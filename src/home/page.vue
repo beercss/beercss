@@ -1519,6 +1519,25 @@
             .space(v-show="exemplo.html")
             pre
               code(v-html="exemplo.codigoFonte")
+      #responsive.col.s12
+        h5 
+          span Responsive
+          a.chip.circle(@click="exibirExemplos('#responsive nav')")
+            i code
+        .card
+          nav.center-align
+            button.circle.small-device
+              i phone_android
+            button.border.circle.medium-device.large-device
+              i phone_android
+            button.circle.medium-device
+              i tablet_android
+            button.border.circle.small-device.large-device
+              i tablet_android
+            button.circle.large-device
+              i laptop_windows
+            button.border.circle.small-device.medium-device
+              i laptop_windows
       .col.s12
         .card.border.transparent
           h5 Summary
@@ -1553,13 +1572,10 @@
               div round
               div circle
             .col
-              b Colors
-              div blue
-              div blue-light-1..5
-              div blue-dark-1..4
-              div blue-text
-              div blue-text-light-1..5
-              div blue-text-dark-1..4
+              b Responsive
+              div small-device
+              div medium-device
+              div large-device
           .row.nowrap
             .col
               b Margin

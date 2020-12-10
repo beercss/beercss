@@ -418,28 +418,25 @@ label {
 }
 
 @media only screen and (max-width: 600px) {
-  .hide-on-small,
-  .hide-on-small.hide-on-medium,
-  .hide-on-small.hide-on-large,
-  .hide-on-small.hide-on-medium.hide-on-large {
+  .medium-device:not(.small-device),
+  .large-device:not(.small-device),
+  .medium-device.large-device:not(.small-device) {
     display: none !important;
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-  .hide-on-medium,
-  .hide-on-medium.hide-on-small,
-  .hide-on-medium.hide-on-large,
-  .hide-on-medium.hide-on-small.hide-on-large {
+  .small-device:not(.medium-device),
+  .large-device:not(.medium-device),
+  .small-device.large-device:not(.medium-device) {
     display: none !important;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .hide-on-large,
-  .hide-on-large.hide-on-medium,
-  .hide-on-large.hide-on-small,
-  .hide-on-large.hide-on-medium.hide-on-small {
+  .medium-device:not(.large-device),
+  .small-device:not(.large-device),
+  .medium-device.small-device:not(.large-device) {
     display: none !important;
   }
 }
