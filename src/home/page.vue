@@ -294,9 +294,7 @@
         h5
           span Dropdowns
           a.chip.circle
-            i(
-              @click="exibirExemplos('#dropdowns .btn, #dropdowns button, #dropdowns span.chip')"
-            ) code
+            i(@click="exibirExemplos('#dropdowns button')") code
         nav
           button(data-ui="#dropdown1")
             span Drooooopdoooooooooown
@@ -408,6 +406,99 @@
                 .col
                   div Title
                   label Complementary text
+          button(data-ui="#dropdown5") 
+            span Calendar
+            #dropdown5.dropdown.small-padding.nowrap(data-ui="#dropdown5")
+              .row.nowrap.middle-align
+                .col.min
+                  a
+                    i arrow_back
+                .col
+                  .h6.center-align Month / Year
+                .col.min
+                  a
+                    i arrow_forward
+              table
+                tbody
+                  tr
+                    td.center-align D
+                    td.center-align S
+                    td.center-align T
+                    td.center-align Q
+                    td.center-align Q
+                    td.center-align S
+                    td.center-align S
+                  tr
+                    td.center-align
+                      a.btn.flat 1
+                    td.center-align
+                      a.btn.flat 2
+                    td.center-align
+                      a.btn.flat 3
+                    td.center-align
+                      a.btn.flat 4
+                    td.center-align
+                      a.btn.flat 5
+                    td.center-align
+                      a.btn.flat 6
+                    td.center-align
+                      a.btn.flat 7
+                  tr
+                    td.center-align
+                      a.btn.small.border.circle.no-margin.center-align 8
+                    td.center-align
+                      a.btn.flat 9
+                    td.center-align
+                      a.btn.flat 10
+                    td.center-align
+                      a.btn.flat 11
+                    td.center-align
+                      a.btn.flat 12
+                    td.center-align
+                      a.btn.flat 13
+                    td.center-align
+                      a.btn.flat 14
+                  tr
+                    td.center-align
+                      a.btn.flat 15
+                    td.center-align
+                      a.btn.flat 16
+                    td.center-align
+                      a.btn.small.circle.no-margin.center-align 17
+                    td.center-align
+                      a.btn.flat 18
+                    td.center-align
+                      a.btn.flat 19
+                    td.center-align
+                      a.btn.flat 20
+                    td.center-align
+                      a.btn.flat 21
+                  tr
+                    td.center-align
+                      a.btn.flat 22
+                    td.center-align
+                      a.btn.flat 23
+                    td.center-align
+                      a.btn.flat 24
+                    td.center-align
+                      a.btn.flat 25
+                    td.center-align
+                      a.btn.flat 26
+                    td.center-align
+                      a.btn.flat 27
+                    td.center-align
+                      a.btn.flat 28
+                  tr
+                    td.center-align
+                      a.btn.flat 29
+                    td.center-align
+                      a.btn.flat 30
+                    td.center-align
+                      a.btn.flat 31
+                    td.center-align 1
+                    td.center-align 2
+                    td.center-align 3
+                    td.center-align 4
       #icons.col.s12
         h5
           span Icons
