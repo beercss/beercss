@@ -1,0 +1,12 @@
+.is-dark {
+  --color-1: #ba68c8;
+  --color-1a: #ba68c880;
+  --color-1b: #ba68c800;
+  --color-2: #ffffff;
+  --color-2a: #ffffff10;
+  --color-2b: #ffffff20;
+  --color-3: #ff9800;
+  --color-4: #37474f;
+  --color-4a: rgba(55, 71, 79, 0.9);
+  --color-5: #263238;
+}

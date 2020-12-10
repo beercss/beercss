@@ -1,0 +1,224 @@
+.modal {
+  display: none;
+  position: fixed;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-4);
+  padding: 16px;
+  box-sizing: border-box;
+  z-index: 100;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, 0);
+  min-width: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal.border {
+  border: 1px solid var(--color-2b);
+  box-shadow: none;
+}
+
+.modal.round {
+  border-radius: 16px;
+}
+
+.modal.bottom.round {
+  border-radius: 16px 16px 0 0;
+}
+
+.modal.top.round {
+  border-radius: 0 0 16px 16px;
+}
+
+.modal.left.round {
+  border-radius: 0 16px 16px 0;
+}
+
+.modal.right.round {
+  border-radius: 16px 0 0 16px;
+}
+
+.modal.small {
+  width: 25%;
+  height: 25%;
+}
+
+.modal.medium {
+  width: 50%;
+  height: 50%;
+}
+
+.modal.large {
+  width: 75%;
+  height: 75%;
+}
+
+.modal.active {
+  display: inline-block;
+  animation: 0.2s modal-to-center;
+}
+
+.modal.active.left {
+  display: inline-block;
+  transform: none;
+  animation: 0.2s modal-to-right;
+}
+
+.modal.active.right {
+  display: inline-block;
+  transform: none;
+  animation: 0.2s modal-to-left;
+}
+
+.modal.active.top {
+  display: inline-block;
+  transform: none;
+  animation: 0.2s modal-to-bottom;
+}
+
+.modal.active.bottom {
+  display: inline-block;
+  transform: none;
+  animation: 0.2s modal-to-top;
+}
+
+.modal.top {
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  height: auto;
+  width: 100%;
+  max-height: 70%;
+}
+
+.modal.left {
+  float: none;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: auto;
+  height: 100%;
+  max-width: 70%;
+}
+
+.modal.right {
+  float: none;
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  height: 100%;
+  max-width: 70%;
+}
+
+.modal.bottom {
+  top: auto;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  max-height: 70%;
+}
+
+.modal.left.small,
+.modal.right.small {
+  width: 350px;
+}
+
+.modal.left.medium,
+.modal.right.medium {
+  width: 525px;
+}
+
+.modal.left.large,
+.modal.right.large {
+  width: 700px;
+}
+
+.modal.top.small,
+.modal.bottom.small {
+  height: 250px;
+}
+
+.modal.top.medium,
+.modal.bottom.medium {
+  height: 375px;
+}
+
+.modal.top.large,
+.modal.bottom.large {
+  height: 500px;
+}
+
+.menu > .modal,
+.menu.left > .modal {
+  z-index: 0;
+  text-align: left;
+  padding: 16px 16px 16px 80px;
+  overflow-y: auto;
+}
+
+.menu.right > .modal {
+  padding: 16px 80px 16px 16px;
+}
+
+.menu.top > .modal {
+  padding: 80px 48px 16px 48px;
+}
+
+.menu.bottom > .modal {
+  padding: 16px 48px 80px 48px;
+}
+
+@keyframes modal-to-right {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes modal-to-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes modal-to-bottom {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes modal-to-top {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes modal-to-center {
+  from {
+    opacity: 0;
+    top: 5%;
+  }
+  to {
+    opacity: 1;
+    top: 10%;
+  }
+}

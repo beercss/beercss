@@ -1,0 +1,93 @@
+.dropdown {
+  display: none;
+  position: absolute;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-4);
+  box-sizing: border-box;
+  z-index: 2;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  width: 100%;
+  max-height: 300px;
+  transform: translateY(100%);
+  overflow-y: auto;
+  font-size: 0.9rem;
+  font-weight: normal;
+  text-transform: none;
+  color: var(--color-2);
+  line-height: normal;
+  text-align: left;
+}
+
+.dropdown.nowrap {
+  width: auto;
+}
+
+.dropdown.active {
+  display: inline-block;
+  animation: 0.1s dropdown-to-bottom;
+}
+
+.dropdown.border {
+  border: 1px solid var(--color-2b);
+  box-shadow: none;
+}
+
+.dropdown.round {
+  border-radius: 16px;
+}
+
+.dropdown.right {
+  left: 0;
+  right: auto;
+}
+
+.dropdown.left {
+  left: auto;
+  right: 0;
+}
+
+.dropdown > a {
+  display: block;
+  padding: 8px 16px;
+}
+
+.dropdown > a:hover,
+.dropdown > a.active {
+  background-color: var(--color-2a);
+}
+
+.dropdown.nowrap > a {
+  white-space: nowrap;
+}
+
+.dropdown.small > a {
+  padding: 4px 16px;
+}
+
+.dropdown.medium > a {
+  padding: 8px 16px;
+}
+
+.dropdown.large > a {
+  padding: 12px 16px;
+}
+
+.dropdown > a.row.nowrap,
+.dropdown > a.row.nowrap + a.row.nowrap {
+  margin: 0;
+}
+
+@keyframes dropdown-to-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(75%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+}

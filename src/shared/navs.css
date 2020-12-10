@@ -1,0 +1,28 @@
+nav {
+  margin-top: 16px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+* > nav:first-child {
+  margin-top: 0;
+}
+
+nav > a,
+nav > button {
+  margin: 0 8px;
+}
+
+nav > a:first-child,
+nav > button:first-child {
+  margin-left: 0 !important;
+}
+
+nav > a:last-child {
+  margin-right: 0 !important;
+}
+
+.field.label > nav {
+  margin-top: 20px;
+}

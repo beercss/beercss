@@ -1,0 +1,547 @@
+.field {
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.field.small {
+  height: 40px;
+}
+
+.field.medium {
+  height: 48px;
+}
+
+.field.large {
+  height: 56px;
+}
+
+.field + .field {
+  margin-top: 16px;
+}
+
+/* icon */
+.field > i {
+  position: absolute;
+  top: 50%;
+  left: auto;
+  right: 0px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #9e9e9e;
+  z-index: 0;
+}
+
+.field.border > i,
+.field.fill > i,
+.field.round > i {
+  left: auto;
+  right: 8px;
+}
+
+.field > i:first-child {
+  left: 0px;
+  right: auto;
+}
+
+.field.border > i:first-child,
+.field.fill > i:first-child,
+.field.round > i:first-child {
+  left: 8px;
+  right: auto;
+}
+
+.field > label i {
+  margin-left: 4px;
+}
+
+/* file */
+input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* text e password */
+.field > input[type="text"],
+.field > input[type="password"] {
+  border: 0;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid #9e9e9e50;
+  padding: 4px 0 4px 0;
+  font-family: Roboto;
+  font-size: 0.9rem;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  z-index: 1;
+  color: var(--color-2);
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.field > input[type="text"]:focus,
+.field > input[type="password"]:focus {
+  border-bottom: 2px solid var(--color-1);
+}
+
+.field.border > input[type="text"],
+.field.border > input[type="password"] {
+  border: 2px solid #9e9e9e50;
+  border-radius: 8px;
+  padding: 4px 8px 4px 8px;
+}
+
+.field.border > input[type="text"]:focus,
+.field.border > input[type="password"]:focus {
+  border: 2px solid var(--color-1);
+}
+
+.field.fill > input[type="text"],
+.field.fill > input[type="password"] {
+  background-color: #9e9e9e10;
+  padding: 4px 8px 4px 8px;
+}
+
+.field.round > input[type="text"],
+.field.round > input[type="password"] {
+  border: 0;
+  border-radius: 32px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  padding: 4px 16px 4px 16px;
+}
+
+.field.round.border > input[type="text"],
+.field.round.border.fill > input[type="text"],
+.field.round.border > input[type="password"],
+.field.round.border.fill > input[type="password"] {
+  border: 2px solid #9e9e9e50;
+  border-radius: 32px;
+  box-shadow: none;
+}
+
+.field.round.border > input[type="text"]:focus,
+.field.round.border.fill > input[type="text"]:focus,
+.field.round.border > input[type="password"]:focus,
+.field.round.border.fill > input[type="password"]:focus {
+  border: 2px solid var(--color-1);
+}
+
+.field.round.fill > input[type="text"],
+.field.round.fill > input[type="password"] {
+  border: 0;
+  border-radius: 32px;
+  box-shadow: none;
+}
+
+.field.label > input[type="text"],
+.field.label > input[type="password"] {
+  padding-top: 16px;
+}
+
+.field.prefix > input[type="text"],
+.field.prefix > input[type="password"] {
+  padding-left: 28px;
+}
+
+.field.prefix.border > input[type="text"],
+.field.prefix.fill > input[type="text"],
+.field.prefix.round > input[type="text"],
+.field.prefix.border > input[type="password"],
+.field.prefix.fill > input[type="password"],
+.field.prefix.round > input[type="password"] {
+  padding-left: 36px;
+}
+
+.field.sufix > input[type="text"],
+.field.sufix > input[type="password"] {
+  padding-right: 28px;
+}
+
+.field.sufix.border > input[type="text"],
+.field.sufix.fill > input[type="text"],
+.field.sufix.round > input[type="text"],
+.field.sufix.border > input[type="password"],
+.field.sufix.fill > input[type="password"],
+.field.sufix.round > input[type="password"] {
+  padding-right: 36px;
+}
+
+.field.invalid > input[type="text"],
+.field.invalid > input[type="password"] {
+  border-bottom: 2px solid  var(--color-3);
+}
+
+.field.invalid.border > input[type="text"],
+.field.invalid.border.round > input[type="text"],
+.field.invalid.border.round.fill > input[type="text"],
+.field.invalid.border > input[type="password"],
+.field.invalid.border.round > input[type="password"],
+.field.invalid.border.round.fill > input[type="password"] {
+  border: 2px solid  var(--color-3);
+}
+
+.field.invalid.round > input[type="text"],
+.field.invalid.round > input[type="password"] {
+  border: inherit;
+}
+
+/* label */
+.field.label > label {
+  animation: 0.1s label-to-middle;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-size: 0.9rem;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.field.label.prefix > label {
+  left: 28px;
+}
+
+.field.label.prefix.border > label,
+.field.label.prefix.fill > label,
+.field.label.prefix.round > label {
+  left: 36px;
+}
+
+.field.label.border > label,
+.field.label.fill > label {
+  left: 8px;
+}
+
+.field.label.round > label {
+  left: 16px;
+}
+
+.field.label > label.active {
+  animation: 0.1s label-to-top;
+  top: 50%;
+  font-size: 0.8rem;
+  transform: translateY(-125%);
+}
+
+.field.label.small > label.active {
+  animation: 0.1s small-label-to-top;
+  top: 50%;
+  font-size: 0.8rem;
+  transform: translateY(-100%);
+}
+
+.field.invalid > label {
+  color:  var(--color-3);
+}
+
+.field > label.required:after,
+.field.required > label:after {
+  content: " * ";
+}
+
+/* checkbox e radio */
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  color: #9e9e9e;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: transparent;
+  animation: 0.4s to-checked;
+}
+
+input[type="checkbox"]::after {
+  content: "check_box_outline_blank";
+}
+
+input[type="checkbox"]:checked::after {
+  color: var(--color-1);
+  content: "check_box";
+}
+
+input[type="radio"]::after {
+  content: "radio_button_unchecked";
+}
+
+input[type="radio"]:checked::after {
+  color: var(--color-1);
+  content: "radio_button_checked";
+}
+
+input[type="radio"] + span,
+input[type="checkbox"] + span {
+  padding: 0 12px 0 8px;
+  cursor: pointer;
+}
+
+span + input[type="radio"],
+span + input[type="checkbox"] {
+  margin: 0 12px 0 8px;
+  cursor: pointer;
+}
+
+/* toggle */
+input[type="checkbox"].toggle {
+  content: "";
+  background-color: #9e9e9e;
+  width: 32px;
+  height: 14px;
+  border-radius: 8px;
+  animation: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"].toggle:checked {
+  background-color: var(--color-1a);
+}
+
+input[type="checkbox"].toggle::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  left: 50%;
+  top: 50%;
+  will-change: transform, background-color;
+  transition: 0.1s transform, 0.1s background-color;
+  transform: translate(-100%, -50%);
+}
+
+input[type="checkbox"].toggle:checked::before {
+  background-color: var(--color-1);
+  transform: translate(0, -50%);
+}
+
+input[type="checkbox"].toggle::after,
+input[type="checkbox"].toggle:checked::after {
+  content: "";
+}
+
+/* select */
+.field > select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid #9e9e9e50;
+  padding: 4px 0 4px 0;
+  font-family: Roboto;
+  font-size: 0.9rem;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+  color: var(--color-2);
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.field > select:focus {
+  border-bottom: 2px solid var(--color-1);
+}
+
+.field.border > select {
+  border: 2px solid #9e9e9e50;
+  border-radius: 8px;
+  padding: 4px 8px 4px 8px;
+}
+
+.field.border > select:focus {
+  border: 2px solid var(--color-1);
+}
+
+.field.fill > select {
+  background-color: #9e9e9e10;
+  padding: 4px 8px 4px 8px;
+}
+
+.field.round > select {
+  border: 0;
+  border-radius: 32px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  padding: 4px 16px 4px 16px;
+}
+
+.field.round.border > select,
+.field.round.border.fill > select {
+  border: 2px solid #9e9e9e50;
+  border-radius: 32px;
+  box-shadow: none;
+}
+
+.field.round.border > select:focus,
+.field.round.border.fill > select:focus {
+  border: 2px solid var(--color-1);
+}
+
+.field.round.fill > select {
+  border: 0;
+  border-radius: 32px;
+  box-shadow: none;
+}
+
+.field.label > select {
+  padding-top: 16px;
+}
+
+.field.prefix > select {
+  padding-left: 28px;
+}
+
+.field.prefix.border > select,
+.field.prefix.fill > select,
+.field.prefix.round > select {
+  padding-left: 36px;
+}
+
+.field.sufix > select {
+  padding-right: 28px;
+}
+.field.sufix.border > select,
+.field.sufix.fill > select,
+.field.sufix.round > select {
+  padding-right: 36px;
+}
+
+.field.invalid > select {
+  border-bottom: 2px solid  var(--color-3);
+}
+
+.field.invalid.border > select,
+.field.invalid.border.round > select,
+.field.invalid.border.round.fill > select {
+  border: 2px solid  var(--color-3);
+}
+
+.field.invalid.round > select {
+  border: inherit;
+}
+
+.field > select > option {
+  background-color: var(--color-4);
+}
+
+/* helper */
+.field > .helper,
+.field > .error {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  font-size: 0.8rem;
+}
+
+a.helper {
+  color: var(--color-1);
+}
+
+.field > .error {
+  color:  var(--color-3);
+}
+
+.field.border > .helper,
+.field.fill > .helper,
+.field.border > .error,
+.field.fill > .error  {
+  left: 8px;
+}
+
+.field.round > .helper,
+.field.round > .error {
+  left: 16px;
+}
+
+.field.invalid > .helper {
+  display: none;
+}
+
+table td > .field {
+  max-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes label-to-top {
+  from {
+    top: 50%;
+    font-size: 0.9rem;
+    transform: translateY(-50%);
+  }
+  to {
+    top: 50%;
+    font-size: 0.8rem;
+    transform: translateY(-125%);
+  }
+}
+
+@keyframes small-label-to-top {
+  from {
+    top: 50%;
+    font-size: 0.9rem;
+    transform: translateY(-50%);
+  }
+  to {
+    top: 50%;
+    font-size: 0.8rem;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes label-to-middle {
+  from {
+    top: 50%;
+    font-size: 0.8rem;
+    transform: translateY(-125%);
+  }
+  to {
+    top: 50%;
+    font-size: 0.9rem;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes to-checked {
+  from {
+    border-radius: 50%;
+    background-color: var(--color-1);
+    box-shadow: 0 0 0 0 var(--color-1);
+  }
+  to {
+    border-radius: 50%;
+    background-color: var(--color-1b);
+    box-shadow: 0 0 0 8px var(--color-1b);
+  }
+}

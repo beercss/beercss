@@ -1,0 +1,42 @@
+table {
+  width: 100%;
+  border-spacing: 0;
+  font-size: 0.9rem;
+}
+
+table th {
+  width: 1%;
+  font-weight: 500;
+  text-align: left;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+table td {
+  width: 1%;
+  text-align: left;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+table.border td, 
+table.border th {
+  border-bottom: 1px solid var(--color-2b);
+}
+
+table.small td,
+table.small th {
+  height: 32px;
+}
+
+table.medium td,
+table.medium th {
+  height: 40px;
+}
+
+table.large td,
+table.large th {
+  height: 48px;
+}

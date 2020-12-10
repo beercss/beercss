@@ -1,0 +1,139 @@
+.loader {
+	background: none !important;
+	animation: loader-to-loop 1.4s linear infinite;
+	width: 48px;
+	height: 48px;
+}
+
+.loader.small {
+	width: 24px;
+	height: 24px;
+}
+
+.loader.medium {
+	width: 40px;
+	height: 40px;
+}
+
+.loader.large {
+	width: 56px;
+	height: 56px;
+}
+
+.loader > circle {
+	stroke-dasharray: 187;
+	stroke-dashoffset: 0;
+	stroke-width: 6;
+	stroke-linecap: round;
+	fill: none;
+	transform-origin: center;
+	stroke: var(--color-1);
+	animation: circle-to-loop 1.4s ease-in-out infinite;
+}
+
+.loader.red > circle {
+	stroke: #f44336 !important;
+}
+
+.loader.pink > circle {
+	stroke: #e91e63 !important;
+}
+
+.loader.purple > circle {
+	stroke: #9c27b0 !important;
+}
+
+.loader.deep-purple > circle {
+	stroke: #673ab7 !important;
+}
+
+.loader.indigo > circle {
+	stroke: #3f51b5 !important;
+}
+
+.loader.blue > circle {
+	stroke: #2196f3 !important;
+}
+
+.loader.light-blue > circle {
+	stroke: #03a9f4 !important;
+}
+
+.loader.cyan > circle {
+	stroke: #00bcd4 !important;
+}
+
+.loader.teal > circle {
+	stroke: #009688 !important;
+}
+
+.loader.green > circle {
+	stroke: #4caf50 !important;
+}
+
+.loader.light-green > circle {
+	stroke: #8bc34a !important;
+}
+
+.loader.lime > circle {
+	stroke: #cddc39 !important;
+}
+
+.loader.yellow > circle {
+	stroke: #ffeb3b !important;
+}
+
+.loader.amber > circle {
+	stroke: #ffc107 !important;
+}
+
+.loader.orange > circle {
+	stroke: #ff9800 !important;
+}
+
+.loader.deep-orange > circle {
+	stroke: #ff5722 !important;
+}
+
+.loader.brown > circle {
+	stroke: #795548 !important;
+}
+
+.loader.blue-grey > circle {
+	stroke: #607d8b !important;
+}
+
+.loader.grey > circle {
+	stroke: #9e9e9e !important;
+}
+
+.loader.black > circle {
+	stroke: #000000 !important;
+}
+
+.loader.white > circle {
+	stroke: #ffffff !important;
+}
+
+@keyframes loader-to-loop {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(270deg);
+	}
+}
+
+@keyframes circle-to-loop {
+	0% {
+		stroke-dashoffset: 187;
+	}
+	50% {
+		stroke-dashoffset: 46.75;
+		transform: rotate(135deg);
+	}
+	100% {
+		stroke-dashoffset: 187;
+		transform: rotate(450deg);
+	}
+}

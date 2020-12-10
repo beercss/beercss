@@ -1,0 +1,287 @@
+.menu {
+  border: 0;
+  position: fixed;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-4);
+  transform: none;
+  box-sizing: border-box;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 64px;
+  height: 100%;
+  text-align: center;
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+}
+
+.menu.border {
+  box-shadow: none;
+  border: 1px solid var(--color-2a);
+}
+
+.menu.left.border {
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+.menu.right.border {
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+.menu.top.border {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.menu.bottom.border {
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+}
+
+.menu.round {
+  border-radius: 48px;
+}
+
+.menu.left.round {
+  border-radius: 0 16px 16px 0;
+}
+
+.menu.right.round {
+  border-radius: 16px 0 0 16px;
+}
+
+.menu.bottom.round {
+  border-radius: 16px 16px 0 0;
+}
+
+.menu.top.round {
+  border-radius: 0 0 16px 16px;
+}
+
+.menu.active {
+  box-shadow: none;
+}
+
+.menu.top {
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  height: auto;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu.left {
+  float: none;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: 64px;
+  height: 100%;
+}
+
+.menu.right {
+  float: none;
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: auto;
+  width: 64px;
+  height: 100%;
+}
+
+.menu.bottom {
+  top: auto;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu.small,
+.menu.small.right,
+.menu.small.left {
+  width: 56px;
+}
+
+.menu.medium,
+.menu.medium.right,
+.menu.medium.left {
+  width: 64px;
+}
+
+.menu.large,
+.menu.large.right,
+.menu.large.left {
+  width: 72px;
+}
+
+.menu.small.top,
+.menu.small.bottom {
+  height: 48px;
+}
+
+.menu.medium.top,
+.menu.medium.bottom {
+  height: 56px;
+}
+
+.menu.large.top,
+.menu.large.bottom {
+  height: 64px;
+}
+
+.menu.top,
+.menu.bottom {
+  width: 100%;
+}
+
+.menu.left,
+.menu.right {
+  height: 100%;
+}
+
+.menu > a {
+  border: 0;
+  display: block;
+  font-size: 0.7rem;
+  padding: 8px 4px;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  z-index: 1;
+}
+
+.menu > a:hover {
+  color: var(--color-1);
+}
+
+.menu.top > a,
+.menu.bottom > a {
+  width: 64px;
+  padding: 6px 4px;
+}
+
+.menu.top.small > a,
+.menu.bottom.small > a {
+  padding: 9px 4px;
+}
+
+.menu.top.large > a,
+.menu.bottom.large > a {
+  padding: 10px 4px;
+}
+
+.menu > a.active {
+  border: 0;
+  border-left: 3px solid var(--color-1);
+  color: var(--color-1);
+}
+
+.menu.left > a.active {
+  border: 0;
+  border-left: 3px solid var(--color-1);
+}
+
+.menu.right > a.active {
+  border: 0;
+  border-right: 3px solid var(--color-1);
+}
+
+.menu.top > a.active {
+  border: 0;
+  border-bottom: 3px solid var(--color-1);
+}
+
+.menu.bottom > a.active {
+  border: 0;
+  border-top: 3px solid var(--color-1);
+}
+
+.menu.small > a > div {
+  display: none;
+}
+
+.is-menu-left {
+  margin: 0 16px 0 80px;
+}
+
+.is-menu-small.is-menu-left {
+  margin: 0 16px 0 72px;
+}
+
+.is-menu-large.is-menu-left {
+  margin: 0 16px 0 88px;
+}
+
+.is-menu-right {
+  margin: 0 80px 0 16px;
+}
+
+.is-menu-small.is-menu-right {
+  margin: 0 72px 0 16px;
+}
+
+.is-menu-large.is-menu-right {
+  margin: 0 88px 0 16px;
+}
+
+.is-menu-top {
+  margin: 72px 16px 0 16px;
+}
+
+.is-menu-small.is-menu-top {
+  margin: 56px 16px 0 16px;
+}
+
+.is-menu-large.is-menu-top {
+  margin: 80px 16px 0 16px;
+}
+
+.is-menu-bottom {
+  margin: 0 16px 72px 16px;
+}
+
+.is-menu-small.is-menu-bottom {
+  margin: 0 16px 56px 16px;
+}
+
+.is-menu-large.is-menu-bottom {
+  margin: 0 16px 80px 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu.bottom {
+    justify-content: space-around;
+  }
+  .menu.top {
+    justify-content: space-around;
+  }
+}

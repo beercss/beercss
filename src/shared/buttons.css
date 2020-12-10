@@ -1,0 +1,115 @@
+.btn,
+button {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  height: 32px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 32px;
+  padding: 0 12px;
+  background-color: var(--color-1);
+  margin: 0 8px;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.btn:hover,
+button:hover {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.btn.flat,
+button.flat {
+  box-shadow: none;
+  height: auto;
+  color: var(--color-1);
+  line-height: normal;
+  padding: 0;
+  background-color: transparent;
+  margin: 0 8px;
+}
+
+.btn.small,
+button.small {
+  height: 24px;
+  line-height: 24px;
+  padding: 0 8px;
+}
+
+.btn.medium,
+button.medium {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 12px;
+}
+
+.btn.large,
+button.large {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 16px;
+}
+
+.btn.border,
+button.border {
+  border: 1px solid var(--color-1);
+  background-color: transparent;
+  color: var(--color-1);
+  box-shadow: none;
+}
+
+.btn.round,
+button.round {
+  border-radius: 24px;
+}
+
+.btn.circle,
+button.circle {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  line-height: 48px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.btn.circle > i,
+button.circle > i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn.circle.small,
+button.circle.small {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.btn.circle.large,
+button.circle.large {
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+}
+
+td > .btn,
+td > nav > .btn,
+td > button,
+td > nav > button {
+  height: 24px;
+  line-height: 24px;
+}
+
+td > .btn.circle,
+td > nav > .btn.circle,
+td > button.circle,
+td > nav > button.circle {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}

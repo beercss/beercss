@@ -1,0 +1,40 @@
+.chip {
+  height: 32px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-2);
+  line-height: 32px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background-color: var(--color-2a);
+  margin: 4px;
+  text-transform: none;
+  display: inline-block;
+}
+
+.chip > * {
+  line-height: 32px;
+}
+
+.chip.border {
+  border: 1px solid var(--color-2b);
+  background-color: transparent;
+}
+
+.chip.circle {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  text-align: center;
+}
+
+.chip.circle > i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chip.active {
+  background-color: var(--color-2b);
+}
