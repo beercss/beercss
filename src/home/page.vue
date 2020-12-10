@@ -1789,8 +1789,6 @@
 </template>
 
 <script>
-import ui from "~/shared/ui.js";
-
 export default {
   data() {
     return {
@@ -2147,8 +2145,6 @@ export default {
 </script>
 
 <style>
-@import "~/shared/ui.css";
-
 #modal-colors .col > div {
   padding: 16px;
 }
@@ -2174,18 +2170,5 @@ pre {
 
 .is-dark pre {
   background-color: rgba(255, 255, 255, 0.1);
-}
-.progressbar {
-  background: rgba(0, 0, 0, 0.2);
-  height: 16px;
-  border-radius: 8px;
-}
-.progressbar > * {
-  height: 16px;
-  border-radius: inherit;
-  transition: width 1s;
-  transition-delay: 0.5s;
-  will-change: width;
-  width: 0%;
 }
 </style>

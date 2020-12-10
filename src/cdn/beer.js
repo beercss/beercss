@@ -249,4 +249,3 @@ const ui = (selector, config) => {
 };
 
 window.ui = ui;
-export default ui;
