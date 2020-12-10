@@ -1,8 +1,10 @@
 <template lang="pug">
 .container
   #menu.menu.left
-    a
-      i.extra sports_bar
+    .small-space
+    .center-align.front
+      a.btn.small.border.circle
+        i sports_bar
     a(@click="alterarMenu(this, 'top')")
       i arrow_upward
       div Top
