@@ -421,12 +421,12 @@
               table
                 tbody
                   tr
-                    td.center-align D
                     td.center-align S
+                    td.center-align M
                     td.center-align T
-                    td.center-align Q
-                    td.center-align Q
-                    td.center-align S
+                    td.center-align W
+                    td.center-align T
+                    td.center-align F
                     td.center-align S
                   tr
                     td.center-align
