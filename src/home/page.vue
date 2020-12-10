@@ -37,18 +37,28 @@
           p Item 1
           p Item 2
           p Item 3
-  #inicio
+  #begin
     .row
       .col.s12
         .card.no-padding.border.transparent
           img.responsive(:src="'/beer-animation.gif'")
           .absolute.bottom.left.right.center-align
-            a.btn.large.pink.white-text(href="https://www.patreon.com/beercss", target="_blank") Donate and support us
+            a.btn.large.pink.white-text(
+              href="https://www.patreon.com/beercss",
+              target="_blank"
+            ) Donate and support us
             .margin.center-align.white-text Everton and Leonardo are creating &reg;beercss
           .absolute.top.left.right.padding.white-text.center-align
             .h4 
               span Beer css!&nbsp;
             .h6 The most tasty, lightweight and easy css framework that you've seen!
+            nav.center-align
+              a.btn.white.black-text.small Get started
+              a.btn.white.black-text.small(
+                href="https://github.com/leonardorafael/beercss",
+                target="_blank"
+              ) Github
+
         .card.border.transparent
           .row.nowrap
             .col.center-align
@@ -63,73 +73,6 @@
             .col.center-align
               div Themeable with
               .h6 light/dark
-        .card.border.transparent(style="display:none")
-          h5 About
-          div It's an open source project.
-          div It's material design.
-          div It's only 10kb of css.
-          div It has zero dependencies.
-          div It's themeable.
-          div 
-            span It has&nbsp;
-            a.link(@click="alterarTema()")
-              b light/dark&nbsp;
-            span theme by defaut.
-          div It's flexible, just use elements with helpers.
-          div It's easy to use with Vue, React, Angular and for prototype too.
-          div And without blah, bla, blah and tons of text to explain it!
-        .card.border.transparent
-          .center-align 
-            .h5 Cheers to our sponsors!
-            label {{sponsors}} of {{limitSponsors}} sponsors
-          .space
-          .row
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/myrp.png'")
-              div myrp
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/inventti.jpg'")
-              div inventti
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 3
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 4
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 5
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 6
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 7
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 8
-          .large-space
-          .row
-            .col.s12.center-align
-              .chip Leonardo Rafael Wehrmeister
-              .chip Everton Alcides Buzzi
-              .chip Sponsor 11
-              .chip Sponsor 12
-              .chip Sponsor 13
-              .chip Sponsor 14
-              .chip Sponsor 15
-              .chip Sponsor 16
-              .chip Sponsor 17
-              .chip Sponsor 18
-              .chip Sponsor 19
-              .chip Sponsor 20
-              .chip Sponsor 21
-              .chip Sponsor 22
-              .chip Sponsor 23
-              .chip Sponsor 24
-          .space
-          nav.center-align
-            a.btn.large(href="https://www.patreon.com/beercss", target="_blank") Donate and support us
     .space
     #toasts
       #toast1.toast.pink.white-text
@@ -1769,6 +1712,62 @@
               div Or add attribute "data-ui" and call javascript function, to setup all automatically
               pre
                 code(v-html="exemploAuto")
+      .col.s12
+        .card.border.transparent
+          .center-align 
+            .h5 Cheers to our sponsors!
+            label {{ sponsors }} of {{ limitSponsors }} sponsors
+          .space
+          .row
+            .col.s3.center-align
+              img.white.extra.border.circle(:src="'/myrp.png'")
+              div myrp
+            .col.s3.center-align
+              img.white.extra.border.circle(:src="'/inventti.jpg'")
+              div inventti
+            .col.s3.center-align
+              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              div Sponsor 3
+            .col.s3.center-align
+              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              div Sponsor 4
+            .col.s3.center-align
+              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              div Sponsor 5
+            .col.s3.center-align
+              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              div Sponsor 6
+            .col.s3.center-align
+              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              div Sponsor 7
+            .col.s3.center-align
+              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              div Sponsor 8
+          .large-space
+          .row
+            .col.s12.center-align
+              .chip Leonardo Rafael Wehrmeister
+              .chip Everton Alcides Buzzi
+              .chip Sponsor 11
+              .chip Sponsor 12
+              .chip Sponsor 13
+              .chip Sponsor 14
+              .chip Sponsor 15
+              .chip Sponsor 16
+              .chip Sponsor 17
+              .chip Sponsor 18
+              .chip Sponsor 19
+              .chip Sponsor 20
+              .chip Sponsor 21
+              .chip Sponsor 22
+              .chip Sponsor 23
+              .chip Sponsor 24
+          .space
+          nav.center-align
+            a.btn.large(
+              href="https://www.patreon.com/beercss",
+              target="_blank"
+            ) Donate and support us
 </template>
 
 <script>
@@ -1783,7 +1782,7 @@ export default {
       exemploJs: null,
       exemploAuto: null,
       sponsors: 4,
-      limitSponsors: 24
+      limitSponsors: 24,
     };
   },
   watch: {},
