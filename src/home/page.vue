@@ -1609,7 +1609,7 @@
             div(v-html="exemplo.html")
             .space(v-show="exemplo.html")
             pre
-              code(v-html="exemplo.codigoFonte")
+              code#code(v-html="exemplo.codigoFonte")
 
         #modal-calendar.modal
           .row
@@ -2078,34 +2078,44 @@ export default {
       else i.addClass("outlined");
     },
     formatarHtml(elemento) {
+      function process(str) {
+        var div = document.createElement("div");
+        div.innerHTML = str.trim();
+
+        return format(div, 0).innerHTML;
+      }
+
+      function format(node, level) {
+        var indentBefore = new Array(level++ + 1).join("  "),
+          indentAfter = new Array(level - 1).join("  "),
+          textNode;
+
+        for (var i = 0; i < node.children.length; i++) {
+          textNode = document.createTextNode("\n" + indentBefore);
+          node.insertBefore(textNode, node.children[i]);
+
+          format(node.children[i], level);
+
+          if (node.lastElementChild == node.children[i]) {
+            textNode = document.createTextNode("\n" + indentAfter);
+            node.appendChild(textNode);
+          }
+        }
+
+        return node;
+      }
+
       var tag = $(elemento).clone();
       tag.find(".overlay").remove();
 
-      var html = tag[0].outerHTML
-        .replace(/\s+(onclick|style)\="[^\"]*"/gi, "")
-        .replace(/\s+id\="(\w+)"/gi, ' id="$1-id"')
-        .replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1-id"')
-        .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
-        .replace(/\>\</gi, ">\n<")
-        .replace(/\n\<\/(circle|th)\>/gi, "</$1>");
-
-      var partes = html.split("\n");
-      if (!partes.length) partes.push(html);
-
-      var space = "";
-      for (var i = 1; i < partes.length; i++) {
-        if (/\<(img|input)/.test(partes[i - 1])) {
-          if (/^\<\//.test(partes[i])) space = space.substr(2);
-        } else if (!/\<\//.test(partes[i - 1])) {
-          space += "  ";
-        } else if (/^\<\//.test(partes[i])) {
-          space = space.substr(2);
-        }
-
-        partes[i] = space + partes[i];
-      }
-
-      return partes.join("\n");
+      return process(
+        tag[0].outerHTML
+          .replace(/\s+(onclick|style)\="[^\"]*"/gi, "")
+          .replace(/\s+id\="(\w+)"/gi, ' id="$1-id"')
+          .replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1-id"')
+          .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
+          .replace(/\n\<\/(circle|th)\>/gi, "</$1>")
+      );
     },
     exibirExemplos(seletor) {
       var elementos = $(seletor);
@@ -2344,7 +2354,7 @@ export default {
   padding: 16px;
 }
 
-code > * {
+#code * {
   vertical-align: text-bottom;
 }
 
