@@ -2,9 +2,8 @@
 .container
   #menu.menu.left
     .small-space
-    .center-align.front
-      a.btn.small.border.circle
-        i sports_bar
+    a.btn.small.border.circle
+      i sports_bar
     a(@click="alterarMenu(this, 'top')")
       i arrow_upward
       div Top
