@@ -1718,17 +1718,17 @@
             i code
         .card
           nav.center-align
-            button.circle.small-device
+            button.small-device.circle
               i phone_android
-            button.border.circle.medium-device.large-device
+            button.medium-device.large-device.border.circle
               i phone_android
-            button.circle.medium-device
+            button.medium-device.circle
               i tablet_android
-            button.border.circle.small-device.large-device
+            button.small-device.large-device.border.circle
               i tablet_android
-            button.circle.large-device
+            button.large-device.circle
               i laptop_windows
-            button.border.circle.small-device.medium-device
+            button.small-device.medium-device.border.circle
               i laptop_windows
       .col.s12
         .card.border.transparent
