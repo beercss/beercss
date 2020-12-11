@@ -2,7 +2,7 @@
 .container
   #menu.menu.left
     .small-space
-    a.btn.small.border.circle
+    a.btn.small.border.circle.no-margin.no-padding
       i sports_bar
     a(@click="alterarMenu(this, 'top')")
       i arrow_upward
@@ -2078,8 +2078,11 @@ export default {
       else i.addClass("outlined");
     },
     formatarHtml(elemento) {
-      var html = $(elemento)[0]
-        .outerHTML.replace(/\s+(onclick|style)\="[^\"]*"/gi, "")
+      var tag = $(elemento).clone();
+      tag.find(".overlay").remove();
+
+      var html = tag[0].outerHTML
+        .replace(/\s+(onclick|style)\="[^\"]*"/gi, "")
         .replace(/\s+id\="(\w+)"/gi, ' id="$1-id"')
         .replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1-id"')
         .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
