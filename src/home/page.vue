@@ -1917,7 +1917,7 @@
                 span.grey-text top-align, bottom-align, middle-align
               div 
                 span &lt;table&gt;&nbsp;
-                span.grey-text small, medium, large, border
+                span.grey-text small, medium, large, border, left-align, center-align, right-align
               .space
               .orange-text * Element unique helpers
           .space
