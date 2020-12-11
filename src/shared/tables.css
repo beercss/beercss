@@ -40,3 +40,18 @@ table.large td,
 table.large th {
   height: 48px;
 }
+
+table.center-align td,
+table.center-align th {
+  text-align: center;
+}
+
+table.left-align td,
+table.left-align th {
+  text-align: left;
+}
+
+table.right-align td,
+table.right-align th {
+  text-align: right;
+}
