@@ -958,6 +958,19 @@
             label
               input#large-tables(type="radio", name="size-tables")
               span large
+            label
+              input#left-align-tables(
+                type="radio",
+                name="align-tables",
+                checked="checked"
+              )
+              span left-align
+            label
+              input#center-align-tables(type="radio", name="align-tables")
+              span center-align
+            label
+              input#right-align-tables(type="radio", name="align-tables")
+              span right-align
           table.border
             thead
               tr
@@ -2174,7 +2187,7 @@ export default {
     },
     exemploTables() {
       $("#table input").on("click", function () {
-        var ids = ["small", "large"];
+        var ids = ["small", "large", "center-align", "right-align"];
         var table = $("#table table");
 
         for (var i = 0; i < ids.length; i++) {
