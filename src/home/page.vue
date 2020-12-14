@@ -2,8 +2,7 @@
 .container
   #menu.menu.left
     .small-space
-    a.btn.small.border.circle.no-margin.no-padding
-      i sports_bar
+    img.front.small.circle.no-margin.no-padding(:src="'/favicon.png'")
     a(@click="alterarMenu(this, 'top')")
       i arrow_upward
       div Top
