@@ -65,14 +65,14 @@
               div Based on
               .h6 Material design
             .col.center-align
-              div Size of
-              .h6 ~10kb
+              div Micro size of
+              .h6 ~7kb
             .col.center-align
-              div Only
-              .h6 CSS/JS
+              div Only standard
+              .h6 html/css/js
             .col.center-align
-              div Themeable with
-              .h6 light/dark
+              div Total css classes
+              .h6 ~70
     .space
     #toasts
       #toast1.toast.pink.white-text
