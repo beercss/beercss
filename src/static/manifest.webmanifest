@@ -10,9 +10,9 @@
         }
     ],
     "start_url": "/",
-    "background_color": "#ffffff",
+    "background_color": "#2196f3",
     "display": "standalone",
     "scope": "/",
-    "theme_color": "#000000",
+    "theme_color": "#ffffff",
     "shortcuts": []
 }
