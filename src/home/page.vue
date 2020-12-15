@@ -4,30 +4,30 @@
     .small-space
     img.front.small.circle.no-margin.no-padding(
       :src="'/favicon.png'",
-      @click="adicionarIcone()"
+      @click="addHomeScreen()"
     )
-    a(@click="alterarMenu(this, 'top')")
+    a(@click="updateMenu(this, 'top')")
       i arrow_upward
       div Top
-    a(@click="alterarMenu(this, 'bottom')")
+    a(@click="updateMenu(this, 'bottom')")
       i arrow_downward
       div Bottom
-    a(@click="alterarMenu(this, 'left')")
+    a(@click="updateMenu(this, 'left')")
       i arrow_back
       div Left
-    a(@click="alterarMenu(this, 'right')")
+    a(@click="updateMenu(this, 'right')")
       i arrow_forward
       div Right
-    a(@click="alterarMenu(this)")
+    a(@click="updateMenu(this)")
       i zoom_out_map
       div Size
-    a(@click="alterarIcones()")
+    a(@click="updateIcons()")
       i image
       div Icons
-    a(@click="alterarTema()")
+    a(@click="updateTheme()")
       i brightness_medium
       div Theme
-    a(@click="exibirExemplos('#menu')")
+    a(@click="showSamples('#menu')")
       i code
       div Code
     a(data-ui="#more")
@@ -96,7 +96,7 @@
         h5
           span Badges
           a.chip.circle
-            i(@click="exibirExemplos('#badges nav > a')") code
+            i(@click="showSamples('#badges nav > a')") code
         .small-space
         nav
           a
@@ -216,7 +216,7 @@
         h5
           span Buttons
           a.chip.circle
-            i(@click="exibirExemplos('#buttons .btn, #button button')") code
+            i(@click="showSamples('#buttons .btn, #button button')") code
         nav
           a.btn Button
           a.btn
@@ -264,7 +264,7 @@
         h5
           span Chips
           a.chip.circle
-            i(@click="exibirExemplos('#chips .chip')") code
+            i(@click="showSamples('#chips .chip')") code
         nav#chips
           a.chip Filter
           a.chip
@@ -295,7 +295,7 @@
         h5
           span Dropdowns
           a.chip.circle
-            i(@click="exibirExemplos('#dropdowns button')") code
+            i(@click="showSamples('#dropdowns button')") code
         nav
           button(data-ui="#dropdown1")
             span Drooooopdoooooooooown
@@ -517,7 +517,7 @@
         h5
           span Images
           a.chip.circle
-            i(@click="exibirExemplos('#images img')") code
+            i(@click="showSamples('#images img')") code
         nav
           a
             img.circle.tiny(:src="'/beer-and-woman.jpg'")
@@ -543,7 +543,7 @@
         h5
           span Loaders
           a.chip.circle
-            i(@click="exibirExemplos('#loaders svg')") code
+            i(@click="showSamples('#loaders svg')") code
         nav
           a
             svg.loader.small(viewBox="0 0 66 66")
@@ -567,7 +567,7 @@
         h5
           span Modals
           a.chip.circle
-            i(@click="exibirExemplos('#modal, #modal-calendar')") code
+            i(@click="showSamples('#modal, #modal-calendar')") code
         nav
           a.btn(data-ui="#modal") Modal
           a.btn(data-ui="#modal-calendar") Calendar
@@ -575,7 +575,7 @@
         h5
           span Tabs
           a.chip.circle
-            i(@click="exibirExemplos('#tabs .tabs')") code
+            i(@click="showSamples('#tabs .tabs')") code
         .tabs
           a.active(data-ui="#") Tab 1
           a(data-ui="#") Tab 2
@@ -624,17 +624,17 @@
         h5
           span Toasts
           a.chip.circle
-            i(@click="exibirExemplos('#toasts .toast')") code
+            i(@click="showSamples('#toasts .toast')") code
         nav
-          a.pink.btn(@click="exibirToasts('#toast1')") Toast
-          a.orange.btn(@click="exibirToasts('#toast2')") Toast
-          a.green.btn(@click="exibirToasts('#toast3')") Toast
-          a.blue.btn(@click="exibirToasts('#toast4')") Toast
+          a.pink.btn(@click="showToasts('#toast1')") Toast
+          a.orange.btn(@click="showToasts('#toast2')") Toast
+          a.green.btn(@click="showToasts('#toast3')") Toast
+          a.blue.btn(@click="showToasts('#toast4')") Toast
       .col.s12.m6
         h5
           span Tooltips
           a.chip.circle
-            i(@click="exibirExemplos('#tooltips a')") code
+            i(@click="showSamples('#tooltips a')") code
         nav#tooltips
           a.chip.circle
             i arrow_back
@@ -653,7 +653,7 @@
         h5
           span Cards
           a.chip.circle
-            i(@click="exibirExemplos('#cards .card')") code
+            i(@click="showSamples('#cards .card')") code
       .col.s12.m6.l3
         .card
           .row.nowrap
@@ -813,7 +813,7 @@
         h5
           span Lists
           a.chip.circle
-            i(@click="exibirExemplos('#list .row')") code
+            i(@click="showSamples('#list .row')") code
         #list.card
           p
             label
@@ -944,7 +944,7 @@
         h5
           span Tables
           a.chip.circle
-            i(@click="exibirExemplos('#table table')") code
+            i(@click="showSamples('#table table')") code
         #table.card
           p
             label
@@ -1019,7 +1019,7 @@
         h5
           span Inputs
           a.chip.circle
-            i(@click="exibirExemplos('#inputs .field')") code
+            i(@click="showSamples('#inputs .field')") code
         #inputs.card
           p
             label
@@ -1111,7 +1111,7 @@
         h5
           span Selects
           a.chip.circle
-            i(@click="exibirExemplos('#selects .field')") code
+            i(@click="showSamples('#selects .field')") code
         #selects.card
           p
             label
@@ -1192,7 +1192,7 @@
         h5
           span Checkboxes
           a.chip.circle
-            i(@click="exibirExemplos('#checkboxes .field')") code
+            i(@click="showSamples('#checkboxes .field')") code
         #checkboxes.card
           .row
             .col.s6
@@ -1305,7 +1305,7 @@
         h5
           span Radios
           a.chip.circle
-            i(@click="exibirExemplos('#radios .field')") code
+            i(@click="showSamples('#radios .field')") code
         #radios.card
           .row
             .col.s12
@@ -1373,11 +1373,11 @@
                 type="radio",
                 name="radio",
                 checked="checked",
-                @click="alterarCores(false)"
+                @click="updateColors(false)"
               )
               span background
             label
-              input(type="radio", name="radio", @click="alterarCores(true)")
+              input(type="radio", name="radio", @click="updateColors(true)")
               span text
           span.space
           .row
@@ -1614,17 +1614,17 @@
             ) Bottom
             a.btn.flat(data-ui="#modal") Close
 
-        #modal-exemplos.modal.right.large
+        #modal-samples.modal.right.large
           nav
-            a(data-ui="#modal-exemplos")
+            a(data-ui="#modal-samples")
               i arrow_back
-            a.h5(data-ui="#modal-exemplos") Back
+            a.h5(data-ui="#modal-samples") Back
           .space
-          .card.border(v-for="exemplo in exemplos")
+          .card.border(v-for="exemplo in samples")
             div(v-html="exemplo.html")
             .space(v-show="exemplo.html")
             pre
-              code#code(v-html="exemplo.codigoFonte")
+              code#code(v-html="exemplo.sourceCode")
 
         #modal-calendar.modal
           .row
@@ -1729,7 +1729,7 @@
       #responsive.col.s12
         h5 
           span Responsive
-          a.chip.circle(@click="exibirExemplos('#responsive nav')")
+          a.chip.circle(@click="showSamples('#responsive nav')")
             i code
         .card
           nav.center-align
@@ -1928,20 +1928,20 @@
               h6 How to trigger elements?
               div Add or remove class "active"
               pre
-                code(v-html="exemploHtml")
+                code(v-html="htmlSample")
               .space
               div Or call javascript function to activate/deactivate an element
               pre
-                code(v-html="exemploJs")
+                code(v-html="jsSample")
               .space
               div Or add attribute "data-ui" and call javascript function, to setup all automatically
               pre
-                code(v-html="exemploAuto")
+                code(v-html="autoSample")
       .col.s12
         .card.border.transparent
           .center-align 
             .h5 Cheers to our sponsors!
-            label {{ sponsors }} of {{ limitSponsors }} sponsors
+            label {{ sponsors }} of {{ sponsorsLimit }} sponsors
           .space
           .row
             .col.s3.center-align
@@ -1999,13 +1999,13 @@
 export default {
   data() {
     return {
-      indiceMenu: 1,
-      exemplos: [],
-      exemploHtml: null,
-      exemploJs: null,
-      exemploAuto: null,
+      indexOfMenu: 1,
+      samples: [],
+      htmlSample: null,
+      jsSample: null,
+      autoSample: null,
       sponsors: 4,
-      limitSponsors: 24,
+      sponsorsLimit: 24,
     };
   },
   watch: {},
@@ -2013,41 +2013,41 @@ export default {
     $("body").addClass("is-dark");
   },
   mounted() {
-    this.exemploHtml = hljs.highlight(
+    this.htmlSample = hljs.highlight(
       "html",
       '<div class="modal active">...</div>\n<div class="dropdown active">...</div>\n<div class="overlay active">...</div>'
     ).value;
 
-    this.exemploJs = hljs.highlight(
+    this.jsSample = hljs.highlight(
       "html",
       'ui("#modal");\nui("#dropdown");\nui("#overlay");\nui("#toast");'
     ).value;
 
-    this.exemploAuto = hljs.highlight(
+    this.autoSample = hljs.highlight(
       "html",
       '<a data-ui="#modal">...</a>\n<a data-ui="#dropdown">...</a>\n<a data-ui="#overlay">...</a>\n<a data-ui="#toast">...</a>\n\nui();'
     ).value;
 
     ui();
 
-    this.exemploGraficos();
-    this.exemploLists();
-    this.exemploTables();
-    this.exemploInputs();
-    this.exemploSelects();
+    this.chartSamples();
+    this.listSamples();
+    this.tableSamples();
+    this.inputSamples();
+    this.selectSamples();
   },
   methods: {
-    alterarTema() {
+    updateTheme() {
       var body = $("body");
 
       if (body.is(".is-dark")) body.removeClass("is-dark");
       else body.addClass("is-dark");
     },
-    adicionarIcone() {
+    addHomeScreen() {
       if (window.beercss && window.beercss.installEvent)
         window.beercss.installEvent.prompt();
     },
-    alterarMenu(from, css) {
+    updateMenu(from, css) {
       var body = $("body");
       var menu = $(".menu");
       var dataUis = $(".menu a");
@@ -2061,10 +2061,10 @@ export default {
       if (!css) {
         var sizes = ["small", "medium", "large"];
 
-        this.indiceMenu = this.indiceMenu + 1;
-        if (!sizes[this.indiceMenu]) this.indiceMenu = 0;
+        this.indexOfMenu = this.indexOfMenu + 1;
+        if (!sizes[this.indexOfMenu]) this.indexOfMenu = 0;
 
-        css = sizes[this.indiceMenu];
+        css = sizes[this.indexOfMenu];
       }
 
       if (/left|right|top|bottom/.test(css)) {
@@ -2091,12 +2091,12 @@ export default {
         }
       }
     },
-    alterarIcones() {
+    updateIcons() {
       var i = $("i");
       if (i.is(".outlined")) i.removeClass("outlined");
       else i.addClass("outlined");
     },
-    formatarHtml(elemento) {
+    formatarHtml(element) {
       function process(str) {
         var div = document.createElement("div");
         div.innerHTML = str.trim();
@@ -2124,7 +2124,7 @@ export default {
         return node;
       }
 
-      var tag = $(elemento).clone();
+      var tag = $(element).clone();
       tag.find(".overlay").remove();
 
       return process(
@@ -2136,35 +2136,35 @@ export default {
           .replace(/\n\<\/(circle|th)\>/gi, "</$1>")
       );
     },
-    exibirExemplos(seletor) {
-      var elementos = $(seletor);
-      this.exemplos = [];
-      for (var i = 0; i < elementos.length; i++) {
-        var html = this.formatarHtml($(elementos[i]), true);
-        var htmlFormatado = hljs.highlight("html", html).value;
+    showSamples(selector) {
+      var elements = $(selector);
+      this.samples = [];
+      for (var i = 0; i < elements.length; i++) {
+        var html = this.formatarHtml($(elements[i]), true);
+        var htmlFormatted = hljs.highlight("html", html).value;
 
         if (
-          $(elementos[i]).is(".menu") ||
-          $(elementos[i]).is(".modal") ||
-          $(elementos[i]).is(".toast")
+          $(elements[i]).is(".menu") ||
+          $(elements[i]).is(".modal") ||
+          $(elements[i]).is(".toast")
         )
           html = "";
 
-        this.exemplos.push({
+        this.samples.push({
           html: html,
-          codigoFonte: htmlFormatado,
+          sourceCode: htmlFormatted,
         });
       }
 
       Vue.nextTick(() => {
         ui();
-        ui("#modal-exemplos");
-        $("#modal-exemplos").scrollTop(0);
+        ui("#modal-samples");
+        $("#modal-samples").scrollTop(0);
       });
     },
-    exibirToasts(seletor) {
-      if (seletor) {
-        ui(seletor);
+    showToasts(selector) {
+      if (selector) {
+        ui(selector);
         return;
       }
 
@@ -2173,7 +2173,7 @@ export default {
       ui("#toast3");
       ui("#toast4");
     },
-    exemploLists() {
+    listSamples() {
       $("#list input").on("click", function () {
         var ids = ["middle-align", "top-align", "bottom-align", "divider"];
         var rows = $("#list .row");
@@ -2184,26 +2184,26 @@ export default {
         rows.removeClass("divider");
 
         for (var i = 0; i < ids.length; i++) {
-          var seletor = "#" + ids[i] + "-lists";
-          if ($(seletor).is(":checked")) {
+          var selector = "#" + ids[i] + "-lists";
+          if ($(selector).is(":checked")) {
             rows.addClass(ids[i]);
           }
         }
       });
     },
-    exemploTables() {
+    tableSamples() {
       $("#table input").on("click", function () {
         var ids = ["small", "large", "center-align", "right-align"];
         var table = $("#table table");
 
         for (var i = 0; i < ids.length; i++) {
-          var seletor = "#" + ids[i] + "-tables";
-          if ($(seletor).is(":checked")) table.addClass(ids[i]);
+          var selector = "#" + ids[i] + "-tables";
+          if ($(selector).is(":checked")) table.addClass(ids[i]);
           else table.removeClass(ids[i]);
         }
       });
     },
-    exemploInputs() {
+    inputSamples() {
       $(
         "#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#text-inputs,#password-inputs,#file-inputs"
       ).on("click", function () {
@@ -2218,10 +2218,10 @@ export default {
           "file",
         ];
         for (var i = 0; i < ids.length; i++) {
-          var seletor = "#" + ids[i] + "-inputs";
+          var selector = "#" + ids[i] + "-inputs";
 
           if (["text", "password", "file"].indexOf(ids[i]) !== -1) {
-            if ($(seletor).is(":checked")) {
+            if ($(selector).is(":checked")) {
               var inputs = $(
                 "#inputs input[type='text'], #inputs input[type='password']"
               );
@@ -2252,27 +2252,27 @@ export default {
               }
             }
           } else {
-            if ($(seletor).is(":checked"))
+            if ($(selector).is(":checked"))
               $("#inputs .field.label").addClass(ids[i]);
             else $("#inputs .field.label").removeClass(ids[i]);
           }
         }
       });
     },
-    exemploSelects() {
+    selectSamples() {
       $(
         "#border-selects,#round-selects,#fill-selects,#small-selects,#medium-selects,#large-selects"
       ).on("click", function () {
         var ids = ["border", "fill", "round", "small", "large"];
         for (var i = 0; i < ids.length; i++) {
-          var seletor = "#" + ids[i] + "-selects";
-          if ($(seletor).is(":checked"))
+          var selector = "#" + ids[i] + "-selects";
+          if ($(selector).is(":checked"))
             $("#selects .field.label").addClass(ids[i]);
           else $("#selects .field.label").removeClass(ids[i]);
         }
       });
     },
-    alterarCores(text) {
+    updateColors(text) {
       $("#modal-colors .col > div").each(function () {
         var html = $(this).html();
         html = text
@@ -2281,7 +2281,7 @@ export default {
         $(this).html(html);
       });
     },
-    exemploGraficos() {
+    chartSamples() {
       for (var i = 0; i < 2; i++) {
         var lightBlue = [
           "#03a9f4",

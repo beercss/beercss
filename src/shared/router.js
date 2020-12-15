@@ -1,10 +1,10 @@
-export default (url, pagina) => {
+export default (url, component) => {
   page(url, () => {
     document.body.innerHTML = "<div id='app'></div>";
 
     new Vue({
       el: '#app',
-      render: h => h(pagina)
+      render: h => h(component)
     });
   });
 
