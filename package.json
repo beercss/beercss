@@ -1,5 +1,7 @@
 {
   "author": "Everton and Leonardo",
+  "homepage": "https://www.beercss.com/",
+  "version": "0.0.1",
   "name": "beercss",
   "port": 1234,
   "scripts": {
