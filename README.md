@@ -2,7 +2,9 @@
 
 <h1 align="center">Beer css!</h1>
 
-The most tasty, lightweight and easy css framework that you've seen! Cheers, www.beercss.com
+The most tasty, lightweight and easy css framework that you've seen!
+
+Cheers, www.beercss.com
 
 ## Getting Started
 
