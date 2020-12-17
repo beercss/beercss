@@ -61,15 +61,15 @@ $ npm run test
 
 - **`dist`**: contains built files for distribution. Note this directory is only updated when a release happens; they do not reflect the latest changes in development branches.
 
-- **`src`**: contains the source code. The codebase is written in ES2015 with [Flow](https://flowtype.org/) type annotations.
+- **`src`**: contains the source code.
 
-  - **`home`**: a homepage for [Beer css!](https://www.beercss.com)
+  - **`home`**: contains a homepage for [Beer css!](https://www.beercss.com)
 
   - **`shared`**: contains utilities shared across the entire codebase.
 
   - **`static`**: contains static files.
 
-  - **`test`**: a blank testpage for use in your tests. It will be available in `npm run dev` at url http://localhost:1234/test
+  - **`test`**: contains a blank test page for use in your tests. It will be available in `npm run dev` at url http://localhost:1234/test
 
 - **`tests`**: contains all tests. The unit tests are written with [Jest](https://jestjs.io/).
 
