@@ -7161,12 +7161,105 @@ var _page = _interopRequireDefault(require("~/home/page.vue"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _router.default)("/", _page.default);
-},{"~/shared/router.js":"shared/router.js","~/home/page.vue":"home/page.vue"}],"app.js":[function(require,module,exports) {
+},{"~/shared/router.js":"shared/router.js","~/home/page.vue":"home/page.vue"}],"test/page.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  methods: {
+    updateTheme: function updateTheme() {
+      document.body.className = document.body.className.indexOf("is-dark") != -1 ? "is-light" : "is-dark";
+    }
+  }
+};
+exports.default = _default;
+        var $0ea019 = exports.default || module.exports;
+      
+      if (typeof $0ea019 === 'function') {
+        $0ea019 = $0ea019.options;
+      }
+    
+        /* template */
+        Object.assign($0ea019, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "space" }),
+    _c("div", { staticClass: "row nowrap middle-align" }, [
+      _c("div", { staticClass: "col min" }, [
+        _c(
+          "a",
+          {
+            on: {
+              click: function($event) {
+                return _vm.updateTheme()
+              }
+            }
+          },
+          [_c("i", { staticClass: "large" }, [_vm._v("brightness_medium")])]
+        )
+      ]),
+      _vm._m(0)
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "h5" }, [_vm._v("Test your changes here")]),
+      _c("div", [_vm._v("Click on icon to change theme")])
+    ])
+  }
+]
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+},{}],"test/index.js":[function(require,module,exports) {
+"use strict";
+
+var _router = _interopRequireDefault(require("~/shared/router.js"));
+
+var _page = _interopRequireDefault(require("~/test/page.vue"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _router.default)("/test", _page.default);
+},{"~/shared/router.js":"shared/router.js","~/test/page.vue":"test/page.vue"}],"app.js":[function(require,module,exports) {
 "use strict";
 
 var _init = _interopRequireDefault(require("~/shared/init.js"));
 
 var _home = _interopRequireDefault(require("~/home"));
 
+var _test = _interopRequireDefault(require("~/test"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"~/shared/init.js":"shared/init.js","~/home":"home/index.js"}]},{},["app.js"], null)
+},{"~/shared/init.js":"shared/init.js","~/home":"home/index.js","~/test":"test/index.js"}]},{},["app.js"], null)
