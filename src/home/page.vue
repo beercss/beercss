@@ -2395,8 +2395,4 @@ pre {
 .is-dark pre {
   background-color: rgba(255, 255, 255, 0.1);
 }
-
-body {
-  min-width: 800px;
-}
 </style>
