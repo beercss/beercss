@@ -3,15 +3,14 @@
   "homepage": "https://www.beercss.com/",
   "version": "0.0.1",
   "name": "beercss",
+  "license": "MIT",
   "port": 1234,
   "scripts": {
     "dev": "node build/dev.js",
     "build": "node build/build.js",
     "test": "jest"
   },
-  "dependencies": {
-    "shared": "^0.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.0",
     "babel-core": "^6.26.3",
@@ -47,5 +46,8 @@
         "staticOutDir": "/"
       }
     ]
-  }
+  },
+  "files": [
+    "/shared"
+  ]
 }
