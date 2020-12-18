@@ -202,6 +202,12 @@
 .menu > a.active {
   border: 0;
   border-left: 3px solid var(--color-1);
+}
+
+.menu > a.active,
+.menu > a.active > *,
+.menu > a:hover,
+.menu > a:hover > * {
   color: var(--color-1);
 }
 
