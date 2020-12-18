@@ -68,8 +68,8 @@ button.round {
 .btn.circle,
 button.circle {
   display: inline-block;
-  width: 48px;
-  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
   padding: 0;
   line-height: 48px;
   border-radius: 50%;
@@ -86,15 +86,15 @@ button.circle > i {
 
 .btn.circle.small,
 button.circle.small {
-  width: 40px;
-  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   line-height: 40px;
 }
 
 .btn.circle.large,
 button.circle.large {
-  width: 56px;
-  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
   line-height: 56px;
 }
 
@@ -110,7 +110,7 @@ td > .btn.circle,
 td > nav > .btn.circle,
 td > button.circle,
 td > nav > button.circle {
-  width: 24px;
-  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
   line-height: 24px;
 }
