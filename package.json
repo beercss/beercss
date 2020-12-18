@@ -48,6 +48,6 @@
     ]
   },
   "files": [
-    "dist"
+    "dist/cdn"
   ]
 }
