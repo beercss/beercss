@@ -6,11 +6,16 @@ body {
   background-color: var(--color-5);
 }
 
-body * {
+* {
   position: relative;
   vertical-align: middle;
+  color: var(--color-2);
 }
 
+* > * {
+  color: inherit;
+}
+ 
 a,
 button {
   cursor: pointer;

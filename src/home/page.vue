@@ -264,8 +264,8 @@
         h5
           span Chips
           a.chip.circle
-            i(@click="showSamples('#chips .chip')") code
-        nav#chips
+            i(@click="showSamples('#chips nav .chip')") code
+        nav
           a.chip Filter
           a.chip
             i.small done
