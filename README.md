@@ -51,8 +51,6 @@ Hi! We are really excited that you are interested in contributing to Beer css! B
 
 https://github.com/leonardorafael/beercss/blob/main/CONTRIBUTING.md
 
-<a href="https://github.com/vuejs/vue/graphs/contributors"><img src="https://opencollective.com/vuejs/contributors.svg?width=890" /></a>
-
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
