@@ -129,6 +129,7 @@ const open = function (from, to, config) {
   if (hasClass(to, "modal")) return modal(from, to, config);
   if (hasClass(to, "dropdown")) return dropdown(from, to, config);
   if (hasClass(to, "toast")) return toast(from, to, config);
+  if (hasClass(to, "page")) return page(from, to, config);
   return tab(from, to, config);
 };
 
@@ -141,6 +142,20 @@ const tab = function (from, to, config) {
   });
 
   addClass(from, "active");
+  addClass(to, "active");
+};
+
+const page = function (from, to, config) {
+  if (hasClass(to, "active")) {
+    removeClass(to, "active");
+    return;
+  }
+
+  var pages = queryAll(".page");
+  pages.forEach((x) => {
+    removeClass(x, "active");
+  });
+
   addClass(to, "active");
 };
 
