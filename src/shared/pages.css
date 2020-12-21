@@ -1,0 +1,68 @@
+.page {
+  display: none;
+}
+
+.page.top.active {
+  display: inline-block;
+  animation: 0.4s page-to-bottom;
+}
+
+.page.bottom.active  {
+  display: inline-block;
+  animation: 0.4s page-to-top;
+}
+
+.page.left.active {
+  display: inline-block;
+  animation: 0.4s page-to-right;
+}
+
+.page.active,
+.page.right.active {
+  display: inline-block;
+  animation: 0.4s page-to-left;
+}
+
+@keyframes page-to-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(-64px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-to-top {
+  from {
+    opacity: 0;
+    transform: translateY(64px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-to-left {
+  from {
+    opacity: 0;
+    transform: translateX(64px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes page-to-right {
+  from {
+    opacity: 0;
+    transform: translateX(-64px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1875,6 +1875,9 @@
                 span modal&nbsp;
                 span.grey-text left, right, top, bottom, small, medium, large, active
               div 
+                span page&nbsp;
+                span.grey-text left, right, top, bottom, active
+              div 
                 span overlay&nbsp;
                 span.grey-text active,&nbsp;
                 span.orange-text light, dark
