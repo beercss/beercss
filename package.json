@@ -10,7 +10,10 @@
     "build": "node build/build.js",
     "test": "jest"
   },
-  "dependencies": {},
+  "dependencies": {
+    "material-icons": "^0.5.1",
+    "roboto-fontface": "^0.10.0"
+  },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.0",
     "babel-core": "^6.26.3",
