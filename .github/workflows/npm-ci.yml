@@ -44,7 +44,7 @@ jobs:
       run: npm_config_yes=true npx best-test@latest
 
     - name: Publish
-      uses: leonardorafael/beercss@main
+      uses: leonardorafael/beercss
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_AUTH_TOKEN: ${{ secrets.NPM }}
