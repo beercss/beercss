@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://www.beercss.com" target="_blank" rel="noopener noreferrer"><img src="https://www.beercss.com/favicon.png" alt="Beer css! logo"></a>
+    <a href="https://www.beercss.com" target="_blank" rel="noopener noreferrer"><img src="https://www.beercss.com/favicon.png" alt="Beercss logo"></a>
 </p>
 <p align="center">
     <a href="https://github.com/leonardorafael/beercss/blob/main/LICENSE"><img src="https://img.shields.io/github/license/leonardorafael/beercss" alt="License"></a>
@@ -9,13 +9,13 @@
     <a href="https://github.com/leonardorafael/beercss/issues"><img src="https://img.shields.io/github/issues/leonardorafael/beercss" alt="Issues"></a>
 </p>
 
-<h1 align="center">Beer css!</h1>
+# Beer css!
 
 The most tasty, lightweight and easy css framework that you've seen!
 
 Cheers, www.beercss.com
 
-<h2 align="center">Supporting Beercss</h2>
+## Supporting Beercss
 
 Beercss is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider:
 
@@ -49,7 +49,7 @@ import "beercss/dist/cdn/beer.min.js";
 
 ## Contributing Guide
 
-Hi! We are really excited that you are interested in contributing to Beer css! Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
+Hi! We are really excited that you are interested in contributing to Beercss! Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
 
 https://github.com/leonardorafael/beercss/blob/main/CONTRIBUTING.md
 
