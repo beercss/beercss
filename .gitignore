@@ -1,5 +1,4 @@
 node_modules
-dist
 .cache
 .firebase
 package-lock.json
