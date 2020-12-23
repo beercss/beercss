@@ -1814,6 +1814,7 @@
               div wrap
               div nowrap
               div truncate
+              div link
               div shadow
               div right-shadow
               div left-shadow
@@ -1863,8 +1864,6 @@
               div
                 span fixed&nbsp;
                 span.grey-text left, right, top, bottom, center, middle, small, medium, large, round
-              div
-                span link
               div
                 span loader&nbsp;
                 span.grey-text small, medium, large
