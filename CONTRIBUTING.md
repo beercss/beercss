@@ -1,6 +1,6 @@
-# Beer css! Contributing Guide
+# Beercss Contributing Guide
 
-Hi! We are really excited that you are interested in contributing to Beer css! Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
+Hi! We are really excited that you are interested in contributing to Beercss! Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
 
 - [Issue Reporting Guidelines](#issue-reporting-guidelines)
 - [Pull Request Guidelines](#pull-request-guidelines)
@@ -63,6 +63,8 @@ $ npm run test
 
 - **`src`**: contains the source code.
 
+  - **`cdn`**: contains files that will be used for cdn/npm
+  
   - **`home`**: contains a homepage for [Beer css!](https://www.beercss.com)
 
   - **`shared`**: contains utilities shared across the entire codebase.
@@ -81,6 +83,6 @@ As a pure community-driven project without major corporate backing, we also welc
 
 ## Credits
 
-Thank you to all the people who have already contributed to Beer css!
+Thank you to all the people who have already contributed to Beercss!
 
 - https://github.com/leonardorafael/beercss/graphs/contributors
