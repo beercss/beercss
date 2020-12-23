@@ -3,23 +3,23 @@
 }
 
 .page.top.active {
-  display: inline-block;
+  display: inherit;
   animation: 0.4s page-to-bottom;
 }
 
 .page.bottom.active  {
-  display: inline-block;
+  display: inherit;
   animation: 0.4s page-to-top;
 }
 
 .page.left.active {
-  display: inline-block;
+  display: inherit;
   animation: 0.4s page-to-right;
 }
 
 .page.active,
 .page.right.active {
-  display: inline-block;
+  display: inherit;
   animation: 0.4s page-to-left;
 }
 
