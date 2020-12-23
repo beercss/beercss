@@ -1,0 +1,26 @@
+#modal-colors .col > div {
+  padding: 16px;
+}
+
+#code * {
+  vertical-align: text-bottom;
+}
+
+.hljs-string {
+  color: #e91e63 !important;
+}
+
+.is-dark .hljs-string {
+  color: #ff9800 !important;
+}
+
+pre {
+  overflow: auto;
+  padding: 8px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.is-dark pre {
+  background-color: rgba(255, 255, 255, 0.1);
+}
