@@ -28,8 +28,6 @@ Beercss is an MIT-licensed open source project with its ongoing development made
 Feel free using our CDN.
 
 ```html
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"/>
 <link href="https://unpkg.com/beercss/dist/cdn/beer.min.css" rel="stylesheet" />
 <script src="https://unpkg.com/beercss/dist/cdn/beer.min.js" type="text/javascript"></script>
 ```
@@ -40,15 +38,11 @@ You can get the latest release using NPM. This release contains source files as 
 
 ```js
 // installing
-npm i material-icons
-npm i roboto-fontface
 npm i beercss
 ```
 
 ```js
 // importing
-import "material-icons";
-import "roboto-fontface/css/roboto/roboto-fontface.css";
 import "beercss/dist/cdn/beer.min.css";
 import "beercss/dist/cdn/beer.min.js";
 ```
