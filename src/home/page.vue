@@ -506,16 +506,20 @@
       #icons.col.s12
         h5
           span Icons
-          a.chip.circle(
-            href="https://material.io/resources/icons/?style=baseline",
-            target="_blank"
-          )
-            i code
+          a.chip.circle
+            i(data-ui="#icon") code
         nav
-          a.btn(
-            href="https://material.io/resources/icons/?style=baseline",
-            target="_blank"
-          ) Icons
+          i.margin home
+          i.margin account_circle
+          i.margin search
+          i.margin build
+          i.margin backup
+          i.margin done
+          i.margin cached
+          i.margin star_rate
+          i.margin work
+          i.margin update
+          i.margin thumb_up
       #images.col.s12
         h5
           span Images
@@ -2037,6 +2041,50 @@
               href="https://www.patreon.com/beercss",
               target="_blank"
             ) Donate and support us
+      div(id="icon").modal.right.large
+        nav
+          a(data-ui="#icon")
+            i arrow_back
+          a.h5(data-ui="#icon") Back
+        .space
+        div.card.border
+          i.margin home
+          i.margin account_circle
+          i.margin search
+          i.margin build
+          i.margin backup
+          i.margin done
+          i.margin cached
+          i.margin star_rate
+          i.margin work
+          i.margin update
+          i.margin thumb_up
+          div.space
+          pre
+            code#code(v-text="'<i>home</i>'")
+          pre
+            code#code(v-text="'<i>account_circle</i>'")
+          pre
+            code#code(v-text="'<i>search</i>'")
+          pre
+            code#code(v-text="'<i>build</i>'")
+          pre
+            code#code(v-text="'<i>backup</i>'")
+          pre
+            code#code(v-text="'<i>done</i>'")
+          pre
+            code#code(v-text="'<i>cached</i>'")
+          pre
+            code#code(v-text="'<i>star_rate</i>'")
+          pre
+            code#code(v-text="'<i>work</i>'")
+          pre
+            code#code(v-text="'<i>update</i>'")
+          pre
+            code#code(v-text="'<i>thumb_up</i>'")
+        div.space
+        div.right-align
+          a.btn(href="https://material.io/resources/icons/?style=baseline" target="_blank") More icons    
 </template>
 
 <script>
