@@ -422,6 +422,47 @@ label {
   text-overflow: ellipsis;
 }
 
+.small-text {
+  font-size: 0.8rem;
+}
+
+.medium-text,
+.text {
+  font-size: 0.9rem;
+}
+
+.large-text {
+  font-size: 1rem;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.lower {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.overline {
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.italic {
+  font-style: italic;
+}
+
 @media only screen and (max-width: 600px) {
   .medium-device:not(.small-device),
   .large-device:not(.small-device),
