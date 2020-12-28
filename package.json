@@ -1,5 +1,6 @@
 {
   "author": "Everton and Leonardo",
+  "description": "The most tasty, lightweight and easy css framework that you've seen!",
   "homepage": "https://www.beercss.com/",
   "version": "0.0.20",
   "name": "beercss",
@@ -51,5 +52,8 @@
   "files": [
     "dist/cdn",
     "index.js"
+  ],
+  "keywords": [
+    "beercss"
   ]
 }
