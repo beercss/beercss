@@ -56,7 +56,10 @@
               span Beer css!&nbsp;
             .h6 The most tasty, lightweight and easy css framework that you've seen!
             nav.center-align
-              a.btn.white.black-text.small Get started
+              a.btn.white.black-text.small(
+                href="https://github.com/leonardorafael/beercss",
+                target="_blank"
+              ) Getting started
               a.btn.white.black-text.small(
                 href="https://github.com/leonardorafael/beercss",
                 target="_blank"
@@ -75,7 +78,7 @@
               .h6 html/css/js
             .col.center-align
               div Total css classes
-              .h6 ~70
+              .h6 ~100
     .space
     #toasts
       #toast1.toast.pink.white-text
@@ -648,6 +651,33 @@
           a.chip.circle
             i arrow_forward
             .tooltip.right Complementary text
+    #typography.row
+      .col.s12
+        h5
+          span Typography
+          a.chip.circle
+            i(@click="showSamples('#typography .col.s6 div')") code
+      .col.s6
+        div
+          p.italic italic
+          p.bold bold
+          p.underline underline
+          p.overline overline
+          p.upper upper
+          p.lower lower
+          p.capitalize capitalize
+          p.link link
+          p.small-text small-text
+          p.medium-text medium-text
+          p.large-text large-text
+      .col.s6
+        div
+          h6 Title
+          h5 Title
+          h4 Title
+          h3 Title
+          h2 Title
+          h1 Title
     #cards.row
       .col.s12
         h5
@@ -1811,9 +1841,8 @@
             .col
               b Others
               div active
-              div wrap
               div nowrap
-              div truncate
+              div wrap
               div shadow
               div right-shadow
               div left-shadow
@@ -1830,6 +1859,20 @@
               div is-menu-small
               div is-menu-medium
               div is-menu-large
+          .row.nowrap
+            .col
+              b Texts
+              div italic
+              div bold
+              div underline
+              div overline
+              div upper
+              div lower
+              div capitalize
+              div link
+              div small-text
+              div medium-text
+              div large-text
           .space
           .row
             .col.s12
@@ -1863,8 +1906,6 @@
               div
                 span fixed&nbsp;
                 span.grey-text left, right, top, bottom, center, middle, small, medium, large, round
-              div
-                span link
               div
                 span loader&nbsp;
                 span.grey-text small, medium, large
