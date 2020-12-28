@@ -1,7 +1,7 @@
 {
   "author": "Everton and Leonardo",
   "homepage": "https://www.beercss.com/",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "name": "beercss",
   "license": "MIT",
   "port": 1234,
@@ -49,6 +49,7 @@
     ]
   },
   "files": [
-    "dist/cdn"
+    "dist/cdn",
+    "index.js"
   ]
 }
