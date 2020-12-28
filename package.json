@@ -49,6 +49,7 @@
     ]
   },
   "files": [
-    "dist/cdn"
+    "dist/cdn",
+    "index.js"
   ]
 }
