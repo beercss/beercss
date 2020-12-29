@@ -2423,38 +2423,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default = {
   data: function data() {
     return {
@@ -2533,7 +2501,7 @@ var _default = {
       var i = $("i");
       if (i.is(".outlined")) i.removeClass("outlined");else i.addClass("outlined");
     },
-    formatarHtml: function formatarHtml(element) {
+    formatHtml: function formatHtml(element) {
       function process(str) {
         var div = document.createElement("div");
         div.innerHTML = str.trim();
@@ -2561,14 +2529,14 @@ var _default = {
 
       var tag = $(element).clone();
       tag.find(".overlay").remove();
-      return process(tag[0].outerHTML.replace(/\s+(onclick|style)\="[^\"]*"/gi, "").replace(/\s+id\="(\w+)"/gi, ' id="$1-id"').replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1-id"').replace(/\s+[a-z-]+\=(""|"#")/gi, "").replace(/\n\<\/(circle|th)\>/gi, "</$1>"));
+      return process(tag[0].outerHTML.replace(/\s+(onclick|style)\="[^\"]*"/gi, "").replace(/\s+id\="(\w+)"/gi, ' id="$1-id"').replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1-id"').replace(/\s+[a-z-]+\=(""|"#")/gi, "").replace(/\n\<\/(circle|th)\>/gi, "</$1>")).replace(/^\s+/g, "");
     },
-    showSamples: function showSamples(selector) {
+    showSamples: function showSamples(selector, modal) {
       var elements = $(selector);
       this.samples = [];
 
       for (var i = 0; i < elements.length; i++) {
-        var html = this.formatarHtml($(elements[i]), true);
+        var html = this.formatHtml($(elements[i]), true);
         var htmlFormatted = hljs.highlight("html", html).value;
         if ($(elements[i]).is(".menu") || $(elements[i]).is(".modal") || $(elements[i]).is(".toast")) html = "";
         this.samples.push({
@@ -2579,8 +2547,8 @@ var _default = {
 
       Vue.nextTick(function () {
         ui();
-        ui("#modal-samples");
-        $("#modal-samples").scrollTop(0);
+        ui(modal || "#modal-samples");
+        $(modal || "#modal-samples").scrollTop(0);
       });
     },
     showToasts: function showToasts(selector) {
@@ -3092,7 +3060,26 @@ exports.default = _default;
             _vm._m(30)
           ])
         ]),
-        _vm._m(31),
+        _c("div", { staticClass: "col s12", attrs: { id: "icons" } }, [
+          _c("h5", [
+            _c("span", [_vm._v("Icons")]),
+            _c("a", { staticClass: "chip circle" }, [
+              _c(
+                "i",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#icons nav", "#modal-icons")
+                    }
+                  }
+                },
+                [_vm._v("code")]
+              )
+            ])
+          ]),
+          _vm._m(31),
+          _c("div", { staticClass: "space" })
+        ]),
         _c("div", { staticClass: "col s12", attrs: { id: "images" } }, [
           _c("h5", [
             _c("span", [_vm._v("Images")]),
@@ -3812,12 +3799,9 @@ exports.default = _default;
                     ],
                     staticClass: "space"
                   }),
-                  _c("pre", [
-                    _c("code", {
-                      attrs: { id: "code" },
-                      domProps: { innerHTML: _vm._s(exemplo.sourceCode) }
-                    })
-                  ])
+                  _c("pre", {
+                    domProps: { innerHTML: _vm._s(exemplo.sourceCode) }
+                  })
                 ])
               })
             ],
@@ -3857,31 +3841,21 @@ exports.default = _default;
               _c("div", { staticClass: "col s12" }, [
                 _c("h6", [_vm._v("How to trigger elements?")]),
                 _c("div", [_vm._v('Add or remove class "active"')]),
-                _c("pre", [
-                  _c("code", {
-                    domProps: { innerHTML: _vm._s(_vm.htmlSample) }
-                  })
-                ]),
+                _c("pre", { domProps: { innerHTML: _vm._s(_vm.htmlSample) } }),
                 _c("div", { staticClass: "space" }),
                 _c("div", [
                   _vm._v(
                     "Or call javascript function to activate/deactivate an element"
                   )
                 ]),
-                _c("pre", [
-                  _c("code", { domProps: { innerHTML: _vm._s(_vm.jsSample) } })
-                ]),
+                _c("pre", { domProps: { innerHTML: _vm._s(_vm.jsSample) } }),
                 _c("div", { staticClass: "space" }),
                 _c("div", [
                   _vm._v(
                     'Or add attribute "data-ui" and call javascript function, to setup all automatically'
                   )
                 ]),
-                _c("pre", [
-                  _c("code", {
-                    domProps: { innerHTML: _vm._s(_vm.autoSample) }
-                  })
-                ])
+                _c("pre", { domProps: { innerHTML: _vm._s(_vm.autoSample) } })
               ])
             ])
           ])
@@ -3966,92 +3940,36 @@ exports.default = _default;
             _vm._m(90)
           ])
         ]),
-        _c("div", { staticClass: "modal right large", attrs: { id: "icon" } }, [
-          _vm._m(91),
-          _c("div", { staticClass: "space" }),
-          _c("div", { staticClass: "card border" }, [
-            _c("i", { staticClass: "margin" }, [_vm._v("home")]),
-            _c("i", { staticClass: "margin" }, [_vm._v("account_circle")]),
-            _c("i", { staticClass: "margin" }, [_vm._v("search")]),
-            _c("i", { staticClass: "margin" }, [_vm._v("build")]),
-            _c("i", { staticClass: "margin" }, [_vm._v("backup")]),
-            _c("i", { staticClass: "margin" }, [_vm._v("done")]),
-            _c("i", { staticClass: "margin" }, [_vm._v("cached")]),
-            _c("i", { staticClass: "margin" }, [_vm._v("star_rate")]),
-            _c("i", { staticClass: "margin" }, [_vm._v("work")]),
-            _c("i", { staticClass: "margin" }, [_vm._v("update")]),
-            _c("i", { staticClass: "margin" }, [_vm._v("thumb_up")]),
+        _c(
+          "div",
+          { staticClass: "modal right large", attrs: { id: "modal-icons" } },
+          [
+            _vm._m(91),
             _c("div", { staticClass: "space" }),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>home</i>") }
-              })
-            ]),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>account_circle</i>") }
-              })
-            ]),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>search</i>") }
-              })
-            ]),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>build</i>") }
-              })
-            ]),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>backup</i>") }
-              })
-            ]),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>done</i>") }
-              })
-            ]),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>cached</i>") }
-              })
-            ]),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>star_rate</i>") }
-              })
-            ]),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>work</i>") }
-              })
-            ]),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>update</i>") }
-              })
-            ]),
-            _c("pre", [
-              _c("code", {
-                attrs: { id: "code" },
-                domProps: { textContent: _vm._s("<i>thumb_up</i>") }
-              })
-            ])
-          ]),
-          _c("div", { staticClass: "space" }),
-          _vm._m(92)
-        ])
+            _vm._l(_vm.samples, function(exemplo) {
+              return _c("div", { staticClass: "card border" }, [
+                _c("div", { domProps: { innerHTML: _vm._s(exemplo.html) } }),
+                _c("div", {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: exemplo.html,
+                      expression: "exemplo.html"
+                    }
+                  ],
+                  staticClass: "space"
+                }),
+                _c("pre", {
+                  domProps: { innerHTML: _vm._s(exemplo.sourceCode) }
+                })
+              ])
+            }),
+            _c("div", { staticClass: "space" }),
+            _vm._m(92)
+          ],
+          2
+        )
       ])
     ])
   ])
@@ -4805,26 +4723,17 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s12", attrs: { id: "icons" } }, [
-      _c("h5", [
-        _c("span", [_vm._v("Icons")]),
-        _c("a", { staticClass: "chip circle" }, [
-          _c("i", { attrs: { "data-ui": "#icon" } }, [_vm._v("code")])
-        ])
-      ]),
-      _c("nav", [
-        _c("i", { staticClass: "margin" }, [_vm._v("home")]),
-        _c("i", { staticClass: "margin" }, [_vm._v("account_circle")]),
-        _c("i", { staticClass: "margin" }, [_vm._v("search")]),
-        _c("i", { staticClass: "margin" }, [_vm._v("build")]),
-        _c("i", { staticClass: "margin" }, [_vm._v("backup")]),
-        _c("i", { staticClass: "margin" }, [_vm._v("done")]),
-        _c("i", { staticClass: "margin" }, [_vm._v("cached")]),
-        _c("i", { staticClass: "margin" }, [_vm._v("star_rate")]),
-        _c("i", { staticClass: "margin" }, [_vm._v("work")]),
-        _c("i", { staticClass: "margin" }, [_vm._v("update")]),
-        _c("i", { staticClass: "margin" }, [_vm._v("thumb_up")])
-      ])
+    return _c("nav", [
+      _c("i", [_vm._v("home")]),
+      _c("i", [_vm._v("account_circle")]),
+      _c("i", [_vm._v("search")]),
+      _c("i", [_vm._v("build")]),
+      _c("i", [_vm._v("done")]),
+      _c("i", [_vm._v("cached")]),
+      _c("i", [_vm._v("star_rate")]),
+      _c("i", [_vm._v("work")]),
+      _c("i", [_vm._v("update")]),
+      _c("i", [_vm._v("thumb_up")])
     ])
   },
   function() {
@@ -6176,7 +6085,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
+    return _c("div", { staticClass: "row white-text small-text" }, [
       _c("div", { staticClass: "col s6" }, [
         _c("div", { staticClass: "red-light-5" }, [
           _vm._v("#ffebee red-light-5")
@@ -7405,10 +7314,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", [
-      _c("a", { attrs: { "data-ui": "#icon" } }, [
+      _c("a", { attrs: { "data-ui": "#modal-icons" } }, [
         _c("i", [_vm._v("arrow_back")])
       ]),
-      _c("a", { staticClass: "h5", attrs: { "data-ui": "#icon" } }, [
+      _c("a", { staticClass: "h5", attrs: { "data-ui": "#modal-icons" } }, [
         _vm._v("Back")
       ])
     ])

@@ -1,8 +1,8 @@
 #modal-colors .col > div {
-  padding: 16px;
+  padding: 12px;
 }
 
-#code * {
+pre * {
   vertical-align: text-bottom;
 }
 
