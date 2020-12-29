@@ -188,25 +188,24 @@
       removeClass(overlay, "active");
     }
 
+    var isActive = hasClass(to, "active");
     var container = parent(to);
     if (hasClass(container, "menu")) {
       var elements = queryAll(".menu > .modal, .menu > a, .menu > .overlay");
       elements.forEach((x) => {
         removeClass(x, "active");
       });
-
-      addClass(from, "active");
     }
 
-    if (hasClass(to, "active")) {
+    if (isActive) {
       removeClass(from, "active");
-      removeClass(to, "active");
       removeClass(overlay, "active");
-      return;
+      removeClass(to, "active");
+    } else {
+      addClass(from, "active");
+      addClass(overlay, "active");
+      addClass(to, "active");
     }
-
-    addClass(overlay, "active");
-    addClass(to, "active");
   };
 
   const toast = (from, to, config) => {
