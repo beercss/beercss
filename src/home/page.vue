@@ -507,19 +507,20 @@
         h5
           span Icons
           a.chip.circle
-            i(data-ui="#icon") code
+            i(@click="showSamples('#icons nav', '#modal-icons')") code
         nav
-          i.margin home
-          i.margin account_circle
-          i.margin search
-          i.margin build
-          i.margin backup
-          i.margin done
-          i.margin cached
-          i.margin star_rate
-          i.margin work
-          i.margin update
-          i.margin thumb_up
+          i home
+          i account_circle
+          i search
+          i build
+          i backup
+          i done
+          i cached
+          i star_rate
+          i work
+          i update
+          i thumb_up
+        .space
       #images.col.s12
         h5
           span Images
@@ -1414,7 +1415,7 @@
               input(type="radio", name="radio", @click="updateColors(true)")
               span text
           span.space
-          .row
+          .row.white-text.small-text
             .col.s6
               .red-light-5 #ffebee red-light-5
               .red-light-4 #ffcdd2 red-light-4
@@ -1658,7 +1659,7 @@
             div(v-html="exemplo.html")
             .space(v-show="exemplo.html")
             pre
-              code#code(v-html="exemplo.sourceCode")
+              code(v-html="exemplo.sourceCode")
 
         #modal-calendar.modal
           .row
@@ -2041,50 +2042,23 @@
               href="https://www.patreon.com/beercss",
               target="_blank"
             ) Donate and support us
-      div(id="icon").modal.right.large
+      #modal-icons.modal.right.large
         nav
-          a(data-ui="#icon")
+          a(data-ui="#modal-icons")
             i arrow_back
-          a.h5(data-ui="#icon") Back
+          a.h5(data-ui="#modal-icons") Back
         .space
-        div.card.border
-          i.margin home
-          i.margin account_circle
-          i.margin search
-          i.margin build
-          i.margin backup
-          i.margin done
-          i.margin cached
-          i.margin star_rate
-          i.margin work
-          i.margin update
-          i.margin thumb_up
-          div.space
+        .card.border(v-for="exemplo in samples")
+          div(v-html="exemplo.html")
+          .space(v-show="exemplo.html")
           pre
-            code#code(v-text="'<i>home</i>'")
-          pre
-            code#code(v-text="'<i>account_circle</i>'")
-          pre
-            code#code(v-text="'<i>search</i>'")
-          pre
-            code#code(v-text="'<i>build</i>'")
-          pre
-            code#code(v-text="'<i>backup</i>'")
-          pre
-            code#code(v-text="'<i>done</i>'")
-          pre
-            code#code(v-text="'<i>cached</i>'")
-          pre
-            code#code(v-text="'<i>star_rate</i>'")
-          pre
-            code#code(v-text="'<i>work</i>'")
-          pre
-            code#code(v-text="'<i>update</i>'")
-          pre
-            code#code(v-text="'<i>thumb_up</i>'")
-        div.space
-        div.right-align
-          a.btn(href="https://material.io/resources/icons/?style=baseline" target="_blank") More icons    
+            code(v-html="exemplo.sourceCode")
+        .space
+        .right-align
+          a.btn(
+            href="https://material.io/resources/icons/?style=baseline",
+            target="_blank"
+          ) More icons
 </template>
 
 <script>
@@ -2228,7 +2202,7 @@ export default {
           .replace(/\n\<\/(circle|th)\>/gi, "</$1>")
       );
     },
-    showSamples(selector) {
+    showSamples(selector, modal) {
       var elements = $(selector);
       this.samples = [];
       for (var i = 0; i < elements.length; i++) {
@@ -2250,8 +2224,8 @@ export default {
 
       Vue.nextTick(() => {
         ui();
-        ui("#modal-samples");
-        $("#modal-samples").scrollTop(0);
+        ui(modal || "#modal-samples");
+        $(modal || "#modal-samples").scrollTop(0);
       });
     },
     showToasts(selector) {
@@ -2462,10 +2436,10 @@ export default {
 
 <style>
 #modal-colors .col > div {
-  padding: 16px;
+  padding: 12px;
 }
 
-#code * {
+code * {
   vertical-align: text-bottom;
 }
 

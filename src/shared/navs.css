@@ -10,16 +10,20 @@ nav {
 }
 
 nav > a,
+nav > i,
 nav > button {
   margin: 0 8px;
 }
 
 nav > a:first-child,
+nav > i:first-child,
 nav > button:first-child {
   margin-left: 0 !important;
 }
 
-nav > a:last-child {
+nav > a:last-child,
+nav > i:last-child,
+nav > button:last-child {
   margin-right: 0 !important;
 }
 
