@@ -2420,9 +2420,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
 var _default = {
   data: function data() {
     return {
@@ -3833,9 +3830,8 @@ exports.default = _default;
             _c("h6", [_vm._v("Helpers")]),
             _vm._m(85),
             _vm._m(86),
-            _vm._m(87),
             _c("div", { staticClass: "space" }),
-            _vm._m(88),
+            _vm._m(87),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s12" }, [
@@ -3935,16 +3931,16 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "large-space" }),
-            _vm._m(89),
+            _vm._m(88),
             _c("div", { staticClass: "space" }),
-            _vm._m(90)
+            _vm._m(89)
           ])
         ]),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
-            _vm._m(91),
+            _vm._m(90),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -3966,7 +3962,7 @@ exports.default = _default;
               ])
             }),
             _c("div", { staticClass: "space" }),
-            _vm._m(92)
+            _vm._m(91)
           ],
           2
         )
@@ -6990,25 +6986,6 @@ var staticRenderFns = [
         _c("div", [_vm._v("large")])
       ]),
       _c("div", { staticClass: "col" }, [
-        _c("b", [_vm._v("Form")]),
-        _c("div", [_vm._v("border")]),
-        _c("div", [_vm._v("round")]),
-        _c("div", [_vm._v("circle")])
-      ]),
-      _c("div", { staticClass: "col" }, [
-        _c("b", [_vm._v("Responsive")]),
-        _c("div", [_vm._v("small-device")]),
-        _c("div", [_vm._v("medium-device")]),
-        _c("div", [_vm._v("large-device")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row nowrap" }, [
-      _c("div", { staticClass: "col" }, [
         _c("b", [_vm._v("Margin")]),
         _c("div", [_vm._v("margin")]),
         _c("div", [_vm._v("no-margin")]),
@@ -7023,7 +7000,14 @@ var staticRenderFns = [
         _c("div", [_vm._v("small-padding")]),
         _c("div", [_vm._v("medium-padding")]),
         _c("div", [_vm._v("large-padding")])
-      ]),
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row nowrap" }, [
       _c("div", { staticClass: "col" }, [
         _c("b", [_vm._v("Spacing")]),
         _c("div", [_vm._v("space")]),
@@ -7036,35 +7020,11 @@ var staticRenderFns = [
         _c("div", [_vm._v("large-divider")])
       ]),
       _c("div", { staticClass: "col" }, [
-        _c("b", [_vm._v("Others")]),
-        _c("div", [_vm._v("active")]),
-        _c("div", [_vm._v("nowrap")]),
-        _c("div", [_vm._v("wrap")]),
-        _c("div", [_vm._v("shadow")]),
-        _c("div", [_vm._v("right-shadow")]),
-        _c("div", [_vm._v("left-shadow")]),
-        _c("div", [_vm._v("bottom-shadow")]),
-        _c("div", [_vm._v("top-shadow")])
+        _c("b", [_vm._v("Form")]),
+        _c("div", [_vm._v("border")]),
+        _c("div", [_vm._v("round")]),
+        _c("div", [_vm._v("circle")])
       ]),
-      _c("div", { staticClass: "col" }, [
-        _c("b", [_vm._v("Themes")]),
-        _c("div", [_vm._v("is-dark")]),
-        _c("div", [_vm._v("is-light")]),
-        _c("div", [_vm._v("is-menu-left")]),
-        _c("div", [_vm._v("is-menu-right")]),
-        _c("div", [_vm._v("is-menu-top")]),
-        _c("div", [_vm._v("is-menu-bottom")]),
-        _c("div", [_vm._v("is-menu-small")]),
-        _c("div", [_vm._v("is-menu-medium")]),
-        _c("div", [_vm._v("is-menu-large")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row nowrap" }, [
       _c("div", { staticClass: "col" }, [
         _c("b", [_vm._v("Texts")]),
         _c("div", [_vm._v("italic")]),
@@ -7078,6 +7038,32 @@ var staticRenderFns = [
         _c("div", [_vm._v("small-text")]),
         _c("div", [_vm._v("medium-text")]),
         _c("div", [_vm._v("large-text")])
+      ]),
+      _c("div", { staticClass: "col" }, [
+        _c("b", [_vm._v("Others")]),
+        _c("div", [_vm._v("shadow")]),
+        _c("div", [_vm._v("right-shadow")]),
+        _c("div", [_vm._v("left-shadow")]),
+        _c("div", [_vm._v("bottom-shadow")]),
+        _c("div", [_vm._v("top-shadow")]),
+        _c("div", [_vm._v("small-device")]),
+        _c("div", [_vm._v("medium-device")]),
+        _c("div", [_vm._v("large-device")]),
+        _c("div", [_vm._v("active")]),
+        _c("div", [_vm._v("nowrap")]),
+        _c("div", [_vm._v("wrap")])
+      ]),
+      _c("div", { staticClass: "col" }, [
+        _c("b", [_vm._v("Themes")]),
+        _c("div", [_vm._v("is-dark")]),
+        _c("div", [_vm._v("is-light")]),
+        _c("div", [_vm._v("is-menu-left")]),
+        _c("div", [_vm._v("is-menu-right")]),
+        _c("div", [_vm._v("is-menu-top")]),
+        _c("div", [_vm._v("is-menu-bottom")]),
+        _c("div", [_vm._v("is-menu-small")]),
+        _c("div", [_vm._v("is-menu-medium")]),
+        _c("div", [_vm._v("is-menu-large")])
       ])
     ])
   },
