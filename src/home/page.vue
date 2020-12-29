@@ -1807,17 +1807,6 @@
               div medium
               div large
             .col
-              b Form
-              div border
-              div round
-              div circle
-            .col
-              b Responsive
-              div small-device
-              div medium-device
-              div large-device
-          .row.nowrap
-            .col
               b Margin
               div margin
               div no-margin
@@ -1831,6 +1820,7 @@
               div small-padding
               div medium-padding
               div large-padding
+          .row.nowrap
             .col
               b Spacing
               div space
@@ -1842,27 +1832,10 @@
               div medium-divider
               div large-divider
             .col
-              b Others
-              div active
-              div nowrap
-              div wrap
-              div shadow
-              div right-shadow
-              div left-shadow
-              div bottom-shadow
-              div top-shadow
-            .col
-              b Themes
-              div is-dark
-              div is-light
-              div is-menu-left
-              div is-menu-right
-              div is-menu-top
-              div is-menu-bottom
-              div is-menu-small
-              div is-menu-medium
-              div is-menu-large
-          .row.nowrap
+              b Form
+              div border
+              div round
+              div circle
             .col
               b Texts
               div italic
@@ -1876,6 +1849,30 @@
               div small-text
               div medium-text
               div large-text
+            .col
+              b Others
+              div shadow
+              div right-shadow
+              div left-shadow
+              div bottom-shadow
+              div top-shadow
+              div small-device
+              div medium-device
+              div large-device
+              div active
+              div nowrap
+              div wrap
+            .col
+              b Themes
+              div is-dark
+              div is-light
+              div is-menu-left
+              div is-menu-right
+              div is-menu-top
+              div is-menu-bottom
+              div is-menu-small
+              div is-menu-medium
+              div is-menu-large
           .space
           .row
             .col.s12
