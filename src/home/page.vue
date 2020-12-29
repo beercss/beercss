@@ -30,10 +30,10 @@
     a(@click="showSamples('#menu')")
       i code
       div Code
-    a(data-ui="#more")
+    a(@click="updateMoreMenu()")
       i more_vert
       div More
-    #more.modal.small.left(data-ui="#more")
+    #more.modal.small.left
       .row
         .col.s6
           b More
@@ -2098,6 +2098,11 @@ export default {
     this.selectSamples();
   },
   methods: {
+    updateMoreMenu(){
+      var element = document.getElementById("more");
+      var overlay = document.getElementsByClassName("overlay");
+      element.className == "modal small left" ? ui("#more") : (element.classList.remove("active"), overlay[0].classList.remove("overlay"));
+    },
     updateTheme() {
       var body = $("body");
 
