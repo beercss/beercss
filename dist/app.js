@@ -2407,6 +2407,54 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -3917,6 +3965,92 @@ exports.default = _default;
             _c("div", { staticClass: "space" }),
             _vm._m(90)
           ])
+        ]),
+        _c("div", { staticClass: "modal right large", attrs: { id: "icon" } }, [
+          _vm._m(91),
+          _c("div", { staticClass: "space" }),
+          _c("div", { staticClass: "card border" }, [
+            _c("i", { staticClass: "margin" }, [_vm._v("home")]),
+            _c("i", { staticClass: "margin" }, [_vm._v("account_circle")]),
+            _c("i", { staticClass: "margin" }, [_vm._v("search")]),
+            _c("i", { staticClass: "margin" }, [_vm._v("build")]),
+            _c("i", { staticClass: "margin" }, [_vm._v("backup")]),
+            _c("i", { staticClass: "margin" }, [_vm._v("done")]),
+            _c("i", { staticClass: "margin" }, [_vm._v("cached")]),
+            _c("i", { staticClass: "margin" }, [_vm._v("star_rate")]),
+            _c("i", { staticClass: "margin" }, [_vm._v("work")]),
+            _c("i", { staticClass: "margin" }, [_vm._v("update")]),
+            _c("i", { staticClass: "margin" }, [_vm._v("thumb_up")]),
+            _c("div", { staticClass: "space" }),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>home</i>") }
+              })
+            ]),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>account_circle</i>") }
+              })
+            ]),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>search</i>") }
+              })
+            ]),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>build</i>") }
+              })
+            ]),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>backup</i>") }
+              })
+            ]),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>done</i>") }
+              })
+            ]),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>cached</i>") }
+              })
+            ]),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>star_rate</i>") }
+              })
+            ]),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>work</i>") }
+              })
+            ]),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>update</i>") }
+              })
+            ]),
+            _c("pre", [
+              _c("code", {
+                attrs: { id: "code" },
+                domProps: { textContent: _vm._s("<i>thumb_up</i>") }
+              })
+            ])
+          ]),
+          _c("div", { staticClass: "space" }),
+          _vm._m(92)
         ])
       ])
     ])
@@ -4674,30 +4808,22 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col s12", attrs: { id: "icons" } }, [
       _c("h5", [
         _c("span", [_vm._v("Icons")]),
-        _c(
-          "a",
-          {
-            staticClass: "chip circle",
-            attrs: {
-              href: "https://material.io/resources/icons/?style=baseline",
-              target: "_blank"
-            }
-          },
-          [_c("i", [_vm._v("code")])]
-        )
+        _c("a", { staticClass: "chip circle" }, [
+          _c("i", { attrs: { "data-ui": "#icon" } }, [_vm._v("code")])
+        ])
       ]),
       _c("nav", [
-        _c(
-          "a",
-          {
-            staticClass: "btn",
-            attrs: {
-              href: "https://material.io/resources/icons/?style=baseline",
-              target: "_blank"
-            }
-          },
-          [_vm._v("Icons")]
-        )
+        _c("i", { staticClass: "margin" }, [_vm._v("home")]),
+        _c("i", { staticClass: "margin" }, [_vm._v("account_circle")]),
+        _c("i", { staticClass: "margin" }, [_vm._v("search")]),
+        _c("i", { staticClass: "margin" }, [_vm._v("build")]),
+        _c("i", { staticClass: "margin" }, [_vm._v("backup")]),
+        _c("i", { staticClass: "margin" }, [_vm._v("done")]),
+        _c("i", { staticClass: "margin" }, [_vm._v("cached")]),
+        _c("i", { staticClass: "margin" }, [_vm._v("star_rate")]),
+        _c("i", { staticClass: "margin" }, [_vm._v("work")]),
+        _c("i", { staticClass: "margin" }, [_vm._v("update")]),
+        _c("i", { staticClass: "margin" }, [_vm._v("thumb_up")])
       ])
     ])
   },
@@ -7271,6 +7397,37 @@ var staticRenderFns = [
           attrs: { href: "https://www.patreon.com/beercss", target: "_blank" }
         },
         [_vm._v("Donate and support us")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", [
+      _c("a", { attrs: { "data-ui": "#icon" } }, [
+        _c("i", [_vm._v("arrow_back")])
+      ]),
+      _c("a", { staticClass: "h5", attrs: { "data-ui": "#icon" } }, [
+        _vm._v("Back")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "right-align" }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn",
+          attrs: {
+            href: "https://material.io/resources/icons/?style=baseline",
+            target: "_blank"
+          }
+        },
+        [_vm._v("More icons")]
       )
     ])
   }
