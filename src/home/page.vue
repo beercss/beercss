@@ -1658,8 +1658,7 @@
           .card.border(v-for="exemplo in samples")
             div(v-html="exemplo.html")
             .space(v-show="exemplo.html")
-            pre
-              code(v-html="exemplo.sourceCode")
+            pre(v-html="exemplo.sourceCode")
 
         #modal-calendar.modal
           .row
@@ -1976,16 +1975,13 @@
             .col.s12
               h6 How to trigger elements?
               div Add or remove class "active"
-              pre
-                code(v-html="htmlSample")
+              pre(v-html="htmlSample")
               .space
               div Or call javascript function to activate/deactivate an element
-              pre
-                code(v-html="jsSample")
+              pre(v-html="jsSample")
               .space
               div Or add attribute "data-ui" and call javascript function, to setup all automatically
-              pre
-                code(v-html="autoSample")
+              pre(v-html="autoSample")
       .col.s12
         .card.border.transparent
           .center-align 
@@ -2051,8 +2047,7 @@
         .card.border(v-for="exemplo in samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
-          pre
-            code(v-html="exemplo.sourceCode")
+          pre(v-html="exemplo.sourceCode")
         .space
         .right-align
           a.btn(
@@ -2162,7 +2157,7 @@ export default {
       if (i.is(".outlined")) i.removeClass("outlined");
       else i.addClass("outlined");
     },
-    formatarHtml(element) {
+    formatHtml(element) {
       function process(str) {
         var div = document.createElement("div");
         div.innerHTML = str.trim();
@@ -2200,13 +2195,13 @@ export default {
           .replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1-id"')
           .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
           .replace(/\n\<\/(circle|th)\>/gi, "</$1>")
-      );
+      ).replace(/^\s+/g, "");
     },
     showSamples(selector, modal) {
       var elements = $(selector);
       this.samples = [];
       for (var i = 0; i < elements.length; i++) {
-        var html = this.formatarHtml($(elements[i]), true);
+        var html = this.formatHtml($(elements[i]), true);
         var htmlFormatted = hljs.highlight("html", html).value;
 
         if (
@@ -2439,7 +2434,7 @@ export default {
   padding: 12px;
 }
 
-code * {
+pre * {
   vertical-align: text-bottom;
 }
 
