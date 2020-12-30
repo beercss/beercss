@@ -296,7 +296,7 @@ input[type="radio"]:checked::after {
 
 input[type="radio"] + span,
 input[type="checkbox"] + span {
-  padding: 0 12px 0 8px;
+  padding: 0 8px;
   cursor: pointer;
 }
 
@@ -306,8 +306,8 @@ span + input[type="checkbox"] {
   cursor: pointer;
 }
 
-/* toggle */
-input[type="checkbox"].toggle {
+/* switch */
+input[type="checkbox"].switch {
   content: "";
   background-color: #9e9e9e;
   width: 32px;
@@ -317,11 +317,11 @@ input[type="checkbox"].toggle {
   cursor: pointer;
 }
 
-input[type="checkbox"].toggle:checked {
+input[type="checkbox"].switch:checked {
   background-color: var(--color-1a);
 }
 
-input[type="checkbox"].toggle::before {
+input[type="checkbox"].switch::before {
   content: "";
   position: absolute;
   border-radius: 50%;
@@ -337,13 +337,13 @@ input[type="checkbox"].toggle::before {
   transform: translate(-100%, -50%);
 }
 
-input[type="checkbox"].toggle:checked::before {
+input[type="checkbox"].switch:checked::before {
   background-color: var(--color-1);
   transform: translate(0, -50%);
 }
 
-input[type="checkbox"].toggle::after,
-input[type="checkbox"].toggle:checked::after {
+input[type="checkbox"].switch::after,
+input[type="checkbox"].switch:checked::after {
   content: "";
 }
 

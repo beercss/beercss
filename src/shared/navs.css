@@ -1,32 +1,32 @@
 nav {
-  margin-top: 16px;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
+  display: block;
+  white-space: normal;
+  margin: 0 -8px;
 }
 
-* > nav:first-child {
-  margin-top: 0;
+* + nav {
+  margin-top: 8px;
+}
+
+.field.label > nav {
+  margin-top: 12px;
+}
+
+nav.nowrap {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 nav > a,
 nav > i,
-nav > button {
-  margin: 0 8px;
-}
-
-nav > a:first-child,
-nav > i:first-child,
-nav > button:first-child {
-  margin-left: 0 !important;
-}
-
+nav > button,
 nav > a:last-child,
 nav > i:last-child,
-nav > button:last-child {
-  margin-right: 0 !important;
-}
-
-.field.label > nav {
-  margin-top: 20px;
+nav > button:last-child,
+nav > a:first-child,
+nav > i:first-child,
+nav > button:first-child,
+nav > label {
+  margin: 8px 8px 0 8px !important;
 }

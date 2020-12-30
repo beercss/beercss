@@ -43,42 +43,39 @@
   #begin
     .row
       .col.s12
-        .card.no-padding.border.transparent
+        #gif.card.no-padding
           img.responsive(:src="'/beer-animation.gif'")
-          .absolute.bottom.left.right.center-align
-            a.btn.large.pink.white-text(
-              href="https://www.patreon.com/beercss",
-              target="_blank"
-            ) Donate and support us
-            .margin.center-align.white-text Everton and Leonardo are creating &reg;beercss
-          .absolute.top.left.right.padding.white-text.center-align
+          .absolute.top.left.right.center-align.padding.white-text
             .h4 
               span Beer css!&nbsp;
             .h6 The most tasty, lightweight and easy css framework that you've seen!
-            nav.center-align
-              a.btn.white.black-text.small(
-                href="https://github.com/leonardorafael/beercss",
-                target="_blank"
-              ) Getting started
-              a.btn.white.black-text.small(
-                href="https://github.com/leonardorafael/beercss",
-                target="_blank"
-              ) Github
-
-        .card.border.transparent
-          .row.nowrap
-            .col.center-align
-              div Based on
-              .h6 Material design
-            .col.center-align
-              div Micro size of
-              .h6 ~7kb
-            .col.center-align
-              div Only standard
-              .h6 html/css/js
-            .col.center-align
-              div Total css classes
-              .h6 ~100
+          .absolute.bottom.left.right.padding.white-text
+            .row.nowrap
+              .col.center-align
+                div Based on
+                .h6 Material design
+              .col.center-align
+                div Micro size of
+                .h6 ~7kb
+              .col.center-align
+                div Only standard
+                .h6 html, css, js
+              .col.center-align
+                div Total css classes
+                .h6 ~100
+        .space
+        nav.center-align
+          a.btn.large.border(
+            href="https://www.npmjs.com/package/beercss",
+            target="_blank"
+          ) NPM
+          a.btn.large.border(
+            href="https://github.com/leonardorafael/beercss",
+            target="_blank"
+          ) Github
+          a.btn.large(href="https://www.patreon.com/beercss", target="_blank") Support us
+        .space
+        .center-align An open source project created by Everton and Leonardo
     .space
     #toasts
       #toast1.toast.pink.white-text
@@ -121,26 +118,6 @@
             span.badge.circle.border 10
             i account_circle
           a
-            span.badge.bottom.right New
-            i search
-          a
-            span.badge.round.bottom.right New
-            i notifications
-          a
-            span.badge.circle.bottom.right 10
-            i apps
-          a
-            span.badge.border.bottom.right New
-            i help_outline
-          a
-            span.badge.border.round.bottom.right New
-            i home
-          a
-            span.badge.circle.border.bottom.right 10
-            i account_circle
-        .small-space
-        nav
-          a
             span.badge.top New
             i search
           a
@@ -159,26 +136,6 @@
             span.badge.circle.border.top 10
             i account_circle
           a
-            span.badge.bottom New
-            i search
-          a
-            span.badge.round.bottom New
-            i notifications
-          a
-            span.badge.circle.bottom 10
-            i apps
-          a
-            span.badge.border.bottom New
-            i help_outline
-          a
-            span.badge.border.round.bottom New
-            i home
-          a
-            span.badge.circle.border.bottom 10
-            i account_circle
-        .small-space
-        nav
-          a
             span.badge.left.top New
             i search
           a
@@ -195,6 +152,42 @@
             i home
           a
             span.badge.circle.border.left.top 10
+            i account_circle
+          a
+            span.badge.bottom.right New
+            i search
+          a
+            span.badge.round.bottom.right New
+            i notifications
+          a
+            span.badge.circle.bottom.right 10
+            i apps
+          a
+            span.badge.border.bottom.right New
+            i help_outline
+          a
+            span.badge.border.round.bottom.right New
+            i home
+          a
+            span.badge.circle.border.bottom.right 10
+            i account_circle
+          a
+            span.badge.bottom New
+            i search
+          a
+            span.badge.round.bottom New
+            i notifications
+          a
+            span.badge.circle.bottom 10
+            i apps
+          a
+            span.badge.border.bottom New
+            i help_outline
+          a
+            span.badge.border.round.bottom New
+            i home
+          a
+            span.badge.circle.border.bottom 10
             i account_circle
           a
             span.badge.left.bottom New
@@ -228,14 +221,6 @@
           a.btn
             span Button
             i refresh
-          a.btn.border Button
-          a.btn.border 
-            i search
-            span Button
-          a.btn.border
-            span Button
-            i refresh
-        nav
           a.btn.round Button
           a.btn.round 
             i place
@@ -243,6 +228,19 @@
           a.btn.round 
             span Button
             i delete
+          a.btn.circle
+            i add
+          a.btn.circle
+            i edit
+          a.btn.circle
+            i home
+          a.btn.border Button
+          a.btn.border 
+            i search
+            span Button
+          a.btn.border
+            span Button
+            i refresh
           a.btn.border.round Button
           a.btn.border.round 
             i place
@@ -250,13 +248,6 @@
           a.btn.border.round 
             span Button
             i delete
-        nav
-          a.btn.circle
-            i add
-          a.btn.circle
-            i edit
-          a.btn.circle
-            i home
           a.btn.border.circle
             i add
           a.btn.border.circle
@@ -627,7 +618,7 @@
           a(data-ui="#")
             span Tab 3
             i.wrap home
-      #toasts.col.s12.m6
+      #toasts.col.s12.l6
         h5
           span Toasts
           a.chip.circle
@@ -637,7 +628,7 @@
           a.orange.btn(@click="showToasts('#toast2')") Toast
           a.green.btn(@click="showToasts('#toast3')") Toast
           a.blue.btn(@click="showToasts('#toast4')") Toast
-      .col.s12.m6
+      .col.s12.l6
         h5
           span Tooltips
           a.chip.circle
@@ -849,7 +840,7 @@
           a.chip.circle
             i(@click="showSamples('#list .row')") code
         #list.card
-          p
+          nav
             label
               input#top-align-lists(type="radio", name="align-lists")
               span top-align
@@ -866,9 +857,8 @@
             label
               input#divider-lists(type="checkbox", name="divider-lists")
               span divider
-
-          label Today
-          .small-space
+          .space
+          label.large-space.middle-align Today
           .row.nowrap.middle-align
             .col.min
               i.light-green-text check_circle
@@ -876,7 +866,7 @@
               div Title
               label Complementary text
             .col.min
-              nav
+              nav.nowrap
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -888,7 +878,7 @@
               div Title
               label Complementary text
             .col.min
-              nav
+              nav.nowrap
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -899,13 +889,11 @@
               div Title
               label Complementary text
             .col.min
-              nav
+              nav.nowrap
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
-          .small-space
-          label Yesterday
-          .small-space
+          label.large-space.middle-align Yesterday
           .row.nowrap.middle-align
             .col.min
               input(type="checkbox")
@@ -913,18 +901,7 @@
               div Title
               label Complementary text
             .col.min
-              nav
-                a.btn.flat Link
-                a.btn.flat
-                  i more_vert
-          .row.nowrap.middle-align
-            .col.min
-              input(type="checkbox")
-            .col
-              div Title
-              label Complementary text
-            .col.min
-              nav
+              nav.nowrap
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -935,13 +912,22 @@
               div Title
               label Complementary text
             .col.min
-              nav
+              nav.nowrap
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
-          .small-space
-          label Older
-          .small-space
+          .row.nowrap.middle-align
+            .col.min
+              input(type="checkbox")
+            .col
+              div Title
+              label Complementary text
+            .col.min
+              nav.nowrap
+                a.btn.flat Link
+                a.btn.flat
+                  i more_vert
+          label.large-space.middle-align Older
           .row.nowrap.middle-align
             .col.min
               img.circle.tiny(:src="'/beer-and-woman.jpg'")
@@ -949,7 +935,7 @@
               div Title
               label Complementary text
             .col.min
-              nav
+              nav.nowrap
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -960,7 +946,7 @@
               div Title
               label Complementary text
             .col.min
-              nav
+              nav.nowrap
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -971,7 +957,7 @@
               div Title
               label Complementary text
             .col.min
-              nav
+              nav.nowrap
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -980,7 +966,7 @@
           a.chip.circle
             i(@click="showSamples('#table table')") code
         #table.card
-          p
+          nav
             label
               input#small-tables(type="radio", name="size-tables")
               span small
@@ -1007,6 +993,7 @@
             label
               input#right-align-tables(type="radio", name="align-tables")
               span right-align
+          .space
           table.border
             thead
               tr
@@ -1023,7 +1010,7 @@
                 td Line 1
                 td Line 1
                 td
-                  nav.right-align
+                  nav.nowrap.right-align
                     a.btn.flat Link
                     a.btn.flat
                       i more_vert
@@ -1034,7 +1021,7 @@
                 td Line 2
                 td Line 2
                 td
-                  nav.right-align
+                  nav.nowrap.right-align
                     a.btn.flat Link
                     a.btn.flat
                       i more_vert
@@ -1045,7 +1032,7 @@
                 td Line 3
                 td Line 3
                 td
-                  nav.right-align
+                  nav.nowrap.right-align
                     a.btn.flat Link
                     a.btn.flat
                       i more_vert
@@ -1055,7 +1042,7 @@
           a.chip.circle
             i(@click="showSamples('#inputs .field')") code
         #inputs.card
-          p
+          nav
             label
               input#border-inputs(type="checkbox")
               span border
@@ -1093,49 +1080,49 @@
               span file
           .space
           .row
-            .col.s12.m4
+            .col.s12.l4
               .field.label
                 input(type="text")
                 label Text
-            .col.s12.m4
+            .col.s12.l4
               .field.label.prefix
                 i search
                 input(type="text")
                 label Text
-            .col.s12.m4
+            .col.s12.l4
               .field.label.sufix
                 input(type="text")
                 label Text
                 i search
-            .col.s12.m4
+            .col.s12.l4
               .field.label
                 input(type="text")
                 label Text
                 span.helper Complementary text
-            .col.s12.m4
+            .col.s12.l4
               .field.label.prefix
                 i search
                 input(type="text")
                 label Text
                 span.helper Complementary text
-            .col.s12.m4
+            .col.s12.l4
               .field.label.sufix
                 input(type="text")
                 label Text
                 i search
                 span.helper Complementary text
-            .col.s12.m4
+            .col.s12.l4
               .field.label.invalid
                 input(type="text")
                 label Text
                 span.error Error text
-            .col.s12.m4
+            .col.s12.l4
               .field.label.prefix.invalid
                 i search
                 input(type="text")
                 label Text
                 span.error Error text
-            .col.s12.m4
+            .col.s12.l4
               .field.label.sufix.invalid
                 input(type="text")
                 label Text
@@ -1147,7 +1134,7 @@
           a.chip.circle
             i(@click="showSamples('#selects .field')") code
         #selects.card
-          p
+          nav
             label
               input#border-selects(type="checkbox")
               span border
@@ -1170,8 +1157,9 @@
             label
               input#large-selects(type="radio", name="size-selects")
               span large
+          .space
           .row
-            .col.s12.m6
+            .col.s12.l6
               .field.label.sufix
                 select
                   option Item 1
@@ -1179,7 +1167,7 @@
                   option Item 3
                 label.active List
                 i arrow_drop_down
-            .col.s12.m6
+            .col.s12.l6
               .field.label.prefix
                 i arrow_drop_down
                 select
@@ -1187,7 +1175,7 @@
                   option Item 2
                   option Item 3
                 label.active List
-            .col.s12.m6
+            .col.s12.l6
               .field.label.sufix
                 select
                   option Item 1
@@ -1196,7 +1184,7 @@
                 label.active List
                 i arrow_drop_down
                 span.helper Complementary text
-            .col.s12.m6
+            .col.s12.l6
               .field.label.prefix
                 i arrow_drop_down
                 select
@@ -1205,7 +1193,7 @@
                   option Item 3
                 label.active List
                 span.helper Complementary text
-            .col.s12.m6
+            .col.s12.l6
               .field.label.sufix.invalid
                 select
                   option Item 1
@@ -1214,7 +1202,7 @@
                 label.active List
                 i arrow_drop_down
                 span.error Error text
-            .col.s12.m6
+            .col.s12.l6
               .field.label.prefix.invalid
                 i arrow_drop_down
                 select
@@ -1229,9 +1217,9 @@
             i(@click="showSamples('#checkboxes .field')") code
         #checkboxes.card
           .row
-            .col.s6
+            .col.s12
               .field.middle-align
-                nav
+                nav.nowrap
                   label
                     input(type="checkbox")
                     span Item 1
@@ -1241,22 +1229,10 @@
                   label
                     input(type="checkbox")
                     span Item 3
-            .col.s6
-              .field.middle-align
-                nav
-                  label
-                    input.toggle(type="checkbox")
-                    span Item 1
-                  label
-                    input.toggle(type="checkbox")
-                    span Item 2
-                  label
-                    input.toggle(type="checkbox")
-                    span Item 3
-            .col.s6
+            .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav
+                nav.nowrap
                   label
                     input(type="checkbox")
                     span Item 1
@@ -1266,23 +1242,10 @@
                   label
                     input(type="checkbox")
                     span Item 3
-            .col.s6
+            .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav
-                  label
-                    input.toggle(type="checkbox")
-                    span Item 1
-                  label
-                    input.toggle(type="checkbox")
-                    span Item 2
-                  label
-                    input.toggle(type="checkbox")
-                    span Item 3
-            .col.s6
-              .field.label.middle-align
-                label.active A question?
-                nav
+                nav.nowrap
                   label
                     input(type="checkbox")
                     span Item 1
@@ -1293,49 +1256,79 @@
                     input(type="checkbox")
                     span Item 3
                 span.helper Complementary text
-            .col.s6
+            .col.s12.l6
+              .field.label.middle-align.invalid
+                label.active A question?
+                nav.nowrap
+                  label
+                    input(type="checkbox")
+                    span Item 1
+                  label
+                    input(type="checkbox")
+                    span Item 2
+                  label
+                    input(type="checkbox")
+                    span Item 3
+                span.error Error text
+        h5
+          span Switches
+          a.chip.circle
+            i(@click="showSamples('#switches .field')") code
+        #switches.card
+          .row
+            .col.s12
+              .field.middle-align
+                nav.nowrap
+                  label
+                    input.switch(type="checkbox")
+                    span Item 1
+                  label
+                    input.switch(type="checkbox")
+                    span Item 2
+                  label
+                    input.switch(type="checkbox")
+                    span Item 3
+            .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav
+                nav.nowrap
                   label
-                    input.toggle(type="checkbox")
+                    input.switch(type="checkbox")
                     span Item 1
                   label
-                    input.toggle(type="checkbox")
+                    input.switch(type="checkbox")
                     span Item 2
                   label
-                    input.toggle(type="checkbox")
+                    input.switch(type="checkbox")
+                    span Item 3
+            .col.s12
+              .field.label.middle-align
+                label.active A question?
+                nav.nowrap
+                  label
+                    input.switch(type="checkbox")
+                    span Item 1
+                  label
+                    input.switch(type="checkbox")
+                    span Item 2
+                  label
+                    input.switch(type="checkbox")
                     span Item 3
                 span.helper Complementary text
-            .col.s6
+            .col.s12.l6
               .field.label.middle-align.invalid
                 label.active A question?
-                nav
+                nav.nowrap
                   label
-                    input(type="checkbox")
+                    input.switch(type="checkbox")
                     span Item 1
                   label
-                    input(type="checkbox")
+                    input.switch(type="checkbox")
                     span Item 2
                   label
-                    input(type="checkbox")
+                    input.switch(type="checkbox")
                     span Item 3
                 span.error Error text
-            .col.s6
-              .field.label.middle-align.invalid
-                label.active A question?
-                nav
-                  label
-                    input.toggle(type="checkbox")
-                    span Item 1
-                  label
-                    input.toggle(type="checkbox")
-                    span Item 2
-                  label
-                    input.toggle(type="checkbox")
-                    span Item 3
-                span.error Error text
-
         h5
           span Radios
           a.chip.circle
@@ -1344,7 +1337,7 @@
           .row
             .col.s12
               .field.middle-align
-                nav
+                nav.nowrap
                   label
                     input(type="radio", name="radio")
                     span Item 1
@@ -1357,7 +1350,7 @@
             .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav
+                nav.nowrap
                   label
                     input(type="radio", name="radio")
                     span Item 1
@@ -1370,7 +1363,7 @@
             .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav
+                nav.nowrap
                   label
                     input(type="radio", name="radio")
                     span Item 1
@@ -1384,7 +1377,7 @@
             .col.s12
               .field.label.middle-align.invalid
                 label.active A question?
-                nav
+                nav.nowrap
                   label
                     input(type="radio", name="radio")
                     span Item 1
@@ -1954,7 +1947,7 @@
                 span.orange-text tiny, extra, responsive, empty-state
               div
                 span &lt;input&gt;&nbsp;
-                span.orange-text toggle
+                span.orange-text switch
               div
                 span &lt;label&gt;&nbsp;
                 span.grey-text active
@@ -2033,7 +2026,7 @@
             a.btn.large(
               href="https://www.patreon.com/beercss",
               target="_blank"
-            ) Donate and support us
+            ) Support us
       #modal-icons.modal.right.large
         nav
           a(data-ui="#modal-icons")
@@ -2428,6 +2421,14 @@ export default {
 <style>
 #modal-colors .col > div {
   padding: 12px;
+}
+
+#badges nav > * {
+  margin-bottom: 8px !important;
+}
+
+#gif {
+  height: 600px;
 }
 
 pre * {
