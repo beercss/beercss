@@ -2,6 +2,14 @@
   padding: 12px;
 }
 
+#badges nav > * {
+  margin-bottom: 8px !important;
+}
+
+#gif {
+  height: 600px;
+}
+
 pre * {
   vertical-align: text-bottom;
 }

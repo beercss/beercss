@@ -2413,13 +2413,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 var _default = {
   data: function data() {
     return {
@@ -2804,7 +2797,7 @@ exports.default = _default;
     _c("div", { attrs: { id: "begin" } }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding border transparent" }, [
+          _c("div", { staticClass: "card no-padding", attrs: { id: "gif" } }, [
             _c("img", {
               staticClass: "responsive",
               attrs: { src: "/beer-animation.gif" }
@@ -2812,7 +2805,12 @@ exports.default = _default;
             _vm._m(2),
             _vm._m(3)
           ]),
-          _vm._m(4)
+          _c("div", { staticClass: "space" }),
+          _vm._m(4),
+          _c("div", { staticClass: "space" }),
+          _c("div", { staticClass: "center-align" }, [
+            _vm._v("An open source project created by Everton and Leonardo")
+          ])
         ])
       ]),
       _c("div", { staticClass: "space" }),
@@ -2837,10 +2835,6 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "small-space" }),
           _vm._m(6),
-          _c("div", { staticClass: "small-space" }),
-          _vm._m(7),
-          _c("div", { staticClass: "small-space" }),
-          _vm._m(8),
           _c("div", { staticClass: "small-space" })
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "buttons" } }, [
@@ -2860,9 +2854,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(9),
-          _vm._m(10),
-          _vm._m(11)
+          _vm._m(7)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "chips" } }, [
           _c("h5", [
@@ -2881,9 +2873,9 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(12)
+          _vm._m(8)
         ]),
-        _vm._m(13),
+        _vm._m(9),
         _c("div", { staticClass: "col s12", attrs: { id: "dropdowns" } }, [
           _c("h5", [
             _c("span", [_vm._v("Dropdowns")]),
@@ -2913,6 +2905,41 @@ exports.default = _default;
                 },
                 [
                   _c("a", [_vm._v("Title")]),
+                  _vm._m(10),
+                  _vm._m(11),
+                  _vm._m(12),
+                  _c("a", { staticClass: "row nowrap middle-align" }, [
+                    _c("div", { staticClass: "col min" }, [
+                      _c("img", {
+                        staticClass: "circle tiny",
+                        attrs: { src: "/beer-and-woman.jpg" }
+                      })
+                    ]),
+                    _c("div", { staticClass: "col" }, [_vm._v("Title")])
+                  ]),
+                  _c("a", { staticClass: "row nowrap middle-align" }, [
+                    _c("div", { staticClass: "col min" }, [
+                      _c("img", {
+                        staticClass: "circle tiny",
+                        attrs: { src: "/beer-and-woman.jpg" }
+                      })
+                    ]),
+                    _vm._m(13)
+                  ])
+                ]
+              )
+            ]),
+            _c("button", { attrs: { "data-ui": "#dropdown2" } }, [
+              _c("span", [_vm._v("Dropdown")]),
+              _c("i", [_vm._v("arrow_drop_down")]),
+              _c(
+                "div",
+                {
+                  staticClass: "dropdown nowrap",
+                  attrs: { id: "dropdown2", "data-ui": "#dropdown2" }
+                },
+                [
+                  _c("a", [_vm._v("Title")]),
                   _vm._m(14),
                   _vm._m(15),
                   _vm._m(16),
@@ -2937,41 +2964,6 @@ exports.default = _default;
                 ]
               )
             ]),
-            _c("button", { attrs: { "data-ui": "#dropdown2" } }, [
-              _c("span", [_vm._v("Dropdown")]),
-              _c("i", [_vm._v("arrow_drop_down")]),
-              _c(
-                "div",
-                {
-                  staticClass: "dropdown nowrap",
-                  attrs: { id: "dropdown2", "data-ui": "#dropdown2" }
-                },
-                [
-                  _c("a", [_vm._v("Title")]),
-                  _vm._m(18),
-                  _vm._m(19),
-                  _vm._m(20),
-                  _c("a", { staticClass: "row nowrap middle-align" }, [
-                    _c("div", { staticClass: "col min" }, [
-                      _c("img", {
-                        staticClass: "circle tiny",
-                        attrs: { src: "/beer-and-woman.jpg" }
-                      })
-                    ]),
-                    _c("div", { staticClass: "col" }, [_vm._v("Title")])
-                  ]),
-                  _c("a", { staticClass: "row nowrap middle-align" }, [
-                    _c("div", { staticClass: "col min" }, [
-                      _c("img", {
-                        staticClass: "circle tiny",
-                        attrs: { src: "/beer-and-woman.jpg" }
-                      })
-                    ]),
-                    _vm._m(21)
-                  ])
-                ]
-              )
-            ]),
             _c(
               "button",
               {
@@ -2985,6 +2977,47 @@ exports.default = _default;
                   {
                     staticClass: "dropdown left nowrap",
                     attrs: { id: "dropdown3", "data-ui": "#dropdown3" }
+                  },
+                  [
+                    _c("a", [_vm._v("Title")]),
+                    _vm._m(18),
+                    _vm._m(19),
+                    _vm._m(20),
+                    _c("a", { staticClass: "row nowrap middle-align" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c("img", {
+                          staticClass: "circle tiny",
+                          attrs: { src: "/beer-and-woman.jpg" }
+                        })
+                      ]),
+                      _c("div", { staticClass: "col" }, [_vm._v("Title")])
+                    ]),
+                    _c("a", { staticClass: "row nowrap middle-align" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c("img", {
+                          staticClass: "circle tiny",
+                          attrs: { src: "/beer-and-woman.jpg" }
+                        })
+                      ]),
+                      _vm._m(21)
+                    ])
+                  ]
+                )
+              ]
+            ),
+            _c(
+              "button",
+              {
+                staticClass: "circle small",
+                attrs: { "data-ui": "#dropdown4" }
+              },
+              [
+                _c("i", [_vm._v("arrow_forward")]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dropdown right nowrap",
+                    attrs: { id: "dropdown4", "data-ui": "#dropdown4" }
                   },
                   [
                     _c("a", [_vm._v("Title")]),
@@ -3013,48 +3046,7 @@ exports.default = _default;
                 )
               ]
             ),
-            _c(
-              "button",
-              {
-                staticClass: "circle small",
-                attrs: { "data-ui": "#dropdown4" }
-              },
-              [
-                _c("i", [_vm._v("arrow_forward")]),
-                _c(
-                  "div",
-                  {
-                    staticClass: "dropdown right nowrap",
-                    attrs: { id: "dropdown4", "data-ui": "#dropdown4" }
-                  },
-                  [
-                    _c("a", [_vm._v("Title")]),
-                    _vm._m(26),
-                    _vm._m(27),
-                    _vm._m(28),
-                    _c("a", { staticClass: "row nowrap middle-align" }, [
-                      _c("div", { staticClass: "col min" }, [
-                        _c("img", {
-                          staticClass: "circle tiny",
-                          attrs: { src: "/beer-and-woman.jpg" }
-                        })
-                      ]),
-                      _c("div", { staticClass: "col" }, [_vm._v("Title")])
-                    ]),
-                    _c("a", { staticClass: "row nowrap middle-align" }, [
-                      _c("div", { staticClass: "col min" }, [
-                        _c("img", {
-                          staticClass: "circle tiny",
-                          attrs: { src: "/beer-and-woman.jpg" }
-                        })
-                      ]),
-                      _vm._m(29)
-                    ])
-                  ]
-                )
-              ]
-            ),
-            _vm._m(30)
+            _vm._m(26)
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "icons" } }, [
@@ -3074,7 +3066,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(31),
+          _vm._m(27),
           _c("div", { staticClass: "space" })
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "images" } }, [
@@ -3278,7 +3270,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(32)
+          _vm._m(28)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "tabs" } }, [
           _c("h5", [
@@ -3297,13 +3289,13 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(33),
-          _vm._m(34),
-          _vm._m(35),
-          _vm._m(36),
-          _vm._m(37)
+          _vm._m(29),
+          _vm._m(30),
+          _vm._m(31),
+          _vm._m(32),
+          _vm._m(33)
         ]),
-        _c("div", { staticClass: "col s12 m6", attrs: { id: "toasts" } }, [
+        _c("div", { staticClass: "col s12 l6", attrs: { id: "toasts" } }, [
           _c("h5", [
             _c("span", [_vm._v("Toasts")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3371,7 +3363,7 @@ exports.default = _default;
             )
           ])
         ]),
-        _c("div", { staticClass: "col s12 m6" }, [
+        _c("div", { staticClass: "col s12 l6" }, [
           _c("h5", [
             _c("span", [_vm._v("Tooltips")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3388,7 +3380,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(38)
+          _vm._m(34)
         ])
       ]),
       _c("div", { staticClass: "row", attrs: { id: "typography" } }, [
@@ -3410,8 +3402,8 @@ exports.default = _default;
             ])
           ])
         ]),
-        _vm._m(39),
-        _vm._m(40)
+        _vm._m(35),
+        _vm._m(36)
       ]),
       _c("div", { staticClass: "row", attrs: { id: "cards" } }, [
         _c("div", { staticClass: "col s12" }, [
@@ -3441,13 +3433,41 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
+              _vm._m(37)
+            ]),
+            _vm._m(38)
+          ])
+        ]),
+        _c("div", { staticClass: "col s12 m6 l3" }, [
+          _c("div", { staticClass: "card round" }, [
+            _c("div", { staticClass: "row nowrap" }, [
+              _c("div", { staticClass: "col min" }, [
+                _c("img", {
+                  staticClass: "circle large",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _vm._m(39)
+            ]),
+            _vm._m(40)
+          ])
+        ]),
+        _c("div", { staticClass: "col s12 m6 l3" }, [
+          _c("div", { staticClass: "card border" }, [
+            _c("div", { staticClass: "row nowrap" }, [
+              _c("div", { staticClass: "col min" }, [
+                _c("img", {
+                  staticClass: "circle large",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
               _vm._m(41)
             ]),
             _vm._m(42)
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card round" }, [
+          _c("div", { staticClass: "card border round" }, [
             _c("div", { staticClass: "row nowrap" }, [
               _c("div", { staticClass: "col min" }, [
                 _c("img", {
@@ -3461,37 +3481,45 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card border" }, [
-            _c("div", { staticClass: "row nowrap" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "circle large",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _vm._m(45)
-            ]),
+          _c("div", { staticClass: "card no-padding" }, [
+            _c("img", {
+              staticClass: "responsive small",
+              attrs: { src: "/beer-and-woman.jpg" }
+            }),
+            _vm._m(45)
+          ])
+        ]),
+        _c("div", { staticClass: "col s12 m6 l3" }, [
+          _c("div", { staticClass: "card no-padding round" }, [
+            _c("img", {
+              staticClass: "responsive small",
+              attrs: { src: "/beer-and-woman.jpg" }
+            }),
             _vm._m(46)
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card border round" }, [
-            _c("div", { staticClass: "row nowrap" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "circle large",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _vm._m(47)
-            ]),
+          _c("div", { staticClass: "card no-padding border" }, [
+            _c("img", {
+              staticClass: "responsive small",
+              attrs: { src: "/beer-and-woman.jpg" }
+            }),
+            _vm._m(47)
+          ])
+        ]),
+        _c("div", { staticClass: "col s12 m6 l3" }, [
+          _c("div", { staticClass: "card no-padding border round" }, [
+            _c("img", {
+              staticClass: "responsive small",
+              attrs: { src: "/beer-and-woman.jpg" }
+            }),
             _vm._m(48)
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
           _c("div", { staticClass: "card no-padding" }, [
             _c("img", {
-              staticClass: "responsive small",
+              staticClass: "responsive medium",
               attrs: { src: "/beer-and-woman.jpg" }
             }),
             _vm._m(49)
@@ -3500,7 +3528,7 @@ exports.default = _default;
         _c("div", { staticClass: "col s12 m6 l3" }, [
           _c("div", { staticClass: "card no-padding round" }, [
             _c("img", {
-              staticClass: "responsive small",
+              staticClass: "responsive medium round",
               attrs: { src: "/beer-and-woman.jpg" }
             }),
             _vm._m(50)
@@ -3509,7 +3537,7 @@ exports.default = _default;
         _c("div", { staticClass: "col s12 m6 l3" }, [
           _c("div", { staticClass: "card no-padding border" }, [
             _c("img", {
-              staticClass: "responsive small",
+              staticClass: "responsive medium",
               attrs: { src: "/beer-and-woman.jpg" }
             }),
             _vm._m(51)
@@ -3518,46 +3546,10 @@ exports.default = _default;
         _c("div", { staticClass: "col s12 m6 l3" }, [
           _c("div", { staticClass: "card no-padding border round" }, [
             _c("img", {
-              staticClass: "responsive small",
+              staticClass: "responsive medium round",
               attrs: { src: "/beer-and-woman.jpg" }
             }),
             _vm._m(52)
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding" }, [
-            _c("img", {
-              staticClass: "responsive medium",
-              attrs: { src: "/beer-and-woman.jpg" }
-            }),
-            _vm._m(53)
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding round" }, [
-            _c("img", {
-              staticClass: "responsive medium round",
-              attrs: { src: "/beer-and-woman.jpg" }
-            }),
-            _vm._m(54)
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding border" }, [
-            _c("img", {
-              staticClass: "responsive medium",
-              attrs: { src: "/beer-and-woman.jpg" }
-            }),
-            _vm._m(55)
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding border round" }, [
-            _c("img", {
-              staticClass: "responsive medium round",
-              attrs: { src: "/beer-and-woman.jpg" }
-            }),
-            _vm._m(56)
           ])
         ]),
         _c("div", { staticClass: "col s12 l6" }, [
@@ -3569,7 +3561,7 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(57)
+              _vm._m(53)
             ])
           ])
         ]),
@@ -3581,14 +3573,14 @@ exports.default = _default;
                   staticClass: "responsive large",
                   attrs: { src: "/beer-and-woman.jpg" }
                 }),
-                _vm._m(58)
+                _vm._m(54)
               ]),
-              _vm._m(59)
+              _vm._m(55)
             ])
           ])
         ])
       ]),
-      _vm._m(60),
+      _vm._m(56),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col s12" }, [
           _c("h5", [
@@ -3608,21 +3600,43 @@ exports.default = _default;
             ])
           ]),
           _c("div", { staticClass: "card", attrs: { id: "list" } }, [
+            _vm._m(57),
+            _c("div", { staticClass: "space" }),
+            _c("label", { staticClass: "large-space middle-align" }, [
+              _vm._v("Today")
+            ]),
+            _vm._m(58),
+            _vm._m(59),
+            _vm._m(60),
+            _c("label", { staticClass: "large-space middle-align" }, [
+              _vm._v("Yesterday")
+            ]),
             _vm._m(61),
-            _c("label", [_vm._v("Today")]),
-            _c("div", { staticClass: "small-space" }),
             _vm._m(62),
             _vm._m(63),
-            _vm._m(64),
-            _c("div", { staticClass: "small-space" }),
-            _c("label", [_vm._v("Yesterday")]),
-            _c("div", { staticClass: "small-space" }),
-            _vm._m(65),
-            _vm._m(66),
-            _vm._m(67),
-            _c("div", { staticClass: "small-space" }),
-            _c("label", [_vm._v("Older")]),
-            _c("div", { staticClass: "small-space" }),
+            _c("label", { staticClass: "large-space middle-align" }, [
+              _vm._v("Older")
+            ]),
+            _c("div", { staticClass: "row nowrap middle-align" }, [
+              _c("div", { staticClass: "col min" }, [
+                _c("img", {
+                  staticClass: "circle tiny",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _vm._m(64),
+              _vm._m(65)
+            ]),
+            _c("div", { staticClass: "row nowrap middle-align" }, [
+              _c("div", { staticClass: "col min" }, [
+                _c("img", {
+                  staticClass: "circle tiny",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _vm._m(66),
+              _vm._m(67)
+            ]),
             _c("div", { staticClass: "row nowrap middle-align" }, [
               _c("div", { staticClass: "col min" }, [
                 _c("img", {
@@ -3632,26 +3646,6 @@ exports.default = _default;
               ]),
               _vm._m(68),
               _vm._m(69)
-            ]),
-            _c("div", { staticClass: "row nowrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "circle tiny",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _vm._m(70),
-              _vm._m(71)
-            ]),
-            _c("div", { staticClass: "row nowrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "circle tiny",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _vm._m(72),
-              _vm._m(73)
             ])
           ]),
           _c("h5", [
@@ -3670,7 +3664,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(74),
+          _vm._m(70),
           _c("h5", [
             _c("span", [_vm._v("Inputs")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3687,7 +3681,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(75),
+          _vm._m(71),
           _c("h5", [
             _c("span", [_vm._v("Selects")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3704,7 +3698,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(76),
+          _vm._m(72),
           _c("h5", [
             _c("span", [_vm._v("Checkboxes")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3721,7 +3715,24 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(77),
+          _vm._m(73),
+          _c("h5", [
+            _c("span", [_vm._v("Switches")]),
+            _c("a", { staticClass: "chip circle" }, [
+              _c(
+                "i",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#switches .field")
+                    }
+                  }
+                },
+                [_vm._v("code")]
+              )
+            ])
+          ]),
+          _vm._m(74),
           _c("h5", [
             _c("span", [_vm._v("Radios")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3738,12 +3749,12 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(78),
+          _vm._m(75),
           _c(
             "div",
             { staticClass: "modal right large", attrs: { id: "modal-colors" } },
             [
-              _vm._m(79),
+              _vm._m(76),
               _c("nav", [
                 _c("label", [
                   _c("input", {
@@ -3769,10 +3780,10 @@ exports.default = _default;
                 ])
               ]),
               _c("span", { staticClass: "space" }),
-              _vm._m(80)
+              _vm._m(77)
             ]
           ),
-          _vm._m(81),
+          _vm._m(78),
           _c(
             "div",
             {
@@ -3780,7 +3791,7 @@ exports.default = _default;
               attrs: { id: "modal-samples" }
             },
             [
-              _vm._m(82),
+              _vm._m(79),
               _c("div", { staticClass: "space" }),
               _vm._l(_vm.samples, function(exemplo) {
                 return _c("div", { staticClass: "card border" }, [
@@ -3804,7 +3815,7 @@ exports.default = _default;
             ],
             2
           ),
-          _vm._m(83)
+          _vm._m(80)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "responsive" } }, [
           _c("h5", [
@@ -3822,16 +3833,16 @@ exports.default = _default;
               [_c("i", [_vm._v("code")])]
             )
           ]),
-          _vm._m(84)
+          _vm._m(81)
         ]),
         _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "card border transparent" }, [
             _c("h5", [_vm._v("Summary")]),
             _c("h6", [_vm._v("Helpers")]),
-            _vm._m(85),
-            _vm._m(86),
+            _vm._m(82),
+            _vm._m(83),
             _c("div", { staticClass: "space" }),
-            _vm._m(87),
+            _vm._m(84),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s12" }, [
@@ -3931,16 +3942,16 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "large-space" }),
-            _vm._m(88),
+            _vm._m(85),
             _c("div", { staticClass: "space" }),
-            _vm._m(89)
+            _vm._m(86)
           ])
         ]),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
-            _vm._m(90),
+            _vm._m(87),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -3962,7 +3973,7 @@ exports.default = _default;
               ])
             }),
             _c("div", { staticClass: "space" }),
-            _vm._m(91)
+            _vm._m(88)
           ],
           2
         )
@@ -4008,18 +4019,15 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "absolute bottom left right center-align" },
+      {
+        staticClass: "absolute top left right center-align padding white-text"
+      },
       [
-        _c(
-          "a",
-          {
-            staticClass: "btn large pink white-text",
-            attrs: { href: "https://www.patreon.com/beercss", target: "_blank" }
-          },
-          [_vm._v("Donate and support us")]
-        ),
-        _c("div", { staticClass: "margin center-align white-text" }, [
-          _vm._v("Everton and Leonardo are creating ®beercss")
+        _c("div", { staticClass: "h4" }, [_c("span", [_vm._v("Beer css! ")])]),
+        _c("div", { staticClass: "h6" }, [
+          _vm._v(
+            "The most tasty, lightweight and easy css framework that you've seen!"
+          )
         ])
       ]
     )
@@ -4030,39 +4038,25 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass: "absolute top left right padding white-text center-align"
-      },
+      { staticClass: "absolute bottom left right padding white-text" },
       [
-        _c("div", { staticClass: "h4" }, [_c("span", [_vm._v("Beer css! ")])]),
-        _c("div", { staticClass: "h6" }, [
-          _vm._v(
-            "The most tasty, lightweight and easy css framework that you've seen!"
-          )
-        ]),
-        _c("nav", { staticClass: "center-align" }, [
-          _c(
-            "a",
-            {
-              staticClass: "btn white black-text small",
-              attrs: {
-                href: "https://github.com/leonardorafael/beercss",
-                target: "_blank"
-              }
-            },
-            [_vm._v("Getting started")]
-          ),
-          _c(
-            "a",
-            {
-              staticClass: "btn white black-text small",
-              attrs: {
-                href: "https://github.com/leonardorafael/beercss",
-                target: "_blank"
-              }
-            },
-            [_vm._v("Github")]
-          )
+        _c("div", { staticClass: "row nowrap" }, [
+          _c("div", { staticClass: "col center-align" }, [
+            _c("div", [_vm._v("Based on")]),
+            _c("div", { staticClass: "h6" }, [_vm._v("Material design")])
+          ]),
+          _c("div", { staticClass: "col center-align" }, [
+            _c("div", [_vm._v("Micro size of")]),
+            _c("div", { staticClass: "h6" }, [_vm._v("~7kb")])
+          ]),
+          _c("div", { staticClass: "col center-align" }, [
+            _c("div", [_vm._v("Only standard")]),
+            _c("div", { staticClass: "h6" }, [_vm._v("html, css, js")])
+          ]),
+          _c("div", { staticClass: "col center-align" }, [
+            _c("div", [_vm._v("Total css classes")]),
+            _c("div", { staticClass: "h6" }, [_vm._v("~100")])
+          ])
         ])
       ]
     )
@@ -4071,25 +4065,37 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card border transparent" }, [
-      _c("div", { staticClass: "row nowrap" }, [
-        _c("div", { staticClass: "col center-align" }, [
-          _c("div", [_vm._v("Based on")]),
-          _c("div", { staticClass: "h6" }, [_vm._v("Material design")])
-        ]),
-        _c("div", { staticClass: "col center-align" }, [
-          _c("div", [_vm._v("Micro size of")]),
-          _c("div", { staticClass: "h6" }, [_vm._v("~7kb")])
-        ]),
-        _c("div", { staticClass: "col center-align" }, [
-          _c("div", [_vm._v("Only standard")]),
-          _c("div", { staticClass: "h6" }, [_vm._v("html/css/js")])
-        ]),
-        _c("div", { staticClass: "col center-align" }, [
-          _c("div", [_vm._v("Total css classes")]),
-          _c("div", { staticClass: "h6" }, [_vm._v("~100")])
-        ])
-      ])
+    return _c("nav", { staticClass: "center-align" }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn large border",
+          attrs: {
+            href: "https://www.npmjs.com/package/beercss",
+            target: "_blank"
+          }
+        },
+        [_vm._v("NPM")]
+      ),
+      _c(
+        "a",
+        {
+          staticClass: "btn large border",
+          attrs: {
+            href: "https://github.com/leonardorafael/beercss",
+            target: "_blank"
+          }
+        },
+        [_vm._v("Github")]
+      ),
+      _c(
+        "a",
+        {
+          staticClass: "btn large",
+          attrs: { href: "https://www.patreon.com/beercss", target: "_blank" }
+        },
+        [_vm._v("Support us")]
+      )
     ])
   },
   function() {
@@ -4152,6 +4158,58 @@ var staticRenderFns = [
         _c("i", [_vm._v("account_circle")])
       ]),
       _c("a", [
+        _c("span", { staticClass: "badge top" }, [_vm._v("New")]),
+        _c("i", [_vm._v("search")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge round top" }, [_vm._v("New")]),
+        _c("i", [_vm._v("notifications")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge circle top" }, [_vm._v("10")]),
+        _c("i", [_vm._v("apps")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge border top" }, [_vm._v("New")]),
+        _c("i", [_vm._v("help_outline")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge border round top" }, [_vm._v("New")]),
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge circle border top" }, [_vm._v("10")]),
+        _c("i", [_vm._v("account_circle")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge left top" }, [_vm._v("New")]),
+        _c("i", [_vm._v("search")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge round left top" }, [_vm._v("New")]),
+        _c("i", [_vm._v("notifications")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge circle left top" }, [_vm._v("10")]),
+        _c("i", [_vm._v("apps")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge border left top" }, [_vm._v("New")]),
+        _c("i", [_vm._v("help_outline")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge border round left top" }, [
+          _vm._v("New")
+        ]),
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge circle border left top" }, [
+          _vm._v("10")
+        ]),
+        _c("i", [_vm._v("account_circle")])
+      ]),
+      _c("a", [
         _c("span", { staticClass: "badge bottom right" }, [_vm._v("New")]),
         _c("i", [_vm._v("search")])
       ]),
@@ -4184,37 +4242,6 @@ var staticRenderFns = [
           _vm._v("10")
         ]),
         _c("i", [_vm._v("account_circle")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("nav", [
-      _c("a", [
-        _c("span", { staticClass: "badge top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge round top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("notifications")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle top" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("help_outline")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border round top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle border top" }, [_vm._v("10")]),
-        _c("i", [_vm._v("account_circle")])
       ]),
       _c("a", [
         _c("span", { staticClass: "badge bottom" }, [_vm._v("New")]),
@@ -4240,41 +4267,6 @@ var staticRenderFns = [
       ]),
       _c("a", [
         _c("span", { staticClass: "badge circle border bottom" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("account_circle")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("nav", [
-      _c("a", [
-        _c("span", { staticClass: "badge left top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge round left top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("notifications")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle left top" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border left top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("help_outline")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border round left top" }, [
-          _vm._v("New")
-        ]),
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle border left top" }, [
           _vm._v("10")
         ]),
         _c("i", [_vm._v("account_circle")])
@@ -4325,22 +4317,6 @@ var staticRenderFns = [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("refresh")])
       ]),
-      _c("a", { staticClass: "btn border" }, [_vm._v("Button")]),
-      _c("a", { staticClass: "btn border" }, [
-        _c("i", [_vm._v("search")]),
-        _c("span", [_vm._v("Button")])
-      ]),
-      _c("a", { staticClass: "btn border" }, [
-        _c("span", [_vm._v("Button")]),
-        _c("i", [_vm._v("refresh")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("nav", [
       _c("a", { staticClass: "btn round" }, [_vm._v("Button")]),
       _c("a", { staticClass: "btn round" }, [
         _c("i", [_vm._v("place")]),
@@ -4350,6 +4326,18 @@ var staticRenderFns = [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("delete")])
       ]),
+      _c("a", { staticClass: "btn circle" }, [_c("i", [_vm._v("add")])]),
+      _c("a", { staticClass: "btn circle" }, [_c("i", [_vm._v("edit")])]),
+      _c("a", { staticClass: "btn circle" }, [_c("i", [_vm._v("home")])]),
+      _c("a", { staticClass: "btn border" }, [_vm._v("Button")]),
+      _c("a", { staticClass: "btn border" }, [
+        _c("i", [_vm._v("search")]),
+        _c("span", [_vm._v("Button")])
+      ]),
+      _c("a", { staticClass: "btn border" }, [
+        _c("span", [_vm._v("Button")]),
+        _c("i", [_vm._v("refresh")])
+      ]),
       _c("a", { staticClass: "btn border round" }, [_vm._v("Button")]),
       _c("a", { staticClass: "btn border round" }, [
         _c("i", [_vm._v("place")]),
@@ -4358,17 +4346,7 @@ var staticRenderFns = [
       _c("a", { staticClass: "btn border round" }, [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("delete")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("nav", [
-      _c("a", { staticClass: "btn circle" }, [_c("i", [_vm._v("add")])]),
-      _c("a", { staticClass: "btn circle" }, [_c("i", [_vm._v("edit")])]),
-      _c("a", { staticClass: "btn circle" }, [_c("i", [_vm._v("home")])]),
+      ]),
       _c("a", { staticClass: "btn border circle" }, [_c("i", [_vm._v("add")])]),
       _c("a", { staticClass: "btn border circle" }, [
         _c("i", [_vm._v("edit")])
@@ -5173,7 +5151,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", [
+    return _c("nav", [
       _c("label", [
         _c("input", {
           attrs: { id: "top-align-lists", type: "radio", name: "align-lists" }
@@ -5226,7 +5204,7 @@ var staticRenderFns = [
         _c("label", [_vm._v("Complementary text")])
       ]),
       _c("div", { staticClass: "col min" }, [
-        _c("nav", [
+        _c("nav", { staticClass: "nowrap" }, [
           _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
           _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
         ])
@@ -5246,7 +5224,7 @@ var staticRenderFns = [
         _c("label", [_vm._v("Complementary text")])
       ]),
       _c("div", { staticClass: "col min" }, [
-        _c("nav", [
+        _c("nav", { staticClass: "nowrap" }, [
           _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
           _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
         ])
@@ -5266,7 +5244,7 @@ var staticRenderFns = [
         _c("label", [_vm._v("Complementary text")])
       ]),
       _c("div", { staticClass: "col min" }, [
-        _c("nav", [
+        _c("nav", { staticClass: "nowrap" }, [
           _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
           _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
         ])
@@ -5286,7 +5264,7 @@ var staticRenderFns = [
         _c("label", [_vm._v("Complementary text")])
       ]),
       _c("div", { staticClass: "col min" }, [
-        _c("nav", [
+        _c("nav", { staticClass: "nowrap" }, [
           _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
           _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
         ])
@@ -5306,7 +5284,7 @@ var staticRenderFns = [
         _c("label", [_vm._v("Complementary text")])
       ]),
       _c("div", { staticClass: "col min" }, [
-        _c("nav", [
+        _c("nav", { staticClass: "nowrap" }, [
           _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
           _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
         ])
@@ -5326,7 +5304,7 @@ var staticRenderFns = [
         _c("label", [_vm._v("Complementary text")])
       ]),
       _c("div", { staticClass: "col min" }, [
-        _c("nav", [
+        _c("nav", { staticClass: "nowrap" }, [
           _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
           _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
         ])
@@ -5347,7 +5325,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col min" }, [
-      _c("nav", [
+      _c("nav", { staticClass: "nowrap" }, [
         _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
         _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
       ])
@@ -5367,7 +5345,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col min" }, [
-      _c("nav", [
+      _c("nav", { staticClass: "nowrap" }, [
         _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
         _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
       ])
@@ -5387,7 +5365,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col min" }, [
-      _c("nav", [
+      _c("nav", { staticClass: "nowrap" }, [
         _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
         _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
       ])
@@ -5398,7 +5376,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card", attrs: { id: "table" } }, [
-      _c("p", [
+      _c("nav", [
         _c("label", [
           _c("input", {
             attrs: { id: "small-tables", type: "radio", name: "size-tables" }
@@ -5454,6 +5432,7 @@ var staticRenderFns = [
           _c("span", [_vm._v("right-align")])
         ])
       ]),
+      _c("div", { staticClass: "space" }),
       _c("table", { staticClass: "border" }, [
         _c("thead", [
           _c("tr", [
@@ -5471,7 +5450,7 @@ var staticRenderFns = [
             _c("td", [_vm._v("Line 1")]),
             _c("td", [_vm._v("Line 1")]),
             _c("td", [
-              _c("nav", { staticClass: "right-align" }, [
+              _c("nav", { staticClass: "nowrap right-align" }, [
                 _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
                 _c("a", { staticClass: "btn flat" }, [
                   _c("i", [_vm._v("more_vert")])
@@ -5485,7 +5464,7 @@ var staticRenderFns = [
             _c("td", [_vm._v("Line 2")]),
             _c("td", [_vm._v("Line 2")]),
             _c("td", [
-              _c("nav", { staticClass: "right-align" }, [
+              _c("nav", { staticClass: "nowrap right-align" }, [
                 _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
                 _c("a", { staticClass: "btn flat" }, [
                   _c("i", [_vm._v("more_vert")])
@@ -5499,7 +5478,7 @@ var staticRenderFns = [
             _c("td", [_vm._v("Line 3")]),
             _c("td", [_vm._v("Line 3")]),
             _c("td", [
-              _c("nav", { staticClass: "right-align" }, [
+              _c("nav", { staticClass: "nowrap right-align" }, [
                 _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
                 _c("a", { staticClass: "btn flat" }, [
                   _c("i", [_vm._v("more_vert")])
@@ -5516,7 +5495,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card", attrs: { id: "inputs" } }, [
-      _c("p", [
+      _c("nav", [
         _c("label", [
           _c("input", { attrs: { id: "border-inputs", type: "checkbox" } }),
           _c("span", [_vm._v("border")])
@@ -5578,27 +5557,27 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "space" }),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col s12 m4" }, [
+        _c("div", { staticClass: "col s12 l4" }, [
           _c("div", { staticClass: "field label" }, [
             _c("input", { attrs: { type: "text" } }),
             _c("label", [_vm._v("Text")])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m4" }, [
+        _c("div", { staticClass: "col s12 l4" }, [
           _c("div", { staticClass: "field label prefix" }, [
             _c("i", [_vm._v("search")]),
             _c("input", { attrs: { type: "text" } }),
             _c("label", [_vm._v("Text")])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m4" }, [
+        _c("div", { staticClass: "col s12 l4" }, [
           _c("div", { staticClass: "field label sufix" }, [
             _c("input", { attrs: { type: "text" } }),
             _c("label", [_vm._v("Text")]),
             _c("i", [_vm._v("search")])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m4" }, [
+        _c("div", { staticClass: "col s12 l4" }, [
           _c("div", { staticClass: "field label" }, [
             _c("input", { attrs: { type: "text" } }),
             _c("label", [_vm._v("Text")]),
@@ -5607,7 +5586,7 @@ var staticRenderFns = [
             ])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m4" }, [
+        _c("div", { staticClass: "col s12 l4" }, [
           _c("div", { staticClass: "field label prefix" }, [
             _c("i", [_vm._v("search")]),
             _c("input", { attrs: { type: "text" } }),
@@ -5617,7 +5596,7 @@ var staticRenderFns = [
             ])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m4" }, [
+        _c("div", { staticClass: "col s12 l4" }, [
           _c("div", { staticClass: "field label sufix" }, [
             _c("input", { attrs: { type: "text" } }),
             _c("label", [_vm._v("Text")]),
@@ -5627,14 +5606,14 @@ var staticRenderFns = [
             ])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m4" }, [
+        _c("div", { staticClass: "col s12 l4" }, [
           _c("div", { staticClass: "field label invalid" }, [
             _c("input", { attrs: { type: "text" } }),
             _c("label", [_vm._v("Text")]),
             _c("span", { staticClass: "error" }, [_vm._v("Error text")])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m4" }, [
+        _c("div", { staticClass: "col s12 l4" }, [
           _c("div", { staticClass: "field label prefix invalid" }, [
             _c("i", [_vm._v("search")]),
             _c("input", { attrs: { type: "text" } }),
@@ -5642,7 +5621,7 @@ var staticRenderFns = [
             _c("span", { staticClass: "error" }, [_vm._v("Error text")])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m4" }, [
+        _c("div", { staticClass: "col s12 l4" }, [
           _c("div", { staticClass: "field label sufix invalid" }, [
             _c("input", { attrs: { type: "text" } }),
             _c("label", [_vm._v("Text")]),
@@ -5658,7 +5637,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card", attrs: { id: "selects" } }, [
-      _c("p", [
+      _c("nav", [
         _c("label", [
           _c("input", { attrs: { id: "border-selects", type: "checkbox" } }),
           _c("span", [_vm._v("border")])
@@ -5695,8 +5674,9 @@ var staticRenderFns = [
           _c("span", [_vm._v("large")])
         ])
       ]),
+      _c("div", { staticClass: "space" }),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col s12 m6" }, [
+        _c("div", { staticClass: "col s12 l6" }, [
           _c("div", { staticClass: "field label sufix" }, [
             _c("select", [
               _c("option", [_vm._v("Item 1")]),
@@ -5707,7 +5687,7 @@ var staticRenderFns = [
             _c("i", [_vm._v("arrow_drop_down")])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m6" }, [
+        _c("div", { staticClass: "col s12 l6" }, [
           _c("div", { staticClass: "field label prefix" }, [
             _c("i", [_vm._v("arrow_drop_down")]),
             _c("select", [
@@ -5718,7 +5698,7 @@ var staticRenderFns = [
             _c("label", { staticClass: "active" }, [_vm._v("List")])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m6" }, [
+        _c("div", { staticClass: "col s12 l6" }, [
           _c("div", { staticClass: "field label sufix" }, [
             _c("select", [
               _c("option", [_vm._v("Item 1")]),
@@ -5732,7 +5712,7 @@ var staticRenderFns = [
             ])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m6" }, [
+        _c("div", { staticClass: "col s12 l6" }, [
           _c("div", { staticClass: "field label prefix" }, [
             _c("i", [_vm._v("arrow_drop_down")]),
             _c("select", [
@@ -5746,7 +5726,7 @@ var staticRenderFns = [
             ])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m6" }, [
+        _c("div", { staticClass: "col s12 l6" }, [
           _c("div", { staticClass: "field label sufix invalid" }, [
             _c("select", [
               _c("option", [_vm._v("Item 1")]),
@@ -5758,7 +5738,7 @@ var staticRenderFns = [
             _c("span", { staticClass: "error" }, [_vm._v("Error text")])
           ])
         ]),
-        _c("div", { staticClass: "col s12 m6" }, [
+        _c("div", { staticClass: "col s12 l6" }, [
           _c("div", { staticClass: "field label prefix invalid" }, [
             _c("i", [_vm._v("arrow_drop_down")]),
             _c("select", [
@@ -5779,9 +5759,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card", attrs: { id: "checkboxes" } }, [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col s6" }, [
+        _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "field middle-align" }, [
-            _c("nav", [
+            _c("nav", { staticClass: "nowrap" }, [
               _c("label", [
                 _c("input", { attrs: { type: "checkbox" } }),
                 _c("span", [_vm._v("Item 1")])
@@ -5797,37 +5777,10 @@ var staticRenderFns = [
             ])
           ])
         ]),
-        _c("div", { staticClass: "col s6" }, [
-          _c("div", { staticClass: "field middle-align" }, [
-            _c("nav", [
-              _c("label", [
-                _c("input", {
-                  staticClass: "toggle",
-                  attrs: { type: "checkbox" }
-                }),
-                _c("span", [_vm._v("Item 1")])
-              ]),
-              _c("label", [
-                _c("input", {
-                  staticClass: "toggle",
-                  attrs: { type: "checkbox" }
-                }),
-                _c("span", [_vm._v("Item 2")])
-              ]),
-              _c("label", [
-                _c("input", {
-                  staticClass: "toggle",
-                  attrs: { type: "checkbox" }
-                }),
-                _c("span", [_vm._v("Item 3")])
-              ])
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s6" }, [
+        _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "field label middle-align" }, [
             _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
-            _c("nav", [
+            _c("nav", { staticClass: "nowrap" }, [
               _c("label", [
                 _c("input", { attrs: { type: "checkbox" } }),
                 _c("span", [_vm._v("Item 1")])
@@ -5843,38 +5796,10 @@ var staticRenderFns = [
             ])
           ])
         ]),
-        _c("div", { staticClass: "col s6" }, [
+        _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "field label middle-align" }, [
             _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
-            _c("nav", [
-              _c("label", [
-                _c("input", {
-                  staticClass: "toggle",
-                  attrs: { type: "checkbox" }
-                }),
-                _c("span", [_vm._v("Item 1")])
-              ]),
-              _c("label", [
-                _c("input", {
-                  staticClass: "toggle",
-                  attrs: { type: "checkbox" }
-                }),
-                _c("span", [_vm._v("Item 2")])
-              ]),
-              _c("label", [
-                _c("input", {
-                  staticClass: "toggle",
-                  attrs: { type: "checkbox" }
-                }),
-                _c("span", [_vm._v("Item 3")])
-              ])
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s6" }, [
-          _c("div", { staticClass: "field label middle-align" }, [
-            _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
-            _c("nav", [
+            _c("nav", { staticClass: "nowrap" }, [
               _c("label", [
                 _c("input", { attrs: { type: "checkbox" } }),
                 _c("span", [_vm._v("Item 1")])
@@ -5893,41 +5818,10 @@ var staticRenderFns = [
             ])
           ])
         ]),
-        _c("div", { staticClass: "col s6" }, [
-          _c("div", { staticClass: "field label middle-align" }, [
-            _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
-            _c("nav", [
-              _c("label", [
-                _c("input", {
-                  staticClass: "toggle",
-                  attrs: { type: "checkbox" }
-                }),
-                _c("span", [_vm._v("Item 1")])
-              ]),
-              _c("label", [
-                _c("input", {
-                  staticClass: "toggle",
-                  attrs: { type: "checkbox" }
-                }),
-                _c("span", [_vm._v("Item 2")])
-              ]),
-              _c("label", [
-                _c("input", {
-                  staticClass: "toggle",
-                  attrs: { type: "checkbox" }
-                }),
-                _c("span", [_vm._v("Item 3")])
-              ])
-            ]),
-            _c("span", { staticClass: "helper" }, [
-              _vm._v("Complementary text")
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s6" }, [
+        _c("div", { staticClass: "col s12 l6" }, [
           _c("div", { staticClass: "field label middle-align invalid" }, [
             _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
-            _c("nav", [
+            _c("nav", { staticClass: "nowrap" }, [
               _c("label", [
                 _c("input", { attrs: { type: "checkbox" } }),
                 _c("span", [_vm._v("Item 1")])
@@ -5943,28 +5837,123 @@ var staticRenderFns = [
             ]),
             _c("span", { staticClass: "error" }, [_vm._v("Error text")])
           ])
-        ]),
-        _c("div", { staticClass: "col s6" }, [
-          _c("div", { staticClass: "field label middle-align invalid" }, [
-            _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
-            _c("nav", [
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card", attrs: { id: "switches" } }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col s12" }, [
+          _c("div", { staticClass: "field middle-align" }, [
+            _c("nav", { staticClass: "nowrap" }, [
               _c("label", [
                 _c("input", {
-                  staticClass: "toggle",
+                  staticClass: "switch",
                   attrs: { type: "checkbox" }
                 }),
                 _c("span", [_vm._v("Item 1")])
               ]),
               _c("label", [
                 _c("input", {
-                  staticClass: "toggle",
+                  staticClass: "switch",
                   attrs: { type: "checkbox" }
                 }),
                 _c("span", [_vm._v("Item 2")])
               ]),
               _c("label", [
                 _c("input", {
-                  staticClass: "toggle",
+                  staticClass: "switch",
+                  attrs: { type: "checkbox" }
+                }),
+                _c("span", [_vm._v("Item 3")])
+              ])
+            ])
+          ])
+        ]),
+        _c("div", { staticClass: "col s12" }, [
+          _c("div", { staticClass: "field label middle-align" }, [
+            _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
+            _c("nav", { staticClass: "nowrap" }, [
+              _c("label", [
+                _c("input", {
+                  staticClass: "switch",
+                  attrs: { type: "checkbox" }
+                }),
+                _c("span", [_vm._v("Item 1")])
+              ]),
+              _c("label", [
+                _c("input", {
+                  staticClass: "switch",
+                  attrs: { type: "checkbox" }
+                }),
+                _c("span", [_vm._v("Item 2")])
+              ]),
+              _c("label", [
+                _c("input", {
+                  staticClass: "switch",
+                  attrs: { type: "checkbox" }
+                }),
+                _c("span", [_vm._v("Item 3")])
+              ])
+            ])
+          ])
+        ]),
+        _c("div", { staticClass: "col s12" }, [
+          _c("div", { staticClass: "field label middle-align" }, [
+            _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
+            _c("nav", { staticClass: "nowrap" }, [
+              _c("label", [
+                _c("input", {
+                  staticClass: "switch",
+                  attrs: { type: "checkbox" }
+                }),
+                _c("span", [_vm._v("Item 1")])
+              ]),
+              _c("label", [
+                _c("input", {
+                  staticClass: "switch",
+                  attrs: { type: "checkbox" }
+                }),
+                _c("span", [_vm._v("Item 2")])
+              ]),
+              _c("label", [
+                _c("input", {
+                  staticClass: "switch",
+                  attrs: { type: "checkbox" }
+                }),
+                _c("span", [_vm._v("Item 3")])
+              ])
+            ]),
+            _c("span", { staticClass: "helper" }, [
+              _vm._v("Complementary text")
+            ])
+          ])
+        ]),
+        _c("div", { staticClass: "col s12 l6" }, [
+          _c("div", { staticClass: "field label middle-align invalid" }, [
+            _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
+            _c("nav", { staticClass: "nowrap" }, [
+              _c("label", [
+                _c("input", {
+                  staticClass: "switch",
+                  attrs: { type: "checkbox" }
+                }),
+                _c("span", [_vm._v("Item 1")])
+              ]),
+              _c("label", [
+                _c("input", {
+                  staticClass: "switch",
+                  attrs: { type: "checkbox" }
+                }),
+                _c("span", [_vm._v("Item 2")])
+              ]),
+              _c("label", [
+                _c("input", {
+                  staticClass: "switch",
                   attrs: { type: "checkbox" }
                 }),
                 _c("span", [_vm._v("Item 3")])
@@ -5984,7 +5973,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "field middle-align" }, [
-            _c("nav", [
+            _c("nav", { staticClass: "nowrap" }, [
               _c("label", [
                 _c("input", { attrs: { type: "radio", name: "radio" } }),
                 _c("span", [_vm._v("Item 1")])
@@ -6003,7 +5992,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "field label middle-align" }, [
             _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
-            _c("nav", [
+            _c("nav", { staticClass: "nowrap" }, [
               _c("label", [
                 _c("input", { attrs: { type: "radio", name: "radio" } }),
                 _c("span", [_vm._v("Item 1")])
@@ -6022,7 +6011,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "field label middle-align" }, [
             _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
-            _c("nav", [
+            _c("nav", { staticClass: "nowrap" }, [
               _c("label", [
                 _c("input", { attrs: { type: "radio", name: "radio" } }),
                 _c("span", [_vm._v("Item 1")])
@@ -6044,7 +6033,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "field label middle-align invalid" }, [
             _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
-            _c("nav", [
+            _c("nav", { staticClass: "nowrap" }, [
               _c("label", [
                 _c("input", { attrs: { type: "radio", name: "radio" } }),
                 _c("span", [_vm._v("Item 1")])
@@ -7226,7 +7215,7 @@ var staticRenderFns = [
         ]),
         _c("div", [
           _c("span", [_vm._v("<input> ")]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("toggle")])
+          _c("span", { staticClass: "orange-text" }, [_vm._v("switch")])
         ]),
         _c("div", [
           _c("span", [_vm._v("<label> ")]),
@@ -7291,7 +7280,7 @@ var staticRenderFns = [
           staticClass: "btn large",
           attrs: { href: "https://www.patreon.com/beercss", target: "_blank" }
         },
-        [_vm._v("Donate and support us")]
+        [_vm._v("Support us")]
       )
     ])
   },
