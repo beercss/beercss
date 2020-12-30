@@ -1,24 +1,24 @@
 <template lang="pug">
 .container
-  #menu.menu.left
+  #menu.menu.left.medium-device.large-device
     .small-space
     img.front.small.circle.no-margin.no-padding(
       :src="'/favicon.png'",
       @click="addHomeScreen()"
     )
-    a(@click="updateMenu(this, 'top')")
+    a(@click="updateMenu('#menu', 'top')")
       i arrow_upward
       div Top
-    a(@click="updateMenu(this, 'bottom')")
+    a(@click="updateMenu('#menu', 'bottom')")
       i arrow_downward
       div Bottom
-    a(@click="updateMenu(this, 'left')")
+    a(@click="updateMenu('#menu', 'left')")
       i arrow_back
       div Left
-    a(@click="updateMenu(this, 'right')")
+    a(@click="updateMenu('#menu', 'right')")
       i arrow_forward
       div Right
-    a(@click="updateMenu(this)")
+    a(@click="updateMenu('#menu')")
       i zoom_out_map
       div Size
     a(@click="updateIcons()")
@@ -34,12 +34,32 @@
       i more_vert
       div More
     #more.modal.small.left(data-ui="#more")
-      .row
-        .col.s6
-          b More
-          p Item 1
-          p Item 2
-          p Item 3
+      b More
+      p Item 1
+      p Item 2
+      p Item 3
+  #menu-bottom.menu.bottom.small-device
+    .small-space
+    a(@click="updateMenu('#menu-bottom')")
+      i zoom_out_map
+      div Size
+    a(@click="updateIcons()")
+      i image
+      div Icons
+    a(@click="updateTheme()")
+      i brightness_medium
+      div Theme
+    a(@click="showSamples('#menu-bottom')")
+      i code
+      div Code
+    a(data-ui="#more-bottom")
+      i more_vert
+      div More
+    #more-bottom.modal.small.bottom(data-ui="#more-bottom")
+      b More
+      p Item 1
+      p Item 2
+      p Item 3
   #begin
     .row
       .col.s12
@@ -98,7 +118,7 @@
           a.chip.circle
             i(@click="showSamples('#badges nav > a')") code
         .small-space
-        nav
+        nav.wrap
           a
             span.badge New
             i search
@@ -213,7 +233,7 @@
           span Buttons
           a.chip.circle
             i(@click="showSamples('#buttons .btn, #button button')") code
-        nav
+        nav.wrap
           a.btn Button
           a.btn
             i search
@@ -259,7 +279,7 @@
           span Chips
           a.chip.circle
             i(@click="showSamples('#chips nav .chip')") code
-        nav
+        nav.wrap
           a.chip Filter
           a.chip
             i.small done
@@ -290,7 +310,7 @@
           span Dropdowns
           a.chip.circle
             i(@click="showSamples('#dropdowns button')") code
-        nav
+        nav.wrap
           button(data-ui="#dropdown1")
             span Drooooopdoooooooooown
             i arrow_drop_down
@@ -499,7 +519,7 @@
           span Icons
           a.chip.circle
             i(@click="showSamples('#icons nav', '#modal-icons')") code
-        nav
+        nav.wrap
           i home
           i account_circle
           i search
@@ -516,7 +536,7 @@
           span Images
           a.chip.circle
             i(@click="showSamples('#images img')") code
-        nav
+        nav.wrap
           a
             img.circle.tiny(:src="'/beer-and-woman.jpg'")
           a
@@ -542,7 +562,7 @@
           span Loaders
           a.chip.circle
             i(@click="showSamples('#loaders svg')") code
-        nav
+        nav.wrap
           a
             svg.loader.small(viewBox="0 0 66 66")
               circle(fill="none", cx="33", cy="33", r="30")
@@ -623,7 +643,7 @@
           span Toasts
           a.chip.circle
             i(@click="showSamples('#toasts .toast')") code
-        nav
+        nav.wrap
           a.pink.btn(@click="showToasts('#toast1')") Toast
           a.orange.btn(@click="showToasts('#toast2')") Toast
           a.green.btn(@click="showToasts('#toast3')") Toast
@@ -633,7 +653,7 @@
           span Tooltips
           a.chip.circle
             i(@click="showSamples('#tooltips a')") code
-        nav#tooltips
+        nav#tooltips.wrap
           a.chip.circle
             i arrow_back
             .tooltip.left Complementary text
@@ -840,7 +860,7 @@
           a.chip.circle
             i(@click="showSamples('#list .row')") code
         #list.card
-          nav
+          nav.wrap
             label
               input#top-align-lists(type="radio", name="align-lists")
               span top-align
@@ -866,7 +886,7 @@
               div Title
               label Complementary text
             .col.min
-              nav.nowrap
+              nav
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -878,7 +898,7 @@
               div Title
               label Complementary text
             .col.min
-              nav.nowrap
+              nav
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -889,7 +909,7 @@
               div Title
               label Complementary text
             .col.min
-              nav.nowrap
+              nav
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -901,7 +921,7 @@
               div Title
               label Complementary text
             .col.min
-              nav.nowrap
+              nav
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -912,7 +932,7 @@
               div Title
               label Complementary text
             .col.min
-              nav.nowrap
+              nav
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -923,7 +943,7 @@
               div Title
               label Complementary text
             .col.min
-              nav.nowrap
+              nav
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -935,7 +955,7 @@
               div Title
               label Complementary text
             .col.min
-              nav.nowrap
+              nav
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -946,7 +966,7 @@
               div Title
               label Complementary text
             .col.min
-              nav.nowrap
+              nav
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -957,7 +977,7 @@
               div Title
               label Complementary text
             .col.min
-              nav.nowrap
+              nav
                 a.btn.flat Link
                 a.btn.flat
                   i more_vert
@@ -966,7 +986,7 @@
           a.chip.circle
             i(@click="showSamples('#table table')") code
         #table.card
-          nav
+          nav.wrap
             label
               input#small-tables(type="radio", name="size-tables")
               span small
@@ -1010,7 +1030,7 @@
                 td Line 1
                 td Line 1
                 td
-                  nav.nowrap.right-align
+                  nav.right-align
                     a.btn.flat Link
                     a.btn.flat
                       i more_vert
@@ -1021,7 +1041,7 @@
                 td Line 2
                 td Line 2
                 td
-                  nav.nowrap.right-align
+                  nav.right-align
                     a.btn.flat Link
                     a.btn.flat
                       i more_vert
@@ -1032,7 +1052,7 @@
                 td Line 3
                 td Line 3
                 td
-                  nav.nowrap.right-align
+                  nav.right-align
                     a.btn.flat Link
                     a.btn.flat
                       i more_vert
@@ -1042,7 +1062,7 @@
           a.chip.circle
             i(@click="showSamples('#inputs .field')") code
         #inputs.card
-          nav
+          nav.wrap
             label
               input#border-inputs(type="checkbox")
               span border
@@ -1134,7 +1154,7 @@
           a.chip.circle
             i(@click="showSamples('#selects .field')") code
         #selects.card
-          nav
+          nav.wrap
             label
               input#border-selects(type="checkbox")
               span border
@@ -1219,7 +1239,7 @@
           .row
             .col.s12
               .field.middle-align
-                nav.nowrap
+                nav
                   label
                     input(type="checkbox")
                     span Item 1
@@ -1232,7 +1252,7 @@
             .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav.nowrap
+                nav
                   label
                     input(type="checkbox")
                     span Item 1
@@ -1245,7 +1265,7 @@
             .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav.nowrap
+                nav
                   label
                     input(type="checkbox")
                     span Item 1
@@ -1259,7 +1279,7 @@
             .col.s12.l6
               .field.label.middle-align.invalid
                 label.active A question?
-                nav.nowrap
+                nav
                   label
                     input(type="checkbox")
                     span Item 1
@@ -1278,7 +1298,7 @@
           .row
             .col.s12
               .field.middle-align
-                nav.nowrap
+                nav
                   label
                     input.switch(type="checkbox")
                     span Item 1
@@ -1291,7 +1311,7 @@
             .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav.nowrap
+                nav
                   label
                     input.switch(type="checkbox")
                     span Item 1
@@ -1304,7 +1324,7 @@
             .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav.nowrap
+                nav
                   label
                     input.switch(type="checkbox")
                     span Item 1
@@ -1318,7 +1338,7 @@
             .col.s12.l6
               .field.label.middle-align.invalid
                 label.active A question?
-                nav.nowrap
+                nav
                   label
                     input.switch(type="checkbox")
                     span Item 1
@@ -1337,7 +1357,7 @@
           .row
             .col.s12
               .field.middle-align
-                nav.nowrap
+                nav
                   label
                     input(type="radio", name="radio")
                     span Item 1
@@ -1350,7 +1370,7 @@
             .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav.nowrap
+                nav
                   label
                     input(type="radio", name="radio")
                     span Item 1
@@ -1363,7 +1383,7 @@
             .col.s12
               .field.label.middle-align
                 label.active A question?
-                nav.nowrap
+                nav
                   label
                     input(type="radio", name="radio")
                     span Item 1
@@ -1377,7 +1397,7 @@
             .col.s12
               .field.label.middle-align.invalid
                 label.active A question?
-                nav.nowrap
+                nav
                   label
                     input(type="radio", name="radio")
                     span Item 1
@@ -1774,98 +1794,99 @@
       .col.s12
         .card.border.transparent
           h5 Summary
-          h6 Helpers
-          .row.nowrap
-            .col
-              b Position
-              div left
-              div right
-              div center
-              div top
-              div bottom
-              div middle
-              div front
-              div back
-            .col
-              b Alignment
-              div left-align
-              div right-align
-              div center-align
-              div top-align
-              div bottom-align
-              div middle-align
-            .col
-              b Size
-              div small
-              div medium
-              div large
-            .col
-              b Margin
-              div margin
-              div no-margin
-              div small-margin
-              div medium-margin
-              div large-margin
-            .col
-              b Padding
-              div padding
-              div no-padding
-              div small-padding
-              div medium-padding
-              div large-padding
-          .row.nowrap
-            .col
-              b Spacing
-              div space
-              div small-space
-              div medium-space
-              div large-space
-              div divider
-              div small-divider
-              div medium-divider
-              div large-divider
-            .col
-              b Form
-              div border
-              div round
-              div circle
-            .col
-              b Texts
-              div italic
-              div bold
-              div underline
-              div overline
-              div upper
-              div lower
-              div capitalize
-              div link
-              div small-text
-              div medium-text
-              div large-text
-            .col
-              b Others
-              div shadow
-              div right-shadow
-              div left-shadow
-              div bottom-shadow
-              div top-shadow
-              div small-device
-              div medium-device
-              div large-device
-              div active
-              div nowrap
-              div wrap
-            .col
-              b Themes
-              div is-dark
-              div is-light
-              div is-menu-left
-              div is-menu-right
-              div is-menu-top
-              div is-menu-bottom
-              div is-menu-small
-              div is-menu-medium
-              div is-menu-large
+          #helpers.medium-device.large-device
+            h6 Helpers
+            .row.nowrap
+              .col
+                b Position
+                div left
+                div right
+                div center
+                div top
+                div bottom
+                div middle
+                div front
+                div back
+              .col
+                b Alignment
+                div left-align
+                div right-align
+                div center-align
+                div top-align
+                div bottom-align
+                div middle-align
+              .col
+                b Size
+                div small
+                div medium
+                div large
+              .col
+                b Margin
+                div margin
+                div no-margin
+                div small-margin
+                div medium-margin
+                div large-margin
+              .col
+                b Padding
+                div padding
+                div no-padding
+                div small-padding
+                div medium-padding
+                div large-padding
+            .row.nowrap
+              .col
+                b Spacing
+                div space
+                div small-space
+                div medium-space
+                div large-space
+                div divider
+                div small-divider
+                div medium-divider
+                div large-divider
+              .col
+                b Form
+                div border
+                div round
+                div circle
+              .col
+                b Texts
+                div italic
+                div bold
+                div underline
+                div overline
+                div upper
+                div lower
+                div capitalize
+                div link
+                div small-text
+                div medium-text
+                div large-text
+              .col
+                b Others
+                div shadow
+                div right-shadow
+                div left-shadow
+                div bottom-shadow
+                div top-shadow
+                div small-device
+                div medium-device
+                div large-device
+                div active
+                div nowrap
+                div wrap
+              .col
+                b Themes
+                div is-dark
+                div is-light
+                div is-menu-left
+                div is-menu-right
+                div is-menu-top
+                div is-menu-bottom
+                div is-menu-small
+                div is-menu-medium
+                div is-menu-large
           .space
           .row
             .col.s12
@@ -1953,7 +1974,7 @@
                 span.grey-text active
               div 
                 span &lt;nav&gt;&nbsp;
-                span.grey-text top-align, bottom-align, middle-align
+                span.grey-text top-align, bottom-align, middle-align, wrap
               div 
                 span &lt;table&gt;&nbsp;
                 span.grey-text small, medium, large, border, left-align, center-align, right-align
@@ -2097,16 +2118,15 @@ export default {
       if (window.beercss && window.beercss.installEvent)
         window.beercss.installEvent.prompt();
     },
-    updateMenu(from, css) {
+    updateMenu(menu, css) {
+      console.log(event.target);
       var body = $("body");
-      var menu = $(".menu");
-      var dataUis = $(".menu a");
-      var dataUi = $(from);
-      var modals = $(".menu .modal");
+      var menu = $(menu);
+      var dataUis = menu.find("a");
+      var modals = menu.find(".modal");
 
       $(modals).removeClass("active");
       $(dataUis).removeClass("active");
-      $(dataUi).addClass("active");
 
       if (!css) {
         var sizes = ["small", "medium", "large"];
@@ -2122,13 +2142,11 @@ export default {
           "is-menu-left is-menu-right is-menu-top is-menu-bottom"
         );
         body.addClass("is-menu-" + css);
-
-        for (var i = 0; i < menu.length; i++) {
-          $(menu[i]).removeClass("left right top bottom");
-          $(menu[i]).addClass(css);
-          $(menu[i]).find("> .modal").removeClass("left right top bottom");
-          $(menu[i]).find("> .modal").addClass(css);
-        }
+        console.log(menu);
+        $(menu).removeClass("left right top bottom");
+        $(menu).addClass(css);
+        $(menu).find("> .modal").removeClass("left right top bottom");
+        $(menu).find("> .modal").addClass(css);
       }
 
       if (/small|medium|large/.test(css)) {
@@ -2423,10 +2441,6 @@ export default {
   padding: 12px;
 }
 
-#badges nav > * {
-  margin-bottom: 8px !important;
-}
-
 #gif {
   height: 600px;
 }
@@ -2452,5 +2466,11 @@ pre {
 
 .is-dark pre {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0 16px 72px 16px !important;
+  }
 }
 </style>

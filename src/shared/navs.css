@@ -1,32 +1,38 @@
 nav {
-  display: block;
-  white-space: normal;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
   margin: 0 -8px;
 }
 
 * + nav {
-  margin-top: 8px;
-}
-
-.field.label > nav {
-  margin-top: 12px;
-}
-
-nav.nowrap {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
+  margin-top: 16px;
 }
 
 nav > a,
 nav > i,
 nav > button,
-nav > a:last-child,
-nav > i:last-child,
-nav > button:last-child,
-nav > a:first-child,
-nav > i:first-child,
-nav > button:first-child,
 nav > label {
-  margin: 8px 8px 0 8px !important;
+  margin: 0 8px;
+}
+
+nav.wrap {
+  display: block;
+  white-space: normal;
+  margin: -8px;
+}
+
+* + nav.wrap {
+  margin: 8px -8px;
+}
+
+nav.wrap > a,
+nav.wrap > i,
+nav.wrap > button,
+nav.wrap > label {
+  margin: 8px;
+}
+
+.field.label > nav {
+  margin-top: 20px;
 }
