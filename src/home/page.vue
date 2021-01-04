@@ -62,13 +62,14 @@
   #begin
     .row
       .col.s12
-        #gif.card.no-padding
-          img.responsive(:src="'/beer-animation.gif'")
-          .absolute.top.left.right.center-align.padding.white-text
+        .card.blue-light-1.white-text
+          .center-align
             .h4 
               span Beer css!&nbsp;
             .h6 The most tasty, lightweight and easy css framework that you've seen!
-          .absolute.bottom.left.right.padding.white-text
+          #container-logo.center-align.middle-align.padding
+            img#logo(:src="'/favicon.png'")
+          .center-align
             .row.nowrap
               .col.center-align
                 div Based on
@@ -2066,6 +2067,12 @@
 </template>
 
 <script>
+$(window).on("load", () => {
+  setTimeout(() => {
+    $("#logo").addClass("active");
+  }, 360);
+});
+
 export default {
   data() {
     return {
@@ -2440,8 +2447,20 @@ export default {
   padding: 12px;
 }
 
-#gif {
-  height: 600px;
+#logo {
+  display: none;
+  max-width: 100%;
+  width: 360px;
+  border-radius: 50%;
+}
+
+#logo.active {
+  display: inline-block;
+  animation: logo-intro 1s;
+}
+
+#container-logo {
+  height: 360px;
 }
 
 pre * {
@@ -2470,6 +2489,21 @@ pre {
 @media only screen and (max-width: 600px) {
   body {
     margin: 0 16px 72px 16px !important;
+  }
+}
+
+@keyframes logo-intro {
+  0% {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5) translateY(25%);
+  }
+  75% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1.1) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translateY(0);
   }
 }
 </style>
