@@ -39,7 +39,6 @@
       p Item 2
       p Item 3
   #menu-bottom.menu.bottom.small-device
-    .small-space
     a(@click="updateMenu('#menu-bottom')")
       i zoom_out_map
       div Size
@@ -807,7 +806,7 @@
         .card.no-padding
           .row.nowrap
             .col
-              img.responsive.large(:src="'/beer-and-woman.jpg'")
+              img.responsive(:src="'/beer-and-woman.jpg'")
             .col
               .padding
                 h5 Title
@@ -818,7 +817,7 @@
         .card.no-padding
           .row.nowrap
             .col
-              img.responsive.large(:src="'/beer-and-woman.jpg'")
+              img.responsive(:src="'/beer-and-woman.jpg'")
               .absolute.top.left.right.padding.top-shadow.white-text
                 h5.no-margin Title
                 div Complementary text
