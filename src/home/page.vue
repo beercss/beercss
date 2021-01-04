@@ -62,7 +62,7 @@
   #begin
     .row
       .col.s12
-        .card.blue-light-1.white-text
+        .card
           .center-align
             .h4 
               span Beer css!&nbsp;
@@ -2443,6 +2443,9 @@ export default {
 </script>
 
 <style>
+#begin .card {
+  box-shadow: none;
+}
 #modal-colors .col > div {
   padding: 12px;
 }
