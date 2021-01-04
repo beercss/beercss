@@ -2,8 +2,20 @@
   padding: 12px;
 }
 
-#gif {
-  height: 600px;
+#logo {
+  display: none;
+  max-width: 100%;
+  width: 360px;
+  border-radius: 50%;
+}
+
+#logo.active {
+  display: inline-block;
+  animation: logo-intro 1s;
+}
+
+#container-logo {
+  height: 360px;
 }
 
 pre * {
@@ -32,5 +44,20 @@ pre {
 @media only screen and (max-width: 600px) {
   body {
     margin: 0 16px 72px 16px !important;
+  }
+}
+
+@keyframes logo-intro {
+  0% {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5) translateY(25%);
+  }
+  75% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1.1) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translateY(0);
   }
 }

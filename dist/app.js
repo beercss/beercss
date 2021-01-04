@@ -2434,6 +2434,11 @@ exports.default = void 0;
 //
 //
 //
+$(window).on("load", function () {
+  setTimeout(function () {
+    $("#logo").addClass("active");
+  }, 360);
+});
 var _default = {
   data: function data() {
     return {
@@ -2823,7 +2828,6 @@ exports.default = _default;
       "div",
       { staticClass: "menu bottom small-device", attrs: { id: "menu-bottom" } },
       [
-        _c("div", { staticClass: "small-space" }),
         _c(
           "a",
           {
@@ -2875,12 +2879,16 @@ exports.default = _default;
     _c("div", { attrs: { id: "begin" } }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding", attrs: { id: "gif" } }, [
-            _c("img", {
-              staticClass: "responsive",
-              attrs: { src: "/beer-animation.gif" }
-            }),
+          _c("div", { staticClass: "card blue-light-1 white-text" }, [
             _vm._m(4),
+            _c(
+              "div",
+              {
+                staticClass: "center-align middle-align padding",
+                attrs: { id: "container-logo" }
+              },
+              [_c("img", { attrs: { id: "logo", src: "/favicon.png" } })]
+            ),
             _vm._m(5)
           ]),
           _c("div", { staticClass: "space" }),
@@ -3635,7 +3643,7 @@ exports.default = _default;
             _c("div", { staticClass: "row nowrap" }, [
               _c("div", { staticClass: "col" }, [
                 _c("img", {
-                  staticClass: "responsive large",
+                  staticClass: "responsive",
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
@@ -3648,7 +3656,7 @@ exports.default = _default;
             _c("div", { staticClass: "row nowrap" }, [
               _c("div", { staticClass: "col" }, [
                 _c("img", {
-                  staticClass: "responsive large",
+                  staticClass: "responsive",
                   attrs: { src: "/beer-and-woman.jpg" }
                 }),
                 _vm._m(56)
@@ -4116,49 +4124,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "absolute top left right center-align padding white-text"
-      },
-      [
-        _c("div", { staticClass: "h4" }, [_c("span", [_vm._v("Beer css! ")])]),
-        _c("div", { staticClass: "h6" }, [
-          _vm._v(
-            "The most tasty, lightweight and easy css framework that you've seen!"
-          )
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "center-align" }, [
+      _c("div", { staticClass: "h4" }, [_c("span", [_vm._v("Beer css! ")])]),
+      _c("div", { staticClass: "h6" }, [
+        _vm._v(
+          "The most tasty, lightweight and easy css framework that you've seen!"
+        )
+      ])
+    ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "absolute bottom left right padding white-text" },
-      [
-        _c("div", { staticClass: "row nowrap" }, [
-          _c("div", { staticClass: "col center-align" }, [
-            _c("div", [_vm._v("Based on")]),
-            _c("div", { staticClass: "h6" }, [_vm._v("Material design")])
-          ]),
-          _c("div", { staticClass: "col center-align" }, [
-            _c("div", [_vm._v("Micro size of")]),
-            _c("div", { staticClass: "h6" }, [_vm._v("~7kb")])
-          ]),
-          _c("div", { staticClass: "col center-align" }, [
-            _c("div", [_vm._v("Only standard")]),
-            _c("div", { staticClass: "h6" }, [_vm._v("html, css, js")])
-          ]),
-          _c("div", { staticClass: "col center-align" }, [
-            _c("div", [_vm._v("Total css classes")]),
-            _c("div", { staticClass: "h6" }, [_vm._v("~100")])
-          ])
+    return _c("div", { staticClass: "center-align" }, [
+      _c("div", { staticClass: "row nowrap" }, [
+        _c("div", { staticClass: "col center-align" }, [
+          _c("div", [_vm._v("Based on")]),
+          _c("div", { staticClass: "h6" }, [_vm._v("Material design")])
+        ]),
+        _c("div", { staticClass: "col center-align" }, [
+          _c("div", [_vm._v("Micro size of")]),
+          _c("div", { staticClass: "h6" }, [_vm._v("~7kb")])
+        ]),
+        _c("div", { staticClass: "col center-align" }, [
+          _c("div", [_vm._v("Only standard")]),
+          _c("div", { staticClass: "h6" }, [_vm._v("html, css, js")])
+        ]),
+        _c("div", { staticClass: "col center-align" }, [
+          _c("div", [_vm._v("Total css classes")]),
+          _c("div", { staticClass: "h6" }, [_vm._v("~100")])
         ])
-      ]
-    )
+      ])
+    ])
   },
   function() {
     var _vm = this
