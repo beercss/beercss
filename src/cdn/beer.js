@@ -51,6 +51,7 @@
   };
 
   const insertBefore = (newElement, element) => {
+    if (!element) return;
     return element.parentNode.insertBefore(newElement, element);
   };
 
@@ -59,19 +60,23 @@
   };
 
   const remove = (element) => {
+    if (!element) return;
     element.remove();
   }
 
   const clone = (element) => {
+    if (!element) return;
     return element.cloneNode(true);
   };
 
   const prev = (element) => {
+    if (!element) return;
     return element.previousElementSibling;
   };
 
   const parent = (element) => {
-    return element.parentElement;
+    if (!element) return;
+    return element.parentNode;
   };
 
   const create = (json) => {
@@ -127,11 +132,18 @@
     if (!to)
       to = query(from.getAttribute("data-ui"));
 
+    if (hasClass(parent(from), "tabs")) return tab(from, to, config);
     if (hasClass(to, "modal")) return modal(from, to, config);
     if (hasClass(to, "dropdown")) return dropdown(from, to, config);
     if (hasClass(to, "toast")) return toast(from, to, config);
     if (hasClass(to, "page")) return page(from, to, config);
-    return tab(from, to, config);
+
+    if (hasClass(to, "active")) {
+      removeClass(to, "active");
+      return;
+    }
+
+    addClass(to, "active");
   };
 
   const tab = (from, to, config) => {
@@ -140,6 +152,7 @@
     var tabs = queryAll("a", container);
     tabs.forEach((x) => {
       removeClass(x, "active");
+      removeClass(query(x.getAttribute("data-ui")), "active");
     });
 
     addClass(from, "active");

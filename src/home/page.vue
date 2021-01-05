@@ -65,7 +65,7 @@
         .center-align
           .h4 
             span Beer css!
-          .h6 A material design framework that you write less and do more
+          .h6 Build material design interfaces in record time
         #container-logo.center-align.middle-align.padding
           img#logo(:src="'/favicon.png'")
         nav.center-align
@@ -575,53 +575,73 @@
         nav
           a.btn(data-ui="#modal") Modal
           a.btn(data-ui="#modal-calendar") Calendar
+      #pages.col.s12
+        h5
+          span Pages
+          a.chip.circle
+            i(@click="showSamples('#pages .page')") code
+        nav.wrap
+          a.btn(
+            onclick="$('#begin, #pages .page').attr('class', 'page left active');"
+          ) From left
+          a.btn(
+            onclick="$('#begin, #pages .page').attr('class', 'page top active');"
+          ) From top
+          a.btn(
+            onclick="$('#begin, #pages .page').attr('class', 'page bottom active');"
+          ) From bottom
+          a.btn(
+            onclick="$('#begin, #pages .page').attr('class', 'page right active');"
+          ) From right
+        div(style="display: none")
+          .page
       #tabs.col.s12
         h5
           span Tabs
           a.chip.circle
             i(@click="showSamples('#tabs .tabs')") code
         .tabs
-          a.active(data-ui="#") Tab 1
-          a(data-ui="#") Tab 2
-          a(data-ui="#") Tab 3
+          a.active(data-ui="#tab1") Tab 1
+          a(data-ui="#tab2") Tab 2
+          a(data-ui="#tab3") Tab 3
         .tabs
-          a.active(data-ui="#")
+          a.active(data-ui="#tab1")
             i home
             span Tab 1
-          a(data-ui="#")
+          a(data-ui="#tab2")
             i home
             span Tab 2
-          a(data-ui="#")
+          a(data-ui="#tab3")
             i home
             span Tab 3
         .tabs
-          a.active(data-ui="#") 
+          a.active(data-ui="#tab1") 
             span Tab 1
             i home
-          a(data-ui="#")
+          a(data-ui="#tab2")
             span Tab 2
             i home
-          a(data-ui="#")
+          a(data-ui="#tab3")
             span Tab 3
             i home
         .tabs
-          a.active(data-ui="#") 
+          a.active(data-ui="#modal") 
             i.wrap home
             span Tab 1
-          a(data-ui="#")
+          a(data-ui="#tab2")
             i.wrap home
             span Tab 2
-          a(data-ui="#")
+          a(data-ui="#tab3")
             i.wrap home
             span Tab 3
         .tabs
-          a.active(data-ui="#") 
+          a.active(data-ui="#tab1") 
             span Tab 1
             i.wrap home
-          a(data-ui="#")
+          a(data-ui="#tab2")
             span Tab 2
             i.wrap home
-          a(data-ui="#")
+          a(data-ui="#tab3")
             span Tab 3
             i.wrap home
       #toasts.col.s12.l6
