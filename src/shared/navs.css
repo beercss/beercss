@@ -19,7 +19,6 @@ nav > label {
 nav.wrap {
   display: block;
   white-space: normal;
-  margin: -8px;
 }
 
 * + nav.wrap {

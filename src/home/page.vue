@@ -62,28 +62,12 @@
   #begin
     .row
       .col.s12
-        .card
-          .center-align
-            .h4 
-              span Beer css!&nbsp;
-            .h6 The most tasty, lightweight and easy css framework that you've seen!
-          #container-logo.center-align.middle-align.padding
-            img#logo(:src="'/favicon.png'")
-          .center-align
-            .row.nowrap
-              .col.center-align
-                div Based on
-                .h6 Material design
-              .col.center-align
-                div Micro size of
-                .h6 ~7kb
-              .col.center-align
-                div Only standard
-                .h6 html, css, js
-              .col.center-align
-                div Total css classes
-                .h6 ~100
-        .space
+        .center-align
+          .h4 
+            span Beer css!
+          .h6 A material design framework that you write less and do more
+        #container-logo.center-align.middle-align.padding
+          img#logo(:src="'/favicon.png'")
         nav.center-align
           a.btn.large.border(
             href="https://www.npmjs.com/package/beercss",
@@ -95,8 +79,10 @@
           ) Github
           a.btn.large(href="https://www.patreon.com/beercss", target="_blank") Support us
         .space
-        .center-align An open source project created by Everton and Leonardo
-    .space
+        .center-align
+          div An open source project created by Everton and Leonardo
+          .small-text.grey-text Material design | Size of 7kb | Only native js/css
+    .large-divider
     #toasts
       #toast1.toast.pink.white-text
         i error
@@ -1792,8 +1778,9 @@
             button.small-device.medium-device.border.circle
               i laptop_windows
       .col.s12
-        .card.border.transparent
-          h5 Summary
+        .large-divider
+        div
+          h4.center-align Summary
           #helpers.medium-device.large-device
             h6 Helpers
             .row.nowrap
@@ -1850,6 +1837,7 @@
                 div border
                 div round
                 div circle
+                div none
               .col
                 b Texts
                 div italic
@@ -1887,7 +1875,7 @@
                 div is-menu-small
                 div is-menu-medium
                 div is-menu-large
-          .space
+            .space
           .row
             .col.s12
               h6 Elements
@@ -1992,11 +1980,10 @@
               .space
               div Or add attribute "data-ui" and call javascript function, to setup all automatically
               pre(v-html="autoSample")
-      .col.s12
-        .card.border.transparent
+        .large-divider
+        div
           .center-align 
-            .h5 Cheers to our sponsors!
-            label {{ sponsors }} of {{ sponsorsLimit }} sponsors
+            .h4 Thank you!
           .space
           .row
             .col.s3.center-align
@@ -2443,9 +2430,6 @@ export default {
 </script>
 
 <style>
-#begin .card {
-  box-shadow: none;
-}
 #modal-colors .col > div {
   padding: 12px;
 }

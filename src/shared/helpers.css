@@ -463,6 +463,11 @@ label {
   font-style: italic;
 }
 
+.none {
+  border: 0;
+  box-shadow: none;
+}
+
 @media only screen and (max-width: 600px) {
   .medium-device:not(.small-device),
   .large-device:not(.small-device),

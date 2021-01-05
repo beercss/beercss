@@ -2421,19 +2421,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -2879,27 +2866,21 @@ exports.default = _default;
     _c("div", { attrs: { id: "begin" } }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card" }, [
-            _vm._m(4),
-            _c(
-              "div",
-              {
-                staticClass: "center-align middle-align padding",
-                attrs: { id: "container-logo" }
-              },
-              [_c("img", { attrs: { id: "logo", src: "/favicon.png" } })]
-            ),
-            _vm._m(5)
-          ]),
+          _vm._m(4),
+          _c(
+            "div",
+            {
+              staticClass: "center-align middle-align padding",
+              attrs: { id: "container-logo" }
+            },
+            [_c("img", { attrs: { id: "logo", src: "/favicon.png" } })]
+          ),
+          _vm._m(5),
           _c("div", { staticClass: "space" }),
-          _vm._m(6),
-          _c("div", { staticClass: "space" }),
-          _c("div", { staticClass: "center-align" }, [
-            _vm._v("An open source project created by Everton and Leonardo")
-          ])
+          _vm._m(6)
         ])
       ]),
-      _c("div", { staticClass: "space" }),
+      _c("div", { staticClass: "large-divider" }),
       _vm._m(7),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col s12", attrs: { id: "badges" } }, [
@@ -3922,10 +3903,10 @@ exports.default = _default;
           _vm._m(83)
         ]),
         _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card border transparent" }, [
-            _c("h5", [_vm._v("Summary")]),
+          _c("div", { staticClass: "large-divider" }),
+          _c("div", [
+            _c("h4", { staticClass: "center-align" }, [_vm._v("Summary")]),
             _vm._m(84),
-            _c("div", { staticClass: "space" }),
             _vm._m(85),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
@@ -3949,23 +3930,10 @@ exports.default = _default;
                 _c("pre", { domProps: { innerHTML: _vm._s(_vm.autoSample) } })
               ])
             ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card border transparent" }, [
-            _c("div", { staticClass: "center-align" }, [
-              _c("div", { staticClass: "h5" }, [
-                _vm._v("Cheers to our sponsors!")
-              ]),
-              _c("label", [
-                _vm._v(
-                  _vm._s(_vm.sponsors) +
-                    " of " +
-                    _vm._s(_vm.sponsorsLimit) +
-                    " sponsors"
-                )
-              ])
-            ]),
+          ]),
+          _c("div", { staticClass: "large-divider" }),
+          _c("div", [
+            _vm._m(86),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s3 center-align" }, [
@@ -4026,16 +3994,16 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "large-space" }),
-            _vm._m(86),
+            _vm._m(87),
             _c("div", { staticClass: "space" }),
-            _vm._m(87)
+            _vm._m(88)
           ])
         ]),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
-            _vm._m(88),
+            _vm._m(89),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -4057,7 +4025,7 @@ exports.default = _default;
               ])
             }),
             _c("div", { staticClass: "space" }),
-            _vm._m(89)
+            _vm._m(90)
           ],
           2
         )
@@ -4125,36 +4093,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "center-align" }, [
-      _c("div", { staticClass: "h4" }, [_c("span", [_vm._v("Beer css! ")])]),
+      _c("div", { staticClass: "h4" }, [_c("span", [_vm._v("Beer css!")])]),
       _c("div", { staticClass: "h6" }, [
-        _vm._v(
-          "The most tasty, lightweight and easy css framework that you've seen!"
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "center-align" }, [
-      _c("div", { staticClass: "row nowrap" }, [
-        _c("div", { staticClass: "col center-align" }, [
-          _c("div", [_vm._v("Based on")]),
-          _c("div", { staticClass: "h6" }, [_vm._v("Material design")])
-        ]),
-        _c("div", { staticClass: "col center-align" }, [
-          _c("div", [_vm._v("Micro size of")]),
-          _c("div", { staticClass: "h6" }, [_vm._v("~7kb")])
-        ]),
-        _c("div", { staticClass: "col center-align" }, [
-          _c("div", [_vm._v("Only standard")]),
-          _c("div", { staticClass: "h6" }, [_vm._v("html, css, js")])
-        ]),
-        _c("div", { staticClass: "col center-align" }, [
-          _c("div", [_vm._v("Total css classes")]),
-          _c("div", { staticClass: "h6" }, [_vm._v("~100")])
-        ])
+        _vm._v("A material design framework that you write less and do more")
       ])
     ])
   },
@@ -4193,6 +4134,19 @@ var staticRenderFns = [
         },
         [_vm._v("Support us")]
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "center-align" }, [
+      _c("div", [
+        _vm._v("An open source project created by Everton and Leonardo")
+      ]),
+      _c("div", { staticClass: "small-text grey-text" }, [
+        _vm._v("Material design | Size of 7kb | Only native js/css")
+      ])
     ])
   },
   function() {
@@ -7109,7 +7063,8 @@ var staticRenderFns = [
             _c("b", [_vm._v("Form")]),
             _c("div", [_vm._v("border")]),
             _c("div", [_vm._v("round")]),
-            _c("div", [_vm._v("circle")])
+            _c("div", [_vm._v("circle")]),
+            _c("div", [_vm._v("none")])
           ]),
           _c("div", { staticClass: "col" }, [
             _c("b", [_vm._v("Texts")]),
@@ -7151,7 +7106,8 @@ var staticRenderFns = [
             _c("div", [_vm._v("is-menu-medium")]),
             _c("div", [_vm._v("is-menu-large")])
           ])
-        ])
+        ]),
+        _c("div", { staticClass: "space" })
       ]
     )
   },
@@ -7339,6 +7295,14 @@ var staticRenderFns = [
           _vm._v("* Element unique helpers")
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "center-align" }, [
+      _c("div", { staticClass: "h4" }, [_vm._v("Thank you!")])
     ])
   },
   function() {
