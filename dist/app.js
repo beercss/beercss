@@ -2879,7 +2879,7 @@ exports.default = _default;
     _c("div", { attrs: { id: "begin" } }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card blue-light-1 white-text" }, [
+          _c("div", { staticClass: "card" }, [
             _vm._m(4),
             _c(
               "div",
