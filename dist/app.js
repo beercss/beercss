@@ -2421,6 +2421,26 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -3339,6 +3359,26 @@ exports.default = _default;
           ]),
           _vm._m(30)
         ]),
+        _c("div", { staticClass: "col s12", attrs: { id: "pages" } }, [
+          _c("h5", [
+            _c("span", [_vm._v("Pages")]),
+            _c("a", { staticClass: "chip circle" }, [
+              _c(
+                "i",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#pages .page")
+                    }
+                  }
+                },
+                [_vm._v("code")]
+              )
+            ])
+          ]),
+          _vm._m(31),
+          _vm._m(32)
+        ]),
         _c("div", { staticClass: "col s12", attrs: { id: "tabs" } }, [
           _c("h5", [
             _c("span", [_vm._v("Tabs")]),
@@ -3356,11 +3396,11 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(31),
-          _vm._m(32),
           _vm._m(33),
           _vm._m(34),
-          _vm._m(35)
+          _vm._m(35),
+          _vm._m(36),
+          _vm._m(37)
         ]),
         _c("div", { staticClass: "col s12 l6", attrs: { id: "toasts" } }, [
           _c("h5", [
@@ -3447,7 +3487,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(36)
+          _vm._m(38)
         ])
       ]),
       _c("div", { staticClass: "row", attrs: { id: "typography" } }, [
@@ -3469,8 +3509,8 @@ exports.default = _default;
             ])
           ])
         ]),
-        _vm._m(37),
-        _vm._m(38)
+        _vm._m(39),
+        _vm._m(40)
       ]),
       _c("div", { staticClass: "row", attrs: { id: "cards" } }, [
         _c("div", { staticClass: "col s12" }, [
@@ -3500,27 +3540,13 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(39)
-            ]),
-            _vm._m(40)
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card round" }, [
-            _c("div", { staticClass: "row nowrap" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "circle large",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
               _vm._m(41)
             ]),
             _vm._m(42)
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card border" }, [
+          _c("div", { staticClass: "card round" }, [
             _c("div", { staticClass: "row nowrap" }, [
               _c("div", { staticClass: "col min" }, [
                 _c("img", {
@@ -3534,7 +3560,7 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card border round" }, [
+          _c("div", { staticClass: "card border" }, [
             _c("div", { staticClass: "row nowrap" }, [
               _c("div", { staticClass: "col min" }, [
                 _c("img", {
@@ -3548,25 +3574,21 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding" }, [
-            _c("img", {
-              staticClass: "responsive small",
-              attrs: { src: "/beer-and-woman.jpg" }
-            }),
-            _vm._m(47)
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding round" }, [
-            _c("img", {
-              staticClass: "responsive small",
-              attrs: { src: "/beer-and-woman.jpg" }
-            }),
+          _c("div", { staticClass: "card border round" }, [
+            _c("div", { staticClass: "row nowrap" }, [
+              _c("div", { staticClass: "col min" }, [
+                _c("img", {
+                  staticClass: "circle large",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _vm._m(47)
+            ]),
             _vm._m(48)
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding border" }, [
+          _c("div", { staticClass: "card no-padding" }, [
             _c("img", {
               staticClass: "responsive small",
               attrs: { src: "/beer-and-woman.jpg" }
@@ -3575,7 +3597,7 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding border round" }, [
+          _c("div", { staticClass: "card no-padding round" }, [
             _c("img", {
               staticClass: "responsive small",
               attrs: { src: "/beer-and-woman.jpg" }
@@ -3584,25 +3606,25 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding" }, [
+          _c("div", { staticClass: "card no-padding border" }, [
             _c("img", {
-              staticClass: "responsive medium",
+              staticClass: "responsive small",
               attrs: { src: "/beer-and-woman.jpg" }
             }),
             _vm._m(51)
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding round" }, [
+          _c("div", { staticClass: "card no-padding border round" }, [
             _c("img", {
-              staticClass: "responsive medium round",
+              staticClass: "responsive small",
               attrs: { src: "/beer-and-woman.jpg" }
             }),
             _vm._m(52)
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding border" }, [
+          _c("div", { staticClass: "card no-padding" }, [
             _c("img", {
               staticClass: "responsive medium",
               attrs: { src: "/beer-and-woman.jpg" }
@@ -3611,12 +3633,30 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding border round" }, [
+          _c("div", { staticClass: "card no-padding round" }, [
             _c("img", {
               staticClass: "responsive medium round",
               attrs: { src: "/beer-and-woman.jpg" }
             }),
             _vm._m(54)
+          ])
+        ]),
+        _c("div", { staticClass: "col s12 m6 l3" }, [
+          _c("div", { staticClass: "card no-padding border" }, [
+            _c("img", {
+              staticClass: "responsive medium",
+              attrs: { src: "/beer-and-woman.jpg" }
+            }),
+            _vm._m(55)
+          ])
+        ]),
+        _c("div", { staticClass: "col s12 m6 l3" }, [
+          _c("div", { staticClass: "card no-padding border round" }, [
+            _c("img", {
+              staticClass: "responsive medium round",
+              attrs: { src: "/beer-and-woman.jpg" }
+            }),
+            _vm._m(56)
           ])
         ]),
         _c("div", { staticClass: "col s12 l6" }, [
@@ -3628,7 +3668,7 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(55)
+              _vm._m(57)
             ])
           ])
         ]),
@@ -3640,14 +3680,14 @@ exports.default = _default;
                   staticClass: "responsive",
                   attrs: { src: "/beer-and-woman.jpg" }
                 }),
-                _vm._m(56)
+                _vm._m(58)
               ]),
-              _vm._m(57)
+              _vm._m(59)
             ])
           ])
         ])
       ]),
-      _vm._m(58),
+      _vm._m(60),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col s12" }, [
           _c("h5", [
@@ -3667,32 +3707,22 @@ exports.default = _default;
             ])
           ]),
           _c("div", { staticClass: "card", attrs: { id: "list" } }, [
-            _vm._m(59),
+            _vm._m(61),
             _c("div", { staticClass: "space" }),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Today")
             ]),
-            _vm._m(60),
-            _vm._m(61),
             _vm._m(62),
+            _vm._m(63),
+            _vm._m(64),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Yesterday")
             ]),
-            _vm._m(63),
-            _vm._m(64),
             _vm._m(65),
+            _vm._m(66),
+            _vm._m(67),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Older")
-            ]),
-            _c("div", { staticClass: "row nowrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "circle tiny",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _vm._m(66),
-              _vm._m(67)
             ]),
             _c("div", { staticClass: "row nowrap middle-align" }, [
               _c("div", { staticClass: "col min" }, [
@@ -3713,6 +3743,16 @@ exports.default = _default;
               ]),
               _vm._m(70),
               _vm._m(71)
+            ]),
+            _c("div", { staticClass: "row nowrap middle-align" }, [
+              _c("div", { staticClass: "col min" }, [
+                _c("img", {
+                  staticClass: "circle tiny",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _vm._m(72),
+              _vm._m(73)
             ])
           ]),
           _c("h5", [
@@ -3731,7 +3771,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(72),
+          _vm._m(74),
           _c("h5", [
             _c("span", [_vm._v("Inputs")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3748,7 +3788,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(73),
+          _vm._m(75),
           _c("h5", [
             _c("span", [_vm._v("Selects")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3765,7 +3805,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(74),
+          _vm._m(76),
           _c("h5", [
             _c("span", [_vm._v("Checkboxes")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3782,7 +3822,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(75),
+          _vm._m(77),
           _c("h5", [
             _c("span", [_vm._v("Switches")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3799,7 +3839,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(76),
+          _vm._m(78),
           _c("h5", [
             _c("span", [_vm._v("Radios")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -3816,12 +3856,12 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(77),
+          _vm._m(79),
           _c(
             "div",
             { staticClass: "modal right large", attrs: { id: "modal-colors" } },
             [
-              _vm._m(78),
+              _vm._m(80),
               _c("nav", [
                 _c("label", [
                   _c("input", {
@@ -3847,10 +3887,10 @@ exports.default = _default;
                 ])
               ]),
               _c("span", { staticClass: "space" }),
-              _vm._m(79)
+              _vm._m(81)
             ]
           ),
-          _vm._m(80),
+          _vm._m(82),
           _c(
             "div",
             {
@@ -3858,7 +3898,7 @@ exports.default = _default;
               attrs: { id: "modal-samples" }
             },
             [
-              _vm._m(81),
+              _vm._m(83),
               _c("div", { staticClass: "space" }),
               _vm._l(_vm.samples, function(exemplo) {
                 return _c("div", { staticClass: "card border" }, [
@@ -3882,7 +3922,7 @@ exports.default = _default;
             ],
             2
           ),
-          _vm._m(82)
+          _vm._m(84)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "responsive" } }, [
           _c("h5", [
@@ -3900,14 +3940,14 @@ exports.default = _default;
               [_c("i", [_vm._v("code")])]
             )
           ]),
-          _vm._m(83)
+          _vm._m(85)
         ]),
         _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "large-divider" }),
           _c("div", [
             _c("h4", { staticClass: "center-align" }, [_vm._v("Summary")]),
-            _vm._m(84),
-            _vm._m(85),
+            _vm._m(86),
+            _vm._m(87),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s12" }, [
@@ -3933,7 +3973,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "large-divider" }),
           _c("div", [
-            _vm._m(86),
+            _vm._m(88),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s3 center-align" }, [
@@ -3994,16 +4034,16 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "large-space" }),
-            _vm._m(87),
+            _vm._m(89),
             _c("div", { staticClass: "space" }),
-            _vm._m(88)
+            _vm._m(90)
           ])
         ]),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
-            _vm._m(89),
+            _vm._m(91),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -4025,7 +4065,7 @@ exports.default = _default;
               ])
             }),
             _c("div", { staticClass: "space" }),
-            _vm._m(90)
+            _vm._m(92)
           ],
           2
         )
@@ -4095,7 +4135,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "center-align" }, [
       _c("div", { staticClass: "h4" }, [_c("span", [_vm._v("Beer css!")])]),
       _c("div", { staticClass: "h6" }, [
-        _vm._v("A material design framework that you write less and do more")
+        _vm._v("Build material design interfaces in record time")
       ])
     ])
   },
@@ -4778,12 +4818,59 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tabs" }, [
-      _c("a", { staticClass: "active", attrs: { "data-ui": "#" } }, [
-        _vm._v("Tab 1")
-      ]),
-      _c("a", { attrs: { "data-ui": "#" } }, [_vm._v("Tab 2")]),
-      _c("a", { attrs: { "data-ui": "#" } }, [_vm._v("Tab 3")])
+    return _c("nav", { staticClass: "wrap" }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn",
+          attrs: {
+            onclick:
+              "$('#begin, #pages .page').attr('class', 'page left active');"
+          }
+        },
+        [_vm._v("From left")]
+      ),
+      _c(
+        "a",
+        {
+          staticClass: "btn",
+          attrs: {
+            onclick:
+              "$('#begin, #pages .page').attr('class', 'page top active');"
+          }
+        },
+        [_vm._v("From top")]
+      ),
+      _c(
+        "a",
+        {
+          staticClass: "btn",
+          attrs: {
+            onclick:
+              "$('#begin, #pages .page').attr('class', 'page bottom active');"
+          }
+        },
+        [_vm._v("From bottom")]
+      ),
+      _c(
+        "a",
+        {
+          staticClass: "btn",
+          attrs: {
+            onclick:
+              "$('#begin, #pages .page').attr('class', 'page right active');"
+          }
+        },
+        [_vm._v("From right")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: { display: "none" } }, [
+      _c("div", { staticClass: "page" })
     ])
   },
   function() {
@@ -4791,15 +4878,27 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "tabs" }, [
-      _c("a", { staticClass: "active", attrs: { "data-ui": "#" } }, [
+      _c("a", { staticClass: "active", attrs: { "data-ui": "#tab1" } }, [
+        _vm._v("Tab 1")
+      ]),
+      _c("a", { attrs: { "data-ui": "#tab2" } }, [_vm._v("Tab 2")]),
+      _c("a", { attrs: { "data-ui": "#tab3" } }, [_vm._v("Tab 3")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "tabs" }, [
+      _c("a", { staticClass: "active", attrs: { "data-ui": "#tab1" } }, [
         _c("i", [_vm._v("home")]),
         _c("span", [_vm._v("Tab 1")])
       ]),
-      _c("a", { attrs: { "data-ui": "#" } }, [
+      _c("a", { attrs: { "data-ui": "#tab2" } }, [
         _c("i", [_vm._v("home")]),
         _c("span", [_vm._v("Tab 2")])
       ]),
-      _c("a", { attrs: { "data-ui": "#" } }, [
+      _c("a", { attrs: { "data-ui": "#tab3" } }, [
         _c("i", [_vm._v("home")]),
         _c("span", [_vm._v("Tab 3")])
       ])
@@ -4810,15 +4909,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "tabs" }, [
-      _c("a", { staticClass: "active", attrs: { "data-ui": "#" } }, [
+      _c("a", { staticClass: "active", attrs: { "data-ui": "#tab1" } }, [
         _c("span", [_vm._v("Tab 1")]),
         _c("i", [_vm._v("home")])
       ]),
-      _c("a", { attrs: { "data-ui": "#" } }, [
+      _c("a", { attrs: { "data-ui": "#tab2" } }, [
         _c("span", [_vm._v("Tab 2")]),
         _c("i", [_vm._v("home")])
       ]),
-      _c("a", { attrs: { "data-ui": "#" } }, [
+      _c("a", { attrs: { "data-ui": "#tab3" } }, [
         _c("span", [_vm._v("Tab 3")]),
         _c("i", [_vm._v("home")])
       ])
@@ -4829,15 +4928,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "tabs" }, [
-      _c("a", { staticClass: "active", attrs: { "data-ui": "#" } }, [
+      _c("a", { staticClass: "active", attrs: { "data-ui": "#modal" } }, [
         _c("i", { staticClass: "wrap" }, [_vm._v("home")]),
         _c("span", [_vm._v("Tab 1")])
       ]),
-      _c("a", { attrs: { "data-ui": "#" } }, [
+      _c("a", { attrs: { "data-ui": "#tab2" } }, [
         _c("i", { staticClass: "wrap" }, [_vm._v("home")]),
         _c("span", [_vm._v("Tab 2")])
       ]),
-      _c("a", { attrs: { "data-ui": "#" } }, [
+      _c("a", { attrs: { "data-ui": "#tab3" } }, [
         _c("i", { staticClass: "wrap" }, [_vm._v("home")]),
         _c("span", [_vm._v("Tab 3")])
       ])
@@ -4848,15 +4947,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "tabs" }, [
-      _c("a", { staticClass: "active", attrs: { "data-ui": "#" } }, [
+      _c("a", { staticClass: "active", attrs: { "data-ui": "#tab1" } }, [
         _c("span", [_vm._v("Tab 1")]),
         _c("i", { staticClass: "wrap" }, [_vm._v("home")])
       ]),
-      _c("a", { attrs: { "data-ui": "#" } }, [
+      _c("a", { attrs: { "data-ui": "#tab2" } }, [
         _c("span", [_vm._v("Tab 2")]),
         _c("i", { staticClass: "wrap" }, [_vm._v("home")])
       ]),
-      _c("a", { attrs: { "data-ui": "#" } }, [
+      _c("a", { attrs: { "data-ui": "#tab3" } }, [
         _c("span", [_vm._v("Tab 3")]),
         _c("i", { staticClass: "wrap" }, [_vm._v("home")])
       ])
