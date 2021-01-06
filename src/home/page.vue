@@ -79,9 +79,7 @@
           ) Github
           a.btn.large(href="https://www.patreon.com/beercss", target="_blank") Support us
         .space
-        .center-align
-          div An open source project created by Everton and Leonardo
-          .small-text.grey-text Material design | Size of 7kb | Only native js/css
+        .center-align An open source project created by Everton and Leonardo
     .large-divider
     #toasts
       #toast1.toast.pink.white-text
@@ -601,47 +599,47 @@
           a.chip.circle
             i(@click="showSamples('#tabs .tabs')") code
         .tabs
-          a.active(data-ui="#tab1") Tab 1
-          a(data-ui="#tab2") Tab 2
-          a(data-ui="#tab3") Tab 3
+          a.active(data-ui="#tab") Tab 1
+          a(data-ui="#tab") Tab 2
+          a(data-ui="#tab") Tab 3
         .tabs
-          a.active(data-ui="#tab1")
+          a.active(data-ui="#tab")
             i home
             span Tab 1
-          a(data-ui="#tab2")
+          a(data-ui="#tab")
             i home
             span Tab 2
-          a(data-ui="#tab3")
+          a(data-ui="#tab")
             i home
             span Tab 3
         .tabs
-          a.active(data-ui="#tab1") 
+          a.active(data-ui="#tab") 
             span Tab 1
             i home
-          a(data-ui="#tab2")
+          a(data-ui="#tab")
             span Tab 2
             i home
-          a(data-ui="#tab3")
+          a(data-ui="#tab")
             span Tab 3
             i home
         .tabs
-          a.active(data-ui="#modal") 
+          a.active(data-ui="#tab") 
             i.wrap home
             span Tab 1
-          a(data-ui="#tab2")
+          a(data-ui="#tab")
             i.wrap home
             span Tab 2
-          a(data-ui="#tab3")
+          a(data-ui="#tab")
             i.wrap home
             span Tab 3
         .tabs
-          a.active(data-ui="#tab1") 
+          a.active(data-ui="#tab") 
             span Tab 1
             i.wrap home
-          a(data-ui="#tab2")
+          a(data-ui="#tab")
             span Tab 2
             i.wrap home
-          a(data-ui="#tab3")
+          a(data-ui="#tab")
             span Tab 3
             i.wrap home
       #toasts.col.s12.l6
