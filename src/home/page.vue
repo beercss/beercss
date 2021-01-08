@@ -573,6 +573,20 @@
         nav
           a.btn(data-ui="#modal") Modal
           a.btn(data-ui="#modal-calendar") Calendar
+      #navs.col.s12
+        h5
+          span Navs
+          a.chip.circle
+            i(@click="showSamples('#navs nav')") code
+        nav
+          a.btn Button
+          a.chip Filter
+          i home
+          a
+            svg.loader.medium(viewBox="0 0 66 66")
+              circle(fill="none", cx="33", cy="33", r="30")
+          a
+            img.circle(:src="'/beer-and-woman.jpg'")
       #pages.col.s12
         h5
           span Pages
@@ -2132,17 +2146,17 @@ export default {
   mounted() {
     this.htmlSample = hljs.highlight(
       "html",
-      '<div class="modal active">...</div>\n<div class="dropdown active">...</div>\n<div class="overlay active">...</div>'
+      '<div class="modal active">...</div>\n<div class="dropdown active">...</div>\n<div class="overlay active">...</div>\n<div class="page active">...</div>\n<div class="toast active">...</div>'
     ).value;
 
     this.jsSample = hljs.highlight(
       "html",
-      'ui("#modal");\nui("#dropdown");\nui("#overlay");\nui("#toast");'
+      'ui("#modal");\nui("#dropdown");\nui("#overlay");\nui("#page");\nui("#toast");'
     ).value;
 
     this.autoSample = hljs.highlight(
       "html",
-      '<a data-ui="#modal">...</a>\n<a data-ui="#dropdown">...</a>\n<a data-ui="#overlay">...</a>\n<a data-ui="#toast">...</a>\n\nui();'
+      '<a data-ui="#modal">...</a>\n<a data-ui="#dropdown">...</a>\n<a data-ui="#overlay">...</a>\n<a data-ui="#page">...</a>\n<a data-ui="#toast">...</a>\n\nui();'
     ).value;
 
     ui();
