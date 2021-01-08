@@ -583,9 +583,6 @@
           a.chip Filter
           i home
           a
-            svg.loader.medium(viewBox="0 0 66 66")
-              circle(fill="none", cx="33", cy="33", r="30")
-          a
             img.circle(:src="'/beer-and-woman.jpg'")
       #pages.col.s12
         h5

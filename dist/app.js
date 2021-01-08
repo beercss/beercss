@@ -2485,9 +2485,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -3429,20 +3426,6 @@ exports.default = _default;
             _c("a", { staticClass: "btn" }, [_vm._v("Button")]),
             _c("a", { staticClass: "chip" }, [_vm._v("Filter")]),
             _c("i", [_vm._v("home")]),
-            _c("a", [
-              _c(
-                "svg",
-                {
-                  staticClass: "loader medium",
-                  attrs: { viewBox: "0 0 66 66" }
-                },
-                [
-                  _c("circle", {
-                    attrs: { fill: "none", cx: "33", cy: "33", r: "30" }
-                  })
-                ]
-              )
-            ]),
             _c("a", [
               _c("img", {
                 staticClass: "circle",
