@@ -2485,6 +2485,13 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -2497,9 +2504,7 @@ var _default = {
       samples: [],
       htmlSample: null,
       jsSample: null,
-      autoSample: null,
-      sponsors: 4,
-      sponsorsLimit: 24
+      autoSample: null
     };
   },
   watch: {},
@@ -4051,61 +4056,92 @@ exports.default = _default;
             _vm._m(87),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s3 center-align" }, [
-                _c("img", {
-                  staticClass: "white extra border circle",
-                  attrs: { src: "/myrp.png" }
-                }),
-                _c("div", [_vm._v("myrp")])
+              _c("div", { staticClass: "col s6 m4 l3 center-align" }, [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "https://www.myrp.com.br", target: "_blank" }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "white extra border circle",
+                      attrs: { src: "/myrp.png" }
+                    })
+                  ]
+                ),
+                _c("p", [_vm._v("Myrp")])
               ]),
-              _c("div", { staticClass: "col s3 center-align" }, [
-                _c("img", {
-                  staticClass: "white extra border circle",
-                  attrs: { src: "/inventti.jpg" }
-                }),
-                _c("div", [_vm._v("inventti")])
+              _c("div", { staticClass: "col s6 m4 l3 center-align" }, [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href: "https://www.inventti.com.br",
+                      target: "_blank"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "white extra border circle",
+                      attrs: { src: "/inventti.jpg" }
+                    })
+                  ]
+                ),
+                _c("p", [_vm._v("Inventti")])
               ]),
-              _c("div", { staticClass: "col s3 center-align" }, [
-                _c("img", {
-                  staticClass: "white extra border circle",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _c("div", [_vm._v("Sponsor 3")])
+              _c("div", { staticClass: "col s6 m4 l3 center-align" }, [
+                _c("a", [
+                  _c("img", {
+                    staticClass: "white extra border circle",
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("p", [_vm._v("Sponsor 3")])
               ]),
-              _c("div", { staticClass: "col s3 center-align" }, [
-                _c("img", {
-                  staticClass: "white extra border circle",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _c("div", [_vm._v("Sponsor 4")])
+              _c("div", { staticClass: "col s6 m4 l3 center-align" }, [
+                _c("a", [
+                  _c("img", {
+                    staticClass: "white extra border circle",
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("p", [_vm._v("Sponsor 4")])
               ]),
-              _c("div", { staticClass: "col s3 center-align" }, [
-                _c("img", {
-                  staticClass: "white extra border circle",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _c("div", [_vm._v("Sponsor 5")])
+              _c("div", { staticClass: "col s6 m4 l3 center-align" }, [
+                _c("a", [
+                  _c("img", {
+                    staticClass: "white extra border circle",
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("p", [_vm._v("Sponsor 5")])
               ]),
-              _c("div", { staticClass: "col s3 center-align" }, [
-                _c("img", {
-                  staticClass: "white extra border circle",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _c("div", [_vm._v("Sponsor 6")])
+              _c("div", { staticClass: "col s6 m4 l3 center-align" }, [
+                _c("a", [
+                  _c("img", {
+                    staticClass: "white extra border circle",
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("p", [_vm._v("Sponsor 6")])
               ]),
-              _c("div", { staticClass: "col s3 center-align" }, [
-                _c("img", {
-                  staticClass: "white extra border circle",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _c("div", [_vm._v("Sponsor 7")])
+              _c("div", { staticClass: "col s6 m4 l3 center-align" }, [
+                _c("a", [
+                  _c("img", {
+                    staticClass: "white extra border circle",
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("p", [_vm._v("Sponsor 7")])
               ]),
-              _c("div", { staticClass: "col s3 center-align" }, [
-                _c("img", {
-                  staticClass: "white extra border circle",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _c("div", [_vm._v("Sponsor 8")])
+              _c("div", { staticClass: "col s6 m4 l3 center-align" }, [
+                _c("a", [
+                  _c("img", {
+                    staticClass: "white extra border circle",
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("p", [_vm._v("Sponsor 8")])
               ])
             ]),
             _c("div", { staticClass: "large-space" }),
@@ -7535,27 +7571,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12 center-align" }, [
-        _c("div", { staticClass: "chip" }, [
-          _vm._v("Leonardo Rafael Wehrmeister")
-        ]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Everton Alcides Buzzi")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 11")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 12")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 13")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 14")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 15")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 16")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 17")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 18")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 19")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 20")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 21")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 22")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 23")]),
-        _c("div", { staticClass: "chip" }, [_vm._v("Sponsor 24")])
-      ])
+    return _c("nav", { staticClass: "wrap center-align" }, [
+      _c("a", { staticClass: "chip" }, [_vm._v("Leonardo Rafael Wehrmeister")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Everton Alcides Buzzi")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 11")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 12")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 13")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 14")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 15")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 16")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 17")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 18")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 19")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 20")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 21")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 22")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 23")]),
+      _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 24")])
     ])
   },
   function() {

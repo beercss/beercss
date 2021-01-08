@@ -2050,49 +2050,56 @@
             .h4 Thank you!
           .space
           .row
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/myrp.png'")
-              div myrp
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/inventti.jpg'")
-              div inventti
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 3
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 4
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 5
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 6
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 7
-            .col.s3.center-align
-              img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-              div Sponsor 8
+            .col.s6.m4.l3.center-align
+              a(href="https://www.myrp.com.br", target="_blank")
+                img.white.extra.border.circle(:src="'/myrp.png'")
+              p Myrp
+            .col.s6.m4.l3.center-align
+              a(href="https://www.inventti.com.br", target="_blank")
+                img.white.extra.border.circle(:src="'/inventti.jpg'")
+              p Inventti
+            .col.s6.m4.l3.center-align
+              a
+                img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              p Sponsor 3
+            .col.s6.m4.l3.center-align
+              a
+                img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              p Sponsor 4
+            .col.s6.m4.l3.center-align
+              a
+                img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              p Sponsor 5
+            .col.s6.m4.l3.center-align
+              a
+                img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              p Sponsor 6
+            .col.s6.m4.l3.center-align
+              a
+                img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              p Sponsor 7
+            .col.s6.m4.l3.center-align
+              a
+                img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
+              p Sponsor 8
           .large-space
-          .row
-            .col.s12.center-align
-              .chip Leonardo Rafael Wehrmeister
-              .chip Everton Alcides Buzzi
-              .chip Sponsor 11
-              .chip Sponsor 12
-              .chip Sponsor 13
-              .chip Sponsor 14
-              .chip Sponsor 15
-              .chip Sponsor 16
-              .chip Sponsor 17
-              .chip Sponsor 18
-              .chip Sponsor 19
-              .chip Sponsor 20
-              .chip Sponsor 21
-              .chip Sponsor 22
-              .chip Sponsor 23
-              .chip Sponsor 24
+          nav.wrap.center-align
+            a.chip Leonardo Rafael Wehrmeister
+            a.chip Everton Alcides Buzzi
+            a.chip Sponsor 11
+            a.chip Sponsor 12
+            a.chip Sponsor 13
+            a.chip Sponsor 14
+            a.chip Sponsor 15
+            a.chip Sponsor 16
+            a.chip Sponsor 17
+            a.chip Sponsor 18
+            a.chip Sponsor 19
+            a.chip Sponsor 20
+            a.chip Sponsor 21
+            a.chip Sponsor 22
+            a.chip Sponsor 23
+            a.chip Sponsor 24
           .space
           nav.center-align
             a.btn.large(
@@ -2132,8 +2139,6 @@ export default {
       htmlSample: null,
       jsSample: null,
       autoSample: null,
-      sponsors: 4,
-      sponsorsLimit: 24,
     };
   },
   watch: {},
