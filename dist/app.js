@@ -2474,6 +2474,20 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -2496,9 +2510,9 @@ var _default = {
     $("body").addClass("is-dark");
   },
   mounted: function mounted() {
-    this.htmlSample = hljs.highlight("html", '<div class="modal active">...</div>\n<div class="dropdown active">...</div>\n<div class="overlay active">...</div>').value;
-    this.jsSample = hljs.highlight("html", 'ui("#modal");\nui("#dropdown");\nui("#overlay");\nui("#toast");').value;
-    this.autoSample = hljs.highlight("html", '<a data-ui="#modal">...</a>\n<a data-ui="#dropdown">...</a>\n<a data-ui="#overlay">...</a>\n<a data-ui="#toast">...</a>\n\nui();').value;
+    this.htmlSample = hljs.highlight("html", '<div class="modal active">...</div>\n<div class="dropdown active">...</div>\n<div class="overlay active">...</div>\n<div class="page active">...</div>\n<div class="toast active">...</div>').value;
+    this.jsSample = hljs.highlight("html", 'ui("#modal");\nui("#dropdown");\nui("#overlay");\nui("#page");\nui("#toast");').value;
+    this.autoSample = hljs.highlight("html", '<a data-ui="#modal">...</a>\n<a data-ui="#dropdown">...</a>\n<a data-ui="#overlay">...</a>\n<a data-ui="#page">...</a>\n<a data-ui="#toast">...</a>\n\nui();').value;
     ui();
     this.chartSamples();
     this.listSamples();
@@ -3393,6 +3407,49 @@ exports.default = _default;
             ])
           ]),
           _vm._m(29)
+        ]),
+        _c("div", { staticClass: "col s12", attrs: { id: "navs" } }, [
+          _c("h5", [
+            _c("span", [_vm._v("Navs")]),
+            _c("a", { staticClass: "chip circle" }, [
+              _c(
+                "i",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#navs nav")
+                    }
+                  }
+                },
+                [_vm._v("code")]
+              )
+            ])
+          ]),
+          _c("nav", [
+            _c("a", { staticClass: "btn" }, [_vm._v("Button")]),
+            _c("a", { staticClass: "chip" }, [_vm._v("Filter")]),
+            _c("i", [_vm._v("home")]),
+            _c("a", [
+              _c(
+                "svg",
+                {
+                  staticClass: "loader medium",
+                  attrs: { viewBox: "0 0 66 66" }
+                },
+                [
+                  _c("circle", {
+                    attrs: { fill: "none", cx: "33", cy: "33", r: "30" }
+                  })
+                ]
+              )
+            ]),
+            _c("a", [
+              _c("img", {
+                staticClass: "circle",
+                attrs: { src: "/beer-and-woman.jpg" }
+              })
+            ])
+          ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "pages" } }, [
           _c("h5", [
