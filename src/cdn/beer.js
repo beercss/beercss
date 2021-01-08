@@ -132,11 +132,12 @@
     if (!to)
       to = query(from.getAttribute("data-ui"));
 
-    if (hasClass(parent(from), "tabs")) return tab(from, to, config);
     if (hasClass(to, "modal")) return modal(from, to, config);
     if (hasClass(to, "dropdown")) return dropdown(from, to, config);
     if (hasClass(to, "toast")) return toast(from, to, config);
     if (hasClass(to, "page")) return page(from, to, config);
+
+    tab(from, to, config);
 
     if (hasClass(to, "active")) {
       removeClass(to, "active");
@@ -148,32 +149,32 @@
 
   const tab = (from, to, config) => {
     var container = parent(from);
+    if (!hasClass(container, "tabs"))
+      return;
 
     var tabs = queryAll("a", container);
     tabs.forEach((x) => {
       removeClass(x, "active");
-      removeClass(query(x.getAttribute("data-ui")), "active");
     });
 
     addClass(from, "active");
-    addClass(to, "active");
   };
 
   const page = (from, to, config) => {
-    if (hasClass(to, "active")) {
-      removeClass(to, "active");
-      return;
-    }
+    tab(from, to, config);
 
-    var pages = queryAll(".page");
-    pages.forEach((x) => {
-      removeClass(x, "active");
-    });
+    var container = parent(to);
+    for (var i = 0; i < container.children.length; i++) {
+      if (hasClass(container.children[i], "page"))
+        removeClass(container.children[i], "active");
+    }
 
     addClass(to, "active");
   };
 
   const dropdown = (from, to, config) => {
+    tab(from, to, config);
+
     if (hasClass(to, "active")) {
       removeClass(to, "active");
       return;
@@ -189,6 +190,8 @@
   };
 
   const modal = (from, to, config) => {
+    tab(from, to, config);
+
     var overlay = prev(to);
     if (!hasClass(overlay, "overlay")) {
       overlay = create({ className: "overlay active" });
@@ -222,6 +225,8 @@
   };
 
   const toast = (from, to, config) => {
+    tab(from, to, config);
+
     var container = query("#toast");
     var toast = clone(to);
     addClass(toast, "active");

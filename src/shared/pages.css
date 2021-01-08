@@ -2,6 +2,10 @@
   display: none;
 }
 
+.page.active {
+  display: inherit;
+}
+
 .page.top.active {
   display: inherit;
   animation: 0.4s page-to-bottom;
@@ -17,7 +21,6 @@
   animation: 0.4s page-to-right;
 }
 
-.page.active,
 .page.right.active {
   display: inherit;
   animation: 0.4s page-to-left;

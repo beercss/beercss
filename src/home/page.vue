@@ -597,51 +597,86 @@
         h5
           span Tabs
           a.chip.circle
-            i(@click="showSamples('#tabs .tabs')") code
-        .tabs
-          a.active(data-ui="#tab") Tab 1
-          a(data-ui="#tab") Tab 2
-          a(data-ui="#tab") Tab 3
-        .tabs
-          a.active(data-ui="#tab")
-            i home
-            span Tab 1
-          a(data-ui="#tab")
-            i home
-            span Tab 2
-          a(data-ui="#tab")
-            i home
-            span Tab 3
-        .tabs
-          a.active(data-ui="#tab") 
-            span Tab 1
-            i home
-          a(data-ui="#tab")
-            span Tab 2
-            i home
-          a(data-ui="#tab")
-            span Tab 3
-            i home
-        .tabs
-          a.active(data-ui="#tab") 
-            i.wrap home
-            span Tab 1
-          a(data-ui="#tab")
-            i.wrap home
-            span Tab 2
-          a(data-ui="#tab")
-            i.wrap home
-            span Tab 3
-        .tabs
-          a.active(data-ui="#tab") 
-            span Tab 1
-            i.wrap home
-          a(data-ui="#tab")
-            span Tab 2
-            i.wrap home
-          a(data-ui="#tab")
-            span Tab 3
-            i.wrap home
+            i(@click="showSamples('#tabs > div')") code
+        div
+          .tabs
+            a.active(data-ui="#tab1") Tab 1
+            a(data-ui="#tab2") Tab 2
+            a(data-ui="#tab3") Tab 3
+          #tab1.page.right.padding.active
+            h5 Tab 1
+          #tab2.page.right.padding
+            h5 Tab 2
+          #tab3.page.right.padding
+            h5 Tab 3
+        div
+          .tabs
+            a.active(data-ui="#tab4")
+              i home
+              span Tab 1
+            a(data-ui="#tab5")
+              i home
+              span Tab 2
+            a(data-ui="#tab6")
+              i home
+              span Tab 3
+          #tab4.page.right.padding.active
+            h5 Tab 1
+          #tab5.page.right.padding
+            h5 Tab 2
+          #tab6.page.right.padding
+            h5 Tab 3
+        div
+          .tabs
+            a.active(data-ui="#tab7") 
+              span Tab 1
+              i home
+            a(data-ui="#tab8")
+              span Tab 2
+              i home
+            a(data-ui="#tab9")
+              span Tab 3
+              i home
+          #tab7.page.right.padding.active
+            h5 Tab 1
+          #tab8.page.right.padding
+            h5 Tab 2
+          #tab9.page.right.padding
+            h5 Tab 3
+        div
+          .tabs
+            a.active(data-ui="#tab10") 
+              i.wrap home
+              span Tab 1
+            a(data-ui="#tab11")
+              i.wrap home
+              span Tab 2
+            a(data-ui="#tab12")
+              i.wrap home
+              span Tab 3
+          #tab10.page.right.padding.active
+            h5 Tab 1
+          #tab11.page.right.padding
+            h5 Tab 2
+          #tab12.page.right.padding
+            h5 Tab 3
+        div
+          .tabs
+            a.active(data-ui="#tab13") 
+              span Tab 1
+              i.wrap home
+            a(data-ui="#tab14")
+              span Tab 2
+              i.wrap home
+            a(data-ui="#tab15")
+              span Tab 3
+              i.wrap home
+          #tab13.page.right.padding.active
+            h5 Tab 1
+          #tab14.page.right.padding
+            h5 Tab 2
+          #tab15.page.right.padding
+            h5 Tab 3
       #toasts.col.s12.l6
         h5
           span Toasts

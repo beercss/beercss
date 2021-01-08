@@ -9,7 +9,6 @@
 @import "../shared/dropdowns.css";
 @import "../shared/fields.css";
 @import "../shared/grid.css";
-@import "../shared/helpers.css";
 @import "../shared/imgs.css";
 @import "../shared/loaders.css";
 @import "../shared/menus.css";
@@ -20,3 +19,4 @@
 @import "../shared/tabs.css";
 @import "../shared/toasts.css";
 @import "../shared/tooltips.css";
+@import "../shared/helpers.css";
