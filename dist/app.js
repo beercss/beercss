@@ -5104,9 +5104,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row nowrap" }, [
-      _c("div", { staticClass: "col max" }, [_vm._v("max")]),
-      _c("div", { staticClass: "col max" }, [_vm._v("max")]),
-      _c("div", { staticClass: "col max" }, [_vm._v("max")])
+      _c("div", { staticClass: "col" }, [_vm._v("max")]),
+      _c("div", { staticClass: "col" }, [_vm._v("max")]),
+      _c("div", { staticClass: "col" }, [_vm._v("max")])
     ])
   },
   function() {
@@ -5125,7 +5125,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row nowrap" }, [
       _c("div", { staticClass: "col min" }, [_vm._v("min")]),
-      _c("div", { staticClass: "col max" }, [_vm._v("max")]),
+      _c("div", { staticClass: "col" }, [_vm._v("max")]),
       _c("div", { staticClass: "col min" }, [_vm._v("min")])
     ])
   },
