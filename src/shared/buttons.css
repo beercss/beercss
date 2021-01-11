@@ -20,8 +20,8 @@ button:hover {
     0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
-.btn.flat,
-button.flat {
+.btn.none,
+button.none {
   box-shadow: none;
   height: auto;
   color: var(--color-1);

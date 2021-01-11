@@ -429,71 +429,71 @@
                     td S
                   tr
                     td
-                      a.btn.flat 1
+                      a.btn.none 1
                     td
-                      a.btn.flat 2
+                      a.btn.none 2
                     td
-                      a.btn.flat 3
+                      a.btn.none 3
                     td
-                      a.btn.flat 4
+                      a.btn.none 4
                     td
-                      a.btn.flat 5
+                      a.btn.none 5
                     td
-                      a.btn.flat 6
+                      a.btn.none 6
                     td
-                      a.btn.flat 7
+                      a.btn.none 7
                   tr
                     td
                       a.btn.small.border.circle.no-margin 8
                     td
-                      a.btn.flat 9
+                      a.btn.none 9
                     td
-                      a.btn.flat 10
+                      a.btn.none 10
                     td
-                      a.btn.flat 11
+                      a.btn.none 11
                     td
-                      a.btn.flat 12
+                      a.btn.none 12
                     td
-                      a.btn.flat 13
+                      a.btn.none 13
                     td
-                      a.btn.flat 14
+                      a.btn.none 14
                   tr
                     td
-                      a.btn.flat 15
+                      a.btn.none 15
                     td
-                      a.btn.flat 16
+                      a.btn.none 16
                     td
                       a.btn.small.circle.no-margin 17
                     td
-                      a.btn.flat 18
+                      a.btn.none 18
                     td
-                      a.btn.flat 19
+                      a.btn.none 19
                     td
-                      a.btn.flat 20
+                      a.btn.none 20
                     td
-                      a.btn.flat 21
+                      a.btn.none 21
                   tr
                     td
-                      a.btn.flat 22
+                      a.btn.none 22
                     td
-                      a.btn.flat 23
+                      a.btn.none 23
                     td
-                      a.btn.flat 24
+                      a.btn.none 24
                     td
-                      a.btn.flat 25
+                      a.btn.none 25
                     td
-                      a.btn.flat 26
+                      a.btn.none 26
                     td
-                      a.btn.flat 27
+                      a.btn.none 27
                     td
-                      a.btn.flat 28
+                      a.btn.none 28
                   tr
                     td
-                      a.btn.flat 29
+                      a.btn.none 29
                     td
-                      a.btn.flat 30
+                      a.btn.none 30
                     td
-                      a.btn.flat 31
+                      a.btn.none 31
                     td 1
                     td 2
                     td 3
@@ -758,7 +758,7 @@
               h5.no-margin Title
               div Complementary text
           nav
-            a.btn.flat Link
+            a.btn.none Link
       .col.s12.m6.l3
         .card.round
           .row.nowrap
@@ -768,7 +768,7 @@
               h5.no-margin Title
               div Complementary text
           nav
-            a.btn.flat Link
+            a.btn.none Link
       .col.s12.m6.l3
         .card.border
           .row.nowrap
@@ -778,7 +778,7 @@
               h5.no-margin Title
               div Complementary text
           nav
-            a.btn.flat Link
+            a.btn.none Link
       .col.s12.m6.l3
         .card.border.round
           .row.nowrap
@@ -788,7 +788,7 @@
               h5.no-margin Title
               div Complementary text
           nav
-            a.btn.flat Link
+            a.btn.none Link
       .col.s12.m6.l3
         .card.no-padding
           img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -796,7 +796,7 @@
             h5.no-margin Title
             div Complementary text
             nav
-              a.btn.flat Link
+              a.btn.none Link
       .col.s12.m6.l3
         .card.no-padding.round
           img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -804,7 +804,7 @@
             h5.no-margin Title
             div Complementary text
             nav
-              a.btn.flat Link
+              a.btn.none Link
       .col.s12.m6.l3
         .card.no-padding.border
           img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -812,7 +812,7 @@
             h5.no-margin Title
             div Complementary text
             nav
-              a.btn.flat Link
+              a.btn.none Link
       .col.s12.m6.l3
         .card.no-padding.border.round
           img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -820,7 +820,7 @@
             h5.no-margin Title
             div Complementary text
             nav
-              a.btn.flat Link
+              a.btn.none Link
       .col.s12.m6.l3
         .card.no-padding
           img.responsive.medium(:src="'/beer-and-woman.jpg'")
@@ -889,8 +889,8 @@
           div
             canvas#grafico0
           nav
-            a.btn.flat Link 1
-            a.btn.flat Link 2
+            a.btn.none Link 1
+            a.btn.none Link 2
       .col.s12.l6
         .card
           .h5 Title
@@ -901,8 +901,8 @@
           div
             canvas#grafico1
           nav
-            a.btn.flat Link 1
-            a.btn.flat Link 2
+            a.btn.none Link 1
+            a.btn.none Link 2
     .row
       .col.s12
         h5
@@ -937,8 +937,8 @@
               label Complementary text
             .col.min
               nav
-                a.btn.flat Link
-                a.btn.flat
+                a.btn.none Link
+                a.btn.none
                   i more_vert
 
           .row.nowrap.middle-align
@@ -949,8 +949,8 @@
               label Complementary text
             .col.min
               nav
-                a.btn.flat Link
-                a.btn.flat
+                a.btn.none Link
+                a.btn.none
                   i more_vert
           .row.nowrap.middle-align
             .col.min
@@ -960,8 +960,8 @@
               label Complementary text
             .col.min
               nav
-                a.btn.flat Link
-                a.btn.flat
+                a.btn.none Link
+                a.btn.none
                   i more_vert
           label.large-space.middle-align Yesterday
           .row.nowrap.middle-align
@@ -972,8 +972,8 @@
               label Complementary text
             .col.min
               nav
-                a.btn.flat Link
-                a.btn.flat
+                a.btn.none Link
+                a.btn.none
                   i more_vert
           .row.nowrap.middle-align
             .col.min
@@ -983,8 +983,8 @@
               label Complementary text
             .col.min
               nav
-                a.btn.flat Link
-                a.btn.flat
+                a.btn.none Link
+                a.btn.none
                   i more_vert
           .row.nowrap.middle-align
             .col.min
@@ -994,8 +994,8 @@
               label Complementary text
             .col.min
               nav
-                a.btn.flat Link
-                a.btn.flat
+                a.btn.none Link
+                a.btn.none
                   i more_vert
           label.large-space.middle-align Older
           .row.nowrap.middle-align
@@ -1006,8 +1006,8 @@
               label Complementary text
             .col.min
               nav
-                a.btn.flat Link
-                a.btn.flat
+                a.btn.none Link
+                a.btn.none
                   i more_vert
           .row.nowrap.middle-align
             .col.min
@@ -1017,8 +1017,8 @@
               label Complementary text
             .col.min
               nav
-                a.btn.flat Link
-                a.btn.flat
+                a.btn.none Link
+                a.btn.none
                   i more_vert
           .row.nowrap.middle-align
             .col.min
@@ -1028,8 +1028,8 @@
               label Complementary text
             .col.min
               nav
-                a.btn.flat Link
-                a.btn.flat
+                a.btn.none Link
+                a.btn.none
                   i more_vert
         h5
           span Tables
@@ -1081,8 +1081,8 @@
                 td Line 1
                 td
                   nav.right-align
-                    a.btn.flat Link
-                    a.btn.flat
+                    a.btn.none Link
+                    a.btn.none
                       i more_vert
               tr
                 td
@@ -1092,8 +1092,8 @@
                 td Line 2
                 td
                   nav.right-align
-                    a.btn.flat Link
-                    a.btn.flat
+                    a.btn.none Link
+                    a.btn.none
                       i more_vert
               tr
                 td
@@ -1103,8 +1103,8 @@
                 td Line 3
                 td
                   nav.right-align
-                    a.btn.flat Link
-                    a.btn.flat
+                    a.btn.none Link
+                    a.btn.none
                       i more_vert
 
         h5
@@ -1696,20 +1696,20 @@
           h5 Title
           div Complementary text
           nav
-            a.btn.flat(onclick="$('#modal').attr('class', 'modal active');") Default
-            a.btn.flat(
+            a.btn.none(onclick="$('#modal').attr('class', 'modal active');") Default
+            a.btn.none(
               onclick="$('#modal').attr('class', 'modal left active');"
             ) Left
-            a.btn.flat(
+            a.btn.none(
               onclick="$('#modal').attr('class', 'modal right active');"
             ) Right
-            a.btn.flat(
+            a.btn.none(
               onclick="$('#modal').attr('class', 'modal top active');"
             ) Top
-            a.btn.flat(
+            a.btn.none(
               onclick="$('#modal').attr('class', 'modal bottom active');"
             ) Bottom
-            a.btn.flat(data-ui="#modal") Close
+            a.btn.none(data-ui="#modal") Close
 
         #modal-samples.modal.right.large
           nav
@@ -1750,78 +1750,78 @@
                     td S
                   tr
                     td
-                      a.btn.flat 1
+                      a.btn.none 1
                     td
-                      a.btn.flat 2
+                      a.btn.none 2
                     td
-                      a.btn.flat 3
+                      a.btn.none 3
                     td
-                      a.btn.flat 4
+                      a.btn.none 4
                     td
-                      a.btn.flat 5
+                      a.btn.none 5
                     td
-                      a.btn.flat 6
+                      a.btn.none 6
                     td
-                      a.btn.flat 7
+                      a.btn.none 7
                   tr
                     td
                       a.btn.small.border.circle.no-margin 8
                     td
-                      a.btn.flat 9
+                      a.btn.none 9
                     td
-                      a.btn.flat 10
+                      a.btn.none 10
                     td
-                      a.btn.flat 11
+                      a.btn.none 11
                     td
-                      a.btn.flat 12
+                      a.btn.none 12
                     td
-                      a.btn.flat 13
+                      a.btn.none 13
                     td
-                      a.btn.flat 14
+                      a.btn.none 14
                   tr
                     td
-                      a.btn.flat 15
+                      a.btn.none 15
                     td
-                      a.btn.flat 16
+                      a.btn.none 16
                     td
                       a.btn.small.circle.no-margin 17
                     td
-                      a.btn.flat 18
+                      a.btn.none 18
                     td
-                      a.btn.flat 19
+                      a.btn.none 19
                     td
-                      a.btn.flat 20
+                      a.btn.none 20
                     td
-                      a.btn.flat 21
+                      a.btn.none 21
                   tr
                     td
-                      a.btn.flat 22
+                      a.btn.none 22
                     td
-                      a.btn.flat 23
+                      a.btn.none 23
                     td
-                      a.btn.flat 24
+                      a.btn.none 24
                     td
-                      a.btn.flat 25
+                      a.btn.none 25
                     td
-                      a.btn.flat 26
+                      a.btn.none 26
                     td
-                      a.btn.flat 27
+                      a.btn.none 27
                     td
-                      a.btn.flat 28
+                      a.btn.none 28
                   tr
                     td
-                      a.btn.flat 29
+                      a.btn.none 29
                     td
-                      a.btn.flat 30
+                      a.btn.none 30
                     td
-                      a.btn.flat 31
+                      a.btn.none 31
                     td 1
                     td 2
                     td 3
                     td 4
           nav.right-align
-            a.btn.flat(data-ui="#modal-calendar") Cancel
-            a.btn.flat(data-ui="#modal-calendar") Ok
+            a.btn.none(data-ui="#modal-calendar") Cancel
+            a.btn.none(data-ui="#modal-calendar") Ok
       #responsive.col.s12
         h5 
           span Responsive
@@ -1952,7 +1952,8 @@
                 span.orange-text auto
               div 
                 span btn&nbsp;
-                span.grey-text small, medium, large, border, round, circle, flat
+                span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
+                span.orange-text none
               div
                 span chip&nbsp;
                 span.grey-text border, circle, active
@@ -2005,7 +2006,8 @@
                 span.grey-text is-light, is-dark, is-menu-left, is-menu-right, is-menu-top, is-menu-bottom, is-menu-small, is-menu-medium, is-menu-large
               div 
                 span &lt;button&gt;&nbsp;
-                span.grey-text small, medium, large, border, round, circle, flat&nbsp;
+                span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
+                span.orange-text none
               div 
                 span &lt;circle&gt;
               div 
