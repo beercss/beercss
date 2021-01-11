@@ -2490,6 +2490,8 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -4784,13 +4786,13 @@ var staticRenderFns = [
                 _c("td", [_vm._v("S")])
               ]),
               _c("tr", [
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("1")])]),
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("2")])]),
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("3")])]),
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("4")])]),
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("5")])]),
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("6")])]),
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("7")])])
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("1")])]),
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("2")])]),
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("3")])]),
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("4")])]),
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("5")])]),
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("6")])]),
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("7")])])
               ]),
               _c("tr", [
                 _c("td", [
@@ -4800,27 +4802,27 @@ var staticRenderFns = [
                     [_vm._v("8")]
                   )
                 ]),
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("9")])]),
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("9")])]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("10")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("10")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("11")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("11")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("12")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("12")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("13")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("13")])
                 ]),
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("14")])])
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("14")])])
               ]),
               _c("tr", [
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("15")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("15")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("16")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("16")])
                 ]),
                 _c("td", [
                   _c("a", { staticClass: "btn small circle no-margin" }, [
@@ -4828,46 +4830,46 @@ var staticRenderFns = [
                   ])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("18")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("18")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("19")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("19")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("20")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("20")])
                 ]),
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("21")])])
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("21")])])
               ]),
               _c("tr", [
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("22")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("22")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("23")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("23")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("24")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("24")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("25")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("25")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("26")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("26")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("27")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("27")])
                 ]),
-                _c("td", [_c("a", { staticClass: "btn flat" }, [_vm._v("28")])])
+                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("28")])])
               ]),
               _c("tr", [
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("29")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("29")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("30")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("30")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn flat" }, [_vm._v("31")])
+                  _c("a", { staticClass: "btn none" }, [_vm._v("31")])
                 ]),
                 _c("td", [_vm._v("1")]),
                 _c("td", [_vm._v("2")]),
@@ -5199,7 +5201,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [_c("a", { staticClass: "btn flat" }, [_vm._v("Link")])])
+    return _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
   },
   function() {
     var _vm = this
@@ -5214,7 +5216,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [_c("a", { staticClass: "btn flat" }, [_vm._v("Link")])])
+    return _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
   },
   function() {
     var _vm = this
@@ -5229,7 +5231,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [_c("a", { staticClass: "btn flat" }, [_vm._v("Link")])])
+    return _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
   },
   function() {
     var _vm = this
@@ -5244,7 +5246,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [_c("a", { staticClass: "btn flat" }, [_vm._v("Link")])])
+    return _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
   },
   function() {
     var _vm = this
@@ -5253,7 +5255,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "padding" }, [
       _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
       _c("div", [_vm._v("Complementary text")]),
-      _c("nav", [_c("a", { staticClass: "btn flat" }, [_vm._v("Link")])])
+      _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
     ])
   },
   function() {
@@ -5263,7 +5265,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "padding" }, [
       _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
       _c("div", [_vm._v("Complementary text")]),
-      _c("nav", [_c("a", { staticClass: "btn flat" }, [_vm._v("Link")])])
+      _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
     ])
   },
   function() {
@@ -5273,7 +5275,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "padding" }, [
       _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
       _c("div", [_vm._v("Complementary text")]),
-      _c("nav", [_c("a", { staticClass: "btn flat" }, [_vm._v("Link")])])
+      _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
     ])
   },
   function() {
@@ -5283,7 +5285,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "padding" }, [
       _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
       _c("div", [_vm._v("Complementary text")]),
-      _c("nav", [_c("a", { staticClass: "btn flat" }, [_vm._v("Link")])])
+      _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
     ])
   },
   function() {
@@ -5429,8 +5431,8 @@ var staticRenderFns = [
           _c("div", { staticClass: "space" }),
           _c("div", [_c("canvas", { attrs: { id: "grafico0" } })]),
           _c("nav", [
-            _c("a", { staticClass: "btn flat" }, [_vm._v("Link 1")]),
-            _c("a", { staticClass: "btn flat" }, [_vm._v("Link 2")])
+            _c("a", { staticClass: "btn none" }, [_vm._v("Link 1")]),
+            _c("a", { staticClass: "btn none" }, [_vm._v("Link 2")])
           ])
         ])
       ]),
@@ -5451,8 +5453,8 @@ var staticRenderFns = [
           _c("div", { staticClass: "space" }),
           _c("div", [_c("canvas", { attrs: { id: "grafico1" } })]),
           _c("nav", [
-            _c("a", { staticClass: "btn flat" }, [_vm._v("Link 1")]),
-            _c("a", { staticClass: "btn flat" }, [_vm._v("Link 2")])
+            _c("a", { staticClass: "btn none" }, [_vm._v("Link 1")]),
+            _c("a", { staticClass: "btn none" }, [_vm._v("Link 2")])
           ])
         ])
       ])
@@ -5516,8 +5518,8 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
+          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
         ])
       ])
     ])
@@ -5536,8 +5538,8 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
+          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
         ])
       ])
     ])
@@ -5556,8 +5558,8 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
+          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
         ])
       ])
     ])
@@ -5576,8 +5578,8 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
+          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
         ])
       ])
     ])
@@ -5596,8 +5598,8 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
+          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
         ])
       ])
     ])
@@ -5616,8 +5618,8 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
+          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
         ])
       ])
     ])
@@ -5637,8 +5639,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col min" }, [
       _c("nav", [
-        _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-        _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
+        _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+        _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
       ])
     ])
   },
@@ -5657,8 +5659,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col min" }, [
       _c("nav", [
-        _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-        _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
+        _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+        _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
       ])
     ])
   },
@@ -5677,8 +5679,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col min" }, [
       _c("nav", [
-        _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-        _c("a", { staticClass: "btn flat" }, [_c("i", [_vm._v("more_vert")])])
+        _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+        _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
       ])
     ])
   },
@@ -5762,8 +5764,8 @@ var staticRenderFns = [
             _c("td", [_vm._v("Line 1")]),
             _c("td", [
               _c("nav", { staticClass: "right-align" }, [
-                _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-                _c("a", { staticClass: "btn flat" }, [
+                _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+                _c("a", { staticClass: "btn none" }, [
                   _c("i", [_vm._v("more_vert")])
                 ])
               ])
@@ -5776,8 +5778,8 @@ var staticRenderFns = [
             _c("td", [_vm._v("Line 2")]),
             _c("td", [
               _c("nav", { staticClass: "right-align" }, [
-                _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-                _c("a", { staticClass: "btn flat" }, [
+                _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+                _c("a", { staticClass: "btn none" }, [
                   _c("i", [_vm._v("more_vert")])
                 ])
               ])
@@ -5790,8 +5792,8 @@ var staticRenderFns = [
             _c("td", [_vm._v("Line 3")]),
             _c("td", [
               _c("nav", { staticClass: "right-align" }, [
-                _c("a", { staticClass: "btn flat" }, [_vm._v("Link")]),
-                _c("a", { staticClass: "btn flat" }, [
+                _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
+                _c("a", { staticClass: "btn none" }, [
                   _c("i", [_vm._v("more_vert")])
                 ])
               ])
@@ -6982,7 +6984,7 @@ var staticRenderFns = [
         _c(
           "a",
           {
-            staticClass: "btn flat",
+            staticClass: "btn none",
             attrs: { onclick: "$('#modal').attr('class', 'modal active');" }
           },
           [_vm._v("Default")]
@@ -6990,7 +6992,7 @@ var staticRenderFns = [
         _c(
           "a",
           {
-            staticClass: "btn flat",
+            staticClass: "btn none",
             attrs: {
               onclick: "$('#modal').attr('class', 'modal left active');"
             }
@@ -7000,7 +7002,7 @@ var staticRenderFns = [
         _c(
           "a",
           {
-            staticClass: "btn flat",
+            staticClass: "btn none",
             attrs: {
               onclick: "$('#modal').attr('class', 'modal right active');"
             }
@@ -7010,7 +7012,7 @@ var staticRenderFns = [
         _c(
           "a",
           {
-            staticClass: "btn flat",
+            staticClass: "btn none",
             attrs: { onclick: "$('#modal').attr('class', 'modal top active');" }
           },
           [_vm._v("Top")]
@@ -7018,14 +7020,14 @@ var staticRenderFns = [
         _c(
           "a",
           {
-            staticClass: "btn flat",
+            staticClass: "btn none",
             attrs: {
               onclick: "$('#modal').attr('class', 'modal bottom active');"
             }
           },
           [_vm._v("Bottom")]
         ),
-        _c("a", { staticClass: "btn flat", attrs: { "data-ui": "#modal" } }, [
+        _c("a", { staticClass: "btn none", attrs: { "data-ui": "#modal" } }, [
           _vm._v("Close")
         ])
       ])
@@ -7085,25 +7087,25 @@ var staticRenderFns = [
                 ]),
                 _c("tr", [
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("1")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("1")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("2")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("2")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("3")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("3")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("4")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("4")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("5")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("5")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("6")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("6")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("7")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("7")])
                   ])
                 ]),
                 _c("tr", [
@@ -7115,30 +7117,30 @@ var staticRenderFns = [
                     )
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("9")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("9")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("10")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("10")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("11")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("11")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("12")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("12")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("13")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("13")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("14")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("14")])
                   ])
                 ]),
                 _c("tr", [
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("15")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("15")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("16")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("16")])
                   ]),
                   _c("td", [
                     _c("a", { staticClass: "btn small circle no-margin" }, [
@@ -7146,50 +7148,50 @@ var staticRenderFns = [
                     ])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("18")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("18")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("19")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("19")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("20")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("20")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("21")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("21")])
                   ])
                 ]),
                 _c("tr", [
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("22")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("22")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("23")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("23")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("24")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("24")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("25")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("25")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("26")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("26")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("27")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("27")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("28")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("28")])
                   ])
                 ]),
                 _c("tr", [
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("29")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("29")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("30")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("30")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn flat" }, [_vm._v("31")])
+                    _c("a", { staticClass: "btn none" }, [_vm._v("31")])
                   ]),
                   _c("td", [_vm._v("1")]),
                   _c("td", [_vm._v("2")]),
@@ -7204,7 +7206,7 @@ var staticRenderFns = [
           _c(
             "a",
             {
-              staticClass: "btn flat",
+              staticClass: "btn none",
               attrs: { "data-ui": "#modal-calendar" }
             },
             [_vm._v("Cancel")]
@@ -7212,7 +7214,7 @@ var staticRenderFns = [
           _c(
             "a",
             {
-              staticClass: "btn flat",
+              staticClass: "btn none",
               attrs: { "data-ui": "#modal-calendar" }
             },
             [_vm._v("Ok")]
@@ -7396,8 +7398,9 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("btn ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("small, medium, large, border, round, circle, flat")
-          ])
+            _vm._v("small, medium, large, border, round, circle, flat, ")
+          ]),
+          _c("span", { staticClass: "orange-text" }, [_vm._v("none")])
         ]),
         _c("div", [
           _c("span", [_vm._v("chip ")]),
@@ -7508,8 +7511,9 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("<button> ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("small, medium, large, border, round, circle, flat ")
-          ])
+            _vm._v("small, medium, large, border, round, circle, flat, ")
+          ]),
+          _c("span", { staticClass: "orange-text" }, [_vm._v("none")])
         ]),
         _c("div", [_c("span", [_vm._v("<circle>")])]),
         _c("div", [
