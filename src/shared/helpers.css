@@ -463,8 +463,7 @@ label {
   font-style: italic;
 }
 
-.none {
-  border: 0;
+.flat {
   box-shadow: none;
 }
 

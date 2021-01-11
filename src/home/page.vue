@@ -1901,7 +1901,7 @@
                 div border
                 div round
                 div circle
-                div none
+                div flat
               .col
                 b Texts
                 div italic
@@ -1952,22 +1952,21 @@
                 span.orange-text auto
               div 
                 span btn&nbsp;
-                span.grey-text small, medium, large, border, round, circle,&nbsp;
-                span.orange-text flat
+                span.grey-text small, medium, large, border, round, circle, flat
               div
                 span chip&nbsp;
                 span.grey-text border, circle, active
               div
                 span card&nbsp;
-                span.grey-text small, medium, large, border, round
+                span.grey-text small, medium, large, border, round, flat
               div 
                 span container
               div 
                 span dropdown&nbsp;
-                span.grey-text left, right, small, medium, large, border, round, active, nowrap
+                span.grey-text left, right, small, medium, large, border, round, flat, active, nowrap
               div 
                 span field&nbsp;
-                span.grey-text small, medium, large, border, round,&nbsp;
+                span.grey-text small, medium, large, border, round, flat,&nbsp;
                 span.orange-text fill, prefix, sufix, label, invalid
               div
                 span fixed&nbsp;
@@ -1977,10 +1976,10 @@
                 span.grey-text small, medium, large
               div
                 span menu&nbsp;
-                span.grey-text left, right, top, bottom, small, medium, large
+                span.grey-text left, right, top, bottom, small, medium, large, border, round, flat
               div 
                 span modal&nbsp;
-                span.grey-text left, right, top, bottom, small, medium, large, active
+                span.grey-text left, right, top, bottom, small, medium, large, active, border, round, flat
               div 
                 span page&nbsp;
                 span.grey-text left, right, top, bottom, active
@@ -1996,18 +1995,17 @@
                 span.orange-text min, max, s1..12, m1..12, l1..12
               div 
                 span toast&nbsp;
-                span.grey-text small, medium, large, border, round, active
+                span.grey-text small, medium, large, border, round, flat, active
               div 
                 span tooltip&nbsp;
-                span.grey-text left, right, top, bottom, small, medium, large, border, round
+                span.grey-text left, right, top, bottom, small, medium, large, border, round, flat
               .space
               div 
                 span &lt;body&gt;&nbsp;
                 span.grey-text is-light, is-dark, is-menu-left, is-menu-right, is-menu-top, is-menu-bottom, is-menu-small, is-menu-medium, is-menu-large
               div 
                 span &lt;button&gt;&nbsp;
-                span.grey-text small, medium, large, border, round, circle,&nbsp;
-                span.orange-text flat
+                span.grey-text small, medium, large, border, round, circle, flat&nbsp;
               div 
                 span &lt;circle&gt;
               div 

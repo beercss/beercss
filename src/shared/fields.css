@@ -139,6 +139,12 @@ input[type="file"] {
   box-shadow: none;
 }
 
+.field.flat input,
+.field.flat input::before,
+.field.flat input::after {
+  box-shadow: none!important;
+}
+
 .field.label > input[type="text"],
 .field.label > input[type="password"] {
   padding-top: 16px;
