@@ -638,9 +638,9 @@
           .col.s12.m6.l3 4
         .medium-space
         .row.nowrap
-          .col.max max
-          .col.max max
-          .col.max max
+          .col max
+          .col max
+          .col max
         .medium-space
         .row.nowrap
           .col.min min
@@ -649,7 +649,7 @@
         .medium-space
         .row.nowrap
           .col.min min
-          .col.max max
+          .col max
           .col.min min
         .space
       #tabs.col.s12
