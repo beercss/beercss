@@ -2490,8 +2490,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -7326,7 +7324,7 @@ var staticRenderFns = [
             _c("div", [_vm._v("border")]),
             _c("div", [_vm._v("round")]),
             _c("div", [_vm._v("circle")]),
-            _c("div", [_vm._v("none")])
+            _c("div", [_vm._v("flat")])
           ]),
           _c("div", { staticClass: "col" }, [
             _c("b", [_vm._v("Texts")]),
@@ -7398,9 +7396,8 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("btn ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("small, medium, large, border, round, circle, ")
-          ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("flat")])
+            _vm._v("small, medium, large, border, round, circle, flat")
+          ])
         ]),
         _c("div", [
           _c("span", [_vm._v("chip ")]),
@@ -7411,7 +7408,7 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("card ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("small, medium, large, border, round")
+            _vm._v("small, medium, large, border, round, flat")
           ])
         ]),
         _c("div", [_c("span", [_vm._v("container")])]),
@@ -7419,14 +7416,14 @@ var staticRenderFns = [
           _c("span", [_vm._v("dropdown ")]),
           _c("span", { staticClass: "grey-text" }, [
             _vm._v(
-              "left, right, small, medium, large, border, round, active, nowrap"
+              "left, right, small, medium, large, border, round, flat, active, nowrap"
             )
           ])
         ]),
         _c("div", [
           _c("span", [_vm._v("field ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("small, medium, large, border, round, ")
+            _vm._v("small, medium, large, border, round, flat, ")
           ]),
           _c("span", { staticClass: "orange-text" }, [
             _vm._v("fill, prefix, sufix, label, invalid")
@@ -7449,13 +7446,17 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("menu ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("left, right, top, bottom, small, medium, large")
+            _vm._v(
+              "left, right, top, bottom, small, medium, large, border, round, flat"
+            )
           ])
         ]),
         _c("div", [
           _c("span", [_vm._v("modal ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("left, right, top, bottom, small, medium, large, active")
+            _vm._v(
+              "left, right, top, bottom, small, medium, large, active, border, round, flat"
+            )
           ])
         ]),
         _c("div", [
@@ -7484,14 +7485,14 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("toast ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("small, medium, large, border, round, active")
+            _vm._v("small, medium, large, border, round, flat, active")
           ])
         ]),
         _c("div", [
           _c("span", [_vm._v("tooltip ")]),
           _c("span", { staticClass: "grey-text" }, [
             _vm._v(
-              "left, right, top, bottom, small, medium, large, border, round"
+              "left, right, top, bottom, small, medium, large, border, round, flat"
             )
           ])
         ]),
@@ -7507,9 +7508,8 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("<button> ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("small, medium, large, border, round, circle, ")
-          ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("flat")])
+            _vm._v("small, medium, large, border, round, circle, flat ")
+          ])
         ]),
         _c("div", [_c("span", [_vm._v("<circle>")])]),
         _c("div", [
