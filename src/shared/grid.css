@@ -33,11 +33,11 @@
   margin-top: 16px;
 }
 
-.row.nowrap .col,
-.row.nowrap .col.max {
+.row.nowrap .col {
   float: none;
   flex: 1;
-  padding: 0 8px;
+  padding: 0;
+  margin: 0 8px;
 }
 
 .row.nowrap .col.min {
