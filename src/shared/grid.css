@@ -7,11 +7,6 @@
   margin-top: -8px;
 }
 
-.col > .row > .col:last-child,
-.col > .row > .col:first-child {
-  padding-bottom: 0;
-}
-
 .row:after {
   content: "";
   display: table;
@@ -42,8 +37,7 @@
 .row.nowrap .col.max {
   float: none;
   flex: 1;
-  padding: 0;
-  margin: 0 8px;
+  padding: 0 8px;
 }
 
 .row.nowrap .col.min {
