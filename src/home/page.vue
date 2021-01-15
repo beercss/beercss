@@ -2219,7 +2219,6 @@ export default {
         window.beercss.installEvent.prompt();
     },
     updateMenu(menu, css) {
-      console.log(event.target);
       var body = $("body");
       var menu = $(menu);
       var dataUis = menu.find("a");
@@ -2242,7 +2241,6 @@ export default {
           "is-menu-left is-menu-right is-menu-top is-menu-bottom"
         );
         body.addClass("is-menu-" + css);
-        console.log(menu);
         $(menu).removeClass("left right top bottom");
         $(menu).addClass(css);
         $(menu).find("> .modal").removeClass("left right top bottom");
