@@ -2569,7 +2569,6 @@ var _default = {
       if (window.beercss && window.beercss.installEvent) window.beercss.installEvent.prompt();
     },
     updateMenu: function updateMenu(menu, css) {
-      console.log(event.target);
       var body = $("body");
       var menu = $(menu);
       var dataUis = menu.find("a");
@@ -2587,7 +2586,6 @@ var _default = {
       if (/left|right|top|bottom/.test(css)) {
         body.removeClass("is-menu-left is-menu-right is-menu-top is-menu-bottom");
         body.addClass("is-menu-" + css);
-        console.log(menu);
         $(menu).removeClass("left right top bottom");
         $(menu).addClass(css);
         $(menu).find("> .modal").removeClass("left right top bottom");
