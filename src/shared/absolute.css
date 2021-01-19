@@ -1,0 +1,69 @@
+.absolute {
+  position: absolute;
+  border-radius: inherit;
+}
+
+.absolute.round {
+  border-radius: 16px;
+}
+
+.absolute.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.absolute.middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.absolute.top {
+  top: 0;
+}
+
+.absolute.left {
+  float: none;
+  left: 0;
+}
+
+.absolute.right {
+  float: none;
+  right: 0;
+}
+
+.absolute.bottom,
+.fixed.bottom {
+  bottom: 0;
+}
+
+.absolute.top.bottom {
+  height: 100%;
+}
+
+.absolute.left.right {
+  width: auto;
+}
+
+.absolute.left.right.small {
+  height: 350px;
+}
+
+.absolute.left.right.medium {
+  height: 475px;
+}
+
+.absolute.left.right.large {
+  height: 700px;
+}
+
+.absolute.top.bottom.small {
+  width: 350px;
+}
+
+.absolute.top.bottom.medium {
+  width: 475px;
+}
+
+.absolute.top.bottom.large {
+  width: 700px;
+}

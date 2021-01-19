@@ -1,0 +1,63 @@
+.fixed {
+  position: fixed;
+}
+
+.fixed.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fixed.middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fixed.top {
+  top: 0;
+}
+
+.fixed.left {
+  float: none;
+  left: 0;
+}
+
+.fixed.right {
+  float: none;
+  right: 0;
+}
+
+.fixed.bottom {
+  bottom: 0;
+}
+
+.fixed.top.bottom {
+  height: 100%;
+}
+
+.fixed.left.right {
+  width: auto;
+}
+
+.fixed.left.right.small {
+  height: 350px;
+}
+
+.fixed.left.right.medium {
+  height: 475px;
+}
+
+.fixed.left.right.large {
+  height: 700px;
+}
+
+.fixed.left.right.small {
+  width: 350px;
+}
+
+.fixed.top.bottom.medium {
+  width: 475px;
+}
+
+.fixed.top.bottom.large {
+  width: 700px;
+}
