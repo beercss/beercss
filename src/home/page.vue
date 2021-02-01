@@ -233,11 +233,8 @@
             span Button
             i delete
           a.btn.circle
-            i add
-          a.btn.circle
-            i edit
-          a.btn.circle
             i home
+          a.btn.circle A
           a.btn.border Button
           a.btn.border 
             i search
@@ -253,11 +250,8 @@
             span Button
             i delete
           a.btn.border.circle
-            i add
-          a.btn.border.circle
-            i edit
-          a.btn.border.circle
             i home
+          a.btn.border.circle B
       #cards.col.s12
         h5
           span Cards
@@ -490,18 +484,21 @@
             span Filter
           a.chip.circle
             i search
+          a.chip.circle A
           a.chip.active Filter
           a.chip.active
             i.small done
             span Filter
           a.chip.circle.active
             i home
+          a.chip.circle.active B
           a.chip.border Filter
           a.chip.border
             i.small done
             span Filter
           a.chip.circle.border
             i refresh
+          a.chip.circle.border C
       #colors.col.s12
         h5 
           span Colors
