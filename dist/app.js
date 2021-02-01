@@ -2527,9 +2527,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -4586,9 +4583,8 @@ var staticRenderFns = [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("delete")])
       ]),
-      _c("a", { staticClass: "btn circle" }, [_c("i", [_vm._v("add")])]),
-      _c("a", { staticClass: "btn circle" }, [_c("i", [_vm._v("edit")])]),
       _c("a", { staticClass: "btn circle" }, [_c("i", [_vm._v("home")])]),
+      _c("a", { staticClass: "btn circle" }, [_vm._v("A")]),
       _c("a", { staticClass: "btn border" }, [_vm._v("Button")]),
       _c("a", { staticClass: "btn border" }, [
         _c("i", [_vm._v("search")]),
@@ -4607,11 +4603,10 @@ var staticRenderFns = [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("delete")])
       ]),
-      _c("a", { staticClass: "btn border circle" }, [_c("i", [_vm._v("add")])]),
       _c("a", { staticClass: "btn border circle" }, [
-        _c("i", [_vm._v("edit")])
+        _c("i", [_vm._v("home")])
       ]),
-      _c("a", { staticClass: "btn border circle" }, [_c("i", [_vm._v("home")])])
+      _c("a", { staticClass: "btn border circle" }, [_vm._v("B")])
     ])
   },
   function() {
@@ -4983,6 +4978,7 @@ var staticRenderFns = [
         _c("span", [_vm._v("Filter")])
       ]),
       _c("a", { staticClass: "chip circle" }, [_c("i", [_vm._v("search")])]),
+      _c("a", { staticClass: "chip circle" }, [_vm._v("A")]),
       _c("a", { staticClass: "chip active" }, [_vm._v("Filter")]),
       _c("a", { staticClass: "chip active" }, [
         _c("i", { staticClass: "small" }, [_vm._v("done")]),
@@ -4991,6 +4987,7 @@ var staticRenderFns = [
       _c("a", { staticClass: "chip circle active" }, [
         _c("i", [_vm._v("home")])
       ]),
+      _c("a", { staticClass: "chip circle active" }, [_vm._v("B")]),
       _c("a", { staticClass: "chip border" }, [_vm._v("Filter")]),
       _c("a", { staticClass: "chip border" }, [
         _c("i", { staticClass: "small" }, [_vm._v("done")]),
@@ -4998,7 +4995,8 @@ var staticRenderFns = [
       ]),
       _c("a", { staticClass: "chip circle border" }, [
         _c("i", [_vm._v("refresh")])
-      ])
+      ]),
+      _c("a", { staticClass: "chip circle border" }, [_vm._v("C")])
     ])
   },
   function() {
