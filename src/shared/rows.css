@@ -1,10 +1,5 @@
 .row {
-  margin: 0 -8px;
   color: inherit;
-}
-
-.col > .row {
-  margin-top: -8px;
 }
 
 .row:after {
@@ -16,7 +11,6 @@
 .row .col {
   float: left;
   box-sizing: border-box;
-  padding: 8px;
   width: min-content;
 }
 
@@ -36,12 +30,14 @@
 .row.nowrap .col {
   float: none;
   flex: 1;
-  padding: 0;
-  margin: 0 8px;
 }
 
 .row.nowrap .col.min {
   flex: 0;
+}
+
+.row.nowrap .col + .col {
+  padding-left: 8px;
 }
 
 .row .col.s1 {
