@@ -76,14 +76,6 @@ button.circle {
   text-align: center;
 }
 
-.btn.circle > i,
-button.circle > i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .btn.circle.small,
 button.circle.small {
   min-width: 40px;

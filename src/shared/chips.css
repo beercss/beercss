@@ -28,13 +28,6 @@
   text-align: center;
 }
 
-.chip.circle > i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .chip.active {
   background-color: var(--color-2b);
 }

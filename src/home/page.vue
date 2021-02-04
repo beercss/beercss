@@ -67,7 +67,7 @@
             span Beer css!
           .h6 Build material design interfaces in record time
         #container-logo.center-align.middle-align.padding
-          img#logo(:src="'/favicon.png'")
+          img#logo(:src="'/favicon.png'", @click="addHomeScreen()")
         nav.center-align
           a.btn.large.border(
             href="https://www.npmjs.com/package/beercss",
