@@ -2975,7 +2975,16 @@ exports.default = _default;
               staticClass: "center-align middle-align padding",
               attrs: { id: "container-logo" }
             },
-            [_c("img", { attrs: { id: "logo", src: "/favicon.png" } })]
+            [
+              _c("img", {
+                attrs: { id: "logo", src: "/favicon.png" },
+                on: {
+                  click: function($event) {
+                    return _vm.addHomeScreen()
+                  }
+                }
+              })
+            ]
           ),
           _vm._m(5),
           _c("div", { staticClass: "space" }),
