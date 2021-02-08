@@ -42,7 +42,10 @@ pre {
 }
 
 #rows .row {
-  margin: 0;
+  border: 1px solid #9e9e9e50;
+}
+
+#rows .col {
   border: 2px solid #9e9e9e50;
 }
 

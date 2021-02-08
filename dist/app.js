@@ -2527,6 +2527,19 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -2556,6 +2569,7 @@ var _default = {
     this.tableSamples();
     this.inputSamples();
     this.selectSamples();
+    this.rowSamples();
   },
   methods: {
     updateTheme: function updateTheme() {
@@ -2743,6 +2757,16 @@ var _default = {
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-selects";
           if ($(selector).is(":checked")) $("#selects .field.label").addClass(ids[i]);else $("#selects .field.label").removeClass(ids[i]);
+        }
+      });
+    },
+    rowSamples: function rowSamples() {
+      $("#no-space-rows,#small-space-rows,#medium-space-rows,#large-space-rows").on("click", function () {
+        var ids = ["no-space", "medium-space", "large-space"];
+
+        for (var i = 0; i < ids.length; i++) {
+          var selector = "#" + ids[i] + "-rows";
+          if ($(selector).is(":checked")) $("#rows .row").addClass(ids[i]);else $("#rows .row").removeClass(ids[i]);
         }
       });
     },
@@ -3184,7 +3208,7 @@ exports.default = _default;
             ]),
             _c("div", { staticClass: "col s12 l6" }, [
               _c("div", { staticClass: "card no-padding" }, [
-                _c("div", { staticClass: "row nowrap" }, [
+                _c("div", { staticClass: "row nowrap no-space" }, [
                   _c("div", { staticClass: "col" }, [
                     _c("img", {
                       staticClass: "responsive",
@@ -3197,7 +3221,7 @@ exports.default = _default;
             ]),
             _c("div", { staticClass: "col s12 l6" }, [
               _c("div", { staticClass: "card no-padding" }, [
-                _c("div", { staticClass: "row nowrap" }, [
+                _c("div", { staticClass: "row nowrap no-space" }, [
                   _c("div", { staticClass: "col" }, [
                     _c("img", {
                       staticClass: "responsive",
@@ -3834,7 +3858,6 @@ exports.default = _default;
               )
             ])
           ]),
-          _c("div", { staticClass: "space" }),
           _vm._m(70),
           _c("div", { staticClass: "space" }),
           _vm._m(71),
@@ -5890,6 +5913,42 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("nav", { staticClass: "wrap" }, [
+      _c("label", [
+        _c("input", {
+          attrs: { id: "no-space-rows", type: "radio", name: "space-rows" }
+        }),
+        _c("span", [_vm._v("no-space")])
+      ]),
+      _c("label", [
+        _c("input", {
+          attrs: {
+            id: "small-space-rows",
+            type: "radio",
+            name: "space-rows",
+            checked: "checked"
+          }
+        }),
+        _c("span", [_vm._v("small-space")])
+      ]),
+      _c("label", [
+        _c("input", {
+          attrs: { id: "medium-space-rows", type: "radio", name: "space-rows" }
+        }),
+        _c("span", [_vm._v("medium-space")])
+      ]),
+      _c("label", [
+        _c("input", {
+          attrs: { id: "large-space-rows", type: "radio", name: "space-rows" }
+        }),
+        _c("span", [_vm._v("large-space")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
       _c("div", { staticClass: "col s1" }, [_vm._v("2")]),
@@ -5950,17 +6009,8 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row nowrap" }, [
       _c("div", { staticClass: "col min" }, [_vm._v("min")]),
       _c("div", { staticClass: "col min" }, [_vm._v("min")]),
-      _c("div", { staticClass: "col min" }, [_vm._v("min")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row nowrap" }, [
       _c("div", { staticClass: "col min" }, [_vm._v("min")]),
-      _c("div", { staticClass: "col" }, [_vm._v("max")]),
-      _c("div", { staticClass: "col min" }, [_vm._v("min")])
+      _c("div", { staticClass: "col" }, [_vm._v("max")])
     ])
   },
   function() {
