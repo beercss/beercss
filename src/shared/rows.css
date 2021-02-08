@@ -1,4 +1,5 @@
 .row {
+  margin: 0 -8px;
   color: inherit;
 }
 
@@ -8,13 +9,58 @@
   clear: both;
 }
 
-.row .col {
+.col > .row:first-child {
+  margin-top: -16px;
+}
+
+.row.no-space {
+  height: auto;
+  margin: 0;
+}
+
+.row.space,
+.row.small-space {
+  height: auto;
+  margin: 0 -8px;
+}
+
+.row.medium-space {
+  height: auto;
+  margin: 0 -12px;
+}
+
+.row.large-space {
+  height: auto;
+  margin: 0 -16px;
+}
+
+.row > .col {
   float: left;
   box-sizing: border-box;
   width: min-content;
+  padding: 8px;
+}
+
+.row.no-space > .col {
+  padding: 0;
+}
+
+.row.space > .col,
+.row.small-space > .col {
+  padding: 8px;
+}
+
+.row.medium-space > .col {
+  padding: 12px;
+}
+
+.row.large-space > .col {
+  padding: 16px;
 }
 
 .row.nowrap {
+  margin-top: 0;
+  margin-bottom: 0;
   display: flex;
 }
 
@@ -27,17 +73,15 @@
   margin-top: 16px;
 }
 
-.row.nowrap .col {
+.row.nowrap > .col {
   float: none;
   flex: 1;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.row.nowrap .col.min {
+.row.nowrap > .col.min {
   flex: 0;
-}
-
-.row.nowrap .col + .col {
-  padding-left: 8px;
 }
 
 .row .col.s1 {

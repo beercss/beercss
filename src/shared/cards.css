@@ -7,10 +7,6 @@
   display: block;
 }
 
-.col > .card {
-  margin: 8px;
-}
-
 .card + .card {
   margin-top: 16px;
 }

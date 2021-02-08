@@ -3,10 +3,6 @@
   margin-bottom: 8px;
 }
 
-.col > .field {
-  margin: 8px;
-}
-
 .field.small {
   height: 40px;
 }

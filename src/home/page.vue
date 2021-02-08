@@ -364,7 +364,7 @@
                   a.btn.border.small Link
           .col.s12.l6
             .card.no-padding
-              .row.nowrap
+              .row.nowrap.no-space
                 .col
                   img.responsive(:src="'/beer-and-woman.jpg'")
                 .col
@@ -375,7 +375,7 @@
                       a.btn.border Link
           .col.s12.l6
             .card.no-padding
-              .row.nowrap
+              .row.nowrap.no-space
                 .col
                   img.responsive(:src="'/beer-and-woman.jpg'")
                   .absolute.top.left.right.padding.top-shadow.white-text
@@ -1119,6 +1119,23 @@
           span Rows
           a.chip.circle
             i(@click="showSamples('#rows .row')") code
+        nav.wrap
+          label
+            input#no-space-rows(type="radio", name="space-rows")
+            span no-space
+          label
+            input#small-space-rows(
+              type="radio",
+              name="space-rows",
+              checked="checked"
+            )
+            span small-space
+          label
+            input#medium-space-rows(type="radio", name="space-rows")
+            span medium-space
+          label
+            input#large-space-rows(type="radio", name="space-rows")
+            span large-space
         .space
         .row
           .col.s1 1
@@ -1156,11 +1173,7 @@
           .col.min min
           .col.min min
           .col.min min
-        .space
-        .row.nowrap
-          .col.min min
           .col max
-          .col.min min
         .space
       #selects.col.s12
         h5
@@ -2203,6 +2216,7 @@ export default {
     this.tableSamples();
     this.inputSamples();
     this.selectSamples();
+    this.rowSamples();
   },
   methods: {
     updateTheme() {
@@ -2435,6 +2449,18 @@ export default {
         }
       });
     },
+    rowSamples() {
+      $(
+        "#no-space-rows,#small-space-rows,#medium-space-rows,#large-space-rows"
+      ).on("click", function () {
+        var ids = ["no-space", "medium-space", "large-space"];
+        for (var i = 0; i < ids.length; i++) {
+          var selector = "#" + ids[i] + "-rows";
+          if ($(selector).is(":checked")) $("#rows .row").addClass(ids[i]);
+          else $("#rows .row").removeClass(ids[i]);
+        }
+      });
+    },
     updateColors(text) {
       $("#modal-colors .col > div").each(function () {
         var html = $(this).html();
@@ -2576,7 +2602,10 @@ pre {
 }
 
 #rows .row {
-  margin: 0;
+  border: 1px solid #9e9e9e50;
+}
+
+#rows .col {
   border: 2px solid #9e9e9e50;
 }
 
