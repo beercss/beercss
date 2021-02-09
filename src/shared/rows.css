@@ -3,14 +3,23 @@
   color: inherit;
 }
 
+.row .row:not(.nowrap) {
+  margin-top: -8px;
+}
+
+.row .row .row:not(.nowrap) {
+  margin-top: 8px;
+}
+
+.row + .row,
+.row .row + .row {
+  margin-top: 16px;
+}
+
 .row:after {
   content: "";
   display: table;
   clear: both;
-}
-
-.col > .row:first-child {
-  margin-top: -16px;
 }
 
 .row.no-space {
@@ -69,7 +78,7 @@
   height: max-content;
 }
 
-.row.nowrap + .row.nowrap {
+.row + .row {
   margin-top: 16px;
 }
 
