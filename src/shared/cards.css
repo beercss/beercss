@@ -11,6 +11,14 @@
   margin-top: 16px;
 }
 
+.row.medium-space > .col > .card + .card {
+  margin-top: 24px;
+}
+
+.row.large-space > .col > .card + .card {
+  margin-top: 32px;
+}
+
 .card.small {
   height: 200px;
 }

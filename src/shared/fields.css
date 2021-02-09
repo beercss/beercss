@@ -16,7 +16,15 @@
 }
 
 .field + .field {
-  margin-top: 16px;
+  margin-top: 24px;
+}
+
+.row.medium-space > .col > .field + .field {
+  margin-top: 32px;
+}
+
+.row.large-space > .col > .field + .field {
+  margin-top: 40px;
 }
 
 /* icon */
