@@ -1675,7 +1675,8 @@
                 span.orange-text light, dark
               div 
                 span row&nbsp;
-                span.grey-text top-align, bottom-align, middle-align, nowrap
+                span.grey-text nowrap, top-align, bottom-align, middle-align, small-space, medium-space, large-space,&nbsp;
+                span.orange-text no-space
               div 
                 span &nbsp;&nbsp;&nbsp;&nbsp;col&nbsp;
                 span.orange-text min, max, s1..12, m1..12, l1..12
