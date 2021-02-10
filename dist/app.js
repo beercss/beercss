@@ -2533,6 +2533,7 @@ exports.default = void 0;
 //
 //
 //
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -6797,8 +6798,11 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("row ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("top-align, bottom-align, middle-align, nowrap")
-          ])
+            _vm._v(
+              "nowrap, top-align, bottom-align, middle-align, small-space, medium-space, large-space, "
+            )
+          ]),
+          _c("span", { staticClass: "orange-text" }, [_vm._v("no-space")])
         ]),
         _c("div", [
           _c("span", [_vm._v("    col ")]),
