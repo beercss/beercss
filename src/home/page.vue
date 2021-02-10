@@ -74,7 +74,7 @@
             target="_blank"
           ) NPM
           a.btn.large.border(
-            href="https://github.com/leonardorafael/beercss",
+            href="https://github.com/beercss/beercss",
             target="_blank"
           ) Github
           a.btn.large(href="https://www.patreon.com/beercss", target="_blank") Support us
