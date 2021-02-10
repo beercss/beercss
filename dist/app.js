@@ -4361,7 +4361,7 @@ var staticRenderFns = [
         {
           staticClass: "btn large border",
           attrs: {
-            href: "https://github.com/leonardorafael/beercss",
+            href: "https://github.com/beercss/beercss",
             target: "_blank"
           }
         },

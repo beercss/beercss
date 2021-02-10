@@ -85,4 +85,4 @@ As a pure community-driven project without major corporate backing, we also welc
 
 Thank you to all the people who have already contributed to Beercss!
 
-- https://github.com/leonardorafael/beercss/graphs/contributors
+- https://github.com/beercss/beercss/graphs/contributors
