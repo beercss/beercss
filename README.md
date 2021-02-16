@@ -15,6 +15,18 @@ The most tasty, lightweight and easy css framework that you've seen!
 
 Cheers, www.beercss.com
 
+## Why? ##
+
+- It's based on latest material design patterns.
+- It has zero dependencies.
+- It's themeable.
+- It does a lot of combinations.
+- It has 7kb of css and 1kb of js.
+- It has the most simple html output around.
+- It's easy to work with Vue, React, Angular, Svelte and others.
+- It does not need tons of documentation to explain it.
+- It's fast to learn, read and write code.
+
 ## Supporting Beercss
 
 Beercss is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider:
