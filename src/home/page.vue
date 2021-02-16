@@ -79,7 +79,7 @@
           ) Github
           a.btn.large(href="https://www.patreon.com/beercss", target="_blank") Support us
         .space
-        .center-align An open source project created by Everton and Leonardo
+        .center-align Hey you! Wanna be a contributor? Help this project to grow up. Help others devs like you. Cheers!
     .large-divider
     #toasts
       #toast1.toast.pink.white-text
