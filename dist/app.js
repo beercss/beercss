@@ -3007,7 +3007,9 @@ exports.default = _default;
           _vm._m(5),
           _c("div", { staticClass: "space" }),
           _c("div", { staticClass: "center-align" }, [
-            _vm._v("An open source project created by Everton and Leonardo")
+            _vm._v(
+              "Hey you! Wanna be a contributor? Help this project to grow up. Help others devs like you. Cheers!"
+            )
           ])
         ])
       ]),
