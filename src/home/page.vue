@@ -79,7 +79,7 @@
           ) Github
           a.btn.large(href="https://www.patreon.com/beercss", target="_blank") Support us
         .space
-        .center-align Hey you! Wanna be a contributor? Help this project to grow up. Help others devs like you. Cheers!
+        .center-align Hey you! Wanna be a contributor? Help this project to grow up. Cheers!
     .large-divider
     #toasts
       #toast1.toast.pink.white-text
