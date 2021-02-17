@@ -3008,7 +3008,7 @@ exports.default = _default;
           _c("div", { staticClass: "space" }),
           _c("div", { staticClass: "center-align" }, [
             _vm._v(
-              "Hey you! Wanna be a contributor? Help this project to grow up. Help others devs like you. Cheers!"
+              "Hey you! Wanna be a contributor? Help this project to grow up. Cheers!"
             )
           ])
         ])
