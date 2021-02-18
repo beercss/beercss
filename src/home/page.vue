@@ -218,6 +218,24 @@
           a.chip.circle
             i(@click="showSamples('#buttons .btn, #button button')") code
         nav.wrap
+          label
+            input#default-buttons(
+              type="radio",
+              name="color-buttons",
+              checked="checked"
+            )
+            span default
+          label
+            input#green-buttons(type="radio", name="color-buttons")
+            span green
+          label
+            input#orange-buttons(type="radio", name="color-buttons")
+            span orange
+          label
+            input#pink-buttons(type="radio", name="color-buttons")
+            span pink
+        .space
+        nav.wrap
           a.btn Button
           a.btn
             i search
@@ -2230,6 +2248,7 @@ export default {
     ui();
 
     this.chartSamples();
+    this.buttonSamples();
     this.listSamples();
     this.tableSamples();
     this.inputSamples();
@@ -2359,6 +2378,30 @@ export default {
       ui("#toast2");
       ui("#toast3");
       ui("#toast4");
+    },
+    buttonSamples() {
+      $("#buttons input").on("click", function () {
+        var ids = ["green", "orange", "pink"];
+        var buttons = $("#buttons .btn:not(.border)");
+        var buttonsBorder = $("#buttons .btn.border");
+
+        for (var i = 0; i < ids.length; i++) {
+          buttons.removeClass(ids[i]);
+          buttons.removeClass(ids[i] + "-border");
+          buttons.removeClass(ids[i] + "-text");
+
+          buttonsBorder.removeClass(ids[i]);
+          buttonsBorder.removeClass(ids[i] + "-border");
+          buttonsBorder.removeClass(ids[i] + "-text");
+
+          var selector = "#" + ids[i] + "-buttons";
+          if ($(selector).is(":checked")) {
+            buttons.addClass(ids[i]);
+            buttonsBorder.addClass(ids[i] + "-border");
+            buttonsBorder.addClass(ids[i] + "-text");
+          }
+        }
+      });
     },
     listSamples() {
       $("#list input").on("click", function () {
