@@ -2527,6 +2527,37 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -2749,13 +2780,6 @@ var _default = {
           var selector = "#" + ids[i] + "-rows";
           if ($(selector).is(":checked")) $("#rows .row").addClass(ids[i]);else $("#rows .row").removeClass(ids[i]);
         }
-      });
-    },
-    updateColors: function updateColors(text) {
-      $("#modal-colors .col > div").each(function () {
-        var html = $(this).html();
-        html = text ? html.replace(/(-light|-dark|$)/, "-text$1") : html.replace(/-text/, "");
-        $(this).html(html);
       });
     },
     chartSamples: function chartSamples() {
@@ -4171,45 +4195,13 @@ exports.default = _default;
           ])
         ])
       ]),
-      _c(
-        "div",
-        { staticClass: "modal right large", attrs: { id: "modal-colors" } },
-        [
-          _vm._m(95),
-          _c("nav", [
-            _c("label", [
-              _c("input", {
-                attrs: { type: "radio", name: "radio", checked: "checked" },
-                on: {
-                  click: function($event) {
-                    return _vm.updateColors(false)
-                  }
-                }
-              }),
-              _c("span", [_vm._v("background")])
-            ]),
-            _c("label", [
-              _c("input", {
-                attrs: { type: "radio", name: "radio" },
-                on: {
-                  click: function($event) {
-                    return _vm.updateColors(true)
-                  }
-                }
-              }),
-              _c("span", [_vm._v("text")])
-            ])
-          ]),
-          _c("span", { staticClass: "space" }),
-          _vm._m(96)
-        ]
-      ),
-      _vm._m(97),
+      _vm._m(95),
+      _vm._m(96),
       _c(
         "div",
         { staticClass: "modal right large", attrs: { id: "modal-samples" } },
         [
-          _vm._m(98),
+          _vm._m(97),
           _c("div", { staticClass: "space" }),
           _vm._l(_vm.samples, function(exemplo) {
             return _c("div", { staticClass: "card border" }, [
@@ -4231,12 +4223,12 @@ exports.default = _default;
         ],
         2
       ),
-      _vm._m(99),
+      _vm._m(98),
       _c(
         "div",
         { staticClass: "modal right large", attrs: { id: "modal-icons" } },
         [
-          _vm._m(100),
+          _vm._m(99),
           _c("div", { staticClass: "space" }),
           _vm._l(_vm.samples, function(exemplo) {
             return _c("div", { staticClass: "card border" }, [
@@ -4256,7 +4248,7 @@ exports.default = _default;
             ])
           }),
           _c("div", { staticClass: "space" }),
-          _vm._m(101)
+          _vm._m(100)
         ],
         2
       )
@@ -6918,608 +6910,639 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [
-      _c("a", { attrs: { "data-ui": "#modal-colors" } }, [
-        _c("i", [_vm._v("arrow_back")])
-      ]),
-      _c("a", { staticClass: "h5", attrs: { "data-ui": "#modal-colors" } }, [
-        _vm._v("Back")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row white-text small-text" }, [
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "red-light-5" }, [
-          _vm._v("#ffebee red-light-5")
+    return _c(
+      "div",
+      { staticClass: "modal right large", attrs: { id: "modal-colors" } },
+      [
+        _c("nav", [
+          _c("a", { attrs: { "data-ui": "#modal-colors" } }, [
+            _c("i", [_vm._v("arrow_back")])
+          ]),
+          _c(
+            "a",
+            { staticClass: "h5", attrs: { "data-ui": "#modal-colors" } },
+            [_vm._v("Back")]
+          )
         ]),
-        _c("div", { staticClass: "red-light-4" }, [
-          _vm._v("#ffcdd2 red-light-4")
-        ]),
-        _c("div", { staticClass: "red-light-3" }, [
-          _vm._v("#ef9a9a red-light-3")
-        ]),
-        _c("div", { staticClass: "red-light-2" }, [
-          _vm._v("#e57373 red-light-2")
-        ]),
-        _c("div", { staticClass: "red-light-1" }, [
-          _vm._v("#ef5350 red-light-1")
-        ]),
-        _c("div", { staticClass: "red" }, [_vm._v("#f44336 red")]),
-        _c("div", { staticClass: "red-dark-1" }, [
-          _vm._v("#e53935 red-dark-1")
-        ]),
-        _c("div", { staticClass: "red-dark-2" }, [
-          _vm._v("#d32f2f red-dark-2")
-        ]),
-        _c("div", { staticClass: "red-dark-3" }, [
-          _vm._v("#c62828 red-dark-3")
-        ]),
-        _c("div", { staticClass: "red-dark-4" }, [_vm._v("#b71c1c red-dark-4")])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "pink-light-5" }, [
-          _vm._v("#fce4ec pink-light-5")
-        ]),
-        _c("div", { staticClass: "pink-light-4" }, [
-          _vm._v("#f8bbd0 pink-light-4")
-        ]),
-        _c("div", { staticClass: "pink-light-3" }, [
-          _vm._v("#f48fb1 pink-light-3")
-        ]),
-        _c("div", { staticClass: "pink-light-2" }, [
-          _vm._v("#f06292 pink-light-2")
-        ]),
-        _c("div", { staticClass: "pink-light-1" }, [
-          _vm._v("#ec407a pink-light-1")
-        ]),
-        _c("div", { staticClass: "pink" }, [_vm._v("#e91e63 pink")]),
-        _c("div", { staticClass: "pink-dark-1" }, [
-          _vm._v("#d81b60 pink-dark-1")
-        ]),
-        _c("div", { staticClass: "pink-dark-2" }, [
-          _vm._v("#c2185b pink-dark-2")
-        ]),
-        _c("div", { staticClass: "pink-dark-3" }, [
-          _vm._v("#ad1457 pink-dark-3")
-        ]),
-        _c("div", { staticClass: "pink-dark-4" }, [
-          _vm._v("#880e4f pink-dark-4")
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "red-light-5" }, [_vm._v("red-light-5")]),
+            _c("div", { staticClass: "red-light-4" }, [_vm._v("red-light-4")]),
+            _c("div", { staticClass: "red-light-3" }, [_vm._v("red-light-3")]),
+            _c("div", { staticClass: "red-light-2" }, [_vm._v("red-light-2")]),
+            _c("div", { staticClass: "red-light-1" }, [_vm._v("red-light-1")]),
+            _c("div", { staticClass: "red" }, [_vm._v("red")]),
+            _c("div", { staticClass: "red-dark-1" }, [_vm._v("red-dark-1")]),
+            _c("div", { staticClass: "red-dark-2" }, [_vm._v("red-dark-2")]),
+            _c("div", { staticClass: "red-dark-3" }, [_vm._v("red-dark-3")]),
+            _c("div", { staticClass: "red-dark-4" }, [_vm._v("red-dark-4")]),
+            _c("div", { staticClass: "red-border border" }, [
+              _vm._v("red-border")
+            ]),
+            _c("div", { staticClass: "red-text" }, [_vm._v("red-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "pink-light-5" }, [
+              _vm._v("pink-light-5")
+            ]),
+            _c("div", { staticClass: "pink-light-4" }, [
+              _vm._v("pink-light-4")
+            ]),
+            _c("div", { staticClass: "pink-light-3" }, [
+              _vm._v("pink-light-3")
+            ]),
+            _c("div", { staticClass: "pink-light-2" }, [
+              _vm._v("pink-light-2")
+            ]),
+            _c("div", { staticClass: "pink-light-1" }, [
+              _vm._v("pink-light-1")
+            ]),
+            _c("div", { staticClass: "pink" }, [_vm._v("pink")]),
+            _c("div", { staticClass: "pink-dark-1" }, [_vm._v("pink-dark-1")]),
+            _c("div", { staticClass: "pink-dark-2" }, [_vm._v("pink-dark-2")]),
+            _c("div", { staticClass: "pink-dark-3" }, [_vm._v("pink-dark-3")]),
+            _c("div", { staticClass: "pink-dark-4" }, [_vm._v("pink-dark-4")]),
+            _c("div", { staticClass: "pink-border border" }, [
+              _vm._v("pink-border")
+            ]),
+            _c("div", { staticClass: "pink-text" }, [_vm._v("pink-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "purple-light-5" }, [
+              _vm._v("purple-light-5")
+            ]),
+            _c("div", { staticClass: "purple-light-4" }, [
+              _vm._v("purple-light-4")
+            ]),
+            _c("div", { staticClass: "purple-light-3" }, [
+              _vm._v("purple-light-3")
+            ]),
+            _c("div", { staticClass: "purple-light-2" }, [
+              _vm._v("purple-light-2")
+            ]),
+            _c("div", { staticClass: "purple-light-1" }, [
+              _vm._v("purple-light-1")
+            ]),
+            _c("div", { staticClass: "purple" }, [_vm._v("purple")]),
+            _c("div", { staticClass: "purple-dark-1" }, [
+              _vm._v("purple-dark-1")
+            ]),
+            _c("div", { staticClass: "purple-dark-2" }, [
+              _vm._v("purple-dark-2")
+            ]),
+            _c("div", { staticClass: "purple-dark-3" }, [
+              _vm._v("purple-dark-3")
+            ]),
+            _c("div", { staticClass: "purple-dark-4" }, [
+              _vm._v("purple-dark-4")
+            ]),
+            _c("div", { staticClass: "purple-border border" }, [
+              _vm._v("purple-border")
+            ]),
+            _c("div", { staticClass: "purple-text" }, [_vm._v("purple-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "deep-purple-light-5" }, [
+              _vm._v("deep-purple-light-5")
+            ]),
+            _c("div", { staticClass: "deep-purple-light-4" }, [
+              _vm._v("deep-purple-light-4")
+            ]),
+            _c("div", { staticClass: "deep-purple-light-3" }, [
+              _vm._v("deep-purple-light-3")
+            ]),
+            _c("div", { staticClass: "deep-purple-light-2" }, [
+              _vm._v("deep-purple-light-2")
+            ]),
+            _c("div", { staticClass: "deep-purple-light-1" }, [
+              _vm._v("deep-purple-light-1")
+            ]),
+            _c("div", { staticClass: "deep-purple" }, [_vm._v("deep-purple")]),
+            _c("div", { staticClass: "deep-purple-dark-1" }, [
+              _vm._v("deep-purple-dark-1")
+            ]),
+            _c("div", { staticClass: "deep-purple-dark-2" }, [
+              _vm._v("deep-purple-dark-2")
+            ]),
+            _c("div", { staticClass: "deep-purple-dark-3" }, [
+              _vm._v("deep-purple-dark-3")
+            ]),
+            _c("div", { staticClass: "deep-purple-dark-4" }, [
+              _vm._v("deep-purple-dark-4")
+            ]),
+            _c("div", { staticClass: "deep-purple-border border" }, [
+              _vm._v("deep-purple-border")
+            ]),
+            _c("div", { staticClass: "deep-purple-text" }, [
+              _vm._v("deep-purple-text")
+            ])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "indigo-light-5" }, [
+              _vm._v("indigo-light-5")
+            ]),
+            _c("div", { staticClass: "indigo-light-4" }, [
+              _vm._v("indigo-light-4")
+            ]),
+            _c("div", { staticClass: "indigo-light-3" }, [
+              _vm._v("indigo-light-3")
+            ]),
+            _c("div", { staticClass: "indigo-light-2" }, [
+              _vm._v("indigo-light-2")
+            ]),
+            _c("div", { staticClass: "indigo-light-1" }, [
+              _vm._v("indigo-light-1")
+            ]),
+            _c("div", { staticClass: "indigo" }, [_vm._v("indigo")]),
+            _c("div", { staticClass: "indigo-dark-1" }, [
+              _vm._v("indigo-dark-1")
+            ]),
+            _c("div", { staticClass: "indigo-dark-2" }, [
+              _vm._v("indigo-dark-2")
+            ]),
+            _c("div", { staticClass: "indigo-dark-3" }, [
+              _vm._v("indigo-dark-3")
+            ]),
+            _c("div", { staticClass: "indigo-dark-4" }, [
+              _vm._v("indigo-dark-4")
+            ]),
+            _c("div", { staticClass: "indigo-border border" }, [
+              _vm._v("indigo-border")
+            ]),
+            _c("div", { staticClass: "indigo-text" }, [_vm._v("indigo-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "blue-light-5" }, [
+              _vm._v("blue-light-5")
+            ]),
+            _c("div", { staticClass: "blue-light-4" }, [
+              _vm._v("blue-light-4")
+            ]),
+            _c("div", { staticClass: "blue-light-3" }, [
+              _vm._v("blue-light-3")
+            ]),
+            _c("div", { staticClass: "blue-light-2" }, [
+              _vm._v("blue-light-2")
+            ]),
+            _c("div", { staticClass: "blue-light-1" }, [
+              _vm._v("blue-light-1")
+            ]),
+            _c("div", { staticClass: "blue" }, [_vm._v("blue")]),
+            _c("div", { staticClass: "blue-dark-1" }, [_vm._v("blue-dark-1")]),
+            _c("div", { staticClass: "blue-dark-2" }, [_vm._v("blue-dark-2")]),
+            _c("div", { staticClass: "blue-dark-3" }, [_vm._v("blue-dark-3")]),
+            _c("div", { staticClass: "blue-dark-4" }, [_vm._v("blue-dark-4")]),
+            _c("div", { staticClass: "blue-border border" }, [
+              _vm._v("blue-border")
+            ]),
+            _c("div", { staticClass: "blue-text" }, [_vm._v("blue-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "light-blue-light-5" }, [
+              _vm._v("light-blue-light-5")
+            ]),
+            _c("div", { staticClass: "light-blue-light-4" }, [
+              _vm._v("light-blue-light-4")
+            ]),
+            _c("div", { staticClass: "light-blue-light-3" }, [
+              _vm._v("light-blue-light-3")
+            ]),
+            _c("div", { staticClass: "light-blue-light-2" }, [
+              _vm._v("light-blue-light-2")
+            ]),
+            _c("div", { staticClass: "light-blue-light-1" }, [
+              _vm._v("light-blue-light-1")
+            ]),
+            _c("div", { staticClass: "light-blue" }, [_vm._v("light-blue")]),
+            _c("div", { staticClass: "light-blue-dark-1" }, [
+              _vm._v("light-blue-dark-1")
+            ]),
+            _c("div", { staticClass: "light-blue-dark-2" }, [
+              _vm._v("light-blue-dark-2")
+            ]),
+            _c("div", { staticClass: "light-blue-dark-3" }, [
+              _vm._v("light-blue-dark-3")
+            ]),
+            _c("div", { staticClass: "light-blue-dark-4" }, [
+              _vm._v("light-blue-dark-4")
+            ]),
+            _c("div", { staticClass: "light-blue-border border" }, [
+              _vm._v("light-blue-border")
+            ]),
+            _c("div", { staticClass: "light-blue-text" }, [
+              _vm._v("light-blue-text")
+            ])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "cyan-light-5" }, [
+              _vm._v("cyan-light-5")
+            ]),
+            _c("div", { staticClass: "cyan-light-4" }, [
+              _vm._v("cyan-light-4")
+            ]),
+            _c("div", { staticClass: "cyan-light-3" }, [
+              _vm._v("cyan-light-3")
+            ]),
+            _c("div", { staticClass: "cyan-light-2" }, [
+              _vm._v("cyan-light-2")
+            ]),
+            _c("div", { staticClass: "cyan-light-1" }, [
+              _vm._v("cyan-light-1")
+            ]),
+            _c("div", { staticClass: "cyan" }, [_vm._v("cyan")]),
+            _c("div", { staticClass: "cyan-dark-1" }, [_vm._v("cyan-dark-1")]),
+            _c("div", { staticClass: "cyan-dark-2" }, [_vm._v("cyan-dark-2")]),
+            _c("div", { staticClass: "cyan-dark-3" }, [_vm._v("cyan-dark-3")]),
+            _c("div", { staticClass: "cyan-dark-4" }, [_vm._v("cyan-dark-4")]),
+            _c("div", { staticClass: "cyan-border border" }, [
+              _vm._v("cyan-border")
+            ]),
+            _c("div", { staticClass: "cyan-text" }, [_vm._v("cyan-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "teal-light-5" }, [
+              _vm._v("teal-light-5")
+            ]),
+            _c("div", { staticClass: "teal-light-4" }, [
+              _vm._v("teal-light-4")
+            ]),
+            _c("div", { staticClass: "teal-light-3" }, [
+              _vm._v("teal-light-3")
+            ]),
+            _c("div", { staticClass: "teal-light-2" }, [
+              _vm._v("teal-light-2")
+            ]),
+            _c("div", { staticClass: "teal-light-1" }, [
+              _vm._v("teal-light-1")
+            ]),
+            _c("div", { staticClass: "teal" }, [_vm._v("teal")]),
+            _c("div", { staticClass: "teal-dark-1" }, [_vm._v("teal-dark-1")]),
+            _c("div", { staticClass: "teal-dark-2" }, [_vm._v("teal-dark-2")]),
+            _c("div", { staticClass: "teal-dark-3" }, [_vm._v("teal-dark-3")]),
+            _c("div", { staticClass: "teal-dark-4" }, [_vm._v("teal-dark-4")]),
+            _c("div", { staticClass: "teal-border border" }, [
+              _vm._v("teal-border")
+            ]),
+            _c("div", { staticClass: "teal-text" }, [_vm._v("teal-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "green-light-5" }, [
+              _vm._v("green-light-5")
+            ]),
+            _c("div", { staticClass: "green-light-4" }, [
+              _vm._v("green-light-4")
+            ]),
+            _c("div", { staticClass: "green-light-3" }, [
+              _vm._v("green-light-3")
+            ]),
+            _c("div", { staticClass: "green-light-2" }, [
+              _vm._v("green-light-2")
+            ]),
+            _c("div", { staticClass: "green-light-1" }, [
+              _vm._v("green-light-1")
+            ]),
+            _c("div", { staticClass: "green" }, [_vm._v("green")]),
+            _c("div", { staticClass: "green-dark-1" }, [
+              _vm._v("green-dark-1")
+            ]),
+            _c("div", { staticClass: "green-dark-2" }, [
+              _vm._v("green-dark-2")
+            ]),
+            _c("div", { staticClass: "green-dark-3" }, [
+              _vm._v("green-dark-3")
+            ]),
+            _c("div", { staticClass: "green-dark-4" }, [
+              _vm._v("green-dark-4")
+            ]),
+            _c("div", { staticClass: "green-border border" }, [
+              _vm._v("green-border")
+            ]),
+            _c("div", { staticClass: "green-text" }, [_vm._v("green-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "light-green-light-5" }, [
+              _vm._v("light-green-light-5")
+            ]),
+            _c("div", { staticClass: "light-green-light-4" }, [
+              _vm._v("light-green-light-4")
+            ]),
+            _c("div", { staticClass: "light-green-light-3" }, [
+              _vm._v("light-green-light-3")
+            ]),
+            _c("div", { staticClass: "light-green-light-2" }, [
+              _vm._v("light-green-light-2")
+            ]),
+            _c("div", { staticClass: "light-green-light-1" }, [
+              _vm._v("light-green-light-1")
+            ]),
+            _c("div", { staticClass: "light-green" }, [_vm._v("light-green")]),
+            _c("div", { staticClass: "light-green-dark-1" }, [
+              _vm._v("light-green-dark-1")
+            ]),
+            _c("div", { staticClass: "light-green-dark-2" }, [
+              _vm._v("light-green-dark-2")
+            ]),
+            _c("div", { staticClass: "light-green-dark-3" }, [
+              _vm._v("light-green-dark-3")
+            ]),
+            _c("div", { staticClass: "light-green-dark-4" }, [
+              _vm._v("light-green-dark-4")
+            ]),
+            _c("div", { staticClass: "light-green-border border" }, [
+              _vm._v("light-green-border")
+            ]),
+            _c("div", { staticClass: "light-green-text" }, [
+              _vm._v("light-green-text")
+            ])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "lime-light-5" }, [
+              _vm._v("lime-light-5")
+            ]),
+            _c("div", { staticClass: "lime-light-4" }, [
+              _vm._v("lime-light-4")
+            ]),
+            _c("div", { staticClass: "lime-light-3" }, [
+              _vm._v("lime-light-3")
+            ]),
+            _c("div", { staticClass: "lime-light-2" }, [
+              _vm._v("lime-light-2")
+            ]),
+            _c("div", { staticClass: "lime-light-1" }, [
+              _vm._v("lime-light-1")
+            ]),
+            _c("div", { staticClass: "lime" }, [_vm._v("lime")]),
+            _c("div", { staticClass: "lime-dark-1" }, [_vm._v("lime-dark-1")]),
+            _c("div", { staticClass: "lime-dark-2" }, [_vm._v("lime-dark-2")]),
+            _c("div", { staticClass: "lime-dark-3" }, [_vm._v("lime-dark-3")]),
+            _c("div", { staticClass: "lime-dark-4" }, [_vm._v("lime-dark-4")]),
+            _c("div", { staticClass: "lime-border border" }, [
+              _vm._v("lime-border")
+            ]),
+            _c("div", { staticClass: "lime-text" }, [_vm._v("lime-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "yellow-light-5" }, [
+              _vm._v("yellow-light-5")
+            ]),
+            _c("div", { staticClass: "yellow-light-4" }, [
+              _vm._v("yellow-light-4")
+            ]),
+            _c("div", { staticClass: "yellow-light-3" }, [
+              _vm._v("yellow-light-3")
+            ]),
+            _c("div", { staticClass: "yellow-light-2" }, [
+              _vm._v("yellow-light-2")
+            ]),
+            _c("div", { staticClass: "yellow-light-1" }, [
+              _vm._v("yellow-light-1")
+            ]),
+            _c("div", { staticClass: "yellow" }, [_vm._v("yellow")]),
+            _c("div", { staticClass: "yellow-dark-1" }, [
+              _vm._v("yellow-dark-1")
+            ]),
+            _c("div", { staticClass: "yellow-dark-2" }, [
+              _vm._v("yellow-dark-2")
+            ]),
+            _c("div", { staticClass: "yellow-dark-3" }, [
+              _vm._v("yellow-dark-3")
+            ]),
+            _c("div", { staticClass: "yellow-dark-4" }, [
+              _vm._v("yellow-dark-4")
+            ]),
+            _c("div", { staticClass: "yellow-border border" }, [
+              _vm._v("yellow-border")
+            ]),
+            _c("div", { staticClass: "yellow-text" }, [_vm._v("yellow-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "amber-light-5" }, [
+              _vm._v("amber-light-5")
+            ]),
+            _c("div", { staticClass: "amber-light-4" }, [
+              _vm._v("amber-light-4")
+            ]),
+            _c("div", { staticClass: "amber-light-3" }, [
+              _vm._v("amber-light-3")
+            ]),
+            _c("div", { staticClass: "amber-light-2" }, [
+              _vm._v("amber-light-2")
+            ]),
+            _c("div", { staticClass: "amber-light-1" }, [
+              _vm._v("amber-light-1")
+            ]),
+            _c("div", { staticClass: "amber" }, [_vm._v("amber")]),
+            _c("div", { staticClass: "amber-dark-1" }, [
+              _vm._v("amber-dark-1")
+            ]),
+            _c("div", { staticClass: "amber-dark-2" }, [
+              _vm._v("amber-dark-2")
+            ]),
+            _c("div", { staticClass: "amber-dark-3" }, [
+              _vm._v("amber-dark-3")
+            ]),
+            _c("div", { staticClass: "amber-dark-4" }, [
+              _vm._v("amber-dark-4")
+            ]),
+            _c("div", { staticClass: "amber-border border" }, [
+              _vm._v("amber-border")
+            ]),
+            _c("div", { staticClass: "amber-text" }, [_vm._v("amber-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "orange-light-5" }, [
+              _vm._v("orange-light-5")
+            ]),
+            _c("div", { staticClass: "orange-light-4" }, [
+              _vm._v("orange-light-4")
+            ]),
+            _c("div", { staticClass: "orange-light-3" }, [
+              _vm._v("orange-light-3")
+            ]),
+            _c("div", { staticClass: "orange-light-2" }, [
+              _vm._v("orange-light-2")
+            ]),
+            _c("div", { staticClass: "orange-light-1" }, [
+              _vm._v("orange-light-1")
+            ]),
+            _c("div", { staticClass: "orange" }, [_vm._v("orange")]),
+            _c("div", { staticClass: "orange-dark-1" }, [
+              _vm._v("orange-dark-1")
+            ]),
+            _c("div", { staticClass: "orange-dark-2" }, [
+              _vm._v("orange-dark-2")
+            ]),
+            _c("div", { staticClass: "orange-dark-3" }, [
+              _vm._v("orange-dark-3")
+            ]),
+            _c("div", { staticClass: "orange-dark-4" }, [
+              _vm._v("orange-dark-4")
+            ]),
+            _c("div", { staticClass: "orange-border border" }, [
+              _vm._v("orange-border")
+            ]),
+            _c("div", { staticClass: "orange-text" }, [_vm._v("orange-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "deep-orange-light-5" }, [
+              _vm._v("deep-orange-light-5")
+            ]),
+            _c("div", { staticClass: "deep-orange-light-4" }, [
+              _vm._v("deep-orange-light-4")
+            ]),
+            _c("div", { staticClass: "deep-orange-light-3" }, [
+              _vm._v("deep-orange-light-3")
+            ]),
+            _c("div", { staticClass: "deep-orange-light-2" }, [
+              _vm._v("deep-orange-light-2")
+            ]),
+            _c("div", { staticClass: "deep-orange-light-1" }, [
+              _vm._v("deep-orange-light-1")
+            ]),
+            _c("div", { staticClass: "deep-orange" }, [_vm._v("deep-orange")]),
+            _c("div", { staticClass: "deep-orange-dark-1" }, [
+              _vm._v("deep-orange-dark-1")
+            ]),
+            _c("div", { staticClass: "deep-orange-dark-2" }, [
+              _vm._v("deep-orange-dark-2")
+            ]),
+            _c("div", { staticClass: "deep-orange-dark-3" }, [
+              _vm._v("deep-orange-dark-3")
+            ]),
+            _c("div", { staticClass: "deep-orange-dark-4" }, [
+              _vm._v("deep-orange-dark-4")
+            ]),
+            _c("div", { staticClass: "deep-orange-border border" }, [
+              _vm._v("deep-orange-border")
+            ]),
+            _c("div", { staticClass: "deep-orange-text" }, [
+              _vm._v("deep-orange-text")
+            ])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "brown-light-5" }, [
+              _vm._v("brown-light-5")
+            ]),
+            _c("div", { staticClass: "brown-light-4" }, [
+              _vm._v("brown-light-4")
+            ]),
+            _c("div", { staticClass: "brown-light-3" }, [
+              _vm._v("brown-light-3")
+            ]),
+            _c("div", { staticClass: "brown-light-2" }, [
+              _vm._v("brown-light-2")
+            ]),
+            _c("div", { staticClass: "brown-light-1" }, [
+              _vm._v("brown-light-1")
+            ]),
+            _c("div", { staticClass: "brown" }, [_vm._v("brown")]),
+            _c("div", { staticClass: "brown-dark-1" }, [
+              _vm._v("brown-dark-1")
+            ]),
+            _c("div", { staticClass: "brown-dark-2" }, [
+              _vm._v("brown-dark-2")
+            ]),
+            _c("div", { staticClass: "brown-dark-3" }, [
+              _vm._v("brown-dark-3")
+            ]),
+            _c("div", { staticClass: "brown-dark-4" }, [
+              _vm._v("brown-dark-4")
+            ]),
+            _c("div", { staticClass: "brown-border border" }, [
+              _vm._v("brown-border")
+            ]),
+            _c("div", { staticClass: "brown-text" }, [_vm._v("brown-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "grey-light-5" }, [
+              _vm._v("grey-light-5")
+            ]),
+            _c("div", { staticClass: "grey-light-4" }, [
+              _vm._v("grey-light-4")
+            ]),
+            _c("div", { staticClass: "grey-light-3" }, [
+              _vm._v("grey-light-3")
+            ]),
+            _c("div", { staticClass: "grey-light-2" }, [
+              _vm._v("grey-light-2")
+            ]),
+            _c("div", { staticClass: "grey-light-1" }, [
+              _vm._v("grey-light-1")
+            ]),
+            _c("div", { staticClass: "grey" }, [_vm._v("grey")]),
+            _c("div", { staticClass: "grey-dark-1" }, [_vm._v("grey-dark-1")]),
+            _c("div", { staticClass: "grey-dark-2" }, [_vm._v("grey-dark-2")]),
+            _c("div", { staticClass: "grey-dark-3" }, [_vm._v("grey-dark-3")]),
+            _c("div", { staticClass: "grey-dark-4" }, [_vm._v("grey-dark-4")]),
+            _c("div", { staticClass: "grey-border border" }, [
+              _vm._v("grey-border")
+            ]),
+            _c("div", { staticClass: "grey-text" }, [_vm._v("grey-text")])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "blue-grey-light-5" }, [
+              _vm._v("blue-grey-light-5")
+            ]),
+            _c("div", { staticClass: "blue-grey-light-4" }, [
+              _vm._v("blue-grey-light-4")
+            ]),
+            _c("div", { staticClass: "blue-grey-light-3" }, [
+              _vm._v("blue-grey-light-3")
+            ]),
+            _c("div", { staticClass: "blue-grey-light-2" }, [
+              _vm._v("blue-grey-light-2")
+            ]),
+            _c("div", { staticClass: "blue-grey-light-1" }, [
+              _vm._v("blue-grey-light-1")
+            ]),
+            _c("div", { staticClass: "blue-grey" }, [_vm._v("blue-grey")]),
+            _c("div", { staticClass: "blue-grey-dark-1" }, [
+              _vm._v("blue-grey-dark-1")
+            ]),
+            _c("div", { staticClass: "blue-grey-dark-2" }, [
+              _vm._v("blue-grey-dark-2")
+            ]),
+            _c("div", { staticClass: "blue-grey-dark-3" }, [
+              _vm._v("blue-grey-dark-3")
+            ]),
+            _c("div", { staticClass: "blue-grey-dark-4" }, [
+              _vm._v("blue-grey-dark-4")
+            ]),
+            _c("div", { staticClass: "blue-grey-border border" }, [
+              _vm._v("blue-grey-border")
+            ]),
+            _c("div", { staticClass: "blue-grey-text" }, [
+              _vm._v("blue-grey-text")
+            ])
+          ]),
+          _c("div", { staticClass: "col s6" }, [
+            _c("div", { staticClass: "black grey-text" }, [_vm._v("black")]),
+            _c("div", { staticClass: "black-border border grey-text" }, [
+              _vm._v("black-border")
+            ]),
+            _c("div", { staticClass: "black-text grey-text" }, [
+              _vm._v("black-text")
+            ]),
+            _c("div", { staticClass: "white grey-text" }, [_vm._v("white")]),
+            _c("div", { staticClass: "white-border border grey-text" }, [
+              _vm._v("white-border")
+            ]),
+            _c("div", { staticClass: "white-text grey-text" }, [
+              _vm._v("white-text")
+            ]),
+            _c("div", { staticClass: "transparent grey-text" }, [
+              _vm._v("transparent")
+            ]),
+            _c("div", { staticClass: "transparent-border border grey-text" }, [
+              _vm._v("transparent-border")
+            ]),
+            _c("div", { staticClass: "transparent-text grey-text" }, [
+              _vm._v("transparent-text")
+            ])
+          ])
         ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "purple-light-5" }, [
-          _vm._v("#f3e5f5 purple-light-5")
-        ]),
-        _c("div", { staticClass: "purple-light-4" }, [
-          _vm._v("#e1bee7 purple-light-4")
-        ]),
-        _c("div", { staticClass: "purple-light-3" }, [
-          _vm._v("#ce93d8 purple-light-3")
-        ]),
-        _c("div", { staticClass: "purple-light-2" }, [
-          _vm._v("#ba68c8 purple-light-2")
-        ]),
-        _c("div", { staticClass: "purple-light-1" }, [
-          _vm._v("#ab47bc purple-light-1")
-        ]),
-        _c("div", { staticClass: "purple" }, [_vm._v("#9c27b0 purple")]),
-        _c("div", { staticClass: "purple-dark-1" }, [
-          _vm._v("#8e24aa purple-dark-1")
-        ]),
-        _c("div", { staticClass: "purple-dark-2" }, [
-          _vm._v("#7b1fa2 purple-dark-2")
-        ]),
-        _c("div", { staticClass: "purple-dark-3" }, [
-          _vm._v("#6a1b9a purple-dark-3")
-        ]),
-        _c("div", { staticClass: "purple-dark-4" }, [
-          _vm._v("#4a148c purple-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "deep-purple-light-5" }, [
-          _vm._v("#ede7f6 deep-purple-light-5")
-        ]),
-        _c("div", { staticClass: "deep-purple-light-4" }, [
-          _vm._v("#d1c4e9 deep-purple-light-4")
-        ]),
-        _c("div", { staticClass: "deep-purple-light-3" }, [
-          _vm._v("#b39ddb deep-purple-light-3")
-        ]),
-        _c("div", { staticClass: "deep-purple-light-2" }, [
-          _vm._v("#9575cd deep-purple-light-2")
-        ]),
-        _c("div", { staticClass: "deep-purple-light-1" }, [
-          _vm._v("#7e57c2 deep-purple-light-1")
-        ]),
-        _c("div", { staticClass: "deep-purple" }, [
-          _vm._v("#673ab7 deep-purple")
-        ]),
-        _c("div", { staticClass: "deep-purple-dark-1" }, [
-          _vm._v("#5e35b1 deep-purple-dark-1")
-        ]),
-        _c("div", { staticClass: "deep-purple-dark-2" }, [
-          _vm._v("#512da8 deep-purple-dark-2")
-        ]),
-        _c("div", { staticClass: "deep-purple-dark-3" }, [
-          _vm._v("#4527a0 deep-purple-dark-3")
-        ]),
-        _c("div", { staticClass: "deep-purple-dark-4" }, [
-          _vm._v("#311b92 deep-purple-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "indigo-light-5" }, [
-          _vm._v("#e8eaf6 indigo-light-5")
-        ]),
-        _c("div", { staticClass: "indigo-light-4" }, [
-          _vm._v("#c5cae9 indigo-light-4")
-        ]),
-        _c("div", { staticClass: "indigo-light-3" }, [
-          _vm._v("#9fa8da indigo-light-3")
-        ]),
-        _c("div", { staticClass: "indigo-light-2" }, [
-          _vm._v("#7986cb indigo-light-2")
-        ]),
-        _c("div", { staticClass: "indigo-light-1" }, [
-          _vm._v("#5c6bc0 indigo-light-1")
-        ]),
-        _c("div", { staticClass: "indigo" }, [_vm._v("#3f51b5 indigo")]),
-        _c("div", { staticClass: "indigo-dark-1" }, [
-          _vm._v("#3949ab indigo-dark-1")
-        ]),
-        _c("div", { staticClass: "indigo-dark-2" }, [
-          _vm._v("#303f9f indigo-dark-2")
-        ]),
-        _c("div", { staticClass: "indigo-dark-3" }, [
-          _vm._v("#283593 indigo-dark-3")
-        ]),
-        _c("div", { staticClass: "indigo-dark-4" }, [
-          _vm._v("#1a237e indigo-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "blue-light-5" }, [
-          _vm._v("#e3f2fd blue-light-5")
-        ]),
-        _c("div", { staticClass: "blue-light-4" }, [
-          _vm._v("#bbdefb blue-light-4")
-        ]),
-        _c("div", { staticClass: "blue-light-3" }, [
-          _vm._v("#90caf9 blue-light-3")
-        ]),
-        _c("div", { staticClass: "blue-light-2" }, [
-          _vm._v("#64b5f6 blue-light-2")
-        ]),
-        _c("div", { staticClass: "blue-light-1" }, [
-          _vm._v("#42a5f5 blue-light-1")
-        ]),
-        _c("div", { staticClass: "blue" }, [_vm._v("#2196f3 blue")]),
-        _c("div", { staticClass: "blue-dark-1" }, [
-          _vm._v("#1e88e5 blue-dark-1")
-        ]),
-        _c("div", { staticClass: "blue-dark-2" }, [
-          _vm._v("#1976d2 blue-dark-2")
-        ]),
-        _c("div", { staticClass: "blue-dark-3" }, [
-          _vm._v("#1565c0 blue-dark-3")
-        ]),
-        _c("div", { staticClass: "blue-dark-4" }, [
-          _vm._v("#0d47a1 blue-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "light-blue-light-5" }, [
-          _vm._v("#e1f5fe light-blue-light-5")
-        ]),
-        _c("div", { staticClass: "light-blue-light-4" }, [
-          _vm._v("#b3e5fc light-blue-light-4")
-        ]),
-        _c("div", { staticClass: "light-blue-light-3" }, [
-          _vm._v("#81d4fa light-blue-light-3")
-        ]),
-        _c("div", { staticClass: "light-blue-light-2" }, [
-          _vm._v("#4fc3f7 light-blue-light-2")
-        ]),
-        _c("div", { staticClass: "light-blue-light-1" }, [
-          _vm._v("#29b6f6 light-blue-light-1")
-        ]),
-        _c("div", { staticClass: "light-blue" }, [
-          _vm._v("#03a9f4 light-blue")
-        ]),
-        _c("div", { staticClass: "light-blue-dark-1" }, [
-          _vm._v("#039be5 light-blue-dark-1")
-        ]),
-        _c("div", { staticClass: "light-blue-dark-2" }, [
-          _vm._v("#0288d1 light-blue-dark-2")
-        ]),
-        _c("div", { staticClass: "light-blue-dark-3" }, [
-          _vm._v("#0277bd light-blue-dark-3")
-        ]),
-        _c("div", { staticClass: "light-blue-dark-4" }, [
-          _vm._v("#01579b light-blue-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "cyan-light-5" }, [
-          _vm._v("#e0f7fa cyan-light-5")
-        ]),
-        _c("div", { staticClass: "cyan-light-4" }, [
-          _vm._v("#b2ebf2 cyan-light-4")
-        ]),
-        _c("div", { staticClass: "cyan-light-3" }, [
-          _vm._v("#80deea cyan-light-3")
-        ]),
-        _c("div", { staticClass: "cyan-light-2" }, [
-          _vm._v("#4dd0e1 cyan-light-2")
-        ]),
-        _c("div", { staticClass: "cyan-light-1" }, [
-          _vm._v("#26c6da cyan-light-1")
-        ]),
-        _c("div", { staticClass: "cyan" }, [_vm._v("#00bcd4 cyan")]),
-        _c("div", { staticClass: "cyan-dark-1" }, [
-          _vm._v("#00acc1 cyan-dark-1")
-        ]),
-        _c("div", { staticClass: "cyan-dark-2" }, [
-          _vm._v("#0097a7 cyan-dark-2")
-        ]),
-        _c("div", { staticClass: "cyan-dark-3" }, [
-          _vm._v("#00838f cyan-dark-3")
-        ]),
-        _c("div", { staticClass: "cyan-dark-4" }, [
-          _vm._v("#006064 cyan-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "teal-light-5" }, [
-          _vm._v("#e0f2f1 teal-light-5")
-        ]),
-        _c("div", { staticClass: "teal-light-4" }, [
-          _vm._v("#b2dfdb teal-light-4")
-        ]),
-        _c("div", { staticClass: "teal-light-3" }, [
-          _vm._v("#80cbc4 teal-light-3")
-        ]),
-        _c("div", { staticClass: "teal-light-2" }, [
-          _vm._v("#4db6ac teal-light-2")
-        ]),
-        _c("div", { staticClass: "teal-light-1" }, [
-          _vm._v("#26a69a teal-light-1")
-        ]),
-        _c("div", { staticClass: "teal" }, [_vm._v("#009688 teal")]),
-        _c("div", { staticClass: "teal-dark-1" }, [
-          _vm._v("#00897b teal-dark-1")
-        ]),
-        _c("div", { staticClass: "teal-dark-2" }, [
-          _vm._v("#00796b teal-dark-2")
-        ]),
-        _c("div", { staticClass: "teal-dark-3" }, [
-          _vm._v("#00695c teal-dark-3")
-        ]),
-        _c("div", { staticClass: "teal-dark-4" }, [
-          _vm._v("#004d40 teal-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "green-light-5" }, [
-          _vm._v("#e8f5e9 green-light-5")
-        ]),
-        _c("div", { staticClass: "green-light-4" }, [
-          _vm._v("#c8e6c9 green-light-4")
-        ]),
-        _c("div", { staticClass: "green-light-3" }, [
-          _vm._v("#a5d6a7 green-light-3")
-        ]),
-        _c("div", { staticClass: "green-light-2" }, [
-          _vm._v("#81c784 green-light-2")
-        ]),
-        _c("div", { staticClass: "green-light-1" }, [
-          _vm._v("#66bb6a green-light-1")
-        ]),
-        _c("div", { staticClass: "green" }, [_vm._v("#4caf50 green")]),
-        _c("div", { staticClass: "green-dark-1" }, [
-          _vm._v("#43a047 green-dark-1")
-        ]),
-        _c("div", { staticClass: "green-dark-2" }, [
-          _vm._v("#388e3c green-dark-2")
-        ]),
-        _c("div", { staticClass: "green-dark-3" }, [
-          _vm._v("#2e7d32 green-dark-3")
-        ]),
-        _c("div", { staticClass: "green-dark-4" }, [
-          _vm._v("#1b5e20 green-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "light-green-light-5" }, [
-          _vm._v("#f1f8e9 light-green-light-5")
-        ]),
-        _c("div", { staticClass: "light-green-light-4" }, [
-          _vm._v("#dcedc8 light-green-light-4")
-        ]),
-        _c("div", { staticClass: "light-green-light-3" }, [
-          _vm._v("#c5e1a5 light-green-light-3")
-        ]),
-        _c("div", { staticClass: "light-green-light-2" }, [
-          _vm._v("#aed581 light-green-light-2")
-        ]),
-        _c("div", { staticClass: "light-green-light-1" }, [
-          _vm._v("#9ccc65 light-green-light-1")
-        ]),
-        _c("div", { staticClass: "light-green" }, [
-          _vm._v("#8bc34a light-green")
-        ]),
-        _c("div", { staticClass: "light-green-dark-1" }, [
-          _vm._v("#7cb342 light-green-dark-1")
-        ]),
-        _c("div", { staticClass: "light-green-dark-2" }, [
-          _vm._v("#689f38 light-green-dark-2")
-        ]),
-        _c("div", { staticClass: "light-green-dark-3" }, [
-          _vm._v("#558b2f light-green-dark-3")
-        ]),
-        _c("div", { staticClass: "light-green-dark-4" }, [
-          _vm._v("#33691e light-green-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "lime-light-5" }, [
-          _vm._v("#f9fbe7 lime-light-5")
-        ]),
-        _c("div", { staticClass: "lime-light-4" }, [
-          _vm._v("#f0f4c3 lime-light-4")
-        ]),
-        _c("div", { staticClass: "lime-light-3" }, [
-          _vm._v("#e6ee9c lime-light-3")
-        ]),
-        _c("div", { staticClass: "lime-light-2" }, [
-          _vm._v("#dce775 lime-light-2")
-        ]),
-        _c("div", { staticClass: "lime-light-1" }, [
-          _vm._v("#d4e157 lime-light-1")
-        ]),
-        _c("div", { staticClass: "lime" }, [_vm._v("#cddc39 lime")]),
-        _c("div", { staticClass: "lime-dark-1" }, [
-          _vm._v("#c0ca33 lime-dark-1")
-        ]),
-        _c("div", { staticClass: "lime-dark-2" }, [
-          _vm._v("#afb42b lime-dark-2")
-        ]),
-        _c("div", { staticClass: "lime-dark-3" }, [
-          _vm._v("#9e9d24 lime-dark-3")
-        ]),
-        _c("div", { staticClass: "lime-dark-4" }, [
-          _vm._v("#827717 lime-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "yellow-light-5" }, [
-          _vm._v("#fffde7 yellow-light-5")
-        ]),
-        _c("div", { staticClass: "yellow-light-4" }, [
-          _vm._v("#fff9c4 yellow-light-4")
-        ]),
-        _c("div", { staticClass: "yellow-light-3" }, [
-          _vm._v("#fff59d yellow-light-3")
-        ]),
-        _c("div", { staticClass: "yellow-light-2" }, [
-          _vm._v("#fff176 yellow-light-2")
-        ]),
-        _c("div", { staticClass: "yellow-light-1" }, [
-          _vm._v("#ffee58 yellow-light-1")
-        ]),
-        _c("div", { staticClass: "yellow" }, [_vm._v("#ffeb3b yellow")]),
-        _c("div", { staticClass: "yellow-dark-1" }, [
-          _vm._v("#fdd835 yellow-dark-1")
-        ]),
-        _c("div", { staticClass: "yellow-dark-2" }, [
-          _vm._v("#fbc02d yellow-dark-2")
-        ]),
-        _c("div", { staticClass: "yellow-dark-3" }, [
-          _vm._v("#f9a825 yellow-dark-3")
-        ]),
-        _c("div", { staticClass: "yellow-dark-4" }, [
-          _vm._v("#f57f17 yellow-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "amber-light-5" }, [
-          _vm._v("#fff8e1 amber-light-5")
-        ]),
-        _c("div", { staticClass: "amber-light-4" }, [
-          _vm._v("#ffecb3 amber-light-4")
-        ]),
-        _c("div", { staticClass: "amber-light-3" }, [
-          _vm._v("#ffe082 amber-light-3")
-        ]),
-        _c("div", { staticClass: "amber-light-2" }, [
-          _vm._v("#ffd54f amber-light-2")
-        ]),
-        _c("div", { staticClass: "amber-light-1" }, [
-          _vm._v("#ffca28 amber-light-1")
-        ]),
-        _c("div", { staticClass: "amber" }, [_vm._v("#ffc107 amber")]),
-        _c("div", { staticClass: "amber-dark-1" }, [
-          _vm._v("#ffb300 amber-dark-1")
-        ]),
-        _c("div", { staticClass: "amber-dark-2" }, [
-          _vm._v("#ffa000 amber-dark-2")
-        ]),
-        _c("div", { staticClass: "amber-dark-3" }, [
-          _vm._v("#ff8f00 amber-dark-3")
-        ]),
-        _c("div", { staticClass: "amber-dark-4" }, [
-          _vm._v("#ff6f00 amber-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "orange-light-5" }, [
-          _vm._v("#fff3e0 orange-light-5")
-        ]),
-        _c("div", { staticClass: "orange-light-4" }, [
-          _vm._v("#ffe0b2 orange-light-4")
-        ]),
-        _c("div", { staticClass: "orange-light-3" }, [
-          _vm._v("#ffcc80 orange-light-3")
-        ]),
-        _c("div", { staticClass: "orange-light-2" }, [
-          _vm._v("#ffb74d orange-light-2")
-        ]),
-        _c("div", { staticClass: "orange-light-1" }, [
-          _vm._v("#ffa726 orange-light-1")
-        ]),
-        _c("div", { staticClass: "orange" }, [_vm._v("#ff9800 orange")]),
-        _c("div", { staticClass: "orange-dark-1" }, [
-          _vm._v("#fb8c00 orange-dark-1")
-        ]),
-        _c("div", { staticClass: "orange-dark-2" }, [
-          _vm._v("#f57c00 orange-dark-2")
-        ]),
-        _c("div", { staticClass: "orange-dark-3" }, [
-          _vm._v("#ef6c00 orange-dark-3")
-        ]),
-        _c("div", { staticClass: "orange-dark-4" }, [
-          _vm._v("#e65100 orange-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "deep-orange-light-5" }, [
-          _vm._v("#fbe9e7 deep-orange-light-5")
-        ]),
-        _c("div", { staticClass: "deep-orange-light-4" }, [
-          _vm._v("#ffccbc deep-orange-light-4")
-        ]),
-        _c("div", { staticClass: "deep-orange-light-3" }, [
-          _vm._v("#ffab91 deep-orange-light-3")
-        ]),
-        _c("div", { staticClass: "deep-orange-light-2" }, [
-          _vm._v("#ff8a65 deep-orange-light-2")
-        ]),
-        _c("div", { staticClass: "deep-orange-light-1" }, [
-          _vm._v("#ff7043 deep-orange-light-1")
-        ]),
-        _c("div", { staticClass: "deep-orange" }, [
-          _vm._v("#ff5722 deep-orange")
-        ]),
-        _c("div", { staticClass: "deep-orange-dark-1" }, [
-          _vm._v("#f4511e deep-orange-dark-1")
-        ]),
-        _c("div", { staticClass: "deep-orange-dark-2" }, [
-          _vm._v("#e64a19 deep-orange-dark-2")
-        ]),
-        _c("div", { staticClass: "deep-orange-dark-3" }, [
-          _vm._v("#d84315 deep-orange-dark-3")
-        ]),
-        _c("div", { staticClass: "deep-orange-dark-4" }, [
-          _vm._v("#bf360c deep-orange-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "brown-light-5" }, [
-          _vm._v("#efebe9 brown-light-5")
-        ]),
-        _c("div", { staticClass: "brown-light-4" }, [
-          _vm._v("#d7ccc8 brown-light-4")
-        ]),
-        _c("div", { staticClass: "brown-light-3" }, [
-          _vm._v("#bcaaa4 brown-light-3")
-        ]),
-        _c("div", { staticClass: "brown-light-2" }, [
-          _vm._v("#a1887f brown-light-2")
-        ]),
-        _c("div", { staticClass: "brown-light-1" }, [
-          _vm._v("#8d6e63 brown-light-1")
-        ]),
-        _c("div", { staticClass: "brown" }, [_vm._v("#795548 brown")]),
-        _c("div", { staticClass: "brown-dark-1" }, [
-          _vm._v("#6d4c41 brown-dark-1")
-        ]),
-        _c("div", { staticClass: "brown-dark-2" }, [
-          _vm._v("#5d4037 brown-dark-2")
-        ]),
-        _c("div", { staticClass: "brown-dark-3" }, [
-          _vm._v("#4e342e brown-dark-3")
-        ]),
-        _c("div", { staticClass: "brown-dark-4" }, [
-          _vm._v("#3e2723 brown-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "grey-light-5" }, [
-          _vm._v("#fafafa grey-light-5")
-        ]),
-        _c("div", { staticClass: "grey-light-4" }, [
-          _vm._v("#f5f5f5 grey-light-4")
-        ]),
-        _c("div", { staticClass: "grey-light-3" }, [
-          _vm._v("#eeeeee grey-light-3")
-        ]),
-        _c("div", { staticClass: "grey-light-2" }, [
-          _vm._v("#e0e0e0 grey-light-2")
-        ]),
-        _c("div", { staticClass: "grey-light-1" }, [
-          _vm._v("#bdbdbd grey-light-1")
-        ]),
-        _c("div", { staticClass: "grey" }, [_vm._v("#9e9e9e grey")]),
-        _c("div", { staticClass: "grey-dark-1" }, [
-          _vm._v("#757575 grey-dark-1")
-        ]),
-        _c("div", { staticClass: "grey-dark-2" }, [
-          _vm._v("#616161 grey-dark-2")
-        ]),
-        _c("div", { staticClass: "grey-dark-3" }, [
-          _vm._v("#424242 grey-dark-3")
-        ]),
-        _c("div", { staticClass: "grey-dark-4" }, [
-          _vm._v("#212121 grey-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "blue-grey-light-5" }, [
-          _vm._v("#eceff1 blue-grey-light-5")
-        ]),
-        _c("div", { staticClass: "blue-grey-light-4" }, [
-          _vm._v("#cfd8dc blue-grey-light-4")
-        ]),
-        _c("div", { staticClass: "blue-grey-light-3" }, [
-          _vm._v("#b0bec5 blue-grey-light-3")
-        ]),
-        _c("div", { staticClass: "blue-grey-light-2" }, [
-          _vm._v("#90a4ae blue-grey-light-2")
-        ]),
-        _c("div", { staticClass: "blue-grey-light-1" }, [
-          _vm._v("#78909c blue-grey-light-1")
-        ]),
-        _c("div", { staticClass: "blue-grey" }, [_vm._v("#607d8b blue-grey")]),
-        _c("div", { staticClass: "blue-grey-dark-1" }, [
-          _vm._v("#546e7a blue-grey-dark-1")
-        ]),
-        _c("div", { staticClass: "blue-grey-dark-2" }, [
-          _vm._v("#455a64 blue-grey-dark-2")
-        ]),
-        _c("div", { staticClass: "blue-grey-dark-3" }, [
-          _vm._v("#37474f blue-grey-dark-3")
-        ]),
-        _c("div", { staticClass: "blue-grey-dark-4" }, [
-          _vm._v("#263238 blue-grey-dark-4")
-        ])
-      ]),
-      _c("div", { staticClass: "col s6" }, [
-        _c("div", { staticClass: "black grey-text" }, [
-          _vm._v("#000000 black")
-        ]),
-        _c("div", { staticClass: "white grey-text" }, [
-          _vm._v("#ffffff white")
-        ]),
-        _c("div", { staticClass: "transparent grey-text" }, [
-          _vm._v("N/A transparent")
-        ])
-      ])
-    ])
+      ]
+    )
   },
   function() {
     var _vm = this

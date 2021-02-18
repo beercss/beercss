@@ -1790,233 +1790,264 @@
         a(data-ui="#modal-colors")
           i arrow_back
         a.h5(data-ui="#modal-colors") Back
-      nav
-        label
-          input(
-            type="radio",
-            name="radio",
-            checked="checked",
-            @click="updateColors(false)"
-          )
-          span background
-        label
-          input(type="radio", name="radio", @click="updateColors(true)")
-          span text
-      span.space
-      .row.white-text.small-text
+      .row
         .col.s6
-          .red-light-5 #ffebee red-light-5
-          .red-light-4 #ffcdd2 red-light-4
-          .red-light-3 #ef9a9a red-light-3
-          .red-light-2 #e57373 red-light-2
-          .red-light-1 #ef5350 red-light-1
-          .red #f44336 red
-          .red-dark-1 #e53935 red-dark-1
-          .red-dark-2 #d32f2f red-dark-2
-          .red-dark-3 #c62828 red-dark-3
-          .red-dark-4 #b71c1c red-dark-4
+          .red-light-5 red-light-5
+          .red-light-4 red-light-4
+          .red-light-3 red-light-3
+          .red-light-2 red-light-2
+          .red-light-1 red-light-1
+          .red red
+          .red-dark-1 red-dark-1
+          .red-dark-2 red-dark-2
+          .red-dark-3 red-dark-3
+          .red-dark-4 red-dark-4
+          .red-border.border red-border
+          .red-text red-text
         .col.s6
-          .pink-light-5 #fce4ec pink-light-5
-          .pink-light-4 #f8bbd0 pink-light-4
-          .pink-light-3 #f48fb1 pink-light-3
-          .pink-light-2 #f06292 pink-light-2
-          .pink-light-1 #ec407a pink-light-1
-          .pink #e91e63 pink
-          .pink-dark-1 #d81b60 pink-dark-1
-          .pink-dark-2 #c2185b pink-dark-2
-          .pink-dark-3 #ad1457 pink-dark-3
-          .pink-dark-4 #880e4f pink-dark-4
+          .pink-light-5 pink-light-5
+          .pink-light-4 pink-light-4
+          .pink-light-3 pink-light-3
+          .pink-light-2 pink-light-2
+          .pink-light-1 pink-light-1
+          .pink pink
+          .pink-dark-1 pink-dark-1
+          .pink-dark-2 pink-dark-2
+          .pink-dark-3 pink-dark-3
+          .pink-dark-4 pink-dark-4
+          .pink-border.border pink-border
+          .pink-text pink-text
         .col.s6
-          .purple-light-5 #f3e5f5 purple-light-5
-          .purple-light-4 #e1bee7 purple-light-4
-          .purple-light-3 #ce93d8 purple-light-3
-          .purple-light-2 #ba68c8 purple-light-2
-          .purple-light-1 #ab47bc purple-light-1
-          .purple #9c27b0 purple
-          .purple-dark-1 #8e24aa purple-dark-1
-          .purple-dark-2 #7b1fa2 purple-dark-2
-          .purple-dark-3 #6a1b9a purple-dark-3
-          .purple-dark-4 #4a148c purple-dark-4
+          .purple-light-5 purple-light-5
+          .purple-light-4 purple-light-4
+          .purple-light-3 purple-light-3
+          .purple-light-2 purple-light-2
+          .purple-light-1 purple-light-1
+          .purple purple
+          .purple-dark-1 purple-dark-1
+          .purple-dark-2 purple-dark-2
+          .purple-dark-3 purple-dark-3
+          .purple-dark-4 purple-dark-4
+          .purple-border.border purple-border
+          .purple-text purple-text
         .col.s6
-          .deep-purple-light-5 #ede7f6 deep-purple-light-5
-          .deep-purple-light-4 #d1c4e9 deep-purple-light-4
-          .deep-purple-light-3 #b39ddb deep-purple-light-3
-          .deep-purple-light-2 #9575cd deep-purple-light-2
-          .deep-purple-light-1 #7e57c2 deep-purple-light-1
-          .deep-purple #673ab7 deep-purple
-          .deep-purple-dark-1 #5e35b1 deep-purple-dark-1
-          .deep-purple-dark-2 #512da8 deep-purple-dark-2
-          .deep-purple-dark-3 #4527a0 deep-purple-dark-3
-          .deep-purple-dark-4 #311b92 deep-purple-dark-4
+          .deep-purple-light-5 deep-purple-light-5
+          .deep-purple-light-4 deep-purple-light-4
+          .deep-purple-light-3 deep-purple-light-3
+          .deep-purple-light-2 deep-purple-light-2
+          .deep-purple-light-1 deep-purple-light-1
+          .deep-purple deep-purple
+          .deep-purple-dark-1 deep-purple-dark-1
+          .deep-purple-dark-2 deep-purple-dark-2
+          .deep-purple-dark-3 deep-purple-dark-3
+          .deep-purple-dark-4 deep-purple-dark-4
+          .deep-purple-border.border deep-purple-border
+          .deep-purple-text deep-purple-text
         .col.s6
-          .indigo-light-5 #e8eaf6 indigo-light-5
-          .indigo-light-4 #c5cae9 indigo-light-4
-          .indigo-light-3 #9fa8da indigo-light-3
-          .indigo-light-2 #7986cb indigo-light-2
-          .indigo-light-1 #5c6bc0 indigo-light-1
-          .indigo #3f51b5 indigo
-          .indigo-dark-1 #3949ab indigo-dark-1
-          .indigo-dark-2 #303f9f indigo-dark-2
-          .indigo-dark-3 #283593 indigo-dark-3
-          .indigo-dark-4 #1a237e indigo-dark-4
+          .indigo-light-5 indigo-light-5
+          .indigo-light-4 indigo-light-4
+          .indigo-light-3 indigo-light-3
+          .indigo-light-2 indigo-light-2
+          .indigo-light-1 indigo-light-1
+          .indigo indigo
+          .indigo-dark-1 indigo-dark-1
+          .indigo-dark-2 indigo-dark-2
+          .indigo-dark-3 indigo-dark-3
+          .indigo-dark-4 indigo-dark-4
+          .indigo-border.border indigo-border
+          .indigo-text indigo-text
         .col.s6
-          .blue-light-5 #e3f2fd blue-light-5
-          .blue-light-4 #bbdefb blue-light-4
-          .blue-light-3 #90caf9 blue-light-3
-          .blue-light-2 #64b5f6 blue-light-2
-          .blue-light-1 #42a5f5 blue-light-1
-          .blue #2196f3 blue
-          .blue-dark-1 #1e88e5 blue-dark-1
-          .blue-dark-2 #1976d2 blue-dark-2
-          .blue-dark-3 #1565c0 blue-dark-3
-          .blue-dark-4 #0d47a1 blue-dark-4
+          .blue-light-5 blue-light-5
+          .blue-light-4 blue-light-4
+          .blue-light-3 blue-light-3
+          .blue-light-2 blue-light-2
+          .blue-light-1 blue-light-1
+          .blue blue
+          .blue-dark-1 blue-dark-1
+          .blue-dark-2 blue-dark-2
+          .blue-dark-3 blue-dark-3
+          .blue-dark-4 blue-dark-4
+          .blue-border.border blue-border
+          .blue-text blue-text
         .col.s6
-          .light-blue-light-5 #e1f5fe light-blue-light-5
-          .light-blue-light-4 #b3e5fc light-blue-light-4
-          .light-blue-light-3 #81d4fa light-blue-light-3
-          .light-blue-light-2 #4fc3f7 light-blue-light-2
-          .light-blue-light-1 #29b6f6 light-blue-light-1
-          .light-blue #03a9f4 light-blue
-          .light-blue-dark-1 #039be5 light-blue-dark-1
-          .light-blue-dark-2 #0288d1 light-blue-dark-2
-          .light-blue-dark-3 #0277bd light-blue-dark-3
-          .light-blue-dark-4 #01579b light-blue-dark-4
+          .light-blue-light-5 light-blue-light-5
+          .light-blue-light-4 light-blue-light-4
+          .light-blue-light-3 light-blue-light-3
+          .light-blue-light-2 light-blue-light-2
+          .light-blue-light-1 light-blue-light-1
+          .light-blue light-blue
+          .light-blue-dark-1 light-blue-dark-1
+          .light-blue-dark-2 light-blue-dark-2
+          .light-blue-dark-3 light-blue-dark-3
+          .light-blue-dark-4 light-blue-dark-4
+          .light-blue-border.border light-blue-border
+          .light-blue-text light-blue-text
         .col.s6
-          .cyan-light-5 #e0f7fa cyan-light-5
-          .cyan-light-4 #b2ebf2 cyan-light-4
-          .cyan-light-3 #80deea cyan-light-3
-          .cyan-light-2 #4dd0e1 cyan-light-2
-          .cyan-light-1 #26c6da cyan-light-1
-          .cyan #00bcd4 cyan
-          .cyan-dark-1 #00acc1 cyan-dark-1
-          .cyan-dark-2 #0097a7 cyan-dark-2
-          .cyan-dark-3 #00838f cyan-dark-3
-          .cyan-dark-4 #006064 cyan-dark-4
+          .cyan-light-5 cyan-light-5
+          .cyan-light-4 cyan-light-4
+          .cyan-light-3 cyan-light-3
+          .cyan-light-2 cyan-light-2
+          .cyan-light-1 cyan-light-1
+          .cyan cyan
+          .cyan-dark-1 cyan-dark-1
+          .cyan-dark-2 cyan-dark-2
+          .cyan-dark-3 cyan-dark-3
+          .cyan-dark-4 cyan-dark-4
+          .cyan-border.border cyan-border
+          .cyan-text cyan-text
         .col.s6
-          .teal-light-5 #e0f2f1 teal-light-5
-          .teal-light-4 #b2dfdb teal-light-4
-          .teal-light-3 #80cbc4 teal-light-3
-          .teal-light-2 #4db6ac teal-light-2
-          .teal-light-1 #26a69a teal-light-1
-          .teal #009688 teal
-          .teal-dark-1 #00897b teal-dark-1
-          .teal-dark-2 #00796b teal-dark-2
-          .teal-dark-3 #00695c teal-dark-3
-          .teal-dark-4 #004d40 teal-dark-4
+          .teal-light-5 teal-light-5
+          .teal-light-4 teal-light-4
+          .teal-light-3 teal-light-3
+          .teal-light-2 teal-light-2
+          .teal-light-1 teal-light-1
+          .teal teal
+          .teal-dark-1 teal-dark-1
+          .teal-dark-2 teal-dark-2
+          .teal-dark-3 teal-dark-3
+          .teal-dark-4 teal-dark-4
+          .teal-border.border teal-border
+          .teal-text teal-text
         .col.s6
-          .green-light-5 #e8f5e9 green-light-5
-          .green-light-4 #c8e6c9 green-light-4
-          .green-light-3 #a5d6a7 green-light-3
-          .green-light-2 #81c784 green-light-2
-          .green-light-1 #66bb6a green-light-1
-          .green #4caf50 green
-          .green-dark-1 #43a047 green-dark-1
-          .green-dark-2 #388e3c green-dark-2
-          .green-dark-3 #2e7d32 green-dark-3
-          .green-dark-4 #1b5e20 green-dark-4
+          .green-light-5 green-light-5
+          .green-light-4 green-light-4
+          .green-light-3 green-light-3
+          .green-light-2 green-light-2
+          .green-light-1 green-light-1
+          .green green
+          .green-dark-1 green-dark-1
+          .green-dark-2 green-dark-2
+          .green-dark-3 green-dark-3
+          .green-dark-4 green-dark-4
+          .green-border.border green-border
+          .green-text green-text
         .col.s6
-          .light-green-light-5 #f1f8e9 light-green-light-5
-          .light-green-light-4 #dcedc8 light-green-light-4
-          .light-green-light-3 #c5e1a5 light-green-light-3
-          .light-green-light-2 #aed581 light-green-light-2
-          .light-green-light-1 #9ccc65 light-green-light-1
-          .light-green #8bc34a light-green
-          .light-green-dark-1 #7cb342 light-green-dark-1
-          .light-green-dark-2 #689f38 light-green-dark-2
-          .light-green-dark-3 #558b2f light-green-dark-3
-          .light-green-dark-4 #33691e light-green-dark-4
+          .light-green-light-5 light-green-light-5
+          .light-green-light-4 light-green-light-4
+          .light-green-light-3 light-green-light-3
+          .light-green-light-2 light-green-light-2
+          .light-green-light-1 light-green-light-1
+          .light-green light-green
+          .light-green-dark-1 light-green-dark-1
+          .light-green-dark-2 light-green-dark-2
+          .light-green-dark-3 light-green-dark-3
+          .light-green-dark-4 light-green-dark-4
+          .light-green-border.border light-green-border
+          .light-green-text light-green-text
         .col.s6
-          .lime-light-5 #f9fbe7 lime-light-5
-          .lime-light-4 #f0f4c3 lime-light-4
-          .lime-light-3 #e6ee9c lime-light-3
-          .lime-light-2 #dce775 lime-light-2
-          .lime-light-1 #d4e157 lime-light-1
-          .lime #cddc39 lime
-          .lime-dark-1 #c0ca33 lime-dark-1
-          .lime-dark-2 #afb42b lime-dark-2
-          .lime-dark-3 #9e9d24 lime-dark-3
-          .lime-dark-4 #827717 lime-dark-4
+          .lime-light-5 lime-light-5
+          .lime-light-4 lime-light-4
+          .lime-light-3 lime-light-3
+          .lime-light-2 lime-light-2
+          .lime-light-1 lime-light-1
+          .lime lime
+          .lime-dark-1 lime-dark-1
+          .lime-dark-2 lime-dark-2
+          .lime-dark-3 lime-dark-3
+          .lime-dark-4 lime-dark-4
+          .lime-border.border lime-border
+          .lime-text lime-text
         .col.s6
-          .yellow-light-5 #fffde7 yellow-light-5
-          .yellow-light-4 #fff9c4 yellow-light-4
-          .yellow-light-3 #fff59d yellow-light-3
-          .yellow-light-2 #fff176 yellow-light-2
-          .yellow-light-1 #ffee58 yellow-light-1
-          .yellow #ffeb3b yellow
-          .yellow-dark-1 #fdd835 yellow-dark-1
-          .yellow-dark-2 #fbc02d yellow-dark-2
-          .yellow-dark-3 #f9a825 yellow-dark-3
-          .yellow-dark-4 #f57f17 yellow-dark-4
+          .yellow-light-5 yellow-light-5
+          .yellow-light-4 yellow-light-4
+          .yellow-light-3 yellow-light-3
+          .yellow-light-2 yellow-light-2
+          .yellow-light-1 yellow-light-1
+          .yellow yellow
+          .yellow-dark-1 yellow-dark-1
+          .yellow-dark-2 yellow-dark-2
+          .yellow-dark-3 yellow-dark-3
+          .yellow-dark-4 yellow-dark-4
+          .yellow-border.border yellow-border
+          .yellow-text yellow-text
         .col.s6
-          .amber-light-5 #fff8e1 amber-light-5
-          .amber-light-4 #ffecb3 amber-light-4
-          .amber-light-3 #ffe082 amber-light-3
-          .amber-light-2 #ffd54f amber-light-2
-          .amber-light-1 #ffca28 amber-light-1
-          .amber #ffc107 amber
-          .amber-dark-1 #ffb300 amber-dark-1
-          .amber-dark-2 #ffa000 amber-dark-2
-          .amber-dark-3 #ff8f00 amber-dark-3
-          .amber-dark-4 #ff6f00 amber-dark-4
+          .amber-light-5 amber-light-5
+          .amber-light-4 amber-light-4
+          .amber-light-3 amber-light-3
+          .amber-light-2 amber-light-2
+          .amber-light-1 amber-light-1
+          .amber amber
+          .amber-dark-1 amber-dark-1
+          .amber-dark-2 amber-dark-2
+          .amber-dark-3 amber-dark-3
+          .amber-dark-4 amber-dark-4
+          .amber-border.border amber-border
+          .amber-text amber-text
         .col.s6
-          .orange-light-5 #fff3e0 orange-light-5
-          .orange-light-4 #ffe0b2 orange-light-4
-          .orange-light-3 #ffcc80 orange-light-3
-          .orange-light-2 #ffb74d orange-light-2
-          .orange-light-1 #ffa726 orange-light-1
-          .orange #ff9800 orange
-          .orange-dark-1 #fb8c00 orange-dark-1
-          .orange-dark-2 #f57c00 orange-dark-2
-          .orange-dark-3 #ef6c00 orange-dark-3
-          .orange-dark-4 #e65100 orange-dark-4
+          .orange-light-5 orange-light-5
+          .orange-light-4 orange-light-4
+          .orange-light-3 orange-light-3
+          .orange-light-2 orange-light-2
+          .orange-light-1 orange-light-1
+          .orange orange
+          .orange-dark-1 orange-dark-1
+          .orange-dark-2 orange-dark-2
+          .orange-dark-3 orange-dark-3
+          .orange-dark-4 orange-dark-4
+          .orange-border.border orange-border
+          .orange-text orange-text
         .col.s6
-          .deep-orange-light-5 #fbe9e7 deep-orange-light-5
-          .deep-orange-light-4 #ffccbc deep-orange-light-4
-          .deep-orange-light-3 #ffab91 deep-orange-light-3
-          .deep-orange-light-2 #ff8a65 deep-orange-light-2
-          .deep-orange-light-1 #ff7043 deep-orange-light-1
-          .deep-orange #ff5722 deep-orange
-          .deep-orange-dark-1 #f4511e deep-orange-dark-1
-          .deep-orange-dark-2 #e64a19 deep-orange-dark-2
-          .deep-orange-dark-3 #d84315 deep-orange-dark-3
-          .deep-orange-dark-4 #bf360c deep-orange-dark-4
+          .deep-orange-light-5 deep-orange-light-5
+          .deep-orange-light-4 deep-orange-light-4
+          .deep-orange-light-3 deep-orange-light-3
+          .deep-orange-light-2 deep-orange-light-2
+          .deep-orange-light-1 deep-orange-light-1
+          .deep-orange deep-orange
+          .deep-orange-dark-1 deep-orange-dark-1
+          .deep-orange-dark-2 deep-orange-dark-2
+          .deep-orange-dark-3 deep-orange-dark-3
+          .deep-orange-dark-4 deep-orange-dark-4
+          .deep-orange-border.border deep-orange-border
+          .deep-orange-text deep-orange-text
         .col.s6
-          .brown-light-5 #efebe9 brown-light-5
-          .brown-light-4 #d7ccc8 brown-light-4
-          .brown-light-3 #bcaaa4 brown-light-3
-          .brown-light-2 #a1887f brown-light-2
-          .brown-light-1 #8d6e63 brown-light-1
-          .brown #795548 brown
-          .brown-dark-1 #6d4c41 brown-dark-1
-          .brown-dark-2 #5d4037 brown-dark-2
-          .brown-dark-3 #4e342e brown-dark-3
-          .brown-dark-4 #3e2723 brown-dark-4
+          .brown-light-5 brown-light-5
+          .brown-light-4 brown-light-4
+          .brown-light-3 brown-light-3
+          .brown-light-2 brown-light-2
+          .brown-light-1 brown-light-1
+          .brown brown
+          .brown-dark-1 brown-dark-1
+          .brown-dark-2 brown-dark-2
+          .brown-dark-3 brown-dark-3
+          .brown-dark-4 brown-dark-4
+          .brown-border.border brown-border
+          .brown-text brown-text
         .col.s6
-          .grey-light-5 #fafafa grey-light-5
-          .grey-light-4 #f5f5f5 grey-light-4
-          .grey-light-3 #eeeeee grey-light-3
-          .grey-light-2 #e0e0e0 grey-light-2
-          .grey-light-1 #bdbdbd grey-light-1
-          .grey #9e9e9e grey
-          .grey-dark-1 #757575 grey-dark-1
-          .grey-dark-2 #616161 grey-dark-2
-          .grey-dark-3 #424242 grey-dark-3
-          .grey-dark-4 #212121 grey-dark-4
+          .grey-light-5 grey-light-5
+          .grey-light-4 grey-light-4
+          .grey-light-3 grey-light-3
+          .grey-light-2 grey-light-2
+          .grey-light-1 grey-light-1
+          .grey grey
+          .grey-dark-1 grey-dark-1
+          .grey-dark-2 grey-dark-2
+          .grey-dark-3 grey-dark-3
+          .grey-dark-4 grey-dark-4
+          .grey-border.border grey-border
+          .grey-text grey-text
         .col.s6
-          .blue-grey-light-5 #eceff1 blue-grey-light-5
-          .blue-grey-light-4 #cfd8dc blue-grey-light-4
-          .blue-grey-light-3 #b0bec5 blue-grey-light-3
-          .blue-grey-light-2 #90a4ae blue-grey-light-2
-          .blue-grey-light-1 #78909c blue-grey-light-1
-          .blue-grey #607d8b blue-grey
-          .blue-grey-dark-1 #546e7a blue-grey-dark-1
-          .blue-grey-dark-2 #455a64 blue-grey-dark-2
-          .blue-grey-dark-3 #37474f blue-grey-dark-3
-          .blue-grey-dark-4 #263238 blue-grey-dark-4
+          .blue-grey-light-5 blue-grey-light-5
+          .blue-grey-light-4 blue-grey-light-4
+          .blue-grey-light-3 blue-grey-light-3
+          .blue-grey-light-2 blue-grey-light-2
+          .blue-grey-light-1 blue-grey-light-1
+          .blue-grey blue-grey
+          .blue-grey-dark-1 blue-grey-dark-1
+          .blue-grey-dark-2 blue-grey-dark-2
+          .blue-grey-dark-3 blue-grey-dark-3
+          .blue-grey-dark-4 blue-grey-dark-4
+          .blue-grey-border.border blue-grey-border
+          .blue-grey-text blue-grey-text
         .col.s6
-          .black.grey-text #000000 black
-          .white.grey-text #ffffff white
-          .transparent.grey-text N/A transparent
+          .black.grey-text black
+          .black-border.border.grey-text black-border
+          .black-text.grey-text black-text
+          .white.grey-text white
+          .white-border.border.grey-text white-border
+          .white-text.grey-text white-text
+          .transparent.grey-text transparent
+          .transparent-border.border.grey-text transparent-border
+          .transparent-text.grey-text transparent-text
 
     #modal.modal
       h5 Title
@@ -2440,15 +2471,6 @@ export default {
         }
       });
     },
-    updateColors(text) {
-      $("#modal-colors .col > div").each(function () {
-        var html = $(this).html();
-        html = text
-          ? html.replace(/(-light|-dark|$)/, "-text$1")
-          : html.replace(/-text/, "");
-        $(this).html(html);
-      });
-    },
     chartSamples() {
       for (var i = 0; i < 2; i++) {
         var lightBlue = [
@@ -2586,6 +2608,10 @@ pre {
 
 #rows .col {
   border: 2px solid #9e9e9e50;
+}
+
+#modal-colors .border {
+  border: 2px solid;
 }
 
 .col.s12[id] > h5 {
