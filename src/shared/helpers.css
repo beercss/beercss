@@ -2,7 +2,6 @@ body {
   font-family: "Roboto";
   font-size: 0.9rem;
   color: var(--color-2);
-  margin: 0 16px 0 80px;
   background-color: var(--color-5);
 }
 

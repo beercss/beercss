@@ -2527,13 +2527,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -2574,7 +2567,6 @@ var _default = {
       if (window.beercss && window.beercss.installEvent) window.beercss.installEvent.prompt();
     },
     updateMenu: function updateMenu(menu, css) {
-      var body = $("body");
       var menu = $(menu);
       var dataUis = menu.find("a");
       var modals = menu.find(".modal");
@@ -2589,8 +2581,6 @@ var _default = {
       }
 
       if (/left|right|top|bottom/.test(css)) {
-        body.removeClass("is-menu-left is-menu-right is-menu-top is-menu-bottom");
-        body.addClass("is-menu-" + css);
         $(menu).removeClass("left right top bottom");
         $(menu).addClass(css);
         $(menu).find("> .modal").removeClass("left right top bottom");
@@ -2598,9 +2588,6 @@ var _default = {
       }
 
       if (/small|medium|large/.test(css)) {
-        body.removeClass("is-menu-small is-menu-medium is-menu-large");
-        body.addClass("is-menu-" + css);
-
         for (var i = 0; i < menu.length; i++) {
           $(menu[i]).removeClass("small medium large");
           if (css != "medium") $(menu[i]).addClass(css);
@@ -6683,14 +6670,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "col" }, [
             _c("b", [_vm._v("Themes")]),
             _c("div", [_vm._v("is-dark")]),
-            _c("div", [_vm._v("is-light")]),
-            _c("div", [_vm._v("is-menu-left")]),
-            _c("div", [_vm._v("is-menu-right")]),
-            _c("div", [_vm._v("is-menu-top")]),
-            _c("div", [_vm._v("is-menu-bottom")]),
-            _c("div", [_vm._v("is-menu-small")]),
-            _c("div", [_vm._v("is-menu-medium")]),
-            _c("div", [_vm._v("is-menu-large")])
+            _c("div", [_vm._v("is-light")])
           ])
         ]),
         _c("div", { staticClass: "space" })
@@ -6830,9 +6810,7 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("<body> ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v(
-              "is-light, is-dark, is-menu-left, is-menu-right, is-menu-top, is-menu-bottom, is-menu-small, is-menu-medium, is-menu-large"
-            )
+            _vm._v("is-light, is-dark")
           ])
         ]),
         _c("div", [

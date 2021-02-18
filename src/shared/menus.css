@@ -235,54 +235,6 @@
   display: none;
 }
 
-.is-menu-left {
-  margin: 0 16px 0 80px;
-}
-
-.is-menu-small.is-menu-left {
-  margin: 0 16px 0 72px;
-}
-
-.is-menu-large.is-menu-left {
-  margin: 0 16px 0 88px;
-}
-
-.is-menu-right {
-  margin: 0 80px 0 16px;
-}
-
-.is-menu-small.is-menu-right {
-  margin: 0 72px 0 16px;
-}
-
-.is-menu-large.is-menu-right {
-  margin: 0 88px 0 16px;
-}
-
-.is-menu-top {
-  margin: 72px 16px 0 16px;
-}
-
-.is-menu-small.is-menu-top {
-  margin: 56px 16px 0 16px;
-}
-
-.is-menu-large.is-menu-top {
-  margin: 80px 16px 0 16px;
-}
-
-.is-menu-bottom {
-  margin: 0 16px 72px 16px;
-}
-
-.is-menu-small.is-menu-bottom {
-  margin: 0 16px 56px 16px;
-}
-
-.is-menu-large.is-menu-bottom {
-  margin: 0 16px 80px 16px;
-}
-
 @media only screen and (max-width: 600px) {
   .menu.bottom {
     justify-content: space-around;

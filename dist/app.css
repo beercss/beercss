@@ -53,12 +53,6 @@ pre {
   margin-top: 32px;
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-    margin: 0 16px 72px 16px !important;
-  }
-}
-
 @keyframes logo-intro {
   0% {
     opacity: 0;

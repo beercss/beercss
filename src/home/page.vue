@@ -1617,13 +1617,6 @@
                 b Themes
                 div is-dark
                 div is-light
-                div is-menu-left
-                div is-menu-right
-                div is-menu-top
-                div is-menu-bottom
-                div is-menu-small
-                div is-menu-medium
-                div is-menu-large
             .space
           .row
             .col.s12
@@ -1689,7 +1682,7 @@
               .space
               div 
                 span &lt;body&gt;&nbsp;
-                span.grey-text is-light, is-dark, is-menu-left, is-menu-right, is-menu-top, is-menu-bottom, is-menu-small, is-menu-medium, is-menu-large
+                span.grey-text is-light, is-dark
               div 
                 span &lt;button&gt;&nbsp;
                 span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
@@ -2224,7 +2217,6 @@ export default {
         window.beercss.installEvent.prompt();
     },
     updateMenu(menu, css) {
-      var body = $("body");
       var menu = $(menu);
       var dataUis = menu.find("a");
       var modals = menu.find(".modal");
@@ -2242,10 +2234,6 @@ export default {
       }
 
       if (/left|right|top|bottom/.test(css)) {
-        body.removeClass(
-          "is-menu-left is-menu-right is-menu-top is-menu-bottom"
-        );
-        body.addClass("is-menu-" + css);
         $(menu).removeClass("left right top bottom");
         $(menu).addClass(css);
         $(menu).find("> .modal").removeClass("left right top bottom");
@@ -2253,9 +2241,6 @@ export default {
       }
 
       if (/small|medium|large/.test(css)) {
-        body.removeClass("is-menu-small is-menu-medium is-menu-large");
-        body.addClass("is-menu-" + css);
-
         for (var i = 0; i < menu.length; i++) {
           $(menu[i]).removeClass("small medium large");
           if (css != "medium") $(menu[i]).addClass(css);
@@ -2605,12 +2590,6 @@ pre {
 
 .col.s12[id] > h5 {
   margin-top: 32px;
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    margin: 0 16px 72px 16px !important;
-  }
 }
 
 @keyframes logo-intro {
