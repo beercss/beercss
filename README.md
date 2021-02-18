@@ -65,6 +65,10 @@ npm i beercss
 import "beercss";
 ```
 
+## Documentation
+Complete documentation and examples available at https://www.beercss.com/
+- **[CodePen Template](https://codepen.io/collection/XydYMB)**
+
 ## Contributing Guide
 
 Hi! We are really excited that you are interested in contributing to Beercss! Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
