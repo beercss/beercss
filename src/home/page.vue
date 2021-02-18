@@ -101,7 +101,24 @@
           span Badges
           a.chip.circle
             i(@click="showSamples('#badges nav > a')") code
-        .small-space
+        nav.wrap
+          label
+            input#default-badges(
+              type="radio",
+              name="color-badges",
+              checked="checked"
+            )
+            span default
+          label
+            input#blue-badges(type="radio", name="color-badges")
+            span blue
+          label
+            input#purple-badges(type="radio", name="color-badges")
+            span purple
+          label
+            input#teal-badges(type="radio", name="color-badges")
+            span teal
+        .space
         nav.wrap
           a
             span.badge New
@@ -234,6 +251,19 @@
           label
             input#pink-buttons(type="radio", name="color-buttons")
             span pink
+          label
+            input#small-buttons(type="radio", name="size-buttons")
+            span small
+          label
+            input#medium-buttons(
+              type="radio",
+              name="size-buttons",
+              checked="checked"
+            )
+            span medium
+          label
+            input#large-buttons(type="radio", name="size-buttons")
+            span large
         .space
         nav.wrap
           a.btn Button
@@ -2249,6 +2279,7 @@ export default {
 
     this.chartSamples();
     this.buttonSamples();
+    this.badgeSamples();
     this.listSamples();
     this.tableSamples();
     this.inputSamples();
@@ -2381,7 +2412,7 @@ export default {
     },
     buttonSamples() {
       $("#buttons input").on("click", function () {
-        var ids = ["green", "orange", "pink"];
+        var ids = ["green", "orange", "pink", "small", "large"];
         var buttons = $("#buttons .btn:not(.border)");
         var buttonsBorder = $("#buttons .btn.border");
 
@@ -2397,8 +2428,36 @@ export default {
           var selector = "#" + ids[i] + "-buttons";
           if ($(selector).is(":checked")) {
             buttons.addClass(ids[i]);
-            buttonsBorder.addClass(ids[i] + "-border");
-            buttonsBorder.addClass(ids[i] + "-text");
+            if (["small", "medium", "large"].indexOf(ids[i]) == -1) {
+              buttonsBorder.addClass(ids[i] + "-border");
+              buttonsBorder.addClass(ids[i] + "-text");
+            } else {
+              buttonsBorder.addClass(ids[i]);
+            }
+          }
+        }
+      });
+    },
+    badgeSamples() {
+      $("#badges input").on("click", function () {
+        var ids = ["blue", "purple", "teal"];
+        var badges = $("#badges .badge:not(.border)");
+        var badgesBorder = $("#badges .badge.border");
+
+        for (var i = 0; i < ids.length; i++) {
+          badges.removeClass(ids[i]);
+          badges.removeClass(ids[i] + "-border");
+          badges.removeClass(ids[i] + "-text");
+
+          badgesBorder.removeClass(ids[i]);
+          badgesBorder.removeClass(ids[i] + "-border");
+          badgesBorder.removeClass(ids[i] + "-text");
+
+          var selector = "#" + ids[i] + "-badges";
+          if ($(selector).is(":checked")) {
+            badges.addClass(ids[i]);
+            badgesBorder.addClass(ids[i] + "-border");
+            badgesBorder.addClass(ids[i] + "-text");
           }
         }
       });
