@@ -2,6 +2,14 @@
   position: fixed;
 }
 
+.fixed.round {
+  border-radius: 16px;
+}
+
+.fixed.border {
+  border: 1px solid var(--color-2b);
+}
+
 .fixed.center {
   left: 50%;
   transform: translateX(-50%);
@@ -28,10 +36,6 @@
 
 .fixed.bottom {
   bottom: 0;
-}
-
-.fixed.top.bottom {
-  height: 100%;
 }
 
 .fixed.left.right {

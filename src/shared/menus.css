@@ -59,19 +59,19 @@
   border-radius: 48px;
 }
 
-.menu.left.round {
+.menu.left.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
   border-radius: 0 16px 16px 0;
 }
 
-.menu.right.round {
+.menu.right.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
   border-radius: 16px 0 0 16px;
 }
 
-.menu.bottom.round {
+.menu.bottom.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
   border-radius: 16px 16px 0 0;
 }
 
-.menu.top.round {
+.menu.top.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
   border-radius: 0 0 16px 16px;
 }
 
