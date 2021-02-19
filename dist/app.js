@@ -6664,7 +6664,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "wraplabel" }, [
+    return _c("nav", { staticClass: "wrap" }, [
       _c("label", [
         _c("input", {
           attrs: {

@@ -1461,7 +1461,7 @@
           span Tabs
           a.chip.circle
             i(@click="showSamples('#tabs > div')") code
-        nav.wraplabel
+        nav.wrap
           label
             input#default-align-tabs(
               type="radio",
