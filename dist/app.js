@@ -2642,6 +2642,19 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -2779,15 +2792,18 @@ var _default = {
     },
     tabSamples: function tabSamples() {
       $("#tabs input").on("click", function () {
-        var ids = ["left", "right"];
+        var ids = ["left", "right", "center-align", "right-align"];
         var pages = $("#tabs .page");
+        var tabs = $("#tabs .tabs");
 
         for (var i = 0; i < ids.length; i++) {
           pages.removeClass(ids[i]);
+          tabs.removeClass(ids[i]);
           var selector = "#" + ids[i] + "-tabs";
 
           if ($(selector).is(":checked")) {
-            pages.addClass(ids[i]);
+            if (["left", "right"].indexOf(ids[i]) != -1) pages.addClass(ids[i]);
+            if (["center-align", "right-align"].indexOf(ids[i]) != -1) tabs.addClass(ids[i]);
           }
         }
       });
@@ -4113,7 +4129,7 @@ exports.default = _default;
             ])
           ]),
           _vm._m(87),
-          _c("div", { staticClass: "space" }),
+          _c("p", { staticClass: "space" }),
           _vm._m(88),
           _vm._m(89),
           _vm._m(90),
@@ -6648,7 +6664,30 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "wrap" }, [
+    return _c("nav", { staticClass: "wraplabel" }, [
+      _c("label", [
+        _c("input", {
+          attrs: {
+            id: "default-align-tabs",
+            type: "radio",
+            name: "align-tabs",
+            checked: "checked"
+          }
+        }),
+        _c("span", [_vm._v("left-align")])
+      ]),
+      _c("label", [
+        _c("input", {
+          attrs: { id: "center-align-tabs", type: "radio", name: "align-tabs" }
+        }),
+        _c("span", [_vm._v("center-align")])
+      ]),
+      _c("label", [
+        _c("input", {
+          attrs: { id: "right-align-tabs", type: "radio", name: "align-tabs" }
+        }),
+        _c("span", [_vm._v("right-align")])
+      ]),
       _c("label", [
         _c("input", {
           attrs: {
@@ -6664,13 +6703,13 @@ var staticRenderFns = [
         _c("input", {
           attrs: { id: "left-tabs", type: "radio", name: "page-tabs" }
         }),
-        _c("span", [_vm._v("left")])
+        _c("span", [_vm._v("from left")])
       ]),
       _c("label", [
         _c("input", {
           attrs: { id: "right-tabs", type: "radio", name: "page-tabs" }
         }),
-        _c("span", [_vm._v("right")])
+        _c("span", [_vm._v("from right")])
       ])
     ])
   },
