@@ -1461,7 +1461,20 @@
           span Tabs
           a.chip.circle
             i(@click="showSamples('#tabs > div')") code
-        nav.wrap
+        nav.wraplabel
+          label
+            input#default-align-tabs(
+              type="radio",
+              name="align-tabs",
+              checked="checked"
+            )
+            span left-align
+          label
+            input#center-align-tabs(type="radio", name="align-tabs")
+            span center-align
+          label
+            input#right-align-tabs(type="radio", name="align-tabs")
+            span right-align
           label
             input#defaut-tabs(
               type="radio",
@@ -1471,11 +1484,11 @@
             span default
           label
             input#left-tabs(type="radio", name="page-tabs")
-            span left
+            span from left
           label
             input#right-tabs(type="radio", name="page-tabs")
-            span right
-        .space
+            span from right
+        p.space
         div
           .tabs
             a.active(data-ui="#tab1") Tab 1
@@ -2449,15 +2462,19 @@ export default {
     },
     tabSamples() {
       $("#tabs input").on("click", function () {
-        var ids = ["left", "right"];
+        var ids = ["left", "right", "center-align", "right-align"];
         var pages = $("#tabs .page");
+        var tabs = $("#tabs .tabs");
 
         for (var i = 0; i < ids.length; i++) {
           pages.removeClass(ids[i]);
+          tabs.removeClass(ids[i]);
 
           var selector = "#" + ids[i] + "-tabs";
           if ($(selector).is(":checked")) {
-            pages.addClass(ids[i]);
+            if (["left", "right"].indexOf(ids[i]) != -1) pages.addClass(ids[i]);
+            if (["center-align", "right-align"].indexOf(ids[i]) != -1)
+              tabs.addClass(ids[i]);
           }
         }
       });
