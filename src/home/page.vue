@@ -1461,16 +1461,31 @@
           span Tabs
           a.chip.circle
             i(@click="showSamples('#tabs > div')") code
+        nav.wrap
+          label
+            input#defaut-tabs(
+              type="radio",
+              name="page-tabs",
+              checked="checked"
+            )
+            span default
+          label
+            input#left-tabs(type="radio", name="page-tabs")
+            span left
+          label
+            input#right-tabs(type="radio", name="page-tabs")
+            span right
+        .space
         div
           .tabs
             a.active(data-ui="#tab1") Tab 1
             a(data-ui="#tab2") Tab 2
             a(data-ui="#tab3") Tab 3
-          #tab1.page.right.padding.active
+          #tab1.page.padding.active
             h5 Tab 1
-          #tab2.page.right.padding
+          #tab2.page.padding
             h5 Tab 2
-          #tab3.page.right.padding
+          #tab3.page.padding
             h5 Tab 3
         div
           .tabs
@@ -1483,11 +1498,11 @@
             a(data-ui="#tab6")
               i home
               span Tab 3
-          #tab4.page.right.padding.active
+          #tab4.page.padding.active
             h5 Tab 1
-          #tab5.page.right.padding
+          #tab5.page.padding
             h5 Tab 2
-          #tab6.page.right.padding
+          #tab6.page.padding
             h5 Tab 3
         div
           .tabs
@@ -1500,11 +1515,11 @@
             a(data-ui="#tab9")
               span Tab 3
               i home
-          #tab7.page.right.padding.active
+          #tab7.page.padding.active
             h5 Tab 1
-          #tab8.page.right.padding
+          #tab8.page.padding
             h5 Tab 2
-          #tab9.page.right.padding
+          #tab9.page.padding
             h5 Tab 3
         div
           .tabs
@@ -1517,11 +1532,11 @@
             a(data-ui="#tab12")
               i.wrap home
               span Tab 3
-          #tab10.page.right.padding.active
+          #tab10.page.padding.active
             h5 Tab 1
-          #tab11.page.right.padding
+          #tab11.page.padding
             h5 Tab 2
-          #tab12.page.right.padding
+          #tab12.page.padding
             h5 Tab 3
         div
           .tabs
@@ -1534,11 +1549,11 @@
             a(data-ui="#tab15")
               span Tab 3
               i.wrap home
-          #tab13.page.right.padding.active
+          #tab13.page.padding.active
             h5 Tab 1
-          #tab14.page.right.padding
+          #tab14.page.padding
             h5 Tab 2
-          #tab15.page.right.padding
+          #tab15.page.padding
             h5 Tab 3
       #toasts.col.s12.l6
         h5
@@ -2298,12 +2313,13 @@ export default {
 
     ui();
 
-    this.chartSamples();
-    this.buttonSamples();
     this.badgeSamples();
+    this.buttonSamples();
+    this.chartSamples();
+    this.inputSamples();
     this.listSamples();
     this.tableSamples();
-    this.inputSamples();
+    this.tabSamples();
     this.selectSamples();
     this.rowSamples();
   },
@@ -2430,6 +2446,21 @@ export default {
       ui("#toast2");
       ui("#toast3");
       ui("#toast4");
+    },
+    tabSamples() {
+      $("#tabs input").on("click", function () {
+        var ids = ["left", "right"];
+        var pages = $("#tabs .page");
+
+        for (var i = 0; i < ids.length; i++) {
+          pages.removeClass(ids[i]);
+
+          var selector = "#" + ids[i] + "-tabs";
+          if ($(selector).is(":checked")) {
+            pages.addClass(ids[i]);
+          }
+        }
+      });
     },
     buttonSamples() {
       $("#buttons input").on("click", function () {
