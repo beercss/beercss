@@ -767,6 +767,17 @@
           a.chip.circle
             i(@click="showSamples('#icons nav', '#modal-icons')") code
         nav.wrap
+          i.small home
+          i.small account_circle
+          i.small search
+          i.small build
+          i.small done
+          i.small cached
+          i.small star_rate
+          i.small work
+          i.small update
+          i.small thumb_up
+        nav.wrap
           i home
           i account_circle
           i search
@@ -777,6 +788,17 @@
           i work
           i update
           i thumb_up
+        nav.wrap
+          i.large home
+          i.large account_circle
+          i.large search
+          i.large build
+          i.large done
+          i.large cached
+          i.large star_rate
+          i.large work
+          i.large update
+          i.large thumb_up
       #images.col.s12
         h5
           span Images
@@ -2231,11 +2253,10 @@
         .space(v-show="exemplo.html")
         pre(v-html="exemplo.sourceCode")
       .space
-      .right-align
-        a.btn(
-          href="https://material.io/resources/icons/?style=baseline",
-          target="_blank"
-        ) More icons
+      a.btn.absolute.top.right.margin(
+        href="https://material.io/resources/icons/?style=baseline",
+        target="_blank"
+      ) More icons
 </template>
 
 <script>
