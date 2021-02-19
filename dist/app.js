@@ -2627,6 +2627,21 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -2651,12 +2666,13 @@ var _default = {
     this.jsSample = hljs.highlight("html", 'ui("#modal");\nui("#dropdown");\nui("#overlay");\nui("#page");\nui("#toast");').value;
     this.autoSample = hljs.highlight("html", '<a data-ui="#modal">...</a>\n<a data-ui="#dropdown">...</a>\n<a data-ui="#overlay">...</a>\n<a data-ui="#page">...</a>\n<a data-ui="#toast">...</a>\n\nui();').value;
     ui();
-    this.chartSamples();
-    this.buttonSamples();
     this.badgeSamples();
+    this.buttonSamples();
+    this.chartSamples();
+    this.inputSamples();
     this.listSamples();
     this.tableSamples();
-    this.inputSamples();
+    this.tabSamples();
     this.selectSamples();
     this.rowSamples();
   },
@@ -2760,6 +2776,21 @@ var _default = {
       ui("#toast2");
       ui("#toast3");
       ui("#toast4");
+    },
+    tabSamples: function tabSamples() {
+      $("#tabs input").on("click", function () {
+        var ids = ["left", "right"];
+        var pages = $("#tabs .page");
+
+        for (var i = 0; i < ids.length; i++) {
+          pages.removeClass(ids[i]);
+          var selector = "#" + ids[i] + "-tabs";
+
+          if ($(selector).is(":checked")) {
+            pages.addClass(ids[i]);
+          }
+        }
+      });
     },
     buttonSamples: function buttonSamples() {
       $("#buttons input").on("click", function () {
@@ -4082,10 +4113,12 @@ exports.default = _default;
             ])
           ]),
           _vm._m(87),
+          _c("div", { staticClass: "space" }),
           _vm._m(88),
           _vm._m(89),
           _vm._m(90),
-          _vm._m(91)
+          _vm._m(91),
+          _vm._m(92)
         ]),
         _c("div", { staticClass: "col s12 l6", attrs: { id: "toasts" } }, [
           _c("h5", [
@@ -4172,7 +4205,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(92)
+          _vm._m(93)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "typography" } }, [
           _c("h5", [
@@ -4191,14 +4224,14 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(93)
+          _vm._m(94)
         ]),
         _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "large-divider" }),
           _c("div", [
             _c("h4", { staticClass: "center-align" }, [_vm._v("Summary")]),
-            _vm._m(94),
             _vm._m(95),
+            _vm._m(96),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s12" }, [
@@ -4224,7 +4257,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "large-divider" }),
           _c("div", [
-            _vm._m(96),
+            _vm._m(97),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s6 m4 l3 center-align" }, [
@@ -4316,19 +4349,19 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "large-space" }),
-            _vm._m(97),
+            _vm._m(98),
             _c("div", { staticClass: "space" }),
-            _vm._m(98)
+            _vm._m(99)
           ])
         ])
       ]),
-      _vm._m(99),
       _vm._m(100),
+      _vm._m(101),
       _c(
         "div",
         { staticClass: "modal right large", attrs: { id: "modal-samples" } },
         [
-          _vm._m(101),
+          _vm._m(102),
           _c("div", { staticClass: "space" }),
           _vm._l(_vm.samples, function(exemplo) {
             return _c("div", { staticClass: "card border" }, [
@@ -4350,12 +4383,12 @@ exports.default = _default;
         ],
         2
       ),
-      _vm._m(102),
+      _vm._m(103),
       _c(
         "div",
         { staticClass: "modal right large", attrs: { id: "modal-icons" } },
         [
-          _vm._m(103),
+          _vm._m(104),
           _c("div", { staticClass: "space" }),
           _vm._l(_vm.samples, function(exemplo) {
             return _c("div", { staticClass: "card border" }, [
@@ -6615,6 +6648,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("nav", { staticClass: "wrap" }, [
+      _c("label", [
+        _c("input", {
+          attrs: {
+            id: "defaut-tabs",
+            type: "radio",
+            name: "page-tabs",
+            checked: "checked"
+          }
+        }),
+        _c("span", [_vm._v("default")])
+      ]),
+      _c("label", [
+        _c("input", {
+          attrs: { id: "left-tabs", type: "radio", name: "page-tabs" }
+        }),
+        _c("span", [_vm._v("left")])
+      ]),
+      _c("label", [
+        _c("input", {
+          attrs: { id: "right-tabs", type: "radio", name: "page-tabs" }
+        }),
+        _c("span", [_vm._v("right")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", [
       _c("div", { staticClass: "tabs" }, [
         _c("a", { staticClass: "active", attrs: { "data-ui": "#tab1" } }, [
@@ -6623,15 +6686,13 @@ var staticRenderFns = [
         _c("a", { attrs: { "data-ui": "#tab2" } }, [_vm._v("Tab 2")]),
         _c("a", { attrs: { "data-ui": "#tab3" } }, [_vm._v("Tab 3")])
       ]),
-      _c(
-        "div",
-        { staticClass: "page right padding active", attrs: { id: "tab1" } },
-        [_c("h5", [_vm._v("Tab 1")])]
-      ),
-      _c("div", { staticClass: "page right padding", attrs: { id: "tab2" } }, [
+      _c("div", { staticClass: "page padding active", attrs: { id: "tab1" } }, [
+        _c("h5", [_vm._v("Tab 1")])
+      ]),
+      _c("div", { staticClass: "page padding", attrs: { id: "tab2" } }, [
         _c("h5", [_vm._v("Tab 2")])
       ]),
-      _c("div", { staticClass: "page right padding", attrs: { id: "tab3" } }, [
+      _c("div", { staticClass: "page padding", attrs: { id: "tab3" } }, [
         _c("h5", [_vm._v("Tab 3")])
       ])
     ])
@@ -6655,15 +6716,13 @@ var staticRenderFns = [
           _c("span", [_vm._v("Tab 3")])
         ])
       ]),
-      _c(
-        "div",
-        { staticClass: "page right padding active", attrs: { id: "tab4" } },
-        [_c("h5", [_vm._v("Tab 1")])]
-      ),
-      _c("div", { staticClass: "page right padding", attrs: { id: "tab5" } }, [
+      _c("div", { staticClass: "page padding active", attrs: { id: "tab4" } }, [
+        _c("h5", [_vm._v("Tab 1")])
+      ]),
+      _c("div", { staticClass: "page padding", attrs: { id: "tab5" } }, [
         _c("h5", [_vm._v("Tab 2")])
       ]),
-      _c("div", { staticClass: "page right padding", attrs: { id: "tab6" } }, [
+      _c("div", { staticClass: "page padding", attrs: { id: "tab6" } }, [
         _c("h5", [_vm._v("Tab 3")])
       ])
     ])
@@ -6687,15 +6746,13 @@ var staticRenderFns = [
           _c("i", [_vm._v("home")])
         ])
       ]),
-      _c(
-        "div",
-        { staticClass: "page right padding active", attrs: { id: "tab7" } },
-        [_c("h5", [_vm._v("Tab 1")])]
-      ),
-      _c("div", { staticClass: "page right padding", attrs: { id: "tab8" } }, [
+      _c("div", { staticClass: "page padding active", attrs: { id: "tab7" } }, [
+        _c("h5", [_vm._v("Tab 1")])
+      ]),
+      _c("div", { staticClass: "page padding", attrs: { id: "tab8" } }, [
         _c("h5", [_vm._v("Tab 2")])
       ]),
-      _c("div", { staticClass: "page right padding", attrs: { id: "tab9" } }, [
+      _c("div", { staticClass: "page padding", attrs: { id: "tab9" } }, [
         _c("h5", [_vm._v("Tab 3")])
       ])
     ])
@@ -6721,13 +6778,13 @@ var staticRenderFns = [
       ]),
       _c(
         "div",
-        { staticClass: "page right padding active", attrs: { id: "tab10" } },
+        { staticClass: "page padding active", attrs: { id: "tab10" } },
         [_c("h5", [_vm._v("Tab 1")])]
       ),
-      _c("div", { staticClass: "page right padding", attrs: { id: "tab11" } }, [
+      _c("div", { staticClass: "page padding", attrs: { id: "tab11" } }, [
         _c("h5", [_vm._v("Tab 2")])
       ]),
-      _c("div", { staticClass: "page right padding", attrs: { id: "tab12" } }, [
+      _c("div", { staticClass: "page padding", attrs: { id: "tab12" } }, [
         _c("h5", [_vm._v("Tab 3")])
       ])
     ])
@@ -6753,13 +6810,13 @@ var staticRenderFns = [
       ]),
       _c(
         "div",
-        { staticClass: "page right padding active", attrs: { id: "tab13" } },
+        { staticClass: "page padding active", attrs: { id: "tab13" } },
         [_c("h5", [_vm._v("Tab 1")])]
       ),
-      _c("div", { staticClass: "page right padding", attrs: { id: "tab14" } }, [
+      _c("div", { staticClass: "page padding", attrs: { id: "tab14" } }, [
         _c("h5", [_vm._v("Tab 2")])
       ]),
-      _c("div", { staticClass: "page right padding", attrs: { id: "tab15" } }, [
+      _c("div", { staticClass: "page padding", attrs: { id: "tab15" } }, [
         _c("h5", [_vm._v("Tab 3")])
       ])
     ])
