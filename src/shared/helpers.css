@@ -3,6 +3,7 @@ body {
   font-size: 0.9rem;
   color: var(--color-2);
   background-color: var(--color-5);
+  margin: 0;
 }
 
 * {

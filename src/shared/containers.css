@@ -1,11 +1,11 @@
 .container {
   margin: 0 auto;
   max-width: 992px;
-  padding: 72px 80px;
+  padding: 80px 88px;
 }
 
 @media only screen and (max-width: 600px) {
   .container {
-    padding: 72px 0;
+    padding: 80px 8px;
   }
 }
