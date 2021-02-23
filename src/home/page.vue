@@ -65,10 +65,8 @@
         #container-logo.center-align.middle-align.padding
           img#logo(:src="'/favicon.png'", @click="addHomeScreen()")
         .space
-        .center-align
-          .h4 
-            span Beer css!
-          .h6 Build material design interfaces in record time
+        h4.center-align Beer css!
+        h6.center-align Build material design interfaces in record time
         .space
         nav.center-align
           a.btn.large.border(
