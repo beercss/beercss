@@ -68,3 +68,34 @@
 *:hover > .tooltip {
   display: initial;
 }
+.tooltip.margin,
+.tooltip.small-margin,
+.tooltip.medium-margin,
+.tooltip.large-margin {
+  max-width: none;
+  max-height: none;
+}
+.tooltip.small-margin {
+  margin: -8px 0 !important;
+}
+.tooltip.margin,
+.tooltip.medium-margin {
+  margin: -16px 0 !important;
+}
+.tooltip.large-margin {
+  margin: -24px 0 !important;
+}
+.tooltip.left.small-margin,
+.tooltip.right.small-margin {
+  margin: 0 -8px !important;
+}
+.tooltip.left.margin,
+.tooltip.left.medium-margin,
+.tooltip.right.margin,
+.tooltip.right.medium-margin {
+  margin: 0 -16px !important;
+}
+.tooltip.left.large-margin,
+.tooltip.right.large-margin {
+  margin: 0 -24px !important;
+}
