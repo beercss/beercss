@@ -78,6 +78,7 @@
             target="_blank"
           ) Github
           a.btn.large(href="https://www.patreon.com/beercss", target="_blank") Support us
+    .medium-space
     .large-divider
     #toasts
       #toast1.toast.pink.white-text
