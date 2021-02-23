@@ -3163,7 +3163,6 @@ exports.default = _default;
     _c("div", { attrs: { id: "begin" } }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col s12" }, [
-          _vm._m(4),
           _c(
             "div",
             {
@@ -3181,13 +3180,10 @@ exports.default = _default;
               })
             ]
           ),
-          _vm._m(5),
           _c("div", { staticClass: "space" }),
-          _c("div", { staticClass: "center-align" }, [
-            _vm._v(
-              "Hey you! Wanna be a contributor? Help this project to grow up. Cheers!"
-            )
-          ])
+          _vm._m(4),
+          _c("div", { staticClass: "space" }),
+          _vm._m(5)
         ])
       ]),
       _c("div", { staticClass: "large-divider" }),

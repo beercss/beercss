@@ -62,12 +62,14 @@
   #begin
     .row
       .col.s12
+        #container-logo.center-align.middle-align.padding
+          img#logo(:src="'/favicon.png'", @click="addHomeScreen()")
+        .space
         .center-align
           .h4 
             span Beer css!
           .h6 Build material design interfaces in record time
-        #container-logo.center-align.middle-align.padding
-          img#logo(:src="'/favicon.png'", @click="addHomeScreen()")
+        .space
         nav.center-align
           a.btn.large.border(
             href="https://www.npmjs.com/package/beercss",
@@ -78,8 +80,6 @@
             target="_blank"
           ) Github
           a.btn.large(href="https://www.patreon.com/beercss", target="_blank") Support us
-        .space
-        .center-align Hey you! Wanna be a contributor? Help this project to grow up. Cheers!
     .large-divider
     #toasts
       #toast1.toast.pink.white-text
