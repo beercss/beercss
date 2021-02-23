@@ -2305,9 +2305,6 @@ export default {
     };
   },
   watch: {},
-  beforeMount() {
-    $("body").addClass("is-dark");
-  },
   mounted() {
     this.htmlSample = hljs.highlight(
       "html",
