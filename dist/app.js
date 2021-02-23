@@ -2671,9 +2671,6 @@ var _default = {
     };
   },
   watch: {},
-  beforeMount: function beforeMount() {
-    $("body").addClass("is-dark");
-  },
   mounted: function mounted() {
     this.htmlSample = hljs.highlight("html", '<div class="modal active">...</div>\n<div class="dropdown active">...</div>\n<div class="overlay active">...</div>\n<div class="page active">...</div>\n<div class="toast active">...</div>').value;
     this.jsSample = hljs.highlight("html", 'ui("#modal");\nui("#dropdown");\nui("#overlay");\nui("#page");\nui("#toast");').value;
