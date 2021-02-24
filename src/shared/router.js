@@ -1,6 +1,6 @@
 export default (url, component) => {
   page(url, () => {
-    document.body.innerHTML = "<div id='app'></div>";
+    document.getElementById("body").innerHTML = "<div id='app'></div>";
 
     new Vue({
       el: '#app',
