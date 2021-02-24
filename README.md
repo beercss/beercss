@@ -18,14 +18,17 @@ Cheers, www.beercss.com
 ## Why? ##
 
 - It's based on latest material design patterns.
-- It has zero dependencies.
 - It's themeable.
+- **It has zero dependencies.**
 - It does a lot of combinations.
-- It has 7kb of css and 1kb of js.
-- It has the most simple html output around.
 - It's easy to work with Vue, React, Angular, Svelte and others.
+- **It has 7kb of css and 1kb of js.**
+- **It has the most simple html output around.**
 - It does not need tons of documentation to explain it.
 - It's fast to learn, read and write code.
+- **It's like pure malt beer, only native and standard code.**
+- No tricks, no build steps and no abstraction layers to try reduce your final code.
+- It's well designed and we hope that you can do a lot with it.
 
 ## Supporting Beercss
 
