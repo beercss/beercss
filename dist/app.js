@@ -137,7 +137,7 @@ exports.default = void 0;
 
 var _default = function _default(url, component) {
   page(url, function () {
-    document.body.innerHTML = "<div id='app'></div>";
+    document.getElementById("body").innerHTML = "<div id='app'></div>";
     new Vue({
       el: '#app',
       render: function render(h) {
@@ -366,6 +366,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+//
 //
 //
 //
@@ -3187,6 +3188,7 @@ exports.default = _default;
           _vm._m(4)
         ])
       ]),
+      _c("div", { staticClass: "medium-space" }),
       _c("div", { staticClass: "large-divider" }),
       _vm._m(5),
       _c("div", { staticClass: "row" }, [
