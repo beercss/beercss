@@ -1710,6 +1710,8 @@
                 div active
                 div nowrap
                 div wrap
+                div scroll
+                div no-scroll
               .col
                 b Themes
                 div is-dark

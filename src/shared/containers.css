@@ -2,6 +2,7 @@
   margin: 0 auto;
   max-width: 992px;
   padding: 80px 88px;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 600px) {

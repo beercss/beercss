@@ -4,6 +4,7 @@ body {
   color: var(--color-2);
   background-color: var(--color-5);
   margin: 0;
+  overflow-x: hidden;
 }
 
 * {
@@ -305,6 +306,14 @@ label {
 
 .flat {
   box-shadow: none;
+}
+
+.scroll {
+  overflow: auto;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 600px) {
