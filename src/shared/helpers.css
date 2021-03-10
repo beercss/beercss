@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
   color: var(--color-2);
   background-color: var(--color-5);
