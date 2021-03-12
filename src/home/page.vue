@@ -100,7 +100,7 @@
           span Badges
           a.chip.circle
             i(@click="showSamples('#badges nav > a')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#badges')" title="Codepen")
         div(v-show="codepen == '#badges'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="jOVXqYv" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -241,7 +241,7 @@
           span Buttons
           a.chip.circle
             i(@click="showSamples('#buttons .btn, #button button')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#buttons')" title="Codepen")
         div(v-show="codepen == '#buttons'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="oNYJxeb" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -320,7 +320,7 @@
           span Cards
           a.chip.circle
             i(@click="showSamples('#cards .card:not(.chart)')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#cards')" title="Codepen")
             div.space
         div(v-show="codepen == '#cards'")
@@ -489,7 +489,7 @@
           span Checkboxes
           a.chip.circle
             i(@click="showSamples('#checkboxes .field')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#checkboxes')" title="Codepen")
         div(v-show="codepen == '#checkboxes'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="YzpdqaN" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -556,7 +556,7 @@
           span Chips
           a.chip.circle
             i(@click="showSamples('#chips nav .chip')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#chips')" title="Codepen")
         div(v-show="codepen == '#chips'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="wvoRGXm" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -607,7 +607,7 @@
           span Dropdowns
           a.chip.circle
             i(@click="showSamples('#dropdowns button')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#dropdowns')" title="Codepen")
         div(v-show="codepen == '#dropdowns'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="VwmqjeM" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -824,7 +824,7 @@
           span Icons
           a.chip.circle
             i(@click="showSamples('#icons nav', '#modal-icons')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#icons')" title="Codepen")
         div(v-show="codepen == '#icons'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="GRNPqNG" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -870,7 +870,7 @@
           span Images
           a.chip.circle
             i(@click="showSamples('#images img')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#images')" title="Codepen")
         div(v-show="codepen == '#images'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="gOLZMmd" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -904,7 +904,7 @@
           span Inputs
           a.chip.circle
             i(@click="showSamples('#inputs .field')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#inputs')" title="Codepen")
         div(v-show="codepen == '#inputs'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="abBPZwJ" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1003,7 +1003,7 @@
           span Lists
           a.chip.circle
             i(@click="showSamples('#list .row')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#list')" title="Codepen")
         div(v-show="codepen == '#list'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="abBPZwJ" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1136,7 +1136,7 @@
           span Loaders
           a.chip.circle
             i(@click="showSamples('#loaders svg')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#loaders')" title="Codepen")
         div(v-show="codepen == '#loaders'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="zYoyEEV" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1168,7 +1168,7 @@
           span Modals
           a.chip.circle
             i(@click="showSamples('#modal, #modal-calendar')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#modal')" title="Codepen")
         div(v-show="codepen == '#modal'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="ExNGwoq" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1184,7 +1184,7 @@
           span Navs
           a.chip.circle
             i(@click="showSamples('#navs nav')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#navs')" title="Codepen")
         div(v-show="codepen == '#navs'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="vYyvejg" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1223,7 +1223,7 @@
           span Radios
           a.chip.circle
             i(@click="showSamples('#radios .field')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#radios')" title="Codepen")
         div(v-show="codepen == '#radios'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="zYoeqxm" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1290,7 +1290,7 @@
           span Responsive
           a.chip.circle(@click="showSamples('#responsive nav')")
             i code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#responsive')" title="Codepen")
         div(v-show="codepen == '#responsive'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="poNGyOO" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1317,7 +1317,7 @@
           span Rows
           a.chip.circle
             i(@click="showSamples('#rows .row')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#rows')" title="Codepen")
         div(v-show="codepen == '#rows'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="vYybGaX" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1381,7 +1381,7 @@
           span Selects
           a.chip.circle
             i(@click="showSamples('#selects .field')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#selects')" title="Codepen")
         div(v-show="codepen == '#selects'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="NWboNrg" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1471,7 +1471,7 @@
           span Switches
           a.chip.circle
             i(@click="showSamples('#switches .field')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#switches')" title="Codepen")
         div(v-show="codepen == '#switches'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="QWGYNKq" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1538,7 +1538,7 @@
           span Tables
           a.chip.circle
             i(@click="showSamples('#table table')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#table')" title="Codepen")
         div(v-show="codepen == '#table'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="ExNrKNr" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1621,7 +1621,7 @@
           span Tabs
           a.chip.circle
             i(@click="showSamples('#tabs > div')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#tabs')" title="Codepen")
         div(v-show="codepen == '#tabs'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="Rwovapr" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1741,7 +1741,7 @@
           span Toasts
           a.chip.circle
             i(@click="showSamples('#toasts .toast')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#toasts')" title="Codepen")
         div(v-show="codepen == '#toasts'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="WNoPwjX" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1759,7 +1759,7 @@
           span Tooltips
           a.chip.circle
             i(@click="showSamples('#tooltips nav a')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#tooltips')" title="Codepen")
         div(v-show="codepen == '#tooltips'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="XWNOdaO" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
@@ -1786,7 +1786,7 @@
           span Typography
           a.chip.circle
             i(@click="showSamples('#typography .col.s6 div')") code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#typography')" title="Codepen")
         div(v-show="codepen == '#typography'")
           p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="yLVZOPq" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
