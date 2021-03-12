@@ -69,15 +69,18 @@
         h6.center-align Build material design interfaces in record time
         .space
         nav.center-align
-          a.btn.large.border(
+          a.button.large.border(
             href="https://www.npmjs.com/package/beercss",
             target="_blank"
           ) NPM
-          a.btn.large.border(
+          a.button.large.border(
             href="https://github.com/beercss/beercss",
             target="_blank"
           ) Github
-          a.btn.large(href="https://www.patreon.com/beercss", target="_blank") Support us
+          a.button.large(
+            href="https://www.patreon.com/beercss",
+            target="_blank"
+          ) Support us
     .medium-space
     .large-divider
     #toasts
@@ -101,10 +104,23 @@
           a.chip.circle
             i(@click="showSamples('#badges nav > a')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#badges')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#badges')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#badges'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="jOVXqYv" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="jOVXqYv",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/oNYJxeb") Beercss buttons embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -240,12 +256,25 @@
         h5
           span Buttons
           a.chip.circle
-            i(@click="showSamples('#buttons .btn, #button button')") code
+            i(@click="showSamples('#buttons button')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#buttons')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#buttons')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#buttons'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="oNYJxeb" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="oNYJxeb",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/oNYJxeb") Beercss buttons embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -281,50 +310,63 @@
             span large
         .space
         nav.wrap
-          a.btn Button
-          a.btn
+          button Button
+          button
             i search
             span Button
-          a.btn
+          button
             span Button
             i refresh
-          a.btn.round Button
-          a.btn.round 
+          button.round Button
+          button.round 
             i place
             span Button
-          a.btn.round 
+          button.round 
             span Button
             i delete
-          a.btn.circle
+          button.circle
             i home
-          a.btn.circle A
-          a.btn.border Button
-          a.btn.border 
+          button.circle A
+          button.border Button
+          button.border 
             i search
             span Button
-          a.btn.border
+          button.border
             span Button
             i refresh
-          a.btn.border.round Button
-          a.btn.border.round 
+          button.border.round Button
+          button.border.round 
             i place
             span Button
-          a.btn.border.round 
+          button.border.round 
             span Button
             i delete
-          a.btn.border.circle
+          button.border.circle
             i home
-          a.btn.border.circle B
+          button.border.circle B
       #cards.col.s12
         h5
           span Cards
           a.chip.circle
             i(@click="showSamples('#cards .card:not(.chart)')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#cards')" title="Codepen")
-            div.space
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#cards')",
+              title="Codepen"
+            )
+            .space
         div(v-show="codepen == '#cards'")
-          p.codepen(data-height="303" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="RwoeqBO" data-preview="true" style="height: 303px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss card embed")
+          p.codepen(
+            data-height="303",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="RwoeqBO",
+            data-preview="true",
+            style="height: 303px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss card embed"
+          )
             span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/RwoeqBO") Beercss card embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
@@ -340,7 +382,7 @@
                   h5.no-margin Title
                   div Complementary text
               nav
-                a.btn.none Link
+                button.none Link
           .col.s12.m6.l3
             .card.round
               .row.nowrap
@@ -350,7 +392,7 @@
                   h5.no-margin Title
                   div Complementary text
               nav
-                a.btn.none Link
+                button.none Link
           .col.s12.m6.l3
             .card.border
               .row.nowrap
@@ -360,7 +402,7 @@
                   h5.no-margin Title
                   div Complementary text
               nav
-                a.btn.none Link
+                button.none Link
           .col.s12.m6.l3
             .card.border.round
               .row.nowrap
@@ -370,7 +412,7 @@
                   h5.no-margin Title
                   div Complementary text
               nav
-                a.btn.none Link
+                button.none Link
           .col.s12.m6.l3
             .card.no-padding
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -378,7 +420,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  a.btn.none Link
+                  button.none Link
           .col.s12.m6.l3
             .card.no-padding.round
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -386,7 +428,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  a.btn.none Link
+                  button.none Link
           .col.s12.m6.l3
             .card.no-padding.border
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -394,7 +436,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  a.btn.none Link
+                  button.none Link
           .col.s12.m6.l3
             .card.no-padding.border.round
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -402,7 +444,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  a.btn.none Link
+                  button.none Link
           .col.s12.m6.l3
             .card.no-padding
               img.responsive.medium(:src="'/beer-and-woman.jpg'")
@@ -410,7 +452,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  a.btn.border.small Link
+                  button.border.small Link
           .col.s12.m6.l3
             .card.no-padding.round
               img.responsive.medium.round(:src="'/beer-and-woman.jpg'")
@@ -418,7 +460,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  a.btn.border.small Link
+                  button.border.small Link
           .col.s12.m6.l3
             .card.no-padding.border
               img.responsive.medium(:src="'/beer-and-woman.jpg'")
@@ -426,7 +468,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  a.btn.border.small Link
+                  button.border.small Link
           .col.s12.m6.l3
             .card.no-padding.border.round
               img.responsive.medium.round(:src="'/beer-and-woman.jpg'")
@@ -434,7 +476,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  a.btn.border.small Link
+                  button.border.small Link
           .col.s12.l6
             .card.no-padding
               .row.nowrap.no-space
@@ -445,7 +487,7 @@
                     h5 Title
                     div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     nav
-                      a.btn.border Link
+                      button.border Link
           .col.s12.l6
             .card.no-padding
               .row.nowrap.no-space
@@ -459,41 +501,54 @@
                     h5 Title
                     div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     nav
-                      a.btn.border Link
+                      button.border Link
           .col.s12.l6
             .card.chart
               h5 Title
               div 
                 span Generated by&nbsp;
-                a.link.b(target="_blank", href="https://www.chartjs.org/") chart.js
+                a.link.bold(target="_blank", href="https://www.chartjs.org/") chart.js
               .space
               div
                 canvas#grafico0
               nav
-                a.btn.none Link 1
-                a.btn.none Link 2
+                button.none Link 1
+                button.none Link 2
           .col.s12.l6
             .card.chart
               h5 Title
               div 
                 span Generated by&nbsp;
-                a.link.b(target="_blank", href="https://www.chartjs.org/") chart.js
+                a.link.bold(target="_blank", href="https://www.chartjs.org/") chart.js
               .space
               div
                 canvas#grafico1
               nav
-                a.btn.none Link 1
-                a.btn.none Link 2
+                button.none Link 1
+                button.none Link 2
       #checkboxes.col.s12
         h5
           span Checkboxes
           a.chip.circle
             i(@click="showSamples('#checkboxes .field')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#checkboxes')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#checkboxes')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#checkboxes'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="YzpdqaN" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="YzpdqaN",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/YzpdqaN") Beercss checkboxes embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -557,10 +612,23 @@
           a.chip.circle
             i(@click="showSamples('#chips nav .chip')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#chips')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#chips')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#chips'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="wvoRGXm" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="wvoRGXm",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/wvoRGXm") Beercss chips embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -592,26 +660,51 @@
           a.chip.circle(data-ui="#modal-colors")
             i code
           a.chip.circle
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#colors')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#colors')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#colors'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="zYoyqmY" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="zYoyqmY",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/zYoyqmY") Beercss colors embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav
-          a.btn(data-ui="#modal-colors") Colors
-
+          button(data-ui="#modal-colors") Colors
       #dropdowns.col.s12
         h5
           span Dropdowns
           a.chip.circle
             i(@click="showSamples('#dropdowns button')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#dropdowns')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#dropdowns')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#dropdowns'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="VwmqjeM" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="VwmqjeM",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/VwmqjeM") Beercss dropdowns embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -750,71 +843,71 @@
                     td S
                   tr
                     td
-                      a.btn.none 1
+                      button.none 1
                     td
-                      a.btn.none 2
+                      button.none 2
                     td
-                      a.btn.none 3
+                      button.none 3
                     td
-                      a.btn.none 4
+                      button.none 4
                     td
-                      a.btn.none 5
+                      button.none 5
                     td
-                      a.btn.none 6
+                      button.none 6
                     td
-                      a.btn.none 7
+                      button.none 7
                   tr
                     td
-                      a.btn.small.border.circle.no-margin 8
+                      button.small.border.circle.no-margin 8
                     td
-                      a.btn.none 9
+                      button.none 9
                     td
-                      a.btn.none 10
+                      button.none 10
                     td
-                      a.btn.none 11
+                      button.none 11
                     td
-                      a.btn.none 12
+                      button.none 12
                     td
-                      a.btn.none 13
+                      button.none 13
                     td
-                      a.btn.none 14
+                      button.none 14
                   tr
                     td
-                      a.btn.none 15
+                      button.none 15
                     td
-                      a.btn.none 16
+                      button.none 16
                     td
-                      a.btn.small.circle.no-margin 17
+                      button.small.circle.no-margin 17
                     td
-                      a.btn.none 18
+                      button.none 18
                     td
-                      a.btn.none 19
+                      button.none 19
                     td
-                      a.btn.none 20
+                      button.none 20
                     td
-                      a.btn.none 21
+                      button.none 21
                   tr
                     td
-                      a.btn.none 22
+                      button.none 22
                     td
-                      a.btn.none 23
+                      button.none 23
                     td
-                      a.btn.none 24
+                      button.none 24
                     td
-                      a.btn.none 25
+                      button.none 25
                     td
-                      a.btn.none 26
+                      button.none 26
                     td
-                      a.btn.none 27
+                      button.none 27
                     td
-                      a.btn.none 28
+                      button.none 28
                   tr
                     td
-                      a.btn.none 29
+                      button.none 29
                     td
-                      a.btn.none 30
+                      button.none 30
                     td
-                      a.btn.none 31
+                      button.none 31
                     td 1
                     td 2
                     td 3
@@ -825,10 +918,23 @@
           a.chip.circle
             i(@click="showSamples('#icons nav', '#modal-icons')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#icons')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#icons')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#icons'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="GRNPqNG" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="GRNPqNG",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/GRNPqNG") Beercss icons embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -871,10 +977,23 @@
           a.chip.circle
             i(@click="showSamples('#images img')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#images')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#images')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#images'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="gOLZMmd" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="gOLZMmd",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/gOLZMmd") Beercss images embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -905,10 +1024,23 @@
           a.chip.circle
             i(@click="showSamples('#inputs .field')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#inputs')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#inputs')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#inputs'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="abBPZwJ" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="abBPZwJ",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/abBPZwJ") Beercss inputs embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1004,10 +1136,23 @@
           a.chip.circle
             i(@click="showSamples('#list .row')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#list')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#list')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#list'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="abBPZwJ" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="abBPZwJ",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/abBPZwJ") Beercss list embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1037,8 +1182,8 @@
             label Complementary text
           .col.min
             nav
-              a.btn.none Link
-              a.btn.none
+              button.none Link
+              button.none
                 i more_vert
 
         .row.nowrap.middle-align
@@ -1049,8 +1194,8 @@
             label Complementary text
           .col.min
             nav
-              a.btn.none Link
-              a.btn.none
+              button.none Link
+              button.none
                 i more_vert
         .row.nowrap.middle-align
           .col.min
@@ -1060,8 +1205,8 @@
             label Complementary text
           .col.min
             nav
-              a.btn.none Link
-              a.btn.none
+              button.none Link
+              button.none
                 i more_vert
         label.large-space.middle-align Yesterday
         .row.nowrap.middle-align
@@ -1072,8 +1217,8 @@
             label Complementary text
           .col.min
             nav
-              a.btn.none Link
-              a.btn.none
+              button.none Link
+              button.none
                 i more_vert
         .row.nowrap.middle-align
           .col.min
@@ -1083,8 +1228,8 @@
             label Complementary text
           .col.min
             nav
-              a.btn.none Link
-              a.btn.none
+              button.none Link
+              button.none
                 i more_vert
         .row.nowrap.middle-align
           .col.min
@@ -1094,8 +1239,8 @@
             label Complementary text
           .col.min
             nav
-              a.btn.none Link
-              a.btn.none
+              button.none Link
+              button.none
                 i more_vert
         label.large-space.middle-align Older
         .row.nowrap.middle-align
@@ -1106,8 +1251,8 @@
             label Complementary text
           .col.min
             nav
-              a.btn.none Link
-              a.btn.none
+              button.none Link
+              button.none
                 i more_vert
         .row.nowrap.middle-align
           .col.min
@@ -1117,8 +1262,8 @@
             label Complementary text
           .col.min
             nav
-              a.btn.none Link
-              a.btn.none
+              button.none Link
+              button.none
                 i more_vert
         .row.nowrap.middle-align
           .col.min
@@ -1128,8 +1273,8 @@
             label Complementary text
           .col.min
             nav
-              a.btn.none Link
-              a.btn.none
+              button.none Link
+              button.none
                 i more_vert
       #loaders.col.s12
         h5
@@ -1137,10 +1282,23 @@
           a.chip.circle
             i(@click="showSamples('#loaders svg')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#loaders')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#loaders')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#loaders'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="zYoyEEV" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="zYoyEEV",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/zYoyEEV") Beercss loaders embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1169,31 +1327,57 @@
           a.chip.circle
             i(@click="showSamples('#modal, #modal-calendar')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#modal')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#modal')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#modal'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="ExNGwoq" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="ExNGwoq",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/ExNGwoq") Beercss modal embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav
-          a.btn(data-ui="#modal") Modal
-          a.btn(data-ui="#modal-calendar") Calendar
+          button(data-ui="#modal") Modal
+          button(data-ui="#modal-calendar") Calendar
       #navs.col.s12
         h5
           span Navs
           a.chip.circle
             i(@click="showSamples('#navs nav')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#navs')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#navs')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#navs'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="vYyvejg" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="vYyvejg",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/qBqLPXE") Beercss navs embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav
-          a.btn Button
+          button Button
           a.chip Filter
           i home
           a
@@ -1204,16 +1388,16 @@
           a.chip.circle
             i(@click="showSamples('#pages .page')") code
         nav.wrap
-          a.btn(
+          button(
             onclick="$('#begin, #pages .page').attr('class', 'page left active');"
           ) From left
-          a.btn(
+          button(
             onclick="$('#begin, #pages .page').attr('class', 'page top active');"
           ) From top
-          a.btn(
+          button(
             onclick="$('#begin, #pages .page').attr('class', 'page bottom active');"
           ) From bottom
-          a.btn(
+          button(
             onclick="$('#begin, #pages .page').attr('class', 'page right active');"
           ) From right
         div(style="display: none")
@@ -1224,10 +1408,23 @@
           a.chip.circle
             i(@click="showSamples('#radios .field')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#radios')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#radios')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#radios'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="zYoeqxm" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="zYoeqxm",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/zYoeqxm") Beercss radios embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1291,10 +1488,23 @@
           a.chip.circle(@click="showSamples('#responsive nav')")
             i code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#responsive')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#responsive')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#responsive'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="poNGyOO" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="poNGyOO",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/poNGyOO") Beercss responsive embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1318,10 +1528,23 @@
           a.chip.circle
             i(@click="showSamples('#rows .row')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#rows')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#rows')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#rows'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="vYybGaX" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="vYybGaX",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/vYybGaX") Beercss rows embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1382,10 +1605,23 @@
           a.chip.circle
             i(@click="showSamples('#selects .field')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#selects')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#selects')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#selects'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="NWboNrg" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="NWboNrg",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/NWboNrg") Beercss selects embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1472,10 +1708,23 @@
           a.chip.circle
             i(@click="showSamples('#switches .field')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#switches')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#switches')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#switches'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="QWGYNKq" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="QWGYNKq",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/QWGYNKq") Beercss switches embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1539,10 +1788,23 @@
           a.chip.circle
             i(@click="showSamples('#table table')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#table')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#table')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#table'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="ExNrKNr" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="ExNrKNr",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/ExNrKNr") Beercss tables embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1591,8 +1853,8 @@
               td Line 1
               td
                 nav.right-align
-                  a.btn.none Link
-                  a.btn.none
+                  button.none Link
+                  button.none
                     i more_vert
             tr
               td
@@ -1602,8 +1864,8 @@
               td Line 2
               td
                 nav.right-align
-                  a.btn.none Link
-                  a.btn.none
+                  button.none Link
+                  button.none
                     i more_vert
             tr
               td
@@ -1613,8 +1875,8 @@
               td Line 3
               td
                 nav.right-align
-                  a.btn.none Link
-                  a.btn.none
+                  button.none Link
+                  button.none
                     i more_vert
       #tabs.col.s12
         h5
@@ -1622,10 +1884,23 @@
           a.chip.circle
             i(@click="showSamples('#tabs > div')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#tabs')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#tabs')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#tabs'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="Rwovapr" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="Rwovapr",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/Rwovapr") Beercss tabs embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1742,28 +2017,54 @@
           a.chip.circle
             i(@click="showSamples('#toasts .toast')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#toasts')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#toasts')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#toasts'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="WNoPwjX" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="WNoPwjX",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/WNoPwjX") Beercss toasts embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav.wrap
-          a.pink.btn(@click="showToasts('#toast1')") Toast
-          a.orange.btn(@click="showToasts('#toast2')") Toast
-          a.green.btn(@click="showToasts('#toast3')") Toast
-          a.blue.btn(@click="showToasts('#toast4')") Toast
+          button.pink(@click="showToasts('#toast1')") Toast
+          button.orange(@click="showToasts('#toast2')") Toast
+          button.green(@click="showToasts('#toast3')") Toast
+          button.blue(@click="showToasts('#toast4')") Toast
       #tooltips.col.s12.l6
         h5
           span Tooltips
           a.chip.circle
             i(@click="showSamples('#tooltips nav a')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#tooltips')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#tooltips')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#tooltips'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="XWNOdaO" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="XWNOdaO",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/XWNOdaO") Beercss tooltips embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1787,10 +2088,23 @@
           a.chip.circle
             i(@click="showSamples('#typography .col.s6 div')") code
           a.chip.circle.medium-device.large-device
-            img.circle.tiny(src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media" @click="showCodepen('#typography')" title="Codepen")
+            img.circle.tiny(
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              @click="showCodepen('#typography')",
+              title="Codepen"
+            )
         div(v-show="codepen == '#typography'")
-          p.codepen(data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="kickerbnu" data-slug-hash="yLVZOPq" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Beercss buttons embed")
-            span See the Pen 
+          p.codepen(
+            data-height="265",
+            data-theme-id="light",
+            data-default-tab="html,result",
+            data-user="kickerbnu",
+            data-slug-hash="yLVZOPq",
+            data-preview="true",
+            style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em",
+            data-pen-title="Beercss buttons embed"
+          )
+            span See the Pen
               a(href="https://codepen.io/kickerbnu/pen/yLVZOPq") Beercss typography embed by Everton Alcides Buzzi
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
@@ -1921,7 +2235,7 @@
                 span.grey-text left, right, top, bottom, border, round, circle,&nbsp;
                 span.orange-text auto
               div 
-                span btn&nbsp;
+                span button&nbsp;
                 span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
                 span.orange-text none
               div
@@ -2072,7 +2386,7 @@
             a.chip Sponsor 24
           .space
           nav.center-align
-            a.btn.large(
+            a.button.large(
               href="https://www.patreon.com/beercss",
               target="_blank"
             ) Support us
@@ -2345,12 +2659,14 @@
       h5 Title
       div Complementary text
       nav
-        a.btn.none(onclick="$('#modal').attr('class', 'modal active');") Default
-        a.btn.none(onclick="$('#modal').attr('class', 'modal left active');") Left
-        a.btn.none(onclick="$('#modal').attr('class', 'modal right active');") Right
-        a.btn.none(onclick="$('#modal').attr('class', 'modal top active');") Top
-        a.btn.none(onclick="$('#modal').attr('class', 'modal bottom active');") Bottom
-        a.btn.none(data-ui="#modal") Close
+        button.none(onclick="$('#modal').attr('class', 'modal active');") Default
+        button.none(onclick="$('#modal').attr('class', 'modal left active');") Left
+        button.none(onclick="$('#modal').attr('class', 'modal right active');") Right
+        button.none(onclick="$('#modal').attr('class', 'modal top active');") Top
+        button.none(
+          onclick="$('#modal').attr('class', 'modal bottom active');"
+        ) Bottom
+        button.none(data-ui="#modal") Close
 
     #modal-samples.modal.right.large
       nav
@@ -2392,78 +2708,78 @@
                 td S
               tr
                 td
-                  a.btn.none 1
+                  button.none 1
                 td
-                  a.btn.none 2
+                  button.none 2
                 td
-                  a.btn.none 3
+                  button.none 3
                 td
-                  a.btn.none 4
+                  button.none 4
                 td
-                  a.btn.none 5
+                  button.none 5
                 td
-                  a.btn.none 6
+                  button.none 6
                 td
-                  a.btn.none 7
+                  button.none 7
               tr
                 td
-                  a.btn.small.border.circle.no-margin 8
+                  button.small.border.circle.no-margin 8
                 td
-                  a.btn.none 9
+                  button.none 9
                 td
-                  a.btn.none 10
+                  button.none 10
                 td
-                  a.btn.none 11
+                  button.none 11
                 td
-                  a.btn.none 12
+                  button.none 12
                 td
-                  a.btn.none 13
+                  button.none 13
                 td
-                  a.btn.none 14
+                  button.none 14
               tr
                 td
-                  a.btn.none 15
+                  button.none 15
                 td
-                  a.btn.none 16
+                  button.none 16
                 td
-                  a.btn.small.circle.no-margin 17
+                  button.small.circle.no-margin 17
                 td
-                  a.btn.none 18
+                  button.none 18
                 td
-                  a.btn.none 19
+                  button.none 19
                 td
-                  a.btn.none 20
+                  button.none 20
                 td
-                  a.btn.none 21
+                  button.none 21
               tr
                 td
-                  a.btn.none 22
+                  button.none 22
                 td
-                  a.btn.none 23
+                  button.none 23
                 td
-                  a.btn.none 24
+                  button.none 24
                 td
-                  a.btn.none 25
+                  button.none 25
                 td
-                  a.btn.none 26
+                  button.none 26
                 td
-                  a.btn.none 27
+                  button.none 27
                 td
-                  a.btn.none 28
+                  button.none 28
               tr
                 td
-                  a.btn.none 29
+                  button.none 29
                 td
-                  a.btn.none 30
+                  button.none 30
                 td
-                  a.btn.none 31
+                  button.none 31
                 td 1
                 td 2
                 td 3
                 td 4
       nav.right-align
-        a.btn.none(data-ui="#modal-calendar") Cancel
-        a.btn.none(data-ui="#modal-calendar") Ok
+        button.none(data-ui="#modal-calendar") Cancel
+        button.none(data-ui="#modal-calendar") Ok
 
     #modal-icons.modal.right.large
       nav
@@ -2477,7 +2793,7 @@
         .space(v-show="exemplo.html")
         pre(v-html="exemplo.sourceCode")
       .space
-      a.btn.absolute.top.right.margin(
+      a.button.absolute.top.right.margin(
         href="https://material.io/resources/icons/?style=baseline",
         target="_blank"
       ) More icons
@@ -2618,7 +2934,7 @@ export default {
       ).replace(/^\s+/g, "");
     },
     showCodepen(codepen) {
-      if(this.codepen == null) this.codepen = codepen
+      if (this.codepen == null) this.codepen = codepen;
       else this.codepen = null;
     },
     showSamples(selector, modal) {
@@ -2680,8 +2996,8 @@ export default {
     buttonSamples() {
       $("#buttons input").on("click", function () {
         var ids = ["green", "orange", "pink", "small", "large"];
-        var buttons = $("#buttons .btn:not(.border)");
-        var buttonsBorder = $("#buttons .btn.border");
+        var buttons = $("#buttons button:not(.border)");
+        var buttonsBorder = $("#buttons button.border");
 
         for (var i = 0; i < ids.length; i++) {
           buttons.removeClass(ids[i]);
