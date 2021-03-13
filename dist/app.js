@@ -3181,7 +3181,7 @@ var _default = {
       jsSample: null,
       autoSample: null,
       codepen: null,
-      theme: null
+      theme: true
     };
   },
   watch: {},
