@@ -105,9 +105,9 @@
             i(@click="showSamples('#badges nav > a')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#badges')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#badges'")
           p.codepen(
@@ -259,9 +259,9 @@
             i(@click="showSamples('#buttons button')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#buttons')",
-              title="Codepen"
+              title="Codepen", :class="{icon: !theme}"
             )
         div(v-show="codepen == '#buttons'")
           p.codepen(
@@ -351,9 +351,9 @@
             i(@click="showSamples('#cards .card:not(.chart)')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#cards')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
             .space
         div(v-show="codepen == '#cards'")
@@ -533,9 +533,9 @@
             i(@click="showSamples('#checkboxes .field')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#checkboxes')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#checkboxes'")
           p.codepen(
@@ -613,9 +613,9 @@
             i(@click="showSamples('#chips nav .chip')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#chips')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#chips'")
           p.codepen(
@@ -661,9 +661,9 @@
             i code
           a.chip.circle
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#colors')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#colors'")
           p.codepen(
@@ -689,9 +689,9 @@
             i(@click="showSamples('#dropdowns button')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#dropdowns')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#dropdowns'")
           p.codepen(
@@ -919,9 +919,9 @@
             i(@click="showSamples('#icons nav', '#modal-icons')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#icons')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#icons'")
           p.codepen(
@@ -978,9 +978,9 @@
             i(@click="showSamples('#images img')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#images')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#images'")
           p.codepen(
@@ -1025,9 +1025,9 @@
             i(@click="showSamples('#inputs .field')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#inputs')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#inputs'")
           p.codepen(
@@ -1137,9 +1137,9 @@
             i(@click="showSamples('#list .row')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#list')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#list'")
           p.codepen(
@@ -1283,9 +1283,9 @@
             i(@click="showSamples('#loaders svg')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#loaders')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#loaders'")
           p.codepen(
@@ -1328,9 +1328,9 @@
             i(@click="showSamples('#modal, #modal-calendar')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#modal')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#modal'")
           p.codepen(
@@ -1357,9 +1357,9 @@
             i(@click="showSamples('#navs nav')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#navs')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#navs'")
           p.codepen(
@@ -1409,9 +1409,9 @@
             i(@click="showSamples('#radios .field')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#radios')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#radios'")
           p.codepen(
@@ -1489,9 +1489,9 @@
             i code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#responsive')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#responsive'")
           p.codepen(
@@ -1529,9 +1529,9 @@
             i(@click="showSamples('#rows .row')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#rows')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#rows'")
           p.codepen(
@@ -1606,9 +1606,9 @@
             i(@click="showSamples('#selects .field')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#selects')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#selects'")
           p.codepen(
@@ -1709,9 +1709,9 @@
             i(@click="showSamples('#switches .field')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#switches')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#switches'")
           p.codepen(
@@ -1789,9 +1789,9 @@
             i(@click="showSamples('#table table')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#table')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#table'")
           p.codepen(
@@ -1885,9 +1885,9 @@
             i(@click="showSamples('#tabs > div')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#tabs')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#tabs'")
           p.codepen(
@@ -2018,9 +2018,9 @@
             i(@click="showSamples('#toasts .toast')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#toasts')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#toasts'")
           p.codepen(
@@ -2049,9 +2049,9 @@
             i(@click="showSamples('#tooltips nav a')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#tooltips')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#tooltips'")
           p.codepen(
@@ -2089,9 +2089,9 @@
             i(@click="showSamples('#typography .col.s6 div')") code
           a.chip.circle.medium-device.large-device
             img.circle.tiny(
-              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.png?alt=media",
+              src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#typography')",
-              title="Codepen"
+              title="Codepen" :class="{icon: !theme}"
             )
         div(v-show="codepen == '#typography'")
           p.codepen(
@@ -2815,6 +2815,7 @@ export default {
       jsSample: null,
       autoSample: null,
       codepen: null,
+      theme: null
     };
   },
   watch: {},
@@ -2850,8 +2851,14 @@ export default {
     updateTheme() {
       var body = $("body");
 
-      if (body.is(".is-dark")) body.removeClass("is-dark");
-      else body.addClass("is-dark");
+      if (body.is(".is-dark")){
+        body.removeClass("is-dark")
+        this.theme = true;
+      }else{
+       body.addClass("is-dark");
+       this.theme = false;
+       
+      }
     },
     addHomeScreen() {
       if (window.beercss && window.beercss.installEvent)
@@ -2934,8 +2941,8 @@ export default {
       ).replace(/^\s+/g, "");
     },
     showCodepen(codepen) {
-      if (this.codepen == null) this.codepen = codepen;
-      else this.codepen = null;
+      this.codepen = this.codepen == codepen ? null : codepen;
+      
     },
     showSamples(selector, modal) {
       var elements = $(selector);
@@ -3244,6 +3251,9 @@ export default {
 </script>
 
 <style>
+.icon {
+  filter: invert(1);
+}
 #modal-colors .col > div {
   padding: 12px;
 }
