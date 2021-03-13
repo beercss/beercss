@@ -4131,7 +4131,7 @@ exports.default = _default;
           _c("h5", [
             _c("span", [_vm._v("Colors")]),
             _vm._m(38),
-            _c("a", { staticClass: "chip circle" }, [
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
               _c("img", {
                 staticClass: "circle tiny",
                 class: { icon: !_vm.theme },
