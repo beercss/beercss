@@ -659,7 +659,7 @@
           span Colors
           a.chip.circle(data-ui="#modal-colors")
             i code
-          a.chip.circle
+          a.chip.circle.medium-device.large-device
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#colors')",
