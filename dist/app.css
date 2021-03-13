@@ -1,3 +1,6 @@
+.icon {
+  filter: invert(1);
+}
 #modal-colors .col > div {
   padding: 12px;
 }

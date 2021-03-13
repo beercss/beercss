@@ -2658,6 +2658,515 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -2670,7 +3179,9 @@ var _default = {
       samples: [],
       htmlSample: null,
       jsSample: null,
-      autoSample: null
+      autoSample: null,
+      codepen: null,
+      theme: null
     };
   },
   watch: {},
@@ -2692,7 +3203,14 @@ var _default = {
   methods: {
     updateTheme: function updateTheme() {
       var body = $("body");
-      if (body.is(".is-dark")) body.removeClass("is-dark");else body.addClass("is-dark");
+
+      if (body.is(".is-dark")) {
+        body.removeClass("is-dark");
+        this.theme = true;
+      } else {
+        body.addClass("is-dark");
+        this.theme = false;
+      }
     },
     addHomeScreen: function addHomeScreen() {
       if (window.beercss && window.beercss.installEvent) window.beercss.installEvent.prompt();
@@ -2759,6 +3277,9 @@ var _default = {
       tag.find(".overlay").remove();
       return process(tag[0].outerHTML.replace(/\s+(onclick|style)\="[^\"]*"/gi, "").replace(/\s+id\="(\w+)"/gi, ' id="$1-id"').replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1-id"').replace(/\s+[a-z-]+\=(""|"#")/gi, "").replace(/\n\<\/(circle|th)\>/gi, "</$1>")).replace(/^\s+/g, "");
     },
+    showCodepen: function showCodepen(codepen) {
+      this.codepen = this.codepen == codepen ? null : codepen;
+    },
     showSamples: function showSamples(selector, modal) {
       var elements = $(selector);
       this.samples = [];
@@ -2811,8 +3332,8 @@ var _default = {
     buttonSamples: function buttonSamples() {
       $("#buttons input").on("click", function () {
         var ids = ["green", "orange", "pink", "small", "large"];
-        var buttons = $("#buttons .btn:not(.border)");
-        var buttonsBorder = $("#buttons .btn.border");
+        var buttons = $("#buttons button:not(.border)");
+        var buttonsBorder = $("#buttons button.border");
 
         for (var i = 0; i < ids.length; i++) {
           buttons.removeClass(ids[i]);
@@ -2989,14 +3510,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $a33138 = exports.default || module.exports;
+        var $678c1f = exports.default || module.exports;
       
-      if (typeof $a33138 === 'function') {
-        $a33138 = $a33138.options;
+      if (typeof $678c1f === 'function') {
+        $678c1f = $678c1f.options;
       }
     
         /* template */
-        Object.assign($a33138, (function () {
+        Object.assign($678c1f, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -3211,11 +3732,41 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#badges")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(6),
-          _c("div", { staticClass: "space" }),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#badges",
+                  expression: "codepen == '#badges'"
+                }
+              ]
+            },
+            [_vm._m(6)]
+          ),
           _vm._m(7),
+          _c("div", { staticClass: "space" }),
+          _vm._m(8),
           _c("div", { staticClass: "small-space" })
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "buttons" } }, [
@@ -3227,17 +3778,47 @@ exports.default = _default;
                 {
                   on: {
                     click: function($event) {
-                      return _vm.showSamples("#buttons .btn, #button button")
+                      return _vm.showSamples("#buttons button")
                     }
                   }
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#buttons")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(8),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#buttons",
+                  expression: "codepen == '#buttons'"
+                }
+              ]
+            },
+            [_vm._m(9)]
+          ),
+          _vm._m(10),
           _c("div", { staticClass: "space" }),
-          _vm._m(9)
+          _vm._m(11)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "cards" } }, [
           _c("h5", [
@@ -3254,8 +3835,40 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#cards")
+                  }
+                }
+              }),
+              _c("div", { staticClass: "space" })
             ])
           ]),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#cards",
+                  expression: "codepen == '#cards'"
+                }
+              ]
+            },
+            [_vm._m(12)]
+          ),
+          _c("div", { staticClass: "space" }),
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col s12 m6 l3" }, [
               _c("div", { staticClass: "card" }, [
@@ -3266,9 +3879,9 @@ exports.default = _default;
                       attrs: { src: "/beer-and-woman.jpg" }
                     })
                   ]),
-                  _vm._m(10)
+                  _vm._m(13)
                 ]),
-                _vm._m(11)
+                _vm._m(14)
               ])
             ]),
             _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -3280,9 +3893,9 @@ exports.default = _default;
                       attrs: { src: "/beer-and-woman.jpg" }
                     })
                   ]),
-                  _vm._m(12)
+                  _vm._m(15)
                 ]),
-                _vm._m(13)
+                _vm._m(16)
               ])
             ]),
             _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -3294,9 +3907,9 @@ exports.default = _default;
                       attrs: { src: "/beer-and-woman.jpg" }
                     })
                   ]),
-                  _vm._m(14)
+                  _vm._m(17)
                 ]),
-                _vm._m(15)
+                _vm._m(18)
               ])
             ]),
             _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -3308,40 +3921,13 @@ exports.default = _default;
                       attrs: { src: "/beer-and-woman.jpg" }
                     })
                   ]),
-                  _vm._m(16)
+                  _vm._m(19)
                 ]),
-                _vm._m(17)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding" }, [
-                _c("img", {
-                  staticClass: "responsive small",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _vm._m(18)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding round" }, [
-                _c("img", {
-                  staticClass: "responsive small",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _vm._m(19)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding border" }, [
-                _c("img", {
-                  staticClass: "responsive small",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
                 _vm._m(20)
               ])
             ]),
             _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding border round" }, [
+              _c("div", { staticClass: "card no-padding" }, [
                 _c("img", {
                   staticClass: "responsive small",
                   attrs: { src: "/beer-and-woman.jpg" }
@@ -3350,12 +3936,39 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "col s12 m6 l3" }, [
+              _c("div", { staticClass: "card no-padding round" }, [
+                _c("img", {
+                  staticClass: "responsive small",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                }),
+                _vm._m(22)
+              ])
+            ]),
+            _c("div", { staticClass: "col s12 m6 l3" }, [
+              _c("div", { staticClass: "card no-padding border" }, [
+                _c("img", {
+                  staticClass: "responsive small",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                }),
+                _vm._m(23)
+              ])
+            ]),
+            _c("div", { staticClass: "col s12 m6 l3" }, [
+              _c("div", { staticClass: "card no-padding border round" }, [
+                _c("img", {
+                  staticClass: "responsive small",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                }),
+                _vm._m(24)
+              ])
+            ]),
+            _c("div", { staticClass: "col s12 m6 l3" }, [
               _c("div", { staticClass: "card no-padding" }, [
                 _c("img", {
                   staticClass: "responsive medium",
                   attrs: { src: "/beer-and-woman.jpg" }
                 }),
-                _vm._m(22)
+                _vm._m(25)
               ])
             ]),
             _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -3364,7 +3977,7 @@ exports.default = _default;
                   staticClass: "responsive medium round",
                   attrs: { src: "/beer-and-woman.jpg" }
                 }),
-                _vm._m(23)
+                _vm._m(26)
               ])
             ]),
             _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -3373,7 +3986,7 @@ exports.default = _default;
                   staticClass: "responsive medium",
                   attrs: { src: "/beer-and-woman.jpg" }
                 }),
-                _vm._m(24)
+                _vm._m(27)
               ])
             ]),
             _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -3382,7 +3995,7 @@ exports.default = _default;
                   staticClass: "responsive medium round",
                   attrs: { src: "/beer-and-woman.jpg" }
                 }),
-                _vm._m(25)
+                _vm._m(28)
               ])
             ]),
             _c("div", { staticClass: "col s12 l6" }, [
@@ -3394,7 +4007,7 @@ exports.default = _default;
                       attrs: { src: "/beer-and-woman.jpg" }
                     })
                   ]),
-                  _vm._m(26)
+                  _vm._m(29)
                 ])
               ])
             ]),
@@ -3406,14 +4019,14 @@ exports.default = _default;
                       staticClass: "responsive",
                       attrs: { src: "/beer-and-woman.jpg" }
                     }),
-                    _vm._m(27)
+                    _vm._m(30)
                   ]),
-                  _vm._m(28)
+                  _vm._m(31)
                 ])
               ])
             ]),
-            _vm._m(29),
-            _vm._m(30)
+            _vm._m(32),
+            _vm._m(33)
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "checkboxes" } }, [
@@ -3431,9 +4044,39 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#checkboxes")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(31)
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#checkboxes",
+                  expression: "codepen == '#checkboxes'"
+                }
+              ]
+            },
+            [_vm._m(34)]
+          ),
+          _vm._m(35)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "chips" } }, [
           _c("h5", [
@@ -3450,11 +4093,77 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#chips")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(32)
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#chips",
+                  expression: "codepen == '#chips'"
+                }
+              ]
+            },
+            [_vm._m(36)]
+          ),
+          _vm._m(37)
         ]),
-        _vm._m(33),
+        _c("div", { staticClass: "col s12", attrs: { id: "colors" } }, [
+          _c("h5", [
+            _c("span", [_vm._v("Colors")]),
+            _vm._m(38),
+            _c("a", { staticClass: "chip circle" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#colors")
+                  }
+                }
+              })
+            ])
+          ]),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#colors",
+                  expression: "codepen == '#colors'"
+                }
+              ]
+            },
+            [_vm._m(39)]
+          ),
+          _vm._m(40)
+        ]),
         _c("div", { staticClass: "col s12", attrs: { id: "dropdowns" } }, [
           _c("h5", [
             _c("span", [_vm._v("Dropdowns")]),
@@ -3470,8 +4179,38 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#dropdowns")
+                  }
+                }
+              })
             ])
           ]),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#dropdowns",
+                  expression: "codepen == '#dropdowns'"
+                }
+              ]
+            },
+            [_vm._m(41)]
+          ),
           _c("nav", { staticClass: "wrap" }, [
             _c("button", { attrs: { "data-ui": "#dropdown1" } }, [
               _c("span", [_vm._v("Drooooopdoooooooooown")]),
@@ -3484,9 +4223,9 @@ exports.default = _default;
                 },
                 [
                   _c("a", [_vm._v("Title")]),
-                  _vm._m(34),
-                  _vm._m(35),
-                  _vm._m(36),
+                  _vm._m(42),
+                  _vm._m(43),
+                  _vm._m(44),
                   _c("a", { staticClass: "row nowrap middle-align" }, [
                     _c("div", { staticClass: "col min" }, [
                       _c("img", {
@@ -3503,7 +4242,7 @@ exports.default = _default;
                         attrs: { src: "/beer-and-woman.jpg" }
                       })
                     ]),
-                    _vm._m(37)
+                    _vm._m(45)
                   ])
                 ]
               )
@@ -3519,9 +4258,9 @@ exports.default = _default;
                 },
                 [
                   _c("a", [_vm._v("Title")]),
-                  _vm._m(38),
-                  _vm._m(39),
-                  _vm._m(40),
+                  _vm._m(46),
+                  _vm._m(47),
+                  _vm._m(48),
                   _c("a", { staticClass: "row nowrap middle-align" }, [
                     _c("div", { staticClass: "col min" }, [
                       _c("img", {
@@ -3538,7 +4277,7 @@ exports.default = _default;
                         attrs: { src: "/beer-and-woman.jpg" }
                       })
                     ]),
-                    _vm._m(41)
+                    _vm._m(49)
                   ])
                 ]
               )
@@ -3559,9 +4298,9 @@ exports.default = _default;
                   },
                   [
                     _c("a", [_vm._v("Title")]),
-                    _vm._m(42),
-                    _vm._m(43),
-                    _vm._m(44),
+                    _vm._m(50),
+                    _vm._m(51),
+                    _vm._m(52),
                     _c("a", { staticClass: "row nowrap middle-align" }, [
                       _c("div", { staticClass: "col min" }, [
                         _c("img", {
@@ -3578,7 +4317,7 @@ exports.default = _default;
                           attrs: { src: "/beer-and-woman.jpg" }
                         })
                       ]),
-                      _vm._m(45)
+                      _vm._m(53)
                     ])
                   ]
                 )
@@ -3600,9 +4339,9 @@ exports.default = _default;
                   },
                   [
                     _c("a", [_vm._v("Title")]),
-                    _vm._m(46),
-                    _vm._m(47),
-                    _vm._m(48),
+                    _vm._m(54),
+                    _vm._m(55),
+                    _vm._m(56),
                     _c("a", { staticClass: "row nowrap middle-align" }, [
                       _c("div", { staticClass: "col min" }, [
                         _c("img", {
@@ -3619,13 +4358,13 @@ exports.default = _default;
                           attrs: { src: "/beer-and-woman.jpg" }
                         })
                       ]),
-                      _vm._m(49)
+                      _vm._m(57)
                     ])
                   ]
                 )
               ]
             ),
-            _vm._m(50)
+            _vm._m(58)
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "icons" } }, [
@@ -3643,11 +4382,41 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#icons")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(51),
-          _vm._m(52),
-          _vm._m(53)
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#icons",
+                  expression: "codepen == '#icons'"
+                }
+              ]
+            },
+            [_vm._m(59)]
+          ),
+          _vm._m(60),
+          _vm._m(61),
+          _vm._m(62)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "images" } }, [
           _c("h5", [
@@ -3664,8 +4433,38 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#images")
+                  }
+                }
+              })
             ])
           ]),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#images",
+                  expression: "codepen == '#images'"
+                }
+              ]
+            },
+            [_vm._m(63)]
+          ),
           _c("nav", { staticClass: "wrap" }, [
             _c("a", [
               _c("img", {
@@ -3744,11 +4543,41 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#inputs")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(54),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#inputs",
+                  expression: "codepen == '#inputs'"
+                }
+              ]
+            },
+            [_vm._m(64)]
+          ),
+          _vm._m(65),
           _c("div", { staticClass: "space" }),
-          _vm._m(55)
+          _vm._m(66)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "list" } }, [
           _c("h5", [
@@ -3765,21 +4594,51 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#list")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(56),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#list",
+                  expression: "codepen == '#list'"
+                }
+              ]
+            },
+            [_vm._m(67)]
+          ),
+          _vm._m(68),
           _c("label", { staticClass: "large-space middle-align" }, [
             _vm._v("Today")
           ]),
-          _vm._m(57),
-          _vm._m(58),
-          _vm._m(59),
+          _vm._m(69),
+          _vm._m(70),
+          _vm._m(71),
           _c("label", { staticClass: "large-space middle-align" }, [
             _vm._v("Yesterday")
           ]),
-          _vm._m(60),
-          _vm._m(61),
-          _vm._m(62),
+          _vm._m(72),
+          _vm._m(73),
+          _vm._m(74),
           _c("label", { staticClass: "large-space middle-align" }, [
             _vm._v("Older")
           ]),
@@ -3790,8 +4649,8 @@ exports.default = _default;
                 attrs: { src: "/beer-and-woman.jpg" }
               })
             ]),
-            _vm._m(63),
-            _vm._m(64)
+            _vm._m(75),
+            _vm._m(76)
           ]),
           _c("div", { staticClass: "row nowrap middle-align" }, [
             _c("div", { staticClass: "col min" }, [
@@ -3800,8 +4659,8 @@ exports.default = _default;
                 attrs: { src: "/beer-and-woman.jpg" }
               })
             ]),
-            _vm._m(65),
-            _vm._m(66)
+            _vm._m(77),
+            _vm._m(78)
           ]),
           _c("div", { staticClass: "row nowrap middle-align" }, [
             _c("div", { staticClass: "col min" }, [
@@ -3810,8 +4669,8 @@ exports.default = _default;
                 attrs: { src: "/beer-and-woman.jpg" }
               })
             ]),
-            _vm._m(67),
-            _vm._m(68)
+            _vm._m(79),
+            _vm._m(80)
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "loaders" } }, [
@@ -3829,8 +4688,38 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#loaders")
+                  }
+                }
+              })
             ])
           ]),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#loaders",
+                  expression: "codepen == '#loaders'"
+                }
+              ]
+            },
+            [_vm._m(81)]
+          ),
           _c("nav", { staticClass: "wrap" }, [
             _c("a", [
               _c(
@@ -3933,9 +4822,39 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#modal")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(69)
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#modal",
+                  expression: "codepen == '#modal'"
+                }
+              ]
+            },
+            [_vm._m(82)]
+          ),
+          _vm._m(83)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "navs" } }, [
           _c("h5", [
@@ -3952,10 +4871,40 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#navs")
+                  }
+                }
+              })
             ])
           ]),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#navs",
+                  expression: "codepen == '#navs'"
+                }
+              ]
+            },
+            [_vm._m(84)]
+          ),
           _c("nav", [
-            _c("a", { staticClass: "btn" }, [_vm._v("Button")]),
+            _c("button", [_vm._v("Button")]),
             _c("a", { staticClass: "chip" }, [_vm._v("Filter")]),
             _c("i", [_vm._v("home")]),
             _c("a", [
@@ -3983,8 +4932,8 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(70),
-          _vm._m(71)
+          _vm._m(85),
+          _vm._m(86)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "radios" } }, [
           _c("h5", [
@@ -4001,9 +4950,39 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#radios")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(72)
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#radios",
+                  expression: "codepen == '#radios'"
+                }
+              ]
+            },
+            [_vm._m(87)]
+          ),
+          _vm._m(88)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "responsive" } }, [
           _c("h5", [
@@ -4019,9 +4998,39 @@ exports.default = _default;
                 }
               },
               [_c("i", [_vm._v("code")])]
-            )
+            ),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#responsive")
+                  }
+                }
+              })
+            ])
           ]),
-          _vm._m(73)
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#responsive",
+                  expression: "codepen == '#responsive'"
+                }
+              ]
+            },
+            [_vm._m(89)]
+          ),
+          _vm._m(90)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "rows" } }, [
           _c("h5", [
@@ -4038,16 +5047,46 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#rows")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(74),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#rows",
+                  expression: "codepen == '#rows'"
+                }
+              ]
+            },
+            [_vm._m(91)]
+          ),
+          _vm._m(92),
           _c("div", { staticClass: "space" }),
-          _vm._m(75),
-          _vm._m(76),
-          _vm._m(77),
-          _vm._m(78),
-          _vm._m(79),
-          _vm._m(80),
+          _vm._m(93),
+          _vm._m(94),
+          _vm._m(95),
+          _vm._m(96),
+          _vm._m(97),
+          _vm._m(98),
           _c("div", { staticClass: "space" })
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "selects" } }, [
@@ -4065,11 +5104,41 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#selects")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(81),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#selects",
+                  expression: "codepen == '#selects'"
+                }
+              ]
+            },
+            [_vm._m(99)]
+          ),
+          _vm._m(100),
           _c("div", { staticClass: "space" }),
-          _vm._m(82)
+          _vm._m(101)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "switches" } }, [
           _c("h5", [
@@ -4086,9 +5155,39 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#switches")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(83)
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#switches",
+                  expression: "codepen == '#switches'"
+                }
+              ]
+            },
+            [_vm._m(102)]
+          ),
+          _vm._m(103)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "table" } }, [
           _c("h5", [
@@ -4105,11 +5204,41 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#table")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(84),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#table",
+                  expression: "codepen == '#table'"
+                }
+              ]
+            },
+            [_vm._m(104)]
+          ),
+          _vm._m(105),
           _c("div", { staticClass: "space" }),
-          _vm._m(85)
+          _vm._m(106)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "tabs" } }, [
           _c("h5", [
@@ -4126,15 +5255,45 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#tabs")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(86),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#tabs",
+                  expression: "codepen == '#tabs'"
+                }
+              ]
+            },
+            [_vm._m(107)]
+          ),
+          _vm._m(108),
           _c("p", { staticClass: "space" }),
-          _vm._m(87),
-          _vm._m(88),
-          _vm._m(89),
-          _vm._m(90),
-          _vm._m(91)
+          _vm._m(109),
+          _vm._m(110),
+          _vm._m(111),
+          _vm._m(112),
+          _vm._m(113)
         ]),
         _c("div", { staticClass: "col s12 l6", attrs: { id: "toasts" } }, [
           _c("h5", [
@@ -4151,13 +5310,43 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#toasts")
+                  }
+                }
+              })
             ])
           ]),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#toasts",
+                  expression: "codepen == '#toasts'"
+                }
+              ]
+            },
+            [_vm._m(114)]
+          ),
           _c("nav", { staticClass: "wrap" }, [
             _c(
-              "a",
+              "button",
               {
-                staticClass: "pink btn",
+                staticClass: "pink",
                 on: {
                   click: function($event) {
                     return _vm.showToasts("#toast1")
@@ -4167,9 +5356,9 @@ exports.default = _default;
               [_vm._v("Toast")]
             ),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "orange btn",
+                staticClass: "orange",
                 on: {
                   click: function($event) {
                     return _vm.showToasts("#toast2")
@@ -4179,9 +5368,9 @@ exports.default = _default;
               [_vm._v("Toast")]
             ),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "green btn",
+                staticClass: "green",
                 on: {
                   click: function($event) {
                     return _vm.showToasts("#toast3")
@@ -4191,9 +5380,9 @@ exports.default = _default;
               [_vm._v("Toast")]
             ),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "blue btn",
+                staticClass: "blue",
                 on: {
                   click: function($event) {
                     return _vm.showToasts("#toast4")
@@ -4219,9 +5408,39 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#tooltips")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(92)
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#tooltips",
+                  expression: "codepen == '#tooltips'"
+                }
+              ]
+            },
+            [_vm._m(115)]
+          ),
+          _vm._m(116)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "typography" } }, [
           _c("h5", [
@@ -4238,16 +5457,46 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
+            ]),
+            _c("a", { staticClass: "chip circle medium-device large-device" }, [
+              _c("img", {
+                staticClass: "circle tiny",
+                class: { icon: !_vm.theme },
+                attrs: {
+                  src:
+                    "https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
+                  title: "Codepen"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.showCodepen("#typography")
+                  }
+                }
+              })
             ])
           ]),
-          _vm._m(93)
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.codepen == "#typography",
+                  expression: "codepen == '#typography'"
+                }
+              ]
+            },
+            [_vm._m(117)]
+          ),
+          _vm._m(118)
         ]),
         _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "large-divider" }),
           _c("div", [
             _c("h4", { staticClass: "center-align" }, [_vm._v("Summary")]),
-            _vm._m(94),
-            _vm._m(95),
+            _vm._m(119),
+            _vm._m(120),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s12" }, [
@@ -4365,19 +5614,19 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "large-space" }),
-            _vm._m(96),
+            _vm._m(121),
             _c("div", { staticClass: "space" }),
-            _vm._m(97)
+            _vm._m(122)
           ])
         ])
       ]),
-      _vm._m(98),
-      _vm._m(99),
+      _vm._m(123),
+      _vm._m(124),
       _c(
         "div",
         { staticClass: "modal right large", attrs: { id: "modal-samples" } },
         [
-          _vm._m(100),
+          _vm._m(125),
           _c("div", { staticClass: "space" }),
           _vm._l(_vm.samples, function(exemplo) {
             return _c("div", { staticClass: "card border" }, [
@@ -4399,12 +5648,12 @@ exports.default = _default;
         ],
         2
       ),
-      _vm._m(101),
+      _vm._m(126),
       _c(
         "div",
         { staticClass: "modal right large", attrs: { id: "modal-icons" } },
         [
-          _vm._m(102),
+          _vm._m(127),
           _c("div", { staticClass: "space" }),
           _vm._l(_vm.samples, function(exemplo) {
             return _c("div", { staticClass: "card border" }, [
@@ -4427,7 +5676,7 @@ exports.default = _default;
           _c(
             "a",
             {
-              staticClass: "btn absolute top right margin",
+              staticClass: "button absolute top right margin",
               attrs: {
                 href: "https://material.io/resources/icons/?style=baseline",
                 target: "_blank"
@@ -4504,7 +5753,7 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "btn large border",
+          staticClass: "button large border",
           attrs: {
             href: "https://www.npmjs.com/package/beercss",
             target: "_blank"
@@ -4515,7 +5764,7 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "btn large border",
+          staticClass: "button large border",
           attrs: {
             href: "https://github.com/beercss/beercss",
             target: "_blank"
@@ -4526,7 +5775,7 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "btn large",
+          staticClass: "button large",
           attrs: { href: "https://www.patreon.com/beercss", target: "_blank" }
         },
         [_vm._v("Support us")]
@@ -4562,6 +5811,52 @@ var staticRenderFns = [
         [_c("i", [_vm._v("info")]), _c("span", [_vm._v("Complementary text")])]
       )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "jOVXqYv",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/oNYJxeb" } },
+            [_vm._v("Beercss buttons embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -4778,6 +6073,52 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "oNYJxeb",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/oNYJxeb" } },
+            [_vm._v("Beercss buttons embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
       _c("label", [
         _c("input", {
@@ -4838,49 +6179,95 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
-      _c("a", { staticClass: "btn" }, [_vm._v("Button")]),
-      _c("a", { staticClass: "btn" }, [
+      _c("button", [_vm._v("Button")]),
+      _c("button", [
         _c("i", [_vm._v("search")]),
         _c("span", [_vm._v("Button")])
       ]),
-      _c("a", { staticClass: "btn" }, [
+      _c("button", [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("refresh")])
       ]),
-      _c("a", { staticClass: "btn round" }, [_vm._v("Button")]),
-      _c("a", { staticClass: "btn round" }, [
+      _c("button", { staticClass: "round" }, [_vm._v("Button")]),
+      _c("button", { staticClass: "round" }, [
         _c("i", [_vm._v("place")]),
         _c("span", [_vm._v("Button")])
       ]),
-      _c("a", { staticClass: "btn round" }, [
+      _c("button", { staticClass: "round" }, [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("delete")])
       ]),
-      _c("a", { staticClass: "btn circle" }, [_c("i", [_vm._v("home")])]),
-      _c("a", { staticClass: "btn circle" }, [_vm._v("A")]),
-      _c("a", { staticClass: "btn border" }, [_vm._v("Button")]),
-      _c("a", { staticClass: "btn border" }, [
+      _c("button", { staticClass: "circle" }, [_c("i", [_vm._v("home")])]),
+      _c("button", { staticClass: "circle" }, [_vm._v("A")]),
+      _c("button", { staticClass: "border" }, [_vm._v("Button")]),
+      _c("button", { staticClass: "border" }, [
         _c("i", [_vm._v("search")]),
         _c("span", [_vm._v("Button")])
       ]),
-      _c("a", { staticClass: "btn border" }, [
+      _c("button", { staticClass: "border" }, [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("refresh")])
       ]),
-      _c("a", { staticClass: "btn border round" }, [_vm._v("Button")]),
-      _c("a", { staticClass: "btn border round" }, [
+      _c("button", { staticClass: "border round" }, [_vm._v("Button")]),
+      _c("button", { staticClass: "border round" }, [
         _c("i", [_vm._v("place")]),
         _c("span", [_vm._v("Button")])
       ]),
-      _c("a", { staticClass: "btn border round" }, [
+      _c("button", { staticClass: "border round" }, [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("delete")])
       ]),
-      _c("a", { staticClass: "btn border circle" }, [
+      _c("button", { staticClass: "border circle" }, [
         _c("i", [_vm._v("home")])
       ]),
-      _c("a", { staticClass: "btn border circle" }, [_vm._v("B")])
+      _c("button", { staticClass: "border circle" }, [_vm._v("B")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "303px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "303",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "RwoeqBO",
+          "data-preview": "true",
+          "data-pen-title": "Beercss card embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/RwoeqBO" } },
+            [_vm._v("Beercss card embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -4895,7 +6282,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
+    return _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Link")])])
   },
   function() {
     var _vm = this
@@ -4910,7 +6297,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
+    return _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Link")])])
   },
   function() {
     var _vm = this
@@ -4925,7 +6312,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
+    return _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Link")])])
   },
   function() {
     var _vm = this
@@ -4940,7 +6327,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
+    return _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Link")])])
   },
   function() {
     var _vm = this
@@ -4949,7 +6336,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "padding" }, [
       _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
       _c("div", [_vm._v("Complementary text")]),
-      _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
+      _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Link")])])
     ])
   },
   function() {
@@ -4959,7 +6346,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "padding" }, [
       _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
       _c("div", [_vm._v("Complementary text")]),
-      _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
+      _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Link")])])
     ])
   },
   function() {
@@ -4969,7 +6356,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "padding" }, [
       _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
       _c("div", [_vm._v("Complementary text")]),
-      _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
+      _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Link")])])
     ])
   },
   function() {
@@ -4979,7 +6366,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "padding" }, [
       _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
       _c("div", [_vm._v("Complementary text")]),
-      _c("nav", [_c("a", { staticClass: "btn none" }, [_vm._v("Link")])])
+      _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Link")])])
     ])
   },
   function() {
@@ -4996,7 +6383,7 @@ var staticRenderFns = [
         _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
         _c("div", [_vm._v("Complementary text")]),
         _c("nav", [
-          _c("a", { staticClass: "btn border small" }, [_vm._v("Link")])
+          _c("button", { staticClass: "border small" }, [_vm._v("Link")])
         ])
       ]
     )
@@ -5015,7 +6402,7 @@ var staticRenderFns = [
         _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
         _c("div", [_vm._v("Complementary text")]),
         _c("nav", [
-          _c("a", { staticClass: "btn border small" }, [_vm._v("Link")])
+          _c("button", { staticClass: "border small" }, [_vm._v("Link")])
         ])
       ]
     )
@@ -5034,7 +6421,7 @@ var staticRenderFns = [
         _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
         _c("div", [_vm._v("Complementary text")]),
         _c("nav", [
-          _c("a", { staticClass: "btn border small" }, [_vm._v("Link")])
+          _c("button", { staticClass: "border small" }, [_vm._v("Link")])
         ])
       ]
     )
@@ -5053,7 +6440,7 @@ var staticRenderFns = [
         _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
         _c("div", [_vm._v("Complementary text")]),
         _c("nav", [
-          _c("a", { staticClass: "btn border small" }, [_vm._v("Link")])
+          _c("button", { staticClass: "border small" }, [_vm._v("Link")])
         ])
       ]
     )
@@ -5070,7 +6457,7 @@ var staticRenderFns = [
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           )
         ]),
-        _c("nav", [_c("a", { staticClass: "btn border" }, [_vm._v("Link")])])
+        _c("nav", [_c("button", { staticClass: "border" }, [_vm._v("Link")])])
       ])
     ])
   },
@@ -5099,7 +6486,7 @@ var staticRenderFns = [
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           )
         ]),
-        _c("nav", [_c("a", { staticClass: "btn border" }, [_vm._v("Link")])])
+        _c("nav", [_c("button", { staticClass: "border" }, [_vm._v("Link")])])
       ])
     ])
   },
@@ -5115,7 +6502,7 @@ var staticRenderFns = [
           _c(
             "a",
             {
-              staticClass: "link b",
+              staticClass: "link bold",
               attrs: { target: "_blank", href: "https://www.chartjs.org/" }
             },
             [_vm._v("chart.js")]
@@ -5124,8 +6511,8 @@ var staticRenderFns = [
         _c("div", { staticClass: "space" }),
         _c("div", [_c("canvas", { attrs: { id: "grafico0" } })]),
         _c("nav", [
-          _c("a", { staticClass: "btn none" }, [_vm._v("Link 1")]),
-          _c("a", { staticClass: "btn none" }, [_vm._v("Link 2")])
+          _c("button", { staticClass: "none" }, [_vm._v("Link 1")]),
+          _c("button", { staticClass: "none" }, [_vm._v("Link 2")])
         ])
       ])
     ])
@@ -5142,7 +6529,7 @@ var staticRenderFns = [
           _c(
             "a",
             {
-              staticClass: "link b",
+              staticClass: "link bold",
               attrs: { target: "_blank", href: "https://www.chartjs.org/" }
             },
             [_vm._v("chart.js")]
@@ -5151,11 +6538,57 @@ var staticRenderFns = [
         _c("div", { staticClass: "space" }),
         _c("div", [_c("canvas", { attrs: { id: "grafico1" } })]),
         _c("nav", [
-          _c("a", { staticClass: "btn none" }, [_vm._v("Link 1")]),
-          _c("a", { staticClass: "btn none" }, [_vm._v("Link 2")])
+          _c("button", { staticClass: "none" }, [_vm._v("Link 1")]),
+          _c("button", { staticClass: "none" }, [_vm._v("Link 2")])
         ])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "YzpdqaN",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/YzpdqaN" } },
+            [_vm._v("Beercss checkboxes embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -5245,6 +6678,52 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "wvoRGXm",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/wvoRGXm" } },
+            [_vm._v("Beercss chips embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
       _c("a", { staticClass: "chip" }, [_vm._v("Filter")]),
       _c("a", { staticClass: "chip" }, [
@@ -5277,21 +6756,113 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s12", attrs: { id: "colors" } }, [
-      _c("h5", [
-        _c("span", [_vm._v("Colors")]),
-        _c(
-          "a",
-          { staticClass: "chip circle", attrs: { "data-ui": "#modal-colors" } },
-          [_c("i", [_vm._v("code")])]
-        )
-      ]),
-      _c("nav", [
-        _c("a", { staticClass: "btn", attrs: { "data-ui": "#modal-colors" } }, [
-          _vm._v("Colors")
+    return _c(
+      "a",
+      { staticClass: "chip circle", attrs: { "data-ui": "#modal-colors" } },
+      [_c("i", [_vm._v("code")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "zYoyqmY",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/zYoyqmY" } },
+            [_vm._v("Beercss colors embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
         ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", [
+      _c("button", { attrs: { "data-ui": "#modal-colors" } }, [
+        _vm._v("Colors")
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "VwmqjeM",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/VwmqjeM" } },
+            [_vm._v("Beercss dropdowns embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -5487,90 +7058,110 @@ var staticRenderFns = [
                 _c("td", [_vm._v("S")])
               ]),
               _c("tr", [
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("1")])]),
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("2")])]),
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("3")])]),
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("4")])]),
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("5")])]),
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("6")])]),
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("7")])])
+                _c("td", [
+                  _c("button", { staticClass: "none" }, [_vm._v("1")])
+                ]),
+                _c("td", [
+                  _c("button", { staticClass: "none" }, [_vm._v("2")])
+                ]),
+                _c("td", [
+                  _c("button", { staticClass: "none" }, [_vm._v("3")])
+                ]),
+                _c("td", [
+                  _c("button", { staticClass: "none" }, [_vm._v("4")])
+                ]),
+                _c("td", [
+                  _c("button", { staticClass: "none" }, [_vm._v("5")])
+                ]),
+                _c("td", [
+                  _c("button", { staticClass: "none" }, [_vm._v("6")])
+                ]),
+                _c("td", [_c("button", { staticClass: "none" }, [_vm._v("7")])])
               ]),
               _c("tr", [
                 _c("td", [
                   _c(
-                    "a",
-                    { staticClass: "btn small border circle no-margin" },
+                    "button",
+                    { staticClass: "small border circle no-margin" },
                     [_vm._v("8")]
                   )
                 ]),
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("9")])]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("10")])
+                  _c("button", { staticClass: "none" }, [_vm._v("9")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("11")])
+                  _c("button", { staticClass: "none" }, [_vm._v("10")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("12")])
+                  _c("button", { staticClass: "none" }, [_vm._v("11")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("13")])
+                  _c("button", { staticClass: "none" }, [_vm._v("12")])
                 ]),
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("14")])])
+                _c("td", [
+                  _c("button", { staticClass: "none" }, [_vm._v("13")])
+                ]),
+                _c("td", [
+                  _c("button", { staticClass: "none" }, [_vm._v("14")])
+                ])
               ]),
               _c("tr", [
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("15")])
+                  _c("button", { staticClass: "none" }, [_vm._v("15")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("16")])
+                  _c("button", { staticClass: "none" }, [_vm._v("16")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn small circle no-margin" }, [
+                  _c("button", { staticClass: "small circle no-margin" }, [
                     _vm._v("17")
                   ])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("18")])
+                  _c("button", { staticClass: "none" }, [_vm._v("18")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("19")])
+                  _c("button", { staticClass: "none" }, [_vm._v("19")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("20")])
+                  _c("button", { staticClass: "none" }, [_vm._v("20")])
                 ]),
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("21")])])
+                _c("td", [
+                  _c("button", { staticClass: "none" }, [_vm._v("21")])
+                ])
               ]),
               _c("tr", [
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("22")])
+                  _c("button", { staticClass: "none" }, [_vm._v("22")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("23")])
+                  _c("button", { staticClass: "none" }, [_vm._v("23")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("24")])
+                  _c("button", { staticClass: "none" }, [_vm._v("24")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("25")])
+                  _c("button", { staticClass: "none" }, [_vm._v("25")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("26")])
+                  _c("button", { staticClass: "none" }, [_vm._v("26")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("27")])
+                  _c("button", { staticClass: "none" }, [_vm._v("27")])
                 ]),
-                _c("td", [_c("a", { staticClass: "btn none" }, [_vm._v("28")])])
+                _c("td", [
+                  _c("button", { staticClass: "none" }, [_vm._v("28")])
+                ])
               ]),
               _c("tr", [
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("29")])
+                  _c("button", { staticClass: "none" }, [_vm._v("29")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("30")])
+                  _c("button", { staticClass: "none" }, [_vm._v("30")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "btn none" }, [_vm._v("31")])
+                  _c("button", { staticClass: "none" }, [_vm._v("31")])
                 ]),
                 _c("td", [_vm._v("1")]),
                 _c("td", [_vm._v("2")]),
@@ -5582,6 +7173,52 @@ var staticRenderFns = [
         ]
       )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "GRNPqNG",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/GRNPqNG" } },
+            [_vm._v("Beercss icons embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -5633,6 +7270,98 @@ var staticRenderFns = [
       _c("i", { staticClass: "large" }, [_vm._v("update")]),
       _c("i", { staticClass: "large" }, [_vm._v("thumb_up")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "gOLZMmd",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/gOLZMmd" } },
+            [_vm._v("Beercss images embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "abBPZwJ",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/abBPZwJ" } },
+            [_vm._v("Beercss inputs embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -5776,6 +7505,52 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "abBPZwJ",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/abBPZwJ" } },
+            [_vm._v("Beercss list embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
       _c("label", [
         _c("input", {
@@ -5830,8 +7605,10 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
+          _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+          _c("button", { staticClass: "none" }, [
+            _c("i", [_vm._v("more_vert")])
+          ])
         ])
       ])
     ])
@@ -5850,8 +7627,10 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
+          _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+          _c("button", { staticClass: "none" }, [
+            _c("i", [_vm._v("more_vert")])
+          ])
         ])
       ])
     ])
@@ -5870,8 +7649,10 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
+          _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+          _c("button", { staticClass: "none" }, [
+            _c("i", [_vm._v("more_vert")])
+          ])
         ])
       ])
     ])
@@ -5890,8 +7671,10 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
+          _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+          _c("button", { staticClass: "none" }, [
+            _c("i", [_vm._v("more_vert")])
+          ])
         ])
       ])
     ])
@@ -5910,8 +7693,10 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
+          _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+          _c("button", { staticClass: "none" }, [
+            _c("i", [_vm._v("more_vert")])
+          ])
         ])
       ])
     ])
@@ -5930,8 +7715,10 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col min" }, [
         _c("nav", [
-          _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-          _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
+          _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+          _c("button", { staticClass: "none" }, [
+            _c("i", [_vm._v("more_vert")])
+          ])
         ])
       ])
     ])
@@ -5951,8 +7738,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col min" }, [
       _c("nav", [
-        _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-        _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
+        _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+        _c("button", { staticClass: "none" }, [_c("i", [_vm._v("more_vert")])])
       ])
     ])
   },
@@ -5971,8 +7758,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col min" }, [
       _c("nav", [
-        _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-        _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
+        _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+        _c("button", { staticClass: "none" }, [_c("i", [_vm._v("more_vert")])])
       ])
     ])
   },
@@ -5991,20 +7778,110 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col min" }, [
       _c("nav", [
-        _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-        _c("a", { staticClass: "btn none" }, [_c("i", [_vm._v("more_vert")])])
+        _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+        _c("button", { staticClass: "none" }, [_c("i", [_vm._v("more_vert")])])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "zYoyEEV",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/zYoyEEV" } },
+            [_vm._v("Beercss loaders embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "ExNGwoq",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/ExNGwoq" } },
+            [_vm._v("Beercss modal embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", [
-      _c("a", { staticClass: "btn", attrs: { "data-ui": "#modal" } }, [
-        _vm._v("Modal")
-      ]),
-      _c("a", { staticClass: "btn", attrs: { "data-ui": "#modal-calendar" } }, [
+      _c("button", { attrs: { "data-ui": "#modal" } }, [_vm._v("Modal")]),
+      _c("button", { attrs: { "data-ui": "#modal-calendar" } }, [
         _vm._v("Calendar")
       ])
     ])
@@ -6013,11 +7890,56 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "vYyvejg",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/qBqLPXE" } },
+            [_vm._v("Beercss navs embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
       _c(
-        "a",
+        "button",
         {
-          staticClass: "btn",
           attrs: {
             onclick:
               "$('#begin, #pages .page').attr('class', 'page left active');"
@@ -6026,9 +7948,8 @@ var staticRenderFns = [
         [_vm._v("From left")]
       ),
       _c(
-        "a",
+        "button",
         {
-          staticClass: "btn",
           attrs: {
             onclick:
               "$('#begin, #pages .page').attr('class', 'page top active');"
@@ -6037,9 +7958,8 @@ var staticRenderFns = [
         [_vm._v("From top")]
       ),
       _c(
-        "a",
+        "button",
         {
-          staticClass: "btn",
           attrs: {
             onclick:
               "$('#begin, #pages .page').attr('class', 'page bottom active');"
@@ -6048,9 +7968,8 @@ var staticRenderFns = [
         [_vm._v("From bottom")]
       ),
       _c(
-        "a",
+        "button",
         {
-          staticClass: "btn",
           attrs: {
             onclick:
               "$('#begin, #pages .page').attr('class', 'page right active');"
@@ -6067,6 +7986,52 @@ var staticRenderFns = [
     return _c("div", { staticStyle: { display: "none" } }, [
       _c("div", { staticClass: "page" })
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "zYoeqxm",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/zYoeqxm" } },
+            [_vm._v("Beercss radios embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -6156,6 +8121,52 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "poNGyOO",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/poNGyOO" } },
+            [_vm._v("Beercss responsive embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", [
       _c("nav", [
         _c("button", { staticClass: "small-device circle" }, [
@@ -6184,6 +8195,52 @@ var staticRenderFns = [
         )
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "vYybGaX",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/vYybGaX" } },
+            [_vm._v("Beercss rows embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -6288,6 +8345,52 @@ var staticRenderFns = [
       _c("div", { staticClass: "col min" }, [_vm._v("min")]),
       _c("div", { staticClass: "col" }, [_vm._v("max")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "NWboNrg",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/NWboNrg" } },
+            [_vm._v("Beercss selects embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -6412,6 +8515,52 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "QWGYNKq",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/QWGYNKq" } },
+            [_vm._v("Beercss switches embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col s12" }, [
         _c("div", { staticClass: "field middle-align" }, [
@@ -6532,6 +8681,52 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "ExNrKNr",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/ExNrKNr" } },
+            [_vm._v("Beercss tables embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
       _c("label", [
         _c("input", {
@@ -6611,8 +8806,8 @@ var staticRenderFns = [
           _c("td", [_vm._v("Line 1")]),
           _c("td", [
             _c("nav", { staticClass: "right-align" }, [
-              _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-              _c("a", { staticClass: "btn none" }, [
+              _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+              _c("button", { staticClass: "none" }, [
                 _c("i", [_vm._v("more_vert")])
               ])
             ])
@@ -6625,8 +8820,8 @@ var staticRenderFns = [
           _c("td", [_vm._v("Line 2")]),
           _c("td", [
             _c("nav", { staticClass: "right-align" }, [
-              _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-              _c("a", { staticClass: "btn none" }, [
+              _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+              _c("button", { staticClass: "none" }, [
                 _c("i", [_vm._v("more_vert")])
               ])
             ])
@@ -6639,8 +8834,8 @@ var staticRenderFns = [
           _c("td", [_vm._v("Line 3")]),
           _c("td", [
             _c("nav", { staticClass: "right-align" }, [
-              _c("a", { staticClass: "btn none" }, [_vm._v("Link")]),
-              _c("a", { staticClass: "btn none" }, [
+              _c("button", { staticClass: "none" }, [_vm._v("Link")]),
+              _c("button", { staticClass: "none" }, [
                 _c("i", [_vm._v("more_vert")])
               ])
             ])
@@ -6648,6 +8843,52 @@ var staticRenderFns = [
         ])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "Rwovapr",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/Rwovapr" } },
+            [_vm._v("Beercss tabs embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -6853,6 +9094,98 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "WNoPwjX",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/WNoPwjX" } },
+            [_vm._v("Beercss toasts embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "XWNOdaO",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/XWNOdaO" } },
+            [_vm._v("Beercss tooltips embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
       _c("a", { staticClass: "chip circle" }, [
         _c("i", [_vm._v("arrow_back")]),
@@ -6877,6 +9210,52 @@ var staticRenderFns = [
         ])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "codepen",
+        staticStyle: {
+          height: "265px",
+          "box-sizing": "border-box",
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          border: "2px solid",
+          margin: "1em 0",
+          padding: "1em"
+        },
+        attrs: {
+          "data-height": "265",
+          "data-theme-id": "light",
+          "data-default-tab": "html,result",
+          "data-user": "kickerbnu",
+          "data-slug-hash": "yLVZOPq",
+          "data-preview": "true",
+          "data-pen-title": "Beercss buttons embed"
+        }
+      },
+      [
+        _c("span", [
+          _vm._v("See the Pen"),
+          _c(
+            "a",
+            { attrs: { href: "https://codepen.io/kickerbnu/pen/yLVZOPq" } },
+            [_vm._v("Beercss typography embed by Everton Alcides Buzzi")]
+          ),
+          _c("a", { attrs: { href: "https://codepen.io/kickerbnu" } }, [
+            _vm._v("@kickerbnu")
+          ]),
+          _c("a", { attrs: { href: "https://codepen.io" } }, [
+            _vm._v("CodePen.")
+          ])
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -7045,7 +9424,7 @@ var staticRenderFns = [
           _c("span", { staticClass: "orange-text" }, [_vm._v("auto")])
         ]),
         _c("div", [
-          _c("span", [_vm._v("btn ")]),
+          _c("span", [_vm._v("button ")]),
           _c("span", { staticClass: "grey-text" }, [
             _vm._v("small, medium, large, border, round, circle, flat, ")
           ]),
@@ -7244,7 +9623,7 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "btn large",
+          staticClass: "button large",
           attrs: { href: "https://www.patreon.com/beercss", target: "_blank" }
         },
         [_vm._v("Support us")]
@@ -7896,17 +10275,17 @@ var staticRenderFns = [
       _c("div", [_vm._v("Complementary text")]),
       _c("nav", [
         _c(
-          "a",
+          "button",
           {
-            staticClass: "btn none",
+            staticClass: "none",
             attrs: { onclick: "$('#modal').attr('class', 'modal active');" }
           },
           [_vm._v("Default")]
         ),
         _c(
-          "a",
+          "button",
           {
-            staticClass: "btn none",
+            staticClass: "none",
             attrs: {
               onclick: "$('#modal').attr('class', 'modal left active');"
             }
@@ -7914,9 +10293,9 @@ var staticRenderFns = [
           [_vm._v("Left")]
         ),
         _c(
-          "a",
+          "button",
           {
-            staticClass: "btn none",
+            staticClass: "none",
             attrs: {
               onclick: "$('#modal').attr('class', 'modal right active');"
             }
@@ -7924,24 +10303,24 @@ var staticRenderFns = [
           [_vm._v("Right")]
         ),
         _c(
-          "a",
+          "button",
           {
-            staticClass: "btn none",
+            staticClass: "none",
             attrs: { onclick: "$('#modal').attr('class', 'modal top active');" }
           },
           [_vm._v("Top")]
         ),
         _c(
-          "a",
+          "button",
           {
-            staticClass: "btn none",
+            staticClass: "none",
             attrs: {
               onclick: "$('#modal').attr('class', 'modal bottom active');"
             }
           },
           [_vm._v("Bottom")]
         ),
-        _c("a", { staticClass: "btn none", attrs: { "data-ui": "#modal" } }, [
+        _c("button", { staticClass: "none", attrs: { "data-ui": "#modal" } }, [
           _vm._v("Close")
         ])
       ])
@@ -8001,111 +10380,111 @@ var staticRenderFns = [
                 ]),
                 _c("tr", [
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("1")])
+                    _c("button", { staticClass: "none" }, [_vm._v("1")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("2")])
+                    _c("button", { staticClass: "none" }, [_vm._v("2")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("3")])
+                    _c("button", { staticClass: "none" }, [_vm._v("3")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("4")])
+                    _c("button", { staticClass: "none" }, [_vm._v("4")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("5")])
+                    _c("button", { staticClass: "none" }, [_vm._v("5")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("6")])
+                    _c("button", { staticClass: "none" }, [_vm._v("6")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("7")])
+                    _c("button", { staticClass: "none" }, [_vm._v("7")])
                   ])
                 ]),
                 _c("tr", [
                   _c("td", [
                     _c(
-                      "a",
-                      { staticClass: "btn small border circle no-margin" },
+                      "button",
+                      { staticClass: "small border circle no-margin" },
                       [_vm._v("8")]
                     )
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("9")])
+                    _c("button", { staticClass: "none" }, [_vm._v("9")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("10")])
+                    _c("button", { staticClass: "none" }, [_vm._v("10")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("11")])
+                    _c("button", { staticClass: "none" }, [_vm._v("11")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("12")])
+                    _c("button", { staticClass: "none" }, [_vm._v("12")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("13")])
+                    _c("button", { staticClass: "none" }, [_vm._v("13")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("14")])
+                    _c("button", { staticClass: "none" }, [_vm._v("14")])
                   ])
                 ]),
                 _c("tr", [
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("15")])
+                    _c("button", { staticClass: "none" }, [_vm._v("15")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("16")])
+                    _c("button", { staticClass: "none" }, [_vm._v("16")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn small circle no-margin" }, [
+                    _c("button", { staticClass: "small circle no-margin" }, [
                       _vm._v("17")
                     ])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("18")])
+                    _c("button", { staticClass: "none" }, [_vm._v("18")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("19")])
+                    _c("button", { staticClass: "none" }, [_vm._v("19")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("20")])
+                    _c("button", { staticClass: "none" }, [_vm._v("20")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("21")])
+                    _c("button", { staticClass: "none" }, [_vm._v("21")])
                   ])
                 ]),
                 _c("tr", [
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("22")])
+                    _c("button", { staticClass: "none" }, [_vm._v("22")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("23")])
+                    _c("button", { staticClass: "none" }, [_vm._v("23")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("24")])
+                    _c("button", { staticClass: "none" }, [_vm._v("24")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("25")])
+                    _c("button", { staticClass: "none" }, [_vm._v("25")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("26")])
+                    _c("button", { staticClass: "none" }, [_vm._v("26")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("27")])
+                    _c("button", { staticClass: "none" }, [_vm._v("27")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("28")])
+                    _c("button", { staticClass: "none" }, [_vm._v("28")])
                   ])
                 ]),
                 _c("tr", [
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("29")])
+                    _c("button", { staticClass: "none" }, [_vm._v("29")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("30")])
+                    _c("button", { staticClass: "none" }, [_vm._v("30")])
                   ]),
                   _c("td", [
-                    _c("a", { staticClass: "btn none" }, [_vm._v("31")])
+                    _c("button", { staticClass: "none" }, [_vm._v("31")])
                   ]),
                   _c("td", [_vm._v("1")]),
                   _c("td", [_vm._v("2")]),
@@ -8118,19 +10497,13 @@ var staticRenderFns = [
         ]),
         _c("nav", { staticClass: "right-align" }, [
           _c(
-            "a",
-            {
-              staticClass: "btn none",
-              attrs: { "data-ui": "#modal-calendar" }
-            },
+            "button",
+            { staticClass: "none", attrs: { "data-ui": "#modal-calendar" } },
             [_vm._v("Cancel")]
           ),
           _c(
-            "a",
-            {
-              staticClass: "btn none",
-              attrs: { "data-ui": "#modal-calendar" }
-            },
+            "button",
+            { staticClass: "none", attrs: { "data-ui": "#modal-calendar" } },
             [_vm._v("Ok")]
           )
         ])
@@ -8199,14 +10572,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $0ea019 = exports.default || module.exports;
+        var $320249 = exports.default || module.exports;
       
-      if (typeof $0ea019 === 'function') {
-        $0ea019 = $0ea019.options;
+      if (typeof $320249 === 'function') {
+        $320249 = $320249.options;
       }
     
         /* template */
-        Object.assign($0ea019, (function () {
+        Object.assign($320249, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
