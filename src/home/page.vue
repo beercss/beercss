@@ -125,20 +125,20 @@
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav.wrap
-          label
+          label.radio
             input#default-badges(
               type="radio",
               name="color-badges",
               checked="checked"
             )
             span default
-          label
+          label.radio
             input#blue-badges(type="radio", name="color-badges")
             span blue
-          label
+          label.radio
             input#purple-badges(type="radio", name="color-badges")
             span purple
-          label
+          label.radio
             input#teal-badges(type="radio", name="color-badges")
             span teal
         .space
@@ -279,33 +279,33 @@
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav.wrap
-          label
+          label.radio
             input#default-buttons(
               type="radio",
               name="color-buttons",
               checked="checked"
             )
             span default
-          label
+          label.radio
             input#green-buttons(type="radio", name="color-buttons")
             span green
-          label
+          label.radio
             input#orange-buttons(type="radio", name="color-buttons")
             span orange
-          label
+          label.radio
             input#pink-buttons(type="radio", name="color-buttons")
             span pink
-          label
+          label.radio
             input#small-buttons(type="radio", name="size-buttons")
             span small
-          label
+          label.radio
             input#medium-buttons(
               type="radio",
               name="size-buttons",
               checked="checked"
             )
             span medium
-          label
+          label.radio
             input#large-buttons(type="radio", name="size-buttons")
             span large
         .space
@@ -556,39 +556,39 @@
           .col.s12
             .field.middle-align
               nav
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 1
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 2
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 3
           .col.s12
             .field.label.middle-align
               label.active A question?
               nav
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 1
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 2
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 3
           .col.s12
             .field.label.middle-align
               label.active A question?
               nav
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 1
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 2
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 3
               span.helper Complementary text
@@ -596,13 +596,13 @@
             .field.label.middle-align.invalid
               label.active A question?
               nav
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 1
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 2
-                label
+                label.checkbox
                   input(type="checkbox")
                   span Item 3
               span.error Error text
@@ -1045,39 +1045,39 @@
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav.wrap
-          label
+          label.checkbox
             input#border-inputs(type="checkbox")
             span border
-          label
+          label.checkbox
             input#round-inputs(type="checkbox")
             span round
-          label
+          label.checkbox
             input#fill-inputs(type="checkbox")
             span fill
-          label
+          label.radio
             input#small-inputs(type="radio", name="size-inputs")
             span small
-          label
+          label.radio
             input#medium-inputs(
               type="radio",
               name="size-inputs",
               checked="checked"
             )
             span medium
-          label
+          label.radio
             input#large-inputs(type="radio", name="size-inputs")
             span large
-          label
+          label.radio
             input#text-inputs(
               type="radio",
               name="type-inputs",
               checked="checked"
             )
             span text
-          label
+          label.radio
             input#password-inputs(type="radio", name="type-inputs")
             span password
-          label
+          label.radio
             input#file-inputs(type="radio", name="type-inputs")
             span file
         .space
@@ -1157,20 +1157,20 @@
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav.wrap
-          label
+          label.radio
             input#top-align-lists(type="radio", name="align-lists")
             span top-align
-          label
+          label.radio
             input#middle-align-lists(
               type="radio",
               name="align-lists",
               checked="checked"
             )
             span middle-align
-          label
+          label.radio
             input#bottom-align-lists(type="radio", name="align-lists")
             span bottom-align
-          label
+          label.checkbox
             input#divider-lists(type="checkbox", name="divider-lists")
             span divider
         label.large-space.middle-align Today
@@ -1211,7 +1211,9 @@
         label.large-space.middle-align Yesterday
         .row.nowrap.middle-align
           .col.min
-            input(type="checkbox")
+            label.checkbox
+              input(type="checkbox")
+              span
           .col
             div Title
             label Complementary text
@@ -1222,7 +1224,9 @@
                 i more_vert
         .row.nowrap.middle-align
           .col.min
-            input(type="checkbox")
+            label.checkbox
+              input(type="checkbox")
+              span
           .col
             div Title
             label Complementary text
@@ -1233,7 +1237,9 @@
                 i more_vert
         .row.nowrap.middle-align
           .col.min
-            input(type="checkbox")
+            label.checkbox
+              input(type="checkbox")
+              span
           .col
             div Title
             label Complementary text
@@ -1432,39 +1438,39 @@
           .col.s12
             .field.middle-align
               nav
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 1
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 2
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 3
           .col.s12
             .field.label.middle-align
               label.active A question?
               nav
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 1
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 2
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 3
           .col.s12
             .field.label.middle-align
               label.active A question?
               nav
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 1
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 2
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 3
               span.helper Complementary text
@@ -1472,13 +1478,13 @@
             .field.label.middle-align.invalid
               label.active A question?
               nav
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 1
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 2
-                label
+                label.radio
                   input(type="radio", name="radio")
                   span Item 3
               span.error Error text
@@ -1549,20 +1555,20 @@
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav.wrap
-          label
+          label.radio
             input#no-space-rows(type="radio", name="space-rows")
             span no-space
-          label
+          label.radio
             input#small-space-rows(
               type="radio",
               name="space-rows",
               checked="checked"
             )
             span small-space
-          label
+          label.radio
             input#medium-space-rows(type="radio", name="space-rows")
             span medium-space
-          label
+          label.radio
             input#large-space-rows(type="radio", name="space-rows")
             span large-space
         .space
@@ -1626,26 +1632,26 @@
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav.wrap
-          label
+          label.checkbox
             input#border-selects(type="checkbox")
             span border
-          label
+          label.checkbox
             input#round-selects(type="checkbox")
             span round
-          label
+          label.checkbox
             input#fill-selects(type="checkbox")
             span fill
-          label
+          label.radio
             input#small-selects(type="radio", name="size-selects")
             span small
-          label
+          label.radio
             input#medium-selects(
               type="radio",
               name="size-selects",
               checked="checked"
             )
             span medium
-          label
+          label.radio
             input#large-selects(type="radio", name="size-selects")
             span large
         .space
@@ -1732,54 +1738,54 @@
           .col.s12
             .field.middle-align
               nav
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 1
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 2
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 3
           .col.s12
             .field.label.middle-align
               label.active A question?
               nav
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 1
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 2
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 3
           .col.s12
             .field.label.middle-align
               label.active A question?
               nav
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 1
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 2
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 3
               span.helper Complementary text
           .col.s12.l6
             .field.label.middle-align.invalid
               label.active A question?
               nav
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 1
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 2
-                label
-                  input.switch(type="checkbox")
+                label.switch
+                  input(type="checkbox")
                   span Item 3
               span.error Error text
       #table.col.s12
@@ -1809,30 +1815,30 @@
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav.wrap
-          label
+          label.radio
             input#small-tables(type="radio", name="size-tables")
             span small
-          label
+          label.radio
             input#medium-tables(
               type="radio",
               name="size-tables",
               checked="checked"
             )
             span medium
-          label
+          label.radio
             input#large-tables(type="radio", name="size-tables")
             span large
-          label
+          label.radio
             input#left-align-tables(
               type="radio",
               name="align-tables",
               checked="checked"
             )
             span left-align
-          label
+          label.radio
             input#center-align-tables(type="radio", name="align-tables")
             span center-align
-          label
+          label.radio
             input#right-align-tables(type="radio", name="align-tables")
             span right-align
         .space
@@ -1847,7 +1853,9 @@
           tbody
             tr
               td
-                input(type="checkbox")
+                label.checkbox
+                  input(type="checkbox")
+                  span
               td Line 1
               td Line 1
               td Line 1
@@ -1858,7 +1866,9 @@
                     i more_vert
             tr
               td
-                input(type="checkbox")
+                label.checkbox
+                  input(type="checkbox")
+                  span
               td Line 2
               td Line 2
               td Line 2
@@ -1869,7 +1879,9 @@
                     i more_vert
             tr
               td
-                input(type="checkbox")
+                label.checkbox
+                  input(type="checkbox")
+                  span
               td Line 3
               td Line 3
               td Line 3
@@ -1905,30 +1917,30 @@
               a(href="https://codepen.io/kickerbnu") @kickerbnu
               a(href="https://codepen.io") CodePen.
         nav.wrap
-          label
+          label.radio
             input#default-align-tabs(
               type="radio",
               name="align-tabs",
               checked="checked"
             )
             span left-align
-          label
+          label.radio
             input#center-align-tabs(type="radio", name="align-tabs")
             span center-align
-          label
+          label.radio
             input#right-align-tabs(type="radio", name="align-tabs")
             span right-align
-          label
+          label.radio
             input#defaut-tabs(
               type="radio",
               name="page-tabs",
               checked="checked"
             )
             span default
-          label
+          label.radio
             input#left-tabs(type="radio", name="page-tabs")
             span from left
-          label
+          label.radio
             input#right-tabs(type="radio", name="page-tabs")
             span from right
         p.space

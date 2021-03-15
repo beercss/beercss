@@ -3167,6 +3167,18 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -3510,14 +3522,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $678c1f = exports.default || module.exports;
+        var $a33138 = exports.default || module.exports;
       
-      if (typeof $678c1f === 'function') {
-        $678c1f = $678c1f.options;
+      if (typeof $a33138 === 'function') {
+        $a33138 = $a33138.options;
       }
     
         /* template */
-        Object.assign($678c1f, (function () {
+        Object.assign($a33138, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -5863,7 +5875,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "default-badges",
@@ -5874,19 +5886,19 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("default")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "blue-badges", type: "radio", name: "color-badges" }
         }),
         _c("span", [_vm._v("blue")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "purple-badges", type: "radio", name: "color-badges" }
         }),
         _c("span", [_vm._v("purple")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "teal-badges", type: "radio", name: "color-badges" }
         }),
@@ -6120,7 +6132,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "default-buttons",
@@ -6131,31 +6143,31 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("default")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "green-buttons", type: "radio", name: "color-buttons" }
         }),
         _c("span", [_vm._v("green")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "orange-buttons", type: "radio", name: "color-buttons" }
         }),
         _c("span", [_vm._v("orange")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "pink-buttons", type: "radio", name: "color-buttons" }
         }),
         _c("span", [_vm._v("pink")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "small-buttons", type: "radio", name: "size-buttons" }
         }),
         _c("span", [_vm._v("small")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "medium-buttons",
@@ -6166,7 +6178,7 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("medium")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "large-buttons", type: "radio", name: "size-buttons" }
         }),
@@ -6598,15 +6610,15 @@ var staticRenderFns = [
       _c("div", { staticClass: "col s12" }, [
         _c("div", { staticClass: "field middle-align" }, [
           _c("nav", [
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 3")])
             ])
@@ -6617,15 +6629,15 @@ var staticRenderFns = [
         _c("div", { staticClass: "field label middle-align" }, [
           _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 3")])
             ])
@@ -6636,15 +6648,15 @@ var staticRenderFns = [
         _c("div", { staticClass: "field label middle-align" }, [
           _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 3")])
             ])
@@ -6656,15 +6668,15 @@ var staticRenderFns = [
         _c("div", { staticClass: "field label middle-align invalid" }, [
           _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 3")])
             ])
@@ -7368,25 +7380,25 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
-      _c("label", [
+      _c("label", { staticClass: "checkbox" }, [
         _c("input", { attrs: { id: "border-inputs", type: "checkbox" } }),
         _c("span", [_vm._v("border")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "checkbox" }, [
         _c("input", { attrs: { id: "round-inputs", type: "checkbox" } }),
         _c("span", [_vm._v("round")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "checkbox" }, [
         _c("input", { attrs: { id: "fill-inputs", type: "checkbox" } }),
         _c("span", [_vm._v("fill")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "small-inputs", type: "radio", name: "size-inputs" }
         }),
         _c("span", [_vm._v("small")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "medium-inputs",
@@ -7397,13 +7409,13 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("medium")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "large-inputs", type: "radio", name: "size-inputs" }
         }),
         _c("span", [_vm._v("large")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "text-inputs",
@@ -7414,13 +7426,13 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("text")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "password-inputs", type: "radio", name: "type-inputs" }
         }),
         _c("span", [_vm._v("password")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "file-inputs", type: "radio", name: "type-inputs" }
         }),
@@ -7552,13 +7564,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "top-align-lists", type: "radio", name: "align-lists" }
         }),
         _c("span", [_vm._v("top-align")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "middle-align-lists",
@@ -7569,7 +7581,7 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("middle-align")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "bottom-align-lists",
@@ -7579,7 +7591,7 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("bottom-align")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "checkbox" }, [
         _c("input", {
           attrs: {
             id: "divider-lists",
@@ -7663,7 +7675,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row nowrap middle-align" }, [
       _c("div", { staticClass: "col min" }, [
-        _c("input", { attrs: { type: "checkbox" } })
+        _c("label", { staticClass: "checkbox" }, [
+          _c("input", { attrs: { type: "checkbox" } }),
+          _c("span")
+        ])
       ]),
       _c("div", { staticClass: "col" }, [
         _c("div", [_vm._v("Title")]),
@@ -7685,7 +7700,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row nowrap middle-align" }, [
       _c("div", { staticClass: "col min" }, [
-        _c("input", { attrs: { type: "checkbox" } })
+        _c("label", { staticClass: "checkbox" }, [
+          _c("input", { attrs: { type: "checkbox" } }),
+          _c("span")
+        ])
       ]),
       _c("div", { staticClass: "col" }, [
         _c("div", [_vm._v("Title")]),
@@ -7707,7 +7725,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row nowrap middle-align" }, [
       _c("div", { staticClass: "col min" }, [
-        _c("input", { attrs: { type: "checkbox" } })
+        _c("label", { staticClass: "checkbox" }, [
+          _c("input", { attrs: { type: "checkbox" } }),
+          _c("span")
+        ])
       ]),
       _c("div", { staticClass: "col" }, [
         _c("div", [_vm._v("Title")]),
@@ -8041,15 +8062,15 @@ var staticRenderFns = [
       _c("div", { staticClass: "col s12" }, [
         _c("div", { staticClass: "field middle-align" }, [
           _c("nav", [
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 3")])
             ])
@@ -8060,15 +8081,15 @@ var staticRenderFns = [
         _c("div", { staticClass: "field label middle-align" }, [
           _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 3")])
             ])
@@ -8079,15 +8100,15 @@ var staticRenderFns = [
         _c("div", { staticClass: "field label middle-align" }, [
           _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 3")])
             ])
@@ -8099,15 +8120,15 @@ var staticRenderFns = [
         _c("div", { staticClass: "field label middle-align invalid" }, [
           _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
+            _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
               _c("span", [_vm._v("Item 3")])
             ])
@@ -8247,13 +8268,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "no-space-rows", type: "radio", name: "space-rows" }
         }),
         _c("span", [_vm._v("no-space")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "small-space-rows",
@@ -8264,13 +8285,13 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("small-space")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "medium-space-rows", type: "radio", name: "space-rows" }
         }),
         _c("span", [_vm._v("medium-space")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "large-space-rows", type: "radio", name: "space-rows" }
         }),
@@ -8397,25 +8418,25 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
-      _c("label", [
+      _c("label", { staticClass: "checkbox" }, [
         _c("input", { attrs: { id: "border-selects", type: "checkbox" } }),
         _c("span", [_vm._v("border")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "checkbox" }, [
         _c("input", { attrs: { id: "round-selects", type: "checkbox" } }),
         _c("span", [_vm._v("round")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "checkbox" }, [
         _c("input", { attrs: { id: "fill-selects", type: "checkbox" } }),
         _c("span", [_vm._v("fill")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "small-selects", type: "radio", name: "size-selects" }
         }),
         _c("span", [_vm._v("small")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "medium-selects",
@@ -8426,7 +8447,7 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("medium")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "large-selects", type: "radio", name: "size-selects" }
         }),
@@ -8565,25 +8586,16 @@ var staticRenderFns = [
       _c("div", { staticClass: "col s12" }, [
         _c("div", { staticClass: "field middle-align" }, [
           _c("nav", [
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 3")])
             ])
           ])
@@ -8593,25 +8605,16 @@ var staticRenderFns = [
         _c("div", { staticClass: "field label middle-align" }, [
           _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 3")])
             ])
           ])
@@ -8621,25 +8624,16 @@ var staticRenderFns = [
         _c("div", { staticClass: "field label middle-align" }, [
           _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 3")])
             ])
           ]),
@@ -8650,25 +8644,16 @@ var staticRenderFns = [
         _c("div", { staticClass: "field label middle-align invalid" }, [
           _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 1")])
             ]),
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 2")])
             ]),
-            _c("label", [
-              _c("input", {
-                staticClass: "switch",
-                attrs: { type: "checkbox" }
-              }),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
               _c("span", [_vm._v("Item 3")])
             ])
           ]),
@@ -8728,13 +8713,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "small-tables", type: "radio", name: "size-tables" }
         }),
         _c("span", [_vm._v("small")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "medium-tables",
@@ -8745,13 +8730,13 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("medium")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "large-tables", type: "radio", name: "size-tables" }
         }),
         _c("span", [_vm._v("large")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "left-align-tables",
@@ -8762,7 +8747,7 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("left-align")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "center-align-tables",
@@ -8772,7 +8757,7 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("center-align")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "right-align-tables",
@@ -8800,7 +8785,12 @@ var staticRenderFns = [
       ]),
       _c("tbody", [
         _c("tr", [
-          _c("td", [_c("input", { attrs: { type: "checkbox" } })]),
+          _c("td", [
+            _c("label", { staticClass: "checkbox" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
+              _c("span")
+            ])
+          ]),
           _c("td", [_vm._v("Line 1")]),
           _c("td", [_vm._v("Line 1")]),
           _c("td", [_vm._v("Line 1")]),
@@ -8814,7 +8804,12 @@ var staticRenderFns = [
           ])
         ]),
         _c("tr", [
-          _c("td", [_c("input", { attrs: { type: "checkbox" } })]),
+          _c("td", [
+            _c("label", { staticClass: "checkbox" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
+              _c("span")
+            ])
+          ]),
           _c("td", [_vm._v("Line 2")]),
           _c("td", [_vm._v("Line 2")]),
           _c("td", [_vm._v("Line 2")]),
@@ -8828,7 +8823,12 @@ var staticRenderFns = [
           ])
         ]),
         _c("tr", [
-          _c("td", [_c("input", { attrs: { type: "checkbox" } })]),
+          _c("td", [
+            _c("label", { staticClass: "checkbox" }, [
+              _c("input", { attrs: { type: "checkbox" } }),
+              _c("span")
+            ])
+          ]),
           _c("td", [_vm._v("Line 3")]),
           _c("td", [_vm._v("Line 3")]),
           _c("td", [_vm._v("Line 3")]),
@@ -8895,7 +8895,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "default-align-tabs",
@@ -8906,19 +8906,19 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("left-align")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "center-align-tabs", type: "radio", name: "align-tabs" }
         }),
         _c("span", [_vm._v("center-align")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "right-align-tabs", type: "radio", name: "align-tabs" }
         }),
         _c("span", [_vm._v("right-align")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
             id: "defaut-tabs",
@@ -8929,13 +8929,13 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("default")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "left-tabs", type: "radio", name: "page-tabs" }
         }),
         _c("span", [_vm._v("from left")])
       ]),
-      _c("label", [
+      _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "right-tabs", type: "radio", name: "page-tabs" }
         }),
@@ -10572,14 +10572,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $320249 = exports.default || module.exports;
+        var $0ea019 = exports.default || module.exports;
       
-      if (typeof $320249 === 'function') {
-        $320249 = $320249.options;
+      if (typeof $0ea019 === 'function') {
+        $0ea019 = $0ea019.options;
       }
     
         /* template */
-        Object.assign($320249, (function () {
+        Object.assign($0ea019, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement

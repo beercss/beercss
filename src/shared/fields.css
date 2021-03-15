@@ -258,12 +258,33 @@ input[type="file"] {
   content: " * ";
 }
 
-/* checkbox e radio */
-input[type="checkbox"],
-input[type="radio"] {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+/* checkbox, radio and switch */
+.checkbox,
+.radio,
+.switch {
+  width: auto;
+  height: auto;
+  line-height: normal;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.checkbox > *,
+.radio > *,
+.switch > * {
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox > input,
+.radio > input {
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+
+.checkbox > input + span::before,
+.radio > input + span::before {
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -282,60 +303,62 @@ input[type="radio"] {
   margin: 0;
   padding: 0;
   color: #9e9e9e;
-}
-
-input[type="checkbox"]:checked,
-input[type="radio"]:checked {
+  position: absolute;
+  left: -24px;
   background-color: transparent;
-  animation: 0.4s to-checked;
 }
 
-input[type="checkbox"]::after {
+.checkbox > input[type="checkbox"] + span::before {
   content: "check_box_outline_blank";
 }
 
-input[type="checkbox"]:checked::after {
-  color: var(--color-1);
-  content: "check_box";
-}
-
-input[type="radio"]::after {
+.radio > input[type="radio"] + span::before {
   content: "radio_button_unchecked";
 }
 
-input[type="radio"]:checked::after {
+.checkbox > input[type="checkbox"]:checked + span::before {
+  color: var(--color-1);
+  content: "check_box";
+  animation: 0.4s to-checked;
+}
+
+.radio > input[type="radio"]:checked + span::before {
   color: var(--color-1);
   content: "radio_button_checked";
+  animation: 0.4s to-checked;
 }
 
-input[type="radio"] + span,
-input[type="checkbox"] + span {
-  padding: 0 8px;
-  cursor: pointer;
+.checkbox + .checkbox,
+.radio + .radio {
+  margin-left: 8px;
 }
 
-span + input[type="radio"],
-span + input[type="checkbox"] {
-  margin: 0 12px 0 8px;
-  cursor: pointer;
+.switch > input {
+  width: 40px;
+  height: 24px;
+  opacity: 0;
 }
 
-/* switch */
-input[type="checkbox"].switch {
+.switch > input + span::before {
   content: "";
+  position:absolute;
+  left: 0;
+  top: 50%;
   background-color: #9e9e9e;
   width: 32px;
   height: 14px;
   border-radius: 8px;
   animation: none;
   cursor: pointer;
+  transform: translate(-40px, -50%);
 }
 
-input[type="checkbox"].switch:checked {
+.switch > input:checked + span::before {
   background-color: var(--color-1a);
 }
 
-input[type="checkbox"].switch::before {
+
+.switch > input + span::after {
   content: "";
   position: absolute;
   border-radius: 50%;
@@ -344,21 +367,16 @@ input[type="checkbox"].switch::before {
   background-color: #ffffff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  left: 50%;
+  left: 0;
   top: 50%;
   will-change: transform, background-color;
   transition: 0.1s transform, 0.1s background-color;
-  transform: translate(-100%, -50%);
+  transform: translate(-44px, -50%);
 }
 
-input[type="checkbox"].switch:checked::before {
+.switch > input:checked + span::after {
   background-color: var(--color-1);
-  transform: translate(0, -50%);
-}
-
-input[type="checkbox"].switch::after,
-input[type="checkbox"].switch:checked::after {
-  content: "";
+  transform: translate(-24px, -50%);
 }
 
 /* select */
