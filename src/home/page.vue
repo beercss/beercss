@@ -107,7 +107,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#badges')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#badges'")
           p.codepen(
@@ -261,7 +262,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#buttons')",
-              title="Codepen", :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#buttons'")
           p.codepen(
@@ -353,7 +355,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#cards')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
             .space
         div(v-show="codepen == '#cards'")
@@ -535,7 +538,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#checkboxes')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#checkboxes'")
           p.codepen(
@@ -615,7 +619,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#chips')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#chips'")
           p.codepen(
@@ -663,7 +668,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#colors')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#colors'")
           p.codepen(
@@ -691,7 +697,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#dropdowns')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#dropdowns'")
           p.codepen(
@@ -921,7 +928,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#icons')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#icons'")
           p.codepen(
@@ -980,7 +988,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#images')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#images'")
           p.codepen(
@@ -1027,7 +1036,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#inputs')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#inputs'")
           p.codepen(
@@ -1139,7 +1149,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#list')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#list'")
           p.codepen(
@@ -1291,7 +1302,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#loaders')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#loaders'")
           p.codepen(
@@ -1336,7 +1348,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#modal')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#modal'")
           p.codepen(
@@ -1365,7 +1378,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#navs')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#navs'")
           p.codepen(
@@ -1417,7 +1431,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#radios')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#radios'")
           p.codepen(
@@ -1497,7 +1512,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#responsive')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#responsive'")
           p.codepen(
@@ -1537,7 +1553,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#rows')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#rows'")
           p.codepen(
@@ -1614,7 +1631,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#selects')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#selects'")
           p.codepen(
@@ -1717,7 +1735,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#switches')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#switches'")
           p.codepen(
@@ -1797,7 +1816,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#table')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#table'")
           p.codepen(
@@ -1899,7 +1919,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#tabs')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#tabs'")
           p.codepen(
@@ -2032,7 +2053,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#toasts')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#toasts'")
           p.codepen(
@@ -2063,7 +2085,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#tooltips')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#tooltips'")
           p.codepen(
@@ -2103,7 +2126,8 @@
             img.circle.tiny(
               src="https://firebasestorage.googleapis.com/v0/b/beer-css.appspot.com/o/codepen.svg?alt=media",
               @click="showCodepen('#typography')",
-              title="Codepen" :class="{icon: !theme}"
+              title="Codepen",
+              :class="{ icon: !theme }"
             )
         div(v-show="codepen == '#typography'")
           p.codepen(
@@ -2231,6 +2255,8 @@
                 div wrap
                 div scroll
                 div no-scroll
+                div wave
+                div no-wave
               .col
                 b Themes
                 div is-dark
@@ -2316,11 +2342,9 @@
                 span.grey-text small, medium, large, border, round, circle,&nbsp;
                 span.orange-text tiny, extra, responsive, empty-state
               div
-                span &lt;input&gt;&nbsp;
-                span.orange-text switch
-              div
                 span &lt;label&gt;&nbsp;
-                span.grey-text active
+                span.grey-text active,&nbsp;
+                span.orange-text checkbox, radio, switch
               div 
                 span &lt;nav&gt;&nbsp;
                 span.grey-text top-align, bottom-align, middle-align, wrap
@@ -2863,13 +2887,12 @@ export default {
     updateTheme() {
       var body = $("body");
 
-      if (body.is(".is-dark")){
-        body.removeClass("is-dark")
+      if (body.is(".is-dark")) {
+        body.removeClass("is-dark");
         this.theme = true;
-      }else{
-       body.addClass("is-dark");
-       this.theme = false;
-       
+      } else {
+        body.addClass("is-dark");
+        this.theme = false;
       }
     },
     addHomeScreen() {
@@ -2954,7 +2977,6 @@ export default {
     },
     showCodepen(codepen) {
       this.codepen = this.codepen == codepen ? null : codepen;
-      
     },
     showSamples(selector, modal) {
       var elements = $(selector);

@@ -3179,6 +3179,30 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 $(window).on("load", function () {
   setTimeout(function () {
     $("#logo").addClass("active");
@@ -9389,7 +9413,9 @@ var staticRenderFns = [
             _c("div", [_vm._v("nowrap")]),
             _c("div", [_vm._v("wrap")]),
             _c("div", [_vm._v("scroll")]),
-            _c("div", [_vm._v("no-scroll")])
+            _c("div", [_vm._v("no-scroll")]),
+            _c("div", [_vm._v("wave")]),
+            _c("div", [_vm._v("no-wave")])
           ]),
           _c("div", { staticClass: "col" }, [
             _c("b", [_vm._v("Themes")]),
@@ -9564,12 +9590,11 @@ var staticRenderFns = [
           ])
         ]),
         _c("div", [
-          _c("span", [_vm._v("<input> ")]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("switch")])
-        ]),
-        _c("div", [
           _c("span", [_vm._v("<label> ")]),
-          _c("span", { staticClass: "grey-text" }, [_vm._v("active")])
+          _c("span", { staticClass: "grey-text" }, [_vm._v("active, ")]),
+          _c("span", { staticClass: "orange-text" }, [
+            _vm._v("checkbox, radio, switch")
+          ])
         ]),
         _c("div", [
           _c("span", [_vm._v("<nav> ")]),
