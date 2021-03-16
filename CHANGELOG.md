@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.0.81 ##
+- Adding wave and no-wave class, button has wave by default
+
+
+
 ## v0.0.78 ##
 
 - To work in iOS we made changes in checkbox, radio and switch
@@ -39,9 +44,13 @@
 </label>
 ```
 
+
+
 ## v0.0.74 ##
 
 - The .btn class was marked as obsolete, use .button or <button> instead.
 - You can still use the .btn class, but is not recommended.
- 
+
+
+
 ### Cheers! ###
