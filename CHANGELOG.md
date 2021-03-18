@@ -1,9 +1,11 @@
 # Changelog
 
+## v1.0.0 ##
+- The .nowrap class was marked as obsolete, use .no-wrap instead.
+- We made this change because it's like no-padding, no-margin and others classes.
+
 ## v0.0.81 ##
 - Adding wave and no-wave class, button has wave by default
-
-
 
 ## v0.0.78 ##
 
@@ -44,13 +46,9 @@
 </label>
 ```
 
-
-
 ## v0.0.74 ##
 
 - The .btn class was marked as obsolete, use .button or <button> instead.
 - You can still use the .btn class, but is not recommended.
-
-
 
 ### Cheers! ###

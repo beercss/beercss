@@ -1,12 +1,15 @@
 .row {
   margin: 0 -8px;
   color: inherit;
+  min-width: 100%;
 }
 
+.row .row:not(.no-wrap),
 .row .row:not(.nowrap) {
   margin-top: -8px;
 }
 
+.row .row .row:not(.no-wrap),
 .row .row .row:not(.nowrap) {
   margin-top: 8px;
 }
@@ -67,12 +70,14 @@
   padding: 16px;
 }
 
+.row.no-wrap,
 .row.nowrap {
   margin-top: 0;
   margin-bottom: 0;
   display: flex;
 }
 
+.modal > .row.no-wrap:only-child,
 .modal > .row.nowrap:only-child {
   min-height: 100%;
   height: max-content;
@@ -82,6 +87,7 @@
   margin-top: 16px;
 }
 
+.row.no-wrap > .col,
 .row.nowrap > .col {
   float: none;
   flex: 1;
@@ -89,6 +95,7 @@
   padding-bottom: 0;
 }
 
+.row.no-wrap > .col.min,
 .row.nowrap > .col.min {
   flex: 0;
 }

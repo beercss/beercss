@@ -39,3 +39,7 @@
 .card.round {
   border-radius: 16px;
 }
+
+.card.min {
+  min-width: 200px;
+}

@@ -1,7 +1,7 @@
 <template lang="pug">
 .container
   .space
-  .row.nowrap.middle-align
+  .row.no-wrap.middle-align
     .col.min
       a(@click="updateTheme()")
         i.large brightness_medium

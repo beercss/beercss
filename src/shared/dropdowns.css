@@ -23,6 +23,7 @@
   text-align: left;
 }
 
+.dropdown.no-wrap,
 .dropdown.nowrap {
   width: auto;
 }
@@ -61,6 +62,7 @@
   background-color: var(--color-2a);
 }
 
+.dropdown.no-wrap > a,
 .dropdown.nowrap > a {
   white-space: nowrap;
 }
@@ -77,6 +79,8 @@
   padding: 12px 16px;
 }
 
+.dropdown > a.row.no-wrap,
+.dropdown > a.row.no-wrap + a.row.no-wrap,
 .dropdown > a.row.nowrap,
 .dropdown > a.row.nowrap + a.row.nowrap {
   margin: 0 -8px;

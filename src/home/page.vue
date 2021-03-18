@@ -266,7 +266,6 @@
           label.radio
             input#large-buttons(type="radio", name="size-buttons")
             span large
-        .space
         nav.wrap
           button Button
           button
@@ -311,7 +310,7 @@
         .row
           .col.s12.m6.l3
             .card
-              .row.nowrap
+              .row.no-wrap
                 .col.min
                   img.circle.large(:src="'/beer-and-woman.jpg'")
                 .col
@@ -321,7 +320,7 @@
                 button.none Link
           .col.s12.m6.l3
             .card.round
-              .row.nowrap
+              .row.no-wrap
                 .col.min
                   img.circle.large(:src="'/beer-and-woman.jpg'")
                 .col
@@ -331,7 +330,7 @@
                 button.none Link
           .col.s12.m6.l3
             .card.border
-              .row.nowrap
+              .row.no-wrap
                 .col.min
                   img.circle.large(:src="'/beer-and-woman.jpg'")
                 .col
@@ -341,7 +340,7 @@
                 button.none Link
           .col.s12.m6.l3
             .card.border.round
-              .row.nowrap
+              .row.no-wrap
                 .col.min
                   img.circle.large(:src="'/beer-and-woman.jpg'")
                 .col
@@ -415,7 +414,7 @@
                   button.border.small Link
           .col.s12.l6
             .card.no-padding
-              .row.nowrap.no-space
+              .row.no-wrap.no-space
                 .col
                   img.responsive(:src="'/beer-and-woman.jpg'")
                 .col
@@ -426,7 +425,7 @@
                       button.border Link
           .col.s12.l6
             .card.no-padding
-              .row.nowrap.no-space
+              .row.no-wrap.no-space
                 .col
                   img.responsive(:src="'/beer-and-woman.jpg'")
                   .absolute.top.left.right.padding.top-shadow.white-text
@@ -569,21 +568,21 @@
               a
                 div Title
                 label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col
                   div Title
                   label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col
@@ -592,26 +591,26 @@
           button(data-ui="#dropdown2")
             span Dropdown
             i arrow_drop_down
-            #dropdown2.dropdown.nowrap(data-ui="#dropdown2")
+            #dropdown2.dropdown.no-wrap(data-ui="#dropdown2")
               a Title
               a
                 div Title
                 label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col
                   div Title
                   label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col
@@ -619,26 +618,26 @@
                   label Complementary text
           button.circle.small(data-ui="#dropdown3")
             i arrow_back
-            #dropdown3.dropdown.left.nowrap(data-ui="#dropdown3")
+            #dropdown3.dropdown.left.no-wrap(data-ui="#dropdown3")
               a Title
               a
                 div Title
                 label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col
                   div Title
                   label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col
@@ -646,26 +645,26 @@
                   label Complementary text
           button.circle.small(data-ui="#dropdown4")
             i arrow_forward
-            #dropdown4.dropdown.right.nowrap(data-ui="#dropdown4")
+            #dropdown4.dropdown.right.no-wrap(data-ui="#dropdown4")
               a Title
               a
                 div Title
                 label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col
                   div Title
                   label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col
@@ -673,8 +672,8 @@
                   label Complementary text
           button(data-ui="#dropdown5") 
             span Calendar
-            #dropdown5.dropdown.small-padding.nowrap(data-ui="#dropdown5")
-              .row.nowrap
+            #dropdown5.dropdown.small-padding.no-wrap(data-ui="#dropdown5")
+              .row.no-wrap
                 .col.min
                   a
                     i arrow_back
@@ -942,7 +941,7 @@
             input#divider-lists(type="checkbox", name="divider-lists")
             span divider
         label.large-space.middle-align Today
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             i.light-green-text check_circle
           .col
@@ -954,7 +953,7 @@
               button.none
                 i more_vert
 
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             i.orange-text warning
           .col
@@ -965,7 +964,7 @@
               button.none Link
               button.none
                 i more_vert
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             i.grey-text schedule
           .col
@@ -977,7 +976,7 @@
               button.none
                 i more_vert
         label.large-space.middle-align Yesterday
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             label.checkbox
               input(type="checkbox")
@@ -990,7 +989,7 @@
               button.none Link
               button.none
                 i more_vert
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             label.checkbox
               input(type="checkbox")
@@ -1003,7 +1002,7 @@
               button.none Link
               button.none
                 i more_vert
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             label.checkbox
               input(type="checkbox")
@@ -1017,7 +1016,7 @@
               button.none
                 i more_vert
         label.large-space.middle-align Older
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             img.circle.tiny(:src="'/beer-and-woman.jpg'")
           .col
@@ -1028,7 +1027,7 @@
               button.none Link
               button.none
                 i more_vert
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             img.circle.tiny(:src="'/beer-and-woman.jpg'")
           .col
@@ -1039,7 +1038,7 @@
               button.none Link
               button.none
                 i more_vert
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             img.circle.tiny(:src="'/beer-and-woman.jpg'")
           .col
@@ -1237,11 +1236,11 @@
           .col.s12.m6.l3 2
           .col.s12.m6.l3 3
           .col.s12.m6.l3 4
-        .row.nowrap
+        .row.no-wrap
           .col max
           .col max
           .col max
-        .row.nowrap
+        .row.no-wrap
           .col.min min
           .col.min min
           .col.min min
@@ -1643,7 +1642,7 @@
           h4.center-align Summary
           #helpers.medium-device.large-device
             h6 Helpers
-            .row.nowrap
+            .row.no-wrap
               .col
                 b Position
                 div left
@@ -1681,7 +1680,7 @@
                 div small-padding
                 div medium-padding
                 div large-padding
-            .row.nowrap
+            .row.no-wrap
               .col
                 b Spacing
                 div space
@@ -1753,6 +1752,7 @@
               div
                 span card&nbsp;
                 span.grey-text small, medium, large, border, round, flat
+                span.orange-text min
               div 
                 span container
               div 
@@ -2194,7 +2194,7 @@
           h5 Tue,
           h5 Month, 17
         .col.s12.m12.l8
-          .row.nowrap
+          .row.no-wrap
             .col.min
               a
                 i arrow_back
