@@ -8,8 +8,6 @@ body {
 }
 
 * {
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
   position: relative;
   vertical-align: middle;
   color: var(--color-2);
