@@ -8,6 +8,7 @@ body {
 }
 
 * {
+  -webkit-tap-highlight-color: transparent;
   position: relative;
   vertical-align: middle;
   color: var(--color-2);
@@ -320,8 +321,6 @@ label {
   .medium-device:not(.small-device),
   .large-device:not(.small-device),
   .medium-device.large-device:not(.small-device) {
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
     display: none !important;
   }
 }
