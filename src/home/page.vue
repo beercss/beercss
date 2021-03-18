@@ -34,11 +34,11 @@
       i collections
       div Templates
     #more.modal.small.left(data-ui="#more")
-      b Templates
-      p
-        a.link(href="/youtube", target="_self") Youtube
-      p Template 2
-      p Template 3
+      h5 Templates
+      a.row.no-wrap(href="/youtube", target="_self")
+        .col.min
+          img(:src="'/youtube.png'")
+        .col Youtube
   #menu-bottom.menu.bottom.small-device
     a(@click="updateMenu('#menu-bottom')")
       i zoom_out_map
@@ -56,11 +56,11 @@
       i collections
       div Templates
     #more-bottom.modal.small.bottom(data-ui="#more-bottom")
-      b Templates
-      p
-        a.link(href="/youtube", target="_self") Youtube
-      p Item 2
-      p Item 3
+      h5 Templates
+      a.row.no-wrap(href="/youtube", target="_self")
+        .col.min
+          img(:src="'/youtube.png'")
+        .col Youtube
   #begin
     .row
       .col.s12

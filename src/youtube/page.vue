@@ -89,7 +89,7 @@ div
                 .col Youtube Kids
           a(data-ui="#modal-notifications")
             i notifications
-          a(data-ui="#modal-profile")
+          a(href="/", target="_self")
             img.small.circle(:src="'/favicon.png'")
 
   .container.page.right.active
@@ -442,35 +442,6 @@ div
       i.front search
       input.white.black-text(type="text")
       i.front mic
-
-  #modal-profile.modal.right.small
-    .row.no-wrap.top-align
-      .col.min
-        img.circle.large(:src="'/favicon.png'")
-      .col
-        h6.no-margin Beercss
-        div beercss2021@gmail.com
-        a.link(href="/", target="_self") https://www.beercss.com
-      .col.min
-        a(data-ui="#modal-profile")
-          i close
-    .large-divider
-    a.row.no-wrap.middle-align
-      .col.min
-        i account_box
-      .col Your channels
-    a.row.no-wrap.middle-align
-      .col.min
-        i settings
-      .col Configuration
-    a.row.no-wrap.middle-align
-      .col.min
-        i switch_account
-      .col Switch account
-    a.row.no-wrap.middle-align
-      .col.min
-        i logout
-      .col Logout
 </template>
 
 <script>
