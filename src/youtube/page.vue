@@ -450,7 +450,7 @@ div
       .col
         h6.no-margin Beercss
         div beercss2021@gmail.com
-        a.link(href="https://www.beercss.com", terget="_self") https://www.beercss.com
+        a.link(href="/", target="_self") https://www.beercss.com
       .col.min
         a(data-ui="#modal-profile")
           i close

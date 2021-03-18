@@ -31,13 +31,14 @@
       i code
       div Code
     a(data-ui="#more")
-      i more_vert
-      div More
+      i collections
+      div Templates
     #more.modal.small.left(data-ui="#more")
-      b More
-      p Item 1
-      p Item 2
-      p Item 3
+      b Templates
+      p
+        a.link(href="/youtube", target="_self") Youtube
+      p Template 2
+      p Template 3
   #menu-bottom.menu.bottom.small-device
     a(@click="updateMenu('#menu-bottom')")
       i zoom_out_map
@@ -52,11 +53,12 @@
       i code
       div Code
     a(data-ui="#more-bottom")
-      i more_vert
-      div More
+      i collections
+      div Templates
     #more-bottom.modal.small.bottom(data-ui="#more-bottom")
-      b More
-      p Item 1
+      b Templates
+      p
+        a.link(href="/youtube", target="_self") Youtube
       p Item 2
       p Item 3
   #begin
