@@ -38,7 +38,7 @@ div
 
   .menu.top.border.large
     .row.no-wrap.middle-align
-      .col.min
+      .col
         nav.padding
           a.medium-device.large-device(data-ui="#modal-expanded")
             i menu
@@ -56,8 +56,8 @@ div
           i.front search
           input.white.black-text(type="text")
           i.front mic
-      .col.min
-        nav
+      .col
+        nav.right-align
           a.small-device(data-ui="#modal-search")
             i search
           a.medium-device.large-device(data-ui="#dropdown-add")
@@ -103,155 +103,155 @@ div
       .col.s12.m6.l3
         .card.no-padding.flat.transparent
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/alok-001.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .space
           .row.no-wrap.middle-align
             .col.min
-              img.small.circle(:src="'/beer-and-woman.jpg'")
-            .col
-              h6.no-margin Title
-              .grey-text More text
+              img.small.circle(:src="'/alok-001.jpg'")
+            .col.truncate
+              .bold Alok 01/2021
+              .grey-text 10k views
             .col.min
               button.none.grey-text(data-ui="#dropdown-1")
                 i more_vert
                 #dropdown-1.dropdown.left.no-wrap(data-ui="#dropdown-1")
-                  a Item 1
-                  a Item 2
-                  a Item 3
+                  a Save to library
+                  a Watch later
+                  a Like it
       .col.s12.m6.l3
         .card.no-padding.flat.transparent
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/alok-002.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .space
           .row.no-wrap.middle-align
             .col.min
-              img.small.circle(:src="'/beer-and-woman.jpg'")
-            .col
-              h6.no-margin Title
-              .grey-text More text
+              img.small.circle(:src="'/alok-002.jpg'")
+            .col.truncate
+              .bold Alok 12/2020
+              .grey-text 10k views
             .col.min
               button.none.grey-text(data-ui="#dropdown-2")
                 i more_vert
                 #dropdown-2.dropdown.left.no-wrap(data-ui="#dropdown-2")
-                  a Item 1
-                  a Item 2
-                  a Item 3
+                  a Save to library
+                  a Watch later
+                  a Like it
       .col.s12.m6.l3
         .card.no-padding.flat.transparent
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/vintage-001.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .space
           .row.no-wrap.middle-align
             .col.min
-              img.small.circle(:src="'/beer-and-woman.jpg'")
-            .col
-              h6.no-margin Title
-              .grey-text More text
+              img.small.circle(:src="'/vintage-001.jpg'")
+            .col.truncate
+              .bold Best of 2021
+              .grey-text 10k views
             .col.min
               button.none.grey-text(data-ui="#dropdown-3")
                 i more_vert
                 #dropdown-3.dropdown.left.no-wrap(data-ui="#dropdown-3")
-                  a Item 1
-                  a Item 2
-                  a Item 3
+                  a Save to library
+                  a Watch later
+                  a Like it
       .col.s12.m6.l3
         .card.no-padding.flat.transparent
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/vintage-002.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .space
           .row.no-wrap.middle-align
             .col.min
-              img.small.circle(:src="'/beer-and-woman.jpg'")
-            .col
-              h6.no-margin Title
-              .grey-text More text
+              img.small.circle(:src="'/vintage-002.jpg'")
+            .col.truncate
+              .bold Best of 2020
+              .grey-text 10k views
             .col.min
               button.none.grey-text(data-ui="#dropdown-4")
                 i more_vert
                 #dropdown-4.dropdown.left.no-wrap(data-ui="#dropdown-4")
-                  a Item 1
-                  a Item 2
-                  a Item 3
+                  a Save to library
+                  a Watch later
+                  a Like it
       .col.s12.m6.l3
         .card.no-padding.flat.transparent
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/radio-001.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .space
           .row.no-wrap.middle-align
             .col.min
-              img.small.circle(:src="'/beer-and-woman.jpg'")
-            .col
-              h6.no-margin Title
-              .grey-text More text
+              img.small.circle(:src="'/radio-001.jpg'")
+            .col.truncate
+              .bold Radio online
+              .grey-text 10k views
             .col.min
               button.none.grey-text(data-ui="#dropdown-5")
                 i more_vert
                 #dropdown-5.dropdown.left.no-wrap(data-ui="#dropdown-5")
-                  a Item 1
-                  a Item 2
-                  a Item 3
+                  a Save to library
+                  a Watch later
+                  a Like it
       .col.s12.m6.l3
         .card.no-padding.flat.transparent
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/ocean-001.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .space
           .row.no-wrap.middle-align
             .col.min
-              img.small.circle(:src="'/beer-and-woman.jpg'")
-            .col
-              h6.no-margin Title
-              .grey-text More text
+              img.small.circle(:src="'/ocean-001.jpg'")
+            .col.truncate
+              .bold Alok, Zebra, Iro - Ocean
+              .grey-text 10k views
             .col.min
               button.none.grey-text(data-ui="#dropdown-6")
                 i more_vert
                 #dropdown-6.dropdown.left.no-wrap(data-ui="#dropdown-6")
-                  a Item 1
-                  a Item 2
-                  a Item 3
+                  a Save to library
+                  a Watch later
+                  a Like it
       .col.s12.m6.l3
         .card.no-padding.flat.transparent
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/alok-001.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .space
           .row.no-wrap.middle-align
             .col.min
-              img.small.circle(:src="'/beer-and-woman.jpg'")
-            .col
-              h6.no-margin Title
-              .grey-text More text
+              img.small.circle(:src="'/alok-001.jpg'")
+            .col.truncate
+              .bold Alok 01/2021
+              .grey-text 10k views
             .col.min
               button.none.grey-text(data-ui="#dropdown-7")
                 i more_vert
                 #dropdown-7.dropdown.left.no-wrap(data-ui="#dropdown-7")
-                  a Item 1
-                  a Item 2
-                  a Item 3
+                  a Save to library
+                  a Watch later
+                  a Like it
       .col.s12.m6.l3
         .card.no-padding.flat.transparent
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/alok-002.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .space
           .row.no-wrap.middle-align
             .col.min
-              img.small.circle(:src="'/beer-and-woman.jpg'")
-            .col
-              h6.no-margin Title
-              .grey-text More text
+              img.small.circle(:src="'/alok-002.jpg'")
+            .col.truncate
+              .bold Alok 12/2020
+              .grey-text 10k views
             .col.min
               button.none.grey-text(data-ui="#dropdown-8")
                 i more_vert
                 #dropdown-8.dropdown.left.no-wrap(data-ui="#dropdown-8")
-                  a Item 1
-                  a Item 2
-                  a Item 3
+                  a Save to library
+                  a Watch later
+                  a Like it
 
     .large-divider
     h5 What's hot
@@ -259,52 +259,52 @@ div
       .col
         .card.no-padding.border.transparent.min
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/vintage-001.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
             .row.no-wrap.middle-align
-              .col
-                h6.no-margin Title
-                .grey-text More text
+              .col.truncate
+                .bold Best of 2021
+                .grey-text 10k views
               .col.min
                 a.grey-text
                   i thumb_up
       .col
         .card.no-padding.border.transparent.min
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/vintage-002.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
             .row.no-wrap.middle-align
-              .col
-                h6.no-margin Title
-                .grey-text More text
+              .col.truncate
+                .bold Best of 2020
+                .grey-text 10k views
               .col.min
                 a.grey-text
                   i thumb_up
       .col
         .card.no-padding.border.transparent.min
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/radio-001.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
             .row.no-wrap.middle-align
-              .col
-                h6.no-margin Title
-                .grey-text More text
+              .col.truncate
+                .bold Radio online
+                .grey-text 10k views
               .col.min
                 a.grey-text
                   i thumb_up
       .col
         .card.no-padding.border.transparent.min
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/ocean-001.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
             .row.no-wrap.middle-align
-              .col
-                h6.no-margin Title
-                .grey-text More text
+              .col.truncate
+                .bold Alok, Zebra, Iro - Ocean
+                .grey-text 10k views
               .col.min
                 a.grey-text
                   i thumb_up
@@ -314,52 +314,52 @@ div
       .col
         .card.no-padding.border.transparent.min
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/alok-001.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
             .row.no-wrap.middle-align
-              .col
-                h6.no-margin Title
-                .grey-text More text
+              .col.truncate
+                .bold Alok 01/2021
+                .grey-text 10k views
               .col.min
                 a.grey-text
                   i thumb_up
       .col
         .card.no-padding.border.transparent.min
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/alok-002.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
             .row.no-wrap.middle-align
-              .col
-                h6.no-margin Title
-                .grey-text More text
+              .col.truncate
+                .bold Alok 12/2020
+                .grey-text 10k views
               .col.min
                 a.grey-text
                   i thumb_up
       .col
         .card.no-padding.border.transparent.min
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/vintage-001.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
             .row.no-wrap.middle-align
-              .col
-                h6.no-margin Title
-                .grey-text More text
+              .col.truncate
+                .bold Best of 2021
+                .grey-text 10k views
               .col.min
                 a.grey-text
                   i thumb_up
       .col
         .card.no-padding.border.transparent.min
           a.wave
-            img.responsive(:src="'/beer-and-woman.jpg'")
+            img.responsive(:src="'/vintage-002.jpg'")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
             .row.no-wrap.middle-align
-              .col
-                h6.no-margin Title
-                .grey-text More text
+              .col.truncate
+                .bold Best of 2020
+                .grey-text 10k views
               .col.min
                 a.grey-text
                   i thumb_up

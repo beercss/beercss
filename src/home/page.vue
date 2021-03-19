@@ -33,8 +33,10 @@
     a(data-ui="#more")
       i collections
       div Templates
-    #more.modal.small.left(data-ui="#more")
+    #more.modal.medium.left(data-ui="#more")
       h5 Templates
+      p.grey-text This templates are only for tests purpose
+      .large-divider
       a.row.no-wrap(href="/youtube", target="_self")
         .col.min
           img(:src="'/youtube.png'")
