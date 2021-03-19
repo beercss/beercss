@@ -32,8 +32,8 @@ div
     a(href="/youtube/explore", :class="{ active: url == '/youtube/explore' }")
       i explore
       div Explore
-    a(href="/youtube/whats-hot")
-      button.circle.small.border(data-ui="#modal-add")
+    a
+      .button.circle.small.border(data-ui="#modal-add")
         i add
     a(href="/youtube/library", :class="{ active: url == '/youtube/library' }")
       i video_library
