@@ -172,7 +172,7 @@
   border: 0;
   display: block;
   font-size: 0.7rem;
-  padding: 8px 4px;
+  padding: 8px;
   text-decoration: none;
   color: inherit;
   text-align: center;
@@ -185,7 +185,7 @@
 
 .menu.top > a,
 .menu.bottom > a {
-  width: 64px;
+  margin: 8px;
 }
 
 .menu > a.active {
@@ -206,5 +206,11 @@
   }
   .menu.top {
     justify-content: space-around;
+  }
+
+  .menu.top > a,
+  .menu.bottom > a {
+    margin: 0;
+    padding: 0;
   }
 }
