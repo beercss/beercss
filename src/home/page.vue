@@ -59,6 +59,8 @@
       div Templates
     #more-bottom.modal.small.bottom(data-ui="#more-bottom")
       h5 Templates
+      p.grey-text This templates are only for tests purpose
+      .large-divider
       a.row.no-wrap(href="/youtube", target="_self")
         .col.min
           img(:src="'/youtube.png'")

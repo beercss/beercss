@@ -186,49 +186,10 @@
 .menu.top > a,
 .menu.bottom > a {
   width: 64px;
-  padding: 6px 4px;
-}
-
-.menu.top.small > a,
-.menu.bottom.small > a {
-  padding: 9px 4px;
-}
-
-.menu.top.large > a,
-.menu.bottom.large > a {
-  padding: 10px 4px;
 }
 
 .menu > a.active {
-  border: 0;
-  border-left: 3px solid var(--color-1);
-}
-
-.menu > a.active,
-.menu > a.active > *,
-.menu > a:hover,
-.menu > a:hover > * {
   color: var(--color-1);
-}
-
-.menu.left > a.active {
-  border: 0;
-  border-left: 3px solid var(--color-1);
-}
-
-.menu.right > a.active {
-  border: 0;
-  border-right: 3px solid var(--color-1);
-}
-
-.menu.top > a.active {
-  border: 0;
-  border-bottom: 3px solid var(--color-1);
-}
-
-.menu.bottom > a.active {
-  border: 0;
-  border-top: 3px solid var(--color-1);
 }
 
 .menu.small > a > div {
