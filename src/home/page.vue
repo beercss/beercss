@@ -33,14 +33,23 @@
     a(data-ui="#more")
       i collections
       div Templates
-    #more.modal.medium.left(data-ui="#more")
+    #more.modal.small.left(data-ui="#more")
       h5 Templates
       p.grey-text This templates are only for tests purpose
+      .large-space
+      a(href="/youtube", v-show="theme == 'is-dark'")
+        img.logo-template(:src="'/youtube-dark.png'")
+      a(href="/youtube", v-show="theme != 'is-dark'")
+        img.logo-template(:src="'/youtube-light.png'")
       .large-divider
-      a.row.no-wrap(href="/youtube", target="_self")
-        .col.min
-          img(:src="'/youtube.png'")
-        .col Youtube
+      a(href="/netflix")
+        img.logo-template(:src="'/netflix-dark.png'")
+      .large-divider
+      a
+        img.logo-template.opacity(:src="'/gmail.png'")
+      .large-divider
+      a
+        img.logo-template.opacity(:src="'/github.png'")
   #menu-bottom.menu.bottom.small-device
     a(@click="updateMenu('#menu-bottom')")
       i zoom_out_map
@@ -57,14 +66,25 @@
     a(data-ui="#more-bottom")
       i collections
       div Templates
-    #more-bottom.modal.small.bottom(data-ui="#more-bottom")
+    #more-bottom.modal.bottom.medium(data-ui="#more-bottom")
       h5 Templates
       p.grey-text This templates are only for tests purpose
       .large-divider
-      a.row.no-wrap(href="/youtube", target="_self")
-        .col.min
-          img(:src="'/youtube.png'")
-        .col Youtube
+      .row
+        .col.s6.middle-align.padding
+          a(href="/youtube", v-show="theme == 'is-dark'")
+            img.logo-template(:src="'/youtube-dark.png'")
+          a(href="/youtube", v-show="theme != 'is-dark'")
+            img.logo-template(:src="'/youtube-light.png'")
+        .col.s6.middle-align.padding
+          a(href="/netflix")
+            img.logo-template(:src="'/netflix-dark.png'")
+        .col.s6.middle-align.padding
+          a
+            img.logo-template.opacity(:src="'/gmail.png'")
+        .col.s6.middle-align.padding
+          a
+            img.logo-template.opacity(:src="'/github.png'")
   #begin
     .row
       .col.s12
@@ -323,7 +343,7 @@
                   h5.no-margin Title
                   div Complementary text
               nav
-                button.none Link
+                button.none Button
           .col.s12.m6.l3
             .card.round
               .row.no-wrap
@@ -333,7 +353,7 @@
                   h5.no-margin Title
                   div Complementary text
               nav
-                button.none Link
+                button.none Button
           .col.s12.m6.l3
             .card.border
               .row.no-wrap
@@ -343,7 +363,7 @@
                   h5.no-margin Title
                   div Complementary text
               nav
-                button.none Link
+                button.none Button
           .col.s12.m6.l3
             .card.border.round
               .row.no-wrap
@@ -353,7 +373,7 @@
                   h5.no-margin Title
                   div Complementary text
               nav
-                button.none Link
+                button.none Button
           .col.s12.m6.l3
             .card.no-padding
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -361,7 +381,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.none Link
+                  button.none Button
           .col.s12.m6.l3
             .card.no-padding.round
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -369,7 +389,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.none Link
+                  button.none Button
           .col.s12.m6.l3
             .card.no-padding.border
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -377,7 +397,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.none Link
+                  button.none Button
           .col.s12.m6.l3
             .card.no-padding.border.round
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -385,7 +405,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.none Link
+                  button.none Button
           .col.s12.m6.l3
             .card.no-padding
               img.responsive.medium(:src="'/beer-and-woman.jpg'")
@@ -393,7 +413,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.border.small Link
+                  button.border.small Button
           .col.s12.m6.l3
             .card.no-padding.round
               img.responsive.medium.round(:src="'/beer-and-woman.jpg'")
@@ -401,7 +421,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.border.small Link
+                  button.border.small Button
           .col.s12.m6.l3
             .card.no-padding.border
               img.responsive.medium(:src="'/beer-and-woman.jpg'")
@@ -409,7 +429,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.border.small Link
+                  button.border.small Button
           .col.s12.m6.l3
             .card.no-padding.border.round
               img.responsive.medium.round(:src="'/beer-and-woman.jpg'")
@@ -417,7 +437,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.border.small Link
+                  button.border.small Button
           .col.s12.l6
             .card.no-padding
               .row.no-wrap.no-space
@@ -428,7 +448,7 @@
                     h5 Title
                     div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     nav
-                      button.border Link
+                      button.border Button
           .col.s12.l6
             .card.no-padding
               .row.no-wrap.no-space
@@ -442,7 +462,7 @@
                     h5 Title
                     div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     nav
-                      button.border Link
+                      button.border Button
           .col.s12.l6
             .card.chart
               h5 Title
@@ -453,8 +473,8 @@
               div
                 canvas#grafico0
               nav
-                button.none Link 1
-                button.none Link 2
+                button.none Button
+                button.none Button
           .col.s12.l6
             .card.chart
               h5 Title
@@ -465,8 +485,8 @@
               div
                 canvas#grafico1
               nav
-                button.none Link 1
-                button.none Link 2
+                button.none Button
+                button.none Button
       #checkboxes.col.s12
         h5
           span Checkboxes
@@ -955,7 +975,7 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
 
@@ -967,7 +987,7 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
         .row.no-wrap.middle-align
@@ -978,7 +998,7 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
         label.large-space.middle-align Yesterday
@@ -992,7 +1012,7 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
         .row.no-wrap.middle-align
@@ -1005,7 +1025,7 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
         .row.no-wrap.middle-align
@@ -1018,7 +1038,7 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
         label.large-space.middle-align Older
@@ -1030,7 +1050,7 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
         .row.no-wrap.middle-align
@@ -1041,7 +1061,7 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
         .row.no-wrap.middle-align
@@ -1052,7 +1072,7 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
       #loaders.col.s12
@@ -1445,7 +1465,7 @@
               td Line 1
               td
                 nav.right-align
-                  button.none Link
+                  button.none Button
                   button.none
                     i more_vert
             tr
@@ -1458,7 +1478,7 @@
               td Line 2
               td
                 nav.right-align
-                  button.none Link
+                  button.none Button
                   button.none
                     i more_vert
             tr
@@ -1471,7 +1491,7 @@
               td Line 3
               td
                 nav.right-align
-                  button.none Link
+                  button.none Button
                   button.none
                     i more_vert
       #tabs.col.s12
@@ -2313,12 +2333,6 @@
 </template>
 
 <script>
-$(window).on("load", () => {
-  setTimeout(() => {
-    $("#logo").addClass("active");
-  }, 360);
-});
-
 export default {
   data() {
     return {
@@ -2331,6 +2345,9 @@ export default {
     };
   },
   watch: {},
+  created() {
+    window.$layout = null;
+  },
   mounted() {
     this.htmlSample = hljs.highlight(
       "html",
@@ -2349,6 +2366,7 @@ export default {
 
     ui();
 
+    this.resetTheme();
     this.badgeSamples();
     this.buttonSamples();
     this.chartSamples();
@@ -2358,17 +2376,24 @@ export default {
     this.tabSamples();
     this.selectSamples();
     this.rowSamples();
+
+    setTimeout(() => {
+      $("#logo").addClass("active");
+    }, 360);
   },
   methods: {
+    resetTheme() {
+      document.body.className = "";
+    },
     updateTheme() {
-      var body = $("body");
+      let css = document.body.className;
 
-      if (body.is(".is-dark")) {
-        body.removeClass("is-dark");
-        this.theme = true;
+      if (css.indexOf("is-dark") === -1) {
+        document.body.className = "is-dark";
+        this.theme = "is-dark";
       } else {
-        body.addClass("is-dark");
-        this.theme = false;
+        document.body.className = "";
+        this.theme = "";
       }
     },
     addHomeScreen() {
@@ -2818,6 +2843,15 @@ pre {
 
 .col.s12[id] > h5 {
   margin-top: 32px;
+}
+
+.logo-template {
+  width: 100px;
+  height: auto;
+}
+
+.opacity {
+  opacity: 0.1;
 }
 
 @keyframes logo-intro {

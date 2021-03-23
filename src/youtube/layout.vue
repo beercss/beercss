@@ -94,7 +94,7 @@ div
                 .col Youtube Kids
           a(data-ui="#modal-notifications")
             i notifications
-          a(href="/", target="_self")
+          a(href="/")
             img.small.circle(:src="'/favicon.png'")
 
   #modal-notifications.modal.right

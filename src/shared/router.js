@@ -8,6 +8,7 @@ export default (url, component, layout) => {
 
     if (layout && !window.$layout) {
       document.getElementById("body").innerHTML = "<div id='app'></div>";
+      document.body.scrollTop = 0;
       new Vue({
         el: '#app',
         mounted() {
@@ -19,6 +20,7 @@ export default (url, component, layout) => {
 
     if (!layout) {
       document.getElementById("body").innerHTML = "<div id='app'></div>";
+      document.body.scrollTop = 0;
       new Vue({
         el: '#app',
         render: h => h(component)
