@@ -1,0 +1,297 @@
+<template lang="pug">
+.container.none
+  .menu.left.border.large.grey-text.medium-device.large-device
+    .large-space
+    .medium-space
+    a.button.white.circle.large(data-ui="#modal-add")
+      img(:src="'/add.png'")
+    .space
+    a(href="/gmail", :class="{ active: this.url == '/gmail' }")
+      i.outlined inbox
+      .tooltip.right Inbox
+    a(href="/gmail/snoozed", :class="{ active: this.url == '/gmail/snoozed' }")
+      i.outlined watch_later
+      .tooltip.right Snoozed
+    a(
+      href="/gmail/important",
+      :class="{ active: this.url == '/gmail/important' }"
+    )
+      i.outlined label_important
+      .tooltip.right Important
+    a(href="/gmail/sent", :class="{ active: this.url == '/gmail/sent' }")
+      i.outlined send
+      .tooltip.right Sent
+    a(href="/gmail/drafts", :class="{ active: this.url == '/gmail/drafts' }")
+      i.outlined insert_drive_file
+      .tooltip.right Drafts
+    a(href="/gmail/spam", :class="{ active: this.url == '/gmail/spam' }")
+      i.outlined error_outline
+      .tooltip.right Spam
+    a(@click="updateTheme()")
+      i.outlined brightness_medium
+      .tooltip.right theme
+
+  .menu.right.border.small.medium-device.large-device
+    .large-space
+    .medium-space
+    a.wave.padding
+      img(width="24", :src="'/calendar.png'")
+      span.tooltip.left Calendar
+    a.wave.padding
+      img(width="24", :src="'/keep.png'")
+      span.tooltip.left Keep
+    a.wave.padding
+      img(width="24", :src="'/tasks.png'")
+      span.tooltip.left Tasks
+    a.wave.padding
+      img(width="24", :src="'/contacts.png'")
+      span.tooltip.left Contacts
+
+  .menu.top.border.large.grey-text
+    .row.no-wrap.middle-align
+      .col
+        nav.padding
+          a(data-ui="#dropdown-menu")
+            i.outlined menu
+            #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
+              a.row.no-wrap(href="/gmail")
+                .col.min
+                  i.outlined inbox
+                .col Inbox
+              a.row.no-wrap(href="/gmail/snoozed")
+                .col.min
+                  i.outlined watch_later
+                .col Snoozed
+              a.row.no-wrap(href="/gmail/important")
+                .col.min
+                  i.outlined label_important
+                .col Important
+              a.row.no-wrap(href="/gmail/sent")
+                .col.min
+                  i.outlined send
+                .col Sent
+              a.row.no-wrap(href="/gmail/drafts")
+                .col.min
+                  i.outlined insert_drive_file
+                .col Drafts
+              a.row.no-wrap(href="/gmail/spam")
+                .col.min
+                  i.outlined error_outline
+                .col Spam
+              a.row.no-wrap(@click="updateTheme()")
+                .col.min
+                  i.outlined brightness_medium
+                .col Theme
+
+          a
+            img(v-show="theme == 'is-gmail-light'", :src="'/gmail-light.png'")
+            img(v-show="theme == 'is-gmail-dark'", :src="'/gmail-dark.png'")
+      .col
+        .field.round.fill.flat.sufix.prefix.small.no-margin.medium-device.large-device
+          i.front search
+          input(type="text", data-ui="#dropdown-search")
+          i.front mic
+      .col
+        nav.right-align
+          a.small-device(data-ui="#modal-search")
+            i.outlined search
+          a.medium-device.large-device(data-ui="#dropdown-settings")
+            i.outline settings
+            #dropdown-settings.dropdown.left.no-wrap(
+              data-ui="#dropdown-settings"
+            )
+              a
+                div Account
+                label Change account
+              a
+                div Appearance
+                label Change display settings
+          a.medium-device.large-device(data-ui="#dropdown-apps")
+            i.outlined apps
+            #dropdown-apps.dropdown.left.no-wrap.min(data-ui="#dropdown-apps")
+              .large-padding
+                .row
+                  a.wave.col.s6.center-align.middle-align
+                    div
+                      img(:src="'/calendar.png'")
+                      p Calendar
+                  a.wave.col.s6.center-align.middle-align
+                    div
+                      img(:src="'/keep.png'")
+                      p Keep
+                  a.wave.col.s6.center-align.middle-align
+                    div
+                      img(:src="'/tasks.png'")
+                      p Tasks
+                  a.wave.col.s6.center-align.middle-align
+                    div
+                      img(:src="'/contacts.png'")
+                      p Contacts
+          a(href="/")
+            img.small.circle(:src="'/favicon.png'")
+
+  .menu.bottom.large.border.small-device.grey-text
+    a(href="/gmail", :class="{ active: this.url == '/gmail' }")
+      i.outlined inbox
+      div Inbox
+    a(href="/gmail/sent", :class="{ active: this.url == '/gmail/sent' }")
+      i.outlined send
+      div Sent
+    a.button.white.circle.large(data-ui="#modal-add-small")
+      img(:src="'/add.png'")
+    a(href="/gmail/drafts", :class="{ active: this.url == '/gmail/drafts' }")
+      i.outlined insert_drive_file
+      div Drafts
+    a(@click="updateTheme()")
+      i.outlined brightness_medium
+      div Theme
+
+  #modal-add.modal.round
+    .row.nowrap
+      .col
+        nav
+          a(data-ui="#modal-add")
+            i.outlined arrow_back
+          a
+            h5.no-margin New message
+      .col
+        nav.right-align
+          a(data-ui="#modal-add")
+            i.outlined attach_file
+          a(data-ui="#modal-add")
+            i.outlined send
+    .row
+      .col.s12
+        .field.label.border
+          input(type="text")
+          label From
+      .col.s12
+        .field.label.border
+          input(type="text")
+          label To
+      .col.s12
+        .field.label.border
+          input(type="text")
+          label Subject
+      .col.s12
+        .field.label.border
+          input(type="text")
+          label Message
+
+  #modal-add-small.modal.round.bottom
+    .row.nowrap
+      .col
+        nav
+          a(data-ui="#modal-add-small")
+            i.outlined arrow_back
+          a
+            h5.no-margin New message
+      .col
+        nav.right-align
+          a(data-ui="#modal-add-small")
+            i.outlined attach_file
+          a(data-ui="#modal-add-small")
+            i.outlined send
+    .row
+      .col.s12
+        .field.label.border
+          input(type="text")
+          label From
+      .col.s12
+        .field.label.border
+          input(type="text")
+          label To
+      .col.s12
+        .field.label.border
+          input(type="text")
+          label Subject
+      .col.s12
+        .field.label.border
+          input(type="text")
+          label Message
+
+  #modal-search.modal.top.transparent.flat
+    .row.no-wrap
+      .col.medium-device.large-device
+      .col
+        .field.round.flat.sufix.prefix.small.no-margin
+          i.front search
+          input.white.black-text(type="text")
+          i.front mic
+      .col.medium-device.large-device
+
+  #layout
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      url: "/gmail",
+      theme: null,
+      logo: null,
+    };
+  },
+  created() {
+    window.$layout = this;
+  },
+  mounted() {
+    this.updateTheme();
+    window.ui();
+  },
+  methods: {
+    updateTheme() {
+      if (this.theme == "is-gmail-light") {
+        this.theme = "is-gmail-dark";
+        this.logo = "/gmail-dark.png";
+      } else {
+        this.theme = "is-gmail-light";
+        this.logo = "/gmail-light.png";
+      }
+
+      document.body.className = this.theme;
+    },
+    scroll(selector) {
+      let element = document.querySelector(selector);
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+    redirect(component) {
+      this.url = page.current;
+
+      document.getElementById("layout").innerHTML = '<div id="app"></div>';
+      document.body.scrollTop = 0;
+      return new Vue({
+        el: "#app",
+        render: (h) => h(component),
+      });
+    },
+  },
+};
+</script>
+
+<style>
+.is-gmail-light {
+  --color-1: #f44336;
+  --color-1a: #f4433680;
+  --color-1b: #f4433600;
+  --color-2: #000000;
+  --color-2a: #00000010;
+  --color-2b: #00000020;
+  --color-3: #e91e63;
+  --color-4: #ffffff;
+  --color-4a: rgba(255, 255, 255, 0.9);
+  --color-5: #f5f5f5;
+}
+.is-gmail-dark {
+  --color-1: #ef5350;
+  --color-1a: #ef535080;
+  --color-1b: #ef535000;
+  --color-2: #ffffff;
+  --color-2a: #ffffff10;
+  --color-2b: #ffffff20;
+  --color-3: #ff9800;
+  --color-4: #263238;
+  --color-4a: rgba(55, 71, 79, 0.9);
+  --color-5: #212121;
+}
+</style>

@@ -5,7 +5,7 @@ div
       .col
         nav.padding
           a
-            img(:src="'/netflix-dark.png'")
+            img(:src="'/netflix.png'")
           a.small-device(data-ui="#dropdown-menu")
             i menu
             #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
@@ -95,7 +95,7 @@ export default {
   },
   methods: {
     updateTheme() {
-      document.body.className = "is-netflix-dark";
+      document.body.className = "is-netflix";
     },
     scroll(selector) {
       let element = document.querySelector(selector);
@@ -116,7 +116,7 @@ export default {
 </script>
 
 <style>
-.is-netflix-dark {
+.is-netflix {
   --color-1: #ef5350;
   --color-1a: #ef535080;
   --color-1b: #ef535000;

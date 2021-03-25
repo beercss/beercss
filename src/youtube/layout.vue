@@ -196,14 +196,7 @@ export default {
     window.ui();
   },
   methods: {
-    updateTheme(theme) {
-      if (theme) {
-        this.theme = theme;
-        window.localStorage.setItem("theme", theme);
-        document.body.className = theme;
-        return;
-      }
-
+    updateTheme() {
       if (this.theme == "is-youtube-light") {
         this.theme = "is-youtube-dark";
         this.logo = "/youtube-dark.png";
@@ -212,7 +205,6 @@ export default {
         this.logo = "/youtube-light.png";
       }
 
-      window.localStorage.setItem("theme", this.theme);
       document.body.className = this.theme;
     },
     redirect(component) {

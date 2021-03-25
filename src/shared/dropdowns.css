@@ -28,6 +28,10 @@
   width: auto;
 }
 
+.dropdown.min {
+  min-width: 200px;
+}
+
 .dropdown.active {
   display: inline-block;
   animation: 0.1s dropdown-to-bottom;

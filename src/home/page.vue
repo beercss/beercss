@@ -43,10 +43,12 @@
         img.logo-template(:src="'/youtube-light.png'")
       .large-divider
       a(href="/netflix")
-        img.logo-template(:src="'/netflix-dark.png'")
+        img.logo-template(:src="'/netflix.png'")
       .large-divider
-      a
-        img.logo-template.opacity(:src="'/gmail.png'")
+      a(href="/gmail", v-show="theme == 'is-dark'")
+        img.logo-template(:src="'/gmail-dark.png'")
+      a(href="/gmail", v-show="theme != 'is-dark'")
+        img.logo-template(:src="'/gmail-light.png'")
       .large-divider
       a
         img.logo-template.opacity(:src="'/github.png'")
@@ -78,10 +80,12 @@
             img.logo-template(:src="'/youtube-light.png'")
         .col.s6.middle-align.padding
           a(href="/netflix")
-            img.logo-template(:src="'/netflix-dark.png'")
+            img.logo-template(:src="'/netflix.png'")
         .col.s6.middle-align.padding
-          a
-            img.logo-template.opacity(:src="'/gmail.png'")
+          a(href="/gmail", v-show="theme == 'is-dark'")
+            img.logo-template(:src="'/gmail-dark.png'")
+          a(href="/gmail", v-show="theme != 'is-dark'")
+            img.logo-template(:src="'/gmail-light.png'")
         .col.s6.middle-align.padding
           a
             img.logo-template.opacity(:src="'/github.png'")

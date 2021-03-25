@@ -1,8 +1,19 @@
-.container {
+.container,
+.container.min {
   margin: 0 auto;
   max-width: 992px;
   padding: 80px 88px;
   overflow-x: hidden;
+}
+
+.container.max {
+  max-width: 100%;
+}
+
+.container.none {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 @media only screen and (max-width: 600px) {

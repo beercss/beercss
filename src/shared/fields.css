@@ -147,10 +147,18 @@ input[type="file"] {
   box-shadow: none;
 }
 
-.field.flat input,
-.field.flat input::before,
-.field.flat input::after {
+.field.flat > input,
+.field.flat > input::before,
+.field.flat > input::after {
+  border: none!important;
   box-shadow: none!important;
+}
+
+.field.flat > input:focus,
+.field.flat > input:focus::before,
+.field.flat > input:focus::after {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2)!important;
 }
 
 .field.label > input[type="text"],
@@ -302,7 +310,7 @@ input[type="file"] {
   cursor: pointer;
   margin: 0;
   padding: 0;
-  color: #9e9e9e;
+  color: inherit;
   position: absolute;
   left: -24px;
   background-color: transparent;
