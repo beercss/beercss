@@ -1785,9 +1785,11 @@
                 span.orange-text min
               div 
                 span container
+                span.orange-text min, max
               div 
                 span dropdown&nbsp;
                 span.grey-text left, right, small, medium, large, border, round, flat, active, nowrap
+                span.orange-text min
               div 
                 span field&nbsp;
                 span.grey-text small, medium, large, border, round, flat,&nbsp;
