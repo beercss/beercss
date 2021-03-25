@@ -1,5 +1,5 @@
 <template lang="pug">
-.container.max.page.right.active
+.page.right.active
   .row.nowrap.medium-device.large-device
     .col
       nav.grey-text

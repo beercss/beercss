@@ -1,5 +1,5 @@
 <template lang="pug">
-.container.none
+.container.max
   .menu.left.border.large.grey-text.medium-device.large-device
     .large-space
     .medium-space

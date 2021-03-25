@@ -1,5 +1,5 @@
 <template lang="pug">
-.container.max.page.right.active
+.page.right.active
   h5.center-align No messages
 </template>
 
