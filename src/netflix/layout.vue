@@ -6,7 +6,7 @@ div
         nav.padding
           a
             img(:src="'/netflix.png'")
-          a.small-device(data-ui="#dropdown-menu")
+          button.none.white-text.small-device(data-ui="#dropdown-menu")
             i menu
             #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
               a.row.no-wrap(@click="scroll('#home')")
@@ -29,16 +29,26 @@ div
                 .col.min
                   i video_library
                 .col My list
-          a.medium-device.large-device(@click="scroll('#home')") Home
-          a.medium-device.large-device(@click="scroll('#series')") Series
-          a.medium-device.large-device(@click="scroll('#movies')") Movies
-          a.medium-device.large-device(@click="scroll('#hot')") Hot
-          a.medium-device.large-device(@click="scroll('#my-list')") My list
+          button.none.white-text.capitalize.medium-device.large-device(
+            @click="scroll('#home')"
+          ) Home
+          button.none.white-text.capitalize.medium-device.large-device(
+            @click="scroll('#series')"
+          ) Series
+          button.none.white-text.capitalize.medium-device.large-device(
+            @click="scroll('#movies')"
+          ) Movies
+          button.none.white-text.capitalize.medium-device.large-device(
+            @click="scroll('#hot')"
+          ) Hot
+          button.none.white-text.capitalize.medium-device.large-device(
+            @click="scroll('#my-list')"
+          ) My list
       .col
         nav.right-align
-          a(data-ui="#modal-search")
+          button.none.white-text(data-ui="#modal-search")
             i search
-          a(data-ui="#dropdown-notifications")
+          button.none.white-text(data-ui="#dropdown-notifications")
             i notifications
             #dropdown-notifications.dropdown.left.no-wrap(
               data-ui="#dropdown-notifications"

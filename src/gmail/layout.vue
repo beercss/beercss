@@ -51,7 +51,7 @@
     .row.no-wrap.middle-align
       .col
         nav.padding
-          a(data-ui="#dropdown-menu")
+          button.none.grey-text(data-ui="#dropdown-menu")
             i.outlined menu
             #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
               a.row.no-wrap(href="/gmail")
@@ -93,10 +93,12 @@
           i.front mic
       .col
         nav.right-align
-          a.small-device(data-ui="#modal-search")
+          button.none.grey-text.small-device(data-ui="#modal-search")
             i.outlined search
-          a.medium-device.large-device(data-ui="#dropdown-settings")
-            i.outline settings
+          button.none.grey-text.medium-device.large-device(
+            data-ui="#dropdown-settings"
+          )
+            i.outlined settings
             #dropdown-settings.dropdown.left.no-wrap(
               data-ui="#dropdown-settings"
             )
@@ -106,7 +108,9 @@
               a
                 div Appearance
                 label Change display settings
-          a.medium-device.large-device(data-ui="#dropdown-apps")
+          button.none.grey-text.medium-device.large-device(
+            data-ui="#dropdown-apps"
+          )
             i.outlined apps
             #dropdown-apps.dropdown.left.no-wrap.min(data-ui="#dropdown-apps")
               .large-padding
