@@ -60,6 +60,15 @@ pre {
   margin-top: 32px;
 }
 
+.logo-template {
+  width: 100px;
+  height: auto;
+}
+
+.opacity {
+  opacity: 0.1;
+}
+
 @keyframes logo-intro {
   0% {
     opacity: 0;
@@ -73,4 +82,61 @@ pre {
     opacity: 1;
     transform: rotate(0deg) scale(1) translateY(0);
   }
+}.is-youtube-light {
+  --color-1: #f44336;
+  --color-1a: #f4433680;
+  --color-1b: #f4433600;
+  --color-2: #000000;
+  --color-2a: #00000010;
+  --color-2b: #00000020;
+  --color-3: #e91e63;
+  --color-4: #ffffff;
+  --color-4a: rgba(255, 255, 255, 0.9);
+  --color-5: #f5f5f5;
+}
+.is-youtube-dark {
+  --color-1: #ef5350;
+  --color-1a: #ef535080;
+  --color-1b: #ef535000;
+  --color-2: #ffffff;
+  --color-2a: #ffffff10;
+  --color-2b: #ffffff20;
+  --color-3: #ff9800;
+  --color-4: #263238;
+  --color-4a: rgba(55, 71, 79, 0.9);
+  --color-5: #212121;
+}.is-netflix {
+  --color-1: #ef5350;
+  --color-1a: #ef535080;
+  --color-1b: #ef535000;
+  --color-2: #ffffff;
+  --color-2a: #ffffff10;
+  --color-2b: #ffffff20;
+  --color-3: #ff9800;
+  --color-4: #263238;
+  --color-4a: rgba(55, 71, 79, 0.9);
+  --color-5: #212121;
+}.is-gmail-light {
+  --color-1: #f44336;
+  --color-1a: #f4433680;
+  --color-1b: #f4433600;
+  --color-2: #000000;
+  --color-2a: #00000010;
+  --color-2b: #00000020;
+  --color-3: #e91e63;
+  --color-4: #ffffff;
+  --color-4a: rgba(255, 255, 255, 0.9);
+  --color-5: #f5f5f5;
+}
+.is-gmail-dark {
+  --color-1: #ef5350;
+  --color-1a: #ef535080;
+  --color-1b: #ef535000;
+  --color-2: #ffffff;
+  --color-2a: #ffffff10;
+  --color-2b: #ffffff20;
+  --color-3: #ff9800;
+  --color-4: #263238;
+  --color-4a: rgba(55, 71, 79, 0.9);
+  --color-5: #212121;
 }
