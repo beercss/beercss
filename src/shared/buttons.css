@@ -28,7 +28,7 @@ button.none {
 }
 
 .btn.small,
-.button.small
+.button.small,
 button.small {
   height: 24px;
   line-height: 24px;
@@ -36,7 +36,7 @@ button.small {
 }
 
 .btn.medium,
-.button.medium
+.button.medium,
 button.medium {
   height: 32px;
   line-height: 32px;
