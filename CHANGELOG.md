@@ -5,6 +5,7 @@
 - Adding .min and .max helpers to .container
 - Adding .min helper to .dropdown
 - Adding .min helper to .card
+- Adding .dark and .light helpers to .wave
 - BREAKING CHANGE - Renaming .nowrap to .no-wrap, it's like .no-padding, .no-margin and others.
 - BREAKING CHANGE - Renaming .btn to .button or <button>
 

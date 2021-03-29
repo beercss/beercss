@@ -34,16 +34,16 @@
   .menu.right.border.small.medium-device.large-device
     .large-space
     .medium-space
-    a.wave.padding
+    a.wave.dark.padding
       img(width="24", :src="'/calendar.png'")
       span.tooltip.left Calendar
-    a.wave.padding
+    a.wave.dark.padding
       img(width="24", :src="'/keep.png'")
       span.tooltip.left Keep
-    a.wave.padding
+    a.wave.dark.padding
       img(width="24", :src="'/tasks.png'")
       span.tooltip.left Tasks
-    a.wave.padding
+    a.wave.dark.padding
       img(width="24", :src="'/contacts.png'")
       span.tooltip.left Contacts
 

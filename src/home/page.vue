@@ -1904,6 +1904,9 @@
               div 
                 span tooltip&nbsp;
                 span.grey-text left, right, top, bottom, small, medium, large, border, round, flat
+              div 
+                span wave&nbsp;
+                span.orange-text light, dark
               .space
               div 
                 span &lt;body&gt;&nbsp;

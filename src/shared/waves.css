@@ -1,5 +1,4 @@
 .wave::after,
-.btn::after,
 .button::after,
 button::after {
   content: "";
@@ -15,14 +14,14 @@ button::after {
 }
 
 .wave:hover::after,
-.btn:hover::after,
+.wave.light:hover::after,
 .button:hover::after,
 button:hover::after {
   background: radial-gradient(circle, rgba(255,255,255,0.2) 1%, transparent 1%) center/15000%;
 }
 
 .wave:active::after,
-.btn:active::after,
+.wave.light:active::after,
 .button:active::after,
 button:active::after {
   background-color: transparent;
@@ -30,7 +29,7 @@ button:active::after {
   transition: background 0s;
 }
 
-.btn.none::after,
+.button.none::after,
 .button.none::after,
 button.none::after {
   width: calc(100% + 8px);
@@ -38,19 +37,17 @@ button.none::after {
   margin: -4px;
 }
 
-.btn.none:hover::after,
+.wave.dark:hover::after,
 .button.none:hover::after,
 button.none:hover::after,
-.btn.border:hover::after,
 .button.border:hover::after,
 button.border:hover::after {
   background: radial-gradient(circle, #9e9e9e20 1%, transparent 1%) center/15000%;
 }
 
-.btn.none:active::after,
+.wave.dark:active::after,
 .button.none:active::after,
 button.none:active::after,
-.btn.border:active::after,
 .button.border:active::after,
 button.border:active::after {
   background-color: transparent;
