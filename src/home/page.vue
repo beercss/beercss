@@ -1610,6 +1610,84 @@
             h5 Tab 2
           #tab15.page.padding
             h5 Tab 3
+      #textareas.col.s12
+        h5
+          span Textareas
+          a.chip.circle
+            i(@click="showSamples('#textareas .field')") code
+        nav.wrap
+          label.checkbox
+            input#border-textareas(type="checkbox")
+            span border
+          label.checkbox
+            input#round-textareas(type="checkbox")
+            span round
+          label.checkbox
+            input#fill-textareas(type="checkbox")
+            span fill
+          label.radio
+            input#small-textareas(type="radio", name="size-textareas")
+            span small
+          label.radio
+            input#medium-textareas(
+              type="radio",
+              name="size-textareas",
+              checked="checked"
+            )
+            span medium
+          label.radio
+            input#large-textareas(type="radio", name="size-textareas")
+            span large
+        .space
+        .row
+          .col.s12.l4
+            .field.label.textarea
+              textarea
+              label Text
+          .col.s12.l4
+            .field.label.prefix.textarea
+              i search
+              textarea
+              label Text
+          .col.s12.l4
+            .field.label.sufix.textarea
+              textarea
+              label Text
+              i search
+          .col.s12.l4
+            .field.label.textarea
+              textarea
+              label Text
+              span.helper Complementary text
+          .col.s12.l4
+            .field.label.prefix.textarea
+              i search
+              textarea
+              label Text
+              span.helper Complementary text
+          .col.s12.l4
+            .field.label.sufix.textarea
+              textarea
+              label Text
+              i search
+              span.helper Complementary text
+          .col.s12.l4
+            .field.label.invalid.textarea
+              textarea
+              label Text
+              span.error Error text
+          .col.s12.l4
+            .field.label.prefix.invalid.textarea
+              i search
+              textarea
+              label Text
+              span.error Error text
+          .col.s12.l4
+            .field.label.sufix.invalid.textarea
+              textarea
+              label Text
+              i search
+              span.error Error text
       #toasts.col.s12.l6
         h5
           span Toasts
@@ -1751,7 +1829,7 @@
                 div medium-device
                 div large-device
                 div active
-                div nowrap
+                div no-wrap
                 div wrap
                 div scroll
                 div no-scroll
@@ -1784,16 +1862,16 @@
                 span.grey-text small, medium, large, border, round, flat
                 span.orange-text min
               div 
-                span container
+                span container&nbsp;
                 span.orange-text min, max
               div 
                 span dropdown&nbsp;
-                span.grey-text left, right, small, medium, large, border, round, flat, active, nowrap
+                span.grey-text left, right, small, medium, large, border, round, flat, active, no-wrap&nbsp;
                 span.orange-text min
               div 
                 span field&nbsp;
                 span.grey-text small, medium, large, border, round, flat,&nbsp;
-                span.orange-text fill, prefix, sufix, label, invalid
+                span.orange-text fill, prefix, sufix, label, invalid, textarea
               div
                 span fixed&nbsp;
                 span.grey-text left, right, top, bottom, center, middle, small, medium, large, round
@@ -1815,7 +1893,7 @@
                 span.orange-text light, dark
               div 
                 span row&nbsp;
-                span.grey-text nowrap, top-align, bottom-align, middle-align, small-space, medium-space, large-space,&nbsp;
+                span.grey-text no-wrap, top-align, bottom-align, middle-align, small-space, medium-space, large-space,&nbsp;
                 span.orange-text no-space
               div 
                 span &nbsp;&nbsp;&nbsp;&nbsp;col&nbsp;
@@ -2382,6 +2460,7 @@ export default {
     this.tabSamples();
     this.selectSamples();
     this.rowSamples();
+    this.textareaSamples();
 
     setTimeout(() => {
       $("#logo").addClass("active");
@@ -2686,6 +2765,20 @@ export default {
           if ($(selector).is(":checked"))
             $("#selects .field.label").addClass(ids[i]);
           else $("#selects .field.label").removeClass(ids[i]);
+        }
+      });
+    },
+    textareaSamples() {
+      $(
+        "#border-textareas,#round-textareas,#fill-textareas,#small-textareas,#medium-textareas,#large-textareas"
+      ).on("click", function () {
+        var ids = ["border", "fill", "round", "small", "large"];
+        for (var i = 0; i < ids.length; i++) {
+          var selector = "#" + ids[i] + "-textareas";
+
+          if ($(selector).is(":checked"))
+            $("#textareas .field.label").addClass(ids[i]);
+          else $("#textareas .field.label").removeClass(ids[i]);
         }
       });
     },
