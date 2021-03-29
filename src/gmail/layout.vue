@@ -174,8 +174,8 @@
           input(type="text")
           label Subject
       .col.s12
-        .field.label.border
-          input(type="text")
+        .field.label.border.textarea
+          textarea
           label Message
 
   #modal-add-small.modal.round.bottom
@@ -206,8 +206,8 @@
           input(type="text")
           label Subject
       .col.s12
-        .field.label.border
-          input(type="text")
+        .field.label.border.textarea
+          textarea
           label Message
 
   #modal-search.modal.top.transparent.flat
