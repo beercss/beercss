@@ -1,11 +1,22 @@
 # Changelog
 
 ## v1.0.0 ##
-- The .nowrap class was marked as obsolete, use .no-wrap instead.
-- We made this change because it's like no-padding, no-margin and others classes.
+- Adding textarea element
+- Adding .min and .max helpers to .container
+- Adding .min helper to .dropdown
+- Adding .min helper to .card
+- BREAKING CHANGE - Renaming .nowrap to .no-wrap, it's like .no-padding, .no-margin and others.
+- BREAKING CHANGE - Renaming .btn to .button or <button>
+
+```html
+<div class="field label textarea">
+  <textarea></textarea>
+  <label>Text</label>
+</div>
+```
 
 ## v0.0.81 ##
-- Adding wave and no-wave class, button has wave by default
+- Adding .wave and .no-wave class, button has .wave by default
 
 ## v0.0.78 ##
 
@@ -13,23 +24,6 @@
 - Old sintax does not will work anymore
 
 ```html
-// old checkbox, radio and switch
-<label>
-  <input type="checkbox">
-  <span>Item</span>
-</label>
-
-<label>
-  <input type="radio">
-  <span>Item</span>
-</label>
-
-<label>
-  <input class="switch" type="checkbox">
-  <span>Item</span>
-</label>
-
-// new checkbox, radio and switch
 <label class="checkbox">
   <input type="checkbox">
   <span>Item</span>
@@ -48,7 +42,7 @@
 
 ## v0.0.74 ##
 
-- The .btn class was marked as obsolete, use .button or <button> instead.
+- Renaming .btn to .button or <button>.
 - You can still use the .btn class, but is not recommended.
 
 ### Cheers! ###

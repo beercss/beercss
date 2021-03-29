@@ -1859,14 +1859,14 @@
                 span.grey-text border, circle, active
               div
                 span card&nbsp;
-                span.grey-text small, medium, large, border, round, flat
+                span.grey-text small, medium, large, border, round, flat,&nbsp;
                 span.orange-text min
               div 
                 span container&nbsp;
                 span.orange-text min, max
               div 
                 span dropdown&nbsp;
-                span.grey-text left, right, small, medium, large, border, round, flat, active, no-wrap&nbsp;
+                span.grey-text left, right, small, medium, large, border, round, flat, active, no-wrap,&nbsp;
                 span.orange-text min
               div 
                 span field&nbsp;

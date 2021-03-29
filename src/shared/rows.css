@@ -4,13 +4,11 @@
   min-width: 100%;
 }
 
-.row .row:not(.no-wrap),
-.row .row:not(.nowrap) {
+.row .row:not(.no-wrap) {
   margin-top: -8px;
 }
 
-.row .row .row:not(.no-wrap),
-.row .row .row:not(.nowrap) {
+.row .row .row:not(.no-wrap) {
   margin-top: 8px;
 }
 
@@ -70,15 +68,13 @@
   padding: 16px;
 }
 
-.row.no-wrap,
-.row.nowrap {
+.row.no-wrap {
   margin-top: 0;
   margin-bottom: 0;
   display: flex;
 }
 
-.modal > .row.no-wrap:only-child,
-.modal > .row.nowrap:only-child {
+.modal > .row.no-wrap:only-child {
   min-height: 100%;
   height: max-content;
 }
@@ -87,16 +83,14 @@
   margin-top: 16px;
 }
 
-.row.no-wrap > .col,
-.row.nowrap > .col {
+.row.no-wrap > .col {
   float: none;
   flex: 1;
   padding-top: 0;
   padding-bottom: 0;
 }
 
-.row.no-wrap > .col.min,
-.row.nowrap > .col.min {
+.row.no-wrap > .col.min {
   flex: 0;
 }
 

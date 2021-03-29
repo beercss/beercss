@@ -1,6 +1,6 @@
 <template lang="pug">
 .page.right.active
-  .row.nowrap.medium-device.large-device
+  .row.no-wrap.medium-device.large-device
     .col
       nav.grey-text
         label.checkbox

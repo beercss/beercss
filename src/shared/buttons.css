@@ -1,4 +1,3 @@
-.btn,
 .button,
 button {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
@@ -15,7 +14,6 @@ button {
   border-radius: 4px;
 }
 
-.btn.none,
 .button.none,
 button.none {
   box-shadow: none;
@@ -27,7 +25,6 @@ button.none {
   margin: 0 8px;
 }
 
-.btn.small,
 .button.small,
 button.small {
   height: 24px;
@@ -35,7 +32,6 @@ button.small {
   padding: 0 8px;
 }
 
-.btn.medium,
 .button.medium,
 button.medium {
   height: 32px;
@@ -43,7 +39,6 @@ button.medium {
   padding: 0 12px;
 }
 
-.btn.large,
 .button.large,
 button.large {
   height: 40px;
@@ -51,7 +46,6 @@ button.large {
   padding: 0 16px;
 }
 
-.btn.border,
 .button.border,
 button.border {
   border: 1px solid var(--color-1);
@@ -60,13 +54,11 @@ button.border {
   box-shadow: none;
 }
 
-.btn.round,
 .button.round,
 button.round {
   border-radius: 24px;
 }
 
-.btn.circle,
 .button.circle,
 button.circle {
   display: inline-block;
@@ -78,7 +70,6 @@ button.circle {
   text-align: center;
 }
 
-.btn.circle.small,
 .button.circle.small,
 button.circle.small {
   min-width: 40px;
@@ -86,7 +77,6 @@ button.circle.small {
   line-height: 40px;
 }
 
-.btn.circle.large,
 .button.circle.large,
 button.circle.large {
   min-width: 56px;
@@ -94,8 +84,6 @@ button.circle.large {
   line-height: 56px;
 }
 
-td > .btn,
-td > nav > .btn,
 td > .button,
 td > nav > .button,
 td > button,
@@ -104,8 +92,6 @@ td > nav > button {
   line-height: 24px;
 }
 
-td > .btn.circle,
-td > nav > .btn.circle,
 td > .button.circle,
 td > nav > .button.circle,
 td > button.circle,

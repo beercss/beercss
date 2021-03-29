@@ -147,7 +147,7 @@
       div Theme
 
   #modal-add.modal.round
-    .row.nowrap
+    .row.no-wrap
       .col
         nav
           a(data-ui="#modal-add")
@@ -179,7 +179,7 @@
           label Message
 
   #modal-add-small.modal.round.bottom
-    .row.nowrap
+    .row.no-wrap
       .col
         nav
           a(data-ui="#modal-add-small")
