@@ -2,6 +2,12 @@
 div
   .fixed.top.left.right.bottom
     img.responsive(:src="'/map.jpg'")
+  .fixed.bottom.right.margin.medium-device.large-device
+    button.circle.white.black-text.wave.dark
+      i add
+    .space
+    button.circle.white.black-text.wave.dark
+      i remove
   .large-space
   .card.no-padding.large-margin.max.large.scroll.medium-device.large-device
     .large-padding.blue.white-text

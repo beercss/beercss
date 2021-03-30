@@ -24773,6 +24773,12 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
 var _default = {
   mounted: function mounted() {},
   data: function data() {
@@ -24822,6 +24828,7 @@ exports.default = _default;
     _c("div", { staticClass: "fixed top left right bottom" }, [
       _c("img", { staticClass: "responsive", attrs: { src: "/map.jpg" } })
     ]),
+    _vm._m(0),
     _c("div", { staticClass: "large-space" }),
     _c(
       "div",
@@ -24922,7 +24929,7 @@ exports.default = _default;
               attrs: { placeholder: _vm.from ? "Destination" : "Departure" }
             })
           ]),
-          _vm._m(0),
+          _vm._m(1),
           _c("div", { staticClass: "medium-space" }),
           _c(
             "a",
@@ -24935,7 +24942,7 @@ exports.default = _default;
               }
             },
             [
-              _vm._m(1),
+              _vm._m(2),
               _c("div", { staticClass: "col" }, [
                 _c("h6", { staticClass: "no-margin" }, [
                   _vm._v(_vm._s(_vm.street))
@@ -24958,7 +24965,7 @@ exports.default = _default;
               }
             },
             [
-              _vm._m(2),
+              _vm._m(3),
               _c("div", { staticClass: "col" }, [
                 _c("h6", { staticClass: "no-margin" }, [_vm._v("Home")]),
                 _c("div", [_vm._v(_vm._s(_vm.street))])
@@ -25064,7 +25071,7 @@ exports.default = _default;
           }
         },
         [
-          _vm._m(3),
+          _vm._m(4),
           _c("div", { staticClass: "col" }, [
             _c("h6", { staticClass: "no-margin" }, [
               _vm._v(_vm._s(_vm.street))
@@ -25085,7 +25092,7 @@ exports.default = _default;
           }
         },
         [
-          _vm._m(4),
+          _vm._m(5),
           _c("div", { staticClass: "col" }, [
             _c("h6", { staticClass: "no-margin" }, [_vm._v("Home")]),
             _c("div", [_vm._v(_vm._s(_vm.street))])
@@ -25096,6 +25103,24 @@ exports.default = _default;
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "fixed bottom right margin medium-device large-device" },
+      [
+        _c("button", { staticClass: "circle white black-text wave dark" }, [
+          _c("i", [_vm._v("add")])
+        ]),
+        _c("div", { staticClass: "space" }),
+        _c("button", { staticClass: "circle white black-text wave dark" }, [
+          _c("i", [_vm._v("remove")])
+        ])
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
