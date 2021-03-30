@@ -50,7 +50,7 @@
       a(href="/gmail", v-show="theme != 'is-dark'")
         img.logo-template(:src="'/gmail-light.png'")
       .large-divider
-      a(href="/gmail", v-show="theme == 'is-dark'")
+      a(href="/uber", v-show="theme == 'is-dark'")
         img.logo-template(:src="'/uber-dark.png'")
       a(href="/uber", v-show="theme != 'is-dark'")
         img.logo-template(:src="'/uber-light.png'")
@@ -64,12 +64,12 @@
     a(@click="updateTheme()")
       i brightness_medium
       div Theme
-    a(@click="showSamples('#menu-bottom')")
-      i code
-      div Code
     a(data-ui="#more-bottom")
       i collections
       div Templates
+    a(@click="showSamples('#menu-bottom')")
+      i code
+      div Code
     #more-bottom.modal.bottom.medium(data-ui="#more-bottom")
       h5 Templates
       p.grey-text This templates are only for tests purpose
@@ -89,8 +89,10 @@
           a(href="/gmail", v-show="theme != 'is-dark'")
             img.logo-template(:src="'/gmail-light.png'")
         .col.s6.middle-align.padding
-          a
-            img.logo-template.opacity(:src="'/github.png'")
+          a(href="/uber", v-show="theme == 'is-dark'")
+            img.logo-template(:src="'/uber-dark.png'")
+          a(href="/uber", v-show="theme != 'is-dark'")
+            img.logo-template(:src="'/uber-light.png'")
   #begin
     .row
       .col.s12
@@ -2965,8 +2967,8 @@ pre {
 }
 
 .logo-template {
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 24px;
 }
 
 .opacity {

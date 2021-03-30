@@ -11254,6 +11254,8 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -11843,7 +11845,7 @@ exports.default = _default;
                     expression: "theme == 'is-dark'"
                   }
                 ],
-                attrs: { href: "/gmail" }
+                attrs: { href: "/uber" }
               },
               [
                 _c("img", {
@@ -11913,6 +11915,7 @@ exports.default = _default;
           },
           [_c("i", [_vm._v("brightness_medium")]), _c("div", [_vm._v("Theme")])]
         ),
+        _vm._m(1),
         _c(
           "a",
           {
@@ -11924,7 +11927,6 @@ exports.default = _default;
           },
           [_c("i", [_vm._v("code")]), _c("div", [_vm._v("Code")])]
         ),
-        _vm._m(1),
         _c(
           "div",
           {
@@ -12031,12 +12033,46 @@ exports.default = _default;
                 )
               ]),
               _c("div", { staticClass: "col s6 middle-align padding" }, [
-                _c("a", [
-                  _c("img", {
-                    staticClass: "logo-template opacity",
-                    attrs: { src: "/github.png" }
-                  })
-                ])
+                _c(
+                  "a",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.theme == "is-dark",
+                        expression: "theme == 'is-dark'"
+                      }
+                    ],
+                    attrs: { href: "/uber" }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "logo-template",
+                      attrs: { src: "/uber-dark.png" }
+                    })
+                  ]
+                ),
+                _c(
+                  "a",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.theme != "is-dark",
+                        expression: "theme != 'is-dark'"
+                      }
+                    ],
+                    attrs: { href: "/uber" }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "logo-template",
+                      attrs: { src: "/uber-light.png" }
+                    })
+                  ]
+                )
               ])
             ])
           ]
@@ -24798,12 +24834,6 @@ var _default = {
 
       this.from = this.street;
       this.to = this.street;
-    },
-    from: function from() {
-      this.from = "Street address, 111";
-    },
-    to: function to() {
-      this.to = "Street address, 111";
     },
     clean: function clean() {
       this.to = null;

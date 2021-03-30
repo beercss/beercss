@@ -102,12 +102,6 @@ export default {
       this.from = this.street;
       this.to = this.street;
     },
-    from() {
-      this.from = "Street address, 111";
-    },
-    to() {
-      this.to = "Street address, 111";
-    },
     clean() {
       this.to = null;
       this.from = null;
