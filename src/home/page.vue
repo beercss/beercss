@@ -584,6 +584,17 @@
             i code
         nav
           button(data-ui="#modal-colors") Colors
+      #containers.col.s12
+        h5
+          span Containers
+          a.chip.circle
+            i(@click="showSamples('#containers .container')") code
+        nav
+          button(@click="updateContainer()") Default
+          button(@click="updateContainer('min')") Min
+          button(@click="updateContainer('max')") Max
+        div(v-show="false")
+          .container
       #dropdowns.col.s12
         h5
           span Dropdowns
@@ -2524,6 +2535,9 @@ export default {
       if (i.is(".outlined")) i.removeClass("outlined");
       else i.addClass("outlined");
     },
+    updateContainer(css) {
+      $(".container").attr("class", css ? "container " + css : "container");
+    },
     formatHtml(element) {
       function process(str) {
         var div = document.createElement("div");
@@ -2574,7 +2588,8 @@ export default {
         if (
           $(elements[i]).is(".menu") ||
           $(elements[i]).is(".modal") ||
-          $(elements[i]).is(".toast")
+          $(elements[i]).is(".toast") ||
+          $(elements[i]).is(".container")
         )
           html = "";
 
