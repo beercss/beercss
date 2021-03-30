@@ -27,12 +27,12 @@
     a(@click="updateTheme()")
       i brightness_medium
       div Theme
-    a(@click="showSamples('#menu')")
-      i code
-      div Code
     a(data-ui="#more")
       i collections
       div Templates
+    a(@click="showSamples('#menu')")
+      i code
+      div Code
     #more.modal.small.left(data-ui="#more")
       h5 Templates
       p.grey-text This templates are only for tests purpose
@@ -50,8 +50,10 @@
       a(href="/gmail", v-show="theme != 'is-dark'")
         img.logo-template(:src="'/gmail-light.png'")
       .large-divider
-      a
-        img.logo-template.opacity(:src="'/github.png'")
+      a(href="/gmail", v-show="theme == 'is-dark'")
+        img.logo-template(:src="'/uber-dark.png'")
+      a(href="/uber", v-show="theme != 'is-dark'")
+        img.logo-template(:src="'/uber-light.png'")
   #menu-bottom.menu.bottom.small-device
     a(@click="updateMenu('#menu-bottom')")
       i zoom_out_map

@@ -11241,6 +11241,19 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -11326,6 +11339,9 @@ var _default = {
       var i = $("i");
       if (i.is(".outlined")) i.removeClass("outlined");else i.addClass("outlined");
     },
+    updateContainer: function updateContainer(css) {
+      $(".container").attr("class", css ? "container " + css : "container");
+    },
     formatHtml: function formatHtml(element) {
       function process(str) {
         var div = document.createElement("div");
@@ -11363,7 +11379,7 @@ var _default = {
       for (var i = 0; i < elements.length; i++) {
         var html = this.formatHtml($(elements[i]), true);
         var htmlFormatted = hljs.highlight("html", html).value;
-        if ($(elements[i]).is(".menu") || $(elements[i]).is(".modal") || $(elements[i]).is(".toast")) html = "";
+        if ($(elements[i]).is(".menu") || $(elements[i]).is(".modal") || $(elements[i]).is(".toast") || $(elements[i]).is(".container")) html = "";
         this.samples.push({
           html: html,
           sourceCode: htmlFormatted
@@ -11703,6 +11719,7 @@ exports.default = _default;
           },
           [_c("i", [_vm._v("brightness_medium")]), _c("div", [_vm._v("Theme")])]
         ),
+        _vm._m(0),
         _c(
           "a",
           {
@@ -11714,7 +11731,6 @@ exports.default = _default;
           },
           [_c("i", [_vm._v("code")]), _c("div", [_vm._v("Code")])]
         ),
-        _vm._m(0),
         _c(
           "div",
           {
@@ -11816,12 +11832,46 @@ exports.default = _default;
               ]
             ),
             _c("div", { staticClass: "large-divider" }),
-            _c("a", [
-              _c("img", {
-                staticClass: "logo-template opacity",
-                attrs: { src: "/github.png" }
-              })
-            ])
+            _c(
+              "a",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.theme == "is-dark",
+                    expression: "theme == 'is-dark'"
+                  }
+                ],
+                attrs: { href: "/gmail" }
+              },
+              [
+                _c("img", {
+                  staticClass: "logo-template",
+                  attrs: { src: "/uber-dark.png" }
+                })
+              ]
+            ),
+            _c(
+              "a",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.theme != "is-dark",
+                    expression: "theme != 'is-dark'"
+                  }
+                ],
+                attrs: { href: "/uber" }
+              },
+              [
+                _c("img", {
+                  staticClass: "logo-template",
+                  attrs: { src: "/uber-light.png" }
+                })
+              ]
+            )
           ]
         )
       ]
@@ -12285,6 +12335,73 @@ exports.default = _default;
           _vm._m(30)
         ]),
         _vm._m(31),
+        _c("div", { staticClass: "col s12", attrs: { id: "containers" } }, [
+          _c("h5", [
+            _c("span", [_vm._v("Containers")]),
+            _c("a", { staticClass: "chip circle" }, [
+              _c(
+                "i",
+                {
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#containers .container")
+                    }
+                  }
+                },
+                [_vm._v("code")]
+              )
+            ])
+          ]),
+          _c("nav", [
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.updateContainer()
+                  }
+                }
+              },
+              [_vm._v("Default")]
+            ),
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.updateContainer("min")
+                  }
+                }
+              },
+              [_vm._v("Min")]
+            ),
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.updateContainer("max")
+                  }
+                }
+              },
+              [_vm._v("Max")]
+            )
+          ]),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: false,
+                  expression: "false"
+                }
+              ]
+            },
+            [_c("div", { staticClass: "container" })]
+          )
+        ]),
         _c("div", { staticClass: "col s12", attrs: { id: "dropdowns" } }, [
           _c("h5", [
             _c("span", [_vm._v("Dropdowns")]),
@@ -20707,6 +20824,16 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -20766,9 +20893,9 @@ exports.default = _default;
           _c("nav", { staticClass: "padding" }, [
             _c("a", [_c("img", { attrs: { src: "/netflix.png" } })]),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "small-device",
+                staticClass: "none white-text small-device",
                 attrs: { "data-ui": "#dropdown-menu" }
               },
               [
@@ -20860,9 +20987,10 @@ exports.default = _default;
               ]
             ),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "medium-device large-device",
+                staticClass:
+                  "none white-text capitalize medium-device large-device",
                 on: {
                   click: function($event) {
                     return _vm.scroll("#home")
@@ -20872,9 +21000,10 @@ exports.default = _default;
               [_vm._v("Home")]
             ),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "medium-device large-device",
+                staticClass:
+                  "none white-text capitalize medium-device large-device",
                 on: {
                   click: function($event) {
                     return _vm.scroll("#series")
@@ -20884,9 +21013,10 @@ exports.default = _default;
               [_vm._v("Series")]
             ),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "medium-device large-device",
+                staticClass:
+                  "none white-text capitalize medium-device large-device",
                 on: {
                   click: function($event) {
                     return _vm.scroll("#movies")
@@ -20896,9 +21026,10 @@ exports.default = _default;
               [_vm._v("Movies")]
             ),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "medium-device large-device",
+                staticClass:
+                  "none white-text capitalize medium-device large-device",
                 on: {
                   click: function($event) {
                     return _vm.scroll("#hot")
@@ -20908,9 +21039,10 @@ exports.default = _default;
               [_vm._v("Hot")]
             ),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "medium-device large-device",
+                staticClass:
+                  "none white-text capitalize medium-device large-device",
                 on: {
                   click: function($event) {
                     return _vm.scroll("#my-list")
@@ -20924,48 +21056,55 @@ exports.default = _default;
         _c("div", { staticClass: "col" }, [
           _c("nav", { staticClass: "right-align" }, [
             _vm._m(5),
-            _c("a", { attrs: { "data-ui": "#dropdown-notifications" } }, [
-              _c("i", [_vm._v("notifications")]),
-              _c(
-                "div",
-                {
-                  staticClass: "dropdown left no-wrap",
-                  attrs: {
-                    id: "dropdown-notifications",
-                    "data-ui": "#dropdown-notifications"
-                  }
-                },
-                [
-                  _c("a", { staticClass: "row no-wrap" }, [
-                    _c("div", { staticClass: "col min" }, [
-                      _c("img", {
-                        staticClass: "round",
-                        attrs: { src: "alok-001.jpg" }
-                      })
+            _c(
+              "button",
+              {
+                staticClass: "none white-text",
+                attrs: { "data-ui": "#dropdown-notifications" }
+              },
+              [
+                _c("i", [_vm._v("notifications")]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dropdown left no-wrap",
+                    attrs: {
+                      id: "dropdown-notifications",
+                      "data-ui": "#dropdown-notifications"
+                    }
+                  },
+                  [
+                    _c("a", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c("img", {
+                          staticClass: "round",
+                          attrs: { src: "alok-001.jpg" }
+                        })
+                      ]),
+                      _vm._m(6)
                     ]),
-                    _vm._m(6)
-                  ]),
-                  _c("a", { staticClass: "row no-wrap" }, [
-                    _c("div", { staticClass: "col min" }, [
-                      _c("img", {
-                        staticClass: "round",
-                        attrs: { src: "vintage-001.jpg" }
-                      })
+                    _c("a", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c("img", {
+                          staticClass: "round",
+                          attrs: { src: "vintage-001.jpg" }
+                        })
+                      ]),
+                      _vm._m(7)
                     ]),
-                    _vm._m(7)
-                  ]),
-                  _c("a", { staticClass: "row no-wrap" }, [
-                    _c("div", { staticClass: "col min" }, [
-                      _c("img", {
-                        staticClass: "round",
-                        attrs: { src: "ocean-001.jpg" }
-                      })
-                    ]),
-                    _vm._m(8)
-                  ])
-                ]
-              )
-            ]),
+                    _c("a", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c("img", {
+                          staticClass: "round",
+                          attrs: { src: "ocean-001.jpg" }
+                        })
+                      ]),
+                      _vm._m(8)
+                    ])
+                  ]
+                )
+              ]
+            ),
             _c("a", { attrs: { href: "/" } }, [
               _c("img", {
                 staticClass: "small circle",
@@ -21023,9 +21162,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { "data-ui": "#modal-search" } }, [
-      _c("i", [_vm._v("search")])
-    ])
+    return _c(
+      "button",
+      { staticClass: "none white-text", attrs: { "data-ui": "#modal-search" } },
+      [_c("i", [_vm._v("search")])]
+    )
   },
   function() {
     var _vm = this
@@ -22320,6 +22461,10 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -22509,39 +22654,46 @@ exports.default = _default;
       _c("div", { staticClass: "row no-wrap middle-align" }, [
         _c("div", { staticClass: "col" }, [
           _c("nav", { staticClass: "padding" }, [
-            _c("a", { attrs: { "data-ui": "#dropdown-menu" } }, [
-              _c("i", { staticClass: "outlined" }, [_vm._v("menu")]),
-              _c(
-                "div",
-                {
-                  staticClass: "dropdown no-wrap",
-                  attrs: { id: "dropdown-menu", "data-ui": "#dropdown-menu" }
-                },
-                [
-                  _vm._m(0),
-                  _vm._m(1),
-                  _vm._m(2),
-                  _vm._m(3),
-                  _vm._m(4),
-                  _vm._m(5),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "row no-wrap",
-                      on: {
-                        click: function($event) {
-                          return _vm.updateTheme()
+            _c(
+              "button",
+              {
+                staticClass: "none grey-text",
+                attrs: { "data-ui": "#dropdown-menu" }
+              },
+              [
+                _c("i", { staticClass: "outlined" }, [_vm._v("menu")]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "dropdown no-wrap",
+                    attrs: { id: "dropdown-menu", "data-ui": "#dropdown-menu" }
+                  },
+                  [
+                    _vm._m(0),
+                    _vm._m(1),
+                    _vm._m(2),
+                    _vm._m(3),
+                    _vm._m(4),
+                    _vm._m(5),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "row no-wrap",
+                        on: {
+                          click: function($event) {
+                            return _vm.updateTheme()
+                          }
                         }
-                      }
-                    },
-                    [
-                      _vm._m(6),
-                      _c("div", { staticClass: "col" }, [_vm._v("Theme")])
-                    ]
-                  )
-                ]
-              )
-            ]),
+                      },
+                      [
+                        _vm._m(6),
+                        _c("div", { staticClass: "col" }, [_vm._v("Theme")])
+                      ]
+                    )
+                  ]
+                )
+              ]
+            ),
             _c("a", [
               _c("img", {
                 directives: [
@@ -22574,9 +22726,9 @@ exports.default = _default;
             _vm._m(8),
             _vm._m(9),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "medium-device large-device",
+                staticClass: "none grey-text medium-device large-device",
                 attrs: { "data-ui": "#dropdown-apps" }
               },
               [
@@ -22842,8 +22994,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "a",
-      { staticClass: "small-device", attrs: { "data-ui": "#modal-search" } },
+      "button",
+      {
+        staticClass: "none grey-text small-device",
+        attrs: { "data-ui": "#modal-search" }
+      },
       [_c("i", { staticClass: "outlined" }, [_vm._v("search")])]
     )
   },
@@ -22852,13 +23007,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "a",
+      "button",
       {
-        staticClass: "medium-device large-device",
+        staticClass: "none grey-text medium-device large-device",
         attrs: { "data-ui": "#dropdown-settings" }
       },
       [
-        _c("i", { staticClass: "outline" }, [_vm._v("settings")]),
+        _c("i", { staticClass: "outlined" }, [_vm._v("settings")]),
         _c(
           "div",
           {
@@ -24229,7 +24384,797 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _router.default)("/gmail/spam", _spam.default, _layout.default);
 (0, _router.default)("/gmail/important", _important.default, _layout.default);
 (0, _router.default)("/gmail/snoozed", _snoozed.default, _layout.default);
-},{"~/shared/router.js":"shared/router.js","~/gmail/layout.vue":"gmail/layout.vue","~/gmail/home.vue":"gmail/home.vue","~/gmail/drafts.vue":"gmail/drafts.vue","~/gmail/sent.vue":"gmail/sent.vue","~/gmail/spam.vue":"gmail/spam.vue","~/gmail/important.vue":"gmail/important.vue","~/gmail/snoozed.vue":"gmail/snoozed.vue"}],"app.js":[function(require,module,exports) {
+},{"~/shared/router.js":"shared/router.js","~/gmail/layout.vue":"gmail/layout.vue","~/gmail/home.vue":"gmail/home.vue","~/gmail/drafts.vue":"gmail/drafts.vue","~/gmail/sent.vue":"gmail/sent.vue","~/gmail/spam.vue":"gmail/spam.vue","~/gmail/important.vue":"gmail/important.vue","~/gmail/snoozed.vue":"gmail/snoozed.vue"}],"uber/layout.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  data: function data() {
+    return {
+      theme: "is-dark"
+    };
+  },
+  created: function created() {
+    window.$layout = this;
+  },
+  mounted: function mounted() {
+    this.updateTheme();
+    window.ui();
+  },
+  methods: {
+    updateTheme: function updateTheme() {
+      this.theme = this.theme != "is-dark" ? "is-dark" : "";
+      document.body.className = this.theme;
+    },
+    redirect: function redirect(component) {
+      this.url = page.current;
+      document.getElementById("layout").innerHTML = '<div id="app"></div>';
+      document.body.scrollTop = 0;
+      return new Vue({
+        el: "#app",
+        render: function render(h) {
+          return h(component);
+        }
+      });
+    }
+  }
+};
+exports.default = _default;
+        var $77849f = exports.default || module.exports;
+      
+      if (typeof $77849f === 'function') {
+        $77849f = $77849f.options;
+      }
+    
+        /* template */
+        Object.assign($77849f, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "menu top black" }, [
+      _c("div", { staticClass: "row no-wrap middle-align" }, [
+        _c("div", { staticClass: "col" }, [
+          _c("nav", { staticClass: "padding" }, [
+            _c("a", [
+              _c("img", { attrs: { height: "21", src: "/uber-dark.png" } })
+            ]),
+            _vm._m(0),
+            _vm._m(1),
+            _vm._m(2)
+          ])
+        ]),
+        _c("div", { staticClass: "col" }, [
+          _c("nav", { staticClass: "right-align" }, [
+            _c(
+              "button",
+              {
+                staticClass: "wave light none white-text",
+                on: {
+                  click: function($event) {
+                    return _vm.updateTheme()
+                  }
+                }
+              },
+              [
+                _c("i", { staticClass: "white-text" }, [
+                  _vm._v("brightness_medium")
+                ])
+              ]
+            ),
+            _c("a", { attrs: { href: "/" } }, [
+              _c("img", {
+                staticClass: "small circle",
+                attrs: { src: "/favicon.png" }
+              })
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._m(3),
+    _c("div", { attrs: { id: "layout" } })
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass:
+          "margin wave light none white-text capitalize medium-device large-device large-text",
+        attrs: { "data-ui": "#dropdown-ride" }
+      },
+      [
+        _c("span", [_vm._v("Ride")]),
+        _c(
+          "div",
+          {
+            staticClass: "dropdown no-wrap",
+            attrs: { id: "dropdown-ride", "data-ui": "#dropdown-ride" }
+          },
+          [
+            _c("a", [_vm._v("Overview")]),
+            _c("a", [_vm._v("Price calculator")]),
+            _c("a", [_vm._v("Cities")]),
+            _c("a", [_vm._v("Companies")]),
+            _c("div", { staticClass: "divider" }),
+            _c("a", [_vm._v("How it works")]),
+            _c("a", [_vm._v("Safety")]),
+            _c("a", [_vm._v("Airports")])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass:
+          "margin wave light none white-text capitalize medium-device large-device large-text",
+        attrs: { "data-ui": "#dropdown-drive" }
+      },
+      [
+        _c("span", [_vm._v("Drive")]),
+        _c(
+          "div",
+          {
+            staticClass: "dropdown no-wrap",
+            attrs: { id: "dropdown-drive", "data-ui": "#dropdown-drive" }
+          },
+          [
+            _c("a", [_vm._v("Overview")]),
+            _c("a", [_vm._v("Partner app")]),
+            _c("a", [_vm._v("Safe")]),
+            _c("a", [_vm._v("How to drive in your city")]),
+            _c("a", [_vm._v("Make deliveries")]),
+            _c("div", { staticClass: "divider" }),
+            _c("a", [_vm._v("Requirements")]),
+            _c("a", [_vm._v("Vehicle solutions")]),
+            _c("a", [_vm._v("Safety")])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass:
+          "margin wave light none white-text capitalize medium-device large-device large-text",
+        attrs: { "data-ui": "#dropdown-more" }
+      },
+      [
+        _c("span", [_vm._v("More")]),
+        _c(
+          "div",
+          {
+            staticClass: "dropdown no-wrap",
+            attrs: { id: "dropdown-more", "data-ui": "#dropdown-more" }
+          },
+          [
+            _c("a", [_vm._v("Uber Eats")]),
+            _c("a", [_vm._v("Make deliveries")]),
+            _c("a", [_vm._v("Uber Health")]),
+            _c("div", { staticClass: "divider" }),
+            _c("a", [_vm._v("Uber for companies")]),
+            _c("a", [_vm._v("Uber Freight")])
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "modal top transparent flat",
+        attrs: { id: "modal-search" }
+      },
+      [
+        _c("div", { staticClass: "row no-wrap" }, [
+          _c("div", { staticClass: "col medium-device large-device" }),
+          _c("div", { staticClass: "col" }, [
+            _c(
+              "div",
+              { staticClass: "field round sufix prefix small no-margin" },
+              [
+                _c("i", { staticClass: "front" }, [_vm._v("search")]),
+                _c("input", {
+                  staticClass: "white black-text",
+                  attrs: { type: "text" }
+                }),
+                _c("i", { staticClass: "front" }, [_vm._v("mic")])
+              ]
+            )
+          ]),
+          _c("div", { staticClass: "col medium-device large-device" })
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+},{}],"uber/home.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  mounted: function mounted() {},
+  data: function data() {
+    return {
+      from: null,
+      to: null,
+      street: "Street address, 111"
+    };
+  },
+  methods: {
+    go: function go() {
+      if (!this.from) {
+        this.from = this.street;
+        this.to = null;
+        return;
+      }
+
+      this.from = this.street;
+      this.to = this.street;
+    },
+    from: function from() {
+      this.from = "Street address, 111";
+    },
+    to: function to() {
+      this.to = "Street address, 111";
+    },
+    clean: function clean() {
+      this.to = null;
+      this.from = null;
+    }
+  }
+};
+exports.default = _default;
+        var $1a2ac5 = exports.default || module.exports;
+      
+      if (typeof $1a2ac5 === 'function') {
+        $1a2ac5 = $1a2ac5.options;
+      }
+    
+        /* template */
+        Object.assign($1a2ac5, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "fixed top left right bottom" }, [
+      _c("img", { staticClass: "responsive", attrs: { src: "/map.jpg" } })
+    ]),
+    _c("div", { staticClass: "large-space" }),
+    _c(
+      "div",
+      {
+        staticClass:
+          "card no-padding large-margin max large scroll medium-device large-device"
+      },
+      [
+        _c("div", { staticClass: "large-padding blue white-text" }, [
+          _c("p", { staticClass: "bold" }, [
+            _vm._v("From " + _vm._s(_vm.from))
+          ]),
+          _c("p", { staticClass: "bold" }, [_vm._v("To " + _vm._s(_vm.to))]),
+          _c(
+            "h5",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.from && !_vm.to,
+                  expression: "!from && !to"
+                }
+              ]
+            },
+            [_vm._v("Where are you?")]
+          ),
+          _c(
+            "h5",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.from && !_vm.to,
+                  expression: "from && !to"
+                }
+              ]
+            },
+            [_vm._v("Where are you going?")]
+          ),
+          _c(
+            "h5",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.from && _vm.to,
+                  expression: "from && to"
+                }
+              ]
+            },
+            [_vm._v("Confirm that ride?")]
+          ),
+          _c("nav", { staticClass: "right-align" }, [
+            _c(
+              "button",
+              {
+                staticClass: "none white-text large wave light",
+                on: {
+                  click: function($event) {
+                    return _vm.clean()
+                  }
+                }
+              },
+              [_c("span", [_vm._v("Cancel")])]
+            ),
+            _c(
+              "button",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.to,
+                    expression: "to"
+                  }
+                ],
+                staticClass: "border white-border white-text large wave light",
+                on: {
+                  click: function($event) {
+                    return _vm.clean()
+                  }
+                }
+              },
+              [
+                _c("i", [_vm._v("time_to_leave")]),
+                _c("span", [_vm._v("Confirm")])
+              ]
+            )
+          ])
+        ]),
+        _c("div", { staticClass: "large-padding" }, [
+          _c("div", { staticClass: "field prefix fill flat border" }, [
+            _c("i", [_vm._v("search")]),
+            _c("input", {
+              attrs: { placeholder: _vm.from ? "Destination" : "Departure" }
+            })
+          ]),
+          _vm._m(0),
+          _c("div", { staticClass: "medium-space" }),
+          _c(
+            "a",
+            {
+              staticClass: "row no-wrap",
+              on: {
+                click: function($event) {
+                  return _vm.go()
+                }
+              }
+            },
+            [
+              _vm._m(1),
+              _c("div", { staticClass: "col" }, [
+                _c("h6", { staticClass: "no-margin" }, [
+                  _vm._v(_vm._s(_vm.street))
+                ]),
+                _c("a", { staticClass: "link" }, [
+                  _vm._v("Your current location")
+                ])
+              ])
+            ]
+          ),
+          _c("div", { staticClass: "divider" }),
+          _c(
+            "a",
+            {
+              staticClass: "row no-wrap",
+              on: {
+                click: function($event) {
+                  return _vm.go()
+                }
+              }
+            },
+            [
+              _vm._m(2),
+              _c("div", { staticClass: "col" }, [
+                _c("h6", { staticClass: "no-margin" }, [_vm._v("Home")]),
+                _c("div", [_vm._v(_vm._s(_vm.street))])
+              ])
+            ]
+          )
+        ])
+      ]
+    ),
+    _c("div", { staticClass: "modal round bottom active small-device" }, [
+      _c(
+        "p",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.from,
+              expression: "from"
+            }
+          ],
+          staticClass: "bold"
+        },
+        [_vm._v("From " + _vm._s(_vm.from))]
+      ),
+      _c(
+        "p",
+        {
+          directives: [
+            { name: "show", rawName: "v-show", value: _vm.to, expression: "to" }
+          ],
+          staticClass: "bold"
+        },
+        [_vm._v("To " + _vm._s(_vm.to))]
+      ),
+      _c(
+        "nav",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.from || _vm.to,
+              expression: "from || to"
+            }
+          ],
+          staticClass: "right-align"
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "none large wave dark",
+              on: {
+                click: function($event) {
+                  return _vm.clean()
+                }
+              }
+            },
+            [_c("span", [_vm._v("Cancel")])]
+          ),
+          _c(
+            "button",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.to,
+                  expression: "to"
+                }
+              ],
+              staticClass: "border large",
+              on: {
+                click: function($event) {
+                  return _vm.clean()
+                }
+              }
+            },
+            [
+              _c("i", [_vm._v("time_to_leave")]),
+              _c("span", [_vm._v("Confirm")])
+            ]
+          )
+        ]
+      ),
+      _c("div", { staticClass: "space" }),
+      _c("div", { staticClass: "field prefix fill flat border" }, [
+        _c("i", [_vm._v("search")]),
+        _c("input", {
+          attrs: { placeholder: _vm.from ? "Destination" : "Departure" }
+        })
+      ]),
+      _c("div", { staticClass: "space" }),
+      _c(
+        "a",
+        {
+          staticClass: "row no-wrap",
+          on: {
+            click: function($event) {
+              return _vm.go()
+            }
+          }
+        },
+        [
+          _vm._m(3),
+          _c("div", { staticClass: "col" }, [
+            _c("h6", { staticClass: "no-margin" }, [
+              _vm._v(_vm._s(_vm.street))
+            ]),
+            _c("a", { staticClass: "link" }, [_vm._v("Your current location")])
+          ])
+        ]
+      ),
+      _c("div", { staticClass: "divider" }),
+      _c(
+        "a",
+        {
+          staticClass: "row no-wrap",
+          on: {
+            click: function($event) {
+              return _vm.go()
+            }
+          }
+        },
+        [
+          _vm._m(4),
+          _c("div", { staticClass: "col" }, [
+            _c("h6", { staticClass: "no-margin" }, [_vm._v("Home")]),
+            _c("div", [_vm._v(_vm._s(_vm.street))])
+          ])
+        ]
+      )
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", [
+      _c("a", { staticClass: "chip wave" }, [
+        _c("i", [_vm._v("watch_later")]),
+        _c("span", { staticClass: "large-text small-padding" }, [
+          _vm._v("Agora")
+        ]),
+        _c("i", [_vm._v("arrow_drop_down")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col min" }, [
+      _c("button", { staticClass: "circle small flat no-wave" }, [
+        _c("i", [_vm._v("gps_fixed")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col min" }, [
+      _c("button", { staticClass: "circle small flat no-wave" }, [
+        _c("i", [_vm._v("home")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col min" }, [
+      _c("button", { staticClass: "circle small flat no-wave" }, [
+        _c("i", [_vm._v("gps_fixed")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col min" }, [
+      _c("button", { staticClass: "circle small flat no-wave" }, [
+        _c("i", [_vm._v("home")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+},{}],"uber/index.js":[function(require,module,exports) {
+"use strict";
+
+var _router = _interopRequireDefault(require("~/shared/router.js"));
+
+var _layout = _interopRequireDefault(require("~/uber/layout.vue"));
+
+var _home = _interopRequireDefault(require("~/uber/home.vue"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _router.default)("/uber", _home.default, _layout.default);
+},{"~/shared/router.js":"shared/router.js","~/uber/layout.vue":"uber/layout.vue","~/uber/home.vue":"uber/home.vue"}],"app.js":[function(require,module,exports) {
 "use strict";
 
 var _init = _interopRequireDefault(require("~/shared/init.js"));
@@ -24244,5 +25189,7 @@ var _netflix = _interopRequireDefault(require("~/netflix"));
 
 var _gmail = _interopRequireDefault(require("~/gmail"));
 
+var _uber = _interopRequireDefault(require("~/uber"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"~/shared/init.js":"shared/init.js","~/home":"home/index.js","~/test":"test/index.js","~/youtube":"youtube/index.js","~/netflix":"netflix/index.js","~/gmail":"gmail/index.js"}]},{},["app.js"], null)
+},{"~/shared/init.js":"shared/init.js","~/home":"home/index.js","~/test":"test/index.js","~/youtube":"youtube/index.js","~/netflix":"netflix/index.js","~/gmail":"gmail/index.js","~/uber":"uber/index.js"}]},{},["app.js"], null)

@@ -43,3 +43,7 @@
 .card.min {
   min-width: 200px;
 }
+
+.card.max {
+  max-width: 400px;
+}
