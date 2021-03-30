@@ -51,16 +51,6 @@ div
           a(href="/")
             img.small.circle(:src="'/favicon.png'")
 
-  #modal-search.modal.top.transparent.flat
-    .row.no-wrap
-      .col.medium-device.large-device
-      .col
-        .field.round.sufix.prefix.small.no-margin
-          i.front search
-          input.white.black-text(type="text")
-          i.front mic
-      .col.medium-device.large-device
-
   #layout
 </template>
 
