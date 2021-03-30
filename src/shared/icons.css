@@ -13,6 +13,10 @@ i {
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
   vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  width: 24px;
+  margin: 0 auto;
 }
 
 i.outlined {
@@ -21,18 +25,22 @@ i.outlined {
 
 i.small {
   font-size: 16px;
+  width: 16px;
 }
 
 i.medium {
   font-size: 24px;
+  width: 24px;
 }
 
 i.large {
   font-size: 32px;
+  width: 32px;
 }
 
 i.extra {
   font-size: 48px;
+  width: 48px;
 }
 
 .circle > i {

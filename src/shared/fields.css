@@ -324,7 +324,7 @@ input[type="file"] {
   font-weight: normal;
   font-style: normal;
   font-size: 24px;
-  line-height: 1;
+  line-height: inherit;
   letter-spacing: normal;
   text-transform: none;
   display: inline-block;
@@ -333,10 +333,14 @@ input[type="file"] {
   direction: ltr;
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  width: 24px;
+  margin: 0 auto;
+  padding: 0;
   outline: none;
   cursor: pointer;
-  margin: 0;
-  padding: 0;
   color: inherit;
   position: absolute;
   left: -24px;
