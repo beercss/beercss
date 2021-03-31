@@ -6,6 +6,7 @@
 - Adding .min helper to .dropdown
 - Adding .min helper to .card
 - Adding .dark and .light helpers to .wave
+- Adding all 5 custom colors to use as .color-1, .color-1-text and .color-1-border
 - BREAKING CHANGE - Renaming .nowrap to .no-wrap, it's like .no-padding, .no-margin and others.
 - BREAKING CHANGE - Renaming .btn to .button or <button>
 

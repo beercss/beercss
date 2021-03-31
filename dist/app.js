@@ -11256,6 +11256,48 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -16392,6 +16434,7 @@ var staticRenderFns = [
         ]),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Red")]),
             _c("div", { staticClass: "red-light-5" }, [_vm._v("red-light-5")]),
             _c("div", { staticClass: "red-light-4" }, [_vm._v("red-light-4")]),
             _c("div", { staticClass: "red-light-3" }, [_vm._v("red-light-3")]),
@@ -16408,6 +16451,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "red-text" }, [_vm._v("red-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Pink")]),
             _c("div", { staticClass: "pink-light-5" }, [
               _vm._v("pink-light-5")
             ]),
@@ -16434,6 +16478,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "pink-text" }, [_vm._v("pink-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Purple")]),
             _c("div", { staticClass: "purple-light-5" }, [
               _vm._v("purple-light-5")
             ]),
@@ -16468,6 +16513,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "purple-text" }, [_vm._v("purple-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Deep-purple")]),
             _c("div", { staticClass: "deep-purple-light-5" }, [
               _vm._v("deep-purple-light-5")
             ]),
@@ -16504,6 +16550,7 @@ var staticRenderFns = [
             ])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Indigo")]),
             _c("div", { staticClass: "indigo-light-5" }, [
               _vm._v("indigo-light-5")
             ]),
@@ -16538,6 +16585,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "indigo-text" }, [_vm._v("indigo-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Blue")]),
             _c("div", { staticClass: "blue-light-5" }, [
               _vm._v("blue-light-5")
             ]),
@@ -16564,6 +16612,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "blue-text" }, [_vm._v("blue-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Light-blue")]),
             _c("div", { staticClass: "light-blue-light-5" }, [
               _vm._v("light-blue-light-5")
             ]),
@@ -16600,6 +16649,7 @@ var staticRenderFns = [
             ])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Cyan")]),
             _c("div", { staticClass: "cyan-light-5" }, [
               _vm._v("cyan-light-5")
             ]),
@@ -16626,6 +16676,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "cyan-text" }, [_vm._v("cyan-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Teal")]),
             _c("div", { staticClass: "teal-light-5" }, [
               _vm._v("teal-light-5")
             ]),
@@ -16652,6 +16703,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "teal-text" }, [_vm._v("teal-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Green")]),
             _c("div", { staticClass: "green-light-5" }, [
               _vm._v("green-light-5")
             ]),
@@ -16686,6 +16738,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "green-text" }, [_vm._v("green-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Light-green")]),
             _c("div", { staticClass: "light-green-light-5" }, [
               _vm._v("light-green-light-5")
             ]),
@@ -16722,6 +16775,7 @@ var staticRenderFns = [
             ])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Lime")]),
             _c("div", { staticClass: "lime-light-5" }, [
               _vm._v("lime-light-5")
             ]),
@@ -16748,6 +16802,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "lime-text" }, [_vm._v("lime-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Yellow")]),
             _c("div", { staticClass: "yellow-light-5" }, [
               _vm._v("yellow-light-5")
             ]),
@@ -16782,6 +16837,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "yellow-text" }, [_vm._v("yellow-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Amber")]),
             _c("div", { staticClass: "amber-light-5" }, [
               _vm._v("amber-light-5")
             ]),
@@ -16816,6 +16872,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "amber-text" }, [_vm._v("amber-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Orange")]),
             _c("div", { staticClass: "orange-light-5" }, [
               _vm._v("orange-light-5")
             ]),
@@ -16850,6 +16907,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "orange-text" }, [_vm._v("orange-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Deep-orange")]),
             _c("div", { staticClass: "deep-orange-light-5" }, [
               _vm._v("deep-orange-light-5")
             ]),
@@ -16886,6 +16944,7 @@ var staticRenderFns = [
             ])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Brown")]),
             _c("div", { staticClass: "brown-light-5" }, [
               _vm._v("brown-light-5")
             ]),
@@ -16920,6 +16979,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "brown-text" }, [_vm._v("brown-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Grey")]),
             _c("div", { staticClass: "grey-light-5" }, [
               _vm._v("grey-light-5")
             ]),
@@ -16946,6 +17006,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "grey-text" }, [_vm._v("grey-text")])
           ]),
           _c("div", { staticClass: "col s6" }, [
+            _c("h5", [_vm._v("Blue-grey")]),
             _c("div", { staticClass: "blue-grey-light-5" }, [
               _vm._v("blue-grey-light-5")
             ]),
@@ -16981,7 +17042,8 @@ var staticRenderFns = [
               _vm._v("blue-grey-text")
             ])
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
+            _c("h5", [_vm._v("Black")]),
             _c("div", { staticClass: "black grey-text" }, [_vm._v("black")]),
             _c("div", { staticClass: "black-border border grey-text" }, [
               _vm._v("black-border")
@@ -16989,6 +17051,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "black-text grey-text" }, [
               _vm._v("black-text")
             ]),
+            _c("h5", [_vm._v("White")]),
             _c("div", { staticClass: "white grey-text" }, [_vm._v("white")]),
             _c("div", { staticClass: "white-border border grey-text" }, [
               _vm._v("white-border")
@@ -16996,6 +17059,7 @@ var staticRenderFns = [
             _c("div", { staticClass: "white-text grey-text" }, [
               _vm._v("white-text")
             ]),
+            _c("h5", [_vm._v("Transparent")]),
             _c("div", { staticClass: "transparent grey-text" }, [
               _vm._v("transparent")
             ]),
@@ -17004,6 +17068,56 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "transparent-text grey-text" }, [
               _vm._v("transparent-text")
+            ]),
+            _c("h5", [_vm._v("Color-1")]),
+            _c("div", { staticClass: "color-1 grey-text" }, [
+              _vm._v("color-1")
+            ]),
+            _c("div", { staticClass: "color-1-border border grey-text" }, [
+              _vm._v("color-1-border")
+            ]),
+            _c("div", { staticClass: "color-1-text grey-text" }, [
+              _vm._v("color-1-text")
+            ]),
+            _c("h5", [_vm._v("Color-2")]),
+            _c("div", { staticClass: "color-2 grey-text" }, [
+              _vm._v("color-2")
+            ]),
+            _c("div", { staticClass: "color-2-border border grey-text" }, [
+              _vm._v("color-2-border")
+            ]),
+            _c("div", { staticClass: "color-2-text grey-text" }, [
+              _vm._v("color-2-text")
+            ]),
+            _c("h5", [_vm._v("Color-3")]),
+            _c("div", { staticClass: "color-3 grey-text" }, [
+              _vm._v("color-3")
+            ]),
+            _c("div", { staticClass: "color-3-border border grey-text" }, [
+              _vm._v("color-3-border")
+            ]),
+            _c("div", { staticClass: "color-3-text grey-text" }, [
+              _vm._v("color-3-text")
+            ]),
+            _c("h5", [_vm._v("Color-4")]),
+            _c("div", { staticClass: "color-4 grey-text" }, [
+              _vm._v("color-4")
+            ]),
+            _c("div", { staticClass: "color-4-border border grey-text" }, [
+              _vm._v("color-4-border")
+            ]),
+            _c("div", { staticClass: "color-4-text grey-text" }, [
+              _vm._v("color-4-text")
+            ]),
+            _c("h5", [_vm._v("Color-5")]),
+            _c("div", { staticClass: "color-5 grey-text" }, [
+              _vm._v("color-5")
+            ]),
+            _c("div", { staticClass: "color-5-border border grey-text" }, [
+              _vm._v("color-5-border")
+            ]),
+            _c("div", { staticClass: "color-5-text grey-text" }, [
+              _vm._v("color-5-text")
             ])
           ])
         ])
@@ -17568,6 +17682,12 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -17748,9 +17868,9 @@ exports.default = _default;
             _vm._m(3),
             _vm._m(4),
             _c(
-              "a",
+              "button",
               {
-                staticClass: "medium-device large-device",
+                staticClass: "none color-2-text medium-device large-device",
                 attrs: { "data-ui": "#dropdown-apps" }
               },
               [
@@ -17880,9 +18000,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "a",
+      "button",
       {
-        staticClass: "medium-device large-device",
+        staticClass: "none color-2-text medium-device large-device",
         attrs: { "data-ui": "#modal-expanded" }
       },
       [_c("i", [_vm._v("menu")])]
@@ -17915,8 +18035,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "a",
-      { staticClass: "small-device", attrs: { "data-ui": "#modal-search" } },
+      "button",
+      {
+        staticClass: "none color-2-text small-device",
+        attrs: { "data-ui": "#modal-search" }
+      },
       [_c("i", [_vm._v("search")])]
     )
   },
@@ -17925,9 +18048,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "a",
+      "button",
       {
-        staticClass: "medium-device large-device",
+        staticClass: "none color-2-text medium-device large-device",
         attrs: { "data-ui": "#dropdown-add" }
       },
       [
@@ -17960,9 +18083,14 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { "data-ui": "#modal-notifications" } }, [
-      _c("i", [_vm._v("notifications")])
-    ])
+    return _c(
+      "button",
+      {
+        staticClass: "none color-2-text",
+        attrs: { "data-ui": "#modal-notifications" }
+      },
+      [_c("i", [_vm._v("notifications")])]
+    )
   },
   function() {
     var _vm = this
@@ -24483,16 +24611,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default = {
   data: function data() {
     return {
@@ -24578,7 +24696,6 @@ exports.default = _default;
         ])
       ])
     ]),
-    _vm._m(3),
     _c("div", { attrs: { id: "layout" } })
   ])
 }
@@ -24678,38 +24795,6 @@ var staticRenderFns = [
             _c("a", [_vm._v("Uber Freight")])
           ]
         )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal top transparent flat",
-        attrs: { id: "modal-search" }
-      },
-      [
-        _c("div", { staticClass: "row no-wrap" }, [
-          _c("div", { staticClass: "col medium-device large-device" }),
-          _c("div", { staticClass: "col" }, [
-            _c(
-              "div",
-              { staticClass: "field round sufix prefix small no-margin" },
-              [
-                _c("i", { staticClass: "front" }, [_vm._v("search")]),
-                _c("input", {
-                  staticClass: "white black-text",
-                  attrs: { type: "text" }
-                }),
-                _c("i", { staticClass: "front" }, [_vm._v("mic")])
-              ]
-            )
-          ]),
-          _c("div", { staticClass: "col medium-device large-device" })
-        ])
       ]
     )
   }

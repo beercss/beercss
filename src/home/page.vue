@@ -2033,6 +2033,7 @@
           h5.no-margin Back
       .row
         .col.s6
+          h5 Red
           .red-light-5 red-light-5
           .red-light-4 red-light-4
           .red-light-3 red-light-3
@@ -2046,6 +2047,7 @@
           .red-border.border red-border
           .red-text red-text
         .col.s6
+          h5 Pink
           .pink-light-5 pink-light-5
           .pink-light-4 pink-light-4
           .pink-light-3 pink-light-3
@@ -2059,6 +2061,7 @@
           .pink-border.border pink-border
           .pink-text pink-text
         .col.s6
+          h5 Purple
           .purple-light-5 purple-light-5
           .purple-light-4 purple-light-4
           .purple-light-3 purple-light-3
@@ -2072,6 +2075,7 @@
           .purple-border.border purple-border
           .purple-text purple-text
         .col.s6
+          h5 Deep-purple
           .deep-purple-light-5 deep-purple-light-5
           .deep-purple-light-4 deep-purple-light-4
           .deep-purple-light-3 deep-purple-light-3
@@ -2085,6 +2089,7 @@
           .deep-purple-border.border deep-purple-border
           .deep-purple-text deep-purple-text
         .col.s6
+          h5 Indigo
           .indigo-light-5 indigo-light-5
           .indigo-light-4 indigo-light-4
           .indigo-light-3 indigo-light-3
@@ -2098,6 +2103,7 @@
           .indigo-border.border indigo-border
           .indigo-text indigo-text
         .col.s6
+          h5 Blue
           .blue-light-5 blue-light-5
           .blue-light-4 blue-light-4
           .blue-light-3 blue-light-3
@@ -2111,6 +2117,7 @@
           .blue-border.border blue-border
           .blue-text blue-text
         .col.s6
+          h5 Light-blue
           .light-blue-light-5 light-blue-light-5
           .light-blue-light-4 light-blue-light-4
           .light-blue-light-3 light-blue-light-3
@@ -2124,6 +2131,7 @@
           .light-blue-border.border light-blue-border
           .light-blue-text light-blue-text
         .col.s6
+          h5 Cyan
           .cyan-light-5 cyan-light-5
           .cyan-light-4 cyan-light-4
           .cyan-light-3 cyan-light-3
@@ -2137,6 +2145,7 @@
           .cyan-border.border cyan-border
           .cyan-text cyan-text
         .col.s6
+          h5 Teal
           .teal-light-5 teal-light-5
           .teal-light-4 teal-light-4
           .teal-light-3 teal-light-3
@@ -2150,6 +2159,7 @@
           .teal-border.border teal-border
           .teal-text teal-text
         .col.s6
+          h5 Green
           .green-light-5 green-light-5
           .green-light-4 green-light-4
           .green-light-3 green-light-3
@@ -2163,6 +2173,7 @@
           .green-border.border green-border
           .green-text green-text
         .col.s6
+          h5 Light-green
           .light-green-light-5 light-green-light-5
           .light-green-light-4 light-green-light-4
           .light-green-light-3 light-green-light-3
@@ -2176,6 +2187,7 @@
           .light-green-border.border light-green-border
           .light-green-text light-green-text
         .col.s6
+          h5 Lime
           .lime-light-5 lime-light-5
           .lime-light-4 lime-light-4
           .lime-light-3 lime-light-3
@@ -2189,6 +2201,7 @@
           .lime-border.border lime-border
           .lime-text lime-text
         .col.s6
+          h5 Yellow
           .yellow-light-5 yellow-light-5
           .yellow-light-4 yellow-light-4
           .yellow-light-3 yellow-light-3
@@ -2202,6 +2215,7 @@
           .yellow-border.border yellow-border
           .yellow-text yellow-text
         .col.s6
+          h5 Amber
           .amber-light-5 amber-light-5
           .amber-light-4 amber-light-4
           .amber-light-3 amber-light-3
@@ -2215,6 +2229,7 @@
           .amber-border.border amber-border
           .amber-text amber-text
         .col.s6
+          h5 Orange
           .orange-light-5 orange-light-5
           .orange-light-4 orange-light-4
           .orange-light-3 orange-light-3
@@ -2228,6 +2243,7 @@
           .orange-border.border orange-border
           .orange-text orange-text
         .col.s6
+          h5 Deep-orange
           .deep-orange-light-5 deep-orange-light-5
           .deep-orange-light-4 deep-orange-light-4
           .deep-orange-light-3 deep-orange-light-3
@@ -2241,6 +2257,7 @@
           .deep-orange-border.border deep-orange-border
           .deep-orange-text deep-orange-text
         .col.s6
+          h5 Brown
           .brown-light-5 brown-light-5
           .brown-light-4 brown-light-4
           .brown-light-3 brown-light-3
@@ -2254,6 +2271,7 @@
           .brown-border.border brown-border
           .brown-text brown-text
         .col.s6
+          h5 Grey
           .grey-light-5 grey-light-5
           .grey-light-4 grey-light-4
           .grey-light-3 grey-light-3
@@ -2267,6 +2285,7 @@
           .grey-border.border grey-border
           .grey-text grey-text
         .col.s6
+          h5 Blue-grey
           .blue-grey-light-5 blue-grey-light-5
           .blue-grey-light-4 blue-grey-light-4
           .blue-grey-light-3 blue-grey-light-3
@@ -2279,16 +2298,39 @@
           .blue-grey-dark-4 blue-grey-dark-4
           .blue-grey-border.border blue-grey-border
           .blue-grey-text blue-grey-text
-        .col.s6
+        .col.s12
+          h5 Black
           .black.grey-text black
           .black-border.border.grey-text black-border
           .black-text.grey-text black-text
+          h5 White
           .white.grey-text white
           .white-border.border.grey-text white-border
           .white-text.grey-text white-text
+          h5 Transparent
           .transparent.grey-text transparent
           .transparent-border.border.grey-text transparent-border
           .transparent-text.grey-text transparent-text
+          h5 Color-1
+          .color-1.grey-text color-1
+          .color-1-border.border.grey-text color-1-border
+          .color-1-text.grey-text color-1-text
+          h5 Color-2
+          .color-2.grey-text color-2
+          .color-2-border.border.grey-text color-2-border
+          .color-2-text.grey-text color-2-text
+          h5 Color-3
+          .color-3.grey-text color-3
+          .color-3-border.border.grey-text color-3-border
+          .color-3-text.grey-text color-3-text
+          h5 Color-4
+          .color-4.grey-text color-4
+          .color-4-border.border.grey-text color-4-border
+          .color-4-text.grey-text color-4-text
+          h5 Color-5
+          .color-5.grey-text color-5
+          .color-5-border.border.grey-text color-5-border
+          .color-5-text.grey-text color-5-text
 
     #modal.modal
       h5 Title

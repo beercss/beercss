@@ -45,7 +45,9 @@ div
     .row.no-wrap.middle-align
       .col
         nav.padding
-          a.medium-device.large-device(data-ui="#modal-expanded")
+          button.none.color-2-text.medium-device.large-device(
+            data-ui="#modal-expanded"
+          )
             i menu
           a
             img(
@@ -63,9 +65,11 @@ div
           i.front mic
       .col
         nav.right-align
-          a.small-device(data-ui="#modal-search")
+          button.none.color-2-text.small-device(data-ui="#modal-search")
             i search
-          a.medium-device.large-device(data-ui="#dropdown-add")
+          button.none.color-2-text.medium-device.large-device(
+            data-ui="#dropdown-add"
+          )
             i video_call
             #dropdown-add.dropdown.left.no-wrap(data-ui="#dropdown-add")
               a.row.no-wrap
@@ -76,7 +80,9 @@ div
                 .col.min
                   i sensors
                 .col Broadcast live
-          a.medium-device.large-device(data-ui="#dropdown-apps")
+          button.none.color-2-text.medium-device.large-device(
+            data-ui="#dropdown-apps"
+          )
             i apps
             #dropdown-apps.dropdown.left.no-wrap(data-ui="#dropdown-apps")
               a.row.no-wrap
@@ -92,7 +98,7 @@ div
                 .col.min
                   img(:src="'/youtube.png'")
                 .col Youtube Kids
-          a(data-ui="#modal-notifications")
+          button.none.color-2-text(data-ui="#modal-notifications")
             i notifications
           a(href="/")
             img.small.circle(:src="'/favicon.png'")
