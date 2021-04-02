@@ -3,9 +3,9 @@
 ## v1.0.0 ##
 - Adding textarea element
 - Adding .min and .max helpers to .container
-- Adding .min helper to .dropdown
-- Adding .min helper to .card
+- Adding width helpers to use as .small-width, medium-width, .large-width
 - Adding .dark and .light helpers to .wave
+- Adding .responsive video helper
 - Adding all 5 custom colors to use as .color-1, .color-1-text and .color-1-border
 - BREAKING CHANGE - Renaming .nowrap to .no-wrap, it's like .no-padding, .no-margin and others.
 - BREAKING CHANGE - Renaming .btn to .button or <button>

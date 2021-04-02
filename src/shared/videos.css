@@ -1,0 +1,38 @@
+video.responsive {
+  object-fit: cover;
+  object-position: center;
+}
+
+video.responsive.tiny {
+  width: 100% !important;
+  height: 64px !important;
+}
+
+video.responsive.small {
+  width: 100% !important;
+  height: 128px !important;
+}
+
+video.responsive.medium {
+  width: 100% !important;
+  height: 192px !important;
+}
+
+video.responsive.large {
+  width: 100% !important;
+  height: 256px !important;
+}
+
+video.responsive.extra {
+  width: 100% !important;
+  height: 320px !important;
+}
+
+video.responsive.round {
+  border-radius: 16px;
+}
+
+video.empty-state {
+  max-width: 100%;
+  width: 400px;
+}

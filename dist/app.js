@@ -11298,6 +11298,28 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -11385,6 +11407,12 @@ var _default = {
     },
     updateContainer: function updateContainer(css) {
       $(".container").attr("class", css ? "container " + css : "container");
+    },
+    updatePage: function updatePage(css) {
+      $("#begin").attr("class", css);
+    },
+    updateModal: function updateModal(css) {
+      $("#modal").attr("class", css);
     },
     formatHtml: function formatHtml(element) {
       function process(str) {
@@ -12155,6 +12183,7 @@ exports.default = _default;
       _vm._m(3),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col s12", attrs: { id: "badges" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Badges")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12177,6 +12206,7 @@ exports.default = _default;
           _c("div", { staticClass: "small-space" })
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "buttons" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Buttons")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12197,6 +12227,7 @@ exports.default = _default;
           _vm._m(7)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "cards" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Cards")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12375,6 +12406,7 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "checkboxes" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Checkboxes")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12394,6 +12426,7 @@ exports.default = _default;
           _vm._m(29)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "chips" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Chips")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12414,6 +12447,7 @@ exports.default = _default;
         ]),
         _vm._m(31),
         _c("div", { staticClass: "col s12", attrs: { id: "containers" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Containers")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12481,6 +12515,7 @@ exports.default = _default;
           )
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "dropdowns" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Dropdowns")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12654,6 +12689,7 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "icons" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Icons")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12675,6 +12711,7 @@ exports.default = _default;
           _vm._m(51)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "images" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Images")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12755,6 +12792,7 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "inputs" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Inputs")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12776,6 +12814,7 @@ exports.default = _default;
           _vm._m(53)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "list" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Lists")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12840,6 +12879,7 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "loaders" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Loaders")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12944,6 +12984,7 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "modals" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Modals")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12963,6 +13004,7 @@ exports.default = _default;
           _vm._m(67)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "navs" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Navs")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -12992,6 +13034,7 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "pages" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Pages")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13008,10 +13051,56 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(68),
-          _vm._m(69)
+          _c("nav", { staticClass: "wrap" }, [
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.updatePage("page left active")
+                  }
+                }
+              },
+              [_vm._v("From left")]
+            ),
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.updatePage("page top active")
+                  }
+                }
+              },
+              [_vm._v("From top")]
+            ),
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.updatePage("page bottom active")
+                  }
+                }
+              },
+              [_vm._v("From bottom")]
+            ),
+            _c(
+              "button",
+              {
+                on: {
+                  click: function($event) {
+                    return _vm.updatePage("page right active")
+                  }
+                }
+              },
+              [_vm._v("From right")]
+            )
+          ]),
+          _vm._m(68)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "radios" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Radios")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13028,9 +13117,10 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(70)
+          _vm._m(69)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "responsive" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Responsive")]),
             _c(
@@ -13046,9 +13136,10 @@ exports.default = _default;
               [_c("i", [_vm._v("code")])]
             )
           ]),
-          _vm._m(71)
+          _vm._m(70)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "rows" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Rows")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13065,17 +13156,18 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(72),
+          _vm._m(71),
           _c("div", { staticClass: "space" }),
+          _vm._m(72),
           _vm._m(73),
           _vm._m(74),
           _vm._m(75),
           _vm._m(76),
           _vm._m(77),
-          _vm._m(78),
           _c("div", { staticClass: "space" })
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "selects" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Selects")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13092,11 +13184,12 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(79),
+          _vm._m(78),
           _c("div", { staticClass: "space" }),
-          _vm._m(80)
+          _vm._m(79)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "switches" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Switches")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13113,9 +13206,10 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(81)
+          _vm._m(80)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "table" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Tables")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13132,11 +13226,12 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(82),
+          _vm._m(81),
           _c("div", { staticClass: "space" }),
-          _vm._m(83)
+          _vm._m(82)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "tabs" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Tabs")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13153,15 +13248,16 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(84),
+          _vm._m(83),
           _c("p", { staticClass: "space" }),
+          _vm._m(84),
           _vm._m(85),
           _vm._m(86),
           _vm._m(87),
-          _vm._m(88),
-          _vm._m(89)
+          _vm._m(88)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "textareas" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Textareas")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13178,11 +13274,12 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(90),
+          _vm._m(89),
           _c("div", { staticClass: "space" }),
-          _vm._m(91)
+          _vm._m(90)
         ]),
         _c("div", { staticClass: "col s12 l6", attrs: { id: "toasts" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Toasts")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13251,6 +13348,7 @@ exports.default = _default;
           ])
         ]),
         _c("div", { staticClass: "col s12 l6", attrs: { id: "tooltips" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Tooltips")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13267,9 +13365,10 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(92)
+          _vm._m(91)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "typography" } }, [
+          _c("div", { staticClass: "medium-space" }),
           _c("h5", [
             _c("span", [_vm._v("Typography")]),
             _c("a", { staticClass: "chip circle" }, [
@@ -13286,14 +13385,14 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(93)
+          _vm._m(92)
         ]),
         _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "large-divider" }),
           _c("div", [
             _c("h4", { staticClass: "center-align" }, [_vm._v("Summary")]),
+            _vm._m(93),
             _vm._m(94),
-            _vm._m(95),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s12" }, [
@@ -13411,19 +13510,89 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "large-space" }),
-            _vm._m(96),
+            _vm._m(95),
             _c("div", { staticClass: "space" }),
-            _vm._m(97)
+            _vm._m(96)
           ])
         ])
       ]),
-      _vm._m(98),
-      _vm._m(99),
+      _vm._m(97),
+      _c("div", { staticClass: "modal", attrs: { id: "modal" } }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")]),
+        _c("nav", [
+          _c(
+            "button",
+            {
+              staticClass: "none",
+              on: {
+                click: function($event) {
+                  return _vm.updateModal("modal active")
+                }
+              }
+            },
+            [_vm._v("Default")]
+          ),
+          _c(
+            "button",
+            {
+              staticClass: "none",
+              on: {
+                click: function($event) {
+                  return _vm.updateModal("modal left active")
+                }
+              }
+            },
+            [_vm._v("Left")]
+          ),
+          _c(
+            "button",
+            {
+              staticClass: "none",
+              on: {
+                click: function($event) {
+                  return _vm.updateModal("modal right active")
+                }
+              }
+            },
+            [_vm._v("Right")]
+          ),
+          _c(
+            "button",
+            {
+              staticClass: "none",
+              on: {
+                click: function($event) {
+                  return _vm.updateModal("modal top active")
+                }
+              }
+            },
+            [_vm._v("Top")]
+          ),
+          _c(
+            "button",
+            {
+              staticClass: "none",
+              on: {
+                click: function($event) {
+                  return _vm.updateModal("modal bottom active")
+                }
+              }
+            },
+            [_vm._v("Bottom")]
+          ),
+          _c(
+            "button",
+            { staticClass: "none", attrs: { "data-ui": "#modal" } },
+            [_vm._v("Close")]
+          )
+        ])
+      ]),
       _c(
         "div",
         { staticClass: "modal right large", attrs: { id: "modal-samples" } },
         [
-          _vm._m(100),
+          _vm._m(98),
           _c("div", { staticClass: "space" }),
           _vm._l(_vm.samples, function(exemplo) {
             return _c("div", { staticClass: "card border" }, [
@@ -13445,12 +13614,12 @@ exports.default = _default;
         ],
         2
       ),
-      _vm._m(101),
+      _vm._m(99),
       _c(
         "div",
         { staticClass: "modal right large", attrs: { id: "modal-icons" } },
         [
-          _vm._m(102),
+          _vm._m(100),
           _c("div", { staticClass: "space" }),
           _vm._l(_vm.samples, function(exemplo) {
             return _c("div", { staticClass: "card border" }, [
@@ -14296,6 +14465,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12", attrs: { id: "colors" } }, [
+      _c("div", { staticClass: "medium-space" }),
       _c("h5", [
         _c("span", [_vm._v("Colors")]),
         _c(
@@ -15064,53 +15234,6 @@ var staticRenderFns = [
       _c("button", { attrs: { "data-ui": "#modal-calendar" } }, [
         _vm._v("Calendar")
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "wrap" }, [
-      _c(
-        "button",
-        {
-          attrs: {
-            onclick:
-              "$('#begin, #pages .page').attr('class', 'page left active');"
-          }
-        },
-        [_vm._v("From left")]
-      ),
-      _c(
-        "button",
-        {
-          attrs: {
-            onclick:
-              "$('#begin, #pages .page').attr('class', 'page top active');"
-          }
-        },
-        [_vm._v("From top")]
-      ),
-      _c(
-        "button",
-        {
-          attrs: {
-            onclick:
-              "$('#begin, #pages .page').attr('class', 'page bottom active');"
-          }
-        },
-        [_vm._v("From bottom")]
-      ),
-      _c(
-        "button",
-        {
-          attrs: {
-            onclick:
-              "$('#begin, #pages .page').attr('class', 'page right active');"
-          }
-        },
-        [_vm._v("From right")]
-      )
     ])
   },
   function() {
@@ -16099,7 +16222,10 @@ var staticRenderFns = [
             _c("b", [_vm._v("Size")]),
             _c("div", [_vm._v("small")]),
             _c("div", [_vm._v("medium")]),
-            _c("div", [_vm._v("large")])
+            _c("div", [_vm._v("large")]),
+            _c("div", [_vm._v("small-width")]),
+            _c("div", [_vm._v("medium-width")]),
+            _c("div", [_vm._v("large-width")])
           ]),
           _c("div", { staticClass: "col" }, [
             _c("b", [_vm._v("Margin")]),
@@ -16162,8 +16288,8 @@ var staticRenderFns = [
             _c("div", [_vm._v("medium-device")]),
             _c("div", [_vm._v("large-device")]),
             _c("div", [_vm._v("active")]),
-            _c("div", [_vm._v("no-wrap")]),
             _c("div", [_vm._v("wrap")]),
+            _c("div", [_vm._v("no-wrap")]),
             _c("div", [_vm._v("scroll")]),
             _c("div", [_vm._v("no-scroll")]),
             _c("div", [_vm._v("wave")]),
@@ -16217,9 +16343,8 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("card ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("small, medium, large, border, round, flat, ")
-          ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("min")])
+            _vm._v("small, medium, large, border, round, flat")
+          ])
         ]),
         _c("div", [
           _c("span", [_vm._v("container ")]),
@@ -16229,10 +16354,9 @@ var staticRenderFns = [
           _c("span", [_vm._v("dropdown ")]),
           _c("span", { staticClass: "grey-text" }, [
             _vm._v(
-              "left, right, small, medium, large, border, round, flat, active, no-wrap, "
+              "left, right, small, medium, large, border, round, flat, active, no-wrap"
             )
-          ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("min")])
+          ])
         ]),
         _c("div", [
           _c("span", [_vm._v("field ")]),
@@ -16371,6 +16495,10 @@ var staticRenderFns = [
             )
           ])
         ]),
+        _c("div", [
+          _c("span", [_vm._v("<video> ")]),
+          _c("span", { staticClass: "orange-text" }, [_vm._v("responsive")])
+        ]),
         _c("div", { staticClass: "space" }),
         _c("div", { staticClass: "orange-text" }, [
           _vm._v("* Element unique helpers")
@@ -16432,6 +16560,7 @@ var staticRenderFns = [
             _c("h5", { staticClass: "no-margin" }, [_vm._v("Back")])
           ])
         ]),
+        _c("div", { staticClass: "space" }),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col s6" }, [
             _c("h5", [_vm._v("Red")]),
@@ -17128,66 +17257,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal", attrs: { id: "modal" } }, [
-      _c("h5", [_vm._v("Title")]),
-      _c("div", [_vm._v("Complementary text")]),
-      _c("nav", [
-        _c(
-          "button",
-          {
-            staticClass: "none",
-            attrs: { onclick: "$('#modal').attr('class', 'modal active');" }
-          },
-          [_vm._v("Default")]
-        ),
-        _c(
-          "button",
-          {
-            staticClass: "none",
-            attrs: {
-              onclick: "$('#modal').attr('class', 'modal left active');"
-            }
-          },
-          [_vm._v("Left")]
-        ),
-        _c(
-          "button",
-          {
-            staticClass: "none",
-            attrs: {
-              onclick: "$('#modal').attr('class', 'modal right active');"
-            }
-          },
-          [_vm._v("Right")]
-        ),
-        _c(
-          "button",
-          {
-            staticClass: "none",
-            attrs: { onclick: "$('#modal').attr('class', 'modal top active');" }
-          },
-          [_vm._v("Top")]
-        ),
-        _c(
-          "button",
-          {
-            staticClass: "none",
-            attrs: {
-              onclick: "$('#modal').attr('class', 'modal bottom active');"
-            }
-          },
-          [_vm._v("Bottom")]
-        ),
-        _c("button", { staticClass: "none", attrs: { "data-ui": "#modal" } }, [
-          _vm._v("Close")
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("nav", [
       _c("a", { attrs: { "data-ui": "#modal-samples" } }, [
         _c("i", [_vm._v("arrow_back")])
@@ -17701,7 +17770,7 @@ var _default = {
   },
   mounted: function mounted() {
     this.updateTheme();
-    window.ui();
+    ui();
   },
   methods: {
     updateTheme: function updateTheme() {
@@ -18321,6 +18390,98 @@ render._withStripped = true
           };
         })());
       
+},{}],"youtube/domain.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  data: function data() {
+    return {
+      itens: [{
+        title: "Alok 01/2021",
+        image: "/alok-001.jpg"
+      }, {
+        title: "Alok 01/2020",
+        image: "/alok-002.jpg"
+      }, {
+        title: "Best of 2021",
+        image: "/vintage-001.jpg"
+      }, {
+        title: "Best of 2020",
+        image: "/vintage-002.jpg"
+      }, {
+        title: "Radio online",
+        image: "/radio-001.jpg"
+      }, {
+        title: "Alok, Zebra, Iro - Ocean",
+        image: "/ocean-001.jpg"
+      }, {
+        title: "Alok 01/2021",
+        image: "/alok-001.jpg"
+      }, {
+        title: "Alok 01/2020",
+        image: "/alok-002.jpg"
+      }],
+      whatsHot: [{
+        title: "Best of 2021",
+        image: "/vintage-001.jpg"
+      }, {
+        title: "Best of 2020",
+        image: "/vintage-002.jpg"
+      }, {
+        title: "Radio online",
+        image: "/radio-001.jpg"
+      }, {
+        title: "Alok, Zebra, Iro - Ocean",
+        image: "/ocean-001.jpg"
+      }, {
+        title: "Alok 01/2021",
+        image: "/alok-001.jpg"
+      }, {
+        title: "Alok 01/2020",
+        image: "/alok-002.jpg"
+      }, {
+        title: "Best of 2021",
+        image: "/vintage-001.jpg"
+      }, {
+        title: "Best of 2020",
+        image: "/vintage-002.jpg"
+      }],
+      yourVideos: [{
+        title: "Radio online",
+        image: "/radio-001.jpg"
+      }, {
+        title: "Alok, Zebra, Iro - Ocean",
+        image: "/ocean-001.jpg"
+      }, {
+        title: "Alok 01/2021",
+        image: "/alok-001.jpg"
+      }, {
+        title: "Alok 01/2020",
+        image: "/alok-002.jpg"
+      }, {
+        title: "Best of 2021",
+        image: "/vintage-001.jpg"
+      }, {
+        title: "Best of 2020",
+        image: "/vintage-002.jpg"
+      }, {
+        title: "Radio online",
+        image: "/radio-001.jpg"
+      }, {
+        title: "Alok, Zebra, Iro - Ocean",
+        image: "/ocean-001.jpg"
+      }]
+    };
+  },
+  mounted: function mounted() {
+    ui();
+  }
+};
+exports.default = _default;
 },{}],"youtube/home.vue":[function(require,module,exports) {
 "use strict";
 
@@ -18328,213 +18489,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _domain = _interopRequireDefault(require("./domain"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -18604,9 +18563,7 @@ exports.default = void 0;
 //
 //
 var _default = {
-  data: function data() {
-    return;
-  }
+  mixins: [_domain.default]
 };
 exports.default = _default;
         var $8dab7f = exports.default || module.exports;
@@ -18625,400 +18582,161 @@ exports.default = _default;
     _c("div", { staticClass: "page right active" }, [
       _vm._m(0),
       _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/alok-001.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _c("div", { staticClass: "space" }),
-            _c("div", { staticClass: "row no-wrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.itens, function(item, i) {
+          return _c("div", { staticClass: "col s12 m6 l3" }, [
+            _c("div", { staticClass: "card no-padding flat transparent" }, [
+              _c("a", { staticClass: "wave" }, [
                 _c("img", {
-                  staticClass: "small circle",
-                  attrs: { src: "/alok-001.jpg" }
-                })
+                  staticClass: "responsive",
+                  attrs: { src: item.image }
+                }),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "absolute right bottom small-margin black white-text small-text"
+                  },
+                  [_vm._v(" 00:00:00 ")]
+                )
               ]),
-              _vm._m(1),
-              _vm._m(2)
+              _c("div", { staticClass: "space" }),
+              _c("div", { staticClass: "row no-wrap middle-align" }, [
+                _c("div", { staticClass: "col min" }, [
+                  _c("img", {
+                    staticClass: "small circle",
+                    attrs: { src: item.image }
+                  })
+                ]),
+                _c("div", { staticClass: "col truncate" }, [
+                  _c("div", { staticClass: "bold" }, [
+                    _vm._v(_vm._s(item.title))
+                  ]),
+                  _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
+                ]),
+                _c("div", { staticClass: "col min" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "none grey-text",
+                      attrs: { "data-ui": "#dropdown-" + i }
+                    },
+                    [
+                      _c("i", [_vm._v("more_vert")]),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "dropdown left no-wrap",
+                          attrs: {
+                            id: "dropdown-" + i,
+                            "data-ui": "#dropdown-" + i
+                          }
+                        },
+                        [
+                          _c("a", [_vm._v("Save to library")]),
+                          _c("a", [_vm._v("Watch later")]),
+                          _c("a", [_vm._v("Like it")])
+                        ]
+                      )
+                    ]
+                  )
+                ])
+              ])
             ])
           ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/alok-002.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _c("div", { staticClass: "space" }),
-            _c("div", { staticClass: "row no-wrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "small circle",
-                  attrs: { src: "/alok-002.jpg" }
-                })
-              ]),
-              _vm._m(3),
-              _vm._m(4)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/vintage-001.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _c("div", { staticClass: "space" }),
-            _c("div", { staticClass: "row no-wrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "small circle",
-                  attrs: { src: "/vintage-001.jpg" }
-                })
-              ]),
-              _vm._m(5),
-              _vm._m(6)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/vintage-002.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _c("div", { staticClass: "space" }),
-            _c("div", { staticClass: "row no-wrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "small circle",
-                  attrs: { src: "/vintage-002.jpg" }
-                })
-              ]),
-              _vm._m(7),
-              _vm._m(8)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/radio-001.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _c("div", { staticClass: "space" }),
-            _c("div", { staticClass: "row no-wrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "small circle",
-                  attrs: { src: "/radio-001.jpg" }
-                })
-              ]),
-              _vm._m(9),
-              _vm._m(10)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/ocean-001.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _c("div", { staticClass: "space" }),
-            _c("div", { staticClass: "row no-wrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "small circle",
-                  attrs: { src: "/ocean-001.jpg" }
-                })
-              ]),
-              _vm._m(11),
-              _vm._m(12)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/alok-001.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _c("div", { staticClass: "space" }),
-            _c("div", { staticClass: "row no-wrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "small circle",
-                  attrs: { src: "/alok-001.jpg" }
-                })
-              ]),
-              _vm._m(13),
-              _vm._m(14)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12 m6 l3" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/alok-002.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _c("div", { staticClass: "space" }),
-            _c("div", { staticClass: "row no-wrap middle-align" }, [
-              _c("div", { staticClass: "col min" }, [
-                _c("img", {
-                  staticClass: "small circle",
-                  attrs: { src: "/alok-002.jpg" }
-                })
-              ]),
-              _vm._m(15),
-              _vm._m(16)
-            ])
-          ])
-        ])
-      ]),
+        }),
+        0
+      ),
       _c("div", { staticClass: "large-divider" }),
       _c("h5", [_vm._v("What's hot")]),
-      _c("div", { staticClass: "row no-wrap scroll" }, [
-        _c("div", { staticClass: "col" }, [
-          _c("div", { staticClass: "card no-padding border transparent min" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/vintage-001.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _vm._m(17)
+      _c(
+        "div",
+        { staticClass: "row no-wrap scroll" },
+        _vm._l(_vm.whatsHot, function(item) {
+          return _c("div", { staticClass: "col" }, [
+            _c(
+              "div",
+              { staticClass: "card no-padding border transparent small-width" },
+              [
+                _c("a", { staticClass: "wave" }, [
+                  _c("img", {
+                    staticClass: "responsive",
+                    attrs: { src: item.image }
+                  }),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "absolute right bottom small-margin black white-text small-text"
+                    },
+                    [_vm._v(" 00:00:00 ")]
+                  )
+                ]),
+                _c("div", { staticClass: "padding" }, [
+                  _c("div", { staticClass: "row no-wrap middle-align" }, [
+                    _c("div", { staticClass: "col truncate" }, [
+                      _c("div", { staticClass: "bold" }, [
+                        _vm._v(_vm._s(item.title))
+                      ]),
+                      _c("div", { staticClass: "grey-text" }, [
+                        _vm._v("10k views")
+                      ])
+                    ]),
+                    _vm._m(1, true)
+                  ])
+                ])
+              ]
+            )
           ])
-        ]),
-        _c("div", { staticClass: "col" }, [
-          _c("div", { staticClass: "card no-padding border transparent min" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/vintage-002.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _vm._m(18)
-          ])
-        ]),
-        _c("div", { staticClass: "col" }, [
-          _c("div", { staticClass: "card no-padding border transparent min" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/radio-001.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _vm._m(19)
-          ])
-        ]),
-        _c("div", { staticClass: "col" }, [
-          _c("div", { staticClass: "card no-padding border transparent min" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/ocean-001.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _vm._m(20)
-          ])
-        ])
-      ]),
+        }),
+        0
+      ),
       _c("div", { staticClass: "large-divider" }),
       _c("h5", [_vm._v("Your videos")]),
-      _c("div", { staticClass: "row no-wrap scroll" }, [
-        _c("div", { staticClass: "col" }, [
-          _c("div", { staticClass: "card no-padding border transparent min" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/alok-001.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _vm._m(21)
+      _c(
+        "div",
+        { staticClass: "row no-wrap scroll" },
+        _vm._l(_vm.yourVideos, function(item) {
+          return _c("div", { staticClass: "col" }, [
+            _c(
+              "div",
+              { staticClass: "card no-padding border transparent small-width" },
+              [
+                _c("a", { staticClass: "wave" }, [
+                  _c("img", {
+                    staticClass: "responsive",
+                    attrs: { src: item.image }
+                  }),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "absolute right bottom small-margin black white-text small-text"
+                    },
+                    [_vm._v(" 00:00:00 ")]
+                  )
+                ]),
+                _c("div", { staticClass: "padding" }, [
+                  _c("div", { staticClass: "row no-wrap middle-align" }, [
+                    _c("div", { staticClass: "col truncate" }, [
+                      _c("div", { staticClass: "bold" }, [
+                        _vm._v(_vm._s(item.title))
+                      ]),
+                      _c("div", { staticClass: "grey-text" }, [
+                        _vm._v("10k views")
+                      ])
+                    ]),
+                    _vm._m(2, true)
+                  ])
+                ])
+              ]
+            )
           ])
-        ]),
-        _c("div", { staticClass: "col" }, [
-          _c("div", { staticClass: "card no-padding border transparent min" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/alok-002.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _vm._m(22)
-          ])
-        ]),
-        _c("div", { staticClass: "col" }, [
-          _c("div", { staticClass: "card no-padding border transparent min" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/vintage-001.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _vm._m(23)
-          ])
-        ]),
-        _c("div", { staticClass: "col" }, [
-          _c("div", { staticClass: "card no-padding border transparent min" }, [
-            _c("a", { staticClass: "wave" }, [
-              _c("img", {
-                staticClass: "responsive",
-                attrs: { src: "/vintage-002.jpg" }
-              }),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "absolute right bottom small-margin black white-text small-text"
-                },
-                [_vm._v(" 00:00:00 ")]
-              )
-            ]),
-            _vm._m(24)
-          ])
-        ])
-      ])
+        }),
+        0
+      )
     ])
   ])
 }
@@ -19040,9 +18758,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col truncate" }, [
-      _c("div", { staticClass: "bold" }, [_vm._v("Alok 01/2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
+    return _c("div", { staticClass: "col min" }, [
+      _c("a", { staticClass: "grey-text" }, [_c("i", [_vm._v("thumb_up")])])
     ])
   },
   function() {
@@ -19050,400 +18767,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col min" }, [
-      _c(
-        "button",
-        { staticClass: "none grey-text", attrs: { "data-ui": "#dropdown-1" } },
-        [
-          _c("i", [_vm._v("more_vert")]),
-          _c(
-            "div",
-            {
-              staticClass: "dropdown left no-wrap",
-              attrs: { id: "dropdown-1", "data-ui": "#dropdown-1" }
-            },
-            [
-              _c("a", [_vm._v("Save to library")]),
-              _c("a", [_vm._v("Watch later")]),
-              _c("a", [_vm._v("Like it")])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col truncate" }, [
-      _c("div", { staticClass: "bold" }, [_vm._v("Alok 12/2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col min" }, [
-      _c(
-        "button",
-        { staticClass: "none grey-text", attrs: { "data-ui": "#dropdown-2" } },
-        [
-          _c("i", [_vm._v("more_vert")]),
-          _c(
-            "div",
-            {
-              staticClass: "dropdown left no-wrap",
-              attrs: { id: "dropdown-2", "data-ui": "#dropdown-2" }
-            },
-            [
-              _c("a", [_vm._v("Save to library")]),
-              _c("a", [_vm._v("Watch later")]),
-              _c("a", [_vm._v("Like it")])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col truncate" }, [
-      _c("div", { staticClass: "bold" }, [_vm._v("Best of 2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col min" }, [
-      _c(
-        "button",
-        { staticClass: "none grey-text", attrs: { "data-ui": "#dropdown-3" } },
-        [
-          _c("i", [_vm._v("more_vert")]),
-          _c(
-            "div",
-            {
-              staticClass: "dropdown left no-wrap",
-              attrs: { id: "dropdown-3", "data-ui": "#dropdown-3" }
-            },
-            [
-              _c("a", [_vm._v("Save to library")]),
-              _c("a", [_vm._v("Watch later")]),
-              _c("a", [_vm._v("Like it")])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col truncate" }, [
-      _c("div", { staticClass: "bold" }, [_vm._v("Best of 2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col min" }, [
-      _c(
-        "button",
-        { staticClass: "none grey-text", attrs: { "data-ui": "#dropdown-4" } },
-        [
-          _c("i", [_vm._v("more_vert")]),
-          _c(
-            "div",
-            {
-              staticClass: "dropdown left no-wrap",
-              attrs: { id: "dropdown-4", "data-ui": "#dropdown-4" }
-            },
-            [
-              _c("a", [_vm._v("Save to library")]),
-              _c("a", [_vm._v("Watch later")]),
-              _c("a", [_vm._v("Like it")])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col truncate" }, [
-      _c("div", { staticClass: "bold" }, [_vm._v("Radio online")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col min" }, [
-      _c(
-        "button",
-        { staticClass: "none grey-text", attrs: { "data-ui": "#dropdown-5" } },
-        [
-          _c("i", [_vm._v("more_vert")]),
-          _c(
-            "div",
-            {
-              staticClass: "dropdown left no-wrap",
-              attrs: { id: "dropdown-5", "data-ui": "#dropdown-5" }
-            },
-            [
-              _c("a", [_vm._v("Save to library")]),
-              _c("a", [_vm._v("Watch later")]),
-              _c("a", [_vm._v("Like it")])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col truncate" }, [
-      _c("div", { staticClass: "bold" }, [_vm._v("Alok, Zebra, Iro - Ocean")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col min" }, [
-      _c(
-        "button",
-        { staticClass: "none grey-text", attrs: { "data-ui": "#dropdown-6" } },
-        [
-          _c("i", [_vm._v("more_vert")]),
-          _c(
-            "div",
-            {
-              staticClass: "dropdown left no-wrap",
-              attrs: { id: "dropdown-6", "data-ui": "#dropdown-6" }
-            },
-            [
-              _c("a", [_vm._v("Save to library")]),
-              _c("a", [_vm._v("Watch later")]),
-              _c("a", [_vm._v("Like it")])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col truncate" }, [
-      _c("div", { staticClass: "bold" }, [_vm._v("Alok 01/2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col min" }, [
-      _c(
-        "button",
-        { staticClass: "none grey-text", attrs: { "data-ui": "#dropdown-7" } },
-        [
-          _c("i", [_vm._v("more_vert")]),
-          _c(
-            "div",
-            {
-              staticClass: "dropdown left no-wrap",
-              attrs: { id: "dropdown-7", "data-ui": "#dropdown-7" }
-            },
-            [
-              _c("a", [_vm._v("Save to library")]),
-              _c("a", [_vm._v("Watch later")]),
-              _c("a", [_vm._v("Like it")])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col truncate" }, [
-      _c("div", { staticClass: "bold" }, [_vm._v("Alok 12/2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col min" }, [
-      _c(
-        "button",
-        { staticClass: "none grey-text", attrs: { "data-ui": "#dropdown-8" } },
-        [
-          _c("i", [_vm._v("more_vert")]),
-          _c(
-            "div",
-            {
-              staticClass: "dropdown left no-wrap",
-              attrs: { id: "dropdown-8", "data-ui": "#dropdown-8" }
-            },
-            [
-              _c("a", [_vm._v("Save to library")]),
-              _c("a", [_vm._v("Watch later")]),
-              _c("a", [_vm._v("Like it")])
-            ]
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padding" }, [
-      _c("div", { staticClass: "row no-wrap middle-align" }, [
-        _c("div", { staticClass: "col truncate" }, [
-          _c("div", { staticClass: "bold" }, [_vm._v("Best of 2021")]),
-          _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-        ]),
-        _c("div", { staticClass: "col min" }, [
-          _c("a", { staticClass: "grey-text" }, [_c("i", [_vm._v("thumb_up")])])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padding" }, [
-      _c("div", { staticClass: "row no-wrap middle-align" }, [
-        _c("div", { staticClass: "col truncate" }, [
-          _c("div", { staticClass: "bold" }, [_vm._v("Best of 2020")]),
-          _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-        ]),
-        _c("div", { staticClass: "col min" }, [
-          _c("a", { staticClass: "grey-text" }, [_c("i", [_vm._v("thumb_up")])])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padding" }, [
-      _c("div", { staticClass: "row no-wrap middle-align" }, [
-        _c("div", { staticClass: "col truncate" }, [
-          _c("div", { staticClass: "bold" }, [_vm._v("Radio online")]),
-          _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-        ]),
-        _c("div", { staticClass: "col min" }, [
-          _c("a", { staticClass: "grey-text" }, [_c("i", [_vm._v("thumb_up")])])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padding" }, [
-      _c("div", { staticClass: "row no-wrap middle-align" }, [
-        _c("div", { staticClass: "col truncate" }, [
-          _c("div", { staticClass: "bold" }, [
-            _vm._v("Alok, Zebra, Iro - Ocean")
-          ]),
-          _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-        ]),
-        _c("div", { staticClass: "col min" }, [
-          _c("a", { staticClass: "grey-text" }, [_c("i", [_vm._v("thumb_up")])])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padding" }, [
-      _c("div", { staticClass: "row no-wrap middle-align" }, [
-        _c("div", { staticClass: "col truncate" }, [
-          _c("div", { staticClass: "bold" }, [_vm._v("Alok 01/2021")]),
-          _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-        ]),
-        _c("div", { staticClass: "col min" }, [
-          _c("a", { staticClass: "grey-text" }, [_c("i", [_vm._v("thumb_up")])])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padding" }, [
-      _c("div", { staticClass: "row no-wrap middle-align" }, [
-        _c("div", { staticClass: "col truncate" }, [
-          _c("div", { staticClass: "bold" }, [_vm._v("Alok 12/2020")]),
-          _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-        ]),
-        _c("div", { staticClass: "col min" }, [
-          _c("a", { staticClass: "grey-text" }, [_c("i", [_vm._v("thumb_up")])])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padding" }, [
-      _c("div", { staticClass: "row no-wrap middle-align" }, [
-        _c("div", { staticClass: "col truncate" }, [
-          _c("div", { staticClass: "bold" }, [_vm._v("Best of 2021")]),
-          _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-        ]),
-        _c("div", { staticClass: "col min" }, [
-          _c("a", { staticClass: "grey-text" }, [_c("i", [_vm._v("thumb_up")])])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padding" }, [
-      _c("div", { staticClass: "row no-wrap middle-align" }, [
-        _c("div", { staticClass: "col truncate" }, [
-          _c("div", { staticClass: "bold" }, [_vm._v("Best of 2020")]),
-          _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")])
-        ]),
-        _c("div", { staticClass: "col min" }, [
-          _c("a", { staticClass: "grey-text" }, [_c("i", [_vm._v("thumb_up")])])
-        ])
-      ])
+      _c("a", { staticClass: "grey-text" }, [_c("i", [_vm._v("thumb_up")])])
     ])
   }
 ]
@@ -19458,73 +18782,18 @@ render._withStripped = true
           };
         })());
       
-},{}],"youtube/whatsHot.vue":[function(require,module,exports) {
+},{"./domain":"youtube/domain.js"}],"youtube/whatsHot.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _domain = _interopRequireDefault(require("./domain"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -19545,9 +18814,7 @@ exports.default = void 0;
 //
 //
 var _default = {
-  data: function data() {
-    return;
-  }
+  mixins: [_domain.default]
 };
 exports.default = _default;
         var $d357d6 = exports.default || module.exports;
@@ -19565,243 +18832,53 @@ exports.default = _default;
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "page right active" }, [
       _c("h5", [_vm._v("What's hot")]),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/alok-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.itens, function(item) {
+          return _c("div", { staticClass: "col s12" }, [
+            _c("div", { staticClass: "card no-padding flat transparent" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col s6 m4 l3" }, [
+                  _c("a", { staticClass: "wave" }, [
+                    _c("img", {
+                      staticClass: "empty-state",
+                      attrs: { src: item.image }
+                    }),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "absolute right bottom small-margin black white-text small-text"
+                      },
+                      [_vm._v(" 00:00:00 ")]
+                    )
+                  ])
+                ]),
+                _c("div", { staticClass: "col s6 m8 l9" }, [
+                  _c("h5", { staticClass: "no-margin" }, [
+                    _vm._v(_vm._s(item.title))
+                  ]),
+                  _c("div", { staticClass: "grey-text" }, [
+                    _vm._v("10k views")
+                  ]),
+                  _c("div", { staticClass: "space" }),
+                  _c("div", { staticClass: "grey-text" }, [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+                    )
+                  ])
                 ])
-              ]),
-              _vm._m(0)
+              ])
             ])
           ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/alok-002.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(1)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/vintage-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(2)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/vintage-002.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(3)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/radio-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(4)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/ocean-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(5)
-            ])
-          ])
-        ])
-      ])
+        }),
+        0
+      )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Alok 01/2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Alok 12/2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Best of 2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Best of 2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Radio online")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [
-        _vm._v("Alok, Zebra, Iro - Ocean")
-      ]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -19813,73 +18890,18 @@ render._withStripped = true
           };
         })());
       
-},{}],"youtube/subscriptions.vue":[function(require,module,exports) {
+},{"./domain":"youtube/domain.js"}],"youtube/subscriptions.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _domain = _interopRequireDefault(require("./domain"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -19900,9 +18922,7 @@ exports.default = void 0;
 //
 //
 var _default = {
-  data: function data() {
-    return;
-  }
+  mixins: [_domain.default]
 };
 exports.default = _default;
         var $898a42 = exports.default || module.exports;
@@ -19920,243 +18940,53 @@ exports.default = _default;
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "page right active" }, [
       _c("h5", [_vm._v("Subscriptions")]),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/alok-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.itens, function(item) {
+          return _c("div", { staticClass: "col s12" }, [
+            _c("div", { staticClass: "card no-padding flat transparent" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col s6 m4 l3" }, [
+                  _c("a", { staticClass: "wave" }, [
+                    _c("img", {
+                      staticClass: "empty-state",
+                      attrs: { src: item.image }
+                    }),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "absolute right bottom small-margin black white-text small-text"
+                      },
+                      [_vm._v(" 00:00:00 ")]
+                    )
+                  ])
+                ]),
+                _c("div", { staticClass: "col s6 m8 l9" }, [
+                  _c("h5", { staticClass: "no-margin" }, [
+                    _vm._v(_vm._s(item.title))
+                  ]),
+                  _c("div", { staticClass: "grey-text" }, [
+                    _vm._v("10k views")
+                  ]),
+                  _c("div", { staticClass: "space" }),
+                  _c("div", { staticClass: "grey-text" }, [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+                    )
+                  ])
                 ])
-              ]),
-              _vm._m(0)
+              ])
             ])
           ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/alok-002.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(1)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/vintage-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(2)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/vintage-002.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(3)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/radio-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(4)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/ocean-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(5)
-            ])
-          ])
-        ])
-      ])
+        }),
+        0
+      )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Alok 01/2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Alok 12/2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Best of 2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Best of 2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Radio online")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [
-        _vm._v("Alok, Zebra, Iro - Ocean")
-      ]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -20168,73 +18998,18 @@ render._withStripped = true
           };
         })());
       
-},{}],"youtube/library.vue":[function(require,module,exports) {
+},{"./domain":"youtube/domain.js"}],"youtube/library.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _domain = _interopRequireDefault(require("./domain"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -20255,9 +19030,7 @@ exports.default = void 0;
 //
 //
 var _default = {
-  data: function data() {
-    return;
-  }
+  mixins: [_domain.default]
 };
 exports.default = _default;
         var $b07cda = exports.default || module.exports;
@@ -20275,243 +19048,53 @@ exports.default = _default;
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "page right active" }, [
       _c("h5", [_vm._v("Library")]),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/alok-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.itens, function(item) {
+          return _c("div", { staticClass: "col s12" }, [
+            _c("div", { staticClass: "card no-padding flat transparent" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col s6 m4 l3" }, [
+                  _c("a", { staticClass: "wave" }, [
+                    _c("img", {
+                      staticClass: "empty-state",
+                      attrs: { src: item.image }
+                    }),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "absolute right bottom small-margin black white-text small-text"
+                      },
+                      [_vm._v(" 00:00:00 ")]
+                    )
+                  ])
+                ]),
+                _c("div", { staticClass: "col s6 m8 l9" }, [
+                  _c("h5", { staticClass: "no-margin" }, [
+                    _vm._v(_vm._s(item.title))
+                  ]),
+                  _c("div", { staticClass: "grey-text" }, [
+                    _vm._v("10k views")
+                  ]),
+                  _c("div", { staticClass: "space" }),
+                  _c("div", { staticClass: "grey-text" }, [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+                    )
+                  ])
                 ])
-              ]),
-              _vm._m(0)
+              ])
             ])
           ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/alok-002.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(1)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/vintage-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(2)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/vintage-002.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(3)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/radio-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(4)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/ocean-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(5)
-            ])
-          ])
-        ])
-      ])
+        }),
+        0
+      )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Alok 01/2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Alok 12/2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Best of 2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Best of 2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Radio online")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [
-        _vm._v("Alok, Zebra, Iro - Ocean")
-      ]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -20523,73 +19106,18 @@ render._withStripped = true
           };
         })());
       
-},{}],"youtube/explore.vue":[function(require,module,exports) {
+},{"./domain":"youtube/domain.js"}],"youtube/explore.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _domain = _interopRequireDefault(require("./domain"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -20610,9 +19138,7 @@ exports.default = void 0;
 //
 //
 var _default = {
-  data: function data() {
-    return;
-  }
+  mixins: [_domain.default]
 };
 exports.default = _default;
         var $262347 = exports.default || module.exports;
@@ -20630,243 +19156,53 @@ exports.default = _default;
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "page right active" }, [
       _c("h5", [_vm._v("Explore")]),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/alok-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.itens, function(item) {
+          return _c("div", { staticClass: "col s12" }, [
+            _c("div", { staticClass: "card no-padding flat transparent" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col s6 m4 l3" }, [
+                  _c("a", { staticClass: "wave" }, [
+                    _c("img", {
+                      staticClass: "empty-state",
+                      attrs: { src: item.image }
+                    }),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "absolute right bottom small-margin black white-text small-text"
+                      },
+                      [_vm._v(" 00:00:00 ")]
+                    )
+                  ])
+                ]),
+                _c("div", { staticClass: "col s6 m8 l9" }, [
+                  _c("h5", { staticClass: "no-margin" }, [
+                    _vm._v(_vm._s(item.title))
+                  ]),
+                  _c("div", { staticClass: "grey-text" }, [
+                    _vm._v("10k views")
+                  ]),
+                  _c("div", { staticClass: "space" }),
+                  _c("div", { staticClass: "grey-text" }, [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+                    )
+                  ])
                 ])
-              ]),
-              _vm._m(0)
+              ])
             ])
           ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/alok-002.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(1)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/vintage-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(2)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/vintage-002.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(3)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/radio-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(4)
-            ])
-          ])
-        ]),
-        _c("div", { staticClass: "col s12" }, [
-          _c("div", { staticClass: "card no-padding flat transparent" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 m4 l3" }, [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "empty-state",
-                    attrs: { src: "/ocean-001.jpg" }
-                  }),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "absolute right bottom small-margin black white-text small-text"
-                    },
-                    [_vm._v(" 00:00:00 ")]
-                  )
-                ])
-              ]),
-              _vm._m(5)
-            ])
-          ])
-        ])
-      ])
+        }),
+        0
+      )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Alok 01/2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Alok 12/2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Best of 2021")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Best of 2020")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [_vm._v("Radio online")]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s6 m8 l9" }, [
-      _c("h5", { staticClass: "no-margin" }, [
-        _vm._v("Alok, Zebra, Iro - Ocean")
-      ]),
-      _c("div", { staticClass: "grey-text" }, [_vm._v("10k views")]),
-      _c("div", { staticClass: "space" }),
-      _c("div", { staticClass: "grey-text" }, [
-        _vm._v(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -20878,7 +19214,7 @@ render._withStripped = true
           };
         })());
       
-},{}],"youtube/index.js":[function(require,module,exports) {
+},{"./domain":"youtube/domain.js"}],"youtube/index.js":[function(require,module,exports) {
 "use strict";
 
 var _router = _interopRequireDefault(require("~/shared/router.js"));
@@ -21011,7 +19347,7 @@ var _default = {
   },
   mounted: function mounted() {
     this.updateTheme();
-    window.ui();
+    ui();
   },
   methods: {
     updateTheme: function updateTheme() {
@@ -21479,164 +19815,98 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default = {
-  mounted: function mounted() {},
   data: function data() {
-    return;
+    return {
+      todaysRanking: [{
+        image: "/alok-001.jpg"
+      }, {
+        image: "/alok-002.jpg"
+      }, {
+        image: "/vintage-001.jpg"
+      }, {
+        image: "/vintage-002.jpg"
+      }, {
+        image: "/radio-001.jpg"
+      }, {
+        image: "/ocean-001.jpg"
+      }, {
+        image: "/alok-001.jpg"
+      }, {
+        image: "/alok-002.jpg"
+      }],
+      series: [{
+        image: "/vintage-001.jpg"
+      }, {
+        image: "/vintage-002.jpg"
+      }, {
+        image: "/radio-001.jpg"
+      }, {
+        image: "/ocean-001.jpg"
+      }, {
+        image: "/alok-001.jpg"
+      }, {
+        image: "/alok-002.jpg"
+      }, {
+        image: "/vintage-001.jpg"
+      }, {
+        image: "/vintage-002.jpg"
+      }],
+      movies: [{
+        image: "/radio-001.jpg"
+      }, {
+        image: "/ocean-001.jpg"
+      }, {
+        image: "/alok-001.jpg"
+      }, {
+        image: "/alok-002.jpg"
+      }, {
+        image: "/vintage-001.jpg"
+      }, {
+        image: "/vintage-002.jpg"
+      }, {
+        image: "/radio-001.jpg"
+      }, {
+        image: "/ocean-001.jpg"
+      }],
+      hot: [{
+        image: "/alok-001.jpg"
+      }, {
+        image: "/alok-002.jpg"
+      }, {
+        image: "/vintage-001.jpg"
+      }, {
+        image: "/vintage-002.jpg"
+      }, {
+        image: "/radio-001.jpg"
+      }, {
+        image: "/ocean-001.jpg"
+      }, {
+        image: "/alok-001.jpg"
+      }, {
+        image: "/alok-002.jpg"
+      }],
+      myList: [{
+        image: "/vintage-001.jpg"
+      }, {
+        image: "/vintage-002.jpg"
+      }, {
+        image: "/radio-001.jpg"
+      }, {
+        image: "/ocean-001.jpg"
+      }, {
+        image: "/alok-001.jpg"
+      }, {
+        image: "/alok-002.jpg"
+      }, {
+        image: "/vintage-001.jpg"
+      }, {
+        image: "/vintage-002.jpg"
+      }]
+    };
+  },
+  mounted: function mounted() {
+    ui();
   },
   methods: {
     showDetails: function showDetails(event) {
@@ -21683,348 +19953,131 @@ exports.default = _default;
       _c("div", { staticClass: "page right active" }, [
         _c("div", { staticClass: "large-space" }),
         _c("h5", { staticClass: "bold" }, [_vm._v("Today's ranking")]),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col s12 m6 l3" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card no-padding",
-                on: { mouseover: _vm.showDetails, mouseout: _vm.hideDetails }
-              },
-              [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "responsive",
-                    attrs: { src: "/alok-001.jpg" }
-                  })
-                ]),
-                _vm._m(1),
-                _vm._m(2)
-              ]
-            )
-          ]),
-          _c("div", { staticClass: "col s12 m6 l3" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card no-padding",
-                on: { mouseover: _vm.showDetails, mouseout: _vm.hideDetails }
-              },
-              [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "responsive",
-                    attrs: { src: "/alok-002.jpg" }
-                  })
-                ]),
-                _vm._m(3),
-                _vm._m(4)
-              ]
-            )
-          ]),
-          _c("div", { staticClass: "col s12 m6 l3" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card no-padding",
-                on: { mouseover: _vm.showDetails, mouseout: _vm.hideDetails }
-              },
-              [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "responsive",
-                    attrs: { src: "/vintage-001.jpg" }
-                  })
-                ]),
-                _vm._m(5),
-                _vm._m(6)
-              ]
-            )
-          ]),
-          _c("div", { staticClass: "col s12 m6 l3" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card no-padding",
-                on: { mouseover: _vm.showDetails, mouseout: _vm.hideDetails }
-              },
-              [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "responsive",
-                    attrs: { src: "/vintage-002.jpg" }
-                  })
-                ]),
-                _vm._m(7),
-                _vm._m(8)
-              ]
-            )
-          ]),
-          _c("div", { staticClass: "col s12 m6 l3" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card no-padding",
-                on: { mouseover: _vm.showDetails, mouseout: _vm.hideDetails }
-              },
-              [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "responsive",
-                    attrs: { src: "/radio-001.jpg" }
-                  })
-                ]),
-                _vm._m(9),
-                _vm._m(10)
-              ]
-            )
-          ]),
-          _c("div", { staticClass: "col s12 m6 l3" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card no-padding",
-                on: { mouseover: _vm.showDetails, mouseout: _vm.hideDetails }
-              },
-              [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "responsive",
-                    attrs: { src: "/ocean-001.jpg" }
-                  })
-                ]),
-                _vm._m(11),
-                _vm._m(12)
-              ]
-            )
-          ]),
-          _c("div", { staticClass: "col s12 m6 l3" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card no-padding",
-                on: { mouseover: _vm.showDetails, mouseout: _vm.hideDetails }
-              },
-              [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "responsive",
-                    attrs: { src: "/alok-001.jpg" }
-                  })
-                ]),
-                _vm._m(13),
-                _vm._m(14)
-              ]
-            )
-          ]),
-          _c("div", { staticClass: "col s12 m6 l3" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card no-padding",
-                on: { mouseover: _vm.showDetails, mouseout: _vm.hideDetails }
-              },
-              [
-                _c("a", { staticClass: "wave" }, [
-                  _c("img", {
-                    staticClass: "responsive",
-                    attrs: { src: "/alok-002.jpg" }
-                  })
-                ]),
-                _vm._m(15),
-                _vm._m(16)
-              ]
-            )
-          ])
-        ]),
+        _c(
+          "div",
+          { staticClass: "row" },
+          _vm._l(_vm.todaysRanking, function(item, i) {
+            return _c("div", { staticClass: "col s12 m6 l3" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "card no-padding",
+                  on: { mouseover: _vm.showDetails, mouseout: _vm.hideDetails }
+                },
+                [
+                  _c("a", { staticClass: "wave" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: item.image }
+                    })
+                  ]),
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "circle small absolute right top margin black white-text"
+                    },
+                    [
+                      _c("h5", { staticClass: "no-margin center-align" }, [
+                        _vm._v(_vm._s(i + 1))
+                      ])
+                    ]
+                  ),
+                  _vm._m(1, true)
+                ]
+              )
+            ])
+          }),
+          0
+        ),
         _c("div", {
           staticClass: "large-space page active",
           attrs: { id: "series" }
         }),
         _c("h5", { staticClass: "bold" }, [_vm._v("Series")]),
-        _c("div", { staticClass: "row no-wrap scroll" }, [
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/vintage-001.jpg" }
-                })
+        _c(
+          "div",
+          { staticClass: "row no-wrap scroll" },
+          _vm._l(_vm.series, function(item) {
+            return _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "card no-padding small-width" }, [
+                _c("a", { staticClass: "wave" }, [
+                  _c("img", {
+                    staticClass: "responsive",
+                    attrs: { src: item.image }
+                  })
+                ])
               ])
             ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/vintage-002.jpg" }
-                })
-              ])
-            ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/radio-001.jpg" }
-                })
-              ])
-            ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/ocean-001.jpg" }
-                })
-              ])
-            ])
-          ])
-        ]),
+          }),
+          0
+        ),
         _c("div", {
           staticClass: "large-space page active",
           attrs: { id: "movies" }
         }),
         _c("h5", { staticClass: "bold" }, [_vm._v("Movies")]),
-        _c("div", { staticClass: "row no-wrap scroll" }, [
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/alok-001.jpg" }
-                })
+        _c(
+          "div",
+          { staticClass: "row no-wrap scroll" },
+          _vm._l(_vm.movies, function(item) {
+            return _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "card no-padding small-width" }, [
+                _c("a", { staticClass: "wave" }, [
+                  _c("img", {
+                    staticClass: "responsive",
+                    attrs: { src: item.image }
+                  })
+                ])
               ])
             ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/alok-002.jpg" }
-                })
-              ])
-            ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/vintage-001.jpg" }
-                })
-              ])
-            ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/vintage-002.jpg" }
-                })
-              ])
-            ])
-          ])
-        ]),
+          }),
+          0
+        ),
         _c("div", {
           staticClass: "large-space page active",
           attrs: { id: "hot" }
         }),
         _c("h5", { staticClass: "bold" }, [_vm._v("Hot")]),
-        _c("div", { staticClass: "row no-wrap scroll" }, [
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/radio-001.jpg" }
-                })
+        _c(
+          "div",
+          { staticClass: "row no-wrap scroll" },
+          _vm._l(_vm.hot, function(item) {
+            return _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "card no-padding small-width" }, [
+                _c("a", { staticClass: "wave" }, [
+                  _c("img", {
+                    staticClass: "responsive",
+                    attrs: { src: item.image }
+                  })
+                ])
               ])
             ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/ocean-001.jpg" }
-                })
-              ])
-            ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/alok-001.jpg" }
-                })
-              ])
-            ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/alok-002.jpg" }
-                })
-              ])
-            ])
-          ])
-        ]),
+          }),
+          0
+        ),
         _c("div", {
           staticClass: "large-space page active",
           attrs: { id: "my-list" }
         }),
         _c("h5", { staticClass: "bold" }, [_vm._v("My list")]),
-        _c("div", { staticClass: "row no-wrap scroll" }, [
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/vintage-001.jpg" }
-                })
+        _c(
+          "div",
+          { staticClass: "row no-wrap scroll" },
+          _vm._l(_vm.myList, function(item) {
+            return _c("div", { staticClass: "col" }, [
+              _c("div", { staticClass: "card no-padding small-width" }, [
+                _c("a", { staticClass: "wave" }, [
+                  _c("img", {
+                    staticClass: "responsive",
+                    attrs: { src: item.image }
+                  })
+                ])
               ])
             ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/vintage-002.jpg" }
-                })
-              ])
-            ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/radio-001.jpg" }
-                })
-              ])
-            ])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("div", { staticClass: "card no-padding min" }, [
-              _c("a", { staticClass: "wave" }, [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: { src: "/ocean-001.jpg" }
-                })
-              ])
-            ])
-          ])
-        ])
+          }),
+          0
+        )
       ])
     ])
   ])
@@ -22063,284 +20116,6 @@ var staticRenderFns = [
           ])
         ])
       ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "circle small absolute right top margin black white-text"
-      },
-      [_c("h5", { staticClass: "no-margin center-align" }, [_vm._v("1")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page" }, [
-      _c("div", { staticClass: "padding absolute left right bottom" }, [
-        _c("nav", [
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("play_arrow")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("add")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("thumb_up")])]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "circle small absolute right top margin black white-text"
-      },
-      [_c("h5", { staticClass: "no-margin center-align" }, [_vm._v("2")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page" }, [
-      _c("div", { staticClass: "padding absolute left right bottom" }, [
-        _c("nav", [
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("play_arrow")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("add")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("thumb_up")])]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "circle small absolute right top margin black white-text"
-      },
-      [_c("h5", { staticClass: "no-margin center-align" }, [_vm._v("3")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page" }, [
-      _c("div", { staticClass: "padding absolute left right bottom" }, [
-        _c("nav", [
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("play_arrow")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("add")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("thumb_up")])]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "circle small absolute right top margin black white-text"
-      },
-      [_c("h5", { staticClass: "no-margin center-align" }, [_vm._v("4")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page" }, [
-      _c("div", { staticClass: "padding absolute left right bottom" }, [
-        _c("nav", [
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("play_arrow")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("add")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("thumb_up")])]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "circle small absolute right top margin black white-text"
-      },
-      [_c("h5", { staticClass: "no-margin center-align" }, [_vm._v("5")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page" }, [
-      _c("div", { staticClass: "padding absolute left right bottom" }, [
-        _c("nav", [
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("play_arrow")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("add")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("thumb_up")])]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "circle small absolute right top margin black white-text"
-      },
-      [_c("h5", { staticClass: "no-margin center-align" }, [_vm._v("6")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page" }, [
-      _c("div", { staticClass: "padding absolute left right bottom" }, [
-        _c("nav", [
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("play_arrow")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("add")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("thumb_up")])]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "circle small absolute right top margin black white-text"
-      },
-      [_c("h5", { staticClass: "no-margin center-align" }, [_vm._v("7")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page" }, [
-      _c("div", { staticClass: "padding absolute left right bottom" }, [
-        _c("nav", [
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("play_arrow")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("add")])]
-          ),
-          _c(
-            "button",
-            { staticClass: "circle border small white-border white-text" },
-            [_c("i", [_vm._v("thumb_up")])]
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "circle small absolute right top margin black white-text"
-      },
-      [_c("h5", { staticClass: "no-margin center-align" }, [_vm._v("8")])]
     )
   },
   function() {
@@ -22629,6 +20404,8 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -22642,7 +20419,7 @@ var _default = {
   },
   mounted: function mounted() {
     this.updateTheme();
-    window.ui();
+    ui();
   },
   methods: {
     updateTheme: function updateTheme() {
@@ -22900,7 +20677,7 @@ exports.default = _default;
                 _c(
                   "div",
                   {
-                    staticClass: "dropdown left no-wrap min",
+                    staticClass: "dropdown left no-wrap small-width",
                     attrs: { id: "dropdown-apps", "data-ui": "#dropdown-apps" }
                   },
                   [
@@ -23360,6 +21137,76 @@ render._withStripped = true
           };
         })());
       
+},{}],"gmail/domain.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var drafts = [];
+
+while (drafts.length < 1) {
+  drafts.push({
+    check: false,
+    star: false
+  });
+}
+
+var inbox = [];
+
+while (inbox.length < 30) {
+  inbox.push({
+    check: false,
+    star: false
+  });
+}
+
+var sent = [];
+
+while (sent.length < 5) {
+  sent.push({
+    check: false,
+    star: false
+  });
+}
+
+var _default = {
+  data: function data() {
+    return {
+      drafts: drafts,
+      inbox: inbox,
+      sent: sent,
+      important: [],
+      snoozed: [],
+      spam: [],
+      emails: [],
+      check: false
+    };
+  },
+  watch: {
+    check: function check() {
+      this.checkAll();
+    }
+  },
+  mounted: function mounted() {
+    ui();
+  },
+  methods: {
+    checkAll: function checkAll() {
+      for (var i = 0; i < this.emails.length; i++) {
+        this.emails[i].check = this.check;
+      }
+    },
+    check: function check(email) {
+      email.check = !email.check;
+    },
+    star: function star(email) {
+      email.star = !email.star;
+    }
+  }
+};
+exports.default = _default;
 },{}],"gmail/home.vue":[function(require,module,exports) {
 "use strict";
 
@@ -23367,6 +21214,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _domain = _interopRequireDefault(require("./domain"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -23406,38 +21258,9 @@ exports.default = void 0;
 //
 //
 var _default = {
-  data: function data() {
-    return {
-      check: false,
-      emails: []
-    };
-  },
-  watch: {
-    check: function check() {
-      this.checkAll();
-    }
-  },
-  mounted: function mounted() {
-    for (var i = 0; i < 30; i++) {
-      this.emails.push({
-        check: false,
-        star: false,
-        read: false
-      });
-    }
-  },
-  methods: {
-    checkAll: function checkAll() {
-      for (var i = 0; i < this.emails.length; i++) {
-        this.emails[i].check = this.check;
-      }
-    },
-    check: function check(email) {
-      email.check = !email.check;
-    },
-    star: function star(email) {
-      email.star = !email.star;
-    }
+  mixins: [_domain.default],
+  created: function created() {
+    this.emails = this.inbox;
   }
 };
 exports.default = _default;
@@ -23504,7 +21327,13 @@ exports.default = _default;
             _vm._m(1)
           ])
         ]),
-        _vm._m(2)
+        _c("div", { staticClass: "col" }, [
+          _c("nav", { staticClass: "grey-text right-align" }, [
+            _c("label", [_vm._v("from 1 to " + _vm._s(_vm.emails.length))]),
+            _vm._m(2),
+            _vm._m(3)
+          ])
+        ])
       ]),
       _c("div", { staticClass: "space medium-device large-device" }),
       _vm._l(_vm.emails, function(email) {
@@ -23605,8 +21434,8 @@ exports.default = _default;
               ])
             ])
           ]),
-          _vm._m(3, true),
-          _vm._m(4, true)
+          _vm._m(4, true),
+          _vm._m(5, true)
         ])
       })
     ],
@@ -23630,13 +21459,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col" }, [
-      _c("nav", { staticClass: "grey-text right-align" }, [
-        _c("label", [_vm._v("from 1 to 30")]),
-        _c("a", [_c("i", [_vm._v("arrow_back")])]),
-        _c("a", [_c("i", [_vm._v("arrow_forward")])])
-      ])
-    ])
+    return _c("a", [_c("i", [_vm._v("arrow_back")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", [_c("i", [_vm._v("arrow_forward")])])
   },
   function() {
     var _vm = this
@@ -23672,13 +21501,18 @@ render._withStripped = true
           };
         })());
       
-},{}],"gmail/drafts.vue":[function(require,module,exports) {
+},{"./domain":"gmail/domain.js"}],"gmail/drafts.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _domain = _interopRequireDefault(require("./domain"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -23718,38 +21552,9 @@ exports.default = void 0;
 //
 //
 var _default = {
-  data: function data() {
-    return {
-      check: false,
-      emails: []
-    };
-  },
-  watch: {
-    check: function check() {
-      this.checkAll();
-    }
-  },
-  mounted: function mounted() {
-    for (var i = 0; i < 1; i++) {
-      this.emails.push({
-        check: false,
-        star: false,
-        read: false
-      });
-    }
-  },
-  methods: {
-    checkAll: function checkAll() {
-      for (var i = 0; i < this.emails.length; i++) {
-        this.emails[i].check = this.check;
-      }
-    },
-    check: function check(email) {
-      email.check = !email.check;
-    },
-    star: function star(email) {
-      email.star = !email.star;
-    }
+  mixins: [_domain.default],
+  created: function created() {
+    this.emails = this.drafts;
   }
 };
 exports.default = _default;
@@ -23816,7 +21621,13 @@ exports.default = _default;
             _vm._m(1)
           ])
         ]),
-        _vm._m(2)
+        _c("div", { staticClass: "col" }, [
+          _c("nav", { staticClass: "grey-text right-align" }, [
+            _c("label", [_vm._v("from 1 to " + _vm._s(_vm.emails.length))]),
+            _vm._m(2),
+            _vm._m(3)
+          ])
+        ])
       ]),
       _c("div", { staticClass: "space medium-device large-device" }),
       _vm._l(_vm.emails, function(email) {
@@ -23917,8 +21728,8 @@ exports.default = _default;
               ])
             ])
           ]),
-          _vm._m(3, true),
-          _vm._m(4, true)
+          _vm._m(4, true),
+          _vm._m(5, true)
         ])
       })
     ],
@@ -23942,13 +21753,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col" }, [
-      _c("nav", { staticClass: "grey-text right-align" }, [
-        _c("label", [_vm._v("from 1 to 1")]),
-        _c("a", [_c("i", [_vm._v("arrow_back")])]),
-        _c("a", [_c("i", [_vm._v("arrow_forward")])])
-      ])
-    ])
+    return _c("a", [_c("i", [_vm._v("arrow_back")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", [_c("i", [_vm._v("arrow_forward")])])
   },
   function() {
     var _vm = this
@@ -23984,13 +21795,18 @@ render._withStripped = true
           };
         })());
       
-},{}],"gmail/sent.vue":[function(require,module,exports) {
+},{"./domain":"gmail/domain.js"}],"gmail/sent.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _domain = _interopRequireDefault(require("./domain"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -24030,38 +21846,9 @@ exports.default = void 0;
 //
 //
 var _default = {
-  data: function data() {
-    return {
-      check: false,
-      emails: []
-    };
-  },
-  watch: {
-    check: function check() {
-      this.checkAll();
-    }
-  },
-  mounted: function mounted() {
-    for (var i = 0; i < 5; i++) {
-      this.emails.push({
-        check: false,
-        star: false,
-        read: false
-      });
-    }
-  },
-  methods: {
-    checkAll: function checkAll() {
-      for (var i = 0; i < this.emails.length; i++) {
-        this.emails[i].check = this.check;
-      }
-    },
-    check: function check(email) {
-      email.check = !email.check;
-    },
-    star: function star(email) {
-      email.star = !email.star;
-    }
+  mixins: [_domain.default],
+  created: function created() {
+    this.emails = this.sent;
   }
 };
 exports.default = _default;
@@ -24128,7 +21915,13 @@ exports.default = _default;
             _vm._m(1)
           ])
         ]),
-        _vm._m(2)
+        _c("div", { staticClass: "col" }, [
+          _c("nav", { staticClass: "grey-text right-align" }, [
+            _c("label", [_vm._v("from 1 to " + _vm._s(_vm.emails.length))]),
+            _vm._m(2),
+            _vm._m(3)
+          ])
+        ])
       ]),
       _c("div", { staticClass: "space medium-device large-device" }),
       _vm._l(_vm.emails, function(email) {
@@ -24229,8 +22022,8 @@ exports.default = _default;
               ])
             ])
           ]),
-          _vm._m(3, true),
-          _vm._m(4, true)
+          _vm._m(4, true),
+          _vm._m(5, true)
         ])
       })
     ],
@@ -24254,13 +22047,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col" }, [
-      _c("nav", { staticClass: "grey-text right-align" }, [
-        _c("label", [_vm._v("from 1 to 5")]),
-        _c("a", [_c("i", [_vm._v("arrow_back")])]),
-        _c("a", [_c("i", [_vm._v("arrow_forward")])])
-      ])
-    ])
+    return _c("a", [_c("i", [_vm._v("arrow_back")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", [_c("i", [_vm._v("arrow_forward")])])
   },
   function() {
     var _vm = this
@@ -24296,7 +22089,7 @@ render._withStripped = true
           };
         })());
       
-},{}],"gmail/spam.vue":[function(require,module,exports) {
+},{"./domain":"gmail/domain.js"}],"gmail/spam.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24310,29 +22103,10 @@ exports.default = void 0;
 //
 var _default = {
   data: function data() {
-    return {
-      check: false,
-      emails: []
-    };
+    return;
   },
-  watch: {
-    check: function check() {
-      this.checkAll();
-    }
-  },
-  mounted: function mounted() {},
-  methods: {
-    checkAll: function checkAll() {
-      for (var i = 0; i < this.emails.length; i++) {
-        this.emails[i].check = this.check;
-      }
-    },
-    check: function check(email) {
-      email.check = !email.check;
-    },
-    star: function star(email) {
-      email.star = !email.star;
-    }
+  mounted: function mounted() {
+    ui();
   }
 };
 exports.default = _default;
@@ -24385,29 +22159,10 @@ exports.default = void 0;
 //
 var _default = {
   data: function data() {
-    return {
-      check: false,
-      emails: []
-    };
+    return;
   },
-  watch: {
-    check: function check() {
-      this.checkAll();
-    }
-  },
-  mounted: function mounted() {},
-  methods: {
-    checkAll: function checkAll() {
-      for (var i = 0; i < this.emails.length; i++) {
-        this.emails[i].check = this.check;
-      }
-    },
-    check: function check(email) {
-      email.check = !email.check;
-    },
-    star: function star(email) {
-      email.star = !email.star;
-    }
+  mounted: function mounted() {
+    ui();
   }
 };
 exports.default = _default;
@@ -24460,29 +22215,10 @@ exports.default = void 0;
 //
 var _default = {
   data: function data() {
-    return {
-      check: false,
-      emails: []
-    };
+    return;
   },
-  watch: {
-    check: function check() {
-      this.checkAll();
-    }
-  },
-  mounted: function mounted() {},
-  methods: {
-    checkAll: function checkAll() {
-      for (var i = 0; i < this.emails.length; i++) {
-        this.emails[i].check = this.check;
-      }
-    },
-    check: function check(email) {
-      email.check = !email.check;
-    },
-    star: function star(email) {
-      email.star = !email.star;
-    }
+  mounted: function mounted() {
+    ui();
   }
 };
 exports.default = _default;
@@ -24622,7 +22358,7 @@ var _default = {
   },
   mounted: function mounted() {
     this.updateTheme();
-    window.ui();
+    ui();
   },
   methods: {
     updateTheme: function updateTheme() {
@@ -24949,7 +22685,7 @@ exports.default = _default;
       "div",
       {
         staticClass:
-          "card no-padding large-margin max large scroll medium-device large-device"
+          "card no-padding large-margin max large scroll medium-device large-device page left active"
       },
       [
         _c("div", { staticClass: "large-padding blue white-text" }, [
@@ -24967,7 +22703,8 @@ exports.default = _default;
                   value: !_vm.from && !_vm.to,
                   expression: "!from && !to"
                 }
-              ]
+              ],
+              staticClass: "page left active"
             },
             [_vm._v("Where are you?")]
           ),
@@ -24981,7 +22718,8 @@ exports.default = _default;
                   value: _vm.from && !_vm.to,
                   expression: "from && !to"
                 }
-              ]
+              ],
+              staticClass: "page left active"
             },
             [_vm._v("Where are you going?")]
           ),
@@ -24995,7 +22733,8 @@ exports.default = _default;
                   value: _vm.from && _vm.to,
                   expression: "from && to"
                 }
-              ]
+              ],
+              staticClass: "page left active"
             },
             [_vm._v("Confirm that ride?")]
           ),

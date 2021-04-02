@@ -6,28 +6,10 @@
 <script>
 export default {
   data() {
-    return {
-      check: false,
-      emails: [],
-    };
+    return;
   },
-  watch: {
-    check() {
-      this.checkAll();
-    },
-  },
-  mounted() {},
-  methods: {
-    checkAll() {
-      for (var i = 0; i < this.emails.length; i++)
-        this.emails[i].check = this.check;
-    },
-    check(email) {
-      email.check = !email.check;
-    },
-    star(email) {
-      email.star = !email.star;
-    },
+  mounted() {
+    ui();
   },
 };
 </script>

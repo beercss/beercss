@@ -1,10 +1,3 @@
-.icon {
-  filter: invert(1);
-}
-#modal-colors .col > div {
-  padding: 12px;
-}
-
 #logo {
   display: none;
   max-width: 100%;
@@ -21,6 +14,17 @@
   height: 360px;
 }
 
+pre {
+  overflow: auto;
+  padding: 8px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.is-dark pre {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 pre * {
   vertical-align: text-bottom;
 }
@@ -31,17 +35,6 @@ pre * {
 
 .is-dark .hljs-string {
   color: #ff9800 !important;
-}
-
-pre {
-  overflow: auto;
-  padding: 8px;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.is-dark pre {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #rows .row {
@@ -56,17 +49,13 @@ pre {
   border: 2px solid;
 }
 
-.col.s12[id] > h5 {
-  margin-top: 32px;
+#modal-colors .col > div {
+  padding: 12px;
 }
 
 .logo-template {
   width: auto;
   height: 24px;
-}
-
-.opacity {
-  opacity: 0.1;
 }
 
 @keyframes logo-intro {

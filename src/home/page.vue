@@ -133,6 +133,7 @@
 
     .row
       #badges.col.s12
+        .medium-space
         h5
           span Badges
           a.chip.circle
@@ -266,6 +267,7 @@
             i account_circle
         .small-space
       #buttons.col.s12
+        .medium-space
         h5
           span Buttons
           a.chip.circle
@@ -336,6 +338,7 @@
             i home
           button.border.circle B
       #cards.col.s12
+        .medium-space
         h5
           span Cards
           a.chip.circle
@@ -496,6 +499,7 @@
                 button.none Button
                 button.none Button
       #checkboxes.col.s12
+        .medium-space
         h5
           span Checkboxes
           a.chip.circle
@@ -555,6 +559,7 @@
                   span Item 3
               span.error Error text
       #chips.col.s12
+        .medium-space
         h5
           span Chips
           a.chip.circle
@@ -582,6 +587,7 @@
             i refresh
           a.chip.circle.border C
       #colors.col.s12
+        .medium-space
         h5 
           span Colors
           a.chip.circle(data-ui="#modal-colors")
@@ -589,6 +595,7 @@
         nav
           button(data-ui="#modal-colors") Colors
       #containers.col.s12
+        .medium-space
         h5
           span Containers
           a.chip.circle
@@ -600,6 +607,7 @@
         div(v-show="false")
           .container
       #dropdowns.col.s12
+        .medium-space
         h5
           span Dropdowns
           a.chip.circle
@@ -809,6 +817,7 @@
                     td 3
                     td 4
       #icons.col.s12
+        .medium-space
         h5
           span Icons
           a.chip.circle
@@ -847,6 +856,7 @@
           i.large update
           i.large thumb_up
       #images.col.s12
+        .medium-space
         h5
           span Images
           a.chip.circle
@@ -873,6 +883,7 @@
           a
             img.round.extra(:src="'/beer-and-woman.jpg'")
       #inputs.col.s12
+        .medium-space
         h5
           span Inputs
           a.chip.circle
@@ -964,6 +975,7 @@
               i search
               span.error Error text
       #list.col.s12
+        .medium-space
         h5
           span Lists
           a.chip.circle
@@ -1095,6 +1107,7 @@
               button.none
                 i more_vert
       #loaders.col.s12
+        .medium-space
         h5
           span Loaders
           a.chip.circle
@@ -1119,6 +1132,7 @@
             svg.loader.large.yellow(viewBox="0 0 66 66")
               circle(fill="none", cx="33", cy="33", r="30")
       #modals.col.s12
+        .medium-space
         h5
           span Modals
           a.chip.circle
@@ -1127,6 +1141,7 @@
           button(data-ui="#modal") Modal
           button(data-ui="#modal-calendar") Calendar
       #navs.col.s12
+        .medium-space
         h5
           span Navs
           a.chip.circle
@@ -1138,26 +1153,20 @@
           a
             img.circle(:src="'/beer-and-woman.jpg'")
       #pages.col.s12
+        .medium-space
         h5
           span Pages
           a.chip.circle
             i(@click="showSamples('#pages .page')") code
         nav.wrap
-          button(
-            onclick="$('#begin, #pages .page').attr('class', 'page left active');"
-          ) From left
-          button(
-            onclick="$('#begin, #pages .page').attr('class', 'page top active');"
-          ) From top
-          button(
-            onclick="$('#begin, #pages .page').attr('class', 'page bottom active');"
-          ) From bottom
-          button(
-            onclick="$('#begin, #pages .page').attr('class', 'page right active');"
-          ) From right
+          button(@click="updatePage('page left active')") From left
+          button(@click="updatePage('page top active')") From top
+          button(@click="updatePage('page bottom active')") From bottom
+          button(@click="updatePage('page right active')") From right
         div(style="display: none")
           .page
       #radios.col.s12
+        .medium-space
         h5
           span Radios
           a.chip.circle
@@ -1217,6 +1226,7 @@
                   span Item 3
               span.error Error text
       #responsive.col.s12
+        .medium-space
         h5 
           span Responsive
           a.chip.circle(@click="showSamples('#responsive nav')")
@@ -1236,6 +1246,7 @@
             button.small-device.medium-device.border.circle
               i laptop_windows
       #rows.col.s12
+        .medium-space
         h5
           span Rows
           a.chip.circle
@@ -1292,6 +1303,7 @@
           .col max
         .space
       #selects.col.s12
+        .medium-space
         h5
           span Selects
           a.chip.circle
@@ -1374,6 +1386,7 @@
               label.active List
               span.error Error text
       #switches.col.s12
+        .medium-space
         h5
           span Switches
           a.chip.circle
@@ -1433,6 +1446,7 @@
                   span Item 3
               span.error Error text
       #table.col.s12
+        .medium-space
         h5
           span Tables
           a.chip.circle
@@ -1514,6 +1528,7 @@
                   button.none
                     i more_vert
       #tabs.col.s12
+        .medium-space
         h5
           span Tabs
           a.chip.circle
@@ -1626,6 +1641,7 @@
           #tab15.page.padding
             h5 Tab 3
       #textareas.col.s12
+        .medium-space
         h5
           span Textareas
           a.chip.circle
@@ -1704,6 +1720,7 @@
               i search
               span.error Error text
       #toasts.col.s12.l6
+        .medium-space
         h5
           span Toasts
           a.chip.circle
@@ -1714,6 +1731,7 @@
           button.green(@click="showToasts('#toast3')") Toast
           button.blue(@click="showToasts('#toast4')") Toast
       #tooltips.col.s12.l6
+        .medium-space
         h5
           span Tooltips
           a.chip.circle
@@ -1733,6 +1751,7 @@
             .tooltip.right Complementary text
 
       #typography.col.s12
+        .medium-space
         h5
           span Typography
           a.chip.circle
@@ -1789,6 +1808,9 @@
                 div small
                 div medium
                 div large
+                div small-width
+                div medium-width
+                div large-width
               .col
                 b Margin
                 div margin
@@ -1844,8 +1866,8 @@
                 div medium-device
                 div large-device
                 div active
-                div no-wrap
                 div wrap
+                div no-wrap
                 div scroll
                 div no-scroll
                 div wave
@@ -1874,15 +1896,13 @@
                 span.grey-text border, circle, active
               div
                 span card&nbsp;
-                span.grey-text small, medium, large, border, round, flat,&nbsp;
-                span.orange-text min
+                span.grey-text small, medium, large, border, round, flat
               div 
                 span container&nbsp;
                 span.orange-text min, max
               div 
                 span dropdown&nbsp;
-                span.grey-text left, right, small, medium, large, border, round, flat, active, no-wrap,&nbsp;
-                span.orange-text min
+                span.grey-text left, right, small, medium, large, border, round, flat, active, no-wrap
               div 
                 span field&nbsp;
                 span.grey-text small, medium, large, border, round, flat,&nbsp;
@@ -1950,6 +1970,9 @@
               div 
                 span &lt;table&gt;&nbsp;
                 span.grey-text small, medium, large, border, left-align, center-align, right-align
+              div 
+                span &lt;video&gt;&nbsp;
+                span.orange-text responsive
               .space
               .orange-text * Element unique helpers
           .space
@@ -2031,6 +2054,7 @@
           i arrow_back
         a(data-ui="#modal-colors")
           h5.no-margin Back
+      .space
       .row
         .col.s6
           h5 Red
@@ -2336,13 +2360,11 @@
       h5 Title
       div Complementary text
       nav
-        button.none(onclick="$('#modal').attr('class', 'modal active');") Default
-        button.none(onclick="$('#modal').attr('class', 'modal left active');") Left
-        button.none(onclick="$('#modal').attr('class', 'modal right active');") Right
-        button.none(onclick="$('#modal').attr('class', 'modal top active');") Top
-        button.none(
-          onclick="$('#modal').attr('class', 'modal bottom active');"
-        ) Bottom
+        button.none(@click="updateModal('modal active')") Default
+        button.none(@click="updateModal('modal left active')") Left
+        button.none(@click="updateModal('modal right active')") Right
+        button.none(@click="updateModal('modal top active')") Top
+        button.none(@click="updateModal('modal bottom active')") Bottom
         button.none(data-ui="#modal") Close
 
     #modal-samples.modal.right.large
@@ -2583,6 +2605,12 @@ export default {
     },
     updateContainer(css) {
       $(".container").attr("class", css ? "container " + css : "container");
+    },
+    updatePage(css) {
+      $("#begin").attr("class", css);
+    },
+    updateModal(css) {
+      $("#modal").attr("class", css);
     },
     formatHtml(element) {
       function process(str) {
@@ -2946,13 +2974,6 @@ export default {
 </script>
 
 <style>
-.icon {
-  filter: invert(1);
-}
-#modal-colors .col > div {
-  padding: 12px;
-}
-
 #logo {
   display: none;
   max-width: 100%;
@@ -2969,6 +2990,17 @@ export default {
   height: 360px;
 }
 
+pre {
+  overflow: auto;
+  padding: 8px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.is-dark pre {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 pre * {
   vertical-align: text-bottom;
 }
@@ -2979,17 +3011,6 @@ pre * {
 
 .is-dark .hljs-string {
   color: #ff9800 !important;
-}
-
-pre {
-  overflow: auto;
-  padding: 8px;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.is-dark pre {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #rows .row {
@@ -3004,17 +3025,13 @@ pre {
   border: 2px solid;
 }
 
-.col.s12[id] > h5 {
-  margin-top: 32px;
+#modal-colors .col > div {
+  padding: 12px;
 }
 
 .logo-template {
   width: auto;
   height: 24px;
-}
-
-.opacity {
-  opacity: 0.1;
 }
 
 @keyframes logo-intro {

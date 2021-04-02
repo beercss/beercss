@@ -9,13 +9,13 @@ div
     button.circle.white.black-text.wave.dark
       i remove
   .large-space
-  .card.no-padding.large-margin.max.large.scroll.medium-device.large-device
+  .card.no-padding.large-margin.max.large.scroll.medium-device.large-device.page.left.active
     .large-padding.blue.white-text
       p.bold From {{ from }}
       p.bold To {{ to }}
-      h5(v-show="!from && !to") Where are you?
-      h5(v-show="from && !to") Where are you going?
-      h5(v-show="from && to") Confirm that ride?
+      h5.page.left.active(v-show="!from && !to") Where are you?
+      h5.page.left.active(v-show="from && !to") Where are you going?
+      h5.page.left.active(v-show="from && to") Confirm that ride?
       nav.right-align
         button.none.white-text.large.wave.light(@click="clean()")
           span Cancel

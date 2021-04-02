@@ -101,7 +101,7 @@ export default {
   },
   mounted() {
     this.updateTheme();
-    window.ui();
+    ui();
   },
   methods: {
     updateTheme() {

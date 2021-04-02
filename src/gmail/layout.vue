@@ -112,7 +112,9 @@
             data-ui="#dropdown-apps"
           )
             i.outlined apps
-            #dropdown-apps.dropdown.left.no-wrap.min(data-ui="#dropdown-apps")
+            #dropdown-apps.dropdown.left.no-wrap.small-width(
+              data-ui="#dropdown-apps"
+            )
               .large-padding
                 .row
                   a.wave.col.s6.center-align.middle-align
@@ -241,7 +243,7 @@ export default {
   },
   mounted() {
     this.updateTheme();
-    window.ui();
+    ui();
   },
   methods: {
     updateTheme() {

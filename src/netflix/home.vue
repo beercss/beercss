@@ -19,12 +19,12 @@
       .large-space
       h5.bold Today's ranking
       .row
-        .col.s12.m6.l3
+        .col.s12.m6.l3(v-for="(item, i) in todaysRanking")
           .card.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
             a.wave
-              img.responsive(:src="'/alok-001.jpg'")
+              img.responsive(:src="item.image")
             button.circle.small.absolute.right.top.margin.black.white-text
-              h5.no-margin.center-align 1
+              h5.no-margin.center-align {{ i + 1 }}
             .page
               .padding.absolute.left.right.bottom
                 nav
@@ -34,198 +34,97 @@
                     i add
                   button.circle.border.small.white-border.white-text
                     i thumb_up
-        .col.s12.m6.l3
-          .card.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
-            a.wave
-              img.responsive(:src="'/alok-002.jpg'")
-            button.circle.small.absolute.right.top.margin.black.white-text
-              h5.no-margin.center-align 2
-            .page
-              .padding.absolute.left.right.bottom
-                nav
-                  button.circle.border.small.white-border.white-text
-                    i play_arrow
-                  button.circle.border.small.white-border.white-text
-                    i add
-                  button.circle.border.small.white-border.white-text
-                    i thumb_up
-        .col.s12.m6.l3
-          .card.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
-            a.wave
-              img.responsive(:src="'/vintage-001.jpg'")
-            button.circle.small.absolute.right.top.margin.black.white-text
-              h5.no-margin.center-align 3
-            .page
-              .padding.absolute.left.right.bottom
-                nav
-                  button.circle.border.small.white-border.white-text
-                    i play_arrow
-                  button.circle.border.small.white-border.white-text
-                    i add
-                  button.circle.border.small.white-border.white-text
-                    i thumb_up
-        .col.s12.m6.l3
-          .card.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
-            a.wave
-              img.responsive(:src="'/vintage-002.jpg'")
-            button.circle.small.absolute.right.top.margin.black.white-text
-              h5.no-margin.center-align 4
-            .page
-              .padding.absolute.left.right.bottom
-                nav
-                  button.circle.border.small.white-border.white-text
-                    i play_arrow
-                  button.circle.border.small.white-border.white-text
-                    i add
-                  button.circle.border.small.white-border.white-text
-                    i thumb_up
-        .col.s12.m6.l3
-          .card.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
-            a.wave
-              img.responsive(:src="'/radio-001.jpg'")
-            button.circle.small.absolute.right.top.margin.black.white-text
-              h5.no-margin.center-align 5
-            .page
-              .padding.absolute.left.right.bottom
-                nav
-                  button.circle.border.small.white-border.white-text
-                    i play_arrow
-                  button.circle.border.small.white-border.white-text
-                    i add
-                  button.circle.border.small.white-border.white-text
-                    i thumb_up
-        .col.s12.m6.l3
-          .card.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
-            a.wave
-              img.responsive(:src="'/ocean-001.jpg'")
-            button.circle.small.absolute.right.top.margin.black.white-text
-              h5.no-margin.center-align 6
-            .page
-              .padding.absolute.left.right.bottom
-                nav
-                  button.circle.border.small.white-border.white-text
-                    i play_arrow
-                  button.circle.border.small.white-border.white-text
-                    i add
-                  button.circle.border.small.white-border.white-text
-                    i thumb_up
-        .col.s12.m6.l3
-          .card.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
-            a.wave
-              img.responsive(:src="'/alok-001.jpg'")
-            button.circle.small.absolute.right.top.margin.black.white-text
-              h5.no-margin.center-align 7
-            .page
-              .padding.absolute.left.right.bottom
-                nav
-                  button.circle.border.small.white-border.white-text
-                    i play_arrow
-                  button.circle.border.small.white-border.white-text
-                    i add
-                  button.circle.border.small.white-border.white-text
-                    i thumb_up
-        .col.s12.m6.l3
-          .card.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
-            a.wave
-              img.responsive(:src="'/alok-002.jpg'")
-            button.circle.small.absolute.right.top.margin.black.white-text
-              h5.no-margin.center-align 8
-            .page
-              .padding.absolute.left.right.bottom
-                nav
-                  button.circle.border.small.white-border.white-text
-                    i play_arrow
-                  button.circle.border.small.white-border.white-text
-                    i add
-                  button.circle.border.small.white-border.white-text
-                    i thumb_up
-
       #series.large-space.page.active
       h5.bold Series
       .row.no-wrap.scroll
-        .col
-          .card.no-padding.min
+        .col(v-for="item in series")
+          .card.no-padding.small-width
             a.wave
-              img.responsive(:src="'/vintage-001.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/vintage-002.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/radio-001.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/ocean-001.jpg'")
+              img.responsive(:src="item.image")
 
       #movies.large-space.page.active
       h5.bold Movies
       .row.no-wrap.scroll
-        .col
-          .card.no-padding.min
+        .col(v-for="item in movies")
+          .card.no-padding.small-width
             a.wave
-              img.responsive(:src="'/alok-001.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/alok-002.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/vintage-001.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/vintage-002.jpg'")
+              img.responsive(:src="item.image")
 
       #hot.large-space.page.active
       h5.bold Hot
       .row.no-wrap.scroll
-        .col
-          .card.no-padding.min
+        .col(v-for="item in hot")
+          .card.no-padding.small-width
             a.wave
-              img.responsive(:src="'/radio-001.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/ocean-001.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/alok-001.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/alok-002.jpg'")
+              img.responsive(:src="item.image")
 
       #my-list.large-space.page.active
       h5.bold My list
       .row.no-wrap.scroll
-        .col
-          .card.no-padding.min
+        .col(v-for="item in myList")
+          .card.no-padding.small-width
             a.wave
-              img.responsive(:src="'/vintage-001.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/vintage-002.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/radio-001.jpg'")
-        .col
-          .card.no-padding.min
-            a.wave
-              img.responsive(:src="'/ocean-001.jpg'")
+              img.responsive(:src="item.image")
 </template>
 
 <script>
 export default {
-  mounted() {},
   data() {
-    return;
+    return {
+      todaysRanking: [
+        { image: "/alok-001.jpg" },
+        { image: "/alok-002.jpg" },
+        { image: "/vintage-001.jpg" },
+        { image: "/vintage-002.jpg" },
+        { image: "/radio-001.jpg" },
+        { image: "/ocean-001.jpg" },
+        { image: "/alok-001.jpg" },
+        { image: "/alok-002.jpg" },
+      ],
+      series: [
+        { image: "/vintage-001.jpg" },
+        { image: "/vintage-002.jpg" },
+        { image: "/radio-001.jpg" },
+        { image: "/ocean-001.jpg" },
+        { image: "/alok-001.jpg" },
+        { image: "/alok-002.jpg" },
+        { image: "/vintage-001.jpg" },
+        { image: "/vintage-002.jpg" },
+      ],
+      movies: [
+        { image: "/radio-001.jpg" },
+        { image: "/ocean-001.jpg" },
+        { image: "/alok-001.jpg" },
+        { image: "/alok-002.jpg" },
+        { image: "/vintage-001.jpg" },
+        { image: "/vintage-002.jpg" },
+        { image: "/radio-001.jpg" },
+        { image: "/ocean-001.jpg" },
+      ],
+      hot: [
+        { image: "/alok-001.jpg" },
+        { image: "/alok-002.jpg" },
+        { image: "/vintage-001.jpg" },
+        { image: "/vintage-002.jpg" },
+        { image: "/radio-001.jpg" },
+        { image: "/ocean-001.jpg" },
+        { image: "/alok-001.jpg" },
+        { image: "/alok-002.jpg" },
+      ],
+      myList: [
+        { image: "/vintage-001.jpg" },
+        { image: "/vintage-002.jpg" },
+        { image: "/radio-001.jpg" },
+        { image: "/ocean-001.jpg" },
+        { image: "/alok-001.jpg" },
+        { image: "/alok-002.jpg" },
+        { image: "/vintage-001.jpg" },
+        { image: "/vintage-002.jpg" },
+      ],
+    };
+  },
+  mounted() {
+    ui();
   },
   methods: {
     showDetails(event) {

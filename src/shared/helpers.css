@@ -317,8 +317,16 @@ label {
   overflow: hidden;
 }
 
-video.responsive {
-  object-fit: cover;
+.small-width {
+  width: 200px;
+}
+
+.medium-width {
+  width: 300px;
+}
+
+.large-width {
+  width: 400px;
 }
 
 @media only screen and (max-width: 600px) {
