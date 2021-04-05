@@ -36,3 +36,11 @@ video.empty-state {
   max-width: 100%;
   width: 400px;
 }
+
+.card.round > video.responsive:not(.round):first-child {
+  border-radius: 16px 16px 0 0;
+}
+
+.card.round > video.responsive:not(.round):last-child {
+  border-radius: 0 0 16px 16px;
+}

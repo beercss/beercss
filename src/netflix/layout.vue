@@ -89,13 +89,6 @@ div
 
 <script>
 export default {
-  data() {
-    return {
-      url: "/netflix",
-      theme: null,
-      logo: null,
-    };
-  },
   created() {
     window.$layout = this;
   },

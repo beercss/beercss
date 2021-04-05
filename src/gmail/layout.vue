@@ -112,9 +112,7 @@
             data-ui="#dropdown-apps"
           )
             i.outlined apps
-            #dropdown-apps.dropdown.left.no-wrap.small-width(
-              data-ui="#dropdown-apps"
-            )
+            #dropdown-apps.dropdown.left.small-width(data-ui="#dropdown-apps")
               .large-padding
                 .row
                   a.wave.col.s6.center-align.middle-align
@@ -256,10 +254,6 @@ export default {
       }
 
       document.body.className = this.theme;
-    },
-    scroll(selector) {
-      let element = document.querySelector(selector);
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
     },
     redirect(component) {
       this.url = page.current;

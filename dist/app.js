@@ -11320,6 +11320,9 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -16225,7 +16228,10 @@ var staticRenderFns = [
             _c("div", [_vm._v("large")]),
             _c("div", [_vm._v("small-width")]),
             _c("div", [_vm._v("medium-width")]),
-            _c("div", [_vm._v("large-width")])
+            _c("div", [_vm._v("large-width")]),
+            _c("div", [_vm._v("small-height")]),
+            _c("div", [_vm._v("medium-height")]),
+            _c("div", [_vm._v("large-height")])
           ]),
           _c("div", { staticClass: "col" }, [
             _c("b", [_vm._v("Margin")]),
@@ -16325,7 +16331,7 @@ var staticRenderFns = [
           _c("span", { staticClass: "grey-text" }, [
             _vm._v("left, right, top, bottom, border, round, circle, ")
           ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("auto")])
+          _c("span", { staticClass: "orange-text" }, [_vm._v("none")])
         ]),
         _c("div", [
           _c("span", [_vm._v("button ")]),
@@ -19335,13 +19341,6 @@ exports.default = void 0;
 //
 //
 var _default = {
-  data: function data() {
-    return {
-      url: "/netflix",
-      theme: null,
-      logo: null
-    };
-  },
   created: function created() {
     window.$layout = this;
   },
@@ -20404,8 +20403,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
 var _default = {
   data: function data() {
     return {
@@ -20432,13 +20429,6 @@ var _default = {
       }
 
       document.body.className = this.theme;
-    },
-    scroll: function scroll(selector) {
-      var element = document.querySelector(selector);
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
     },
     redirect: function redirect(component) {
       this.url = page.current;
@@ -20677,7 +20667,7 @@ exports.default = _default;
                 _c(
                   "div",
                   {
-                    staticClass: "dropdown left no-wrap small-width",
+                    staticClass: "dropdown left small-width",
                     attrs: { id: "dropdown-apps", "data-ui": "#dropdown-apps" }
                   },
                   [
@@ -22685,7 +22675,7 @@ exports.default = _default;
       "div",
       {
         staticClass:
-          "card no-padding large-margin max large scroll medium-device large-device page left active"
+          "card no-padding large-margin medium-width large-height scroll medium-device large-device page left active"
       },
       [
         _c("div", { staticClass: "large-padding blue white-text" }, [
@@ -22801,7 +22791,7 @@ exports.default = _default;
                 _c("h6", { staticClass: "no-margin" }, [
                   _vm._v(_vm._s(_vm.street))
                 ]),
-                _c("a", { staticClass: "link" }, [
+                _c("div", { staticClass: "link" }, [
                   _vm._v("Your current location")
                 ])
               ])

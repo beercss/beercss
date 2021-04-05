@@ -1811,6 +1811,9 @@
                 div small-width
                 div medium-width
                 div large-width
+                div small-height
+                div medium-height
+                div large-height
               .col
                 b Margin
                 div margin
@@ -1886,7 +1889,7 @@
               div
                 span badge&nbsp;
                 span.grey-text left, right, top, bottom, border, round, circle,&nbsp;
-                span.orange-text auto
+                span.orange-text none
               div 
                 span button&nbsp;
                 span.grey-text small, medium, large, border, round, circle, flat,&nbsp;

@@ -94,8 +94,7 @@ h6,
   font-size: 0.8rem;
 }
 
-.medium-text,
-.text {
+.medium-text {
   font-size: 0.9rem;
 }
 
@@ -322,11 +321,23 @@ label {
 }
 
 .medium-width {
-  width: 300px;
+  width: 350px;
 }
 
 .large-width {
-  width: 400px;
+  width: 500px;
+}
+
+.small-height {
+  height: 200px;
+}
+
+.medium-height {
+  height: 350px;
+}
+
+.large-height {
+  height: 500px;
 }
 
 @media only screen and (max-width: 600px) {
