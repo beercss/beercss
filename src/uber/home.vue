@@ -70,7 +70,7 @@ div
           i gps_fixed
       .col
         h6.no-margin {{ street }}
-        a.link Your current location
+        .link Your current location
     .divider
     a.row.no-wrap(@click="go()")
       .col.min

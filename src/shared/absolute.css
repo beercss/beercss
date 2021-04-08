@@ -1,6 +1,7 @@
 .absolute {
   position: absolute;
   border-radius: inherit;
+  float: none;
 }
 
 .absolute.round {
@@ -21,22 +22,23 @@
   transform: translateY(-50%);
 }
 
+.absolute.middle.center {
+  transform: translate(-50%, -50%);
+}
+
 .absolute.top {
   top: 0;
 }
 
 .absolute.left {
-  float: none;
   left: 0;
 }
 
 .absolute.right {
-  float: none;
   right: 0;
 }
 
-.absolute.bottom,
-.fixed.bottom {
+.absolute.bottom {
   bottom: 0;
 }
 

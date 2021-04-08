@@ -4,8 +4,9 @@
 - Adding textarea element
 - Adding .min and .max helpers to .container
 - Adding width helpers to use as .small-width, medium-width, .large-width
+- Adding height helpers to use as .small-height, medium-height, .large-height
 - Adding .dark and .light helpers to .wave
-- Adding video helper
+- Adding video element
 - Adding all 5 custom colors to use as .color-1, .color-1-text and .color-1-border
 - Removing border from menu item on hover/activated, now it's like navigation rail of material design.
 - BREAKING CHANGE - Renaming .nowrap to .no-wrap, it's like .no-padding, .no-margin and others.
