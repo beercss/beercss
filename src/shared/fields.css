@@ -78,7 +78,7 @@ input[type="file"] {
   cursor: pointer;
 }
 
-/* input e textarea */
+/* input and textarea */
 .field.small.textarea {
   height: 72px;
 }

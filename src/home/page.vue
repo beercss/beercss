@@ -996,83 +996,6 @@
           i.large work
           i.large update
           i.large thumb_up
-      #images.col.s12
-        .medium-space
-        h5
-          span Images
-          a.chip.circle
-            i(
-              @click="showSamples('#images img:visible, #images video:visible,')"
-            ) code
-        nav.wrap
-          label.radio
-            input(
-              v-model="mediaImage",
-              value="1",
-              type="radio",
-              name="media-images"
-            )
-            span images
-          label.radio
-            input(
-              v-model="mediaImage",
-              value="2",
-              type="radio",
-              name="media-images"
-            )
-            span videos
-        nav.wrap(v-show="mediaImage == 1")
-          a
-            img.circle.tiny(:src="'/beer-and-woman.jpg'")
-          a
-            img.circle.small(:src="'/beer-and-woman.jpg'")
-          a
-            img.circle(:src="'/beer-and-woman.jpg'")
-          a
-            img.circle.large(:src="'/beer-and-woman.jpg'")
-          a
-            img.circle.extra(:src="'/beer-and-woman.jpg'")
-          a
-            img.round.tiny(:src="'/beer-and-woman.jpg'")
-          a
-            img.round.small(:src="'/beer-and-woman.jpg'")
-          a
-            img.round(:src="'/beer-and-woman.jpg'")
-          a
-            img.round.large(:src="'/beer-and-woman.jpg'")
-          a
-            img.round.extra(:src="'/beer-and-woman.jpg'")
-        nav.wrap(v-show="mediaImage == 2")
-          a
-            video.circle.tiny(autoplay, loop, muted)
-              source(:src="'/dance.mp4'", type="video/mp4")
-          a
-            video.circle.small(autoplay, loop, muted)
-              source(:src="'/dance.mp4'", type="video/mp4")
-          a
-            video.circle.medium(autoplay, loop, muted)
-              source(:src="'/dance.mp4'", type="video/mp4")
-          a
-            video.circle.large(autoplay, loop, muted)
-              source(:src="'/dance.mp4'", type="video/mp4")
-          a
-            video.circle.extra(autoplay, loop, muted)
-              source(:src="'/dance.mp4'", type="video/mp4")
-          a
-            video.round.tiny(autoplay, loop, muted)
-              source(:src="'/dance.mp4'", type="video/mp4")
-          a
-            video.round.small(autoplay, loop, muted)
-              source(:src="'/dance.mp4'", type="video/mp4")
-          a
-            video.round.medium(autoplay, loop, muted)
-              source(:src="'/dance.mp4'", type="video/mp4")
-          a
-            video.round.large(autoplay, loop, muted)
-              source(:src="'/dance.mp4'", type="video/mp4")
-          a
-            video.round.extra(autoplay, loop, muted)
-              source(:src="'/dance.mp4'", type="video/mp4")
       #inputs.col.s12
         .medium-space
         h5
@@ -1165,6 +1088,35 @@
               label Text
               i search
               span.error Error text
+      #layouts.col.s12
+        .medium-space
+        h5
+          span Layouts
+          a.chip.circle
+            i(@click="layout = 0; showSamples('#layouts .absolute')") code
+        nav.wrap
+          label.checkbox
+            input#left-layouts(type="checkbox")
+            span left
+          label.checkbox
+            input#right-layouts(type="checkbox")
+            span right
+          label.checkbox
+            input#center-layouts(type="checkbox", checked)
+            span center
+          label.checkbox
+            input#top-layouts(type="checkbox")
+            span top
+          label.checkbox
+            input#bottom-layouts(type="checkbox")
+            span bottom
+          label.checkbox
+            input#middle-layouts(type="checkbox", checked)
+            span middle
+        .card.border.small.transparent.no-padding
+          .absolute.middle.center.color-1
+            .padding.white-text
+              h5.no-margin Absolute
       #list.col.s12
         .medium-space
         h5
@@ -1322,6 +1274,81 @@
           a
             svg.loader.large.yellow(viewBox="0 0 66 66")
               circle(fill="none", cx="33", cy="33", r="30")
+      #media.col.s12
+        .medium-space
+        h5
+          span Media
+          a.chip.circle
+            i(@click="showSamples('#media img:visible, #media video:visible')") code
+        nav.wrap
+          label.radio
+            input(
+              v-model="mediaImage",
+              value="1",
+              type="radio",
+              name="media-images"
+            )
+            span images
+          label.radio
+            input(
+              v-model="mediaImage",
+              value="2",
+              type="radio",
+              name="media-images"
+            )
+            span videos
+        nav.wrap(v-show="mediaImage == 1")
+          a
+            img.circle.tiny(:src="'/beer-and-woman.jpg'")
+          a
+            img.circle.small(:src="'/beer-and-woman.jpg'")
+          a
+            img.circle(:src="'/beer-and-woman.jpg'")
+          a
+            img.circle.large(:src="'/beer-and-woman.jpg'")
+          a
+            img.circle.extra(:src="'/beer-and-woman.jpg'")
+          a
+            img.round.tiny(:src="'/beer-and-woman.jpg'")
+          a
+            img.round.small(:src="'/beer-and-woman.jpg'")
+          a
+            img.round(:src="'/beer-and-woman.jpg'")
+          a
+            img.round.large(:src="'/beer-and-woman.jpg'")
+          a
+            img.round.extra(:src="'/beer-and-woman.jpg'")
+        nav.wrap(v-show="mediaImage == 2")
+          a
+            video.circle.tiny(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.circle.small(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.circle.medium(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.circle.large(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.circle.extra(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.round.tiny(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.round.small(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.round.medium(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.round.large(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.round.extra(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
       #modals.col.s12
         .medium-space
         h5
@@ -2705,6 +2732,7 @@ export default {
       theme: true,
       mediaCard: 1,
       mediaImage: 1,
+      layout: 0,
     };
   },
   watch: {},
@@ -2739,6 +2767,7 @@ export default {
     this.selectSamples();
     this.rowSamples();
     this.textareaSamples();
+    this.layoutSamples();
 
     setTimeout(() => {
       $("#logo").addClass("active");
@@ -2758,6 +2787,12 @@ export default {
         document.body.className = "";
         this.theme = "";
       }
+    },
+    goTo(selector) {
+      setTimeout(() => {
+        let element = document.querySelector(selector);
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 180);
     },
     addHomeScreen() {
       if (window.beercss && window.beercss.installEvent)
@@ -2793,6 +2828,38 @@ export default {
           if (css != "medium") $(menu[i]).addClass(css);
         }
       }
+    },
+    layoutSamples() {
+      $("#layouts input").on("click", function () {
+        var id = $(this).attr("id");
+        var checked = $(this).is(":checked");
+        var positions = ["left", "right", "center", "top", "bottom", "middle"];
+        var absolute = $("#layouts .absolute");
+
+        if (checked && (id == "left-layouts" || id == "right-layouts"))
+          $("#center-layouts")[0].checked = false;
+
+        if (checked && (id == "top-layouts" || id == "bottom-layouts"))
+          $("#middle-layouts")[0].checked = false;
+
+        if (checked && id == "center-layouts") {
+          $("#left-layouts")[0].checked = false;
+          $("#right-layouts")[0].checked = false;
+        }
+
+        if (checked && id == "middle-layouts") {
+          $("#top-layouts")[0].checked = false;
+          $("#bottom-layouts")[0].checked = false;
+        }
+
+        $(absolute).removeClass("left right center top bottom middle");
+
+        for (var i = 0; i < positions.length; i++) {
+          if ($("#" + positions[i] + "-layouts").is(":checked")) {
+            $(absolute).addClass(positions[i]);
+          }
+        }
+      });
     },
     updateIcons() {
       var i = $("i");
@@ -2859,7 +2926,9 @@ export default {
           $(elements[i]).is(".menu") ||
           $(elements[i]).is(".modal") ||
           $(elements[i]).is(".toast") ||
-          $(elements[i]).is(".container")
+          $(elements[i]).is(".container") ||
+          $(elements[i]).is(".absolute") ||
+          $(elements[i]).is(".fixed")
         )
           html = "";
 
