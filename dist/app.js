@@ -11323,6 +11323,198 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -11331,7 +11523,9 @@ var _default = {
       htmlSample: null,
       jsSample: null,
       autoSample: null,
-      theme: true
+      theme: true,
+      mediaCard: 1,
+      mediaImage: 1
     };
   },
   watch: {},
@@ -11346,7 +11540,6 @@ var _default = {
     this.resetTheme();
     this.badgeSamples();
     this.buttonSamples();
-    this.chartSamples();
     this.inputSamples();
     this.listSamples();
     this.tableSamples();
@@ -11356,7 +11549,7 @@ var _default = {
     this.textareaSamples();
     setTimeout(function () {
       $("#logo").addClass("active");
-    }, 360);
+    }, 1000);
   },
   methods: {
     resetTheme: function resetTheme() {
@@ -11648,41 +11841,6 @@ var _default = {
           if ($(selector).is(":checked")) $("#rows .row").addClass(ids[i]);else $("#rows .row").removeClass(ids[i]);
         }
       });
-    },
-    chartSamples: function chartSamples() {
-      for (var i = 0; i < 2; i++) {
-        var lightBlue = ["#03a9f4", "#29b6f6", "#4fc3f7", "#81d4fa", "#b3e5fc", "#e1f5fe"];
-        var amber = ["#ffc107", "#ffca28", "#ffd54f", "#ffe082", "#ffecb3", "#fff8e1"];
-        var pink = ["#e91e63", "#ec407a", "#f06292", "#f48fb1", "#f8bbd0", "#fce4ec"];
-        var lightGreen = ["#8bc34a", "#9ccc65", "#aed581", "#c5e1a5", "#dcedc8", "#f1f8e9"];
-        var purple = ["#9c27b0", "#ab47bc", "#ba68c8", "#ce93d8", "#e1bee7", "#f3e5f5"];
-        var teal = ["#009688", "#26a69a", "#4db6ac", "#80cbc4", "#b2dfdb", "#e0f2f1"];
-        var colors = [lightBlue, amber, pink, lightGreen, purple];
-        var type = i == 0 ? "bar" : "doughnut";
-        var ctx = document.getElementById("grafico" + i);
-        Chart.defaults.global.defaultFontColor = "#9e9e9e";
-        var myChart = new Chart(ctx, {
-          type: i == 0 ? "bar" : "doughnut",
-          data: {
-            labels: ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"],
-            datasets: [{
-              label: "Label",
-              data: [12, 19, 3, 5, 2],
-              backgroundColor: colors[Math.floor(Math.random() * 5)],
-              borderWidth: 0
-            }]
-          },
-          options: {
-            scales: {
-              yAxes: [{
-                ticks: {
-                  beginAtZero: true
-                }
-              }]
-            }
-          }
-        });
-      }
     }
   }
 };
@@ -12239,7 +12397,7 @@ exports.default = _default;
                 {
                   on: {
                     click: function($event) {
-                      _vm.showSamples("#cards .card:not(.chart)")
+                      return _vm.showSamples("#cards .card:visible")
                     }
                   }
                 },
@@ -12247,166 +12405,548 @@ exports.default = _default;
               )
             ])
           ]),
-          _c("div", { staticClass: "space" }),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card" }, [
-                _c("div", { staticClass: "row no-wrap" }, [
-                  _c("div", { staticClass: "col min" }, [
-                    _c("img", {
-                      staticClass: "circle large",
-                      attrs: { src: "/beer-and-woman.jpg" }
-                    })
-                  ]),
-                  _vm._m(8)
+          _c("nav", { staticClass: "wrap" }, [
+            _c("label", { staticClass: "radio" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.mediaCard,
+                    expression: "mediaCard"
+                  }
+                ],
+                attrs: { value: "1", type: "radio", name: "media-cards" },
+                domProps: { checked: _vm._q(_vm.mediaCard, "1") },
+                on: {
+                  change: function($event) {
+                    _vm.mediaCard = "1"
+                  }
+                }
+              }),
+              _c("span", [_vm._v("images")])
+            ]),
+            _c("label", { staticClass: "radio" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.mediaCard,
+                    expression: "mediaCard"
+                  }
+                ],
+                attrs: { value: "2", type: "radio", name: "media-cards" },
+                domProps: { checked: _vm._q(_vm.mediaCard, "2") },
+                on: {
+                  change: function($event) {
+                    _vm.mediaCard = "2"
+                  }
+                }
+              }),
+              _c("span", [_vm._v("videos")])
+            ])
+          ]),
+          _vm.mediaCard == 1
+            ? _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card" }, [
+                    _c("div", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c("img", {
+                          staticClass: "circle large",
+                          attrs: { src: "/beer-and-woman.jpg" }
+                        })
+                      ]),
+                      _vm._m(8)
+                    ]),
+                    _vm._m(9)
+                  ])
                 ]),
-                _vm._m(9)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card round" }, [
-                _c("div", { staticClass: "row no-wrap" }, [
-                  _c("div", { staticClass: "col min" }, [
-                    _c("img", {
-                      staticClass: "circle large",
-                      attrs: { src: "/beer-and-woman.jpg" }
-                    })
-                  ]),
-                  _vm._m(10)
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card round" }, [
+                    _c("div", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c("img", {
+                          staticClass: "circle large",
+                          attrs: { src: "/beer-and-woman.jpg" }
+                        })
+                      ]),
+                      _vm._m(10)
+                    ]),
+                    _vm._m(11)
+                  ])
                 ]),
-                _vm._m(11)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card border" }, [
-                _c("div", { staticClass: "row no-wrap" }, [
-                  _c("div", { staticClass: "col min" }, [
-                    _c("img", {
-                      staticClass: "circle large",
-                      attrs: { src: "/beer-and-woman.jpg" }
-                    })
-                  ]),
-                  _vm._m(12)
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card border" }, [
+                    _c("div", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c("img", {
+                          staticClass: "circle large",
+                          attrs: { src: "/beer-and-woman.jpg" }
+                        })
+                      ]),
+                      _vm._m(12)
+                    ]),
+                    _vm._m(13)
+                  ])
                 ]),
-                _vm._m(13)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card border round" }, [
-                _c("div", { staticClass: "row no-wrap" }, [
-                  _c("div", { staticClass: "col min" }, [
-                    _c("img", {
-                      staticClass: "circle large",
-                      attrs: { src: "/beer-and-woman.jpg" }
-                    })
-                  ]),
-                  _vm._m(14)
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card border round" }, [
+                    _c("div", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c("img", {
+                          staticClass: "circle large",
+                          attrs: { src: "/beer-and-woman.jpg" }
+                        })
+                      ]),
+                      _vm._m(14)
+                    ]),
+                    _vm._m(15)
+                  ])
                 ]),
-                _vm._m(15)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding" }, [
-                _c("img", {
-                  staticClass: "responsive small",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _vm._m(16)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding round" }, [
-                _c("img", {
-                  staticClass: "responsive small",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _vm._m(17)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding border" }, [
-                _c("img", {
-                  staticClass: "responsive small",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _vm._m(18)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding border round" }, [
-                _c("img", {
-                  staticClass: "responsive small",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _vm._m(19)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding" }, [
-                _c("img", {
-                  staticClass: "responsive medium",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _vm._m(20)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding round" }, [
-                _c("img", {
-                  staticClass: "responsive medium round",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _vm._m(21)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding border" }, [
-                _c("img", {
-                  staticClass: "responsive medium",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _vm._m(22)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 m6 l3" }, [
-              _c("div", { staticClass: "card no-padding border round" }, [
-                _c("img", {
-                  staticClass: "responsive medium round",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                }),
-                _vm._m(23)
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 l6" }, [
-              _c("div", { staticClass: "card no-padding" }, [
-                _c("div", { staticClass: "row no-wrap no-space" }, [
-                  _c("div", { staticClass: "col" }, [
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding" }, [
                     _c("img", {
-                      staticClass: "responsive",
-                      attrs: { src: "/beer-and-woman.jpg" }
-                    })
-                  ]),
-                  _vm._m(24)
-                ])
-              ])
-            ]),
-            _c("div", { staticClass: "col s12 l6" }, [
-              _c("div", { staticClass: "card no-padding" }, [
-                _c("div", { staticClass: "row no-wrap no-space" }, [
-                  _c("div", { staticClass: "col" }, [
-                    _c("img", {
-                      staticClass: "responsive",
+                      staticClass: "responsive small",
                       attrs: { src: "/beer-and-woman.jpg" }
                     }),
-                    _vm._m(25)
-                  ]),
-                  _vm._m(26)
+                    _vm._m(16)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding round" }, [
+                    _c("img", {
+                      staticClass: "responsive small",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    }),
+                    _vm._m(17)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding border" }, [
+                    _c("img", {
+                      staticClass: "responsive small",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    }),
+                    _vm._m(18)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding border round" }, [
+                    _c("img", {
+                      staticClass: "responsive small",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    }),
+                    _vm._m(19)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding" }, [
+                    _c("img", {
+                      staticClass: "responsive medium",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    }),
+                    _vm._m(20)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding round" }, [
+                    _c("img", {
+                      staticClass: "responsive medium round",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    }),
+                    _vm._m(21)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding border" }, [
+                    _c("img", {
+                      staticClass: "responsive medium",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    }),
+                    _vm._m(22)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding border round" }, [
+                    _c("img", {
+                      staticClass: "responsive medium round",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    }),
+                    _vm._m(23)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 l6" }, [
+                  _c("div", { staticClass: "card no-padding" }, [
+                    _c("div", { staticClass: "row no-wrap no-space" }, [
+                      _c("div", { staticClass: "col" }, [
+                        _c("img", {
+                          staticClass: "responsive",
+                          attrs: { src: "/beer-and-woman.jpg" }
+                        })
+                      ]),
+                      _vm._m(24)
+                    ])
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 l6" }, [
+                  _c("div", { staticClass: "card no-padding" }, [
+                    _c("div", { staticClass: "row no-wrap no-space" }, [
+                      _c("div", { staticClass: "col" }, [
+                        _c("img", {
+                          staticClass: "responsive",
+                          attrs: { src: "/beer-and-woman.jpg" }
+                        }),
+                        _vm._m(25)
+                      ]),
+                      _vm._m(26)
+                    ])
+                  ])
                 ])
               ])
-            ]),
-            _vm._m(27),
-            _vm._m(28)
-          ])
+            : _vm._e(),
+          _vm.mediaCard == 2
+            ? _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card" }, [
+                    _c("div", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c(
+                          "video",
+                          {
+                            staticClass: "circle large",
+                            attrs: {
+                              autoplay: "autoplay",
+                              loop: "loop",
+                              muted: "muted"
+                            },
+                            domProps: { muted: true }
+                          },
+                          [
+                            _c("source", {
+                              attrs: { src: "/dance.mp4", type: "video/mp4" }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._m(27)
+                    ]),
+                    _vm._m(28)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card round" }, [
+                    _c("div", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c(
+                          "video",
+                          {
+                            staticClass: "circle large",
+                            attrs: {
+                              autoplay: "autoplay",
+                              loop: "loop",
+                              muted: "muted"
+                            },
+                            domProps: { muted: true }
+                          },
+                          [
+                            _c("source", {
+                              attrs: { src: "/dance.mp4", type: "video/mp4" }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._m(29)
+                    ]),
+                    _vm._m(30)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card border" }, [
+                    _c("div", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c(
+                          "video",
+                          {
+                            staticClass: "circle large",
+                            attrs: {
+                              autoplay: "autoplay",
+                              loop: "loop",
+                              muted: "muted"
+                            },
+                            domProps: { muted: true }
+                          },
+                          [
+                            _c("source", {
+                              attrs: { src: "/dance.mp4", type: "video/mp4" }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._m(31)
+                    ]),
+                    _vm._m(32)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card border round" }, [
+                    _c("div", { staticClass: "row no-wrap" }, [
+                      _c("div", { staticClass: "col min" }, [
+                        _c(
+                          "video",
+                          {
+                            staticClass: "circle large",
+                            attrs: {
+                              autoplay: "autoplay",
+                              loop: "loop",
+                              muted: "muted"
+                            },
+                            domProps: { muted: true }
+                          },
+                          [
+                            _c("source", {
+                              attrs: { src: "/dance.mp4", type: "video/mp4" }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._m(33)
+                    ]),
+                    _vm._m(34)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding" }, [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "responsive small",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    ),
+                    _vm._m(35)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding round" }, [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "responsive small",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    ),
+                    _vm._m(36)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding border" }, [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "responsive small",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    ),
+                    _vm._m(37)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding border round" }, [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "responsive small",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    ),
+                    _vm._m(38)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding" }, [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "responsive medium",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    ),
+                    _vm._m(39)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding round" }, [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "responsive medium round",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    ),
+                    _vm._m(40)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding border" }, [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "responsive medium",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    ),
+                    _vm._m(41)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "card no-padding border round" }, [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "responsive medium round",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    ),
+                    _vm._m(42)
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 l6" }, [
+                  _c("div", { staticClass: "card no-padding" }, [
+                    _c("div", { staticClass: "row no-wrap no-space" }, [
+                      _c("div", { staticClass: "col" }, [
+                        _c(
+                          "video",
+                          {
+                            staticClass: "responsive",
+                            attrs: {
+                              autoplay: "autoplay",
+                              loop: "loop",
+                              muted: "muted"
+                            },
+                            domProps: { muted: true }
+                          },
+                          [
+                            _c("source", {
+                              attrs: { src: "/dance.mp4", type: "video/mp4" }
+                            })
+                          ]
+                        )
+                      ]),
+                      _vm._m(43)
+                    ])
+                  ])
+                ]),
+                _c("div", { staticClass: "col s12 l6" }, [
+                  _c("div", { staticClass: "card no-padding" }, [
+                    _c("div", { staticClass: "row no-wrap no-space" }, [
+                      _c("div", { staticClass: "col" }, [
+                        _c(
+                          "video",
+                          {
+                            staticClass: "responsive",
+                            attrs: {
+                              autoplay: "autoplay",
+                              loop: "loop",
+                              muted: "muted"
+                            },
+                            domProps: { muted: true }
+                          },
+                          [
+                            _c("source", {
+                              attrs: { src: "/dance.mp4", type: "video/mp4" }
+                            })
+                          ]
+                        ),
+                        _vm._m(44)
+                      ]),
+                      _vm._m(45)
+                    ])
+                  ])
+                ])
+              ])
+            : _vm._e()
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "checkboxes" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -12426,7 +12966,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(29)
+          _vm._m(46)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "chips" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -12446,9 +12986,9 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(30)
+          _vm._m(47)
         ]),
-        _vm._m(31),
+        _vm._m(48),
         _c("div", { staticClass: "col s12", attrs: { id: "containers" } }, [
           _c("div", { staticClass: "medium-space" }),
           _c("h5", [
@@ -12547,9 +13087,9 @@ exports.default = _default;
                 },
                 [
                   _c("a", [_vm._v("Title")]),
-                  _vm._m(32),
-                  _vm._m(33),
-                  _vm._m(34),
+                  _vm._m(49),
+                  _vm._m(50),
+                  _vm._m(51),
                   _c("a", { staticClass: "row no-wrap middle-align" }, [
                     _c("div", { staticClass: "col min" }, [
                       _c("img", {
@@ -12566,7 +13106,7 @@ exports.default = _default;
                         attrs: { src: "/beer-and-woman.jpg" }
                       })
                     ]),
-                    _vm._m(35)
+                    _vm._m(52)
                   ])
                 ]
               )
@@ -12582,9 +13122,9 @@ exports.default = _default;
                 },
                 [
                   _c("a", [_vm._v("Title")]),
-                  _vm._m(36),
-                  _vm._m(37),
-                  _vm._m(38),
+                  _vm._m(53),
+                  _vm._m(54),
+                  _vm._m(55),
                   _c("a", { staticClass: "row no-wrap middle-align" }, [
                     _c("div", { staticClass: "col min" }, [
                       _c("img", {
@@ -12601,7 +13141,7 @@ exports.default = _default;
                         attrs: { src: "/beer-and-woman.jpg" }
                       })
                     ]),
-                    _vm._m(39)
+                    _vm._m(56)
                   ])
                 ]
               )
@@ -12622,9 +13162,9 @@ exports.default = _default;
                   },
                   [
                     _c("a", [_vm._v("Title")]),
-                    _vm._m(40),
-                    _vm._m(41),
-                    _vm._m(42),
+                    _vm._m(57),
+                    _vm._m(58),
+                    _vm._m(59),
                     _c("a", { staticClass: "row no-wrap middle-align" }, [
                       _c("div", { staticClass: "col min" }, [
                         _c("img", {
@@ -12641,7 +13181,7 @@ exports.default = _default;
                           attrs: { src: "/beer-and-woman.jpg" }
                         })
                       ]),
-                      _vm._m(43)
+                      _vm._m(60)
                     ])
                   ]
                 )
@@ -12663,9 +13203,9 @@ exports.default = _default;
                   },
                   [
                     _c("a", [_vm._v("Title")]),
-                    _vm._m(44),
-                    _vm._m(45),
-                    _vm._m(46),
+                    _vm._m(61),
+                    _vm._m(62),
+                    _vm._m(63),
                     _c("a", { staticClass: "row no-wrap middle-align" }, [
                       _c("div", { staticClass: "col min" }, [
                         _c("img", {
@@ -12682,13 +13222,42 @@ exports.default = _default;
                           attrs: { src: "/beer-and-woman.jpg" }
                         })
                       ]),
-                      _vm._m(47)
+                      _vm._m(64)
                     ])
                   ]
                 )
               ]
             ),
-            _vm._m(48)
+            _vm._m(65),
+            _c("button", { attrs: { "data-ui": "#dropdown6" } }, [
+              _c("span", [_vm._v("Video")]),
+              _c(
+                "div",
+                {
+                  staticClass: "dropdown no-padding small-width",
+                  attrs: { id: "dropdown6", "data-ui": "#dropdown6" }
+                },
+                [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "responsive",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ]
+              )
+            ])
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "icons" } }, [
@@ -12709,9 +13278,9 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(49),
-          _vm._m(50),
-          _vm._m(51)
+          _vm._m(66),
+          _vm._m(67),
+          _vm._m(68)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "images" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -12723,7 +13292,9 @@ exports.default = _default;
                 {
                   on: {
                     click: function($event) {
-                      return _vm.showSamples("#images img")
+                      return _vm.showSamples(
+                        "#images img:visible, #images video:visible,"
+                      )
                     }
                   }
                 },
@@ -12732,67 +13303,329 @@ exports.default = _default;
             ])
           ]),
           _c("nav", { staticClass: "wrap" }, [
-            _c("a", [
-              _c("img", {
-                staticClass: "circle tiny",
-                attrs: { src: "/beer-and-woman.jpg" }
-              })
+            _c("label", { staticClass: "radio" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.mediaImage,
+                    expression: "mediaImage"
+                  }
+                ],
+                attrs: { value: "1", type: "radio", name: "media-images" },
+                domProps: { checked: _vm._q(_vm.mediaImage, "1") },
+                on: {
+                  change: function($event) {
+                    _vm.mediaImage = "1"
+                  }
+                }
+              }),
+              _c("span", [_vm._v("images")])
             ]),
-            _c("a", [
-              _c("img", {
-                staticClass: "circle small",
-                attrs: { src: "/beer-and-woman.jpg" }
-              })
-            ]),
-            _c("a", [
-              _c("img", {
-                staticClass: "circle",
-                attrs: { src: "/beer-and-woman.jpg" }
-              })
-            ]),
-            _c("a", [
-              _c("img", {
-                staticClass: "circle large",
-                attrs: { src: "/beer-and-woman.jpg" }
-              })
-            ]),
-            _c("a", [
-              _c("img", {
-                staticClass: "circle extra",
-                attrs: { src: "/beer-and-woman.jpg" }
-              })
-            ]),
-            _c("a", [
-              _c("img", {
-                staticClass: "round tiny",
-                attrs: { src: "/beer-and-woman.jpg" }
-              })
-            ]),
-            _c("a", [
-              _c("img", {
-                staticClass: "round small",
-                attrs: { src: "/beer-and-woman.jpg" }
-              })
-            ]),
-            _c("a", [
-              _c("img", {
-                staticClass: "round",
-                attrs: { src: "/beer-and-woman.jpg" }
-              })
-            ]),
-            _c("a", [
-              _c("img", {
-                staticClass: "round large",
-                attrs: { src: "/beer-and-woman.jpg" }
-              })
-            ]),
-            _c("a", [
-              _c("img", {
-                staticClass: "round extra",
-                attrs: { src: "/beer-and-woman.jpg" }
-              })
+            _c("label", { staticClass: "radio" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.mediaImage,
+                    expression: "mediaImage"
+                  }
+                ],
+                attrs: { value: "2", type: "radio", name: "media-images" },
+                domProps: { checked: _vm._q(_vm.mediaImage, "2") },
+                on: {
+                  change: function($event) {
+                    _vm.mediaImage = "2"
+                  }
+                }
+              }),
+              _c("span", [_vm._v("videos")])
             ])
-          ])
+          ]),
+          _c(
+            "nav",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.mediaImage == 1,
+                  expression: "mediaImage == 1"
+                }
+              ],
+              staticClass: "wrap"
+            },
+            [
+              _c("a", [
+                _c("img", {
+                  staticClass: "circle tiny",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _c("a", [
+                _c("img", {
+                  staticClass: "circle small",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _c("a", [
+                _c("img", {
+                  staticClass: "circle",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _c("a", [
+                _c("img", {
+                  staticClass: "circle large",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _c("a", [
+                _c("img", {
+                  staticClass: "circle extra",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _c("a", [
+                _c("img", {
+                  staticClass: "round tiny",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _c("a", [
+                _c("img", {
+                  staticClass: "round small",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _c("a", [
+                _c("img", {
+                  staticClass: "round",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _c("a", [
+                _c("img", {
+                  staticClass: "round large",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ]),
+              _c("a", [
+                _c("img", {
+                  staticClass: "round extra",
+                  attrs: { src: "/beer-and-woman.jpg" }
+                })
+              ])
+            ]
+          ),
+          _c(
+            "nav",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.mediaImage == 2,
+                  expression: "mediaImage == 2"
+                }
+              ],
+              staticClass: "wrap"
+            },
+            [
+              _c("a", [
+                _c(
+                  "video",
+                  {
+                    staticClass: "circle tiny",
+                    attrs: {
+                      autoplay: "autoplay",
+                      loop: "loop",
+                      muted: "muted"
+                    },
+                    domProps: { muted: true }
+                  },
+                  [
+                    _c("source", {
+                      attrs: { src: "/dance.mp4", type: "video/mp4" }
+                    })
+                  ]
+                )
+              ]),
+              _c("a", [
+                _c(
+                  "video",
+                  {
+                    staticClass: "circle small",
+                    attrs: {
+                      autoplay: "autoplay",
+                      loop: "loop",
+                      muted: "muted"
+                    },
+                    domProps: { muted: true }
+                  },
+                  [
+                    _c("source", {
+                      attrs: { src: "/dance.mp4", type: "video/mp4" }
+                    })
+                  ]
+                )
+              ]),
+              _c("a", [
+                _c(
+                  "video",
+                  {
+                    staticClass: "circle medium",
+                    attrs: {
+                      autoplay: "autoplay",
+                      loop: "loop",
+                      muted: "muted"
+                    },
+                    domProps: { muted: true }
+                  },
+                  [
+                    _c("source", {
+                      attrs: { src: "/dance.mp4", type: "video/mp4" }
+                    })
+                  ]
+                )
+              ]),
+              _c("a", [
+                _c(
+                  "video",
+                  {
+                    staticClass: "circle large",
+                    attrs: {
+                      autoplay: "autoplay",
+                      loop: "loop",
+                      muted: "muted"
+                    },
+                    domProps: { muted: true }
+                  },
+                  [
+                    _c("source", {
+                      attrs: { src: "/dance.mp4", type: "video/mp4" }
+                    })
+                  ]
+                )
+              ]),
+              _c("a", [
+                _c(
+                  "video",
+                  {
+                    staticClass: "circle extra",
+                    attrs: {
+                      autoplay: "autoplay",
+                      loop: "loop",
+                      muted: "muted"
+                    },
+                    domProps: { muted: true }
+                  },
+                  [
+                    _c("source", {
+                      attrs: { src: "/dance.mp4", type: "video/mp4" }
+                    })
+                  ]
+                )
+              ]),
+              _c("a", [
+                _c(
+                  "video",
+                  {
+                    staticClass: "round tiny",
+                    attrs: {
+                      autoplay: "autoplay",
+                      loop: "loop",
+                      muted: "muted"
+                    },
+                    domProps: { muted: true }
+                  },
+                  [
+                    _c("source", {
+                      attrs: { src: "/dance.mp4", type: "video/mp4" }
+                    })
+                  ]
+                )
+              ]),
+              _c("a", [
+                _c(
+                  "video",
+                  {
+                    staticClass: "round small",
+                    attrs: {
+                      autoplay: "autoplay",
+                      loop: "loop",
+                      muted: "muted"
+                    },
+                    domProps: { muted: true }
+                  },
+                  [
+                    _c("source", {
+                      attrs: { src: "/dance.mp4", type: "video/mp4" }
+                    })
+                  ]
+                )
+              ]),
+              _c("a", [
+                _c(
+                  "video",
+                  {
+                    staticClass: "round medium",
+                    attrs: {
+                      autoplay: "autoplay",
+                      loop: "loop",
+                      muted: "muted"
+                    },
+                    domProps: { muted: true }
+                  },
+                  [
+                    _c("source", {
+                      attrs: { src: "/dance.mp4", type: "video/mp4" }
+                    })
+                  ]
+                )
+              ]),
+              _c("a", [
+                _c(
+                  "video",
+                  {
+                    staticClass: "round large",
+                    attrs: {
+                      autoplay: "autoplay",
+                      loop: "loop",
+                      muted: "muted"
+                    },
+                    domProps: { muted: true }
+                  },
+                  [
+                    _c("source", {
+                      attrs: { src: "/dance.mp4", type: "video/mp4" }
+                    })
+                  ]
+                )
+              ]),
+              _c("a", [
+                _c(
+                  "video",
+                  {
+                    staticClass: "round extra",
+                    attrs: {
+                      autoplay: "autoplay",
+                      loop: "loop",
+                      muted: "muted"
+                    },
+                    domProps: { muted: true }
+                  },
+                  [
+                    _c("source", {
+                      attrs: { src: "/dance.mp4", type: "video/mp4" }
+                    })
+                  ]
+                )
+              ])
+            ]
+          )
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "inputs" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -12812,9 +13645,9 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(52),
+          _vm._m(69),
           _c("div", { staticClass: "space" }),
-          _vm._m(53)
+          _vm._m(70)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "list" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -12834,19 +13667,19 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(54),
+          _vm._m(71),
           _c("label", { staticClass: "large-space middle-align" }, [
             _vm._v("Today")
           ]),
-          _vm._m(55),
-          _vm._m(56),
-          _vm._m(57),
+          _vm._m(72),
+          _vm._m(73),
+          _vm._m(74),
           _c("label", { staticClass: "large-space middle-align" }, [
             _vm._v("Yesterday")
           ]),
-          _vm._m(58),
-          _vm._m(59),
-          _vm._m(60),
+          _vm._m(75),
+          _vm._m(76),
+          _vm._m(77),
           _c("label", { staticClass: "large-space middle-align" }, [
             _vm._v("Older")
           ]),
@@ -12857,8 +13690,8 @@ exports.default = _default;
                 attrs: { src: "/beer-and-woman.jpg" }
               })
             ]),
-            _vm._m(61),
-            _vm._m(62)
+            _vm._m(78),
+            _vm._m(79)
           ]),
           _c("div", { staticClass: "row no-wrap middle-align" }, [
             _c("div", { staticClass: "col min" }, [
@@ -12867,8 +13700,8 @@ exports.default = _default;
                 attrs: { src: "/beer-and-woman.jpg" }
               })
             ]),
-            _vm._m(63),
-            _vm._m(64)
+            _vm._m(80),
+            _vm._m(81)
           ]),
           _c("div", { staticClass: "row no-wrap middle-align" }, [
             _c("div", { staticClass: "col min" }, [
@@ -12877,8 +13710,8 @@ exports.default = _default;
                 attrs: { src: "/beer-and-woman.jpg" }
               })
             ]),
-            _vm._m(65),
-            _vm._m(66)
+            _vm._m(82),
+            _vm._m(83)
           ])
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "loaders" } }, [
@@ -13004,7 +13837,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(67)
+          _vm._m(84)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "navs" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -13100,7 +13933,7 @@ exports.default = _default;
               [_vm._v("From right")]
             )
           ]),
-          _vm._m(68)
+          _vm._m(85)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "radios" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -13120,7 +13953,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(69)
+          _vm._m(86)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "responsive" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -13139,7 +13972,7 @@ exports.default = _default;
               [_c("i", [_vm._v("code")])]
             )
           ]),
-          _vm._m(70)
+          _vm._m(87)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "rows" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -13159,14 +13992,14 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(71),
+          _vm._m(88),
           _c("div", { staticClass: "space" }),
-          _vm._m(72),
-          _vm._m(73),
-          _vm._m(74),
-          _vm._m(75),
-          _vm._m(76),
-          _vm._m(77),
+          _vm._m(89),
+          _vm._m(90),
+          _vm._m(91),
+          _vm._m(92),
+          _vm._m(93),
+          _vm._m(94),
           _c("div", { staticClass: "space" })
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "selects" } }, [
@@ -13187,9 +14020,9 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(78),
+          _vm._m(95),
           _c("div", { staticClass: "space" }),
-          _vm._m(79)
+          _vm._m(96)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "switches" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -13209,7 +14042,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(80)
+          _vm._m(97)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "table" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -13229,9 +14062,9 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(81),
+          _vm._m(98),
           _c("div", { staticClass: "space" }),
-          _vm._m(82)
+          _vm._m(99)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "tabs" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -13251,13 +14084,13 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(83),
+          _vm._m(100),
           _c("p", { staticClass: "space" }),
-          _vm._m(84),
-          _vm._m(85),
-          _vm._m(86),
-          _vm._m(87),
-          _vm._m(88)
+          _vm._m(101),
+          _vm._m(102),
+          _vm._m(103),
+          _vm._m(104),
+          _vm._m(105)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "textareas" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -13277,9 +14110,9 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(89),
+          _vm._m(106),
           _c("div", { staticClass: "space" }),
-          _vm._m(90)
+          _vm._m(107)
         ]),
         _c("div", { staticClass: "col s12 l6", attrs: { id: "toasts" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -13368,7 +14201,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(91)
+          _vm._m(108)
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "typography" } }, [
           _c("div", { staticClass: "medium-space" }),
@@ -13388,14 +14221,14 @@ exports.default = _default;
               )
             ])
           ]),
-          _vm._m(92)
+          _vm._m(109)
         ]),
         _c("div", { staticClass: "col s12" }, [
           _c("div", { staticClass: "large-divider" }),
           _c("div", [
             _c("h4", { staticClass: "center-align" }, [_vm._v("Summary")]),
-            _vm._m(93),
-            _vm._m(94),
+            _vm._m(110),
+            _vm._m(111),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s12" }, [
@@ -13513,13 +14346,13 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "large-space" }),
-            _vm._m(95),
+            _vm._m(112),
             _c("div", { staticClass: "space" }),
-            _vm._m(96)
+            _vm._m(113)
           ])
         ])
       ]),
-      _vm._m(97),
+      _vm._m(114),
       _c("div", { staticClass: "modal", attrs: { id: "modal" } }, [
         _c("h5", [_vm._v("Title")]),
         _c("div", [_vm._v("Complementary text")]),
@@ -13595,7 +14428,7 @@ exports.default = _default;
         "div",
         { staticClass: "modal right large", attrs: { id: "modal-samples" } },
         [
-          _vm._m(98),
+          _vm._m(115),
           _c("div", { staticClass: "space" }),
           _vm._l(_vm.samples, function(exemplo) {
             return _c("div", { staticClass: "card border" }, [
@@ -13617,12 +14450,12 @@ exports.default = _default;
         ],
         2
       ),
-      _vm._m(99),
+      _vm._m(116),
       _c(
         "div",
         { staticClass: "modal right large", attrs: { id: "modal-icons" } },
         [
-          _vm._m(100),
+          _vm._m(117),
           _c("div", { staticClass: "space" }),
           _vm._l(_vm.samples, function(exemplo) {
             return _c("div", { staticClass: "card border" }, [
@@ -14297,26 +15130,199 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s12 l6" }, [
-      _c("div", { staticClass: "card chart" }, [
+    return _c("div", { staticClass: "col" }, [
+      _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+      _c("div", [_vm._v("Complementary text")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", [
+      _c("button", { staticClass: "none" }, [_vm._v("Button")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+      _c("div", [_vm._v("Complementary text")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", [
+      _c("button", { staticClass: "none" }, [_vm._v("Button")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+      _c("div", [_vm._v("Complementary text")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", [
+      _c("button", { staticClass: "none" }, [_vm._v("Button")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+      _c("div", [_vm._v("Complementary text")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", [
+      _c("button", { staticClass: "none" }, [_vm._v("Button")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "padding" }, [
+      _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+      _c("div", [_vm._v("Complementary text")]),
+      _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Button")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "padding" }, [
+      _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+      _c("div", [_vm._v("Complementary text")]),
+      _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Button")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "padding" }, [
+      _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+      _c("div", [_vm._v("Complementary text")]),
+      _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Button")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "padding" }, [
+      _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+      _c("div", [_vm._v("Complementary text")]),
+      _c("nav", [_c("button", { staticClass: "none" }, [_vm._v("Button")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "absolute bottom left right padding bottom-shadow white-text"
+      },
+      [
+        _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")]),
+        _c("nav", [
+          _c("button", { staticClass: "border small" }, [_vm._v("Button")])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "absolute bottom left right padding bottom-shadow white-text"
+      },
+      [
+        _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")]),
+        _c("nav", [
+          _c("button", { staticClass: "border small" }, [_vm._v("Button")])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "absolute bottom left right padding bottom-shadow white-text"
+      },
+      [
+        _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")]),
+        _c("nav", [
+          _c("button", { staticClass: "border small" }, [_vm._v("Button")])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "absolute bottom left right padding bottom-shadow white-text"
+      },
+      [
+        _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")]),
+        _c("nav", [
+          _c("button", { staticClass: "border small" }, [_vm._v("Button")])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "padding" }, [
         _c("h5", [_vm._v("Title")]),
         _c("div", [
-          _c("span", [_vm._v("Generated by ")]),
-          _c(
-            "a",
-            {
-              staticClass: "link bold",
-              attrs: { target: "_blank", href: "https://www.chartjs.org/" }
-            },
-            [_vm._v("chart.js")]
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           )
         ]),
-        _c("div", { staticClass: "space" }),
-        _c("div", [_c("canvas", { attrs: { id: "grafico0" } })]),
-        _c("nav", [
-          _c("button", { staticClass: "none" }, [_vm._v("Button")]),
-          _c("button", { staticClass: "none" }, [_vm._v("Button")])
-        ])
+        _c("nav", [_c("button", { staticClass: "border" }, [_vm._v("Button")])])
       ])
     ])
   },
@@ -14324,26 +15330,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s12 l6" }, [
-      _c("div", { staticClass: "card chart" }, [
+    return _c(
+      "div",
+      { staticClass: "absolute top left right padding top-shadow white-text" },
+      [
+        _c("h5", { staticClass: "no-margin" }, [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "padding" }, [
         _c("h5", [_vm._v("Title")]),
         _c("div", [
-          _c("span", [_vm._v("Generated by ")]),
-          _c(
-            "a",
-            {
-              staticClass: "link bold",
-              attrs: { target: "_blank", href: "https://www.chartjs.org/" }
-            },
-            [_vm._v("chart.js")]
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           )
         ]),
-        _c("div", { staticClass: "space" }),
-        _c("div", [_c("canvas", { attrs: { id: "grafico1" } })]),
-        _c("nav", [
-          _c("button", { staticClass: "none" }, [_vm._v("Button")]),
-          _c("button", { staticClass: "none" }, [_vm._v("Button")])
-        ])
+        _c("nav", [_c("button", { staticClass: "border" }, [_vm._v("Button")])])
       ])
     ])
   },
@@ -14679,109 +15687,111 @@ var staticRenderFns = [
               ]),
               _c("tr", [
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("1")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("1")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("2")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("2")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("3")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("3")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("4")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("4")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("5")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("5")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("6")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("6")])
                 ]),
-                _c("td", [_c("button", { staticClass: "none" }, [_vm._v("7")])])
+                _c("td", [
+                  _c("a", { staticClass: "button none" }, [_vm._v("7")])
+                ])
               ]),
               _c("tr", [
                 _c("td", [
                   _c(
-                    "button",
-                    { staticClass: "small border circle no-margin" },
+                    "div",
+                    { staticClass: "button small border circle no-margin" },
                     [_vm._v("8")]
                   )
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("9")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("9")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("10")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("10")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("11")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("11")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("12")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("12")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("13")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("13")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("14")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("14")])
                 ])
               ]),
               _c("tr", [
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("15")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("15")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("16")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("16")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "small circle no-margin" }, [
+                  _c("a", { staticClass: "button small circle no-margin" }, [
                     _vm._v("17")
                   ])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("18")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("18")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("19")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("19")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("20")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("20")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("21")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("21")])
                 ])
               ]),
               _c("tr", [
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("22")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("22")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("23")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("23")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("24")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("24")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("25")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("25")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("26")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("26")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("27")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("27")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("28")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("28")])
                 ])
               ]),
               _c("tr", [
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("29")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("29")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("30")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("30")])
                 ]),
                 _c("td", [
-                  _c("button", { staticClass: "none" }, [_vm._v("31")])
+                  _c("a", { staticClass: "button none" }, [_vm._v("31")])
                 ]),
                 _c("td", [_vm._v("1")]),
                 _c("td", [_vm._v("2")]),
@@ -16503,7 +17513,12 @@ var staticRenderFns = [
         ]),
         _c("div", [
           _c("span", [_vm._v("<video> ")]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("responsive")])
+          _c("span", { staticClass: "grey-text" }, [
+            _vm._v("small, medium, large, border, round, circle, ")
+          ]),
+          _c("span", { staticClass: "orange-text" }, [
+            _vm._v("tiny, extra, responsive, empty-state")
+          ])
         ]),
         _c("div", { staticClass: "space" }),
         _c("div", { staticClass: "orange-text" }, [
@@ -22920,7 +23935,9 @@ exports.default = _default;
             _c("h6", { staticClass: "no-margin" }, [
               _vm._v(_vm._s(_vm.street))
             ]),
-            _c("a", { staticClass: "link" }, [_vm._v("Your current location")])
+            _c("div", { staticClass: "link" }, [
+              _vm._v("Your current location")
+            ])
           ])
         ]
       ),
