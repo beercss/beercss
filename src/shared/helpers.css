@@ -321,11 +321,11 @@ label {
 }
 
 .medium-width {
-  width: 350px;
+  width: 400px;
 }
 
 .large-width {
-  width: 500px;
+  width: 600px;
 }
 
 .small-height {
@@ -333,11 +333,11 @@ label {
 }
 
 .medium-height {
-  height: 350px;
+  height: 400px;
 }
 
 .large-height {
-  height: 500px;
+  height: 600px;
 }
 
 @media only screen and (max-width: 600px) {

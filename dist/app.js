@@ -21084,18 +21084,12 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "home" } }, [
-    _c("div", [
+    _c("div", { staticClass: "large-height" }, [
       _c(
         "video",
         {
           staticClass: "responsive",
-          attrs: {
-            width: "100%",
-            height: "600",
-            autoplay: "autoplay",
-            loop: "loop",
-            muted: "muted"
-          },
+          attrs: { autoplay: "autoplay", loop: "loop", muted: "muted" },
           domProps: { muted: true }
         },
         [_c("source", { attrs: { src: "/dance.mp4", type: "video/mp4" } })]
@@ -23829,7 +23823,7 @@ exports.default = _default;
       "div",
       {
         staticClass:
-          "card no-padding large-margin medium-width large-height scroll medium-device large-device page left active"
+          "card no-padding large-margin medium-width medium-device large-device page left active"
       },
       [
         _c("div", { staticClass: "large-padding blue white-text" }, [

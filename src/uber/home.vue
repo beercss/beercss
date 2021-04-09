@@ -9,7 +9,7 @@ div
     button.circle.white.black-text.wave.dark
       i remove
   .large-space
-  .card.no-padding.large-margin.medium-width.large-height.scroll.medium-device.large-device.page.left.active
+  .card.no-padding.large-margin.medium-width.medium-device.large-device.page.left.active
     .large-padding.blue.white-text
       p.bold From {{ from }}
       p.bold To {{ to }}
