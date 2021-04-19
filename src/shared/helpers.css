@@ -213,21 +213,15 @@ label {
 
 .small-margin {
   margin: 8px !important;
-  max-width: calc(100% - 16px);
-  max-height: calc(100% - 16px);
 }
 
 .medium-margin,
 .margin {
   margin: 16px !important;
-  max-width: calc(100% - 32px);
-  max-height: calc(100% - 32px);
 }
 
 .large-margin {
   margin: 24px !important;
-  max-width: calc(100% - 48px);
-  max-height: calc(100% - 48px);
 }
 
 .shadow {

@@ -9,8 +9,9 @@
   z-index: 100;
   left: 0;
   top: 0;
-  width: 64px;
-  height: 100%;
+  bottom: 0;
+  height: auto;
+  width: auto;
   text-align: center;
 }
 
@@ -82,10 +83,9 @@
 .menu.top {
   top: 0;
   left: 0;
-  right: auto;
+  right: 0;
   bottom: auto;
-  height: auto;
-  width: 100%;
+  width: auto;
   height: 56px;
   display: flex;
   align-items: center;
@@ -97,9 +97,9 @@
   top: 0;
   left: 0;
   right: auto;
-  bottom: auto;
+  bottom: 0;
   width: 64px;
-  height: 100%;
+  height: auto;
 }
 
 .menu.right {
@@ -107,37 +107,33 @@
   top: 0;
   left: auto;
   right: 0;
-  bottom: auto;
+  bottom: 0;
   width: 64px;
-  height: 100%;
+  height: auto;
 }
 
 .menu.bottom {
   top: auto;
   left: 0;
-  right: auto;
+  right: 0;
   bottom: 0;
-  height: auto;
-  width: 100%;
+  width: auto;
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.menu.small,
 .menu.small.right,
 .menu.small.left {
   width: 56px;
 }
 
-.menu.medium,
 .menu.medium.right,
 .menu.medium.left {
   width: 64px;
 }
 
-.menu.large,
 .menu.large.right,
 .menu.large.left {
   width: 72px;
@@ -156,16 +152,6 @@
 .menu.large.top,
 .menu.large.bottom {
   height: 64px;
-}
-
-.menu.top,
-.menu.bottom {
-  width: 100%;
-}
-
-.menu.left,
-.menu.right {
-  height: 100%;
 }
 
 .menu > a {
