@@ -1093,8 +1093,11 @@
         h5
           span Layouts
           a.chip.circle
-            i(@click="layout = 0; showSamples('#layouts .absolute')") code
+            i(@click="layout = 0; showSamples('#layouts #container')") code
         nav.wrap
+          label.checkbox
+            input#center-layouts(type="checkbox", checked)
+            span center
           label.checkbox
             input#left-layouts(type="checkbox")
             span left
@@ -1102,21 +1105,53 @@
             input#right-layouts(type="checkbox")
             span right
           label.checkbox
-            input#center-layouts(type="checkbox", checked)
-            span center
+            input#middle-layouts(type="checkbox", checked)
+            span middle
           label.checkbox
             input#top-layouts(type="checkbox")
             span top
           label.checkbox
             input#bottom-layouts(type="checkbox")
             span bottom
-          label.checkbox
-            input#middle-layouts(type="checkbox", checked)
-            span middle
-        .card.border.small.transparent.no-padding
-          .absolute.middle.center.color-1
-            .padding.white-text
-              h5.no-margin Absolute
+        #positions
+          #container
+            .absolute.blue.white-text.center.middle
+              .padding
+                h5 Position
+                div Lorem ipsum dolor...
+        .space
+        nav.wrap
+          label.radio
+            input#center-align-layouts(
+              type="radio",
+              name="horizontal-layouts",
+              checked
+            )
+            span center-align
+          label.radio
+            input#left-align-layouts(type="radio", name="horizontal-layouts")
+            span left-align
+          label.radio
+            input#right-align-layouts(type="radio", name="horizontal-layouts")
+            span right-align
+          label.radio
+            input#middle-align-layouts(
+              type="radio",
+              name="vertical-layouts",
+              checked
+            )
+            span middle-align
+          label.radio
+            input#top-align-layouts(type="radio", name="vertical-layouts")
+            span top-align
+          label.radio
+            input#bottom-align-layouts(type="radio", name="vertical-layouts")
+            span bottom-align
+        #alignments
+          #container.center-align.middle-align
+            .padding
+              h5 Alignment
+              div Lorem ipsum dolor...
       #list.col.s12
         .medium-space
         h5
@@ -2834,7 +2869,16 @@ export default {
         var id = $(this).attr("id");
         var checked = $(this).is(":checked");
         var positions = ["left", "right", "center", "top", "bottom", "middle"];
-        var absolute = $("#layouts .absolute");
+        var alignments = [
+          "left-align",
+          "right-align",
+          "center-align",
+          "top-align",
+          "bottom-align",
+          "middle-align",
+        ];
+        var position = $("#positions .absolute");
+        var alignment = $("#alignments #container");
 
         if (checked && (id == "left-layouts" || id == "right-layouts"))
           $("#center-layouts")[0].checked = false;
@@ -2852,11 +2896,43 @@ export default {
           $("#bottom-layouts")[0].checked = false;
         }
 
-        $(absolute).removeClass("left right center top bottom middle");
+        if (
+          checked &&
+          (id == "left-align-layouts" || id == "right-align-layouts")
+        )
+          $("#center-align-layouts")[0].checked = false;
+
+        if (
+          checked &&
+          (id == "top-align-layouts" || id == "bottom-align-layouts")
+        )
+          $("#middle-align-layouts")[0].checked = false;
+
+        if (checked && id == "center-align-layouts") {
+          $("#left-align-layouts")[0].checked = false;
+          $("#right-align-layouts")[0].checked = false;
+        }
+
+        if (checked && id == "middle-align-layouts") {
+          $("#top-align-layouts")[0].checked = false;
+          $("#bottom-align-layouts")[0].checked = false;
+        }
+
+        $(position).removeClass("left right center top bottom middle");
 
         for (var i = 0; i < positions.length; i++) {
           if ($("#" + positions[i] + "-layouts").is(":checked")) {
-            $(absolute).addClass(positions[i]);
+            $(position).addClass(positions[i]);
+          }
+        }
+
+        $(alignment).removeClass(
+          "left-align right-align center-align top-align bottom-align middle-align"
+        );
+
+        for (var i = 0; i < alignments.length; i++) {
+          if ($("#" + alignments[i] + "-layouts").is(":checked")) {
+            $(alignment).addClass(alignments[i]);
           }
         }
       });
@@ -2927,7 +3003,7 @@ export default {
           $(elements[i]).is(".modal") ||
           $(elements[i]).is(".toast") ||
           $(elements[i]).is(".container") ||
-          $(elements[i]).is(".absolute") ||
+          $(elements[i]).is("#container") ||
           $(elements[i]).is(".fixed")
         )
           html = "";
@@ -3214,6 +3290,12 @@ pre * {
 .logo-template {
   width: auto;
   height: 24px;
+}
+
+#container {
+  height: 200px;
+  border: 1px solid #9e9e9e50;
+  border-radius: 8px;
 }
 
 @keyframes logo-intro {
