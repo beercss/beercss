@@ -1,5 +1,5 @@
 <template lang="pug">
-.container
+.container(v-show="isLoaded")
   .page.right.active
     h5 What's hot
     .row

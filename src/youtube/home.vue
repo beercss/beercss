@@ -1,5 +1,5 @@
 <template lang="pug">
-.container
+.container(v-show="isLoaded")
   .page.right.active
     nav.scroll
       a.chip.active.wave The best of 2020
