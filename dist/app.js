@@ -13686,288 +13686,264 @@ exports.default = _default;
               _c("span", [_vm._v("videos")])
             ])
           ]),
-          _c(
-            "nav",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.mediaImage == 1,
-                  expression: "mediaImage == 1"
-                }
-              ],
-              staticClass: "wrap"
-            },
-            [
-              _c("a", [
-                _c("img", {
-                  staticClass: "circle tiny",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _c("a", [
-                _c("img", {
-                  staticClass: "circle small",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _c("a", [
-                _c("img", {
-                  staticClass: "circle",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _c("a", [
-                _c("img", {
-                  staticClass: "circle large",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _c("a", [
-                _c("img", {
-                  staticClass: "circle extra",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _c("a", [
-                _c("img", {
-                  staticClass: "round tiny",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _c("a", [
-                _c("img", {
-                  staticClass: "round small",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _c("a", [
-                _c("img", {
-                  staticClass: "round",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _c("a", [
-                _c("img", {
-                  staticClass: "round large",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ]),
-              _c("a", [
-                _c("img", {
-                  staticClass: "round extra",
-                  attrs: { src: "/beer-and-woman.jpg" }
-                })
-              ])
-            ]
-          ),
-          _c(
-            "nav",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: _vm.mediaImage == 2,
-                  expression: "mediaImage == 2"
-                }
-              ],
-              staticClass: "wrap"
-            },
-            [
-              _c("a", [
-                _c(
-                  "video",
-                  {
+          _vm.mediaImage == 1
+            ? _c("nav", { staticClass: "wrap" }, [
+                _c("a", [
+                  _c("img", {
                     staticClass: "circle tiny",
-                    attrs: {
-                      autoplay: "autoplay",
-                      loop: "loop",
-                      muted: "muted"
-                    },
-                    domProps: { muted: true }
-                  },
-                  [
-                    _c("source", {
-                      attrs: { src: "/dance.mp4", type: "video/mp4" }
-                    })
-                  ]
-                )
-              ]),
-              _c("a", [
-                _c(
-                  "video",
-                  {
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("a", [
+                  _c("img", {
                     staticClass: "circle small",
-                    attrs: {
-                      autoplay: "autoplay",
-                      loop: "loop",
-                      muted: "muted"
-                    },
-                    domProps: { muted: true }
-                  },
-                  [
-                    _c("source", {
-                      attrs: { src: "/dance.mp4", type: "video/mp4" }
-                    })
-                  ]
-                )
-              ]),
-              _c("a", [
-                _c(
-                  "video",
-                  {
-                    staticClass: "circle medium",
-                    attrs: {
-                      autoplay: "autoplay",
-                      loop: "loop",
-                      muted: "muted"
-                    },
-                    domProps: { muted: true }
-                  },
-                  [
-                    _c("source", {
-                      attrs: { src: "/dance.mp4", type: "video/mp4" }
-                    })
-                  ]
-                )
-              ]),
-              _c("a", [
-                _c(
-                  "video",
-                  {
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("a", [
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("a", [
+                  _c("img", {
                     staticClass: "circle large",
-                    attrs: {
-                      autoplay: "autoplay",
-                      loop: "loop",
-                      muted: "muted"
-                    },
-                    domProps: { muted: true }
-                  },
-                  [
-                    _c("source", {
-                      attrs: { src: "/dance.mp4", type: "video/mp4" }
-                    })
-                  ]
-                )
-              ]),
-              _c("a", [
-                _c(
-                  "video",
-                  {
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("a", [
+                  _c("img", {
                     staticClass: "circle extra",
-                    attrs: {
-                      autoplay: "autoplay",
-                      loop: "loop",
-                      muted: "muted"
-                    },
-                    domProps: { muted: true }
-                  },
-                  [
-                    _c("source", {
-                      attrs: { src: "/dance.mp4", type: "video/mp4" }
-                    })
-                  ]
-                )
-              ]),
-              _c("a", [
-                _c(
-                  "video",
-                  {
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("a", [
+                  _c("img", {
                     staticClass: "round tiny",
-                    attrs: {
-                      autoplay: "autoplay",
-                      loop: "loop",
-                      muted: "muted"
-                    },
-                    domProps: { muted: true }
-                  },
-                  [
-                    _c("source", {
-                      attrs: { src: "/dance.mp4", type: "video/mp4" }
-                    })
-                  ]
-                )
-              ]),
-              _c("a", [
-                _c(
-                  "video",
-                  {
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("a", [
+                  _c("img", {
                     staticClass: "round small",
-                    attrs: {
-                      autoplay: "autoplay",
-                      loop: "loop",
-                      muted: "muted"
-                    },
-                    domProps: { muted: true }
-                  },
-                  [
-                    _c("source", {
-                      attrs: { src: "/dance.mp4", type: "video/mp4" }
-                    })
-                  ]
-                )
-              ]),
-              _c("a", [
-                _c(
-                  "video",
-                  {
-                    staticClass: "round medium",
-                    attrs: {
-                      autoplay: "autoplay",
-                      loop: "loop",
-                      muted: "muted"
-                    },
-                    domProps: { muted: true }
-                  },
-                  [
-                    _c("source", {
-                      attrs: { src: "/dance.mp4", type: "video/mp4" }
-                    })
-                  ]
-                )
-              ]),
-              _c("a", [
-                _c(
-                  "video",
-                  {
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("a", [
+                  _c("img", {
+                    staticClass: "round",
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("a", [
+                  _c("img", {
                     staticClass: "round large",
-                    attrs: {
-                      autoplay: "autoplay",
-                      loop: "loop",
-                      muted: "muted"
-                    },
-                    domProps: { muted: true }
-                  },
-                  [
-                    _c("source", {
-                      attrs: { src: "/dance.mp4", type: "video/mp4" }
-                    })
-                  ]
-                )
-              ]),
-              _c("a", [
-                _c(
-                  "video",
-                  {
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ]),
+                _c("a", [
+                  _c("img", {
                     staticClass: "round extra",
-                    attrs: {
-                      autoplay: "autoplay",
-                      loop: "loop",
-                      muted: "muted"
-                    },
-                    domProps: { muted: true }
-                  },
-                  [
-                    _c("source", {
-                      attrs: { src: "/dance.mp4", type: "video/mp4" }
-                    })
-                  ]
-                )
+                    attrs: { src: "/beer-and-woman.jpg" }
+                  })
+                ])
               ])
-            ]
-          )
+            : _vm._e(),
+          _vm.mediaImage == 2
+            ? _c("nav", { staticClass: "wrap" }, [
+                _c("a", [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "circle tiny",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ]),
+                _c("a", [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "circle small",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ]),
+                _c("a", [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "circle medium",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ]),
+                _c("a", [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "circle large",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ]),
+                _c("a", [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "circle extra",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ]),
+                _c("a", [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "round tiny",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ]),
+                _c("a", [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "round small",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ]),
+                _c("a", [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "round medium",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ]),
+                _c("a", [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "round large",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ]),
+                _c("a", [
+                  _c(
+                    "video",
+                    {
+                      staticClass: "round extra",
+                      attrs: {
+                        autoplay: "autoplay",
+                        loop: "loop",
+                        muted: "muted"
+                      },
+                      domProps: { muted: true }
+                    },
+                    [
+                      _c("source", {
+                        attrs: { src: "/dance.mp4", type: "video/mp4" }
+                      })
+                    ]
+                  )
+                ])
+              ])
+            : _vm._e()
         ]),
         _c("div", { staticClass: "col s12", attrs: { id: "modals" } }, [
           _c("div", { staticClass: "medium-space" }),

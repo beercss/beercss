@@ -1333,7 +1333,7 @@
               name="media-images"
             )
             span videos
-        nav.wrap(v-show="mediaImage == 1")
+        nav.wrap(v-if="mediaImage == 1")
           a
             img.circle.tiny(:src="'/beer-and-woman.jpg'")
           a
@@ -1354,7 +1354,7 @@
             img.round.large(:src="'/beer-and-woman.jpg'")
           a
             img.round.extra(:src="'/beer-and-woman.jpg'")
-        nav.wrap(v-show="mediaImage == 2")
+        nav.wrap(v-if="mediaImage == 2")
           a
             video.circle.tiny(autoplay, loop, muted)
               source(:src="'/dance.mp4'", type="video/mp4")
