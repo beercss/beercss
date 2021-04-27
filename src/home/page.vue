@@ -30,6 +30,7 @@
     a(data-ui="#more")
       i collections
       div Templates
+      span.badge.circle.margin 4
     a(@click="showSamples('#menu')")
       i code
       div Code
