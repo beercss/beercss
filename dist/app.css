@@ -58,6 +58,12 @@ pre * {
   height: 24px;
 }
 
+#container {
+  height: 200px;
+  border: 1px solid #9e9e9e50;
+  border-radius: 8px;
+}
+
 @keyframes logo-intro {
   0% {
     opacity: 0;
