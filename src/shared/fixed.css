@@ -1,5 +1,7 @@
 .fixed {
   position: fixed;
+  border-radius: inherit;
+  float: none;
 }
 
 .fixed.round {
@@ -10,14 +12,18 @@
   border: 1px solid var(--color-2b);
 }
 
+.fixed.middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .fixed.center {
   left: 50%;
   transform: translateX(-50%);
 }
 
-.fixed.middle {
-  top: 50%;
-  transform: translateY(-50%);
+.fixed.middle.center {
+  transform: translate(-50%, -50%);
 }
 
 .fixed.top {
@@ -25,12 +31,10 @@
 }
 
 .fixed.left {
-  float: none;
   left: 0;
 }
 
 .fixed.right {
-  float: none;
   right: 0;
 }
 
@@ -54,7 +58,7 @@
   height: 700px;
 }
 
-.fixed.left.right.small {
+.fixed.top.bottom.small {
   width: 350px;
 }
 

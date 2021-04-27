@@ -9,8 +9,9 @@
   z-index: 100;
   left: 0;
   top: 0;
-  width: 64px;
-  height: 100%;
+  bottom: 0;
+  height: auto;
+  width: auto;
   text-align: center;
 }
 
@@ -82,10 +83,9 @@
 .menu.top {
   top: 0;
   left: 0;
-  right: auto;
+  right: 0;
   bottom: auto;
-  height: auto;
-  width: 100%;
+  width: auto;
   height: 56px;
   display: flex;
   align-items: center;
@@ -97,9 +97,9 @@
   top: 0;
   left: 0;
   right: auto;
-  bottom: auto;
+  bottom: 0;
   width: 64px;
-  height: 100%;
+  height: auto;
 }
 
 .menu.right {
@@ -107,37 +107,33 @@
   top: 0;
   left: auto;
   right: 0;
-  bottom: auto;
+  bottom: 0;
   width: 64px;
-  height: 100%;
+  height: auto;
 }
 
 .menu.bottom {
   top: auto;
   left: 0;
-  right: auto;
+  right: 0;
   bottom: 0;
-  height: auto;
-  width: 100%;
+  width: auto;
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.menu.small,
 .menu.small.right,
 .menu.small.left {
   width: 56px;
 }
 
-.menu.medium,
 .menu.medium.right,
 .menu.medium.left {
   width: 64px;
 }
 
-.menu.large,
 .menu.large.right,
 .menu.large.left {
   width: 72px;
@@ -158,21 +154,11 @@
   height: 64px;
 }
 
-.menu.top,
-.menu.bottom {
-  width: 100%;
-}
-
-.menu.left,
-.menu.right {
-  height: 100%;
-}
-
 .menu > a {
   border: 0;
   display: block;
   font-size: 0.7rem;
-  padding: 8px 4px;
+  padding: 8px;
   text-decoration: none;
   color: inherit;
   text-align: center;
@@ -185,54 +171,19 @@
 
 .menu.top > a,
 .menu.bottom > a {
-  width: 64px;
-  padding: 6px 4px;
-}
-
-.menu.top.small > a,
-.menu.bottom.small > a {
-  padding: 9px 4px;
-}
-
-.menu.top.large > a,
-.menu.bottom.large > a {
-  padding: 10px 4px;
+  margin: 8px;
 }
 
 .menu > a.active {
-  border: 0;
-  border-left: 3px solid var(--color-1);
-}
-
-.menu > a.active,
-.menu > a.active > *,
-.menu > a:hover,
-.menu > a:hover > * {
   color: var(--color-1);
-}
-
-.menu.left > a.active {
-  border: 0;
-  border-left: 3px solid var(--color-1);
-}
-
-.menu.right > a.active {
-  border: 0;
-  border-right: 3px solid var(--color-1);
-}
-
-.menu.top > a.active {
-  border: 0;
-  border-bottom: 3px solid var(--color-1);
-}
-
-.menu.bottom > a.active {
-  border: 0;
-  border-top: 3px solid var(--color-1);
 }
 
 .menu.small > a > div {
   display: none;
+}
+
+.menu > .row {
+  z-index: 1;
 }
 
 @media only screen and (max-width: 600px) {
@@ -241,5 +192,11 @@
   }
   .menu.top {
     justify-content: space-around;
+  }
+
+  .menu.top > a,
+  .menu.bottom > a {
+    margin: 0;
+    padding: 0;
   }
 }

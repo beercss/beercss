@@ -94,8 +94,7 @@ h6,
   font-size: 0.8rem;
 }
 
-.medium-text,
-.text {
+.medium-text {
   font-size: 0.9rem;
 }
 
@@ -214,21 +213,15 @@ label {
 
 .small-margin {
   margin: 8px !important;
-  max-width: calc(100% - 16px);
-  max-height: calc(100% - 16px);
 }
 
 .medium-margin,
 .margin {
   margin: 16px !important;
-  max-width: calc(100% - 32px);
-  max-height: calc(100% - 32px);
 }
 
 .large-margin {
   margin: 24px !important;
-  max-width: calc(100% - 48px);
-  max-height: calc(100% - 48px);
 }
 
 .shadow {
@@ -298,11 +291,11 @@ label {
 }
 
 .front {
-  z-index: 10;
+  z-index: 10!important;
 }
 
 .back {
-  z-index: -10;
+  z-index: -10!important;
 }
 
 .flat {
@@ -315,6 +308,30 @@ label {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.small-width {
+  width: 200px;
+}
+
+.medium-width {
+  width: 400px;
+}
+
+.large-width {
+  width: 600px;
+}
+
+.small-height {
+  height: 200px;
+}
+
+.medium-height {
+  height: 400px;
+}
+
+.large-height {
+  height: 600px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -945,3 +945,63 @@
 .grey-dark-4 {
   background-color: #212121 !important;
 }
+
+.color-1 {
+  background-color: var(--color-1) !important;
+}
+
+.color-1-text {
+  color: var(--color-1) !important;
+}
+
+.color-1-border {
+  border-color: var(--color-1) !important;
+}
+
+.color-2 {
+  background-color: var(--color-2) !important;
+}
+
+.color-2-text {
+  color: var(--color-2) !important;
+}
+
+.color-2-border {
+  border-color: var(--color-2) !important;
+}
+
+.color-3 {
+  background-color: var(--color-3) !important;
+}
+
+.color-3-text {
+  color: var(--color-3) !important;
+}
+
+.color-3-border {
+  border-color: var(--color-3) !important;
+}
+
+.color-4 {
+  background-color: var(--color-4) !important;
+}
+
+.color-4-text {
+  color: var(--color-4) !important;
+}
+
+.color-4-border {
+  border-color: var(--color-4) !important;
+}
+
+.color-5 {
+  background-color: var(--color-5) !important;
+}
+
+.color-5-text {
+  color: var(--color-5) !important;
+}
+
+.color-5-border {
+  border-color: var(--color-5) !important;
+}

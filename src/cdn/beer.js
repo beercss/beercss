@@ -94,7 +94,7 @@
   };
 
   const onClickLabel = (e) => {
-    var input = query('input[type=text], input[type=password], select', parent(e.currentTarget));
+    var input = query('input:not([type=checkbox]):not([type=radio]), select, textarea', parent(e.currentTarget));
     input.focus();
   };
 
@@ -269,7 +269,7 @@
       on(x, "click", onClickLabel);
     });
 
-    var inputs = queryAll(".field > input[type=text], .field > input[type=password]");
+    var inputs = queryAll(".field > input:not([type=checkbox]):not([type=radio]), select, textarea");
     inputs.forEach((x) => {
       var label = query("label", parent(x));
 

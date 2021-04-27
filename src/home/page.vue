@@ -27,17 +27,34 @@
     a(@click="updateTheme()")
       i brightness_medium
       div Theme
+    a(data-ui="#more")
+      i collections
+      div Templates
+      span.badge.circle.margin 4
     a(@click="showSamples('#menu')")
       i code
       div Code
-    a(data-ui="#more")
-      i more_vert
-      div More
     #more.modal.small.left(data-ui="#more")
-      b More
-      p Item 1
-      p Item 2
-      p Item 3
+      h5 Templates
+      p.grey-text This templates are only for tests purpose
+      .large-space
+      a(href="/youtube", v-show="theme == 'is-dark'")
+        img.logo-template(:src="'/youtube-dark.png'")
+      a(href="/youtube", v-show="theme != 'is-dark'")
+        img.logo-template(:src="'/youtube-light.png'")
+      .large-divider
+      a(href="/netflix")
+        img.logo-template(:src="'/netflix.png'")
+      .large-divider
+      a(href="/gmail", v-show="theme == 'is-dark'")
+        img.logo-template(:src="'/gmail-dark.png'")
+      a(href="/gmail", v-show="theme != 'is-dark'")
+        img.logo-template(:src="'/gmail-light.png'")
+      .large-divider
+      a(href="/uber", v-show="theme == 'is-dark'")
+        img.logo-template(:src="'/uber-dark.png'")
+      a(href="/uber", v-show="theme != 'is-dark'")
+        img.logo-template(:src="'/uber-light.png'")
   #menu-bottom.menu.bottom.small-device
     a(@click="updateMenu('#menu-bottom')")
       i zoom_out_map
@@ -48,17 +65,35 @@
     a(@click="updateTheme()")
       i brightness_medium
       div Theme
+    a(data-ui="#more-bottom")
+      i collections
+      div Templates
     a(@click="showSamples('#menu-bottom')")
       i code
       div Code
-    a(data-ui="#more-bottom")
-      i more_vert
-      div More
-    #more-bottom.modal.small.bottom(data-ui="#more-bottom")
-      b More
-      p Item 1
-      p Item 2
-      p Item 3
+    #more-bottom.modal.bottom.medium(data-ui="#more-bottom")
+      h5 Templates
+      p.grey-text This templates are only for tests purpose
+      .large-divider
+      .row
+        .col.s6.middle-align.padding
+          a(href="/youtube", v-show="theme == 'is-dark'")
+            img.logo-template(:src="'/youtube-dark.png'")
+          a(href="/youtube", v-show="theme != 'is-dark'")
+            img.logo-template(:src="'/youtube-light.png'")
+        .col.s6.middle-align.padding
+          a(href="/netflix")
+            img.logo-template(:src="'/netflix.png'")
+        .col.s6.middle-align.padding
+          a(href="/gmail", v-show="theme == 'is-dark'")
+            img.logo-template(:src="'/gmail-dark.png'")
+          a(href="/gmail", v-show="theme != 'is-dark'")
+            img.logo-template(:src="'/gmail-light.png'")
+        .col.s6.middle-align.padding
+          a(href="/uber", v-show="theme == 'is-dark'")
+            img.logo-template(:src="'/uber-dark.png'")
+          a(href="/uber", v-show="theme != 'is-dark'")
+            img.logo-template(:src="'/uber-light.png'")
   #begin
     .row
       .col.s12
@@ -99,6 +134,7 @@
 
     .row
       #badges.col.s12
+        .medium-space
         h5
           span Badges
           a.chip.circle
@@ -232,6 +268,7 @@
             i account_circle
         .small-space
       #buttons.col.s12
+        .medium-space
         h5
           span Buttons
           a.chip.circle
@@ -266,7 +303,6 @@
           label.radio
             input#large-buttons(type="radio", name="size-buttons")
             span large
-        .space
         nav.wrap
           button Button
           button
@@ -303,52 +339,69 @@
             i home
           button.border.circle B
       #cards.col.s12
+        .medium-space
         h5
           span Cards
           a.chip.circle
-            i(@click="showSamples('#cards .card:not(.chart)')") code
-        .space
-        .row
+            i(@click="showSamples('#cards .card:visible')") code
+        nav.wrap
+          label.radio
+            input(
+              v-model="mediaCard",
+              value="1",
+              type="radio",
+              name="media-cards"
+            )
+            span images
+          label.radio
+            input(
+              v-model="mediaCard",
+              value="2",
+              type="radio",
+              name="media-cards"
+            )
+            span videos
+        .row(v-if="mediaCard == 1")
           .col.s12.m6.l3
             .card
-              .row.nowrap
+              .row.no-wrap
                 .col.min
                   img.circle.large(:src="'/beer-and-woman.jpg'")
                 .col
                   h5.no-margin Title
                   div Complementary text
               nav
-                button.none Link
+                button.none Button
           .col.s12.m6.l3
             .card.round
-              .row.nowrap
+              .row.no-wrap
                 .col.min
                   img.circle.large(:src="'/beer-and-woman.jpg'")
                 .col
                   h5.no-margin Title
                   div Complementary text
               nav
-                button.none Link
+                button.none Button
           .col.s12.m6.l3
             .card.border
-              .row.nowrap
+              .row.no-wrap
                 .col.min
                   img.circle.large(:src="'/beer-and-woman.jpg'")
                 .col
                   h5.no-margin Title
                   div Complementary text
               nav
-                button.none Link
+                button.none Button
           .col.s12.m6.l3
             .card.border.round
-              .row.nowrap
+              .row.no-wrap
                 .col.min
                   img.circle.large(:src="'/beer-and-woman.jpg'")
                 .col
                   h5.no-margin Title
                   div Complementary text
               nav
-                button.none Link
+                button.none Button
           .col.s12.m6.l3
             .card.no-padding
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -356,7 +409,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.none Link
+                  button.none Button
           .col.s12.m6.l3
             .card.no-padding.round
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -364,7 +417,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.none Link
+                  button.none Button
           .col.s12.m6.l3
             .card.no-padding.border
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -372,7 +425,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.none Link
+                  button.none Button
           .col.s12.m6.l3
             .card.no-padding.border.round
               img.responsive.small(:src="'/beer-and-woman.jpg'")
@@ -380,7 +433,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.none Link
+                  button.none Button
           .col.s12.m6.l3
             .card.no-padding
               img.responsive.medium(:src="'/beer-and-woman.jpg'")
@@ -388,7 +441,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.border.small Link
+                  button.border.small Button
           .col.s12.m6.l3
             .card.no-padding.round
               img.responsive.medium.round(:src="'/beer-and-woman.jpg'")
@@ -396,7 +449,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.border.small Link
+                  button.border.small Button
           .col.s12.m6.l3
             .card.no-padding.border
               img.responsive.medium(:src="'/beer-and-woman.jpg'")
@@ -404,7 +457,7 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.border.small Link
+                  button.border.small Button
           .col.s12.m6.l3
             .card.no-padding.border.round
               img.responsive.medium.round(:src="'/beer-and-woman.jpg'")
@@ -412,10 +465,10 @@
                 h5.no-margin Title
                 div Complementary text
                 nav
-                  button.border.small Link
+                  button.border.small Button
           .col.s12.l6
             .card.no-padding
-              .row.nowrap.no-space
+              .row.no-wrap.no-space
                 .col
                   img.responsive(:src="'/beer-and-woman.jpg'")
                 .col
@@ -423,10 +476,10 @@
                     h5 Title
                     div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     nav
-                      button.border Link
+                      button.border Button
           .col.s12.l6
             .card.no-padding
-              .row.nowrap.no-space
+              .row.no-wrap.no-space
                 .col
                   img.responsive(:src="'/beer-and-woman.jpg'")
                   .absolute.top.left.right.padding.top-shadow.white-text
@@ -437,32 +490,153 @@
                     h5 Title
                     div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     nav
-                      button.border Link
-          .col.s12.l6
-            .card.chart
-              h5 Title
-              div 
-                span Generated by&nbsp;
-                a.link.bold(target="_blank", href="https://www.chartjs.org/") chart.js
-              .space
-              div
-                canvas#grafico0
+                      button.border Button
+        .row(v-if="mediaCard == 2")
+          .col.s12.m6.l3
+            .card
+              .row.no-wrap
+                .col.min
+                  video.circle.large(autoplay, loop, muted)
+                    source(:src="'/dance.mp4'", type="video/mp4")
+                .col
+                  h5.no-margin Title
+                  div Complementary text
               nav
-                button.none Link 1
-                button.none Link 2
-          .col.s12.l6
-            .card.chart
-              h5 Title
-              div 
-                span Generated by&nbsp;
-                a.link.bold(target="_blank", href="https://www.chartjs.org/") chart.js
-              .space
-              div
-                canvas#grafico1
+                button.none Button
+          .col.s12.m6.l3
+            .card.round
+              .row.no-wrap
+                .col.min
+                  video.circle.large(autoplay, loop, muted)
+                    source(:src="'/dance.mp4'", type="video/mp4")
+                .col
+                  h5.no-margin Title
+                  div Complementary text
               nav
-                button.none Link 1
-                button.none Link 2
+                button.none Button
+          .col.s12.m6.l3
+            .card.border
+              .row.no-wrap
+                .col.min
+                  video.circle.large(autoplay, loop, muted)
+                    source(:src="'/dance.mp4'", type="video/mp4")
+                .col
+                  h5.no-margin Title
+                  div Complementary text
+              nav
+                button.none Button
+          .col.s12.m6.l3
+            .card.border.round
+              .row.no-wrap
+                .col.min
+                  video.circle.large(autoplay, loop, muted)
+                    source(:src="'/dance.mp4'", type="video/mp4")
+                .col
+                  h5.no-margin Title
+                  div Complementary text
+              nav
+                button.none Button
+          .col.s12.m6.l3
+            .card.no-padding
+              video.responsive.small(autoplay, loop, muted)
+                source(:src="'/dance.mp4'", type="video/mp4")
+              .padding
+                h5.no-margin Title
+                div Complementary text
+                nav
+                  button.none Button
+          .col.s12.m6.l3
+            .card.no-padding.round
+              video.responsive.small(autoplay, loop, muted)
+                source(:src="'/dance.mp4'", type="video/mp4")
+              .padding
+                h5.no-margin Title
+                div Complementary text
+                nav
+                  button.none Button
+          .col.s12.m6.l3
+            .card.no-padding.border
+              video.responsive.small(autoplay, loop, muted)
+                source(:src="'/dance.mp4'", type="video/mp4")
+              .padding
+                h5.no-margin Title
+                div Complementary text
+                nav
+                  button.none Button
+          .col.s12.m6.l3
+            .card.no-padding.border.round
+              video.responsive.small(autoplay, loop, muted)
+                source(:src="'/dance.mp4'", type="video/mp4")
+              .padding
+                h5.no-margin Title
+                div Complementary text
+                nav
+                  button.none Button
+          .col.s12.m6.l3
+            .card.no-padding
+              video.responsive.medium(autoplay, loop, muted)
+                source(:src="'/dance.mp4'", type="video/mp4")
+              .absolute.bottom.left.right.padding.bottom-shadow.white-text
+                h5.no-margin Title
+                div Complementary text
+                nav
+                  button.border.small Button
+          .col.s12.m6.l3
+            .card.no-padding.round
+              video.responsive.medium.round(autoplay, loop, muted)
+                source(:src="'/dance.mp4'", type="video/mp4")
+              .absolute.bottom.left.right.padding.bottom-shadow.white-text
+                h5.no-margin Title
+                div Complementary text
+                nav
+                  button.border.small Button
+          .col.s12.m6.l3
+            .card.no-padding.border
+              video.responsive.medium(autoplay, loop, muted)
+                source(:src="'/dance.mp4'", type="video/mp4")
+              .absolute.bottom.left.right.padding.bottom-shadow.white-text
+                h5.no-margin Title
+                div Complementary text
+                nav
+                  button.border.small Button
+          .col.s12.m6.l3
+            .card.no-padding.border.round
+              video.responsive.medium.round(autoplay, loop, muted)
+                source(:src="'/dance.mp4'", type="video/mp4")
+              .absolute.bottom.left.right.padding.bottom-shadow.white-text
+                h5.no-margin Title
+                div Complementary text
+                nav
+                  button.border.small Button
+          .col.s12.l6
+            .card.no-padding
+              .row.no-wrap.no-space
+                .col
+                  video.responsive(autoplay, loop, muted)
+                    source(:src="'/dance.mp4'", type="video/mp4")
+                .col
+                  .padding
+                    h5 Title
+                    div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    nav
+                      button.border Button
+          .col.s12.l6
+            .card.no-padding
+              .row.no-wrap.no-space
+                .col
+                  video.responsive(autoplay, loop, muted)
+                    source(:src="'/dance.mp4'", type="video/mp4")
+                  .absolute.top.left.right.padding.top-shadow.white-text
+                    h5.no-margin Title
+                    div Complementary text
+                .col
+                  .padding
+                    h5 Title
+                    div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    nav
+                      button.border Button
       #checkboxes.col.s12
+        .medium-space
         h5
           span Checkboxes
           a.chip.circle
@@ -522,6 +696,7 @@
                   span Item 3
               span.error Error text
       #chips.col.s12
+        .medium-space
         h5
           span Chips
           a.chip.circle
@@ -549,13 +724,27 @@
             i refresh
           a.chip.circle.border C
       #colors.col.s12
+        .medium-space
         h5 
           span Colors
           a.chip.circle(data-ui="#modal-colors")
             i code
         nav
           button(data-ui="#modal-colors") Colors
+      #containers.col.s12
+        .medium-space
+        h5
+          span Containers
+          a.chip.circle
+            i(@click="showSamples('#containers .container')") code
+        nav
+          button(@click="updateContainer()") Default
+          button(@click="updateContainer('min')") Min
+          button(@click="updateContainer('max')") Max
+        div(v-show="false")
+          .container
       #dropdowns.col.s12
+        .medium-space
         h5
           span Dropdowns
           a.chip.circle
@@ -569,21 +758,21 @@
               a
                 div Title
                 label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col
                   div Title
                   label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col
@@ -592,26 +781,26 @@
           button(data-ui="#dropdown2")
             span Dropdown
             i arrow_drop_down
-            #dropdown2.dropdown.nowrap(data-ui="#dropdown2")
+            #dropdown2.dropdown.no-wrap(data-ui="#dropdown2")
               a Title
               a
                 div Title
                 label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col
                   div Title
                   label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col
@@ -619,26 +808,26 @@
                   label Complementary text
           button.circle.small(data-ui="#dropdown3")
             i arrow_back
-            #dropdown3.dropdown.left.nowrap(data-ui="#dropdown3")
+            #dropdown3.dropdown.left.no-wrap(data-ui="#dropdown3")
               a Title
               a
                 div Title
                 label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col
                   div Title
                   label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col
@@ -646,26 +835,26 @@
                   label Complementary text
           button.circle.small(data-ui="#dropdown4")
             i arrow_forward
-            #dropdown4.dropdown.right.nowrap(data-ui="#dropdown4")
+            #dropdown4.dropdown.right.no-wrap(data-ui="#dropdown4")
               a Title
               a
                 div Title
                 label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   i home
                 .col
                   div Title
                   label Complementary text
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col Title
-              a.row.nowrap.middle-align
+              a.row.no-wrap.middle-align
                 .col.min
                   img.circle.tiny(:src="'/beer-and-woman.jpg'")
                 .col
@@ -673,8 +862,8 @@
                   label Complementary text
           button(data-ui="#dropdown5") 
             span Calendar
-            #dropdown5.dropdown.small-padding.nowrap(data-ui="#dropdown5")
-              .row.nowrap
+            #dropdown5.dropdown.small-padding.no-wrap(data-ui="#dropdown5")
+              .row.no-wrap
                 .col.min
                   a
                     i arrow_back
@@ -695,76 +884,82 @@
                     td S
                   tr
                     td
-                      button.none 1
+                      a.button.none 1
                     td
-                      button.none 2
+                      a.button.none 2
                     td
-                      button.none 3
+                      a.button.none 3
                     td
-                      button.none 4
+                      a.button.none 4
                     td
-                      button.none 5
+                      a.button.none 5
                     td
-                      button.none 6
+                      a.button.none 6
                     td
-                      button.none 7
+                      a.button.none 7
                   tr
                     td
-                      button.small.border.circle.no-margin 8
+                      .button.small.border.circle.no-margin 8
                     td
-                      button.none 9
+                      a.button.none 9
                     td
-                      button.none 10
+                      a.button.none 10
                     td
-                      button.none 11
+                      a.button.none 11
                     td
-                      button.none 12
+                      a.button.none 12
                     td
-                      button.none 13
+                      a.button.none 13
                     td
-                      button.none 14
+                      a.button.none 14
                   tr
                     td
-                      button.none 15
+                      a.button.none 15
                     td
-                      button.none 16
+                      a.button.none 16
                     td
-                      button.small.circle.no-margin 17
+                      a.button.small.circle.no-margin 17
                     td
-                      button.none 18
+                      a.button.none 18
                     td
-                      button.none 19
+                      a.button.none 19
                     td
-                      button.none 20
+                      a.button.none 20
                     td
-                      button.none 21
+                      a.button.none 21
                   tr
                     td
-                      button.none 22
+                      a.button.none 22
                     td
-                      button.none 23
+                      a.button.none 23
                     td
-                      button.none 24
+                      a.button.none 24
                     td
-                      button.none 25
+                      a.button.none 25
                     td
-                      button.none 26
+                      a.button.none 26
                     td
-                      button.none 27
+                      a.button.none 27
                     td
-                      button.none 28
+                      a.button.none 28
                   tr
                     td
-                      button.none 29
+                      a.button.none 29
                     td
-                      button.none 30
+                      a.button.none 30
                     td
-                      button.none 31
+                      a.button.none 31
                     td 1
                     td 2
                     td 3
                     td 4
+          button(data-ui="#dropdown6")
+            span Video
+            #dropdown6.dropdown.no-padding.small-width(data-ui="#dropdown6") 
+              video.responsive(autoplay, loop, muted)
+                source(:src="'/dance.mp4'", type="video/mp4")
       #icons.col.s12
+        .medium-space
         h5
           span Icons
           a.chip.circle
@@ -802,33 +997,8 @@
           i.large work
           i.large update
           i.large thumb_up
-      #images.col.s12
-        h5
-          span Images
-          a.chip.circle
-            i(@click="showSamples('#images img')") code
-        nav.wrap
-          a
-            img.circle.tiny(:src="'/beer-and-woman.jpg'")
-          a
-            img.circle.small(:src="'/beer-and-woman.jpg'")
-          a
-            img.circle(:src="'/beer-and-woman.jpg'")
-          a
-            img.circle.large(:src="'/beer-and-woman.jpg'")
-          a
-            img.circle.extra(:src="'/beer-and-woman.jpg'")
-          a
-            img.round.tiny(:src="'/beer-and-woman.jpg'")
-          a
-            img.round.small(:src="'/beer-and-woman.jpg'")
-          a
-            img.round(:src="'/beer-and-woman.jpg'")
-          a
-            img.round.large(:src="'/beer-and-woman.jpg'")
-          a
-            img.round.extra(:src="'/beer-and-woman.jpg'")
       #inputs.col.s12
+        .medium-space
         h5
           span Inputs
           a.chip.circle
@@ -919,7 +1089,72 @@
               label Text
               i search
               span.error Error text
+      #layouts.col.s12
+        .medium-space
+        h5
+          span Layouts
+          a.chip.circle
+            i(@click="layout = 0; showSamples('#layouts #container')") code
+        nav.wrap
+          label.checkbox
+            input#center-layouts(type="checkbox", checked)
+            span center
+          label.checkbox
+            input#left-layouts(type="checkbox")
+            span left
+          label.checkbox
+            input#right-layouts(type="checkbox")
+            span right
+          label.checkbox
+            input#middle-layouts(type="checkbox", checked)
+            span middle
+          label.checkbox
+            input#top-layouts(type="checkbox")
+            span top
+          label.checkbox
+            input#bottom-layouts(type="checkbox")
+            span bottom
+        #positions
+          #container
+            .absolute.blue.white-text.center.middle
+              .padding
+                h5 Position
+                div Lorem ipsum dolor...
+        .space
+        nav.wrap
+          label.radio
+            input#center-align-layouts(
+              type="radio",
+              name="horizontal-layouts",
+              checked
+            )
+            span center-align
+          label.radio
+            input#left-align-layouts(type="radio", name="horizontal-layouts")
+            span left-align
+          label.radio
+            input#right-align-layouts(type="radio", name="horizontal-layouts")
+            span right-align
+          label.radio
+            input#middle-align-layouts(
+              type="radio",
+              name="vertical-layouts",
+              checked
+            )
+            span middle-align
+          label.radio
+            input#top-align-layouts(type="radio", name="vertical-layouts")
+            span top-align
+          label.radio
+            input#bottom-align-layouts(type="radio", name="vertical-layouts")
+            span bottom-align
+        #alignments
+          #container.center-align.middle-align
+            .padding
+              h5 Alignment
+              div Lorem ipsum dolor...
       #list.col.s12
+        .medium-space
         h5
           span Lists
           a.chip.circle
@@ -942,7 +1177,7 @@
             input#divider-lists(type="checkbox", name="divider-lists")
             span divider
         label.large-space.middle-align Today
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             i.light-green-text check_circle
           .col
@@ -950,11 +1185,11 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
 
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             i.orange-text warning
           .col
@@ -962,10 +1197,10 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             i.grey-text schedule
           .col
@@ -973,11 +1208,11 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
         label.large-space.middle-align Yesterday
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             label.checkbox
               input(type="checkbox")
@@ -987,10 +1222,10 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             label.checkbox
               input(type="checkbox")
@@ -1000,10 +1235,10 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             label.checkbox
               input(type="checkbox")
@@ -1013,11 +1248,11 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
         label.large-space.middle-align Older
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             img.circle.tiny(:src="'/beer-and-woman.jpg'")
           .col
@@ -1025,10 +1260,10 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             img.circle.tiny(:src="'/beer-and-woman.jpg'")
           .col
@@ -1036,10 +1271,10 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
-        .row.nowrap.middle-align
+        .row.no-wrap.middle-align
           .col.min
             img.circle.tiny(:src="'/beer-and-woman.jpg'")
           .col
@@ -1047,10 +1282,11 @@
             label Complementary text
           .col.min
             nav
-              button.none Link
+              button.none Button
               button.none
                 i more_vert
       #loaders.col.s12
+        .medium-space
         h5
           span Loaders
           a.chip.circle
@@ -1074,7 +1310,83 @@
           a
             svg.loader.large.yellow(viewBox="0 0 66 66")
               circle(fill="none", cx="33", cy="33", r="30")
+      #media.col.s12
+        .medium-space
+        h5
+          span Media
+          a.chip.circle
+            i(@click="showSamples('#media img:visible, #media video:visible')") code
+        nav.wrap
+          label.radio
+            input(
+              v-model="mediaImage",
+              value="1",
+              type="radio",
+              name="media-images"
+            )
+            span images
+          label.radio
+            input(
+              v-model="mediaImage",
+              value="2",
+              type="radio",
+              name="media-images"
+            )
+            span videos
+        nav.wrap(v-show="mediaImage == 1")
+          a
+            img.circle.tiny(:src="'/beer-and-woman.jpg'")
+          a
+            img.circle.small(:src="'/beer-and-woman.jpg'")
+          a
+            img.circle(:src="'/beer-and-woman.jpg'")
+          a
+            img.circle.large(:src="'/beer-and-woman.jpg'")
+          a
+            img.circle.extra(:src="'/beer-and-woman.jpg'")
+          a
+            img.round.tiny(:src="'/beer-and-woman.jpg'")
+          a
+            img.round.small(:src="'/beer-and-woman.jpg'")
+          a
+            img.round(:src="'/beer-and-woman.jpg'")
+          a
+            img.round.large(:src="'/beer-and-woman.jpg'")
+          a
+            img.round.extra(:src="'/beer-and-woman.jpg'")
+        nav.wrap(v-show="mediaImage == 2")
+          a
+            video.circle.tiny(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.circle.small(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.circle.medium(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.circle.large(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.circle.extra(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.round.tiny(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.round.small(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.round.medium(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.round.large(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
+          a
+            video.round.extra(autoplay, loop, muted)
+              source(:src="'/dance.mp4'", type="video/mp4")
       #modals.col.s12
+        .medium-space
         h5
           span Modals
           a.chip.circle
@@ -1083,6 +1395,7 @@
           button(data-ui="#modal") Modal
           button(data-ui="#modal-calendar") Calendar
       #navs.col.s12
+        .medium-space
         h5
           span Navs
           a.chip.circle
@@ -1094,26 +1407,20 @@
           a
             img.circle(:src="'/beer-and-woman.jpg'")
       #pages.col.s12
+        .medium-space
         h5
           span Pages
           a.chip.circle
             i(@click="showSamples('#pages .page')") code
         nav.wrap
-          button(
-            onclick="$('#begin, #pages .page').attr('class', 'page left active');"
-          ) From left
-          button(
-            onclick="$('#begin, #pages .page').attr('class', 'page top active');"
-          ) From top
-          button(
-            onclick="$('#begin, #pages .page').attr('class', 'page bottom active');"
-          ) From bottom
-          button(
-            onclick="$('#begin, #pages .page').attr('class', 'page right active');"
-          ) From right
+          button(@click="updatePage('page left active')") From left
+          button(@click="updatePage('page top active')") From top
+          button(@click="updatePage('page bottom active')") From bottom
+          button(@click="updatePage('page right active')") From right
         div(style="display: none")
           .page
       #radios.col.s12
+        .medium-space
         h5
           span Radios
           a.chip.circle
@@ -1173,6 +1480,7 @@
                   span Item 3
               span.error Error text
       #responsive.col.s12
+        .medium-space
         h5 
           span Responsive
           a.chip.circle(@click="showSamples('#responsive nav')")
@@ -1192,6 +1500,7 @@
             button.small-device.medium-device.border.circle
               i laptop_windows
       #rows.col.s12
+        .medium-space
         h5
           span Rows
           a.chip.circle
@@ -1237,17 +1546,18 @@
           .col.s12.m6.l3 2
           .col.s12.m6.l3 3
           .col.s12.m6.l3 4
-        .row.nowrap
+        .row.no-wrap
           .col max
           .col max
           .col max
-        .row.nowrap
+        .row.no-wrap
           .col.min min
           .col.min min
           .col.min min
           .col max
         .space
       #selects.col.s12
+        .medium-space
         h5
           span Selects
           a.chip.circle
@@ -1330,6 +1640,7 @@
               label.active List
               span.error Error text
       #switches.col.s12
+        .medium-space
         h5
           span Switches
           a.chip.circle
@@ -1389,6 +1700,7 @@
                   span Item 3
               span.error Error text
       #table.col.s12
+        .medium-space
         h5
           span Tables
           a.chip.circle
@@ -1440,7 +1752,7 @@
               td Line 1
               td
                 nav.right-align
-                  button.none Link
+                  button.none Button
                   button.none
                     i more_vert
             tr
@@ -1453,7 +1765,7 @@
               td Line 2
               td
                 nav.right-align
-                  button.none Link
+                  button.none Button
                   button.none
                     i more_vert
             tr
@@ -1466,10 +1778,11 @@
               td Line 3
               td
                 nav.right-align
-                  button.none Link
+                  button.none Button
                   button.none
                     i more_vert
       #tabs.col.s12
+        .medium-space
         h5
           span Tabs
           a.chip.circle
@@ -1581,7 +1894,87 @@
             h5 Tab 2
           #tab15.page.padding
             h5 Tab 3
+      #textareas.col.s12
+        .medium-space
+        h5
+          span Textareas
+          a.chip.circle
+            i(@click="showSamples('#textareas .field')") code
+        nav.wrap
+          label.checkbox
+            input#border-textareas(type="checkbox")
+            span border
+          label.checkbox
+            input#round-textareas(type="checkbox")
+            span round
+          label.checkbox
+            input#fill-textareas(type="checkbox")
+            span fill
+          label.radio
+            input#small-textareas(type="radio", name="size-textareas")
+            span small
+          label.radio
+            input#medium-textareas(
+              type="radio",
+              name="size-textareas",
+              checked="checked"
+            )
+            span medium
+          label.radio
+            input#large-textareas(type="radio", name="size-textareas")
+            span large
+        .space
+        .row
+          .col.s12.l4
+            .field.label.textarea
+              textarea
+              label Text
+          .col.s12.l4
+            .field.label.prefix.textarea
+              i search
+              textarea
+              label Text
+          .col.s12.l4
+            .field.label.sufix.textarea
+              textarea
+              label Text
+              i search
+          .col.s12.l4
+            .field.label.textarea
+              textarea
+              label Text
+              span.helper Complementary text
+          .col.s12.l4
+            .field.label.prefix.textarea
+              i search
+              textarea
+              label Text
+              span.helper Complementary text
+          .col.s12.l4
+            .field.label.sufix.textarea
+              textarea
+              label Text
+              i search
+              span.helper Complementary text
+          .col.s12.l4
+            .field.label.invalid.textarea
+              textarea
+              label Text
+              span.error Error text
+          .col.s12.l4
+            .field.label.prefix.invalid.textarea
+              i search
+              textarea
+              label Text
+              span.error Error text
+          .col.s12.l4
+            .field.label.sufix.invalid.textarea
+              textarea
+              label Text
+              i search
+              span.error Error text
       #toasts.col.s12.l6
+        .medium-space
         h5
           span Toasts
           a.chip.circle
@@ -1592,6 +1985,7 @@
           button.green(@click="showToasts('#toast3')") Toast
           button.blue(@click="showToasts('#toast4')") Toast
       #tooltips.col.s12.l6
+        .medium-space
         h5
           span Tooltips
           a.chip.circle
@@ -1611,6 +2005,7 @@
             .tooltip.right Complementary text
 
       #typography.col.s12
+        .medium-space
         h5
           span Typography
           a.chip.circle
@@ -1643,7 +2038,7 @@
           h4.center-align Summary
           #helpers.medium-device.large-device
             h6 Helpers
-            .row.nowrap
+            .row.no-wrap
               .col
                 b Position
                 div left
@@ -1667,6 +2062,12 @@
                 div small
                 div medium
                 div large
+                div small-width
+                div medium-width
+                div large-width
+                div small-height
+                div medium-height
+                div large-height
               .col
                 b Margin
                 div margin
@@ -1681,7 +2082,7 @@
                 div small-padding
                 div medium-padding
                 div large-padding
-            .row.nowrap
+            .row.no-wrap
               .col
                 b Spacing
                 div space
@@ -1722,8 +2123,8 @@
                 div medium-device
                 div large-device
                 div active
-                div nowrap
                 div wrap
+                div no-wrap
                 div scroll
                 div no-scroll
                 div wave
@@ -1742,7 +2143,7 @@
               div
                 span badge&nbsp;
                 span.grey-text left, right, top, bottom, border, round, circle,&nbsp;
-                span.orange-text auto
+                span.orange-text none
               div 
                 span button&nbsp;
                 span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
@@ -1754,14 +2155,15 @@
                 span card&nbsp;
                 span.grey-text small, medium, large, border, round, flat
               div 
-                span container
+                span container&nbsp;
+                span.orange-text min, max
               div 
                 span dropdown&nbsp;
-                span.grey-text left, right, small, medium, large, border, round, flat, active, nowrap
+                span.grey-text left, right, small, medium, large, border, round, flat, active, no-wrap
               div 
                 span field&nbsp;
                 span.grey-text small, medium, large, border, round, flat,&nbsp;
-                span.orange-text fill, prefix, sufix, label, invalid
+                span.orange-text fill, prefix, sufix, label, invalid, textarea
               div
                 span fixed&nbsp;
                 span.grey-text left, right, top, bottom, center, middle, small, medium, large, round
@@ -1783,7 +2185,7 @@
                 span.orange-text light, dark
               div 
                 span row&nbsp;
-                span.grey-text nowrap, top-align, bottom-align, middle-align, small-space, medium-space, large-space,&nbsp;
+                span.grey-text no-wrap, top-align, bottom-align, middle-align, small-space, medium-space, large-space,&nbsp;
                 span.orange-text no-space
               div 
                 span &nbsp;&nbsp;&nbsp;&nbsp;col&nbsp;
@@ -1794,6 +2196,9 @@
               div 
                 span tooltip&nbsp;
                 span.grey-text left, right, top, bottom, small, medium, large, border, round, flat
+              div 
+                span wave&nbsp;
+                span.orange-text light, dark
               .space
               div 
                 span &lt;body&gt;&nbsp;
@@ -1822,6 +2227,10 @@
               div 
                 span &lt;table&gt;&nbsp;
                 span.grey-text small, medium, large, border, left-align, center-align, right-align
+              div
+                span &lt;video&gt;&nbsp;
+                span.grey-text small, medium, large, border, round, circle,&nbsp;
+                span.orange-text tiny, extra, responsive, empty-state
               .space
               .orange-text * Element unique helpers
           .space
@@ -1903,8 +2312,10 @@
           i arrow_back
         a(data-ui="#modal-colors")
           h5.no-margin Back
+      .space
       .row
         .col.s6
+          h5 Red
           .red-light-5 red-light-5
           .red-light-4 red-light-4
           .red-light-3 red-light-3
@@ -1918,6 +2329,7 @@
           .red-border.border red-border
           .red-text red-text
         .col.s6
+          h5 Pink
           .pink-light-5 pink-light-5
           .pink-light-4 pink-light-4
           .pink-light-3 pink-light-3
@@ -1931,6 +2343,7 @@
           .pink-border.border pink-border
           .pink-text pink-text
         .col.s6
+          h5 Purple
           .purple-light-5 purple-light-5
           .purple-light-4 purple-light-4
           .purple-light-3 purple-light-3
@@ -1944,6 +2357,7 @@
           .purple-border.border purple-border
           .purple-text purple-text
         .col.s6
+          h5 Deep-purple
           .deep-purple-light-5 deep-purple-light-5
           .deep-purple-light-4 deep-purple-light-4
           .deep-purple-light-3 deep-purple-light-3
@@ -1957,6 +2371,7 @@
           .deep-purple-border.border deep-purple-border
           .deep-purple-text deep-purple-text
         .col.s6
+          h5 Indigo
           .indigo-light-5 indigo-light-5
           .indigo-light-4 indigo-light-4
           .indigo-light-3 indigo-light-3
@@ -1970,6 +2385,7 @@
           .indigo-border.border indigo-border
           .indigo-text indigo-text
         .col.s6
+          h5 Blue
           .blue-light-5 blue-light-5
           .blue-light-4 blue-light-4
           .blue-light-3 blue-light-3
@@ -1983,6 +2399,7 @@
           .blue-border.border blue-border
           .blue-text blue-text
         .col.s6
+          h5 Light-blue
           .light-blue-light-5 light-blue-light-5
           .light-blue-light-4 light-blue-light-4
           .light-blue-light-3 light-blue-light-3
@@ -1996,6 +2413,7 @@
           .light-blue-border.border light-blue-border
           .light-blue-text light-blue-text
         .col.s6
+          h5 Cyan
           .cyan-light-5 cyan-light-5
           .cyan-light-4 cyan-light-4
           .cyan-light-3 cyan-light-3
@@ -2009,6 +2427,7 @@
           .cyan-border.border cyan-border
           .cyan-text cyan-text
         .col.s6
+          h5 Teal
           .teal-light-5 teal-light-5
           .teal-light-4 teal-light-4
           .teal-light-3 teal-light-3
@@ -2022,6 +2441,7 @@
           .teal-border.border teal-border
           .teal-text teal-text
         .col.s6
+          h5 Green
           .green-light-5 green-light-5
           .green-light-4 green-light-4
           .green-light-3 green-light-3
@@ -2035,6 +2455,7 @@
           .green-border.border green-border
           .green-text green-text
         .col.s6
+          h5 Light-green
           .light-green-light-5 light-green-light-5
           .light-green-light-4 light-green-light-4
           .light-green-light-3 light-green-light-3
@@ -2048,6 +2469,7 @@
           .light-green-border.border light-green-border
           .light-green-text light-green-text
         .col.s6
+          h5 Lime
           .lime-light-5 lime-light-5
           .lime-light-4 lime-light-4
           .lime-light-3 lime-light-3
@@ -2061,6 +2483,7 @@
           .lime-border.border lime-border
           .lime-text lime-text
         .col.s6
+          h5 Yellow
           .yellow-light-5 yellow-light-5
           .yellow-light-4 yellow-light-4
           .yellow-light-3 yellow-light-3
@@ -2074,6 +2497,7 @@
           .yellow-border.border yellow-border
           .yellow-text yellow-text
         .col.s6
+          h5 Amber
           .amber-light-5 amber-light-5
           .amber-light-4 amber-light-4
           .amber-light-3 amber-light-3
@@ -2087,6 +2511,7 @@
           .amber-border.border amber-border
           .amber-text amber-text
         .col.s6
+          h5 Orange
           .orange-light-5 orange-light-5
           .orange-light-4 orange-light-4
           .orange-light-3 orange-light-3
@@ -2100,6 +2525,7 @@
           .orange-border.border orange-border
           .orange-text orange-text
         .col.s6
+          h5 Deep-orange
           .deep-orange-light-5 deep-orange-light-5
           .deep-orange-light-4 deep-orange-light-4
           .deep-orange-light-3 deep-orange-light-3
@@ -2113,6 +2539,7 @@
           .deep-orange-border.border deep-orange-border
           .deep-orange-text deep-orange-text
         .col.s6
+          h5 Brown
           .brown-light-5 brown-light-5
           .brown-light-4 brown-light-4
           .brown-light-3 brown-light-3
@@ -2126,6 +2553,7 @@
           .brown-border.border brown-border
           .brown-text brown-text
         .col.s6
+          h5 Grey
           .grey-light-5 grey-light-5
           .grey-light-4 grey-light-4
           .grey-light-3 grey-light-3
@@ -2139,6 +2567,7 @@
           .grey-border.border grey-border
           .grey-text grey-text
         .col.s6
+          h5 Blue-grey
           .blue-grey-light-5 blue-grey-light-5
           .blue-grey-light-4 blue-grey-light-4
           .blue-grey-light-3 blue-grey-light-3
@@ -2151,28 +2580,49 @@
           .blue-grey-dark-4 blue-grey-dark-4
           .blue-grey-border.border blue-grey-border
           .blue-grey-text blue-grey-text
-        .col.s6
+        .col.s12
+          h5 Black
           .black.grey-text black
           .black-border.border.grey-text black-border
           .black-text.grey-text black-text
+          h5 White
           .white.grey-text white
           .white-border.border.grey-text white-border
           .white-text.grey-text white-text
+          h5 Transparent
           .transparent.grey-text transparent
           .transparent-border.border.grey-text transparent-border
           .transparent-text.grey-text transparent-text
+          h5 Color-1
+          .color-1.grey-text color-1
+          .color-1-border.border.grey-text color-1-border
+          .color-1-text.grey-text color-1-text
+          h5 Color-2
+          .color-2.grey-text color-2
+          .color-2-border.border.grey-text color-2-border
+          .color-2-text.grey-text color-2-text
+          h5 Color-3
+          .color-3.grey-text color-3
+          .color-3-border.border.grey-text color-3-border
+          .color-3-text.grey-text color-3-text
+          h5 Color-4
+          .color-4.grey-text color-4
+          .color-4-border.border.grey-text color-4-border
+          .color-4-text.grey-text color-4-text
+          h5 Color-5
+          .color-5.grey-text color-5
+          .color-5-border.border.grey-text color-5-border
+          .color-5-text.grey-text color-5-text
 
     #modal.modal
       h5 Title
       div Complementary text
       nav
-        button.none(onclick="$('#modal').attr('class', 'modal active');") Default
-        button.none(onclick="$('#modal').attr('class', 'modal left active');") Left
-        button.none(onclick="$('#modal').attr('class', 'modal right active');") Right
-        button.none(onclick="$('#modal').attr('class', 'modal top active');") Top
-        button.none(
-          onclick="$('#modal').attr('class', 'modal bottom active');"
-        ) Bottom
+        button.none(@click="updateModal('modal active')") Default
+        button.none(@click="updateModal('modal left active')") Left
+        button.none(@click="updateModal('modal right active')") Right
+        button.none(@click="updateModal('modal top active')") Top
+        button.none(@click="updateModal('modal bottom active')") Bottom
         button.none(data-ui="#modal") Close
 
     #modal-samples.modal.right.large
@@ -2194,7 +2644,7 @@
           h5 Tue,
           h5 Month, 17
         .col.s12.m12.l8
-          .row.nowrap
+          .row.no-wrap
             .col.min
               a
                 i arrow_back
@@ -2307,12 +2757,6 @@
 </template>
 
 <script>
-$(window).on("load", () => {
-  setTimeout(() => {
-    $("#logo").addClass("active");
-  }, 360);
-});
-
 export default {
   data() {
     return {
@@ -2322,9 +2766,15 @@ export default {
       jsSample: null,
       autoSample: null,
       theme: true,
+      mediaCard: 1,
+      mediaImage: 1,
+      layout: 0,
     };
   },
   watch: {},
+  created() {
+    window.$layout = null;
+  },
   mounted() {
     this.htmlSample = hljs.highlight(
       "html",
@@ -2343,27 +2793,42 @@ export default {
 
     ui();
 
+    this.resetTheme();
     this.badgeSamples();
     this.buttonSamples();
-    this.chartSamples();
     this.inputSamples();
     this.listSamples();
     this.tableSamples();
     this.tabSamples();
     this.selectSamples();
     this.rowSamples();
+    this.textareaSamples();
+    this.layoutSamples();
+
+    setTimeout(() => {
+      $("#logo").addClass("active");
+    }, 1000);
   },
   methods: {
+    resetTheme() {
+      document.body.className = "";
+    },
     updateTheme() {
-      var body = $("body");
+      let css = document.body.className;
 
-      if (body.is(".is-dark")) {
-        body.removeClass("is-dark");
-        this.theme = true;
+      if (css.indexOf("is-dark") === -1) {
+        document.body.className = "is-dark";
+        this.theme = "is-dark";
       } else {
-        body.addClass("is-dark");
-        this.theme = false;
+        document.body.className = "";
+        this.theme = "";
       }
+    },
+    goTo(selector) {
+      setTimeout(() => {
+        let element = document.querySelector(selector);
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 180);
     },
     addHomeScreen() {
       if (window.beercss && window.beercss.installEvent)
@@ -2400,10 +2865,92 @@ export default {
         }
       }
     },
+    layoutSamples() {
+      $("#layouts input").on("click", function () {
+        var id = $(this).attr("id");
+        var checked = $(this).is(":checked");
+        var positions = ["left", "right", "center", "top", "bottom", "middle"];
+        var alignments = [
+          "left-align",
+          "right-align",
+          "center-align",
+          "top-align",
+          "bottom-align",
+          "middle-align",
+        ];
+        var position = $("#positions .absolute");
+        var alignment = $("#alignments #container");
+
+        if (checked && (id == "left-layouts" || id == "right-layouts"))
+          $("#center-layouts")[0].checked = false;
+
+        if (checked && (id == "top-layouts" || id == "bottom-layouts"))
+          $("#middle-layouts")[0].checked = false;
+
+        if (checked && id == "center-layouts") {
+          $("#left-layouts")[0].checked = false;
+          $("#right-layouts")[0].checked = false;
+        }
+
+        if (checked && id == "middle-layouts") {
+          $("#top-layouts")[0].checked = false;
+          $("#bottom-layouts")[0].checked = false;
+        }
+
+        if (
+          checked &&
+          (id == "left-align-layouts" || id == "right-align-layouts")
+        )
+          $("#center-align-layouts")[0].checked = false;
+
+        if (
+          checked &&
+          (id == "top-align-layouts" || id == "bottom-align-layouts")
+        )
+          $("#middle-align-layouts")[0].checked = false;
+
+        if (checked && id == "center-align-layouts") {
+          $("#left-align-layouts")[0].checked = false;
+          $("#right-align-layouts")[0].checked = false;
+        }
+
+        if (checked && id == "middle-align-layouts") {
+          $("#top-align-layouts")[0].checked = false;
+          $("#bottom-align-layouts")[0].checked = false;
+        }
+
+        $(position).removeClass("left right center top bottom middle");
+
+        for (var i = 0; i < positions.length; i++) {
+          if ($("#" + positions[i] + "-layouts").is(":checked")) {
+            $(position).addClass(positions[i]);
+          }
+        }
+
+        $(alignment).removeClass(
+          "left-align right-align center-align top-align bottom-align middle-align"
+        );
+
+        for (var i = 0; i < alignments.length; i++) {
+          if ($("#" + alignments[i] + "-layouts").is(":checked")) {
+            $(alignment).addClass(alignments[i]);
+          }
+        }
+      });
+    },
     updateIcons() {
       var i = $("i");
       if (i.is(".outlined")) i.removeClass("outlined");
       else i.addClass("outlined");
+    },
+    updateContainer(css) {
+      $(".container").attr("class", css ? "container " + css : "container");
+    },
+    updatePage(css) {
+      $("#begin").attr("class", css);
+    },
+    updateModal(css) {
+      $("#modal").attr("class", css);
     },
     formatHtml(element) {
       function process(str) {
@@ -2455,7 +3002,10 @@ export default {
         if (
           $(elements[i]).is(".menu") ||
           $(elements[i]).is(".modal") ||
-          $(elements[i]).is(".toast")
+          $(elements[i]).is(".toast") ||
+          $(elements[i]).is(".container") ||
+          $(elements[i]).is("#container") ||
+          $(elements[i]).is(".fixed")
         )
           html = "";
 
@@ -2652,6 +3202,20 @@ export default {
         }
       });
     },
+    textareaSamples() {
+      $(
+        "#border-textareas,#round-textareas,#fill-textareas,#small-textareas,#medium-textareas,#large-textareas"
+      ).on("click", function () {
+        var ids = ["border", "fill", "round", "small", "large"];
+        for (var i = 0; i < ids.length; i++) {
+          var selector = "#" + ids[i] + "-textareas";
+
+          if ($(selector).is(":checked"))
+            $("#textareas .field.label").addClass(ids[i]);
+          else $("#textareas .field.label").removeClass(ids[i]);
+        }
+      });
+    },
     rowSamples() {
       $(
         "#no-space-rows,#small-space-rows,#medium-space-rows,#large-space-rows"
@@ -2664,101 +3228,11 @@ export default {
         }
       });
     },
-    chartSamples() {
-      for (var i = 0; i < 2; i++) {
-        var lightBlue = [
-          "#03a9f4",
-          "#29b6f6",
-          "#4fc3f7",
-          "#81d4fa",
-          "#b3e5fc",
-          "#e1f5fe",
-        ];
-        var amber = [
-          "#ffc107",
-          "#ffca28",
-          "#ffd54f",
-          "#ffe082",
-          "#ffecb3",
-          "#fff8e1",
-        ];
-        var pink = [
-          "#e91e63",
-          "#ec407a",
-          "#f06292",
-          "#f48fb1",
-          "#f8bbd0",
-          "#fce4ec",
-        ];
-        var lightGreen = [
-          "#8bc34a",
-          "#9ccc65",
-          "#aed581",
-          "#c5e1a5",
-          "#dcedc8",
-          "#f1f8e9",
-        ];
-        var purple = [
-          "#9c27b0",
-          "#ab47bc",
-          "#ba68c8",
-          "#ce93d8",
-          "#e1bee7",
-          "#f3e5f5",
-        ];
-        var teal = [
-          "#009688",
-          "#26a69a",
-          "#4db6ac",
-          "#80cbc4",
-          "#b2dfdb",
-          "#e0f2f1",
-        ];
-
-        var colors = [lightBlue, amber, pink, lightGreen, purple];
-        var type = i == 0 ? "bar" : "doughnut";
-        var ctx = document.getElementById("grafico" + i);
-        Chart.defaults.global.defaultFontColor = "#9e9e9e";
-
-        var myChart = new Chart(ctx, {
-          type: i == 0 ? "bar" : "doughnut",
-          data: {
-            labels: ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"],
-            datasets: [
-              {
-                label: "Label",
-                data: [12, 19, 3, 5, 2],
-                backgroundColor: colors[Math.floor(Math.random() * 5)],
-                borderWidth: 0,
-              },
-            ],
-          },
-          options: {
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: true,
-                  },
-                },
-              ],
-            },
-          },
-        });
-      }
-    },
   },
 };
 </script>
 
 <style>
-.icon {
-  filter: invert(1);
-}
-#modal-colors .col > div {
-  padding: 12px;
-}
-
 #logo {
   display: none;
   max-width: 100%;
@@ -2775,6 +3249,17 @@ export default {
   height: 360px;
 }
 
+pre {
+  overflow: auto;
+  padding: 8px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.is-dark pre {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 pre * {
   vertical-align: text-bottom;
 }
@@ -2785,17 +3270,6 @@ pre * {
 
 .is-dark .hljs-string {
   color: #ff9800 !important;
-}
-
-pre {
-  overflow: auto;
-  padding: 8px;
-  margin: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.is-dark pre {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #rows .row {
@@ -2810,8 +3284,19 @@ pre {
   border: 2px solid;
 }
 
-.col.s12[id] > h5 {
-  margin-top: 32px;
+#modal-colors .col > div {
+  padding: 12px;
+}
+
+.logo-template {
+  width: auto;
+  height: 24px;
+}
+
+#container {
+  height: 200px;
+  border: 1px solid #9e9e9e50;
+  border-radius: 8px;
 }
 
 @keyframes logo-intro {
