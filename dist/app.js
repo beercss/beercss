@@ -11578,6 +11578,13 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -12528,7 +12535,12 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
-            ])
+            ]),
+            _c(
+              "span",
+              { staticClass: "badge top left medium-device large-device" },
+              [_vm._v("New")]
+            )
           ]),
           _c("nav", { staticClass: "wrap medium-device large-device" }, [
             _c("label", { staticClass: "radio" }, [
@@ -13130,7 +13142,12 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
-            ])
+            ]),
+            _c(
+              "span",
+              { staticClass: "badge top left medium-device large-device" },
+              [_vm._v("New")]
+            )
           ]),
           _c("nav", [
             _c(
@@ -13355,6 +13372,7 @@ exports.default = _default;
             ),
             _vm._m(65),
             _c("button", { attrs: { "data-ui": "#dropdown6" } }, [
+              _c("span", { staticClass: "badge" }, [_vm._v("New")]),
               _c("span", [_vm._v("Video")]),
               _c(
                 "div",
@@ -13446,7 +13464,12 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
-            ])
+            ]),
+            _c(
+              "span",
+              { staticClass: "badge top left medium-device large-device" },
+              [_vm._v("New")]
+            )
           ]),
           _vm._m(71),
           _vm._m(72),
@@ -13642,7 +13665,12 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
-            ])
+            ]),
+            _c(
+              "span",
+              { staticClass: "badge top left medium-device large-device" },
+              [_vm._v("New")]
+            )
           ]),
           _c("nav", { staticClass: "wrap medium-device large-device" }, [
             _c("label", { staticClass: "radio" }, [
@@ -14234,7 +14262,12 @@ exports.default = _default;
                 },
                 [_vm._v("code")]
               )
-            ])
+            ]),
+            _c(
+              "span",
+              { staticClass: "badge top left medium-device large-device" },
+              [_vm._v("New")]
+            )
           ]),
           _vm._m(110),
           _c("div", { staticClass: "space" }),
@@ -14635,7 +14668,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("a", { attrs: { "data-ui": "#more-bottom" } }, [
       _c("i", [_vm._v("collections")]),
-      _c("div", [_vm._v("Templates")])
+      _c("div", [_vm._v("Templates")]),
+      _c("span", { staticClass: "badge circle small-margin" }, [_vm._v("4")])
     ])
   },
   function() {

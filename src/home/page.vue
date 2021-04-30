@@ -68,6 +68,7 @@
     a(data-ui="#more-bottom")
       i collections
       div Templates
+      span.badge.circle.small-margin 4
     a(@click="showSamples('#menu-bottom')")
       i code
       div Code
@@ -344,6 +345,7 @@
           span Cards
           a.chip.circle
             i(@click="showSamples('#cards .card:visible')") code
+          span.badge.top.left.medium-device.large-device New
         nav.wrap.medium-device.large-device
           label.radio
             input(
@@ -737,6 +739,7 @@
           span Containers
           a.chip.circle
             i(@click="showSamples('#containers .container')") code
+          span.badge.top.left.medium-device.large-device New
         nav
           button(@click="updateContainer()") Default
           button(@click="updateContainer('min')") Min
@@ -954,6 +957,7 @@
                     td 3
                     td 4
           button(data-ui="#dropdown6")
+            span.badge New
             span Video
             #dropdown6.dropdown.no-padding.small-width(data-ui="#dropdown6") 
               video.responsive(autoplay, loop, muted)
@@ -1095,6 +1099,7 @@
           span Layouts
           a.chip.circle
             i(@click="layout = 0; showSamples('#layouts #container')") code
+          span.badge.top.left.medium-device.large-device New
         nav.wrap
           label.checkbox
             input#center-layouts(type="checkbox", checked)
@@ -1316,6 +1321,7 @@
           span Media
           a.chip.circle
             i(@click="showSamples('#media img:visible, #media video:visible')") code
+          span.badge.top.left.medium-device.large-device New
         nav.wrap.medium-device.large-device
           label.radio
             input(
@@ -1900,6 +1906,7 @@
           span Textareas
           a.chip.circle
             i(@click="showSamples('#textareas .field')") code
+          span.badge.top.left.medium-device.large-device New
         nav.wrap
           label.checkbox
             input#border-textareas(type="checkbox")
