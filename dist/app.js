@@ -12530,7 +12530,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _c("nav", { staticClass: "wrap" }, [
+          _c("nav", { staticClass: "wrap medium-device large-device" }, [
             _c("label", { staticClass: "radio" }, [
               _c("input", {
                 directives: [
@@ -13644,7 +13644,7 @@ exports.default = _default;
               )
             ])
           ]),
-          _c("nav", { staticClass: "wrap" }, [
+          _c("nav", { staticClass: "wrap medium-device large-device" }, [
             _c("label", { staticClass: "radio" }, [
               _c("input", {
                 directives: [

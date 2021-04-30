@@ -344,7 +344,7 @@
           span Cards
           a.chip.circle
             i(@click="showSamples('#cards .card:visible')") code
-        nav.wrap
+        nav.wrap.medium-device.large-device
           label.radio
             input(
               v-model="mediaCard",
@@ -1316,7 +1316,7 @@
           span Media
           a.chip.circle
             i(@click="showSamples('#media img:visible, #media video:visible')") code
-        nav.wrap
+        nav.wrap.medium-device.large-device
           label.radio
             input(
               v-model="mediaImage",
