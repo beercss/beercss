@@ -12756,7 +12756,8 @@ exports.default = _default;
                             attrs: {
                               autoplay: "autoplay",
                               loop: "loop",
-                              muted: "muted"
+                              muted: "muted",
+                              playsinline: "playsinline"
                             },
                             domProps: { muted: true }
                           },
@@ -12783,7 +12784,8 @@ exports.default = _default;
                             attrs: {
                               autoplay: "autoplay",
                               loop: "loop",
-                              muted: "muted"
+                              muted: "muted",
+                              playsinline: "playsinline"
                             },
                             domProps: { muted: true }
                           },
@@ -12810,7 +12812,8 @@ exports.default = _default;
                             attrs: {
                               autoplay: "autoplay",
                               loop: "loop",
-                              muted: "muted"
+                              muted: "muted",
+                              playsinline: "playsinline"
                             },
                             domProps: { muted: true }
                           },
@@ -12837,7 +12840,8 @@ exports.default = _default;
                             attrs: {
                               autoplay: "autoplay",
                               loop: "loop",
-                              muted: "muted"
+                              muted: "muted",
+                              playsinline: "playsinline"
                             },
                             domProps: { muted: true }
                           },
@@ -12862,7 +12866,8 @@ exports.default = _default;
                         attrs: {
                           autoplay: "autoplay",
                           loop: "loop",
-                          muted: "muted"
+                          muted: "muted",
+                          playsinline: "playsinline"
                         },
                         domProps: { muted: true }
                       },
@@ -12884,7 +12889,8 @@ exports.default = _default;
                         attrs: {
                           autoplay: "autoplay",
                           loop: "loop",
-                          muted: "muted"
+                          muted: "muted",
+                          playsinline: "playsinline"
                         },
                         domProps: { muted: true }
                       },
@@ -12906,7 +12912,8 @@ exports.default = _default;
                         attrs: {
                           autoplay: "autoplay",
                           loop: "loop",
-                          muted: "muted"
+                          muted: "muted",
+                          playsinline: "playsinline"
                         },
                         domProps: { muted: true }
                       },
@@ -12928,7 +12935,8 @@ exports.default = _default;
                         attrs: {
                           autoplay: "autoplay",
                           loop: "loop",
-                          muted: "muted"
+                          muted: "muted",
+                          playsinline: "playsinline"
                         },
                         domProps: { muted: true }
                       },
@@ -12950,7 +12958,8 @@ exports.default = _default;
                         attrs: {
                           autoplay: "autoplay",
                           loop: "loop",
-                          muted: "muted"
+                          muted: "muted",
+                          playsinline: "playsinline"
                         },
                         domProps: { muted: true }
                       },
@@ -12972,7 +12981,8 @@ exports.default = _default;
                         attrs: {
                           autoplay: "autoplay",
                           loop: "loop",
-                          muted: "muted"
+                          muted: "muted",
+                          playsinline: "playsinline"
                         },
                         domProps: { muted: true }
                       },
@@ -12994,7 +13004,8 @@ exports.default = _default;
                         attrs: {
                           autoplay: "autoplay",
                           loop: "loop",
-                          muted: "muted"
+                          muted: "muted",
+                          playsinline: "playsinline"
                         },
                         domProps: { muted: true }
                       },
@@ -13016,7 +13027,8 @@ exports.default = _default;
                         attrs: {
                           autoplay: "autoplay",
                           loop: "loop",
-                          muted: "muted"
+                          muted: "muted",
+                          playsinline: "playsinline"
                         },
                         domProps: { muted: true }
                       },
@@ -13040,7 +13052,8 @@ exports.default = _default;
                             attrs: {
                               autoplay: "autoplay",
                               loop: "loop",
-                              muted: "muted"
+                              muted: "muted",
+                              playsinline: "playsinline"
                             },
                             domProps: { muted: true }
                           },
@@ -13066,7 +13079,8 @@ exports.default = _default;
                             attrs: {
                               autoplay: "autoplay",
                               loop: "loop",
-                              muted: "muted"
+                              muted: "muted",
+                              playsinline: "playsinline"
                             },
                             domProps: { muted: true }
                           },
@@ -13388,7 +13402,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },
@@ -13788,7 +13803,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },
@@ -13807,7 +13823,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },
@@ -13826,7 +13843,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },
@@ -13845,7 +13863,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },
@@ -13864,7 +13883,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },
@@ -13883,7 +13903,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },
@@ -13902,7 +13923,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },
@@ -13921,7 +13943,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },
@@ -13940,7 +13963,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },
@@ -13959,7 +13983,8 @@ exports.default = _default;
                       attrs: {
                         autoplay: "autoplay",
                         loop: "loop",
-                        muted: "muted"
+                        muted: "muted",
+                        playsinline: "playsinline"
                       },
                       domProps: { muted: true }
                     },

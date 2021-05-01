@@ -498,7 +498,7 @@
             .card
               .row.no-wrap
                 .col.min
-                  video.circle.large(autoplay, loop, muted)
+                  video.circle.large(autoplay, loop, muted, playsinline)
                     source(:src="'/dance.mp4'", type="video/mp4")
                 .col
                   h5.no-margin Title
@@ -509,7 +509,7 @@
             .card.round
               .row.no-wrap
                 .col.min
-                  video.circle.large(autoplay, loop, muted)
+                  video.circle.large(autoplay, loop, muted, playsinline)
                     source(:src="'/dance.mp4'", type="video/mp4")
                 .col
                   h5.no-margin Title
@@ -520,7 +520,7 @@
             .card.border
               .row.no-wrap
                 .col.min
-                  video.circle.large(autoplay, loop, muted)
+                  video.circle.large(autoplay, loop, muted, playsinline)
                     source(:src="'/dance.mp4'", type="video/mp4")
                 .col
                   h5.no-margin Title
@@ -531,7 +531,7 @@
             .card.border.round
               .row.no-wrap
                 .col.min
-                  video.circle.large(autoplay, loop, muted)
+                  video.circle.large(autoplay, loop, muted, playsinline)
                     source(:src="'/dance.mp4'", type="video/mp4")
                 .col
                   h5.no-margin Title
@@ -540,7 +540,7 @@
                 button.none Button
           .col.s12.m6.l3
             .card.no-padding
-              video.responsive.small(autoplay, loop, muted)
+              video.responsive.small(autoplay, loop, muted, playsinline)
                 source(:src="'/dance.mp4'", type="video/mp4")
               .padding
                 h5.no-margin Title
@@ -549,7 +549,7 @@
                   button.none Button
           .col.s12.m6.l3
             .card.no-padding.round
-              video.responsive.small(autoplay, loop, muted)
+              video.responsive.small(autoplay, loop, muted, playsinline)
                 source(:src="'/dance.mp4'", type="video/mp4")
               .padding
                 h5.no-margin Title
@@ -558,7 +558,7 @@
                   button.none Button
           .col.s12.m6.l3
             .card.no-padding.border
-              video.responsive.small(autoplay, loop, muted)
+              video.responsive.small(autoplay, loop, muted, playsinline)
                 source(:src="'/dance.mp4'", type="video/mp4")
               .padding
                 h5.no-margin Title
@@ -567,7 +567,7 @@
                   button.none Button
           .col.s12.m6.l3
             .card.no-padding.border.round
-              video.responsive.small(autoplay, loop, muted)
+              video.responsive.small(autoplay, loop, muted, playsinline)
                 source(:src="'/dance.mp4'", type="video/mp4")
               .padding
                 h5.no-margin Title
@@ -576,7 +576,7 @@
                   button.none Button
           .col.s12.m6.l3
             .card.no-padding
-              video.responsive.medium(autoplay, loop, muted)
+              video.responsive.medium(autoplay, loop, muted, playsinline)
                 source(:src="'/dance.mp4'", type="video/mp4")
               .absolute.bottom.left.right.padding.bottom-shadow.white-text
                 h5.no-margin Title
@@ -585,7 +585,7 @@
                   button.border.small Button
           .col.s12.m6.l3
             .card.no-padding.round
-              video.responsive.medium.round(autoplay, loop, muted)
+              video.responsive.medium.round(autoplay, loop, muted, playsinline)
                 source(:src="'/dance.mp4'", type="video/mp4")
               .absolute.bottom.left.right.padding.bottom-shadow.white-text
                 h5.no-margin Title
@@ -594,7 +594,7 @@
                   button.border.small Button
           .col.s12.m6.l3
             .card.no-padding.border
-              video.responsive.medium(autoplay, loop, muted)
+              video.responsive.medium(autoplay, loop, muted, playsinline)
                 source(:src="'/dance.mp4'", type="video/mp4")
               .absolute.bottom.left.right.padding.bottom-shadow.white-text
                 h5.no-margin Title
@@ -603,7 +603,7 @@
                   button.border.small Button
           .col.s12.m6.l3
             .card.no-padding.border.round
-              video.responsive.medium.round(autoplay, loop, muted)
+              video.responsive.medium.round(autoplay, loop, muted, playsinline)
                 source(:src="'/dance.mp4'", type="video/mp4")
               .absolute.bottom.left.right.padding.bottom-shadow.white-text
                 h5.no-margin Title
@@ -614,7 +614,7 @@
             .card.no-padding
               .row.no-wrap.no-space
                 .col
-                  video.responsive(autoplay, loop, muted)
+                  video.responsive(autoplay, loop, muted, playsinline)
                     source(:src="'/dance.mp4'", type="video/mp4")
                 .col
                   .padding
@@ -626,7 +626,7 @@
             .card.no-padding
               .row.no-wrap.no-space
                 .col
-                  video.responsive(autoplay, loop, muted)
+                  video.responsive(autoplay, loop, muted, playsinline)
                     source(:src="'/dance.mp4'", type="video/mp4")
                   .absolute.top.left.right.padding.top-shadow.white-text
                     h5.no-margin Title
@@ -960,7 +960,7 @@
             span.badge New
             span Video
             #dropdown6.dropdown.no-padding.small-width(data-ui="#dropdown6") 
-              video.responsive(autoplay, loop, muted)
+              video.responsive(autoplay, loop, muted, playsinline)
                 source(:src="'/dance.mp4'", type="video/mp4")
       #icons.col.s12
         .medium-space
@@ -1362,34 +1362,34 @@
             img.round.extra(:src="'/beer-and-woman.jpg'")
         nav.wrap(v-if="mediaImage == 2")
           a
-            video.circle.tiny(autoplay, loop, muted)
+            video.circle.tiny(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
           a
-            video.circle.small(autoplay, loop, muted)
+            video.circle.small(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
           a
-            video.circle.medium(autoplay, loop, muted)
+            video.circle.medium(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
           a
-            video.circle.large(autoplay, loop, muted)
+            video.circle.large(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
           a
-            video.circle.extra(autoplay, loop, muted)
+            video.circle.extra(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
           a
-            video.round.tiny(autoplay, loop, muted)
+            video.round.tiny(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
           a
-            video.round.small(autoplay, loop, muted)
+            video.round.small(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
           a
-            video.round.medium(autoplay, loop, muted)
+            video.round.medium(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
           a
-            video.round.large(autoplay, loop, muted)
+            video.round.large(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
           a
-            video.round.extra(autoplay, loop, muted)
+            video.round.extra(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
       #modals.col.s12
         .medium-space
