@@ -21376,7 +21376,12 @@ exports.default = _default;
         "video",
         {
           staticClass: "responsive",
-          attrs: { autoplay: "autoplay", loop: "loop", muted: "muted" },
+          attrs: {
+            autoplay: "autoplay",
+            loop: "loop",
+            muted: "muted",
+            playsinline: "playsinline"
+          },
           domProps: { muted: true }
         },
         [_c("source", { attrs: { src: "/dance.mp4", type: "video/mp4" } })]

@@ -1,7 +1,7 @@
 <template lang="pug">
 #home
   .large-height
-    video.responsive(autoplay, loop, muted)
+    video.responsive(autoplay, loop, muted, playsinline)
       source(:src="'/dance.mp4'", type="video/mp4")
     .absolute.top.bottom.left.middle-align.small.left-shadow
       .large-padding
