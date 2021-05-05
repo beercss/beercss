@@ -96,8 +96,9 @@ div
           a(href="/uber", v-show="theme != 'is-dark'")
             img.logo-template(:src="'/uber-light.png'")
   
-  .center-align.middle-align.padding.medium-height.yellow-light-2
+  .center-align.middle-align.padding.medium-height.yellow-light-2.no-scroll
     img#logo(:src="'/logo.png'", @click="addHomeScreen()")
+
   #begin.container
     h4.center-align Beercss
     h6.center-align Build material design interfaces in record time

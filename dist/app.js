@@ -11583,6 +11583,7 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   data: function data() {
     return {
@@ -12444,7 +12445,7 @@ exports.default = _default;
       "div",
       {
         staticClass:
-          "center-align middle-align padding medium-height yellow-light-2"
+          "center-align middle-align padding medium-height yellow-light-2 no-scroll"
       },
       [
         _c("img", {
