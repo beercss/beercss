@@ -1,6 +1,6 @@
 {
-    "name": "Beer css!",
-    "background_color": "#2196f3",
+    "name": "Beercss",
+    "background_color": "#fff176",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
