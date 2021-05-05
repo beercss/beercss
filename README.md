@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://www.beercss.com" target="_blank" rel="noopener noreferrer"><img src="https://www.beercss.com/favicon.png" alt="Beercss logo"></a>
+    <a href="https://www.beercss.com" target="_blank" rel="noopener noreferrer"><img src="https://www.beercss.com/logo.png" alt="Beercss logo"></a>
 </p>
 <p align="center">
     <a href="https://github.com/beercss/beercss/blob/main/LICENSE"><img src="https://img.shields.io/github/license/beercss/beercss" alt="License"></a>
@@ -9,7 +9,7 @@
     <a href="https://github.com/beercss/beercss/issues"><img src="https://img.shields.io/github/issues/beercss/beercss" alt="Issues"></a>
 </p>
 
-# Beer css!
+# Beercss
 
 The most tasty, lightweight and easy css framework that you've seen!
 
