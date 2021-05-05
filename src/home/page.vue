@@ -1,5 +1,5 @@
 <template lang="pug">
-.container
+div
   #menu.menu.left.medium-device.large-device
     .small-space
     img.front.small.circle.no-margin.no-padding(
@@ -95,30 +95,28 @@
             img.logo-template(:src="'/uber-dark.png'")
           a(href="/uber", v-show="theme != 'is-dark'")
             img.logo-template(:src="'/uber-light.png'")
-  #begin
-    .row
-      .col.s12
-        #container-logo.center-align.middle-align.padding
-          img#logo(:src="'/favicon.png'", @click="addHomeScreen()")
-        .space
-        h4.center-align Beer css!
-        h6.center-align Build material design interfaces in record time
-        .space
-        nav.center-align
-          a.button.large.border(
-            href="https://www.npmjs.com/package/beercss",
-            target="_blank"
-          ) NPM
-          a.button.large.border(
-            href="https://github.com/beercss/beercss",
-            target="_blank"
-          ) Github
-          a.button.large(
-            href="https://www.patreon.com/beercss",
-            target="_blank"
-          ) Support us
-    .medium-space
-    .large-divider
+  
+  .center-align.middle-align.padding.medium-height.yellow-light-2
+    img#logo(:src="'/logo.png'", @click="addHomeScreen()")
+  #begin.container
+    h4.center-align Beercss
+    h6.center-align Build material design interfaces in record time
+    .space
+    nav.center-align
+      a.button.large.border(
+        href="https://www.npmjs.com/package/beercss",
+        target="_blank"
+      ) NPM
+      a.button.large.border(
+        href="https://github.com/beercss/beercss",
+        target="_blank"
+      ) Github
+      a.button.large(
+        href="https://www.patreon.com/beercss",
+        target="_blank"
+      ) Support us
+    .large-space
+    .large-divider  
     #toasts
       #toast1.toast.pink.white-text
         i error
@@ -3243,8 +3241,7 @@ export default {
 #logo {
   display: none;
   max-width: 100%;
-  width: 360px;
-  border-radius: 50%;
+  width: 512px;
 }
 
 #logo.active {
@@ -3253,7 +3250,7 @@ export default {
 }
 
 #container-logo {
-  height: 360px;
+  height: 256px;
 }
 
 pre {

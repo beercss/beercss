@@ -11583,8 +11583,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
 var _default = {
   data: function data() {
     return {
@@ -11989,7 +11987,7 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", [
     _c(
       "div",
       {
@@ -12442,36 +12440,31 @@ exports.default = _default;
         )
       ]
     ),
-    _c("div", { attrs: { id: "begin" } }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col s12" }, [
-          _c(
-            "div",
-            {
-              staticClass: "center-align middle-align padding",
-              attrs: { id: "container-logo" }
-            },
-            [
-              _c("img", {
-                attrs: { id: "logo", src: "/favicon.png" },
-                on: {
-                  click: function($event) {
-                    return _vm.addHomeScreen()
-                  }
-                }
-              })
-            ]
-          ),
-          _c("div", { staticClass: "space" }),
-          _c("h4", { staticClass: "center-align" }, [_vm._v("Beer css!")]),
-          _c("h6", { staticClass: "center-align" }, [
-            _vm._v("Build material design interfaces in record time")
-          ]),
-          _c("div", { staticClass: "space" }),
-          _vm._m(2)
-        ])
+    _c(
+      "div",
+      {
+        staticClass:
+          "center-align middle-align padding medium-height yellow-light-2"
+      },
+      [
+        _c("img", {
+          attrs: { id: "logo", src: "/logo.png" },
+          on: {
+            click: function($event) {
+              return _vm.addHomeScreen()
+            }
+          }
+        })
+      ]
+    ),
+    _c("div", { staticClass: "container", attrs: { id: "begin" } }, [
+      _c("h4", { staticClass: "center-align" }, [_vm._v("Beercss")]),
+      _c("h6", { staticClass: "center-align" }, [
+        _vm._v("Build material design interfaces in record time")
       ]),
-      _c("div", { staticClass: "medium-space" }),
+      _c("div", { staticClass: "space" }),
+      _vm._m(2),
+      _c("div", { staticClass: "large-space" }),
       _c("div", { staticClass: "large-divider" }),
       _vm._m(3),
       _c("div", { staticClass: "row" }, [

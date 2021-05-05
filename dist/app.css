@@ -1,8 +1,7 @@
 #logo {
   display: none;
   max-width: 100%;
-  width: 360px;
-  border-radius: 50%;
+  width: 512px;
 }
 
 #logo.active {
@@ -11,7 +10,7 @@
 }
 
 #container-logo {
-  height: 360px;
+  height: 256px;
 }
 
 pre {
