@@ -11,7 +11,8 @@
 
 # Beercss
 
-The most tasty, lightweight and easy css framework that you've seen!
+Build material design interfaces in record time...
+...without stress for devs 🍺💛
 
 Cheers, www.beercss.com
 
