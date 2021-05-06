@@ -11584,6 +11584,9 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -12460,8 +12463,13 @@ exports.default = _default;
     ),
     _c("div", { staticClass: "container", attrs: { id: "begin" } }, [
       _c("h4", { staticClass: "center-align" }, [_vm._v("Beercss")]),
+      _c("div", { staticClass: "space" }),
       _c("h6", { staticClass: "center-align" }, [
-        _vm._v("Build material design interfaces in record time")
+        _vm._v("Build material design interfaces in record time...")
+      ]),
+      _c("div", { staticClass: "space" }),
+      _c("h6", { staticClass: "center-align" }, [
+        _vm._v("...without stress for devs 🍺💛")
       ]),
       _c("div", { staticClass: "space" }),
       _vm._m(2),
