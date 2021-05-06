@@ -101,7 +101,10 @@ div
 
   #begin.container
     h4.center-align Beercss
-    h6.center-align Build material design interfaces in record time
+    .space
+    h6.center-align Build material design interfaces in record time...
+    .space
+    h6.center-align ...without stress for devs 🍺💛
     .space
     nav.center-align
       a.button.large.border(
