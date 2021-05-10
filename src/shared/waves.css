@@ -16,7 +16,11 @@ button::after {
 .wave:hover::after,
 .wave.light:hover::after,
 .button:hover::after,
-button:hover::after {
+button:hover::after,
+.wave:focus::after,
+.wave.light:focus::after,
+.button:focus::after,
+button:focus::after {
   background: radial-gradient(circle, rgba(255,255,255,0.2) 1%, transparent 1%) center/15000%;
 }
 
@@ -41,7 +45,12 @@ button.none::after {
 .button.none:hover::after,
 button.none:hover::after,
 .button.border:hover::after,
-button.border:hover::after {
+button.border:hover::after,
+.wave.dark:focus::after,
+.button.none:focus::after,
+button.none:focus::after,
+.button.border:focus::after,
+button.border:focus::after {
   background: radial-gradient(circle, #9e9e9e20 1%, transparent 1%) center/15000%;
 }
 
