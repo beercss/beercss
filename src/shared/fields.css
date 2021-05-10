@@ -355,6 +355,13 @@ input[type="file"] {
   content: "radio_button_unchecked";
 }
 
+.checkbox > input:focus + span::before,
+.radio > input:focus + span::before {
+  border-radius: 50%;
+  background-color: var(--color-2a);
+  box-shadow: 0 0 0 8px var(--color-2a);
+}
+
 .checkbox > input:checked + span::before {
   color: var(--color-1);
   content: "check_box";
@@ -595,7 +602,7 @@ table td > .field {
   }
   to {
     border-radius: 50%;
-    background-color: var(--color-1b);
-    box-shadow: 0 0 0 8px var(--color-1b);
+    background-color: var(--color-2a);
+    box-shadow: 0 0 0 8px var(--color-2a);
   }
 }
