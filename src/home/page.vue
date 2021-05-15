@@ -95,7 +95,7 @@ div
             img.logo-template(:src="'/uber-dark.png'")
           a(href="/uber", v-show="theme != 'is-dark'")
             img.logo-template(:src="'/uber-light.png'")
-  
+
   #begin
     .center-align.middle-align.padding.medium-height.yellow-light-2.no-scroll
       img#logo(:src="'/logo.png'", @click="addHomeScreen()")
@@ -116,12 +116,9 @@ div
           href="https://github.com/beercss/beercss",
           target="_blank"
         ) Github
-        a.button.large(
-          href="https://www.patreon.com/beercss",
-          target="_blank"
-        ) Support us
+        a.button.large(href="https://www.patreon.com/beercss", target="_blank") Support us
       .large-space
-      .large-divider  
+      .large-divider 
       #toasts
         #toast1.toast.pink.white-text
           i error
@@ -141,8 +138,8 @@ div
           .medium-space
           h5
             span Badges
-            a.chip.circle
-              i(@click="showSamples('#badges nav > a')") code
+            a.chip.circle(@click="showSamples('#badges nav > a')")
+              i code
           nav.wrap
             label.radio
               input#default-badges(
@@ -275,8 +272,8 @@ div
           .medium-space
           h5
             span Buttons
-            a.chip.circle
-              i(@click="showSamples('#buttons button')") code
+            a.chip.circle(@click="showSamples('#buttons button')")
+              i code
           nav.wrap
             label.radio
               input#default-buttons(
@@ -346,8 +343,8 @@ div
           .medium-space
           h5
             span Cards
-            a.chip.circle
-              i(@click="showSamples('#cards .card:visible')") code
+            a.chip.circle(@click="showSamples('#cards .card:visible')")
+              i code
             span.badge.top.left.medium-device.large-device New
           nav.wrap.medium-device.large-device
             label.radio
@@ -588,7 +585,12 @@ div
                     button.border.small Button
             .col.s12.m6.l3
               .card.no-padding.round
-                video.responsive.medium.round(autoplay, loop, muted, playsinline)
+                video.responsive.medium.round(
+                  autoplay,
+                  loop,
+                  muted,
+                  playsinline
+                )
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
                   h5.no-margin Title
@@ -606,7 +608,12 @@ div
                     button.border.small Button
             .col.s12.m6.l3
               .card.no-padding.border.round
-                video.responsive.medium.round(autoplay, loop, muted, playsinline)
+                video.responsive.medium.round(
+                  autoplay,
+                  loop,
+                  muted,
+                  playsinline
+                )
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
                   h5.no-margin Title
@@ -644,8 +651,8 @@ div
           .medium-space
           h5
             span Checkboxes
-            a.chip.circle
-              i(@click="showSamples('#checkboxes .field')") code
+            a.chip.circle(@click="showSamples('#checkboxes .field')")
+              i code
           .row
             .col.s12
               .field.middle-align
@@ -704,8 +711,8 @@ div
           .medium-space
           h5
             span Chips
-            a.chip.circle
-              i(@click="showSamples('#chips nav .chip')") code
+            a.chip.circle(@click="showSamples('#chips nav .chip')")
+              i code
           nav.wrap
             a.chip Filter
             a.chip
@@ -740,8 +747,8 @@ div
           .medium-space
           h5
             span Containers
-            a.chip.circle
-              i(@click="showSamples('#containers .container')") code
+            a.chip.circle(@click="showSamples('#containers .container')")
+              i code
             span.badge.top.left.medium-device.large-device New
           nav
             button(@click="updateContainer()") Default
@@ -753,8 +760,8 @@ div
           .medium-space
           h5
             span Dropdowns
-            a.chip.circle
-              i(@click="showSamples('#dropdowns button')") code
+            a.chip.circle(@click="showSamples('#dropdowns button')")
+              i code
           nav.wrap
             button(data-ui="#dropdown1")
               span Drooooopdoooooooooown
@@ -969,8 +976,8 @@ div
           .medium-space
           h5
             span Icons
-            a.chip.circle
-              i(@click="showSamples('#icons nav', '#modal-icons')") code
+            a.chip.circle(@click="showSamples('#icons nav', '#modal-icons')")
+              i code
           nav.wrap
             i.small home
             i.small account_circle
@@ -1008,8 +1015,8 @@ div
           .medium-space
           h5
             span Inputs
-            a.chip.circle
-              i(@click="showSamples('#inputs .field')") code
+            a.chip.circle(@click="showSamples('#inputs .field')")
+              i code
           nav.wrap
             label.checkbox
               input#border-inputs(type="checkbox")
@@ -1100,8 +1107,10 @@ div
           .medium-space
           h5
             span Layouts
-            a.chip.circle
-              i(@click="layout = 0; showSamples('#layouts #container')") code
+            a.chip.circle(
+              @click="layout = 0; showSamples('#layouts #container')"
+            )
+              i code
             span.badge.top.left.medium-device.large-device New
           nav.wrap
             label.checkbox
@@ -1124,10 +1133,9 @@ div
               span bottom
           #positions
             #container
-              .absolute.blue.white-text.center.middle
-                .padding
-                  h5 Position
-                  div Lorem ipsum dolor...
+              .padding.absolute.blue.white-text.center.middle
+                h5 Position
+                div Lorem ipsum dolor...
           .space
           nav.wrap
             label.radio
@@ -1141,7 +1149,10 @@ div
               input#left-align-layouts(type="radio", name="horizontal-layouts")
               span left-align
             label.radio
-              input#right-align-layouts(type="radio", name="horizontal-layouts")
+              input#right-align-layouts(
+                type="radio",
+                name="horizontal-layouts"
+              )
               span right-align
             label.radio
               input#middle-align-layouts(
@@ -1165,8 +1176,8 @@ div
           .medium-space
           h5
             span Lists
-            a.chip.circle
-              i(@click="showSamples('#list .row')") code
+            a.chip.circle(@click="showSamples('#list .row')")
+              i code
           nav.wrap
             label.radio
               input#top-align-lists(type="radio", name="align-lists")
@@ -1297,8 +1308,8 @@ div
           .medium-space
           h5
             span Loaders
-            a.chip.circle
-              i(@click="showSamples('#loaders svg')") code
+            a.chip.circle(@click="showSamples('#loaders svg')")
+              i code
           nav.wrap
             a
               svg.loader.small(viewBox="0 0 66 66")
@@ -1323,7 +1334,9 @@ div
           h5
             span Media
             a.chip.circle
-              i(@click="showSamples('#media img:visible, #media video:visible')") code
+              i(
+                @click="showSamples('#media img:visible, #media video:visible')"
+              ) code
             span.badge.top.left.medium-device.large-device New
           nav.wrap.medium-device.large-device
             label.radio
@@ -1398,8 +1411,8 @@ div
           .medium-space
           h5
             span Modals
-            a.chip.circle
-              i(@click="showSamples('#modal, #modal-calendar')") code
+            a.chip.circle(@click="showSamples('#modal, #modal-calendar')")
+              i code
           nav
             button(data-ui="#modal") Modal
             button(data-ui="#modal-calendar") Calendar
@@ -1407,8 +1420,8 @@ div
           .medium-space
           h5
             span Navs
-            a.chip.circle
-              i(@click="showSamples('#navs nav')") code
+            a.chip.circle(@click="showSamples('#navs nav')")
+              i code
           nav
             button Button
             a.chip Filter
@@ -1419,8 +1432,8 @@ div
           .medium-space
           h5
             span Pages
-            a.chip.circle
-              i(@click="showSamples('#pages .page')") code
+            a.chip.circle(@click="showSamples('#pages .page')")
+              i code
           nav.wrap
             button(@click="updatePage('page left active')") From left
             button(@click="updatePage('page top active')") From top
@@ -1432,8 +1445,8 @@ div
           .medium-space
           h5
             span Radios
-            a.chip.circle
-              i(@click="showSamples('#radios .field')") code
+            a.chip.circle(@click="showSamples('#radios .field')")
+              i code
           .row
             .col.s12
               .field.middle-align
@@ -1512,8 +1525,8 @@ div
           .medium-space
           h5
             span Rows
-            a.chip.circle
-              i(@click="showSamples('#rows .row')") code
+            a.chip.circle(@click="showSamples('#rows .row')")
+              i code
           nav.wrap
             label.radio
               input#no-space-rows(type="radio", name="space-rows")
@@ -1569,8 +1582,8 @@ div
           .medium-space
           h5
             span Selects
-            a.chip.circle
-              i(@click="showSamples('#selects .field')") code
+            a.chip.circle(@click="showSamples('#selects .field')")
+              i code
           nav.wrap
             label.checkbox
               input#border-selects(type="checkbox")
@@ -1652,8 +1665,8 @@ div
           .medium-space
           h5
             span Switches
-            a.chip.circle
-              i(@click="showSamples('#switches .field')") code
+            a.chip.circle(@click="showSamples('#switches .field')")
+              i code
           .row
             .col.s12
               .field.middle-align
@@ -1712,8 +1725,8 @@ div
           .medium-space
           h5
             span Tables
-            a.chip.circle
-              i(@click="showSamples('#table table')") code
+            a.chip.circle(@click="showSamples('#table table')")
+              i code
           nav.wrap
             label.radio
               input#small-tables(type="radio", name="size-tables")
@@ -1794,8 +1807,10 @@ div
           .medium-space
           h5
             span Tabs
-            a.chip.circle
-              i(@click="showSamples('#tabs > div')") code
+            a.chip.circle(
+              @click="showSamples('#tabs > div:not(.medium-space)')"
+            )
+              i code
           nav.wrap
             label.radio
               input#default-align-tabs(
@@ -1907,8 +1922,8 @@ div
           .medium-space
           h5
             span Textareas
-            a.chip.circle
-              i(@click="showSamples('#textareas .field')") code
+            a.chip.circle(@click="showSamples('#textareas .field')")
+              i code
             span.badge.top.left.medium-device.large-device New
           nav.wrap
             label.checkbox
@@ -1987,8 +2002,8 @@ div
           .medium-space
           h5
             span Toasts
-            a.chip.circle
-              i(@click="showSamples('#toasts .toast')") code
+            a.chip.circle(@click="showSamples('#toasts .toast')")
+              i code
           nav.wrap
             button.pink(@click="showToasts('#toast1')") Toast
             button.orange(@click="showToasts('#toast2')") Toast
@@ -1998,8 +2013,8 @@ div
           .medium-space
           h5
             span Tooltips
-            a.chip.circle
-              i(@click="showSamples('#tooltips nav a')") code
+            a.chip.circle(@click="showSamples('#tooltips nav a')")
+              i code
           nav.wrap
             a.chip.circle
               i arrow_back
@@ -2018,8 +2033,8 @@ div
           .medium-space
           h5
             span Typography
-            a.chip.circle
-              i(@click="showSamples('#typography .col.s6 div')") code
+            a.chip.circle(@click="showSamples('#typography .col.s6 div')")
+              i code
           .row
             .col.s6
               div

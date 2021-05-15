@@ -11588,6 +11588,21 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -12483,19 +12498,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Badges")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#badges nav > a")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#badges nav > a")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(4),
             _c("div", { staticClass: "space" }),
@@ -12506,19 +12520,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Buttons")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#buttons button")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#buttons button")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(6),
             _vm._m(7)
@@ -12527,19 +12540,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Cards")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#cards .card:visible")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#cards .card:visible")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ]),
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              ),
               _c(
                 "span",
                 { staticClass: "badge top left medium-device large-device" },
@@ -13107,19 +13119,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Checkboxes")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#checkboxes .field")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#checkboxes .field")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(46)
           ]),
@@ -13127,19 +13138,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Chips")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#chips nav .chip")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#chips nav .chip")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(47)
           ]),
@@ -13148,19 +13158,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Containers")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#containers .container")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#containers .container")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ]),
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              ),
               _c(
                 "span",
                 { staticClass: "badge top left medium-device large-device" },
@@ -13221,19 +13230,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Dropdowns")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#dropdowns button")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#dropdowns button")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _c("nav", { staticClass: "wrap" }, [
               _c("button", { attrs: { "data-ui": "#dropdown1" } }, [
@@ -13426,19 +13434,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Icons")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#icons nav", "#modal-icons")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#icons nav", "#modal-icons")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(66),
             _vm._m(67),
@@ -13448,19 +13455,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Inputs")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#inputs .field")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#inputs .field")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(69),
             _c("div", { staticClass: "space" }),
@@ -13470,20 +13476,19 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Layouts")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        _vm.layout = 0
-                        _vm.showSamples("#layouts #container")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      _vm.layout = 0
+                      _vm.showSamples("#layouts #container")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ]),
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              ),
               _c(
                 "span",
                 { staticClass: "badge top left medium-device large-device" },
@@ -13500,19 +13505,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Lists")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#list .row")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#list .row")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(75),
             _c("label", { staticClass: "large-space middle-align" }, [
@@ -13565,19 +13569,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Loaders")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#loaders svg")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#loaders svg")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _c("nav", { staticClass: "wrap" }, [
               _c("a", [
@@ -14006,19 +14009,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Modals")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#modal, #modal-calendar")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#modal, #modal-calendar")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(88)
           ]),
@@ -14026,19 +14028,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Navs")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#navs nav")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#navs nav")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _c("nav", [
               _c("button", [_vm._v("Button")]),
@@ -14056,19 +14057,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Pages")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#pages .page")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#pages .page")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _c("nav", { staticClass: "wrap" }, [
               _c(
@@ -14122,19 +14122,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Radios")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#radios .field")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#radios .field")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(90)
           ]),
@@ -14161,19 +14160,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Rows")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#rows .row")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#rows .row")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(92),
             _c("div", { staticClass: "space" }),
@@ -14189,19 +14187,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Selects")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#selects .field")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#selects .field")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(99),
             _c("div", { staticClass: "space" }),
@@ -14211,19 +14208,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Switches")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#switches .field")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#switches .field")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(101)
           ]),
@@ -14231,19 +14227,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Tables")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#table table")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#table table")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(102),
             _c("div", { staticClass: "space" }),
@@ -14253,19 +14248,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Tabs")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#tabs > div")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      _vm.showSamples("#tabs > div:not(.medium-space)")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(104),
             _c("p", { staticClass: "space" }),
@@ -14279,19 +14273,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Textareas")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#textareas .field")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#textareas .field")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ]),
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              ),
               _c(
                 "span",
                 { staticClass: "badge top left medium-device large-device" },
@@ -14306,19 +14299,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Toasts")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#toasts .toast")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#toasts .toast")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _c("nav", { staticClass: "wrap" }, [
               _c(
@@ -14375,19 +14367,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Tooltips")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#tooltips nav a")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#tooltips nav a")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(112)
           ]),
@@ -14395,19 +14386,18 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Typography")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples("#typography .col.s6 div")
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples("#typography .col.s6 div")
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ])
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              )
             ]),
             _vm._m(113)
           ]),
@@ -16234,12 +16224,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { attrs: { id: "positions" } }, [
       _c("div", { attrs: { id: "container" } }, [
-        _c("div", { staticClass: "absolute blue white-text center middle" }, [
-          _c("div", { staticClass: "padding" }, [
+        _c(
+          "div",
+          { staticClass: "padding absolute blue white-text center middle" },
+          [
             _c("h5", [_vm._v("Position")]),
             _c("div", [_vm._v("Lorem ipsum dolor...")])
-          ])
-        ])
+          ]
+        )
       ])
     ])
   },
