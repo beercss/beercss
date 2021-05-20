@@ -108,6 +108,40 @@ button.square.large {
   line-height: 56px;
 }
 
+.button.diamond,
+button.diamond {
+  transform: rotate(-45deg);
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+}
+
+.button.diamond.small,
+button.diamond.small {
+  width: 32px;
+  height: 32px;
+}
+
+.button.diamond,
+button.diamond.medium {
+  width: 40px;
+  height: 40px;
+}
+
+.button.diamond.large,
+button.diamond.large {
+  width: 48px;
+  height: 48px;
+}
+
+.button.diamond > i,
+button.diamond > i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
 td > .button,
 td > nav > .button,
 td > button,

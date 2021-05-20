@@ -11802,6 +11802,17 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -15485,8 +15496,9 @@ var staticRenderFns = [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("delete")])
       ]),
-      _c("button", { staticClass: "circle" }, [_c("i", [_vm._v("home")])]),
       _c("button", { staticClass: "circle" }, [_vm._v("A")]),
+      _c("button", { staticClass: "circle" }, [_c("i", [_vm._v("home")])]),
+      _c("button", { staticClass: "diamond" }, [_c("i", [_vm._v("home")])]),
       _c("button", { staticClass: "square" }, [_c("i", [_vm._v("home")])]),
       _c("button", { staticClass: "square left-round" }, [
         _c("i", [_vm._v("home")])
@@ -15524,10 +15536,13 @@ var staticRenderFns = [
         _c("span", [_vm._v("Button")]),
         _c("i", [_vm._v("delete")])
       ]),
+      _c("button", { staticClass: "border circle" }, [_vm._v("B")]),
       _c("button", { staticClass: "border circle" }, [
         _c("i", [_vm._v("home")])
       ]),
-      _c("button", { staticClass: "border circle" }, [_vm._v("B")]),
+      _c("button", { staticClass: "border diamond" }, [
+        _c("i", [_vm._v("home")])
+      ]),
       _c("button", { staticClass: "border square" }, [
         _c("i", [_vm._v("home")])
       ]),
@@ -16235,8 +16250,9 @@ var staticRenderFns = [
         _c("i", { staticClass: "small" }, [_vm._v("done")]),
         _c("span", [_vm._v("Filter")])
       ]),
-      _c("a", { staticClass: "chip circle" }, [_c("i", [_vm._v("search")])]),
       _c("a", { staticClass: "chip circle" }, [_vm._v("A")]),
+      _c("a", { staticClass: "chip circle" }, [_c("i", [_vm._v("search")])]),
+      _c("a", { staticClass: "chip diamond" }, [_c("i", [_vm._v("search")])]),
       _c("a", { staticClass: "chip square" }, [_c("i", [_vm._v("search")])]),
       _c("a", { staticClass: "chip square left-round" }, [
         _c("i", [_vm._v("search")])
@@ -16261,10 +16277,13 @@ var staticRenderFns = [
         _c("i", { staticClass: "small" }, [_vm._v("done")]),
         _c("span", [_vm._v("Filter")])
       ]),
+      _c("a", { staticClass: "chip circle active" }, [_vm._v("B")]),
       _c("a", { staticClass: "chip circle active" }, [
         _c("i", [_vm._v("home")])
       ]),
-      _c("a", { staticClass: "chip circle active" }, [_vm._v("B")]),
+      _c("a", { staticClass: "chip diamond active" }, [
+        _c("i", [_vm._v("home")])
+      ]),
       _c("a", { staticClass: "chip square active" }, [
         _c("i", [_vm._v("home")])
       ]),
@@ -16291,10 +16310,13 @@ var staticRenderFns = [
         _c("i", { staticClass: "small" }, [_vm._v("done")]),
         _c("span", [_vm._v("Filter")])
       ]),
+      _c("a", { staticClass: "chip circle border" }, [_vm._v("C")]),
       _c("a", { staticClass: "chip circle border" }, [
         _c("i", [_vm._v("refresh")])
       ]),
-      _c("a", { staticClass: "chip circle border" }, [_vm._v("C")]),
+      _c("a", { staticClass: "chip diamond border" }, [
+        _c("i", [_vm._v("refresh")])
+      ]),
       _c("a", { staticClass: "chip square border" }, [
         _c("i", [_vm._v("refresh")])
       ]),
@@ -18334,7 +18356,7 @@ var staticRenderFns = [
           _c("span", { staticClass: "grey-text" }, [
             _vm._v("left, right, top, bottom, border, round, circle, ")
           ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("none")])
+          _c("span", { staticClass: "orange-text" }, [_vm._v("none, diamond")])
         ]),
         _c("div", [
           _c("span", [_vm._v("button ")]),
@@ -18347,7 +18369,8 @@ var staticRenderFns = [
           _c("span", [_vm._v("chip ")]),
           _c("span", { staticClass: "grey-text" }, [
             _vm._v("border, circle, active")
-          ])
+          ]),
+          _c("span", { staticClass: "orange-text" }, [_vm._v("none, diamond")])
         ]),
         _c("div", [
           _c("span", [_vm._v("card ")]),

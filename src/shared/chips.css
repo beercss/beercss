@@ -36,6 +36,23 @@
   border-radius: 4px;
 }
 
+.chip.diamond {
+  transform: rotate(-45deg);
+  border-radius: 4px;
+  min-width: 28px;
+  min-height: 28px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+}
+
+.chip.diamond > i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
 .chip.active {
   background-color: var(--color-2b);
 }
