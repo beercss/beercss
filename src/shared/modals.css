@@ -21,23 +21,23 @@
 }
 
 .modal.round {
-  border-radius: 16px;
+  border-radius: 24px;
 }
 
 .modal.bottom.round {
-  border-radius: 16px 16px 0 0;
+  border-radius: 24px 24px 0 0;
 }
 
 .modal.top.round {
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 24px 24px;
 }
 
 .modal.left.round {
-  border-radius: 0 16px 16px 0;
+  border-radius: 0 24px 24px 0;
 }
 
 .modal.right.round {
-  border-radius: 16px 0 0 16px;
+  border-radius: 24px 0 0 24px;
 }
 
 .modal.small {

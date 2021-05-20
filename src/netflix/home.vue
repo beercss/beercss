@@ -90,6 +90,8 @@ export default {
         { image: "/alok-002.jpg" },
         { image: "/vintage-001.jpg" },
         { image: "/vintage-002.jpg" },
+        { image: "/radio-001.jpg" },
+        { image: "/ocean-001.jpg" },
       ],
       movies: [
         { image: "/radio-001.jpg" },
@@ -100,6 +102,8 @@ export default {
         { image: "/vintage-002.jpg" },
         { image: "/radio-001.jpg" },
         { image: "/ocean-001.jpg" },
+        { image: "/alok-001.jpg" },
+        { image: "/alok-002.jpg" },
       ],
       hot: [
         { image: "/alok-001.jpg" },
@@ -110,6 +114,8 @@ export default {
         { image: "/ocean-001.jpg" },
         { image: "/alok-001.jpg" },
         { image: "/alok-002.jpg" },
+        { image: "/vintage-001.jpg" },
+        { image: "/vintage-002.jpg" },
       ],
       myList: [
         { image: "/vintage-001.jpg" },
@@ -120,6 +126,8 @@ export default {
         { image: "/alok-002.jpg" },
         { image: "/vintage-001.jpg" },
         { image: "/vintage-002.jpg" },
+        { image: "/radio-001.jpg" },
+        { image: "/ocean-001.jpg" },
       ],
     };
   },

@@ -109,3 +109,12 @@
   text-align: center;
   border-radius: 50%;
 }
+
+.badge.square {
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  line-height: 16px !important;
+  text-align: center;
+  border-radius: 0;
+}

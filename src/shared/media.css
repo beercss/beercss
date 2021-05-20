@@ -108,7 +108,7 @@ video.responsive.extra {
 
 img.responsive.round,
 video.responsive.round {
-  border-radius: 16px;
+  border-radius: 24px;
 }
 
 img.empty-state,
@@ -135,10 +135,10 @@ td > nav > a > video.circle {
 
 .card.round > img.responsive:not(.round):first-child,
 .card.round > video.responsive:not(.round):first-child {
-  border-radius: 16px 16px 0 0;
+  border-radius: 24px 24px 0 0;
 }
 
 .card.round > img.responsive:not(.round):last-child,
 .card.round > video.responsive:not(.round):last-child {
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 24px 24px;
 }

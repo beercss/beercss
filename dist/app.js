@@ -11603,6 +11603,208 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -12509,6 +12711,11 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
+              ),
+              _c(
+                "span",
+                { staticClass: "badge top left medium-device large-device" },
+                [_vm._v("New")]
               )
             ]),
             _vm._m(4),
@@ -12531,6 +12738,11 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
+              ),
+              _c(
+                "span",
+                { staticClass: "badge top left medium-device large-device" },
+                [_vm._v("New")]
               )
             ]),
             _vm._m(6),
@@ -12602,50 +12814,14 @@ exports.default = _default;
             ]),
             _vm.mediaCard == 1
               ? _c("div", { staticClass: "row" }, [
+                  _vm._m(8),
+                  _vm._m(9),
+                  _vm._m(10),
+                  _vm._m(11),
+                  _vm._m(12),
+                  _vm._m(13),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card" }, [
-                      _c("div", { staticClass: "row no-wrap" }, [
-                        _c("div", { staticClass: "col min" }, [
-                          _c("img", {
-                            staticClass: "circle large",
-                            attrs: { src: "/beer-and-woman.jpg" }
-                          })
-                        ]),
-                        _vm._m(8)
-                      ]),
-                      _vm._m(9)
-                    ])
-                  ]),
-                  _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card round" }, [
-                      _c("div", { staticClass: "row no-wrap" }, [
-                        _c("div", { staticClass: "col min" }, [
-                          _c("img", {
-                            staticClass: "circle large",
-                            attrs: { src: "/beer-and-woman.jpg" }
-                          })
-                        ]),
-                        _vm._m(10)
-                      ]),
-                      _vm._m(11)
-                    ])
-                  ]),
-                  _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card border" }, [
-                      _c("div", { staticClass: "row no-wrap" }, [
-                        _c("div", { staticClass: "col min" }, [
-                          _c("img", {
-                            staticClass: "circle large",
-                            attrs: { src: "/beer-and-woman.jpg" }
-                          })
-                        ]),
-                        _vm._m(12)
-                      ]),
-                      _vm._m(13)
-                    ])
-                  ]),
-                  _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card border round" }, [
                       _c("div", { staticClass: "row no-wrap" }, [
                         _c("div", { staticClass: "col min" }, [
                           _c("img", {
@@ -12659,75 +12835,117 @@ exports.default = _default;
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding" }, [
-                      _c("img", {
-                        staticClass: "responsive small",
-                        attrs: { src: "/beer-and-woman.jpg" }
-                      }),
-                      _vm._m(16)
-                    ])
-                  ]),
-                  _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding round" }, [
-                      _c("img", {
-                        staticClass: "responsive small",
-                        attrs: { src: "/beer-and-woman.jpg" }
-                      }),
+                    _c("div", { staticClass: "card round" }, [
+                      _c("div", { staticClass: "row no-wrap" }, [
+                        _c("div", { staticClass: "col min" }, [
+                          _c("img", {
+                            staticClass: "circle large",
+                            attrs: { src: "/beer-and-woman.jpg" }
+                          })
+                        ]),
+                        _vm._m(16)
+                      ]),
                       _vm._m(17)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding border" }, [
-                      _c("img", {
-                        staticClass: "responsive small",
-                        attrs: { src: "/beer-and-woman.jpg" }
-                      }),
-                      _vm._m(18)
+                    _c("div", { staticClass: "card border" }, [
+                      _c("div", { staticClass: "row no-wrap" }, [
+                        _c("div", { staticClass: "col min" }, [
+                          _c("img", {
+                            staticClass: "circle large",
+                            attrs: { src: "/beer-and-woman.jpg" }
+                          })
+                        ]),
+                        _vm._m(18)
+                      ]),
+                      _vm._m(19)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding border round" }, [
-                      _c("img", {
-                        staticClass: "responsive small",
-                        attrs: { src: "/beer-and-woman.jpg" }
-                      }),
-                      _vm._m(19)
+                    _c("div", { staticClass: "card border round" }, [
+                      _c("div", { staticClass: "row no-wrap" }, [
+                        _c("div", { staticClass: "col min" }, [
+                          _c("img", {
+                            staticClass: "circle large",
+                            attrs: { src: "/beer-and-woman.jpg" }
+                          })
+                        ]),
+                        _vm._m(20)
+                      ]),
+                      _vm._m(21)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding" }, [
                       _c("img", {
-                        staticClass: "responsive medium",
-                        attrs: { src: "/beer-and-woman.jpg" }
-                      }),
-                      _vm._m(20)
-                    ])
-                  ]),
-                  _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding round" }, [
-                      _c("img", {
-                        staticClass: "responsive medium round",
-                        attrs: { src: "/beer-and-woman.jpg" }
-                      }),
-                      _vm._m(21)
-                    ])
-                  ]),
-                  _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding border" }, [
-                      _c("img", {
-                        staticClass: "responsive medium",
+                        staticClass: "responsive small",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
                       _vm._m(22)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
+                    _c("div", { staticClass: "card no-padding round" }, [
+                      _c("img", {
+                        staticClass: "responsive small",
+                        attrs: { src: "/beer-and-woman.jpg" }
+                      }),
+                      _vm._m(23)
+                    ])
+                  ]),
+                  _c("div", { staticClass: "col s12 m6 l3" }, [
+                    _c("div", { staticClass: "card no-padding border" }, [
+                      _c("img", {
+                        staticClass: "responsive small",
+                        attrs: { src: "/beer-and-woman.jpg" }
+                      }),
+                      _vm._m(24)
+                    ])
+                  ]),
+                  _c("div", { staticClass: "col s12 m6 l3" }, [
+                    _c("div", { staticClass: "card no-padding border round" }, [
+                      _c("img", {
+                        staticClass: "responsive small",
+                        attrs: { src: "/beer-and-woman.jpg" }
+                      }),
+                      _vm._m(25)
+                    ])
+                  ]),
+                  _c("div", { staticClass: "col s12 m6 l3" }, [
+                    _c("div", { staticClass: "card no-padding" }, [
+                      _c("img", {
+                        staticClass: "responsive medium",
+                        attrs: { src: "/beer-and-woman.jpg" }
+                      }),
+                      _vm._m(26)
+                    ])
+                  ]),
+                  _c("div", { staticClass: "col s12 m6 l3" }, [
+                    _c("div", { staticClass: "card no-padding round" }, [
+                      _c("img", {
+                        staticClass: "responsive medium round",
+                        attrs: { src: "/beer-and-woman.jpg" }
+                      }),
+                      _vm._m(27)
+                    ])
+                  ]),
+                  _c("div", { staticClass: "col s12 m6 l3" }, [
+                    _c("div", { staticClass: "card no-padding border" }, [
+                      _c("img", {
+                        staticClass: "responsive medium",
+                        attrs: { src: "/beer-and-woman.jpg" }
+                      }),
+                      _vm._m(28)
+                    ])
+                  ]),
+                  _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding border round" }, [
                       _c("img", {
                         staticClass: "responsive medium round",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(23)
+                      _vm._m(29)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 l6" }, [
@@ -12739,7 +12957,7 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(24)
+                        _vm._m(30)
                       ])
                     ])
                   ]),
@@ -12751,9 +12969,9 @@ exports.default = _default;
                             staticClass: "responsive",
                             attrs: { src: "/beer-and-woman.jpg" }
                           }),
-                          _vm._m(25)
+                          _vm._m(31)
                         ]),
-                        _vm._m(26)
+                        _vm._m(32)
                       ])
                     ])
                   ])
@@ -12761,6 +12979,12 @@ exports.default = _default;
               : _vm._e(),
             _vm.mediaCard == 2
               ? _c("div", { staticClass: "row" }, [
+                  _vm._m(33),
+                  _vm._m(34),
+                  _vm._m(35),
+                  _vm._m(36),
+                  _vm._m(37),
+                  _vm._m(38),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card" }, [
                       _c("div", { staticClass: "row no-wrap" }, [
@@ -12784,9 +13008,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(27)
+                        _vm._m(39)
                       ]),
-                      _vm._m(28)
+                      _vm._m(40)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12812,9 +13036,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(29)
+                        _vm._m(41)
                       ]),
-                      _vm._m(30)
+                      _vm._m(42)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12840,9 +13064,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(31)
+                        _vm._m(43)
                       ]),
-                      _vm._m(32)
+                      _vm._m(44)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12868,9 +13092,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(33)
+                        _vm._m(45)
                       ]),
-                      _vm._m(34)
+                      _vm._m(46)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12893,7 +13117,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(35)
+                      _vm._m(47)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12916,7 +13140,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(36)
+                      _vm._m(48)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12939,7 +13163,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(37)
+                      _vm._m(49)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12962,7 +13186,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(38)
+                      _vm._m(50)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12985,7 +13209,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(39)
+                      _vm._m(51)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13008,7 +13232,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(40)
+                      _vm._m(52)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13031,7 +13255,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(41)
+                      _vm._m(53)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13054,7 +13278,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(42)
+                      _vm._m(54)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 l6" }, [
@@ -13080,7 +13304,7 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(43)
+                        _vm._m(55)
                       ])
                     ])
                   ]),
@@ -13106,9 +13330,9 @@ exports.default = _default;
                               })
                             ]
                           ),
-                          _vm._m(44)
+                          _vm._m(56)
                         ]),
-                        _vm._m(45)
+                        _vm._m(57)
                       ])
                     ])
                   ])
@@ -13132,7 +13356,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(46)
+            _vm._m(58)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "chips" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -13149,11 +13373,16 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
+              ),
+              _c(
+                "span",
+                { staticClass: "badge top left medium-device large-device" },
+                [_vm._v("New")]
               )
             ]),
-            _vm._m(47)
+            _vm._m(59)
           ]),
-          _vm._m(48),
+          _vm._m(60),
           _c("div", { staticClass: "col s12", attrs: { id: "containers" } }, [
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
@@ -13169,11 +13398,6 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
-              ),
-              _c(
-                "span",
-                { staticClass: "badge top left medium-device large-device" },
-                [_vm._v("New")]
               )
             ]),
             _c("nav", [
@@ -13255,9 +13479,9 @@ exports.default = _default;
                   },
                   [
                     _c("a", [_vm._v("Title")]),
-                    _vm._m(49),
-                    _vm._m(50),
-                    _vm._m(51),
+                    _vm._m(61),
+                    _vm._m(62),
+                    _vm._m(63),
                     _c("a", { staticClass: "row no-wrap middle-align" }, [
                       _c("div", { staticClass: "col min" }, [
                         _c("img", {
@@ -13274,7 +13498,7 @@ exports.default = _default;
                           attrs: { src: "/beer-and-woman.jpg" }
                         })
                       ]),
-                      _vm._m(52)
+                      _vm._m(64)
                     ])
                   ]
                 )
@@ -13290,9 +13514,9 @@ exports.default = _default;
                   },
                   [
                     _c("a", [_vm._v("Title")]),
-                    _vm._m(53),
-                    _vm._m(54),
-                    _vm._m(55),
+                    _vm._m(65),
+                    _vm._m(66),
+                    _vm._m(67),
                     _c("a", { staticClass: "row no-wrap middle-align" }, [
                       _c("div", { staticClass: "col min" }, [
                         _c("img", {
@@ -13309,7 +13533,7 @@ exports.default = _default;
                           attrs: { src: "/beer-and-woman.jpg" }
                         })
                       ]),
-                      _vm._m(56)
+                      _vm._m(68)
                     ])
                   ]
                 )
@@ -13330,9 +13554,9 @@ exports.default = _default;
                     },
                     [
                       _c("a", [_vm._v("Title")]),
-                      _vm._m(57),
-                      _vm._m(58),
-                      _vm._m(59),
+                      _vm._m(69),
+                      _vm._m(70),
+                      _vm._m(71),
                       _c("a", { staticClass: "row no-wrap middle-align" }, [
                         _c("div", { staticClass: "col min" }, [
                           _c("img", {
@@ -13349,7 +13573,7 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(60)
+                        _vm._m(72)
                       ])
                     ]
                   )
@@ -13371,9 +13595,9 @@ exports.default = _default;
                     },
                     [
                       _c("a", [_vm._v("Title")]),
-                      _vm._m(61),
-                      _vm._m(62),
-                      _vm._m(63),
+                      _vm._m(73),
+                      _vm._m(74),
+                      _vm._m(75),
                       _c("a", { staticClass: "row no-wrap middle-align" }, [
                         _c("div", { staticClass: "col min" }, [
                           _c("img", {
@@ -13390,13 +13614,13 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(64)
+                        _vm._m(76)
                       ])
                     ]
                   )
                 ]
               ),
-              _vm._m(65),
+              _vm._m(77),
               _c("button", { attrs: { "data-ui": "#dropdown6" } }, [
                 _c("span", { staticClass: "badge" }, [_vm._v("New")]),
                 _c("span", [_vm._v("Video")]),
@@ -13447,9 +13671,9 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(66),
-            _vm._m(67),
-            _vm._m(68)
+            _vm._m(78),
+            _vm._m(79),
+            _vm._m(80)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "inputs" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -13468,9 +13692,9 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(69),
+            _vm._m(81),
             _c("div", { staticClass: "space" }),
-            _vm._m(70)
+            _vm._m(82)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "layouts" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -13488,18 +13712,13 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
-              ),
-              _c(
-                "span",
-                { staticClass: "badge top left medium-device large-device" },
-                [_vm._v("New")]
               )
             ]),
-            _vm._m(71),
-            _vm._m(72),
+            _vm._m(83),
+            _vm._m(84),
             _c("div", { staticClass: "space" }),
-            _vm._m(73),
-            _vm._m(74)
+            _vm._m(85),
+            _vm._m(86)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "list" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -13518,19 +13737,19 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(75),
+            _vm._m(87),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Today")
             ]),
-            _vm._m(76),
-            _vm._m(77),
-            _vm._m(78),
+            _vm._m(88),
+            _vm._m(89),
+            _vm._m(90),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Yesterday")
             ]),
-            _vm._m(79),
-            _vm._m(80),
-            _vm._m(81),
+            _vm._m(91),
+            _vm._m(92),
+            _vm._m(93),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Older")
             ]),
@@ -13541,8 +13760,8 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(82),
-              _vm._m(83)
+              _vm._m(94),
+              _vm._m(95)
             ]),
             _c("div", { staticClass: "row no-wrap middle-align" }, [
               _c("div", { staticClass: "col min" }, [
@@ -13551,8 +13770,8 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(84),
-              _vm._m(85)
+              _vm._m(96),
+              _vm._m(97)
             ]),
             _c("div", { staticClass: "row no-wrap middle-align" }, [
               _c("div", { staticClass: "col min" }, [
@@ -13561,8 +13780,8 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(86),
-              _vm._m(87)
+              _vm._m(98),
+              _vm._m(99)
             ])
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "loaders" } }, [
@@ -13673,21 +13892,20 @@ exports.default = _default;
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
               _c("span", [_vm._v("Media")]),
-              _c("a", { staticClass: "chip circle" }, [
-                _c(
-                  "i",
-                  {
-                    on: {
-                      click: function($event) {
-                        return _vm.showSamples(
-                          "#media img:visible, #media video:visible"
-                        )
-                      }
+              _c(
+                "a",
+                {
+                  staticClass: "chip circle",
+                  on: {
+                    click: function($event) {
+                      return _vm.showSamples(
+                        "#media img:visible, #media video:visible"
+                      )
                     }
-                  },
-                  [_vm._v("code")]
-                )
-              ]),
+                  }
+                },
+                [_c("i", [_vm._v("code")])]
+              ),
               _c(
                 "span",
                 { staticClass: "badge top left medium-device large-device" },
@@ -13795,6 +14013,42 @@ exports.default = _default;
                   _c("a", [
                     _c("img", {
                       staticClass: "round extra",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    })
+                  ]),
+                  _c("a", [
+                    _c("img", {
+                      staticClass: "left-round medium",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    })
+                  ]),
+                  _c("a", [
+                    _c("img", {
+                      staticClass: "top-round medium",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    })
+                  ]),
+                  _c("a", [
+                    _c("img", {
+                      staticClass: "right-round medium",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    })
+                  ]),
+                  _c("a", [
+                    _c("img", {
+                      staticClass: "bottom-round medium",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    })
+                  ]),
+                  _c("a", [
+                    _c("img", {
+                      staticClass: "top-round left-round medium",
+                      attrs: { src: "/beer-and-woman.jpg" }
+                    })
+                  ]),
+                  _c("a", [
+                    _c("img", {
+                      staticClass: "bottom-round right-round medium",
                       attrs: { src: "/beer-and-woman.jpg" }
                     })
                   ])
@@ -14001,6 +14255,126 @@ exports.default = _default;
                         })
                       ]
                     )
+                  ]),
+                  _c("a", [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "left-round medium",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted",
+                          playsinline: "playsinline"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    )
+                  ]),
+                  _c("a", [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "top-round medium",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted",
+                          playsinline: "playsinline"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    )
+                  ]),
+                  _c("a", [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "right-round medium",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted",
+                          playsinline: "playsinline"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    )
+                  ]),
+                  _c("a", [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "bottom-round medium",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted",
+                          playsinline: "playsinline"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    )
+                  ]),
+                  _c("a", [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "top-round left-round medium",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted",
+                          playsinline: "playsinline"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    )
+                  ]),
+                  _c("a", [
+                    _c(
+                      "video",
+                      {
+                        staticClass: "bottom-round right-round medium",
+                        attrs: {
+                          autoplay: "autoplay",
+                          loop: "loop",
+                          muted: "muted",
+                          playsinline: "playsinline"
+                        },
+                        domProps: { muted: true }
+                      },
+                      [
+                        _c("source", {
+                          attrs: { src: "/dance.mp4", type: "video/mp4" }
+                        })
+                      ]
+                    )
                   ])
                 ])
               : _vm._e()
@@ -14022,7 +14396,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(88)
+            _vm._m(100)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "navs" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14116,7 +14490,7 @@ exports.default = _default;
                 [_vm._v("From right")]
               )
             ]),
-            _vm._m(89)
+            _vm._m(101)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "radios" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14135,7 +14509,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(90)
+            _vm._m(102)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "responsive" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14154,7 +14528,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(91)
+            _vm._m(103)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "rows" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14173,14 +14547,14 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(92),
+            _vm._m(104),
             _c("div", { staticClass: "space" }),
-            _vm._m(93),
-            _vm._m(94),
-            _vm._m(95),
-            _vm._m(96),
-            _vm._m(97),
-            _vm._m(98),
+            _vm._m(105),
+            _vm._m(106),
+            _vm._m(107),
+            _vm._m(108),
+            _vm._m(109),
+            _vm._m(110),
             _c("div", { staticClass: "space" })
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "selects" } }, [
@@ -14200,9 +14574,9 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(99),
+            _vm._m(111),
             _c("div", { staticClass: "space" }),
-            _vm._m(100)
+            _vm._m(112)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "switches" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14221,7 +14595,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(101)
+            _vm._m(113)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "table" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14240,9 +14614,9 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(102),
+            _vm._m(114),
             _c("div", { staticClass: "space" }),
-            _vm._m(103)
+            _vm._m(115)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "tabs" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14261,13 +14635,13 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(104),
+            _vm._m(116),
             _c("p", { staticClass: "space" }),
-            _vm._m(105),
-            _vm._m(106),
-            _vm._m(107),
-            _vm._m(108),
-            _vm._m(109)
+            _vm._m(117),
+            _vm._m(118),
+            _vm._m(119),
+            _vm._m(120),
+            _vm._m(121)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "textareas" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14284,16 +14658,11 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
-              ),
-              _c(
-                "span",
-                { staticClass: "badge top left medium-device large-device" },
-                [_vm._v("New")]
               )
             ]),
-            _vm._m(110),
+            _vm._m(122),
             _c("div", { staticClass: "space" }),
-            _vm._m(111)
+            _vm._m(123)
           ]),
           _c("div", { staticClass: "col s12 l6", attrs: { id: "toasts" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14380,7 +14749,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(112)
+            _vm._m(124)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "typography" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14399,14 +14768,14 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(113)
+            _vm._m(125)
           ]),
           _c("div", { staticClass: "col s12" }, [
             _c("div", { staticClass: "large-divider" }),
             _c("div", [
               _c("h4", { staticClass: "center-align" }, [_vm._v("Summary")]),
-              _vm._m(114),
-              _vm._m(115),
+              _vm._m(126),
+              _vm._m(127),
               _c("div", { staticClass: "space" }),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col s12" }, [
@@ -14529,13 +14898,13 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "large-space" }),
-              _vm._m(116),
+              _vm._m(128),
               _c("div", { staticClass: "space" }),
-              _vm._m(117)
+              _vm._m(129)
             ])
           ])
         ]),
-        _vm._m(118),
+        _vm._m(130),
         _c("div", { staticClass: "modal", attrs: { id: "modal" } }, [
           _c("h5", [_vm._v("Title")]),
           _c("div", [_vm._v("Complementary text")]),
@@ -14611,7 +14980,7 @@ exports.default = _default;
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-samples" } },
           [
-            _vm._m(119),
+            _vm._m(131),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -14635,12 +15004,12 @@ exports.default = _default;
           ],
           2
         ),
-        _vm._m(120),
+        _vm._m(132),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
-            _vm._m(121),
+            _vm._m(133),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -14822,6 +15191,10 @@ var staticRenderFns = [
         _c("i", [_vm._v("apps")])
       ]),
       _c("a", [
+        _c("span", { staticClass: "badge square" }, [_vm._v("10")]),
+        _c("i", [_vm._v("apps")])
+      ]),
+      _c("a", [
         _c("span", { staticClass: "badge border" }, [_vm._v("New")]),
         _c("i", [_vm._v("help_outline")])
       ]),
@@ -14831,6 +15204,10 @@ var staticRenderFns = [
       ]),
       _c("a", [
         _c("span", { staticClass: "badge circle border" }, [_vm._v("10")]),
+        _c("i", [_vm._v("account_circle")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge square border" }, [_vm._v("10")]),
         _c("i", [_vm._v("account_circle")])
       ]),
       _c("a", [
@@ -14846,6 +15223,10 @@ var staticRenderFns = [
         _c("i", [_vm._v("apps")])
       ]),
       _c("a", [
+        _c("span", { staticClass: "badge square top" }, [_vm._v("10")]),
+        _c("i", [_vm._v("apps")])
+      ]),
+      _c("a", [
         _c("span", { staticClass: "badge border top" }, [_vm._v("New")]),
         _c("i", [_vm._v("help_outline")])
       ]),
@@ -14858,6 +15239,10 @@ var staticRenderFns = [
         _c("i", [_vm._v("account_circle")])
       ]),
       _c("a", [
+        _c("span", { staticClass: "badge square border top" }, [_vm._v("10")]),
+        _c("i", [_vm._v("account_circle")])
+      ]),
+      _c("a", [
         _c("span", { staticClass: "badge left top" }, [_vm._v("New")]),
         _c("i", [_vm._v("search")])
       ]),
@@ -14867,6 +15252,10 @@ var staticRenderFns = [
       ]),
       _c("a", [
         _c("span", { staticClass: "badge circle left top" }, [_vm._v("10")]),
+        _c("i", [_vm._v("apps")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge square left top" }, [_vm._v("10")]),
         _c("i", [_vm._v("apps")])
       ]),
       _c("a", [
@@ -14886,6 +15275,12 @@ var staticRenderFns = [
         _c("i", [_vm._v("account_circle")])
       ]),
       _c("a", [
+        _c("span", { staticClass: "badge square border left top" }, [
+          _vm._v("10")
+        ]),
+        _c("i", [_vm._v("account_circle")])
+      ]),
+      _c("a", [
         _c("span", { staticClass: "badge bottom right" }, [_vm._v("New")]),
         _c("i", [_vm._v("search")])
       ]),
@@ -14897,6 +15292,12 @@ var staticRenderFns = [
       ]),
       _c("a", [
         _c("span", { staticClass: "badge circle bottom right" }, [
+          _vm._v("10")
+        ]),
+        _c("i", [_vm._v("apps")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge square bottom right" }, [
           _vm._v("10")
         ]),
         _c("i", [_vm._v("apps")])
@@ -14920,6 +15321,12 @@ var staticRenderFns = [
         _c("i", [_vm._v("account_circle")])
       ]),
       _c("a", [
+        _c("span", { staticClass: "badge square border bottom right" }, [
+          _vm._v("10")
+        ]),
+        _c("i", [_vm._v("account_circle")])
+      ]),
+      _c("a", [
         _c("span", { staticClass: "badge bottom" }, [_vm._v("New")]),
         _c("i", [_vm._v("search")])
       ]),
@@ -14929,6 +15336,10 @@ var staticRenderFns = [
       ]),
       _c("a", [
         _c("span", { staticClass: "badge circle bottom" }, [_vm._v("10")]),
+        _c("i", [_vm._v("apps")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge square bottom" }, [_vm._v("10")]),
         _c("i", [_vm._v("apps")])
       ]),
       _c("a", [
@@ -14948,6 +15359,12 @@ var staticRenderFns = [
         _c("i", [_vm._v("account_circle")])
       ]),
       _c("a", [
+        _c("span", { staticClass: "badge square border bottom" }, [
+          _vm._v("10")
+        ]),
+        _c("i", [_vm._v("account_circle")])
+      ]),
+      _c("a", [
         _c("span", { staticClass: "badge left bottom" }, [_vm._v("New")]),
         _c("i", [_vm._v("search")])
       ]),
@@ -14957,6 +15374,10 @@ var staticRenderFns = [
       ]),
       _c("a", [
         _c("span", { staticClass: "badge circle left bottom" }, [_vm._v("10")]),
+        _c("i", [_vm._v("apps")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge square left bottom" }, [_vm._v("10")]),
         _c("i", [_vm._v("apps")])
       ]),
       _c("a", [
@@ -14973,6 +15394,12 @@ var staticRenderFns = [
       ]),
       _c("a", [
         _c("span", { staticClass: "badge circle border left bottom" }, [
+          _vm._v("10")
+        ]),
+        _c("i", [_vm._v("account_circle")])
+      ]),
+      _c("a", [
+        _c("span", { staticClass: "badge square border left bottom" }, [
           _vm._v("10")
         ]),
         _c("i", [_vm._v("account_circle")])
@@ -15063,6 +15490,25 @@ var staticRenderFns = [
       ]),
       _c("button", { staticClass: "circle" }, [_c("i", [_vm._v("home")])]),
       _c("button", { staticClass: "circle" }, [_vm._v("A")]),
+      _c("button", { staticClass: "square" }, [_c("i", [_vm._v("home")])]),
+      _c("button", { staticClass: "square left-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "square top-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "square right-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "square bottom-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "square top-round left-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "square bottom-round right-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
       _c("button", { staticClass: "border" }, [_vm._v("Button")]),
       _c("button", { staticClass: "border" }, [
         _c("i", [_vm._v("search")]),
@@ -15084,7 +15530,94 @@ var staticRenderFns = [
       _c("button", { staticClass: "border circle" }, [
         _c("i", [_vm._v("home")])
       ]),
-      _c("button", { staticClass: "border circle" }, [_vm._v("B")])
+      _c("button", { staticClass: "border circle" }, [_vm._v("B")]),
+      _c("button", { staticClass: "border square" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "border square left-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "border square top-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "border square right-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "border square bottom-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "border square top-round left-round" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("button", { staticClass: "border square bottom-round right-round" }, [
+        _c("i", [_vm._v("home")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card left-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card top-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card right-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card bottom-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card top-round left-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card bottom-round right-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
     ])
   },
   function() {
@@ -15313,6 +15846,72 @@ var staticRenderFns = [
           )
         ]),
         _c("nav", [_c("button", { staticClass: "border" }, [_vm._v("Button")])])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card left-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card top-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card right-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card bottom-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card top-round left-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 m4 l2" }, [
+      _c("div", { staticClass: "card bottom-round right-round" }, [
+        _c("h5", [_vm._v("Title")]),
+        _c("div", [_vm._v("Complementary text")])
       ])
     ])
   },
@@ -15641,6 +16240,25 @@ var staticRenderFns = [
       ]),
       _c("a", { staticClass: "chip circle" }, [_c("i", [_vm._v("search")])]),
       _c("a", { staticClass: "chip circle" }, [_vm._v("A")]),
+      _c("a", { staticClass: "chip square" }, [_c("i", [_vm._v("search")])]),
+      _c("a", { staticClass: "chip square left-round" }, [
+        _c("i", [_vm._v("search")])
+      ]),
+      _c("a", { staticClass: "chip square top-round" }, [
+        _c("i", [_vm._v("search")])
+      ]),
+      _c("a", { staticClass: "chip square right-round" }, [
+        _c("i", [_vm._v("search")])
+      ]),
+      _c("a", { staticClass: "chip square bottom-round" }, [
+        _c("i", [_vm._v("search")])
+      ]),
+      _c("a", { staticClass: "chip square top-round left-round" }, [
+        _c("i", [_vm._v("search")])
+      ]),
+      _c("a", { staticClass: "chip square bottom-round right-round" }, [
+        _c("i", [_vm._v("search")])
+      ]),
       _c("a", { staticClass: "chip active" }, [_vm._v("Filter")]),
       _c("a", { staticClass: "chip active" }, [
         _c("i", { staticClass: "small" }, [_vm._v("done")]),
@@ -15650,6 +16268,27 @@ var staticRenderFns = [
         _c("i", [_vm._v("home")])
       ]),
       _c("a", { staticClass: "chip circle active" }, [_vm._v("B")]),
+      _c("a", { staticClass: "chip square active" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("a", { staticClass: "chip square left-round active" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("a", { staticClass: "chip square top-round active" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("a", { staticClass: "chip square right-round active" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("a", { staticClass: "chip square bottom-round active" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("a", { staticClass: "chip square top-round left-round active" }, [
+        _c("i", [_vm._v("home")])
+      ]),
+      _c("a", { staticClass: "chip square bottom-round right-round active" }, [
+        _c("i", [_vm._v("home")])
+      ]),
       _c("a", { staticClass: "chip border" }, [_vm._v("Filter")]),
       _c("a", { staticClass: "chip border" }, [
         _c("i", { staticClass: "small" }, [_vm._v("done")]),
@@ -15658,7 +16297,32 @@ var staticRenderFns = [
       _c("a", { staticClass: "chip circle border" }, [
         _c("i", [_vm._v("refresh")])
       ]),
-      _c("a", { staticClass: "chip circle border" }, [_vm._v("C")])
+      _c("a", { staticClass: "chip circle border" }, [_vm._v("C")]),
+      _c("a", { staticClass: "chip square border" }, [
+        _c("i", [_vm._v("refresh")])
+      ]),
+      _c("a", { staticClass: "chip square border" }, [_vm._v("C")]),
+      _c("a", { staticClass: "chip square border" }, [
+        _c("i", [_vm._v("refresh")])
+      ]),
+      _c("a", { staticClass: "chip square border left-round" }, [
+        _c("i", [_vm._v("refresh")])
+      ]),
+      _c("a", { staticClass: "chip square border top-round" }, [
+        _c("i", [_vm._v("refresh")])
+      ]),
+      _c("a", { staticClass: "chip square border right-round" }, [
+        _c("i", [_vm._v("refresh")])
+      ]),
+      _c("a", { staticClass: "chip square border bottom-round" }, [
+        _c("i", [_vm._v("refresh")])
+      ]),
+      _c("a", { staticClass: "chip square border top-round left-round" }, [
+        _c("i", [_vm._v("refresh")])
+      ]),
+      _c("a", { staticClass: "chip square border bottom-round right-round" }, [
+        _c("i", [_vm._v("refresh")])
+      ])
     ])
   },
   function() {
@@ -17607,8 +18271,13 @@ var staticRenderFns = [
             _c("b", [_vm._v("Form")]),
             _c("div", [_vm._v("border")]),
             _c("div", [_vm._v("round")]),
+            _c("div", [_vm._v("left-round")]),
+            _c("div", [_vm._v("right-round")]),
+            _c("div", [_vm._v("top-round")]),
+            _c("div", [_vm._v("bottom-round")]),
             _c("div", [_vm._v("circle")]),
-            _c("div", [_vm._v("flat")])
+            _c("div", [_vm._v("flat")]),
+            _c("div", [_vm._v("square")])
           ]),
           _c("div", { staticClass: "col" }, [
             _c("b", [_vm._v("Texts")]),
@@ -21297,6 +21966,10 @@ var _default = {
         image: "/vintage-001.jpg"
       }, {
         image: "/vintage-002.jpg"
+      }, {
+        image: "/radio-001.jpg"
+      }, {
+        image: "/ocean-001.jpg"
       }],
       movies: [{
         image: "/radio-001.jpg"
@@ -21314,6 +21987,10 @@ var _default = {
         image: "/radio-001.jpg"
       }, {
         image: "/ocean-001.jpg"
+      }, {
+        image: "/alok-001.jpg"
+      }, {
+        image: "/alok-002.jpg"
       }],
       hot: [{
         image: "/alok-001.jpg"
@@ -21331,6 +22008,10 @@ var _default = {
         image: "/alok-001.jpg"
       }, {
         image: "/alok-002.jpg"
+      }, {
+        image: "/vintage-001.jpg"
+      }, {
+        image: "/vintage-002.jpg"
       }],
       myList: [{
         image: "/vintage-001.jpg"
@@ -21348,6 +22029,10 @@ var _default = {
         image: "/vintage-001.jpg"
       }, {
         image: "/vintage-002.jpg"
+      }, {
+        image: "/radio-001.jpg"
+      }, {
+        image: "/ocean-001.jpg"
       }]
     };
   },
