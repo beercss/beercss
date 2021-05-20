@@ -61,19 +61,19 @@
 }
 
 .menu.left.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
-  border-radius: 0 16px 16px 0;
+  border-radius: 0 24px 24px 0;
 }
 
 .menu.right.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
-  border-radius: 16px 0 0 16px;
+  border-radius: 24px 0 0 24px;
 }
 
 .menu.bottom.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
-  border-radius: 16px 16px 0 0;
+  border-radius: 24px 24px 0 0;
 }
 
 .menu.top.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 24px 24px;
 }
 
 .menu.active {

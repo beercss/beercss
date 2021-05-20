@@ -5,7 +5,7 @@
   color: var(--color-2);
   line-height: 32px;
   padding: 0 12px;
-  border-radius: 16px;
+  border-radius: 24px;
   background-color: var(--color-2a);
   margin: 0 8px;
   text-transform: none;
@@ -26,6 +26,14 @@
   min-height: 32px;
   padding: 0;
   text-align: center;
+}
+
+.chip.square {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+  text-align: center;
+  border-radius: 4px;
 }
 
 .chip.active {

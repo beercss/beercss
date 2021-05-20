@@ -140,6 +140,7 @@ div
             span Badges
             a.chip.circle(@click="showSamples('#badges nav > a')")
               i code
+            span.badge.top.left.medium-device.large-device New
           nav.wrap
             label.radio
               input#default-badges(
@@ -169,6 +170,9 @@ div
               span.badge.circle 10
               i apps
             a
+              span.badge.square 10
+              i apps
+            a
               span.badge.border New
               i help_outline
             a
@@ -176,6 +180,9 @@ div
               i home
             a
               span.badge.circle.border 10
+              i account_circle
+            a
+              span.badge.square.border 10
               i account_circle
             a
               span.badge.top New
@@ -187,6 +194,9 @@ div
               span.badge.circle.top 10
               i apps
             a
+              span.badge.square.top 10
+              i apps
+            a
               span.badge.border.top New
               i help_outline
             a
@@ -194,6 +204,9 @@ div
               i home
             a
               span.badge.circle.border.top 10
+              i account_circle
+            a
+              span.badge.square.border.top 10
               i account_circle
             a
               span.badge.left.top New
@@ -205,6 +218,9 @@ div
               span.badge.circle.left.top 10
               i apps
             a
+              span.badge.square.left.top 10
+              i apps
+            a
               span.badge.border.left.top New
               i help_outline
             a
@@ -212,6 +228,9 @@ div
               i home
             a
               span.badge.circle.border.left.top 10
+              i account_circle
+            a
+              span.badge.square.border.left.top 10
               i account_circle
             a
               span.badge.bottom.right New
@@ -223,6 +242,9 @@ div
               span.badge.circle.bottom.right 10
               i apps
             a
+              span.badge.square.bottom.right 10
+              i apps
+            a
               span.badge.border.bottom.right New
               i help_outline
             a
@@ -230,6 +252,9 @@ div
               i home
             a
               span.badge.circle.border.bottom.right 10
+              i account_circle
+            a
+              span.badge.square.border.bottom.right 10
               i account_circle
             a
               span.badge.bottom New
@@ -241,6 +266,9 @@ div
               span.badge.circle.bottom 10
               i apps
             a
+              span.badge.square.bottom 10
+              i apps
+            a
               span.badge.border.bottom New
               i help_outline
             a
@@ -248,6 +276,9 @@ div
               i home
             a
               span.badge.circle.border.bottom 10
+              i account_circle
+            a
+              span.badge.square.border.bottom 10
               i account_circle
             a
               span.badge.left.bottom New
@@ -259,6 +290,9 @@ div
               span.badge.circle.left.bottom 10
               i apps
             a
+              span.badge.square.left.bottom 10
+              i apps
+            a
               span.badge.border.left.bottom New
               i help_outline
             a
@@ -267,6 +301,9 @@ div
             a
               span.badge.circle.border.left.bottom 10
               i account_circle
+            a
+              span.badge.square.border.left.bottom 10
+              i account_circle
           .small-space
         #buttons.col.s12
           .medium-space
@@ -274,6 +311,7 @@ div
             span Buttons
             a.chip.circle(@click="showSamples('#buttons button')")
               i code
+            span.badge.top.left.medium-device.large-device New
           nav.wrap
             label.radio
               input#default-buttons(
@@ -322,6 +360,20 @@ div
             button.circle
               i home
             button.circle A
+            button.square
+              i home
+            button.square.left-round
+              i home
+            button.square.top-round
+              i home
+            button.square.right-round
+              i home
+            button.square.bottom-round
+              i home
+            button.square.top-round.left-round
+              i home
+            button.square.bottom-round.right-round
+              i home
             button.border Button
             button.border 
               i search
@@ -339,6 +391,20 @@ div
             button.border.circle
               i home
             button.border.circle B
+            button.border.square
+              i home
+            button.border.square.left-round
+              i home
+            button.border.square.top-round
+              i home
+            button.border.square.right-round
+              i home
+            button.border.square.bottom-round
+              i home
+            button.border.square.top-round.left-round
+              i home
+            button.border.square.bottom-round.right-round
+              i home
         #cards.col.s12
           .medium-space
           h5
@@ -364,6 +430,30 @@ div
               )
               span videos
           .row(v-if="mediaCard == 1")
+            .col.s12.m4.l2
+              .card.left-round
+                h5 Title
+                div Complementary text
+            .col.s12.m4.l2
+              .card.top-round
+                h5 Title
+                div Complementary text
+            .col.s12.m4.l2
+              .card.right-round
+                h5 Title
+                div Complementary text
+            .col.s12.m4.l2
+              .card.bottom-round
+                h5 Title
+                div Complementary text
+            .col.s12.m4.l2
+              .card.top-round.left-round
+                h5 Title
+                div Complementary text
+            .col.s12.m4.l2
+              .card.bottom-round.right-round
+                h5 Title
+                div Complementary text
             .col.s12.m6.l3
               .card
                 .row.no-wrap
@@ -494,6 +584,30 @@ div
                       nav
                         button.border Button
           .row(v-if="mediaCard == 2")
+            .col.s12.m4.l2
+              .card.left-round
+                h5 Title
+                div Complementary text
+            .col.s12.m4.l2
+              .card.top-round
+                h5 Title
+                div Complementary text
+            .col.s12.m4.l2
+              .card.right-round
+                h5 Title
+                div Complementary text
+            .col.s12.m4.l2
+              .card.bottom-round
+                h5 Title
+                div Complementary text
+            .col.s12.m4.l2
+              .card.top-round.left-round
+                h5 Title
+                div Complementary text
+            .col.s12.m4.l2
+              .card.bottom-round.right-round
+                h5 Title
+                div Complementary text
             .col.s12.m6.l3
               .card
                 .row.no-wrap
@@ -713,6 +827,7 @@ div
             span Chips
             a.chip.circle(@click="showSamples('#chips nav .chip')")
               i code
+            span.badge.top.left.medium-device.large-device New
           nav.wrap
             a.chip Filter
             a.chip
@@ -721,6 +836,20 @@ div
             a.chip.circle
               i search
             a.chip.circle A
+            a.chip.square
+              i search
+            a.chip.square.left-round
+              i search
+            a.chip.square.top-round
+              i search
+            a.chip.square.right-round
+              i search
+            a.chip.square.bottom-round
+              i search
+            a.chip.square.top-round.left-round
+              i search
+            a.chip.square.bottom-round.right-round
+              i search
             a.chip.active Filter
             a.chip.active
               i.small done
@@ -728,6 +857,20 @@ div
             a.chip.circle.active
               i home
             a.chip.circle.active B
+            a.chip.square.active
+              i home
+            a.chip.square.left-round.active
+              i home
+            a.chip.square.top-round.active
+              i home
+            a.chip.square.right-round.active
+              i home
+            a.chip.square.bottom-round.active
+              i home
+            a.chip.square.top-round.left-round.active
+              i home
+            a.chip.square.bottom-round.right-round.active
+              i home
             a.chip.border Filter
             a.chip.border
               i.small done
@@ -735,6 +878,23 @@ div
             a.chip.circle.border
               i refresh
             a.chip.circle.border C
+            a.chip.square.border
+              i refresh
+            a.chip.square.border C
+            a.chip.square.border
+              i refresh
+            a.chip.square.border.left-round
+              i refresh
+            a.chip.square.border.top-round
+              i refresh
+            a.chip.square.border.right-round
+              i refresh
+            a.chip.square.border.bottom-round
+              i refresh
+            a.chip.square.border.top-round.left-round
+              i refresh
+            a.chip.square.border.bottom-round.right-round
+              i refresh
         #colors.col.s12
           .medium-space
           h5 
@@ -749,7 +909,6 @@ div
             span Containers
             a.chip.circle(@click="showSamples('#containers .container')")
               i code
-            span.badge.top.left.medium-device.large-device New
           nav
             button(@click="updateContainer()") Default
             button(@click="updateContainer('min')") Min
@@ -1111,7 +1270,6 @@ div
               @click="layout = 0; showSamples('#layouts #container')"
             )
               i code
-            span.badge.top.left.medium-device.large-device New
           nav.wrap
             label.checkbox
               input#center-layouts(type="checkbox", checked)
@@ -1333,10 +1491,10 @@ div
           .medium-space
           h5
             span Media
-            a.chip.circle
-              i(
-                @click="showSamples('#media img:visible, #media video:visible')"
-              ) code
+            a.chip.circle(
+              @click="showSamples('#media img:visible, #media video:visible')"
+            )
+              i code
             span.badge.top.left.medium-device.large-device New
           nav.wrap.medium-device.large-device
             label.radio
@@ -1376,6 +1534,18 @@ div
               img.round.large(:src="'/beer-and-woman.jpg'")
             a
               img.round.extra(:src="'/beer-and-woman.jpg'")
+            a
+              img.left-round.medium(:src="'/beer-and-woman.jpg'")
+            a
+              img.top-round.medium(:src="'/beer-and-woman.jpg'")
+            a
+              img.right-round.medium(:src="'/beer-and-woman.jpg'")
+            a
+              img.bottom-round.medium(:src="'/beer-and-woman.jpg'")
+            a
+              img.top-round.left-round.medium(:src="'/beer-and-woman.jpg'")
+            a
+              img.bottom-round.right-round.medium(:src="'/beer-and-woman.jpg'")
           nav.wrap(v-if="mediaImage == 2")
             a
               video.circle.tiny(autoplay, loop, muted, playsinline)
@@ -1406,6 +1576,34 @@ div
                 source(:src="'/dance.mp4'", type="video/mp4")
             a
               video.round.extra(autoplay, loop, muted, playsinline)
+                source(:src="'/dance.mp4'", type="video/mp4")
+            a
+              video.left-round.medium(autoplay, loop, muted, playsinline)
+                source(:src="'/dance.mp4'", type="video/mp4")
+            a
+              video.top-round.medium(autoplay, loop, muted, playsinline)
+                source(:src="'/dance.mp4'", type="video/mp4")
+            a
+              video.right-round.medium(autoplay, loop, muted, playsinline)
+                source(:src="'/dance.mp4'", type="video/mp4")
+            a
+              video.bottom-round.medium(autoplay, loop, muted, playsinline)
+                source(:src="'/dance.mp4'", type="video/mp4")
+            a
+              video.top-round.left-round.medium(
+                autoplay,
+                loop,
+                muted,
+                playsinline
+              )
+                source(:src="'/dance.mp4'", type="video/mp4")
+            a
+              video.bottom-round.right-round.medium(
+                autoplay,
+                loop,
+                muted,
+                playsinline
+              )
                 source(:src="'/dance.mp4'", type="video/mp4")
         #modals.col.s12
           .medium-space
@@ -1924,7 +2122,6 @@ div
             span Textareas
             a.chip.circle(@click="showSamples('#textareas .field')")
               i code
-            span.badge.top.left.medium-device.large-device New
           nav.wrap
             label.checkbox
               input#border-textareas(type="checkbox")
@@ -2122,8 +2319,13 @@ div
                   b Form
                   div border
                   div round
+                  div left-round
+                  div right-round
+                  div top-round
+                  div bottom-round
                   div circle
                   div flat
+                  div square
                 .col
                   b Texts
                   div italic

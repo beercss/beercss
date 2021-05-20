@@ -84,6 +84,30 @@ button.circle.large {
   line-height: 56px;
 }
 
+.button.square,
+button.square {
+  display: inline-block;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  line-height: 48px;
+  text-align: center;
+}
+
+.button.square.small,
+button.square.small {
+  min-width: 40px;
+  min-height: 40px;
+  line-height: 40px;
+}
+
+.button.square.large,
+button.square.large {
+  min-width: 56px;
+  min-height: 56px;
+  line-height: 56px;
+}
+
 td > .button,
 td > nav > .button,
 td > button,
@@ -95,7 +119,11 @@ td > nav > button {
 td > .button.circle,
 td > nav > .button.circle,
 td > button.circle,
-td > nav > button.circle {
+td > nav > button.circle,
+td > .button.square,
+td > nav > .button.square,
+td > button.square,
+td > nav > button.square {
   min-width: 24px;
   min-height: 24px;
   line-height: 24px;
