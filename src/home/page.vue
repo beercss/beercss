@@ -357,9 +357,11 @@ div
             button.round 
               span Button
               i delete
+            button.circle A
             button.circle
               i home
-            button.circle A
+            button.diamond
+              i home
             button.square
               i home
             button.square.left-round
@@ -388,9 +390,11 @@ div
             button.border.round 
               span Button
               i delete
+            button.border.circle B
             button.border.circle
               i home
-            button.border.circle B
+            button.border.diamond
+              i home
             button.border.square
               i home
             button.border.square.left-round
@@ -833,9 +837,11 @@ div
             a.chip
               i.small done
               span Filter
+            a.chip.circle A
             a.chip.circle
               i search
-            a.chip.circle A
+            a.chip.diamond
+              i search
             a.chip.square
               i search
             a.chip.square.left-round
@@ -854,9 +860,11 @@ div
             a.chip.active
               i.small done
               span Filter
+            a.chip.circle.active B
             a.chip.circle.active
               i home
-            a.chip.circle.active B
+            a.chip.diamond.active
+              i home
             a.chip.square.active
               i home
             a.chip.square.left-round.active
@@ -875,9 +883,11 @@ div
             a.chip.border
               i.small done
               span Filter
+            a.chip.circle.border C
             a.chip.circle.border
               i refresh
-            a.chip.circle.border C
+            a.chip.diamond.border
+              i refresh
             a.chip.square.border
               i refresh
             a.chip.square.border.left-round
@@ -2367,7 +2377,7 @@ div
                 div
                   span badge&nbsp;
                   span.grey-text left, right, top, bottom, border, round, circle,&nbsp;
-                  span.orange-text none
+                  span.orange-text none, diamond
                 div 
                   span button&nbsp;
                   span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
@@ -2375,6 +2385,7 @@ div
                 div
                   span chip&nbsp;
                   span.grey-text border, circle, active
+                  span.orange-text none, diamond
                 div
                   span card&nbsp;
                   span.grey-text small, medium, large, border, round, flat
