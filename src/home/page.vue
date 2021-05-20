@@ -2377,15 +2377,15 @@ div
                 div
                   span badge&nbsp;
                   span.grey-text left, right, top, bottom, border, round, circle,&nbsp;
-                  span.orange-text none, diamond
+                  span.orange-text none
                 div 
                   span button&nbsp;
                   span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
-                  span.orange-text none
+                  span.orange-text none, diamond
                 div
                   span chip&nbsp;
-                  span.grey-text border, circle, active
-                  span.orange-text none, diamond
+                  span.grey-text border, circle, active,&nbsp;
+                  span.orange-text diamond
                 div
                   span card&nbsp;
                   span.grey-text small, medium, large, border, round, flat
@@ -2441,7 +2441,7 @@ div
                 div 
                   span &lt;button&gt;&nbsp;
                   span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
-                  span.orange-text none
+                  span.orange-text none, diamond
                 div 
                   span &lt;circle&gt;
                 div 

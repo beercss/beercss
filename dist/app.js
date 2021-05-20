@@ -18356,21 +18356,21 @@ var staticRenderFns = [
           _c("span", { staticClass: "grey-text" }, [
             _vm._v("left, right, top, bottom, border, round, circle, ")
           ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("none, diamond")])
+          _c("span", { staticClass: "orange-text" }, [_vm._v("none")])
         ]),
         _c("div", [
           _c("span", [_vm._v("button ")]),
           _c("span", { staticClass: "grey-text" }, [
             _vm._v("small, medium, large, border, round, circle, flat, ")
           ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("none")])
+          _c("span", { staticClass: "orange-text" }, [_vm._v("none, diamond")])
         ]),
         _c("div", [
           _c("span", [_vm._v("chip ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("border, circle, active")
+            _vm._v("border, circle, active, ")
           ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("none, diamond")])
+          _c("span", { staticClass: "orange-text" }, [_vm._v("diamond")])
         ]),
         _c("div", [
           _c("span", [_vm._v("card ")]),
@@ -18485,7 +18485,7 @@ var staticRenderFns = [
           _c("span", { staticClass: "grey-text" }, [
             _vm._v("small, medium, large, border, round, circle, flat, ")
           ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("none")])
+          _c("span", { staticClass: "orange-text" }, [_vm._v("none, diamond")])
         ]),
         _c("div", [_c("span", [_vm._v("<circle>")])]),
         _c("div", [
