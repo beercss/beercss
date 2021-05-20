@@ -880,9 +880,6 @@ div
             a.chip.circle.border C
             a.chip.square.border
               i refresh
-            a.chip.square.border C
-            a.chip.square.border
-              i refresh
             a.chip.square.border.left-round
               i refresh
             a.chip.square.border.top-round

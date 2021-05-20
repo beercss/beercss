@@ -11802,9 +11802,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
 var _default = {
   data: function data() {
     return {
@@ -16298,10 +16295,6 @@ var staticRenderFns = [
         _c("i", [_vm._v("refresh")])
       ]),
       _c("a", { staticClass: "chip circle border" }, [_vm._v("C")]),
-      _c("a", { staticClass: "chip square border" }, [
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("a", { staticClass: "chip square border" }, [_vm._v("C")]),
       _c("a", { staticClass: "chip square border" }, [
         _c("i", [_vm._v("refresh")])
       ]),
