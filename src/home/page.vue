@@ -2264,9 +2264,10 @@ div
         .col.s12
           .large-divider
           div
-            h4.center-align Summary
-            #helpers.medium-device.large-device
-              h6 Helpers
+            h4.center-align Has about 100 css classes to combine...
+            .large-space
+            #helpers.small-device.medium-device.large-device
+              h5 Helpers
               .row.no-wrap
                 .col
                   b Position
@@ -2370,7 +2371,7 @@ div
               .space
             .row
               .col.s12
-                h6 Elements
+                h5 Elements
                 div
                   span absolute&nbsp;
                   span.grey-text left, right, top, bottom, center, middle, small, medium, large, round
@@ -2471,7 +2472,9 @@ div
             .space
             .row
               .col.s12
-                h6 How to trigger elements?
+                .large-divider
+                h4.center-align ...and 3 ways to trigger elements
+                .large-space
                 div Add or remove class "active"
                 pre(v-html="htmlSample")
                 .space
@@ -2482,8 +2485,8 @@ div
                 pre(v-html="autoSample")
           .large-divider
           div
-            h4.center-align Thank you!
-            .space
+            h4.center-align Cheers 🍻
+            .large-space
             .row
               .col.s6.m4.l3.center-align
                 a(href="https://www.myrp.com.br", target="_blank")

@@ -655,7 +655,7 @@ function parsePath(path) {
 // can we use __proto__?
 
 
-var hasProto = '__proto__' in {}; // Browser environment sniffing
+var hasProto = ('__proto__' in {}); // Browser environment sniffing
 
 var inBrowser = typeof window !== 'undefined';
 var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
@@ -726,9 +726,7 @@ if (typeof Set !== 'undefined' && isNative(Set)) {
   _Set = Set;
 } else {
   // a non-standard Set polyfill that only works with primitive keys.
-  _Set =
-  /*@__PURE__*/
-  function () {
+  _Set = /*@__PURE__*/function () {
     function Set() {
       this.set = Object.create(null);
     }
@@ -2212,7 +2210,7 @@ if (undefined !== 'production') {
 
   var hasHandler = {
     has: function has(target, key) {
-      var has = key in target;
+      var has = (key in target);
       var isAllowed = allowedGlobals(key) || typeof key === 'string' && key.charAt(0) === '_' && !(key in target.$data);
 
       if (!has && !isAllowed) {
@@ -5851,9 +5849,7 @@ function setStyleScope(node, scopeId) {
   node.setAttribute(scopeId, '');
 }
 
-var nodeOps =
-/*#__PURE__*/
-Object.freeze({
+var nodeOps = /*#__PURE__*/Object.freeze({
   createElement: createElement$1,
   createElementNS: createElementNS,
   createTextNode: createTextNode,
@@ -8820,6 +8816,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+//
+//
+//
 //
 //
 //
@@ -14781,13 +14780,20 @@ exports.default = _default;
           _c("div", { staticClass: "col s12" }, [
             _c("div", { staticClass: "large-divider" }),
             _c("div", [
-              _c("h4", { staticClass: "center-align" }, [_vm._v("Summary")]),
+              _c("h4", { staticClass: "center-align" }, [
+                _vm._v("Has about 100 css classes to combine...")
+              ]),
+              _c("div", { staticClass: "large-space" }),
               _vm._m(126),
               _vm._m(127),
               _c("div", { staticClass: "space" }),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col s12" }, [
-                  _c("h6", [_vm._v("How to trigger elements?")]),
+                  _c("div", { staticClass: "large-divider" }),
+                  _c("h4", { staticClass: "center-align" }, [
+                    _vm._v("...and 3 ways to trigger elements")
+                  ]),
+                  _c("div", { staticClass: "large-space" }),
                   _c("div", [_vm._v('Add or remove class "active"')]),
                   _c("pre", {
                     domProps: { innerHTML: _vm._s(_vm.htmlSample) }
@@ -14811,8 +14817,8 @@ exports.default = _default;
             ]),
             _c("div", { staticClass: "large-divider" }),
             _c("div", [
-              _c("h4", { staticClass: "center-align" }, [_vm._v("Thank you!")]),
-              _c("div", { staticClass: "space" }),
+              _c("h4", { staticClass: "center-align" }, [_vm._v("Cheers 🍻")]),
+              _c("div", { staticClass: "large-space" }),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col s6 m4 l3 center-align" }, [
                   _c(
@@ -18217,9 +18223,12 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "medium-device large-device", attrs: { id: "helpers" } },
+      {
+        staticClass: "small-device medium-device large-device",
+        attrs: { id: "helpers" }
+      },
       [
-        _c("h6", [_vm._v("Helpers")]),
+        _c("h5", [_vm._v("Helpers")]),
         _c("div", { staticClass: "row no-wrap" }, [
           _c("div", { staticClass: "col" }, [
             _c("b", [_vm._v("Position")]),
@@ -18342,7 +18351,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col s12" }, [
-        _c("h6", [_vm._v("Elements")]),
+        _c("h5", [_vm._v("Elements")]),
         _c("div", [
           _c("span", [_vm._v("absolute ")]),
           _c("span", { staticClass: "grey-text" }, [
