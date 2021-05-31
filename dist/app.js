@@ -18223,10 +18223,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      {
-        staticClass: "small-device medium-device large-device",
-        attrs: { id: "helpers" }
-      },
+      { staticClass: "medium-device large-device", attrs: { id: "helpers" } },
       [
         _c("h5", [_vm._v("Helpers")]),
         _c("div", { staticClass: "row no-wrap" }, [
