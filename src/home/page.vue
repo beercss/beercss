@@ -2266,7 +2266,7 @@ div
           div
             h4.center-align Has about 100 css classes to combine...
             .large-space
-            #helpers.small-device.medium-device.large-device
+            #helpers.medium-device.large-device
               h5 Helpers
               .row.no-wrap
                 .col
