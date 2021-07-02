@@ -133,10 +133,4 @@ pre * {
   --color-4: #263238;
   --color-4a: rgba(55, 71, 79, 0.9);
   --color-5: #212121;
-}:root,
-.is-dark,
-.is-light {
-  --small-round: 24px;
-  --medium-round: 32px;
-  --large-round: 40px;
 }

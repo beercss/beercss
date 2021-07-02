@@ -5,4 +5,3 @@ import youtube from "~/youtube";
 import netflix from "~/netflix";
 import gmail from "~/gmail";
 import uber from "~/uber";
-import materialYou from "~/materialYou";
