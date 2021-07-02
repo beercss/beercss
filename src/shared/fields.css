@@ -27,43 +27,47 @@
   margin-top: 40px;
 }
 
+.field.round {
+  border-radius: var(--medium-round);
+}
+
 /* icon */
-.field > i {
+.field > i,
+.field > img {
   position: absolute;
   top: 50%;
   left: auto;
-  right: 0px;
+  right: 8px;
   transform: translateY(-50%);
   cursor: pointer;
   color: #9e9e9e;
   z-index: 0;
 }
 
-.field.textarea > i {
-  top: 24px;
-}
-
 .field.border > i,
 .field.fill > i,
-.field.round > i {
+.field.round > i,
+.field.border > img,
+.field.fill > img,
+.field.round > img {
   left: auto;
   right: 8px;
 }
 
-.field > i:first-child {
-  left: 0px;
+.field > i:first-child,
+.field > img:first-child {
+  left: 8px;
   right: auto;
 }
 
 .field.border > i:first-child,
 .field.fill > i:first-child,
-.field.round > i:first-child {
+.field.round > i:first-child,
+.field.border > img:first-child,
+.field.fill > img:first-child,
+.field.round > img:first-child {
   left: 8px;
   right: auto;
-}
-
-.field > label i {
-  margin-left: 4px;
 }
 
 /* file */
@@ -97,9 +101,9 @@ input[type="file"] {
   border: 0;
   border-radius: 8px 8px 0 0;
   border-bottom: 2px solid #9e9e9e50;
-  padding: 4px 0;
+  padding: 4px 8px;
   font-family: Roboto;
-  font-size: 0.9rem;
+  font-size: var(--medium-text);
   width: 100%;
   height: 100%;
   outline: none;
@@ -108,6 +112,7 @@ input[type="file"] {
   background-color: transparent;
   box-sizing: border-box;
   resize: none;
+  color: inherit;
 }
 
 .field > input:focus,
@@ -136,10 +141,18 @@ input[type="file"] {
 .field.round > input,
 .field.round > textarea {
   border: 0;
-  border-radius: 32px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.field.round > input {
+  border-radius: 32px;
   padding: 4px 16px;
+}
+
+.field.round > textarea {
+  border-radius: 24px;
+  padding: 13px 16px;
 }
 
 .field.round.border > input,
@@ -147,7 +160,6 @@ input[type="file"] {
 .field.round.border > textarea,
 .field.round.border.fill > textarea {
   border: 2px solid #9e9e9e50;
-  border-radius: 32px;
   box-shadow: none;
 }
 
@@ -161,7 +173,6 @@ input[type="file"] {
 .field.round.fill > input,
 .field.round.fill > textarea {
   border: 0;
-  border-radius: 32px;
   box-shadow: none;
 }
 
@@ -180,39 +191,34 @@ input[type="file"] {
 }
 
 .field.label > input {
-  padding-top: 16px;
+  padding-top: 20px;
+}
+
+.field.label.small > textarea {
+  padding-top: 17px;
+}
+
+.field.label > textarea,
+.field.label.medium > textarea {
+  padding-top: 21px;
+}
+
+.field.label.large > textarea {
+  padding-top: 25px;
 }
 
 .field.label > textarea {
-  padding-top: 20px;
+  padding-top: 21px;
 }
 
 .field.prefix > input,
 .field.prefix > textarea {
-  padding-left: 28px;
-}
-
-.field.prefix.border > input,
-.field.prefix.fill > input,
-.field.prefix.round > input,
-.field.prefix.border > textarea,
-.field.prefix.fill > textarea,
-.field.prefix.round > textarea {
-  padding-left: 36px;
+  padding-left: 40px;
 }
 
 .field.sufix > input,
 .field.sufix > textarea {
-  padding-right: 28px;
-}
-
-.field.sufix.border > input,
-.field.sufix.fill > input,
-.field.sufix.round > input,
-.field.sufix.border > textarea,
-.field.sufix.fill > textarea,
-.field.sufix.round > textarea {
-  padding-right: 36px;
+  padding-right: 40px;
 }
 
 .field.invalid > input,
@@ -234,54 +240,46 @@ input[type="file"] {
   border: inherit;
 }
 
+.field > :disabled {
+  background-color: #9e9e9e30!important;
+}
+
 /* label */
 .field.label > label {
   animation: 0.1s label-to-middle;
   position: absolute;
   top: 50%;
-  left: 0;
-  font-size: 0.9rem;
+  left: 8px;
+  font-size: var(--medium-text);
   transform: translateY(-50%);
-  z-index: 1;
+  z-index: 0;
 }
 
-.field.label > label {
-  animation: 0.1s label-to-middle;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  font-size: 0.9rem;
-  transform: translateY(-50%);
-  z-index: 1;
+.field.label.textarea.small > label {
+  top: 20px;
 }
 
-.field.label.textarea > label {
+.field.label.textarea > label,
+.field.label.textarea.medium > label {
   top: 24px;
 }
 
-.field.label.prefix > label {
-  left: 28px;
-}
-
-.field.label.prefix.border > label,
-.field.label.prefix.fill > label,
-.field.label.prefix.round > label {
-  left: 36px;
-}
-
-.field.label.border > label,
-.field.label.fill > label {
-  left: 8px;
+.field.label.textarea.large > label {
+  top: 28px;
 }
 
 .field.label.round > label {
   left: 16px;
 }
 
+.field.label.prefix > label {
+  left: 40px;
+}
+
 .field.label > label.active {
   animation: 0.1s label-to-top;
-  font-size: 0.8rem;
-  transform: translateY(-125%);
+  font-size: var(--small-text);
+  transform: translateY(-120%);
 }
 
 .field.invalid > label {
@@ -379,6 +377,24 @@ input[type="file"] {
   margin-left: 8px;
 }
 
+.field > .checkbox,
+.field > .radio {
+  margin: 0 12px 0 4px
+}
+
+.field > nav > .checkbox,
+.field > nav > .radio {
+  margin: 0 4px 0 12px;
+}
+
+.field > .switch {
+  margin: 0 16px 0 8px
+}
+
+.field > nav > .switch {
+  margin: 0 8px 0 16px;
+}
+
 .switch > input {
   width: 40px;
   height: 24px;
@@ -402,7 +418,6 @@ input[type="file"] {
 .switch > input:checked + span::before {
   background-color: var(--color-1a);
 }
-
 
 .switch > input + span::after {
   content: "";
@@ -437,9 +452,9 @@ input[type="file"] {
   border: 0;
   border-radius: 8px 8px 0 0;
   border-bottom: 2px solid #9e9e9e50;
-  padding: 4px 0 4px 0;
+  padding: 4px 8px;
   font-family: Roboto;
-  font-size: 0.9rem;
+  font-size: var(--medium-text);
   width: 100%;
   height: 100%;
   outline: none;
@@ -456,7 +471,6 @@ input[type="file"] {
 .field.border > select {
   border: 2px solid #9e9e9e50;
   border-radius: 8px;
-  padding: 4px 8px 4px 8px;
 }
 
 .field.border > select:focus {
@@ -473,7 +487,7 @@ input[type="file"] {
   border-radius: 32px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  padding: 4px 16px 4px 16px;
+  padding: 4px 16px;
 }
 
 .field.round.border > select,
@@ -499,22 +513,11 @@ input[type="file"] {
 }
 
 .field.prefix > select {
-  padding-left: 28px;
-}
-
-.field.prefix.border > select,
-.field.prefix.fill > select,
-.field.prefix.round > select {
-  padding-left: 36px;
+  padding-left: 40px;
 }
 
 .field.sufix > select {
-  padding-right: 28px;
-}
-.field.sufix.border > select,
-.field.sufix.fill > select,
-.field.sufix.round > select {
-  padding-right: 36px;
+  padding-right: 40px;
 }
 
 .field.invalid > select {
@@ -539,10 +542,10 @@ input[type="file"] {
 .field > .helper,
 .field > .error {
   position: absolute;
-  left: 0;
+  left: 8px;
   bottom: 0;
   transform: translateY(100%);
-  font-size: 0.8rem;
+  font-size: var(--small-text);
 }
 
 a.helper {
@@ -551,13 +554,6 @@ a.helper {
 
 .field > .error {
   color:  var(--color-3);
-}
-
-.field.border > .helper,
-.field.fill > .helper,
-.field.border > .error,
-.field.fill > .error  {
-  left: 8px;
 }
 
 .field.round > .helper,
@@ -578,22 +574,22 @@ table td > .field {
 
 @keyframes label-to-top {
   from {
-    font-size: 0.9rem;
+    font-size: var(--medium-text);
     transform: translateY(-50%);
   }
   to {
-    font-size: 0.8rem;
-    transform: translateY(-125%);
+    font-size: var(--small-text);
+    transform: translateY(-120%);
   }
 }
 
 @keyframes label-to-middle {
   from {
-    font-size: 0.8rem;
-    transform: translateY(-125%);
+    font-size: var(--small-text);
+    transform: translateY(-120%);
   }
   to {
-    font-size: 0.9rem;
+    font-size: var(--medium-text);
     transform: translateY(-50%);
   }
 }

@@ -2,14 +2,14 @@
 div
   .fixed.top.left.right.bottom
     img.responsive(:src="'/map.jpg'")
-  .fixed.bottom.right.margin.medium-device.large-device
+  .fixed.bottom.right.margin.m.l
     button.circle.white.black-text.wave.dark
       i add
     .space
     button.circle.white.black-text.wave.dark
       i remove
   .large-space
-  .card.no-padding.large-margin.medium-width.medium-device.large-device.page.left.active
+  .card.no-padding.large-margin.medium-width.m.l.page.left.active
     .large-padding.blue.white-text
       p.bold From {{ from }}
       p.bold To {{ to }}
@@ -50,7 +50,7 @@ div
         .col
           h6.no-margin Home
           div {{ street }}
-  .modal.round.bottom.active.small-device
+  .modal.round.bottom.active.s
     p.bold(v-show="from") From {{ from }}
     p.bold(v-show="to") To {{ to }}
     nav.right-align(v-show="from || to")

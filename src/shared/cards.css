@@ -5,6 +5,7 @@
   padding: 16px;
   border-radius: 4px;
   display: block;
+  transition: transform 0.3s ease, border-radius 0.3s, padding 0.3s;
 }
 
 .card + .card {
@@ -37,5 +38,5 @@
 }
 
 .card.round {
-  border-radius: 24px;
+  border-radius: var(--small-round);
 }

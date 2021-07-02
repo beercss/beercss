@@ -11812,6 +11812,197 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -11838,6 +12029,7 @@ var _default = {
     this.resetTheme();
     this.badgeSamples();
     this.buttonSamples();
+    this.chipSamples();
     this.inputSamples();
     this.listSamples();
     this.tableSamples();
@@ -12050,7 +12242,7 @@ var _default = {
     },
     buttonSamples: function buttonSamples() {
       $("#buttons input").on("click", function () {
-        var ids = ["green", "orange", "pink", "small", "large"];
+        var ids = ["green", "orange", "pink", "medium", "large", "extra"];
         var buttons = $("#buttons button:not(.border)");
         var buttonsBorder = $("#buttons button.border");
 
@@ -12066,12 +12258,27 @@ var _default = {
           if ($(selector).is(":checked")) {
             buttons.addClass(ids[i]);
 
-            if (["small", "medium", "large"].indexOf(ids[i]) == -1) {
+            if (["small", "medium", "large", "extra"].indexOf(ids[i]) == -1) {
               buttonsBorder.addClass(ids[i] + "-border");
               buttonsBorder.addClass(ids[i] + "-text");
             } else {
               buttonsBorder.addClass(ids[i]);
             }
+          }
+        }
+      });
+    },
+    chipSamples: function chipSamples() {
+      $("#chips input").on("click", function () {
+        var ids = ["small", "medium", "large", "active"];
+        var chips = $("#chips nav .chip");
+
+        for (var i = 0; i < ids.length; i++) {
+          chips.removeClass(ids[i]);
+          var selector = "#" + ids[i] + "-chips";
+
+          if ($(selector).is(":checked")) {
+            chips.addClass(ids[i]);
           }
         }
       });
@@ -12145,7 +12352,7 @@ var _default = {
 
               if (ids[i] == "file") {
                 inputs.attr("type", "text");
-                labels.html("Choose a file");
+                labels.html("File");
                 icons.html("attach_file");
 
                 for (var j = 0; j < inputs.length; j++) {
@@ -12166,7 +12373,7 @@ var _default = {
               }
             }
           } else {
-            if ($(selector).is(":checked")) $("#inputs .field.label").addClass(ids[i]);else $("#inputs .field.label").removeClass(ids[i]);
+            if ($(selector).is(":checked")) $("#inputs .field").addClass(ids[i]);else $("#inputs .field").removeClass(ids[i]);
           }
         }
       });
@@ -12177,7 +12384,7 @@ var _default = {
 
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-selects";
-          if ($(selector).is(":checked")) $("#selects .field.label").addClass(ids[i]);else $("#selects .field.label").removeClass(ids[i]);
+          if ($(selector).is(":checked")) $("#selects .field").addClass(ids[i]);else $("#selects .field").removeClass(ids[i]);
         }
       });
     },
@@ -12187,7 +12394,7 @@ var _default = {
 
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-textareas";
-          if ($(selector).is(":checked")) $("#textareas .field.label").addClass(ids[i]);else $("#textareas .field.label").removeClass(ids[i]);
+          if ($(selector).is(":checked")) $("#textareas .field").addClass(ids[i]);else $("#textareas .field").removeClass(ids[i]);
         }
       });
     },
@@ -12217,458 +12424,446 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      {
-        staticClass: "menu left medium-device large-device",
-        attrs: { id: "menu" }
-      },
-      [
-        _c("div", { staticClass: "small-space" }),
-        _c("img", {
-          staticClass: "front small circle no-margin no-padding",
-          attrs: { src: "/favicon.png" },
+    _c("div", { staticClass: "menu left m l", attrs: { id: "menu" } }, [
+      _c("img", {
+        staticClass: "small circle small-margin",
+        attrs: { src: "/favicon.png" },
+        on: {
+          click: function($event) {
+            return _vm.addHomeScreen()
+          }
+        }
+      }),
+      _c(
+        "a",
+        {
           on: {
             click: function($event) {
-              return _vm.addHomeScreen()
+              return _vm.updateMenu("#menu", "top")
             }
           }
-        }),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateMenu("#menu", "top")
-              }
+        },
+        [_c("i", [_vm._v("arrow_upward")]), _c("div", [_vm._v("Top")])]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateMenu("#menu", "bottom")
             }
-          },
-          [_c("i", [_vm._v("arrow_upward")]), _c("div", [_vm._v("Top")])]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateMenu("#menu", "bottom")
-              }
+          }
+        },
+        [_c("i", [_vm._v("arrow_downward")]), _c("div", [_vm._v("Bottom")])]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateMenu("#menu", "left")
             }
-          },
-          [_c("i", [_vm._v("arrow_downward")]), _c("div", [_vm._v("Bottom")])]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateMenu("#menu", "left")
-              }
+          }
+        },
+        [_c("i", [_vm._v("arrow_back")]), _c("div", [_vm._v("Left")])]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateMenu("#menu", "right")
             }
-          },
-          [_c("i", [_vm._v("arrow_back")]), _c("div", [_vm._v("Left")])]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateMenu("#menu", "right")
-              }
+          }
+        },
+        [_c("i", [_vm._v("arrow_forward")]), _c("div", [_vm._v("Right")])]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateMenu("#menu")
             }
-          },
-          [_c("i", [_vm._v("arrow_forward")]), _c("div", [_vm._v("Right")])]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateMenu("#menu")
-              }
+          }
+        },
+        [_c("i", [_vm._v("zoom_out_map")]), _c("div", [_vm._v("Size")])]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateIcons()
             }
-          },
-          [_c("i", [_vm._v("zoom_out_map")]), _c("div", [_vm._v("Size")])]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateIcons()
-              }
+          }
+        },
+        [_c("i", [_vm._v("image")]), _c("div", [_vm._v("Icons")])]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateTheme()
             }
-          },
-          [_c("i", [_vm._v("image")]), _c("div", [_vm._v("Icons")])]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateTheme()
-              }
+          }
+        },
+        [_c("i", [_vm._v("brightness_medium")]), _c("div", [_vm._v("Theme")])]
+      ),
+      _vm._m(0),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.showSamples("#menu")
             }
-          },
-          [_c("i", [_vm._v("brightness_medium")]), _c("div", [_vm._v("Theme")])]
-        ),
-        _vm._m(0),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.showSamples("#menu")
-              }
-            }
-          },
-          [_c("i", [_vm._v("code")]), _c("div", [_vm._v("Code")])]
-        ),
-        _c(
-          "div",
-          {
-            staticClass: "modal small left",
-            attrs: { id: "more", "data-ui": "#more" }
-          },
-          [
-            _c("h5", [_vm._v("Templates")]),
-            _c("p", { staticClass: "grey-text" }, [
-              _vm._v("This templates are only for tests purpose")
-            ]),
-            _c("div", { staticClass: "large-space" }),
-            _c(
-              "a",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.theme == "is-dark",
-                    expression: "theme == 'is-dark'"
-                  }
-                ],
-                attrs: { href: "/youtube" }
-              },
-              [
-                _c("img", {
-                  staticClass: "logo-template",
-                  attrs: { src: "/youtube-dark.png" }
-                })
-              ]
-            ),
-            _c(
-              "a",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.theme != "is-dark",
-                    expression: "theme != 'is-dark'"
-                  }
-                ],
-                attrs: { href: "/youtube" }
-              },
-              [
-                _c("img", {
-                  staticClass: "logo-template",
-                  attrs: { src: "/youtube-light.png" }
-                })
-              ]
-            ),
-            _c("div", { staticClass: "large-divider" }),
-            _c("a", { attrs: { href: "/netflix" } }, [
+          }
+        },
+        [_c("i", [_vm._v("code")]), _c("div", [_vm._v("Code")])]
+      ),
+      _c(
+        "div",
+        {
+          staticClass: "modal small left",
+          attrs: { id: "more", "data-ui": "#more" }
+        },
+        [
+          _c("h5", [_vm._v("Templates")]),
+          _c("p", { staticClass: "grey-text" }, [
+            _vm._v("This templates are only for tests purpose")
+          ]),
+          _c("div", { staticClass: "large-space" }),
+          _c(
+            "a",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.theme == "is-dark",
+                  expression: "theme == 'is-dark'"
+                }
+              ],
+              attrs: { href: "/youtube" }
+            },
+            [
               _c("img", {
                 staticClass: "logo-template",
-                attrs: { src: "/netflix.png" }
+                attrs: { src: "/youtube-dark.png" }
               })
-            ]),
-            _c("div", { staticClass: "large-divider" }),
-            _c(
-              "a",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.theme == "is-dark",
-                    expression: "theme == 'is-dark'"
-                  }
-                ],
-                attrs: { href: "/gmail" }
-              },
-              [
-                _c("img", {
-                  staticClass: "logo-template",
-                  attrs: { src: "/gmail-dark.png" }
-                })
-              ]
-            ),
-            _c(
-              "a",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.theme != "is-dark",
-                    expression: "theme != 'is-dark'"
-                  }
-                ],
-                attrs: { href: "/gmail" }
-              },
-              [
-                _c("img", {
-                  staticClass: "logo-template",
-                  attrs: { src: "/gmail-light.png" }
-                })
-              ]
-            ),
-            _c("div", { staticClass: "large-divider" }),
-            _c(
-              "a",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.theme == "is-dark",
-                    expression: "theme == 'is-dark'"
-                  }
-                ],
-                attrs: { href: "/uber" }
-              },
-              [
-                _c("img", {
-                  staticClass: "logo-template",
-                  attrs: { src: "/uber-dark.png" }
-                })
-              ]
-            ),
-            _c(
-              "a",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.theme != "is-dark",
-                    expression: "theme != 'is-dark'"
-                  }
-                ],
-                attrs: { href: "/uber" }
-              },
-              [
-                _c("img", {
-                  staticClass: "logo-template",
-                  attrs: { src: "/uber-light.png" }
-                })
-              ]
-            )
-          ]
-        )
-      ]
-    ),
-    _c(
-      "div",
-      { staticClass: "menu bottom small-device", attrs: { id: "menu-bottom" } },
-      [
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateMenu("#menu-bottom")
-              }
+            ]
+          ),
+          _c(
+            "a",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.theme != "is-dark",
+                  expression: "theme != 'is-dark'"
+                }
+              ],
+              attrs: { href: "/youtube" }
+            },
+            [
+              _c("img", {
+                staticClass: "logo-template",
+                attrs: { src: "/youtube-light.png" }
+              })
+            ]
+          ),
+          _c("div", { staticClass: "large-divider" }),
+          _c("a", { attrs: { href: "/netflix" } }, [
+            _c("img", {
+              staticClass: "logo-template",
+              attrs: { src: "/netflix.png" }
+            })
+          ]),
+          _c("div", { staticClass: "large-divider" }),
+          _c(
+            "a",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.theme == "is-dark",
+                  expression: "theme == 'is-dark'"
+                }
+              ],
+              attrs: { href: "/gmail" }
+            },
+            [
+              _c("img", {
+                staticClass: "logo-template",
+                attrs: { src: "/gmail-dark.png" }
+              })
+            ]
+          ),
+          _c(
+            "a",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.theme != "is-dark",
+                  expression: "theme != 'is-dark'"
+                }
+              ],
+              attrs: { href: "/gmail" }
+            },
+            [
+              _c("img", {
+                staticClass: "logo-template",
+                attrs: { src: "/gmail-light.png" }
+              })
+            ]
+          ),
+          _c("div", { staticClass: "large-divider" }),
+          _c(
+            "a",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.theme == "is-dark",
+                  expression: "theme == 'is-dark'"
+                }
+              ],
+              attrs: { href: "/uber" }
+            },
+            [
+              _c("img", {
+                staticClass: "logo-template",
+                attrs: { src: "/uber-dark.png" }
+              })
+            ]
+          ),
+          _c(
+            "a",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.theme != "is-dark",
+                  expression: "theme != 'is-dark'"
+                }
+              ],
+              attrs: { href: "/uber" }
+            },
+            [
+              _c("img", {
+                staticClass: "logo-template",
+                attrs: { src: "/uber-light.png" }
+              })
+            ]
+          )
+        ]
+      )
+    ]),
+    _c("div", { staticClass: "menu bottom s", attrs: { id: "menu-bottom" } }, [
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateMenu("#menu-bottom")
             }
-          },
-          [_c("i", [_vm._v("zoom_out_map")]), _c("div", [_vm._v("Size")])]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateIcons()
-              }
+          }
+        },
+        [_c("i", [_vm._v("zoom_out_map")]), _c("div", [_vm._v("Size")])]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateIcons()
             }
-          },
-          [_c("i", [_vm._v("image")]), _c("div", [_vm._v("Icons")])]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateTheme()
-              }
+          }
+        },
+        [_c("i", [_vm._v("image")]), _c("div", [_vm._v("Icons")])]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateTheme()
             }
-          },
-          [_c("i", [_vm._v("brightness_medium")]), _c("div", [_vm._v("Theme")])]
-        ),
-        _vm._m(1),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.showSamples("#menu-bottom")
-              }
+          }
+        },
+        [_c("i", [_vm._v("brightness_medium")]), _c("div", [_vm._v("Theme")])]
+      ),
+      _vm._m(1),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.showSamples("#menu-bottom")
             }
-          },
-          [_c("i", [_vm._v("code")]), _c("div", [_vm._v("Code")])]
-        ),
-        _c(
-          "div",
-          {
-            staticClass: "modal bottom medium",
-            attrs: { id: "more-bottom", "data-ui": "#more-bottom" }
-          },
-          [
-            _c("h5", [_vm._v("Templates")]),
-            _c("p", { staticClass: "grey-text" }, [
-              _vm._v("This templates are only for tests purpose")
-            ]),
-            _c("div", { staticClass: "large-divider" }),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col s6 middle-align padding" }, [
-                _c(
-                  "a",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.theme == "is-dark",
-                        expression: "theme == 'is-dark'"
-                      }
-                    ],
-                    attrs: { href: "/youtube" }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "logo-template",
-                      attrs: { src: "/youtube-dark.png" }
-                    })
-                  ]
-                ),
-                _c(
-                  "a",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.theme != "is-dark",
-                        expression: "theme != 'is-dark'"
-                      }
-                    ],
-                    attrs: { href: "/youtube" }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "logo-template",
-                      attrs: { src: "/youtube-light.png" }
-                    })
-                  ]
-                )
-              ]),
-              _c("div", { staticClass: "col s6 middle-align padding" }, [
-                _c("a", { attrs: { href: "/netflix" } }, [
+          }
+        },
+        [_c("i", [_vm._v("code")]), _c("div", [_vm._v("Code")])]
+      ),
+      _c(
+        "div",
+        {
+          staticClass: "modal bottom medium",
+          attrs: { id: "more-bottom", "data-ui": "#more-bottom" }
+        },
+        [
+          _c("h5", [_vm._v("Templates")]),
+          _c("p", { staticClass: "grey-text" }, [
+            _vm._v("This templates are only for tests purpose")
+          ]),
+          _c("div", { staticClass: "large-divider" }),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col s6 middle-align padding" }, [
+              _c(
+                "a",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.theme == "is-dark",
+                      expression: "theme == 'is-dark'"
+                    }
+                  ],
+                  attrs: { href: "/youtube" }
+                },
+                [
                   _c("img", {
                     staticClass: "logo-template",
-                    attrs: { src: "/netflix.png" }
+                    attrs: { src: "/youtube-dark.png" }
                   })
-                ])
-              ]),
-              _c("div", { staticClass: "col s6 middle-align padding" }, [
-                _c(
-                  "a",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.theme == "is-dark",
-                        expression: "theme == 'is-dark'"
-                      }
-                    ],
-                    attrs: { href: "/gmail" }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "logo-template",
-                      attrs: { src: "/gmail-dark.png" }
-                    })
-                  ]
-                ),
-                _c(
-                  "a",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.theme != "is-dark",
-                        expression: "theme != 'is-dark'"
-                      }
-                    ],
-                    attrs: { href: "/gmail" }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "logo-template",
-                      attrs: { src: "/gmail-light.png" }
-                    })
-                  ]
-                )
-              ]),
-              _c("div", { staticClass: "col s6 middle-align padding" }, [
-                _c(
-                  "a",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.theme == "is-dark",
-                        expression: "theme == 'is-dark'"
-                      }
-                    ],
-                    attrs: { href: "/uber" }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "logo-template",
-                      attrs: { src: "/uber-dark.png" }
-                    })
-                  ]
-                ),
-                _c(
-                  "a",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: _vm.theme != "is-dark",
-                        expression: "theme != 'is-dark'"
-                      }
-                    ],
-                    attrs: { href: "/uber" }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "logo-template",
-                      attrs: { src: "/uber-light.png" }
-                    })
-                  ]
-                )
+                ]
+              ),
+              _c(
+                "a",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.theme != "is-dark",
+                      expression: "theme != 'is-dark'"
+                    }
+                  ],
+                  attrs: { href: "/youtube" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "logo-template",
+                    attrs: { src: "/youtube-light.png" }
+                  })
+                ]
+              )
+            ]),
+            _c("div", { staticClass: "col s6 middle-align padding" }, [
+              _c("a", { attrs: { href: "/netflix" } }, [
+                _c("img", {
+                  staticClass: "logo-template",
+                  attrs: { src: "/netflix.png" }
+                })
               ])
+            ]),
+            _c("div", { staticClass: "col s6 middle-align padding" }, [
+              _c(
+                "a",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.theme == "is-dark",
+                      expression: "theme == 'is-dark'"
+                    }
+                  ],
+                  attrs: { href: "/gmail" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "logo-template",
+                    attrs: { src: "/gmail-dark.png" }
+                  })
+                ]
+              ),
+              _c(
+                "a",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.theme != "is-dark",
+                      expression: "theme != 'is-dark'"
+                    }
+                  ],
+                  attrs: { href: "/gmail" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "logo-template",
+                    attrs: { src: "/gmail-light.png" }
+                  })
+                ]
+              )
+            ]),
+            _c("div", { staticClass: "col s6 middle-align padding" }, [
+              _c(
+                "a",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.theme == "is-dark",
+                      expression: "theme == 'is-dark'"
+                    }
+                  ],
+                  attrs: { href: "/uber" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "logo-template",
+                    attrs: { src: "/uber-dark.png" }
+                  })
+                ]
+              ),
+              _c(
+                "a",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.theme != "is-dark",
+                      expression: "theme != 'is-dark'"
+                    }
+                  ],
+                  attrs: { href: "/uber" }
+                },
+                [
+                  _c("img", {
+                    staticClass: "logo-template",
+                    attrs: { src: "/uber-light.png" }
+                  })
+                ]
+              )
             ])
-          ]
-        )
-      ]
-    ),
+          ])
+        ]
+      )
+    ]),
     _c("div", { attrs: { id: "begin" } }, [
       _c(
         "div",
@@ -12718,11 +12913,6 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
-              ),
-              _c(
-                "span",
-                { staticClass: "badge top left medium-device large-device" },
-                [_vm._v("New")]
               )
             ]),
             _vm._m(4),
@@ -12746,14 +12936,263 @@ exports.default = _default;
                 },
                 [_c("i", [_vm._v("code")])]
               ),
-              _c(
-                "span",
-                { staticClass: "badge top left medium-device large-device" },
-                [_vm._v("New")]
-              )
+              _c("span", { staticClass: "badge top left m l" }, [_vm._v("New")])
             ]),
             _vm._m(6),
-            _vm._m(7)
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col s12 m6" }, [
+                _c("div", { staticClass: "space" }),
+                _c("nav", { staticClass: "wrap" }, [
+                  _c("button", [_vm._v("Button")]),
+                  _vm._m(7),
+                  _c("button", { staticClass: "round" }, [_vm._v("Button")]),
+                  _vm._m(8),
+                  _c("button", { staticClass: "circle" }, [_vm._v("A")]),
+                  _vm._m(9),
+                  _vm._m(10),
+                  _vm._m(11),
+                  _vm._m(12),
+                  _vm._m(13),
+                  _vm._m(14),
+                  _vm._m(15),
+                  _vm._m(16),
+                  _vm._m(17),
+                  _c("button", [
+                    _c("img", { attrs: { src: "/favicon.png" } }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "round" }, [
+                    _c("img", { attrs: { src: "/favicon.png" } }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "top-round left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "bottom-round right-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "right-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "circle" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "square" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "square left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "square top-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "square right-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "square bottom-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "square top-round left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c(
+                    "button",
+                    { staticClass: "square bottom-round right-round" },
+                    [
+                      _c("img", {
+                        staticClass: "responsive",
+                        attrs: { src: "/favicon.png" }
+                      })
+                    ]
+                  )
+                ])
+              ]),
+              _c("div", { staticClass: "col s12 m6" }, [
+                _c("div", { staticClass: "space" }),
+                _c("nav", { staticClass: "wrap" }, [
+                  _c("button", { staticClass: "border" }, [_vm._v("Button")]),
+                  _vm._m(18),
+                  _c("button", { staticClass: "border round" }, [
+                    _vm._v("Button")
+                  ]),
+                  _vm._m(19),
+                  _c("button", { staticClass: "border circle" }, [_vm._v("B")]),
+                  _vm._m(20),
+                  _vm._m(21),
+                  _vm._m(22),
+                  _vm._m(23),
+                  _vm._m(24),
+                  _vm._m(25),
+                  _vm._m(26),
+                  _vm._m(27),
+                  _vm._m(28),
+                  _c("button", { staticClass: "border" }, [
+                    _c("img", { attrs: { src: "/favicon.png" } }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "border round" }, [
+                    _c("img", { attrs: { src: "/favicon.png" } }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "border round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "border top-round left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c(
+                    "button",
+                    { staticClass: "border bottom-round right-round" },
+                    [
+                      _c("img", {
+                        staticClass: "responsive",
+                        attrs: { src: "/favicon.png" }
+                      }),
+                      _c("span", [_vm._v("Button")])
+                    ]
+                  ),
+                  _c("button", { staticClass: "border left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "border right-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Button")])
+                  ]),
+                  _c("button", { staticClass: "border circle" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "border square" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "border square left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "border square top-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "border square right-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("button", { staticClass: "border square bottom-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c(
+                    "button",
+                    { staticClass: "border square top-round left-round" },
+                    [
+                      _c("img", {
+                        staticClass: "responsive",
+                        attrs: { src: "/favicon.png" }
+                      })
+                    ]
+                  ),
+                  _c(
+                    "button",
+                    { staticClass: "border square bottom-round right-round" },
+                    [
+                      _c("img", {
+                        staticClass: "responsive",
+                        attrs: { src: "/favicon.png" }
+                      })
+                    ]
+                  )
+                ])
+              ])
+            ])
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "cards" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -12770,14 +13209,9 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
-              ),
-              _c(
-                "span",
-                { staticClass: "badge top left medium-device large-device" },
-                [_vm._v("New")]
               )
             ]),
-            _c("nav", { staticClass: "wrap medium-device large-device" }, [
+            _c("nav", { staticClass: "wrap m l" }, [
               _c("label", { staticClass: "radio" }, [
                 _c("input", {
                   directives: [
@@ -12821,12 +13255,12 @@ exports.default = _default;
             ]),
             _vm.mediaCard == 1
               ? _c("div", { staticClass: "row" }, [
-                  _vm._m(8),
-                  _vm._m(9),
-                  _vm._m(10),
-                  _vm._m(11),
-                  _vm._m(12),
-                  _vm._m(13),
+                  _vm._m(29),
+                  _vm._m(30),
+                  _vm._m(31),
+                  _vm._m(32),
+                  _vm._m(33),
+                  _vm._m(34),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card" }, [
                       _c("div", { staticClass: "row no-wrap" }, [
@@ -12836,9 +13270,9 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(14)
+                        _vm._m(35)
                       ]),
-                      _vm._m(15)
+                      _vm._m(36)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12850,9 +13284,9 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(16)
+                        _vm._m(37)
                       ]),
-                      _vm._m(17)
+                      _vm._m(38)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12864,9 +13298,9 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(18)
+                        _vm._m(39)
                       ]),
-                      _vm._m(19)
+                      _vm._m(40)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12878,9 +13312,9 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(20)
+                        _vm._m(41)
                       ]),
-                      _vm._m(21)
+                      _vm._m(42)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12889,16 +13323,16 @@ exports.default = _default;
                         staticClass: "responsive small",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(22)
+                      _vm._m(43)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding round" }, [
                       _c("img", {
-                        staticClass: "responsive small",
+                        staticClass: "responsive small top-round",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(23)
+                      _vm._m(44)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12907,16 +13341,16 @@ exports.default = _default;
                         staticClass: "responsive small",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(24)
+                      _vm._m(45)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding border round" }, [
                       _c("img", {
-                        staticClass: "responsive small",
+                        staticClass: "responsive small top-round",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(25)
+                      _vm._m(46)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12925,16 +13359,16 @@ exports.default = _default;
                         staticClass: "responsive medium",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(26)
+                      _vm._m(47)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding round" }, [
                       _c("img", {
-                        staticClass: "responsive medium round",
+                        staticClass: "responsive medium",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(27)
+                      _vm._m(48)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -12943,16 +13377,16 @@ exports.default = _default;
                         staticClass: "responsive medium",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(28)
+                      _vm._m(49)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding border round" }, [
                       _c("img", {
-                        staticClass: "responsive medium round",
+                        staticClass: "responsive medium",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(29)
+                      _vm._m(50)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 l6" }, [
@@ -12964,7 +13398,7 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(30)
+                        _vm._m(51)
                       ])
                     ])
                   ]),
@@ -12976,9 +13410,9 @@ exports.default = _default;
                             staticClass: "responsive",
                             attrs: { src: "/beer-and-woman.jpg" }
                           }),
-                          _vm._m(31)
+                          _vm._m(52)
                         ]),
-                        _vm._m(32)
+                        _vm._m(53)
                       ])
                     ])
                   ])
@@ -12986,12 +13420,12 @@ exports.default = _default;
               : _vm._e(),
             _vm.mediaCard == 2
               ? _c("div", { staticClass: "row" }, [
-                  _vm._m(33),
-                  _vm._m(34),
-                  _vm._m(35),
-                  _vm._m(36),
-                  _vm._m(37),
-                  _vm._m(38),
+                  _vm._m(54),
+                  _vm._m(55),
+                  _vm._m(56),
+                  _vm._m(57),
+                  _vm._m(58),
+                  _vm._m(59),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card" }, [
                       _c("div", { staticClass: "row no-wrap" }, [
@@ -13015,9 +13449,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(39)
+                        _vm._m(60)
                       ]),
-                      _vm._m(40)
+                      _vm._m(61)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13043,9 +13477,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(41)
+                        _vm._m(62)
                       ]),
-                      _vm._m(42)
+                      _vm._m(63)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13071,9 +13505,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(43)
+                        _vm._m(64)
                       ]),
-                      _vm._m(44)
+                      _vm._m(65)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13099,9 +13533,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(45)
+                        _vm._m(66)
                       ]),
-                      _vm._m(46)
+                      _vm._m(67)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13124,7 +13558,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(47)
+                      _vm._m(68)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13132,7 +13566,7 @@ exports.default = _default;
                       _c(
                         "video",
                         {
-                          staticClass: "responsive small",
+                          staticClass: "responsive small top-round",
                           attrs: {
                             autoplay: "autoplay",
                             loop: "loop",
@@ -13147,7 +13581,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(48)
+                      _vm._m(69)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13170,7 +13604,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(49)
+                      _vm._m(70)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13178,7 +13612,7 @@ exports.default = _default;
                       _c(
                         "video",
                         {
-                          staticClass: "responsive small",
+                          staticClass: "responsive small top-round",
                           attrs: {
                             autoplay: "autoplay",
                             loop: "loop",
@@ -13193,7 +13627,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(50)
+                      _vm._m(71)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13216,7 +13650,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(51)
+                      _vm._m(72)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13224,7 +13658,7 @@ exports.default = _default;
                       _c(
                         "video",
                         {
-                          staticClass: "responsive medium round",
+                          staticClass: "responsive medium",
                           attrs: {
                             autoplay: "autoplay",
                             loop: "loop",
@@ -13239,7 +13673,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(52)
+                      _vm._m(73)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13262,7 +13696,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(53)
+                      _vm._m(74)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13270,7 +13704,7 @@ exports.default = _default;
                       _c(
                         "video",
                         {
-                          staticClass: "responsive medium round",
+                          staticClass: "responsive medium",
                           attrs: {
                             autoplay: "autoplay",
                             loop: "loop",
@@ -13285,7 +13719,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(54)
+                      _vm._m(75)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 l6" }, [
@@ -13311,7 +13745,7 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(55)
+                        _vm._m(76)
                       ])
                     ])
                   ]),
@@ -13337,9 +13771,9 @@ exports.default = _default;
                               })
                             ]
                           ),
-                          _vm._m(56)
+                          _vm._m(77)
                         ]),
-                        _vm._m(57)
+                        _vm._m(78)
                       ])
                     ])
                   ])
@@ -13363,7 +13797,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(58)
+            _vm._m(79)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "chips" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -13381,15 +13815,239 @@ exports.default = _default;
                 },
                 [_c("i", [_vm._v("code")])]
               ),
-              _c(
-                "span",
-                { staticClass: "badge top left medium-device large-device" },
-                [_vm._v("New")]
-              )
+              _c("span", { staticClass: "badge top left m l" }, [_vm._v("New")])
             ]),
-            _vm._m(59)
+            _vm._m(80),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col s12 m6" }, [
+                _c("div", { staticClass: "space" }),
+                _c("nav", { staticClass: "wrap" }, [
+                  _c("a", { staticClass: "chip" }, [_vm._v("Chip")]),
+                  _vm._m(81),
+                  _c("a", { staticClass: "chip circle" }, [_vm._v("A")]),
+                  _vm._m(82),
+                  _vm._m(83),
+                  _vm._m(84),
+                  _vm._m(85),
+                  _vm._m(86),
+                  _vm._m(87),
+                  _vm._m(88),
+                  _vm._m(89),
+                  _vm._m(90),
+                  _c("a", { staticClass: "chip" }, [
+                    _c("img", { attrs: { src: "/favicon.png" } }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c("a", { staticClass: "chip" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c("a", { staticClass: "chip top-round left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c("a", { staticClass: "chip bottom-round right-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c("a", { staticClass: "chip left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c("a", { staticClass: "chip right-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c("a", { staticClass: "chip circle" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square top-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square right-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square bottom-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square top-round left-round" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c(
+                    "a",
+                    { staticClass: "chip square bottom-round right-round" },
+                    [
+                      _c("img", {
+                        staticClass: "responsive",
+                        attrs: { src: "/favicon.png" }
+                      })
+                    ]
+                  )
+                ])
+              ]),
+              _c("div", { staticClass: "col s12 m6" }, [
+                _c("div", { staticClass: "space" }),
+                _c("nav", { staticClass: "wrap" }, [
+                  _c("a", { staticClass: "chip border" }, [_vm._v("Chip")]),
+                  _vm._m(91),
+                  _c("a", { staticClass: "chip circle border" }, [_vm._v("B")]),
+                  _vm._m(92),
+                  _vm._m(93),
+                  _vm._m(94),
+                  _vm._m(95),
+                  _vm._m(96),
+                  _vm._m(97),
+                  _vm._m(98),
+                  _vm._m(99),
+                  _vm._m(100),
+                  _c("a", { staticClass: "chip border" }, [
+                    _c("img", { attrs: { src: "/favicon.png" } }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c("a", { staticClass: "chip border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c("a", { staticClass: "chip top-round left-round border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c(
+                    "a",
+                    { staticClass: "chip bottom-round right-round border" },
+                    [
+                      _c("img", {
+                        staticClass: "responsive",
+                        attrs: { src: "/favicon.png" }
+                      }),
+                      _c("span", [_vm._v("Chip")])
+                    ]
+                  ),
+                  _c("a", { staticClass: "chip left-round border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c("a", { staticClass: "chip right-round border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Chip")])
+                  ]),
+                  _c("a", { staticClass: "chip circle border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square left-round border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square top-round border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square right-round border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c("a", { staticClass: "chip square bottom-round border" }, [
+                    _c("img", {
+                      staticClass: "responsive",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]),
+                  _c(
+                    "a",
+                    { staticClass: "chip square top-round left-round border" },
+                    [
+                      _c("img", {
+                        staticClass: "responsive",
+                        attrs: { src: "/favicon.png" }
+                      })
+                    ]
+                  ),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "chip square bottom-round right-round border"
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "responsive",
+                        attrs: { src: "/favicon.png" }
+                      })
+                    ]
+                  )
+                ])
+              ])
+            ])
           ]),
-          _vm._m(60),
+          _vm._m(101),
           _c("div", { staticClass: "col s12", attrs: { id: "containers" } }, [
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
@@ -13486,9 +14144,9 @@ exports.default = _default;
                   },
                   [
                     _c("a", [_vm._v("Title")]),
-                    _vm._m(61),
-                    _vm._m(62),
-                    _vm._m(63),
+                    _vm._m(102),
+                    _vm._m(103),
+                    _vm._m(104),
                     _c("a", { staticClass: "row no-wrap middle-align" }, [
                       _c("div", { staticClass: "col min" }, [
                         _c("img", {
@@ -13505,7 +14163,7 @@ exports.default = _default;
                           attrs: { src: "/beer-and-woman.jpg" }
                         })
                       ]),
-                      _vm._m(64)
+                      _vm._m(105)
                     ])
                   ]
                 )
@@ -13521,9 +14179,9 @@ exports.default = _default;
                   },
                   [
                     _c("a", [_vm._v("Title")]),
-                    _vm._m(65),
-                    _vm._m(66),
-                    _vm._m(67),
+                    _vm._m(106),
+                    _vm._m(107),
+                    _vm._m(108),
                     _c("a", { staticClass: "row no-wrap middle-align" }, [
                       _c("div", { staticClass: "col min" }, [
                         _c("img", {
@@ -13540,17 +14198,14 @@ exports.default = _default;
                           attrs: { src: "/beer-and-woman.jpg" }
                         })
                       ]),
-                      _vm._m(68)
+                      _vm._m(109)
                     ])
                   ]
                 )
               ]),
               _c(
                 "button",
-                {
-                  staticClass: "circle small",
-                  attrs: { "data-ui": "#dropdown3" }
-                },
+                { staticClass: "circle", attrs: { "data-ui": "#dropdown3" } },
                 [
                   _c("i", [_vm._v("arrow_back")]),
                   _c(
@@ -13561,9 +14216,9 @@ exports.default = _default;
                     },
                     [
                       _c("a", [_vm._v("Title")]),
-                      _vm._m(69),
-                      _vm._m(70),
-                      _vm._m(71),
+                      _vm._m(110),
+                      _vm._m(111),
+                      _vm._m(112),
                       _c("a", { staticClass: "row no-wrap middle-align" }, [
                         _c("div", { staticClass: "col min" }, [
                           _c("img", {
@@ -13580,7 +14235,7 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(72)
+                        _vm._m(113)
                       ])
                     ]
                   )
@@ -13588,10 +14243,7 @@ exports.default = _default;
               ),
               _c(
                 "button",
-                {
-                  staticClass: "circle small",
-                  attrs: { "data-ui": "#dropdown4" }
-                },
+                { staticClass: "circle", attrs: { "data-ui": "#dropdown4" } },
                 [
                   _c("i", [_vm._v("arrow_forward")]),
                   _c(
@@ -13602,9 +14254,9 @@ exports.default = _default;
                     },
                     [
                       _c("a", [_vm._v("Title")]),
-                      _vm._m(73),
-                      _vm._m(74),
-                      _vm._m(75),
+                      _vm._m(114),
+                      _vm._m(115),
+                      _vm._m(116),
                       _c("a", { staticClass: "row no-wrap middle-align" }, [
                         _c("div", { staticClass: "col min" }, [
                           _c("img", {
@@ -13621,15 +14273,14 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(76)
+                        _vm._m(117)
                       ])
                     ]
                   )
                 ]
               ),
-              _vm._m(77),
+              _vm._m(118),
               _c("button", { attrs: { "data-ui": "#dropdown6" } }, [
-                _c("span", { staticClass: "badge" }, [_vm._v("New")]),
                 _c("span", [_vm._v("Video")]),
                 _c(
                   "div",
@@ -13678,9 +14329,9 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(78),
-            _vm._m(79),
-            _vm._m(80)
+            _vm._m(119),
+            _vm._m(120),
+            _vm._m(121)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "inputs" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -13697,11 +14348,56 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
-              )
+              ),
+              _c("span", { staticClass: "badge top left" }, [_vm._v("New")])
             ]),
-            _vm._m(81),
+            _vm._m(122),
             _c("div", { staticClass: "space" }),
-            _vm._m(82)
+            _c("div", { staticClass: "row" }, [
+              _vm._m(123),
+              _vm._m(124),
+              _vm._m(125),
+              _vm._m(126),
+              _vm._m(127),
+              _vm._m(128),
+              _vm._m(129),
+              _vm._m(130),
+              _vm._m(131),
+              _c("div", { staticClass: "col s12 l4" }, [
+                _c("div", { staticClass: "field label prefix" }, [
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  }),
+                  _c("input", { attrs: { type: "text" } }),
+                  _c("label", [_vm._v("Text")])
+                ])
+              ]),
+              _c("div", { staticClass: "col s12 l4" }, [
+                _c("div", { staticClass: "field label sufix" }, [
+                  _c("input", { attrs: { type: "text" } }),
+                  _c("label", [_vm._v("Text")]),
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  })
+                ])
+              ]),
+              _c("div", { staticClass: "col s12 l4" }, [
+                _c("div", { staticClass: "field label prefix sufix" }, [
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  }),
+                  _c("input", { attrs: { type: "text" } }),
+                  _c("label", [_vm._v("Text")]),
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  })
+                ])
+              ])
+            ])
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "layouts" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -13721,11 +14417,11 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(83),
-            _vm._m(84),
+            _vm._m(132),
+            _vm._m(133),
             _c("div", { staticClass: "space" }),
-            _vm._m(85),
-            _vm._m(86)
+            _vm._m(134),
+            _vm._m(135)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "list" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -13744,19 +14440,19 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(87),
+            _vm._m(136),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Today")
             ]),
-            _vm._m(88),
-            _vm._m(89),
-            _vm._m(90),
+            _vm._m(137),
+            _vm._m(138),
+            _vm._m(139),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Yesterday")
             ]),
-            _vm._m(91),
-            _vm._m(92),
-            _vm._m(93),
+            _vm._m(140),
+            _vm._m(141),
+            _vm._m(142),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Older")
             ]),
@@ -13767,8 +14463,8 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(94),
-              _vm._m(95)
+              _vm._m(143),
+              _vm._m(144)
             ]),
             _c("div", { staticClass: "row no-wrap middle-align" }, [
               _c("div", { staticClass: "col min" }, [
@@ -13777,8 +14473,8 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(96),
-              _vm._m(97)
+              _vm._m(145),
+              _vm._m(146)
             ]),
             _c("div", { staticClass: "row no-wrap middle-align" }, [
               _c("div", { staticClass: "col min" }, [
@@ -13787,8 +14483,8 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(98),
-              _vm._m(99)
+              _vm._m(147),
+              _vm._m(148)
             ])
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "loaders" } }, [
@@ -13912,14 +14608,9 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
-              ),
-              _c(
-                "span",
-                { staticClass: "badge top left medium-device large-device" },
-                [_vm._v("New")]
               )
             ]),
-            _c("nav", { staticClass: "wrap medium-device large-device" }, [
+            _c("nav", { staticClass: "wrap m l" }, [
               _c("label", { staticClass: "radio" }, [
                 _c("input", {
                   directives: [
@@ -14403,7 +15094,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(100)
+            _vm._m(149)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "navs" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14424,7 +15115,7 @@ exports.default = _default;
             ]),
             _c("nav", [
               _c("button", [_vm._v("Button")]),
-              _c("a", { staticClass: "chip" }, [_vm._v("Filter")]),
+              _c("a", { staticClass: "chip" }, [_vm._v("Chip")]),
               _c("i", [_vm._v("home")]),
               _c("a", [
                 _c("img", {
@@ -14497,7 +15188,7 @@ exports.default = _default;
                 [_vm._v("From right")]
               )
             ]),
-            _vm._m(101)
+            _vm._m(150)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "radios" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14516,7 +15207,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(102)
+            _vm._m(151)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "responsive" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14535,7 +15226,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(103)
+            _vm._m(152)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "rows" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14554,14 +15245,14 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(104),
+            _vm._m(153),
             _c("div", { staticClass: "space" }),
-            _vm._m(105),
-            _vm._m(106),
-            _vm._m(107),
-            _vm._m(108),
-            _vm._m(109),
-            _vm._m(110),
+            _vm._m(154),
+            _vm._m(155),
+            _vm._m(156),
+            _vm._m(157),
+            _vm._m(158),
+            _vm._m(159),
             _c("div", { staticClass: "space" })
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "selects" } }, [
@@ -14579,11 +15270,53 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
-              )
+              ),
+              _c("span", { staticClass: "badge top left" }, [_vm._v("New")])
             ]),
-            _vm._m(111),
+            _vm._m(160),
             _c("div", { staticClass: "space" }),
-            _vm._m(112)
+            _c("div", { staticClass: "row" }, [
+              _vm._m(161),
+              _vm._m(162),
+              _vm._m(163),
+              _vm._m(164),
+              _vm._m(165),
+              _vm._m(166),
+              _c("div", { staticClass: "col s12 l4" }, [
+                _c("div", { staticClass: "field label sufix" }, [
+                  _vm._m(167),
+                  _c("label", { staticClass: "active" }, [_vm._v("List")]),
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  })
+                ])
+              ]),
+              _c("div", { staticClass: "col s12 l4" }, [
+                _c("div", { staticClass: "field label sufix" }, [
+                  _vm._m(168),
+                  _c("label", { staticClass: "active" }, [_vm._v("List")]),
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  }),
+                  _c("span", { staticClass: "helper" }, [
+                    _vm._v("Complementary text")
+                  ])
+                ])
+              ]),
+              _c("div", { staticClass: "col s12 l4" }, [
+                _c("div", { staticClass: "field label sufix" }, [
+                  _vm._m(169),
+                  _c("label", { staticClass: "active" }, [_vm._v("List")]),
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  }),
+                  _c("span", { staticClass: "error" }, [_vm._v("Error text")])
+                ])
+              ])
+            ])
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "switches" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14602,7 +15335,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(113)
+            _vm._m(170)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "table" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14621,9 +15354,9 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(114),
+            _vm._m(171),
             _c("div", { staticClass: "space" }),
-            _vm._m(115)
+            _vm._m(172)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "tabs" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14640,15 +15373,78 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
-              )
+              ),
+              _c("span", { staticClass: "badge left top" }, [_vm._v("New")])
             ]),
-            _vm._m(116),
+            _vm._m(173),
             _c("p", { staticClass: "space" }),
-            _vm._m(117),
-            _vm._m(118),
-            _vm._m(119),
-            _vm._m(120),
-            _vm._m(121)
+            _vm._m(174),
+            _vm._m(175),
+            _vm._m(176),
+            _c("div", [
+              _c("div", { staticClass: "tabs" }, [
+                _c(
+                  "a",
+                  { staticClass: "active", attrs: { "data-ui": "#tab7" } },
+                  [
+                    _c("img", {
+                      staticClass: "circle",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Tab 1")])
+                  ]
+                ),
+                _c("a", { attrs: { "data-ui": "#tab8" } }, [
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  }),
+                  _c("span", [_vm._v("Tab 2")])
+                ]),
+                _c("a", { attrs: { "data-ui": "#tab9" } }, [
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  }),
+                  _c("span", [_vm._v("Tab 3")])
+                ])
+              ]),
+              _vm._m(177),
+              _vm._m(178),
+              _vm._m(179)
+            ]),
+            _c("div", [
+              _c("div", { staticClass: "tabs" }, [
+                _c(
+                  "a",
+                  { staticClass: "active", attrs: { "data-ui": "#tab13" } },
+                  [
+                    _c("img", {
+                      staticClass: "wrap circle",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("span", [_vm._v("Tab 1")])
+                  ]
+                ),
+                _c("a", { attrs: { "data-ui": "#tab14" } }, [
+                  _c("img", {
+                    staticClass: "wrap circle",
+                    attrs: { src: "/favicon.png" }
+                  }),
+                  _c("span", [_vm._v("Tab 2")])
+                ]),
+                _c("a", { attrs: { "data-ui": "#tab15" } }, [
+                  _c("img", {
+                    staticClass: "wrap circle",
+                    attrs: { src: "/favicon.png" }
+                  }),
+                  _c("span", [_vm._v("Tab 3")])
+                ])
+              ]),
+              _vm._m(180),
+              _vm._m(181),
+              _vm._m(182)
+            ])
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "textareas" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14665,11 +15461,60 @@ exports.default = _default;
                   }
                 },
                 [_c("i", [_vm._v("code")])]
-              )
+              ),
+              _c("span", { staticClass: "badge top left" }, [_vm._v("New")])
             ]),
-            _vm._m(122),
+            _vm._m(183),
             _c("div", { staticClass: "space" }),
-            _vm._m(123)
+            _c("div", { staticClass: "row" }, [
+              _vm._m(184),
+              _vm._m(185),
+              _vm._m(186),
+              _vm._m(187),
+              _vm._m(188),
+              _vm._m(189),
+              _vm._m(190),
+              _vm._m(191),
+              _vm._m(192),
+              _c("div", { staticClass: "col s12 l4" }, [
+                _c("div", { staticClass: "field textarea label prefix" }, [
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  }),
+                  _c("textarea"),
+                  _c("label", [_vm._v("Text")])
+                ])
+              ]),
+              _c("div", { staticClass: "col s12 l4" }, [
+                _c("div", { staticClass: "field textarea label sufix" }, [
+                  _c("textarea"),
+                  _c("label", [_vm._v("Text")]),
+                  _c("img", {
+                    staticClass: "circle",
+                    attrs: { src: "/favicon.png" }
+                  })
+                ])
+              ]),
+              _c("div", { staticClass: "col s12 l4" }, [
+                _c(
+                  "div",
+                  { staticClass: "field textarea label prefix sufix" },
+                  [
+                    _c("img", {
+                      staticClass: "circle",
+                      attrs: { src: "/favicon.png" }
+                    }),
+                    _c("textarea"),
+                    _c("label", [_vm._v("Text")]),
+                    _c("img", {
+                      staticClass: "circle",
+                      attrs: { src: "/favicon.png" }
+                    })
+                  ]
+                )
+              ])
+            ])
           ]),
           _c("div", { staticClass: "col s12 l6", attrs: { id: "toasts" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14756,7 +15601,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(124)
+            _vm._m(193)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "typography" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14775,7 +15620,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(125)
+            _vm._m(194)
           ]),
           _c("div", { staticClass: "col s12" }, [
             _c("div", { staticClass: "large-divider" }),
@@ -14784,8 +15629,8 @@ exports.default = _default;
                 _vm._v("Has about 100 css classes to combine...")
               ]),
               _c("div", { staticClass: "large-space" }),
-              _vm._m(126),
-              _vm._m(127),
+              _vm._m(195),
+              _vm._m(196),
               _c("div", { staticClass: "space" }),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col s12" }, [
@@ -14912,13 +15757,13 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "large-space" }),
-              _vm._m(128),
+              _vm._m(197),
               _c("div", { staticClass: "space" }),
-              _vm._m(129)
+              _vm._m(198)
             ])
           ])
         ]),
-        _vm._m(130),
+        _vm._m(199),
         _c("div", { staticClass: "modal", attrs: { id: "modal" } }, [
           _c("h5", [_vm._v("Title")]),
           _c("div", [_vm._v("Complementary text")]),
@@ -14994,7 +15839,7 @@ exports.default = _default;
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-samples" } },
           [
-            _vm._m(131),
+            _vm._m(200),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -15018,12 +15863,12 @@ exports.default = _default;
           ],
           2
         ),
-        _vm._m(132),
+        _vm._m(201),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
-            _vm._m(133),
+            _vm._m(202),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -15191,232 +16036,262 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "wrap" }, [
-      _c("a", [
-        _c("span", { staticClass: "badge" }, [_vm._v("New")]),
-        _c("i", [_vm._v("search")])
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col s12 m6" }, [
+        _c("div", { staticClass: "space" }),
+        _c("nav", { staticClass: "wrap" }, [
+          _c("a", [
+            _c("span", { staticClass: "badge" }, [_vm._v("New")]),
+            _c("i", [_vm._v("search")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge round" }, [_vm._v("New")]),
+            _c("i", [_vm._v("notifications")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle" }, [_vm._v("10")]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square" }, [_vm._v("10")]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge top" }, [_vm._v("New")]),
+            _c("i", [_vm._v("search")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge round top" }, [_vm._v("New")]),
+            _c("i", [_vm._v("notifications")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle top" }, [_vm._v("10")]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square top" }, [_vm._v("10")]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge left top" }, [_vm._v("New")]),
+            _c("i", [_vm._v("search")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge round left top" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("notifications")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle left top" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square left top" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge bottom right" }, [_vm._v("New")]),
+            _c("i", [_vm._v("search")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge round bottom right" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("notifications")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle bottom right" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square bottom right" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge bottom" }, [_vm._v("New")]),
+            _c("i", [_vm._v("search")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge round bottom" }, [_vm._v("New")]),
+            _c("i", [_vm._v("notifications")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle bottom" }, [_vm._v("10")]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square bottom" }, [_vm._v("10")]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge left bottom" }, [_vm._v("New")]),
+            _c("i", [_vm._v("search")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge round left bottom" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("notifications")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle left bottom" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("apps")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square left bottom" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("apps")])
+          ])
+        ])
       ]),
-      _c("a", [
-        _c("span", { staticClass: "badge round" }, [_vm._v("New")]),
-        _c("i", [_vm._v("notifications")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border" }, [_vm._v("New")]),
-        _c("i", [_vm._v("help_outline")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border round" }, [_vm._v("New")]),
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle border" }, [_vm._v("10")]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square border" }, [_vm._v("10")]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge round top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("notifications")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle top" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square top" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("help_outline")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border round top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle border top" }, [_vm._v("10")]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square border top" }, [_vm._v("10")]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge left top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge round left top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("notifications")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle left top" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square left top" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border left top" }, [_vm._v("New")]),
-        _c("i", [_vm._v("help_outline")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border round left top" }, [
-          _vm._v("New")
-        ]),
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle border left top" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square border left top" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge bottom right" }, [_vm._v("New")]),
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge round bottom right" }, [
-          _vm._v("New")
-        ]),
-        _c("i", [_vm._v("notifications")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle bottom right" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square bottom right" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border bottom right" }, [
-          _vm._v("New")
-        ]),
-        _c("i", [_vm._v("help_outline")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border round bottom right" }, [
-          _vm._v("New")
-        ]),
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle border bottom right" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square border bottom right" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge bottom" }, [_vm._v("New")]),
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge round bottom" }, [_vm._v("New")]),
-        _c("i", [_vm._v("notifications")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle bottom" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square bottom" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border bottom" }, [_vm._v("New")]),
-        _c("i", [_vm._v("help_outline")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border round bottom" }, [
-          _vm._v("New")
-        ]),
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle border bottom" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square border bottom" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge left bottom" }, [_vm._v("New")]),
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge round left bottom" }, [_vm._v("New")]),
-        _c("i", [_vm._v("notifications")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle left bottom" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square left bottom" }, [_vm._v("10")]),
-        _c("i", [_vm._v("apps")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border left bottom" }, [
-          _vm._v("New")
-        ]),
-        _c("i", [_vm._v("help_outline")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge border round left bottom" }, [
-          _vm._v("New")
-        ]),
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge circle border left bottom" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("account_circle")])
-      ]),
-      _c("a", [
-        _c("span", { staticClass: "badge square border left bottom" }, [
-          _vm._v("10")
-        ]),
-        _c("i", [_vm._v("account_circle")])
+      _c("div", { staticClass: "col s12 m6" }, [
+        _c("div", { staticClass: "space" }),
+        _c("nav", { staticClass: "wrap" }, [
+          _c("a", [
+            _c("span", { staticClass: "badge border" }, [_vm._v("New")]),
+            _c("i", [_vm._v("help_outline")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border round" }, [_vm._v("New")]),
+            _c("i", [_vm._v("home")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle border" }, [_vm._v("10")]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square border" }, [_vm._v("10")]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border top" }, [_vm._v("New")]),
+            _c("i", [_vm._v("help_outline")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border round top" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("home")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle border top" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square border top" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border left top" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("help_outline")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border round left top" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("home")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle border left top" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square border left top" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border bottom right" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("help_outline")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border round bottom right" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("home")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle border bottom right" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square border bottom right" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border bottom" }, [_vm._v("New")]),
+            _c("i", [_vm._v("help_outline")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border round bottom" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("home")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle border bottom" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square border bottom" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border left bottom" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("help_outline")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge border round left bottom" }, [
+              _vm._v("New")
+            ]),
+            _c("i", [_vm._v("home")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge circle border left bottom" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("account_circle")])
+          ]),
+          _c("a", [
+            _c("span", { staticClass: "badge square border left bottom" }, [
+              _vm._v("10")
+            ]),
+            _c("i", [_vm._v("account_circle")])
+          ])
+        ])
       ])
     ])
   },
@@ -15456,18 +16331,18 @@ var staticRenderFns = [
       ]),
       _c("label", { staticClass: "radio" }, [
         _c("input", {
-          attrs: { id: "small-buttons", type: "radio", name: "size-buttons" }
+          attrs: {
+            id: "small-buttons",
+            type: "radio",
+            name: "size-buttons",
+            checked: "checked"
+          }
         }),
         _c("span", [_vm._v("small")])
       ]),
       _c("label", { staticClass: "radio" }, [
         _c("input", {
-          attrs: {
-            id: "medium-buttons",
-            type: "radio",
-            name: "size-buttons",
-            checked: "checked"
-          }
+          attrs: { id: "medium-buttons", type: "radio", name: "size-buttons" }
         }),
         _c("span", [_vm._v("medium")])
       ]),
@@ -15476,6 +16351,12 @@ var staticRenderFns = [
           attrs: { id: "large-buttons", type: "radio", name: "size-buttons" }
         }),
         _c("span", [_vm._v("large")])
+      ]),
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: { id: "extra-buttons", type: "radio", name: "size-buttons" }
+        }),
+        _c("span", [_vm._v("extra")])
       ])
     ])
   },
@@ -15483,94 +16364,177 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "wrap" }, [
-      _c("button", [_vm._v("Button")]),
-      _c("button", [
-        _c("i", [_vm._v("search")]),
-        _c("span", [_vm._v("Button")])
-      ]),
-      _c("button", [
-        _c("span", [_vm._v("Button")]),
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("button", { staticClass: "round" }, [_vm._v("Button")]),
-      _c("button", { staticClass: "round" }, [
-        _c("i", [_vm._v("place")]),
-        _c("span", [_vm._v("Button")])
-      ]),
-      _c("button", { staticClass: "round" }, [
-        _c("span", [_vm._v("Button")]),
-        _c("i", [_vm._v("delete")])
-      ]),
-      _c("button", { staticClass: "circle" }, [_vm._v("A")]),
-      _c("button", { staticClass: "circle" }, [_c("i", [_vm._v("home")])]),
-      _c("button", { staticClass: "diamond" }, [_c("i", [_vm._v("home")])]),
-      _c("button", { staticClass: "square" }, [_c("i", [_vm._v("home")])]),
-      _c("button", { staticClass: "square left-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "square top-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "square right-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "square bottom-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "square top-round left-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "square bottom-round right-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "border" }, [_vm._v("Button")]),
-      _c("button", { staticClass: "border" }, [
-        _c("i", [_vm._v("search")]),
-        _c("span", [_vm._v("Button")])
-      ]),
-      _c("button", { staticClass: "border" }, [
-        _c("span", [_vm._v("Button")]),
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("button", { staticClass: "border round" }, [_vm._v("Button")]),
-      _c("button", { staticClass: "border round" }, [
-        _c("i", [_vm._v("place")]),
-        _c("span", [_vm._v("Button")])
-      ]),
-      _c("button", { staticClass: "border round" }, [
-        _c("span", [_vm._v("Button")]),
-        _c("i", [_vm._v("delete")])
-      ]),
-      _c("button", { staticClass: "border circle" }, [_vm._v("B")]),
-      _c("button", { staticClass: "border circle" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "border diamond" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "border square" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "border square left-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "border square top-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "border square right-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "border square bottom-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "border square top-round left-round" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("button", { staticClass: "border square bottom-round right-round" }, [
-        _c("i", [_vm._v("home")])
-      ])
+    return _c("button", [
+      _c("i", [_vm._v("search")]),
+      _c("span", [_vm._v("Button")])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "round" }, [
+      _c("i", [_vm._v("place")]),
+      _c("span", [_vm._v("Button")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "circle" }, [_c("i", [_vm._v("home")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "diamond" }, [_c("i", [_vm._v("home")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "square" }, [_c("i", [_vm._v("home")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "square left-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "square top-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "square right-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "square bottom-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "square top-round left-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "square bottom-round right-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "border" }, [
+      _c("i", [_vm._v("search")]),
+      _c("span", [_vm._v("Button")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "border round" }, [
+      _c("i", [_vm._v("place")]),
+      _c("span", [_vm._v("Button")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "border circle" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "border diamond" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "border square" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "border square left-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "border square top-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "border square right-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "border square bottom-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", { staticClass: "border square top-round left-round" }, [
+      _c("i", [_vm._v("home")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "border square bottom-round right-round" },
+      [_c("i", [_vm._v("home")])]
+    )
   },
   function() {
     var _vm = this
@@ -16251,100 +17215,200 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
-      _c("a", { staticClass: "chip" }, [_vm._v("Filter")]),
-      _c("a", { staticClass: "chip" }, [
-        _c("i", { staticClass: "small" }, [_vm._v("done")]),
-        _c("span", [_vm._v("Filter")])
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: {
+            id: "small-chips",
+            type: "radio",
+            name: "size-chips",
+            checked: "checked"
+          }
+        }),
+        _c("span", [_vm._v("small")])
       ]),
-      _c("a", { staticClass: "chip circle" }, [_vm._v("A")]),
-      _c("a", { staticClass: "chip circle" }, [_c("i", [_vm._v("search")])]),
-      _c("a", { staticClass: "chip diamond" }, [_c("i", [_vm._v("search")])]),
-      _c("a", { staticClass: "chip square" }, [_c("i", [_vm._v("search")])]),
-      _c("a", { staticClass: "chip square left-round" }, [
-        _c("i", [_vm._v("search")])
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: { id: "medium-chips", type: "radio", name: "size-chips" }
+        }),
+        _c("span", [_vm._v("medium")])
       ]),
-      _c("a", { staticClass: "chip square top-round" }, [
-        _c("i", [_vm._v("search")])
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: { id: "large-chips", type: "radio", name: "size-chips" }
+        }),
+        _c("span", [_vm._v("large")])
       ]),
-      _c("a", { staticClass: "chip square right-round" }, [
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", { staticClass: "chip square bottom-round" }, [
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", { staticClass: "chip square top-round left-round" }, [
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", { staticClass: "chip square bottom-round right-round" }, [
-        _c("i", [_vm._v("search")])
-      ]),
-      _c("a", { staticClass: "chip active" }, [_vm._v("Filter")]),
-      _c("a", { staticClass: "chip active" }, [
-        _c("i", { staticClass: "small" }, [_vm._v("done")]),
-        _c("span", [_vm._v("Filter")])
-      ]),
-      _c("a", { staticClass: "chip circle active" }, [_vm._v("B")]),
-      _c("a", { staticClass: "chip circle active" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", { staticClass: "chip diamond active" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", { staticClass: "chip square active" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", { staticClass: "chip square left-round active" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", { staticClass: "chip square top-round active" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", { staticClass: "chip square right-round active" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", { staticClass: "chip square bottom-round active" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", { staticClass: "chip square top-round left-round active" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", { staticClass: "chip square bottom-round right-round active" }, [
-        _c("i", [_vm._v("home")])
-      ]),
-      _c("a", { staticClass: "chip border" }, [_vm._v("Filter")]),
-      _c("a", { staticClass: "chip border" }, [
-        _c("i", { staticClass: "small" }, [_vm._v("done")]),
-        _c("span", [_vm._v("Filter")])
-      ]),
-      _c("a", { staticClass: "chip circle border" }, [_vm._v("C")]),
-      _c("a", { staticClass: "chip circle border" }, [
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("a", { staticClass: "chip diamond border" }, [
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("a", { staticClass: "chip square border" }, [
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("a", { staticClass: "chip square border left-round" }, [
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("a", { staticClass: "chip square border top-round" }, [
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("a", { staticClass: "chip square border right-round" }, [
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("a", { staticClass: "chip square border bottom-round" }, [
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("a", { staticClass: "chip square border top-round left-round" }, [
-        _c("i", [_vm._v("refresh")])
-      ]),
-      _c("a", { staticClass: "chip square border bottom-round right-round" }, [
-        _c("i", [_vm._v("refresh")])
+      _c("label", { staticClass: "checkbox" }, [
+        _c("input", {
+          attrs: { id: "active-chips", type: "checkbox", name: "active-chips" }
+        }),
+        _c("span", [_vm._v("active")])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip" }, [
+      _c("i", { staticClass: "small" }, [_vm._v("done")]),
+      _c("span", [_vm._v("Chip")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip circle" }, [
+      _c("i", [_vm._v("search")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip diamond" }, [
+      _c("i", [_vm._v("search")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square" }, [
+      _c("i", [_vm._v("search")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square left-round" }, [
+      _c("i", [_vm._v("search")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square top-round" }, [
+      _c("i", [_vm._v("search")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square right-round" }, [
+      _c("i", [_vm._v("search")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square bottom-round" }, [
+      _c("i", [_vm._v("search")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square top-round left-round" }, [
+      _c("i", [_vm._v("search")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square bottom-round right-round" }, [
+      _c("i", [_vm._v("search")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip border" }, [
+      _c("i", { staticClass: "small" }, [_vm._v("done")]),
+      _c("span", [_vm._v("Chip")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip circle border" }, [
+      _c("i", [_vm._v("refresh")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip diamond border" }, [
+      _c("i", [_vm._v("refresh")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square border" }, [
+      _c("i", [_vm._v("refresh")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square border left-round" }, [
+      _c("i", [_vm._v("refresh")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square border top-round" }, [
+      _c("i", [_vm._v("refresh")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square border right-round" }, [
+      _c("i", [_vm._v("refresh")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square border bottom-round" }, [
+      _c("i", [_vm._v("refresh")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "chip square border top-round left-round" }, [
+      _c("i", [_vm._v("refresh")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "chip square border bottom-round right-round" },
+      [_c("i", [_vm._v("refresh")])]
+    )
   },
   function() {
     var _vm = this
@@ -16586,8 +17650,11 @@ var staticRenderFns = [
               _c("tr", [
                 _c("td", [
                   _c(
-                    "div",
-                    { staticClass: "button small border circle no-margin" },
+                    "a",
+                    {
+                      staticClass:
+                        "button border color-1-border circle medium no-margin absolute middle center"
+                    },
                     [_vm._v("8")]
                   )
                 ]),
@@ -16618,9 +17685,14 @@ var staticRenderFns = [
                   _c("a", { staticClass: "button none" }, [_vm._v("16")])
                 ]),
                 _c("td", [
-                  _c("a", { staticClass: "button small circle no-margin" }, [
-                    _vm._v("17")
-                  ])
+                  _c(
+                    "a",
+                    {
+                      staticClass:
+                        "button circle medium no-margin absolute middle center"
+                    },
+                    [_vm._v("17")]
+                  )
                 ]),
                 _c("td", [
                   _c("a", { staticClass: "button none" }, [_vm._v("18")])
@@ -16799,72 +17871,103 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label" }, [
-          _c("input", { attrs: { type: "text" } }),
-          _c("label", [_vm._v("Text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label prefix" }, [
-          _c("i", [_vm._v("search")]),
-          _c("input", { attrs: { type: "text" } }),
-          _c("label", [_vm._v("Text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label sufix" }, [
-          _c("input", { attrs: { type: "text" } }),
-          _c("label", [_vm._v("Text")]),
-          _c("i", [_vm._v("search")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label" }, [
-          _c("input", { attrs: { type: "text" } }),
-          _c("label", [_vm._v("Text")]),
-          _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label prefix" }, [
-          _c("i", [_vm._v("search")]),
-          _c("input", { attrs: { type: "text" } }),
-          _c("label", [_vm._v("Text")]),
-          _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label sufix" }, [
-          _c("input", { attrs: { type: "text" } }),
-          _c("label", [_vm._v("Text")]),
-          _c("i", [_vm._v("search")]),
-          _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label invalid" }, [
-          _c("input", { attrs: { type: "text" } }),
-          _c("label", [_vm._v("Text")]),
-          _c("span", { staticClass: "error" }, [_vm._v("Error text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label prefix invalid" }, [
-          _c("i", [_vm._v("search")]),
-          _c("input", { attrs: { type: "text" } }),
-          _c("label", [_vm._v("Text")]),
-          _c("span", { staticClass: "error" }, [_vm._v("Error text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label sufix invalid" }, [
-          _c("input", { attrs: { type: "text" } }),
-          _c("label", [_vm._v("Text")]),
-          _c("i", [_vm._v("search")]),
-          _c("span", { staticClass: "error" }, [_vm._v("Error text")])
-        ])
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field" }, [
+        _c("input", { attrs: { type: "text" } })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field" }, [
+        _c("input", { attrs: { type: "text" } }),
+        _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field invalid" }, [
+        _c("input", { attrs: { type: "text" } }),
+        _c("span", { staticClass: "error" }, [_vm._v("Error text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field label" }, [
+        _c("input", { attrs: { type: "text" } }),
+        _c("label", [_vm._v("Text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field label" }, [
+        _c("input", { attrs: { type: "text" } }),
+        _c("label", [_vm._v("Text")]),
+        _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field label invalid" }, [
+        _c("input", { attrs: { type: "text" } }),
+        _c("label", [_vm._v("Text")]),
+        _c("span", { staticClass: "error" }, [_vm._v("Error text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field label prefix" }, [
+        _c("i", [_vm._v("search")]),
+        _c("input", { attrs: { type: "text" } }),
+        _c("label", [_vm._v("Text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field label sufix" }, [
+        _c("input", { attrs: { type: "text" } }),
+        _c("label", [_vm._v("Text")]),
+        _c("i", [_vm._v("search")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field label prefix sufix" }, [
+        _c("i", [_vm._v("search")]),
+        _c("input", { attrs: { type: "text" } }),
+        _c("label", [_vm._v("Text")]),
+        _c("i", [_vm._v("search")])
       ])
     ])
   },
@@ -17363,30 +18466,24 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("nav", [
-        _c("button", { staticClass: "small-device circle" }, [
+        _c("button", { staticClass: "s circle extra" }, [
           _c("i", [_vm._v("phone_android")])
         ]),
-        _c(
-          "button",
-          { staticClass: "medium-device large-device border circle" },
-          [_c("i", [_vm._v("phone_android")])]
-        ),
-        _c("button", { staticClass: "medium-device circle" }, [
+        _c("button", { staticClass: "m l border circle extra" }, [
+          _c("i", [_vm._v("phone_android")])
+        ]),
+        _c("button", { staticClass: "m circle extra" }, [
           _c("i", [_vm._v("tablet_android")])
         ]),
-        _c(
-          "button",
-          { staticClass: "small-device large-device border circle" },
-          [_c("i", [_vm._v("tablet_android")])]
-        ),
-        _c("button", { staticClass: "large-device circle" }, [
+        _c("button", { staticClass: "s l border circle extra" }, [
+          _c("i", [_vm._v("tablet_android")])
+        ]),
+        _c("button", { staticClass: "l circle extra" }, [
           _c("i", [_vm._v("laptop_windows")])
         ]),
-        _c(
-          "button",
-          { staticClass: "small-device medium-device border circle" },
-          [_c("i", [_vm._v("laptop_windows")])]
-        )
+        _c("button", { staticClass: "s m border circle extra" }, [
+          _c("i", [_vm._v("laptop_windows")])
+        ])
       ])
     ])
   },
@@ -17540,77 +18637,127 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12 l6" }, [
-        _c("div", { staticClass: "field label sufix" }, [
-          _c("select", [
-            _c("option", [_vm._v("Item 1")]),
-            _c("option", [_vm._v("Item 2")]),
-            _c("option", [_vm._v("Item 3")])
-          ]),
-          _c("label", { staticClass: "active" }, [_vm._v("List")]),
-          _c("i", [_vm._v("arrow_drop_down")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l6" }, [
-        _c("div", { staticClass: "field label prefix" }, [
-          _c("i", [_vm._v("arrow_drop_down")]),
-          _c("select", [
-            _c("option", [_vm._v("Item 1")]),
-            _c("option", [_vm._v("Item 2")]),
-            _c("option", [_vm._v("Item 3")])
-          ]),
-          _c("label", { staticClass: "active" }, [_vm._v("List")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l6" }, [
-        _c("div", { staticClass: "field label sufix" }, [
-          _c("select", [
-            _c("option", [_vm._v("Item 1")]),
-            _c("option", [_vm._v("Item 2")]),
-            _c("option", [_vm._v("Item 3")])
-          ]),
-          _c("label", { staticClass: "active" }, [_vm._v("List")]),
-          _c("i", [_vm._v("arrow_drop_down")]),
-          _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l6" }, [
-        _c("div", { staticClass: "field label prefix" }, [
-          _c("i", [_vm._v("arrow_drop_down")]),
-          _c("select", [
-            _c("option", [_vm._v("Item 1")]),
-            _c("option", [_vm._v("Item 2")]),
-            _c("option", [_vm._v("Item 3")])
-          ]),
-          _c("label", { staticClass: "active" }, [_vm._v("List")]),
-          _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l6" }, [
-        _c("div", { staticClass: "field label sufix invalid" }, [
-          _c("select", [
-            _c("option", [_vm._v("Item 1")]),
-            _c("option", [_vm._v("Item 2")]),
-            _c("option", [_vm._v("Item 3")])
-          ]),
-          _c("label", { staticClass: "active" }, [_vm._v("List")]),
-          _c("i", [_vm._v("arrow_drop_down")]),
-          _c("span", { staticClass: "error" }, [_vm._v("Error text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l6" }, [
-        _c("div", { staticClass: "field label prefix invalid" }, [
-          _c("i", [_vm._v("arrow_drop_down")]),
-          _c("select", [
-            _c("option", [_vm._v("Item 1")]),
-            _c("option", [_vm._v("Item 2")]),
-            _c("option", [_vm._v("Item 3")])
-          ]),
-          _c("label", { staticClass: "active" }, [_vm._v("List")]),
-          _c("span", { staticClass: "error" }, [_vm._v("Error text")])
-        ])
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field sufix" }, [
+        _c("select", [
+          _c("option", [_vm._v("Item 1")]),
+          _c("option", [_vm._v("Item 2")]),
+          _c("option", [_vm._v("Item 3")])
+        ]),
+        _c("i", [_vm._v("arrow_drop_down")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field sufix" }, [
+        _c("select", [
+          _c("option", [_vm._v("Item 1")]),
+          _c("option", [_vm._v("Item 2")]),
+          _c("option", [_vm._v("Item 3")])
+        ]),
+        _c("i", [_vm._v("arrow_drop_down")]),
+        _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field sufix invalid" }, [
+        _c("select", [
+          _c("option", [_vm._v("Item 1")]),
+          _c("option", [_vm._v("Item 2")]),
+          _c("option", [_vm._v("Item 3")])
+        ]),
+        _c("i", [_vm._v("arrow_drop_down")]),
+        _c("span", { staticClass: "error" }, [_vm._v("Error text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field label sufix" }, [
+        _c("select", [
+          _c("option", [_vm._v("Item 1")]),
+          _c("option", [_vm._v("Item 2")]),
+          _c("option", [_vm._v("Item 3")])
+        ]),
+        _c("label", { staticClass: "active" }, [_vm._v("List")]),
+        _c("i", [_vm._v("arrow_drop_down")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field label sufix" }, [
+        _c("select", [
+          _c("option", [_vm._v("Item 1")]),
+          _c("option", [_vm._v("Item 2")]),
+          _c("option", [_vm._v("Item 3")])
+        ]),
+        _c("label", { staticClass: "active" }, [_vm._v("List")]),
+        _c("i", [_vm._v("arrow_drop_down")]),
+        _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field label sufix invalid" }, [
+        _c("select", [
+          _c("option", [_vm._v("Item 1")]),
+          _c("option", [_vm._v("Item 2")]),
+          _c("option", [_vm._v("Item 3")])
+        ]),
+        _c("label", { staticClass: "active" }, [_vm._v("List")]),
+        _c("i", [_vm._v("arrow_drop_down")]),
+        _c("span", { staticClass: "error" }, [_vm._v("Error text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("select", [
+      _c("option", [_vm._v("Item 1")]),
+      _c("option", [_vm._v("Item 2")]),
+      _c("option", [_vm._v("Item 3")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("select", [
+      _c("option", [_vm._v("Item 1")]),
+      _c("option", [_vm._v("Item 2")]),
+      _c("option", [_vm._v("Item 3")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("select", [
+      _c("option", [_vm._v("Item 1")]),
+      _c("option", [_vm._v("Item 2")]),
+      _c("option", [_vm._v("Item 3")])
     ])
   },
   function() {
@@ -17945,36 +19092,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("div", { staticClass: "tabs" }, [
-        _c("a", { staticClass: "active", attrs: { "data-ui": "#tab7" } }, [
-          _c("span", [_vm._v("Tab 1")]),
-          _c("i", [_vm._v("home")])
-        ]),
-        _c("a", { attrs: { "data-ui": "#tab8" } }, [
-          _c("span", [_vm._v("Tab 2")]),
-          _c("i", [_vm._v("home")])
-        ]),
-        _c("a", { attrs: { "data-ui": "#tab9" } }, [
-          _c("span", [_vm._v("Tab 3")]),
-          _c("i", [_vm._v("home")])
-        ])
-      ]),
-      _c("div", { staticClass: "page padding active", attrs: { id: "tab7" } }, [
-        _c("h5", [_vm._v("Tab 1")])
-      ]),
-      _c("div", { staticClass: "page padding", attrs: { id: "tab8" } }, [
-        _c("h5", [_vm._v("Tab 2")])
-      ]),
-      _c("div", { staticClass: "page padding", attrs: { id: "tab9" } }, [
-        _c("h5", [_vm._v("Tab 3")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "tabs" }, [
         _c("a", { staticClass: "active", attrs: { "data-ui": "#tab10" } }, [
           _c("i", { staticClass: "wrap" }, [_vm._v("home")]),
           _c("span", [_vm._v("Tab 1")])
@@ -18005,32 +19122,52 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "tabs" }, [
-        _c("a", { staticClass: "active", attrs: { "data-ui": "#tab13" } }, [
-          _c("span", [_vm._v("Tab 1")]),
-          _c("i", { staticClass: "wrap" }, [_vm._v("home")])
-        ]),
-        _c("a", { attrs: { "data-ui": "#tab14" } }, [
-          _c("span", [_vm._v("Tab 2")]),
-          _c("i", { staticClass: "wrap" }, [_vm._v("home")])
-        ]),
-        _c("a", { attrs: { "data-ui": "#tab15" } }, [
-          _c("span", [_vm._v("Tab 3")]),
-          _c("i", { staticClass: "wrap" }, [_vm._v("home")])
-        ])
-      ]),
-      _c(
-        "div",
-        { staticClass: "page padding active", attrs: { id: "tab13" } },
-        [_c("h5", [_vm._v("Tab 1")])]
-      ),
-      _c("div", { staticClass: "page padding", attrs: { id: "tab14" } }, [
-        _c("h5", [_vm._v("Tab 2")])
-      ]),
-      _c("div", { staticClass: "page padding", attrs: { id: "tab15" } }, [
-        _c("h5", [_vm._v("Tab 3")])
-      ])
+    return _c(
+      "div",
+      { staticClass: "page padding active", attrs: { id: "tab7" } },
+      [_c("h5", [_vm._v("Tab 1")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page padding", attrs: { id: "tab8" } }, [
+      _c("h5", [_vm._v("Tab 2")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page padding", attrs: { id: "tab9" } }, [
+      _c("h5", [_vm._v("Tab 3")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "page padding active", attrs: { id: "tab13" } },
+      [_c("h5", [_vm._v("Tab 1")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page padding", attrs: { id: "tab14" } }, [
+      _c("h5", [_vm._v("Tab 2")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page padding", attrs: { id: "tab15" } }, [
+      _c("h5", [_vm._v("Tab 3")])
     ])
   },
   function() {
@@ -18087,72 +19224,101 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label textarea" }, [
-          _c("textarea"),
-          _c("label", [_vm._v("Text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label prefix textarea" }, [
-          _c("i", [_vm._v("search")]),
-          _c("textarea"),
-          _c("label", [_vm._v("Text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label sufix textarea" }, [
-          _c("textarea"),
-          _c("label", [_vm._v("Text")]),
-          _c("i", [_vm._v("search")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label textarea" }, [
-          _c("textarea"),
-          _c("label", [_vm._v("Text")]),
-          _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label prefix textarea" }, [
-          _c("i", [_vm._v("search")]),
-          _c("textarea"),
-          _c("label", [_vm._v("Text")]),
-          _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label sufix textarea" }, [
-          _c("textarea"),
-          _c("label", [_vm._v("Text")]),
-          _c("i", [_vm._v("search")]),
-          _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label invalid textarea" }, [
-          _c("textarea"),
-          _c("label", [_vm._v("Text")]),
-          _c("span", { staticClass: "error" }, [_vm._v("Error text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label prefix invalid textarea" }, [
-          _c("i", [_vm._v("search")]),
-          _c("textarea"),
-          _c("label", [_vm._v("Text")]),
-          _c("span", { staticClass: "error" }, [_vm._v("Error text")])
-        ])
-      ]),
-      _c("div", { staticClass: "col s12 l4" }, [
-        _c("div", { staticClass: "field label sufix invalid textarea" }, [
-          _c("textarea"),
-          _c("label", [_vm._v("Text")]),
-          _c("i", [_vm._v("search")]),
-          _c("span", { staticClass: "error" }, [_vm._v("Error text")])
-        ])
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field textarea" }, [_c("textarea")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field textarea" }, [
+        _c("textarea"),
+        _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field textarea invalid" }, [
+        _c("textarea"),
+        _c("span", { staticClass: "error" }, [_vm._v("Error text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field textarea label" }, [
+        _c("textarea"),
+        _c("label", [_vm._v("Text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field textarea label" }, [
+        _c("textarea"),
+        _c("label", [_vm._v("Text")]),
+        _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field textarea label invalid" }, [
+        _c("textarea"),
+        _c("label", [_vm._v("Text")]),
+        _c("span", { staticClass: "error" }, [_vm._v("Error text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field textarea label prefix" }, [
+        _c("i", [_vm._v("search")]),
+        _c("textarea"),
+        _c("label", [_vm._v("Text")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field textarea label sufix" }, [
+        _c("textarea"),
+        _c("label", [_vm._v("Text")]),
+        _c("i", [_vm._v("search")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col s12 l4" }, [
+      _c("div", { staticClass: "field textarea label prefix sufix" }, [
+        _c("i", [_vm._v("search")]),
+        _c("textarea"),
+        _c("label", [_vm._v("Text")]),
+        _c("i", [_vm._v("search")])
       ])
     ])
   },
@@ -18221,126 +19387,122 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "medium-device large-device", attrs: { id: "helpers" } },
-      [
-        _c("h5", [_vm._v("Helpers")]),
-        _c("div", { staticClass: "row no-wrap" }, [
-          _c("div", { staticClass: "col" }, [
-            _c("b", [_vm._v("Position")]),
-            _c("div", [_vm._v("left")]),
-            _c("div", [_vm._v("right")]),
-            _c("div", [_vm._v("center")]),
-            _c("div", [_vm._v("top")]),
-            _c("div", [_vm._v("bottom")]),
-            _c("div", [_vm._v("middle")]),
-            _c("div", [_vm._v("front")]),
-            _c("div", [_vm._v("back")])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("b", [_vm._v("Alignment")]),
-            _c("div", [_vm._v("left-align")]),
-            _c("div", [_vm._v("right-align")]),
-            _c("div", [_vm._v("center-align")]),
-            _c("div", [_vm._v("top-align")]),
-            _c("div", [_vm._v("bottom-align")]),
-            _c("div", [_vm._v("middle-align")])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("b", [_vm._v("Size")]),
-            _c("div", [_vm._v("small")]),
-            _c("div", [_vm._v("medium")]),
-            _c("div", [_vm._v("large")]),
-            _c("div", [_vm._v("small-width")]),
-            _c("div", [_vm._v("medium-width")]),
-            _c("div", [_vm._v("large-width")]),
-            _c("div", [_vm._v("small-height")]),
-            _c("div", [_vm._v("medium-height")]),
-            _c("div", [_vm._v("large-height")])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("b", [_vm._v("Margin")]),
-            _c("div", [_vm._v("margin")]),
-            _c("div", [_vm._v("no-margin")]),
-            _c("div", [_vm._v("small-margin")]),
-            _c("div", [_vm._v("medium-margin")]),
-            _c("div", [_vm._v("large-margin")])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("b", [_vm._v("Padding")]),
-            _c("div", [_vm._v("padding")]),
-            _c("div", [_vm._v("no-padding")]),
-            _c("div", [_vm._v("small-padding")]),
-            _c("div", [_vm._v("medium-padding")]),
-            _c("div", [_vm._v("large-padding")])
-          ])
+    return _c("div", { staticClass: "m l", attrs: { id: "helpers" } }, [
+      _c("h5", [_vm._v("Helpers")]),
+      _c("div", { staticClass: "row no-wrap" }, [
+        _c("div", { staticClass: "col" }, [
+          _c("b", [_vm._v("Position")]),
+          _c("div", [_vm._v("left")]),
+          _c("div", [_vm._v("right")]),
+          _c("div", [_vm._v("center")]),
+          _c("div", [_vm._v("top")]),
+          _c("div", [_vm._v("bottom")]),
+          _c("div", [_vm._v("middle")]),
+          _c("div", [_vm._v("front")]),
+          _c("div", [_vm._v("back")])
         ]),
-        _c("div", { staticClass: "row no-wrap" }, [
-          _c("div", { staticClass: "col" }, [
-            _c("b", [_vm._v("Spacing")]),
-            _c("div", [_vm._v("space")]),
-            _c("div", [_vm._v("small-space")]),
-            _c("div", [_vm._v("medium-space")]),
-            _c("div", [_vm._v("large-space")]),
-            _c("div", [_vm._v("divider")]),
-            _c("div", [_vm._v("small-divider")]),
-            _c("div", [_vm._v("medium-divider")]),
-            _c("div", [_vm._v("large-divider")])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("b", [_vm._v("Form")]),
-            _c("div", [_vm._v("border")]),
-            _c("div", [_vm._v("round")]),
-            _c("div", [_vm._v("left-round")]),
-            _c("div", [_vm._v("right-round")]),
-            _c("div", [_vm._v("top-round")]),
-            _c("div", [_vm._v("bottom-round")]),
-            _c("div", [_vm._v("circle")]),
-            _c("div", [_vm._v("flat")]),
-            _c("div", [_vm._v("square")])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("b", [_vm._v("Texts")]),
-            _c("div", [_vm._v("italic")]),
-            _c("div", [_vm._v("bold")]),
-            _c("div", [_vm._v("underline")]),
-            _c("div", [_vm._v("overline")]),
-            _c("div", [_vm._v("upper")]),
-            _c("div", [_vm._v("lower")]),
-            _c("div", [_vm._v("capitalize")]),
-            _c("div", [_vm._v("link")]),
-            _c("div", [_vm._v("small-text")]),
-            _c("div", [_vm._v("medium-text")]),
-            _c("div", [_vm._v("large-text")])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("b", [_vm._v("Others")]),
-            _c("div", [_vm._v("shadow")]),
-            _c("div", [_vm._v("right-shadow")]),
-            _c("div", [_vm._v("left-shadow")]),
-            _c("div", [_vm._v("bottom-shadow")]),
-            _c("div", [_vm._v("top-shadow")]),
-            _c("div", [_vm._v("small-device")]),
-            _c("div", [_vm._v("medium-device")]),
-            _c("div", [_vm._v("large-device")]),
-            _c("div", [_vm._v("active")]),
-            _c("div", [_vm._v("wrap")]),
-            _c("div", [_vm._v("no-wrap")]),
-            _c("div", [_vm._v("scroll")]),
-            _c("div", [_vm._v("no-scroll")]),
-            _c("div", [_vm._v("wave")]),
-            _c("div", [_vm._v("no-wave")])
-          ]),
-          _c("div", { staticClass: "col" }, [
-            _c("b", [_vm._v("Themes")]),
-            _c("div", [_vm._v("is-dark")]),
-            _c("div", [_vm._v("is-light")])
-          ])
+        _c("div", { staticClass: "col" }, [
+          _c("b", [_vm._v("Alignment")]),
+          _c("div", [_vm._v("left-align")]),
+          _c("div", [_vm._v("right-align")]),
+          _c("div", [_vm._v("center-align")]),
+          _c("div", [_vm._v("top-align")]),
+          _c("div", [_vm._v("bottom-align")]),
+          _c("div", [_vm._v("middle-align")])
         ]),
-        _c("div", { staticClass: "space" })
-      ]
-    )
+        _c("div", { staticClass: "col" }, [
+          _c("b", [_vm._v("Size")]),
+          _c("div", [_vm._v("small")]),
+          _c("div", [_vm._v("medium")]),
+          _c("div", [_vm._v("large")]),
+          _c("div", [_vm._v("small-width")]),
+          _c("div", [_vm._v("medium-width")]),
+          _c("div", [_vm._v("large-width")]),
+          _c("div", [_vm._v("small-height")]),
+          _c("div", [_vm._v("medium-height")]),
+          _c("div", [_vm._v("large-height")])
+        ]),
+        _c("div", { staticClass: "col" }, [
+          _c("b", [_vm._v("Margin")]),
+          _c("div", [_vm._v("margin")]),
+          _c("div", [_vm._v("no-margin")]),
+          _c("div", [_vm._v("small-margin")]),
+          _c("div", [_vm._v("medium-margin")]),
+          _c("div", [_vm._v("large-margin")])
+        ]),
+        _c("div", { staticClass: "col" }, [
+          _c("b", [_vm._v("Padding")]),
+          _c("div", [_vm._v("padding")]),
+          _c("div", [_vm._v("no-padding")]),
+          _c("div", [_vm._v("small-padding")]),
+          _c("div", [_vm._v("medium-padding")]),
+          _c("div", [_vm._v("large-padding")])
+        ])
+      ]),
+      _c("div", { staticClass: "row no-wrap" }, [
+        _c("div", { staticClass: "col" }, [
+          _c("b", [_vm._v("Spacing")]),
+          _c("div", [_vm._v("space")]),
+          _c("div", [_vm._v("small-space")]),
+          _c("div", [_vm._v("medium-space")]),
+          _c("div", [_vm._v("large-space")]),
+          _c("div", [_vm._v("divider")]),
+          _c("div", [_vm._v("small-divider")]),
+          _c("div", [_vm._v("medium-divider")]),
+          _c("div", [_vm._v("large-divider")])
+        ]),
+        _c("div", { staticClass: "col" }, [
+          _c("b", [_vm._v("Form")]),
+          _c("div", [_vm._v("border")]),
+          _c("div", [_vm._v("round")]),
+          _c("div", [_vm._v("left-round")]),
+          _c("div", [_vm._v("right-round")]),
+          _c("div", [_vm._v("top-round")]),
+          _c("div", [_vm._v("bottom-round")]),
+          _c("div", [_vm._v("circle")]),
+          _c("div", [_vm._v("flat")]),
+          _c("div", [_vm._v("square")])
+        ]),
+        _c("div", { staticClass: "col" }, [
+          _c("b", [_vm._v("Texts")]),
+          _c("div", [_vm._v("italic")]),
+          _c("div", [_vm._v("bold")]),
+          _c("div", [_vm._v("underline")]),
+          _c("div", [_vm._v("overline")]),
+          _c("div", [_vm._v("upper")]),
+          _c("div", [_vm._v("lower")]),
+          _c("div", [_vm._v("capitalize")]),
+          _c("div", [_vm._v("link")]),
+          _c("div", [_vm._v("small-text")]),
+          _c("div", [_vm._v("medium-text")]),
+          _c("div", [_vm._v("large-text")])
+        ]),
+        _c("div", { staticClass: "col" }, [
+          _c("b", [_vm._v("Others")]),
+          _c("div", [_vm._v("shadow")]),
+          _c("div", [_vm._v("right-shadow")]),
+          _c("div", [_vm._v("left-shadow")]),
+          _c("div", [_vm._v("bottom-shadow")]),
+          _c("div", [_vm._v("top-shadow")]),
+          _c("div", [_vm._v("s")]),
+          _c("div", [_vm._v("m")]),
+          _c("div", [_vm._v("l")]),
+          _c("div", [_vm._v("active")]),
+          _c("div", [_vm._v("wrap")]),
+          _c("div", [_vm._v("no-wrap")]),
+          _c("div", [_vm._v("scroll")]),
+          _c("div", [_vm._v("no-scroll")]),
+          _c("div", [_vm._v("wave")]),
+          _c("div", [_vm._v("no-wave")])
+        ]),
+        _c("div", { staticClass: "col" }, [
+          _c("b", [_vm._v("Themes")]),
+          _c("div", [_vm._v("is-dark")]),
+          _c("div", [_vm._v("is-light")])
+        ])
+      ]),
+      _c("div", { staticClass: "space" })
+    ])
   },
   function() {
     var _vm = this
@@ -18369,7 +19531,9 @@ var staticRenderFns = [
           _c("span", { staticClass: "grey-text" }, [
             _vm._v("small, medium, large, border, round, circle, flat, ")
           ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("none, diamond")])
+          _c("span", { staticClass: "orange-text" }, [
+            _vm._v("none, diamond, extra")
+          ])
         ]),
         _c("div", [
           _c("span", [_vm._v("chip ")]),
@@ -18491,7 +19655,9 @@ var staticRenderFns = [
           _c("span", { staticClass: "grey-text" }, [
             _vm._v("small, medium, large, border, round, circle, flat, ")
           ]),
-          _c("span", { staticClass: "orange-text" }, [_vm._v("none, diamond")])
+          _c("span", { staticClass: "orange-text" }, [
+            _vm._v("none, diamond, extra")
+          ])
         ]),
         _c("div", [_c("span", [_vm._v("<circle>")])]),
         _c("div", [
@@ -19375,7 +20541,10 @@ var staticRenderFns = [
                   _c("td", [
                     _c(
                       "button",
-                      { staticClass: "small border circle no-margin" },
+                      {
+                        staticClass:
+                          "border circle medium no-margin color-1-border absolute middle center"
+                      },
                       [_vm._v("8")]
                     )
                   ]),
@@ -19406,9 +20575,14 @@ var staticRenderFns = [
                     _c("button", { staticClass: "none" }, [_vm._v("16")])
                   ]),
                   _c("td", [
-                    _c("button", { staticClass: "small circle no-margin" }, [
-                      _vm._v("17")
-                    ])
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "circle medium no-margin absolute middle center"
+                      },
+                      [_vm._v("17")]
+                    )
                   ]),
                   _c("td", [
                     _c("button", { staticClass: "none" }, [_vm._v("18")])
@@ -19580,7 +20754,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col" }, [
-      _c("div", { staticClass: "h5" }, [_vm._v("Test your changes here")]),
+      _c("h5", [_vm._v("Test your changes here")]),
       _c("div", [_vm._v("Click on icon to change theme")])
     ])
   }
@@ -19613,12 +20787,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -19854,58 +21022,54 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      { staticClass: "menu left large flat medium-device large-device" },
-      [
-        _c("div", { staticClass: "large-space" }),
-        _c("div", { staticClass: "large-space" }),
-        _c(
-          "a",
-          {
-            class: { active: _vm.url == "/youtube" },
-            attrs: { href: "/youtube" }
-          },
-          [_c("i", [_vm._v("home")]), _c("div", [_vm._v("Home")])]
-        ),
-        _c(
-          "a",
-          {
-            class: { active: _vm.url == "/youtube/whats-hot" },
-            attrs: { href: "/youtube/whats-hot" }
-          },
-          [_c("i", [_vm._v("whatshot")]), _c("div", [_vm._v("What's hot")])]
-        ),
-        _c(
-          "a",
-          {
-            class: { active: _vm.url == "/youtube/subscriptions" },
-            attrs: { href: "/youtube/subscriptions" }
-          },
-          [_c("i", [_vm._v("subscriptions")]), _c("div", [_vm._v("Subscript")])]
-        ),
-        _c(
-          "a",
-          {
-            class: { active: _vm.url == "/youtube/library" },
-            attrs: { href: "/youtube/library" }
-          },
-          [_c("i", [_vm._v("video_library")]), _c("div", [_vm._v("Library")])]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateTheme()
-              }
+    _c("div", { staticClass: "menu left large flat m l" }, [
+      _c("div", { staticClass: "large-space" }),
+      _c("div", { staticClass: "large-space" }),
+      _c(
+        "a",
+        {
+          class: { active: _vm.url == "/youtube" },
+          attrs: { href: "/youtube" }
+        },
+        [_c("i", [_vm._v("home")]), _c("div", [_vm._v("Home")])]
+      ),
+      _c(
+        "a",
+        {
+          class: { active: _vm.url == "/youtube/whats-hot" },
+          attrs: { href: "/youtube/whats-hot" }
+        },
+        [_c("i", [_vm._v("whatshot")]), _c("div", [_vm._v("What's hot")])]
+      ),
+      _c(
+        "a",
+        {
+          class: { active: _vm.url == "/youtube/subscriptions" },
+          attrs: { href: "/youtube/subscriptions" }
+        },
+        [_c("i", [_vm._v("subscriptions")]), _c("div", [_vm._v("Subscript")])]
+      ),
+      _c(
+        "a",
+        {
+          class: { active: _vm.url == "/youtube/library" },
+          attrs: { href: "/youtube/library" }
+        },
+        [_c("i", [_vm._v("video_library")]), _c("div", [_vm._v("Library")])]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateTheme()
             }
-          },
-          [_c("i", [_vm._v("brightness_medium")]), _c("div", [_vm._v("Theme")])]
-        )
-      ]
-    ),
-    _c("div", { staticClass: "menu bottom border small-device" }, [
+          }
+        },
+        [_c("i", [_vm._v("brightness_medium")]), _c("div", [_vm._v("Theme")])]
+      )
+    ]),
+    _c("div", { staticClass: "menu bottom border s" }, [
       _c(
         "a",
         {
@@ -19982,7 +21146,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass: "none color-2-text medium-device large-device",
+                staticClass: "none color-2-text m l",
                 attrs: { "data-ui": "#dropdown-apps" }
               },
               [
@@ -20114,7 +21278,7 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "none color-2-text medium-device large-device",
+        staticClass: "none color-2-text m l",
         attrs: { "data-ui": "#modal-expanded" }
       },
       [_c("i", [_vm._v("menu")])]
@@ -20127,10 +21291,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col" }, [
       _c(
         "div",
-        {
-          staticClass:
-            "field round sufix prefix small no-margin medium-device large-device"
-        },
+        { staticClass: "field round sufix prefix small no-margin m l" },
         [
           _c("i", { staticClass: "front" }, [_vm._v("search")]),
           _c("input", {
@@ -20149,7 +21310,7 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "none color-2-text small-device",
+        staticClass: "none color-2-text s",
         attrs: { "data-ui": "#modal-search" }
       },
       [_c("i", [_vm._v("search")])]
@@ -20162,7 +21323,7 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "none color-2-text medium-device large-device",
+        staticClass: "none color-2-text m l",
         attrs: { "data-ui": "#dropdown-add" }
       },
       [
@@ -21468,16 +22629,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default = {
   created: function created() {
     window.$layout = this;
@@ -21532,7 +22683,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass: "none white-text small-device",
+                staticClass: "none white-text s",
                 attrs: { "data-ui": "#dropdown-menu" }
               },
               [
@@ -21626,8 +22777,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass:
-                  "none white-text capitalize medium-device large-device",
+                staticClass: "none white-text capitalize m l",
                 on: {
                   click: function($event) {
                     return _vm.scroll("#home")
@@ -21639,8 +22789,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass:
-                  "none white-text capitalize medium-device large-device",
+                staticClass: "none white-text capitalize m l",
                 on: {
                   click: function($event) {
                     return _vm.scroll("#series")
@@ -21652,8 +22801,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass:
-                  "none white-text capitalize medium-device large-device",
+                staticClass: "none white-text capitalize m l",
                 on: {
                   click: function($event) {
                     return _vm.scroll("#movies")
@@ -21665,8 +22813,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass:
-                  "none white-text capitalize medium-device large-device",
+                staticClass: "none white-text capitalize m l",
                 on: {
                   click: function($event) {
                     return _vm.scroll("#hot")
@@ -21678,8 +22825,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass:
-                  "none white-text capitalize medium-device large-device",
+                staticClass: "none white-text capitalize m l",
                 on: {
                   click: function($event) {
                     return _vm.scroll("#my-list")
@@ -21844,7 +22990,7 @@ var staticRenderFns = [
       },
       [
         _c("div", { staticClass: "row no-wrap" }, [
-          _c("div", { staticClass: "col medium-device large-device" }),
+          _c("div", { staticClass: "col m l" }),
           _c("div", { staticClass: "col" }, [
             _c(
               "div",
@@ -21859,7 +23005,7 @@ var staticRenderFns = [
               ]
             )
           ]),
-          _c("div", { staticClass: "col medium-device large-device" })
+          _c("div", { staticClass: "col m l" })
         ])
       ]
     )
@@ -22552,10 +23698,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
-//
 var _default = {
   data: function data() {
     return {
@@ -22610,130 +23752,116 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container max" }, [
-    _c(
-      "div",
-      {
-        staticClass:
-          "menu left border large grey-text medium-device large-device"
-      },
-      [
-        _c("div", { staticClass: "large-space" }),
-        _c("div", { staticClass: "medium-space" }),
-        _c(
-          "a",
-          {
-            staticClass: "button white circle large",
-            attrs: { "data-ui": "#modal-add" }
-          },
-          [_c("img", { attrs: { src: "/add.png" } })]
-        ),
-        _c("div", { staticClass: "space" }),
-        _c(
-          "a",
-          {
-            class: { active: this.url == "/gmail" },
-            attrs: { href: "/gmail" }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("inbox")]),
-            _c("div", { staticClass: "tooltip right" }, [_vm._v("Inbox")])
-          ]
-        ),
-        _c(
-          "a",
-          {
-            class: { active: this.url == "/gmail/snoozed" },
-            attrs: { href: "/gmail/snoozed" }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("watch_later")]),
-            _c("div", { staticClass: "tooltip right" }, [_vm._v("Snoozed")])
-          ]
-        ),
-        _c(
-          "a",
-          {
-            class: { active: this.url == "/gmail/important" },
-            attrs: { href: "/gmail/important" }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("label_important")]),
-            _c("div", { staticClass: "tooltip right" }, [_vm._v("Important")])
-          ]
-        ),
-        _c(
-          "a",
-          {
-            class: { active: this.url == "/gmail/sent" },
-            attrs: { href: "/gmail/sent" }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("send")]),
-            _c("div", { staticClass: "tooltip right" }, [_vm._v("Sent")])
-          ]
-        ),
-        _c(
-          "a",
-          {
-            class: { active: this.url == "/gmail/drafts" },
-            attrs: { href: "/gmail/drafts" }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("insert_drive_file")]),
-            _c("div", { staticClass: "tooltip right" }, [_vm._v("Drafts")])
-          ]
-        ),
-        _c(
-          "a",
-          {
-            class: { active: this.url == "/gmail/spam" },
-            attrs: { href: "/gmail/spam" }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("error_outline")]),
-            _c("div", { staticClass: "tooltip right" }, [_vm._v("Spam")])
-          ]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateTheme()
-              }
+    _c("div", { staticClass: "menu left border large grey-text m l" }, [
+      _c("div", { staticClass: "large-space" }),
+      _c("div", { staticClass: "medium-space" }),
+      _c(
+        "a",
+        {
+          staticClass: "button white circle large",
+          attrs: { "data-ui": "#modal-add" }
+        },
+        [_c("img", { attrs: { src: "/add.png" } })]
+      ),
+      _c("div", { staticClass: "space" }),
+      _c(
+        "a",
+        { class: { active: this.url == "/gmail" }, attrs: { href: "/gmail" } },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("inbox")]),
+          _c("div", { staticClass: "tooltip right" }, [_vm._v("Inbox")])
+        ]
+      ),
+      _c(
+        "a",
+        {
+          class: { active: this.url == "/gmail/snoozed" },
+          attrs: { href: "/gmail/snoozed" }
+        },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("watch_later")]),
+          _c("div", { staticClass: "tooltip right" }, [_vm._v("Snoozed")])
+        ]
+      ),
+      _c(
+        "a",
+        {
+          class: { active: this.url == "/gmail/important" },
+          attrs: { href: "/gmail/important" }
+        },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("label_important")]),
+          _c("div", { staticClass: "tooltip right" }, [_vm._v("Important")])
+        ]
+      ),
+      _c(
+        "a",
+        {
+          class: { active: this.url == "/gmail/sent" },
+          attrs: { href: "/gmail/sent" }
+        },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("send")]),
+          _c("div", { staticClass: "tooltip right" }, [_vm._v("Sent")])
+        ]
+      ),
+      _c(
+        "a",
+        {
+          class: { active: this.url == "/gmail/drafts" },
+          attrs: { href: "/gmail/drafts" }
+        },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("insert_drive_file")]),
+          _c("div", { staticClass: "tooltip right" }, [_vm._v("Drafts")])
+        ]
+      ),
+      _c(
+        "a",
+        {
+          class: { active: this.url == "/gmail/spam" },
+          attrs: { href: "/gmail/spam" }
+        },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("error_outline")]),
+          _c("div", { staticClass: "tooltip right" }, [_vm._v("Spam")])
+        ]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateTheme()
             }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("brightness_medium")]),
-            _c("div", { staticClass: "tooltip right" }, [_vm._v("theme")])
-          ]
-        )
-      ]
-    ),
-    _c(
-      "div",
-      { staticClass: "menu right border small medium-device large-device" },
-      [
-        _c("div", { staticClass: "large-space" }),
-        _c("div", { staticClass: "medium-space" }),
-        _c("a", { staticClass: "wave dark padding" }, [
-          _c("img", { attrs: { width: "24", src: "/calendar.png" } }),
-          _c("span", { staticClass: "tooltip left" }, [_vm._v("Calendar")])
-        ]),
-        _c("a", { staticClass: "wave dark padding" }, [
-          _c("img", { attrs: { width: "24", src: "/keep.png" } }),
-          _c("span", { staticClass: "tooltip left" }, [_vm._v("Keep")])
-        ]),
-        _c("a", { staticClass: "wave dark padding" }, [
-          _c("img", { attrs: { width: "24", src: "/tasks.png" } }),
-          _c("span", { staticClass: "tooltip left" }, [_vm._v("Tasks")])
-        ]),
-        _c("a", { staticClass: "wave dark padding" }, [
-          _c("img", { attrs: { width: "24", src: "/contacts.png" } }),
-          _c("span", { staticClass: "tooltip left" }, [_vm._v("Contacts")])
-        ])
-      ]
-    ),
+          }
+        },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("brightness_medium")]),
+          _c("div", { staticClass: "tooltip right" }, [_vm._v("theme")])
+        ]
+      )
+    ]),
+    _c("div", { staticClass: "menu right border small m l" }, [
+      _c("div", { staticClass: "large-space" }),
+      _c("div", { staticClass: "medium-space" }),
+      _c("a", { staticClass: "wave dark padding" }, [
+        _c("img", { attrs: { width: "24", src: "/calendar.png" } }),
+        _c("span", { staticClass: "tooltip left" }, [_vm._v("Calendar")])
+      ]),
+      _c("a", { staticClass: "wave dark padding" }, [
+        _c("img", { attrs: { width: "24", src: "/keep.png" } }),
+        _c("span", { staticClass: "tooltip left" }, [_vm._v("Keep")])
+      ]),
+      _c("a", { staticClass: "wave dark padding" }, [
+        _c("img", { attrs: { width: "24", src: "/tasks.png" } }),
+        _c("span", { staticClass: "tooltip left" }, [_vm._v("Tasks")])
+      ]),
+      _c("a", { staticClass: "wave dark padding" }, [
+        _c("img", { attrs: { width: "24", src: "/contacts.png" } }),
+        _c("span", { staticClass: "tooltip left" }, [_vm._v("Contacts")])
+      ])
+    ]),
     _c("div", { staticClass: "menu top border large grey-text" }, [
       _c("div", { staticClass: "row no-wrap middle-align" }, [
         _c("div", { staticClass: "col" }, [
@@ -22812,7 +23940,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass: "none grey-text medium-device large-device",
+                staticClass: "none grey-text m l",
                 attrs: { "data-ui": "#dropdown-apps" }
               },
               [
@@ -22890,67 +24018,60 @@ exports.default = _default;
         ])
       ])
     ]),
-    _c(
-      "div",
-      { staticClass: "menu bottom large border small-device grey-text" },
-      [
-        _c(
-          "a",
-          {
-            class: { active: this.url == "/gmail" },
-            attrs: { href: "/gmail" }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("inbox")]),
-            _c("div", [_vm._v("Inbox")])
-          ]
-        ),
-        _c(
-          "a",
-          {
-            class: { active: this.url == "/gmail/sent" },
-            attrs: { href: "/gmail/sent" }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("send")]),
-            _c("div", [_vm._v("Sent")])
-          ]
-        ),
-        _c(
-          "a",
-          {
-            staticClass: "button white circle large",
-            attrs: { "data-ui": "#modal-add-small" }
-          },
-          [_c("img", { attrs: { src: "/add.png" } })]
-        ),
-        _c(
-          "a",
-          {
-            class: { active: this.url == "/gmail/drafts" },
-            attrs: { href: "/gmail/drafts" }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("insert_drive_file")]),
-            _c("div", [_vm._v("Drafts")])
-          ]
-        ),
-        _c(
-          "a",
-          {
-            on: {
-              click: function($event) {
-                return _vm.updateTheme()
-              }
+    _c("div", { staticClass: "menu bottom large border s grey-text" }, [
+      _c(
+        "a",
+        { class: { active: this.url == "/gmail" }, attrs: { href: "/gmail" } },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("inbox")]),
+          _c("div", [_vm._v("Inbox")])
+        ]
+      ),
+      _c(
+        "a",
+        {
+          class: { active: this.url == "/gmail/sent" },
+          attrs: { href: "/gmail/sent" }
+        },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("send")]),
+          _c("div", [_vm._v("Sent")])
+        ]
+      ),
+      _c(
+        "a",
+        {
+          staticClass: "button white circle large",
+          attrs: { "data-ui": "#modal-add-small" }
+        },
+        [_c("img", { attrs: { src: "/add.png" } })]
+      ),
+      _c(
+        "a",
+        {
+          class: { active: this.url == "/gmail/drafts" },
+          attrs: { href: "/gmail/drafts" }
+        },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("insert_drive_file")]),
+          _c("div", [_vm._v("Drafts")])
+        ]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateTheme()
             }
-          },
-          [
-            _c("i", { staticClass: "outlined" }, [_vm._v("brightness_medium")]),
-            _c("div", [_vm._v("Theme")])
-          ]
-        )
-      ]
-    ),
+          }
+        },
+        [
+          _c("i", { staticClass: "outlined" }, [_vm._v("brightness_medium")]),
+          _c("div", [_vm._v("Theme")])
+        ]
+      )
+    ]),
     _vm._m(10),
     _vm._m(11),
     _vm._m(12),
@@ -23060,8 +24181,7 @@ var staticRenderFns = [
       _c(
         "div",
         {
-          staticClass:
-            "field round fill flat sufix prefix small no-margin medium-device large-device"
+          staticClass: "field round fill flat sufix prefix small no-margin m l"
         },
         [
           _c("i", { staticClass: "front" }, [_vm._v("search")]),
@@ -23080,7 +24200,7 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "none grey-text small-device",
+        staticClass: "none grey-text s",
         attrs: { "data-ui": "#modal-search" }
       },
       [_c("i", { staticClass: "outlined" }, [_vm._v("search")])]
@@ -23093,7 +24213,7 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "none grey-text medium-device large-device",
+        staticClass: "none grey-text m l",
         attrs: { "data-ui": "#dropdown-settings" }
       },
       [
@@ -23248,7 +24368,7 @@ var staticRenderFns = [
       },
       [
         _c("div", { staticClass: "row no-wrap" }, [
-          _c("div", { staticClass: "col medium-device large-device" }),
+          _c("div", { staticClass: "col m l" }),
           _c("div", { staticClass: "col" }, [
             _c(
               "div",
@@ -23263,7 +24383,7 @@ var staticRenderFns = [
               ]
             )
           ]),
-          _c("div", { staticClass: "col medium-device large-device" })
+          _c("div", { staticClass: "col m l" })
         ])
       ]
     )
@@ -23423,7 +24543,7 @@ exports.default = _default;
     "div",
     { staticClass: "page right active" },
     [
-      _c("div", { staticClass: "row no-wrap medium-device large-device" }, [
+      _c("div", { staticClass: "row no-wrap m l" }, [
         _c("div", { staticClass: "col" }, [
           _c("nav", { staticClass: "grey-text" }, [
             _c("label", { staticClass: "checkbox" }, [
@@ -23478,62 +24598,57 @@ exports.default = _default;
           ])
         ])
       ]),
-      _c("div", { staticClass: "space medium-device large-device" }),
+      _c("div", { staticClass: "space m l" }),
       _vm._l(_vm.emails, function(email) {
         return _c("a", { staticClass: "row no-wrap middle-align divider" }, [
           _c("div", { staticClass: "col min" }, [
             _c("nav", { staticClass: "grey-text" }, [
-              _c(
-                "label",
-                { staticClass: "checkbox medium-device large-device" },
-                [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: email.check,
-                        expression: "email.check"
-                      }
-                    ],
-                    attrs: { type: "checkbox" },
-                    domProps: {
-                      checked: Array.isArray(email.check)
-                        ? _vm._i(email.check, null) > -1
-                        : email.check
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = email.check,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 &&
-                              _vm.$set(email, "check", $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              _vm.$set(
-                                email,
-                                "check",
-                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                              )
-                          }
+              _c("label", { staticClass: "checkbox m l" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: email.check,
+                      expression: "email.check"
+                    }
+                  ],
+                  attrs: { type: "checkbox" },
+                  domProps: {
+                    checked: Array.isArray(email.check)
+                      ? _vm._i(email.check, null) > -1
+                      : email.check
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = email.check,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && _vm.$set(email, "check", $$a.concat([$$v]))
                         } else {
-                          _vm.$set(email, "check", $$c)
+                          $$i > -1 &&
+                            _vm.$set(
+                              email,
+                              "check",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
                         }
+                      } else {
+                        _vm.$set(email, "check", $$c)
                       }
                     }
-                  }),
-                  _c("span")
-                ]
-              ),
+                  }
+                }),
+                _c("span")
+              ]),
               _c(
                 "a",
                 {
-                  staticClass: "medium-device large-device",
+                  staticClass: "m l",
                   on: {
                     click: function($event) {
                       return _vm.star(email)
@@ -23572,7 +24687,7 @@ exports.default = _default;
                   )
                 ]
               ),
-              _c("button", { staticClass: "small flat circle small-device" }, [
+              _c("button", { staticClass: "small flat circle s" }, [
                 _vm._v("A")
               ])
             ])
@@ -23717,7 +24832,7 @@ exports.default = _default;
     "div",
     { staticClass: "page right active" },
     [
-      _c("div", { staticClass: "row no-wrap medium-device large-device" }, [
+      _c("div", { staticClass: "row no-wrap m l" }, [
         _c("div", { staticClass: "col" }, [
           _c("nav", { staticClass: "grey-text" }, [
             _c("label", { staticClass: "checkbox" }, [
@@ -23772,62 +24887,57 @@ exports.default = _default;
           ])
         ])
       ]),
-      _c("div", { staticClass: "space medium-device large-device" }),
+      _c("div", { staticClass: "space m l" }),
       _vm._l(_vm.emails, function(email) {
         return _c("a", { staticClass: "row no-wrap middle-align divider" }, [
           _c("div", { staticClass: "col min" }, [
             _c("nav", { staticClass: "grey-text" }, [
-              _c(
-                "label",
-                { staticClass: "checkbox medium-device large-device" },
-                [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: email.check,
-                        expression: "email.check"
-                      }
-                    ],
-                    attrs: { type: "checkbox" },
-                    domProps: {
-                      checked: Array.isArray(email.check)
-                        ? _vm._i(email.check, null) > -1
-                        : email.check
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = email.check,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 &&
-                              _vm.$set(email, "check", $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              _vm.$set(
-                                email,
-                                "check",
-                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                              )
-                          }
+              _c("label", { staticClass: "checkbox m l" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: email.check,
+                      expression: "email.check"
+                    }
+                  ],
+                  attrs: { type: "checkbox" },
+                  domProps: {
+                    checked: Array.isArray(email.check)
+                      ? _vm._i(email.check, null) > -1
+                      : email.check
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = email.check,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && _vm.$set(email, "check", $$a.concat([$$v]))
                         } else {
-                          _vm.$set(email, "check", $$c)
+                          $$i > -1 &&
+                            _vm.$set(
+                              email,
+                              "check",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
                         }
+                      } else {
+                        _vm.$set(email, "check", $$c)
                       }
                     }
-                  }),
-                  _c("span")
-                ]
-              ),
+                  }
+                }),
+                _c("span")
+              ]),
               _c(
                 "a",
                 {
-                  staticClass: "medium-device large-device",
+                  staticClass: "m l",
                   on: {
                     click: function($event) {
                       return _vm.star(email)
@@ -23866,7 +24976,7 @@ exports.default = _default;
                   )
                 ]
               ),
-              _c("button", { staticClass: "small flat circle small-device" }, [
+              _c("button", { staticClass: "small flat circle s" }, [
                 _vm._v("A")
               ])
             ])
@@ -24011,7 +25121,7 @@ exports.default = _default;
     "div",
     { staticClass: "page right active" },
     [
-      _c("div", { staticClass: "row no-wrap medium-device large-device" }, [
+      _c("div", { staticClass: "row no-wrap m l" }, [
         _c("div", { staticClass: "col" }, [
           _c("nav", { staticClass: "grey-text" }, [
             _c("label", { staticClass: "checkbox" }, [
@@ -24066,62 +25176,57 @@ exports.default = _default;
           ])
         ])
       ]),
-      _c("div", { staticClass: "space medium-device large-device" }),
+      _c("div", { staticClass: "space m l" }),
       _vm._l(_vm.emails, function(email) {
         return _c("a", { staticClass: "row no-wrap middle-align divider" }, [
           _c("div", { staticClass: "col min" }, [
             _c("nav", { staticClass: "grey-text" }, [
-              _c(
-                "label",
-                { staticClass: "checkbox medium-device large-device" },
-                [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: email.check,
-                        expression: "email.check"
-                      }
-                    ],
-                    attrs: { type: "checkbox" },
-                    domProps: {
-                      checked: Array.isArray(email.check)
-                        ? _vm._i(email.check, null) > -1
-                        : email.check
-                    },
-                    on: {
-                      change: function($event) {
-                        var $$a = email.check,
-                          $$el = $event.target,
-                          $$c = $$el.checked ? true : false
-                        if (Array.isArray($$a)) {
-                          var $$v = null,
-                            $$i = _vm._i($$a, $$v)
-                          if ($$el.checked) {
-                            $$i < 0 &&
-                              _vm.$set(email, "check", $$a.concat([$$v]))
-                          } else {
-                            $$i > -1 &&
-                              _vm.$set(
-                                email,
-                                "check",
-                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                              )
-                          }
+              _c("label", { staticClass: "checkbox m l" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: email.check,
+                      expression: "email.check"
+                    }
+                  ],
+                  attrs: { type: "checkbox" },
+                  domProps: {
+                    checked: Array.isArray(email.check)
+                      ? _vm._i(email.check, null) > -1
+                      : email.check
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = email.check,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = null,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && _vm.$set(email, "check", $$a.concat([$$v]))
                         } else {
-                          _vm.$set(email, "check", $$c)
+                          $$i > -1 &&
+                            _vm.$set(
+                              email,
+                              "check",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
                         }
+                      } else {
+                        _vm.$set(email, "check", $$c)
                       }
                     }
-                  }),
-                  _c("span")
-                ]
-              ),
+                  }
+                }),
+                _c("span")
+              ]),
               _c(
                 "a",
                 {
-                  staticClass: "medium-device large-device",
+                  staticClass: "m l",
                   on: {
                     click: function($event) {
                       return _vm.star(email)
@@ -24160,7 +25265,7 @@ exports.default = _default;
                   )
                 ]
               ),
-              _c("button", { staticClass: "small flat circle small-device" }, [
+              _c("button", { staticClass: "small flat circle s" }, [
                 _vm._v("A")
               ])
             ])
@@ -24587,7 +25692,7 @@ var staticRenderFns = [
       "button",
       {
         staticClass:
-          "margin wave light none white-text capitalize medium-device large-device large-text",
+          "margin wave light none white-text capitalize m l large-text",
         attrs: { "data-ui": "#dropdown-ride" }
       },
       [
@@ -24620,7 +25725,7 @@ var staticRenderFns = [
       "button",
       {
         staticClass:
-          "margin wave light none white-text capitalize medium-device large-device large-text",
+          "margin wave light none white-text capitalize m l large-text",
         attrs: { "data-ui": "#dropdown-drive" }
       },
       [
@@ -24654,7 +25759,7 @@ var staticRenderFns = [
       "button",
       {
         staticClass:
-          "margin wave light none white-text capitalize medium-device large-device large-text",
+          "margin wave light none white-text capitalize m l large-text",
         attrs: { "data-ui": "#dropdown-more" }
       },
       [
@@ -24828,7 +25933,7 @@ exports.default = _default;
       "div",
       {
         staticClass:
-          "card no-padding large-margin medium-width medium-device large-device page left active"
+          "card no-padding large-margin medium-width m l page left active"
       },
       [
         _c("div", { staticClass: "large-padding blue white-text" }, [
@@ -24972,7 +26077,7 @@ exports.default = _default;
         ])
       ]
     ),
-    _c("div", { staticClass: "modal round bottom active small-device" }, [
+    _c("div", { staticClass: "modal round bottom active s" }, [
       _c(
         "p",
         {
@@ -25106,19 +26211,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "fixed bottom right margin medium-device large-device" },
-      [
-        _c("button", { staticClass: "circle white black-text wave dark" }, [
-          _c("i", [_vm._v("add")])
-        ]),
-        _c("div", { staticClass: "space" }),
-        _c("button", { staticClass: "circle white black-text wave dark" }, [
-          _c("i", [_vm._v("remove")])
-        ])
-      ]
-    )
+    return _c("div", { staticClass: "fixed bottom right margin m l" }, [
+      _c("button", { staticClass: "circle white black-text wave dark" }, [
+        _c("i", [_vm._v("add")])
+      ]),
+      _c("div", { staticClass: "space" }),
+      _c("button", { staticClass: "circle white black-text wave dark" }, [
+        _c("i", [_vm._v("remove")])
+      ])
+    ])
   },
   function() {
     var _vm = this
@@ -25198,7 +26299,315 @@ var _home = _interopRequireDefault(require("~/uber/home.vue"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _router.default)("/uber", _home.default, _layout.default);
-},{"~/shared/router.js":"shared/router.js","~/uber/layout.vue":"uber/layout.vue","~/uber/home.vue":"uber/home.vue"}],"app.js":[function(require,module,exports) {
+},{"~/shared/router.js":"shared/router.js","~/uber/layout.vue":"uber/layout.vue","~/uber/home.vue":"uber/home.vue"}],"materialYou/layout.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+var _default = {
+  created: function created() {
+    window.$layout = this;
+  },
+  mounted: function mounted() {
+    ui();
+  },
+  methods: {
+    redirect: function redirect(component) {
+      this.url = page.current;
+      document.getElementById("layout").innerHTML = '<div id="app"></div>';
+      document.body.scrollTop = 0;
+      return new Vue({
+        el: "#app",
+        render: function render(h) {
+          return h(component);
+        }
+      });
+    }
+  }
+};
+exports.default = _default;
+        var $b6370f = exports.default || module.exports;
+      
+      if (typeof $b6370f === 'function') {
+        $b6370f = $b6370f.options;
+      }
+    
+        /* template */
+        Object.assign($b6370f, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("div", { attrs: { id: "layout" } })])
+  }
+]
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+},{}],"materialYou/home.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  data: function data() {
+    return {
+      index: 0,
+      css: ["diamond", "square", "circle", "round", "left-round", "top-round", "right-round", "bottom-round", "bottom-round right-round", "bottom-round left-round", "top-round left-round", "top-round right-round"]
+    };
+  },
+  mounted: function mounted() {
+    this.start();
+  },
+  methods: {
+    updateTheme: function updateTheme() {
+      document.body.className = document.body.className == "is-dark" ? "" : "is-dark";
+    },
+    start: function start() {
+      var _this = this;
+
+      ui();
+
+      var timeout = function timeout() {
+        if (!_this.css[_this.index]) _this.index = 0;
+
+        _this.to(_this.css[_this.index]);
+
+        _this.index++;
+        setTimeout(timeout, 1500);
+      };
+
+      setTimeout(timeout, 1500);
+    },
+    to: function to(css) {
+      var e = document.querySelectorAll("button, img, .card, .chip");
+      e.forEach(function (x) {
+        if (x.classList.contains("ignore")) return;
+        x.classList.remove("diamond", "square", "circle", "round", "left-round", "top-round", "right-round", "bottom-round");
+        var list = css.split(" ");
+        list.forEach(function (y) {
+          x.classList.add(y);
+        });
+      });
+    },
+    reload: function reload() {
+      var e = document.getElementById("card");
+      e.style.display = "none";
+      setTimeout(function () {
+        e.style.display = "";
+      }, 500);
+    }
+  }
+};
+exports.default = _default;
+        var $b76898 = exports.default || module.exports;
+      
+      if (typeof $b76898 === 'function') {
+        $b76898 = $b76898.options;
+      }
+    
+        /* template */
+        Object.assign($b76898, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("nav", { staticClass: "absolute top left right padding right-align" }, [
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.reload()
+            }
+          }
+        },
+        [_c("i", [_vm._v("refresh")])]
+      ),
+      _c(
+        "a",
+        {
+          on: {
+            click: function($event) {
+              return _vm.updateTheme()
+            }
+          }
+        },
+        [_c("i", [_vm._v("brightness_medium")])]
+      )
+    ]),
+    _c("div", { staticClass: "card large-padding", attrs: { id: "card" } }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col s12 m6 l3" }, [
+          _c("a", { staticClass: "page left active" }, [
+            _c("img", {
+              staticClass: "responsive medium",
+              attrs: { src: "/favicon.png" }
+            })
+          ]),
+          _c("div", { staticClass: "space" }),
+          _vm._m(0)
+        ]),
+        _c("div", { staticClass: "col s12 m6 l3 m l" }, [
+          _vm._m(1),
+          _c("div", { staticClass: "space" }),
+          _c("a", { staticClass: "page right active" }, [
+            _c("img", {
+              staticClass: "responsive medium",
+              attrs: { src: "/beer-and-woman.jpg" }
+            })
+          ])
+        ]),
+        _c("div", { staticClass: "col s12 m12 l6 center-align" }, [
+          _vm._m(2),
+          _c("div", { staticClass: "space" }),
+          _vm._m(3),
+          _c("nav", { staticClass: "center-align no-margin wrap" }, [
+            _c("button", { staticClass: "border circle extra margin" }, [
+              _c("img", {
+                staticClass: "responsive",
+                attrs: { src: "/favicon.png" }
+              }),
+              _c("span", [_vm._v("Button")])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card border page bottom active m l" }, [
+      _c("h5", [_vm._v("Card")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card border page top active" }, [
+      _c("h5", [_vm._v("Card")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page right active center-align" }, [
+      _c("h3", { staticClass: "no-margin center-align" }, [_vm._v("Ready")]),
+      _c("h6", { staticClass: "no-margin center-align" }, [
+        _vm._v("for material you and beer?")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", { staticClass: "center-align no-margin wrap" }, [
+      _c("button", { staticClass: "circle extra margin" }, [
+        _c("i", [_vm._v("refresh")]),
+        _c("span", [_vm._v("Button")])
+      ]),
+      _c("button", { staticClass: "border circle extra margin" }, [
+        _c("i", [_vm._v("home")]),
+        _c("span", [_vm._v("Button")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+},{}],"materialYou/index.js":[function(require,module,exports) {
+"use strict";
+
+var _router = _interopRequireDefault(require("~/shared/router.js"));
+
+var _layout = _interopRequireDefault(require("~/materialYou/layout.vue"));
+
+var _home = _interopRequireDefault(require("~/materialYou/home.vue"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _router.default)("/material-you", _home.default, _layout.default);
+},{"~/shared/router.js":"shared/router.js","~/materialYou/layout.vue":"materialYou/layout.vue","~/materialYou/home.vue":"materialYou/home.vue"}],"app.js":[function(require,module,exports) {
 "use strict";
 
 var _init = _interopRequireDefault(require("~/shared/init.js"));
@@ -25215,5 +26624,7 @@ var _gmail = _interopRequireDefault(require("~/gmail"));
 
 var _uber = _interopRequireDefault(require("~/uber"));
 
+var _materialYou = _interopRequireDefault(require("~/materialYou"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"~/shared/init.js":"shared/init.js","~/home":"home/index.js","~/test":"test/index.js","~/youtube":"youtube/index.js","~/netflix":"netflix/index.js","~/gmail":"gmail/index.js","~/uber":"uber/index.js"}]},{},["app.js"], null)
+},{"~/shared/init.js":"shared/init.js","~/home":"home/index.js","~/test":"test/index.js","~/youtube":"youtube/index.js","~/netflix":"netflix/index.js","~/gmail":"gmail/index.js","~/uber":"uber/index.js","~/materialYou":"materialYou/index.js"}]},{},["app.js"], null)

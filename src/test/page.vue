@@ -6,7 +6,7 @@
       a(@click="updateTheme()")
         i.large brightness_medium
     .col
-      .h5 Test your changes here
+      h5 Test your changes here
       div Click on icon to change theme
 </template>
 

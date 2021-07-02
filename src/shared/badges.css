@@ -1,10 +1,12 @@
 .badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   font-size: 0.6rem;
   text-transform: none;
   z-index: 1;
   padding: 2px 4px;
-  line-height: normal !important;
   background-color:var(--color-3);
   color: #ffffff;
   top: 0;
@@ -21,7 +23,6 @@
   right: auto;
   transform: none;
   position: relative;
-  display: inline-block;
   margin: 0 2px;
 }
 
@@ -42,7 +43,6 @@
 }
 
 .badge.left {
-  float: none;
   top: 50%;
   left: 0;
   bottom: auto;
@@ -51,7 +51,6 @@
 }
 
 .badge.right {
-  float: none;
   top: 50%;
   left: auto;
   bottom: auto;
@@ -105,7 +104,6 @@
   padding: 0;
   width: 16px;
   height: 16px;
-  line-height: 16px !important;
   text-align: center;
   border-radius: 50%;
 }
@@ -114,7 +112,6 @@
   padding: 0;
   width: 16px;
   height: 16px;
-  line-height: 16px !important;
   text-align: center;
   border-radius: 0;
 }

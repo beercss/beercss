@@ -2,7 +2,7 @@
   display: none;
   background-color:rgba(0, 0, 0, 0.8);
   color: #ffffff;
-  font-size: 0.8rem;
+  font-size: var(--small-text);
   text-align: center;
   border-radius: 4px;
   padding: 8px;

@@ -9,4 +9,10 @@
   --color-4: #37474f;
   --color-4a: rgba(55, 71, 79, 0.9);
   --color-5: #263238;
+  --small-round: 24px;
+  --medium-round: 32px;
+  --large-round: 40px;
+  --small-text: 0.8rem;
+  --medium-text: 0.9rem;
+  --large-text: 1rem;
 }

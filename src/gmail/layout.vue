@@ -1,6 +1,6 @@
 <template lang="pug">
 .container.max
-  .menu.left.border.large.grey-text.medium-device.large-device
+  .menu.left.border.large.grey-text.m.l
     .large-space
     .medium-space
     a.button.white.circle.large(data-ui="#modal-add")
@@ -31,7 +31,7 @@
       i.outlined brightness_medium
       .tooltip.right theme
 
-  .menu.right.border.small.medium-device.large-device
+  .menu.right.border.small.m.l
     .large-space
     .medium-space
     a.wave.dark.padding
@@ -87,17 +87,15 @@
             img(v-show="theme == 'is-gmail-light'", :src="'/gmail-light.png'")
             img(v-show="theme == 'is-gmail-dark'", :src="'/gmail-dark.png'")
       .col
-        .field.round.fill.flat.sufix.prefix.small.no-margin.medium-device.large-device
+        .field.round.fill.flat.sufix.prefix.small.no-margin.m.l
           i.front search
           input(type="text", data-ui="#dropdown-search")
           i.front mic
       .col
         nav.right-align
-          button.none.grey-text.small-device(data-ui="#modal-search")
+          button.none.grey-text.s(data-ui="#modal-search")
             i.outlined search
-          button.none.grey-text.medium-device.large-device(
-            data-ui="#dropdown-settings"
-          )
+          button.none.grey-text.m.l(data-ui="#dropdown-settings")
             i.outlined settings
             #dropdown-settings.dropdown.left.no-wrap(
               data-ui="#dropdown-settings"
@@ -108,9 +106,7 @@
               a
                 div Appearance
                 label Change display settings
-          button.none.grey-text.medium-device.large-device(
-            data-ui="#dropdown-apps"
-          )
+          button.none.grey-text.m.l(data-ui="#dropdown-apps")
             i.outlined apps
             #dropdown-apps.dropdown.left.small-width(data-ui="#dropdown-apps")
               .large-padding
@@ -134,7 +130,7 @@
           a(href="/")
             img.small.circle(:src="'/favicon.png'")
 
-  .menu.bottom.large.border.small-device.grey-text
+  .menu.bottom.large.border.s.grey-text
     a(href="/gmail", :class="{ active: this.url == '/gmail' }")
       i.outlined inbox
       div Inbox
@@ -216,13 +212,13 @@
 
   #modal-search.modal.top.transparent.flat
     .row.no-wrap
-      .col.medium-device.large-device
+      .col.m.l
       .col
         .field.round.flat.sufix.prefix.small.no-margin
           i.front search
           input.white.black-text(type="text")
           i.front mic
-      .col.medium-device.large-device
+      .col.m.l
 
   #layout
 </template>

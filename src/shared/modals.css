@@ -57,13 +57,13 @@
 
 .modal.active {
   display: inline-block;
-  animation: 0.2s modal-to-center;
+  animation: 0.2s modal-to-center ease-out;
 }
 
 .modal.active.left {
   display: inline-block;
   transform: none;
-  animation: 0.2s modal-to-right;
+  animation: 0.2s modal-to-right ease-out;
 }
 
 .modal.active.right {

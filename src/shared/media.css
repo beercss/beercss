@@ -1,3 +1,23 @@
+img,
+video {
+  border-radius: inherit;
+  margin: 0 auto;
+}
+
+img.right,
+video.right,
+i.right {
+  position: absolute;
+  right: 0;
+}
+
+img.left,
+video.left,
+i.left {
+  position: absolute;
+  left: 0;
+}
+
 img.small,
 img.medium,
 img.large,
@@ -18,6 +38,7 @@ video.circle,
 video.responsive {
   object-fit: cover;
   object-position: center;
+  transition: transform 0.3s ease, border-radius 0.3s, padding 0.3s;
 }
 
 img.border,
@@ -27,14 +48,14 @@ video.border {
 
 img.round,
 video.round {
-  border-radius: 8px;
+  border-radius: 8px !important;
   height: 48px !important;
   width: 48px !important;
 }
 
 img.circle,
 video.circle {
-  border-radius: 50%;
+  border-radius: 50% !important;
   height: 48px !important;
   width: 48px !important;
 }
@@ -73,7 +94,13 @@ img.responsive,
 video.responsive {
   width: 100% !important;
   height: 100% !important;
-  border-radius: inherit;
+}
+
+button > img.responsive,
+.button > img.responsive,
+.chip > img.responsive {
+  height: calc(100% - 4px) !important;
+  width: auto !important;
 }
 
 img.responsive.tiny,
@@ -106,39 +133,28 @@ video.responsive.extra {
   height: 320px !important;
 }
 
-img.responsive.round,
-video.responsive.round {
-  border-radius: 24px;
-}
-
 img.empty-state,
 video.empty-state {
   max-width: 100%;
   width: 400px;
 }
 
-td > img.round,
-td > nav > img.round,
-td > nav > a > img.round,
-td > img.circle,
-td > nav > img.circle,
-td > nav > a > img.circle,
-td > video.round,
-td > nav > video.round,
-td > nav > a > video.round,
-td > video.circle,
-td > nav > video.circle,
-td > nav > a > video.circle {
-  width: 24px !important;
-  height: 24px !important;
+button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+.button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+.chip > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+.field > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+.tabs > a > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+td img:not(.responsive, .tiny, .small, .medium, .large, .extra) {
+  max-width: 24px!important;
+  max-height: 24px!important;
 }
 
-.card.round > img.responsive:not(.round):first-child,
-.card.round > video.responsive:not(.round):first-child {
-  border-radius: 24px 24px 0 0;
-}
-
-.card.round > img.responsive:not(.round):last-child,
-.card.round > video.responsive:not(.round):last-child {
-  border-radius: 0 0 24px 24px;
+.button.diamond > img,
+button.diamond > img,
+.button.circle > img,
+button.circle > img,
+.button.square > img,
+button.square > img {
+  margin: 0!important;
+  padding: 0!important;
 }

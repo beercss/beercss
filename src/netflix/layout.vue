@@ -6,7 +6,7 @@ div
         nav.padding
           a
             img(:src="'/netflix.png'")
-          button.none.white-text.small-device(data-ui="#dropdown-menu")
+          button.none.white-text.s(data-ui="#dropdown-menu")
             i menu
             #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
               a.row.no-wrap(@click="scroll('#home')")
@@ -29,21 +29,11 @@ div
                 .col.min
                   i video_library
                 .col My list
-          button.none.white-text.capitalize.medium-device.large-device(
-            @click="scroll('#home')"
-          ) Home
-          button.none.white-text.capitalize.medium-device.large-device(
-            @click="scroll('#series')"
-          ) Series
-          button.none.white-text.capitalize.medium-device.large-device(
-            @click="scroll('#movies')"
-          ) Movies
-          button.none.white-text.capitalize.medium-device.large-device(
-            @click="scroll('#hot')"
-          ) Hot
-          button.none.white-text.capitalize.medium-device.large-device(
-            @click="scroll('#my-list')"
-          ) My list
+          button.none.white-text.capitalize.m.l(@click="scroll('#home')") Home
+          button.none.white-text.capitalize.m.l(@click="scroll('#series')") Series
+          button.none.white-text.capitalize.m.l(@click="scroll('#movies')") Movies
+          button.none.white-text.capitalize.m.l(@click="scroll('#hot')") Hot
+          button.none.white-text.capitalize.m.l(@click="scroll('#my-list')") My list
       .col
         nav.right-align
           button.none.white-text(data-ui="#modal-search")
@@ -76,13 +66,13 @@ div
 
   #modal-search.modal.top.transparent.flat
     .row.no-wrap
-      .col.medium-device.large-device
+      .col.m.l
       .col
         .field.round.sufix.prefix.small.no-margin
           i.front search
           input.white.black-text(type="text")
           i.front mic
-      .col.medium-device.large-device
+      .col.m.l
 
   #layout
 </template>

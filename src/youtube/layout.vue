@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  .menu.left.large.flat.medium-device.large-device
+  .menu.left.large.flat.m.l
     .large-space
     .large-space
     a(href="/youtube", :class="{ active: url == '/youtube' }")
@@ -25,7 +25,7 @@ div
       i brightness_medium
       div Theme
 
-  .menu.bottom.border.small-device
+  .menu.bottom.border.s
     a(href="/youtube", :class="{ active: url == '/youtube' }")
       i home
       div Home
@@ -45,9 +45,7 @@ div
     .row.no-wrap.middle-align
       .col
         nav.padding
-          button.none.color-2-text.medium-device.large-device(
-            data-ui="#modal-expanded"
-          )
+          button.none.color-2-text.m.l(data-ui="#modal-expanded")
             i menu
           a
             img(
@@ -59,17 +57,15 @@ div
               :src="'/youtube-dark.png'"
             )
       .col
-        .field.round.sufix.prefix.small.no-margin.medium-device.large-device
+        .field.round.sufix.prefix.small.no-margin.m.l
           i.front search
           input.white.black-text(type="text")
           i.front mic
       .col
         nav.right-align
-          button.none.color-2-text.small-device(data-ui="#modal-search")
+          button.none.color-2-text.s(data-ui="#modal-search")
             i search
-          button.none.color-2-text.medium-device.large-device(
-            data-ui="#dropdown-add"
-          )
+          button.none.color-2-text.m.l(data-ui="#dropdown-add")
             i video_call
             #dropdown-add.dropdown.left.no-wrap(data-ui="#dropdown-add")
               a.row.no-wrap
@@ -80,9 +76,7 @@ div
                 .col.min
                   i sensors
                 .col Broadcast live
-          button.none.color-2-text.medium-device.large-device(
-            data-ui="#dropdown-apps"
-          )
+          button.none.color-2-text.m.l(data-ui="#dropdown-apps")
             i apps
             #dropdown-apps.dropdown.left.no-wrap(data-ui="#dropdown-apps")
               a.row.no-wrap

@@ -1,6 +1,6 @@
 <template lang="pug">
 .page.right.active
-  .row.no-wrap.medium-device.large-device
+  .row.no-wrap.m.l
     .col
       nav.grey-text
         label.checkbox
@@ -17,17 +17,17 @@
           i arrow_back
         a
           i arrow_forward
-  .space.medium-device.large-device
+  .space.m.l
   a.row.no-wrap.middle-align.divider(v-for="email in emails")
     .col.min
       nav.grey-text
-        label.checkbox.medium-device.large-device
+        label.checkbox.m.l
           input(type="checkbox", v-model="email.check")
           span
-        a.medium-device.large-device(@click="star(email)")
+        a.m.l(@click="star(email)")
           i(v-show="!email.star") star_outline
           i.yellow-text(v-show="email.star") star
-        button.small.flat.circle.small-device A
+        button.small.flat.circle.s A
     .col.truncate
       b From -&nbsp;
       b Subject -&nbsp;
