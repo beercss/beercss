@@ -15,7 +15,7 @@
   transform: translateY(100%);
   overflow-x: hidden;
   overflow-y: auto;
-  font-size: 0.9rem;
+  font-size: var(--medium-text);
   font-weight: normal;
   text-transform: none;
   color: var(--color-2);

@@ -23,7 +23,7 @@ button:hover::after,
 .wave.light:focus::after,
 .button:focus::after,
 button:focus::after {
-  background: radial-gradient(circle, rgba(255,255,255,0.2) 1%, transparent 1%) center/15000%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 1%, transparent 1%) center/15000%;
 }
 
 .wave:active::after,
@@ -36,7 +36,6 @@ button:active::after {
   transition: background 0s;
 }
 
-.button.none::after,
 .button.none::after,
 button.none::after {
   width: calc(100% + 8px);
@@ -55,7 +54,7 @@ button.border:hover::after,
 button.none:focus::after,
 .button.border:focus::after,
 button.border:focus::after {
-  background: radial-gradient(circle, #9e9e9e20 1%, transparent 1%) center/15000%;
+  background: radial-gradient(circle, rgba(150,150,150,0.2) 1%, transparent 1%) center/15000%;
 }
 
 .wave.dark:active::after,

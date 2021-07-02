@@ -1,19 +1,50 @@
 .chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
   height: 32px;
-  font-size: 0.8rem;
+  font-size: var(--small-text);
   font-weight: 500;
   color: var(--color-2);
-  line-height: 32px;
   padding: 0 12px;
   border-radius: 24px;
   background-color: var(--color-2a);
   margin: 0 8px;
   text-transform: none;
-  display: inline-block;
+  transition: transform .3s ease, border-radius .3s, padding .3s;
+  z-index: 1;
 }
 
-.chip > * {
-  line-height: 32px;
+.chip > :not(.dropdown, .badge) + :not(.dropdown, .badge) {
+  margin-left: 4px;
+}
+
+.chip > .responsive:first-child {
+  margin-left: -10px;
+}
+
+.chip > .responsive:last-child {
+  margin-right: -10px;
+}
+
+.chip.small {
+  min-width: 32px !important;
+  min-height: 32px !important;
+  height: 32px;
+}
+
+.chip.medium {
+  min-width: 40px !important;
+  min-height: 40px !important;
+  height: 40px;
+}
+
+.chip.large {
+  min-width: 48px !important;
+  min-height: 48px !important;
+  height: 48px;
 }
 
 .chip.border {
@@ -21,36 +52,34 @@
   background-color: transparent;
 }
 
+.chip.circle > span,
+.chip.square > span,
+.chip.diamond > span {
+  display: none;
+}
+
 .chip.circle {
-  min-width: 32px;
-  min-height: 32px;
   padding: 0;
   text-align: center;
 }
 
 .chip.square {
-  min-width: 32px;
-  min-height: 32px;
   padding: 0;
   text-align: center;
   border-radius: 4px;
 }
 
 .chip.diamond {
-  transform: rotate(-45deg);
-  border-radius: 4px;
-  min-width: 28px;
-  min-height: 28px;
-  width: 28px;
-  height: 28px;
   padding: 0;
+  transform: rotate(45deg);
+  border-radius: 4px;
 }
 
 .chip.diamond > i {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .chip.active {

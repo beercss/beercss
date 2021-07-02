@@ -10,7 +10,7 @@
 
 .tabs > a {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: var(--medium-text);
   font-weight: 500;
   color: var(--color-2);
   padding: 4px 16px;
@@ -19,12 +19,8 @@
   text-align: center;
 }
 
-.tabs > a:first-child {
-  margin-left: 0 !important;
-}
-
-.tabs > a:last-child {
-  margin-right: 0 !important;
+.tabs > a > span {
+  margin: 4px;
 }
 
 .tabs.small > a {

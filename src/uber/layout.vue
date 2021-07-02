@@ -6,7 +6,7 @@ div
         nav.padding
           a
             img(height="21", :src="'/uber-dark.png'")
-          button.margin.wave.light.none.white-text.capitalize.medium-device.large-device.large-text(
+          button.margin.wave.light.none.white-text.capitalize.m.l.large-text(
             data-ui="#dropdown-ride"
           ) 
             span Ride
@@ -19,7 +19,7 @@ div
               a How it works
               a Safety
               a Airports
-          button.margin.wave.light.none.white-text.capitalize.medium-device.large-device.large-text(
+          button.margin.wave.light.none.white-text.capitalize.m.l.large-text(
             data-ui="#dropdown-drive"
           ) 
             span Drive
@@ -33,7 +33,7 @@ div
               a Requirements
               a Vehicle solutions
               a Safety
-          button.margin.wave.light.none.white-text.capitalize.medium-device.large-device.large-text(
+          button.margin.wave.light.none.white-text.capitalize.m.l.large-text(
             data-ui="#dropdown-more"
           ) 
             span More

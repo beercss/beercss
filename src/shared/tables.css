@@ -1,23 +1,21 @@
 table {
   width: 100%;
   border-spacing: 0;
-  font-size: 0.9rem;
+  font-size: var(--medium-text);
 }
 
 table th {
   width: 1%;
   font-weight: 500;
   text-align: left;
-  height: 40px;
-  padding: 0;
+  padding: 8px 4px;
   margin: 0;
 }
 
 table td {
   width: 1%;
   text-align: left;
-  height: 40px;
-  padding: 0;
+  padding: 8px 4px;
   margin: 0;
 }
 
@@ -28,17 +26,17 @@ table.border th {
 
 table.small td,
 table.small th {
-  height: 32px;
+  padding: 4px 4px;
 }
 
 table.medium td,
 table.medium th {
-  height: 40px;
+  padding: 8px 4px;
 }
 
 table.large td,
 table.large th {
-  height: 48px;
+  padding: 12px 4px;
 }
 
 table.center-align td,

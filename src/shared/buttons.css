@@ -1,25 +1,59 @@
 .button,
 button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  min-width: 32px;
+  min-height: 32px;
   height: 32px;
-  font-size: 0.9rem;
+  font-size: var(--medium-text);
   font-weight: 500;
   color: #ffffff;
-  line-height: 32px;
   padding: 0 12px;
   background-color: var(--color-1);
   margin: 0 8px;
   text-transform: uppercase;
   border-radius: 4px;
+  transition: transform .3s ease, border-radius .3s, padding .3s;
+}
+
+button > :not(.dropdown, .badge) + :not(.dropdown, .badge),
+.button > :not(.dropdown, .badge) + :not(.dropdown, .badge) {
+  margin-left: 4px;
+}
+
+button > .responsive:first-child,
+.button > .responsive:first-child {
+  margin-left: -10px;
+}
+
+button > .responsive:last-child,
+.button > .responsive:last-child {
+  margin-right: -10px;
+}
+
+button.responsive,
+.button.responsive {
+  display: flex;
+  margin: 0;
+  width: -webkit-fill-available;
+}
+
+button.responsive > i,
+.button.responsive > i {
+  margin: 0;
 }
 
 .button.none,
 button.none {
   box-shadow: none;
+  width: auto;
+  min-width: auto;
   height: auto;
+  min-height: auto;
   color: var(--color-1);
-  line-height: normal;
   padding: 0;
   background-color: transparent;
   margin: 0 8px;
@@ -27,23 +61,30 @@ button.none {
 
 .button.small,
 button.small {
-  height: 24px;
-  line-height: 24px;
-  padding: 0 8px;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  height: 32px;
 }
 
 .button.medium,
 button.medium {
-  height: 32px;
-  line-height: 32px;
-  padding: 0 12px;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  height: 40px;
 }
 
 .button.large,
 button.large {
-  height: 40px;
-  line-height: 40px;
-  padding: 0 16px;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  height: 48px;
+}
+
+.button.extra,
+button.extra {
+  min-width: 56px !important;
+  min-height: 56px !important;
+  height: 56px;
 }
 
 .button.border,
@@ -56,82 +97,80 @@ button.border {
 
 .button.round,
 button.round {
-  border-radius: 24px;
+  transform: none;
+  border-radius: var(--medium-round);
+}
+
+.button.top-round,
+button.top-round {
+  border-radius: var(--medium-round) var(--medium-round) 4px 4px !important;
+}
+
+.button.bottom-round,
+button.bottom-round {
+  border-radius: 4px 4px var(--medium-round) var(--medium-round) !important;
+}
+
+.button.left-round,
+button.left-round {
+  border-radius: var(--medium-round) 4px 4px var(--medium-round) !important;
+}
+
+.button.right-round,
+button.right-round {
+  border-radius: 4px var(--medium-round) var(--medium-round) 4px !important;
+}
+
+.button.top-round.left-round,
+button.top-round.left-round {
+  border-radius: var(--medium-round) var(--medium-round) 4px var(--medium-round) !important;
+}
+
+.button.top-round.right-round,
+button.top-round.right-round {
+  border-radius: var(--medium-round) var(--medium-round) var(--medium-round) 4px !important;
+}
+
+.button.bottom-round.left-round,
+button.bottom-round.left-round {
+  border-radius: var(--medium-round) 4px var(--medium-round) var(--medium-round) !important;
+}
+
+.button.bottom-round.right-round,
+button.bottom-round.right-round {
+  border-radius: 4px var(--medium-round) var(--medium-round) var(--medium-round) !important;
+}
+
+.button.circle > span,
+button.circle > span,
+.button.square > span,
+button.square > span,
+.button.diamond > span,
+button.diamond > span {
+  display: none;
 }
 
 .button.circle,
 button.circle {
-  display: inline-block;
-  min-width: 48px;
-  min-height: 48px;
+  transform: none;
   padding: 0;
-  line-height: 48px;
-  border-radius: 50%;
-  text-align: center;
-}
-
-.button.circle.small,
-button.circle.small {
-  min-width: 40px;
-  min-height: 40px;
-  line-height: 40px;
-}
-
-.button.circle.large,
-button.circle.large {
-  min-width: 56px;
-  min-height: 56px;
-  line-height: 56px;
+  border-radius: 32px;
+  padding: 0;
 }
 
 .button.square,
 button.square {
-  display: inline-block;
-  min-width: 48px;
-  min-height: 48px;
+  transform: none;
   padding: 0;
-  line-height: 48px;
-  text-align: center;
-}
-
-.button.square.small,
-button.square.small {
-  min-width: 40px;
-  min-height: 40px;
-  line-height: 40px;
-}
-
-.button.square.large,
-button.square.large {
-  min-width: 56px;
-  min-height: 56px;
-  line-height: 56px;
+  border-radius: 4px;
+  padding: 0;
 }
 
 .button.diamond,
 button.diamond {
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
   border-radius: 4px;
-  width: 40px;
-  height: 40px;
-}
-
-.button.diamond.small,
-button.diamond.small {
-  width: 32px;
-  height: 32px;
-}
-
-.button.diamond,
-button.diamond.medium {
-  width: 40px;
-  height: 40px;
-}
-
-.button.diamond.large,
-button.diamond.large {
-  width: 48px;
-  height: 48px;
+  padding: 0;
 }
 
 .button.diamond > i,
@@ -139,15 +178,17 @@ button.diamond > i {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  margin: 0;
+  padding: 0;
 }
 
 td > .button,
 td > nav > .button,
 td > button,
 td > nav > button {
-  height: 24px;
-  line-height: 24px;
+  min-height: 24px;
+  max-height: 24px;
 }
 
 td > .button.circle,
@@ -159,6 +200,5 @@ td > nav > .button.square,
 td > button.square,
 td > nav > button.square {
   min-width: 24px;
-  min-height: 24px;
-  line-height: 24px;
+  max-width: 24px;
 }

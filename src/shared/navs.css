@@ -9,10 +9,7 @@ nav {
   margin-top: 16px;
 }
 
-nav > a,
-nav > i,
-nav > button,
-nav > label {
+nav > :not(.dropdown, .badge) {
   margin: 0 8px;
 }
 
@@ -25,10 +22,7 @@ nav.wrap {
   margin: 8px -8px;
 }
 
-nav.wrap > a,
-nav.wrap > i,
-nav.wrap > button,
-nav.wrap > label {
+nav.wrap > :not(.dropdown, .badge) {
   margin: 8px;
 }
 

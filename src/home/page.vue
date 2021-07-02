@@ -1,8 +1,7 @@
 <template lang="pug">
 div
-  #menu.menu.left.medium-device.large-device
-    .small-space
-    img.front.small.circle.no-margin.no-padding(
+  #menu.menu.left.m.l
+    img.small.circle.small-margin(
       :src="'/favicon.png'",
       @click="addHomeScreen()"
     )
@@ -55,7 +54,7 @@ div
         img.logo-template(:src="'/uber-dark.png'")
       a(href="/uber", v-show="theme != 'is-dark'")
         img.logo-template(:src="'/uber-light.png'")
-  #menu-bottom.menu.bottom.small-device
+  #menu-bottom.menu.bottom.s
     a(@click="updateMenu('#menu-bottom')")
       i zoom_out_map
       div Size
@@ -140,7 +139,6 @@ div
             span Badges
             a.chip.circle(@click="showSamples('#badges nav > a')")
               i code
-            span.badge.top.left.medium-device.large-device New
           nav.wrap
             label.radio
               input#default-badges(
@@ -159,151 +157,157 @@ div
               input#teal-badges(type="radio", name="color-badges")
               span teal
           .space
-          nav.wrap
-            a
-              span.badge New
-              i search
-            a
-              span.badge.round New
-              i notifications
-            a
-              span.badge.circle 10
-              i apps
-            a
-              span.badge.square 10
-              i apps
-            a
-              span.badge.border New
-              i help_outline
-            a
-              span.badge.border.round New
-              i home
-            a
-              span.badge.circle.border 10
-              i account_circle
-            a
-              span.badge.square.border 10
-              i account_circle
-            a
-              span.badge.top New
-              i search
-            a
-              span.badge.round.top New
-              i notifications
-            a
-              span.badge.circle.top 10
-              i apps
-            a
-              span.badge.square.top 10
-              i apps
-            a
-              span.badge.border.top New
-              i help_outline
-            a
-              span.badge.border.round.top New
-              i home
-            a
-              span.badge.circle.border.top 10
-              i account_circle
-            a
-              span.badge.square.border.top 10
-              i account_circle
-            a
-              span.badge.left.top New
-              i search
-            a
-              span.badge.round.left.top New
-              i notifications
-            a
-              span.badge.circle.left.top 10
-              i apps
-            a
-              span.badge.square.left.top 10
-              i apps
-            a
-              span.badge.border.left.top New
-              i help_outline
-            a
-              span.badge.border.round.left.top New
-              i home
-            a
-              span.badge.circle.border.left.top 10
-              i account_circle
-            a
-              span.badge.square.border.left.top 10
-              i account_circle
-            a
-              span.badge.bottom.right New
-              i search
-            a
-              span.badge.round.bottom.right New
-              i notifications
-            a
-              span.badge.circle.bottom.right 10
-              i apps
-            a
-              span.badge.square.bottom.right 10
-              i apps
-            a
-              span.badge.border.bottom.right New
-              i help_outline
-            a
-              span.badge.border.round.bottom.right New
-              i home
-            a
-              span.badge.circle.border.bottom.right 10
-              i account_circle
-            a
-              span.badge.square.border.bottom.right 10
-              i account_circle
-            a
-              span.badge.bottom New
-              i search
-            a
-              span.badge.round.bottom New
-              i notifications
-            a
-              span.badge.circle.bottom 10
-              i apps
-            a
-              span.badge.square.bottom 10
-              i apps
-            a
-              span.badge.border.bottom New
-              i help_outline
-            a
-              span.badge.border.round.bottom New
-              i home
-            a
-              span.badge.circle.border.bottom 10
-              i account_circle
-            a
-              span.badge.square.border.bottom 10
-              i account_circle
-            a
-              span.badge.left.bottom New
-              i search
-            a
-              span.badge.round.left.bottom New
-              i notifications
-            a
-              span.badge.circle.left.bottom 10
-              i apps
-            a
-              span.badge.square.left.bottom 10
-              i apps
-            a
-              span.badge.border.left.bottom New
-              i help_outline
-            a
-              span.badge.border.round.left.bottom New
-              i home
-            a
-              span.badge.circle.border.left.bottom 10
-              i account_circle
-            a
-              span.badge.square.border.left.bottom 10
-              i account_circle
+          .row
+            .col.s12.m6
+              .space
+              nav.wrap
+                a
+                  span.badge New
+                  i search
+                a
+                  span.badge.round New
+                  i notifications
+                a
+                  span.badge.circle 10
+                  i apps
+                a
+                  span.badge.square 10
+                  i apps
+                a
+                  span.badge.top New
+                  i search
+                a
+                  span.badge.round.top New
+                  i notifications
+                a
+                  span.badge.circle.top 10
+                  i apps
+                a
+                  span.badge.square.top 10
+                  i apps
+                a
+                  span.badge.left.top New
+                  i search
+                a
+                  span.badge.round.left.top New
+                  i notifications
+                a
+                  span.badge.circle.left.top 10
+                  i apps
+                a
+                  span.badge.square.left.top 10
+                  i apps
+                a
+                  span.badge.bottom.right New
+                  i search
+                a
+                  span.badge.round.bottom.right New
+                  i notifications
+                a
+                  span.badge.circle.bottom.right 10
+                  i apps
+                a
+                  span.badge.square.bottom.right 10
+                  i apps
+                a
+                  span.badge.bottom New
+                  i search
+                a
+                  span.badge.round.bottom New
+                  i notifications
+                a
+                  span.badge.circle.bottom 10
+                  i apps
+                a
+                  span.badge.square.bottom 10
+                  i apps
+                a
+                  span.badge.left.bottom New
+                  i search
+                a
+                  span.badge.round.left.bottom New
+                  i notifications
+                a
+                  span.badge.circle.left.bottom 10
+                  i apps
+                a
+                  span.badge.square.left.bottom 10
+                  i apps
+            .col.s12.m6
+              .space
+              nav.wrap
+                a
+                  span.badge.border New
+                  i help_outline
+                a
+                  span.badge.border.round New
+                  i home
+                a
+                  span.badge.circle.border 10
+                  i account_circle
+                a
+                  span.badge.square.border 10
+                  i account_circle
+                a
+                  span.badge.border.top New
+                  i help_outline
+                a
+                  span.badge.border.round.top New
+                  i home
+                a
+                  span.badge.circle.border.top 10
+                  i account_circle
+                a
+                  span.badge.square.border.top 10
+                  i account_circle
+                a
+                  span.badge.border.left.top New
+                  i help_outline
+                a
+                  span.badge.border.round.left.top New
+                  i home
+                a
+                  span.badge.circle.border.left.top 10
+                  i account_circle
+                a
+                  span.badge.square.border.left.top 10
+                  i account_circle
+                a
+                  span.badge.border.bottom.right New
+                  i help_outline
+                a
+                  span.badge.border.round.bottom.right New
+                  i home
+                a
+                  span.badge.circle.border.bottom.right 10
+                  i account_circle
+                a
+                  span.badge.square.border.bottom.right 10
+                  i account_circle
+                a
+                  span.badge.border.bottom New
+                  i help_outline
+                a
+                  span.badge.border.round.bottom New
+                  i home
+                a
+                  span.badge.circle.border.bottom 10
+                  i account_circle
+                a
+                  span.badge.square.border.bottom 10
+                  i account_circle
+                a
+                  span.badge.border.left.bottom New
+                  i help_outline
+                a
+                  span.badge.border.round.left.bottom New
+                  i home
+                a
+                  span.badge.circle.border.left.bottom 10
+                  i account_circle
+                a
+                  span.badge.square.border.left.bottom 10
+                  i account_circle
           .small-space
         #buttons.col.s12
           .medium-space
@@ -311,7 +315,7 @@ div
             span Buttons
             a.chip.circle(@click="showSamples('#buttons button')")
               i code
-            span.badge.top.left.medium-device.large-device New
+            span.badge.top.left.m.l New
           nav.wrap
             label.radio
               input#default-buttons(
@@ -330,93 +334,169 @@ div
               input#pink-buttons(type="radio", name="color-buttons")
               span pink
             label.radio
-              input#small-buttons(type="radio", name="size-buttons")
-              span small
-            label.radio
-              input#medium-buttons(
+              input#small-buttons(
                 type="radio",
                 name="size-buttons",
                 checked="checked"
               )
+              span small
+            label.radio
+              input#medium-buttons(type="radio", name="size-buttons")
               span medium
             label.radio
               input#large-buttons(type="radio", name="size-buttons")
               span large
-          nav.wrap
-            button Button
-            button
-              i search
-              span Button
-            button
-              span Button
-              i refresh
-            button.round Button
-            button.round 
-              i place
-              span Button
-            button.round 
-              span Button
-              i delete
-            button.circle A
-            button.circle
-              i home
-            button.diamond
-              i home
-            button.square
-              i home
-            button.square.left-round
-              i home
-            button.square.top-round
-              i home
-            button.square.right-round
-              i home
-            button.square.bottom-round
-              i home
-            button.square.top-round.left-round
-              i home
-            button.square.bottom-round.right-round
-              i home
-            button.border Button
-            button.border 
-              i search
-              span Button
-            button.border
-              span Button
-              i refresh
-            button.border.round Button
-            button.border.round 
-              i place
-              span Button
-            button.border.round 
-              span Button
-              i delete
-            button.border.circle B
-            button.border.circle
-              i home
-            button.border.diamond
-              i home
-            button.border.square
-              i home
-            button.border.square.left-round
-              i home
-            button.border.square.top-round
-              i home
-            button.border.square.right-round
-              i home
-            button.border.square.bottom-round
-              i home
-            button.border.square.top-round.left-round
-              i home
-            button.border.square.bottom-round.right-round
-              i home
+            label.radio
+              input#extra-buttons(type="radio", name="size-buttons")
+              span extra
+          .row
+            .col.s12.m6
+              .space
+              nav.wrap
+                button Button
+                button
+                  i search
+                  span Button
+                button.round Button
+                button.round 
+                  i place
+                  span Button
+                button.circle A
+                button.circle
+                  i home
+                button.diamond
+                  i home
+                button.square
+                  i home
+                button.square.left-round
+                  i home
+                button.square.top-round
+                  i home
+                button.square.right-round
+                  i home
+                button.square.bottom-round
+                  i home
+                button.square.top-round.left-round
+                  i home
+                button.square.bottom-round.right-round
+                  i home
+                button
+                  img(:src="'/favicon.png'")
+                  span Button
+                button
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.round 
+                  img(:src="'/favicon.png'")
+                  span Button
+                button.round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.top-round.left-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.bottom-round.right-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.left-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.right-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.circle
+                  img.responsive(:src="'/favicon.png'")
+                button.square
+                  img.responsive(:src="'/favicon.png'")
+                button.square.left-round
+                  img.responsive(:src="'/favicon.png'")
+                button.square.top-round
+                  img.responsive(:src="'/favicon.png'")
+                button.square.right-round
+                  img.responsive(:src="'/favicon.png'")
+                button.square.bottom-round
+                  img.responsive(:src="'/favicon.png'")
+                button.square.top-round.left-round
+                  img.responsive(:src="'/favicon.png'")
+                button.square.bottom-round.right-round
+                  img.responsive(:src="'/favicon.png'")
+            .col.s12.m6
+              .space
+              nav.wrap
+                button.border Button
+                button.border 
+                  i search
+                  span Button
+                button.border.round Button
+                button.border.round 
+                  i place
+                  span Button
+                button.border.circle B
+                button.border.circle
+                  i home
+                button.border.diamond
+                  i home
+                button.border.square
+                  i home
+                button.border.square.left-round
+                  i home
+                button.border.square.top-round
+                  i home
+                button.border.square.right-round
+                  i home
+                button.border.square.bottom-round
+                  i home
+                button.border.square.top-round.left-round
+                  i home
+                button.border.square.bottom-round.right-round
+                  i home
+                button.border
+                  img(:src="'/favicon.png'")
+                  span Button
+                button.border
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.border.round
+                  img(:src="'/favicon.png'")
+                  span Button
+                button.border.round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.border.top-round.left-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.border.bottom-round.right-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.border.left-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.border.right-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+                button.border.circle
+                  img.responsive(:src="'/favicon.png'")
+                button.border.square
+                  img.responsive(:src="'/favicon.png'")
+                button.border.square.left-round
+                  img.responsive(:src="'/favicon.png'")
+                button.border.square.top-round
+                  img.responsive(:src="'/favicon.png'")
+                button.border.square.right-round
+                  img.responsive(:src="'/favicon.png'")
+                button.border.square.bottom-round
+                  img.responsive(:src="'/favicon.png'")
+                button.border.square.top-round.left-round
+                  img.responsive(:src="'/favicon.png'")
+                button.border.square.bottom-round.right-round
+                  img.responsive(:src="'/favicon.png'")
         #cards.col.s12
           .medium-space
           h5
             span Cards
             a.chip.circle(@click="showSamples('#cards .card:visible')")
               i code
-            span.badge.top.left.medium-device.large-device New
-          nav.wrap.medium-device.large-device
+          nav.wrap.m.l
             label.radio
               input(
                 v-model="mediaCard",
@@ -508,7 +588,7 @@ div
                     button.none Button
             .col.s12.m6.l3
               .card.no-padding.round
-                img.responsive.small(:src="'/beer-and-woman.jpg'")
+                img.responsive.small.top-round(:src="'/beer-and-woman.jpg'")
                 .padding
                   h5.no-margin Title
                   div Complementary text
@@ -524,7 +604,7 @@ div
                     button.none Button
             .col.s12.m6.l3
               .card.no-padding.border.round
-                img.responsive.small(:src="'/beer-and-woman.jpg'")
+                img.responsive.small.top-round(:src="'/beer-and-woman.jpg'")
                 .padding
                   h5.no-margin Title
                   div Complementary text
@@ -540,7 +620,7 @@ div
                     button.border.small Button
             .col.s12.m6.l3
               .card.no-padding.round
-                img.responsive.medium.round(:src="'/beer-and-woman.jpg'")
+                img.responsive.medium(:src="'/beer-and-woman.jpg'")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
                   h5.no-margin Title
                   div Complementary text
@@ -556,7 +636,7 @@ div
                     button.border.small Button
             .col.s12.m6.l3
               .card.no-padding.border.round
-                img.responsive.medium.round(:src="'/beer-and-woman.jpg'")
+                img.responsive.medium(:src="'/beer-and-woman.jpg'")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
                   h5.no-margin Title
                   div Complementary text
@@ -667,7 +747,12 @@ div
                     button.none Button
             .col.s12.m6.l3
               .card.no-padding.round
-                video.responsive.small(autoplay, loop, muted, playsinline)
+                video.responsive.small.top-round(
+                  autoplay,
+                  loop,
+                  muted,
+                  playsinline
+                )
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .padding
                   h5.no-margin Title
@@ -685,7 +770,12 @@ div
                     button.none Button
             .col.s12.m6.l3
               .card.no-padding.border.round
-                video.responsive.small(autoplay, loop, muted, playsinline)
+                video.responsive.small.top-round(
+                  autoplay,
+                  loop,
+                  muted,
+                  playsinline
+                )
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .padding
                   h5.no-margin Title
@@ -703,12 +793,7 @@ div
                     button.border.small Button
             .col.s12.m6.l3
               .card.no-padding.round
-                video.responsive.medium.round(
-                  autoplay,
-                  loop,
-                  muted,
-                  playsinline
-                )
+                video.responsive.medium(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
                   h5.no-margin Title
@@ -726,12 +811,7 @@ div
                     button.border.small Button
             .col.s12.m6.l3
               .card.no-padding.border.round
-                video.responsive.medium.round(
-                  autoplay,
-                  loop,
-                  muted,
-                  playsinline
-                )
+                video.responsive.medium(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
                   h5.no-margin Title
@@ -831,77 +911,145 @@ div
             span Chips
             a.chip.circle(@click="showSamples('#chips nav .chip')")
               i code
-            span.badge.top.left.medium-device.large-device New
+            span.badge.top.left.m.l New
           nav.wrap
-            a.chip Filter
-            a.chip
-              i.small done
-              span Filter
-            a.chip.circle A
-            a.chip.circle
-              i search
-            a.chip.diamond
-              i search
-            a.chip.square
-              i search
-            a.chip.square.left-round
-              i search
-            a.chip.square.top-round
-              i search
-            a.chip.square.right-round
-              i search
-            a.chip.square.bottom-round
-              i search
-            a.chip.square.top-round.left-round
-              i search
-            a.chip.square.bottom-round.right-round
-              i search
-            a.chip.active Filter
-            a.chip.active
-              i.small done
-              span Filter
-            a.chip.circle.active B
-            a.chip.circle.active
-              i home
-            a.chip.diamond.active
-              i home
-            a.chip.square.active
-              i home
-            a.chip.square.left-round.active
-              i home
-            a.chip.square.top-round.active
-              i home
-            a.chip.square.right-round.active
-              i home
-            a.chip.square.bottom-round.active
-              i home
-            a.chip.square.top-round.left-round.active
-              i home
-            a.chip.square.bottom-round.right-round.active
-              i home
-            a.chip.border Filter
-            a.chip.border
-              i.small done
-              span Filter
-            a.chip.circle.border C
-            a.chip.circle.border
-              i refresh
-            a.chip.diamond.border
-              i refresh
-            a.chip.square.border
-              i refresh
-            a.chip.square.border.left-round
-              i refresh
-            a.chip.square.border.top-round
-              i refresh
-            a.chip.square.border.right-round
-              i refresh
-            a.chip.square.border.bottom-round
-              i refresh
-            a.chip.square.border.top-round.left-round
-              i refresh
-            a.chip.square.border.bottom-round.right-round
-              i refresh
+            label.radio
+              input#small-chips(
+                type="radio",
+                name="size-chips",
+                checked="checked"
+              )
+              span small
+            label.radio
+              input#medium-chips(type="radio", name="size-chips")
+              span medium
+            label.radio
+              input#large-chips(type="radio", name="size-chips")
+              span large
+            label.checkbox
+              input#active-chips(type="checkbox", name="active-chips")
+              span active
+          .row
+            .col.s12.m6
+              .space
+              nav.wrap
+                a.chip Chip
+                a.chip
+                  i.small done
+                  span Chip
+                a.chip.circle A
+                a.chip.circle
+                  i search
+                a.chip.diamond
+                  i search
+                a.chip.square
+                  i search
+                a.chip.square.left-round
+                  i search
+                a.chip.square.top-round
+                  i search
+                a.chip.square.right-round
+                  i search
+                a.chip.square.bottom-round
+                  i search
+                a.chip.square.top-round.left-round
+                  i search
+                a.chip.square.bottom-round.right-round
+                  i search
+                a.chip
+                  img(:src="'/favicon.png'")
+                  span Chip
+                a.chip
+                  img.responsive(:src="'/favicon.png'")
+                  span Chip
+                a.chip.top-round.left-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Chip
+                a.chip.bottom-round.right-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Chip
+                a.chip.left-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Chip
+                a.chip.right-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Chip
+                a.chip.circle
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.left-round
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.top-round
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.right-round
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.bottom-round
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.top-round.left-round
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.bottom-round.right-round
+                  img.responsive(:src="'/favicon.png'")
+            .col.s12.m6
+              .space
+              nav.wrap
+                a.chip.border Chip
+                a.chip.border
+                  i.small done
+                  span Chip
+                a.chip.circle.border B
+                a.chip.circle.border
+                  i refresh
+                a.chip.diamond.border
+                  i refresh
+                a.chip.square.border
+                  i refresh
+                a.chip.square.border.left-round
+                  i refresh
+                a.chip.square.border.top-round
+                  i refresh
+                a.chip.square.border.right-round
+                  i refresh
+                a.chip.square.border.bottom-round
+                  i refresh
+                a.chip.square.border.top-round.left-round
+                  i refresh
+                a.chip.square.border.bottom-round.right-round
+                  i refresh
+                a.chip.border
+                  img(:src="'/favicon.png'")
+                  span Chip
+                a.chip.border
+                  img.responsive(:src="'/favicon.png'")
+                  span Chip
+                a.chip.top-round.left-round.border
+                  img.responsive(:src="'/favicon.png'")
+                  span Chip
+                a.chip.bottom-round.right-round.border
+                  img.responsive(:src="'/favicon.png'")
+                  span Chip
+                a.chip.left-round.border
+                  img.responsive(:src="'/favicon.png'")
+                  span Chip
+                a.chip.right-round.border
+                  img.responsive(:src="'/favicon.png'")
+                  span Chip
+                a.chip.circle.border
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.border
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.left-round.border
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.top-round.border
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.right-round.border
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.bottom-round.border
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.top-round.left-round.border
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.bottom-round.right-round.border
+                  img.responsive(:src="'/favicon.png'")
         #colors.col.s12
           .medium-space
           h5 
@@ -985,7 +1133,7 @@ div
                   .col
                     div Title
                     label Complementary text
-            button.circle.small(data-ui="#dropdown3")
+            button.circle(data-ui="#dropdown3")
               i arrow_back
               #dropdown3.dropdown.left.no-wrap(data-ui="#dropdown3")
                 a Title
@@ -1012,7 +1160,7 @@ div
                   .col
                     div Title
                     label Complementary text
-            button.circle.small(data-ui="#dropdown4")
+            button.circle(data-ui="#dropdown4")
               i arrow_forward
               #dropdown4.dropdown.right.no-wrap(data-ui="#dropdown4")
                 a Title
@@ -1078,7 +1226,7 @@ div
                         a.button.none 7
                     tr
                       td
-                        .button.small.border.circle.no-margin 8
+                        a.button.border.color-1-border.circle.medium.no-margin.absolute.middle.center 8
                       td
                         a.button.none 9
                       td
@@ -1097,7 +1245,7 @@ div
                       td
                         a.button.none 16
                       td
-                        a.button.small.circle.no-margin 17
+                        a.button.circle.medium.no-margin.absolute.middle.center 17
                       td
                         a.button.none 18
                       td
@@ -1133,7 +1281,6 @@ div
                       td 3
                       td 4
             button(data-ui="#dropdown6")
-              span.badge New
               span Video
               #dropdown6.dropdown.no-padding.small-width(data-ui="#dropdown6") 
                 video.responsive(autoplay, loop, muted, playsinline)
@@ -1183,6 +1330,7 @@ div
             span Inputs
             a.chip.circle(@click="showSamples('#inputs .field')")
               i code
+            span.badge.top.left New
           nav.wrap
             label.checkbox
               input#border-inputs(type="checkbox")
@@ -1222,35 +1370,24 @@ div
           .space
           .row
             .col.s12.l4
+              .field
+                input(type="text")
+            .col.s12.l4
+              .field
+                input(type="text")
+                span.helper Complementary text
+            .col.s12.l4
+              .field.invalid
+                input(type="text")
+                span.error Error text
+            .col.s12.l4
               .field.label
                 input(type="text")
                 label Text
             .col.s12.l4
-              .field.label.prefix
-                i search
-                input(type="text")
-                label Text
-            .col.s12.l4
-              .field.label.sufix
-                input(type="text")
-                label Text
-                i search
-            .col.s12.l4
               .field.label
                 input(type="text")
                 label Text
-                span.helper Complementary text
-            .col.s12.l4
-              .field.label.prefix
-                i search
-                input(type="text")
-                label Text
-                span.helper Complementary text
-            .col.s12.l4
-              .field.label.sufix
-                input(type="text")
-                label Text
-                i search
                 span.helper Complementary text
             .col.s12.l4
               .field.label.invalid
@@ -1258,17 +1395,37 @@ div
                 label Text
                 span.error Error text
             .col.s12.l4
-              .field.label.prefix.invalid
+              .field.label.prefix
                 i search
                 input(type="text")
                 label Text
-                span.error Error text
             .col.s12.l4
-              .field.label.sufix.invalid
+              .field.label.sufix
                 input(type="text")
                 label Text
                 i search
-                span.error Error text
+            .col.s12.l4
+              .field.label.prefix.sufix
+                i search
+                input(type="text")
+                label Text
+                i search
+            .col.s12.l4
+              .field.label.prefix
+                img.circle(:src="'/favicon.png'")
+                input(type="text")
+                label Text
+            .col.s12.l4
+              .field.label.sufix
+                input(type="text")
+                label Text
+                img.circle(:src="'/favicon.png'")
+            .col.s12.l4
+              .field.label.prefix.sufix
+                img.circle(:src="'/favicon.png'")
+                input(type="text")
+                label Text
+                img.circle(:src="'/favicon.png'")
         #layouts.col.s12
           .medium-space
           h5
@@ -1502,8 +1659,7 @@ div
               @click="showSamples('#media img:visible, #media video:visible')"
             )
               i code
-            span.badge.top.left.medium-device.large-device New
-          nav.wrap.medium-device.large-device
+          nav.wrap.m.l
             label.radio
               input(
                 v-model="mediaImage",
@@ -1629,7 +1785,7 @@ div
               i code
           nav
             button Button
-            a.chip Filter
+            a.chip Chip
             i home
             a
               img.circle(:src="'/beer-and-woman.jpg'")
@@ -1714,17 +1870,17 @@ div
               i code
           div
             nav
-              button.small-device.circle
+              button.s.circle.extra
                 i phone_android
-              button.medium-device.large-device.border.circle
+              button.m.l.border.circle.extra
                 i phone_android
-              button.medium-device.circle
+              button.m.circle.extra
                 i tablet_android
-              button.small-device.large-device.border.circle
+              button.s.l.border.circle.extra
                 i tablet_android
-              button.large-device.circle
+              button.l.circle.extra
                 i laptop_windows
-              button.small-device.medium-device.border.circle
+              button.s.m.border.circle.extra
                 i laptop_windows
         #rows.col.s12
           .medium-space
@@ -1789,6 +1945,7 @@ div
             span Selects
             a.chip.circle(@click="showSamples('#selects .field')")
               i code
+            span.badge.top.left New
           nav.wrap
             label.checkbox
               input#border-selects(type="checkbox")
@@ -1814,7 +1971,30 @@ div
               span large
           .space
           .row
-            .col.s12.l6
+            .col.s12.l4
+              .field.sufix
+                select
+                  option Item 1
+                  option Item 2
+                  option Item 3
+                i arrow_drop_down
+            .col.s12.l4
+              .field.sufix
+                select
+                  option Item 1
+                  option Item 2
+                  option Item 3
+                i arrow_drop_down
+                span.helper Complementary text
+            .col.s12.l4
+              .field.sufix.invalid
+                select
+                  option Item 1
+                  option Item 2
+                  option Item 3
+                i arrow_drop_down
+                span.error Error text
+            .col.s12.l4
               .field.label.sufix
                 select
                   option Item 1
@@ -1822,15 +2002,7 @@ div
                   option Item 3
                 label.active List
                 i arrow_drop_down
-            .col.s12.l6
-              .field.label.prefix
-                i arrow_drop_down
-                select
-                  option Item 1
-                  option Item 2
-                  option Item 3
-                label.active List
-            .col.s12.l6
+            .col.s12.l4
               .field.label.sufix
                 select
                   option Item 1
@@ -1839,16 +2011,7 @@ div
                 label.active List
                 i arrow_drop_down
                 span.helper Complementary text
-            .col.s12.l6
-              .field.label.prefix
-                i arrow_drop_down
-                select
-                  option Item 1
-                  option Item 2
-                  option Item 3
-                label.active List
-                span.helper Complementary text
-            .col.s12.l6
+            .col.s12.l4
               .field.label.sufix.invalid
                 select
                   option Item 1
@@ -1857,14 +2020,31 @@ div
                 label.active List
                 i arrow_drop_down
                 span.error Error text
-            .col.s12.l6
-              .field.label.prefix.invalid
-                i arrow_drop_down
+            .col.s12.l4
+              .field.label.sufix
                 select
                   option Item 1
                   option Item 2
                   option Item 3
                 label.active List
+                img.circle(:src="'/favicon.png'")
+            .col.s12.l4
+              .field.label.sufix
+                select
+                  option Item 1
+                  option Item 2
+                  option Item 3
+                label.active List
+                img.circle(:src="'/favicon.png'")
+                span.helper Complementary text
+            .col.s12.l4
+              .field.label.sufix
+                select
+                  option Item 1
+                  option Item 2
+                  option Item 3
+                label.active List
+                img.circle(:src="'/favicon.png'")
                 span.error Error text
         #switches.col.s12
           .medium-space
@@ -2016,6 +2196,7 @@ div
               @click="showSamples('#tabs > div:not(.medium-space)')"
             )
               i code
+            span.badge.left.top New
           nav.wrap
             label.radio
               input#default-align-tabs(
@@ -2074,23 +2255,6 @@ div
               h5 Tab 3
           div
             .tabs
-              a.active(data-ui="#tab7") 
-                span Tab 1
-                i home
-              a(data-ui="#tab8")
-                span Tab 2
-                i home
-              a(data-ui="#tab9")
-                span Tab 3
-                i home
-            #tab7.page.padding.active
-              h5 Tab 1
-            #tab8.page.padding
-              h5 Tab 2
-            #tab9.page.padding
-              h5 Tab 3
-          div
-            .tabs
               a.active(data-ui="#tab10") 
                 i.wrap home
                 span Tab 1
@@ -2108,15 +2272,32 @@ div
               h5 Tab 3
           div
             .tabs
-              a.active(data-ui="#tab13") 
+              a.active(data-ui="#tab7") 
+                img.circle(:src="'/favicon.png'")
                 span Tab 1
-                i.wrap home
-              a(data-ui="#tab14")
+              a(data-ui="#tab8")
+                img.circle(:src="'/favicon.png'")
                 span Tab 2
-                i.wrap home
-              a(data-ui="#tab15")
+              a(data-ui="#tab9")
+                img.circle(:src="'/favicon.png'")
                 span Tab 3
-                i.wrap home
+            #tab7.page.padding.active
+              h5 Tab 1
+            #tab8.page.padding
+              h5 Tab 2
+            #tab9.page.padding
+              h5 Tab 3
+          div
+            .tabs
+              a.active(data-ui="#tab13") 
+                img.wrap.circle(:src="'/favicon.png'")
+                span Tab 1
+              a(data-ui="#tab14")
+                img.wrap.circle(:src="'/favicon.png'")
+                span Tab 2
+              a(data-ui="#tab15")
+                img.wrap.circle(:src="'/favicon.png'")
+                span Tab 3
             #tab13.page.padding.active
               h5 Tab 1
             #tab14.page.padding
@@ -2129,6 +2310,7 @@ div
             span Textareas
             a.chip.circle(@click="showSamples('#textareas .field')")
               i code
+            span.badge.top.left New
           nav.wrap
             label.checkbox
               input#border-textareas(type="checkbox")
@@ -2155,53 +2337,62 @@ div
           .space
           .row
             .col.s12.l4
-              .field.label.textarea
+              .field.textarea
+                textarea
+            .col.s12.l4
+              .field.textarea
+                textarea
+                span.helper Complementary text
+            .col.s12.l4
+              .field.textarea.invalid
+                textarea
+                span.error Error text
+            .col.s12.l4
+              .field.textarea.label
                 textarea
                 label Text
             .col.s12.l4
-              .field.label.prefix.textarea
-                i search
-                textarea
-                label Text
-            .col.s12.l4
-              .field.label.sufix.textarea
-                textarea
-                label Text
-                i search
-            .col.s12.l4
-              .field.label.textarea
+              .field.textarea.label
                 textarea
                 label Text
                 span.helper Complementary text
             .col.s12.l4
-              .field.label.prefix.textarea
-                i search
-                textarea
-                label Text
-                span.helper Complementary text
-            .col.s12.l4
-              .field.label.sufix.textarea
-                textarea
-                label Text
-                i search
-                span.helper Complementary text
-            .col.s12.l4
-              .field.label.invalid.textarea
+              .field.textarea.label.invalid
                 textarea
                 label Text
                 span.error Error text
             .col.s12.l4
-              .field.label.prefix.invalid.textarea
+              .field.textarea.label.prefix
                 i search
                 textarea
                 label Text
-                span.error Error text
             .col.s12.l4
-              .field.label.sufix.invalid.textarea
+              .field.textarea.label.sufix
                 textarea
                 label Text
                 i search
-                span.error Error text
+            .col.s12.l4
+              .field.textarea.label.prefix.sufix
+                i search
+                textarea
+                label Text
+                i search
+            .col.s12.l4
+              .field.textarea.label.prefix
+                img.circle(:src="'/favicon.png'")
+                textarea
+                label Text
+            .col.s12.l4
+              .field.textarea.label.sufix
+                textarea
+                label Text
+                img.circle(:src="'/favicon.png'")
+            .col.s12.l4
+              .field.textarea.label.prefix.sufix
+                img.circle(:src="'/favicon.png'")
+                textarea
+                label Text
+                img.circle(:src="'/favicon.png'")
         #toasts.col.s12.l6
           .medium-space
           h5
@@ -2266,7 +2457,7 @@ div
           div
             h4.center-align Has about 100 css classes to combine...
             .large-space
-            #helpers.medium-device.large-device
+            #helpers.m.l
               h5 Helpers
               .row.no-wrap
                 .col
@@ -2354,9 +2545,9 @@ div
                   div left-shadow
                   div bottom-shadow
                   div top-shadow
-                  div small-device
-                  div medium-device
-                  div large-device
+                  div s
+                  div m
+                  div l
                   div active
                   div wrap
                   div no-wrap
@@ -2382,7 +2573,7 @@ div
                 div 
                   span button&nbsp;
                   span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
-                  span.orange-text none, diamond
+                  span.orange-text none, diamond, extra
                 div
                   span chip&nbsp;
                   span.grey-text border, circle, active,&nbsp;
@@ -2442,7 +2633,7 @@ div
                 div 
                   span &lt;button&gt;&nbsp;
                   span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
-                  span.orange-text none, diamond
+                  span.orange-text none, diamond, extra
                 div 
                   span &lt;circle&gt;
                 div 
@@ -2918,7 +3109,7 @@ div
                     button.none 7
                 tr
                   td
-                    button.small.border.circle.no-margin 8
+                    button.border.circle.medium.no-margin.color-1-border.absolute.middle.center 8
                   td
                     button.none 9
                   td
@@ -2937,7 +3128,7 @@ div
                   td
                     button.none 16
                   td
-                    button.small.circle.no-margin 17
+                    button.circle.medium.no-margin.absolute.middle.center 17
                   td
                     button.none 18
                   td
@@ -3034,6 +3225,7 @@ export default {
     this.resetTheme();
     this.badgeSamples();
     this.buttonSamples();
+    this.chipSamples();
     this.inputSamples();
     this.listSamples();
     this.tableSamples();
@@ -3291,7 +3483,7 @@ export default {
     },
     buttonSamples() {
       $("#buttons input").on("click", function () {
-        var ids = ["green", "orange", "pink", "small", "large"];
+        var ids = ["green", "orange", "pink", "medium", "large", "extra"];
         var buttons = $("#buttons button:not(.border)");
         var buttonsBorder = $("#buttons button.border");
 
@@ -3307,12 +3499,27 @@ export default {
           var selector = "#" + ids[i] + "-buttons";
           if ($(selector).is(":checked")) {
             buttons.addClass(ids[i]);
-            if (["small", "medium", "large"].indexOf(ids[i]) == -1) {
+            if (["small", "medium", "large", "extra"].indexOf(ids[i]) == -1) {
               buttonsBorder.addClass(ids[i] + "-border");
               buttonsBorder.addClass(ids[i] + "-text");
             } else {
               buttonsBorder.addClass(ids[i]);
             }
+          }
+        }
+      });
+    },
+    chipSamples() {
+      $("#chips input").on("click", function () {
+        var ids = ["small", "medium", "large", "active"];
+        var chips = $("#chips nav .chip");
+
+        for (var i = 0; i < ids.length; i++) {
+          chips.removeClass(ids[i]);
+
+          var selector = "#" + ids[i] + "-chips";
+          if ($(selector).is(":checked")) {
+            chips.addClass(ids[i]);
           }
         }
       });
@@ -3400,7 +3607,7 @@ export default {
 
               if (ids[i] == "file") {
                 inputs.attr("type", "text");
-                labels.html("Choose a file");
+                labels.html("File");
                 icons.html("attach_file");
 
                 for (var j = 0; j < inputs.length; j++)
@@ -3421,8 +3628,8 @@ export default {
             }
           } else {
             if ($(selector).is(":checked"))
-              $("#inputs .field.label").addClass(ids[i]);
-            else $("#inputs .field.label").removeClass(ids[i]);
+              $("#inputs .field").addClass(ids[i]);
+            else $("#inputs .field").removeClass(ids[i]);
           }
         }
       });
@@ -3434,9 +3641,8 @@ export default {
         var ids = ["border", "fill", "round", "small", "large"];
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-selects";
-          if ($(selector).is(":checked"))
-            $("#selects .field.label").addClass(ids[i]);
-          else $("#selects .field.label").removeClass(ids[i]);
+          if ($(selector).is(":checked")) $("#selects .field").addClass(ids[i]);
+          else $("#selects .field").removeClass(ids[i]);
         }
       });
     },
@@ -3449,8 +3655,8 @@ export default {
           var selector = "#" + ids[i] + "-textareas";
 
           if ($(selector).is(":checked"))
-            $("#textareas .field.label").addClass(ids[i]);
-          else $("#textareas .field.label").removeClass(ids[i]);
+            $("#textareas .field").addClass(ids[i]);
+          else $("#textareas .field").removeClass(ids[i]);
         }
       });
     },

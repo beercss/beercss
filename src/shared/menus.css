@@ -1,4 +1,8 @@
 .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   border: 0;
   position: fixed;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
@@ -57,23 +61,23 @@
 }
 
 .menu.round {
-  border-radius: 48px;
+  border-radius: var(--large-round);
 }
 
-.menu.left.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
-  border-radius: 0 24px 24px 0;
+.menu.left.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
+  border-radius: 0 var(--small-round) var(--small-round) 0;
 }
 
-.menu.right.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
-  border-radius: 24px 0 0 24px;
+.menu.right.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
+  border-radius: var(--small-round) 0 0 var(--small-round);
 }
 
-.menu.bottom.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
-  border-radius: 24px 24px 0 0;
+.menu.bottom.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
+  border-radius: var(--small-round) var(--small-round) 0 0;
 }
 
-.menu.top.round:not(.margin):not(.small-margin):not(.medium-margin):not(.large-margin) {
-  border-radius: 0 0 24px 24px;
+.menu.top.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
+  border-radius: 0 0 var(--small-round) var(--small-round);
 }
 
 .menu.active {
@@ -87,29 +91,30 @@
   bottom: auto;
   width: auto;
   height: 56px;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  flex-direction: row;
 }
 
 .menu.left {
-  float: none;
   top: 0;
   left: 0;
   right: auto;
   bottom: 0;
   width: 64px;
   height: auto;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .menu.right {
-  float: none;
   top: 0;
   left: auto;
   right: 0;
   bottom: 0;
   width: 64px;
   height: auto;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .menu.bottom {
@@ -119,9 +124,8 @@
   bottom: 0;
   width: auto;
   height: 56px;
-  display: flex;
-  align-items: center;
   justify-content: center;
+  flex-direction: row;
 }
 
 .menu.small.right,
@@ -154,7 +158,15 @@
   height: 64px;
 }
 
-.menu > a {
+.menu > button,
+.menu > .button,
+.menu > .chip,
+.menu > img,
+.menu > video {
+  z-index: 1;
+}
+
+.menu > a:not(.button, .chip) {
   border: 0;
   display: block;
   font-size: 0.7rem;
@@ -165,16 +177,16 @@
   z-index: 1;
 }
 
-.menu > a:hover {
+.menu > a:not(.button, .chip):hover {
   color: var(--color-1);
 }
 
-.menu.top > a,
-.menu.bottom > a {
+.menu.top > a:not(.button, .chip),
+.menu.bottom > a:not(.button, .chip) {
   margin: 8px;
 }
 
-.menu > a.active {
+.menu > a:not(.button, .chip).active {
   color: var(--color-1);
 }
 
@@ -194,8 +206,21 @@
     justify-content: space-around;
   }
 
-  .menu.top > a,
-  .menu.bottom > a {
+  .menu.top > button,
+  .menu.top > .button,
+  .menu.top > .chip,
+  .menu.top > img,
+  .menu.top > video,
+  .menu.bottom > button,
+  .menu.bottom > .button,
+  .menu.bottom > .chip,
+  .menu.bottom > img,
+  .menu.bottom > video {
+    margin: 0;
+  }
+
+  .menu.top > a:not(.button, .chip),
+  .menu.bottom > a:not(.button, .chip) {
     margin: 0;
     padding: 0;
   }
