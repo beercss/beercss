@@ -24,7 +24,7 @@ Cheers, www.beercss.com
 - **It has zero dependencies.**
 - It does a lot of combinations.
 - It's easy to work with Vue, React, Angular, Svelte and others.
-- **It has about 10kb**
+- **It has about 10kb.**
 - **It has the most simple html output around.**
 - It does not need tons of documentation to explain it.
 - It's fast to learn, read and write code.
