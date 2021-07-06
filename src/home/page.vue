@@ -1074,11 +1074,13 @@ div
           .medium-space
           h5
             span Dropdowns
-            a.chip.circle(@click="showSamples('#dropdowns button')")
+            a.chip.circle(
+              @click="showSamples('#dropdowns button, #dropdowns .field')"
+            )
               i code
           nav.wrap
             button(data-ui="#dropdown1")
-              span Drooooopdoooooooooown
+              span This is a large button
               i arrow_drop_down
               #dropdown1.dropdown(data-ui="#dropdown1")
                 a Title
@@ -1106,7 +1108,7 @@ div
                     div Title
                     label Complementary text
             button(data-ui="#dropdown2")
-              span Dropdown
+              span Button
               i arrow_drop_down
               #dropdown2.dropdown.no-wrap(data-ui="#dropdown2")
                 a Title
@@ -1285,6 +1287,35 @@ div
               #dropdown6.dropdown.no-padding.small-width(data-ui="#dropdown6") 
                 video.responsive(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
+            .field.label.sufix
+              input(type="text", data-ui="#dropdown0")
+              label This is an input
+              i arrow_drop_down
+              #dropdown0.dropdown(data-ui="#dropdown0")
+                a Title
+                a
+                  div Title
+                  label Complementary text
+                a.row.no-wrap.middle-align
+                  .col.min
+                    i home
+                  .col Title
+                a.row.no-wrap.middle-align
+                  .col.min
+                    i home
+                  .col
+                    div Title
+                    label Complementary text
+                a.row.no-wrap.middle-align
+                  .col.min
+                    img.circle.tiny(:src="'/beer-and-woman.jpg'")
+                  .col Title
+                a.row.no-wrap.middle-align
+                  .col.min
+                    img.circle.tiny(:src="'/beer-and-woman.jpg'")
+                  .col
+                    div Title
+                    label Complementary text
         #icons.col.s12
           .medium-space
           h5
@@ -3734,6 +3765,10 @@ pre * {
 .logo-template {
   width: auto;
   height: 24px;
+}
+
+nav > .field {
+  display: inline-block;
 }
 
 #container {
