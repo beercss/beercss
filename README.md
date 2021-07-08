@@ -43,18 +43,11 @@ Beercss is an MIT-licensed open source project with its ongoing development made
 
 ### CDN
 
-From unpkg.com.
-
-```html
-<link href="https://unpkg.com/beercss/dist/cdn/beer.min.css" rel="stylesheet" />
-<script src="https://unpkg.com/beercss/dist/cdn/beer.min.js" type="text/javascript"></script>
-```
-
 From jsdelivr.net.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@latest/dist/cdn/beer.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/beercss@latest/dist/cdn/beer.min.js" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@1.1.1/dist/cdn/beer.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/beercss@1.1.1/dist/cdn/beer.min.js" type="text/javascript"></script>
 ```
 
 ### NPM
