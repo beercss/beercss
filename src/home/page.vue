@@ -29,7 +29,7 @@ div
     a(data-ui="#more")
       i collections
       div Templates
-      span.badge.circle.margin 4
+      span.badge.circle.top.margin 4
     a(@click="showSamples('#menu')")
       i code
       div Code
@@ -1357,6 +1357,9 @@ div
               input#large-inputs(type="radio", name="size-inputs")
               span large
             label.radio
+              input#extra-inputs(type="radio", name="size-inputs")
+              span extra
+            label.radio
               input#text-inputs(
                 type="radio",
                 name="type-inputs",
@@ -1971,6 +1974,9 @@ div
             label.radio
               input#large-selects(type="radio", name="size-selects")
               span large
+            label.radio
+              input#extra-selects(type="radio", name="size-selects")
+              span extra
           .space
           .row
             .col.s12.l4
@@ -2336,6 +2342,9 @@ div
             label.radio
               input#large-textareas(type="radio", name="size-textareas")
               span large
+            label.radio
+              input#extra-textareas(type="radio", name="size-textareas")
+              span extra
           .space
           .row
             .col.s12.l4
@@ -3582,7 +3591,7 @@ export default {
     },
     inputSamples() {
       $(
-        "#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#text-inputs,#password-inputs,#file-inputs"
+        "#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#extra-inputs,#text-inputs,#password-inputs,#file-inputs"
       ).on("click", function () {
         var ids = [
           "border",
@@ -3590,6 +3599,7 @@ export default {
           "round",
           "small",
           "large",
+          "extra",
           "text",
           "password",
           "file",
@@ -3638,9 +3648,9 @@ export default {
     },
     selectSamples() {
       $(
-        "#border-selects,#round-selects,#fill-selects,#small-selects,#medium-selects,#large-selects"
+        "#border-selects,#round-selects,#fill-selects,#small-selects,#medium-selects,#large-selects,#extra-selects"
       ).on("click", function () {
-        var ids = ["border", "fill", "round", "small", "large"];
+        var ids = ["border", "fill", "round", "small", "large", "extra"];
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-selects";
           if ($(selector).is(":checked")) $("#selects .field").addClass(ids[i]);
@@ -3650,9 +3660,9 @@ export default {
     },
     textareaSamples() {
       $(
-        "#border-textareas,#round-textareas,#fill-textareas,#small-textareas,#medium-textareas,#large-textareas"
+        "#border-textareas,#round-textareas,#fill-textareas,#small-textareas,#medium-textareas,#large-textareas,#extra-textareas"
       ).on("click", function () {
-        var ids = ["border", "fill", "round", "small", "large"];
+        var ids = ["border", "fill", "round", "small", "large", "extra"];
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-textareas";
 
@@ -3687,7 +3697,7 @@ export default {
 
 #logo.active {
   display: inline-block;
-  animation: logo-intro 1s;
+  animation: 1s logo-intro;
 }
 
 #container-logo {

@@ -15,6 +15,10 @@
   height: 56px;
 }
 
+.field.extra {
+  height: 64px;
+}
+
 .field + .field {
   margin-top: 24px;
 }
@@ -37,7 +41,7 @@
   position: absolute;
   top: 50%;
   left: auto;
-  right: 8px;
+  right: 10px;
   transform: translateY(-50%);
   cursor: pointer;
   color: #9e9e9e;
@@ -51,12 +55,12 @@
 .field.fill > img,
 .field.round > img {
   left: auto;
-  right: 8px;
+  right: 10px;
 }
 
 .field > i:first-child,
 .field > img:first-child {
-  left: 8px;
+  left: 10px;
   right: auto;
 }
 
@@ -66,7 +70,7 @@
 .field.border > img:first-child,
 .field.fill > img:first-child,
 .field.round > img:first-child {
-  left: 8px;
+  left: 10px;
   right: auto;
 }
 
@@ -94,6 +98,10 @@ input[type="file"] {
 
 .field.large.textarea {
   height: 104px;
+}
+
+.field.extra.textarea {
+  height: 120px;
 }
 
 .field > input,
@@ -207,6 +215,10 @@ input[type="file"] {
   padding-top: 25px;
 }
 
+.field.label.extra > textarea {
+  padding-top: 29px;
+}
+
 .field.label > textarea {
   padding-top: 21px;
 }
@@ -266,6 +278,10 @@ input[type="file"] {
 
 .field.label.textarea.large > label {
   top: 28px;
+}
+
+.field.label.textarea.extra > label {
+  top: 32px;
 }
 
 .field.label.round > label {
@@ -363,13 +379,13 @@ input[type="file"] {
 .checkbox > input:checked + span::before {
   color: var(--color-1);
   content: "check_box";
-  animation: 0.4s to-checked;
+  animation: 0.3s to-checked;
 }
 
 .radio > input:checked + span::before {
   color: var(--color-1);
   content: "radio_button_checked";
-  animation: 0.4s to-checked;
+  animation: 0.3s to-checked;
 }
 
 .checkbox + .checkbox,
