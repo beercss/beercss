@@ -9,9 +9,8 @@
 }
 
 #toast .toast.active {
-  display: inline-block;
-  animation-name: toast-to-top;
-  animation-duration: 0.2s;
+  visibility: visible;
+  animation: 0.2s toast-to-top;
 }
 
 .toast {
@@ -20,7 +19,7 @@
     0 3px 5px -1px rgba(0, 0, 0, 0.3);
   background-color: var(--color-4);
   padding: 12px;
-  display: none;
+  visibility: hidden;
   max-width: 100%;
   width: auto;
   opacity: 1;

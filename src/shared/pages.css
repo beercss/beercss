@@ -1,28 +1,26 @@
 .page {
-  display: none;
+  position: absolute;
+  visibility: hidden;
 }
 
 .page.active {
-  display: inherit;
+  position: inherit;
+  visibility: visible;
 }
 
 .page.top.active {
-  display: inherit;
   animation: 0.4s page-to-bottom;
 }
 
 .page.bottom.active  {
-  display: inherit;
   animation: 0.4s page-to-top;
 }
 
 .page.left.active {
-  display: inherit;
   animation: 0.4s page-to-right;
 }
 
 .page.right.active {
-  display: inherit;
   animation: 0.4s page-to-left;
 }
 

@@ -1,6 +1,6 @@
 .loader {
 	background: none !important;
-	animation: loader-to-loop 1.4s linear infinite;
+	animation: 1.4s loader-to-loop linear infinite;
 	width: 48px;
 	height: 48px;
 }
@@ -28,7 +28,7 @@
 	fill: none;
 	transform-origin: center;
 	stroke: var(--color-1);
-	animation: circle-to-loop 1.4s ease-in-out infinite;
+	animation:  1.4s circle-to-loop ease-in-out infinite;
 }
 
 .loader.red > circle {

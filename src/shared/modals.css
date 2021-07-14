@@ -1,5 +1,5 @@
 .modal {
-  display: none;
+  visibility: hidden;
   position: fixed;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
     0 3px 5px -1px rgba(0, 0, 0, 0.3);
@@ -56,7 +56,7 @@
 }
 
 .modal.active {
-  display: inline-block;
+  visibility: visible;
   animation: 0.2s modal-to-center ease-out;
 }
 
@@ -181,7 +181,7 @@
     transform: translateX(-100%);
   }
   to {
-    transform: translateX(0px);
+    transform: translateX(0%);
   }
 }
 
@@ -190,7 +190,7 @@
     transform: translateX(100%);
   }
   to {
-    transform: translateX(0px);
+    transform: translateX(0%);
   }
 }
 
@@ -199,7 +199,7 @@
     transform: translateY(-100%);
   }
   to {
-    transform: translateY(0px);
+    transform: translateY(0%);
   }
 }
 
@@ -208,7 +208,7 @@
     transform: translateY(100%);
   }
   to {
-    transform: translateY(0px);
+    transform: translateY(0%);
   }
 }
 
