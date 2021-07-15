@@ -6,7 +6,7 @@
 
 #logo.active {
   display: inline-block;
-  animation: logo-intro 1s;
+  animation: 1s logo-intro;
 }
 
 #container-logo {
