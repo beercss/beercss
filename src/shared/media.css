@@ -38,7 +38,8 @@ video.circle,
 video.responsive {
   object-fit: cover;
   object-position: center;
-  transition: transform 0.3s ease, border-radius 0.3s, padding 0.3s;
+  will-change: transform, border-radius, padding;
+  transition: 0.3s transform ease, 0.3s border-radius ease, 0.3s padding ease;
 }
 
 img.border,

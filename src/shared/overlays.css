@@ -1,5 +1,6 @@
 .overlay {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -8,16 +9,15 @@
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 100;
+  will-change: opacity;
 }
 
 .overlay.dark {
-  display: none;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 .overlay.light {
-  display: none;
   color: var(--color-2);
   background-color: var(--color-4a);
 }
@@ -27,11 +27,22 @@
 }
 
 .overlay.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  animation: 0.3s overlay-to-active;
 }
 
 .overlay.active.top-align,
 .overlay.active.middle-align,
 .overlay.active.bottom-align {
   display: flex;
+}
+
+@keyframes overlay-to-active {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

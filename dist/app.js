@@ -12005,6 +12005,15 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -12338,8 +12347,8 @@ var _default = {
       });
     },
     inputSamples: function inputSamples() {
-      $("#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#text-inputs,#password-inputs,#file-inputs").on("click", function () {
-        var ids = ["border", "fill", "round", "small", "large", "text", "password", "file"];
+      $("#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#extra-inputs,#text-inputs,#password-inputs,#file-inputs").on("click", function () {
+        var ids = ["border", "fill", "round", "small", "large", "extra", "text", "password", "file"];
 
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-inputs";
@@ -12381,8 +12390,8 @@ var _default = {
       });
     },
     selectSamples: function selectSamples() {
-      $("#border-selects,#round-selects,#fill-selects,#small-selects,#medium-selects,#large-selects").on("click", function () {
-        var ids = ["border", "fill", "round", "small", "large"];
+      $("#border-selects,#round-selects,#fill-selects,#small-selects,#medium-selects,#large-selects,#extra-selects").on("click", function () {
+        var ids = ["border", "fill", "round", "small", "large", "extra"];
 
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-selects";
@@ -12391,8 +12400,8 @@ var _default = {
       });
     },
     textareaSamples: function textareaSamples() {
-      $("#border-textareas,#round-textareas,#fill-textareas,#small-textareas,#medium-textareas,#large-textareas").on("click", function () {
-        var ids = ["border", "fill", "round", "small", "large"];
+      $("#border-textareas,#round-textareas,#fill-textareas,#small-textareas,#medium-textareas,#large-textareas,#extra-textareas").on("click", function () {
+        var ids = ["border", "fill", "round", "small", "large", "extra"];
 
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-textareas";
@@ -15920,7 +15929,7 @@ var staticRenderFns = [
     return _c("a", { attrs: { "data-ui": "#more" } }, [
       _c("i", [_vm._v("collections")]),
       _c("div", [_vm._v("Templates")]),
-      _c("span", { staticClass: "badge circle margin" }, [_vm._v("4")])
+      _c("span", { staticClass: "badge circle top margin" }, [_vm._v("4")])
     ])
   },
   function() {
@@ -15930,7 +15939,9 @@ var staticRenderFns = [
     return _c("a", { attrs: { "data-ui": "#more-bottom" } }, [
       _c("i", [_vm._v("collections")]),
       _c("div", [_vm._v("Templates")]),
-      _c("span", { staticClass: "badge circle small-margin" }, [_vm._v("4")])
+      _c("span", { staticClass: "badge circle top small-margin" }, [
+        _vm._v("4")
+      ])
     ])
   },
   function() {
@@ -17848,6 +17859,12 @@ var staticRenderFns = [
       ]),
       _c("label", { staticClass: "radio" }, [
         _c("input", {
+          attrs: { id: "extra-inputs", type: "radio", name: "size-inputs" }
+        }),
+        _c("span", [_vm._v("extra")])
+      ]),
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
           attrs: {
             id: "text-inputs",
             type: "radio",
@@ -18634,6 +18651,12 @@ var staticRenderFns = [
           attrs: { id: "large-selects", type: "radio", name: "size-selects" }
         }),
         _c("span", [_vm._v("large")])
+      ]),
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: { id: "extra-selects", type: "radio", name: "size-selects" }
+        }),
+        _c("span", [_vm._v("extra")])
       ])
     ])
   },
@@ -19221,6 +19244,16 @@ var staticRenderFns = [
           }
         }),
         _c("span", [_vm._v("large")])
+      ]),
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: {
+            id: "extra-textareas",
+            type: "radio",
+            name: "size-textareas"
+          }
+        }),
+        _c("span", [_vm._v("extra")])
       ])
     ])
   },
