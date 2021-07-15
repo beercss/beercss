@@ -263,7 +263,6 @@ input[type="file"] {
   top: 50%;
   left: 8px;
   font-size: var(--medium-text);
-  will-change: transform, font-size;
   transform: translateY(-50%);
   z-index: 0;
 }
@@ -333,6 +332,12 @@ input[type="file"] {
   opacity: 0;
 }
 
+.checkbox > span,
+.radio > span {
+  display: inline-flex;
+  align-items: center;
+}
+
 .checkbox > input + span::before,
 .radio > input + span::before {
   font-family: "Material Icons";
@@ -342,7 +347,8 @@ input[type="file"] {
   line-height: inherit;
   letter-spacing: normal;
   text-transform: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
@@ -352,6 +358,7 @@ input[type="file"] {
   text-align: center;
   overflow: hidden;
   width: 24px;
+  height: 24px;
   margin: 0 auto;
   padding: 0;
   outline: none;
@@ -360,7 +367,6 @@ input[type="file"] {
   position: absolute;
   left: -24px;
   background-color: transparent;
-  will-change: border-radius, background-color, box-shadow;
 }
 
 .checkbox > input + span::before {
@@ -381,13 +387,13 @@ input[type="file"] {
 .checkbox > input:checked + span::before {
   color: var(--color-1);
   content: "check_box";
-  animation: 0.3s to-checked ease;
+  animation: 0.3s to-checked;
 }
 
 .radio > input:checked + span::before {
   color: var(--color-1);
   content: "radio_button_checked";
-  animation: 0.3s to-checked ease;
+  animation: 0.3s to-checked;
 }
 
 .checkbox + .checkbox,
@@ -448,7 +454,6 @@ input[type="file"] {
     0 3px 1px -2px rgba(0, 0, 0, 0.2);
   left: 0;
   top: 50%;
-  will-change: transform, background-color;
   transition: 0.1s transform, 0.1s background-color;
   transform: translate(-44px, -50%);
 }

@@ -13,7 +13,6 @@
   min-width: 350px;
   overflow-x: hidden;
   overflow-y: auto;
-  will-change: transform, opacity;
 }
 
 .modal.border {

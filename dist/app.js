@@ -12014,6 +12014,11 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -15266,6 +15271,7 @@ exports.default = _default;
             _vm._m(157),
             _vm._m(158),
             _vm._m(159),
+            _vm._m(160),
             _c("div", { staticClass: "space" })
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "selects" } }, [
@@ -15286,18 +15292,18 @@ exports.default = _default;
               ),
               _c("span", { staticClass: "badge top left" }, [_vm._v("New")])
             ]),
-            _vm._m(160),
+            _vm._m(161),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
-              _vm._m(161),
               _vm._m(162),
               _vm._m(163),
               _vm._m(164),
               _vm._m(165),
               _vm._m(166),
+              _vm._m(167),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field label sufix" }, [
-                  _vm._m(167),
+                  _vm._m(168),
                   _c("label", { staticClass: "active" }, [_vm._v("List")]),
                   _c("img", {
                     staticClass: "circle",
@@ -15307,7 +15313,7 @@ exports.default = _default;
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field label sufix" }, [
-                  _vm._m(168),
+                  _vm._m(169),
                   _c("label", { staticClass: "active" }, [_vm._v("List")]),
                   _c("img", {
                     staticClass: "circle",
@@ -15320,7 +15326,7 @@ exports.default = _default;
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field label sufix" }, [
-                  _vm._m(169),
+                  _vm._m(170),
                   _c("label", { staticClass: "active" }, [_vm._v("List")]),
                   _c("img", {
                     staticClass: "circle",
@@ -15348,7 +15354,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(170)
+            _vm._m(171)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "table" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15367,9 +15373,9 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(171),
+            _vm._m(172),
             _c("div", { staticClass: "space" }),
-            _vm._m(172)
+            _vm._m(173)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "tabs" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15389,11 +15395,11 @@ exports.default = _default;
               ),
               _c("span", { staticClass: "badge left top" }, [_vm._v("New")])
             ]),
-            _vm._m(173),
-            _c("p", { staticClass: "space" }),
             _vm._m(174),
+            _c("p", { staticClass: "space" }),
             _vm._m(175),
             _vm._m(176),
+            _vm._m(177),
             _c("div", [
               _c("div", { staticClass: "tabs" }, [
                 _c(
@@ -15422,9 +15428,9 @@ exports.default = _default;
                   _c("span", [_vm._v("Tab 3")])
                 ])
               ]),
-              _vm._m(177),
               _vm._m(178),
-              _vm._m(179)
+              _vm._m(179),
+              _vm._m(180)
             ]),
             _c("div", [
               _c("div", { staticClass: "tabs" }, [
@@ -15454,9 +15460,9 @@ exports.default = _default;
                   _c("span", [_vm._v("Tab 3")])
                 ])
               ]),
-              _vm._m(180),
               _vm._m(181),
-              _vm._m(182)
+              _vm._m(182),
+              _vm._m(183)
             ])
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "textareas" } }, [
@@ -15477,10 +15483,9 @@ exports.default = _default;
               ),
               _c("span", { staticClass: "badge top left" }, [_vm._v("New")])
             ]),
-            _vm._m(183),
+            _vm._m(184),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
-              _vm._m(184),
               _vm._m(185),
               _vm._m(186),
               _vm._m(187),
@@ -15489,6 +15494,7 @@ exports.default = _default;
               _vm._m(190),
               _vm._m(191),
               _vm._m(192),
+              _vm._m(193),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field textarea label prefix" }, [
                   _c("img", {
@@ -15614,7 +15620,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(193)
+            _vm._m(194)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "typography" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15633,7 +15639,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(194)
+            _vm._m(195)
           ]),
           _c("div", { staticClass: "col s12" }, [
             _c("div", { staticClass: "large-divider" }),
@@ -15642,8 +15648,8 @@ exports.default = _default;
                 _vm._v("Has about 100 css classes to combine...")
               ]),
               _c("div", { staticClass: "large-space" }),
-              _vm._m(195),
               _vm._m(196),
+              _vm._m(197),
               _c("div", { staticClass: "space" }),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col s12" }, [
@@ -15770,13 +15776,13 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "large-space" }),
-              _vm._m(197),
+              _vm._m(198),
               _c("div", { staticClass: "space" }),
-              _vm._m(198)
+              _vm._m(199)
             ])
           ])
         ]),
-        _vm._m(199),
+        _vm._m(200),
         _c("div", { staticClass: "modal", attrs: { id: "modal" } }, [
           _c("h5", [_vm._v("Title")]),
           _c("div", [_vm._v("Complementary text")]),
@@ -15852,7 +15858,7 @@ exports.default = _default;
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-samples" } },
           [
-            _vm._m(200),
+            _vm._m(201),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -15876,12 +15882,12 @@ exports.default = _default;
           ],
           2
         ),
-        _vm._m(201),
+        _vm._m(202),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
-            _vm._m(202),
+            _vm._m(203),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -18608,6 +18614,17 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row no-wrap" }, [
       _c("div", { staticClass: "col min" }, [_vm._v("min")]),
       _c("div", { staticClass: "col min" }, [_vm._v("min")]),
+      _c("div", { staticClass: "col min" }, [_vm._v("min")]),
+      _c("div", { staticClass: "col" }, [_vm._v("max")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row no-wrap" }, [
+      _c("div", { staticClass: "col min" }, [_vm._v("min")]),
+      _c("div", { staticClass: "col" }, [_vm._v("max")]),
       _c("div", { staticClass: "col min" }, [_vm._v("min")]),
       _c("div", { staticClass: "col" }, [_vm._v("max")])
     ])
