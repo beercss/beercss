@@ -50,8 +50,8 @@ button.none {
   box-shadow: none;
   width: auto;
   min-width: auto;
-  height: 24px;
-  min-height: 24px;
+  height: 32px;
+  min-height: 32px;
   color: var(--color-1);
   padding: 0;
   background-color: transparent;
@@ -188,7 +188,9 @@ button.diamond > i {
 td > .button,
 td > nav > .button,
 td > button,
-td > nav > button {
+td > nav > button
+td > button.none,
+td > nav > button.none {
   min-height: 24px;
   max-height: 24px;
 }
