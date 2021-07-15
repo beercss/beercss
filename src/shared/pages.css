@@ -1,27 +1,30 @@
 .page {
+  opacity: 0;
   position: absolute;
   visibility: hidden;
+  will-change: all;
 }
 
 .page.active {
+  opacity: 1;
   position: inherit;
   visibility: visible;
 }
 
 .page.top.active {
-  animation: 0.4s page-to-bottom;
+  animation: 0.4s page-to-bottom ease;
 }
 
 .page.bottom.active  {
-  animation: 0.4s page-to-top;
+  animation: 0.4s page-to-top ease;
 }
 
 .page.left.active {
-  animation: 0.4s page-to-right;
+  animation: 0.4s page-to-right ease;
 }
 
 .page.right.active {
-  animation: 0.4s page-to-left;
+  animation: 0.4s page-to-left ease;
 }
 
 @keyframes page-to-bottom {

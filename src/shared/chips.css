@@ -12,7 +12,8 @@
   background-color: var(--color-2a);
   margin: 0 8px;
   text-transform: none;
-  transition: transform .3s ease, border-radius .3s, padding .3s;
+  will-change: transform, border-radius, padding;
+  transition: 0.3s transform ease, 0.3s border-radius ease, 0.3s padding ease;
   z-index: 1;
 }
 

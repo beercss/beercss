@@ -1,4 +1,5 @@
 .modal {
+  opacity: 0;
   visibility: hidden;
   position: fixed;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
@@ -9,10 +10,10 @@
   z-index: 100;
   left: 50%;
   top: 10%;
-  transform: translate(-50%, 0);
   min-width: 350px;
   overflow-x: hidden;
   overflow-y: auto;
+  will-change: transform, opacity;
 }
 
 .modal.border {
@@ -56,32 +57,30 @@
 }
 
 .modal.active {
+  opacity: 1;
   visibility: visible;
-  animation: 0.2s modal-to-center ease-out;
+  transform: translate(-50%, 0);
+  animation: 0.2s modal-to-center ease;
 }
 
 .modal.active.left {
-  display: inline-block;
-  transform: none;
-  animation: 0.2s modal-to-right ease-out;
+  transform: translate(0);
+  animation: 0.2s modal-to-right ease;
 }
 
 .modal.active.right {
-  display: inline-block;
-  transform: none;
-  animation: 0.2s modal-to-left;
+  transform: translate(0);
+  animation: 0.2s modal-to-left ease;
 }
 
 .modal.active.top {
-  display: inline-block;
-  transform: none;
-  animation: 0.2s modal-to-bottom;
+  transform: translate(0);
+  animation: 0.2s modal-to-bottom ease;
 }
 
 .modal.active.bottom {
-  display: inline-block;
-  transform: none;
-  animation: 0.2s modal-to-top;
+  transform: translate(0);
+  animation: 0.2s modal-to-top ease;
 }
 
 .modal.top {
@@ -178,47 +177,55 @@
 
 @keyframes modal-to-right {
   from {
-    transform: translateX(-100%);
+    opacity: 0;
+    transform: translate(-50%, 0);
   }
   to {
-    transform: translateX(0%);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
 @keyframes modal-to-left {
   from {
-    transform: translateX(100%);
+    opacity: 0;
+    transform: translate(50%, 0);
   }
   to {
-    transform: translateX(0%);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
 @keyframes modal-to-bottom {
   from {
-    transform: translateY(-100%);
+    opacity: 0;
+    transform: translate(0, -50%);
   }
   to {
-    transform: translateY(0%);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
 @keyframes modal-to-top {
   from {
-    transform: translateY(100%);
+    opacity: 0;
+    transform: translate(0, 50%);
   }
   to {
-    transform: translateY(0%);
+    opacity: 1;
+    transform: translate(0);
   }
 }
 
 @keyframes modal-to-center {
   from {
     opacity: 0;
-    top: 5%;
+    transform: translate(-50%, -64px);
   }
   to {
     opacity: 1;
-    top: 10%;
+    transform: translate(-50%, 0)
   }
 }

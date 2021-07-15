@@ -67,7 +67,7 @@ div
     a(data-ui="#more-bottom")
       i collections
       div Templates
-      span.badge.circle.small-margin 4
+      span.badge.circle.top.small-margin 4
     a(@click="showSamples('#menu-bottom')")
       i code
       div Code

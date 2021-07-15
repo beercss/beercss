@@ -263,6 +263,7 @@ input[type="file"] {
   top: 50%;
   left: 8px;
   font-size: var(--medium-text);
+  will-change: transform, font-size;
   transform: translateY(-50%);
   z-index: 0;
 }
@@ -359,6 +360,7 @@ input[type="file"] {
   position: absolute;
   left: -24px;
   background-color: transparent;
+  will-change: border-radius, background-color, box-shadow;
 }
 
 .checkbox > input + span::before {
@@ -379,13 +381,13 @@ input[type="file"] {
 .checkbox > input:checked + span::before {
   color: var(--color-1);
   content: "check_box";
-  animation: 0.3s to-checked;
+  animation: 0.3s to-checked ease;
 }
 
 .radio > input:checked + span::before {
   color: var(--color-1);
   content: "radio_button_checked";
-  animation: 0.3s to-checked;
+  animation: 0.3s to-checked ease;
 }
 
 .checkbox + .checkbox,

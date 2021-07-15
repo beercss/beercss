@@ -1,4 +1,5 @@
 .dropdown {
+  opacity: 0;
   visibility: hidden;
   position: absolute;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
@@ -21,6 +22,7 @@
   color: var(--color-2);
   line-height: normal;
   text-align: left;
+  will-change: transform, opacity;
 }
 
 .dropdown.no-wrap {
@@ -28,6 +30,7 @@
 }
 
 .dropdown.active {
+  opacity: 1;
   visibility: visible;
   animation: 0.1s dropdown-to-bottom;
 }
