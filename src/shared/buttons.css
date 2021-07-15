@@ -15,8 +15,7 @@ button {
   margin: 0 8px;
   text-transform: uppercase;
   border-radius: 4px;
-  will-change: transform, border-radius, padding;
-  transition: 0.3s transform ease, 0.3s border-radius ease, 0.3s padding ease;
+  transition: 0.3s transform, 0.3s border-radius, 0.3s padding;
 }
 
 button > :not(.dropdown, .badge) + :not(.dropdown, .badge),
@@ -51,8 +50,8 @@ button.none {
   box-shadow: none;
   width: auto;
   min-width: auto;
-  height: auto;
-  min-height: auto;
+  height: 24px;
+  min-height: 24px;
   color: var(--color-1);
   padding: 0;
   background-color: transparent;

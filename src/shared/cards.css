@@ -5,8 +5,7 @@
   padding: 16px;
   border-radius: 4px;
   display: block;
-  will-change: transform, border-radius, padding;
-  transition: 0.3s transform ease, 0.3s border-radius ease, 0.3s padding ease;
+  transition: 0.3s transform, 0.3s border-radius, 0.3s padding;
 }
 
 .card + .card {

@@ -1943,6 +1943,11 @@ div
             .col.min min
             .col.min min
             .col max
+          .row.no-wrap
+            .col.min min
+            .col max
+            .col.min min
+            .col max
           .space
         #selects.col.s12
           .medium-space
