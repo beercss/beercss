@@ -2647,7 +2647,7 @@ div
                   span.orange-text min, max, s1..12, m1..12, l1..12
                 div 
                   span toast&nbsp;
-                  span.grey-text small, medium, large, border, round, flat, active
+                  span.grey-text top, bottom, small, medium, large, border, round, flat, active
                 div 
                   span tooltip&nbsp;
                   span.grey-text left, right, top, bottom, small, medium, large, border, round, flat
