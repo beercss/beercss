@@ -118,20 +118,6 @@ div
         a.button.large(href="https://www.patreon.com/beercss", target="_blank") Support us
       .large-space
       .large-divider 
-      #toasts
-        #toast1.toast.pink.white-text
-          i error
-          span Complementary text
-        #toast2.toast.orange.white-text
-          i warning
-          span Complementary text
-        #toast3.toast.green.white-text
-          i done
-          span Complementary text
-        #toast4.toast.blue.white-text
-          i info
-          span Complementary text
-
       .row
         #badges.col.s12
           .medium-space
@@ -2416,10 +2402,22 @@ div
             a.chip.circle(@click="showSamples('#toasts .toast')")
               i code
           nav.wrap
-            button.pink(@click="showToasts('#toast1')") Toast
-            button.orange(@click="showToasts('#toast2')") Toast
-            button.green(@click="showToasts('#toast3')") Toast
-            button.blue(@click="showToasts('#toast4')") Toast
+            button.pink(onclick="ui('.toast.pink')") Toast
+            button.orange(onclick="ui('.toast.orange')") Toast
+            button.green(onclick="ui('.toast.green')") Toast
+            button.blue(onclick="ui('.toast.blue')") Toast
+          .toast.pink.white-text
+            i error
+            span Complementary text
+          .toast.orange.white-text
+            i warning
+            span Complementary text
+          .toast.green.white-text
+            i done
+            span Complementary text
+          .toast.blue.white-text
+            i info
+            span Complementary text
         #tooltips.col.s12.l6
           .medium-space
           h5
@@ -3466,17 +3464,6 @@ export default {
         ui(modal || "#modal-samples");
         $(modal || "#modal-samples").scrollTop(0);
       });
-    },
-    showToasts(selector) {
-      if (selector) {
-        ui(selector);
-        return;
-      }
-
-      ui("#toast1");
-      ui("#toast2");
-      ui("#toast3");
-      ui("#toast4");
     },
     tabSamples() {
       $("#tabs input").on("click", function () {

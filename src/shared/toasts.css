@@ -1,34 +1,44 @@
-#toast {
+.toast {
   position: fixed;
+  top: auto;
   bottom: 0;
   left: 50%;
+  right: auto;
   width: 80%;
   height: auto;
   z-index: 200;
-  transform: translateX(-50%);
+  visibility: hidden;
+  display: inline-block;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-4);
+  padding: 16px;
+  opacity: 1;
+  margin: 8px;
+  cursor: pointer;
+  transform: translate(-50%, 0);
+  text-align: left;
+  vertical-align: middle;
 }
 
-#toast .toast.active {
-  position: relative;
+.toast.top {
+  top: 0;
+  bottom: auto;
+}
+
+.toast.bottom {
+  top: auto;
+  bottom: 0;
+}
+
+.toast.active  {
   visibility: visible;
   animation: 0.2s toast-to-top;
 }
 
-.toast {
-  position: absolute;
-  visibility: hidden;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
-    0 3px 5px -1px rgba(0, 0, 0, 0.3);
-  background-color: var(--color-4);
-  padding: 12px;
-  display: block;
-  opacity: 1;
-  margin: 8px;
-  cursor: pointer;
-  transform: translateY(0);
-  text-align: left;
+.toast.active.top {
+  visibility: visible;
+  animation: 0.2s toast-to-bottom;
 }
 
 .toast.small {
@@ -36,11 +46,11 @@
 }
 
 .toast.medium {
-  padding: 12px;
+  padding: 16px;
 }
 
 .toast.large {
-  padding: 16px;
+  padding: 24px;
 }
 
 .toast.round {
@@ -54,16 +64,27 @@
 @keyframes toast-to-top {
   0% {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translate(-50%, 16px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes toast-to-bottom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
 }
 
 @media only screen and (min-width: 993px) {
-  #toast {
+  .toast {
     width: 40%;
   }
 }
