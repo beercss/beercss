@@ -12019,6 +12019,18 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -12054,6 +12066,7 @@ var _default = {
     this.rowSamples();
     this.textareaSamples();
     this.layoutSamples();
+    this.toastSamples();
     setTimeout(function () {
       $("#logo").addClass("active");
     }, 1000);
@@ -12227,16 +12240,20 @@ var _default = {
         $(modal || "#modal-samples").scrollTop(0);
       });
     },
-    showToasts: function showToasts(selector) {
-      if (selector) {
-        ui(selector);
-        return;
-      }
+    toastSamples: function toastSamples() {
+      $("#toasts input").on("click", function () {
+        var ids = ["top"];
+        var toasts = $("#toasts .toast");
 
-      ui("#toast1");
-      ui("#toast2");
-      ui("#toast3");
-      ui("#toast4");
+        for (var i = 0; i < ids.length; i++) {
+          toasts.removeClass(ids[i]);
+          var selector = "#" + ids[i] + "-toasts";
+
+          if ($(selector).is(":checked")) {
+            if (["top"].indexOf(ids[i]) != -1) toasts.addClass(ids[i]);
+          }
+        }
+      });
     },
     tabSamples: function tabSamples() {
       $("#tabs input").on("click", function () {
@@ -12912,7 +12929,6 @@ exports.default = _default;
         _vm._m(2),
         _c("div", { staticClass: "large-space" }),
         _c("div", { staticClass: "large-divider" }),
-        _vm._m(3),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col s12", attrs: { id: "badges" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -12931,9 +12947,9 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(4),
+            _vm._m(3),
             _c("div", { staticClass: "space" }),
-            _vm._m(5),
+            _vm._m(4),
             _c("div", { staticClass: "small-space" })
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "buttons" } }, [
@@ -12954,16 +12970,17 @@ exports.default = _default;
               ),
               _c("span", { staticClass: "badge top left m l" }, [_vm._v("New")])
             ]),
-            _vm._m(6),
+            _vm._m(5),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s12 m6" }, [
                 _c("div", { staticClass: "space" }),
                 _c("nav", { staticClass: "wrap" }, [
                   _c("button", [_vm._v("Button")]),
-                  _vm._m(7),
+                  _vm._m(6),
                   _c("button", { staticClass: "round" }, [_vm._v("Button")]),
-                  _vm._m(8),
+                  _vm._m(7),
                   _c("button", { staticClass: "circle" }, [_vm._v("A")]),
+                  _vm._m(8),
                   _vm._m(9),
                   _vm._m(10),
                   _vm._m(11),
@@ -12972,7 +12989,6 @@ exports.default = _default;
                   _vm._m(14),
                   _vm._m(15),
                   _vm._m(16),
-                  _vm._m(17),
                   _c("button", [
                     _c("img", { attrs: { src: "/favicon.png" } }),
                     _c("span", [_vm._v("Button")])
@@ -13081,12 +13097,13 @@ exports.default = _default;
                 _c("div", { staticClass: "space" }),
                 _c("nav", { staticClass: "wrap" }, [
                   _c("button", { staticClass: "border" }, [_vm._v("Button")]),
-                  _vm._m(18),
+                  _vm._m(17),
                   _c("button", { staticClass: "border round" }, [
                     _vm._v("Button")
                   ]),
-                  _vm._m(19),
+                  _vm._m(18),
                   _c("button", { staticClass: "border circle" }, [_vm._v("B")]),
+                  _vm._m(19),
                   _vm._m(20),
                   _vm._m(21),
                   _vm._m(22),
@@ -13095,7 +13112,6 @@ exports.default = _default;
                   _vm._m(25),
                   _vm._m(26),
                   _vm._m(27),
-                  _vm._m(28),
                   _c("button", { staticClass: "border" }, [
                     _c("img", { attrs: { src: "/favicon.png" } }),
                     _c("span", [_vm._v("Button")])
@@ -13271,12 +13287,12 @@ exports.default = _default;
             ]),
             _vm.mediaCard == 1
               ? _c("div", { staticClass: "row" }, [
+                  _vm._m(28),
                   _vm._m(29),
                   _vm._m(30),
                   _vm._m(31),
                   _vm._m(32),
                   _vm._m(33),
-                  _vm._m(34),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card" }, [
                       _c("div", { staticClass: "row no-wrap" }, [
@@ -13286,9 +13302,9 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(35)
+                        _vm._m(34)
                       ]),
-                      _vm._m(36)
+                      _vm._m(35)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13300,9 +13316,9 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(37)
+                        _vm._m(36)
                       ]),
-                      _vm._m(38)
+                      _vm._m(37)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13314,9 +13330,9 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(39)
+                        _vm._m(38)
                       ]),
-                      _vm._m(40)
+                      _vm._m(39)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13328,9 +13344,9 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(41)
+                        _vm._m(40)
                       ]),
-                      _vm._m(42)
+                      _vm._m(41)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13339,7 +13355,7 @@ exports.default = _default;
                         staticClass: "responsive small",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(43)
+                      _vm._m(42)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13348,7 +13364,7 @@ exports.default = _default;
                         staticClass: "responsive small top-round",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(44)
+                      _vm._m(43)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13357,7 +13373,7 @@ exports.default = _default;
                         staticClass: "responsive small",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(45)
+                      _vm._m(44)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13366,11 +13382,20 @@ exports.default = _default;
                         staticClass: "responsive small top-round",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(46)
+                      _vm._m(45)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding" }, [
+                      _c("img", {
+                        staticClass: "responsive medium",
+                        attrs: { src: "/beer-and-woman.jpg" }
+                      }),
+                      _vm._m(46)
+                    ])
+                  ]),
+                  _c("div", { staticClass: "col s12 m6 l3" }, [
+                    _c("div", { staticClass: "card no-padding round" }, [
                       _c("img", {
                         staticClass: "responsive medium",
                         attrs: { src: "/beer-and-woman.jpg" }
@@ -13379,7 +13404,7 @@ exports.default = _default;
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding round" }, [
+                    _c("div", { staticClass: "card no-padding border" }, [
                       _c("img", {
                         staticClass: "responsive medium",
                         attrs: { src: "/beer-and-woman.jpg" }
@@ -13388,21 +13413,12 @@ exports.default = _default;
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding border" }, [
-                      _c("img", {
-                        staticClass: "responsive medium",
-                        attrs: { src: "/beer-and-woman.jpg" }
-                      }),
-                      _vm._m(49)
-                    ])
-                  ]),
-                  _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding border round" }, [
                       _c("img", {
                         staticClass: "responsive medium",
                         attrs: { src: "/beer-and-woman.jpg" }
                       }),
-                      _vm._m(50)
+                      _vm._m(49)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 l6" }, [
@@ -13414,7 +13430,7 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(51)
+                        _vm._m(50)
                       ])
                     ])
                   ]),
@@ -13426,9 +13442,9 @@ exports.default = _default;
                             staticClass: "responsive",
                             attrs: { src: "/beer-and-woman.jpg" }
                           }),
-                          _vm._m(52)
+                          _vm._m(51)
                         ]),
-                        _vm._m(53)
+                        _vm._m(52)
                       ])
                     ])
                   ])
@@ -13436,12 +13452,12 @@ exports.default = _default;
               : _vm._e(),
             _vm.mediaCard == 2
               ? _c("div", { staticClass: "row" }, [
+                  _vm._m(53),
                   _vm._m(54),
                   _vm._m(55),
                   _vm._m(56),
                   _vm._m(57),
                   _vm._m(58),
-                  _vm._m(59),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card" }, [
                       _c("div", { staticClass: "row no-wrap" }, [
@@ -13465,9 +13481,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(60)
+                        _vm._m(59)
                       ]),
-                      _vm._m(61)
+                      _vm._m(60)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13493,9 +13509,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(62)
+                        _vm._m(61)
                       ]),
-                      _vm._m(63)
+                      _vm._m(62)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13521,9 +13537,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(64)
+                        _vm._m(63)
                       ]),
-                      _vm._m(65)
+                      _vm._m(64)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13549,9 +13565,9 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(66)
+                        _vm._m(65)
                       ]),
-                      _vm._m(67)
+                      _vm._m(66)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13560,6 +13576,29 @@ exports.default = _default;
                         "video",
                         {
                           staticClass: "responsive small",
+                          attrs: {
+                            autoplay: "autoplay",
+                            loop: "loop",
+                            muted: "muted",
+                            playsinline: "playsinline"
+                          },
+                          domProps: { muted: true }
+                        },
+                        [
+                          _c("source", {
+                            attrs: { src: "/dance.mp4", type: "video/mp4" }
+                          })
+                        ]
+                      ),
+                      _vm._m(67)
+                    ])
+                  ]),
+                  _c("div", { staticClass: "col s12 m6 l3" }, [
+                    _c("div", { staticClass: "card no-padding round" }, [
+                      _c(
+                        "video",
+                        {
+                          staticClass: "responsive small top-round",
                           attrs: {
                             autoplay: "autoplay",
                             loop: "loop",
@@ -13578,29 +13617,6 @@ exports.default = _default;
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding round" }, [
-                      _c(
-                        "video",
-                        {
-                          staticClass: "responsive small top-round",
-                          attrs: {
-                            autoplay: "autoplay",
-                            loop: "loop",
-                            muted: "muted",
-                            playsinline: "playsinline"
-                          },
-                          domProps: { muted: true }
-                        },
-                        [
-                          _c("source", {
-                            attrs: { src: "/dance.mp4", type: "video/mp4" }
-                          })
-                        ]
-                      ),
-                      _vm._m(69)
-                    ])
-                  ]),
-                  _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding border" }, [
                       _c(
                         "video",
@@ -13620,7 +13636,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(70)
+                      _vm._m(69)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
@@ -13643,11 +13659,34 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(71)
+                      _vm._m(70)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding" }, [
+                      _c(
+                        "video",
+                        {
+                          staticClass: "responsive medium",
+                          attrs: {
+                            autoplay: "autoplay",
+                            loop: "loop",
+                            muted: "muted",
+                            playsinline: "playsinline"
+                          },
+                          domProps: { muted: true }
+                        },
+                        [
+                          _c("source", {
+                            attrs: { src: "/dance.mp4", type: "video/mp4" }
+                          })
+                        ]
+                      ),
+                      _vm._m(71)
+                    ])
+                  ]),
+                  _c("div", { staticClass: "col s12 m6 l3" }, [
+                    _c("div", { staticClass: "card no-padding round" }, [
                       _c(
                         "video",
                         {
@@ -13670,7 +13709,7 @@ exports.default = _default;
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding round" }, [
+                    _c("div", { staticClass: "card no-padding border" }, [
                       _c(
                         "video",
                         {
@@ -13693,29 +13732,6 @@ exports.default = _default;
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 m6 l3" }, [
-                    _c("div", { staticClass: "card no-padding border" }, [
-                      _c(
-                        "video",
-                        {
-                          staticClass: "responsive medium",
-                          attrs: {
-                            autoplay: "autoplay",
-                            loop: "loop",
-                            muted: "muted",
-                            playsinline: "playsinline"
-                          },
-                          domProps: { muted: true }
-                        },
-                        [
-                          _c("source", {
-                            attrs: { src: "/dance.mp4", type: "video/mp4" }
-                          })
-                        ]
-                      ),
-                      _vm._m(74)
-                    ])
-                  ]),
-                  _c("div", { staticClass: "col s12 m6 l3" }, [
                     _c("div", { staticClass: "card no-padding border round" }, [
                       _c(
                         "video",
@@ -13735,7 +13751,7 @@ exports.default = _default;
                           })
                         ]
                       ),
-                      _vm._m(75)
+                      _vm._m(74)
                     ])
                   ]),
                   _c("div", { staticClass: "col s12 l6" }, [
@@ -13761,7 +13777,7 @@ exports.default = _default;
                             ]
                           )
                         ]),
-                        _vm._m(76)
+                        _vm._m(75)
                       ])
                     ])
                   ]),
@@ -13787,9 +13803,9 @@ exports.default = _default;
                               })
                             ]
                           ),
-                          _vm._m(77)
+                          _vm._m(76)
                         ]),
-                        _vm._m(78)
+                        _vm._m(77)
                       ])
                     ])
                   ])
@@ -13813,7 +13829,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(79)
+            _vm._m(78)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "chips" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -13833,14 +13849,15 @@ exports.default = _default;
               ),
               _c("span", { staticClass: "badge top left m l" }, [_vm._v("New")])
             ]),
-            _vm._m(80),
+            _vm._m(79),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col s12 m6" }, [
                 _c("div", { staticClass: "space" }),
                 _c("nav", { staticClass: "wrap" }, [
                   _c("a", { staticClass: "chip" }, [_vm._v("Chip")]),
-                  _vm._m(81),
+                  _vm._m(80),
                   _c("a", { staticClass: "chip circle" }, [_vm._v("A")]),
+                  _vm._m(81),
                   _vm._m(82),
                   _vm._m(83),
                   _vm._m(84),
@@ -13849,7 +13866,6 @@ exports.default = _default;
                   _vm._m(87),
                   _vm._m(88),
                   _vm._m(89),
-                  _vm._m(90),
                   _c("a", { staticClass: "chip" }, [
                     _c("img", { attrs: { src: "/favicon.png" } }),
                     _c("span", [_vm._v("Chip")])
@@ -13947,8 +13963,9 @@ exports.default = _default;
                 _c("div", { staticClass: "space" }),
                 _c("nav", { staticClass: "wrap" }, [
                   _c("a", { staticClass: "chip border" }, [_vm._v("Chip")]),
-                  _vm._m(91),
+                  _vm._m(90),
                   _c("a", { staticClass: "chip circle border" }, [_vm._v("B")]),
+                  _vm._m(91),
                   _vm._m(92),
                   _vm._m(93),
                   _vm._m(94),
@@ -13957,7 +13974,6 @@ exports.default = _default;
                   _vm._m(97),
                   _vm._m(98),
                   _vm._m(99),
-                  _vm._m(100),
                   _c("a", { staticClass: "chip border" }, [
                     _c("img", { attrs: { src: "/favicon.png" } }),
                     _c("span", [_vm._v("Chip")])
@@ -14063,7 +14079,7 @@ exports.default = _default;
               ])
             ])
           ]),
-          _vm._m(101),
+          _vm._m(100),
           _c("div", { staticClass: "col s12", attrs: { id: "containers" } }, [
             _c("div", { staticClass: "medium-space" }),
             _c("h5", [
@@ -14162,9 +14178,9 @@ exports.default = _default;
                   },
                   [
                     _c("a", [_vm._v("Title")]),
+                    _vm._m(101),
                     _vm._m(102),
                     _vm._m(103),
-                    _vm._m(104),
                     _c("a", { staticClass: "row no-wrap middle-align" }, [
                       _c("div", { staticClass: "col min" }, [
                         _c("img", {
@@ -14181,7 +14197,7 @@ exports.default = _default;
                           attrs: { src: "/beer-and-woman.jpg" }
                         })
                       ]),
-                      _vm._m(105)
+                      _vm._m(104)
                     ])
                   ]
                 )
@@ -14197,9 +14213,9 @@ exports.default = _default;
                   },
                   [
                     _c("a", [_vm._v("Title")]),
+                    _vm._m(105),
                     _vm._m(106),
                     _vm._m(107),
-                    _vm._m(108),
                     _c("a", { staticClass: "row no-wrap middle-align" }, [
                       _c("div", { staticClass: "col min" }, [
                         _c("img", {
@@ -14216,7 +14232,7 @@ exports.default = _default;
                           attrs: { src: "/beer-and-woman.jpg" }
                         })
                       ]),
-                      _vm._m(109)
+                      _vm._m(108)
                     ])
                   ]
                 )
@@ -14234,9 +14250,9 @@ exports.default = _default;
                     },
                     [
                       _c("a", [_vm._v("Title")]),
+                      _vm._m(109),
                       _vm._m(110),
                       _vm._m(111),
-                      _vm._m(112),
                       _c("a", { staticClass: "row no-wrap middle-align" }, [
                         _c("div", { staticClass: "col min" }, [
                           _c("img", {
@@ -14253,7 +14269,7 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(113)
+                        _vm._m(112)
                       ])
                     ]
                   )
@@ -14272,9 +14288,9 @@ exports.default = _default;
                     },
                     [
                       _c("a", [_vm._v("Title")]),
+                      _vm._m(113),
                       _vm._m(114),
                       _vm._m(115),
-                      _vm._m(116),
                       _c("a", { staticClass: "row no-wrap middle-align" }, [
                         _c("div", { staticClass: "col min" }, [
                           _c("img", {
@@ -14291,13 +14307,13 @@ exports.default = _default;
                             attrs: { src: "/beer-and-woman.jpg" }
                           })
                         ]),
-                        _vm._m(117)
+                        _vm._m(116)
                       ])
                     ]
                   )
                 ]
               ),
-              _vm._m(118),
+              _vm._m(117),
               _c("button", { attrs: { "data-ui": "#dropdown6" } }, [
                 _c("span", [_vm._v("Video")]),
                 _c(
@@ -14347,9 +14363,9 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
+            _vm._m(118),
             _vm._m(119),
-            _vm._m(120),
-            _vm._m(121)
+            _vm._m(120)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "inputs" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14369,9 +14385,10 @@ exports.default = _default;
               ),
               _c("span", { staticClass: "badge top left" }, [_vm._v("New")])
             ]),
-            _vm._m(122),
+            _vm._m(121),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
+              _vm._m(122),
               _vm._m(123),
               _vm._m(124),
               _vm._m(125),
@@ -14380,7 +14397,6 @@ exports.default = _default;
               _vm._m(128),
               _vm._m(129),
               _vm._m(130),
-              _vm._m(131),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field label prefix" }, [
                   _c("img", {
@@ -14435,11 +14451,11 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
+            _vm._m(131),
             _vm._m(132),
-            _vm._m(133),
             _c("div", { staticClass: "space" }),
-            _vm._m(134),
-            _vm._m(135)
+            _vm._m(133),
+            _vm._m(134)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "list" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -14458,19 +14474,19 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(136),
+            _vm._m(135),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Today")
             ]),
+            _vm._m(136),
             _vm._m(137),
             _vm._m(138),
-            _vm._m(139),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Yesterday")
             ]),
+            _vm._m(139),
             _vm._m(140),
             _vm._m(141),
-            _vm._m(142),
             _c("label", { staticClass: "large-space middle-align" }, [
               _vm._v("Older")
             ]),
@@ -14481,8 +14497,8 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(143),
-              _vm._m(144)
+              _vm._m(142),
+              _vm._m(143)
             ]),
             _c("div", { staticClass: "row no-wrap middle-align" }, [
               _c("div", { staticClass: "col min" }, [
@@ -14491,8 +14507,8 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(145),
-              _vm._m(146)
+              _vm._m(144),
+              _vm._m(145)
             ]),
             _c("div", { staticClass: "row no-wrap middle-align" }, [
               _c("div", { staticClass: "col min" }, [
@@ -14501,8 +14517,8 @@ exports.default = _default;
                   attrs: { src: "/beer-and-woman.jpg" }
                 })
               ]),
-              _vm._m(147),
-              _vm._m(148)
+              _vm._m(146),
+              _vm._m(147)
             ])
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "loaders" } }, [
@@ -15112,7 +15128,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(149)
+            _vm._m(148)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "navs" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15206,7 +15222,7 @@ exports.default = _default;
                 [_vm._v("From right")]
               )
             ]),
-            _vm._m(150)
+            _vm._m(149)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "radios" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15225,7 +15241,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(151)
+            _vm._m(150)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "responsive" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15244,7 +15260,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(152)
+            _vm._m(151)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "rows" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15263,15 +15279,15 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(153),
+            _vm._m(152),
             _c("div", { staticClass: "space" }),
+            _vm._m(153),
             _vm._m(154),
             _vm._m(155),
             _vm._m(156),
             _vm._m(157),
             _vm._m(158),
             _vm._m(159),
-            _vm._m(160),
             _c("div", { staticClass: "space" })
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "selects" } }, [
@@ -15292,18 +15308,18 @@ exports.default = _default;
               ),
               _c("span", { staticClass: "badge top left" }, [_vm._v("New")])
             ]),
-            _vm._m(161),
+            _vm._m(160),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
+              _vm._m(161),
               _vm._m(162),
               _vm._m(163),
               _vm._m(164),
               _vm._m(165),
               _vm._m(166),
-              _vm._m(167),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field label sufix" }, [
-                  _vm._m(168),
+                  _vm._m(167),
                   _c("label", { staticClass: "active" }, [_vm._v("List")]),
                   _c("img", {
                     staticClass: "circle",
@@ -15313,7 +15329,7 @@ exports.default = _default;
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field label sufix" }, [
-                  _vm._m(169),
+                  _vm._m(168),
                   _c("label", { staticClass: "active" }, [_vm._v("List")]),
                   _c("img", {
                     staticClass: "circle",
@@ -15326,7 +15342,7 @@ exports.default = _default;
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field label sufix" }, [
-                  _vm._m(170),
+                  _vm._m(169),
                   _c("label", { staticClass: "active" }, [_vm._v("List")]),
                   _c("img", {
                     staticClass: "circle",
@@ -15354,7 +15370,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(171)
+            _vm._m(170)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "table" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15373,9 +15389,9 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(172),
+            _vm._m(171),
             _c("div", { staticClass: "space" }),
-            _vm._m(173)
+            _vm._m(172)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "tabs" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15395,11 +15411,11 @@ exports.default = _default;
               ),
               _c("span", { staticClass: "badge left top" }, [_vm._v("New")])
             ]),
-            _vm._m(174),
+            _vm._m(173),
             _c("p", { staticClass: "space" }),
+            _vm._m(174),
             _vm._m(175),
             _vm._m(176),
-            _vm._m(177),
             _c("div", [
               _c("div", { staticClass: "tabs" }, [
                 _c(
@@ -15428,9 +15444,9 @@ exports.default = _default;
                   _c("span", [_vm._v("Tab 3")])
                 ])
               ]),
+              _vm._m(177),
               _vm._m(178),
-              _vm._m(179),
-              _vm._m(180)
+              _vm._m(179)
             ]),
             _c("div", [
               _c("div", { staticClass: "tabs" }, [
@@ -15460,9 +15476,9 @@ exports.default = _default;
                   _c("span", [_vm._v("Tab 3")])
                 ])
               ]),
+              _vm._m(180),
               _vm._m(181),
-              _vm._m(182),
-              _vm._m(183)
+              _vm._m(182)
             ])
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "textareas" } }, [
@@ -15483,9 +15499,10 @@ exports.default = _default;
               ),
               _c("span", { staticClass: "badge top left" }, [_vm._v("New")])
             ]),
-            _vm._m(184),
+            _vm._m(183),
             _c("div", { staticClass: "space" }),
             _c("div", { staticClass: "row" }, [
+              _vm._m(184),
               _vm._m(185),
               _vm._m(186),
               _vm._m(187),
@@ -15494,7 +15511,6 @@ exports.default = _default;
               _vm._m(190),
               _vm._m(191),
               _vm._m(192),
-              _vm._m(193),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field textarea label prefix" }, [
                   _c("img", {
@@ -15552,56 +15568,12 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _c("nav", { staticClass: "wrap" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "pink",
-                  on: {
-                    click: function($event) {
-                      return _vm.showToasts("#toast1")
-                    }
-                  }
-                },
-                [_vm._v("Toast")]
-              ),
-              _c(
-                "button",
-                {
-                  staticClass: "orange",
-                  on: {
-                    click: function($event) {
-                      return _vm.showToasts("#toast2")
-                    }
-                  }
-                },
-                [_vm._v("Toast")]
-              ),
-              _c(
-                "button",
-                {
-                  staticClass: "green",
-                  on: {
-                    click: function($event) {
-                      return _vm.showToasts("#toast3")
-                    }
-                  }
-                },
-                [_vm._v("Toast")]
-              ),
-              _c(
-                "button",
-                {
-                  staticClass: "blue",
-                  on: {
-                    click: function($event) {
-                      return _vm.showToasts("#toast4")
-                    }
-                  }
-                },
-                [_vm._v("Toast")]
-              )
-            ])
+            _vm._m(193),
+            _vm._m(194),
+            _vm._m(195),
+            _vm._m(196),
+            _vm._m(197),
+            _vm._m(198)
           ]),
           _c("div", { staticClass: "col s12 l6", attrs: { id: "tooltips" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15620,7 +15592,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(194)
+            _vm._m(199)
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "typography" } }, [
             _c("div", { staticClass: "medium-space" }),
@@ -15639,7 +15611,7 @@ exports.default = _default;
                 [_c("i", [_vm._v("code")])]
               )
             ]),
-            _vm._m(195)
+            _vm._m(200)
           ]),
           _c("div", { staticClass: "col s12" }, [
             _c("div", { staticClass: "large-divider" }),
@@ -15648,8 +15620,8 @@ exports.default = _default;
                 _vm._v("Has about 100 css classes to combine...")
               ]),
               _c("div", { staticClass: "large-space" }),
-              _vm._m(196),
-              _vm._m(197),
+              _vm._m(201),
+              _vm._m(202),
               _c("div", { staticClass: "space" }),
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col s12" }, [
@@ -15776,13 +15748,13 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "large-space" }),
-              _vm._m(198),
+              _vm._m(203),
               _c("div", { staticClass: "space" }),
-              _vm._m(199)
+              _vm._m(204)
             ])
           ])
         ]),
-        _vm._m(200),
+        _vm._m(205),
         _c("div", { staticClass: "modal", attrs: { id: "modal" } }, [
           _c("h5", [_vm._v("Title")]),
           _c("div", [_vm._v("Complementary text")]),
@@ -15858,7 +15830,7 @@ exports.default = _default;
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-samples" } },
           [
-            _vm._m(201),
+            _vm._m(206),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -15882,12 +15854,12 @@ exports.default = _default;
           ],
           2
         ),
-        _vm._m(202),
+        _vm._m(207),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
-            _vm._m(203),
+            _vm._m(208),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -15961,7 +15933,7 @@ var staticRenderFns = [
           staticClass: "button large border",
           attrs: {
             href: "https://www.npmjs.com/package/beercss",
-            target: "_blank"
+            target: "_self"
           }
         },
         [_vm._v("NPM")]
@@ -15970,10 +15942,7 @@ var staticRenderFns = [
         "a",
         {
           staticClass: "button large border",
-          attrs: {
-            href: "https://github.com/beercss/beercss",
-            target: "_blank"
-          }
+          attrs: { href: "https://github.com/beercss/beercss", target: "_self" }
         },
         [_vm._v("Github")]
       ),
@@ -15981,39 +15950,9 @@ var staticRenderFns = [
         "a",
         {
           staticClass: "button large",
-          attrs: { href: "https://www.patreon.com/beercss", target: "_blank" }
+          attrs: { href: "https://github.com/beercss/beercss", target: "_self" }
         },
-        [_vm._v("Support us")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "toasts" } }, [
-      _c(
-        "div",
-        { staticClass: "toast pink white-text", attrs: { id: "toast1" } },
-        [_c("i", [_vm._v("error")]), _c("span", [_vm._v("Complementary text")])]
-      ),
-      _c(
-        "div",
-        { staticClass: "toast orange white-text", attrs: { id: "toast2" } },
-        [
-          _c("i", [_vm._v("warning")]),
-          _c("span", [_vm._v("Complementary text")])
-        ]
-      ),
-      _c(
-        "div",
-        { staticClass: "toast green white-text", attrs: { id: "toast3" } },
-        [_c("i", [_vm._v("done")]), _c("span", [_vm._v("Complementary text")])]
-      ),
-      _c(
-        "div",
-        { staticClass: "toast blue white-text", attrs: { id: "toast4" } },
-        [_c("i", [_vm._v("info")]), _c("span", [_vm._v("Complementary text")])]
+        [_vm._v("Get started")]
       )
     ])
   },
@@ -19381,6 +19320,93 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: {
+            id: "bottom-toasts",
+            type: "radio",
+            name: "position-toasts",
+            checked: "checked"
+          }
+        }),
+        _c("span", [_vm._v("bottom")])
+      ]),
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: { id: "top-toasts", type: "radio", name: "position-toasts" }
+        }),
+        _c("span", [_vm._v("top")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", { staticClass: "wrap" }, [
+      _c(
+        "button",
+        { staticClass: "pink", attrs: { onclick: "ui('.toast.pink')" } },
+        [_vm._v("Toast")]
+      ),
+      _c(
+        "button",
+        { staticClass: "orange", attrs: { onclick: "ui('.toast.orange')" } },
+        [_vm._v("Toast")]
+      ),
+      _c(
+        "button",
+        { staticClass: "green", attrs: { onclick: "ui('.toast.green')" } },
+        [_vm._v("Toast")]
+      ),
+      _c(
+        "button",
+        { staticClass: "blue", attrs: { onclick: "ui('.toast.blue')" } },
+        [_vm._v("Toast")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "toast pink white-text" }, [
+      _c("i", [_vm._v("error")]),
+      _c("span", [_vm._v("Complementary text")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "toast orange white-text" }, [
+      _c("i", [_vm._v("warning")]),
+      _c("span", [_vm._v("Complementary text")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "toast green white-text" }, [
+      _c("i", [_vm._v("done")]),
+      _c("span", [_vm._v("Complementary text")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "toast blue white-text" }, [
+      _c("i", [_vm._v("info")]),
+      _c("span", [_vm._v("Complementary text")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", { staticClass: "wrap" }, [
       _c("a", { staticClass: "chip circle" }, [
         _c("i", [_vm._v("arrow_back")]),
         _c("div", { staticClass: "tooltip left" }, [
@@ -19682,7 +19708,9 @@ var staticRenderFns = [
         _c("div", [
           _c("span", [_vm._v("toast ")]),
           _c("span", { staticClass: "grey-text" }, [
-            _vm._v("small, medium, large, border, round, flat, active")
+            _vm._v(
+              "top, bottom, small, medium, large, border, round, flat, active"
+            )
           ])
         ]),
         _c("div", [
