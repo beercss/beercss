@@ -2405,6 +2405,17 @@ div
             a.chip.circle(@click="showSamples('#toasts .toast')")
               i code
           nav.wrap
+            label.radio
+              input#bottom-toasts(
+                type="radio",
+                name="position-toasts",
+                checked="checked"
+              )
+              span bottom
+            label.radio
+              input#top-toasts(type="radio", name="position-toasts")
+              span top
+          nav.wrap
             button.pink(onclick="ui('.toast.pink')") Toast
             button.orange(onclick="ui('.toast.orange')") Toast
             button.green(onclick="ui('.toast.green')") Toast
@@ -3251,6 +3262,7 @@ export default {
     this.rowSamples();
     this.textareaSamples();
     this.layoutSamples();
+    this.toastSamples();
 
     setTimeout(() => {
       $("#logo").addClass("active");
@@ -3466,6 +3478,21 @@ export default {
         ui();
         ui(modal || "#modal-samples");
         $(modal || "#modal-samples").scrollTop(0);
+      });
+    },
+    toastSamples() {
+      $("#toasts input").on("click", function () {
+        var ids = ["top"];
+        var toasts = $("#toasts .toast");
+
+        for (var i = 0; i < ids.length; i++) {
+          toasts.removeClass(ids[i]);
+
+          var selector = "#" + ids[i] + "-toasts";
+          if ($(selector).is(":checked")) {
+            if (["top"].indexOf(ids[i]) != -1) toasts.addClass(ids[i]);
+          }
+        }
       });
     },
     tabSamples() {
