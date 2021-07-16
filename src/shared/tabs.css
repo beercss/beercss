@@ -9,14 +9,16 @@
 }
 
 .tabs > a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: var(--medium-text);
   font-weight: 500;
   color: var(--color-2);
-  padding: 4px 16px;
+  padding: 0 16px;
   text-transform: uppercase;
   border-bottom: 2px solid transparent;
   text-align: center;
+  min-height: 32px;
 }
 
 .tabs > a > span {
@@ -24,15 +26,15 @@
 }
 
 .tabs.small > a {
-  padding: 0 16px;
+  min-height: 32px;
 }
 
 .tabs.medium > a {
-  padding: 4px 16px;
+  min-height: 40px;
 }
 
 .tabs.large > a {
-  padding: 8px 16px;
+  min-height: 48px;
 }
 
 .tabs > a.active {

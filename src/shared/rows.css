@@ -46,6 +46,7 @@
 
 .row > .col {
   float: left;
+  text-align: left;
   box-sizing: border-box;
   width: min-content;
   padding: 8px;

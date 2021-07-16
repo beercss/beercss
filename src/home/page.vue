@@ -109,29 +109,18 @@ div
       nav.center-align
         a.button.large.border(
           href="https://www.npmjs.com/package/beercss",
-          target="_blank"
+          target="_self"
         ) NPM
         a.button.large.border(
           href="https://github.com/beercss/beercss",
-          target="_blank"
+          target="_self"
         ) Github
-        a.button.large(href="https://www.patreon.com/beercss", target="_blank") Support us
+        a.button.large(
+          href="https://github.com/beercss/beercss",
+          target="_self"
+        ) Get started
       .large-space
       .large-divider 
-      #toasts
-        #toast1.toast.pink.white-text
-          i error
-          span Complementary text
-        #toast2.toast.orange.white-text
-          i warning
-          span Complementary text
-        #toast3.toast.green.white-text
-          i done
-          span Complementary text
-        #toast4.toast.blue.white-text
-          i info
-          span Complementary text
-
       .row
         #badges.col.s12
           .medium-space
@@ -2416,10 +2405,33 @@ div
             a.chip.circle(@click="showSamples('#toasts .toast')")
               i code
           nav.wrap
-            button.pink(@click="showToasts('#toast1')") Toast
-            button.orange(@click="showToasts('#toast2')") Toast
-            button.green(@click="showToasts('#toast3')") Toast
-            button.blue(@click="showToasts('#toast4')") Toast
+            label.radio
+              input#bottom-toasts(
+                type="radio",
+                name="position-toasts",
+                checked="checked"
+              )
+              span bottom
+            label.radio
+              input#top-toasts(type="radio", name="position-toasts")
+              span top
+          nav.wrap
+            button.pink(onclick="ui('.toast.pink')") Toast
+            button.orange(onclick="ui('.toast.orange')") Toast
+            button.green(onclick="ui('.toast.green')") Toast
+            button.blue(onclick="ui('.toast.blue')") Toast
+          .toast.pink.white-text
+            i error
+            span Complementary text
+          .toast.orange.white-text
+            i warning
+            span Complementary text
+          .toast.green.white-text
+            i done
+            span Complementary text
+          .toast.blue.white-text
+            i info
+            span Complementary text
         #tooltips.col.s12.l6
           .medium-space
           h5
@@ -2635,7 +2647,7 @@ div
                   span.orange-text min, max, s1..12, m1..12, l1..12
                 div 
                   span toast&nbsp;
-                  span.grey-text small, medium, large, border, round, flat, active
+                  span.grey-text top, bottom, small, medium, large, border, round, flat, active
                 div 
                   span tooltip&nbsp;
                   span.grey-text left, right, top, bottom, small, medium, large, border, round, flat
@@ -3250,6 +3262,7 @@ export default {
     this.rowSamples();
     this.textareaSamples();
     this.layoutSamples();
+    this.toastSamples();
 
     setTimeout(() => {
       $("#logo").addClass("active");
@@ -3467,16 +3480,20 @@ export default {
         $(modal || "#modal-samples").scrollTop(0);
       });
     },
-    showToasts(selector) {
-      if (selector) {
-        ui(selector);
-        return;
-      }
+    toastSamples() {
+      $("#toasts input").on("click", function () {
+        var ids = ["top"];
+        var toasts = $("#toasts .toast");
 
-      ui("#toast1");
-      ui("#toast2");
-      ui("#toast3");
-      ui("#toast4");
+        for (var i = 0; i < ids.length; i++) {
+          toasts.removeClass(ids[i]);
+
+          var selector = "#" + ids[i] + "-toasts";
+          if ($(selector).is(":checked")) {
+            if (["top"].indexOf(ids[i]) != -1) toasts.addClass(ids[i]);
+          }
+        }
+      });
     },
     tabSamples() {
       $("#tabs input").on("click", function () {

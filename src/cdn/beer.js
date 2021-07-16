@@ -125,8 +125,13 @@
   };
 
   const onClickToast = (e) => {
-    remove(e.currentTarget);
+    removeClass(e.currentTarget, "active");
+
+    if (timeoutToast)
+      clearTimeout(timeoutToast);
   };
+
+  var timeoutToast = null;
 
   const open = (from, to, config) => {
     if (!to)
@@ -227,25 +232,21 @@
   const toast = (from, to, config) => {
     tab(from, to, config);
 
-    var container = query("#toast");
-    var toast = clone(to);
-    addClass(toast, "active");
+    var elements = queryAll(".toast.active");
+    elements.forEach((x) => {
+      removeClass(x, "active");
+    });
+    addClass(to, "active");
+    on(to, "click", onClickToast);
 
-    if (!container) {
-      container = create({ id: "toast" });
-      insert(container);
-    }
-
-    var element = create({ className: "right-align" });
-    insert(toast, element);
-    on(element, "click", onClickToast);
-    insert(element, container);
+    if (timeoutToast)
+      clearTimeout(timeoutToast);
 
     if (config && config.timeout == -1)
       return;
 
-    setTimeout(() => {
-      remove(element);
+    timeoutToast = setTimeout(() => {
+      removeClass(to, "active");
     }, config && config.timeout ? config.timeout : 6000);
   };
 
