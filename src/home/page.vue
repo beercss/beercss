@@ -109,13 +109,16 @@ div
       nav.center-align
         a.button.large.border(
           href="https://www.npmjs.com/package/beercss",
-          target="_blank"
+          target="_self"
         ) NPM
         a.button.large.border(
           href="https://github.com/beercss/beercss",
-          target="_blank"
+          target="_self"
         ) Github
-        a.button.large(href="https://www.patreon.com/beercss", target="_blank") Support us
+        a.button.large(
+          href="https://github.com/beercss/beercss",
+          target="_self"
+        ) Get started
       .large-space
       .large-divider 
       .row
