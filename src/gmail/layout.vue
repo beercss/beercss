@@ -1,6 +1,6 @@
 <template lang="pug">
 .container.max
-  .menu.left.border.small.grey-text.m.l
+  .menu.left.border.no-space.grey-text.m.l
     .large-space
     .medium-space
     a.button.white.circle.large(data-ui="#modal-add")
@@ -31,7 +31,7 @@
       i.outlined brightness_medium
       .tooltip.right Theme
 
-  .menu.right.border.large.m.l
+  .menu.right.border.large-space.m.l
     .large-space
     .medium-space
     a.wave.dark
