@@ -392,13 +392,13 @@ input[type="file"] {
 .checkbox > input:checked + span::before {
   color: var(--color-1);
   content: "check_box";
-  animation: 0.3s to-checked;
+  animation: 0.3s to-checked ease;
 }
 
 .radio > input:checked + span::before {
   color: var(--color-1);
   content: "radio_button_checked";
-  animation: 0.3s to-checked;
+  animation: 0.3s to-checked ease;
 }
 
 .checkbox + .checkbox,
