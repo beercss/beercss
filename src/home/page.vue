@@ -1,39 +1,36 @@
 <template lang="pug">
 div
-  #menu.menu.left.m.l
-    img.small.circle.small-margin(
-      :src="'/favicon.png'",
-      @click="addHomeScreen()"
-    )
-    a(@click="updateMenu('#menu', 'top')")
+  .menu.left.m.l
+    img.circle.small-margin(:src="'/favicon.png'", @click="addHomeScreen()")
+    a(@click="updateMenu('.menu.m.l', 'top')")
       i arrow_upward
       div Top
-    a(@click="updateMenu('#menu', 'bottom')")
+    a(@click="updateMenu('.menu.m.l', 'bottom')")
       i arrow_downward
       div Bottom
-    a(@click="updateMenu('#menu', 'left')")
+    a(@click="updateMenu('.menu.m.l', 'left')")
       i arrow_back
       div Left
-    a(@click="updateMenu('#menu', 'right')")
+    a(@click="updateMenu('.menu.m.l', 'right')")
       i arrow_forward
       div Right
-    a(@click="updateMenu('#menu')")
-      i zoom_out_map
-      div Size
+    a(@click="updateMenu('.menu.m.l')")
+      i visibility_off
+      div Text
     a(@click="updateIcons()")
       i image
       div Icons
     a(@click="updateTheme()")
       i brightness_medium
       div Theme
-    a(data-ui="#more")
+    a(data-ui="#more1")
       i collections
       div Templates
-      span.badge.circle.top.margin 4
-    a(@click="showSamples('#menu')")
+      span.badge.circle.margin 4
+    a(@click="showSamples('.menu.m.l')")
       i code
       div Code
-    #more.modal.small.left(data-ui="#more")
+    #more1.modal.left(data-ui="#more1")
       h5 Templates
       p.grey-text This templates are only for tests purpose
       .large-space
@@ -54,24 +51,24 @@ div
         img.logo-template(:src="'/uber-dark.png'")
       a(href="/uber", v-show="theme != 'is-dark'")
         img.logo-template(:src="'/uber-light.png'")
-  #menu-bottom.menu.bottom.s
-    a(@click="updateMenu('#menu-bottom')")
-      i zoom_out_map
-      div Size
+  .menu.bottom.s
+    a(@click="updateMenu('.menu.s')")
+      i visibility_off
+      div Text
     a(@click="updateIcons()")
       i image
       div Icons
     a(@click="updateTheme()")
       i brightness_medium
       div Theme
-    a(data-ui="#more-bottom")
+    a(data-ui="#more2")
       i collections
       div Templates
-      span.badge.circle.top.small-margin 4
-    a(@click="showSamples('#menu-bottom')")
+      span.badge.circle.margin 4
+    a(@click="showSamples('.menu.s')")
       i code
       div Code
-    #more-bottom.modal.bottom.medium(data-ui="#more-bottom")
+    #more2.modal.bottom.medium(data-ui="#more2")
       h5 Templates
       p.grey-text This templates are only for tests purpose
       .large-divider
@@ -95,11 +92,11 @@ div
           a(href="/uber", v-show="theme != 'is-dark'")
             img.logo-template(:src="'/uber-light.png'")
 
-  #begin
-    .center-align.middle-align.padding.medium-height.yellow-light-2.no-scroll
-      img#logo(:src="'/logo.png'", @click="addHomeScreen()")
+  .center-align.middle-align.padding.medium-height.yellow-light-2.no-scroll
+    img#logo(:src="'/logo.png'", @click="addHomeScreen()")
 
-    .container
+  .container
+    #begin
       h4.center-align Beercss
       .space
       h6.center-align Build material design interfaces in record time...
@@ -161,28 +158,28 @@ div
                   i apps
                 a
                   span.badge.square 10
-                  i apps
+                  i search
                 a
                   span.badge.top New
-                  i search
+                  i notifications
                 a
                   span.badge.round.top New
-                  i notifications
+                  i apps
                 a
                   span.badge.circle.top 10
-                  i apps
-                a
-                  span.badge.square.top 10
-                  i apps
-                a
-                  span.badge.left.top New
                   i search
                 a
-                  span.badge.round.left.top New
+                  span.badge.square.top 10
                   i notifications
                 a
-                  span.badge.circle.left.top 10
+                  span.badge.left.top New
                   i apps
+                a
+                  span.badge.round.left.top New
+                  i search
+                a
+                  span.badge.circle.left.top 10
+                  i notifications
                 a
                   span.badge.square.left.top 10
                   i apps
@@ -197,28 +194,28 @@ div
                   i apps
                 a
                   span.badge.square.bottom.right 10
-                  i apps
+                  i search
                 a
                   span.badge.bottom New
-                  i search
+                  i notifications
                 a
                   span.badge.round.bottom New
-                  i notifications
+                  i apps
                 a
                   span.badge.circle.bottom 10
-                  i apps
-                a
-                  span.badge.square.bottom 10
-                  i apps
-                a
-                  span.badge.left.bottom New
                   i search
                 a
-                  span.badge.round.left.bottom New
+                  span.badge.square.bottom 10
                   i notifications
                 a
-                  span.badge.circle.left.bottom 10
+                  span.badge.left.bottom New
                   i apps
+                a
+                  span.badge.round.left.bottom New
+                  i search
+                a
+                  span.badge.circle.left.bottom 10
+                  i notifications
                 a
                   span.badge.square.left.bottom 10
                   i apps
@@ -236,28 +233,28 @@ div
                   i account_circle
                 a
                   span.badge.square.border 10
-                  i account_circle
+                  i help_outline
                 a
                   span.badge.border.top New
-                  i help_outline
+                  i home
                 a
                   span.badge.border.round.top New
-                  i home
+                  i account_circle
                 a
                   span.badge.circle.border.top 10
-                  i account_circle
-                a
-                  span.badge.square.border.top 10
-                  i account_circle
-                a
-                  span.badge.border.left.top New
                   i help_outline
                 a
-                  span.badge.border.round.left.top New
+                  span.badge.square.border.top 10
                   i home
                 a
-                  span.badge.circle.border.left.top 10
+                  span.badge.border.left.top New
                   i account_circle
+                a
+                  span.badge.border.round.left.top New
+                  i help_outline
+                a
+                  span.badge.circle.border.left.top 10
+                  i home
                 a
                   span.badge.square.border.left.top 10
                   i account_circle
@@ -272,28 +269,28 @@ div
                   i account_circle
                 a
                   span.badge.square.border.bottom.right 10
-                  i account_circle
+                  i help_outline
                 a
                   span.badge.border.bottom New
-                  i help_outline
+                  i home
                 a
                   span.badge.border.round.bottom New
-                  i home
+                  i account_circle
                 a
                   span.badge.circle.border.bottom 10
-                  i account_circle
-                a
-                  span.badge.square.border.bottom 10
-                  i account_circle
-                a
-                  span.badge.border.left.bottom New
                   i help_outline
                 a
-                  span.badge.border.round.left.bottom New
+                  span.badge.square.border.bottom 10
                   i home
                 a
+                  span.badge.border.left.bottom New
+                  i account_circlec
+                a
+                  span.badge.border.round.left.bottom New
+                  i help_outline
+                a
                   span.badge.circle.border.left.bottom 10
-                  i account_circle
+                  i home
                 a
                   span.badge.square.border.left.bottom 10
                   i account_circle
@@ -304,7 +301,6 @@ div
             span Buttons
             a.chip.circle(@click="showSamples('#buttons button')")
               i code
-            span.badge.top.left.m.l New
           nav.wrap
             label.radio
               input#default-buttons(
@@ -323,14 +319,14 @@ div
               input#pink-buttons(type="radio", name="color-buttons")
               span pink
             label.radio
-              input#small-buttons(
+              input#small-buttons(type="radio", name="size-buttons")
+              span small
+            label.radio
+              input#medium-buttons(
                 type="radio",
                 name="size-buttons",
                 checked="checked"
               )
-              span small
-            label.radio
-              input#medium-buttons(type="radio", name="size-buttons")
               span medium
             label.radio
               input#large-buttons(type="radio", name="size-buttons")
@@ -900,17 +896,16 @@ div
             span Chips
             a.chip.circle(@click="showSamples('#chips nav .chip')")
               i code
-            span.badge.top.left.m.l New
           nav.wrap
             label.radio
-              input#small-chips(
+              input#small-chips(type="radio", name="size-chips")
+              span small
+            label.radio
+              input#medium-chips(
                 type="radio",
                 name="size-chips",
                 checked="checked"
               )
-              span small
-            label.radio
-              input#medium-chips(type="radio", name="size-chips")
               span medium
             label.radio
               input#large-chips(type="radio", name="size-chips")
@@ -1321,7 +1316,6 @@ div
             span Inputs
             a.chip.circle(@click="showSamples('#inputs .field')")
               i code
-            span.badge.top.left New
           nav.wrap
             label.checkbox
               input#border-inputs(type="checkbox")
@@ -1944,7 +1938,6 @@ div
             span Selects
             a.chip.circle(@click="showSamples('#selects .field')")
               i code
-            span.badge.top.left New
           nav.wrap
             label.checkbox
               input#border-selects(type="checkbox")
@@ -2198,7 +2191,6 @@ div
               @click="showSamples('#tabs > div:not(.medium-space)')"
             )
               i code
-            span.badge.left.top New
           nav.wrap
             label.radio
               input#default-align-tabs(
@@ -2312,7 +2304,6 @@ div
             span Textareas
             a.chip.circle(@click="showSamples('#textareas .field')")
               i code
-            span.badge.top.left New
           nav.wrap
             label.checkbox
               input#border-textareas(type="checkbox")
@@ -2627,7 +2618,8 @@ div
                   span.grey-text small, medium, large
                 div
                   span menu&nbsp;
-                  span.grey-text left, right, top, bottom, small, medium, large, border, round, flat
+                  span.grey-text left, right, top, bottom, border, round, flat, small-space, medium-space, large-space,&nbsp;
+                  span.orange-text no-space
                 div 
                   span modal&nbsp;
                   span.grey-text left, right, top, bottom, small, medium, large, active, border, round, flat
@@ -3270,16 +3262,17 @@ export default {
   },
   methods: {
     resetTheme() {
-      document.body.className = "";
+      $("html")[0].className = "";
     },
     updateTheme() {
-      let css = document.body.className;
+      let element = $("html")[0];
+      let css = element.className;
 
       if (css.indexOf("is-dark") === -1) {
-        document.body.className = "is-dark";
+        element.className = "is-dark";
         this.theme = "is-dark";
       } else {
-        document.body.className = "";
+        element.className = "";
         this.theme = "";
       }
     },
@@ -3294,6 +3287,7 @@ export default {
         window.beercss.installEvent.prompt();
     },
     updateMenu(menu, css) {
+      var selector = menu;
       var menu = $(menu);
       var dataUis = menu.find("a");
       var modals = menu.find(".modal");
@@ -3302,12 +3296,9 @@ export default {
       $(dataUis).removeClass("active");
 
       if (!css) {
-        var sizes = ["small", "medium", "large"];
-
-        this.indexOfMenu = this.indexOfMenu + 1;
-        if (!sizes[this.indexOfMenu]) this.indexOfMenu = 0;
-
-        css = sizes[this.indexOfMenu];
+        return $(selector + " > a > div:visible").length
+          ? $(selector + " > a > div").hide()
+          : $(selector + " > a > div").show();
       }
 
       if (/left|right|top|bottom/.test(css)) {
@@ -3321,6 +3312,15 @@ export default {
         for (var i = 0; i < menu.length; i++) {
           $(menu[i]).removeClass("small medium large");
           if (css != "medium") $(menu[i]).addClass(css);
+        }
+      }
+
+      if (/left-align|right-align|top-align|bottom-align/.test(css)) {
+        for (var i = 0; i < menu.length; i++) {
+          $(menu[i]).removeClass(
+            "left-align right-align top-align bottom-align"
+          );
+          $(menu[i]).addClass(css);
         }
       }
     },
@@ -3441,12 +3441,13 @@ export default {
 
       var tag = $(element).clone();
       tag.find(".overlay").remove();
+      tag.find("[style*='none']").remove();
 
       return process(
         tag[0].outerHTML
           .replace(/\s+(onclick|style)\="[^\"]*"/gi, "")
-          .replace(/\s+id\="(\w+)"/gi, ' id="$1-id"')
-          .replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1-id"')
+          .replace(/\s+id\="(\w+)"/gi, ' id="$1_"')
+          .replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1_"')
           .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
           .replace(/\n\<\/(circle|th)\>/gi, "</$1>")
       ).replace(/^\s+/g, "");
@@ -3516,7 +3517,7 @@ export default {
     },
     buttonSamples() {
       $("#buttons input").on("click", function () {
-        var ids = ["green", "orange", "pink", "medium", "large", "extra"];
+        var ids = ["green", "orange", "pink", "small", "large", "extra"];
         var buttons = $("#buttons button:not(.border)");
         var buttonsBorder = $("#buttons button.border");
 
@@ -3544,7 +3545,7 @@ export default {
     },
     chipSamples() {
       $("#chips input").on("click", function () {
-        var ids = ["small", "medium", "large", "active"];
+        var ids = ["small", "large", "active"];
         var chips = $("#chips nav .chip");
 
         for (var i = 0; i < ids.length; i++) {
@@ -3714,7 +3715,7 @@ export default {
 #logo {
   display: none;
   max-width: 100%;
-  width: 512px;
+  width: 512rem;
 }
 
 #logo.active {
@@ -3723,12 +3724,12 @@ export default {
 }
 
 #container-logo {
-  height: 256px;
+  height: 256rem;
 }
 
 pre {
   overflow: auto;
-  padding: 8px;
+  padding: 8rem;
   margin: 0;
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -3750,30 +3751,30 @@ pre * {
 }
 
 #rows .row {
-  border: 1px solid #9e9e9e50;
+  border: 1rem solid #9e9e9e50;
 }
 
 #rows .col {
-  border: 2px solid #9e9e9e50;
+  border: 2rem solid #9e9e9e50;
 }
 
 #modal-colors .border {
-  border: 2px solid;
+  border: 2rem solid;
 }
 
 #modal-colors .col > div {
-  padding: 12px;
+  padding: 12rem;
 }
 
 .logo-template {
   width: auto;
-  height: 24px;
+  height: 24rem;
 }
 
 #container {
-  height: 200px;
-  border: 1px solid #9e9e9e50;
-  border-radius: 8px;
+  height: 200rem;
+  border: 1rem solid #9e9e9e50;
+  border-radius: 8rem;
 }
 
 @keyframes logo-intro {

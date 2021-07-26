@@ -43,51 +43,51 @@ video.responsive {
 
 img.border,
 video.border {
-  border: 1px solid var(--color-2b);
+  border: 1rem solid var(--color-2b);
 }
 
 img.round,
 video.round {
-  border-radius: 8px !important;
-  height: 48px !important;
-  width: 48px !important;
+  border-radius: 8rem !important;
+  height: 48rem !important;
+  width: 48rem !important;
 }
 
 img.circle,
 video.circle {
   border-radius: 50% !important;
-  height: 48px !important;
-  width: 48px !important;
+  height: 48rem !important;
+  width: 48rem !important;
 }
 
 img.tiny,
 video.tiny {
-  height: 32px !important;
-  width: 32px !important;
+  height: 32rem !important;
+  width: 32rem !important;
 }
 
 img.small,
 video.small {
-  height: 40px !important;
-  width: 40px !important;
+  height: 40rem !important;
+  width: 40rem !important;
 }
 
 img.medium,
 video.medium {
-  height: 48px !important;
-  width: 48px !important;
+  height: 48rem !important;
+  width: 48rem !important;
 }
 
 img.large,
 video.large {
-  height: 56px !important;
-  width: 56px !important;
+  height: 56rem !important;
+  width: 56rem !important;
 }
 
 img.extra,
 video.extra {
-  height: 64px !important;
-  width: 64px !important;
+  height: 64rem !important;
+  width: 64rem !important;
 }
 
 img.responsive,
@@ -99,44 +99,45 @@ video.responsive {
 button > img.responsive,
 .button > img.responsive,
 .chip > img.responsive {
-  height: calc(100% - 4px) !important;
   width: auto !important;
+  border: 2rem solid transparent;
+  box-sizing: border-box;
 }
 
 img.responsive.tiny,
 video.responsive.tiny {
   width: 100% !important;
-  height: 64px !important;
+  height: 64rem !important;
 }
 
 img.responsive.small,
 video.responsive.small {
   width: 100% !important;
-  height: 128px !important;
+  height: 128rem !important;
 }
 
 img.responsive.medium,
 video.responsive.medium {
   width: 100% !important;
-  height: 192px !important;
+  height: 192rem !important;
 }
 
 img.responsive.large,
 video.responsive.large {
   width: 100% !important;
-  height: 256px !important;
+  height: 256rem !important;
 }
 
 img.responsive.extra,
 video.responsive.extra {
   width: 100% !important;
-  height: 320px !important;
+  height: 320rem !important;
 }
 
 img.empty-state,
 video.empty-state {
   max-width: 100%;
-  width: 400px;
+  width: 384rem;
 }
 
 button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
@@ -145,8 +146,10 @@ button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
 .field > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
 .tabs > a > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
 td img:not(.responsive, .tiny, .small, .medium, .large, .extra) {
-  max-width: 24px!important;
-  max-height: 24px!important;
+  min-width: 24rem!important;
+  max-width: 24rem!important;
+  min-height: 24rem!important;
+  max-height: 24rem!important;
 }
 
 .button.diamond > img,

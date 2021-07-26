@@ -30,7 +30,7 @@ div
         i search
         input(:placeholder="from ? 'Destination' : 'Departure'")
       nav
-        a.chip.wave
+        a.chip
           i watch_later
           span.large-text.small-padding Agora
           i arrow_drop_down

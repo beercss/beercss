@@ -49,7 +49,7 @@ div
           button.wave.light.none.white-text(@click="updateTheme()")
             i.white-text brightness_medium
           a(href="/")
-            img.small.circle(:src="'/favicon.png'")
+            img.circle(:src="'/favicon.png'")
 
   #layout
 </template>
@@ -70,8 +70,8 @@ export default {
   },
   methods: {
     updateTheme() {
-      this.theme = this.theme != "is-dark" ? "is-dark" : "";
-      document.body.className = this.theme;
+      this.theme = this.theme != "is-light" ? "is-light" : "is-dark";
+      document.querySelector("html").className = this.theme;
     },
     redirect(component) {
       this.url = page.current;

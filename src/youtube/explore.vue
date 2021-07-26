@@ -6,11 +6,11 @@
       .col.s12(v-for="item in itens")
         .card.no-padding.flat.transparent
           .row
-            .col.s6.m4.l3
+            .col.s12.m4
               a.wave
                 img.empty-state(:src="item.image")
                 .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
-            .col.s6.m8.l9
+            .col.s12.m8
               h5.no-margin {{ item.title }}
               .grey-text 10k views
               .space

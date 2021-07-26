@@ -14,10 +14,9 @@
 export default {
   methods: {
     updateTheme() {
-      document.body.className =
-        document.body.className.indexOf("is-dark") != -1
-          ? "is-light"
-          : "is-dark";
+      let element = document.querySelector("html");
+      element.className =
+        element.className.indexOf("is-dark") != -1 ? "is-light" : "is-dark";
     },
   },
 };

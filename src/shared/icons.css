@@ -2,7 +2,7 @@ i {
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  font-size: 24rem;
   line-height: inherit;
   letter-spacing: normal;
   text-transform: none;
@@ -15,7 +15,7 @@ i {
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  width: 24px;
+  width: 24rem;
   margin: 0 auto;
 }
 
@@ -24,23 +24,23 @@ i.outlined {
 }
 
 i.small {
-  font-size: 16px;
-  width: 16px;
+  font-size: 16rem;
+  width: 16rem;
 }
 
 i.medium {
-  font-size: 24px;
-  width: 24px;
+  font-size: 24rem;
+  width: 24rem;
 }
 
 i.large {
-  font-size: 32px;
-  width: 32px;
+  font-size: 32rem;
+  width: 32rem;
 }
 
 i.extra {
-  font-size: 48px;
-  width: 48px;
+  font-size: 48rem;
+  width: 48rem;
 }
 
 .circle > i {

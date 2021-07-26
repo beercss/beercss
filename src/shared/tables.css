@@ -1,42 +1,42 @@
 table {
   width: 100%;
   border-spacing: 0;
-  font-size: var(--medium-text);
+  font-size: 14rem;
 }
 
 table th {
   width: 1%;
   font-weight: 500;
   text-align: left;
-  padding: 8px 4px;
+  padding: 8rem 4rem;
   margin: 0;
 }
 
 table td {
   width: 1%;
   text-align: left;
-  padding: 8px 4px;
+  padding: 8rem 4rem;
   margin: 0;
 }
 
 table.border td, 
 table.border th {
-  border-bottom: 1px solid var(--color-2b);
+  border-bottom: 1rem solid var(--color-2b);
 }
 
 table.small td,
 table.small th {
-  padding: 4px 4px;
+  padding: 4rem 4rem;
 }
 
 table.medium td,
 table.medium th {
-  padding: 8px 4px;
+  padding: 8rem 4rem;
 }
 
 table.large td,
 table.large th {
-  padding: 12px 4px;
+  padding: 12rem 4rem;
 }
 
 table.center-align td,
@@ -52,4 +52,30 @@ table.left-align th {
 table.right-align td,
 table.right-align th {
   text-align: right;
+}
+
+td > .button,
+td > nav > .button,
+td > button,
+td > nav > button,
+td > .none,
+td > nav > .none,
+td > .chip,
+td > nav > .chip {
+  min-height: 24rem;
+  max-height: 24rem;
+  box-sizing: border-box;
+}
+
+td > .circle:not(.tiny, .small, .medium, .large, .extra),
+td > nav > .circle:not(.tiny, .small, .medium, .large, .extra),
+td > .square:not(.tiny, .small, .medium, .large, .extra),
+td > nav > .square:not(.tiny, .small, .medium, .large, .extra),
+td > .diamond:not(.tiny, .small, .medium, .large, .extra),
+td > nav > .diamond:not(.tiny, .small, .medium, .large, .extra) {
+  min-width: 24rem;
+  max-width: 24rem;
+  min-height: 24rem;
+  max-height: 24rem;
+  box-sizing: border-box;
 }

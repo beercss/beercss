@@ -2,42 +2,43 @@
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
-    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-2);
   background-color: var(--color-4);
-  padding: 16px;
+  padding: 16rem;
   box-sizing: border-box;
   z-index: 100;
   left: 50%;
   top: 10%;
-  min-width: 350px;
+  min-width: 320rem;
+  max-width: 100%;
+  max-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 }
 
 .modal.border {
-  border: 1px solid var(--color-2b);
+  border: 1rem solid var(--color-2b);
   box-shadow: none;
 }
 
 .modal.round {
-  border-radius: 24px;
+  border-radius: 24rem;
 }
 
 .modal.bottom.round {
-  border-radius: 24px 24px 0 0;
+  border-radius: 24rem 24rem 0 0;
 }
 
 .modal.top.round {
-  border-radius: 0 0 24px 24px;
+  border-radius: 0 0 24rem 24rem;
 }
 
 .modal.left.round {
-  border-radius: 0 24px 24px 0;
+  border-radius: 0 24rem 24rem 0;
 }
 
 .modal.right.round {
-  border-radius: 24px 0 0 24px;
+  border-radius: 24rem 0 0 24rem;
 }
 
 .modal.small {
@@ -89,7 +90,6 @@
   bottom: auto;
   height: auto;
   width: 100%;
-  max-height: 70%;
 }
 
 .modal.left {
@@ -100,7 +100,6 @@
   bottom: auto;
   width: auto;
   height: 100%;
-  max-width: 70%;
 }
 
 .modal.right {
@@ -111,7 +110,6 @@
   bottom: auto;
   width: auto;
   height: 100%;
-  max-width: 70%;
 }
 
 .modal.bottom {
@@ -121,57 +119,56 @@
   bottom: 0;
   height: auto;
   width: 100%;
-  max-height: 70%;
 }
 
 .modal.left.small,
 .modal.right.small {
-  width: 350px;
+  width: 320rem;
 }
 
 .modal.left.medium,
 .modal.right.medium {
-  width: 525px;
+  width: 512rem;
 }
 
 .modal.left.large,
 .modal.right.large {
-  width: 700px;
+  width: 704rem;
 }
 
 .modal.top.small,
 .modal.bottom.small {
-  height: 250px;
+  height: 256rem;
 }
 
 .modal.top.medium,
 .modal.bottom.medium {
-  height: 375px;
+  height: 384rem;
 }
 
 .modal.top.large,
 .modal.bottom.large {
-  height: 500px;
+  height: 512rem;
 }
 
 .menu > .modal,
 .menu.left > .modal {
   z-index: 0;
   text-align: left;
-  padding: 16px 16px 16px 80px;
+  padding: 16rem 16rem 16rem 80rem;
   overflow-y: auto;
 }
 
 .menu.right > .modal {
-  padding: 16px 80px 16px 16px;
+  padding: 16rem 80rem 16rem 16rem;
 }
 
 .menu.top > .modal {
-  padding: 80px 48px 16px 48px;
+  padding: 80rem 48rem 16rem 48rem;
 }
 
 .menu.bottom > .modal {
-  padding: 16px 48px 80px 48px;
+  padding: 16rem 48rem 80rem 48rem;
 }
 
 @keyframes modal-to-right {
@@ -221,7 +218,7 @@
 @keyframes modal-to-center {
   from {
     opacity: 0;
-    transform: translate(-50%, -64px);
+    transform: translate(-50%, -64rem);
   }
   to {
     opacity: 1;
