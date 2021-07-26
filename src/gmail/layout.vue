@@ -1,6 +1,6 @@
 <template lang="pug">
 .container.max
-  .menu.left.border.large.grey-text.m.l
+  .menu.left.border.small.grey-text.m.l
     .large-space
     .medium-space
     a.button.white.circle.large(data-ui="#modal-add")
@@ -29,25 +29,25 @@
       .tooltip.right Spam
     a(@click="updateTheme()")
       i.outlined brightness_medium
-      .tooltip.right theme
+      .tooltip.right Theme
 
-  .menu.right.border.small.m.l
+  .menu.right.border.large.m.l
     .large-space
     .medium-space
-    a.wave.dark.padding
-      img(width="24", :src="'/calendar.png'")
+    a.wave.dark
+      img(:src="'/calendar.png'")
       span.tooltip.left Calendar
-    a.wave.dark.padding
-      img(width="24", :src="'/keep.png'")
+    a.wave.dark
+      img(:src="'/keep.png'")
       span.tooltip.left Keep
-    a.wave.dark.padding
-      img(width="24", :src="'/tasks.png'")
+    a.wave.dark
+      img(:src="'/tasks.png'")
       span.tooltip.left Tasks
-    a.wave.dark.padding
-      img(width="24", :src="'/contacts.png'")
+    a.wave.dark
+      img(:src="'/contacts.png'")
       span.tooltip.left Contacts
 
-  .menu.top.border.large.grey-text
+  .menu.top.border.grey-text
     .row.no-wrap.middle-align
       .col
         nav.padding
@@ -111,26 +111,26 @@
             #dropdown-apps.dropdown.left.small-width(data-ui="#dropdown-apps")
               .large-padding
                 .row
-                  a.wave.col.s6.center-align.middle-align
-                    div
+                  a.wave.col.s6.middle-align
+                    .center-align
                       img(:src="'/calendar.png'")
                       p Calendar
-                  a.wave.col.s6.center-align.middle-align
-                    div
+                  a.wave.col.s6.middle-align
+                    .center-align
                       img(:src="'/keep.png'")
                       p Keep
-                  a.wave.col.s6.center-align.middle-align
-                    div
+                  a.wave.col.s6.middle-align
+                    .center-align
                       img(:src="'/tasks.png'")
                       p Tasks
-                  a.wave.col.s6.center-align.middle-align
-                    div
+                  a.wave.col.s6.middle-align
+                    .center-align
                       img(:src="'/contacts.png'")
                       p Contacts
           a(href="/")
-            img.small.circle(:src="'/favicon.png'")
+            img.circle(:src="'/favicon.png'")
 
-  .menu.bottom.large.border.s.grey-text
+  .menu.bottom.border.s.grey-text
     a(href="/gmail", :class="{ active: this.url == '/gmail' }")
       i.outlined inbox
       div Inbox
@@ -241,15 +241,14 @@ export default {
   },
   methods: {
     updateTheme() {
-      if (this.theme == "is-gmail-light") {
-        this.theme = "is-gmail-dark";
-        this.logo = "/gmail-dark.png";
-      } else {
+      if (this.theme != "is-gmail-light") {
         this.theme = "is-gmail-light";
         this.logo = "/gmail-light.png";
+      } else {
+        this.theme = "is-gmail-dark";
+        this.logo = "/gmail-dark.png";
       }
-
-      document.body.className = this.theme;
+      document.querySelector("html").className = this.theme;
     },
     redirect(component) {
       this.url = page.current;

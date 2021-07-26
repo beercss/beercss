@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  .menu.left.large.flat.m.l
+  .menu.left.flat.m.l
     .large-space
     .large-space
     a(href="/youtube", :class="{ active: url == '/youtube' }")
@@ -41,7 +41,7 @@ div
       i brightness_medium
       div Theme
 
-  .menu.top.border.large
+  .menu.top.border
     .row.no-wrap.middle-align
       .col
         nav.padding
@@ -95,7 +95,7 @@ div
           button.none.color-2-text(data-ui="#modal-notifications")
             i notifications
           a(href="/")
-            img.small.circle(:src="'/favicon.png'")
+            img.circle(:src="'/favicon.png'")
 
   #modal-notifications.modal.right
     .row.no-wrap.middle-align
@@ -205,7 +205,7 @@ export default {
         this.logo = "/youtube-light.png";
       }
 
-      document.body.className = this.theme;
+      document.querySelector("html").className = this.theme;
     },
     redirect(component) {
       this.url = page.current;

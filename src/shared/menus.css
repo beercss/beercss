@@ -5,8 +5,7 @@
   flex-direction: column;
   border: 0;
   position: fixed;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
-    0 3px 5px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-2);
   background-color: var(--color-4);
   transform: none;
   box-sizing: border-box;
@@ -17,6 +16,16 @@
   height: auto;
   width: auto;
   text-align: center;
+}
+
+.menu.left,
+.menu.right {
+  width: 72rem;
+}
+
+.menu.top,
+.menu.bottom {
+  height: 64rem;
 }
 
 .menu::before {
@@ -33,7 +42,7 @@
 
 .menu.border {
   box-shadow: none;
-  border: 1px solid var(--color-2a);
+  border: 1rem solid var(--color-2a);
 }
 
 .menu.left.border {
@@ -61,23 +70,23 @@
 }
 
 .menu.round {
-  border-radius: var(--large-round);
+  border-radius: 40rem;
 }
 
 .menu.left.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
-  border-radius: 0 var(--small-round) var(--small-round) 0;
+  border-radius: 0 24rem 24rem 0;
 }
 
 .menu.right.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
-  border-radius: var(--small-round) 0 0 var(--small-round);
+  border-radius: 24rem 0 0 24rem;
 }
 
 .menu.bottom.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
-  border-radius: var(--small-round) var(--small-round) 0 0;
+  border-radius: 24rem 24rem 0 0;
 }
 
 .menu.top.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
-  border-radius: 0 0 var(--small-round) var(--small-round);
+  border-radius: 0 0 24rem 24rem;
 }
 
 .menu.active {
@@ -89,8 +98,6 @@
   left: 0;
   right: 0;
   bottom: auto;
-  width: auto;
-  height: 56px;
   justify-content: center;
   flex-direction: row;
 }
@@ -100,8 +107,6 @@
   left: 0;
   right: auto;
   bottom: 0;
-  width: 64px;
-  height: auto;
   justify-content: flex-start;
   flex-direction: column;
 }
@@ -111,8 +116,6 @@
   left: auto;
   right: 0;
   bottom: 0;
-  width: 64px;
-  height: auto;
   justify-content: flex-start;
   flex-direction: column;
 }
@@ -122,40 +125,26 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: auto;
-  height: 56px;
   justify-content: center;
   flex-direction: row;
 }
 
-.menu.small.right,
-.menu.small.left {
-  width: 56px;
+.menu.left-align,
+.menu.top-align {
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.menu.medium.right,
-.menu.medium.left {
-  width: 64px;
+.menu.right-align,
+.menu.bottom-align {
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.menu.large.right,
-.menu.large.left {
-  width: 72px;
-}
-
-.menu.small.top,
-.menu.small.bottom {
-  height: 48px;
-}
-
-.menu.medium.top,
-.menu.medium.bottom {
-  height: 56px;
-}
-
-.menu.large.top,
-.menu.large.bottom {
-  height: 64px;
+.menu.center-align,
+.menu.middle-align {
+  align-items: center;
+  justify-content: center;
 }
 
 .menu > button,
@@ -168,30 +157,61 @@
 
 .menu > a:not(.button, .chip) {
   border: 0;
-  display: block;
-  font-size: 0.7rem;
-  padding: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12rem;
+  padding: 0;
+  margin: 4rem;
   text-decoration: none;
   color: inherit;
   text-align: center;
   z-index: 1;
+  width: 56rem;
+  height: auto;
+  min-height: 56rem;
+}
+
+.menu.no-space:not(.left, .right) > a:not(.button, .chip) {
+  margin: 0;
+}
+
+.menu:not(.left, .right) > a:not(.button, .chip),
+.menu.small-space:not(.left, .right) > a:not(.button, .chip) {
+  margin: 0 8rem;
+}
+
+.menu.medium-space:not(.left, .right) > a:not(.button, .chip) {
+  margin: 0 12rem;
+}
+
+.menu.large-space:not(.left, .right) > a:not(.button, .chip) {
+  margin: 0 16rem;
+}
+
+.menu.no-space:not(.top, .bottom) > a:not(.button, .chip) {
+  margin: 0;
+}
+
+.menu:not(.top, .bottom) > a:not(.button, .chip),
+.menu.small-space:not(.top, .bottom) > a:not(.button, .chip) {
+  margin: 4rem 0;
+}
+
+.menu.medium-space:not(.top, .bottom) > a:not(.button, .chip) {
+  margin: 8rem 0;
+}
+
+.menu.large-space:not(.top, .bottom) > a:not(.button, .chip) {
+  margin: 12rem 0;
 }
 
 .menu > a:not(.button, .chip):hover {
   color: var(--color-1);
 }
 
-.menu.top > a:not(.button, .chip),
-.menu.bottom > a:not(.button, .chip) {
-  margin: 8px;
-}
-
 .menu > a:not(.button, .chip).active {
   color: var(--color-1);
-}
-
-.menu.small > a > div {
-  display: none;
 }
 
 .menu > .row {
@@ -217,11 +237,5 @@
   .menu.bottom > img,
   .menu.bottom > video {
     margin: 0;
-  }
-
-  .menu.top > a:not(.button, .chip),
-  .menu.bottom > a:not(.button, .chip) {
-    margin: 0;
-    padding: 0;
   }
 }

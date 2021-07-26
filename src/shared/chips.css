@@ -1,89 +1,67 @@
 .chip {
+  box-sizing: content-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 32px;
-  height: 32px;
-  font-size: var(--small-text);
+  min-height: 40rem;
+  height: 40rem;
+  font-size: 14rem;
   font-weight: 500;
   color: var(--color-2);
-  padding: 0 12px;
-  border-radius: 24px;
+  padding: 0 12rem;
+  border-radius: 24rem;
   background-color: var(--color-2a);
-  margin: 0 8px;
+  margin: 0 8rem;
   text-transform: none;
   transition: 0.3s transform, 0.3s border-radius, 0.3s padding;
   z-index: 1;
 }
 
 .chip > :not(.dropdown, .badge) + :not(.dropdown, .badge) {
-  margin-left: 4px;
+  margin-left: 4rem;
 }
 
 .chip > .responsive:first-child {
-  margin-left: -10px;
+  margin-left: -12rem;
 }
 
 .chip > .responsive:last-child {
-  margin-right: -10px;
+  margin-right: -12rem;
 }
 
 .chip.small {
-  min-width: 32px !important;
-  min-height: 32px !important;
-  height: 32px;
+  min-height: 32rem !important;
+  height: 32rem;
 }
 
 .chip.medium {
-  min-width: 40px !important;
-  min-height: 40px !important;
-  height: 40px;
+  min-height: 40rem !important;
+  height: 40rem;
 }
 
 .chip.large {
-  min-width: 48px !important;
-  min-height: 48px !important;
-  height: 48px;
+  min-height: 48rem !important;
+  height: 48rem;
 }
 
 .chip.border {
-  border: 1px solid var(--color-2b);
+  border: 1rem solid var(--color-2b);
   background-color: transparent;
-}
-
-.chip.circle > span,
-.chip.square > span,
-.chip.diamond > span {
-  display: none;
-}
-
-.chip.circle {
-  min-width: 32px;
-  padding: 0;
-  text-align: center;
-}
-
-.chip.square {
-  min-width: 32px;
-  padding: 0;
-  text-align: center;
-  border-radius: 4px;
-}
-
-.chip.diamond {
-  min-width: 32px;
-  padding: 0;
-  transform: rotate(45deg);
-  border-radius: 4px;
-}
-
-.chip.diamond > i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .chip.active {
   background-color: var(--color-2b);
+}
+
+.chip.circle {
+  transform: none;
+  padding: 0;
+  border-radius: 40rem;
+  padding: 0;
+}
+
+.chip.square {
+  transform: none;
+  border-radius: 4rem;
+  padding: 0;
 }

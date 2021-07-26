@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  font-size: 0.6rem;
+  font-size: 10rem;
   text-transform: none;
   z-index: 1;
-  padding: 2px 4px;
+  padding: 0 6rem;
   background-color:var(--color-3);
   color: #ffffff;
   top: 0;
@@ -14,6 +14,8 @@
   bottom: auto;
   right: 0;
   transform: translate(50%, -100%);
+  width: 16rem;
+  height: 16rem;
 }
 
 .badge.none {
@@ -23,7 +25,7 @@
   right: auto;
   transform: none;
   position: relative;
-  margin: 0 2px;
+  margin: 0 2rem;
 }
 
 .badge.top {
@@ -91,27 +93,31 @@
 }
 
 .badge.border {
-  border: 1px solid var(--color-3);
+  border: 1rem solid var(--color-3);
   background-color: transparent;
   color:var(--color-3);
 }
 
 .badge.round {
-  border-radius: 8px;
+  border-radius: 8rem;
+}
+
+.badge.circle,
+.badge.square {
+  padding: 0;
+  text-align: center;
+  width: 16rem;
+  height: 16rem;
+  min-width: auto;
+  min-height: auto;
+  max-width: none;
+  max-height: none;
 }
 
 .badge.circle {
-  padding: 0;
-  width: 16px;
-  height: 16px;
-  text-align: center;
   border-radius: 50%;
 }
 
 .badge.square {
-  padding: 0;
-  width: 16px;
-  height: 16px;
-  text-align: center;
   border-radius: 0;
 }

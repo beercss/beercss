@@ -1,20 +1,20 @@
 .row {
-  margin: 0 -8px;
+  margin: 0 -8rem;
   color: inherit;
   min-width: 100%;
 }
 
 .row .row:not(.no-wrap) {
-  margin-top: -8px;
+  margin-top: -8rem;
 }
 
 .row .row .row:not(.no-wrap) {
-  margin-top: 8px;
+  margin-top: 8rem;
 }
 
 .row + .row,
 .row .row + .row {
-  margin-top: 16px;
+  margin-top: 16rem;
 }
 
 .row:after {
@@ -31,17 +31,17 @@
 .row.space,
 .row.small-space {
   height: auto;
-  margin: 0 -8px;
+  margin: 0 -8rem;
 }
 
 .row.medium-space {
   height: auto;
-  margin: 0 -12px;
+  margin: 0 -12rem;
 }
 
 .row.large-space {
   height: auto;
-  margin: 0 -16px;
+  margin: 0 -16rem;
 }
 
 .row > .col {
@@ -49,7 +49,7 @@
   text-align: left;
   box-sizing: border-box;
   width: min-content;
-  padding: 8px;
+  padding: 8rem;
 }
 
 .row.no-space > .col {
@@ -58,15 +58,15 @@
 
 .row.space > .col,
 .row.small-space > .col {
-  padding: 8px;
+  padding: 8rem;
 }
 
 .row.medium-space > .col {
-  padding: 12px;
+  padding: 12rem;
 }
 
 .row.large-space > .col {
-  padding: 16px;
+  padding: 16rem;
 }
 
 .row.no-wrap {
@@ -81,7 +81,7 @@
 }
 
 .row + .row {
-  margin-top: 16px;
+  margin-top: 16rem;
 }
 
 .row.no-wrap > .col {

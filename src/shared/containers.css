@@ -1,8 +1,8 @@
 .container,
 .container.min {
   margin: 0 auto;
-  max-width: 992px;
-  padding: 80px 88px;
+  max-width: 992rem;
+  padding: 80rem 88rem;
   overflow-x: hidden;
 }
 
@@ -13,6 +13,6 @@
 @media only screen and (max-width: 600px) {
   .container,
   .container.min {
-    padding: 80px 8px;
+    padding: 80rem 8rem;
   }
 }

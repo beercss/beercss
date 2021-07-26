@@ -1,23 +1,23 @@
 .loader {
 	background: none !important;
 	animation: 1.4s loader-to-loop linear infinite;
-	width: 48px;
-	height: 48px;
+	width: 48rem;
+	height: 48rem;
 }
 
 .loader.small {
-	width: 24px;
-	height: 24px;
+	width: 24rem;
+	height: 24rem;
 }
 
 .loader.medium {
-	width: 40px;
-	height: 40px;
+	width: 40rem;
+	height: 40rem;
 }
 
 .loader.large {
-	width: 56px;
-	height: 56px;
+	width: 56rem;
+	height: 56rem;
 }
 
 .loader > circle {

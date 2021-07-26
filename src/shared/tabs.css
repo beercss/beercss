@@ -1,7 +1,7 @@
 .tabs {
-  margin-top: 16px;
+  margin-top: 16rem;
   white-space: nowrap;
-  border-bottom: 1px solid var(--color-2b);
+  border-bottom: 1rem solid var(--color-2b);
 }
 
 * > .tabs:first-child {
@@ -11,32 +11,32 @@
 .tabs > a {
   display: inline-flex;
   align-items: center;
-  font-size: var(--medium-text);
+  font-size: 14rem;
   font-weight: 500;
   color: var(--color-2);
-  padding: 0 16px;
+  padding: 0 16rem;
   text-transform: uppercase;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2rem solid transparent;
   text-align: center;
-  min-height: 32px;
+  min-height: 40rem;
 }
 
 .tabs > a > span {
-  margin: 4px;
+  margin: 4rem;
 }
 
 .tabs.small > a {
-  min-height: 32px;
+  min-height: 32rem;
 }
 
 .tabs.medium > a {
-  min-height: 40px;
+  min-height: 40rem;
 }
 
 .tabs.large > a {
-  min-height: 48px;
+  min-height: 48rem;
 }
 
 .tabs > a.active {
-  border-bottom: 2px solid var(--color-2);
+  border-bottom: 2rem solid var(--color-2);
 }

@@ -1,6 +1,10 @@
+html {
+  font-size: var(--size);
+}
+
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: var(--medium-text);
+  font-size: 14rem;
   color: var(--color-2);
   background-color: var(--color-5);
   margin: 0;
@@ -39,7 +43,7 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  margin: 8px 0;
+  margin: 8rem 0;
 }
 
 * > h1:first-child,
@@ -48,31 +52,31 @@ h6 {
 * > h4:first-child,
 * > h5:first-child,
 * > h6:first-child {
-  margin: 0 0 8px 0;
+  margin: 0 0 8rem 0;
 }
 
 h1 {
-  font-size: 4.2rem;
+  font-size: 80rem;
 }
 
 h2 {
-  font-size: 3.56rem;
+  font-size: 64rem;
 }
 
 h3 {
-  font-size: 2.92rem;
+  font-size: 48rem;
 }
 
 h4 {
-  font-size: 2.28rem;
+  font-size: 32rem;
 }
 
 h5 {
-  font-size: 1.64rem;
+  font-size: 24rem;
 }
 
 h6 {
-  font-size: 1.1rem;
+  font-size: 16rem;
 }
 
 .link {
@@ -86,15 +90,15 @@ h6 {
 }
 
 .small-text {
-  font-size: var(--small-text);
+  font-size: 12rem;
 }
 
 .medium-text {
-  font-size: var(--medium-text);
+  font-size: 14rem;
 }
 
 .large-text {
-  font-size: var(--large-text);
+  font-size: 16rem;
 }
 
 .upper {
@@ -126,63 +130,63 @@ h6 {
 }
 
 p {
-  margin: 8px 0;
+  margin: 8rem 0;
 }
 
 label {
-  font-size: var(--small-text);
+  font-size: 12rem;
   color: #9e9e9e;
 }
 
-.space,
-.small-space {
-  height: 16px;
+.space:not(.menu, nav, .row),
+.small-space:not(.menu, nav, .row) {
+  height: 16rem;
   display: block;
 }
 
-.medium-space {
-  height: 32px;
+.medium-space:not(.menu, nav, .row) {
+  height: 32rem;
   display: block;
 }
 
-.large-space {
-  height: 48px;
+.large-space:not(.menu, nav, .row) {
+  height: 48rem;
   display: block;
 }
 
 .divider,
 .small-divider {
-  border-bottom: 1px solid #9e9e9e50;
+  border-bottom: 1rem solid #9e9e9e50;
   display: block;
-  margin: 8px 0;
+  margin: 8rem 0;
 }
 
 .medium-divider {
-  border-bottom: 1px solid #9e9e9e50;
+  border-bottom: 1rem solid #9e9e9e50;
   display: block;
-  margin: 16px 0;
+  margin: 16rem 0;
 }
 
 .large-divider {
-  border-bottom: 1px solid #9e9e9e50;
+  border-bottom: 1rem solid #9e9e9e50;
   display: block;
-  margin: 24px 0;
+  margin: 24rem 0;
 }
 
 .row.divider,
 .row.small-divider {
-  margin: 0 -8px !important;
-  padding: 8px 0;
+  margin: 0 -8rem !important;
+  padding: 8rem 0;
 }
 
 .row.medium-divider {
-  margin: 0 -8px !important;
-  padding: 16px 0;
+  margin: 0 -8rem !important;
+  padding: 16rem 0;
 }
 
 .row.large-divider {
-  margin: 0 -8px !important;
-  padding: 24px 0;
+  margin: 0 -8rem !important;
+  padding: 24rem 0;
 }
 
 .no-padding {
@@ -190,16 +194,16 @@ label {
 }
 
 .small-padding {
-  padding: 8px !important;
+  padding: 8rem !important;
 }
 
 .medium-padding,
 .padding {
-  padding: 16px !important;
+  padding: 16rem !important;
 }
 
 .large-padding {
-  padding: 24px !important;
+  padding: 24rem !important;
 }
 
 .no-margin {
@@ -207,16 +211,16 @@ label {
 }
 
 .small-margin {
-  margin: 8px !important;
+  margin: 8rem !important;
 }
 
 .medium-margin,
 .margin {
-  margin: 16px !important;
+  margin: 16rem !important;
 }
 
 .large-margin {
-  margin: 24px !important;
+  margin: 24rem !important;
 }
 
 .shadow {
@@ -306,59 +310,120 @@ label {
 }
 
 .small-width {
-  width: 200px;
+  width: 192rem;
 }
 
 .medium-width {
-  width: 400px;
+  width: 384rem;
 }
 
 .large-width {
-  width: 600px;
+  width: 576rem;
 }
 
 .small-height {
-  height: 200px;
+  height: 192rem;
 }
 
 .medium-height {
-  height: 400px;
+  height: 384rem;
 }
 
 .large-height {
-  height: 600px;
+  height: 576rem;
 }
 
 .top-round {
-  border-radius: var(--small-round) var(--small-round) 4px 4px !important;
+  border-radius: 24rem 24rem 4rem 4rem !important;
 }
 
 .bottom-round {
-  border-radius: 4px 4px var(--small-round) var(--small-round) !important;
+  border-radius: 4rem 4rem 24rem 24rem !important;
 }
 
 .left-round {
-  border-radius: var(--small-round) 4px 4px var(--small-round) !important;
+  border-radius: 24rem 4rem 4rem 24rem !important;
 }
 
 .right-round {
-  border-radius: 4px var(--small-round) var(--small-round) 4px !important;
+  border-radius: 4rem 24rem 24rem 4rem !important;
 }
 
 .top-round.left-round {
-  border-radius: var(--small-round) var(--small-round) 4px var(--small-round) !important;
+  border-radius: 24rem 24rem 4rem 24rem !important;
 }
 
 .top-round.right-round {
-  border-radius: var(--small-round) var(--small-round) var(--small-round) 4px !important;
+  border-radius: 24rem 24rem 24rem 4rem !important;
 }
 
 .bottom-round.left-round {
-  border-radius: var(--small-round) 4px var(--small-round) var(--small-round) !important;
+  border-radius: 24rem 4rem 24rem 24rem !important;
 }
 
 .bottom-round.right-round {
-  border-radius: 4px var(--small-round) var(--small-round) var(--small-round) !important;
+  border-radius: 4rem 24rem 24rem 24rem !important;
+}
+
+.circle,
+.square,
+.diamond {
+  min-width: 40rem;
+  min-height: 40rem;
+  max-width: 40rem;
+  max-height: 40rem;
+  height: 40rem;
+}
+
+.circle > span,
+.square > span,
+.diamond > span {
+  display: none;
+}
+
+.diamond.small,
+.square.small,
+.circle.small {
+  min-width: 32rem;
+  min-height: 32rem;
+  max-width: 32rem;
+  max-height: 32rem;
+  height: 32rem;
+}
+
+.diamond.large,
+.square.large,
+.circle.large {
+  min-width: 48rem;
+  min-height: 48rem;
+  max-width: 48rem;
+  max-height: 48rem;
+  height: 48rem;
+}
+
+.diamond.extra,
+.square.extra,
+.circle.extra {
+  min-width: 56rem;
+  min-height: 56rem;
+  max-width: 56rem;
+  max-height: 56rem;
+  height: 56rem;
+}
+
+.diamond {
+  transform: rotate(45deg);
+  border-radius: 4rem;
+  padding: 0;
+}
+
+.diamond > i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  margin: 0;
+  padding: 0;
 }
 
 @media only screen and (max-width: 600px) {

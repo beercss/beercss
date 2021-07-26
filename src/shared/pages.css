@@ -29,7 +29,7 @@
 @keyframes page-to-bottom {
   from {
     opacity: 0;
-    transform: translateY(-64px);
+    transform: translateY(-64rem);
   }
   to {
     opacity: 1;
@@ -40,7 +40,7 @@
 @keyframes page-to-top {
   from {
     opacity: 0;
-    transform: translateY(64px);
+    transform: translateY(64rem);
   }
   to {
     opacity: 1;
@@ -51,7 +51,7 @@
 @keyframes page-to-left {
   from {
     opacity: 0;
-    transform: translateX(64px);
+    transform: translateX(64rem);
   }
   to {
     opacity: 1;
@@ -62,7 +62,7 @@
 @keyframes page-to-right {
   from {
     opacity: 0;
-    transform: translateX(-64px);
+    transform: translateX(-64rem);
   }
   to {
     opacity: 1;

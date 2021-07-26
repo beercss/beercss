@@ -2,10 +2,10 @@
 .container(v-show="isLoaded")
   .page.right.active
     nav.scroll
-      a.chip.active.wave The best of 2020
-      a.chip.wave Documentaries
-      a.chip.wave Rock and roll
-      a.chip.wave Others
+      a.chip.active The best of 2020
+      a.chip Documentaries
+      a.chip Rock and roll
+      a.chip Others
     .space
     .row
       .col.s12.m6.l3(v-for="(item, i) in itens")

@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  .menu.top.top-shadow.large
+  .menu.top.top-shadow
     .row.no-wrap.middle-align
       .col
         nav.padding
@@ -62,7 +62,7 @@ div
                   div Alok, Zebra, Iro - Ocean
                   label 10k views
           a(href="/")
-            img.small.circle(:src="'/favicon.png'")
+            img.circle(:src="'/favicon.png'")
 
   #modal-search.modal.top.transparent.flat
     .row.no-wrap
@@ -88,7 +88,7 @@ export default {
   },
   methods: {
     updateTheme() {
-      document.body.className = "is-netflix";
+      document.querySelector("html").className = "is-netflix";
     },
     scroll(selector) {
       let element = document.querySelector(selector);
