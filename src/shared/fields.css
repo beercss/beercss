@@ -366,25 +366,23 @@ input[type="file"] {
   padding: 0;
   outline: none;
   cursor: pointer;
-  color: inherit;
+  color: #9e9e9e;
   position: absolute;
   left: -24rem;
   background-color: transparent;
+  border-radius: 50%;
 }
 
 .checkbox > input + span::before {
-  color: #9e9e9e;
   content: "check_box_outline_blank";
 }
 
 .radio > input + span::before {
-  color: #9e9e9e;
   content: "radio_button_unchecked";
 }
 
 .checkbox > input:focus + span::before,
 .radio > input:focus + span::before {
-  border-radius: 50%;
   background-color: var(--color-2a);
   box-shadow: 0 0 0 8rem var(--color-2a);
   animation: 0.1s to-checked linear;
