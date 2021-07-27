@@ -27,6 +27,7 @@ button.border::after {
   background-image: radial-gradient(circle, rgba(150,150,150,0.2) 1%, transparent 1%);
 }
 
+.wave.none::after,
 .button.none::after,
 button.none::after {
   top: 0;
@@ -34,6 +35,7 @@ button.none::after {
   padding: 0 4rem;
 }
 
+.wave.none:not(.small, .medium, .large, .extra)::after,
 .button.none:not(.small, .medium, .large, .extra)::after,
 button.none:not(.small, .medium, .large, .extra)::after {
   top: -4rem;
