@@ -1,7 +1,7 @@
 .toast {
   position: fixed;
   top: auto;
-  bottom: 64rem;
+  bottom: 72rem;
   left: 50%;
   right: auto;
   width: 80%;
@@ -13,7 +13,7 @@
   background-color: var(--color-4);
   padding: 16rem;
   opacity: 1;
-  margin: 8rem;
+  margin: 0;
   cursor: pointer;
   transform: translate(-50%, 0);
   text-align: left;
@@ -21,13 +21,13 @@
 }
 
 .toast.top {
-  top: 64rem;
+  top: 72rem;
   bottom: auto;
 }
 
 .toast.bottom {
   top: auto;
-  bottom: 64rem;
+  bottom: 72rem;
 }
 
 .toast.active  {
