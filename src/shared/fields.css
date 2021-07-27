@@ -385,7 +385,7 @@ input[type="file"] {
 .radio > input:focus + span::before {
   background-color: var(--color-2a);
   box-shadow: 0 0 0 8rem var(--color-2a);
-  animation: 0.1s to-checked linear;
+  animation: 0.1s to-checked ease-out;
 }
 
 .checkbox > input:checked + span::before {
