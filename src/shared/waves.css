@@ -13,6 +13,9 @@ button::after {
   height: 100%;
   background-position: center;
   background-image: radial-gradient(circle, rgba(255,255,255,0.4) 1%, transparent 1%);
+  opacity: 0;
+  transition: none;
+  will-change: background-size;
 }
 
 .wave.dark::after,
@@ -47,15 +50,17 @@ button:hover::after,
 .button:focus::after,
 button:focus::after {
   background-size: 15000%;
-  transition: 0.4s background-size ease-out;
+  opacity: 1;
+  transition: 0.2s background-size linear;
 }
 
 .wave:active::after,
 .chip:active::after,
 .button:active::after,
 button:active::after {
-  background-size: 100%;
-  transition: 0s background-size ease-out;
+  background-size: 5000%;
+  opacity: 0;
+  transition: none;
 }
 
 .no-wave::after,

@@ -33,18 +33,6 @@ button > .responsive:last-child,
   margin-right: -12rem;
 }
 
-button.responsive,
-.button.responsive {
-  display: flex;
-  margin: 0;
-  width: -webkit-fill-available;
-}
-
-button.responsive > i,
-.button.responsive > i {
-  margin: 0;
-}
-
 .button.none,
 button.none {
   box-shadow: none;

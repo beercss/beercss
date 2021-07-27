@@ -366,39 +366,36 @@ input[type="file"] {
   padding: 0;
   outline: none;
   cursor: pointer;
-  color: inherit;
+  color: #9e9e9e;
   position: absolute;
   left: -24rem;
   background-color: transparent;
+  border-radius: 50%;
 }
 
 .checkbox > input + span::before {
-  color: #9e9e9e;
   content: "check_box_outline_blank";
 }
 
 .radio > input + span::before {
-  color: #9e9e9e;
   content: "radio_button_unchecked";
 }
 
 .checkbox > input:focus + span::before,
 .radio > input:focus + span::before {
-  border-radius: 50%;
   background-color: var(--color-2a);
   box-shadow: 0 0 0 8rem var(--color-2a);
+  animation: 0.1s to-checked linear;
 }
 
 .checkbox > input:checked + span::before {
   color: var(--color-1);
   content: "check_box";
-  animation: 0.3s to-checked;
 }
 
 .radio > input:checked + span::before {
   color: var(--color-1);
   content: "radio_button_checked";
-  animation: 0.3s to-checked;
 }
 
 .checkbox + .checkbox,
@@ -623,13 +620,9 @@ table td > .field {
 
 @keyframes to-checked {
   from {
-    border-radius: 50%;
-    background-color: var(--color-1);
-    box-shadow: 0 0 0 0 var(--color-1);
+    box-shadow: 0 0 0 0 var(--color-2a);
   }
   to {
-    border-radius: 50%;
-    background-color: var(--color-2a);
     box-shadow: 0 0 0 8rem var(--color-2a);
   }
 }

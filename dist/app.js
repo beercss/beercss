@@ -23825,7 +23825,7 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container max" }, [
-    _c("div", { staticClass: "menu left border small grey-text m l" }, [
+    _c("div", { staticClass: "menu left border no-space grey-text m l" }, [
       _c("div", { staticClass: "large-space" }),
       _c("div", { staticClass: "medium-space" }),
       _c(
@@ -23915,7 +23915,7 @@ exports.default = _default;
         ]
       )
     ]),
-    _c("div", { staticClass: "menu right border large m l" }, [
+    _c("div", { staticClass: "menu right border large-space m l" }, [
       _c("div", { staticClass: "large-space" }),
       _c("div", { staticClass: "medium-space" }),
       _c("a", { staticClass: "wave dark" }, [

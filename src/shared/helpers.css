@@ -253,35 +253,35 @@ label {
 }
 
 .middle-align {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: flex-start;
 }
 
 .bottom-align {
-  display: flex;
+  display: flex !important;
   align-items: flex-end;
   justify-content: flex-start;
 }
 
 .top-align {
-  display: flex;
+  display: flex !important;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
 .left-align {
-  text-align: left;
+  text-align: left !important;
   justify-content: flex-start;
 }
 
 .right-align {
-  text-align: right;
+  text-align: right !important;
   justify-content: flex-end;
 }
 
 .center-align {
-  text-align: center;
+  text-align: center !important;
   justify-content: center;
 }
 
@@ -424,6 +424,15 @@ label {
   transform: translate(-50%, -50%) rotate(-45deg);
   margin: 0;
   padding: 0;
+}
+
+.responsive {
+  margin: 0;
+  width: -webkit-fill-available;
+}
+
+.responsive > :not(.dropdown, .badge) {
+  margin: 0;
 }
 
 @media only screen and (max-width: 600px) {
