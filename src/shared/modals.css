@@ -90,6 +90,7 @@
   bottom: auto;
   height: auto;
   width: 100%;
+  min-width: auto;
 }
 
 .modal.left {
@@ -119,6 +120,7 @@
   bottom: 0;
   height: auto;
   width: 100%;
+  min-width: auto;
 }
 
 .modal.left.small,
