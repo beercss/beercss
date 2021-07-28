@@ -2,6 +2,7 @@
   opacity: 0;
   position: absolute;
   visibility: hidden;
+  display: block;
 }
 
 .page.active {
