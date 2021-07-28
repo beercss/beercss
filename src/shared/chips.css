@@ -3,16 +3,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-shadow: none;
   min-height: 40rem;
   height: 40rem;
   font-size: 14rem;
   font-weight: 500;
   color: var(--color-2);
   padding: 0 12rem;
-  border-radius: 24rem;
   background-color: var(--color-2a);
   margin: 0 8rem;
   text-transform: none;
+  border-radius: 24rem;
   transition: 0.3s transform, 0.3s border-radius, 0.3s padding;
   z-index: 1;
 }
@@ -47,6 +48,7 @@
 .chip.border {
   border: 1rem solid var(--color-2b);
   background-color: transparent;
+  color: inherit;
 }
 
 .chip.active {
