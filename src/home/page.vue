@@ -898,6 +898,22 @@ div
               i code
           nav.wrap
             label.radio
+              input#default-chips(
+                type="radio",
+                name="color-chips",
+                checked="checked"
+              )
+              span default
+            label.radio
+              input#brown-chips(type="radio", name="color-chips")
+              span brown
+            label.radio
+              input#indigo-chips(type="radio", name="color-chips")
+              span indigo
+            label.radio
+              input#red-chips(type="radio", name="color-chips")
+              span red
+            label.radio
               input#small-chips(type="radio", name="size-chips")
               span small
             label.radio
@@ -3545,15 +3561,32 @@ export default {
     },
     chipSamples() {
       $("#chips input").on("click", function () {
-        var ids = ["small", "large", "active"];
-        var chips = $("#chips nav .chip");
+        var ids = ["brown", "indigo", "red", "small", "large", "active"];
+        var chips = $("#chips nav .chip:not(.border)");
+        var chipsBorder = $("#chips nav .chip.border");
 
         for (var i = 0; i < ids.length; i++) {
+          chips.removeClass(ids[i] + "-light-4");
           chips.removeClass(ids[i]);
+          chips.removeClass(ids[i] + "-border");
+          chips.removeClass(ids[i] + "-text");
+
+          chipsBorder.removeClass(ids[i] + "-light-4");
+          chipsBorder.removeClass(ids[i]);
+          chipsBorder.removeClass(ids[i] + "-border");
+          chipsBorder.removeClass(ids[i] + "-text");
 
           var selector = "#" + ids[i] + "-chips";
           if ($(selector).is(":checked")) {
-            chips.addClass(ids[i]);
+            if (["small", "medium", "large", "active"].indexOf(ids[i]) == -1) {
+              chips.addClass(ids[i] + "-light-4");
+              chips.addClass(ids[i] + "-text");
+              chipsBorder.addClass(ids[i] + "-border");
+              chipsBorder.addClass(ids[i] + "-text");
+            } else {
+              chips.addClass(ids[i]);
+              chipsBorder.addClass(ids[i]);
+            }
           }
         }
       });

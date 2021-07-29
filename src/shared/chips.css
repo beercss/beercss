@@ -51,7 +51,14 @@
   color: inherit;
 }
 
-.chip.active {
+.chip.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
   background-color: var(--color-2b);
 }
 

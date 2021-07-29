@@ -12023,6 +12023,22 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -12302,15 +12318,31 @@ var _default = {
     },
     chipSamples: function chipSamples() {
       $("#chips input").on("click", function () {
-        var ids = ["small", "large", "active"];
-        var chips = $("#chips nav .chip");
+        var ids = ["brown", "indigo", "red", "small", "large", "active"];
+        var chips = $("#chips nav .chip:not(.border)");
+        var chipsBorder = $("#chips nav .chip.border");
 
         for (var i = 0; i < ids.length; i++) {
+          chips.removeClass(ids[i] + "-light-4");
           chips.removeClass(ids[i]);
+          chips.removeClass(ids[i] + "-border");
+          chips.removeClass(ids[i] + "-text");
+          chipsBorder.removeClass(ids[i] + "-light-4");
+          chipsBorder.removeClass(ids[i]);
+          chipsBorder.removeClass(ids[i] + "-border");
+          chipsBorder.removeClass(ids[i] + "-text");
           var selector = "#" + ids[i] + "-chips";
 
           if ($(selector).is(":checked")) {
-            chips.addClass(ids[i]);
+            if (["small", "medium", "large", "active"].indexOf(ids[i]) == -1) {
+              chips.addClass(ids[i] + "-light-4");
+              chips.addClass(ids[i] + "-text");
+              chipsBorder.addClass(ids[i] + "-border");
+              chipsBorder.addClass(ids[i] + "-text");
+            } else {
+              chips.addClass(ids[i]);
+              chipsBorder.addClass(ids[i]);
+            }
           }
         }
       });
@@ -17166,6 +17198,35 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: {
+            id: "default-chips",
+            type: "radio",
+            name: "color-chips",
+            checked: "checked"
+          }
+        }),
+        _c("span", [_vm._v("default")])
+      ]),
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: { id: "brown-chips", type: "radio", name: "color-chips" }
+        }),
+        _c("span", [_vm._v("brown")])
+      ]),
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: { id: "indigo-chips", type: "radio", name: "color-chips" }
+        }),
+        _c("span", [_vm._v("indigo")])
+      ]),
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: { id: "red-chips", type: "radio", name: "color-chips" }
+        }),
+        _c("span", [_vm._v("red")])
+      ]),
       _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: { id: "small-chips", type: "radio", name: "size-chips" }
