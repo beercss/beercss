@@ -16,7 +16,6 @@ body {
   position: relative;
   vertical-align: middle;
   color: var(--color-2);
-  margin: 0 auto;
 }
 
 * > * {
@@ -255,19 +254,16 @@ label {
 .middle-align {
   display: flex !important;
   align-items: center;
-  justify-content: flex-start;
 }
 
 .bottom-align {
   display: flex !important;
   align-items: flex-end;
-  justify-content: flex-start;
 }
 
 .top-align {
   display: flex !important;
   align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .left-align {
@@ -310,30 +306,30 @@ label {
 }
 
 .small-width {
-  width: 192rem;
+  width: 192rem !important;
   max-width: 100%;
 }
 
 .medium-width {
-  width: 384rem;
+  width: 384rem !important;
   max-width: 100%;
 }
 
 .large-width {
-  width: 576rem;
+  width: 576rem !important;
   max-width: 100%;
 }
 
 .small-height {
-  height: 192rem;
+  height: 192rem !important;
 }
 
 .medium-height {
-  height: 384rem;
+  height: 384rem !important;
 }
 
 .large-height {
-  height: 576rem;
+  height: 576rem !important;
 }
 
 .top-round {

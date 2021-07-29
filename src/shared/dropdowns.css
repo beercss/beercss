@@ -30,6 +30,7 @@
 .dropdown.active {
   opacity: 1;
   visibility: visible;
+  max-width: none;
   animation: 0.1s dropdown-to-bottom;
 }
 
