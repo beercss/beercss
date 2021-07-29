@@ -77,3 +77,6 @@ https://github.com/beercss/beercss/blob/main/CONTRIBUTING.md
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
+
+## Cheers to all people here 🍻
+[![Stargazers repo roster for @beercss/beercss](https://reporoster.com/stars/notext/beercss/beercss)](https://github.com/beercss/beercss/stargazers)
