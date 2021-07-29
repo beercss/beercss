@@ -1634,27 +1634,15 @@ div
           .medium-space
           h5
             span Loaders
-            a.chip.circle(@click="showSamples('#loaders svg')")
+            a.chip.circle(@click="showSamples('#loaders .loader')")
               i code
           nav.wrap
-            a
-              svg.loader.small(viewBox="0 0 66 66")
-                circle(fill="none", cx="33", cy="33", r="30")
-            a
-              svg.loader.medium(viewBox="0 0 66 66")
-                circle(fill="none", cx="33", cy="33", r="30")
-            a
-              svg.loader.large(viewBox="0 0 66 66")
-                circle(fill="none", cx="33", cy="33", r="30")
-            a
-              svg.loader.small.pink(viewBox="0 0 66 66")
-                circle(fill="none", cx="33", cy="33", r="30")
-            a
-              svg.loader.medium.orange(viewBox="0 0 66 66")
-                circle(fill="none", cx="33", cy="33", r="30")
-            a
-              svg.loader.large.yellow(viewBox="0 0 66 66")
-                circle(fill="none", cx="33", cy="33", r="30")
+            a.loader.small
+            a.loader.medium
+            a.loader.large
+            a.loader.small.pink
+            a.loader.medium.orange
+            a.loader.large.yellow
         #media.col.s12
           .medium-space
           h5
