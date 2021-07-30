@@ -655,7 +655,7 @@ function parsePath(path) {
 // can we use __proto__?
 
 
-var hasProto = ('__proto__' in {}); // Browser environment sniffing
+var hasProto = '__proto__' in {}; // Browser environment sniffing
 
 var inBrowser = typeof window !== 'undefined';
 var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
@@ -726,7 +726,9 @@ if (typeof Set !== 'undefined' && isNative(Set)) {
   _Set = Set;
 } else {
   // a non-standard Set polyfill that only works with primitive keys.
-  _Set = /*@__PURE__*/function () {
+  _Set =
+  /*@__PURE__*/
+  function () {
     function Set() {
       this.set = Object.create(null);
     }
@@ -2210,7 +2212,7 @@ if (undefined !== 'production') {
 
   var hasHandler = {
     has: function has(target, key) {
-      var has = (key in target);
+      var has = key in target;
       var isAllowed = allowedGlobals(key) || typeof key === 'string' && key.charAt(0) === '_' && !(key in target.$data);
 
       if (!has && !isAllowed) {
@@ -5849,7 +5851,9 @@ function setStyleScope(node, scopeId) {
   node.setAttribute(scopeId, '');
 }
 
-var nodeOps = /*#__PURE__*/Object.freeze({
+var nodeOps =
+/*#__PURE__*/
+Object.freeze({
   createElement: createElement$1,
   createElementNS: createElementNS,
   createTextNode: createTextNode,
