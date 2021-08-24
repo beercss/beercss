@@ -23,5 +23,6 @@
 @import "./shared/tabs.css";
 @import "./shared/toasts.css";
 @import "./shared/tooltips.css";
+@import "./shared/typography.css";
 @import "./shared/waves.css";
 @import "./shared/helpers.css";
