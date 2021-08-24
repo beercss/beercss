@@ -1,10 +1,4 @@
-html {
-  font-size: var(--size);
-}
-
 body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: 14rem;
   color: var(--color-2);
   background-color: var(--color-5);
   margin: 0;
@@ -33,103 +27,6 @@ button,
   font-family: inherit;
   outline: inherit;
   justify-content: center;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 400;
-  margin: 8rem 0;
-}
-
-* > h1:first-child,
-* > h2:first-child,
-* > h3:first-child,
-* > h4:first-child,
-* > h5:first-child,
-* > h6:first-child {
-  margin: 0 0 8rem 0;
-}
-
-h1 {
-  font-size: 80rem;
-}
-
-h2 {
-  font-size: 64rem;
-}
-
-h3 {
-  font-size: 48rem;
-}
-
-h4 {
-  font-size: 32rem;
-}
-
-h5 {
-  font-size: 24rem;
-}
-
-h6 {
-  font-size: 16rem;
-}
-
-.link {
-  color: var(--color-1);
-}
-
-.truncate {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.small-text {
-  font-size: 12rem;
-}
-
-.medium-text {
-  font-size: 14rem;
-}
-
-.large-text {
-  font-size: 16rem;
-}
-
-.upper {
-  text-transform: uppercase;
-}
-
-.lower {
-  text-transform: lowercase;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.overline {
-  text-decoration: line-through;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-.italic {
-  font-style: italic;
-}
-
-p {
-  margin: 8rem 0;
 }
 
 label {
