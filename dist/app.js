@@ -12939,13 +12939,13 @@ exports.default = _default;
     ),
     _c("div", { staticClass: "container" }, [
       _c("div", { attrs: { id: "begin" } }, [
-        _c("h3", { staticClass: "center-align" }, [_vm._v("Beercss")]),
+        _c("h4", { staticClass: "center-align" }, [_vm._v("Beercss")]),
         _c("div", { staticClass: "space" }),
-        _c("h6", { staticClass: "center-align" }, [
+        _c("div", { staticClass: "large-text center-align" }, [
           _vm._v("Build material design interfaces in record time...")
         ]),
         _c("div", { staticClass: "space" }),
-        _c("h6", { staticClass: "center-align" }, [
+        _c("div", { staticClass: "large-text center-align" }, [
           _vm._v("...without stress for devs 🍺💛")
         ]),
         _c("div", { staticClass: "space" }),
@@ -12955,7 +12955,7 @@ exports.default = _default;
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col s12", attrs: { id: "badges" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Badges")]),
               _c(
                 "a",
@@ -12977,7 +12977,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "buttons" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Buttons")]),
               _c(
                 "a",
@@ -13250,7 +13250,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "cards" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Cards")]),
               _c(
                 "a",
@@ -13836,7 +13836,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "checkboxes" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Checkboxes")]),
               _c(
                 "a",
@@ -13855,7 +13855,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "chips" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Chips")]),
               _c(
                 "a",
@@ -14103,7 +14103,7 @@ exports.default = _default;
           _vm._m(100),
           _c("div", { staticClass: "col s12", attrs: { id: "containers" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Containers")]),
               _c(
                 "a",
@@ -14170,7 +14170,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "dropdowns" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Dropdowns")]),
               _c(
                 "a",
@@ -14369,7 +14369,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "icons" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Icons")]),
               _c(
                 "a",
@@ -14390,7 +14390,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "inputs" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Inputs")]),
               _c(
                 "a",
@@ -14455,7 +14455,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "layouts" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Layouts")]),
               _c(
                 "a",
@@ -14479,7 +14479,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "list" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Lists")]),
               _c(
                 "a",
@@ -14543,7 +14543,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "loaders" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Loaders")]),
               _c(
                 "a",
@@ -14562,7 +14562,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "media" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Media")]),
               _c(
                 "a",
@@ -15048,7 +15048,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "modals" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Modals")]),
               _c(
                 "a",
@@ -15067,7 +15067,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "navs" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Navs")]),
               _c(
                 "a",
@@ -15096,7 +15096,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "pages" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Pages")]),
               _c(
                 "a",
@@ -15161,7 +15161,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "radios" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Radios")]),
               _c(
                 "a",
@@ -15180,7 +15180,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "responsive" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Responsive")]),
               _c(
                 "a",
@@ -15199,7 +15199,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "rows" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Rows")]),
               _c(
                 "a",
@@ -15227,7 +15227,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "selects" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Selects")]),
               _c(
                 "a",
@@ -15289,7 +15289,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "switches" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Switches")]),
               _c(
                 "a",
@@ -15308,7 +15308,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "table" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Tables")]),
               _c(
                 "a",
@@ -15329,7 +15329,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "tabs" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Tabs")]),
               _c(
                 "a",
@@ -15416,7 +15416,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "textareas" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Textareas")]),
               _c(
                 "a",
@@ -15485,7 +15485,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12 l6", attrs: { id: "toasts" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Toasts")]),
               _c(
                 "a",
@@ -15509,7 +15509,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12 l6", attrs: { id: "tooltips" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Tooltips")]),
               _c(
                 "a",
@@ -15528,7 +15528,7 @@ exports.default = _default;
           ]),
           _c("div", { staticClass: "col s12", attrs: { id: "typography" } }, [
             _c("div", { staticClass: "medium-space" }),
-            _c("h4", [
+            _c("h5", [
               _c("span", [_vm._v("Typography")]),
               _c(
                 "a",
@@ -17335,7 +17335,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12", attrs: { id: "colors" } }, [
       _c("div", { staticClass: "medium-space" }),
-      _c("h4", [
+      _c("h5", [
         _c("span", [_vm._v("Colors")]),
         _c(
           "a",
