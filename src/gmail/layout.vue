@@ -31,20 +31,20 @@
       i.outlined brightness_medium
       .tooltip.right Theme
 
-  .menu.right.border.large-space.m.l
+  .menu.right.border.m.l
     .large-space
     .medium-space
     a.wave.dark
-      img(:src="'/calendar.png'")
+      img.tiny(:src="'/calendar.png'")
       span.tooltip.left Calendar
     a.wave.dark
-      img(:src="'/keep.png'")
+      img.tiny(:src="'/keep.png'")
       span.tooltip.left Keep
     a.wave.dark
-      img(:src="'/tasks.png'")
+      img.tiny(:src="'/tasks.png'")
       span.tooltip.left Tasks
     a.wave.dark
-      img(:src="'/contacts.png'")
+      img.tiny(:src="'/contacts.png'")
       span.tooltip.left Contacts
 
   .menu.top.border.grey-text

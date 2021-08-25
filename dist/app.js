@@ -23896,23 +23896,23 @@ exports.default = _default;
         ]
       )
     ]),
-    _c("div", { staticClass: "menu right border large-space m l" }, [
+    _c("div", { staticClass: "menu right border m l" }, [
       _c("div", { staticClass: "large-space" }),
       _c("div", { staticClass: "medium-space" }),
       _c("a", { staticClass: "wave dark" }, [
-        _c("img", { attrs: { src: "/calendar.png" } }),
+        _c("img", { staticClass: "tiny", attrs: { src: "/calendar.png" } }),
         _c("span", { staticClass: "tooltip left" }, [_vm._v("Calendar")])
       ]),
       _c("a", { staticClass: "wave dark" }, [
-        _c("img", { attrs: { src: "/keep.png" } }),
+        _c("img", { staticClass: "tiny", attrs: { src: "/keep.png" } }),
         _c("span", { staticClass: "tooltip left" }, [_vm._v("Keep")])
       ]),
       _c("a", { staticClass: "wave dark" }, [
-        _c("img", { attrs: { src: "/tasks.png" } }),
+        _c("img", { staticClass: "tiny", attrs: { src: "/tasks.png" } }),
         _c("span", { staticClass: "tooltip left" }, [_vm._v("Tasks")])
       ]),
       _c("a", { staticClass: "wave dark" }, [
-        _c("img", { attrs: { src: "/contacts.png" } }),
+        _c("img", { staticClass: "tiny", attrs: { src: "/contacts.png" } }),
         _c("span", { staticClass: "tooltip left" }, [_vm._v("Contacts")])
       ])
     ]),
