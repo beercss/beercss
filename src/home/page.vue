@@ -92,7 +92,7 @@ div
           a(href="/uber", v-show="theme != 'is-dark'")
             img.logo-template(:src="'/uber-light.png'")
 
-  .center-align.middle-align.padding.medium-height.yellow-light-2.no-scroll
+  .center-align.middle-align.padding.large-height.yellow-light-2.no-scroll
     img#logo(:src="'/logo.png'", @click="addHomeScreen()")
 
   .container
