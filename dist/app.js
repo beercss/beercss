@@ -14428,7 +14428,7 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label sufix" }, [
+                _c("div", { staticClass: "field label suffix" }, [
                   _c("input", { attrs: { type: "text" } }),
                   _c("label", [_vm._v("Text")]),
                   _c("img", {
@@ -14438,7 +14438,7 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label prefix sufix" }, [
+                _c("div", { staticClass: "field label prefix suffix" }, [
                   _c("img", {
                     staticClass: "circle",
                     attrs: { src: "/favicon.png" }
@@ -15252,7 +15252,7 @@ exports.default = _default;
               _vm._m(166),
               _vm._m(167),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label sufix" }, [
+                _c("div", { staticClass: "field label suffix" }, [
                   _vm._m(168),
                   _c("label", { staticClass: "active" }, [_vm._v("List")]),
                   _c("img", {
@@ -15262,7 +15262,7 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label sufix" }, [
+                _c("div", { staticClass: "field label suffix" }, [
                   _vm._m(169),
                   _c("label", { staticClass: "active" }, [_vm._v("List")]),
                   _c("img", {
@@ -15275,7 +15275,7 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label sufix" }, [
+                _c("div", { staticClass: "field label suffix" }, [
                   _vm._m(170),
                   _c("label", { staticClass: "active" }, [_vm._v("List")]),
                   _c("img", {
@@ -15454,7 +15454,7 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field textarea label sufix" }, [
+                _c("div", { staticClass: "field textarea label suffix" }, [
                   _c("textarea"),
                   _c("label", [_vm._v("Text")]),
                   _c("img", {
@@ -15466,7 +15466,7 @@ exports.default = _default;
               _c("div", { staticClass: "col s12 l4" }, [
                 _c(
                   "div",
-                  { staticClass: "field textarea label prefix sufix" },
+                  { staticClass: "field textarea label prefix suffix" },
                   [
                     _c("img", {
                       staticClass: "circle",
@@ -17876,7 +17876,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label sufix" }, [
+      _c("div", { staticClass: "field label suffix" }, [
         _c("input", { attrs: { type: "text" } }),
         _c("label", [_vm._v("Text")]),
         _c("i", [_vm._v("search")])
@@ -17888,7 +17888,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label prefix sufix" }, [
+      _c("div", { staticClass: "field label prefix suffix" }, [
         _c("i", [_vm._v("search")]),
         _c("input", { attrs: { type: "text" } }),
         _c("label", [_vm._v("Text")]),
@@ -18593,7 +18593,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field sufix" }, [
+      _c("div", { staticClass: "field suffix" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -18608,7 +18608,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field sufix" }, [
+      _c("div", { staticClass: "field suffix" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -18624,7 +18624,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field sufix invalid" }, [
+      _c("div", { staticClass: "field suffix invalid" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -18640,7 +18640,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label sufix" }, [
+      _c("div", { staticClass: "field label suffix" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -18656,7 +18656,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label sufix" }, [
+      _c("div", { staticClass: "field label suffix" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -18673,7 +18673,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label sufix invalid" }, [
+      _c("div", { staticClass: "field label suffix invalid" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -19267,7 +19267,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea label sufix" }, [
+      _c("div", { staticClass: "field textarea label suffix" }, [
         _c("textarea"),
         _c("label", [_vm._v("Text")]),
         _c("i", [_vm._v("search")])
@@ -19279,7 +19279,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea label prefix sufix" }, [
+      _c("div", { staticClass: "field textarea label prefix suffix" }, [
         _c("i", [_vm._v("search")]),
         _c("textarea"),
         _c("label", [_vm._v("Text")]),
@@ -19618,7 +19618,7 @@ var staticRenderFns = [
             _vm._v("small, medium, large, border, round, flat, ")
           ]),
           _c("span", { staticClass: "orange-text" }, [
-            _vm._v("fill, prefix, sufix, label, invalid, textarea")
+            _vm._v("fill, prefix, suffix, label, invalid, textarea")
           ])
         ]),
         _c("div", [
@@ -21347,7 +21347,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col" }, [
       _c(
         "div",
-        { staticClass: "field round sufix prefix small no-margin m l" },
+        { staticClass: "field round suffix prefix small no-margin m l" },
         [
           _c("i", { staticClass: "front" }, [_vm._v("search")]),
           _c("input", {
@@ -21627,14 +21627,18 @@ var staticRenderFns = [
         attrs: { id: "modal-search" }
       },
       [
-        _c("div", { staticClass: "field round sufix prefix small no-margin" }, [
-          _c("i", { staticClass: "front" }, [_vm._v("search")]),
-          _c("input", {
-            staticClass: "white black-text",
-            attrs: { type: "text" }
-          }),
-          _c("i", { staticClass: "front" }, [_vm._v("mic")])
-        ])
+        _c(
+          "div",
+          { staticClass: "field round suffix prefix small no-margin" },
+          [
+            _c("i", { staticClass: "front" }, [_vm._v("search")]),
+            _c("input", {
+              staticClass: "white black-text",
+              attrs: { type: "text" }
+            }),
+            _c("i", { staticClass: "front" }, [_vm._v("mic")])
+          ]
+        )
       ]
     )
   }
@@ -23048,7 +23052,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "col" }, [
             _c(
               "div",
-              { staticClass: "field round sufix prefix small no-margin" },
+              { staticClass: "field round suffix prefix small no-margin" },
               [
                 _c("i", { staticClass: "front" }, [_vm._v("search")]),
                 _c("input", {
@@ -24211,7 +24215,7 @@ var staticRenderFns = [
       _c(
         "div",
         {
-          staticClass: "field round fill flat sufix prefix small no-margin m l"
+          staticClass: "field round fill flat suffix prefix small no-margin m l"
         },
         [
           _c("i", { staticClass: "front" }, [_vm._v("search")]),
@@ -24402,7 +24406,7 @@ var staticRenderFns = [
           _c("div", { staticClass: "col" }, [
             _c(
               "div",
-              { staticClass: "field round flat sufix prefix small no-margin" },
+              { staticClass: "field round flat suffix prefix small no-margin" },
               [
                 _c("i", { staticClass: "front" }, [_vm._v("search")]),
                 _c("input", {

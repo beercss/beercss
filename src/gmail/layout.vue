@@ -87,7 +87,7 @@
             img(v-show="theme == 'is-gmail-light'", :src="'/gmail-light.png'")
             img(v-show="theme == 'is-gmail-dark'", :src="'/gmail-dark.png'")
       .col
-        .field.round.fill.flat.sufix.prefix.small.no-margin.m.l
+        .field.round.fill.flat.suffix.prefix.small.no-margin.m.l
           i.front search
           input(type="text", data-ui="#dropdown-search")
           i.front mic
@@ -214,7 +214,7 @@
     .row.no-wrap
       .col.m.l
       .col
-        .field.round.flat.sufix.prefix.small.no-margin
+        .field.round.flat.suffix.prefix.small.no-margin
           i.front search
           input.white.black-text(type="text")
           i.front mic
