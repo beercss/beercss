@@ -57,7 +57,7 @@ div
               :src="'/youtube-dark.png'"
             )
       .col
-        .field.round.sufix.prefix.small.no-margin.m.l
+        .field.round.suffix.prefix.small.no-margin.m.l
           i.front search
           input.white.black-text(type="text")
           i.front mic
@@ -171,7 +171,7 @@ div
         span Broadcast live
 
   #modal-search.modal.top.transparent.flat
-    .field.round.sufix.prefix.small.no-margin
+    .field.round.suffix.prefix.small.no-margin
       i.front search
       input.white.black-text(type="text")
       i.front mic

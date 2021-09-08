@@ -1404,12 +1404,12 @@ div
                 input(type="text")
                 label Text
             .col.s12.l4
-              .field.label.sufix
+              .field.label.suffix
                 input(type="text")
                 label Text
                 i search
             .col.s12.l4
-              .field.label.prefix.sufix
+              .field.label.prefix.suffix
                 i search
                 input(type="text")
                 label Text
@@ -1420,12 +1420,12 @@ div
                 input(type="text")
                 label Text
             .col.s12.l4
-              .field.label.sufix
+              .field.label.suffix
                 input(type="text")
                 label Text
                 img.circle(:src="'/favicon.png'")
             .col.s12.l4
-              .field.label.prefix.sufix
+              .field.label.prefix.suffix
                 img.circle(:src="'/favicon.png'")
                 input(type="text")
                 label Text
@@ -1971,14 +1971,14 @@ div
           .space
           .row
             .col.s12.l4
-              .field.sufix
+              .field.suffix
                 select
                   option Item 1
                   option Item 2
                   option Item 3
                 i arrow_drop_down
             .col.s12.l4
-              .field.sufix
+              .field.suffix
                 select
                   option Item 1
                   option Item 2
@@ -1986,7 +1986,7 @@ div
                 i arrow_drop_down
                 span.helper Complementary text
             .col.s12.l4
-              .field.sufix.invalid
+              .field.suffix.invalid
                 select
                   option Item 1
                   option Item 2
@@ -1994,7 +1994,7 @@ div
                 i arrow_drop_down
                 span.error Error text
             .col.s12.l4
-              .field.label.sufix
+              .field.label.suffix
                 select
                   option Item 1
                   option Item 2
@@ -2002,7 +2002,7 @@ div
                 label.active List
                 i arrow_drop_down
             .col.s12.l4
-              .field.label.sufix
+              .field.label.suffix
                 select
                   option Item 1
                   option Item 2
@@ -2011,7 +2011,7 @@ div
                 i arrow_drop_down
                 span.helper Complementary text
             .col.s12.l4
-              .field.label.sufix.invalid
+              .field.label.suffix.invalid
                 select
                   option Item 1
                   option Item 2
@@ -2020,7 +2020,7 @@ div
                 i arrow_drop_down
                 span.error Error text
             .col.s12.l4
-              .field.label.sufix
+              .field.label.suffix
                 select
                   option Item 1
                   option Item 2
@@ -2028,7 +2028,7 @@ div
                 label.active List
                 img.circle(:src="'/favicon.png'")
             .col.s12.l4
-              .field.label.sufix
+              .field.label.suffix
                 select
                   option Item 1
                   option Item 2
@@ -2037,7 +2037,7 @@ div
                 img.circle(:src="'/favicon.png'")
                 span.helper Complementary text
             .col.s12.l4
-              .field.label.sufix
+              .field.label.suffix
                 select
                   option Item 1
                   option Item 2
@@ -2367,12 +2367,12 @@ div
                 textarea
                 label Text
             .col.s12.l4
-              .field.textarea.label.sufix
+              .field.textarea.label.suffix
                 textarea
                 label Text
                 i search
             .col.s12.l4
-              .field.textarea.label.prefix.sufix
+              .field.textarea.label.prefix.suffix
                 i search
                 textarea
                 label Text
@@ -2383,12 +2383,12 @@ div
                 textarea
                 label Text
             .col.s12.l4
-              .field.textarea.label.sufix
+              .field.textarea.label.suffix
                 textarea
                 label Text
                 img.circle(:src="'/favicon.png'")
             .col.s12.l4
-              .field.textarea.label.prefix.sufix
+              .field.textarea.label.prefix.suffix
                 img.circle(:src="'/favicon.png'")
                 textarea
                 label Text
@@ -2613,7 +2613,7 @@ div
                 div 
                   span field&nbsp;
                   span.grey-text small, medium, large, border, round, flat,&nbsp;
-                  span.orange-text fill, prefix, sufix, label, invalid, textarea
+                  span.orange-text fill, prefix, suffix, label, invalid, textarea
                 div
                   span fixed&nbsp;
                   span.grey-text left, right, top, bottom, center, middle, small, medium, large, round

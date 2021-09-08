@@ -68,7 +68,7 @@ div
     .row.no-wrap
       .col.m.l
       .col
-        .field.round.sufix.prefix.small.no-margin
+        .field.round.suffix.prefix.small.no-margin
           i.front search
           input.white.black-text(type="text")
           i.front mic

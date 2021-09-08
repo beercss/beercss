@@ -206,8 +206,8 @@ input[type="file"] {
   padding-left: 40rem;
 }
 
-.field.sufix > input,
-.field.sufix > textarea {
+.field.suffix > input,
+.field.suffix > textarea {
   padding-right: 40rem;
 }
 
@@ -540,7 +540,7 @@ input[type="file"] {
   padding-left: 40rem;
 }
 
-.field.sufix > select {
+.field.suffix > select {
   padding-right: 40rem;
 }
 
