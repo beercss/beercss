@@ -487,6 +487,7 @@ input[type="file"] {
   color: var(--color-2);
   background-color: transparent;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 .field > select:focus {
