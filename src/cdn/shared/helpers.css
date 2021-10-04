@@ -325,6 +325,7 @@ label {
 .responsive {
   margin: 0;
   width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 .responsive > :not(.dropdown, .badge) {

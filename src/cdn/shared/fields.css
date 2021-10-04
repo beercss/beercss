@@ -287,7 +287,9 @@ input[type="file"] {
   left: 40rem;
 }
 
-.field.label > label.active {
+.field.label > label.active,
+.field.label > [placeholder]:focus ~ label,
+.field.label > [placeholder]:not(:placeholder-shown) ~ label {
   animation: 0.1s label-to-top;
   font-size: 12rem;
   transform: translateY(-120%);

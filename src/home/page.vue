@@ -2699,6 +2699,10 @@ div
                 div Or add attribute "data-ui" and call javascript function, to setup all automatically
                 pre(v-html="autoSample")
           .large-divider
+          .center-align
+            h4.center-align Search more in codepen.io
+            a.link.large-text(href="https://codepen.io/search/pens?q=beercss") https://codepen.io/search/pens?q=beercss
+          .large-divider
           div
             h4.center-align Cheers 🍻
             .large-space

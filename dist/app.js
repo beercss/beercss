@@ -12031,6 +12031,10 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -15584,6 +15588,8 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "large-divider" }),
+            _vm._m(204),
+            _c("div", { staticClass: "large-divider" }),
             _c("div", [
               _c("h4", { staticClass: "center-align" }, [_vm._v("Cheers 🍻")]),
               _c("div", { staticClass: "large-space" }),
@@ -15680,13 +15686,13 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "large-space" }),
-              _vm._m(204),
+              _vm._m(205),
               _c("div", { staticClass: "space" }),
-              _vm._m(205)
+              _vm._m(206)
             ])
           ])
         ]),
-        _vm._m(206),
+        _vm._m(207),
         _c("div", { staticClass: "modal", attrs: { id: "modal" } }, [
           _c("h5", [_vm._v("Title")]),
           _c("div", [_vm._v("Complementary text")]),
@@ -15762,7 +15768,7 @@ exports.default = _default;
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-samples" } },
           [
-            _vm._m(207),
+            _vm._m(208),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -15786,12 +15792,12 @@ exports.default = _default;
           ],
           2
         ),
-        _vm._m(208),
+        _vm._m(209),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
-            _vm._m(209),
+            _vm._m(210),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -19774,6 +19780,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "center-align" }, [
+      _c("h4", { staticClass: "center-align" }, [
+        _vm._v("Search more in codepen.io")
+      ]),
+      _c(
+        "a",
+        {
+          staticClass: "link large-text",
+          attrs: { href: "https://codepen.io/search/pens?q=beercss" }
+        },
+        [_vm._v("https://codepen.io/search/pens?q=beercss")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap center-align" }, [
       _c("a", { staticClass: "chip" }, [_vm._v("Leonardo Rafael Wehrmeister")]),
       _c("a", { staticClass: "chip" }, [_vm._v("Everton Alcides Buzzi")]),
@@ -23305,7 +23329,7 @@ exports.default = _default;
       ),
       _vm._m(0)
     ]),
-    _c("div", { staticClass: "large-margin" }, [
+    _c("div", { staticClass: "container max" }, [
       _c("div", { staticClass: "page right active" }, [
         _c("div", { staticClass: "large-space" }),
         _c("h5", { staticClass: "bold" }, [_vm._v("Today's ranking")]),
