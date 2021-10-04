@@ -14,7 +14,7 @@
           button.large.border.white-border.white-text
             i info_outline
             span &nbsp;More info
-  .large-margin
+  .container.max
     .page.right.active
       .large-space
       h5.bold Today's ranking

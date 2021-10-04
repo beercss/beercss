@@ -116,3 +116,10 @@
 .tooltip.right.large-margin {
   margin: 0 -24rem !important;
 }
+
+.dropdown:active ~ .tooltip,
+button:focus > .dropdown ~ .tooltip,
+.button:focus > .dropdown ~ .tooltip,
+.field > :focus ~ .dropdown ~ .tooltip {
+  display: none;
+}

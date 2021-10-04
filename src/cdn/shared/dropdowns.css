@@ -27,7 +27,11 @@
   width: auto;
 }
 
-.dropdown.active {
+.dropdown.active,
+.dropdown:active,
+button:focus > .dropdown,
+.button:focus > .dropdown,
+.field > :focus ~ .dropdown {
   opacity: 1;
   visibility: visible;
   max-width: none;

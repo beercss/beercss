@@ -15,7 +15,6 @@
   text-transform: none;
   border-radius: 24rem;
   transition: 0.3s transform, 0.3s border-radius, 0.3s padding;
-  z-index: 1;
 }
 
 .chip > :not(.dropdown, .badge) + :not(.dropdown, .badge) {
