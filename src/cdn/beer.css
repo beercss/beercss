@@ -19,6 +19,7 @@
 @import "./shared/overlays.css";
 @import "./shared/pages.css";
 @import "./shared/rows.css";
+@import "./shared/selections.css";
 @import "./shared/tables.css";
 @import "./shared/tabs.css";
 @import "./shared/toasts.css";

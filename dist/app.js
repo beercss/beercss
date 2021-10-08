@@ -12035,6 +12035,15 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -17032,15 +17041,27 @@ var staticRenderFns = [
           _c("nav", [
             _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
-              _c("span", [_vm._v("Item 1")])
+              _c("span", [_vm._v("Enabled")])
             ]),
             _c("label", { staticClass: "checkbox" }, [
-              _c("input", { attrs: { type: "checkbox" } }),
-              _c("span", [_vm._v("Item 2")])
+              _c("input", { attrs: { type: "checkbox", checked: "checked" } }),
+              _c("span", [_vm._v("Enabled")])
             ]),
             _c("label", { staticClass: "checkbox" }, [
-              _c("input", { attrs: { type: "checkbox" } }),
-              _c("span", [_vm._v("Item 3")])
+              _c("input", {
+                attrs: { type: "checkbox", disabled: "disabled" }
+              }),
+              _c("span", [_vm._v("Disabled")])
+            ]),
+            _c("label", { staticClass: "checkbox" }, [
+              _c("input", {
+                attrs: {
+                  type: "checkbox",
+                  checked: "checked",
+                  disabled: "disabled"
+                }
+              }),
+              _c("span", [_vm._v("Disabled")])
             ])
           ])
         ])
@@ -18330,15 +18351,27 @@ var staticRenderFns = [
           _c("nav", [
             _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio" } }),
-              _c("span", [_vm._v("Item 1")])
+              _c("span", [_vm._v("Enabled")])
             ]),
             _c("label", { staticClass: "radio" }, [
-              _c("input", { attrs: { type: "radio", name: "radio" } }),
-              _c("span", [_vm._v("Item 2")])
+              _c("input", {
+                attrs: { type: "radio", name: "radio", checked: "checked" }
+              }),
+              _c("span", [_vm._v("Enabled")])
             ]),
             _c("label", { staticClass: "radio" }, [
-              _c("input", { attrs: { type: "radio", name: "radio" } }),
-              _c("span", [_vm._v("Item 3")])
+              _c("input", { attrs: { type: "radio", disabled: "disabled" } }),
+              _c("span", [_vm._v("Disabled")])
+            ]),
+            _c("label", { staticClass: "radio" }, [
+              _c("input", {
+                attrs: {
+                  type: "radio",
+                  checked: "checked",
+                  disabled: "disabled"
+                }
+              }),
+              _c("span", [_vm._v("Disabled")])
             ])
           ])
         ])
@@ -18731,15 +18764,27 @@ var staticRenderFns = [
           _c("nav", [
             _c("label", { staticClass: "switch" }, [
               _c("input", { attrs: { type: "checkbox" } }),
-              _c("span", [_vm._v("Item 1")])
+              _c("span", [_vm._v("Enabled")])
             ]),
             _c("label", { staticClass: "switch" }, [
-              _c("input", { attrs: { type: "checkbox" } }),
-              _c("span", [_vm._v("Item 2")])
+              _c("input", { attrs: { type: "checkbox", checked: "checked" } }),
+              _c("span", [_vm._v("Enabled")])
             ]),
             _c("label", { staticClass: "switch" }, [
-              _c("input", { attrs: { type: "checkbox" } }),
-              _c("span", [_vm._v("Item 3")])
+              _c("input", {
+                attrs: { type: "checkbox", disabled: "disabled" }
+              }),
+              _c("span", [_vm._v("Disabled")])
+            ]),
+            _c("label", { staticClass: "switch" }, [
+              _c("input", {
+                attrs: {
+                  type: "checkbox",
+                  checked: "checked",
+                  disabled: "disabled"
+                }
+              }),
+              _c("span", [_vm._v("Disabled")])
             ])
           ])
         ])
