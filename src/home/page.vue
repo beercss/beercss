@@ -842,13 +842,16 @@ div
                 nav
                   label.checkbox
                     input(type="checkbox")
-                    span Item 1
+                    span Enabled
                   label.checkbox
-                    input(type="checkbox")
-                    span Item 2
+                    input(type="checkbox", checked)
+                    span Enabled
                   label.checkbox
-                    input(type="checkbox")
-                    span Item 3
+                    input(type="checkbox", disabled)
+                    span Disabled
+                  label.checkbox
+                    input(type="checkbox", checked, disabled)
+                    span Disabled
             .col.s12
               .field.label.middle-align
                 label.active A question?
@@ -1806,13 +1809,16 @@ div
                 nav
                   label.radio
                     input(type="radio", name="radio")
-                    span Item 1
+                    span Enabled
                   label.radio
-                    input(type="radio", name="radio")
-                    span Item 2
+                    input(type="radio", name="radio", checked)
+                    span Enabled
                   label.radio
-                    input(type="radio", name="radio")
-                    span Item 3
+                    input(type="radio", disabled)
+                    span Disabled
+                  label.radio
+                    input(type="radio", checked, disabled)
+                    span Disabled
             .col.s12
               .field.label.middle-align
                 label.active A question?
@@ -2057,13 +2063,16 @@ div
                 nav
                   label.switch
                     input(type="checkbox")
-                    span Item 1
+                    span Enabled
                   label.switch
-                    input(type="checkbox")
-                    span Item 2
+                    input(type="checkbox", checked)
+                    span Enabled
                   label.switch
-                    input(type="checkbox")
-                    span Item 3
+                    input(type="checkbox", disabled)
+                    span Disabled
+                  label.switch
+                    input(type="checkbox", checked, disabled)
+                    span Disabled
             .col.s12
               .field.label.middle-align
                 label.active A question?
