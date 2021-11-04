@@ -12080,6 +12080,14 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
@@ -12768,6 +12776,22 @@ exports.default = _default;
                 attrs: { src: "/uber-light.png" }
               })
             ]
+          ),
+          _c("div", { staticClass: "large-divider" }),
+          _c(
+            "a",
+            {
+              attrs: {
+                href: "https://codepen.io/search/pens?q=beercss",
+                target: "_self"
+              }
+            },
+            [
+              _c("img", {
+                staticClass: "logo-codepen",
+                attrs: { src: "/codepen.png" }
+              })
+            ]
           )
         ]
       )
@@ -12961,6 +12985,23 @@ exports.default = _default;
                   _c("img", {
                     staticClass: "logo-template",
                     attrs: { src: "/uber-light.png" }
+                  })
+                ]
+              )
+            ]),
+            _c("div", { staticClass: "col s6 middle-align padding" }, [
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "https://codepen.io/search/pens?q=beercss",
+                    target: "_self"
+                  }
+                },
+                [
+                  _c("img", {
+                    staticClass: "logo-codepen",
+                    attrs: { src: "/codepen.png" }
                   })
                 ]
               )
@@ -15658,8 +15699,6 @@ exports.default = _default;
               ])
             ]),
             _c("div", { staticClass: "large-divider" }),
-            _vm._m(208),
-            _c("div", { staticClass: "large-divider" }),
             _c("div", [
               _c("h4", { staticClass: "center-align" }, [_vm._v("Cheers 🍻")]),
               _c("div", { staticClass: "large-space" }),
@@ -15670,7 +15709,7 @@ exports.default = _default;
                     {
                       attrs: {
                         href: "https://www.myrp.com.br",
-                        target: "_blank"
+                        target: "_self"
                       }
                     },
                     [
@@ -15688,7 +15727,7 @@ exports.default = _default;
                     {
                       attrs: {
                         href: "https://www.inventti.com.br",
-                        target: "_blank"
+                        target: "_self"
                       }
                     },
                     [
@@ -15756,13 +15795,47 @@ exports.default = _default;
                 ])
               ]),
               _c("div", { staticClass: "large-space" }),
-              _vm._m(209),
-              _c("div", { staticClass: "space" }),
-              _vm._m(210)
+              _vm._m(208)
+            ]),
+            _c("div", { staticClass: "large-divider" }),
+            _c("div", [
+              _c("h4", { staticClass: "center-align" }, [_vm._v("Support us")]),
+              _c("nav", { staticClass: "center-align wrap" }, [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href: "https://www.patreon.com/beercss",
+                      target: "_self"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "logo-support",
+                      attrs: { src: "/patreon.png" }
+                    })
+                  ]
+                ),
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href: "https://www.opencollective.com/beercss",
+                      target: "_self"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "logo-support",
+                      attrs: { src: "/open-collective.png" }
+                    })
+                  ]
+                )
+              ])
             ])
           ])
         ]),
-        _vm._m(211),
+        _vm._m(209),
         _c("div", { staticClass: "modal", attrs: { id: "modal" } }, [
           _c("h5", [_vm._v("Title")]),
           _c("div", [_vm._v("Complementary text")]),
@@ -15838,7 +15911,7 @@ exports.default = _default;
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-samples" } },
           [
-            _vm._m(212),
+            _vm._m(210),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -15862,12 +15935,12 @@ exports.default = _default;
           ],
           2
         ),
-        _vm._m(213),
+        _vm._m(211),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
-            _vm._m(214),
+            _vm._m(212),
             _c("div", { staticClass: "space" }),
             _vm._l(_vm.samples, function(exemplo) {
               return _c("div", { staticClass: "card border" }, [
@@ -15915,7 +15988,7 @@ var staticRenderFns = [
     return _c("a", { attrs: { "data-ui": "#more1" } }, [
       _c("i", [_vm._v("collections")]),
       _c("div", [_vm._v("Templates")]),
-      _c("span", { staticClass: "badge circle margin" }, [_vm._v("4")])
+      _c("span", { staticClass: "badge circle margin" }, [_vm._v("5")])
     ])
   },
   function() {
@@ -15925,7 +15998,7 @@ var staticRenderFns = [
     return _c("a", { attrs: { "data-ui": "#more2" } }, [
       _c("i", [_vm._v("collections")]),
       _c("div", [_vm._v("Templates")]),
-      _c("span", { staticClass: "badge circle margin" }, [_vm._v("4")])
+      _c("span", { staticClass: "badge circle margin" }, [_vm._v("5")])
     ])
   },
   function() {
@@ -19894,6 +19967,12 @@ var staticRenderFns = [
         ]),
         _c("div", { staticClass: "space" }),
         _c("div", [
+          _c("span", [_vm._v("<article> ")]),
+          _c("span", { staticClass: "grey-text" }, [
+            _vm._v("small, medium, large, border, round, flat")
+          ])
+        ]),
+        _c("div", [
           _c("span", [_vm._v("<body> ")]),
           _c("span", { staticClass: "grey-text" }, [
             _vm._v("is-light, is-dark")
@@ -19908,7 +19987,6 @@ var staticRenderFns = [
             _vm._v("none, diamond, extra")
           ])
         ]),
-        _c("div", [_c("span", [_vm._v("<circle>")])]),
         _c("div", [
           _c("span", [_vm._v("<i> ")]),
           _c("span", { staticClass: "grey-text" }, [
@@ -19941,6 +20019,10 @@ var staticRenderFns = [
           ])
         ]),
         _c("div", [
+          _c("span", [_vm._v("<summary> ")]),
+          _c("span", { staticClass: "orange-text" }, [_vm._v("none")])
+        ]),
+        _c("div", [
           _c("span", [_vm._v("<table> ")]),
           _c("span", { staticClass: "grey-text" }, [
             _vm._v(
@@ -19968,24 +20050,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "center-align" }, [
-      _c("h4", { staticClass: "center-align" }, [
-        _vm._v("Search more in codepen.io")
-      ]),
-      _c(
-        "a",
-        {
-          staticClass: "link large-text",
-          attrs: { href: "https://codepen.io/search/pens?q=beercss" }
-        },
-        [_vm._v("https://codepen.io/search/pens?q=beercss")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap center-align" }, [
       _c("a", { staticClass: "chip" }, [_vm._v("Leonardo Rafael Wehrmeister")]),
       _c("a", { staticClass: "chip" }, [_vm._v("Everton Alcides Buzzi")]),
@@ -20003,21 +20067,6 @@ var staticRenderFns = [
       _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 22")]),
       _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 23")]),
       _c("a", { staticClass: "chip" }, [_vm._v("Sponsor 24")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "center-align" }, [
-      _c(
-        "a",
-        {
-          staticClass: "button large",
-          attrs: { href: "https://www.patreon.com/beercss", target: "_blank" }
-        },
-        [_vm._v("Support us")]
-      )
     ])
   },
   function() {

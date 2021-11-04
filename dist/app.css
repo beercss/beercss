@@ -57,6 +57,16 @@ pre * {
   height: 24rem;
 }
 
+.logo-codepen {
+  width: auto;
+  height: 20rem;
+}
+
+.logo-support {
+  width: auto;
+  height: 100rem;
+}
+
 #container {
   height: 200rem;
   border: 1rem solid #9e9e9e50;

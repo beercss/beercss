@@ -26,7 +26,7 @@ div
     a(data-ui="#more1")
       i collections
       div Templates
-      span.badge.circle.margin 4
+      span.badge.circle.margin 5
     a(@click="showSamples('.menu.m.l')")
       i code
       div Code
@@ -51,6 +51,9 @@ div
         img.logo-template(:src="'/uber-dark.png'")
       a(href="/uber", v-show="theme != 'is-dark'")
         img.logo-template(:src="'/uber-light.png'")
+      .large-divider
+      a(href="https://codepen.io/search/pens?q=beercss" target="_self")
+        img.logo-codepen(:src="'/codepen.png'")
   .menu.bottom.s
     a(@click="updateMenu('.menu.s')")
       i visibility_off
@@ -64,7 +67,7 @@ div
     a(data-ui="#more2")
       i collections
       div Templates
-      span.badge.circle.margin 4
+      span.badge.circle.margin 5
     a(@click="showSamples('.menu.s')")
       i code
       div Code
@@ -91,6 +94,9 @@ div
             img.logo-template(:src="'/uber-dark.png'")
           a(href="/uber", v-show="theme != 'is-dark'")
             img.logo-template(:src="'/uber-light.png'")
+        .col.s6.middle-align.padding
+          a(href="https://codepen.io/search/pens?q=beercss" target="_self")
+            img.logo-codepen(:src="'/codepen.png'")
 
   .center-align.middle-align.padding.medium-height.yellow-light-2.no-scroll
     img#logo(:src="'/logo.png'", @click="addHomeScreen()")
@@ -2748,20 +2754,16 @@ div
                 div Or add attribute "data-ui" and call javascript function, to setup all automatically
                 pre(v-html="autoSample")
           .large-divider
-          .center-align
-            h4.center-align Search more in codepen.io
-            a.link.large-text(href="https://codepen.io/search/pens?q=beercss") https://codepen.io/search/pens?q=beercss
-          .large-divider
           div
             h4.center-align Cheers 🍻
             .large-space
             .row
               .col.s6.m4.l3.center-align
-                a(href="https://www.myrp.com.br", target="_blank")
+                a(href="https://www.myrp.com.br", target="_self")
                   img.white.extra.border.circle(:src="'/myrp.png'")
                 p Myrp
               .col.s6.m4.l3.center-align
-                a(href="https://www.inventti.com.br", target="_blank")
+                a(href="https://www.inventti.com.br", target="_self")
                   img.white.extra.border.circle(:src="'/inventti.jpg'")
                 p Inventti
               .col.s6.m4.l3.center-align
@@ -2806,12 +2808,14 @@ div
               a.chip Sponsor 22
               a.chip Sponsor 23
               a.chip Sponsor 24
-            .space
-            nav.center-align
-              a.button.large(
-                href="https://www.patreon.com/beercss",
-                target="_blank"
-              ) Support us
+          .large-divider
+          div
+            h4.center-align Support us
+            nav.center-align.wrap
+              a(href="https://www.patreon.com/beercss" target="_self")
+                img.logo-support(:src="'/patreon.png'")
+              a(href="https://www.opencollective.com/beercss" target="_self")
+                img.logo-support(:src="'/open-collective.png'")
       #modal-colors.modal.right.large
         nav
           a(data-ui="#modal-colors")
@@ -3843,6 +3847,16 @@ pre * {
 .logo-template {
   width: auto;
   height: 24rem;
+}
+
+.logo-codepen {
+  width: auto;
+  height: 20rem;
+}
+
+.logo-support {
+  width: auto;
+  height: 100rem;
 }
 
 #container {
