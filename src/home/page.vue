@@ -839,7 +839,7 @@ div
           .row
             .col.s12
               .field.middle-align
-                nav
+                nav.wrap
                   label.checkbox
                     input(type="checkbox")
                     span Enabled
@@ -1290,6 +1290,42 @@ div
               #dropdown6.dropdown.no-padding.small-width(data-ui="#dropdown6") 
                 video.responsive(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
+        #expansions.col.s12
+          .medium-space
+          h5
+            span Expansions
+            a.chip.circle(@click="showSamples('#expansions details')")
+              i code
+          details
+            summary Title
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          .small-space
+          details.card
+            summary Title
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          .small-space
+          details.card
+            summary.none
+              .row.no-wrap.middle-align
+                .col
+                  div Title
+                  .small-text.grey-text Complementary text
+                .col.min
+                  i more_vert
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          .small-space
+          details
+            summary.card.border.round.transparent
+              .row.no-wrap.middle-align
+                .col.min
+                  img.circle(src="https://www.beercss.com/favicon.png")
+                .col
+                  div Title
+                  .small-text.grey-text Complementary text
+                .col.min
+                  i more_vert
+            .card.border.round.transparent Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          
         #icons.col.s12
           .medium-space
           h5
@@ -1806,7 +1842,7 @@ div
           .row
             .col.s12
               .field.middle-align
-                nav
+                nav.wrap
                   label.radio
                     input(type="radio", name="radio")
                     span Enabled
