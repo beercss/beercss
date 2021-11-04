@@ -2697,14 +2697,15 @@ div
                   span.orange-text light, dark
                 .space
                 div 
+                  span &lt;article&gt;&nbsp;
+                  span.grey-text small, medium, large, border, round, flat
+                div 
                   span &lt;body&gt;&nbsp;
                   span.grey-text is-light, is-dark
                 div 
                   span &lt;button&gt;&nbsp;
                   span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
                   span.orange-text none, diamond, extra
-                div 
-                  span &lt;circle&gt;
                 div 
                   span &lt;i&gt;&nbsp;
                   span.grey-text small, medium, large, wrap,&nbsp;
@@ -2720,6 +2721,9 @@ div
                 div 
                   span &lt;nav&gt;&nbsp;
                   span.grey-text top-align, bottom-align, middle-align, wrap
+                div 
+                  span &lt;summary&gt;&nbsp;
+                  span.orange-text none
                 div 
                   span &lt;table&gt;&nbsp;
                   span.grey-text small, medium, large, border, left-align, center-align, right-align
