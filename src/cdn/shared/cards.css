@@ -1,4 +1,5 @@
-.card {
+.card,
+article {
   box-shadow: var(--shadow-1);
   background-color: var(--color-4);
   padding: 16rem;
@@ -7,35 +8,43 @@
   transition: 0.3s transform, 0.3s border-radius, 0.3s padding;
 }
 
-.card + .card {
+.card + .card,
+article + article {
   margin-top: 16rem;
 }
 
-.row.medium-space > .col > .card + .card {
+.row.medium-space > .col > .card + .card,
+.row.medium-space > .col > article + article {
   margin-top: 24rem;
 }
 
-.row.large-space > .col > .card + .card {
+.row.large-space > .col > .card + .card,
+.row.large-space > .col > article + article {
   margin-top: 32rem;
 }
 
-.card.small {
+.card.small,
+article.small {
   height: 192rem;
 }
 
-.card.medium {
+.card.medium,
+article.medium {
   height: 320rem;
 }
 
-.card.large {
+.card.large,
+article.large {
   height: 512rem;
 }
 
-.card.border {
+.card.border,
+article.border {
   border: 1rem solid var(--color-2b);
   box-shadow: none;
 }
 
-.card.round {
+.card.round,
+article.round {
   border-radius: 24rem;
 }
