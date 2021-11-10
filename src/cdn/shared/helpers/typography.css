@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: var(--fonts);
   font-size: 14rem;
 }
 
