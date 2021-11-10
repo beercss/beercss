@@ -33,11 +33,65 @@ Cheers, www.beercss.com
 - No tricks, no build steps and no abstraction layers to try reduce your final code.
 - It's well designed and we hope that you can do a lot with it.
 
+## Applying "the beer way" in css?
+
+This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1956. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: **settings**, **elements** and **helpers**. This sounds weird at first time, because It's not BEN, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
+
+```
+|  SETTINGS     |       // The settings affects all document
+|---------------|----|
+|               |    |
+|  ELEMENTS     |    |  // The elements are the components, widgets or tags
+|               |    |
+|---------------|    |
+|               |    |
+|               |    |
+|  HELPERS      |----|  // The common helpers makes the elements more scalable and customizable
+|               |
+|               |
+|---------------|
+```
+
+### DO:
+
+```
+// 1 setting to 1 document
+<html class="settings">...</html>
+
+// 1 element to N helpers
+<element class="helper helper">...</element>
+<div class="element helper helper">...</div>
+
+// apply css rules like this
+.element > .helper
+```
+
+### DON'T:
+
+```
+// N elements to 1 tag
+<div class="element element helper">...</div>
+
+// avoid dependencies
+<div class="element">
+  <div class="element-header">...</div>
+  <div class="element-content">...</div>
+  <div class="element-footer">...</div>
+</div>
+
+// apply css rules like this
+.element .helper
+.element .element-header
+.element .element-content
+.element .element-footer
+```
+
 ## Supporting Beercss
 
 Beercss is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider:
 
 - [Become a backer or sponsor on Patreon](https://www.patreon.com/beercss).
+- [Become a backer or sponsor on Open Collective](https://www.opencollective.com/beercss).
 
 ## Getting Started
 
