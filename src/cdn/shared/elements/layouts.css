@@ -1,71 +1,58 @@
+.absolute {
+  position: absolute;
+}
+
 .fixed {
   position: fixed;
+}
+
+.absolute,
+.fixed {
   border-radius: inherit;
   float: none;
 }
 
+.absolute.round,
 .fixed.round {
   border-radius: 24rem;
 }
 
+.absolute.border,
 .fixed.border {
   border: 1rem solid var(--color-2b);
 }
 
-.fixed.middle {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.fixed.center {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.fixed.middle.center {
-  transform: translate(-50%, -50%);
-}
-
-.fixed.top {
-  top: 0;
-}
-
-.fixed.left {
-  left: 0;
-}
-
-.fixed.right {
-  right: 0;
-}
-
-.fixed.bottom {
-  bottom: 0;
-}
-
+.absolute.left.right,
 .fixed.left.right {
   width: auto;
 }
 
+.absolute.left.right.small,
 .fixed.left.right.small {
   height: 320rem;
 }
 
+.absolute.left.right.medium,
 .fixed.left.right.medium {
   height: 448rem;
 }
 
+.absolute.left.right.large,
 .fixed.left.right.large {
   height: 704rem;
 }
 
+.absolute.top.bottom.small,
 .fixed.top.bottom.small {
   width: 320rem;
 }
 
+.absolute.top.bottom.medium,
 .fixed.top.bottom.medium {
   width: 448rem;
 }
 
+.absolute.top.bottom.large,
 .fixed.top.bottom.large {
   width: 704rem;
 }

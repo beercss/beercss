@@ -13,6 +13,7 @@
   left: 0;
   top: 0;
   bottom: 0;
+  right: 0;
   height: auto;
   width: auto;
   text-align: center;
@@ -94,37 +95,25 @@
 }
 
 .menu.top {
-  top: 0;
-  left: 0;
-  right: 0;
   bottom: auto;
   justify-content: center;
   flex-direction: row;
 }
 
 .menu.left {
-  top: 0;
-  left: 0;
   right: auto;
-  bottom: 0;
   justify-content: flex-start;
   flex-direction: column;
 }
 
 .menu.right {
-  top: 0;
   left: auto;
-  right: 0;
-  bottom: 0;
   justify-content: flex-start;
   flex-direction: column;
 }
 
 .menu.bottom {
   top: auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
   justify-content: center;
   flex-direction: row;
 }
