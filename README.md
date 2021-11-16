@@ -63,7 +63,9 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 <div class="element helper helper">...</div>
 
 // apply css rules like this
-.element > .helper
+.element.helper {...}
+.element > .element {...}
+.element > .helper {...}
 ```
 
 ### DON'T:
@@ -80,10 +82,9 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 </div>
 
 // apply css rules like this
-.element .helper
-.element .element-header
-.element .element-content
-.element .element-footer
+.element.element {...}
+.element .element {...}
+.element .helper {...}
 ```
 
 ## Supporting Beercss
