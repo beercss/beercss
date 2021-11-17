@@ -28,10 +28,10 @@
 }
 
 .dropdown.active,
-.dropdown:active,
-button:focus > .dropdown,
-.button:focus > .dropdown,
-.field > :focus ~ .dropdown {
+.dropdown:not([data-ui]):active,
+button:not([data-ui]):focus > .dropdown,
+.button:not([data-ui]):focus > .dropdown,
+.field > :not([data-ui]):focus ~ .dropdown {
   opacity: 1;
   visibility: visible;
   max-width: none;

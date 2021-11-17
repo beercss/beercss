@@ -8,6 +8,10 @@ summary.none {
   
 summary {
   cursor: pointer;
+} 
+  
+summary:focus {
+  outline: none;
 }
   
 @keyframes details-to-open {
