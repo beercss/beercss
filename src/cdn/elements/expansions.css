@@ -1,5 +1,5 @@
 details[open] > :not(summary) {
-  animation: details-to-open 0.3s ease;
+  animation: details-to-open var(--speed-3) ease;
 }
 
 summary.none {

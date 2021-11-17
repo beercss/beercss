@@ -32,12 +32,12 @@
 
 .toast.active  {
   visibility: visible;
-  animation: 0.2s toast-to-top;
+  animation: var(--speed-2) toast-to-top;
 }
 
 .toast.active.top {
   visibility: visible;
-  animation: 0.2s toast-to-bottom;
+  animation: var(--speed-2) toast-to-bottom;
 }
 
 .toast.small {

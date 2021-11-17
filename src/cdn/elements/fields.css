@@ -236,7 +236,7 @@ input[type="file"] {
 
 /* label */
 .field.label > label {
-  animation: 0.1s label-to-middle;
+  animation: var(--speed-1) label-to-middle;
   position: absolute;
   top: 50%;
   left: 8rem;
@@ -290,7 +290,7 @@ input[type="file"] {
 .field.label > label.active,
 .field.label > [placeholder]:focus ~ label,
 .field.label > [placeholder]:not(:placeholder-shown) ~ label {
-  animation: 0.1s label-to-top;
+  animation: var(--speed-1) label-to-top;
   font-size: 12rem;
   transform: translateY(-120%);
 }

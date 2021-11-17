@@ -15,7 +15,7 @@ button {
   margin: 0 8rem;
   text-transform: uppercase;
   border-radius: 4rem;
-  transition: 0.3s transform, 0.3s border-radius, 0.3s padding;
+  transition: var(--speed-3) transform, var(--speed-3) border-radius, var(--speed-3) padding;
 }
 
 button > :not(.dropdown, .badge) + :not(.dropdown, .badge),

@@ -35,7 +35,7 @@ button:not([data-ui]):focus > .dropdown,
   opacity: 1;
   visibility: visible;
   max-width: none;
-  animation: 0.1s dropdown-to-bottom;
+  animation: var(--speed-1) dropdown-to-bottom;
 }
 
 .dropdown.border {
