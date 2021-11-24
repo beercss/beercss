@@ -8568,36 +8568,30 @@ var _vue = _interopRequireDefault(require("vue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-window.$layout = null;
+var redirect = function redirect(url, component, layout) {
+  var element = layout ? document.getElementById("layout") || document.getElementById("body") : document.getElementById("body");
+  element.innerHTML = "<div id='app'></div>";
+  document.body.scrollTop = 0;
+  return new _vue.default({
+    el: '#app',
+    mounted: function mounted() {
+      var event = new CustomEvent("redirected", {
+        detail: {
+          url: page.current
+        }
+      });
+      window.dispatchEvent(event);
+      if (layout && element.id == "body") return redirect(url, component, layout);
+    },
+    render: function render(h) {
+      return h(layout && element.id == "body" ? layout : component);
+    }
+  });
+};
 
 var _default = function _default(url, component, layout) {
   page(url, function () {
-    if (layout && window.$layout) window.$layout.redirect(component);
-
-    if (layout && !window.$layout) {
-      document.getElementById("body").innerHTML = "<div id='app'></div>";
-      document.body.scrollTop = 0;
-      new _vue.default({
-        el: '#app',
-        mounted: function mounted() {
-          window.$layout.redirect(component);
-        },
-        render: function render(h) {
-          return h(layout);
-        }
-      });
-    }
-
-    if (!layout) {
-      document.getElementById("body").innerHTML = "<div id='app'></div>";
-      document.body.scrollTop = 0;
-      new _vue.default({
-        el: '#app',
-        render: function render(h) {
-          return h(component);
-        }
-      });
-    }
+    return redirect(url, component, layout);
   });
   page.start();
 };
@@ -12103,9 +12097,6 @@ var _default = {
     };
   },
   watch: {},
-  created: function created() {
-    window.$layout = null;
-  },
   mounted: function mounted() {
     this.htmlSample = hljs.highlight("html", '<div class="modal active">...</div>\n<div class="dropdown active">...</div>\n<div class="overlay active">...</div>\n<div class="page active">...</div>\n<div class="toast active">...</div>').value;
     this.jsSample = hljs.highlight("html", 'ui("#modal");\nui("#dropdown");\nui("#overlay");\nui("#page");\nui("#toast");').value;
@@ -21293,12 +21284,14 @@ var _default = {
       logo: null
     };
   },
-  created: function created() {
-    window.$layout = this;
-  },
   mounted: function mounted() {
+    var _this = this;
+
     this.updateTheme();
     ui();
+    window.addEventListener("redirected", function (event) {
+      _this.url = event.detail.url;
+    });
   },
   methods: {
     updateTheme: function updateTheme() {
@@ -21311,17 +21304,6 @@ var _default = {
       }
 
       document.querySelector("html").className = this.theme;
-    },
-    redirect: function redirect(component) {
-      this.url = page.current;
-      document.getElementById("layout").innerHTML = '<div id="app"></div>';
-      document.body.scrollTop = 0;
-      return new Vue({
-        el: "#app",
-        render: function render(h) {
-          return h(component);
-        }
-      });
     }
   }
 };
@@ -22949,9 +22931,6 @@ exports.default = void 0;
 //
 //
 var _default = {
-  created: function created() {
-    window.$layout = this;
-  },
   mounted: function mounted() {
     this.updateTheme();
     ui();
@@ -22965,17 +22944,6 @@ var _default = {
       element.scrollIntoView({
         behavior: "smooth",
         block: "start"
-      });
-    },
-    redirect: function redirect(component) {
-      this.url = page.current;
-      document.getElementById("layout").innerHTML = '<div id="app"></div>';
-      document.body.scrollTop = 0;
-      return new Vue({
-        el: "#app",
-        render: function render(h) {
-          return h(component);
-        }
       });
     }
   }
@@ -24025,9 +23993,6 @@ var _default = {
       logo: null
     };
   },
-  created: function created() {
-    window.$layout = this;
-  },
   mounted: function mounted() {
     this.updateTheme();
     ui();
@@ -24043,17 +24008,6 @@ var _default = {
       }
 
       document.querySelector("html").className = this.theme;
-    },
-    redirect: function redirect(component) {
-      this.url = page.current;
-      document.getElementById("layout").innerHTML = '<div id="app"></div>';
-      document.body.scrollTop = 0;
-      return new Vue({
-        el: "#app",
-        render: function render(h) {
-          return h(component);
-        }
-      });
     }
   }
 };
@@ -25896,9 +25850,6 @@ var _default = {
       theme: "is-dark"
     };
   },
-  created: function created() {
-    window.$layout = this;
-  },
   mounted: function mounted() {
     this.updateTheme();
     ui();
@@ -25907,17 +25858,6 @@ var _default = {
     updateTheme: function updateTheme() {
       this.theme = this.theme != "is-light" ? "is-light" : "is-dark";
       document.querySelector("html").className = this.theme;
-    },
-    redirect: function redirect(component) {
-      this.url = page.current;
-      document.getElementById("layout").innerHTML = '<div id="app"></div>';
-      document.body.scrollTop = 0;
-      return new Vue({
-        el: "#app",
-        render: function render(h) {
-          return h(component);
-        }
-      });
     }
   }
 };

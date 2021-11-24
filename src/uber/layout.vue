@@ -61,9 +61,6 @@ export default {
       theme: "is-dark",
     };
   },
-  created() {
-    window.$layout = this;
-  },
   mounted() {
     this.updateTheme();
     ui();
@@ -72,16 +69,6 @@ export default {
     updateTheme() {
       this.theme = this.theme != "is-light" ? "is-light" : "is-dark";
       document.querySelector("html").className = this.theme;
-    },
-    redirect(component) {
-      this.url = page.current;
-
-      document.getElementById("layout").innerHTML = '<div id="app"></div>';
-      document.body.scrollTop = 0;
-      return new Vue({
-        el: "#app",
-        render: (h) => h(component),
-      });
     },
   },
 };

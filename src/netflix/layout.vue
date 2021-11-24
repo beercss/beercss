@@ -79,9 +79,6 @@ div
 
 <script>
 export default {
-  created() {
-    window.$layout = this;
-  },
   mounted() {
     this.updateTheme();
     ui();
@@ -93,16 +90,6 @@ export default {
     scroll(selector) {
       let element = document.querySelector(selector);
       element.scrollIntoView({ behavior: "smooth", block: "start" });
-    },
-    redirect(component) {
-      this.url = page.current;
-
-      document.getElementById("layout").innerHTML = '<div id="app"></div>';
-      document.body.scrollTop = 0;
-      return new Vue({
-        el: "#app",
-        render: (h) => h(component),
-      });
     },
   },
 };

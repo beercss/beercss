@@ -3282,9 +3282,6 @@ export default {
     };
   },
   watch: {},
-  created() {
-    window.$layout = null;
-  },
   mounted() {
     this.htmlSample = hljs.highlight(
       "html",
