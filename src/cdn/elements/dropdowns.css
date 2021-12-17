@@ -29,9 +29,9 @@
 
 .dropdown.active,
 .dropdown:not([data-ui]):active,
-button:not([data-ui]):focus > .dropdown,
-.button:not([data-ui]):focus > .dropdown,
-.field > :not([data-ui]):focus ~ .dropdown {
+button:not([data-ui]):focus-within > .dropdown,
+.button:not([data-ui]):focus-within > .dropdown,
+.field > :not([data-ui]):focus-within ~ .dropdown {
   opacity: 1;
   visibility: visible;
   max-width: none;
@@ -63,6 +63,7 @@ button:not([data-ui]):focus > .dropdown,
 }
 
 .dropdown > a:hover,
+.dropdown > a:focus,
 .dropdown > a.active {
   background-color: var(--color-2a);
 }
