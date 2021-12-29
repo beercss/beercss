@@ -161,3 +161,43 @@ button.square > img {
   margin: 0!important;
   padding: 0!important;
 }
+
+.button > .responsive:first-child, 
+button > .responsive:first-child,
+.chip > .responsive:first-child {
+  margin-left: -16rem;
+}
+
+.button > .responsive:last-child, 
+button > .responsive:last-child,
+.chip > .responsive:last-child {
+  margin-right: -16rem;
+}
+
+.button.extend > i:first-child,
+.button.extend > img:first-child,
+button.extend > i:first-child,
+button.extend > img:first-child {
+  position: absolute;
+  left: 16rem;
+}
+
+.button.extend > i:last-child,
+.button.extend > img:last-child,
+button.extend > i:last-child,
+button.extend > img:last-child {
+  position: absolute;
+  right: 16rem;
+}
+
+.button.extend > img.responsive:first-child,
+button.extend > img.responsive:first-child {
+  position: absolute;
+  left: 0;
+}
+
+.button.extend > img.responsive:last-child,
+button.extend > img.responsive:last-child {
+  position: absolute;
+  right: 0;
+}

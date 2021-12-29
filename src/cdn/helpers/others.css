@@ -38,8 +38,17 @@ label {
   display: block;
 }
 
+a.no-wrap {
+  flex-direction: row;
+}
+
+a.wrap {
+  flex-direction: column;
+}
+
 .scroll {
   overflow: auto;
+  padding-bottom: 16rem;
 }
 
 .no-scroll {

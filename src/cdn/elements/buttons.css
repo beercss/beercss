@@ -10,7 +10,7 @@ button {
   font-size: 14rem;
   font-weight: 500;
   color: #ffffff;
-  padding: 0 12rem;
+  padding: 0 16rem;
   background-color: var(--color-1);
   margin: 0 8rem;
   text-transform: uppercase;
@@ -21,16 +21,6 @@ button {
 button > :not(.dropdown, .badge) + :not(.dropdown, .badge),
 .button > :not(.dropdown, .badge) + :not(.dropdown, .badge) {
   margin-left: 6rem;
-}
-
-button > .responsive:first-child,
-.button > .responsive:first-child {
-  margin-left: -12rem;
-}
-
-button > .responsive:last-child,
-.button > .responsive:last-child {
-  margin-right: -12rem;
 }
 
 .button.none,
@@ -137,4 +127,62 @@ button.square {
   transform: none;
   border-radius: 4rem;
   padding: 0;
+}
+
+.button.extend,
+button.extend {
+  min-height: 56rem !important;
+  min-width: 56rem !important;
+}
+
+.button.extend > span,
+button.extend > span {
+  display: none;
+}
+
+.button.extend:hover,
+button.extend:hover,
+.button.extend.active,
+button.extend.active {
+  width: auto;
+  max-width: none;  
+  min-width: none;
+}
+
+.button.extend:hover > i + span,
+button.extend:hover > i + span,
+.button.extend.active > i + span,
+button.extend.active > i + span {
+  display: inherit;
+  margin-left: 32rem;
+}
+
+.button.extend:hover > img + span,
+button.extend:hover > img + span,
+.button.extend.active > img + span,
+button.extend.active > img + span {
+  display: inherit;
+  margin-left: 48rem;
+}
+
+.button.square:not(.flat, .border),
+.button.circle:not(.flat, .border),
+.button.diamond:not(.flat, .border),
+button.square:not(.flat, .border),
+button.circle:not(.flat, .border),
+button.diamond:not(.flat, .border) {
+  box-shadow: var(--shadow-2);
+}
+
+.button:disabled,
+button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.button:disabled:before,
+button:disabled:before,
+.button:disabled:after,
+button:disabled:after {
+  display: none;
 }

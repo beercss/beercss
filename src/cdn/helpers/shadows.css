@@ -26,3 +26,19 @@
   box-shadow: none !important;
   background-image: linear-gradient(to bottom, black, transparent) !important;
 }
+
+.no-shadow {
+  box-shadow: none !important;
+}
+
+.small-shadow {
+  box-shadow: var(--shadow-1) !important;
+}
+
+.medium-shadow {
+  box-shadow: var(--shadow-2) !important;
+}
+
+.large-shadow {
+  box-shadow: var(--shadow-3) !important;
+}

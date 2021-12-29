@@ -123,11 +123,10 @@ div
           target="_self"
         ) Get started
       .large-space
-      .large-divider 
       .row
         #badges.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Badges
             a.chip.circle(@click="showSamples('#badges nav > a')")
               i code
@@ -302,188 +301,465 @@ div
                   i account_circle
           .small-space
         #buttons.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Buttons
             a.chip.circle(@click="showSamples('#buttons button')")
               i code
-          nav.wrap
-            label.radio
-              input#default-buttons(
-                type="radio",
-                name="color-buttons",
-                checked="checked"
-              )
-              span default
-            label.radio
-              input#green-buttons(type="radio", name="color-buttons")
-              span green
-            label.radio
-              input#orange-buttons(type="radio", name="color-buttons")
-              span orange
-            label.radio
-              input#pink-buttons(type="radio", name="color-buttons")
-              span pink
-            label.radio
-              input#small-buttons(type="radio", name="size-buttons")
-              span small
-            label.radio
-              input#medium-buttons(
-                type="radio",
-                name="size-buttons",
-                checked="checked"
-              )
-              span medium
-            label.radio
-              input#large-buttons(type="radio", name="size-buttons")
-              span large
-            label.radio
-              input#extra-buttons(type="radio", name="size-buttons")
-              span extra
-          .row
-            .col.s12.m6
-              .space
-              nav.wrap
-                button Button
-                button
-                  i search
-                  span Button
-                button.round Button
-                button.round 
-                  i place
-                  span Button
-                button.circle A
-                button.circle
-                  i home
-                button.diamond
-                  i home
-                button.square
-                  i home
-                button.square.left-round
-                  i home
-                button.square.top-round
-                  i home
-                button.square.right-round
-                  i home
-                button.square.bottom-round
-                  i home
-                button.square.top-round.left-round
-                  i home
-                button.square.bottom-round.right-round
-                  i home
-                button
-                  img(:src="'/favicon.png'")
-                  span Button
-                button
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.round 
-                  img(:src="'/favicon.png'")
-                  span Button
-                button.round
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.top-round.left-round
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.bottom-round.right-round
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.left-round
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.right-round
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.circle
-                  img.responsive(:src="'/favicon.png'")
-                button.square
-                  img.responsive(:src="'/favicon.png'")
-                button.square.left-round
-                  img.responsive(:src="'/favicon.png'")
-                button.square.top-round
-                  img.responsive(:src="'/favicon.png'")
-                button.square.right-round
-                  img.responsive(:src="'/favicon.png'")
-                button.square.bottom-round
-                  img.responsive(:src="'/favicon.png'")
-                button.square.top-round.left-round
-                  img.responsive(:src="'/favicon.png'")
-                button.square.bottom-round.right-round
-                  img.responsive(:src="'/favicon.png'")
-            .col.s12.m6
-              .space
-              nav.wrap
-                button.border Button
-                button.border 
-                  i search
-                  span Button
-                button.border.round Button
-                button.border.round 
-                  i place
-                  span Button
-                button.border.circle B
-                button.border.circle
-                  i home
-                button.border.diamond
-                  i home
-                button.border.square
-                  i home
-                button.border.square.left-round
-                  i home
-                button.border.square.top-round
-                  i home
-                button.border.square.right-round
-                  i home
-                button.border.square.bottom-round
-                  i home
-                button.border.square.top-round.left-round
-                  i home
-                button.border.square.bottom-round.right-round
-                  i home
-                button.border
-                  img(:src="'/favicon.png'")
-                  span Button
-                button.border
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.border.round
-                  img(:src="'/favicon.png'")
-                  span Button
-                button.border.round
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.border.top-round.left-round
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.border.bottom-round.right-round
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.border.left-round
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.border.right-round
-                  img.responsive(:src="'/favicon.png'")
-                  span Button
-                button.border.circle
-                  img.responsive(:src="'/favicon.png'")
-                button.border.square
-                  img.responsive(:src="'/favicon.png'")
-                button.border.square.left-round
-                  img.responsive(:src="'/favicon.png'")
-                button.border.square.top-round
-                  img.responsive(:src="'/favicon.png'")
-                button.border.square.right-round
-                  img.responsive(:src="'/favicon.png'")
-                button.border.square.bottom-round
-                  img.responsive(:src="'/favicon.png'")
-                button.border.square.top-round.left-round
-                  img.responsive(:src="'/favicon.png'")
-                button.border.square.bottom-round.right-round
-                  img.responsive(:src="'/favicon.png'")
-        #cards.col.s12
           .medium-space
-          h5
+          h6
+            span FABs
+            a.chip.circle(@click="showSamples('#fabs button')")
+              i code
+          selectionForButtons(context="fabs", selectedSize="extra")
+          #fabs
+            nav.wrap
+              button.square
+                i add
+              button.diamond
+                i add
+              button.square.round
+                i add
+              button.diamond.round
+                i add
+              button.circle
+                i add
+              button.circle.left-round.top-round
+                i add
+              button.circle.left-round.bottom-round
+                i add
+              button.circle.right-round.top-round
+                i add
+              button.circle.right-round.bottom-round
+                i add
+              button.circle.left-round
+                i add
+              button.circle.right-round
+                i add
+            nav.wrap
+              button.flat.square
+                i add
+              button.flat.diamond
+                i add
+              button.flat.square.round
+                i add
+              button.flat.diamond.round
+                i add
+              button.flat.circle
+                i add
+              button.flat.circle.left-round.top-round
+                i add
+              button.flat.circle.left-round.bottom-round
+                i add
+              button.flat.circle.right-round.top-round
+                i add
+              button.flat.circle.right-round.bottom-round
+                i add
+              button.flat.circle.left-round
+                i add
+              button.flat.circle.right-round
+                i add
+            nav.wrap
+              button.border.square
+                i add
+              button.border.diamond
+                i add
+              button.border.square.round
+                i add
+              button.border.diamond.round
+                i add
+              button.border.circle
+                i add
+              button.border.circle.left-round.top-round
+                i add
+              button.border.circle.left-round.bottom-round
+                i add
+              button.border.circle.right-round.top-round
+                i add
+              button.border.circle.right-round.bottom-round
+                i add
+              button.border.circle.left-round
+                i add
+              button.border.circle.right-round
+                i add
+            nav.wrap
+              button.border.square
+                img.responsive(:src="'/favicon.png'")
+              button.border.square.round
+                img.responsive(:src="'/favicon.png'")
+              button.border.circle
+                img.responsive(:src="'/favicon.png'")
+              button.border.circle.left-round.top-round
+                img.responsive(:src="'/favicon.png'")
+              button.border.circle.left-round.bottom-round
+                img.responsive(:src="'/favicon.png'")
+              button.border.circle.right-round.top-round
+                img.responsive(:src="'/favicon.png'")
+              button.border.circle.right-round.bottom-round
+                img.responsive(:src="'/favicon.png'")
+              button.border.circle.left-round
+                img.responsive(:src="'/favicon.png'")
+              button.border.circle.right-round
+                img.responsive(:src="'/favicon.png'")
+          .medium-space
+          h6
+            span Extended FABs
+            a.chip.circle(@click="showSamples('#extended-fabs button')")
+              i code
+          selectionForButtons(context="extended-fabs", :sizes="['extra']", selectedSize="extra")
+          #extended-fabs.row
+            .col.s12.m6.l3
+              nav
+                button.extend.square
+                  i add
+                  span Button
+              nav
+                button.extend.square.round
+                  i add
+                  span Button
+              nav
+                button.extend.circle
+                  i add
+                  span Button
+              nav
+                button.extend.circle.left-round.top-round
+                  i add
+                  span Button
+              nav
+                button.extend.circle.left-round.bottom-round
+                  i add
+                  span Button
+              nav
+                button.extend.circle.right-round.top-round
+                  i add
+                  span Button
+              nav
+                button.extend.circle.right-round.bottom-round
+                  i add
+                  span Button
+              nav
+                button.extend.circle.left-round
+                  i add
+                  span Button
+              nav
+                button.extend.circle.right-round
+                  i add
+                  span Button
+            .col.s12.m6.l3
+              nav
+                button.extend.flat.square
+                  i add
+                  span Button
+              nav
+                button.extend.flat.square.round
+                  i add
+                  span Button
+              nav
+                button.extend.flat.circle
+                  i add
+                  span Button
+              nav
+                button.extend.flat.circle.left-round.top-round
+                  i add
+                  span Button
+              nav
+                button.extend.flat.circle.left-round.bottom-round
+                  i add
+                  span Button
+              nav
+                button.extend.flat.circle.right-round.top-round
+                  i add
+                  span Button
+              nav
+                button.extend.flat.circle.right-round.bottom-round
+                  i add
+                  span Button
+              nav
+                button.extend.flat.circle.left-round
+                  i add
+                  span Button
+              nav
+                button.extend.flat.circle.right-round
+                  i add
+                  span Button
+            .col.s12.m6.l3
+              nav
+                button.extend.border.square
+                  i add
+                  span Button
+              nav
+                button.extend.border.square.round
+                  i add
+                  span Button
+              nav
+                button.extend.border.circle
+                  i add
+                  span Button
+              nav
+                button.extend.border.circle.left-round.top-round
+                  i add
+                  span Button
+              nav
+                button.extend.border.circle.left-round.bottom-round
+                  i add
+                  span Button
+              nav
+                button.extend.border.circle.right-round.top-round
+                  i add
+                  span Button
+              nav
+                button.extend.border.circle.right-round.bottom-round
+                  i add
+                  span Button
+              nav
+                button.extend.border.circle.left-round
+                  i add
+                  span Button
+              nav
+                button.extend.border.circle.right-round
+                  i add
+                  span Button
+            .col.s12.m6.l3
+              nav
+                button.extend.border.square
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+              nav
+                button.extend.border.square.round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+              nav
+                button.extend.border.circle
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+              nav
+                button.extend.border.circle.left-round.top-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+              nav
+                button.extend.border.circle.left-round.bottom-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+              nav
+                button.extend.border.circle.right-round.top-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+              nav
+                button.extend.border.circle.right-round.bottom-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+              nav
+                button.extend.border.circle.left-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+              nav
+                button.extend.border.circle.right-round
+                  img.responsive(:src="'/favicon.png'")
+                  span Button
+          .medium-space
+          h6
+            span Buttons
+            a.chip.circle(@click="showSamples('#default-buttons button')")
+              i code
+          selectionForButtons(context="default-buttons")
+          #default-buttons
+            nav.wrap
+              button Button
+              button
+                i home
+                span Button
+              button
+                img(:src="'/favicon.png'")
+                span Button
+              button
+                img.responsive(:src="'/favicon.png'")
+                span Button
+            nav.wrap
+              button.round Button
+              button.round
+                i home
+                span Button
+              button.round
+                img(:src="'/favicon.png'")
+                span Button
+              button.round
+                img.responsive(:src="'/favicon.png'")
+                span Button
+            nav.wrap
+              button.flat Button
+              button.flat
+                i home
+                span Button
+              button.flat
+                img(:src="'/favicon.png'")
+                span Button
+              button.flat
+                img.responsive(:src="'/favicon.png'")
+                span Button
+            nav.wrap
+              button.flat.round Button
+              button.flat.round
+                i home
+                span Button
+              button.flat.round
+                img(:src="'/favicon.png'")
+                span Button
+              button.flat.round
+                img.responsive(:src="'/favicon.png'")
+                span Button
+            nav.wrap
+              button.border Button
+              button.border
+                i home
+                span Button
+              button.border
+                img(:src="'/favicon.png'")
+                span Button
+              button.border
+                img.responsive(:src="'/favicon.png'")
+                span Button
+            nav.wrap
+              button.border.round Button
+              button.border.round
+                i home
+                span Button
+              button.border.round
+                img(:src="'/favicon.png'")
+                span Button
+              button.border.round
+                img.responsive(:src="'/favicon.png'")
+                span Button
+            nav.wrap
+              button.border.left-round.top-round Button
+              button.border.left-round.bottom-round
+                i home
+                span Button
+              button.border.right-round.top-round
+                img(:src="'/favicon.png'")
+                span Button
+              button.border.right-round.bottom-round
+                img.responsive(:src="'/favicon.png'")
+                span Button
+            nav.wrap
+              button.border.left-round Button
+              button.border.left-round
+                i home
+                span Button
+              button.border.left-round
+                img(:src="'/favicon.png'")
+                span Button
+              button.border.left-round
+                img.responsive(:src="'/favicon.png'")
+                span Button
+            nav.wrap
+              button.border.right-round Button
+              button.border.right-round
+                i home
+                span Button
+              button.border.right-round
+                img(:src="'/favicon.png'")
+                span Button
+              button.border.right-round
+                img.responsive(:src="'/favicon.png'")
+                span Button
+          .medium-space
+          h6
+            span Responsive buttons
+            a.chip.circle(@click="showSamples('#responsive-buttons button')")
+              i code
+          selectionForButtons(context="responsive-buttons")
+          #responsive-buttons.row
+            .col.s12.m6
+              nav 
+                button.responsive Button
+              nav
+                button.responsive
+                  i home
+                  span Button
+              nav
+                button.responsive
+                  img(:src="'/favicon.png'")
+                  span Button
+            .col.s12.m6
+              nav 
+                button.responsive.round Button
+              nav
+                button.responsive.round
+                  i home
+                  span Button
+              nav
+                button.responsive.round
+                  img(:src="'/favicon.png'")
+                  span Button
+            .col.s12.m6
+              nav 
+                button.responsive.flat Button
+              nav
+                button.responsive.flat
+                  i home
+                  span Button
+              nav
+                button.responsive.flat
+                  img(:src="'/favicon.png'")
+                  span Button
+            .col.s12.m6
+              nav 
+                button.responsive.flat.round Button
+              nav
+                button.responsive.flat.round
+                  i home
+                  span Button
+              nav
+                button.responsive.flat.round
+                  img(:src="'/favicon.png'")
+                  span Button
+            .col.s12.m6
+              nav 
+                button.responsive.border Button
+              nav
+                button.responsive.border
+                  i home
+                  span Button
+              nav
+                button.responsive.border
+                  img(:src="'/favicon.png'")
+                  span Button
+            .col.s12.m6
+              nav 
+                button.responsive.border.round Button
+              nav
+                button.responsive.border.round
+                  i home
+                  span Button
+              nav
+                button.responsive.border.round
+                  img(:src="'/favicon.png'")
+                  span Button
+            .col.s12.m6
+              nav 
+                button.responsive.border.left-round Button
+              nav
+                button.responsive.border.left-round
+                  i home
+                  span Button
+              nav
+                button.responsive.border.left-round
+                  img(:src="'/favicon.png'")
+                  span Button
+            .col.s12.m6
+              nav 
+                button.responsive.border.right-round Button
+              nav
+                button.responsive.border.right-round
+                  i home
+                  span Button
+              nav
+                button.responsive.border.right-round
+                  img(:src="'/favicon.png'")
+                  span Button
+        #cards.col.s12
+          .large-divider
+          h4
             span Cards
             a.chip.circle(@click="showSamples('#cards .card:visible')")
               i code
@@ -837,8 +1113,8 @@ div
                       nav
                         button.border Button
         #checkboxes.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Checkboxes
             a.chip.circle(@click="showSamples('#checkboxes .field')")
               i code
@@ -900,8 +1176,8 @@ div
                     span Item 3
                 span.error Error text
         #chips.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Chips
             a.chip.circle(@click="showSamples('#chips nav .chip')")
               i code
@@ -939,137 +1215,211 @@ div
               input#active-chips(type="checkbox", name="active-chips")
               span active
           .row
-            .col.s12.m6
-              .space
+            .col.s12.m12.l6
               nav.wrap
                 a.chip Chip
                 a.chip
                   i.small done
                   span Chip
-                a.chip.circle A
-                a.chip.circle
-                  i search
-                a.chip.diamond
-                  i search
-                a.chip.square
-                  i search
-                a.chip.square.left-round
-                  i search
-                a.chip.square.top-round
-                  i search
-                a.chip.square.right-round
-                  i search
-                a.chip.square.bottom-round
-                  i search
-                a.chip.square.top-round.left-round
-                  i search
-                a.chip.square.bottom-round.right-round
-                  i search
                 a.chip
                   img(:src="'/favicon.png'")
                   span Chip
                 a.chip
                   img.responsive(:src="'/favicon.png'")
                   span Chip
-                a.chip.top-round.left-round
+              nav.wrap
+                a.chip.round Chip
+                a.chip.round
+                  i.small done
+                  span Chip
+                a.chip.round
+                  img(:src="'/favicon.png'")
+                  span Chip
+                a.chip.round
                   img.responsive(:src="'/favicon.png'")
                   span Chip
-                a.chip.bottom-round.right-round
+              nav.wrap
+                a.chip.left-round.top-round Chip
+                a.chip.left-round.bottom-round
+                  i.small done
+                  span Chip
+                a.chip.right-round.top-round
+                  img(:src="'/favicon.png'")
+                  span Chip
+                a.chip.right-round.bottom-round
                   img.responsive(:src="'/favicon.png'")
+                  span Chip
+              nav.wrap
+                a.chip.left-round Chip
+                a.chip.left-round
+                  i.small done
+                  span Chip
+                a.chip.left-round
+                  img(:src="'/favicon.png'")
                   span Chip
                 a.chip.left-round
                   img.responsive(:src="'/favicon.png'")
                   span Chip
+              nav.wrap
+                a.chip.right-round Chip
+                a.chip.right-round
+                  i.small done
+                  span Chip
+                a.chip.right-round
+                  img(:src="'/favicon.png'")
+                  span Chip
                 a.chip.right-round
                   img.responsive(:src="'/favicon.png'")
                   span Chip
+              nav.wrap
+                a.chip.square
+                  i search
+                a.chip.diamond
+                  i search
+                a.chip.square.round
+                  i search
+                a.chip.diamond.round
+                  i search
+                a.chip.circle
+                  i search
+                a.chip.square.left-round.top-round
+                  i search
+                a.chip.square.left-round.bottom-round
+                  i search
+                a.chip.square.right-round.top-round
+                  i search
+                a.chip.square.right-round.bottom-round
+                  i search
+                a.chip.square.left-round
+                  i search
+                a.chip.square.right-round
+                  i search
+                a.chip.square
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.round
+                  img.responsive(:src="'/favicon.png'")
                 a.chip.circle
                   img.responsive(:src="'/favicon.png'")
-                a.chip.square
+                a.chip.square.left-round.top-round
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.left-round.bottom-round
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.right-round.top-round
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.square.right-round.bottom-round
                   img.responsive(:src="'/favicon.png'")
                 a.chip.square.left-round
                   img.responsive(:src="'/favicon.png'")
-                a.chip.square.top-round
-                  img.responsive(:src="'/favicon.png'")
                 a.chip.square.right-round
                   img.responsive(:src="'/favicon.png'")
-                a.chip.square.bottom-round
-                  img.responsive(:src="'/favicon.png'")
-                a.chip.square.top-round.left-round
-                  img.responsive(:src="'/favicon.png'")
-                a.chip.square.bottom-round.right-round
-                  img.responsive(:src="'/favicon.png'")
-            .col.s12.m6
-              .space
+            .col.s12.m12.l6
               nav.wrap
                 a.chip.border Chip
                 a.chip.border
                   i.small done
                   span Chip
-                a.chip.circle.border B
-                a.chip.circle.border
-                  i refresh
-                a.chip.diamond.border
-                  i refresh
-                a.chip.square.border
-                  i refresh
-                a.chip.square.border.left-round
-                  i refresh
-                a.chip.square.border.top-round
-                  i refresh
-                a.chip.square.border.right-round
-                  i refresh
-                a.chip.square.border.bottom-round
-                  i refresh
-                a.chip.square.border.top-round.left-round
-                  i refresh
-                a.chip.square.border.bottom-round.right-round
-                  i refresh
                 a.chip.border
                   img(:src="'/favicon.png'")
                   span Chip
                 a.chip.border
                   img.responsive(:src="'/favicon.png'")
                   span Chip
-                a.chip.top-round.left-round.border
+              nav.wrap
+                a.chip.border.round Chip
+                a.chip.border.round
+                  i.small done
+                  span Chip
+                a.chip.border.round
+                  img(:src="'/favicon.png'")
+                  span Chip
+                a.chip.border.round
                   img.responsive(:src="'/favicon.png'")
                   span Chip
-                a.chip.bottom-round.right-round.border
+              nav.wrap
+                a.chip.border.left-round.top-round Chip
+                a.chip.border.left-round.bottom-round
+                  i.small done
+                  span Chip
+                a.chip.border.right-round.top-round
+                  img(:src="'/favicon.png'")
+                  span Chip
+                a.chip.border.right-round.bottom-round
                   img.responsive(:src="'/favicon.png'")
                   span Chip
-                a.chip.left-round.border
+              nav.wrap
+                a.chip.border.left-round Chip
+                a.chip.border.left-round
+                  i.small done
+                  span Chip
+                a.chip.border.left-round
+                  img(:src="'/favicon.png'")
+                  span Chip
+                a.chip.border.left-round
                   img.responsive(:src="'/favicon.png'")
                   span Chip
-                a.chip.right-round.border
+              nav.wrap
+                a.chip.border.right-round Chip
+                a.chip.border.right-round
+                  i.small done
+                  span Chip
+                a.chip.border.right-round
+                  img(:src="'/favicon.png'")
+                  span Chip
+                a.chip.border.right-round
                   img.responsive(:src="'/favicon.png'")
                   span Chip
-                a.chip.circle.border
+              nav.wrap
+                a.chip.border.square
+                  i search
+                a.chip.border.diamond
+                  i search
+                a.chip.border.square.round
+                  i search
+                a.chip.border.diamond.round
+                  i search
+                a.chip.border.circle
+                  i search
+                a.chip.border.square.left-round.top-round
+                  i search
+                a.chip.border.square.left-round.bottom-round
+                  i search
+                a.chip.border.square.right-round.top-round
+                  i search
+                a.chip.border.square.right-round.bottom-round
+                  i search
+                a.chip.border.square.left-round
+                  i search
+                a.chip.border.square.right-round
+                  i search
+                a.chip.border.square
                   img.responsive(:src="'/favicon.png'")
-                a.chip.square.border
+                a.chip.border.square.round
                   img.responsive(:src="'/favicon.png'")
-                a.chip.square.left-round.border
+                a.chip.border.circle
                   img.responsive(:src="'/favicon.png'")
-                a.chip.square.top-round.border
+                a.chip.border.square.left-round.top-round
                   img.responsive(:src="'/favicon.png'")
-                a.chip.square.right-round.border
+                a.chip.border.square.left-round.bottom-round
                   img.responsive(:src="'/favicon.png'")
-                a.chip.square.bottom-round.border
+                a.chip.border.square.right-round.top-round
                   img.responsive(:src="'/favicon.png'")
-                a.chip.square.top-round.left-round.border
+                a.chip.border.square.right-round.bottom-round
                   img.responsive(:src="'/favicon.png'")
-                a.chip.square.bottom-round.right-round.border
+                a.chip.border.square.left-round
+                  img.responsive(:src="'/favicon.png'")
+                a.chip.border.square.right-round
                   img.responsive(:src="'/favicon.png'")
         #colors.col.s12
-          .medium-space
-          h5 
+          .large-divider
+          h4 
             span Colors
             a.chip.circle(data-ui="#modal-colors")
               i code
           nav
             button(data-ui="#modal-colors") Colors
         #containers.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Containers
             a.chip.circle(@click="showSamples('#containers .container')")
               i code
@@ -1080,8 +1430,8 @@ div
           div(v-show="false")
             .container
         #dropdowns.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Dropdowns
             a.chip.circle(
               @click="showSamples('#dropdowns button, #dropdowns .field')"
@@ -1297,8 +1647,8 @@ div
                 video.responsive(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
         #expansions.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Expansions
             a.chip.circle(@click="showSamples('#expansions details')")
               i code
@@ -1324,7 +1674,7 @@ div
             summary.card.border.round.transparent
               .row.no-wrap.middle-align
                 .col.min
-                  img.circle(src="https://www.beercss.com/favicon.png")
+                  img.circle(:src="'/favicon.png'")
                 .col
                   div Title
                   .small-text.grey-text Complementary text
@@ -1333,8 +1683,8 @@ div
             .card.border.round.transparent Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           
         #icons.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Icons
             a.chip.circle(@click="showSamples('#icons nav', '#modal-icons')")
               i code
@@ -1372,8 +1722,8 @@ div
             i.large update
             i.large thumb_up
         #inputs.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Inputs
             a.chip.circle(@click="showSamples('#inputs .field')")
               i code
@@ -1476,8 +1826,8 @@ div
                 label Text
                 img.circle(:src="'/favicon.png'")
         #layouts.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Layouts
             a.chip.circle(
               @click="layout = 0; showSamples('#layouts #container')"
@@ -1543,9 +1893,25 @@ div
               .padding
                 h5 Alignment
                 div Lorem ipsum dolor...
+          .space
+          .row
+            .col.s12.m6
+              #headers
+                .card.flat.small.scroll
+                  header.fixed
+                    h5.no-margin Fixed header
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .col.s12.m6
+              #footers
+                .card.flat.small.scroll
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  footer.fixed
+                    h5.no-margin Fixed footer
         #list.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Lists
             a.chip.circle(@click="showSamples('#list .row')")
               i code
@@ -1676,8 +2042,8 @@ div
                 button.none
                   i more_vert
         #loaders.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Loaders
             a.chip.circle(@click="showSamples('#loaders .loader')")
               i code
@@ -1689,8 +2055,8 @@ div
             a.loader.medium.orange
             a.loader.large.yellow
         #media.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Media
             a.chip.circle(
               @click="showSamples('#media img:visible, #media video:visible')"
@@ -1806,8 +2172,8 @@ div
               )
                 source(:src="'/dance.mp4'", type="video/mp4")
         #modals.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Modals
             a.chip.circle(@click="showSamples('#modal, #modal-calendar')")
               i code
@@ -1815,8 +2181,8 @@ div
             button(data-ui="#modal") Modal
             button(data-ui="#modal-calendar") Calendar
         #navs.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Navs
             a.chip.circle(@click="showSamples('#navs nav')")
               i code
@@ -1827,8 +2193,8 @@ div
             a
               img.circle(:src="'/beer-and-woman.jpg'")
         #pages.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Pages
             a.chip.circle(@click="showSamples('#pages .page')")
               i code
@@ -1840,8 +2206,8 @@ div
           div(style="display: none")
             .page
         #radios.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Radios
             a.chip.circle(@click="showSamples('#radios .field')")
               i code
@@ -1903,8 +2269,8 @@ div
                     span Item 3
                 span.error Error text
         #responsive.col.s12
-          .medium-space
-          h5 
+          .large-divider
+          h4 
             span Responsive
             a.chip.circle(@click="showSamples('#responsive nav')")
               i code
@@ -1923,8 +2289,8 @@ div
               button.s.m.border.circle.extra
                 i laptop_windows
         #rows.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Rows
             a.chip.circle(@click="showSamples('#rows .row')")
               i code
@@ -1985,8 +2351,8 @@ div
             .col max
           .space
         #selects.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Selects
             a.chip.circle(@click="showSamples('#selects .field')")
               i code
@@ -2094,8 +2460,8 @@ div
                 img.circle(:src="'/favicon.png'")
                 span.error Error text
         #switches.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Switches
             a.chip.circle(@click="showSamples('#switches .field')")
               i code
@@ -2157,8 +2523,8 @@ div
                     span Item 3
                 span.error Error text
         #table.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Tables
             a.chip.circle(@click="showSamples('#table table')")
               i code
@@ -2239,11 +2605,11 @@ div
                     button.none
                       i more_vert
         #tabs.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Tabs
             a.chip.circle(
-              @click="showSamples('#tabs > div:not(.medium-space)')"
+              @click="showSamples('#tabs > div:not(.large-divider)')"
             )
               i code
           nav.wrap
@@ -2253,6 +2619,9 @@ div
                 name="align-tabs",
                 checked="checked"
               )
+              span default
+            label.radio
+              input#left-align-tabs(type="radio", name="align-tabs")
               span left-align
             label.radio
               input#center-align-tabs(type="radio", name="align-tabs")
@@ -2304,14 +2673,14 @@ div
               h5 Tab 3
           div
             .tabs
-              a.active(data-ui="#tab10") 
-                i.wrap home
+              a.wrap.active(data-ui="#tab10") 
+                i home
                 span Tab 1
-              a(data-ui="#tab11")
-                i.wrap home
+              a.wrap(data-ui="#tab11")
+                i home
                 span Tab 2
-              a(data-ui="#tab12")
-                i.wrap home
+              a.wrap(data-ui="#tab12")
+                i home
                 span Tab 3
             #tab10.page.padding.active
               h5 Tab 1
@@ -2338,14 +2707,14 @@ div
               h5 Tab 3
           div
             .tabs
-              a.active(data-ui="#tab13") 
-                img.wrap.circle(:src="'/favicon.png'")
+              a.wrap.active(data-ui="#tab13") 
+                img.circle(:src="'/favicon.png'")
                 span Tab 1
-              a(data-ui="#tab14")
-                img.wrap.circle(:src="'/favicon.png'")
+              a.wrap(data-ui="#tab14")
+                img.circle(:src="'/favicon.png'")
                 span Tab 2
-              a(data-ui="#tab15")
-                img.wrap.circle(:src="'/favicon.png'")
+              a.wrap(data-ui="#tab15")
+                img.circle(:src="'/favicon.png'")
                 span Tab 3
             #tab13.page.padding.active
               h5 Tab 1
@@ -2354,8 +2723,8 @@ div
             #tab15.page.padding
               h5 Tab 3
         #textareas.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Textareas
             a.chip.circle(@click="showSamples('#textareas .field')")
               i code
@@ -2445,8 +2814,8 @@ div
                 label Text
                 img.circle(:src="'/favicon.png'")
         #toasts.col.s12.l6
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Toasts
             a.chip.circle(@click="showSamples('#toasts .toast')")
               i code
@@ -2479,8 +2848,8 @@ div
             i info
             span Complementary text
         #tooltips.col.s12.l6
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Tooltips
             a.chip.circle(@click="showSamples('#tooltips nav a')")
               i code
@@ -2499,8 +2868,8 @@ div
               .tooltip.right Complementary text
 
         #typography.col.s12
-          .medium-space
-          h5
+          .large-divider
+          h4
             span Typography
             a.chip.circle(@click="showSamples('#typography .col.s6 div')")
               i code
@@ -2613,15 +2982,18 @@ div
                   div medium-text
                   div large-text
                 .col
-                  b Others
+                  b Shadows
                   div shadow
                   div right-shadow
                   div left-shadow
                   div bottom-shadow
                   div top-shadow
-                  div s
-                  div m
-                  div l
+                  div no-shadow
+                  div small-shadow
+                  div medium-shadow
+                  div large-shadow
+                .col
+                  b Others
                   div active
                   div wrap
                   div no-wrap
@@ -2629,10 +3001,9 @@ div
                   div no-scroll
                   div wave
                   div no-wave
-                .col
-                  b Themes
-                  div is-dark
-                  div is-light
+                  div s
+                  div m
+                  div l
               .space
             .row
               .col.s12
@@ -2647,7 +3018,7 @@ div
                 div 
                   span button&nbsp;
                   span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
-                  span.orange-text none, diamond, extra
+                  span.orange-text none, diamond, extend, extra
                 div
                   span chip&nbsp;
                   span.grey-text border, circle, active,&nbsp;
@@ -2693,6 +3064,9 @@ div
                   span &nbsp;&nbsp;&nbsp;&nbsp;col&nbsp;
                   span.orange-text min, max, s1..12, m1..12, l1..12
                 div 
+                  span tabs&nbsp;
+                  span.grey-text left-align, center-align, right-align
+                div 
                   span toast&nbsp;
                   span.grey-text top, bottom, small, medium, large, border, round, flat, active
                 div 
@@ -2711,7 +3085,7 @@ div
                 div 
                   span &lt;button&gt;&nbsp;
                   span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
-                  span.orange-text none, diamond, extra
+                  span.orange-text none, diamond, extend, extra
                 div 
                   span &lt;i&gt;&nbsp;
                   span.grey-text small, medium, large, wrap,&nbsp;
@@ -2739,6 +3113,68 @@ div
                   span.orange-text tiny, extra, responsive, empty-state
                 .space
                 .orange-text * Element unique helpers
+            .row
+              .col.s12
+                h5 Settings
+                div is-dark
+                div is-light
+                div
+                  span --color-1
+                  i.small(style="color: var(--color-1)") fiber_manual_record
+                div
+                  span --color-1a
+                  i.small(style="color: var(--color-1a)") fiber_manual_record
+                div
+                  span --color-1b
+                  i.small(style="color: var(--color-1b)") fiber_manual_record
+                div
+                  span --color-2
+                  i.small(style="color: var(--color-2)") fiber_manual_record
+                div
+                  span --color-2a
+                  i.small(style="color: var(--color-2a)") fiber_manual_record
+                div
+                  span --color-2b
+                  i.small(style="color: var(--color-2b)") fiber_manual_record
+                div
+                  span --color-3
+                  i.small(style="color: var(--color-3)") fiber_manual_record
+                div
+                  span --color-4
+                  i.small(style="color: var(--color-4)") fiber_manual_record
+                div
+                  span --color-4a
+                  i.small(style="color: var(--color-4a)") fiber_manual_record
+                div
+                  span --color-5
+                  i.small(style="color: var(--color-5)") fiber_manual_record
+                div
+                  span --shadow-1&nbsp;
+                  span.grey-text 0 2rem 2rem 0 rgba(0, 0, 0, 0.14), 0 1rem 5rem 0 rgba(0, 0, 0, 0.12), 0 3rem 1rem -2rem rgba(0, 0, 0, 0.2)
+                div
+                  span --shadow-2&nbsp;
+                  span.grey-text 0 6rem 10rem 0 rgba(0, 0, 0, 0.14), 0 1rem 18rem 0 rgba(0, 0, 0, 0.12), 0 3rem 5rem -1rem rgba(0, 0, 0, 0.3)
+                div
+                  span --shadow-3&nbsp;
+                  span.grey-text 0 10rem 16rem 0 rgba(0, 0, 0, 0.14), 0 1rem 31rem 0 rgba(0, 0, 0, 0.12), 0 3rem 9rem 0rem rgba(0, 0, 0, 0.4)
+                div
+                  span --size&nbsp;
+                  span.grey-text 1px
+                div
+                  span --fonts&nbsp;
+                  span.grey-text "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+                div
+                  span --speed-1&nbsp;
+                  span.grey-text 0.1s
+                div
+                  span --speed-2&nbsp;
+                  span.grey-text 0.2s
+                div
+                  span --speed-3&nbsp;
+                  span.grey-text 0.3s
+                div
+                  span --speed-4&nbsp;
+                  span.grey-text 0.4s
             .space
             .row
               .col.s12
@@ -3136,12 +3572,10 @@ div
           button.none(data-ui="#modal") Close
 
       #modal-samples.modal.right.large
-        nav
+        header.fixed
           a(data-ui="#modal-samples")
-            i arrow_back
-          a(data-ui="#modal-samples")
-            h5.no-margin Back
-        .space
+            i arrow_backward
+            h5.small-margin Back
         .card.border(v-for="exemplo in samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
@@ -3267,7 +3701,12 @@ div
 </template>
 
 <script>
+import selectionForButtons from "./selectionForButtons.vue";
+
 export default {
+  components: {
+    selectionForButtons
+  },
   data() {
     return {
       indexOfMenu: 1,
@@ -3302,7 +3741,6 @@ export default {
 
     this.resetTheme();
     this.badgeSamples();
-    this.buttonSamples();
     this.chipSamples();
     this.inputSamples();
     this.listSamples();
@@ -3556,7 +3994,7 @@ export default {
     },
     tabSamples() {
       $("#tabs input").on("click", function () {
-        var ids = ["left", "right", "center-align", "right-align"];
+        var ids = ["left", "right", "left-align", "center-align", "right-align"];
         var pages = $("#tabs .page");
         var tabs = $("#tabs .tabs");
 
@@ -3567,36 +4005,8 @@ export default {
           var selector = "#" + ids[i] + "-tabs";
           if ($(selector).is(":checked")) {
             if (["left", "right"].indexOf(ids[i]) != -1) pages.addClass(ids[i]);
-            if (["center-align", "right-align"].indexOf(ids[i]) != -1)
+            if (["left-align", "center-align", "right-align"].indexOf(ids[i]) != -1)
               tabs.addClass(ids[i]);
-          }
-        }
-      });
-    },
-    buttonSamples() {
-      $("#buttons input").on("click", function () {
-        var ids = ["green", "orange", "pink", "small", "large", "extra"];
-        var buttons = $("#buttons button:not(.border)");
-        var buttonsBorder = $("#buttons button.border");
-
-        for (var i = 0; i < ids.length; i++) {
-          buttons.removeClass(ids[i]);
-          buttons.removeClass(ids[i] + "-border");
-          buttons.removeClass(ids[i] + "-text");
-
-          buttonsBorder.removeClass(ids[i]);
-          buttonsBorder.removeClass(ids[i] + "-border");
-          buttonsBorder.removeClass(ids[i] + "-text");
-
-          var selector = "#" + ids[i] + "-buttons";
-          if ($(selector).is(":checked")) {
-            buttons.addClass(ids[i]);
-            if (["small", "medium", "large", "extra"].indexOf(ids[i]) == -1) {
-              buttonsBorder.addClass(ids[i] + "-border");
-              buttonsBorder.addClass(ids[i] + "-text");
-            } else {
-              buttonsBorder.addClass(ids[i]);
-            }
           }
         }
       });

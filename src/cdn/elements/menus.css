@@ -144,7 +144,7 @@
   z-index: 1;
 }
 
-.menu > a:not(.button, .chip) {
+.menu > a:not(button, .button, .chip) {
   border: 0;
   display: flex;
   align-items: center;
@@ -161,46 +161,52 @@
   min-height: 56rem;
 }
 
-.menu.no-space:not(.left, .right) > a:not(.button, .chip) {
+.menu.no-space:not(.left, .right) > a:not(button, .button, .chip) {
   margin: 0;
 }
 
-.menu:not(.left, .right) > a:not(.button, .chip),
-.menu.small-space:not(.left, .right) > a:not(.button, .chip) {
+.menu:not(.left, .right) > a:not(button, .button, .chip),
+.menu.small-space:not(.left, .right) > a:not(button, .button, .chip) {
   margin: 0 8rem;
 }
 
-.menu.medium-space:not(.left, .right) > a:not(.button, .chip) {
+.menu.medium-space:not(.left, .right) > a:not(button, .button, .chip) {
   margin: 0 12rem;
 }
 
-.menu.large-space:not(.left, .right) > a:not(.button, .chip) {
+.menu.large-space:not(.left, .right) > a:not(button, .button, .chip) {
   margin: 0 16rem;
 }
 
-.menu.no-space:not(.top, .bottom) > a:not(.button, .chip) {
+.menu.no-space:not(.top, .bottom) > a:not(button, .button, .chip) {
   margin: 0;
 }
 
-.menu:not(.top, .bottom) > a:not(.button, .chip),
-.menu.small-space:not(.top, .bottom) > a:not(.button, .chip) {
+.menu:not(.top, .bottom) > a:not(button, .button, .chip),
+.menu.small-space:not(.top, .bottom) > a:not(button, .button, .chip) {
   margin: 4rem 0;
 }
 
-.menu.medium-space:not(.top, .bottom) > a:not(.button, .chip) {
+.menu.medium-space:not(.top, .bottom) > a:not(button, .button, .chip) {
   margin: 8rem 0;
 }
 
-.menu.large-space:not(.top, .bottom) > a:not(.button, .chip) {
+.menu.large-space:not(.top, .bottom) > a:not(button, .button, .chip) {
   margin: 12rem 0;
 }
 
-.menu > a:not(.button, .chip):hover {
-  color: var(--color-1);
+.menu > a:not(button, .button, .chip) > i {
+  margin-bottom: 4rem;
+  padding: 4rem;
+  border-radius: 32rem;
+  transition: var(--speed-1) padding linear;
 }
 
-.menu > a:not(.button, .chip).active {
-  color: var(--color-1);
+.menu > a:not(button, .button, .chip):hover > i,
+.menu > a:not(button, .button, .chip):focus > i,
+.menu > a:not(button, .button, .chip).active > i {
+  background-color: var(--color-2a);
+  padding: 4rem 16rem;
 }
 
 .menu > .row {

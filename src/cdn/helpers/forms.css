@@ -2,6 +2,10 @@
   box-shadow: none;
 }
 
+.round {
+  border-radius: 24rem !important;
+}
+
 .top-round {
   border-radius: 24rem 24rem 4rem 4rem !important;
 }
@@ -93,4 +97,14 @@
   transform: translate(-50%, -50%) rotate(-45deg);
   margin: 0;
   padding: 0;
+}
+
+.square.round,
+.circle.round,
+.diamond.round {
+  border-radius: 16rem;
+}
+
+.diamond.round {
+  transform: rotate(45deg);
 }

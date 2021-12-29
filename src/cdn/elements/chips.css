@@ -9,24 +9,16 @@
   font-size: 14rem;
   font-weight: 500;
   color: var(--color-2);
-  padding: 0 12rem;
+  padding: 0 16rem;
   background-color: var(--color-2a);
   margin: 0 8rem;
   text-transform: none;
-  border-radius: 24rem;
+  border-radius: 8rem;
   transition: var(--speed-3) transform, var(--speed-3) border-radius, var(--speed-3) padding;
 }
 
 .chip > :not(.dropdown, .badge) + :not(.dropdown, .badge) {
   margin-left: 4rem;
-}
-
-.chip > .responsive:first-child {
-  margin-left: -12rem;
-}
-
-.chip > .responsive:last-child {
-  margin-right: -12rem;
 }
 
 .chip.small {
@@ -72,4 +64,8 @@
   transform: none;
   border-radius: 4rem;
   padding: 0;
+}
+
+.chip.round {
+  border-radius: 24rem;
 }

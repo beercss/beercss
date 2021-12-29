@@ -1,4 +1,6 @@
 .tabs {
+  display: flex;
+  justify-content: space-around;
   margin-top: 16rem;
   white-space: nowrap;
   border-bottom: 1rem solid var(--color-2b);
@@ -19,6 +21,7 @@
   border-bottom: 2rem solid transparent;
   text-align: center;
   min-height: 40rem;
+  width: 100%;
 }
 
 .tabs > a > span {
@@ -39,4 +42,15 @@
 
 .tabs > a.active {
   border-bottom: 2rem solid var(--color-2);
+}
+
+.tabs > a > i,
+.tabs > a > img {
+  margin: 0;
+}
+
+.tabs.left-align > a,
+.tabs.center-align > a,
+.tabs.right-align > a {
+  width: auto;
 }
