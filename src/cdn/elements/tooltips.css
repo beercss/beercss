@@ -1,7 +1,7 @@
 .tooltip {
   display: none;
-  background-color:rgba(0, 0, 0, 0.8);
-  color: #ffffff;
+  background-color: var(--tooltip);
+  color: var(--tooltip-text);
   font-size: 12rem;
   text-align: center;
   border-radius: 4rem;
@@ -25,7 +25,7 @@
 }
 
 .tooltip.border {
-  border: 1rem solid var(--color-4);
+  border: 1rem solid var(--border);
 }
 
 .tooltip.left {

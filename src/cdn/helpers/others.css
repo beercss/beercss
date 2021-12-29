@@ -1,6 +1,6 @@
 body {
-  color: var(--color-2);
-  background-color: var(--color-5);
+  color: var(--text-1);
+  background-color: var(--background);
   margin: 0;
   overflow-x: hidden;
 }
@@ -9,7 +9,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   position: relative;
   vertical-align: middle;
-  color: var(--color-2);
+  color: var(--text-1);
 }
 
 * > * {
@@ -31,7 +31,7 @@ button,
 
 label {
   font-size: 12rem;
-  color: #9e9e9e;
+  color: var(--text-2);
 }
 
 .wrap {

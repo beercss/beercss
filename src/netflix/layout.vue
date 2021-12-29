@@ -97,15 +97,31 @@ export default {
 
 <style>
 .is-netflix {
-  --color-1: #ef5350;
-  --color-1a: #ef535080;
-  --color-1b: #ef535000;
-  --color-2: #ffffff;
-  --color-2a: #ffffff10;
-  --color-2b: #ffffff20;
-  --color-3: #ff9800;
-  --color-4: #263238;
-  --color-4a: rgba(55, 71, 79, 0.9);
-  --color-5: #212121;
+  --background: #212121;
+  --foreground: #37474f;
+  --text-1: #ffffff;
+  --text-2: #9e9e9e;
+  --border: rgba(255,255,255,.2);
+  --active: rgba(255,255,255,.1);
+  --fill: rgba(0,0,0,.1);
+  --success: #ef5350;
+  --success-text: #ffffff;
+  --warning: #ff9800;
+  --warning-text: #ffffff;
+  --chip: rgba(255,255,255,.07);
+  --chip-text: #ffffff;
+  --overlay: rgba(0,0,0,.5);
+  --overlay-text: #000000;
+  --tooltip: rgba(0,0,0,.9);
+  --tooltip-text: #ffffff;
+  --shadow-1: 0 2rem 2rem 0 rgba(0, 0, 0, .14), 0 1rem 5rem 0 rgba(0, 0, 0, .12), 0 3rem 1rem -2rem rgba(0, 0, 0, .2);
+  --shadow-2: 0 6rem 10rem 0 rgba(0, 0, 0, .14), 0 1rem 18rem 0 rgba(0, 0, 0, .12), 0 3rem 5rem -1rem rgba(0, 0, 0, .3);
+  --shadow-3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);
+  --size: 1px;
+  --font: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --speed-1: .1s;
+  --speed-2: .2s;
+  --speed-3: .3s;
+  --speed-4: .4s;
 }
 </style>

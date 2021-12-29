@@ -3,7 +3,7 @@
   visibility: hidden;
   position: absolute;
   box-shadow: var(--shadow-2);
-  background-color: var(--color-4);
+  background-color: var(--foreground);
   box-sizing: border-box;
   z-index: 2;
   top: auto;
@@ -18,7 +18,7 @@
   font-size: 14rem;
   font-weight: normal;
   text-transform: none;
-  color: var(--color-2);
+  color: var(--text-1);
   line-height: normal;
   text-align: left;
 }
@@ -39,7 +39,7 @@ button:not([data-ui]):focus-within > .dropdown,
 }
 
 .dropdown.border {
-  border: 1rem solid var(--color-2b);
+  border: 1rem solid var(--border);
   box-shadow: none;
 }
 
@@ -65,7 +65,7 @@ button:not([data-ui]):focus-within > .dropdown,
 .dropdown > a:hover,
 .dropdown > a:focus,
 .dropdown > a.active {
-  background-color: var(--color-2a);
+  background-color: var(--active);
 }
 
 .dropdown.no-wrap > a {

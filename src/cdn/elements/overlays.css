@@ -6,14 +6,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--overlay-text);
+  background-color: var(--overlay);
   z-index: 100;
-}
-
-.overlay.light {
-  color: var(--color-2);
-  background-color: var(--color-4a);
 }
 
 .menu > .overlay {

@@ -45,8 +45,8 @@ div
     .row.no-wrap.middle-align
       .col
         nav.padding
-          button.none.color-2-text.m.l(data-ui="#modal-expanded")
-            i menu
+          button.none.m.l(data-ui="#modal-expanded")
+            i.grey-text menu
           a
             img(
               v-show="theme == 'is-youtube-light'",
@@ -63,10 +63,10 @@ div
           i.front mic
       .col
         nav.right-align
-          button.none.color-2-text.s(data-ui="#modal-search")
-            i search
-          button.none.color-2-text.m.l(data-ui="#dropdown-add")
-            i video_call
+          button.none.s(data-ui="#modal-search")
+            i.grey-text search
+          button.none.m.l(data-ui="#dropdown-add")
+            i.grey-text video_call
             #dropdown-add.dropdown.left.no-wrap(data-ui="#dropdown-add")
               a.row.no-wrap
                 .col.min
@@ -76,8 +76,8 @@ div
                 .col.min
                   i sensors
                 .col Broadcast live
-          button.none.color-2-text.m.l(data-ui="#dropdown-apps")
-            i apps
+          button.none.m.l(data-ui="#dropdown-apps")
+            i.grey-text apps
             #dropdown-apps.dropdown.left.no-wrap(data-ui="#dropdown-apps")
               a.row.no-wrap
                 .col.min
@@ -92,8 +92,8 @@ div
                 .col.min
                   img(:src="'/youtube.png'")
                 .col Youtube Kids
-          button.none.color-2-text(data-ui="#modal-notifications")
-            i notifications
+          button.none(data-ui="#modal-notifications")
+            i.grey-text notifications
           a(href="/")
             img.circle(:src="'/favicon.png'")
 
@@ -214,27 +214,60 @@ export default {
 
 <style>
 .is-youtube-light {
-  --color-1: #f44336;
-  --color-1a: #f4433680;
-  --color-1b: #f4433600;
-  --color-2: #000000;
-  --color-2a: #00000010;
-  --color-2b: #00000020;
-  --color-3: #e91e63;
-  --color-4: #ffffff;
-  --color-4a: rgba(255, 255, 255, 0.9);
-  --color-5: #f5f5f5;
+  --background: #f5f5f5;
+  --foreground: #ffffff;
+  --text-1: #000000;
+  --text-2: #9e9e9e;
+  --border: rgba(0,0,0,.2);
+  --active: rgba(0,0,0,.1);
+  --fill: rgba(0,0,0,.05);
+  --success: #f44336;
+  --success-text: #ffffff;
+  --warning: #e91e63;
+  --warning-text: #ffffff;
+  --chip: rgba(0,0,0,.07);
+  --chip-text: #000000;
+  --overlay: rgba(0,0,0,.5);
+  --overlay-text: #ffffff;
+  --tooltip: rgba(0,0,0,.9);
+  --tooltip-text: #ffffff;
+  --shadow-1: 0 2rem 2rem 0 rgba(0, 0, 0, .14), 0 1rem 5rem 0 rgba(0, 0, 0, .12), 0 3rem 1rem -2rem rgba(0, 0, 0, .2);
+  --shadow-2: 0 6rem 10rem 0 rgba(0, 0, 0, .14), 0 1rem 18rem 0 rgba(0, 0, 0, .12), 0 3rem 5rem -1rem rgba(0, 0, 0, .3);
+  --shadow-3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);
+  --size: 1px;
+  --font: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --speed-1: .1s;
+  --speed-2: .2s;
+  --speed-3: .3s;
+  --speed-4: .4s;
 }
+
 .is-youtube-dark {
-  --color-1: #ef5350;
-  --color-1a: #ef535080;
-  --color-1b: #ef535000;
-  --color-2: #ffffff;
-  --color-2a: #ffffff10;
-  --color-2b: #ffffff20;
-  --color-3: #ff9800;
-  --color-4: #263238;
-  --color-4a: rgba(55, 71, 79, 0.9);
-  --color-5: #212121;
+  --background: #212121;
+  --foreground: #263238;
+  --text-1: #ffffff;
+  --text-2: #9e9e9e;
+  --border: rgba(255,255,255,.2);
+  --active: rgba(255,255,255,.1);
+  --fill: rgba(0,0,0,.1);
+  --success: #ef5350;
+  --success-text: #ffffff;
+  --warning: #ff9800;
+  --warning-text: #ffffff;
+  --chip: rgba(255,255,255,.07);
+  --chip-text: #ffffff;
+  --overlay: rgba(0,0,0,.5);
+  --overlay-text: #000000;
+  --tooltip: rgba(0,0,0,.9);
+  --tooltip-text: #ffffff;
+  --shadow-1: 0 2rem 2rem 0 rgba(0, 0, 0, .14), 0 1rem 5rem 0 rgba(0, 0, 0, .12), 0 3rem 1rem -2rem rgba(0, 0, 0, .2);
+  --shadow-2: 0 6rem 10rem 0 rgba(0, 0, 0, .14), 0 1rem 18rem 0 rgba(0, 0, 0, .12), 0 3rem 5rem -1rem rgba(0, 0, 0, .3);
+  --shadow-3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);
+  --size: 1px;
+  --font: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --speed-1: .1s;
+  --speed-2: .2s;
+  --speed-3: .3s;
+  --speed-4: .4s;
 }
 </style>

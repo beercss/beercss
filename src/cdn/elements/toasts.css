@@ -10,7 +10,8 @@
   visibility: hidden;
   display: inline-block;
   box-shadow: var(--shadow-2);
-  background-color: var(--color-4);
+  color: var(--warning-text);
+  background-color: var(--warning-background);
   padding: 16rem;
   opacity: 1;
   margin: 0;
@@ -58,6 +59,10 @@
 
 .toast > * + * {
   margin-left: 8rem;
+}
+
+.toast > * {
+  color: inherit;
 }
 
 @keyframes toast-to-top {

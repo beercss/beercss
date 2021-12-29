@@ -6,7 +6,8 @@
   border: 0;
   position: fixed;
   box-shadow: var(--shadow-2);
-  background-color: var(--color-4);
+  color: var(--text-1);
+  background-color: var(--foreground);
   transform: none;
   box-sizing: border-box;
   z-index: 100;
@@ -43,7 +44,7 @@
 
 .menu.border {
   box-shadow: none;
-  border: 1rem solid var(--color-2a);
+  border: 1rem solid var(--border);
 }
 
 .menu.left.border {
@@ -205,7 +206,7 @@
 .menu > a:not(button, .button, .chip):hover > i,
 .menu > a:not(button, .button, .chip):focus > i,
 .menu > a:not(button, .button, .chip).active > i {
-  background-color: var(--color-2a);
+  background-color: var(--active);
   padding: 4rem 16rem;
 }
 

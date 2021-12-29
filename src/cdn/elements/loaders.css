@@ -4,7 +4,7 @@
 	height: 40rem;
 	border-radius: 50%;
 	box-sizing: border-box;
-	border: 4rem solid var(--color-1);
+	border: 4rem solid var(--success);
 	clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
 	animation: 1.6s to-loader linear infinite;
 	background: none !important;

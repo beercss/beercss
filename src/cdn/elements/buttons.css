@@ -9,9 +9,9 @@ button {
   height: 40rem;
   font-size: 14rem;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--success-text);
   padding: 0 16rem;
-  background-color: var(--color-1);
+  background-color: var(--success);
   margin: 0 8rem;
   text-transform: uppercase;
   border-radius: 4rem;
@@ -30,7 +30,7 @@ button.none {
   min-width: auto;
   height: auto;
   min-height: auto;
-  color: var(--color-1);
+  color: var(--success);
   padding: 0;
   background-color: transparent;
   margin: 0 8rem;
@@ -62,9 +62,9 @@ button.extra {
 
 .button.border,
 button.border {
-  border: 1rem solid var(--color-1);
+  border: 1rem solid var(--success);
   background-color: transparent;
-  color: var(--color-1);
+  color: var(--success);
   box-shadow: none;
 }
 
@@ -133,6 +133,7 @@ button.square {
 button.extend {
   min-height: 56rem !important;
   min-width: 56rem !important;
+  padding: 0;
 }
 
 .button.extend > span,
@@ -146,7 +147,8 @@ button.extend:hover,
 button.extend.active {
   width: auto;
   max-width: none;  
-  min-width: none;
+  min-width: auto;
+  padding: 0 16rem;
 }
 
 .button.extend:hover > i + span,
@@ -176,7 +178,7 @@ button.diamond:not(.flat, .border) {
 
 .button:disabled,
 button:disabled {
-  opacity: 0.5;
+  opacity: .5;
   pointer-events: none;
 }
 

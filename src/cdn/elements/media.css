@@ -43,7 +43,7 @@ video.responsive {
 
 img.border,
 video.border {
-  border: 1rem solid var(--color-2b);
+  border: 1rem solid var(--border);
 }
 
 img.round,
@@ -94,6 +94,12 @@ img.responsive,
 video.responsive {
   width: 100% !important;
   height: 100% !important;
+}
+
+button > i,
+.button > i,
+.chip > i {
+  color: inherit;
 }
 
 button > img.responsive,

@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: var(--fonts);
+  font-family: var(--font);
   font-size: 14rem;
 }
 
@@ -51,7 +51,7 @@ h6 {
 }
 
 .link {
-  color: var(--color-1);
+  color: var(--success);
 }
 
 .truncate {

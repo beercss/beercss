@@ -33,26 +33,26 @@ div
     #more1.modal.left(data-ui="#more1")
       h5 Templates
       p.grey-text This templates are only for tests purpose
-      .large-space
-      a(href="/youtube", v-show="theme == 'is-dark'")
+      .space
+      a.wrap.padding(href="/youtube", v-show="theme == 'is-dark'")
         img.logo-template(:src="'/youtube-dark.png'")
-      a(href="/youtube", v-show="theme != 'is-dark'")
+      a.wrap.padding(href="/youtube", v-show="theme != 'is-dark'")
         img.logo-template(:src="'/youtube-light.png'")
-      .large-divider
-      a(href="/netflix")
+      .divider
+      a.wrap.padding(href="/netflix")
         img.logo-template(:src="'/netflix.png'")
-      .large-divider
-      a(href="/gmail", v-show="theme == 'is-dark'")
+      .divider
+      a.wrap.padding(href="/gmail", v-show="theme == 'is-dark'")
         img.logo-template(:src="'/gmail-dark.png'")
-      a(href="/gmail", v-show="theme != 'is-dark'")
+      a.wrap.padding(href="/gmail", v-show="theme != 'is-dark'")
         img.logo-template(:src="'/gmail-light.png'")
-      .large-divider
-      a(href="/uber", v-show="theme == 'is-dark'")
+      .divider
+      a.wrap.padding(href="/uber", v-show="theme == 'is-dark'")
         img.logo-template(:src="'/uber-dark.png'")
-      a(href="/uber", v-show="theme != 'is-dark'")
+      a.wrap.padding(href="/uber", v-show="theme != 'is-dark'")
         img.logo-template(:src="'/uber-light.png'")
-      .large-divider
-      a(href="https://codepen.io/search/pens?q=beercss" target="_self")
+      .divider
+      a.wrap.padding(href="https://codepen.io/search/pens?q=beercss" target="_self")
         img.logo-codepen(:src="'/codepen.png'")
   .menu.bottom.s
     a(@click="updateMenu('.menu.s')")
@@ -1587,7 +1587,7 @@ div
                         a.button.none 7
                     tr
                       td
-                        a.button.border.color-1-border.circle.medium.no-margin.absolute.middle.center 8
+                        a.button.border.circle.medium.no-margin.absolute.middle.center 8
                       td
                         a.button.none 9
                       td
@@ -3119,62 +3119,66 @@ div
                 div is-dark
                 div is-light
                 div
-                  span --color-1
-                  i.small(style="color: var(--color-1)") fiber_manual_record
+                  span --background
                 div
-                  span --color-1a
-                  i.small(style="color: var(--color-1a)") fiber_manual_record
+                  span --foreground&nbsp;
+                  span.grey-text cards, dropdowns, menus, modals
                 div
-                  span --color-1b
-                  i.small(style="color: var(--color-1b)") fiber_manual_record
+                  span --text-1
                 div
-                  span --color-2
-                  i.small(style="color: var(--color-2)") fiber_manual_record
+                  span --text-2
                 div
-                  span --color-2a
-                  i.small(style="color: var(--color-2a)") fiber_manual_record
+                  span --border
                 div
-                  span --color-2b
-                  i.small(style="color: var(--color-2b)") fiber_manual_record
+                  span --active
                 div
-                  span --color-3
-                  i.small(style="color: var(--color-3)") fiber_manual_record
+                  span --chip
                 div
-                  span --color-4
-                  i.small(style="color: var(--color-4)") fiber_manual_record
+                  span --chip-text
                 div
-                  span --color-4a
-                  i.small(style="color: var(--color-4a)") fiber_manual_record
+                  span --overlay
                 div
-                  span --color-5
-                  i.small(style="color: var(--color-5)") fiber_manual_record
+                  span --overlay-text
+                div
+                  span --success&nbsp;
+                  span.grey-text buttons, checkboxes, inputs, loaders, radios, selects, switches
+                div
+                  span --success-text&nbsp;
+                  span.grey-text buttons, checkboxes, inputs, loaders, radios, selects, switches
+                div
+                  span --tooltip
+                div
+                  span --tooltip-text
+                div
+                  span --warning&nbsp;
+                  span.grey-text badges, checkboxes, inputs, radios, selects, switches, toasts
+                div
+                  span --warning-text&nbsp;
+                  span.grey-text badges, checkboxes, inputs, radios, selects, switches, toasts
                 div
                   span --shadow-1&nbsp;
-                  span.grey-text 0 2rem 2rem 0 rgba(0, 0, 0, 0.14), 0 1rem 5rem 0 rgba(0, 0, 0, 0.12), 0 3rem 1rem -2rem rgba(0, 0, 0, 0.2)
+                  span.grey-text buttons, cards, dropdowns, inputs
                 div
                   span --shadow-2&nbsp;
-                  span.grey-text 0 6rem 10rem 0 rgba(0, 0, 0, 0.14), 0 1rem 18rem 0 rgba(0, 0, 0, 0.12), 0 3rem 5rem -1rem rgba(0, 0, 0, 0.3)
+                  span.grey-text buttons, menus, modals
                 div
-                  span --shadow-3&nbsp;
-                  span.grey-text 0 10rem 16rem 0 rgba(0, 0, 0, 0.14), 0 1rem 31rem 0 rgba(0, 0, 0, 0.12), 0 3rem 9rem 0rem rgba(0, 0, 0, 0.4)
+                  span --shadow-3
                 div
-                  span --size&nbsp;
-                  span.grey-text 1px
+                  span --size
                 div
-                  span --fonts&nbsp;
-                  span.grey-text "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+                  span --font
                 div
                   span --speed-1&nbsp;
-                  span.grey-text 0.1s
+                  span.grey-text checkboxes, dropdowns, labels, menus, modals, radios, switches
                 div
                   span --speed-2&nbsp;
-                  span.grey-text 0.2s
+                  span.grey-text modals, toasts, waves
                 div
                   span --speed-3&nbsp;
-                  span.grey-text 0.3s
+                  span.grey-text buttons, cards, chips. expansions, media, overlays
                 div
                   span --speed-4&nbsp;
-                  span.grey-text 0.4s
+                  span.grey-text pages
             .space
             .row
               .col.s12
@@ -3539,26 +3543,6 @@ div
             .transparent.grey-text transparent
             .transparent-border.border.grey-text transparent-border
             .transparent-text.grey-text transparent-text
-            h5 Color-1
-            .color-1.grey-text color-1
-            .color-1-border.border.grey-text color-1-border
-            .color-1-text.grey-text color-1-text
-            h5 Color-2
-            .color-2.grey-text color-2
-            .color-2-border.border.grey-text color-2-border
-            .color-2-text.grey-text color-2-text
-            h5 Color-3
-            .color-3.grey-text color-3
-            .color-3-border.border.grey-text color-3-border
-            .color-3-text.grey-text color-3-text
-            h5 Color-4
-            .color-4.grey-text color-4
-            .color-4-border.border.grey-text color-4-border
-            .color-4-text.grey-text color-4-text
-            h5 Color-5
-            .color-5.grey-text color-5
-            .color-5-border.border.grey-text color-5-border
-            .color-5-text.grey-text color-5-text
 
       #modal.modal
         h5 Title
@@ -3624,7 +3608,7 @@ div
                     button.none 7
                 tr
                   td
-                    button.border.circle.medium.no-margin.color-1-border.absolute.middle.center 8
+                    button.border.circle.medium.no-margin.absolute.middle.center 8
                   td
                     button.none 9
                   td
