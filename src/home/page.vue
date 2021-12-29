@@ -3128,9 +3128,26 @@ div
                 div
                   span --text-2
                 div
-                  span --border
+                  span --border&nbsp;
+                  span.grey-text cards, checkboxes, dropdowns, inputs, medias, menus, tables, tabs, tooltips, modals, radios, selects, switches, tables, tabs, tooltips
                 div
-                  span --active
+                  span --active&nbsp;
+                  span.grey-text chips, checkboxes, dropdowns, menus, modals, radios, switches
+                div
+                  span --fill&nbsp;
+                  span.grey-text inputs, selects
+                div
+                  span --success&nbsp;
+                  span.grey-text buttons, checkboxes, inputs, loaders, radios, selects, switches
+                div
+                  span --success-text&nbsp;
+                  span.grey-text buttons, checkboxes, inputs, loaders, radios, selects, switches
+                div
+                  span --warning&nbsp;
+                  span.grey-text badges, checkboxes, inputs, radios, selects, switches, toasts
+                div
+                  span --warning-text&nbsp;
+                  span.grey-text badges, checkboxes, inputs, radios, selects, switches, toasts
                 div
                   span --chip
                 div
@@ -3140,21 +3157,9 @@ div
                 div
                   span --overlay-text
                 div
-                  span --success&nbsp;
-                  span.grey-text buttons, checkboxes, inputs, loaders, radios, selects, switches
-                div
-                  span --success-text&nbsp;
-                  span.grey-text buttons, checkboxes, inputs, loaders, radios, selects, switches
-                div
                   span --tooltip
                 div
                   span --tooltip-text
-                div
-                  span --warning&nbsp;
-                  span.grey-text badges, checkboxes, inputs, radios, selects, switches, toasts
-                div
-                  span --warning-text&nbsp;
-                  span.grey-text badges, checkboxes, inputs, radios, selects, switches, toasts
                 div
                   span --shadow-1&nbsp;
                   span.grey-text buttons, cards, dropdowns, inputs
