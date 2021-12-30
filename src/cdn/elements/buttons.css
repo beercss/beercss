@@ -9,11 +9,10 @@ button {
   height: 40rem;
   font-size: 14rem;
   font-weight: 500;
-  color: var(--success-text);
+  color: var(--on-primary);
   padding: 0 16rem;
-  background-color: var(--success);
+  background-color: var(--primary);
   margin: 0 8rem;
-  text-transform: uppercase;
   border-radius: 4rem;
   transition: var(--speed-3) transform, var(--speed-3) border-radius, var(--speed-3) padding;
 }
@@ -30,7 +29,7 @@ button.none {
   min-width: auto;
   height: auto;
   min-height: auto;
-  color: var(--success);
+  color: var(--primary);
   padding: 0;
   background-color: transparent;
   margin: 0 8rem;
@@ -40,6 +39,7 @@ button.none {
 button.small {
   min-height: 32rem !important;
   height: 32rem;
+  font-size: 14rem;
 }
 
 .button.medium,
@@ -58,13 +58,14 @@ button.large {
 button.extra {
   min-height: 56rem !important;
   height: 56rem;
+  font-size: 16rem;
 }
 
 .button.border,
 button.border {
-  border: 1rem solid var(--success);
+  border: 1rem solid var(--primary);
   background-color: transparent;
-  color: var(--success);
+  color: var(--primary);
   box-shadow: none;
 }
 
@@ -174,6 +175,8 @@ button.square:not(.flat, .border),
 button.circle:not(.flat, .border),
 button.diamond:not(.flat, .border) {
   box-shadow: var(--shadow-2);
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
 }
 
 .button:disabled,

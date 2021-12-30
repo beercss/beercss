@@ -3,8 +3,8 @@
   visibility: hidden;
   position: fixed;
   box-shadow: var(--shadow-2);
-  color: var(--text-1);
-  background-color: var(--foreground);
+  color: var(--on-surface-variant);
+  background-color: var(--surface-variant);
   padding: 16rem;
   box-sizing: border-box;
   z-index: 100;
@@ -18,7 +18,7 @@
 }
 
 .modal.border {
-  border: 1rem solid var(--border);
+  border: 1rem solid var(--outline);
   box-shadow: none;
 }
 

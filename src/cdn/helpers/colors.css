@@ -945,3 +945,58 @@
 .grey-dark-4 {
   background-color: #212121 !important;
 }
+
+.primary {
+  background-color: var(--primary)!important;
+  color: var(--on-primary)!important;
+}
+
+.primary-container {
+  background-color: var(--primary-container)!important;
+  color: var(--on-primary-container)!important;
+}
+
+.secondary {
+  background-color: var(--secondary)!important;
+  color: var(--on-secondary)!important;
+}
+
+.secondary-container {
+  background-color: var(--secondary-container)!important;
+  color: var(--on-secondary-container)!important;
+}
+
+.tertiary {
+  background-color: var(--tertiary)!important;
+  color: var(--on-tertiary)!important;
+}
+
+.tertiary-container {
+  background-color: var(--tertiary-container)!important;
+  color: var(--on-tertiary-container)!important;
+}
+
+.error {
+  background-color: var(--error)!important;
+  color: var(--on-error)!important;
+}
+
+.error-container {
+  background-color: var(--error-container)!important;
+  color: var(--on-error-container)!important;
+}
+
+.background {
+  background-color: var(--background)!important;
+  color: var(--on-background)!important;
+}
+
+.surface {
+  background-color: var(--surface)!important;
+  color: var(--on-surface)!important;
+}
+
+.surface-variant {
+  background-color: var(--surface-variant)!important;
+  color: var(--on-surface-variant)!important;
+}

@@ -1,8 +1,8 @@
 .card,
 article {
   box-shadow: var(--shadow-1);
-  background-color: var(--foreground);
-  color: var(--text-1);
+  background-color: var(--surface-variant);
+  color: var(--on-surface-variant);
   padding: 16rem;
   border-radius: 4rem;
   display: block;
@@ -41,8 +41,9 @@ article.large {
 
 .card.border,
 article.border {
-  border: 1rem solid var(--border);
+  border: 1rem solid var(--outline);
   box-shadow: none;
+  background-color: transparent;
 }
 
 .card.round,

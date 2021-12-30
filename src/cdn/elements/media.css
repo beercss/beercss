@@ -43,7 +43,7 @@ video.responsive {
 
 img.border,
 video.border {
-  border: 1rem solid var(--border);
+  border: 1rem solid var(--outline);
 }
 
 img.round,

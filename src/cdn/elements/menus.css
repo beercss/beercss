@@ -6,8 +6,8 @@
   border: 0;
   position: fixed;
   box-shadow: var(--shadow-2);
-  color: var(--text-1);
-  background-color: var(--foreground);
+  color: var(--on-surface-variant);
+  background-color: var(--surface-variant);
   transform: none;
   box-sizing: border-box;
   z-index: 100;
@@ -44,7 +44,7 @@
 
 .menu.border {
   box-shadow: none;
-  border: 1rem solid var(--border);
+  border: 1rem solid var(--outline);
 }
 
 .menu.left.border {
@@ -69,26 +69,6 @@
   border-bottom: none;
   border-right: none;
   border-left: none;
-}
-
-.menu.round {
-  border-radius: 40rem;
-}
-
-.menu.left.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
-  border-radius: 0 24rem 24rem 0;
-}
-
-.menu.right.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
-  border-radius: 24rem 0 0 24rem;
-}
-
-.menu.bottom.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
-  border-radius: 24rem 24rem 0 0;
-}
-
-.menu.top.round:not(.margin, .small-margin, .medium-margin, .large-margin) {
-  border-radius: 0 0 24rem 24rem;
 }
 
 .menu.active {

@@ -3,7 +3,7 @@
   justify-content: space-around;
   margin-top: 16rem;
   white-space: nowrap;
-  border-bottom: 1rem solid var(--border);
+  border-bottom: 1rem solid var(--outline);
 }
 
 * > .tabs:first-child {
@@ -15,7 +15,7 @@
   align-items: center;
   font-size: 14rem;
   font-weight: 500;
-  color: var(--text-1);
+  color: var(--on-background);
   padding: 0 16rem;
   text-transform: uppercase;
   border-bottom: 2rem solid transparent;
@@ -41,8 +41,8 @@
 }
 
 .tabs > a.active {
-  color: var(--text-1);
-  border-bottom: 2rem solid var(--text-1);
+  color: var(--on-background);
+  border-bottom: 2rem solid var(--on-background);
 }
 
 .tabs > a > i,

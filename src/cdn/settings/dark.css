@@ -1,21 +1,35 @@
-.is-dark {
-  --background: #263238;
-  --foreground: #37474f;
-  --text-1: #ffffff;
-  --text-2: #9e9e9e;
-  --border: rgba(255,255,255,.2);
-  --active: rgba(255,255,255,.1);
-  --fill: rgba(0,0,0,.1);
-  --success: #ba68c8;
-  --success-text: #ffffff;
-  --warning: #ff9800;
-  --warning-text: #ffffff;
-  --chip: rgba(255,255,255,.07);
-  --chip-text: #ffffff;
+:root {
+  --primary: #6750A4;
+  --on-primary: #FFFFFF;
+  --primary-container: #EADDFF;
+  --on-primary-container: #21005E;
+
+  --secondary: #625B71;
+  --on-secondary: #FFFFFF;
+  --secondary-container: #E8DEF8;
+  --on-secondary-container: #1E192B;
+
+  --tertiary: #7D5260;
+  --on-tertiary: #FFFFFF;
+  --tertiary-container: #FFD8E4;
+  --on-tertiary-container: #370B1E;
+
+  --error: #B3261E;
+  --on-error: #FFFFFF;
+  --error-container: #F9DEDC;
+  --on-error-container: #370B1E;
+
+  --surface-variant: #E7E0EC;
+  --on-surface-variant: #49454E;
+  --outline: #79747E;
+
+  --background: #FFFBFE;
+  --on-background: #1C1B1F;
+  --surface: #FFFBFE;
+  --on-surface: #1C1B1F;
+
   --overlay: rgba(0,0,0,.5);
-  --overlay-text: #000000;
-  --tooltip: rgba(0,0,0,.9);
-  --tooltip-text: #ffffff;
+  --active: rgba(0,0,0,.1);
   --shadow-1: 0 2rem 2rem 0 rgba(0, 0, 0, .14), 0 1rem 5rem 0 rgba(0, 0, 0, .12), 0 3rem 1rem -2rem rgba(0, 0, 0, .2);
   --shadow-2: 0 6rem 10rem 0 rgba(0, 0, 0, .14), 0 1rem 18rem 0 rgba(0, 0, 0, .12), 0 3rem 5rem -1rem rgba(0, 0, 0, .3);
   --shadow-3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);

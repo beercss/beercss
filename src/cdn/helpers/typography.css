@@ -51,7 +51,7 @@ h6 {
 }
 
 .link {
-  color: var(--success);
+  color: var(--primary);
 }
 
 .truncate {

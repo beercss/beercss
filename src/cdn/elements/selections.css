@@ -28,7 +28,7 @@
 .switch > span {
   display: inline-flex;
   align-items: center;
-  color: var(--text-1);
+  color: var(--on-background);
   font-size: 14rem;
 }
 
@@ -62,7 +62,7 @@
   padding: 0;
   outline: none;
   cursor: pointer;
-  color: var(--text-2);
+  color: var(--primary);
   position: absolute;
   left: -24rem;
   background-color: transparent;
@@ -85,12 +85,12 @@
 }
 
 .checkbox > input:checked + span::before {
-  color: var(--success);
+  color: var(--primary);
   content: "check_box";
 }
 
 .radio > input:checked + span::before {
-  color: var(--success);
+  color: var(--primary);
   content: "radio_button_checked";
 }
 
@@ -129,7 +129,7 @@
   position:absolute;
   left: 0;
   top: 50%;
-  background-color: var(--text-2);
+  background-color: var(--on-background);
   opacity: .6;
   width: 32rem;
   height: 14rem;
@@ -140,7 +140,7 @@
 }
 
 .switch > input:checked + span::before {
-  background-color: var(--success);
+  background-color: var(--primary);
 }
 
 .switch > input + span::after {
@@ -158,7 +158,7 @@
 }
 
 .switch > input:checked + span::after {
-  background-color: var(--success);
+  background-color: var(--primary);
   transform: translate(-24rem, -50%);
 }
 

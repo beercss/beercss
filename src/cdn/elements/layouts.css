@@ -19,7 +19,7 @@
 
 .absolute.border,
 .fixed.border {
-  border: 1rem solid var(--border);
+  border: 1rem solid var(--outline);
 }
 
 .absolute.left.right,

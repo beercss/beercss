@@ -32,7 +32,7 @@ div
       div Code
     #more1.modal.left(data-ui="#more1")
       h5 Templates
-      p.grey-text This templates are only for tests purpose
+      p This templates are only for tests purpose
       .space
       a.wrap.padding(href="/youtube", v-show="theme == 'is-dark'")
         img.logo-template(:src="'/youtube-dark.png'")
@@ -73,7 +73,7 @@ div
       div Code
     #more2.modal.bottom.medium(data-ui="#more2")
       h5 Templates
-      p.grey-text This templates are only for tests purpose
+      p This templates are only for tests purpose
       .large-divider
       .row
         .col.s6.middle-align.padding
@@ -98,34 +98,44 @@ div
           a(href="https://codepen.io/search/pens?q=beercss" target="_self")
             img.logo-codepen(:src="'/codepen.png'")
 
-  .center-align.middle-align.padding.medium-height.yellow-light-2.no-scroll
-    img#logo(:src="'/logo.png'", @click="addHomeScreen()")
-
-  .container
-    #begin
-      h4.center-align Beercss
-      .space
-      .large-text.center-align Build material design interfaces in record time...
-      .space
-      .large-text.center-align ...without stress for devs 🍺💛
-      .space
+  .center-align.padding.yellow-light-2
+    div
+      .large-height.no-scroll.middle-align
+        img#logo(:src="'/logo.png'", @click="addHomeScreen()")
+      h5.center-align Build material design
+      h3.center-align in record time
+      h5.center-align without stress for devs
+      .large-space
+      .large-space
       nav.center-align
-        a.button.large.border(
+        a.button.black-border.black-text.large.border(
           href="https://www.npmjs.com/package/beercss",
           target="_self"
         ) NPM
-        a.button.large.border(
+        a.button.black-border.black-text.large.border(
           href="https://github.com/beercss/beercss",
           target="_self"
         ) Github
-        a.button.large(
+        a.button.black.white-text.large(
           href="https://github.com/beercss/beercss",
           target="_self"
         ) Get started
       .large-space
+      .large-space
+      .large-space
+      .large-space
+      .large-space
+
+  .container
+    #begin
       .row
+        #intro.col.s12
+          h4.center-align Hope you enjoy it
+          h2.center-align Beercss 🍻
+          .center-align latest version 2.0.0
+          .large-space
+          .large-space
         #badges.col.s12
-          .large-divider
           h4
             span Badges
             a.chip.circle(@click="showSamples('#badges nav > a')")
@@ -301,7 +311,7 @@ div
                   i account_circle
           .small-space
         #buttons.col.s12
-          .large-divider
+          .large-space
           h4
             span Buttons
             a.chip.circle(@click="showSamples('#buttons button')")
@@ -758,7 +768,7 @@ div
                   img(:src="'/favicon.png'")
                   span Button
         #cards.col.s12
-          .large-divider
+          .large-space
           h4
             span Cards
             a.chip.circle(@click="showSamples('#cards .card:visible')")
@@ -1113,7 +1123,7 @@ div
                       nav
                         button.border Button
         #checkboxes.col.s12
-          .large-divider
+          .large-space
           h4
             span Checkboxes
             a.chip.circle(@click="showSamples('#checkboxes .field')")
@@ -1176,7 +1186,7 @@ div
                     span Item 3
                 span.error Error text
         #chips.col.s12
-          .large-divider
+          .large-space
           h4
             span Chips
             a.chip.circle(@click="showSamples('#chips nav .chip')")
@@ -1410,7 +1420,7 @@ div
                 a.chip.border.square.right-round
                   img.responsive(:src="'/favicon.png'")
         #colors.col.s12
-          .large-divider
+          .large-space
           h4 
             span Colors
             a.chip.circle(data-ui="#modal-colors")
@@ -1418,7 +1428,7 @@ div
           nav
             button(data-ui="#modal-colors") Colors
         #containers.col.s12
-          .large-divider
+          .large-space
           h4
             span Containers
             a.chip.circle(@click="showSamples('#containers .container')")
@@ -1430,7 +1440,7 @@ div
           div(v-show="false")
             .container
         #dropdowns.col.s12
-          .large-divider
+          .large-space
           h4
             span Dropdowns
             a.chip.circle(
@@ -1647,7 +1657,7 @@ div
                 video.responsive(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
         #expansions.col.s12
-          .large-divider
+          .large-space
           h4
             span Expansions
             a.chip.circle(@click="showSamples('#expansions details')")
@@ -1665,7 +1675,7 @@ div
               .row.no-wrap.middle-align
                 .col
                   div Title
-                  .small-text.grey-text Complementary text
+                  .small-text Complementary text
                 .col.min
                   i more_vert
             p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -1677,13 +1687,13 @@ div
                   img.circle(:src="'/favicon.png'")
                 .col
                   div Title
-                  .small-text.grey-text Complementary text
+                  .small-text Complementary text
                 .col.min
                   i more_vert
             .card.border.round.transparent Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           
         #icons.col.s12
-          .large-divider
+          .large-space
           h4
             span Icons
             a.chip.circle(@click="showSamples('#icons nav', '#modal-icons')")
@@ -1722,7 +1732,7 @@ div
             i.large update
             i.large thumb_up
         #inputs.col.s12
-          .large-divider
+          .large-space
           h4
             span Inputs
             a.chip.circle(@click="showSamples('#inputs .field')")
@@ -1826,7 +1836,7 @@ div
                 label Text
                 img.circle(:src="'/favicon.png'")
         #layouts.col.s12
-          .large-divider
+          .large-space
           h4
             span Layouts
             a.chip.circle(
@@ -1854,7 +1864,7 @@ div
               span bottom
           #positions
             #container
-              .padding.absolute.blue.white-text.center.middle
+              .padding.absolute.blue.white-text.center.middle.primary
                 h5 Position
                 div Lorem ipsum dolor...
           .space
@@ -1910,7 +1920,7 @@ div
                   footer.fixed
                     h5.no-margin Fixed footer
         #list.col.s12
-          .large-divider
+          .large-space
           h4
             span Lists
             a.chip.circle(@click="showSamples('#list .row')")
@@ -2042,7 +2052,7 @@ div
                 button.none
                   i more_vert
         #loaders.col.s12
-          .large-divider
+          .large-space
           h4
             span Loaders
             a.chip.circle(@click="showSamples('#loaders .loader')")
@@ -2055,7 +2065,7 @@ div
             a.loader.medium.orange
             a.loader.large.yellow
         #media.col.s12
-          .large-divider
+          .large-space
           h4
             span Media
             a.chip.circle(
@@ -2172,7 +2182,7 @@ div
               )
                 source(:src="'/dance.mp4'", type="video/mp4")
         #modals.col.s12
-          .large-divider
+          .large-space
           h4
             span Modals
             a.chip.circle(@click="showSamples('#modal, #modal-calendar')")
@@ -2181,7 +2191,7 @@ div
             button(data-ui="#modal") Modal
             button(data-ui="#modal-calendar") Calendar
         #navs.col.s12
-          .large-divider
+          .large-space
           h4
             span Navs
             a.chip.circle(@click="showSamples('#navs nav')")
@@ -2193,7 +2203,7 @@ div
             a
               img.circle(:src="'/beer-and-woman.jpg'")
         #pages.col.s12
-          .large-divider
+          .large-space
           h4
             span Pages
             a.chip.circle(@click="showSamples('#pages .page')")
@@ -2206,7 +2216,7 @@ div
           div(style="display: none")
             .page
         #radios.col.s12
-          .large-divider
+          .large-space
           h4
             span Radios
             a.chip.circle(@click="showSamples('#radios .field')")
@@ -2269,7 +2279,7 @@ div
                     span Item 3
                 span.error Error text
         #responsive.col.s12
-          .large-divider
+          .large-space
           h4 
             span Responsive
             a.chip.circle(@click="showSamples('#responsive nav')")
@@ -2289,7 +2299,7 @@ div
               button.s.m.border.circle.extra
                 i laptop_windows
         #rows.col.s12
-          .large-divider
+          .large-space
           h4
             span Rows
             a.chip.circle(@click="showSamples('#rows .row')")
@@ -2351,7 +2361,7 @@ div
             .col max
           .space
         #selects.col.s12
-          .large-divider
+          .large-space
           h4
             span Selects
             a.chip.circle(@click="showSamples('#selects .field')")
@@ -2460,7 +2470,7 @@ div
                 img.circle(:src="'/favicon.png'")
                 span.error Error text
         #switches.col.s12
-          .large-divider
+          .large-space
           h4
             span Switches
             a.chip.circle(@click="showSamples('#switches .field')")
@@ -2523,7 +2533,7 @@ div
                     span Item 3
                 span.error Error text
         #table.col.s12
-          .large-divider
+          .large-space
           h4
             span Tables
             a.chip.circle(@click="showSamples('#table table')")
@@ -2605,11 +2615,11 @@ div
                     button.none
                       i more_vert
         #tabs.col.s12
-          .large-divider
+          .large-space
           h4
             span Tabs
             a.chip.circle(
-              @click="showSamples('#tabs > div:not(.large-divider)')"
+              @click="showSamples('#tabs > div:not(.large-space)')"
             )
               i code
           nav.wrap
@@ -2723,7 +2733,7 @@ div
             #tab15.page.padding
               h5 Tab 3
         #textareas.col.s12
-          .large-divider
+          .large-space
           h4
             span Textareas
             a.chip.circle(@click="showSamples('#textareas .field')")
@@ -2814,7 +2824,7 @@ div
                 label Text
                 img.circle(:src="'/favicon.png'")
         #toasts.col.s12.l6
-          .large-divider
+          .large-space
           h4
             span Toasts
             a.chip.circle(@click="showSamples('#toasts .toast')")
@@ -2848,7 +2858,7 @@ div
             i info
             span Complementary text
         #tooltips.col.s12.l6
-          .large-divider
+          .large-space
           h4
             span Tooltips
             a.chip.circle(@click="showSamples('#tooltips nav a')")
@@ -2868,7 +2878,7 @@ div
               .tooltip.right Complementary text
 
         #typography.col.s12
-          .large-divider
+          .large-space
           h4
             span Typography
             a.chip.circle(@click="showSamples('#typography .col.s6 div')")
@@ -2896,7 +2906,7 @@ div
                 h2 Title
                 h1 Title
         .col.s12
-          .large-divider
+          .large-space
           div
             h4.center-align Has about 100 css classes to combine...
             .large-space
@@ -3116,78 +3126,70 @@ div
             .row
               .col.s12
                 h5 Settings
-                div is-dark
-                div is-light
-                div
-                  span --background
-                div
-                  span --foreground&nbsp;
-                  span.grey-text cards, dropdowns, menus, modals
-                div
-                  span --text-1
-                div
-                  span --text-2
-                div
-                  span --border&nbsp;
-                  span.grey-text cards, checkboxes, dropdowns, inputs, medias, menus, tables, tabs, tooltips, modals, radios, selects, switches, tables, tabs, tooltips
-                div
-                  span --active&nbsp;
-                  span.grey-text chips, checkboxes, dropdowns, menus, modals, radios, switches
-                div
-                  span --fill&nbsp;
-                  span.grey-text inputs, selects
-                div
-                  span --success&nbsp;
-                  span.grey-text buttons, checkboxes, inputs, loaders, radios, selects, switches
-                div
-                  span --success-text&nbsp;
-                  span.grey-text buttons, checkboxes, inputs, loaders, radios, selects, switches
-                div
-                  span --warning&nbsp;
-                  span.grey-text badges, checkboxes, inputs, radios, selects, switches, toasts
-                div
-                  span --warning-text&nbsp;
-                  span.grey-text badges, checkboxes, inputs, radios, selects, switches, toasts
-                div
-                  span --chip
-                div
-                  span --chip-text
-                div
-                  span --overlay
-                div
-                  span --overlay-text
-                div
-                  span --tooltip
-                div
-                  span --tooltip-text
-                div
-                  span --shadow-1&nbsp;
-                  span.grey-text buttons, cards, dropdowns, inputs
-                div
-                  span --shadow-2&nbsp;
-                  span.grey-text buttons, menus, modals
-                div
-                  span --shadow-3
-                div
-                  span --size
-                div
-                  span --font
-                div
-                  span --speed-1&nbsp;
-                  span.grey-text checkboxes, dropdowns, labels, menus, modals, radios, switches
-                div
-                  span --speed-2&nbsp;
-                  span.grey-text modals, toasts, waves
-                div
-                  span --speed-3&nbsp;
-                  span.grey-text buttons, cards, chips. expansions, media, overlays
-                div
-                  span --speed-4&nbsp;
-                  span.grey-text pages
+                .row.no-wrap
+                  .col
+                    b Themes
+                    div is-dark
+                    div is-light
+                  .col
+                    b Primary colors
+                    div --primary
+                    div --on-primary
+                    div --primary-container
+                    div --on-primary-container
+                  .col
+                    b Secondary colors
+                    div --secondary
+                    div --on-secondary
+                    div --secondary-container
+                    div --on-secondary-container
+                  .col
+                    b Tertiary colors
+                    div --tertiary
+                    div --on-tertiary
+                    div --tertiary-container
+                    div --on-tertiary-container
+                .row.no-wrap
+                  .col
+                    b Error colors
+                    div --error
+                    div --on-error
+                    div --error-container
+                    div --on-error-container
+                  .col
+                    b Background colors
+                    div --background
+                    div --on-background
+                  .col
+                    b Surface colors
+                    div --surface
+                    div --on-surface
+                    div --surface-variant
+                    div --on-surface-variant
+                    div --outline
+                  .col
+                    b Shadows
+                    div --shadow-1
+                    div --shadow-2
+                    div --shadow-3
+                .row.no-wrap
+                  .col
+                    b Speed
+                    div --speed-1
+                    div --speed-2
+                    div --speed-3
+                    div --speed-4
+                  .col 
+                    b Others
+                    div --active
+                    div --font
+                    div --size
+                  .col
+                  .col
             .space
             .row
               .col.s12
-                .large-divider
+                .large-space
                 h4.center-align ...and 3 ways to trigger elements
                 .large-space
                 div Add or remove class "active"
@@ -3198,7 +3200,7 @@ div
                 .space
                 div Or add attribute "data-ui" and call javascript function, to setup all automatically
                 pre(v-html="autoSample")
-          .large-divider
+          .large-space
           div
             h4.center-align Cheers 🍻
             .large-space
@@ -3253,7 +3255,7 @@ div
               a.chip Sponsor 22
               a.chip Sponsor 23
               a.chip Sponsor 24
-          .large-divider
+          .large-space
           div
             h4.center-align Support us
             nav.center-align.wrap
@@ -3535,7 +3537,7 @@ div
             .blue-grey-dark-4 blue-grey-dark-4
             .blue-grey-border.border blue-grey-border
             .blue-grey-text blue-grey-text
-          .col.s12
+          .col.s6
             h5 Black
             .black.grey-text black
             .black-border.border.grey-text black-border
@@ -3573,7 +3575,7 @@ div
       #modal-calendar.modal
         .row
           .col.s12.m12.l4
-            .grey-text Selected date
+            div Selected date
             h5 Tue,
             h5 Month, 17
           .col.s12.m12.l8
@@ -4257,7 +4259,7 @@ pre * {
 
 #container {
   height: 200rem;
-  border: 1rem solid #9e9e9e50;
+  border: 1rem solid var(--outline);
   border-radius: 8rem;
 }
 

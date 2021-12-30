@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  color: var(--overlay-text);
+  color: var(--on-background);
   background-color: var(--overlay);
   z-index: 100;
 }

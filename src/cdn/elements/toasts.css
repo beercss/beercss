@@ -10,8 +10,8 @@
   visibility: hidden;
   display: inline-block;
   box-shadow: var(--shadow-2);
-  color: var(--warning-text);
-  background-color: var(--warning-background);
+  color: var(--on-error);
+  background-color: var(--error-background);
   padding: 16rem;
   opacity: 1;
   margin: 0;

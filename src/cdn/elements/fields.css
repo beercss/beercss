@@ -44,8 +44,8 @@
   right: 10rem;
   transform: translateY(-50%);
   cursor: pointer;
-  color: var(--text-2);
-  z-index: 0;
+  color: var(--on-background);
+  z-index: 10;
 }
 
 .field.border > i,
@@ -108,7 +108,7 @@ input[type="file"] {
 .field > textarea {
   border: 0;
   border-radius: 8rem 8rem 0 0;
-  border-bottom: 2rem solid var(--border);
+  border-bottom: 2rem solid var(--outline);
   padding: 4rem 8rem;
   font-family: inherit;
   font-size: 14rem;
@@ -116,7 +116,7 @@ input[type="file"] {
   height: 100%;
   outline: none;
   z-index: 1;
-  color: var(--text-1);
+  color: var(--on-background);
   background-color: transparent;
   box-sizing: border-box;
   resize: none;
@@ -124,24 +124,24 @@ input[type="file"] {
 
 .field > input:focus,
 .field > textarea:focus {
-  border-bottom: 2rem solid var(--success);
+  border-bottom: 2rem solid var(--primary);
 }
 
 .field.border > input,
 .field.border > textarea {
-  border: 2rem solid var(--border);
+  border: 2rem solid var(--outline);
   border-radius: 8rem;
   padding: 4rem 8rem;
 }
 
 .field.border > input:focus,
 .field.border > textarea:focus {
-  border: 2rem solid var(--success);
+  border: 2rem solid var(--primary);
 }
 
 .field.fill > input,
 .field.fill > textarea {
-  background-color: var(--fill);
+  background-color: var(--primary-container);
   padding: 4rem 8rem;
 }
 
@@ -165,7 +165,7 @@ input[type="file"] {
 .field.round.border.fill > input,
 .field.round.border > textarea,
 .field.round.border.fill > textarea {
-  border: 2rem solid var(--border);
+  border: 2rem solid var(--outline);
   box-shadow: none;
 }
 
@@ -173,7 +173,7 @@ input[type="file"] {
 .field.round.border.fill > input:focus,
 .field.round.border > textarea:focus,
 .field.round.border.fill > textarea:focus {
-  border: 2rem solid var(--success);
+  border: 2rem solid var(--primary);
 }
 
 .field.round.fill > input,
@@ -212,7 +212,7 @@ input[type="file"] {
 
 .field.invalid > input,
 .field.invalid > textarea {
-  border-bottom: 2rem solid  var(--warning);
+  border-bottom: 2rem solid  var(--error);
 }
 
 .field.invalid.border > input,
@@ -221,7 +221,7 @@ input[type="file"] {
 .field.invalid.border > textarea,
 .field.invalid.border.round > textarea,
 .field.invalid.border.round.fill > textarea {
-  border: 2rem solid  var(--warning);
+  border: 2rem solid  var(--error);
 }
 
 .field.invalid.round > input,
@@ -230,7 +230,7 @@ input[type="file"] {
 }
 
 .field > :disabled {
-  opacity: .1;
+  opacity: .5;
   pointer-events: none;
 }
 
@@ -242,7 +242,7 @@ input[type="file"] {
   left: 8rem;
   font-size: 14rem;
   transform: translateY(-50%);
-  z-index: 0;
+  z-index: 10;
 }
 
 .field.label.textarea.small > label {
@@ -295,8 +295,12 @@ input[type="file"] {
   transform: translateY(-120%);
 }
 
+.field.label > :focus ~ label {
+  color: var(--primary);
+}
+
 .field.invalid > label {
-  color: var(--warning);
+  color: var(--error)!important;
 }
 
 .field > label.required:after,
@@ -311,7 +315,7 @@ input[type="file"] {
   appearance: none;
   border: 0;
   border-radius: 8rem 8rem 0 0;
-  border-bottom: 2rem solid var(--border);
+  border-bottom: 2rem solid var(--outline);
   padding: 4rem 8rem;
   font-family: inherit;
   font-size: 14rem;
@@ -319,27 +323,27 @@ input[type="file"] {
   height: 100%;
   outline: none;
   cursor: pointer;
-  color: var(--text-1);
+  color: var(--on-background);
   background-color: transparent;
   box-sizing: border-box;
   z-index: 1;
 }
 
 .field > select:focus {
-  border-bottom: 2rem solid var(--success);
+  border-bottom: 2rem solid var(--primary);
 }
 
 .field.border > select {
-  border: 2rem solid var(--border);
+  border: 2rem solid var(--outline);
   border-radius: 8rem;
 }
 
 .field.border > select:focus {
-  border: 2rem solid var(--success);
+  border: 2rem solid var(--primary);
 }
 
 .field.fill > select {
-  background-color: var(--fill);
+  background-color: var(--primary-container);
   padding: 4rem 8rem 4rem 8rem;
 }
 
@@ -352,14 +356,14 @@ input[type="file"] {
 
 .field.round.border > select,
 .field.round.border.fill > select {
-  border: 2rem solid var(--border);
+  border: 2rem solid var(--outline);
   border-radius: 32rem;
   box-shadow: none;
 }
 
 .field.round.border > select:focus,
 .field.round.border.fill > select:focus {
-  border: 2rem solid var(--success);
+  border: 2rem solid var(--primary);
 }
 
 .field.round.fill > select {
@@ -381,13 +385,13 @@ input[type="file"] {
 }
 
 .field.invalid > select {
-  border-bottom: 2rem solid  var(--warning);
+  border-bottom: 2rem solid  var(--error);
 }
 
 .field.invalid.border > select,
 .field.invalid.border.round > select,
 .field.invalid.border.round.fill > select {
-  border: 2rem solid  var(--warning);
+  border: 2rem solid  var(--error);
 }
 
 .field.invalid.round > select {
@@ -395,7 +399,7 @@ input[type="file"] {
 }
 
 .field > select > option {
-  background-color: var(--foreground);
+  background-color: var(--surface);
 }
 
 /* helper */
@@ -406,14 +410,15 @@ input[type="file"] {
   bottom: 0;
   transform: translateY(100%);
   font-size: 12rem;
+  background: none!important;
 }
 
 a.helper {
-  color: var(--success);
+  color: var(--primary);
 }
 
 .field > .error {
-  color:  var(--warning);
+  color:  var(--error)!important;
 }
 
 .field.round > .helper,

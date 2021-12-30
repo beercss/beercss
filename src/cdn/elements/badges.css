@@ -7,8 +7,8 @@
   text-transform: none;
   z-index: 1;
   padding: 0 6rem;
-  background-color: var(--warning);
-  color: var(--warning-text);
+  background-color: var(--error);
+  color: var(--on-error);
   top: 0;
   left: auto;
   bottom: auto;
@@ -93,9 +93,9 @@
 }
 
 .badge.border {
-  border: 1rem solid var(--warning);
+  border: 1rem solid var(--error);
   background-color: transparent;
-  color:var(--warning);
+  color:var(--error);
 }
 
 .badge.round {
