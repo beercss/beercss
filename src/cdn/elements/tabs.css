@@ -41,8 +41,12 @@
 }
 
 .tabs > a.active {
-  color: var(--on-background);
-  border-bottom: 2rem solid var(--on-background);
+  color: var(--primary);
+  border-bottom: 2rem solid var(--primary);
+}
+
+.tabs > a.active > i {
+  color: var(--primary);
 }
 
 .tabs > a > i,
