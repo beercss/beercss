@@ -4354,15 +4354,11 @@ pre * {
 }
 
 #rows .row {
-  border: 1rem solid #9e9e9e50;
+  border: 1rem solid var(--outline);
 }
 
 #rows .col {
-  border: 2rem solid #9e9e9e50;
-}
-
-#modal-colors .border {
-  border: 2rem solid;
+  border: 1rem solid var(--outline);
 }
 
 #modal-colors .col > div {
