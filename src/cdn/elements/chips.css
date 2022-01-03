@@ -8,9 +8,9 @@
   height: 40rem;
   font-size: 14rem;
   font-weight: 500;
-  color: var(--on-primary);
+  color: var(--on-secondary);
   padding: 0 16rem;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   margin: 0 8rem;
   text-transform: none;
   border-radius: 8rem;
@@ -37,9 +37,9 @@
 }
 
 .chip.border {
-  border: 1rem solid var(--primary);
+  border: 1rem solid var(--secondary);
   background-color: transparent;
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .chip.active::before {
