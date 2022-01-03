@@ -17,9 +17,9 @@ button {
   transition: var(--speed-3) transform, var(--speed-3) border-radius, var(--speed-3) padding;
 }
 
-button > :not(.dropdown, .badge) + :not(.dropdown, .badge),
-.button > :not(.dropdown, .badge) + :not(.dropdown, .badge) {
-  margin-left: 6rem;
+.button > :not(.dropdown, .progress, .badge, .tooltip) + :not(.dropdown, .progress, .badge, .tooltip),
+button > :not(.dropdown, .progress, .badge, .tooltip) + :not(.dropdown, .progress, .badge, .tooltip) {
+  margin-left: 4rem;
 }
 
 .button.none,

@@ -61,7 +61,8 @@ a.wrap {
   width: -moz-available;
 }
 
-.responsive > :not(.dropdown, .badge) {
+.responsive > i,
+.responsive > img {
   margin: 0;
 }
 

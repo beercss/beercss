@@ -17,7 +17,7 @@
   transition: var(--speed-3) transform, var(--speed-3) border-radius, var(--speed-3) padding;
 }
 
-.chip > :not(.dropdown, .badge) + :not(.dropdown, .badge) {
+.chip > :not(.dropdown, .progress, .badge, .tooltip) + :not(.dropdown, .progress, .badge, .tooltip) {
   margin-left: 4rem;
 }
 

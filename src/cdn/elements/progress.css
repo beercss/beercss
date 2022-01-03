@@ -28,10 +28,10 @@
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
 }
 
-.card > *:not(.dropdown, .progress, header, footer),
-article > *:not(.dropdown, .progress, header, footer),
-.button > *:not(.dropdown, .progress, header, footer),
-button > *:not(.dropdown, .progress, header, footer),
-.chip > *:not(.dropdown, .progress, header, footer) {
+.card > *:not(.progress),
+article > *:not(.progress),
+.button > *:not(.progress),
+button > *:not(.progress),
+.chip > *:not(.progress) {
   z-index: 1;
 }
