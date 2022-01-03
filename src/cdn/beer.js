@@ -243,12 +243,12 @@
     if (timeoutToast)
       clearTimeout(timeoutToast);
 
-    if (config && config.timeout == -1)
+    if (config && config == -1)
       return;
 
     timeoutToast = setTimeout(() => {
       removeClass(to, "active");
-    }, config && config.timeout ? config.timeout : 6000);
+    }, config && config ? config : 6000);
   };
 
   const progress = (from, to, config) => {

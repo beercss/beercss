@@ -2219,7 +2219,7 @@ div
           .large-space
           h4
             span Progress
-            a.chip.circle(@click="showSamples('#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, 'To change the progress call a js function&nbsp;<b>ui(selector, number)</b>')")
+            a.chip.circle(@click="showSamples('#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, 'To change the progress call a js function&nbsp;<b>ui(\"#progress\", percentage)</b>')")
               i code
           nav.wrap
             label.radio
@@ -3303,6 +3303,9 @@ div
                 .space
                 div Or add attribute "data-ui" and call javascript function, to setup all automatically
                 pre(v-html="autoSample")
+                .space
+                div Some elements accept options
+                pre(v-html="extraSample")
           .large-space
           div
             h4.center-align Cheers 🍻
@@ -3812,6 +3815,7 @@ export default {
       htmlSample: null,
       jsSample: null,
       autoSample: null,
+      extraSample: null,
       textSample: null,
       modalSample: null,
       theme: true,
@@ -3828,13 +3832,18 @@ export default {
     ).value;
 
     this.jsSample = hljs.highlight(
-      "html",
+      "js",
       'ui("#modal");\nui("#dropdown");\nui("#overlay");\nui("#page");\nui("#toast");'
     ).value;
 
     this.autoSample = hljs.highlight(
       "html",
       '<a data-ui="#modal">...</a>\n<a data-ui="#dropdown">...</a>\n<a data-ui="#overlay">...</a>\n<a data-ui="#page">...</a>\n<a data-ui="#toast">...</a>\n\nui();'
+    ).value;
+
+    this.extraSample = hljs.highlight(
+      "js",
+      'ui("#progress", percentage);\nui("#toast", millisecondsToHide);'
     ).value;
 
     ui();
