@@ -2944,10 +2944,10 @@ div
               input#top-toasts(type="radio", name="position-toasts")
               span top
           nav.wrap
-            button.pink(onclick="ui('.toast.pink')") Toast
-            button.orange(onclick="ui('.toast.orange')") Toast
-            button.green(onclick="ui('.toast.green')") Toast
-            button.blue(onclick="ui('.toast.blue')") Toast
+            button.pink.white-text(onclick="ui('.toast.pink')") Toast
+            button.orange.white-text(onclick="ui('.toast.orange')") Toast
+            button.green.white-text(onclick="ui('.toast.green')") Toast
+            button.blue.white-text(onclick="ui('.toast.blue')") Toast
           .toast.pink.white-text
             i error
             span Complementary text

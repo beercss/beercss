@@ -73,6 +73,7 @@ footer.fixed {
 
 .modal > header.fixed,
 .card > header.fixed,
+article > header.fixed,
 .padding > header.fixed,
 .medium-padding > header.fixed {
   transform: translateY(-16rem);
@@ -80,6 +81,7 @@ footer.fixed {
 
 .modal > footer.fixed,
 .card > footer.fixed,
+article > footer.fixed,
 .padding > footer.fixed,
 .medium-padding > footer.fixed {
   transform: translateY(16rem);
