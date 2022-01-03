@@ -2215,6 +2215,109 @@ div
             button(@click="updatePage('page right active')") From right
           div(style="display: none")
             .page
+        #progress.col.s12
+          .large-space
+          h4
+            span Progress
+            a.chip.circle(@click="showSamples('#progress .small-space, #progress .card, #progress nav > button, #progress nav > .chip', null, 'To change the progress call a js function&nbsp;<b>ui(selector, number)</b>')")
+              i code
+          nav.wrap
+            label.radio
+              input#0-progress(type="radio", name="percent-progress", checked="checked")
+              span 0%
+            label.radio
+              input#30-progress(type="radio", name="percent-progress")
+              span 30%
+            label.radio
+              input#60-progress(type="radio", name="percent-progress")
+              span 60%
+            label.radio
+              input#100-progress(type="radio", name="percent-progress")
+              span 100%
+            label.radio
+              input#default-progress(type="radio", name="color-progress", checked="checked")
+              span default
+            label.radio
+              input#light-green-progress(type="radio", name="color-progress")
+              span light-green
+            label.radio
+              input#orange-progress(type="radio", name="color-progress")
+              span orange
+          .space
+          .small-space.secondary-container.border
+            .progress.left
+          .space
+          .small-space.tertiary-container
+            .progress.right
+          .space
+          .row
+            .col.s12.m3
+              .card.small
+                h5 Card
+                .progress.left
+            .col.s12.m3
+              .card.small.round
+                h5 Card
+                .progress.right
+            .col.s12.m3
+              .card.border.small
+                h5 Card
+                .progress.top
+            .col.s12.m3
+              .card.small.border.round
+                h5 Card
+                .progress.bottom
+          nav.wrap
+            button
+              span Button
+              .progress.left
+            button.round
+              span Button
+              .progress.right
+            button.circle.extra
+              i home
+              .progress.top
+            button.square.extra
+              i home
+              .progress.bottom
+            button.border
+              span Button
+              .progress.left
+            button.border.round
+              span Button
+              .progress.right
+            button.border.circle.extra
+              i home
+              .progress.top
+            button.border.square.extra
+              i home
+              .progress.bottom
+          nav.wrap
+            a.chip
+              span Chip
+              .progress.left
+            a.chip.round
+              span Chip
+              .progress.right
+            a.chip.circle
+              i search
+              .progress.top
+            a.chip.square
+              i search
+              .progress.bottom
+            a.chip.border
+              span Chip
+              .progress.left
+            a.chip.border.round
+              span Chip
+              .progress.right
+            a.chip.border.circle
+              i search
+              .progress.top
+            a.chip.border.square
+              i search
+              .progress.bottom
+
         #radios.col.s12
           .large-space
           h4
@@ -3567,6 +3670,7 @@ div
           a(data-ui="#modal-samples")
             i arrow_backward
             h5.small-margin Back
+          .middle-align(v-show="textSample", v-html="textSample")
         .card.border(v-for="exemplo in samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
@@ -3705,6 +3809,7 @@ export default {
       htmlSample: null,
       jsSample: null,
       autoSample: null,
+      textSample: null,
       theme: true,
       mediaCard: 1,
       mediaImage: 1,
@@ -3742,6 +3847,7 @@ export default {
     this.textareaSamples();
     this.layoutSamples();
     this.toastSamples();
+    this.progressSamples();
 
     setTimeout(() => {
       $("#logo").addClass("active");
@@ -3939,9 +4045,10 @@ export default {
           .replace(/\n\<\/(circle|th)\>/gi, "</$1>")
       ).replace(/^\s+/g, "");
     },
-    showSamples(selector, modal) {
+    showSamples(selector, modal, text) {
       var elements = $(selector);
       this.samples = [];
+      this.textSample = text || null;
       for (var i = 0; i < elements.length; i++) {
         var html = this.formatHtml($(elements[i]), true);
         var htmlFormatted = hljs.highlight("html", html).value;
@@ -4183,7 +4290,27 @@ export default {
         }
       });
     },
-  },
+    progressSamples() {
+      $(
+        "#0-progress,#30-progress,#60-progress,#100-progress,#default-progress,#light-green-progress,#orange-progress"
+      ).on("click", function () {
+        var ids = [0, 30, 60, 100, "light-green", "orange"];
+        $("#progress .progress").removeClass("light-green");
+        $("#progress .progress").removeClass("orange");
+
+        for (var i = 0; i < ids.length; i++) {
+          var selector = "#" + ids[i] + "-progress";
+
+          if ($(selector).is(":checked")) {
+            if (["light-green", "orange"].indexOf(ids[i]) != -1)
+              $("#progress .progress").addClass(ids[i]);
+            else
+              document.querySelectorAll("#progress .progress").forEach((x) => ui(x, ids[i]));
+          }
+        }
+      });
+    }
+  }
 };
 </script>
 

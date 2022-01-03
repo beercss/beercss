@@ -141,6 +141,7 @@
     if (hasClass(to, "dropdown")) return dropdown(from, to, config);
     if (hasClass(to, "toast")) return toast(from, to, config);
     if (hasClass(to, "page")) return page(from, to, config);
+    if (hasClass(to, "progress")) return progress(from, to, config);
 
     tab(from, to, config);
 
@@ -248,6 +249,20 @@
     timeoutToast = setTimeout(() => {
       removeClass(to, "active");
     }, config && config.timeout ? config.timeout : 6000);
+  };
+
+  const progress = (from, to, config) => {
+    if (hasClass(to, "left"))
+      return  to.style.clipPath = `polygon(0% 0%, 0% 100%, ${config}% 100%, ${config}% 0%)`;
+
+    if (hasClass(to, "top"))
+      return to.style.clipPath = `polygon(0% 0%, 100% 0%, 100% ${config}%, 0% ${config}%)`;
+
+    if (hasClass(to, "right"))
+      return  to.style.clipPath = `polygon(100% 0%, 100% 100%, ${100 - config}% 100%, ${100 - config}% 0%)`;
+
+    if (hasClass(to, "bottom"))
+      return to.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - config}%, 0% ${100 - config}%)`;
   };
 
   const ui = (selector, config) => {
