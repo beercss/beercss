@@ -99,7 +99,7 @@ div
             img.logo-codepen(:src="'/codepen.png'")
 
   .center-align.padding.yellow-light-2
-    div
+    div.black-text
       .large-height.no-scroll.middle-align
         img#logo(:src="'/logo.png'", @click="addHomeScreen()")
       h5.center-align Build material design
@@ -771,7 +771,7 @@ div
           .large-space
           h4
             span Cards
-            a.chip.circle(@click="showSamples('#cards .card:visible')")
+            a.chip.circle(@click="showSamples('#cards article:visible')")
               i code
           nav.wrap.m.l
             label.radio
@@ -792,31 +792,31 @@ div
               span videos
           .row(v-if="mediaCard == 1")
             .col.s12.m4.l2
-              .card.left-round
+              article.left-round
                 h5 Title
                 div Complementary text
             .col.s12.m4.l2
-              .card.top-round
+              article.top-round
                 h5 Title
                 div Complementary text
             .col.s12.m4.l2
-              .card.right-round
+              article.right-round
                 h5 Title
                 div Complementary text
             .col.s12.m4.l2
-              .card.bottom-round
+              article.bottom-round
                 h5 Title
                 div Complementary text
             .col.s12.m4.l2
-              .card.top-round.left-round
+              article.top-round.left-round
                 h5 Title
                 div Complementary text
             .col.s12.m4.l2
-              .card.bottom-round.right-round
+              article.bottom-round.right-round
                 h5 Title
                 div Complementary text
             .col.s12.m6.l3
-              .card
+              article
                 .row.no-wrap
                   .col.min
                     img.circle.large(:src="'/beer-and-woman.jpg'")
@@ -826,7 +826,7 @@ div
                 nav
                   button.none Button
             .col.s12.m6.l3
-              .card.round
+              article.round
                 .row.no-wrap
                   .col.min
                     img.circle.large(:src="'/beer-and-woman.jpg'")
@@ -836,7 +836,7 @@ div
                 nav
                   button.none Button
             .col.s12.m6.l3
-              .card.border
+              article.border
                 .row.no-wrap
                   .col.min
                     img.circle.large(:src="'/beer-and-woman.jpg'")
@@ -846,7 +846,7 @@ div
                 nav
                   button.none Button
             .col.s12.m6.l3
-              .card.border.round
+              article.border.round
                 .row.no-wrap
                   .col.min
                     img.circle.large(:src="'/beer-and-woman.jpg'")
@@ -856,7 +856,7 @@ div
                 nav
                   button.none Button
             .col.s12.m6.l3
-              .card.no-padding
+              article.no-padding
                 img.responsive.small(:src="'/beer-and-woman.jpg'")
                 .padding
                   h5.no-margin Title
@@ -864,7 +864,7 @@ div
                   nav
                     button.none Button
             .col.s12.m6.l3
-              .card.no-padding.round
+              article.no-padding.round
                 img.responsive.small.top-round(:src="'/beer-and-woman.jpg'")
                 .padding
                   h5.no-margin Title
@@ -872,7 +872,7 @@ div
                   nav
                     button.none Button
             .col.s12.m6.l3
-              .card.no-padding.border
+              article.no-padding.border
                 img.responsive.small(:src="'/beer-and-woman.jpg'")
                 .padding
                   h5.no-margin Title
@@ -880,7 +880,7 @@ div
                   nav
                     button.none Button
             .col.s12.m6.l3
-              .card.no-padding.border.round
+              article.no-padding.border.round
                 img.responsive.small.top-round(:src="'/beer-and-woman.jpg'")
                 .padding
                   h5.no-margin Title
@@ -888,7 +888,7 @@ div
                   nav
                     button.none Button
             .col.s12.m6.l3
-              .card.no-padding
+              article.no-padding
                 img.responsive.medium(:src="'/beer-and-woman.jpg'")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
                   h5.no-margin Title
@@ -896,7 +896,7 @@ div
                   nav
                     button.border.small Button
             .col.s12.m6.l3
-              .card.no-padding.round
+              article.no-padding.round
                 img.responsive.medium(:src="'/beer-and-woman.jpg'")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
                   h5.no-margin Title
@@ -904,7 +904,7 @@ div
                   nav
                     button.border.small Button
             .col.s12.m6.l3
-              .card.no-padding.border
+              article.no-padding.border
                 img.responsive.medium(:src="'/beer-and-woman.jpg'")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
                   h5.no-margin Title
@@ -912,7 +912,7 @@ div
                   nav
                     button.border.small Button
             .col.s12.m6.l3
-              .card.no-padding.border.round
+              article.no-padding.border.round
                 img.responsive.medium(:src="'/beer-and-woman.jpg'")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
                   h5.no-margin Title
@@ -920,7 +920,7 @@ div
                   nav
                     button.border.small Button
             .col.s12.l6
-              .card.no-padding
+              article.no-padding
                 .row.no-wrap.no-space
                   .col
                     img.responsive(:src="'/beer-and-woman.jpg'")
@@ -931,7 +931,7 @@ div
                       nav
                         button.border Button
             .col.s12.l6
-              .card.no-padding
+              article.no-padding
                 .row.no-wrap.no-space
                   .col
                     img.responsive(:src="'/beer-and-woman.jpg'")
@@ -946,31 +946,31 @@ div
                         button.border Button
           .row(v-if="mediaCard == 2")
             .col.s12.m4.l2
-              .card.left-round
+              article.left-round
                 h5 Title
                 div Complementary text
             .col.s12.m4.l2
-              .card.top-round
+              article.top-round
                 h5 Title
                 div Complementary text
             .col.s12.m4.l2
-              .card.right-round
+              article.right-round
                 h5 Title
                 div Complementary text
             .col.s12.m4.l2
-              .card.bottom-round
+              article.bottom-round
                 h5 Title
                 div Complementary text
             .col.s12.m4.l2
-              .card.top-round.left-round
+              article.top-round.left-round
                 h5 Title
                 div Complementary text
             .col.s12.m4.l2
-              .card.bottom-round.right-round
+              article.bottom-round.right-round
                 h5 Title
                 div Complementary text
             .col.s12.m6.l3
-              .card
+              article
                 .row.no-wrap
                   .col.min
                     video.circle.large(autoplay, loop, muted, playsinline)
@@ -981,7 +981,7 @@ div
                 nav
                   button.none Button
             .col.s12.m6.l3
-              .card.round
+              article.round
                 .row.no-wrap
                   .col.min
                     video.circle.large(autoplay, loop, muted, playsinline)
@@ -992,7 +992,7 @@ div
                 nav
                   button.none Button
             .col.s12.m6.l3
-              .card.border
+              article.border
                 .row.no-wrap
                   .col.min
                     video.circle.large(autoplay, loop, muted, playsinline)
@@ -1003,7 +1003,7 @@ div
                 nav
                   button.none Button
             .col.s12.m6.l3
-              .card.border.round
+              article.border.round
                 .row.no-wrap
                   .col.min
                     video.circle.large(autoplay, loop, muted, playsinline)
@@ -1014,7 +1014,7 @@ div
                 nav
                   button.none Button
             .col.s12.m6.l3
-              .card.no-padding
+              article.no-padding
                 video.responsive.small(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .padding
@@ -1023,7 +1023,7 @@ div
                   nav
                     button.none Button
             .col.s12.m6.l3
-              .card.no-padding.round
+              article.no-padding.round
                 video.responsive.small.top-round(
                   autoplay,
                   loop,
@@ -1037,7 +1037,7 @@ div
                   nav
                     button.none Button
             .col.s12.m6.l3
-              .card.no-padding.border
+              article.no-padding.border
                 video.responsive.small(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .padding
@@ -1046,7 +1046,7 @@ div
                   nav
                     button.none Button
             .col.s12.m6.l3
-              .card.no-padding.border.round
+              article.no-padding.border.round
                 video.responsive.small.top-round(
                   autoplay,
                   loop,
@@ -1060,7 +1060,7 @@ div
                   nav
                     button.none Button
             .col.s12.m6.l3
-              .card.no-padding
+              article.no-padding
                 video.responsive.medium(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
@@ -1069,7 +1069,7 @@ div
                   nav
                     button.border.small Button
             .col.s12.m6.l3
-              .card.no-padding.round
+              article.no-padding.round
                 video.responsive.medium(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
@@ -1078,7 +1078,7 @@ div
                   nav
                     button.border.small Button
             .col.s12.m6.l3
-              .card.no-padding.border
+              article.no-padding.border
                 video.responsive.medium(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
@@ -1087,7 +1087,7 @@ div
                   nav
                     button.border.small Button
             .col.s12.m6.l3
-              .card.no-padding.border.round
+              article.no-padding.border.round
                 video.responsive.medium(autoplay, loop, muted, playsinline)
                   source(:src="'/dance.mp4'", type="video/mp4")
                 .absolute.bottom.left.right.padding.bottom-shadow.white-text
@@ -1096,7 +1096,7 @@ div
                   nav
                     button.border.small Button
             .col.s12.l6
-              .card.no-padding
+              article.no-padding
                 .row.no-wrap.no-space
                   .col
                     video.responsive(autoplay, loop, muted, playsinline)
@@ -1108,7 +1108,7 @@ div
                       nav
                         button.border Button
             .col.s12.l6
-              .card.no-padding
+              article.no-padding
                 .row.no-wrap.no-space
                   .col
                     video.responsive(autoplay, loop, muted, playsinline)
@@ -1907,14 +1907,14 @@ div
           .row
             .col.s12.m6
               #headers
-                .card.flat.small.scroll
+                article.flat.small.scroll
                   header.fixed
                     h5.no-margin Fixed header
                   p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                   p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             .col.s12.m6
               #footers
-                .card.flat.small.scroll
+                article.flat.small.scroll
                   p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                   p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                   footer.fixed
@@ -2219,7 +2219,7 @@ div
           .large-space
           h4
             span Progress
-            a.chip.circle(@click="showSamples('#progress .small-space, #progress .card, #progress nav > button, #progress nav > .chip', null, 'To change the progress call a js function&nbsp;<b>ui(selector, number)</b>')")
+            a.chip.circle(@click="showSamples('#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, 'To change the progress call a js function&nbsp;<b>ui(selector, number)</b>')")
               i code
           nav.wrap
             label.radio
@@ -2252,19 +2252,19 @@ div
           .space
           .row
             .col.s12.m3
-              .card.small
+              article.small
                 h5 Card
                 .progress.left
             .col.s12.m3
-              .card.small.round
+              article.small.round
                 h5 Card
                 .progress.right
             .col.s12.m3
-              .card.border.small
+              article.border.small
                 h5 Card
                 .progress.top
             .col.s12.m3
-              .card.small.border.round
+              article.small.border.round
                 h5 Card
                 .progress.bottom
           nav.wrap
@@ -3671,7 +3671,7 @@ div
             i arrow_backward
             h5.small-margin Back
           .middle-align(v-show="textSample", v-html="textSample")
-        .card.border(v-for="exemplo in samples")
+        article.border(v-for="exemplo in samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
           pre(v-html="exemplo.sourceCode")
@@ -3784,7 +3784,7 @@ div
           a(data-ui="#modal-icons")
             h5.no-margin Back
         .space
-        .card.border(v-for="exemplo in samples")
+        article.border(v-for="exemplo in samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
           pre(v-html="exemplo.sourceCode")
