@@ -3778,21 +3778,24 @@ div
           button.none(data-ui="#modal-calendar") Ok
 
       #modal-icons.modal.right.large
-        nav
-          a(data-ui="#modal-icons")
-            i arrow_back
-          a(data-ui="#modal-icons")
-            h5.no-margin Back
+        header.fixed
+          nav
+            a(data-ui="#modal-icons")
+              i arrow_back
+            a(data-ui="#modal-icons")
+              h5.no-margin Back
+            a.button.border(
+              v-show="modalSample == '#modal-icons'"
+              href="https://material.io/resources/icons/?style=baseline",
+              target="_blank"
+            ) More icons
         .space
-        article.border(v-for="exemplo in samples")
-          div(v-html="exemplo.html")
-          .space(v-show="exemplo.html")
-          pre(v-html="exemplo.sourceCode")
-        .space
-        a.button.absolute.top.right.margin(
-          href="https://material.io/resources/icons/?style=baseline",
-          target="_blank"
-        ) More icons
+        div(v-if="modalSample == '#modal-icons'")
+          article.border(v-for="exemplo in samples")
+            div(v-html="exemplo.html")
+            .space(v-show="exemplo.html")
+            pre(v-html="exemplo.sourceCode")
+          .space
 </template>
 
 <script>
@@ -3810,6 +3813,7 @@ export default {
       jsSample: null,
       autoSample: null,
       textSample: null,
+      modalSample: null,
       theme: true,
       mediaCard: 1,
       mediaImage: 1,
@@ -4049,6 +4053,8 @@ export default {
       var elements = $(selector);
       this.samples = [];
       this.textSample = text || null;
+      this.modalSample = modal || "#modal-samples";
+
       for (var i = 0; i < elements.length; i++) {
         var html = this.formatHtml($(elements[i]), true);
         var htmlFormatted = hljs.highlight("html", html).value;
@@ -4071,8 +4077,8 @@ export default {
 
       Vue.nextTick(() => {
         ui();
-        ui(modal || "#modal-samples");
-        $(modal || "#modal-samples").scrollTop(0);
+        ui(this.modalSample);
+        $(this.modalSample).scrollTop(0);
       });
     },
     toastSamples() {
