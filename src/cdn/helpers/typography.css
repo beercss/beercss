@@ -14,16 +14,16 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  margin: 8rem 0;
+  margin: 0 0 8rem 0;
 }
 
-* > h1:first-child,
-* > h2:first-child,
-* > h3:first-child,
-* > h4:first-child,
-* > h5:first-child,
-* > h6:first-child {
-  margin: 0 0 8rem 0;
+*:not(.progress) + h1,
+*:not(.progress) + h2,
+*:not(.progress) + h3,
+*:not(.progress) + h4,
+*:not(.progress) + h5,
+*:not(.progress) + h6 {
+  margin: 8rem 0;
 }
 
 h1 {

@@ -5,7 +5,7 @@
   box-shadow: var(--shadow-2);
   background-color: var(--surface);
   box-sizing: border-box;
-  z-index: 2 !important;
+  z-index: 2;
   top: auto;
   bottom: 0;
   left: 0;

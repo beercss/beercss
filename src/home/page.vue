@@ -2253,70 +2253,70 @@ div
           .row
             .col.s12.m3
               article.small
-                h5 Card
                 .progress.left
+                h5 Card
             .col.s12.m3
               article.small.round
-                h5 Card
                 .progress.right
+                h5 Card
             .col.s12.m3
               article.border.small
-                h5 Card
                 .progress.top
+                h5 Card
             .col.s12.m3
               article.small.border.round
-                h5 Card
                 .progress.bottom
+                h5 Card
           nav.wrap
             button
-              span Button
               .progress.left
+              span Button
             button.round
-              span Button
               .progress.right
+              span Button
             button.circle.extra
-              i home
               .progress.top
+              i home
             button.square.extra
-              i home
               .progress.bottom
+              i home
             button.border
-              span Button
               .progress.left
-            button.border.round
               span Button
+            button.border.round
               .progress.right
+              span Button
             button.border.circle.extra
-              i home
               .progress.top
-            button.border.square.extra
               i home
+            button.border.square.extra
               .progress.bottom
+              i home
           nav.wrap
             a.chip
-              span Chip
               .progress.left
+              span Chip
             a.chip.round
-              span Chip
               .progress.right
+              span Chip
             a.chip.circle
-              i search
               .progress.top
+              i search
             a.chip.square
-              i search
               .progress.bottom
+              i search
             a.chip.border
-              span Chip
               .progress.left
-            a.chip.border.round
               span Chip
+            a.chip.border.round
               .progress.right
+              span Chip
             a.chip.border.circle
-              i search
               .progress.top
-            a.chip.border.square
               i search
+            a.chip.border.square
               .progress.bottom
+              i search
 
         #radios.col.s12
           .large-space

@@ -64,7 +64,7 @@ footer.fixed {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 10!important;
+  z-index: 10;
   background-color: inherit;
   padding: inherit;
   padding-left: 0;

@@ -5,7 +5,7 @@ nav {
   margin: 0 -8rem;
 }
 
-* + nav {
+*:not(.progress) + nav {
   margin-top: 16rem;
 }
 
@@ -18,7 +18,7 @@ nav.wrap {
   white-space: normal;
 }
 
-* + nav.wrap {
+*:not(.progress) + nav.wrap {
   margin: 8rem -8rem;
 }
 

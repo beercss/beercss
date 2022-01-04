@@ -7,7 +7,7 @@
   border-radius: 4rem;
   padding: 8rem;
   position: absolute;
-  z-index: 3!important;
+  z-index: 3;
   top: 0;
   left: 50%;
   bottom: auto;
