@@ -160,6 +160,7 @@
   text-align: left;
   padding: 16rem 16rem 16rem 80rem;
   overflow-y: auto;
+  background-color: inherit;
 }
 
 .menu.right > .modal {
