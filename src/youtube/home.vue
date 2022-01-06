@@ -19,9 +19,9 @@
               img.small.circle(:src="item.image")
             .col.truncate
               .bold {{ item.title }}
-              .grey-text 10k views
+              div 10k views
             .col.min
-              button.none.grey-text(:data-ui="'#dropdown-' + i")
+              button.none(:data-ui="'#dropdown-' + i")
                 i more_vert
                 .dropdown.left.no-wrap(
                   :id="'dropdown-' + i",
@@ -43,9 +43,9 @@
             .row.no-wrap.middle-align
               .col.truncate
                 .bold {{ item.title }}
-                .grey-text 10k views
+                div 10k views
               .col.min
-                a.grey-text
+                a
                   i thumb_up
 
     .large-divider
@@ -60,9 +60,9 @@
             .row.no-wrap.middle-align
               .col.truncate
                 .bold {{ item.title }}
-                .grey-text 10k views
+                div 10k views
               .col.min
-                a.grey-text
+                a
                   i thumb_up
 </template>
 

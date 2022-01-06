@@ -12,9 +12,9 @@
                 .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
             .col.s12.m8
               h5.no-margin {{ item.title }}
-              .grey-text 10k views
+              div 10k views
               .space
-              .grey-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              div Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 </template>
 
 <script>

@@ -21,11 +21,14 @@ div
     a(href="/youtube/library", :class="{ active: url == '/youtube/library' }")
       i video_library
       div Library
-    a(@click="updateTheme()")
+    a(data-ui="#themes1")
       i brightness_medium
-      div Theme
+      div Themes
+    themes(id="themes1", v-model="$data")
+      .large-space
+      .medium-space
 
-  .menu.bottom.border.s
+  .menu.bottom.s
     a(href="/youtube", :class="{ active: url == '/youtube' }")
       i home
       div Home
@@ -37,36 +40,39 @@ div
     a(href="/youtube/library", :class="{ active: url == '/youtube/library' }")
       i video_library
       div Library
-    a(@click="updateTheme()")
+    a(data-ui="#themes2")
       i brightness_medium
-      div Theme
+      div Themes
+    themes(id="themes2", v-model="$data")
+      .large-space
+      .medium-space
 
-  .menu.top.border
+  .menu.top
     .row.no-wrap.middle-align
       .col
         nav.padding
           button.none.m.l(data-ui="#modal-expanded")
-            i.grey-text menu
+            i menu
           a
             img(
-              v-show="theme == 'is-youtube-light'",
+              v-show="!isDarkTheme",
               :src="'/youtube-light.png'"
             )
             img(
-              v-show="theme == 'is-youtube-dark'",
+              v-show="isDarkTheme",
               :src="'/youtube-dark.png'"
             )
       .col
         .field.round.suffix.prefix.small.no-margin.m.l
-          i.front search
+          i.front.black-text search
           input.white.black-text(type="text")
-          i.front mic
+          i.front.black-text mic
       .col
         nav.right-align
           button.none.s(data-ui="#modal-search")
-            i.grey-text search
+            i search
           button.none.m.l(data-ui="#dropdown-add")
-            i.grey-text video_call
+            i video_call
             #dropdown-add.dropdown.left.no-wrap(data-ui="#dropdown-add")
               a.row.no-wrap
                 .col.min
@@ -77,7 +83,7 @@ div
                   i sensors
                 .col Broadcast live
           button.none.m.l(data-ui="#dropdown-apps")
-            i.grey-text apps
+            i apps
             #dropdown-apps.dropdown.left.no-wrap(data-ui="#dropdown-apps")
               a.row.no-wrap
                 .col.min
@@ -93,7 +99,7 @@ div
                   img(:src="'/youtube.png'")
                 .col Youtube Kids
           button.none(data-ui="#modal-notifications")
-            i.grey-text notifications
+            i notifications
           a(href="/")
             img.circle(:src="'/favicon.png'")
 
@@ -111,8 +117,8 @@ div
       a(data-ui="#modal-expanded")
         i menu
       a
-        img(v-show="theme == 'is-youtube-light'", :src="'/youtube-light.png'")
-        img(v-show="theme == 'is-youtube-dark'", :src="'/youtube-dark.png'")
+        img(v-show="!isDarkTheme", :src="'/youtube-light.png'")
+        img(v-show="isDarkTheme", :src="'/youtube-dark.png'")
     .medium-space
     a.row.no-wrap(data-ui="#modal-expanded", href="/youtube")
       .col.min
@@ -130,10 +136,10 @@ div
       .col.min
         i video_library
       .col Library
-    a.row.no-wrap(@click="updateTheme()")
+    a.row.no-wrap(data-ui="#themes")
       .col.min
         i brightness_medium
-      .col Theme
+      .col Themes
     .large-divider
     a.row.no-wrap(data-ui="#modal-expanded")
       .col.min
@@ -172,24 +178,27 @@ div
 
   #modal-search.modal.top.transparent.flat
     .field.round.suffix.prefix.small.no-margin
-      i.front search
+      i.front.black-text search
       input.white.black-text(type="text")
-      i.front mic
+      i.front.black-text mic
 
   #layout
 </template>
 
 <script>
+import themes from "/shared/themes.vue";
+
 export default {
+  components: {
+    themes
+  },
   data() {
     return {
       url: "/youtube",
-      theme: null,
-      logo: null,
+      isDarkTheme: false
     };
   },
   mounted() {
-    this.updateTheme();
     ui();
 
     window.addEventListener("redirected", (event) => {
@@ -198,76 +207,18 @@ export default {
   },
   methods: {
     updateTheme() {
-      if (this.theme == "is-youtube-light") {
-        this.theme = "is-youtube-dark";
-        this.logo = "/youtube-dark.png";
-      } else {
-        this.theme = "is-youtube-light";
-        this.logo = "/youtube-light.png";
-      }
+      let theme = document.querySelector("html").className;
+      this.isDarkTheme = /dark/i.test(theme);
 
-      document.querySelector("html").className = this.theme;
+      theme = this.isDarkTheme
+        ? theme.replace("dark", "light")
+        : theme.replace("light", "dark");
+
+      document.querySelector("html").className = theme;
     },
   },
 };
 </script>
 
 <style>
-.is-youtube-light {
-  --background: #f5f5f5;
-  --foreground: #ffffff;
-  --text-1: #000000;
-  --text-2: #9e9e9e;
-  --border: rgba(0,0,0,.2);
-  --active: rgba(0,0,0,.1);
-  --fill: rgba(0,0,0,.05);
-  --success: #f44336;
-  --success-text: #ffffff;
-  --warning: #e91e63;
-  --warning-text: #ffffff;
-  --chip: rgba(0,0,0,.07);
-  --chip-text: #000000;
-  --overlay: rgba(0,0,0,.5);
-  --overlay-text: #ffffff;
-  --tooltip: rgba(0,0,0,.9);
-  --tooltip-text: #ffffff;
-  --shadow-1: 0 2rem 2rem 0 rgba(0, 0, 0, .14), 0 1rem 5rem 0 rgba(0, 0, 0, .12), 0 3rem 1rem -2rem rgba(0, 0, 0, .2);
-  --shadow-2: 0 6rem 10rem 0 rgba(0, 0, 0, .14), 0 1rem 18rem 0 rgba(0, 0, 0, .12), 0 3rem 5rem -1rem rgba(0, 0, 0, .3);
-  --shadow-3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);
-  --size: 1px;
-  --font: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  --speed-1: .1s;
-  --speed-2: .2s;
-  --speed-3: .3s;
-  --speed-4: .4s;
-}
-
-.is-youtube-dark {
-  --background: #212121;
-  --foreground: #263238;
-  --text-1: #ffffff;
-  --text-2: #9e9e9e;
-  --border: rgba(255,255,255,.2);
-  --active: rgba(255,255,255,.1);
-  --fill: rgba(0,0,0,.1);
-  --success: #ef5350;
-  --success-text: #ffffff;
-  --warning: #ff9800;
-  --warning-text: #ffffff;
-  --chip: rgba(255,255,255,.07);
-  --chip-text: #ffffff;
-  --overlay: rgba(0,0,0,.5);
-  --overlay-text: #000000;
-  --tooltip: rgba(0,0,0,.9);
-  --tooltip-text: #ffffff;
-  --shadow-1: 0 2rem 2rem 0 rgba(0, 0, 0, .14), 0 1rem 5rem 0 rgba(0, 0, 0, .12), 0 3rem 1rem -2rem rgba(0, 0, 0, .2);
-  --shadow-2: 0 6rem 10rem 0 rgba(0, 0, 0, .14), 0 1rem 18rem 0 rgba(0, 0, 0, .12), 0 3rem 5rem -1rem rgba(0, 0, 0, .3);
-  --shadow-3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);
-  --size: 1px;
-  --font: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  --speed-1: .1s;
-  --speed-2: .2s;
-  --speed-3: .3s;
-  --speed-4: .4s;
-}
 </style>
