@@ -177,15 +177,15 @@ button.diamond:not(.flat, .border) {
   box-shadow: var(--shadow-2);
 }
 
-.button:disabled,
+.button[disabled],
 button:disabled {
   opacity: .5;
   pointer-events: none;
 }
 
-.button:disabled:before,
+.button[disabled]:before,
 button:disabled:before,
-.button:disabled:after,
+.button[disabled]:after,
 button:disabled:after {
   display: none;
 }

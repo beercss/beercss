@@ -38,20 +38,16 @@ div
         img.logo-template(:src="'/youtube-dark.png'")
       a.wrap.padding(href="/youtube", v-show="!isDarkTheme")
         img.logo-template(:src="'/youtube-light.png'")
-      .divider
       a.wrap.padding(href="/netflix")
         img.logo-template(:src="'/netflix.png'")
-      .divider
       a.wrap.padding(href="/gmail", v-show="isDarkTheme")
         img.logo-template(:src="'/gmail-dark.png'")
       a.wrap.padding(href="/gmail", v-show="!isDarkTheme")
         img.logo-template(:src="'/gmail-light.png'")
-      .divider
       a.wrap.padding(href="/uber", v-show="isDarkTheme")
         img.logo-template(:src="'/uber-dark.png'")
       a.wrap.padding(href="/uber", v-show="!isDarkTheme")
         img.logo-template(:src="'/uber-light.png'")
-      .divider
       a.wrap.padding(href="https://codepen.io/search/pens?q=beercss" target="_self")
         img.logo-codepen(:src="'/codepen.png'")
     themes(id="themes1", v-model="$data")
