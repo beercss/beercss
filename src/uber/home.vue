@@ -28,12 +28,7 @@ div
     .large-padding
       .field.prefix.fill.flat.border
         i.black-text search
-        input.white(:placeholder="from ? 'Destination' : 'Departure'")
-      nav
-        a.chip
-          i watch_later
-          span.large-text.small-padding Agora
-          i arrow_drop_down
+        input.white(:placeholder="from ? 'Destination' : 'Departure'", @click="go()")
       .medium-space
       a.row.no-wrap(@click="go()")
         .col.min
@@ -67,7 +62,7 @@ div
       .space
       .field.prefix.fill.flat.border
         i.black-text search
-        input.white(:placeholder="from ? 'Destination' : 'Departure'")
+        input.white(:placeholder="from ? 'Destination' : 'Departure'", @click="go()")
       .space
       a.row.no-wrap(@click="go()")
         .col.min
@@ -76,14 +71,6 @@ div
         .col
           h6.no-margin {{ street }}
           .link Your current location
-      .divider
-      a.row.no-wrap(@click="go()")
-        .col.min
-          button.circle.small.flat.no-wave
-            i home
-        .col
-          h6.no-margin Home
-          div {{ street }}
 </template>
 
 <script>
