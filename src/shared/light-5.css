@@ -1,0 +1,30 @@
+.is-light-5 {
+  --primary: #476810;
+  --on-primary: #ffffff;
+  --primary-container: #476810;
+  --on-primary-container: #102000;
+  --secondary: #586249;
+  --on-secondary: #ffffff;
+  --secondary-container: #586249;
+  --on-secondary-container: #161e0a;
+  --tertiary: #396662;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #396662;
+  --on-tertiary-container: #00201e;
+  --error: #ba1b1b;
+  --on-error: #ffffff;
+  --error-container: #ba1b1b;
+  --on-error-container: #410001;
+  --background: #fdfcf4;
+  --on-background: #1b1c18;
+  --surface: #fdfcf4;
+  --on-surface: #1b1c18;
+  --outline: #75786c;
+  --surface-variant: #e1e4d5;
+  --on-surface-variant: #44483d;
+  --inverse-surface: #30312c;
+  --inverse-on-surface: #f2f1e9;
+
+  --overlay: rgba(0,0,0,.5);
+  --active: rgba(0,0,0,.1);
+}

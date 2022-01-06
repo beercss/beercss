@@ -141,8 +141,14 @@ input[type="file"] {
 
 .field.fill > input,
 .field.fill > textarea {
-  background-color: var(--primary-container);
+  background-color: var(--surface-variant);
+  color: var(--on-surface-variant);
   padding: 4rem 8rem;
+}
+
+.field.fill > i,
+.field.fill > img {
+  color: var(--on-surface-variant);
 }
 
 .field.round > input,
@@ -212,7 +218,7 @@ input[type="file"] {
 
 .field.invalid > input,
 .field.invalid > textarea {
-  border-bottom: 2rem solid  var(--error);
+  border-bottom: 2rem solid var(--error);
 }
 
 .field.invalid.border > input,
@@ -221,7 +227,7 @@ input[type="file"] {
 .field.invalid.border > textarea,
 .field.invalid.border.round > textarea,
 .field.invalid.border.round.fill > textarea {
-  border: 2rem solid  var(--error);
+  border: 2rem solid var(--error);
 }
 
 .field.invalid.round > input,
@@ -343,7 +349,8 @@ input[type="file"] {
 }
 
 .field.fill > select {
-  background-color: var(--primary-container);
+  background-color: var(--surface-variant);
+  color: var(--on-surface-variant);
   padding: 4rem 8rem 4rem 8rem;
 }
 
@@ -385,13 +392,13 @@ input[type="file"] {
 }
 
 .field.invalid > select {
-  border-bottom: 2rem solid  var(--error);
+  border-bottom: 2rem solid var(--error);
 }
 
 .field.invalid.border > select,
 .field.invalid.border.round > select,
 .field.invalid.border.round.fill > select {
-  border: 2rem solid  var(--error);
+  border: 2rem solid var(--error);
 }
 
 .field.invalid.round > select {
@@ -418,7 +425,7 @@ a.helper {
 }
 
 .field > .error {
-  color:  var(--error)!important;
+  color: var(--error)!important;
 }
 
 .field.round > .helper,

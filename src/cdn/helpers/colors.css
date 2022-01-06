@@ -953,7 +953,7 @@
 
 .primary-container {
   background-color: var(--primary-container)!important;
-  color: var(--on-primary-container)!important;
+  color: var(--on-tertiary)!important;
 }
 
 .secondary {
@@ -963,7 +963,7 @@
 
 .secondary-container {
   background-color: var(--secondary-container)!important;
-  color: var(--on-secondary-container)!important;
+  color: var(--on-tertiary)!important;
 }
 
 .tertiary {
@@ -973,7 +973,7 @@
 
 .tertiary-container {
   background-color: var(--tertiary-container)!important;
-  color: var(--on-tertiary-container)!important;
+  color: var(--on-tertiary)!important;
 }
 
 .error {

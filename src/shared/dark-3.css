@@ -1,0 +1,30 @@
+.is-dark-3 {
+  --primary: #ffb683;
+  --on-primary: #512400;
+  --primary-container: #ffb683;
+  --on-primary-container: #ffdbc4;
+  --secondary: #e5bfa8;
+  --on-secondary: #422b1b;
+  --secondary-container: #e5bfa8;
+  --on-secondary-container: #ffdbc4;
+  --tertiary: #c9ca93;
+  --on-tertiary: #31320a;
+  --tertiary-container: #c9ca93;
+  --on-tertiary-container: #e6e6ae;
+  --error: #ffb4a9;
+  --on-error: #680003;
+  --error-container: #ffb4a9;
+  --on-error-container: #ffdad4;
+  --background: #201a17;
+  --on-background: #ece0db;
+  --surface: #201a17;
+  --on-surface: #ece0db;
+  --outline: #9f8d83;
+  --surface-variant: #52443b;
+  --on-surface-variant: #d7c3b7;
+  --inverse-surface: #ece0db;
+  --inverse-on-surface: #201a17;
+
+  --overlay: rgba(0,0,0,.5);
+  --active: rgba(255,255,255,.2);
+}

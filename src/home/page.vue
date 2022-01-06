@@ -20,9 +20,9 @@ div
     a(@click="updateIcons()")
       i image
       div Icons
-    a(@click="updateTheme()")
+    a(data-ui="#themes1")
       i brightness_medium
-      div Theme
+      div Themes
     a(data-ui="#more1")
       i collections
       div Templates
@@ -34,26 +34,28 @@ div
       h5 Templates
       p This templates are only for tests purpose
       .space
-      a.wrap.padding(href="/youtube", v-show="theme == 'is-dark'")
+      a.wrap.padding(href="/youtube", v-show="isDarkTheme")
         img.logo-template(:src="'/youtube-dark.png'")
-      a.wrap.padding(href="/youtube", v-show="theme != 'is-dark'")
+      a.wrap.padding(href="/youtube", v-show="!isDarkTheme")
         img.logo-template(:src="'/youtube-light.png'")
       .divider
       a.wrap.padding(href="/netflix")
         img.logo-template(:src="'/netflix.png'")
       .divider
-      a.wrap.padding(href="/gmail", v-show="theme == 'is-dark'")
+      a.wrap.padding(href="/gmail", v-show="isDarkTheme")
         img.logo-template(:src="'/gmail-dark.png'")
-      a.wrap.padding(href="/gmail", v-show="theme != 'is-dark'")
+      a.wrap.padding(href="/gmail", v-show="!isDarkTheme")
         img.logo-template(:src="'/gmail-light.png'")
       .divider
-      a.wrap.padding(href="/uber", v-show="theme == 'is-dark'")
+      a.wrap.padding(href="/uber", v-show="isDarkTheme")
         img.logo-template(:src="'/uber-dark.png'")
-      a.wrap.padding(href="/uber", v-show="theme != 'is-dark'")
+      a.wrap.padding(href="/uber", v-show="!isDarkTheme")
         img.logo-template(:src="'/uber-light.png'")
       .divider
       a.wrap.padding(href="https://codepen.io/search/pens?q=beercss" target="_self")
         img.logo-codepen(:src="'/codepen.png'")
+    themes(id="themes1", v-model="$data")
+
   .menu.bottom.s
     a(@click="updateMenu('.menu.s')")
       i visibility_off
@@ -61,9 +63,9 @@ div
     a(@click="updateIcons()")
       i image
       div Icons
-    a(@click="updateTheme()")
+    a
       i brightness_medium
-      div Theme
+      div Themes
     a(data-ui="#more2")
       i collections
       div Templates
@@ -77,26 +79,27 @@ div
       .large-divider
       .row
         .col.s6.middle-align.padding
-          a(href="/youtube", v-show="theme == 'is-dark'")
+          a(href="/youtube", v-show="isDarkTheme")
             img.logo-template(:src="'/youtube-dark.png'")
-          a(href="/youtube", v-show="theme != 'is-dark'")
+          a(href="/youtube", v-show="!isDarkTheme")
             img.logo-template(:src="'/youtube-light.png'")
         .col.s6.middle-align.padding
           a(href="/netflix")
             img.logo-template(:src="'/netflix.png'")
         .col.s6.middle-align.padding
-          a(href="/gmail", v-show="theme == 'is-dark'")
+          a(href="/gmail", v-show="isDarkTheme")
             img.logo-template(:src="'/gmail-dark.png'")
-          a(href="/gmail", v-show="theme != 'is-dark'")
+          a(href="/gmail", v-show="!isDarkTheme")
             img.logo-template(:src="'/gmail-light.png'")
         .col.s6.middle-align.padding
-          a(href="/uber", v-show="theme == 'is-dark'")
+          a(href="/uber", v-show="isDarkTheme")
             img.logo-template(:src="'/uber-dark.png'")
-          a(href="/uber", v-show="theme != 'is-dark'")
+          a(href="/uber", v-show="!isDarkTheme")
             img.logo-template(:src="'/uber-light.png'")
         .col.s6.middle-align.padding
           a(href="https://codepen.io/search/pens?q=beercss" target="_self")
             img.logo-codepen(:src="'/codepen.png'")
+    themes(id="themes2", v-model="$data")
 
   .center-align.padding.yellow-light-2
     div.black-text
@@ -1616,7 +1619,7 @@ div
                       td
                         a.button.none 16
                       td
-                        a.button.circle.medium.no-margin.absolute.middle.center 17
+                        a.button.circle.medium.no-margin.absolute.middle.center.flat 17
                       td
                         a.button.none 18
                       td
@@ -2243,6 +2246,9 @@ div
             label.radio
               input#orange-progress(type="radio", name="color-progress")
               span orange
+          .space
+          .small-space.primary-container.border
+            .progress.left
           .space
           .small-space.secondary-container.border
             .progress.left
@@ -3741,7 +3747,7 @@ div
                   td
                     button.none 16
                   td
-                    button.circle.medium.no-margin.absolute.middle.center 17
+                    button.circle.medium.no-margin.absolute.middle.center.flat 17
                   td
                     button.none 18
                   td
@@ -3803,10 +3809,12 @@ div
 
 <script>
 import selectionForButtons from "./selectionForButtons.vue";
+import themes from "/shared/themes.vue";
 
 export default {
   components: {
-    selectionForButtons
+    selectionForButtons,
+    themes
   },
   data() {
     return {
@@ -3818,13 +3826,12 @@ export default {
       extraSample: null,
       textSample: null,
       modalSample: null,
-      theme: true,
       mediaCard: 1,
       mediaImage: 1,
       layout: 0,
+      isDarkTheme: false
     };
   },
-  watch: {},
   mounted() {
     this.htmlSample = hljs.highlight(
       "html",
@@ -3869,18 +3876,6 @@ export default {
   methods: {
     resetTheme() {
       $("html")[0].className = "";
-    },
-    updateTheme() {
-      let element = $("html")[0];
-      let css = element.className;
-
-      if (css.indexOf("is-dark") === -1) {
-        element.className = "is-dark";
-        this.theme = "is-dark";
-      } else {
-        element.className = "";
-        this.theme = "";
-      }
     },
     goTo(selector) {
       setTimeout(() => {
@@ -4349,11 +4344,6 @@ pre {
   overflow: auto;
   padding: 8rem;
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.is-dark pre {
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 pre * {
@@ -4361,11 +4351,11 @@ pre * {
 }
 
 .hljs-string {
-  color: #e91e63 !important;
+  color: var(--error) !important;
 }
 
 .is-dark .hljs-string {
-  color: #ff9800 !important;
+  color: var(--error) !important;
 }
 
 #rows .row {

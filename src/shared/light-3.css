@@ -1,0 +1,30 @@
+.is-light-3 {
+  --primary: #944a02;
+  --on-primary: #ffffff;
+  --primary-container: #944a02;
+  --on-primary-container: #301400;
+  --secondary: #755845;
+  --on-secondary: #ffffff;
+  --secondary-container: #755845;
+  --on-secondary-container: #2b1708;
+  --tertiary: #5f6135;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #5f6135;
+  --on-tertiary-container: #1b1d00;
+  --error: #ba1b1b;
+  --on-error: #ffffff;
+  --error-container: #ba1b1b;
+  --on-error-container: #410001;
+  --background: #fcfcfc;
+  --on-background: #201a17;
+  --surface: #fcfcfc;
+  --on-surface: #201a17;
+  --outline: #85746a;
+  --surface-variant: #f4dfd3;
+  --on-surface-variant: #52443b;
+  --inverse-surface: #362f2b;
+  --inverse-on-surface: #faeee8;
+
+  --overlay: rgba(0,0,0,.5);
+  --active: rgba(0,0,0,.1);
+}

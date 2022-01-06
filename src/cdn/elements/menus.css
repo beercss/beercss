@@ -186,7 +186,8 @@
 .menu > a:not(button, .button, .chip):hover > i,
 .menu > a:not(button, .button, .chip):focus > i,
 .menu > a:not(button, .button, .chip).active > i {
-  background-color: var(--active);
+  background-color: var(--primary);
+  color: var(--on-primary);
   padding: 4rem 16rem;
 }
 

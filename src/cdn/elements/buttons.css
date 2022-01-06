@@ -175,8 +175,6 @@ button.square:not(.flat, .border),
 button.circle:not(.flat, .border),
 button.diamond:not(.flat, .border) {
   box-shadow: var(--shadow-2);
-  background-color: var(--primary-container);
-  color: var(--on-primary-container);
 }
 
 .button:disabled,
