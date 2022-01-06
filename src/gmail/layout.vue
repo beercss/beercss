@@ -243,6 +243,7 @@ export default {
     };
   },
   mounted() {
+    this.isDarkTheme = /dark/.test(document.querySelector("html").className);
     ui();
 
     window.addEventListener("redirected", (event) => {
