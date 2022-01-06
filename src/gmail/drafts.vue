@@ -2,7 +2,7 @@
 .page.right.active
   .row.no-wrap.m.l
     .col
-      nav.grey-text
+      nav
         label.checkbox
           input(type="checkbox", v-model="check")
           span
@@ -11,7 +11,7 @@
         a
           i more_vert
     .col
-      nav.grey-text.right-align
+      nav.right-align
         label from 1 to {{ emails.length }}
         a
           i arrow_back
@@ -20,7 +20,7 @@
   .space.m.l
   a.row.no-wrap.middle-align.divider(v-for="email in emails")
     .col.min
-      nav.grey-text
+      nav
         label.checkbox.m.l
           input(type="checkbox", v-model="email.check")
           span
