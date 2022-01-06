@@ -48,8 +48,10 @@ div
         img.logo-template(:src="'/uber-dark.png'")
       a.wrap.padding(href="/uber", v-show="!isDarkTheme")
         img.logo-template(:src="'/uber-light.png'")
-      a.wrap.padding(href="https://codepen.io/search/pens?q=beercss" target="_self")
-        img.logo-codepen(:src="'/codepen.png'")
+      a.wrap.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="isDarkTheme")
+        img.logo-codepen(:src="'/codepen-dark.png'")
+      a.wrap.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!isDarkTheme")
+        img.logo-codepen(:src="'/codepen-light.png'")
     themes(id="themes1", v-model="$data")
 
   .menu.bottom.s
@@ -72,7 +74,7 @@ div
     #more2.modal.bottom.medium(data-ui="#more2")
       h5 Templates
       p This templates are only for tests purpose
-      .large-divider
+      .space
       .row
         .col.s6.middle-align.padding
           a(href="/youtube", v-show="isDarkTheme")
@@ -93,8 +95,10 @@ div
           a(href="/uber", v-show="!isDarkTheme")
             img.logo-template(:src="'/uber-light.png'")
         .col.s6.middle-align.padding
-          a(href="https://codepen.io/search/pens?q=beercss" target="_self")
-            img.logo-codepen(:src="'/codepen.png'")
+          a(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="isDarkTheme")
+            img.logo-codepen(:src="'/codepen-dark.png'")
+          a(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!isDarkTheme")
+            img.logo-codepen(:src="'/codepen-light.png'")
     themes(id="themes2", v-model="$data")
 
   .center-align.padding.yellow-light-2
