@@ -1,5 +1,5 @@
 <template lang="pug">
-.modal.left(:id="id")
+.modal.left.surface-variant(:id="id")
   slot
   h5 Light
   nav.wrap

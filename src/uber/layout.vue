@@ -1,5 +1,7 @@
 <template lang="pug">
 div
+  #layout
+
   .menu.top.black
     .row.no-wrap.middle-align
       .col
@@ -46,31 +48,28 @@ div
               a Uber Freight
       .col
         nav.right-align
-          button.wave.light.none.white-text(@click="updateTheme()")
+          button.wave.light.none.white-text(data-ui="#themes")
             i.white-text brightness_medium
           a(href="/")
             img.circle(:src="'/favicon.png'")
-
-  #layout
+    themes(v-model="$data")
 </template>
 
 <script>
+import themes from "../shared/themes.vue";
+
 export default {
+  components: {
+    themes
+  },
   data() {
     return {
-      theme: "is-dark",
+      isDarkTheme: false,
     };
   },
   mounted() {
-    this.updateTheme();
     ui();
-  },
-  methods: {
-    updateTheme() {
-      this.theme = this.theme != "is-light" ? "is-light" : "is-dark";
-      document.querySelector("html").className = this.theme;
-    },
-  },
+  }
 };
 </script>
 

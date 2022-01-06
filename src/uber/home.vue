@@ -10,7 +10,7 @@ div
       i remove
   .large-space
   .card.no-padding.large-margin.medium-width.m.l.page.left.active.medium-shadow
-    .large-padding.blue.white-text
+    .large-padding.black.white-text
       p.bold From {{ from }}
       p.bold To {{ to }}
       h5.page.left.active(v-show="!from && !to") Where are you?
@@ -27,8 +27,8 @@ div
           span Confirm
     .large-padding
       .field.prefix.fill.flat.border
-        i search
-        input(:placeholder="from ? 'Destination' : 'Departure'")
+        i.black-text search
+        input.white(:placeholder="from ? 'Destination' : 'Departure'")
       nav
         a.chip
           i watch_later
@@ -50,35 +50,40 @@ div
         .col
           h6.no-margin Home
           div {{ street }}
-  .modal.round.bottom.active.s
-    p.bold(v-show="from") From {{ from }}
-    p.bold(v-show="to") To {{ to }}
-    nav.right-align(v-show="from || to")
-      button.none.large.wave.dark(@click="clean()")
-        span Cancel
-      button.border.large(v-show="to", @click="clean()")
-        i time_to_leave
-        span Confirm
-    .space
-    .field.prefix.fill.flat.border
-      i search
-      input(:placeholder="from ? 'Destination' : 'Departure'")
-    .space
-    a.row.no-wrap(@click="go()")
-      .col.min
-        button.circle.small.flat.no-wave
-          i gps_fixed
-      .col
-        h6.no-margin {{ street }}
-        .link Your current location
-    .divider
-    a.row.no-wrap(@click="go()")
-      .col.min
-        button.circle.small.flat.no-wave
-          i home
-      .col
-        h6.no-margin Home
-        div {{ street }}
+  .modal.bottom.active.s.no-padding
+    .padding.black.white-text
+      p.bold(v-show="from") From {{ from }}
+      p.bold(v-show="to") To {{ to }}
+      h5.page.left.active(v-show="!from && !to") Where are you?
+      h5.page.left.active(v-show="from && !to") Where are you going?
+      h5.page.left.active(v-show="from && to") Confirm that ride?
+      nav.right-align(v-show="from || to")
+        button.none.white-text.large(@click="clean()")
+          span Cancel
+        button.border.large.white-text.white-border(v-show="to", @click="clean()")
+          i time_to_leave
+          span Confirm
+    .padding
+      .space
+      .field.prefix.fill.flat.border
+        i.black-text search
+        input.white(:placeholder="from ? 'Destination' : 'Departure'")
+      .space
+      a.row.no-wrap(@click="go()")
+        .col.min
+          button.circle.small.flat.no-wave
+            i gps_fixed
+        .col
+          h6.no-margin {{ street }}
+          .link Your current location
+      .divider
+      a.row.no-wrap(@click="go()")
+        .col.min
+          button.circle.small.flat.no-wave
+            i home
+        .col
+          h6.no-margin Home
+          div {{ street }}
 </template>
 
 <script>
