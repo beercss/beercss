@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+.grey-dark-4.white-text
   .menu.top.top-shadow
     .row.no-wrap.middle-align
       .col
@@ -80,48 +80,10 @@ div
 <script>
 export default {
   mounted() {
-    this.updateTheme();
     ui();
-  },
-  methods: {
-    updateTheme() {
-      document.querySelector("html").className = "is-netflix";
-    },
-    scroll(selector) {
-      let element = document.querySelector(selector);
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    },
   },
 };
 </script>
 
 <style>
-.is-netflix {
-  --background: #212121;
-  --foreground: #37474f;
-  --text-1: #ffffff;
-  --text-2: #9e9e9e;
-  --border: rgba(255,255,255,.2);
-  --active: rgba(255,255,255,.1);
-  --fill: rgba(0,0,0,.1);
-  --success: #ef5350;
-  --success-text: #ffffff;
-  --warning: #ff9800;
-  --warning-text: #ffffff;
-  --chip: rgba(255,255,255,.07);
-  --chip-text: #ffffff;
-  --overlay: rgba(0,0,0,.5);
-  --overlay-text: #000000;
-  --tooltip: rgba(0,0,0,.9);
-  --tooltip-text: #ffffff;
-  --shadow-1: 0 2rem 2rem 0 rgba(0, 0, 0, .14), 0 1rem 5rem 0 rgba(0, 0, 0, .12), 0 3rem 1rem -2rem rgba(0, 0, 0, .2);
-  --shadow-2: 0 6rem 10rem 0 rgba(0, 0, 0, .14), 0 1rem 18rem 0 rgba(0, 0, 0, .12), 0 3rem 5rem -1rem rgba(0, 0, 0, .3);
-  --shadow-3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);
-  --size: 1px;
-  --font: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  --speed-1: .1s;
-  --speed-2: .2s;
-  --speed-3: .3s;
-  --speed-4: .4s;
-}
 </style>
