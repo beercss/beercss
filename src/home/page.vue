@@ -63,7 +63,7 @@ div
     a(@click="updateIcons()")
       i image
       div Icons
-    a
+    a(data-ui="#themes2")
       i brightness_medium
       div Themes
     a(data-ui="#more2")
