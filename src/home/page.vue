@@ -3833,6 +3833,7 @@ export default {
     };
   },
   mounted() {
+    this.isDarkTheme = /dark/.test(document.body.getAttribute("style"));
     this.htmlSample = hljs.highlight(
       "html",
       '<div class="modal active">...</div>\n<div class="dropdown active">...</div>\n<div class="overlay active">...</div>\n<div class="page active">...</div>\n<div class="toast active">...</div>'
