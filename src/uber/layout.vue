@@ -68,7 +68,7 @@ export default {
     };
   },
   mounted() {
-    this.isDarkTheme = /dark/.test(document.querySelector("html").className);
+    this.isDarkTheme = /dark/.test(document.body.getAttribute("style"));
     ui();
   }
 };
