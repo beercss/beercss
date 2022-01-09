@@ -18,7 +18,7 @@
 .overlay.active {
   opacity: 1;
   visibility: visible;
-  animation: var(--speed-3) overlay-to-active;
+  animation: var(--speed3) overlay-to-active;
 }
 
 .overlay.active.top-align,

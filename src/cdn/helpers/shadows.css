@@ -32,13 +32,13 @@
 }
 
 .small-shadow {
-  box-shadow: var(--shadow-1) !important;
+  box-shadow: var(--shadow1) !important;
 }
 
 .medium-shadow {
-  box-shadow: var(--shadow-2) !important;
+  box-shadow: var(--shadow2) !important;
 }
 
 .large-shadow {
-  box-shadow: var(--shadow-3) !important;
+  box-shadow: var(--shadow3) !important;
 }

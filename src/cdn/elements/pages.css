@@ -12,19 +12,19 @@
 }
 
 .page.top.active {
-  animation: var(--speed-4) page-to-bottom ease;
+  animation: var(--speed4) page-to-bottom ease;
 }
 
 .page.bottom.active  {
-  animation: var(--speed-4) page-to-top ease;
+  animation: var(--speed4) page-to-top ease;
 }
 
 .page.left.active {
-  animation: var(--speed-4) page-to-right ease;
+  animation: var(--speed4) page-to-right ease;
 }
 
 .page.right.active {
-  animation: var(--speed-4) page-to-left ease;
+  animation: var(--speed4) page-to-left ease;
 }
 
 @keyframes page-to-bottom {

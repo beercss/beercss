@@ -14,7 +14,7 @@
   margin: 0 8rem;
   text-transform: none;
   border-radius: 8rem;
-  transition: var(--speed-3) transform, var(--speed-3) border-radius, var(--speed-3) padding;
+  transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
 }
 
 .chip > :not(.dropdown, .progress, .badge, .tooltip) + :not(.dropdown, .progress, .badge, .tooltip) {

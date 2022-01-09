@@ -101,7 +101,7 @@ div
             img.logo-codepen(:src="'/codepen-light.png'")
     themes(id="themes2", v-model="$data")
 
-  .center-align.padding.yellow-light-2
+  .center-align.padding.yellow4
     div.black-text
       .large-height.no-scroll.middle-align
         img#logo(:src="'/logo.png'", @click="addHomeScreen()")
@@ -3382,271 +3382,271 @@ div
           a(data-ui="#modal-colors")
             h5.no-margin Back
         .space
-        .row
+        .row.black-text
           .col.s6
             h5 Red
-            .red-light-5 red-light-5
-            .red-light-4 red-light-4
-            .red-light-3 red-light-3
-            .red-light-2 red-light-2
-            .red-light-1 red-light-1
-            .red red
-            .red-dark-1 red-dark-1
-            .red-dark-2 red-dark-2
-            .red-dark-3 red-dark-3
-            .red-dark-4 red-dark-4
+            .red1 red1
+            .red2 red2
+            .red3 red3
+            .red4 red4
+            .red5 red5
+            .red red6 / red
+            .red7 red7
+            .red8 red8
+            .red9 red9
+            .red10 red10
             .red-border.border red-border
             .red-text red-text
           .col.s6
             h5 Pink
-            .pink-light-5 pink-light-5
-            .pink-light-4 pink-light-4
-            .pink-light-3 pink-light-3
-            .pink-light-2 pink-light-2
-            .pink-light-1 pink-light-1
-            .pink pink
-            .pink-dark-1 pink-dark-1
-            .pink-dark-2 pink-dark-2
-            .pink-dark-3 pink-dark-3
-            .pink-dark-4 pink-dark-4
+            .pink1 pink1
+            .pink2 pink2
+            .pink3 pink3
+            .pink4 pink4
+            .pink5 pink5
+            .pink pink6 / pink
+            .pink7 pink7
+            .pink8 pink8
+            .pink9 pink9
+            .pink10 pink10
             .pink-border.border pink-border
             .pink-text pink-text
           .col.s6
             h5 Purple
-            .purple-light-5 purple-light-5
-            .purple-light-4 purple-light-4
-            .purple-light-3 purple-light-3
-            .purple-light-2 purple-light-2
-            .purple-light-1 purple-light-1
-            .purple purple
-            .purple-dark-1 purple-dark-1
-            .purple-dark-2 purple-dark-2
-            .purple-dark-3 purple-dark-3
-            .purple-dark-4 purple-dark-4
+            .purple1 purple1
+            .purple2 purple2
+            .purple3 purple3
+            .purple4 purple4
+            .purple5 purple5
+            .purple purple6 / purple
+            .purple7 purple7
+            .purple8 purple8
+            .purple9 purple9
+            .purple10 purple10
             .purple-border.border purple-border
             .purple-text purple-text
           .col.s6
             h5 Deep-purple
-            .deep-purple-light-5 deep-purple-light-5
-            .deep-purple-light-4 deep-purple-light-4
-            .deep-purple-light-3 deep-purple-light-3
-            .deep-purple-light-2 deep-purple-light-2
-            .deep-purple-light-1 deep-purple-light-1
-            .deep-purple deep-purple
-            .deep-purple-dark-1 deep-purple-dark-1
-            .deep-purple-dark-2 deep-purple-dark-2
-            .deep-purple-dark-3 deep-purple-dark-3
-            .deep-purple-dark-4 deep-purple-dark-4
+            .deep-purple1 deep-purple1
+            .deep-purple2 deep-purple2
+            .deep-purple3 deep-purple3
+            .deep-purple4 deep-purple4
+            .deep-purple5 deep-purple5
+            .deep-purple deep-purple6 / deep-purple
+            .deep-purple7 deep-purple7
+            .deep-purple8 deep-purple8
+            .deep-purple9 deep-purple9
+            .deep-purple10 deep-purple10
             .deep-purple-border.border deep-purple-border
             .deep-purple-text deep-purple-text
           .col.s6
             h5 Indigo
-            .indigo-light-5 indigo-light-5
-            .indigo-light-4 indigo-light-4
-            .indigo-light-3 indigo-light-3
-            .indigo-light-2 indigo-light-2
-            .indigo-light-1 indigo-light-1
-            .indigo indigo
-            .indigo-dark-1 indigo-dark-1
-            .indigo-dark-2 indigo-dark-2
-            .indigo-dark-3 indigo-dark-3
-            .indigo-dark-4 indigo-dark-4
+            .indigo1 indigo1
+            .indigo2 indigo2
+            .indigo3 indigo3
+            .indigo4 indigo4
+            .indigo5 indigo5
+            .indigo indigo6 / indigo
+            .indigo7 indigo7
+            .indigo8 indigo8
+            .indigo9 indigo9
+            .indigo10 indigo10
             .indigo-border.border indigo-border
             .indigo-text indigo-text
           .col.s6
             h5 Blue
-            .blue-light-5 blue-light-5
-            .blue-light-4 blue-light-4
-            .blue-light-3 blue-light-3
-            .blue-light-2 blue-light-2
-            .blue-light-1 blue-light-1
-            .blue blue
-            .blue-dark-1 blue-dark-1
-            .blue-dark-2 blue-dark-2
-            .blue-dark-3 blue-dark-3
-            .blue-dark-4 blue-dark-4
+            .blue1 blue1
+            .blue2 blue2
+            .blue3 blue3
+            .blue4 blue4
+            .blue5 blue5
+            .blue blue6 / blue
+            .blue7 blue7
+            .blue8 blue8
+            .blue9 blue9
+            .blue10 blue10
             .blue-border.border blue-border
             .blue-text blue-text
           .col.s6
             h5 Light-blue
-            .light-blue-light-5 light-blue-light-5
-            .light-blue-light-4 light-blue-light-4
-            .light-blue-light-3 light-blue-light-3
-            .light-blue-light-2 light-blue-light-2
-            .light-blue-light-1 light-blue-light-1
-            .light-blue light-blue
-            .light-blue-dark-1 light-blue-dark-1
-            .light-blue-dark-2 light-blue-dark-2
-            .light-blue-dark-3 light-blue-dark-3
-            .light-blue-dark-4 light-blue-dark-4
+            .light-blue1 light-blue1
+            .light-blue2 light-blue2
+            .light-blue3 light-blue3
+            .light-blue4 light-blue4
+            .light-blue5 light-blue5
+            .light-blue light-blue6 / light-blue
+            .light-blue7 light-blue7
+            .light-blue8 light-blue8
+            .light-blue9 light-blue9
+            .light-blue10 light-blue10
             .light-blue-border.border light-blue-border
             .light-blue-text light-blue-text
           .col.s6
             h5 Cyan
-            .cyan-light-5 cyan-light-5
-            .cyan-light-4 cyan-light-4
-            .cyan-light-3 cyan-light-3
-            .cyan-light-2 cyan-light-2
-            .cyan-light-1 cyan-light-1
-            .cyan cyan
-            .cyan-dark-1 cyan-dark-1
-            .cyan-dark-2 cyan-dark-2
-            .cyan-dark-3 cyan-dark-3
-            .cyan-dark-4 cyan-dark-4
+            .cyan1 cyan1
+            .cyan2 cyan2
+            .cyan3 cyan3
+            .cyan4 cyan4
+            .cyan5 cyan5
+            .cyan cyan6 / cyan
+            .cyan7 cyan7
+            .cyan8 cyan8
+            .cyan9 cyan9
+            .cyan10 cyan10
             .cyan-border.border cyan-border
             .cyan-text cyan-text
           .col.s6
             h5 Teal
-            .teal-light-5 teal-light-5
-            .teal-light-4 teal-light-4
-            .teal-light-3 teal-light-3
-            .teal-light-2 teal-light-2
-            .teal-light-1 teal-light-1
-            .teal teal
-            .teal-dark-1 teal-dark-1
-            .teal-dark-2 teal-dark-2
-            .teal-dark-3 teal-dark-3
-            .teal-dark-4 teal-dark-4
+            .teal1 teal1
+            .teal2 teal2
+            .teal3 teal3
+            .teal4 teal4
+            .teal5 teal5
+            .teal teal6 / teal
+            .teal7 teal7
+            .teal8 teal8
+            .teal9 teal9
+            .teal10 teal10
             .teal-border.border teal-border
             .teal-text teal-text
           .col.s6
             h5 Green
-            .green-light-5 green-light-5
-            .green-light-4 green-light-4
-            .green-light-3 green-light-3
-            .green-light-2 green-light-2
-            .green-light-1 green-light-1
-            .green green
-            .green-dark-1 green-dark-1
-            .green-dark-2 green-dark-2
-            .green-dark-3 green-dark-3
-            .green-dark-4 green-dark-4
+            .green1 green1
+            .green2 green2
+            .green3 green3
+            .green4 green4
+            .green5 green5
+            .green green6 / green
+            .green7 green7
+            .green8 green8
+            .green9 green9
+            .green10 green10
             .green-border.border green-border
             .green-text green-text
           .col.s6
             h5 Light-green
-            .light-green-light-5 light-green-light-5
-            .light-green-light-4 light-green-light-4
-            .light-green-light-3 light-green-light-3
-            .light-green-light-2 light-green-light-2
-            .light-green-light-1 light-green-light-1
-            .light-green light-green
-            .light-green-dark-1 light-green-dark-1
-            .light-green-dark-2 light-green-dark-2
-            .light-green-dark-3 light-green-dark-3
-            .light-green-dark-4 light-green-dark-4
+            .light-green1 light-green1
+            .light-green2 light-green2
+            .light-green3 light-green3
+            .light-green4 light-green4
+            .light-green5 light-green5
+            .light-green light-green6 / light-green
+            .light-green7 light-green7
+            .light-green8 light-green8
+            .light-green9 light-green9
+            .light-green10 light-green10
             .light-green-border.border light-green-border
             .light-green-text light-green-text
           .col.s6
             h5 Lime
-            .lime-light-5 lime-light-5
-            .lime-light-4 lime-light-4
-            .lime-light-3 lime-light-3
-            .lime-light-2 lime-light-2
-            .lime-light-1 lime-light-1
-            .lime lime
-            .lime-dark-1 lime-dark-1
-            .lime-dark-2 lime-dark-2
-            .lime-dark-3 lime-dark-3
-            .lime-dark-4 lime-dark-4
+            .lime1 lime1
+            .lime2 lime2
+            .lime3 lime3
+            .lime4 lime4
+            .lime5 lime5
+            .lime lime6 / lime
+            .lime7 lime7
+            .lime8 lime8
+            .lime9 lime9
+            .lime10 lime10
             .lime-border.border lime-border
             .lime-text lime-text
           .col.s6
             h5 Yellow
-            .yellow-light-5 yellow-light-5
-            .yellow-light-4 yellow-light-4
-            .yellow-light-3 yellow-light-3
-            .yellow-light-2 yellow-light-2
-            .yellow-light-1 yellow-light-1
-            .yellow yellow
-            .yellow-dark-1 yellow-dark-1
-            .yellow-dark-2 yellow-dark-2
-            .yellow-dark-3 yellow-dark-3
-            .yellow-dark-4 yellow-dark-4
+            .yellow1 yellow1
+            .yellow2 yellow2
+            .yellow3 yellow3
+            .yellow4 yellow4
+            .yellow5 yellow5
+            .yellow yellow6 / yellow
+            .yellow7 yellow7
+            .yellow8 yellow8
+            .yellow9 yellow9
+            .yellow10 yellow10
             .yellow-border.border yellow-border
             .yellow-text yellow-text
           .col.s6
             h5 Amber
-            .amber-light-5 amber-light-5
-            .amber-light-4 amber-light-4
-            .amber-light-3 amber-light-3
-            .amber-light-2 amber-light-2
-            .amber-light-1 amber-light-1
-            .amber amber
-            .amber-dark-1 amber-dark-1
-            .amber-dark-2 amber-dark-2
-            .amber-dark-3 amber-dark-3
-            .amber-dark-4 amber-dark-4
+            .amber1 amber1
+            .amber2 amber2
+            .amber3 amber3
+            .amber4 amber4
+            .amber5 amber5
+            .amber amber6 / amber
+            .amber7 amber7
+            .amber8 amber8
+            .amber9 amber9
+            .amber10 amber10
             .amber-border.border amber-border
             .amber-text amber-text
           .col.s6
             h5 Orange
-            .orange-light-5 orange-light-5
-            .orange-light-4 orange-light-4
-            .orange-light-3 orange-light-3
-            .orange-light-2 orange-light-2
-            .orange-light-1 orange-light-1
-            .orange orange
-            .orange-dark-1 orange-dark-1
-            .orange-dark-2 orange-dark-2
-            .orange-dark-3 orange-dark-3
-            .orange-dark-4 orange-dark-4
+            .orange1 orange1
+            .orange2 orange2
+            .orange3 orange3
+            .orange4 orange4
+            .orange5 orange5
+            .orange orange6 / orange
+            .orange7 orange7
+            .orange8 orange8
+            .orange9 orange9
+            .orange10 orange10
             .orange-border.border orange-border
             .orange-text orange-text
           .col.s6
             h5 Deep-orange
-            .deep-orange-light-5 deep-orange-light-5
-            .deep-orange-light-4 deep-orange-light-4
-            .deep-orange-light-3 deep-orange-light-3
-            .deep-orange-light-2 deep-orange-light-2
-            .deep-orange-light-1 deep-orange-light-1
-            .deep-orange deep-orange
-            .deep-orange-dark-1 deep-orange-dark-1
-            .deep-orange-dark-2 deep-orange-dark-2
-            .deep-orange-dark-3 deep-orange-dark-3
-            .deep-orange-dark-4 deep-orange-dark-4
+            .deep-orange1 deep-orange1
+            .deep-orange2 deep-orange2
+            .deep-orange3 deep-orange3
+            .deep-orange4 deep-orange4
+            .deep-orange5 deep-orange5
+            .deep-orange deep-orange6 / deep-orange
+            .deep-orange7 deep-orange7
+            .deep-orange8 deep-orange8
+            .deep-orange9 deep-orange9
+            .deep-orange10 deep-orange10
             .deep-orange-border.border deep-orange-border
             .deep-orange-text deep-orange-text
           .col.s6
             h5 Brown
-            .brown-light-5 brown-light-5
-            .brown-light-4 brown-light-4
-            .brown-light-3 brown-light-3
-            .brown-light-2 brown-light-2
-            .brown-light-1 brown-light-1
-            .brown brown
-            .brown-dark-1 brown-dark-1
-            .brown-dark-2 brown-dark-2
-            .brown-dark-3 brown-dark-3
-            .brown-dark-4 brown-dark-4
+            .brown1 brown1
+            .brown2 brown2
+            .brown3 brown3
+            .brown4 brown4
+            .brown5 brown5
+            .brown brown6 / brown
+            .brown7 brown7
+            .brown8 brown8
+            .brown9 brown9
+            .brown10 brown10
             .brown-border.border brown-border
             .brown-text brown-text
           .col.s6
             h5 Grey
-            .grey-light-5 grey-light-5
-            .grey-light-4 grey-light-4
-            .grey-light-3 grey-light-3
-            .grey-light-2 grey-light-2
-            .grey-light-1 grey-light-1
-            .grey grey
-            .grey-dark-1 grey-dark-1
-            .grey-dark-2 grey-dark-2
-            .grey-dark-3 grey-dark-3
-            .grey-dark-4 grey-dark-4
+            .grey1 grey1
+            .grey2 grey2
+            .grey3 grey3
+            .grey4 grey4
+            .grey5 grey5
+            .grey grey6 / grey
+            .grey7 grey7
+            .grey8 grey8
+            .grey9 grey9
+            .grey10 grey10
             .grey-border.border grey-border
             .grey-text grey-text
           .col.s6
             h5 Blue-grey
-            .blue-grey-light-5 blue-grey-light-5
-            .blue-grey-light-4 blue-grey-light-4
-            .blue-grey-light-3 blue-grey-light-3
-            .blue-grey-light-2 blue-grey-light-2
-            .blue-grey-light-1 blue-grey-light-1
-            .blue-grey blue-grey
-            .blue-grey-dark-1 blue-grey-dark-1
-            .blue-grey-dark-2 blue-grey-dark-2
-            .blue-grey-dark-3 blue-grey-dark-3
-            .blue-grey-dark-4 blue-grey-dark-4
+            .blue-grey1 blue-grey1
+            .blue-grey2 blue-grey2
+            .blue-grey3 blue-grey3
+            .blue-grey4 blue-grey4
+            .blue-grey5 blue-grey5
+            .blue-grey blue-grey6 / blue-grey
+            .blue-grey7 blue-grey7
+            .blue-grey8 blue-grey8
+            .blue-grey9 blue-grey9
+            .blue-grey10 blue-grey10
             .blue-grey-border.border blue-grey-border
             .blue-grey-text blue-grey-text
           .col.s6
@@ -4127,12 +4127,12 @@ export default {
         var chipsBorder = $("#chips nav .chip.border");
 
         for (var i = 0; i < ids.length; i++) {
-          chips.removeClass(ids[i] + "-light-4");
+          chips.removeClass(ids[i] + "2");
           chips.removeClass(ids[i]);
           chips.removeClass(ids[i] + "-border");
           chips.removeClass(ids[i] + "-text");
 
-          chipsBorder.removeClass(ids[i] + "-light-4");
+          chipsBorder.removeClass(ids[i] + "2");
           chipsBorder.removeClass(ids[i]);
           chipsBorder.removeClass(ids[i] + "-border");
           chipsBorder.removeClass(ids[i] + "-text");
@@ -4140,7 +4140,7 @@ export default {
           var selector = "#" + ids[i] + "-chips";
           if ($(selector).is(":checked")) {
             if (["small", "medium", "large", "active"].indexOf(ids[i]) == -1) {
-              chips.addClass(ids[i] + "-light-4");
+              chips.addClass(ids[i] + "2");
               chips.addClass(ids[i] + "-text");
               chipsBorder.addClass(ids[i] + "-border");
               chipsBorder.addClass(ids[i] + "-text");

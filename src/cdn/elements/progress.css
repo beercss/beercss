@@ -8,7 +8,7 @@
   border-radius: inherit;
   margin: 0 !important;
   padding: 0 !important;
-  transition: var(--speed-4) clip-path;
+  transition: var(--speed4) clip-path;
   clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
 }
 

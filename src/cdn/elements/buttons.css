@@ -4,7 +4,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow1);
   min-height: 40rem;
   height: 40rem;
   font-size: 14rem;
@@ -14,7 +14,7 @@ button {
   background-color: var(--primary);
   margin: 0 8rem;
   border-radius: 4rem;
-  transition: var(--speed-3) transform, var(--speed-3) border-radius, var(--speed-3) padding;
+  transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
 }
 
 .button > :not(.dropdown, .progress, .badge, .tooltip) + :not(.dropdown, .progress, .badge, .tooltip),
@@ -174,7 +174,7 @@ button.extend.active > img + span {
 button.square:not(.flat, .border),
 button.circle:not(.flat, .border),
 button.diamond:not(.flat, .border) {
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow2);
 }
 
 .button[disabled],

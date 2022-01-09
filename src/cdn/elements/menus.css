@@ -5,7 +5,7 @@
   flex-direction: column;
   border: 0;
   position: fixed;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow2);
   color: var(--on-surface-variant);
   background-color: var(--surface-variant);
   transform: none;
@@ -180,7 +180,7 @@
   margin-bottom: 4rem;
   padding: 4rem;
   border-radius: 32rem;
-  transition: var(--speed-1) padding linear;
+  transition: var(--speed1) padding linear;
 }
 
 .menu > a:not(button, .button, .chip):hover > i,

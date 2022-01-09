@@ -154,7 +154,7 @@ input[type="file"] {
 .field.round > input,
 .field.round > textarea {
   border: 0;
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow1);
 }
 
 .field.round > input {
@@ -198,7 +198,7 @@ input[type="file"] {
 .field.flat > input:focus,
 .field.flat > input:focus::before,
 .field.flat > input:focus::after {
-  box-shadow: var(--shadow-1)!important;
+  box-shadow: var(--shadow1)!important;
 }
 
 .field.label > input,
@@ -242,7 +242,7 @@ input[type="file"] {
 
 /* label */
 .field.label > label {
-  animation: var(--speed-1) label-to-middle;
+  animation: var(--speed1) label-to-middle;
   position: absolute;
   top: 50%;
   left: 8rem;
@@ -296,7 +296,7 @@ input[type="file"] {
 .field.label > label.active,
 .field.label > [placeholder]:focus ~ label,
 .field.label > [placeholder]:not(:placeholder-shown) ~ label {
-  animation: var(--speed-1) label-to-top;
+  animation: var(--speed1) label-to-top;
   font-size: 12rem;
   transform: translateY(-120%);
 }
@@ -357,7 +357,7 @@ input[type="file"] {
 .field.round > select {
   border: 0;
   border-radius: 32rem;
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow1);
   padding: 4rem 16rem;
 }
 

@@ -81,7 +81,7 @@
 .radio > input:focus + span::before {
   background-color: var(--active);
   box-shadow: 0 0 0 8rem var(--active);
-  animation: var(--speed-1) to-checked ease-out;
+  animation: var(--speed1) to-checked ease-out;
 }
 
 .checkbox > input:checked + span::before {
@@ -150,10 +150,10 @@
   width: 20rem;
   height: 20rem;
   background-color: #ffffff;
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow1);
   left: 0;
   top: 50%;
-  transition: var(--speed-1) transform, var(--speed-1) background-color;
+  transition: var(--speed1) transform, var(--speed1) background-color;
   transform: translate(-44rem, -50%);
 }
 

@@ -9,7 +9,7 @@
   z-index: 200;
   visibility: hidden;
   display: inline-block;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow2);
   color: var(--on-error);
   background-color: var(--error-background);
   padding: 16rem;
@@ -33,12 +33,12 @@
 
 .toast.active  {
   visibility: visible;
-  animation: var(--speed-2) toast-to-top;
+  animation: var(--speed2) toast-to-top;
 }
 
 .toast.active.top {
   visibility: visible;
-  animation: var(--speed-2) toast-to-bottom;
+  animation: var(--speed2) toast-to-bottom;
 }
 
 .toast.small {

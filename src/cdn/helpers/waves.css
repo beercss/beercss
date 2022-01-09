@@ -53,7 +53,7 @@ button:hover::after,
 button:focus::after {
   background-size: 15000%;
   opacity: 1;
-  transition: var(--speed-2) background-size linear;
+  transition: var(--speed2) background-size linear;
 }
 
 .wave:active::after,

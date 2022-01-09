@@ -2,7 +2,7 @@
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow2);
   background-color: var(--surface);
   box-sizing: border-box;
   z-index: 2;
@@ -35,7 +35,7 @@ button:not([data-ui]):focus-within > .dropdown,
   opacity: 1;
   visibility: visible;
   max-width: none;
-  animation: var(--speed-1) dropdown-to-bottom;
+  animation: var(--speed1) dropdown-to-bottom;
 }
 
 .dropdown.border {

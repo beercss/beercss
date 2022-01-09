@@ -1,5 +1,5 @@
 <template lang="pug">
-.grey-dark-4.white-text
+.grey10.white-text
   .menu.top.top-shadow
     .row.no-wrap.middle-align
       .col

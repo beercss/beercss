@@ -2,7 +2,7 @@
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow2);
   color: var(--on-surface-variant);
   background-color: var(--surface-variant);
   padding: 16rem;
@@ -61,27 +61,27 @@
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, 0);
-  animation: var(--speed-2) modal-to-center ease;
+  animation: var(--speed2) modal-to-center ease;
 }
 
 .modal.active.left {
   transform: translate(0);
-  animation: var(--speed-2) modal-to-right ease;
+  animation: var(--speed2) modal-to-right ease;
 }
 
 .modal.active.right {
   transform: translate(0);
-  animation: var(--speed-2) modal-to-left ease;
+  animation: var(--speed2) modal-to-left ease;
 }
 
 .modal.active.top {
   transform: translate(0);
-  animation: var(--speed-2) modal-to-bottom ease;
+  animation: var(--speed2) modal-to-bottom ease;
 }
 
 .modal.active.bottom {
   transform: translate(0);
-  animation: var(--speed-2) modal-to-top ease;
+  animation: var(--speed2) modal-to-top ease;
 }
 
 .modal.top {
