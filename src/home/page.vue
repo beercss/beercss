@@ -1840,7 +1840,7 @@ div
           h4
             span Layouts
             a.chip.circle(
-              @click="layout = 0; showSamples('#layouts #container')"
+              @click="layout = 0; showSamples('#layouts article')"
             )
               i code
           nav.wrap
@@ -1862,11 +1862,10 @@ div
             label.checkbox
               input#bottom-layouts(type="checkbox")
               span bottom
-          #positions
-            #container
-              .padding.absolute.blue.white-text.center.middle.primary
-                h5 Position
-                div Lorem ipsum dolor...
+          article.border.medium.no-padding
+            .padding.absolute.blue.white-text.center.middle.primary
+              h5 Position
+              div Lorem ipsum dolor...
           .space
           nav.wrap
             label.radio
@@ -1898,27 +1897,24 @@ div
             label.radio
               input#bottom-align-layouts(type="radio", name="vertical-layouts")
               span bottom-align
-          #alignments
-            #container.center-align.middle-align
-              .padding
-                h5 Alignment
-                div Lorem ipsum dolor...
+          article.border.medium.no-padding.center-align.middle-align
+            .padding
+              h5 Alignment
+              div Lorem ipsum dolor...
           .space
           .row
             .col.s12.m6
-              #headers
-                article.flat.small.scroll
-                  header.fixed
-                    h5.no-margin Fixed header
-                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              article.flat.small.scroll
+                header.fixed
+                  h5.no-margin Fixed header
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             .col.s12.m6
-              #footers
-                article.flat.small.scroll
-                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  footer.fixed
-                    h5.no-margin Fixed footer
+              article.flat.small.scroll
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                footer.fixed
+                  h5.no-margin Fixed footer
         #list.col.s12
           .large-space
           h4
@@ -4068,7 +4064,6 @@ export default {
           $(elements[i]).is(".modal") ||
           $(elements[i]).is(".toast") ||
           $(elements[i]).is(".container") ||
-          $(elements[i]).is("#container") ||
           $(elements[i]).is(".fixed")
         )
           html = "";
@@ -4386,12 +4381,6 @@ pre * {
 .logo-support {
   width: auto;
   height: 100rem;
-}
-
-#container {
-  height: 200rem;
-  border: 1rem solid var(--outline);
-  border-radius: 8rem;
 }
 
 @keyframes logo-intro {
