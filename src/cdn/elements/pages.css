@@ -1,4 +1,6 @@
-.page {
+.page,
+.modal:not(.active) .page.active,
+.page:not(.active) .page.active {
   opacity: 0;
   position: absolute;
   visibility: hidden;
