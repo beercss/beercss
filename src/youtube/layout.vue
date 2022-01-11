@@ -136,10 +136,6 @@ div
       .col.min
         i video_library
       .col Library
-    a.row.no-wrap(data-ui="#themes")
-      .col.min
-        i brightness_medium
-      .col Themes
     .large-divider
     a.row.no-wrap(data-ui="#modal-expanded")
       .col.min

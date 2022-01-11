@@ -1,5 +1,9 @@
 <template lang="pug">
 div
+  themes(v-model="$data")
+    .large-space
+    .medium-space
+
   #layout
 
   .menu.top.black
@@ -52,7 +56,6 @@ div
             i.white-text brightness_medium
           a(href="/")
             img.circle(:src="'/favicon.png'")
-    themes(v-model="$data")
 </template>
 
 <script>
