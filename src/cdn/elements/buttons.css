@@ -180,6 +180,10 @@ button.diamond:not(.flat, .border) {
 .button[disabled],
 button:disabled {
   opacity: .5;
+  cursor: not-allowed;
+}
+
+.button[disabled] {
   pointer-events: none;
 }
 

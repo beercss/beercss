@@ -61,7 +61,7 @@
   margin: 0 auto;
   padding: 0;
   outline: none;
-  cursor: pointer;
+  cursor: inherit;
   color: var(--primary);
   position: absolute;
   left: -24rem;
@@ -135,7 +135,6 @@
   height: 14rem;
   border-radius: 8rem;
   animation: none;
-  cursor: pointer;
   transform: translate(-40rem, -50%);
 }
 
@@ -170,6 +169,7 @@
 .radio > input:disabled + span,
 .switch > input:disabled + span {
   opacity: .5;
+  cursor: not-allowed;
 }
 
 @keyframes to-checked {
