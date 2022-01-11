@@ -22,6 +22,8 @@
   --outline: #79747E;
   --surface-variant: #E7E0EC;
   --on-surface-variant: #49454E;
+  --inverse-surface: #313033;
+  --inverse-on-surface: #F4EFF4;
 
   --overlay: rgba(0,0,0,.5);
   --active: rgba(0,0,0,.1);
