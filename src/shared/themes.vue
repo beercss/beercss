@@ -1,47 +1,68 @@
 <template lang="pug">
-.modal.medium.left.surface-variant(:id="id")
+.modal.medium.left.surface-variant.no-scroll(:id="id")
   slot
   div(v-show="!showCssVariables")
-    h5 Light
-    nav.wrap
-      a.wave(@click="updateColors('/wallpaper-1.webp', 'light')")
-        img.round.large(:src="'/wallpaper-1.webp'")
-      a.wave(@click="updateColors('/wallpaper-2.webp', 'light')")
-        img.round.large(:src="'/wallpaper-2.webp'")
-      a.wave(@click="updateColors('/wallpaper-3.webp', 'light')")
-        img.round.large(:src="'/wallpaper-3.webp'")
-      a.wave(@click="updateColors('/wallpaper-4.webp', 'light')")
-        img.round.large(:src="'/wallpaper-4.webp'")
-      a.wave(@click="updateColors('/wallpaper-5.webp', 'light')")
-        img.round.large(:src="'/wallpaper-5.webp'")
-      a.button.square.extra.flat
-        i upload
-        input#light-file.absolute.top.left.front(type="file", @change="updateColors('#light-file', 'light')", style="opacity: 0")
-    h5 Dark
-    nav.wrap
-      a.wave(@click="updateColors('/wallpaper-1.webp', 'dark')")
-        img.round.large(:src="'/wallpaper-1.webp'")
-      a.wave(@click="updateColors('/wallpaper-2.webp', 'dark')")
-        img.round.large(:src="'/wallpaper-2.webp'")
-      a.wave(@click="updateColors('/wallpaper-3.webp', 'dark')")
-        img.round.large(:src="'/wallpaper-3.webp'")
-      a.wave(@click="updateColors('/wallpaper-4.webp', 'dark')")
-        img.round.large(:src="'/wallpaper-4.webp'")
-      a.wave(@click="updateColors('/wallpaper-5.webp', 'dark')")
-        img.round.large(:src="'/wallpaper-5.webp'")
-      a.button.square.extra.flat
-        i upload
-        input#dark-file.absolute.top.left.front(type="file", @change="updateColors('#dark-file', 'dark')", style="opacity: 0")
-    nav
-      a.button.border(:data-ui="'#' + id") Close
-      a.button.flat(@click="showCssVariables=true") Get css variables
-    .space
-    a.small-text.link(href="https://m3.material.io/styles/color/overview", target="_blank") Go to Material Design 3 colors
+    .row.no-wrap.middle-align.no-space
+      .col
+        h5.no-margin 
+          span Themes
+          a.chip.circle(@click="showCssVariables=true")
+            i code
+      .col.min
+        nav.right-align
+          a(@click="updateMode()")
+            i light_mode
+          a(:data-ui="'#' + id")
+            i close
+    .tabs.left-align
+      a.active(:data-ui="`#${id}-tab-image`") From image
+      a(:data-ui="`#${id}-tab-color`") From color
+    .page.right.active(:id="`${id}-tab-image`")
+      .space
+      nav.wrap
+        a.wave(@click="updateTheme('/wallpaper-1.webp')")
+          img.round.large(:src="'/wallpaper-1.webp'")
+        a.wave(@click="updateTheme('/wallpaper-2.webp')")
+          img.round.large(:src="'/wallpaper-2.webp'")
+        a.wave(@click="updateTheme('/wallpaper-3.webp')")
+          img.round.large(:src="'/wallpaper-3.webp'")
+        a.wave(@click="updateTheme('/wallpaper-4.webp')")
+          img.round.large(:src="'/wallpaper-4.webp'")
+        a.wave(@click="updateTheme('/wallpaper-5.webp')")
+          img.round.large(:src="'/wallpaper-5.webp'")
+        a.button.square.extra.flat
+          i upload
+          input.absolute.top.left.right.bottom(:id="`${id}-image`", type="file", @change="updateTheme(`#${id}-image`)", style="opacity: 0")
+    .page.right(:id="`${id}-tab-color`")
+      .space
+      nav.wrap
+        a.button.square.extra.flat.red.m.l(@click="updateTheme('#f44336')")
+        a.button.square.extra.flat.pink.m.l(@click="updateTheme('#e91e63')")
+        a.button.square.extra.flat.purple.m.l(@click="updateTheme('#9c27b0')")
+        a.button.square.extra.flat.deep-purple.m.l(@click="updateTheme('#673ab7')")
+        a.button.square.extra.flat.indigo.m.l(@click="updateTheme('#3f51b5')")
+        a.button.square.extra.flat.blue.m.l(@click="updateTheme('#2196f3')")
+        a.button.square.extra.flat.light-blue.m.l(@click="updateTheme('#03a9f4')")
+        a.button.square.extra.flat.cyan.m.l(@click="updateTheme('#00bcd4')")
+        a.button.square.extra.flat.teal.m.l(@click="updateTheme('#009688')")
+        a.button.square.extra.flat.green.m.l(@click="updateTheme('#4caf50')")
+        a.button.square.extra.flat.light-green.m.l(@click="updateTheme('#8bc34a')")
+        a.button.square.extra.flat.lime.m.l(@click="updateTheme('#cddc39')")
+        a.button.square.extra.flat.yellow.m.l(@click="updateTheme('#ffeb3b')")
+        a.button.square.extra.flat.amber.m.l(@click="updateTheme('#ffc107')")
+        a.button.square.extra.flat.orange.m.l(@click="updateTheme('#ff9800')")
+        a.button.square.extra.flat.depp-orange.m.l(@click="updateTheme('#ff5722')")
+        a.button.square.extra.flat.brown.m.l(@click="updateTheme('#795548')")
+        a.button.square.extra.flat.grey.m.l(@click="updateTheme('#9e9e9e')")
+        a.button.square.extra.flat.blue-grey.m.l(@click="updateTheme('#607d8b')")
+        a.button.square.extra.flat.black.m.l(@click="updateTheme('#000000')")
+        a.button.square.extra.flat.white.m.l(@click="updateTheme('#ffffff')")
   div(v-show="showCssVariables")
     header.fixed(@click="showCssVariables=false")
       a(data-ui="")
         i arrow_backward
         h5.small-margin Back
+        a.button.border.link(href="https://m3.material.io/styles/color/overview", target="_blank") More about
     nav
       label.radio
         input(type="radio", value="light", v-model="selectedMode")
@@ -52,35 +73,12 @@
     .space
     article.border
       pre(v-html="selectedTheme[selectedMode]")
+  nav.wrap
+    
 </template>
 
 <script>
-const themes = {
-  default: {
-    dark: "--primary: #D0BCFF;--on-primary: #371E73;--primary-container: #4F378B;--on-primary-container: #EADDFF;--secondary: #CCC2DC;--on-secondary: #332D41;--secondary-container: #4A4458;--on-secondary-container: #E8DEF8;--tertiary: #EFB8C8;--on-tertiary: #492532;--tertiary-container: #633B48;--on-tertiary-container: #FFD8E4;--error: #F2B8B5;--on-error: #601410;--error-container: #8C1D18;--on-error-container: #F9DEDC;--background: #1C1B1F;--on-background: #E6E1E5;--surface: #1C1B1F;--on-surface: #E6E1E5;--outline: #938F99;--surface-variant: #49454F;--on-surface-variant: #CAC4D0;--inverse-surface: #E6E1E5;--inverse-on-surface: #313033;--overlay: rgba(0,0,0,.5);--active: rgba(255,255,255,.2);",
-    light: "--primary: #6750A4;--on-primary: #FFFFFF;--primary-container: #EADDFF;--on-primary-container: #21005E;--secondary: #625B71;--on-secondary: #FFFFFF;--secondary-container: #E8DEF8;--on-secondary-container: #1E192B;--tertiary: #7D5260;--on-tertiary: #FFFFFF;--tertiary-container: #FFD8E4;--on-tertiary-container: #370B1E;--error: #B3261E;--on-error: #FFFFFF;--error-container: #F9DEDC;--on-error-container: #370B1E;--background: #FFFBFE;--on-background: #1C1B1F;--surface: #FFFBFE;--on-surface: #1C1B1F;--outline: #79747E;--surface-variant: #E7E0EC;--on-surface-variant: #49454E;--inverse-surface: #313033;--inverse-on-surface: #F4EFF4;--overlay: rgba(0,0,0,.5);--active: rgba(0,0,0,.1);"
-  },
-  "/wallpaper-1.webp": {
-    dark: "--primary: #ffb4a5;--on-primary: #5e150c;--primary-container: #7d2b1f;--on-primary-container: #ffdad2;--secondary: #e7bdb5;--on-secondary: #442924;--secondary-container: #5d3f3a;--on-secondary-container: #ffdad3;--tertiary: #dec48c;--on-tertiary: #3d2e04;--tertiary-container: #564519;--on-tertiary-container: #fbe0a6;--error: #ffb4a9;--error-container: #930006;--on-error: #680003;--on-error-container: #ffdad4;--background: #201a19;--on-background: #ede0de;--surface: #201a19;--on-surface: #ede0de;--surface-variant: #534341;--on-surface-variant: #d8c2be;--outline: #a08c89;--inverse-on-surface: #201a19;--inverse-surface: #ede0de;--overlay: rgba(0,0,0,.5);--active: rgba(255,255,255,.2);",
-    light: "--primary: #9c4234;--on-primary: #ffffff;--primary-container: #ffdad2;--on-primary-container: #400100;--secondary: #775751;--on-secondary: #ffffff;--secondary-container: #ffdad3;--on-secondary-container: #2d1511;--tertiary: #6f5c2e;--on-tertiary: #ffffff;--tertiary-container: #fbe0a6;--on-tertiary-container: #261a00;--error: #ba1b1b;--error-container: #ffdad4;--on-error: #ffffff;--on-error-container: #410001;--background: #fcfcfc;--on-background: #201a19;--surface: #fcfcfc;--on-surface: #201a19;--surface-variant: #f5deda;--on-surface-variant: #534341;--outline: #857370;--inverse-on-surface: #fbeeeb;--inverse-surface: #362f2e;--overlay: rgba(0,0,0,.5);--active: rgba(0,0,0,.1);"
-  },
-  "/wallpaper-2.webp": {
-    dark: "--primary: #70dba8;--on-primary: #003822;--primary-container: #005235;--on-primary-container: #8cf8c3;--secondary: #b3ccbc;--on-secondary: #20352a;--secondary-container: #364b3f;--on-secondary-container: #d0e8d8;--tertiary: #a5cdde;--on-tertiary: #063543;--tertiary-container: #234c5a;--on-tertiary-container: #c0e9fb;--error: #ffb4a9;--error-container: #930006;--on-error: #680003;--on-error-container: #ffdad4;--background: #191c1a;--on-background: #e1e3df;--surface: #191c1a;--on-surface: #e1e3df;--surface-variant: #404943;--on-surface-variant: #bfc9c1;--outline: #8a938c;--inverse-on-surface: #191c1a;--inverse-surface: #e1e3df;--overlay: rgba(0,0,0,.5);--active: rgba(255,255,255,.2);",
-    light: "--primary: #006c47;--on-primary: #ffffff;--primary-container: #8cf8c3;--on-primary-container: #002112;--secondary: #4d6356;--on-secondary: #ffffff;--secondary-container: #d0e8d8;--on-secondary-container: #0a2015;--tertiary: #3d6473;--on-tertiary: #ffffff;--tertiary-container: #c0e9fb;--on-tertiary-container: #001f29;--error: #ba1b1b;--error-container: #ffdad4;--on-error: #ffffff;--on-error-container: #410001;--background: #fbfdf8;--on-background: #191c1a;--surface: #fbfdf8;--on-surface: #191c1a;--surface-variant: #dce5dd;--on-surface-variant: #404943;--outline: #707972;--inverse-on-surface: #f0f1ed;--inverse-surface: #2d312e;--overlay: rgba(0,0,0,.5);--active: rgba(0,0,0,.1);"
-  },
-  "/wallpaper-3.webp": {
-    dark: "--primary: #ffb683;--on-primary: #502400;--primary-container: #723600;--on-primary-container: #ffdcc4;--secondary: #e4bfa8;--on-secondary: #422b1b;--secondary-container: #5b412f;--on-secondary-container: #ffdcc4;--tertiary: #c8ca94;--on-tertiary: #31320b;--tertiary-container: #47491f;--on-tertiary-container: #e5e6ae;--error: #ffb4a9;--error-container: #930006;--on-error: #680003;--on-error-container: #ffdad4;--background: #201a17;--on-background: #ece0da;--surface: #201a17;--on-surface: #ece0da;--surface-variant: #52443b;--on-surface-variant: #d7c3b7;--outline: #9f8d83;--inverse-on-surface: #201a17;--inverse-surface: #ece0da;--overlay: rgba(0,0,0,.5);--active: rgba(255,255,255,.2);",
-    light: "--primary: #944a01;--on-primary: #ffffff;--primary-container: #ffdcc4;--on-primary-container: #301400;--secondary: #755946;--on-secondary: #ffffff;--secondary-container: #ffdcc4;--on-secondary-container: #2b1708;--tertiary: #5f6135;--on-tertiary: #ffffff;--tertiary-container: #e5e6ae;--on-tertiary-container: #1b1d00;--error: #ba1b1b;--error-container: #ffdad4;--on-error: #ffffff;--on-error-container: #410001;--background: #fcfcfc;--on-background: #201a17;--surface: #fcfcfc;--on-surface: #201a17;--surface-variant: #f4dfd3;--on-surface-variant: #52443b;--outline: #85746a;--inverse-on-surface: #faeee8;--inverse-surface: #362f2b;--overlay: rgba(0,0,0,.5);--active: rgba(0,0,0,.1);"
-  },
-  "/wallpaper-4.webp": {
-    dark: "--primary: #acc7ff;--on-primary: #002e6c;--primary-container: #004397;--on-primary-container: #d6e2ff;--secondary: #bfc6dc;--on-secondary: #283041;--secondary-container: #3f4759;--on-secondary-container: #dae2f9;--tertiary: #debbdf;--on-tertiary: #402843;--tertiary-container: #583e5b;--on-tertiary-container: #fbd7fb;--error: #ffb4a9;--error-container: #930006;--on-error: #680003;--on-error-container: #ffdad4;--background: #1b1b1e;--on-background: #e4e2e6;--surface: #1b1b1e;--on-surface: #e4e2e6;--surface-variant: #44474f;--on-surface-variant: #c4c6d0;--outline: #8e9099;--inverse-on-surface: #1b1b1e;--inverse-surface: #e4e2e6;--overlay: rgba(0,0,0,.5);--active: rgba(255,255,255,.2);",
-    light: "--primary: #005ac5;--on-primary: #ffffff;--primary-container: #d6e2ff;--on-primary-container: #001a43;--secondary: #575e71;--on-secondary: #ffffff;--secondary-container: #dae2f9;--on-secondary-container: #141b2c;--tertiary: #715574;--on-tertiary: #ffffff;--tertiary-container: #fbd7fb;--on-tertiary-container: #29132d;--error: #ba1b1b;--error-container: #ffdad4;--on-error: #ffffff;--on-error-container: #410001;--background: #fdfbff;--on-background: #1b1b1e;--surface: #fdfbff;--on-surface: #1b1b1e;--surface-variant: #e1e2ec;--on-surface-variant: #44474f;--outline: #74777f;--inverse-on-surface: #f2f0f4;--inverse-surface: #2f3033;--overlay: rgba(0,0,0,.5);--active: rgba(0,0,0,.1);"
-  },
-  "/wallpaper-5.webp": {
-    dark: "--primary: #abd371;--on-primary: #203600;--primary-container: #304f00;--on-primary-container: #c6f089;--secondary: #c0caac;--on-secondary: #2b331e;--secondary-container: #414a33;--on-secondary-container: #dce6c7;--tertiary: #a0cfca;--on-tertiary: #013734;--tertiary-container: #1f4e4a;--on-tertiary-container: #bbece6;--error: #ffb4a9;--error-container: #930006;--on-error: #680003;--on-error-container: #ffdad4;--background: #1b1c18;--on-background: #e4e3dc;--surface: #1b1c18;--on-surface: #e4e3dc;--surface-variant: #44483d;--on-surface-variant: #c5c8b9;--outline: #8f9285;--inverse-on-surface: #1b1c18;--inverse-surface: #e4e3dc;--overlay: rgba(0,0,0,.5);--active: rgba(255,255,255,.2);",
-    light: "--primary: #47680e;--on-primary: #ffffff;--primary-container: #c8f089;--on-primary-container: #112000;--secondary: #596249;--on-secondary: #ffffff;--secondary-container: #dde7c7;--on-secondary-container: #161e0a;--tertiary: #396662;--on-tertiary: #ffffff;--tertiary-container: #bcece6;--on-tertiary-container: #00201d;--error: #ba1b1b;--error-container: #ffdad4;--on-error: #ffffff;--on-error-container: #410001;--background: #fdfcf4;--on-background: #1b1c18;--surface: #fdfcf4;--on-surface: #1b1c18;--surface-variant: #e1e4d4;--on-surface-variant: #44483c;--outline: #75786c;--inverse-on-surface: #f2f1e9;--inverse-surface: #30312c;--overlay: rgba(0,0,0,.5);--active: rgba(0,0,0,.1);"
-  },
-};
+import domain from "./domain";
 
 export default {
   props: {
@@ -91,53 +89,20 @@ export default {
     value: Object
   },
   data() {
-    return {
-      ...this.value,
-      selectedTheme: themes.default,
-      showCssVariables: false,
-      selectedMode: "light"
-    }
+    return this.value;
+  },
+  mouted() {
+    ui();
   },
   methods: {
     toCssVariables(theme) {
-      const toStyle = (mode) => {
-        let style = "";
-        for (var i in theme[mode]) {
-          let kebabCase = i.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
-          style += "--"+kebabCase+": "+theme[mode][i]+";";
-        }
-
-        if (mode == "dark")
-          style += "--overlay: rgba(0,0,0,.5);--active: rgba(255,255,255,.2);";
-        else
-          style += "--overlay: rgba(0,0,0,.5);--active: rgba(0,0,0,.1);";
-
-        return style;
-      }
-
-      this.selectedTheme = {
-        dark: toStyle("dark"),
-        light: toStyle("light")
-      }
+      domain.toCssVariables(this.$data, theme);
     },
-    updateColors(url, mode = "light") {
-      if (themes[url]) {
-        this.selectedTheme = themes[url];
-        this.isDarkTheme = mode == "dark";
-        document.body.setAttribute("style", "--"+mode+": true;"+this.selectedTheme[mode]);
-        return;
-      }
-
-      let image = (url[0] == "#")
-        ? URL.createObjectURL(document.querySelector(url).files[0])
-        : url;
-
-      window.module$contents$google3$ux$material$theme_generator$src$theme$index_seedFromImage(image).then(color => {
-        let colors = window.module$exports$google3$ux$material$theme_generator$src$theme$index$ThemeAdapter$fromColor(color);
-        this.toCssVariables(colors);
-        this.isDarkTheme = mode == "dark";
-        document.body.setAttribute("style", "--"+mode+": true;"+this.selectedTheme[mode]);
-      });
+    updateTheme(url) {
+      domain.updateTheme(this.$data, url, this.isDark ? "dark" : "light");
+    },
+    updateMode(mode) {
+      domain.updateMode(this.$data, mode);
     }
   }
 }

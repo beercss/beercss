@@ -55,11 +55,11 @@ div
             i menu
           a
             img(
-              v-show="!isDarkTheme",
+              v-show="!isDark",
               :src="'/youtube-light.png'"
             )
             img(
-              v-show="isDarkTheme",
+              v-show="isDark",
               :src="'/youtube-dark.png'"
             )
       .col
@@ -117,8 +117,8 @@ div
       a(data-ui="#modal-expanded")
         i menu
       a
-        img(v-show="!isDarkTheme", :src="'/youtube-light.png'")
-        img(v-show="isDarkTheme", :src="'/youtube-dark.png'")
+        img(v-show="!isDark", :src="'/youtube-light.png'")
+        img(v-show="isDark", :src="'/youtube-dark.png'")
     .medium-space
     a.row.no-wrap(data-ui="#modal-expanded", href="/youtube")
       .col.min
@@ -187,6 +187,7 @@ div
 
 <script>
 import themes from "/shared/themes.vue";
+import data from "/shared/data";
 
 export default {
   components: {
@@ -194,12 +195,12 @@ export default {
   },
   data() {
     return {
-      url: "/youtube",
-      isDarkTheme: false
+      ...data(),
+      url: "/youtube"
     };
   },
   mounted() {
-    this.isDarkTheme = /dark/.test(document.body.getAttribute("style"));
+    this.isDark = /dark/.test(document.body.getAttribute("style"));
     ui();
 
     window.addEventListener("redirected", (event) => {
@@ -209,9 +210,9 @@ export default {
   methods: {
     updateTheme() {
       let theme = document.querySelector("html").className;
-      this.isDarkTheme = /dark/i.test(theme);
+      this.isDark = /dark/i.test(theme);
 
-      theme = this.isDarkTheme
+      theme = this.isDark
         ? theme.replace("dark", "light")
         : theme.replace("light", "dark");
 

@@ -14,14 +14,14 @@ div
     a(@click="updateMenu('.menu.m.l', 'right')")
       i arrow_forward
       div Right
-    a(@click="updateMenu('.menu.m.l')")
-      i visibility_off
-      div Text
     a(@click="updateIcons()")
       i image
       div Icons
+    a(@click="updateMode()")
+      i light_mode
+      div Light/Dark
     a(data-ui="#themes1")
-      i brightness_medium
+      i palette
       div Themes
     a(data-ui="#more1")
       i collections
@@ -30,34 +30,31 @@ div
     a(@click="showSamples('.menu.m.l')")
       i code
       div Code
+    themes(id="themes1", v-model="$data")
     #more1.modal.left(data-ui="#more1")
       h5 Templates
       p This templates are only for tests purpose
       .space
-      a.wrap.padding(href="/youtube", v-show="isDarkTheme")
+      a.wrap.padding(href="/youtube", v-show="isDark")
         img.logo-template(:src="'/youtube-dark.png'")
-      a.wrap.padding(href="/youtube", v-show="!isDarkTheme")
+      a.wrap.padding(href="/youtube", v-show="!isDark")
         img.logo-template(:src="'/youtube-light.png'")
       a.wrap.padding(href="/netflix")
         img.logo-template(:src="'/netflix.png'")
-      a.wrap.padding(href="/gmail", v-show="isDarkTheme")
+      a.wrap.padding(href="/gmail", v-show="isDark")
         img.logo-template(:src="'/gmail-dark.png'")
-      a.wrap.padding(href="/gmail", v-show="!isDarkTheme")
+      a.wrap.padding(href="/gmail", v-show="!isDark")
         img.logo-template(:src="'/gmail-light.png'")
-      a.wrap.padding(href="/uber", v-show="isDarkTheme")
+      a.wrap.padding(href="/uber", v-show="isDark")
         img.logo-template(:src="'/uber-dark.png'")
-      a.wrap.padding(href="/uber", v-show="!isDarkTheme")
+      a.wrap.padding(href="/uber", v-show="!isDark")
         img.logo-template(:src="'/uber-light.png'")
-      a.wrap.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="isDarkTheme")
+      a.wrap.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="isDark")
         img.logo-codepen(:src="'/codepen-dark.png'")
-      a.wrap.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!isDarkTheme")
+      a.wrap.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!isDark")
         img.logo-codepen(:src="'/codepen-light.png'")
-    themes(id="themes1", v-model="$data")
 
   .menu.bottom.s
-    a(@click="updateMenu('.menu.s')")
-      i visibility_off
-      div Text
     a(@click="updateIcons()")
       i image
       div Icons
@@ -71,35 +68,35 @@ div
     a(@click="showSamples('.menu.s')")
       i code
       div Code
+    themes(id="themes2", v-model="$data")
     #more2.modal.bottom.medium(data-ui="#more2")
       h5 Templates
       p This templates are only for tests purpose
       .space
       .row
         .col.s6.middle-align.padding
-          a(href="/youtube", v-show="isDarkTheme")
+          a(href="/youtube", v-show="isDark")
             img.logo-template(:src="'/youtube-dark.png'")
-          a(href="/youtube", v-show="!isDarkTheme")
+          a(href="/youtube", v-show="!isDark")
             img.logo-template(:src="'/youtube-light.png'")
         .col.s6.middle-align.padding
           a(href="/netflix")
             img.logo-template(:src="'/netflix.png'")
         .col.s6.middle-align.padding
-          a(href="/gmail", v-show="isDarkTheme")
+          a(href="/gmail", v-show="isDark")
             img.logo-template(:src="'/gmail-dark.png'")
-          a(href="/gmail", v-show="!isDarkTheme")
+          a(href="/gmail", v-show="!isDark")
             img.logo-template(:src="'/gmail-light.png'")
         .col.s6.middle-align.padding
-          a(href="/uber", v-show="isDarkTheme")
+          a(href="/uber", v-show="isDark")
             img.logo-template(:src="'/uber-dark.png'")
-          a(href="/uber", v-show="!isDarkTheme")
+          a(href="/uber", v-show="!isDark")
             img.logo-template(:src="'/uber-light.png'")
         .col.s6.middle-align.padding
-          a(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="isDarkTheme")
+          a(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="isDark")
             img.logo-codepen(:src="'/codepen-dark.png'")
-          a(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!isDarkTheme")
+          a(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!isDark")
             img.logo-codepen(:src="'/codepen-light.png'")
-    themes(id="themes2", v-model="$data")
 
   .center-align.padding.yellow4
     div.black-text
@@ -3810,6 +3807,8 @@ div
 <script>
 import selectionForButtons from "./selectionForButtons.vue";
 import themes from "/shared/themes.vue";
+import data from "/shared/data.js";
+import domain from "/shared/domain.js";
 
 export default {
   components: {
@@ -3818,6 +3817,7 @@ export default {
   },
   data() {
     return {
+      ...data(),
       indexOfMenu: 1,
       samples: [],
       htmlSample: null,
@@ -3828,12 +3828,11 @@ export default {
       modalSample: null,
       mediaCard: 1,
       mediaImage: 1,
-      layout: 0,
-      isDarkTheme: false
+      layout: 0
     };
   },
   mounted() {
-    this.isDarkTheme = /dark/.test(document.body.getAttribute("style"));
+    this.isDark = /dark/.test(document.body.getAttribute("style"));
     this.htmlSample = hljs.highlight(
       "html",
       '<div class="modal active">...</div>\n<div class="dropdown active">...</div>\n<div class="overlay active">...</div>\n<div class="page active">...</div>\n<div class="toast active">...</div>'
@@ -4320,6 +4319,9 @@ export default {
           }
         }
       });
+    },
+    updateMode(mode) {
+      domain.updateMode(this.$data, mode);
     }
   }
 };

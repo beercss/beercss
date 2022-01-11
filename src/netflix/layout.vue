@@ -76,9 +76,13 @@
 
   #layout
 </template>
+import data from "../shared/data";
 
 <script>
 export default {
+  data() {
+    return data();
+  },
   mounted() {
     ui();
   },

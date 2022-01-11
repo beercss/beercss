@@ -106,8 +106,8 @@
                 .col Themes
 
           a
-            img(v-show="!isDarkTheme", :src="'/gmail-light.png'")
-            img(v-show="isDarkTheme", :src="'/gmail-dark.png'")
+            img(v-show="!isDark", :src="'/gmail-light.png'")
+            img(v-show="isDark", :src="'/gmail-dark.png'")
       .col
         .field.round.fill.flat.suffix.prefix.small.no-margin.m.l
           i.front.black-text search
@@ -230,7 +230,8 @@
 </template>
 
 <script>
-import themes from "/shared/themes.vue";
+import themes from "../shared/themes.vue";
+import data from "../shared/data";
 
 export default {
   components: {
@@ -238,12 +239,12 @@ export default {
   },
   data() {
     return {
-      url: "/gmail",
-      isDarkTheme: false
+      ...data(),
+      url: "/gmail"
     };
   },
   mounted() {
-    this.isDarkTheme = /dark/.test(document.body.getAttribute("style"));
+    this.isDark = /dark/.test(document.body.getAttribute("style"));
     ui();
 
     window.addEventListener("redirected", (event) => {

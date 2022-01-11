@@ -57,18 +57,17 @@ div
 
 <script>
 import themes from "../shared/themes.vue";
+import data from "../shared/data";
 
 export default {
   components: {
     themes
   },
   data() {
-    return {
-      isDarkTheme: false,
-    };
+    return data()
   },
   mounted() {
-    this.isDarkTheme = /dark/.test(document.body.getAttribute("style"));
+    this.isDark = /dark/.test(document.body.getAttribute("style"));
     ui();
   }
 };
