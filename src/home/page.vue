@@ -3677,12 +3677,18 @@ div
         h5 Title
         div Complementary text
         nav
-          button.none(@click="updateModal('modal active')") Default
-          button.none(@click="updateModal('modal left active')") Left
-          button.none(@click="updateModal('modal right active')") Right
-          button.none(@click="updateModal('modal top active')") Top
-          button.none(@click="updateModal('modal bottom active')") Bottom
-          button.none(data-ui="#modal") Close
+          button.border.square.round(@click="updateModal('modal active')")
+            i zoom_in_map
+          button.border.square.round(@click="updateModal('modal left active')")
+            i arrow_backward
+          button.border.square.round(@click="updateModal('modal right active')")
+            i arrow_forward
+          button.border.square.round(@click="updateModal('modal top active')")
+            i arrow_upward
+          button.border.square.round(@click="updateModal('modal bottom active')")
+            i arrow_downward
+          button.square.round.flat(data-ui="#modal")
+            i close
 
       #modal-samples.modal.right.large
         header.fixed
@@ -3793,8 +3799,8 @@ div
                   td 3
                   td 4
         nav.right-align
-          button.none(data-ui="#modal-calendar") Cancel
-          button.none(data-ui="#modal-calendar") Ok
+          button.border(data-ui="#modal-calendar") Cancel
+          button.flat(data-ui="#modal-calendar") Ok
 
       #modal-icons.modal.right.large
         header.fixed

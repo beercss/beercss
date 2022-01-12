@@ -14019,68 +14019,64 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass: "none",
+                staticClass: "border square round",
                 on: {
                   click: function ($event) {
                     return _vm.updateModal("modal active")
                   },
                 },
               },
-              [_vm._v("Default")]
+              [_c("i", [_vm._v("zoom_in_map")])]
             ),
             _c(
               "button",
               {
-                staticClass: "none",
+                staticClass: "border square round",
                 on: {
                   click: function ($event) {
                     return _vm.updateModal("modal left active")
                   },
                 },
               },
-              [_vm._v("Left")]
+              [_c("i", [_vm._v("arrow_backward")])]
             ),
             _c(
               "button",
               {
-                staticClass: "none",
+                staticClass: "border square round",
                 on: {
                   click: function ($event) {
                     return _vm.updateModal("modal right active")
                   },
                 },
               },
-              [_vm._v("Right")]
+              [_c("i", [_vm._v("arrow_forward")])]
             ),
             _c(
               "button",
               {
-                staticClass: "none",
+                staticClass: "border square round",
                 on: {
                   click: function ($event) {
                     return _vm.updateModal("modal top active")
                   },
                 },
               },
-              [_vm._v("Top")]
+              [_c("i", [_vm._v("arrow_upward")])]
             ),
             _c(
               "button",
               {
-                staticClass: "none",
+                staticClass: "border square round",
                 on: {
                   click: function ($event) {
                     return _vm.updateModal("modal bottom active")
                   },
                 },
               },
-              [_vm._v("Bottom")]
+              [_c("i", [_vm._v("arrow_downward")])]
             ),
-            _c(
-              "button",
-              { staticClass: "none", attrs: { "data-ui": "#modal" } },
-              [_vm._v("Close")]
-            ),
+            _vm._m(243),
           ]),
         ]),
         _c(
@@ -14088,7 +14084,7 @@ exports.default = _default;
           { staticClass: "modal right large", attrs: { id: "modal-samples" } },
           [
             _c("header", { staticClass: "fixed" }, [
-              _vm._m(243),
+              _vm._m(244),
               _c("div", {
                 directives: [
                   {
@@ -14124,15 +14120,15 @@ exports.default = _default;
           ],
           2
         ),
-        _vm._m(244),
+        _vm._m(245),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
             _c("header", { staticClass: "fixed" }, [
               _c("nav", [
-                _vm._m(245),
                 _vm._m(246),
+                _vm._m(247),
                 _c(
                   "a",
                   {
@@ -19695,6 +19691,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticClass: "square round flat", attrs: { "data-ui": "#modal" } },
+      [_c("i", [_vm._v("close")])]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c("a", { attrs: { "data-ui": "#modal-samples" } }, [
       _c("i", [_vm._v("arrow_backward")]),
       _c("h5", { staticClass: "small-margin" }, [_vm._v("Back")]),
@@ -19867,12 +19873,12 @@ var staticRenderFns = [
         _c("nav", { staticClass: "right-align" }, [
           _c(
             "button",
-            { staticClass: "none", attrs: { "data-ui": "#modal-calendar" } },
+            { staticClass: "border", attrs: { "data-ui": "#modal-calendar" } },
             [_vm._v("Cancel")]
           ),
           _c(
             "button",
-            { staticClass: "none", attrs: { "data-ui": "#modal-calendar" } },
+            { staticClass: "flat", attrs: { "data-ui": "#modal-calendar" } },
             [_vm._v("Ok")]
           ),
         ]),
