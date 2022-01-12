@@ -20,16 +20,16 @@
     .page.right.active(:id="`${id}-tab-image`")
       .space
       nav.wrap
-        a.wave(@click="updateTheme('/wallpaper-1.webp')")
-          img.round.large(:src="'/wallpaper-1.webp'")
-        a.wave(@click="updateTheme('/wallpaper-2.webp')")
-          img.round.large(:src="'/wallpaper-2.webp'")
-        a.wave(@click="updateTheme('/wallpaper-3.webp')")
-          img.round.large(:src="'/wallpaper-3.webp'")
-        a.wave(@click="updateTheme('/wallpaper-4.webp')")
-          img.round.large(:src="'/wallpaper-4.webp'")
-        a.wave(@click="updateTheme('/wallpaper-5.webp')")
-          img.round.large(:src="'/wallpaper-5.webp'")
+        a.wave(@click="updateTheme('/wallpaper-1.jpg')")
+          img.round.large(:src="'/wallpaper-1.jpg'")
+        a.wave(@click="updateTheme('/wallpaper-2.jpg')")
+          img.round.large(:src="'/wallpaper-2.jpg'")
+        a.wave(@click="updateTheme('/wallpaper-3.jpg')")
+          img.round.large(:src="'/wallpaper-3.jpg'")
+        a.wave(@click="updateTheme('/wallpaper-4.jpg')")
+          img.round.large(:src="'/wallpaper-4.jpg'")
+        a.wave(@click="updateTheme('/wallpaper-5.jpg')")
+          img.round.large(:src="'/wallpaper-5.jpg'")
         a.button.square.extra.flat
           i upload
           input.absolute.top.left.right.bottom(:id="`${id}-image`", type="file", @change="updateTheme(`#${id}-image`)", style="opacity: 0")
