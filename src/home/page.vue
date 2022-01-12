@@ -3271,19 +3271,20 @@ div
                     div --outline
                   .col
                     b Shadows
-                    div --shadow-1
-                    div --shadow-2
-                    div --shadow-3
+                    div --shadow1
+                    div --shadow2
+                    div --shadow3
                 .row.no-wrap
                   .col
                     b Speed
-                    div --speed-1
-                    div --speed-2
-                    div --speed-3
-                    div --speed-4
+                    div --speed1
+                    div --speed2
+                    div --speed3
+                    div --speed4
                   .col 
                     b Others
                     div --active
+                    div --overlay
                     div --font
                     div --size
                   .col
