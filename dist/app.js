@@ -9168,7 +9168,7 @@ exports.default = _default;
               _c("div", { staticClass: "space" }),
               _c("nav", { staticClass: "wrap" }, [
                 _c("a", {
-                  staticClass: "button square extra flat red m l",
+                  staticClass: "button square extra flat red",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#f44336")
@@ -9176,7 +9176,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat pink m l",
+                  staticClass: "button square extra flat pink",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#e91e63")
@@ -9184,7 +9184,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat purple m l",
+                  staticClass: "button square extra flat purple",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#9c27b0")
@@ -9192,7 +9192,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat deep-purple m l",
+                  staticClass: "button square extra flat deep-purple",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#673ab7")
@@ -9200,7 +9200,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat indigo m l",
+                  staticClass: "button square extra flat indigo",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#3f51b5")
@@ -9208,7 +9208,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat blue m l",
+                  staticClass: "button square extra flat blue",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#2196f3")
@@ -9216,7 +9216,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat light-blue m l",
+                  staticClass: "button square extra flat light-blue",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#03a9f4")
@@ -9224,7 +9224,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat cyan m l",
+                  staticClass: "button square extra flat cyan",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#00bcd4")
@@ -9232,7 +9232,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat teal m l",
+                  staticClass: "button square extra flat teal",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#009688")
@@ -9240,7 +9240,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat green m l",
+                  staticClass: "button square extra flat green",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#4caf50")
@@ -9248,7 +9248,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat light-green m l",
+                  staticClass: "button square extra flat light-green",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#8bc34a")
@@ -9256,7 +9256,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat lime m l",
+                  staticClass: "button square extra flat lime",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#cddc39")
@@ -9264,7 +9264,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat yellow m l",
+                  staticClass: "button square extra flat yellow",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#ffeb3b")
@@ -9272,7 +9272,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat amber m l",
+                  staticClass: "button square extra flat amber",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#ffc107")
@@ -9280,7 +9280,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat orange m l",
+                  staticClass: "button square extra flat orange",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#ff9800")
@@ -9288,7 +9288,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat depp-orange m l",
+                  staticClass: "button square extra flat depp-orange",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#ff5722")
@@ -9296,7 +9296,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat brown m l",
+                  staticClass: "button square extra flat brown",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#795548")
@@ -9304,7 +9304,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat grey m l",
+                  staticClass: "button square extra flat grey",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#9e9e9e")
@@ -9312,7 +9312,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat blue-grey m l",
+                  staticClass: "button square extra flat blue-grey",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#607d8b")
@@ -9320,7 +9320,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat black m l",
+                  staticClass: "button square extra flat black",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#000000")
@@ -9328,7 +9328,7 @@ exports.default = _default;
                   },
                 }),
                 _c("a", {
-                  staticClass: "button square extra flat white m l",
+                  staticClass: "button square extra flat white",
                   on: {
                     click: function ($event) {
                       return _vm.updateTheme("#ffffff")
