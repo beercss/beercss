@@ -134,7 +134,7 @@ div
                 h2 Beercss 🍻
                 h4 Hope you enjoy it!
               .col.s12.m6
-                b.large-text An framework out of the box.
+                b.large-text An framework out of the box.&nbsp;
                 span.large-text This is a tech page and do not need to be a beautiful page. This page needs to be useful. We believe that this framework can be very useful for the community. This framework is calling for people that say things like:
                 .space
                 .large-text - Yes they have a beer!
@@ -145,6 +145,7 @@ div
                 .large-text - I do not need an ecosystem to run this?
                 .large-text - Wow, I did my work in record time!
             .medium-space
+          .large-space
           .large-space
         #badges.col.s12
           h4
