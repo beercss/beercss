@@ -8985,10 +8985,7 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "modal medium left surface-variant no-scroll",
-      attrs: { id: _vm.id },
-    },
+    { staticClass: "modal medium left no-scroll", attrs: { id: _vm.id } },
     [
       _vm._t("default"),
       _c(

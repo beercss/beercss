@@ -1,5 +1,5 @@
 <template lang="pug">
-.modal.medium.left.surface-variant.no-scroll(:id="id")
+.modal.medium.left.no-scroll(:id="id")
   slot
   div(v-show="!showCssVariables")
     .row.no-wrap.middle-align.no-space
