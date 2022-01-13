@@ -9923,7 +9923,7 @@ var _default = {
       var tag = $(element).clone();
       tag.find(".overlay").remove();
       tag.find("[style*='none']").remove();
-      return process(tag[0].outerHTML.replace(/\s+(onclick|style)\="[^\"]*"/gi, "").replace(/\s+id\="(\w+)"/gi, ' id="$1_"').replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1_"').replace(/\s+[a-z-]+\=(""|"#")/gi, "").replace(/\n\<\/(circle|th)\>/gi, "</$1>")).replace(/^\s+/g, "");
+      return process(tag[0].outerHTML.replace(/\s+(onclick|style|data-v-\w+)\="[^\"]*"/gi, "").replace(/\s+id\="(\w+)"/gi, ' id="$1_"').replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1_"').replace(/\s+[a-z-]+\=(""|"#")/gi, "").replace(/\n\<\/(circle|th)\>/gi, "</$1>")).replace(/^\s+/g, "");
     },
     showSamples: function showSamples(selector, modal, text) {
       var _this = this;
@@ -9934,9 +9934,18 @@ var _default = {
       this.modalSample = modal || "#modal-samples";
 
       for (var i = 0; i < elements.length; i++) {
-        var html = this.formatHtml($(elements[i]), true);
-        var htmlFormatted = hljs.highlight("html", html).value;
-        if ($(elements[i]).is(".menu") || $(elements[i]).is(".modal") || $(elements[i]).is(".toast") || $(elements[i]).is(".container") || $(elements[i]).is(".fixed")) html = "";
+        var element = $($(elements[i])[0].outerHTML);
+
+        if (element.is(".menu")) {
+          element.find(".modal").html("");
+          var html = this.formatHtml(element, true);
+          var htmlFormatted = hljs.highlight("html", html).value;
+        } else {
+          var html = this.formatHtml(element, true);
+          var htmlFormatted = hljs.highlight("html", html).value;
+        }
+
+        if (element.is(".menu") || element.is(".modal") || element.is(".toast") || element.is(".container") || element.is(".fixed")) html = "";
         this.samples.push({
           html: html,
           sourceCode: htmlFormatted
@@ -10912,7 +10921,7 @@ exports.default = _default;
                   _vm._m(11),
                   _vm._m(12),
                   _vm._m(13),
-                  _c("div", { staticClass: "col s12 m6 l3" }, [
+                  _c("div", { staticClass: "col s6 m6 l3" }, [
                     _c("nav", [
                       _c("button", { staticClass: "extend border square" }, [
                         _c("img", {
@@ -14204,7 +14213,6 @@ var staticRenderFns = [
     return _c("a", { attrs: { "data-ui": "#more1" } }, [
       _c("i", [_vm._v("collections")]),
       _c("div", [_vm._v("Templates")]),
-      _c("span", { staticClass: "badge circle margin" }, [_vm._v("5")]),
     ])
   },
   function () {
@@ -14223,7 +14231,6 @@ var staticRenderFns = [
     return _c("a", { attrs: { "data-ui": "#more2" } }, [
       _c("i", [_vm._v("collections")]),
       _c("div", [_vm._v("Templates")]),
-      _c("span", { staticClass: "badge circle margin" }, [_vm._v("5")]),
     ])
   },
   function () {
@@ -14689,7 +14696,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s12 m6 l3" }, [
+    return _c("div", { staticClass: "col s6 m6 l3" }, [
       _c("nav", [
         _c("button", { staticClass: "extend square" }, [
           _c("i", [_vm._v("add")]),
@@ -14751,7 +14758,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s12 m6 l3" }, [
+    return _c("div", { staticClass: "col s6 m6 l3" }, [
       _c("nav", [
         _c("button", { staticClass: "extend flat square" }, [
           _c("i", [_vm._v("add")]),
@@ -14816,7 +14823,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col s12 m6 l3" }, [
+    return _c("div", { staticClass: "col s6 m6 l3" }, [
       _c("nav", [
         _c("button", { staticClass: "extend border square" }, [
           _c("i", [_vm._v("add")]),

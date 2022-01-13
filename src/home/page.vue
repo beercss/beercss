@@ -26,7 +26,6 @@ div
     a(data-ui="#more1")
       i collections
       div Templates
-      span.badge.circle.margin 5
     a(@click="showSamples('.menu.m.l')")
       i code
       div Code
@@ -64,7 +63,6 @@ div
     a(data-ui="#more2")
       i collections
       div Templates
-      span.badge.circle.margin 5
     a(@click="showSamples('.menu.s')")
       i code
       div Code
@@ -418,7 +416,7 @@ div
               i code
           selectionForButtons(context="extended-fabs", :sizes="['extra']", selectedSize="extra")
           #extended-fabs.row
-            .col.s12.m6.l3
+            .col.s6.m6.l3
               nav
                 button.extend.square
                   i add
@@ -455,7 +453,7 @@ div
                 button.extend.circle.right-round
                   i add
                   span Button
-            .col.s12.m6.l3
+            .col.s6.m6.l3
               nav
                 button.extend.flat.square
                   i add
@@ -492,7 +490,7 @@ div
                 button.extend.flat.circle.right-round
                   i add
                   span Button
-            .col.s12.m6.l3
+            .col.s6.m6.l3
               nav
                 button.extend.border.square
                   i add
@@ -529,7 +527,7 @@ div
                 button.extend.border.circle.right-round
                   i add
                   span Button
-            .col.s12.m6.l3
+            .col.s6.m6.l3
               nav
                 button.extend.border.square
                   img.responsive(:src="'/favicon.png'")
@@ -4065,7 +4063,7 @@ export default {
 
       return process(
         tag[0].outerHTML
-          .replace(/\s+(onclick|style)\="[^\"]*"/gi, "")
+          .replace(/\s+(onclick|style|data-v-\w+)\="[^\"]*"/gi, "")
           .replace(/\s+id\="(\w+)"/gi, ' id="$1_"')
           .replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1_"')
           .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
@@ -4079,15 +4077,23 @@ export default {
       this.modalSample = modal || "#modal-samples";
 
       for (var i = 0; i < elements.length; i++) {
-        var html = this.formatHtml($(elements[i]), true);
-        var htmlFormatted = hljs.highlight("html", html).value;
+        var element = $($(elements[i])[0].outerHTML);
+        
+        if (element.is(".menu")) {
+          element.find(".modal").html("");
+          var html = this.formatHtml(element, true);
+          var htmlFormatted = hljs.highlight("html", html).value;
+        } else {
+          var html = this.formatHtml(element, true);
+          var htmlFormatted = hljs.highlight("html", html).value;
+        }
 
         if (
-          $(elements[i]).is(".menu") ||
-          $(elements[i]).is(".modal") ||
-          $(elements[i]).is(".toast") ||
-          $(elements[i]).is(".container") ||
-          $(elements[i]).is(".fixed")
+          element.is(".menu") ||
+          element.is(".modal") ||
+          element.is(".toast") ||
+          element.is(".container") ||
+          element.is(".fixed")
         )
           html = "";
 
