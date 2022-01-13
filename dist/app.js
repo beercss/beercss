@@ -14275,12 +14275,48 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12", attrs: { id: "intro" } }, [
-      _c("h4", { staticClass: "center-align" }, [_vm._v("Hope you enjoy it")]),
-      _c("h2", { staticClass: "center-align" }, [_vm._v("Beercss 🍻")]),
-      _c("div", { staticClass: "center-align" }, [
-        _vm._v("latest version 2.0.0"),
+      _c("article", { staticClass: "border round large-padding" }, [
+        _c("div", { staticClass: "medium-space" }),
+        _c("div", { staticClass: "row middle-align" }, [
+          _c("div", { staticClass: "col s12 m6 center-align" }, [
+            _c("h2", [_vm._v("Beercss 🍻")]),
+            _c("h4", [_vm._v("Hope you enjoy it!")]),
+          ]),
+          _c("div", { staticClass: "col s12 m6" }, [
+            _c("b", { staticClass: "large-text" }, [
+              _vm._v("An framework out of the box."),
+            ]),
+            _c("span", { staticClass: "large-text" }, [
+              _vm._v(
+                "This is a tech page and do not need to be a beautiful page. This page needs to be useful. We believe that this framework can be very useful for the community. This framework is calling for people that say things like:"
+              ),
+            ]),
+            _c("div", { staticClass: "space" }),
+            _c("div", { staticClass: "large-text" }, [
+              _vm._v("- Yes they have a beer!"),
+            ]),
+            _c("div", { staticClass: "large-text" }, [
+              _vm._v("- Only one page?"),
+            ]),
+            _c("div", { staticClass: "large-text" }, [
+              _vm._v("- There is no documentation?"),
+            ]),
+            _c("div", { staticClass: "large-text" }, [
+              _vm._v('- When I click on "<>" it shows the code for me?'),
+            ]),
+            _c("div", { staticClass: "large-text" }, [
+              _vm._v("- How do they that with only 10kb?"),
+            ]),
+            _c("div", { staticClass: "large-text" }, [
+              _vm._v("- I do not need an ecosystem to run this?"),
+            ]),
+            _c("div", { staticClass: "large-text" }, [
+              _vm._v("- Wow, I did my work in record time!"),
+            ]),
+          ]),
+        ]),
+        _c("div", { staticClass: "medium-space" }),
       ]),
-      _c("div", { staticClass: "large-space" }),
       _c("div", { staticClass: "large-space" }),
     ])
   },

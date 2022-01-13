@@ -123,15 +123,28 @@ div
       .large-space
       .large-space
       .large-space
-
   .container
     #begin
       .row
         #intro.col.s12
-          h4.center-align Hope you enjoy it
-          h2.center-align Beercss 🍻
-          .center-align latest version 2.0.0
-          .large-space
+          article.border.round.large-padding
+            .medium-space
+            .row.middle-align
+              .col.s12.m6.center-align
+                h2 Beercss 🍻
+                h4 Hope you enjoy it!
+              .col.s12.m6
+                b.large-text An framework out of the box.
+                span.large-text This is a tech page and do not need to be a beautiful page. This page needs to be useful. We believe that this framework can be very useful for the community. This framework is calling for people that say things like:
+                .space
+                .large-text - Yes they have a beer!
+                .large-text - Only one page?
+                .large-text - There is no documentation?
+                .large-text - When I click on "<>" it shows the code for me?
+                .large-text - How do they that with only 10kb?
+                .large-text - I do not need an ecosystem to run this?
+                .large-text - Wow, I did my work in record time!
+            .medium-space
           .large-space
         #badges.col.s12
           h4
