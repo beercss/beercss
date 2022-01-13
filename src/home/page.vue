@@ -129,11 +129,12 @@ div
         #intro.col.s12
           article.border.round.large-padding
             .medium-space
-            .row.middle-align
-              .col.s12.m6.center-align
-                h2 Beercss 🍻
-                h4 Hope you enjoy it!
-              .col.s12.m6
+            .row
+              .col.s12.m12.l6.center-align
+                h3 Beercss 
+                h5 Hope you enjoy it!
+                h1 🍻
+              .col.s12.m12.l6
                 b.large-text An framework out of the box.&nbsp;
                 span.large-text This is a tech page and do not need to be a beautiful page. This page needs to be useful. We believe that this framework can be very useful for the community. This framework is calling for people that say things like:
                 .space

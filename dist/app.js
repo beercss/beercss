@@ -14277,12 +14277,13 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col s12", attrs: { id: "intro" } }, [
       _c("article", { staticClass: "border round large-padding" }, [
         _c("div", { staticClass: "medium-space" }),
-        _c("div", { staticClass: "row middle-align" }, [
-          _c("div", { staticClass: "col s12 m6 center-align" }, [
-            _c("h2", [_vm._v("Beercss 🍻")]),
-            _c("h4", [_vm._v("Hope you enjoy it!")]),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col s12 m12 l6 center-align" }, [
+            _c("h3", [_vm._v("Beercss ")]),
+            _c("h5", [_vm._v("Hope you enjoy it!")]),
+            _c("h1", [_vm._v("🍻")]),
           ]),
-          _c("div", { staticClass: "col s12 m6" }, [
+          _c("div", { staticClass: "col s12 m12 l6" }, [
             _c("b", { staticClass: "large-text" }, [
               _vm._v("An framework out of the box. "),
             ]),
