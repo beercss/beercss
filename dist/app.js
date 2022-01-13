@@ -13417,7 +13417,7 @@ exports.default = _default;
                       _vm.showSamples(
                         "#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip",
                         null,
-                        'To change the progress call a js function&nbsp;<b>ui("#progress", percentage)</b>'
+                        '<span>To change the progress call a js function&nbsp;</span><b>ui("#progress", percentage)</b>'
                       )
                     },
                   },
@@ -14100,7 +14100,6 @@ exports.default = _default;
                     expression: "textSample",
                   },
                 ],
-                staticClass: "middle-align",
                 domProps: { innerHTML: _vm._s(_vm.textSample) },
               }),
             ]),

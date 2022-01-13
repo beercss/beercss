@@ -2228,7 +2228,7 @@ div
           .large-space
           h4
             span Progress
-            a.chip.circle(@click="showSamples('#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, 'To change the progress call a js function&nbsp;<b>ui(\"#progress\", percentage)</b>')")
+            a.chip.circle(@click="showSamples('#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, '<span>To change the progress call a js function&nbsp;</span><b>ui(\"#progress\", percentage)</b>')")
               i code
           nav.wrap
             label.radio
@@ -3708,7 +3708,7 @@ div
           a(data-ui="#modal-samples")
             i arrow_backward
             h5.small-margin Back
-          .middle-align(v-show="textSample", v-html="textSample")
+          div(v-show="textSample", v-html="textSample")
         article.border(v-for="exemplo in samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
