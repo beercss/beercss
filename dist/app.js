@@ -14284,7 +14284,7 @@ var staticRenderFns = [
           ]),
           _c("div", { staticClass: "col s12 m12 l6" }, [
             _c("b", { staticClass: "large-text" }, [
-              _vm._v("An framework out of the box. "),
+              _vm._v("A framework out of the box. "),
             ]),
             _c("span", { staticClass: "large-text" }, [
               _vm._v(

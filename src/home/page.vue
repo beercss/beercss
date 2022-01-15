@@ -135,7 +135,7 @@ div
                 h5 Hope you enjoy it!
                 h1 🍻
               .col.s12.m12.l6
-                b.large-text An framework out of the box.&nbsp;
+                b.large-text A framework out of the box.&nbsp;
                 span.large-text This is a tech page and do not need to be a beautiful page. This page needs to be useful. We believe that this framework can be very useful for the community. This framework is calling for people that say things like:
                 .space
                 .large-text - Yes they have a beer!
