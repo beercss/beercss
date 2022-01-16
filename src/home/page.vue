@@ -1875,10 +1875,11 @@ div
             label.checkbox
               input#bottom-layouts(type="checkbox")
               span bottom
-          article.border.medium.no-padding
-            .padding.absolute.blue.white-text.center.middle.primary
-              h5 Position
-              div Lorem ipsum dolor...
+          #positions
+            article.border.medium.no-padding
+              .padding.absolute.blue.white-text.center.middle.primary
+                h5 Position
+                div Lorem ipsum dolor...
           .space
           nav.wrap
             label.radio
@@ -1910,10 +1911,11 @@ div
             label.radio
               input#bottom-align-layouts(type="radio", name="vertical-layouts")
               span bottom-align
-          article.border.medium.no-padding.center-align.middle-align
-            .padding
-              h5 Alignment
-              div Lorem ipsum dolor...
+          #alignments
+            article.border.medium.no-padding.center-align.middle-align
+              .padding
+                h5 Alignment
+                div Lorem ipsum dolor...
           .space
           .row
             .col.s12.m6
@@ -3971,7 +3973,7 @@ export default {
           "middle-align",
         ];
         var position = $("#positions .absolute");
-        var alignment = $("#alignments #container");
+        var alignment = $("#alignments article");
 
         if (checked && (id == "left-layouts" || id == "right-layouts"))
           $("#center-layouts")[0].checked = false;

@@ -9834,7 +9834,7 @@ var _default = {
         var positions = ["left", "right", "center", "top", "bottom", "middle"];
         var alignments = ["left-align", "right-align", "center-align", "top-align", "bottom-align", "middle-align"];
         var position = $("#positions .absolute");
-        var alignment = $("#alignments #container");
+        var alignment = $("#alignments article");
         if (checked && (id == "left-layouts" || id == "right-layouts")) $("#center-layouts")[0].checked = false;
         if (checked && (id == "top-layouts" || id == "bottom-layouts")) $("#middle-layouts")[0].checked = false;
 
@@ -16864,17 +16864,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("article", { staticClass: "border medium no-padding" }, [
-      _c(
-        "div",
-        {
-          staticClass: "padding absolute blue white-text center middle primary",
-        },
-        [
-          _c("h5", [_vm._v("Position")]),
-          _c("div", [_vm._v("Lorem ipsum dolor...")]),
-        ]
-      ),
+    return _c("div", { attrs: { id: "positions" } }, [
+      _c("article", { staticClass: "border medium no-padding" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "padding absolute blue white-text center middle primary",
+          },
+          [
+            _c("h5", [_vm._v("Position")]),
+            _c("div", [_vm._v("Lorem ipsum dolor...")]),
+          ]
+        ),
+      ]),
     ])
   },
   function () {
@@ -16950,16 +16953,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "article",
-      { staticClass: "border medium no-padding center-align middle-align" },
-      [
-        _c("div", { staticClass: "padding" }, [
-          _c("h5", [_vm._v("Alignment")]),
-          _c("div", [_vm._v("Lorem ipsum dolor...")]),
-        ]),
-      ]
-    )
+    return _c("div", { attrs: { id: "alignments" } }, [
+      _c(
+        "article",
+        { staticClass: "border medium no-padding center-align middle-align" },
+        [
+          _c("div", { staticClass: "padding" }, [
+            _c("h5", [_vm._v("Alignment")]),
+            _c("div", [_vm._v("Lorem ipsum dolor...")]),
+          ]),
+        ]
+      ),
+    ])
   },
   function () {
     var _vm = this
