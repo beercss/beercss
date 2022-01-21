@@ -175,22 +175,16 @@
   padding: 16rem 48rem 80rem 48rem;
 }
 
-.modal > a:not(button, .button, .chip):before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: inherit;
-}
-
-.modal > a.row:before {
-  margin: -8rem;
-}
-
-.modal > a:not(button, .button, .chip):hover:before {
+.modal > a:not(button, .button, .chip):hover {
   background-color: var(--active);
+}
+
+.modal > a.row {
+  margin: 0 -8rem;
+}
+
+.modal > a:not(button, .button, .chip) {
+  padding: 12rem 0;
 }
 
 @keyframes modal-to-right {
