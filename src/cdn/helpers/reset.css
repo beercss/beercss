@@ -1,3 +1,10 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  vertical-align: middle;
+  color: inherit;
+}
+
 body {
   color: var(--on-background);
   background-color: var(--background);
@@ -5,17 +12,10 @@ body {
   overflow-x: hidden;
 }
 
-* {
-  -webkit-tap-highlight-color: transparent;
-  position: relative;
-  vertical-align: middle;
-  color: var(--on-background);
+label {
+  font-size: 12rem;
 }
 
-* > * {
-  color: inherit;
-}
- 
 a,
 button,
 .button {
@@ -27,11 +27,6 @@ button,
   font-family: inherit;
   outline: inherit;
   justify-content: center;
-}
-
-label {
-  font-size: 12rem;
-  color: var(--on-background);
 }
 
 .wrap {

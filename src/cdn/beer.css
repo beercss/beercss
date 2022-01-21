@@ -1,6 +1,7 @@
 @import "./settings/urls.css";
 @import "./settings/light.css";
 @import "./settings/dark.css";
+@import "./helpers/reset.css";
 @import "./helpers/colors.css";
 @import "./elements/badges.css";
 @import "./elements/buttons.css";
@@ -30,7 +31,6 @@
 @import "./helpers/dividers.css";
 @import "./helpers/forms.css";
 @import "./helpers/margins.css";
-@import "./helpers/others.css";
 @import "./helpers/paddings.css";
 @import "./helpers/positions.css";
 @import "./helpers/shadows.css";
