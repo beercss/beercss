@@ -86,6 +86,11 @@ export default {
   mounted() {
     ui();
   },
+  methods: {
+    scroll(selector) {
+      document.querySelector(selector).scrollIntoView({block: "start", behavior: "smooth"});
+    }
+  }
 };
 </script>
 

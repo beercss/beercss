@@ -136,7 +136,7 @@ div
       .col.min
         i video_library
       .col Library
-    .large-divider
+    .divider
     a.row.no-wrap(data-ui="#modal-expanded")
       .col.min
         i history

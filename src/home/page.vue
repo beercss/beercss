@@ -1805,48 +1805,48 @@ div
             .col.s12.l4
               .field.label
                 input(type="text")
-                label Text
+                label Label
             .col.s12.l4
               .field.label
                 input(type="text")
-                label Text
+                label Label
                 span.helper Complementary text
             .col.s12.l4
               .field.label.invalid
                 input(type="text")
-                label Text
+                label Label
                 span.error Error text
             .col.s12.l4
               .field.label.prefix
                 i search
                 input(type="text")
-                label Text
+                label Label
             .col.s12.l4
               .field.label.suffix
                 input(type="text")
-                label Text
+                label Label
                 i search
             .col.s12.l4
               .field.label.prefix.suffix
                 i search
                 input(type="text")
-                label Text
+                label Label
                 i search
             .col.s12.l4
               .field.label.prefix
                 img.circle(:src="'/favicon.png'")
                 input(type="text")
-                label Text
+                label Label
             .col.s12.l4
               .field.label.suffix
                 input(type="text")
-                label Text
+                label Label
                 img.circle(:src="'/favicon.png'")
             .col.s12.l4
               .field.label.prefix.suffix
                 img.circle(:src="'/favicon.png'")
                 input(type="text")
-                label Text
+                label Label
                 img.circle(:src="'/favicon.png'")
         #layouts.col.s12
           .large-space
@@ -2540,7 +2540,7 @@ div
                   option Item 1
                   option Item 2
                   option Item 3
-                label.active List
+                label.active Label
                 i arrow_drop_down
             .col.s12.l4
               .field.label.suffix
@@ -2548,7 +2548,7 @@ div
                   option Item 1
                   option Item 2
                   option Item 3
-                label.active List
+                label.active Label
                 i arrow_drop_down
                 span.helper Complementary text
             .col.s12.l4
@@ -2557,7 +2557,7 @@ div
                   option Item 1
                   option Item 2
                   option Item 3
-                label.active List
+                label.active Label
                 i arrow_drop_down
                 span.error Error text
             .col.s12.l4
@@ -2566,7 +2566,7 @@ div
                   option Item 1
                   option Item 2
                   option Item 3
-                label.active List
+                label.active Label
                 img.circle(:src="'/favicon.png'")
             .col.s12.l4
               .field.label.suffix
@@ -2574,16 +2574,16 @@ div
                   option Item 1
                   option Item 2
                   option Item 3
-                label.active List
+                label.active Label
                 img.circle(:src="'/favicon.png'")
                 span.helper Complementary text
             .col.s12.l4
-              .field.label.suffix
+              .field.label.suffix.invalid
                 select
                   option Item 1
                   option Item 2
                   option Item 3
-                label.active List
+                label.active Label
                 img.circle(:src="'/favicon.png'")
                 span.error Error text
         #switches.col.s12
@@ -2897,48 +2897,48 @@ div
             .col.s12.l4
               .field.textarea.label
                 textarea
-                label Text
+                label Label
             .col.s12.l4
               .field.textarea.label
                 textarea
-                label Text
+                label Label
                 span.helper Complementary text
             .col.s12.l4
               .field.textarea.label.invalid
                 textarea
-                label Text
+                label Label
                 span.error Error text
             .col.s12.l4
               .field.textarea.label.prefix
                 i search
                 textarea
-                label Text
+                label Label
             .col.s12.l4
               .field.textarea.label.suffix
                 textarea
-                label Text
+                label Label
                 i search
             .col.s12.l4
               .field.textarea.label.prefix.suffix
                 i search
                 textarea
-                label Text
+                label Label
                 i search
             .col.s12.l4
               .field.textarea.label.prefix
                 img.circle(:src="'/favicon.png'")
                 textarea
-                label Text
+                label Label
             .col.s12.l4
               .field.textarea.label.suffix
                 textarea
-                label Text
+                label Label
                 img.circle(:src="'/favicon.png'")
             .col.s12.l4
               .field.textarea.label.prefix.suffix
                 img.circle(:src="'/favicon.png'")
                 textarea
-                label Text
+                label Label
                 img.circle(:src="'/favicon.png'")
         #toasts.col.s12.l6
           .large-space
@@ -4284,7 +4284,7 @@ export default {
               }
 
               if (ids[i] == "text") {
-                labels.html("Text");
+                labels.html("Label");
                 inputs.attr("type", ids[i]);
                 icons.html("search");
               }
@@ -4301,6 +4301,7 @@ export default {
             else $("#inputs .field").removeClass(ids[i]);
           }
         }
+        ui();
       });
     },
     selectSamples() {
@@ -4313,6 +4314,7 @@ export default {
           if ($(selector).is(":checked")) $("#selects .field").addClass(ids[i]);
           else $("#selects .field").removeClass(ids[i]);
         }
+        ui();
       });
     },
     textareaSamples() {
@@ -4327,6 +4329,7 @@ export default {
             $("#textareas .field").addClass(ids[i]);
           else $("#textareas .field").removeClass(ids[i]);
         }
+        ui();
       });
     },
     rowSamples() {
