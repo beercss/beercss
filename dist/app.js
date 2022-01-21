@@ -10097,7 +10097,7 @@ var _default = {
               }
 
               if (ids[i] == "text") {
-                labels.html("Text");
+                labels.html("Label");
                 inputs.attr("type", ids[i]);
                 icons.html("search");
               }
@@ -10112,6 +10112,8 @@ var _default = {
             if ($(selector).is(":checked")) $("#inputs .field").addClass(ids[i]);else $("#inputs .field").removeClass(ids[i]);
           }
         }
+
+        ui();
       });
     },
     selectSamples: function selectSamples() {
@@ -10122,6 +10124,8 @@ var _default = {
           var selector = "#" + ids[i] + "-selects";
           if ($(selector).is(":checked")) $("#selects .field").addClass(ids[i]);else $("#selects .field").removeClass(ids[i]);
         }
+
+        ui();
       });
     },
     textareaSamples: function textareaSamples() {
@@ -10132,6 +10136,8 @@ var _default = {
           var selector = "#" + ids[i] + "-textareas";
           if ($(selector).is(":checked")) $("#textareas .field").addClass(ids[i]);else $("#textareas .field").removeClass(ids[i]);
         }
+
+        ui();
       });
     },
     rowSamples: function rowSamples() {
@@ -12667,13 +12673,13 @@ exports.default = _default;
                     attrs: { src: "/favicon.png" },
                   }),
                   _c("input", { attrs: { type: "text" } }),
-                  _c("label", [_vm._v("Text")]),
+                  _c("label", [_vm._v("Label")]),
                 ]),
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field label suffix" }, [
                   _c("input", { attrs: { type: "text" } }),
-                  _c("label", [_vm._v("Text")]),
+                  _c("label", [_vm._v("Label")]),
                   _c("img", {
                     staticClass: "circle",
                     attrs: { src: "/favicon.png" },
@@ -12687,7 +12693,7 @@ exports.default = _default;
                     attrs: { src: "/favicon.png" },
                   }),
                   _c("input", { attrs: { type: "text" } }),
-                  _c("label", [_vm._v("Text")]),
+                  _c("label", [_vm._v("Label")]),
                   _c("img", {
                     staticClass: "circle",
                     attrs: { src: "/favicon.png" },
@@ -13532,7 +13538,7 @@ exports.default = _default;
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field label suffix" }, [
                   _vm._m(204),
-                  _c("label", { staticClass: "active" }, [_vm._v("List")]),
+                  _c("label", { staticClass: "active" }, [_vm._v("Label")]),
                   _c("img", {
                     staticClass: "circle",
                     attrs: { src: "/favicon.png" },
@@ -13542,7 +13548,7 @@ exports.default = _default;
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field label suffix" }, [
                   _vm._m(205),
-                  _c("label", { staticClass: "active" }, [_vm._v("List")]),
+                  _c("label", { staticClass: "active" }, [_vm._v("Label")]),
                   _c("img", {
                     staticClass: "circle",
                     attrs: { src: "/favicon.png" },
@@ -13553,9 +13559,9 @@ exports.default = _default;
                 ]),
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label suffix" }, [
+                _c("div", { staticClass: "field label suffix invalid" }, [
                   _vm._m(206),
-                  _c("label", { staticClass: "active" }, [_vm._v("List")]),
+                  _c("label", { staticClass: "active" }, [_vm._v("Label")]),
                   _c("img", {
                     staticClass: "circle",
                     attrs: { src: "/favicon.png" },
@@ -13739,13 +13745,13 @@ exports.default = _default;
                     attrs: { src: "/favicon.png" },
                   }),
                   _c("textarea"),
-                  _c("label", [_vm._v("Text")]),
+                  _c("label", [_vm._v("Label")]),
                 ]),
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c("div", { staticClass: "field textarea label suffix" }, [
                   _c("textarea"),
-                  _c("label", [_vm._v("Text")]),
+                  _c("label", [_vm._v("Label")]),
                   _c("img", {
                     staticClass: "circle",
                     attrs: { src: "/favicon.png" },
@@ -13762,7 +13768,7 @@ exports.default = _default;
                       attrs: { src: "/favicon.png" },
                     }),
                     _c("textarea"),
-                    _c("label", [_vm._v("Text")]),
+                    _c("label", [_vm._v("Label")]),
                     _c("img", {
                       staticClass: "circle",
                       attrs: { src: "/favicon.png" },
@@ -16760,7 +16766,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col s12 l4" }, [
       _c("div", { staticClass: "field label" }, [
         _c("input", { attrs: { type: "text" } }),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
       ]),
     ])
   },
@@ -16771,7 +16777,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col s12 l4" }, [
       _c("div", { staticClass: "field label" }, [
         _c("input", { attrs: { type: "text" } }),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
         _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")]),
       ]),
     ])
@@ -16783,7 +16789,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col s12 l4" }, [
       _c("div", { staticClass: "field label invalid" }, [
         _c("input", { attrs: { type: "text" } }),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
         _c("span", { staticClass: "error" }, [_vm._v("Error text")]),
       ]),
     ])
@@ -16796,7 +16802,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "field label prefix" }, [
         _c("i", [_vm._v("search")]),
         _c("input", { attrs: { type: "text" } }),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
       ]),
     ])
   },
@@ -16807,7 +16813,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col s12 l4" }, [
       _c("div", { staticClass: "field label suffix" }, [
         _c("input", { attrs: { type: "text" } }),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
         _c("i", [_vm._v("search")]),
       ]),
     ])
@@ -16820,7 +16826,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "field label prefix suffix" }, [
         _c("i", [_vm._v("search")]),
         _c("input", { attrs: { type: "text" } }),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
         _c("i", [_vm._v("search")]),
       ]),
     ])
@@ -17834,7 +17840,7 @@ var staticRenderFns = [
           _c("option", [_vm._v("Item 2")]),
           _c("option", [_vm._v("Item 3")]),
         ]),
-        _c("label", { staticClass: "active" }, [_vm._v("List")]),
+        _c("label", { staticClass: "active" }, [_vm._v("Label")]),
         _c("i", [_vm._v("arrow_drop_down")]),
       ]),
     ])
@@ -17850,7 +17856,7 @@ var staticRenderFns = [
           _c("option", [_vm._v("Item 2")]),
           _c("option", [_vm._v("Item 3")]),
         ]),
-        _c("label", { staticClass: "active" }, [_vm._v("List")]),
+        _c("label", { staticClass: "active" }, [_vm._v("Label")]),
         _c("i", [_vm._v("arrow_drop_down")]),
         _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")]),
       ]),
@@ -17867,7 +17873,7 @@ var staticRenderFns = [
           _c("option", [_vm._v("Item 2")]),
           _c("option", [_vm._v("Item 3")]),
         ]),
-        _c("label", { staticClass: "active" }, [_vm._v("List")]),
+        _c("label", { staticClass: "active" }, [_vm._v("Label")]),
         _c("i", [_vm._v("arrow_drop_down")]),
         _c("span", { staticClass: "error" }, [_vm._v("Error text")]),
       ]),
@@ -18429,7 +18435,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col s12 l4" }, [
       _c("div", { staticClass: "field textarea label" }, [
         _c("textarea"),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
       ]),
     ])
   },
@@ -18440,7 +18446,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col s12 l4" }, [
       _c("div", { staticClass: "field textarea label" }, [
         _c("textarea"),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
         _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")]),
       ]),
     ])
@@ -18452,7 +18458,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col s12 l4" }, [
       _c("div", { staticClass: "field textarea label invalid" }, [
         _c("textarea"),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
         _c("span", { staticClass: "error" }, [_vm._v("Error text")]),
       ]),
     ])
@@ -18465,7 +18471,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "field textarea label prefix" }, [
         _c("i", [_vm._v("search")]),
         _c("textarea"),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
       ]),
     ])
   },
@@ -18476,7 +18482,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col s12 l4" }, [
       _c("div", { staticClass: "field textarea label suffix" }, [
         _c("textarea"),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
         _c("i", [_vm._v("search")]),
       ]),
     ])
@@ -18489,7 +18495,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "field textarea label prefix suffix" }, [
         _c("i", [_vm._v("search")]),
         _c("textarea"),
-        _c("label", [_vm._v("Text")]),
+        _c("label", [_vm._v("Label")]),
         _c("i", [_vm._v("search")]),
       ]),
     ])
@@ -20357,7 +20363,7 @@ exports.default = _default;
         _vm._m(11),
         _vm._m(12),
         _vm._m(13),
-        _c("div", { staticClass: "large-divider" }),
+        _c("div", { staticClass: "divider" }),
         _vm._m(14),
         _vm._m(15),
         _vm._m(16),
@@ -21744,6 +21750,14 @@ var _default = {
   }),
   mounted: function mounted() {
     ui();
+  },
+  methods: {
+    scroll: function scroll(selector) {
+      document.querySelector(selector).scrollIntoView({
+        block: "start",
+        behavior: "smooth"
+      });
+    }
   }
 };
 exports.default = _default;
@@ -24522,7 +24536,7 @@ var staticRenderFns = [
       "button",
       {
         staticClass:
-          "margin wave light none white-text capitalize m l large-text",
+          "small-padding wave light none white-text capitalize m l large-text",
         attrs: { "data-ui": "#dropdown-ride" },
       },
       [
@@ -24555,7 +24569,7 @@ var staticRenderFns = [
       "button",
       {
         staticClass:
-          "margin wave light none white-text capitalize m l large-text",
+          "small-padding wave light none white-text capitalize m l large-text",
         attrs: { "data-ui": "#dropdown-drive" },
       },
       [
@@ -24589,7 +24603,7 @@ var staticRenderFns = [
       "button",
       {
         staticClass:
-          "margin wave light none white-text capitalize m l large-text",
+          "small-padding wave light none white-text capitalize m l large-text",
         attrs: { "data-ui": "#dropdown-more" },
       },
       [
@@ -24619,7 +24633,7 @@ var staticRenderFns = [
     return _c(
       "button",
       {
-        staticClass: "wave light none white-text",
+        staticClass: "small-padding wave light none white-text",
         attrs: { "data-ui": "#themes" },
       },
       [_c("i", { staticClass: "white-text" }, [_vm._v("brightness_medium")])]
