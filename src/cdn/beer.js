@@ -1,7 +1,7 @@
 (() => {
   const guid = () => {
     return "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-      var r = (Math.random() * 16) | 0,
+      let r = (Math.random() * 16) | 0,
         v = c == "x" ? r : (r & 0x3) | 0x8;
       return v.toString(16);
     });
@@ -12,9 +12,7 @@
       return selector instanceof HTMLElement
         ? selector
         : (element || document).querySelector(selector);
-    } catch {
-      return null;
-    }
+    } catch {}
   };
 
   const queryAll = (selector, element) => {
@@ -22,9 +20,7 @@
       return Array.isArray(selector)
         ? selector
         : (element || document).querySelectorAll(selector);
-    } catch {
-      return null;
-    }
+    } catch {}
   };
 
   const hasClass = (element, name) => {
@@ -80,13 +76,26 @@
   };
 
   const create = (json) => {
-    var element = document.createElement("div");
+    let element = document.createElement("div");
 
-    for (var i in json)
+    for (let i in json)
       element[i] = json[i];
 
     return element;
   };
+
+  const updateInput = (input, label, parentTarget) => {
+    if (!input.value && document.activeElement != input) return input.style.clipPath = "";
+
+    if (label && hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill")) {
+      let width = Math.round(label.offsetWidth / (label.offsetHeight / 14));
+      let start = hasClass(parentTarget, "round") ? 20 : 12;
+      let end = width + start + 8;
+      input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 8rem, ${end}rem 8rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
+    } else {
+      input.style.clipPath = "";
+    }  
+  }
 
   const onClickElement = (e) => {
     if (/input/i.test(e.tagName)) return;
@@ -94,29 +103,35 @@
   };
 
   const onClickLabel = (e) => {
-    var input = query('input:not([type=checkbox]):not([type=radio]), select, textarea', parent(e.currentTarget));
+    let input = query('input:not([type=checkbox]):not([type=radio]), select, textarea', parent(e.currentTarget));
     input.focus();
   };
 
   const onFocusInput = (e) => {
-    var label = query("label", parent(e.currentTarget));
+    let parentTarget = parent(e.currentTarget);
+    let label = query("label", parentTarget);
+
     addClass(label, "active");
+    updateInput(e.currentTarget, label, parentTarget);
 
     if (e.currentTarget.getAttribute("data-ui"))
       open(e.currentTarget);
   };
 
   const onBlurInput = (e) => {
-    var label = query("label", parent(e.currentTarget));
+    let label = query("label", parent(e.currentTarget));
 
-    if (!e.currentTarget.value) removeClass(label, "active");
+    if (!e.currentTarget.value) {
+      removeClass(label, "active");
+      e.currentTarget.style.clipPath = "";
+    }
 
     if (e.currentTarget.getAttribute("data-ui"))
       open(e.currentTarget);
   };
 
   const onClickDocument = (e) => {
-    var dropdowns = queryAll(".dropdown.active");
+    let dropdowns = queryAll(".dropdown.active");
     dropdowns.forEach((x) => {
       removeClass(x, "active");
     });
@@ -131,7 +146,7 @@
       clearTimeout(timeoutToast);
   };
 
-  var timeoutToast = null;
+  let timeoutToast = null;
 
   const open = (from, to, config) => {
     if (!to)
@@ -145,20 +160,17 @@
 
     tab(from, to, config);
 
-    if (hasClass(to, "active")) {
-      removeClass(to, "active");
-      return;
-    }
+    if (hasClass(to, "active")) return removeClass(to, "active");
 
     addClass(to, "active");
   };
 
   const tab = (from, to, config) => {
-    var container = parent(from);
+    let container = parent(from);
     if (!hasClass(container, "tabs"))
       return;
 
-    var tabs = queryAll("a", container);
+    let tabs = queryAll("a", container);
     tabs.forEach((x) => {
       removeClass(x, "active");
     });
@@ -169,8 +181,8 @@
   const page = (from, to, config) => {
     tab(from, to, config);
 
-    var container = parent(to);
-    for (var i = 0; i < container.children.length; i++) {
+    let container = parent(to);
+    for (let i = 0; i < container.children.length; i++) {
       if (hasClass(container.children[i], "page"))
         removeClass(container.children[i], "active");
     }
@@ -181,12 +193,9 @@
   const dropdown = (from, to, config) => {
     tab(from, to, config);
 
-    if (hasClass(to, "active")) {
-      removeClass(to, "active");
-      return;
-    }
+    if (hasClass(to, "active")) return removeClass(to, "active");
 
-    var dropdowns = queryAll(".dropdown.active");
+    let dropdowns = queryAll(".dropdown.active");
     dropdowns.forEach((x) => {
       removeClass(x, "active");
     });
@@ -198,7 +207,7 @@
   const modal = (from, to, config) => {
     tab(from, to, config);
 
-    var overlay = prev(to);
+    let overlay = prev(to);
     if (!hasClass(overlay, "overlay")) {
       overlay = create({ className: "overlay active" });
       insertBefore(overlay, to);
@@ -210,10 +219,10 @@
       removeClass(overlay, "active");
     }
 
-    var isActive = hasClass(to, "active");
-    var container = parent(to);
+    let isActive = hasClass(to, "active");
+    let container = parent(to);
     if (hasClass(container, "menu")) {
-      var elements = queryAll(".menu > .modal, .menu > a, .menu > .overlay");
+      let elements = queryAll(".menu > .modal, .menu > a, .menu > .overlay");
       elements.forEach((x) => {
         removeClass(x, "active");
       });
@@ -233,7 +242,7 @@
   const toast = (from, to, config) => {
     tab(from, to, config);
 
-    var elements = queryAll(".toast.active");
+    let elements = queryAll(".toast.active");
     elements.forEach((x) => {
       removeClass(x, "active");
     });
@@ -269,31 +278,32 @@
     if (selector) {
       if (selector == "guid") return guid();
 
-      var to = query(selector);
-      var from = query("[data-ui='#" + to.id + "']");
-      open(from, to, config);
-      return;
+      let to = query(selector);
+      let from = query("[data-ui='#" + to.id + "']");
+      return open(from, to, config);
     }
 
-    var elements = queryAll("[data-ui]");
+    let elements = queryAll("[data-ui]");
     elements.forEach((x) => {
       on(x, "click", onClickElement);
     });
 
-    var labels = queryAll(".field > label");
+    let labels = queryAll(".field > label");
     labels.forEach((x) => {
       on(x, "click", onClickLabel);
     });
 
-    var inputs = queryAll(".field > input:not([type=checkbox]):not([type=radio]), select, textarea");
+    let inputs = queryAll(".field > input:not([type=checkbox]):not([type=radio]), select, textarea");
     inputs.forEach((x) => {
-      var label = query("label", parent(x));
+      let parentTarget = parent(x);
+      let label = query("label", parentTarget);
 
       on(x, "focus", onFocusInput);
       on(x, "blur", onBlurInput);
 
       if (x.value) addClass(label, "active");
       else removeClass(label, "active");
+      updateInput(x, label, parentTarget);
     });
   };
 

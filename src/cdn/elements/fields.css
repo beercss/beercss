@@ -1,6 +1,7 @@
 .field {
   height: 48rem;
   margin-bottom: 8rem;
+  border: none!important;
 }
 
 .field.small {
@@ -41,7 +42,7 @@
   position: absolute;
   top: 50%;
   left: auto;
-  right: 10rem;
+  right: 16rem;
   transform: translateY(-50%);
   cursor: pointer;
   color: var(--on-background);
@@ -55,12 +56,12 @@
 .field.fill > img,
 .field.round > img {
   left: auto;
-  right: 10rem;
+  right: 16rem;
 }
 
 .field > i:first-child,
 .field > img:first-child {
-  left: 10rem;
+  left: 16rem;
   right: auto;
 }
 
@@ -70,11 +71,15 @@
 .field.border > img:first-child,
 .field.fill > img:first-child,
 .field.round > img:first-child {
-  left: 10rem;
+  left: 16rem;
   right: auto;
 }
 
-/* file */
+.field.invalid > i {
+  color: var(--error)!important;
+}
+
+/* input, textarea and select */
 input[type="file"] {
   position: absolute;
   top: 0;
@@ -86,7 +91,234 @@ input[type="file"] {
   cursor: pointer;
 }
 
-/* input and textarea */
+.field > input,
+.field > textarea,
+.field > select {
+  border: 0;
+  border-radius: 8rem 8rem 0 0;
+  border-bottom: 2rem solid var(--outline);
+  padding: 0 16rem;
+  font-family: inherit;
+  font-size: 16rem;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  z-index: 1;
+  color: var(--on-background);
+  background-color: transparent;
+  box-sizing: border-box;
+  resize: none;
+}
+
+.field > select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.field > textarea {
+  padding: 16rem;
+}
+
+.field.border > input,
+.field.border > select {
+  padding: 0 14rem;
+}
+
+.field.border > textarea {
+  padding: 14rem;
+}
+
+.field > input:focus,
+.field > textarea:focus,
+.field > select:focus {
+  border-bottom: 2rem solid var(--primary);
+}
+
+.field.border > input,
+.field.border > textarea,
+.field.border > select {
+  border: 2rem solid var(--outline);
+  border-radius: 8rem;
+}
+
+.field.border > input:focus,
+.field.border > textarea:focus,
+.field.border > select:focus {
+  border: 2rem solid var(--primary);
+}
+
+.field.fill > input,
+.field.fill > textarea,
+.field.fill > select {
+  background-color: var(--surface-variant);
+  color: var(--on-surface-variant);
+}
+
+.field.fill > i,
+.field.fill > img {
+  color: var(--on-surface-variant);
+}
+
+.field.round > input,
+.field.round > textarea,
+.field.round > select {
+  border: 0;
+  border-radius: 32rem;
+  box-shadow: var(--shadow1);
+  padding: 0 24rem;
+}
+
+.field.round > textarea {
+  border-radius: 24rem;
+  padding: 16rem 24rem;
+}
+
+.field.round.border > input,
+.field.round.border > select,
+.field.round.border > textarea {
+  padding-left: 22rem;
+  padding-right: 22rem;
+}
+
+.field.round.border > input,
+.field.round.border.fill > input,
+.field.round.border > textarea,
+.field.round.border.fill > textarea,
+.field.round.border > select,
+.field.round.border.fill > select {
+  border: 2rem solid var(--outline);
+  box-shadow: none;
+}
+
+.field.round.border > input:focus,
+.field.round.border.fill > input:focus,
+.field.round.border > textarea:focus,
+.field.round.border.fill > textarea:focus,
+.field.round.border > select:focus,
+.field.round.border.fill > select:focus {
+  border: 2rem solid var(--primary);
+}
+
+.field.round.fill > input,
+.field.round.fill > textarea,
+.field.round.fill > select {
+  border: 0;
+  box-shadow: none;
+}
+
+.field.flat > input,
+.field.flat > textarea,
+.field.flat > select {
+  border: none!important;
+  box-shadow: none!important;
+}
+
+.field.flat > input:focus,
+.field.flat > textarea:focus,
+.field.flat > select:focus {
+  box-shadow: var(--shadow1)!important;
+}
+
+.field.label > input,
+.field.label > textarea,
+.field.label > select {
+  padding-top: 20rem;
+}
+
+.field.label.border:not(.fill) > input,
+.field.label.border:not(.fill) > select {
+  padding-top: 0;
+}
+
+.field.prefix > input,
+.field.prefix > textarea,
+.field.prefix > select {
+  padding-left: 48rem;
+}
+
+.field.suffix > input,
+.field.suffix > textarea,
+.field.suffix > select {
+  padding-right: 48rem;
+}
+
+.field.border.prefix > input,
+.field.border.prefix > textarea,
+.field.border.prefix > select {
+  padding-left: 46rem;
+}
+
+.field.border.suffix > input,
+.field.border.suffix > textarea,
+.field.border.suffix > select {
+  padding-right: 46rem;
+}
+
+.field.invalid > input,
+.field.invalid > textarea,
+.field.invalid > select {
+  border-bottom: 2rem solid var(--error);
+}
+
+.field.invalid.border > input,
+.field.invalid.border.round > input,
+.field.invalid.border.round.fill > input,
+.field.invalid.border > textarea,
+.field.invalid.border.round > textarea,
+.field.invalid.border.round.fill > textarea,
+.field.invalid.border > select,
+.field.invalid.border.round > select,
+.field.invalid.border.round.fill > select {
+  border: 2rem solid var(--error);
+}
+
+.field.invalid.round > input,
+.field.invalid.round > textarea,
+.field.invalid.round > select {
+  border: inherit;
+}
+
+.field > :disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.field.label.textarea.small > textarea {
+  padding-top: 20rem;
+}
+
+.field.label.textarea > textarea,
+.field.label.textarea.medium > textarea {
+  padding-top: 24rem;
+}
+
+.field.label.textarea.large > textarea {
+  padding-top: 28rem;
+}
+
+.field.label.textarea.extra > textarea {
+  padding-top: 32rem;
+}
+
+.field.label.textarea.small.border:not(.fill) > textarea {
+  padding-top: 10rem;
+}
+
+.field.label.textarea.border:not(.fill) > textarea,
+.field.label.textarea.medium.border:not(.fill) > textarea {
+  padding-top: 14rem;
+}
+
+.field.label.textarea.large.border:not(.fill) > textarea {
+  padding-top: 18rem;
+}
+
+.field.label.textarea.extra.border:not(.fill) > textarea {
+  padding-top: 22rem;
+}
+
 .field.small.textarea {
   height: 72rem;
 }
@@ -104,150 +336,19 @@ input[type="file"] {
   height: 120rem;
 }
 
-.field > input,
-.field > textarea {
-  border: 0;
-  border-radius: 8rem 8rem 0 0;
-  border-bottom: 2rem solid var(--outline);
-  padding: 4rem 8rem;
-  font-family: inherit;
-  font-size: 14rem;
-  width: 100%;
-  height: 100%;
-  outline: none;
-  z-index: 1;
-  color: var(--on-background);
-  background-color: transparent;
-  box-sizing: border-box;
-  resize: none;
-}
-
-.field > input:focus,
-.field > textarea:focus {
-  border-bottom: 2rem solid var(--primary);
-}
-
-.field.border > input,
-.field.border > textarea {
-  border: 2rem solid var(--outline);
-  border-radius: 8rem;
-  padding: 4rem 8rem;
-}
-
-.field.border > input:focus,
-.field.border > textarea:focus {
-  border: 2rem solid var(--primary);
-}
-
-.field.fill > input,
-.field.fill > textarea {
-  background-color: var(--surface-variant);
-  color: var(--on-surface-variant);
-  padding: 4rem 8rem;
-}
-
-.field.fill > i,
-.field.fill > img {
-  color: var(--on-surface-variant);
-}
-
-.field.round > input,
-.field.round > textarea {
-  border: 0;
-  box-shadow: var(--shadow1);
-}
-
-.field.round > input {
-  border-radius: 32rem;
-  padding: 4rem 16rem;
-}
-
-.field.round > textarea {
-  border-radius: 24rem;
-  padding: 13rem 16rem;
-}
-
-.field.round.border > input,
-.field.round.border.fill > input,
-.field.round.border > textarea,
-.field.round.border.fill > textarea {
-  border: 2rem solid var(--outline);
-  box-shadow: none;
-}
-
-.field.round.border > input:focus,
-.field.round.border.fill > input:focus,
-.field.round.border > textarea:focus,
-.field.round.border.fill > textarea:focus {
-  border: 2rem solid var(--primary);
-}
-
-.field.round.fill > input,
-.field.round.fill > textarea {
-  border: 0;
-  box-shadow: none;
-}
-
-.field.flat > input,
-.field.flat > input::before,
-.field.flat > input::after {
-  border: none!important;
-  box-shadow: none!important;
-}
-
-.field.flat > input:focus,
-.field.flat > input:focus::before,
-.field.flat > input:focus::after {
-  box-shadow: var(--shadow1)!important;
-}
-
-.field.label > input,
-.field.label > textarea {
-  padding-top: 20rem;
-}
-
-.field.prefix > input,
-.field.prefix > textarea {
-  padding-left: 40rem;
-}
-
-.field.suffix > input,
-.field.suffix > textarea {
-  padding-right: 40rem;
-}
-
-.field.invalid > input,
-.field.invalid > textarea {
-  border-bottom: 2rem solid var(--error);
-}
-
-.field.invalid.border > input,
-.field.invalid.border.round > input,
-.field.invalid.border.round.fill > input,
-.field.invalid.border > textarea,
-.field.invalid.border.round > textarea,
-.field.invalid.border.round.fill > textarea {
-  border: 2rem solid var(--error);
-}
-
-.field.invalid.round > input,
-.field.invalid.round > textarea {
-  border: inherit;
-}
-
-.field > :disabled {
-  opacity: .5;
-  cursor: not-allowed;
+.field > select > option {
+  background-color: var(--surface);
 }
 
 /* label */
 .field.label > label {
-  animation: var(--speed1) label-to-middle;
+  will-change: top, left;
   position: absolute;
   top: 50%;
-  left: 8rem;
-  font-size: 14rem;
+  left: 16rem;
+  font-size: 16rem;
   transform: translateY(-50%);
+  transition: all var(--speed1);
   z-index: 10;
 }
 
@@ -268,37 +369,34 @@ input[type="file"] {
   top: 32rem;
 }
 
-.field.label.textarea.small > textarea {
-  padding-top: 20rem;
-}
-
-.field.label.textarea > textarea,
-.field.label.textarea.medium > textarea {
-  padding-top: 24rem;
-}
-
-.field.label.textarea.large > textarea {
-  padding-top: 28rem;
-}
-
-.field.label.textarea.extra > textarea {
-  padding-top: 32rem;
-}
-
 .field.label.round > label {
-  left: 16rem;
+  left: 24rem;
 }
 
 .field.label.prefix > label {
-  left: 40rem;
+  left: 48rem;
 }
 
 .field.label > label.active,
 .field.label > [placeholder]:focus ~ label,
 .field.label > [placeholder]:not(:placeholder-shown) ~ label {
-  animation: var(--speed1) label-to-top;
   font-size: 12rem;
   transform: translateY(-120%);
+}
+
+.field.label.border:not(.fill) > label.active,
+.field.label.border:not(.fill) > [placeholder]:focus ~ label,
+.field.label.border:not(.fill) > [placeholder]:not(:placeholder-shown) ~ label {
+  font-size: 12rem;
+  top: 0%;
+  left: 16rem;
+  transform: translateY(-50%);
+}
+
+.field.label.border.round:not(.fill) > label.active,
+.field.label.border.round:not(.fill) > [placeholder]:focus ~ label,
+.field.label.border.round:not(.fill) > [placeholder]:not(:placeholder-shown) ~ label {
+  left: 24rem;
 }
 
 .field.label > :focus ~ label {
@@ -314,110 +412,16 @@ input[type="file"] {
   content: " * ";
 }
 
-/* select */
-.field > select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  border: 0;
-  border-radius: 8rem 8rem 0 0;
-  border-bottom: 2rem solid var(--outline);
-  padding: 4rem 8rem;
-  font-family: inherit;
-  font-size: 14rem;
-  width: 100%;
-  height: 100%;
-  outline: none;
-  cursor: pointer;
-  color: var(--on-background);
-  background-color: transparent;
-  box-sizing: border-box;
-  z-index: 1;
-}
-
-.field > select:focus {
-  border-bottom: 2rem solid var(--primary);
-}
-
-.field.border > select {
-  border: 2rem solid var(--outline);
-  border-radius: 8rem;
-}
-
-.field.border > select:focus {
-  border: 2rem solid var(--primary);
-}
-
-.field.fill > select {
-  background-color: var(--surface-variant);
-  color: var(--on-surface-variant);
-  padding: 4rem 8rem 4rem 8rem;
-}
-
-.field.round > select {
-  border: 0;
-  border-radius: 32rem;
-  box-shadow: var(--shadow1);
-  padding: 4rem 16rem;
-}
-
-.field.round.border > select,
-.field.round.border.fill > select {
-  border: 2rem solid var(--outline);
-  border-radius: 32rem;
-  box-shadow: none;
-}
-
-.field.round.border > select:focus,
-.field.round.border.fill > select:focus {
-  border: 2rem solid var(--primary);
-}
-
-.field.round.fill > select {
-  border: 0;
-  border-radius: 32rem;
-  box-shadow: none;
-}
-
-.field.label > select {
-  padding-top: 20rem;
-}
-
-.field.prefix > select {
-  padding-left: 40rem;
-}
-
-.field.suffix > select {
-  padding-right: 40rem;
-}
-
-.field.invalid > select {
-  border-bottom: 2rem solid var(--error);
-}
-
-.field.invalid.border > select,
-.field.invalid.border.round > select,
-.field.invalid.border.round.fill > select {
-  border: 2rem solid var(--error);
-}
-
-.field.invalid.round > select {
-  border: inherit;
-}
-
-.field > select > option {
-  background-color: var(--surface);
-}
-
 /* helper */
 .field > .helper,
 .field > .error {
   position: absolute;
-  left: 8rem;
+  left: 16rem;
   bottom: 0;
   transform: translateY(100%);
   font-size: 12rem;
   background: none!important;
+  padding-top: 2rem;
 }
 
 a.helper {
@@ -430,7 +434,7 @@ a.helper {
 
 .field.round > .helper,
 .field.round > .error {
-  left: 16rem;
+  left: 24rem;
 }
 
 .field.invalid > .helper {
@@ -442,26 +446,4 @@ table td > .field {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-
-@keyframes label-to-top {
-  from {
-    font-size: 14rem;
-    transform: translateY(-50%);
-  }
-  to {
-    font-size: 12rem;
-    transform: translateY(-120%);
-  }
-}
-
-@keyframes label-to-middle {
-  from {
-    font-size: 12rem;
-    transform: translateY(-120%);
-  }
-  to {
-    font-size: 14rem;
-    transform: translateY(-50%);
-  }
 }
