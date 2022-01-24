@@ -187,9 +187,9 @@ button:disabled {
   pointer-events: none;
 }
 
-.button[disabled]:before,
-button:disabled:before,
-.button[disabled]:after,
-button:disabled:after {
+.button[disabled]::before,
+button:disabled::before,
+.button[disabled]::after,
+button:disabled::after {
   display: none;
 }

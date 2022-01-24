@@ -7,6 +7,8 @@
   line-height: normal;
   white-space: nowrap;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
 }
 
 .checkbox > *,

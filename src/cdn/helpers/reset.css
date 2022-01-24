@@ -14,6 +14,14 @@ body {
 
 label {
   font-size: 12rem;
+  vertical-align: baseline;
+}
+
+a,
+b,
+i,
+span {
+  vertical-align: bottom;
 }
 
 a,

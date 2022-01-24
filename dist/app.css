@@ -25,11 +25,7 @@ pre * {
   vertical-align: text-bottom;
 }
 
-.hljs-string {
-  color: var(--error) !important;
-}
-
-.is-dark .hljs-string {
+.hljs-string, .error-text {
   color: var(--error) !important;
 }
 

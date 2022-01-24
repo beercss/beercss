@@ -127,24 +127,24 @@ div
     #begin
       .row
         #intro.col.s12
-          article.border.round.large-padding
+          article.flat.round.large-padding
             .medium-space
             .row
               .col.s12.m12.l6.center-align
                 h3 Beercss 
                 h5 Hope you enjoy it!
-                h1 🍻
-              .col.s12.m12.l6
-                b.large-text A framework out of the box.&nbsp;
-                span.large-text This is a tech page and do not need to be a beautiful page. This page needs to be useful. We believe that this framework can be very useful for the community. This framework is calling for people that say things like:
+                .medium-space.s.m
+              .col.s12.m12.l6.large-text
+                b A framework out of the box.&nbsp;
+                span This is a tech page and do not need to be a beautiful page. This page needs to be useful. We believe that this framework can be very useful for the community. This framework is calling for people that say things like:
                 .space
-                .large-text - Yes they have a beer!
-                .large-text - Only one page?
-                .large-text - There is no documentation?
-                .large-text - When I click on "<>" it shows the code for me?
-                .large-text - How do they that with only 10kb?
-                .large-text - I do not need an ecosystem to run this?
-                .large-text - Wow, I did my work in record time!
+                div - Yes they have a beer!
+                div - Only one page?
+                div - There is no documentation?
+                div - When I click on "<>" it shows the code for me?
+                div - How do they that with only 10kb?
+                div - I do not need an ecosystem to run this?
+                div - Wow, I did my work in record time!
             .medium-space
           .large-space
           .large-space
@@ -3027,300 +3027,288 @@ div
           div
             h4.center-align Has about 100 css classes to combine...
             .large-space
-            #helpers.m.l
-              h5 Helpers
-              .row.no-wrap
-                .col
-                  b Position
-                  div left
-                  div right
-                  div center
-                  div top
-                  div bottom
-                  div middle
-                  div front
-                  div back
-                .col
-                  b Alignment
-                  div left-align
-                  div right-align
-                  div center-align
-                  div top-align
-                  div bottom-align
-                  div middle-align
-                .col
-                  b Size
-                  div small
-                  div medium
-                  div large
-                  div small-width
-                  div medium-width
-                  div large-width
-                  div small-height
-                  div medium-height
-                  div large-height
-                .col
-                  b Margin
-                  div margin
-                  div no-margin
-                  div small-margin
-                  div medium-margin
-                  div large-margin
-                .col
-                  b Padding
-                  div padding
-                  div no-padding
-                  div small-padding
-                  div medium-padding
-                  div large-padding
-              .row.no-wrap
-                .col
-                  b Spacing
-                  div space
-                  div small-space
-                  div medium-space
-                  div large-space
-                  div divider
-                  div small-divider
-                  div medium-divider
-                  div large-divider
-                .col
-                  b Form
-                  div border
-                  div round
-                  div left-round
-                  div right-round
-                  div top-round
-                  div bottom-round
-                  div circle
-                  div flat
-                  div square
-                .col
-                  b Texts
-                  div italic
-                  div bold
-                  div underline
-                  div overline
-                  div upper
-                  div lower
-                  div capitalize
-                  div link
-                  div small-text
-                  div medium-text
-                  div large-text
-                .col
-                  b Shadows
-                  div shadow
-                  div right-shadow
-                  div left-shadow
-                  div bottom-shadow
-                  div top-shadow
-                  div no-shadow
-                  div small-shadow
-                  div medium-shadow
-                  div large-shadow
-                .col
-                  b Others
-                  div active
-                  div wrap
-                  div no-wrap
-                  div scroll
-                  div no-scroll
-                  div wave
-                  div no-wave
-                  div s
-                  div m
-                  div l
-              .space
+            #helpers.row
+              .col.s12
+                .card.flat.round
+                  h5 Helpers
+                  .large-divider
+                  .row.no-wrap
+                    .col
+                      b Position
+                      div left
+                      div right
+                      div center
+                      div top
+                      div bottom
+                      div middle
+                      div front
+                      div back
+                    .col
+                      b Alignment
+                      div left-align
+                      div right-align
+                      div center-align
+                      div top-align
+                      div bottom-align
+                      div middle-align
+                    .col
+                      b Size
+                      div small
+                      div medium
+                      div large
+                      div small-width
+                      div medium-width
+                      div large-width
+                      div small-height
+                      div medium-height
+                      div large-height
+                  .row.no-wrap
+                    .col
+                      b Margin
+                      div margin
+                      div no-margin
+                      div small-margin
+                      div medium-margin
+                      div large-margin
+                    .col
+                      b Padding
+                      div padding
+                      div no-padding
+                      div small-padding
+                      div medium-padding
+                      div large-padding
+                    .col
+                      b Spacing
+                      div space
+                      div small-space
+                      div medium-space
+                      div large-space
+                      div divider
+                      div small-divider
+                      div medium-divider
+                      div large-divider
+                  .row.no-wrap
+                    .col
+                      b Form
+                      div border
+                      div round
+                      div left-round
+                      div right-round
+                      div top-round
+                      div bottom-round
+                      div circle
+                      div flat
+                      div square
+                    .col
+                      b Texts
+                      div italic
+                      div bold
+                      div underline
+                      div overline
+                      div upper
+                      div lower
+                      div capitalize
+                      div link
+                      div small-text
+                      div medium-text
+                      div large-text
+                    .col
+                      b Shadows
+                      div shadow
+                      div right-shadow
+                      div left-shadow
+                      div bottom-shadow
+                      div top-shadow
+                      div no-shadow
+                      div small-shadow
+                      div medium-shadow
+                      div large-shadow
+                  .row.no-wrap
+                    .col
+                      b Others
+                      div active
+                      div wrap
+                      div no-wrap
+                      div scroll
+                      div no-scroll
+                      div wave
+                      div no-wave
+                      div s
+                      div m
+                      div l
+                    .col
+                    .col
             .row
               .col.s12
-                h5 Elements
-                div
-                  span absolute&nbsp;
-                  span.grey-text left, right, top, bottom, center, middle, small, medium, large, round
-                div
-                  span badge&nbsp;
-                  span.grey-text left, right, top, bottom, border, round, circle,&nbsp;
-                  span.orange-text none
-                div 
-                  span button&nbsp;
-                  span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
-                  span.orange-text none, diamond, extend, extra
-                div
-                  span chip&nbsp;
-                  span.grey-text border, circle, active,&nbsp;
-                  span.orange-text diamond
-                div
-                  span card&nbsp;
-                  span.grey-text small, medium, large, border, round, flat
-                div 
-                  span container&nbsp;
-                  span.orange-text min, max
-                div 
-                  span dropdown&nbsp;
-                  span.grey-text left, right, small, medium, large, border, round, flat, active, no-wrap
-                div 
-                  span field&nbsp;
-                  span.grey-text small, medium, large, border, round, flat,&nbsp;
-                  span.orange-text fill, prefix, suffix, label, invalid, textarea
-                div
-                  span fixed&nbsp;
-                  span.grey-text left, right, top, bottom, center, middle, small, medium, large, round
-                div
-                  span loader&nbsp;
-                  span.grey-text small, medium, large
-                div
-                  span menu&nbsp;
-                  span.grey-text left, right, top, bottom, border, round, flat, small-space, medium-space, large-space,&nbsp;
-                  span.orange-text no-space
-                div 
-                  span modal&nbsp;
-                  span.grey-text left, right, top, bottom, small, medium, large, active, border, round, flat
-                div 
-                  span page&nbsp;
-                  span.grey-text left, right, top, bottom, active
-                div 
-                  span overlay&nbsp;
-                  span.grey-text active,&nbsp;
-                  span.orange-text light, dark
-                div 
-                  span row&nbsp;
-                  span.grey-text no-wrap, top-align, bottom-align, middle-align, small-space, medium-space, large-space,&nbsp;
-                  span.orange-text no-space
-                div 
-                  span &nbsp;&nbsp;&nbsp;&nbsp;col&nbsp;
-                  span.orange-text min, max, s1..12, m1..12, l1..12
-                div 
-                  span tabs&nbsp;
-                  span.grey-text left-align, center-align, right-align
-                div 
-                  span toast&nbsp;
-                  span.grey-text top, bottom, small, medium, large, border, round, flat, active
-                div 
-                  span tooltip&nbsp;
-                  span.grey-text left, right, top, bottom, small, medium, large, border, round, flat
-                div 
-                  span wave&nbsp;
-                  span.orange-text light, dark
-                .space
-                div 
-                  span &lt;article&gt;&nbsp;
-                  span.grey-text small, medium, large, border, round, flat
-                div 
-                  span &lt;body&gt;&nbsp;
-                  span.grey-text is-light, is-dark
-                div 
-                  span &lt;button&gt;&nbsp;
-                  span.grey-text small, medium, large, border, round, circle, flat,&nbsp;
-                  span.orange-text none, diamond, extend, extra
-                div 
-                  span &lt;i&gt;&nbsp;
-                  span.grey-text small, medium, large, wrap,&nbsp;
-                  span.orange-text tiny, extra, outlined
-                div
-                  span &lt;img&gt;&nbsp;
-                  span.grey-text small, medium, large, border, round, circle,&nbsp;
-                  span.orange-text tiny, extra, responsive, empty-state
-                div
-                  span &lt;label&gt;&nbsp;
-                  span.grey-text active,&nbsp;
-                  span.orange-text checkbox, radio, switch
-                div 
-                  span &lt;nav&gt;&nbsp;
-                  span.grey-text top-align, bottom-align, middle-align, wrap
-                div 
-                  span &lt;summary&gt;&nbsp;
-                  span.orange-text none
-                div 
-                  span &lt;table&gt;&nbsp;
-                  span.grey-text small, medium, large, border, left-align, center-align, right-align
-                div
-                  span &lt;video&gt;&nbsp;
-                  span.grey-text small, medium, large, border, round, circle,&nbsp;
-                  span.orange-text tiny, extra, responsive, empty-state
-                .space
-                .orange-text * Element unique helpers
+                .card.flat.round
+                  h5 Elements
+                  .large-divider
+                  .row.no-wrap
+                    .col
+                      div
+                        span absolute&nbsp;
+                      div
+                        span badge&nbsp;
+                        span.error-text none
+                      div 
+                        span button&nbsp;
+                        span.error-text none, diamond, extend, extra
+                      div
+                        span chip&nbsp;
+                        span.error-text diamond
+                      div
+                        span card&nbsp;
+                      div 
+                        span container&nbsp;
+                        span.error-text min, max
+                      div 
+                        span dropdown&nbsp;
+                      div 
+                        span field&nbsp;
+                        span.error-text fill, prefix, suffix, label, invalid, textarea
+                      div
+                        span fixed&nbsp;
+                      div
+                        span loader&nbsp;
+                      div
+                        span menu&nbsp;
+                        span.error-text no-space
+                      div 
+                        span modal&nbsp;
+                      div 
+                        span page&nbsp;
+                      div 
+                        span overlay&nbsp;
+                        span.error-text light, dark
+                      div 
+                        span row&nbsp;
+                        span.error-text no-space
+                      div 
+                        span &nbsp;&nbsp;&nbsp;&nbsp;col&nbsp;
+                        span.error-text min, max, s1..12, m1..12, l1..12
+                      div 
+                        span tabs&nbsp;
+                      div 
+                        span toast&nbsp;
+                      div 
+                        span tooltip&nbsp;
+                      div 
+                        span wave&nbsp;
+                        span.error-text light, dark
+                    .col
+                      div 
+                        span &lt;article&gt;&nbsp;
+                      div 
+                        span &lt;body&gt;&nbsp;
+                      div 
+                        span &lt;button&gt;&nbsp;
+                        span.error-text none, diamond, extend, extra
+                      div 
+                        span &lt;details&gt;&nbsp;
+                      div 
+                        span &lt;i&gt;&nbsp;
+                        span.error-text tiny, extra, outlined
+                      div
+                        span &lt;img&gt;&nbsp;
+                        span.error-text tiny, extra, responsive, empty-state
+                      div
+                        span &lt;label&gt;&nbsp;
+                        span.error-text checkbox, radio, switch
+                      div 
+                        span &lt;nav&gt;&nbsp;
+                      div 
+                        span &lt;summary&gt;&nbsp;
+                        span.error-text none
+                      div 
+                        span &lt;table&gt;&nbsp;
+                      div
+                        span &lt;video&gt;&nbsp;
+                        span.error-text tiny, extra, responsive, empty-state
+                  .space
+                  .error-text * Element unique helpers
             .row
               .col.s12
-                h5 Settings
-                .row.no-wrap
-                  .col
-                    b Themes
-                    div is-dark
-                    div is-light
-                  .col
-                    b Primary colors
-                    div --primary
-                    div --on-primary
-                    div --primary-container
-                    div --on-primary-container
-                  .col
-                    b Secondary colors
-                    div --secondary
-                    div --on-secondary
-                    div --secondary-container
-                    div --on-secondary-container
-                  .col
-                    b Tertiary colors
-                    div --tertiary
-                    div --on-tertiary
-                    div --tertiary-container
-                    div --on-tertiary-container
-                .row.no-wrap
-                  .col
-                    b Error colors
-                    div --error
-                    div --on-error
-                    div --error-container
-                    div --on-error-container
-                  .col
-                    b Background colors
-                    div --background
-                    div --on-background
-                  .col
-                    b Surface colors
-                    div --surface
-                    div --on-surface
-                    div --surface-variant
-                    div --on-surface-variant
-                    div --outline
-                  .col
-                    b Shadows
-                    div --shadow1
-                    div --shadow2
-                    div --shadow3
-                .row.no-wrap
-                  .col
-                    b Speed
-                    div --speed1
-                    div --speed2
-                    div --speed3
-                    div --speed4
-                  .col 
-                    b Others
-                    div --active
-                    div --overlay
-                    div --font
-                    div --size
-                  .col
-                  .col
-            .space
+                .card.flat.round
+                  h5 Settings
+                  .large-divider
+                  .row.no-wrap
+                    .col
+                      b Themes
+                      div is-dark
+                      div is-light
+                    .col
+                      b Primary colors
+                      div --primary
+                      div --on-primary
+                      div --primary-container
+                      div --on-primary-container
+                    .col
+                      b Secondary colors
+                      div --secondary
+                      div --on-secondary
+                      div --secondary-container
+                      div --on-secondary-container
+                    .col
+                      b Tertiary colors
+                      div --tertiary
+                      div --on-tertiary
+                      div --tertiary-container
+                      div --on-tertiary-container
+                  .row.no-wrap
+                    .col
+                      b Error colors
+                      div --error
+                      div --on-error
+                      div --error-container
+                      div --on-error-container
+                    .col
+                      b Background colors
+                      div --background
+                      div --on-background
+                    .col
+                      b Surface colors
+                      div --surface
+                      div --on-surface
+                      div --surface-variant
+                      div --on-surface-variant
+                      div --outline
+                    .col
+                      b Shadows
+                      div --shadow1
+                      div --shadow2
+                      div --shadow3
+                  .row.no-wrap
+                    .col
+                      b Speed
+                      div --speed1
+                      div --speed2
+                      div --speed3
+                      div --speed4
+                    .col 
+                      b Others
+                      div --active
+                      div --overlay
+                      div --font
+                      div --size
+                    .col
+                    .col
+            .large-space
+            h4.center-align ...and 3 ways to trigger elements
+            .large-space
             .row
               .col.s12
-                .large-space
-                h4.center-align ...and 3 ways to trigger elements
-                .large-space
-                div Add or remove class "active"
-                pre(v-html="htmlSample")
-                .space
-                div Or call javascript function to activate/deactivate an element
-                pre(v-html="jsSample")
-                .space
-                div Or add attribute "data-ui" and call javascript function, to setup all automatically
-                pre(v-html="autoSample")
-                .space
-                div Some elements accept options
-                pre(v-html="extraSample")
+                .card.flat.round
+                  div Add or remove class "active"
+                  pre(v-html="htmlSample")
+                  .space
+                  div Or call javascript function to activate/deactivate an element
+                  pre(v-html="jsSample")
+                  .space
+                  div Or add attribute "data-ui" and call javascript function, to setup all automatically
+                  pre(v-html="autoSample")
+                  .space
+                  div Some elements accept options
+                  pre(v-html="extraSample")
           .large-space
           div
             h4.center-align Cheers 🍻
@@ -4397,11 +4385,7 @@ pre * {
   vertical-align: text-bottom;
 }
 
-.hljs-string {
-  color: var(--error) !important;
-}
-
-.is-dark .hljs-string {
+.hljs-string, .error-text {
   color: var(--error) !important;
 }
 

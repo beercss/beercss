@@ -4,7 +4,7 @@
   div(v-show="!showCssVariables")
     .row.no-wrap.middle-align.no-space
       .col
-        h5.no-margin 
+        h5.no-margin.middle-align
           span Themes
           a.chip.circle(@click="showCssVariables=true")
             i code
