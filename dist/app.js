@@ -13523,7 +13523,11 @@ exports.default = _default;
                   staticClass: "chip circle",
                   on: {
                     click: function ($event) {
-                      return _vm.showSamples("#selects .field")
+                      _vm.showSamples(
+                        "#selects .field",
+                        null,
+                        "After render a select with label call the js function <b>ui()</b>"
+                      )
                     },
                   },
                 },

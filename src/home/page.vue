@@ -2481,7 +2481,7 @@ div
           .large-space
           h4
             span Selects
-            a.chip.circle(@click="showSamples('#selects .field')")
+            a.chip.circle(@click="showSamples('#selects .field', null, 'After render a select with label call the js function <b>ui()</b>')")
               i code
           nav.wrap
             label.checkbox
