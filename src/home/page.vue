@@ -3875,8 +3875,6 @@ export default {
       'ui("#progress", percentage);\nui("#toast", millisecondsToHide);'
     ).value;
 
-    ui();
-
     this.resetTheme();
     this.badgeSamples();
     this.chipSamples();
@@ -3890,6 +3888,7 @@ export default {
     this.layoutSamples();
     this.toastSamples();
     this.progressSamples();
+    ui();
 
     setTimeout(() => {
       $("#logo").addClass("active");
