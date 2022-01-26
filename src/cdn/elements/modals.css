@@ -175,7 +175,8 @@
   padding: 16rem 48rem 80rem 48rem;
 }
 
-.modal > a:not(button, .button, .chip):hover {
+.modal > a:not(button, .button, .chip):hover,
+.modal > a:not(button, .button, .chip).active {
   background-color: var(--active);
 }
 

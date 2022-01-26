@@ -1748,11 +1748,11 @@ div
           .large-space
           h4
             span Inputs
-            a.chip.circle(@click="showSamples('#inputs .field')")
+            a.chip.circle(@click="showSamples('#inputs .field', null, 'After render a input with label call the js function <b>ui()</b>')")
               i code
           nav.wrap
             label.checkbox
-              input#border-inputs(type="checkbox")
+              input#border-inputs(type="checkbox", checked="checked")
               span border
             label.checkbox
               input#round-inputs(type="checkbox")
@@ -1792,58 +1792,58 @@ div
           .space
           .row
             .col.s12.l4
-              .field
+              .field.border
                 input(type="text")
             .col.s12.l4
-              .field
+              .field.border
                 input(type="text")
                 span.helper Complementary text
             .col.s12.l4
-              .field.invalid
+              .field.invalid.border
                 input(type="text")
                 span.error Error text
             .col.s12.l4
-              .field.label
+              .field.label.border
                 input(type="text")
                 label Label
             .col.s12.l4
-              .field.label
+              .field.label.border
                 input(type="text")
                 label Label
                 span.helper Complementary text
             .col.s12.l4
-              .field.label.invalid
+              .field.label.invalid.border
                 input(type="text")
                 label Label
                 span.error Error text
             .col.s12.l4
-              .field.label.prefix
+              .field.label.prefix.border
                 i search
                 input(type="text")
                 label Label
             .col.s12.l4
-              .field.label.suffix
+              .field.label.suffix.border
                 input(type="text")
                 label Label
                 i search
             .col.s12.l4
-              .field.label.prefix.suffix
+              .field.label.prefix.suffix.border
                 i search
                 input(type="text")
                 label Label
                 i search
             .col.s12.l4
-              .field.label.prefix
+              .field.label.prefix.border
                 img.circle(:src="'/favicon.png'")
                 input(type="text")
                 label Label
             .col.s12.l4
-              .field.label.suffix
+              .field.label.suffix.border
                 input(type="text")
                 label Label
                 img.circle(:src="'/favicon.png'")
             .col.s12.l4
-              .field.label.prefix.suffix
+              .field.label.prefix.suffix.border
                 img.circle(:src="'/favicon.png'")
                 input(type="text")
                 label Label
@@ -2230,7 +2230,7 @@ div
           .large-space
           h4
             span Progress
-            a.chip.circle(@click="showSamples('#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, '<span>To change the progress call a js function&nbsp;</span><b>ui(\"#progress\", percentage)</b>')")
+            a.chip.circle(@click="showSamples('#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, 'To change the progress call the js function <b>ui(\"#progress\", percentage)</b>')")
               i code
           nav.wrap
             label.radio
@@ -2485,7 +2485,7 @@ div
               i code
           nav.wrap
             label.checkbox
-              input#border-selects(type="checkbox")
+              input#border-selects(type="checkbox", checked="checked")
               span border
             label.checkbox
               input#round-selects(type="checkbox")
@@ -2512,14 +2512,14 @@ div
           .space
           .row
             .col.s12.l4
-              .field.suffix
+              .field.suffix.border
                 select
                   option Item 1
                   option Item 2
                   option Item 3
                 i arrow_drop_down
             .col.s12.l4
-              .field.suffix
+              .field.suffix.border
                 select
                   option Item 1
                   option Item 2
@@ -2527,7 +2527,7 @@ div
                 i arrow_drop_down
                 span.helper Complementary text
             .col.s12.l4
-              .field.suffix.invalid
+              .field.suffix.invalid.border
                 select
                   option Item 1
                   option Item 2
@@ -2535,7 +2535,7 @@ div
                 i arrow_drop_down
                 span.error Error text
             .col.s12.l4
-              .field.label.suffix
+              .field.label.suffix.border
                 select
                   option Item 1
                   option Item 2
@@ -2543,7 +2543,7 @@ div
                 label.active Label
                 i arrow_drop_down
             .col.s12.l4
-              .field.label.suffix
+              .field.label.suffix.border
                 select
                   option Item 1
                   option Item 2
@@ -2552,7 +2552,7 @@ div
                 i arrow_drop_down
                 span.helper Complementary text
             .col.s12.l4
-              .field.label.suffix.invalid
+              .field.label.suffix.invalid.border
                 select
                   option Item 1
                   option Item 2
@@ -2561,7 +2561,7 @@ div
                 i arrow_drop_down
                 span.error Error text
             .col.s12.l4
-              .field.label.suffix
+              .field.label.suffix.border
                 select
                   option Item 1
                   option Item 2
@@ -2569,7 +2569,7 @@ div
                 label.active Label
                 img.circle(:src="'/favicon.png'")
             .col.s12.l4
-              .field.label.suffix
+              .field.label.suffix.border
                 select
                   option Item 1
                   option Item 2
@@ -2578,7 +2578,7 @@ div
                 img.circle(:src="'/favicon.png'")
                 span.helper Complementary text
             .col.s12.l4
-              .field.label.suffix.invalid
+              .field.label.suffix.invalid.border
                 select
                   option Item 1
                   option Item 2
@@ -2853,11 +2853,11 @@ div
           .large-space
           h4
             span Textareas
-            a.chip.circle(@click="showSamples('#textareas .field')")
+            a.chip.circle(@click="showSamples('#textareas .field', null, 'After render a textarea with label call the js function <b>ui()</b>')")
               i code
           nav.wrap
             label.checkbox
-              input#border-textareas(type="checkbox")
+              input#border-textareas(type="checkbox", checked="checked")
               span border
             label.checkbox
               input#round-textareas(type="checkbox")
@@ -2884,58 +2884,58 @@ div
           .space
           .row
             .col.s12.l4
-              .field.textarea
+              .field.textarea.border
                 textarea
             .col.s12.l4
-              .field.textarea
+              .field.textarea.border
                 textarea
                 span.helper Complementary text
             .col.s12.l4
-              .field.textarea.invalid
+              .field.textarea.invalid.border
                 textarea
                 span.error Error text
             .col.s12.l4
-              .field.textarea.label
+              .field.textarea.label.border
                 textarea
                 label Label
             .col.s12.l4
-              .field.textarea.label
+              .field.textarea.label.border
                 textarea
                 label Label
                 span.helper Complementary text
             .col.s12.l4
-              .field.textarea.label.invalid
+              .field.textarea.label.invalid.border
                 textarea
                 label Label
                 span.error Error text
             .col.s12.l4
-              .field.textarea.label.prefix
+              .field.textarea.label.prefix.border
                 i search
                 textarea
                 label Label
             .col.s12.l4
-              .field.textarea.label.suffix
+              .field.textarea.label.suffix.border
                 textarea
                 label Label
                 i search
             .col.s12.l4
-              .field.textarea.label.prefix.suffix
+              .field.textarea.label.prefix.suffix.border
                 i search
                 textarea
                 label Label
                 i search
             .col.s12.l4
-              .field.textarea.label.prefix
+              .field.textarea.label.prefix.border
                 img.circle(:src="'/favicon.png'")
                 textarea
                 label Label
             .col.s12.l4
-              .field.textarea.label.suffix
+              .field.textarea.label.suffix.border
                 textarea
                 label Label
                 img.circle(:src="'/favicon.png'")
             .col.s12.l4
-              .field.textarea.label.prefix.suffix
+              .field.textarea.label.prefix.suffix.border
                 img.circle(:src="'/favicon.png'")
                 textarea
                 label Label

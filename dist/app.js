@@ -12647,7 +12647,11 @@ exports.default = _default;
                   staticClass: "chip circle",
                   on: {
                     click: function ($event) {
-                      return _vm.showSamples("#inputs .field")
+                      _vm.showSamples(
+                        "#inputs .field",
+                        null,
+                        "After render a input with label call the js function <b>ui()</b>"
+                      )
                     },
                   },
                 },
@@ -12667,7 +12671,7 @@ exports.default = _default;
               _vm._m(157),
               _vm._m(158),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label prefix" }, [
+                _c("div", { staticClass: "field label prefix border" }, [
                   _c("img", {
                     staticClass: "circle",
                     attrs: { src: "/favicon.png" },
@@ -12677,7 +12681,7 @@ exports.default = _default;
                 ]),
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label suffix" }, [
+                _c("div", { staticClass: "field label suffix border" }, [
                   _c("input", { attrs: { type: "text" } }),
                   _c("label", [_vm._v("Label")]),
                   _c("img", {
@@ -12687,7 +12691,7 @@ exports.default = _default;
                 ]),
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label prefix suffix" }, [
+                _c("div", { staticClass: "field label prefix suffix border" }, [
                   _c("img", {
                     staticClass: "circle",
                     attrs: { src: "/favicon.png" },
@@ -13423,7 +13427,7 @@ exports.default = _default;
                       _vm.showSamples(
                         "#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip",
                         null,
-                        '<span>To change the progress call a js function&nbsp;</span><b>ui("#progress", percentage)</b>'
+                        'To change the progress call the js function <b>ui("#progress", percentage)</b>'
                       )
                     },
                   },
@@ -13536,7 +13540,7 @@ exports.default = _default;
               _vm._m(202),
               _vm._m(203),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label suffix" }, [
+                _c("div", { staticClass: "field label suffix border" }, [
                   _vm._m(204),
                   _c("label", { staticClass: "active" }, [_vm._v("Label")]),
                   _c("img", {
@@ -13546,7 +13550,7 @@ exports.default = _default;
                 ]),
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label suffix" }, [
+                _c("div", { staticClass: "field label suffix border" }, [
                   _vm._m(205),
                   _c("label", { staticClass: "active" }, [_vm._v("Label")]),
                   _c("img", {
@@ -13559,15 +13563,21 @@ exports.default = _default;
                 ]),
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field label suffix invalid" }, [
-                  _vm._m(206),
-                  _c("label", { staticClass: "active" }, [_vm._v("Label")]),
-                  _c("img", {
-                    staticClass: "circle",
-                    attrs: { src: "/favicon.png" },
-                  }),
-                  _c("span", { staticClass: "error" }, [_vm._v("Error text")]),
-                ]),
+                _c(
+                  "div",
+                  { staticClass: "field label suffix invalid border" },
+                  [
+                    _vm._m(206),
+                    _c("label", { staticClass: "active" }, [_vm._v("Label")]),
+                    _c("img", {
+                      staticClass: "circle",
+                      attrs: { src: "/favicon.png" },
+                    }),
+                    _c("span", { staticClass: "error" }, [
+                      _vm._v("Error text"),
+                    ]),
+                  ]
+                ),
               ]),
             ]),
           ]),
@@ -13719,7 +13729,11 @@ exports.default = _default;
                   staticClass: "chip circle",
                   on: {
                     click: function ($event) {
-                      return _vm.showSamples("#textareas .field")
+                      _vm.showSamples(
+                        "#textareas .field",
+                        null,
+                        "After render a textarea with label call the js function <b>ui()</b>"
+                      )
                     },
                   },
                 },
@@ -13739,29 +13753,37 @@ exports.default = _default;
               _vm._m(228),
               _vm._m(229),
               _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field textarea label prefix" }, [
-                  _c("img", {
-                    staticClass: "circle",
-                    attrs: { src: "/favicon.png" },
-                  }),
-                  _c("textarea"),
-                  _c("label", [_vm._v("Label")]),
-                ]),
-              ]),
-              _c("div", { staticClass: "col s12 l4" }, [
-                _c("div", { staticClass: "field textarea label suffix" }, [
-                  _c("textarea"),
-                  _c("label", [_vm._v("Label")]),
-                  _c("img", {
-                    staticClass: "circle",
-                    attrs: { src: "/favicon.png" },
-                  }),
-                ]),
+                _c(
+                  "div",
+                  { staticClass: "field textarea label prefix border" },
+                  [
+                    _c("img", {
+                      staticClass: "circle",
+                      attrs: { src: "/favicon.png" },
+                    }),
+                    _c("textarea"),
+                    _c("label", [_vm._v("Label")]),
+                  ]
+                ),
               ]),
               _c("div", { staticClass: "col s12 l4" }, [
                 _c(
                   "div",
-                  { staticClass: "field textarea label prefix suffix" },
+                  { staticClass: "field textarea label suffix border" },
+                  [
+                    _c("textarea"),
+                    _c("label", [_vm._v("Label")]),
+                    _c("img", {
+                      staticClass: "circle",
+                      attrs: { src: "/favicon.png" },
+                    }),
+                  ]
+                ),
+              ]),
+              _c("div", { staticClass: "col s12 l4" }, [
+                _c(
+                  "div",
+                  { staticClass: "field textarea label prefix suffix border" },
                   [
                     _c("img", {
                       staticClass: "circle",
@@ -16651,7 +16673,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
       _c("label", { staticClass: "checkbox" }, [
-        _c("input", { attrs: { id: "border-inputs", type: "checkbox" } }),
+        _c("input", {
+          attrs: { id: "border-inputs", type: "checkbox", checked: "checked" },
+        }),
         _c("span", [_vm._v("border")]),
       ]),
       _c("label", { staticClass: "checkbox" }, [
@@ -16721,7 +16745,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field" }, [
+      _c("div", { staticClass: "field border" }, [
         _c("input", { attrs: { type: "text" } }),
       ]),
     ])
@@ -16731,7 +16755,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field" }, [
+      _c("div", { staticClass: "field border" }, [
         _c("input", { attrs: { type: "text" } }),
         _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")]),
       ]),
@@ -16742,7 +16766,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field invalid" }, [
+      _c("div", { staticClass: "field invalid border" }, [
         _c("input", { attrs: { type: "text" } }),
         _c("span", { staticClass: "error" }, [_vm._v("Error text")]),
       ]),
@@ -16753,7 +16777,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label" }, [
+      _c("div", { staticClass: "field label border" }, [
         _c("input", { attrs: { type: "text" } }),
         _c("label", [_vm._v("Label")]),
       ]),
@@ -16764,7 +16788,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label" }, [
+      _c("div", { staticClass: "field label border" }, [
         _c("input", { attrs: { type: "text" } }),
         _c("label", [_vm._v("Label")]),
         _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")]),
@@ -16776,7 +16800,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label invalid" }, [
+      _c("div", { staticClass: "field label invalid border" }, [
         _c("input", { attrs: { type: "text" } }),
         _c("label", [_vm._v("Label")]),
         _c("span", { staticClass: "error" }, [_vm._v("Error text")]),
@@ -16788,7 +16812,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label prefix" }, [
+      _c("div", { staticClass: "field label prefix border" }, [
         _c("i", [_vm._v("search")]),
         _c("input", { attrs: { type: "text" } }),
         _c("label", [_vm._v("Label")]),
@@ -16800,7 +16824,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label suffix" }, [
+      _c("div", { staticClass: "field label suffix border" }, [
         _c("input", { attrs: { type: "text" } }),
         _c("label", [_vm._v("Label")]),
         _c("i", [_vm._v("search")]),
@@ -16812,7 +16836,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label prefix suffix" }, [
+      _c("div", { staticClass: "field label prefix suffix border" }, [
         _c("i", [_vm._v("search")]),
         _c("input", { attrs: { type: "text" } }),
         _c("label", [_vm._v("Label")]),
@@ -17729,7 +17753,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
       _c("label", { staticClass: "checkbox" }, [
-        _c("input", { attrs: { id: "border-selects", type: "checkbox" } }),
+        _c("input", {
+          attrs: { id: "border-selects", type: "checkbox", checked: "checked" },
+        }),
         _c("span", [_vm._v("border")]),
       ]),
       _c("label", { staticClass: "checkbox" }, [
@@ -17776,7 +17802,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field suffix" }, [
+      _c("div", { staticClass: "field suffix border" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -17791,7 +17817,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field suffix" }, [
+      _c("div", { staticClass: "field suffix border" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -17807,7 +17833,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field suffix invalid" }, [
+      _c("div", { staticClass: "field suffix invalid border" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -17823,7 +17849,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label suffix" }, [
+      _c("div", { staticClass: "field label suffix border" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -17839,7 +17865,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label suffix" }, [
+      _c("div", { staticClass: "field label suffix border" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -17856,7 +17882,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field label suffix invalid" }, [
+      _c("div", { staticClass: "field label suffix invalid border" }, [
         _c("select", [
           _c("option", [_vm._v("Item 1")]),
           _c("option", [_vm._v("Item 2")]),
@@ -18333,7 +18359,13 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("nav", { staticClass: "wrap" }, [
       _c("label", { staticClass: "checkbox" }, [
-        _c("input", { attrs: { id: "border-textareas", type: "checkbox" } }),
+        _c("input", {
+          attrs: {
+            id: "border-textareas",
+            type: "checkbox",
+            checked: "checked",
+          },
+        }),
         _c("span", [_vm._v("border")]),
       ]),
       _c("label", { staticClass: "checkbox" }, [
@@ -18392,7 +18424,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea" }, [_c("textarea")]),
+      _c("div", { staticClass: "field textarea border" }, [_c("textarea")]),
     ])
   },
   function () {
@@ -18400,7 +18432,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea" }, [
+      _c("div", { staticClass: "field textarea border" }, [
         _c("textarea"),
         _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")]),
       ]),
@@ -18411,7 +18443,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea invalid" }, [
+      _c("div", { staticClass: "field textarea invalid border" }, [
         _c("textarea"),
         _c("span", { staticClass: "error" }, [_vm._v("Error text")]),
       ]),
@@ -18422,7 +18454,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea label" }, [
+      _c("div", { staticClass: "field textarea label border" }, [
         _c("textarea"),
         _c("label", [_vm._v("Label")]),
       ]),
@@ -18433,7 +18465,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea label" }, [
+      _c("div", { staticClass: "field textarea label border" }, [
         _c("textarea"),
         _c("label", [_vm._v("Label")]),
         _c("span", { staticClass: "helper" }, [_vm._v("Complementary text")]),
@@ -18445,7 +18477,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea label invalid" }, [
+      _c("div", { staticClass: "field textarea label invalid border" }, [
         _c("textarea"),
         _c("label", [_vm._v("Label")]),
         _c("span", { staticClass: "error" }, [_vm._v("Error text")]),
@@ -18457,7 +18489,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea label prefix" }, [
+      _c("div", { staticClass: "field textarea label prefix border" }, [
         _c("i", [_vm._v("search")]),
         _c("textarea"),
         _c("label", [_vm._v("Label")]),
@@ -18469,7 +18501,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea label suffix" }, [
+      _c("div", { staticClass: "field textarea label suffix border" }, [
         _c("textarea"),
         _c("label", [_vm._v("Label")]),
         _c("i", [_vm._v("search")]),
@@ -18481,7 +18513,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12 l4" }, [
-      _c("div", { staticClass: "field textarea label prefix suffix" }, [
+      _c("div", { staticClass: "field textarea label prefix suffix border" }, [
         _c("i", [_vm._v("search")]),
         _c("textarea"),
         _c("label", [_vm._v("Label")]),
