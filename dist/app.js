@@ -9760,7 +9760,6 @@ var _default = {
     this.jsSample = hljs.highlight("js", 'ui("#modal");\nui("#dropdown");\nui("#overlay");\nui("#page");\nui("#toast");').value;
     this.autoSample = hljs.highlight("html", '<a data-ui="#modal">...</a>\n<a data-ui="#dropdown">...</a>\n<a data-ui="#overlay">...</a>\n<a data-ui="#page">...</a>\n<a data-ui="#toast">...</a>\n\nui();').value;
     this.extraSample = hljs.highlight("js", 'ui("#progress", percentage);\nui("#toast", millisecondsToHide);').value;
-    ui();
     this.resetTheme();
     this.badgeSamples();
     this.chipSamples();
@@ -9774,6 +9773,7 @@ var _default = {
     this.layoutSamples();
     this.toastSamples();
     this.progressSamples();
+    ui();
     setTimeout(function () {
       $("#logo").addClass("active");
     }, 1000);
