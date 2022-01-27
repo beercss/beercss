@@ -149,7 +149,7 @@ div
           .large-space
           .large-space
         #badges.col.s12
-          h4
+          h4.middle-align
             span Badges
             a.chip.circle(@click="showSamples('#badges nav > a')")
               i code
@@ -325,12 +325,12 @@ div
           .small-space
         #buttons.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Buttons
             a.chip.circle(@click="showSamples('#buttons button')")
               i code
           .medium-space
-          h6
+          h6.middle-align
             span FABs
             a.chip.circle(@click="showSamples('#fabs button')")
               i code
@@ -425,7 +425,7 @@ div
               button.border.circle.right-round
                 img.responsive(:src="'/favicon.png'")
           .medium-space
-          h6
+          h6.middle-align
             span Extended FABs
             a.chip.circle(@click="showSamples('#extended-fabs button')")
               i code
@@ -580,7 +580,7 @@ div
                   img.responsive(:src="'/favicon.png'")
                   span Button
           .medium-space
-          h6
+          h6.middle-align
             span Buttons
             a.chip.circle(@click="showSamples('#default-buttons button')")
               i code
@@ -686,7 +686,7 @@ div
                 img.responsive(:src="'/favicon.png'")
                 span Button
           .medium-space
-          h6
+          h6.middle-align
             span Responsive buttons
             a.chip.circle(@click="showSamples('#responsive-buttons button')")
               i code
@@ -1137,7 +1137,7 @@ div
                         button.border Button
         #checkboxes.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Checkboxes
             a.chip.circle(@click="showSamples('#checkboxes .field')")
               i code
@@ -1200,7 +1200,7 @@ div
                 span.error Error text
         #chips.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Chips
             a.chip.circle(@click="showSamples('#chips nav .chip')")
               i code
@@ -1434,7 +1434,7 @@ div
                   img.responsive(:src="'/favicon.png'")
         #colors.col.s12
           .large-space
-          h4 
+          h4.middle-align 
             span Colors
             a.chip.circle(data-ui="#modal-colors")
               i code
@@ -1442,7 +1442,7 @@ div
             button(data-ui="#modal-colors") Colors
         #containers.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Containers
             a.chip.circle(@click="showSamples('#containers .container')")
               i code
@@ -1454,7 +1454,7 @@ div
             .container
         #dropdowns.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Dropdowns
             a.chip.circle(
               @click="showSamples('#dropdowns button, #dropdowns .field')"
@@ -1671,7 +1671,7 @@ div
                   source(:src="'/dance.mp4'", type="video/mp4")
         #expansions.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Expansions
             a.chip.circle(@click="showSamples('#expansions details')")
               i code
@@ -1707,7 +1707,7 @@ div
           
         #icons.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Icons
             a.chip.circle(@click="showSamples('#icons nav', '#modal-icons')")
               i code
@@ -1746,7 +1746,7 @@ div
             i.large thumb_up
         #inputs.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Inputs
             a.chip.circle(@click="showSamples('#inputs .field', null, 'After render a input with label call the js function <b>ui()</b>')")
               i code
@@ -1850,7 +1850,7 @@ div
                 img.circle(:src="'/favicon.png'")
         #layouts.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Layouts
             a.chip.circle(
               @click="layout = 0; showSamples('#layouts article')"
@@ -1932,7 +1932,7 @@ div
                   h5.no-margin Fixed footer
         #list.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Lists
             a.chip.circle(@click="showSamples('#list .row')")
               i code
@@ -2064,7 +2064,7 @@ div
                   i more_vert
         #loaders.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Loaders
             a.chip.circle(@click="showSamples('#loaders .loader')")
               i code
@@ -2077,7 +2077,7 @@ div
             a.loader.large.yellow
         #media.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Media
             a.chip.circle(
               @click="showSamples('#media img:visible, #media video:visible')"
@@ -2194,7 +2194,7 @@ div
                 source(:src="'/dance.mp4'", type="video/mp4")
         #modals.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Modals
             a.chip.circle(@click="showSamples('#modal, #modal-calendar')")
               i code
@@ -2203,7 +2203,7 @@ div
             button(data-ui="#modal-calendar") Calendar
         #navs.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Navs
             a.chip.circle(@click="showSamples('#navs nav')")
               i code
@@ -2215,7 +2215,7 @@ div
               img.circle(:src="'/beer-and-woman.jpg'")
         #pages.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Pages
             a.chip.circle(@click="showSamples('#pages .page')")
               i code
@@ -2228,7 +2228,7 @@ div
             .page
         #progress.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Progress
             a.chip.circle(@click="showSamples('#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, 'To change the progress call the js function <b>ui(\"#progress\", percentage)</b>')")
               i code
@@ -2334,7 +2334,7 @@ div
 
         #radios.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Radios
             a.chip.circle(@click="showSamples('#radios .field')")
               i code
@@ -2397,7 +2397,7 @@ div
                 span.error Error text
         #responsive.col.s12
           .large-space
-          h4 
+          h4.middle-align 
             span Responsive
             a.chip.circle(@click="showSamples('#responsive nav')")
               i code
@@ -2417,7 +2417,7 @@ div
                 i laptop_windows
         #rows.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Rows
             a.chip.circle(@click="showSamples('#rows .row')")
               i code
@@ -2479,7 +2479,7 @@ div
           .space
         #selects.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Selects
             a.chip.circle(@click="showSamples('#selects .field', null, 'After render a select with label call the js function <b>ui()</b>')")
               i code
@@ -2588,7 +2588,7 @@ div
                 span.error Error text
         #switches.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Switches
             a.chip.circle(@click="showSamples('#switches .field')")
               i code
@@ -2651,7 +2651,7 @@ div
                 span.error Error text
         #table.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Tables
             a.chip.circle(@click="showSamples('#table table')")
               i code
@@ -2733,7 +2733,7 @@ div
                       i more_vert
         #tabs.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Tabs
             a.chip.circle(
               @click="showSamples('#tabs > div:not(.large-space)')"
@@ -2851,7 +2851,7 @@ div
               h5 Tab 3
         #textareas.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Textareas
             a.chip.circle(@click="showSamples('#textareas .field', null, 'After render a textarea with label call the js function <b>ui()</b>')")
               i code
@@ -2942,7 +2942,7 @@ div
                 img.circle(:src="'/favicon.png'")
         #toasts.col.s12.l6
           .large-space
-          h4
+          h4.middle-align
             span Toasts
             a.chip.circle(@click="showSamples('#toasts .toast')")
               i code
@@ -2976,7 +2976,7 @@ div
             span Complementary text
         #tooltips.col.s12.l6
           .large-space
-          h4
+          h4.middle-align
             span Tooltips
             a.chip.circle(@click="showSamples('#tooltips nav a')")
               i code
@@ -2996,7 +2996,7 @@ div
 
         #typography.col.s12
           .large-space
-          h4
+          h4.middle-align
             span Typography
             a.chip.circle(@click="showSamples('#typography .col.s6 div')")
               i code
