@@ -3373,11 +3373,12 @@ div
               a(href="https://www.opencollective.com/beercss" target="_self")
                 img.logo-support(:src="'/open-collective.png'")
       #modal-colors.modal.right.large
-        nav
-          a(data-ui="#modal-colors")
-            i arrow_back
-          a(data-ui="#modal-colors")
-            h5.no-margin Back
+        header.fixed
+          nav
+            a(data-ui="#modal-colors")
+              i arrow_back
+            a(data-ui="#modal-colors")
+              h5.no-margin Back
         .space
         .row
           .col.s6

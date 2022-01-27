@@ -19058,12 +19058,14 @@ var staticRenderFns = [
       "div",
       { staticClass: "modal right large", attrs: { id: "modal-colors" } },
       [
-        _c("nav", [
-          _c("a", { attrs: { "data-ui": "#modal-colors" } }, [
-            _c("i", [_vm._v("arrow_back")]),
-          ]),
-          _c("a", { attrs: { "data-ui": "#modal-colors" } }, [
-            _c("h5", { staticClass: "no-margin" }, [_vm._v("Back")]),
+        _c("header", { staticClass: "fixed" }, [
+          _c("nav", [
+            _c("a", { attrs: { "data-ui": "#modal-colors" } }, [
+              _c("i", [_vm._v("arrow_back")]),
+            ]),
+            _c("a", { attrs: { "data-ui": "#modal-colors" } }, [
+              _c("h5", { staticClass: "no-margin" }, [_vm._v("Back")]),
+            ]),
           ]),
         ]),
         _c("div", { staticClass: "space" }),
