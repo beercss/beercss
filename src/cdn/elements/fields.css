@@ -32,10 +32,6 @@
   margin-top: 40rem;
 }
 
-.field.round {
-  border-radius: 32rem;
-}
-
 /* icon */
 .field > i,
 .field > img {
@@ -94,10 +90,9 @@ input[type="file"] {
 .field > input,
 .field > textarea,
 .field > select {
-  border: 0;
+  border: 1rem solid transparent;
   border-radius: 8rem 8rem 0 0;
-  border-bottom: 2rem solid var(--outline);
-  padding: 0 16rem;
+  padding: 0 15rem;
   font-family: inherit;
   font-size: 16rem;
   width: 100%;
@@ -110,43 +105,88 @@ input[type="file"] {
   resize: none;
 }
 
-.field > select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-}
-
-.field > textarea {
-  padding: 16rem;
-}
-
-.field.border > input,
-.field.border > select {
-  padding: 0 14rem;
-}
-
-.field.border > textarea {
-  padding: 14rem;
-}
-
 .field > input:focus,
 .field > textarea:focus,
 .field > select:focus {
-  border-bottom: 2rem solid var(--primary);
+  border: 2rem solid transparent;
+  padding: 0 14rem;
 }
 
 .field.border > input,
 .field.border > textarea,
 .field.border > select {
-  border: 2rem solid var(--outline);
+  border-color: var(--outline);
   border-radius: 8rem;
+  box-shadow: none!important;
 }
 
 .field.border > input:focus,
 .field.border > textarea:focus,
 .field.border > select:focus {
-  border: 2rem solid var(--primary);
+  border-color: var(--primary);
+}
+
+.field.round > input,
+.field.round > textarea,
+.field.round > select {
+  border-radius: 32rem;
+  box-shadow: var(--shadow1);
+  padding-left: 23rem;
+  padding-right: 23rem;
+}
+
+.field.round > input:focus,
+.field.round > textarea:focus,
+.field.round > select:focus {
+  padding-left: 22rem;
+  padding-right: 22rem;
+}
+
+.field.prefix > input,
+.field.prefix > textarea,
+.field.prefix > select {
+  padding-left: 47rem;
+}
+
+.field.prefix > input:focus,
+.field.prefix > textarea:focus,
+.field.prefix > select:focus {
+  padding-left: 46rem;
+}
+
+.field.suffix > input,
+.field.suffix > textarea,
+.field.suffix > select {
+  padding-right: 47rem;
+}
+
+.field.suffix > input:focus,
+.field.suffix > textarea:focus,
+.field.suffix > select:focus {
+  padding-right: 46rem;
+}
+
+.field:not(.border, .flat, .round) > input,
+.field:not(.border, .flat, .round) > textarea,
+.field:not(.border, .flat, .round) > select {
+  border-bottom-color: var(--outline);
+}
+
+.field:not(.border, .flat, .round) > input:focus,
+.field:not(.border, .flat, .round) > textarea:focus,
+.field:not(.border, .flat, .round) > select:focus {
+  border-bottom-color: var(--primary);
+}
+
+.field.round > textarea {
+  border-radius: 24rem;
+}
+
+.field > select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
 }
 
 .field.fill > input,
@@ -161,50 +201,9 @@ input[type="file"] {
   color: var(--on-surface-variant);
 }
 
-.field.round > input,
-.field.round > textarea,
-.field.round > select {
-  border: 0;
-  border-radius: 32rem;
-  box-shadow: var(--shadow1);
-  padding: 0 24rem;
-}
-
-.field.round > textarea {
-  border-radius: 24rem;
-  padding: 16rem 24rem;
-}
-
-.field.round.border > input,
-.field.round.border > select,
-.field.round.border > textarea {
-  padding-left: 22rem;
-  padding-right: 22rem;
-}
-
-.field.round.border > input,
-.field.round.border.fill > input,
-.field.round.border > textarea,
-.field.round.border.fill > textarea,
-.field.round.border > select,
-.field.round.border.fill > select {
-  border: 2rem solid var(--outline);
-  box-shadow: none;
-}
-
-.field.round.border > input:focus,
-.field.round.border.fill > input:focus,
-.field.round.border > textarea:focus,
-.field.round.border.fill > textarea:focus,
-.field.round.border > select:focus,
-.field.round.border.fill > select:focus {
-  border: 2rem solid var(--primary);
-}
-
-.field.round.fill > input,
-.field.round.fill > textarea,
-.field.round.fill > select {
-  border: 0;
+.field.fill > input,
+.field.fill > textarea,
+.field.fill > select {
   box-shadow: none;
 }
 
@@ -221,102 +220,27 @@ input[type="file"] {
   box-shadow: var(--shadow1)!important;
 }
 
-.field.label > input,
-.field.label > textarea,
-.field.label > select {
-  padding-top: 20rem;
-}
-
-.field.label.border:not(.fill) > input,
-.field.label.border:not(.fill) > select {
-  padding-top: 0;
-}
-
-.field.prefix > input,
-.field.prefix > textarea,
-.field.prefix > select {
-  padding-left: 48rem;
-}
-
-.field.suffix > input,
-.field.suffix > textarea,
-.field.suffix > select {
-  padding-right: 48rem;
-}
-
-.field.border.prefix > input,
-.field.border.prefix > textarea,
-.field.border.prefix > select {
-  padding-left: 46rem;
-}
-
-.field.border.suffix > input,
-.field.border.suffix > textarea,
-.field.border.suffix > select {
-  padding-right: 46rem;
-}
-
-.field.invalid > input,
-.field.invalid > textarea,
-.field.invalid > select {
-  border-bottom: 2rem solid var(--error);
+.field.invalid:not(.border, .round, .flat) > input,
+.field.invalid:not(.border, .round, .flat) > textarea,
+.field.invalid:not(.border, .round, .flat) > select,
+.field.invalid:not(.border, .round, .flat) > input:focus,
+.field.invalid:not(.border, .round, .flat) > textarea:focus,
+.field.invalid:not(.border, .round, .flat) > select:focus {
+  border-bottom-color: var(--error);
 }
 
 .field.invalid.border > input,
-.field.invalid.border.round > input,
-.field.invalid.border.round.fill > input,
 .field.invalid.border > textarea,
-.field.invalid.border.round > textarea,
-.field.invalid.border.round.fill > textarea,
 .field.invalid.border > select,
-.field.invalid.border.round > select,
-.field.invalid.border.round.fill > select {
-  border: 2rem solid var(--error);
-}
-
-.field.invalid.round > input,
-.field.invalid.round > textarea,
-.field.invalid.round > select {
-  border: inherit;
+.field.invalid.border > input:focus,
+.field.invalid.border > textarea:focus,
+.field.invalid.border > select:focus {
+  border-color: var(--error);
 }
 
 .field > :disabled {
   opacity: .5;
   cursor: not-allowed;
-}
-
-.field.label.textarea.small > textarea {
-  padding-top: 20rem;
-}
-
-.field.label.textarea > textarea,
-.field.label.textarea.medium > textarea {
-  padding-top: 24rem;
-}
-
-.field.label.textarea.large > textarea {
-  padding-top: 28rem;
-}
-
-.field.label.textarea.extra > textarea {
-  padding-top: 32rem;
-}
-
-.field.label.textarea.small.border:not(.fill) > textarea {
-  padding-top: 10rem;
-}
-
-.field.label.textarea.border:not(.fill) > textarea,
-.field.label.textarea.medium.border:not(.fill) > textarea {
-  padding-top: 14rem;
-}
-
-.field.label.textarea.large.border:not(.fill) > textarea {
-  padding-top: 18rem;
-}
-
-.field.label.textarea.extra.border:not(.fill) > textarea {
-  padding-top: 22rem;
 }
 
 .field.small.textarea {
@@ -338,6 +262,55 @@ input[type="file"] {
 
 .field > select > option {
   background-color: var(--surface);
+}
+
+.field.label > input,
+.field.label > select {
+  padding-top: 16rem;
+}
+
+.field.label.border:not(.fill) > input,
+.field.label.border:not(.fill) > select {
+  padding-top: 0;
+}
+
+.field.label.small > textarea {
+  padding-top: 18rem;
+}
+
+.field.label > textarea,
+.field.label.medium > textarea {
+  padding-top: 22rem;
+}
+
+.field.label.large > textarea {
+  padding-top: 26rem;
+}
+
+.field.label.extra > textarea {
+  padding-top: 30rem;
+}
+
+.field.small:not(.label) > textarea,
+.field.small.border:not(.fill) > textarea {
+  padding-top: 10rem;
+}
+
+.field:not(.label) > textarea,
+.field.border:not(.fill) > textarea,
+.field.medium:not(.label) > textarea,
+.field.medium.border:not(.fill) > textarea {
+  padding-top: 14rem;
+}
+
+.field.large:not(.label) > textarea,
+.field.large.border:not(.fill) > textarea {
+  padding-top: 18rem;
+}
+
+.field.extra:not(.label) > textarea,
+.field.extra.border:not(.fill) > textarea {
+  padding-top: 22rem;
 }
 
 /* label */
