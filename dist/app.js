@@ -19071,7 +19071,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "space" }),
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col s6" }, [
-            _c("h5", [_vm._v("Dynamic colors")]),
+            _c("h5", [_vm._v("Theme")]),
             _c("div", { staticClass: "primary" }, [_vm._v("primary")]),
             _c("div", { staticClass: "primary-container" }, [
               _vm._v("primary-container"),

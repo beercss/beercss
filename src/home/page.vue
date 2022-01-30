@@ -3382,7 +3382,7 @@ div
         .space
         .row
           .col.s6
-            h5 Dynamic colors
+            h5 Theme
             .primary primary
             .primary-container primary-container
             .secondary secondary
