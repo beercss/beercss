@@ -80,7 +80,9 @@
 }
 
 .checkbox > input:focus + span::before,
-.radio > input:focus + span::before {
+.checkbox > input:hover + span::before,
+.radio > input:focus + span::before,
+.radio > input:hover + span::before {
   background-color: var(--active);
   box-shadow: 0 0 0 8rem var(--active);
   animation: var(--speed1) to-checked ease-out;
@@ -163,7 +165,8 @@
   transform: translate(-24rem, -50%);
 }
 
-.switch > input:focus + span::after {
+.switch > input:focus + span::after,
+.switch > input:hover + span::after {
   box-shadow: 0 0 0 8rem var(--active);
 }
 
