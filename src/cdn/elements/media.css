@@ -105,9 +105,27 @@ button > i,
 button > img.responsive,
 .button > img.responsive,
 .chip > img.responsive {
-  width: auto !important;
+  width: 40rem!important;
   border: 2rem solid transparent;
   box-sizing: border-box;
+}
+
+button.small > img.responsive,
+.button.small > img.responsive,
+.chip.small > img.responsive {
+  width: 32rem!important;
+}
+
+button.large > img.responsive,
+.button.large > img.responsive,
+.chip.large > img.responsive {
+  width: 48rem!important;
+}
+
+button.extra > img.responsive,
+.button.extra > img.responsive,
+.chip.extra > img.responsive {
+  width: 56rem!important;
 }
 
 img.responsive.tiny,
@@ -168,15 +186,15 @@ button.square > img {
   padding: 0!important;
 }
 
-.button > .responsive:first-child, 
-button > .responsive:first-child,
-.chip > .responsive:first-child {
+.button > img.responsive:first-child, 
+button > img.responsive:first-child,
+.chip > img.responsive:first-child {
   margin-left: -16rem;
 }
 
-.button > .responsive:last-child, 
-button > .responsive:last-child,
-.chip > .responsive:last-child {
+.button > img.responsive:last-child, 
+button > img.responsive:last-child,
+.chip > img.responsive:last-child {
   margin-right: -16rem;
 }
 
