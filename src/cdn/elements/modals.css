@@ -92,6 +92,7 @@
   height: auto;
   width: 100%;
   min-width: auto;
+  max-height: 100%;
 }
 
 .modal.left {
@@ -124,6 +125,7 @@
   height: auto;
   width: 100%;
   min-width: auto;
+  max-height: 100%;
 }
 
 .modal.left.small,
