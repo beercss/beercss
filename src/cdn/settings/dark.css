@@ -32,7 +32,7 @@
   --shadow3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);
   --size: 6.25%;
   --font: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  --speed1: .1s;
+  --speed1: 1px;
   --speed2: .2s;
   --speed3: .3s;
   --speed4: .4s;
