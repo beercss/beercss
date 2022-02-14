@@ -18,7 +18,8 @@
   cursor: pointer;
   transform: translate(-50%, 0);
   text-align: left;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
 }
 
 .toast.top {
@@ -63,6 +64,10 @@
 
 .toast > * {
   color: inherit;
+}
+
+.toast > i {
+  margin: 0;
 }
 
 @keyframes toast-to-top {
