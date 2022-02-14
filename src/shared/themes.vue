@@ -32,7 +32,7 @@
           img.round.large(:src="'/wallpaper-5.jpg'")
         a.button.square.extra.flat
           i upload
-          input.absolute.top.left.right.bottom(:id="`${id}-image`", type="file", @change="updateTheme(`#${id}-image`)", style="opacity: 0")
+          input.absolute.top.left.right.bottom(type="file", @change="updateTheme", style="opacity: 0")
     .page.right(:id="`${id}-tab-color`")
       .space
       nav.wrap
@@ -57,7 +57,7 @@
         a.button.square.extra.flat.blue-grey(@click="updateTheme('#607d8b')")
         a.button.square.extra.flat.black(@click="updateTheme('#000000')")
         a.button.square.extra.flat.white(@click="updateTheme('#ffffff')")
-  div(v-show="showCssVariables")
+  div(v-if="showCssVariables && theme")
     header.fixed(@click="showCssVariables=false")
       a(data-ui="")
         i arrow_backward
@@ -65,14 +65,14 @@
         a.button.border.link(href="https://m3.material.io/styles/color/overview", target="_blank") More about
     nav
       label.radio
-        input(type="radio", value="light", v-model="selectedMode")
+        input(type="radio", value="light", v-model="theme.selected")
         span Light
       label.radio
-        input(type="radio", value="dark", v-model="selectedMode")
+        input(type="radio", value="dark", v-model="theme.selected")
         span Dark
     .space
     article.border
-      pre(v-html="selectedTheme[selectedMode]")
+      pre(v-html="theme[theme.selected]")
   nav.wrap
     
 </template>
@@ -95,14 +95,11 @@ export default {
     ui();
   },
   methods: {
-    toCssVariables(theme) {
-      domain.toCssVariables(this.$data, theme);
+    updateTheme(from, mode) {
+      domain.updateTheme(this.$data, from, mode);
     },
-    updateTheme(url) {
-      domain.updateTheme(this.$data, url, this.isDark ? "dark" : "light");
-    },
-    updateMode(mode) {
-      domain.updateMode(this.$data, mode);
+    updateMode() {
+      domain.updateMode(this.$data);
     }
   }
 }
