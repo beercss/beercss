@@ -58,16 +58,14 @@
   border-radius: 24rem;
 }
 
-.toast > * + * {
-  margin-left: 8rem;
-}
-
 .toast > * {
   color: inherit;
+  margin: 0;
+  overflow: unset;
 }
 
-.toast > i {
-  margin: 0;
+.toast > * + * {
+  margin-left: 8rem;
 }
 
 @keyframes toast-to-top {
