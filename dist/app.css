@@ -60,6 +60,10 @@ pre * {
   height: 100rem;
 }
 
+pre.wrap {
+  white-space: pre-wrap;
+}
+
 @keyframes logo-intro {
   0% {
     opacity: 0;

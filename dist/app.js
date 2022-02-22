@@ -14843,7 +14843,11 @@ exports.default = _default;
                   staticClass: "chip circle",
                   on: {
                     click: function ($event) {
-                      return _vm.showSamples("#toasts .toast")
+                      _vm.showSamples(
+                        "#toasts .toast",
+                        null,
+                        'The default hide time is 6 seconds, you can change it calling <b>ui("#toast", millisecondsToHide)</b>'
+                      )
                     },
                   },
                 },
@@ -14896,70 +14900,6 @@ exports.default = _default;
             _vm._m(237),
           ]),
           _c("div", { staticClass: "col s12" }, [
-            _c("div", { staticClass: "large-space" }),
-            _c("div", [
-              _c("h4", { staticClass: "center-align" }, [
-                _vm._v("Has about 100 css classes to combine..."),
-              ]),
-              _c("div", { staticClass: "large-space" }),
-              _vm._m(238),
-              _vm._m(239),
-              _vm._m(240),
-              _c("div", { staticClass: "large-space" }),
-              _c("h4", { staticClass: "center-align" }, [
-                _vm._v("...and 3 ways to trigger elements"),
-              ]),
-              _c("div", { staticClass: "large-space" }),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col s12" }, [
-                  _c("div", { staticClass: "card flat round" }, [
-                    _c("h5", [_vm._v("API")]),
-                    _c("div", { staticClass: "large-divider" }),
-                    _c("b", [_vm._v("To trigger elements")]),
-                    _c("div", { staticClass: "space" }),
-                    _c("div", [_vm._v('1) Add or remove class "active"')]),
-                    _c("pre", {
-                      domProps: { innerHTML: _vm._s(_vm.htmlSample) },
-                    }),
-                    _c("div", { staticClass: "space" }),
-                    _c("div", [
-                      _vm._v(
-                        "2) Or call a javascript function to activate/deactivate an element"
-                      ),
-                    ]),
-                    _c("pre", {
-                      domProps: { innerHTML: _vm._s(_vm.jsSample) },
-                    }),
-                    _c("div", { staticClass: "space" }),
-                    _c("div", [
-                      _vm._v(
-                        '3) Or add an attribute "data-ui" and call a javascript function, to setup all automatically'
-                      ),
-                    ]),
-                    _c("pre", {
-                      domProps: { innerHTML: _vm._s(_vm.autoSample) },
-                    }),
-                    _c("div", { staticClass: "space" }),
-                    _c("b", [_vm._v("This elements can accept options")]),
-                    _c("pre", {
-                      domProps: { innerHTML: _vm._s(_vm.extraSample) },
-                    }),
-                    _c("div", { staticClass: "space" }),
-                    _vm._m(241),
-                    _c("pre", {
-                      domProps: { innerHTML: _vm._s(_vm.themeSample) },
-                    }),
-                    _c("div", { staticClass: "space" }),
-                    _c("b", [_vm._v("The returned theme is")]),
-                    _c("pre", [
-                      _vm._v(
-                        '{\n  dark: "--primary: #D0BCFF;--on-primary: #371E73;--primary-container: #4F378B;--on-primary-container: #EADDFF;--secondary: #CCC2DC;--on-secondary: #332D41;--secondary-container: #4A4458;--on-secondary-container: #E8DEF8;--tertiary: #EFB8C8;--on-tertiary: #492532;--tertiary-container: #633B48;--on-tertiary-container: #FFD8E4;--error: #F2B8B5;--on-error: #601410;--error-container: #8C1D18;--on-error-container: #F9DEDC;--background: #1C1B1F;--on-background: #E6E1E5;--surface: #1C1B1F;--on-surface: #E6E1E5;--outline: #938F99;--surface-variant: #49454F;--on-surface-variant: #CAC4D0;--inverse-surface: #E6E1E5;--inverse-on-surface: #313033;--active: rgba(255,255,255,.2);--mode: dark;",\n  light: "--primary: #6750A4;--on-primary: #FFFFFF;--primary-container: #EADDFF;--on-primary-container: #21005E;--secondary: #625B71;--on-secondary: #FFFFFF;--secondary-container: #E8DEF8;--on-secondary-container: #1E192B;--tertiary: #7D5260;--on-tertiary: #FFFFFF;--tertiary-container: #FFD8E4;--on-tertiary-container: #370B1E;--error: #B3261E;--on-error: #FFFFFF;--error-container: #F9DEDC;--on-error-container: #370B1E;--background: #FFFBFE;--on-background: #1C1B1F;--surface: #FFFBFE;--on-surface: #1C1B1F;--outline: #79747E;--surface-variant: #E7E0EC;--on-surface-variant: #49454E;--inverse-surface: #313033;--inverse-on-surface: #F4EFF4;--active: rgba(0,0,0,.1);--mode: light;",\n  selected: "light"\n}'
-                      ),
-                    ]),
-                  ]),
-                ]),
-              ]),
-            ]),
             _c("div", { staticClass: "large-space" }),
             _c("div", [
               _c("h4", { staticClass: "center-align" }, [_vm._v("Cheers 🍻")]),
@@ -15057,7 +14997,7 @@ exports.default = _default;
                 ]),
               ]),
               _c("div", { staticClass: "large-space" }),
-              _vm._m(242),
+              _vm._m(238),
             ]),
             _c("div", { staticClass: "large-space" }),
             _c("div", [
@@ -15097,7 +15037,7 @@ exports.default = _default;
             ]),
           ]),
         ]),
-        _vm._m(243),
+        _vm._m(239),
         _c("div", { staticClass: "modal", attrs: { id: "modal" } }, [
           _c("h5", [_vm._v("Title")]),
           _c("div", [_vm._v("Complementary text")]),
@@ -15162,7 +15102,7 @@ exports.default = _default;
               },
               [_c("i", [_vm._v("arrow_downward")])]
             ),
-            _vm._m(244),
+            _vm._m(240),
           ]),
         ]),
         _c(
@@ -15170,7 +15110,7 @@ exports.default = _default;
           { staticClass: "modal right large", attrs: { id: "modal-samples" } },
           [
             _c("header", { staticClass: "fixed" }, [
-              _vm._m(245),
+              _vm._m(241),
               _c("div", {
                 directives: [
                   {
@@ -15205,15 +15145,15 @@ exports.default = _default;
           ],
           2
         ),
-        _vm._m(246),
+        _vm._m(242),
         _c(
           "div",
           { staticClass: "modal right large", attrs: { id: "modal-icons" } },
           [
             _c("header", { staticClass: "fixed" }, [
               _c("nav", [
-                _vm._m(247),
-                _vm._m(248),
+                _vm._m(243),
+                _vm._m(244),
                 _c(
                   "a",
                   {
@@ -15355,33 +15295,62 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12", attrs: { id: "intro" } }, [
       _c("article", { staticClass: "flat round large-padding" }, [
+        _c("h3", [_vm._v("Get started ")]),
         _c("div", { staticClass: "medium-space" }),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col s12 m12 l6 center-align" }, [
-            _c("h3", [_vm._v("Beercss ")]),
-            _c("h5", [_vm._v("Hope you enjoy it!")]),
-            _c("div", { staticClass: "medium-space s m" }),
-          ]),
-          _c("div", { staticClass: "col s12 m12 l6 large-text" }, [
-            _c("b", [_vm._v("A framework out of the box. ")]),
-            _c("span", [
-              _vm._v(
-                "This is a tech page and do not need to be a beautiful page. This page needs to be useful. We believe that this framework can be very useful for the community. This framework is calling for people that say things like:"
-              ),
-            ]),
-            _c("div", { staticClass: "space" }),
-            _c("div", [_vm._v("- Yes they have a beer!")]),
-            _c("div", [_vm._v("- Only one page?")]),
-            _c("div", [_vm._v("- There is no documentation?")]),
-            _c("div", [
-              _vm._v('- When I click on "<>" it shows the code for me?'),
-            ]),
-            _c("div", [_vm._v("- How do they that with only 10kb?")]),
-            _c("div", [_vm._v("- I do not need an ecosystem to run this?")]),
-            _c("div", [_vm._v("- Wow, I did my work in record time!")]),
-          ]),
+        _c("h5", [_vm._v("From CDN")]),
+        _c(
+          "pre",
+          {
+            staticClass: "wrap",
+            staticStyle: { "font-family": "courier new" },
+          },
+          [
+            _vm._v(
+              '<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.13/dist/cdn/beer.min.css" rel="stylesheet">\n\n<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.13/dist/cdn/beer.min.js" type="text/javascript">\n\n<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript">'
+            ),
+          ]
+        ),
+        _c("div", { staticClass: "medium-space" }),
+        _c("h5", [_vm._v("From NPM")]),
+        _c(
+          "pre",
+          {
+            staticClass: "wrap",
+            staticStyle: { "font-family": "courier new" },
+          },
+          [
+            _vm._v(
+              '// installing\nnpm i beercss\nnpm i material-dynamic-colors\n\n// importing\nimport "beercss";\nimport "material-dynamic-colors";'
+            ),
+          ]
+        ),
+        _c("div", { staticClass: "medium-space" }),
+        _c("b", [
+          _vm._v(
+            "We recommend use the material-dynamic-colors only when your app needs to change theme at runtime."
+          ),
         ]),
         _c("div", { staticClass: "medium-space" }),
+        _c("nav", [
+          _c(
+            "a",
+            {
+              staticClass: "button left-round",
+              attrs: {
+                href: "https://github.com/beercss/beercss/blob/main/docs/INDEX.md",
+              },
+            },
+            [_vm._v("See all documentation")]
+          ),
+          _c(
+            "a",
+            {
+              staticClass: "button right-round",
+              attrs: { href: "https://codepen.io/collection/XydYMB" },
+            },
+            [_vm._v("See on codepen")]
+          ),
+        ]),
       ]),
       _c("div", { staticClass: "large-space" }),
       _c("div", { staticClass: "large-space" }),
@@ -19728,367 +19697,6 @@ var staticRenderFns = [
           _c("h1", [_vm._v("Title")]),
         ]),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row", attrs: { id: "helpers" } }, [
-      _c("div", { staticClass: "col s12" }, [
-        _c("div", { staticClass: "card flat round" }, [
-          _c("h5", [_vm._v("Helpers")]),
-          _c("div", { staticClass: "large-divider" }),
-          _c("div", { staticClass: "row no-wrap" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Position")]),
-              _c("div", [_vm._v("left")]),
-              _c("div", [_vm._v("right")]),
-              _c("div", [_vm._v("center")]),
-              _c("div", [_vm._v("top")]),
-              _c("div", [_vm._v("bottom")]),
-              _c("div", [_vm._v("middle")]),
-              _c("div", [_vm._v("front")]),
-              _c("div", [_vm._v("back")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Alignment")]),
-              _c("div", [_vm._v("left-align")]),
-              _c("div", [_vm._v("right-align")]),
-              _c("div", [_vm._v("center-align")]),
-              _c("div", [_vm._v("top-align")]),
-              _c("div", [_vm._v("bottom-align")]),
-              _c("div", [_vm._v("middle-align")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Size")]),
-              _c("div", [_vm._v("small")]),
-              _c("div", [_vm._v("medium")]),
-              _c("div", [_vm._v("large")]),
-              _c("div", [_vm._v("small-width")]),
-              _c("div", [_vm._v("medium-width")]),
-              _c("div", [_vm._v("large-width")]),
-              _c("div", [_vm._v("small-height")]),
-              _c("div", [_vm._v("medium-height")]),
-              _c("div", [_vm._v("large-height")]),
-            ]),
-          ]),
-          _c("div", { staticClass: "row no-wrap" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Margin")]),
-              _c("div", [_vm._v("margin")]),
-              _c("div", [_vm._v("no-margin")]),
-              _c("div", [_vm._v("small-margin")]),
-              _c("div", [_vm._v("medium-margin")]),
-              _c("div", [_vm._v("large-margin")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Padding")]),
-              _c("div", [_vm._v("padding")]),
-              _c("div", [_vm._v("no-padding")]),
-              _c("div", [_vm._v("small-padding")]),
-              _c("div", [_vm._v("medium-padding")]),
-              _c("div", [_vm._v("large-padding")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Spacing")]),
-              _c("div", [_vm._v("space")]),
-              _c("div", [_vm._v("small-space")]),
-              _c("div", [_vm._v("medium-space")]),
-              _c("div", [_vm._v("large-space")]),
-              _c("div", [_vm._v("divider")]),
-              _c("div", [_vm._v("small-divider")]),
-              _c("div", [_vm._v("medium-divider")]),
-              _c("div", [_vm._v("large-divider")]),
-            ]),
-          ]),
-          _c("div", { staticClass: "row no-wrap" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Form")]),
-              _c("div", [_vm._v("border")]),
-              _c("div", [_vm._v("round")]),
-              _c("div", [_vm._v("left-round")]),
-              _c("div", [_vm._v("right-round")]),
-              _c("div", [_vm._v("top-round")]),
-              _c("div", [_vm._v("bottom-round")]),
-              _c("div", [_vm._v("circle")]),
-              _c("div", [_vm._v("flat")]),
-              _c("div", [_vm._v("square")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Texts")]),
-              _c("div", [_vm._v("italic")]),
-              _c("div", [_vm._v("bold")]),
-              _c("div", [_vm._v("underline")]),
-              _c("div", [_vm._v("overline")]),
-              _c("div", [_vm._v("upper")]),
-              _c("div", [_vm._v("lower")]),
-              _c("div", [_vm._v("capitalize")]),
-              _c("div", [_vm._v("link")]),
-              _c("div", [_vm._v("small-text")]),
-              _c("div", [_vm._v("medium-text")]),
-              _c("div", [_vm._v("large-text")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Shadows")]),
-              _c("div", [_vm._v("shadow")]),
-              _c("div", [_vm._v("right-shadow")]),
-              _c("div", [_vm._v("left-shadow")]),
-              _c("div", [_vm._v("bottom-shadow")]),
-              _c("div", [_vm._v("top-shadow")]),
-              _c("div", [_vm._v("no-shadow")]),
-              _c("div", [_vm._v("small-shadow")]),
-              _c("div", [_vm._v("medium-shadow")]),
-              _c("div", [_vm._v("large-shadow")]),
-            ]),
-          ]),
-          _c("div", { staticClass: "row no-wrap" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Others")]),
-              _c("div", [_vm._v("active")]),
-              _c("div", [_vm._v("wrap")]),
-              _c("div", [_vm._v("no-wrap")]),
-              _c("div", [_vm._v("scroll")]),
-              _c("div", [_vm._v("no-scroll")]),
-              _c("div", [_vm._v("wave")]),
-              _c("div", [_vm._v("no-wave")]),
-              _c("div", [_vm._v("s")]),
-              _c("div", [_vm._v("m")]),
-              _c("div", [_vm._v("l")]),
-            ]),
-            _c("div", { staticClass: "col" }),
-            _c("div", { staticClass: "col" }),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12" }, [
-        _c("div", { staticClass: "card flat round" }, [
-          _c("h5", [_vm._v("Elements")]),
-          _c("div", { staticClass: "large-divider" }),
-          _c("div", { staticClass: "row no-wrap" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("div", [_c("span", [_vm._v("absolute ")])]),
-              _c("div", [
-                _c("span", [_vm._v("badge ")]),
-                _c("span", { staticClass: "error-text" }, [_vm._v("none")]),
-              ]),
-              _c("div", [
-                _c("span", [_vm._v("button ")]),
-                _c("span", { staticClass: "error-text" }, [
-                  _vm._v("none, diamond, extend, extra"),
-                ]),
-              ]),
-              _c("div", [
-                _c("span", [_vm._v("chip ")]),
-                _c("span", { staticClass: "error-text" }, [_vm._v("diamond")]),
-              ]),
-              _c("div", [_c("span", [_vm._v("card ")])]),
-              _c("div", [
-                _c("span", [_vm._v("container ")]),
-                _c("span", { staticClass: "error-text" }, [_vm._v("min, max")]),
-              ]),
-              _c("div", [_c("span", [_vm._v("dropdown ")])]),
-              _c("div", [
-                _c("span", [_vm._v("field ")]),
-                _c("span", { staticClass: "error-text" }, [
-                  _vm._v("fill, prefix, suffix, label, invalid, textarea"),
-                ]),
-              ]),
-              _c("div", [_c("span", [_vm._v("fixed ")])]),
-              _c("div", [_c("span", [_vm._v("loader ")])]),
-              _c("div", [
-                _c("span", [_vm._v("menu ")]),
-                _c("span", { staticClass: "error-text" }, [_vm._v("no-space")]),
-              ]),
-              _c("div", [_c("span", [_vm._v("modal ")])]),
-              _c("div", [_c("span", [_vm._v("page ")])]),
-              _c("div", [
-                _c("span", [_vm._v("overlay ")]),
-                _c("span", { staticClass: "error-text" }, [
-                  _vm._v("light, dark"),
-                ]),
-              ]),
-              _c("div", [
-                _c("span", [_vm._v("row ")]),
-                _c("span", { staticClass: "error-text" }, [_vm._v("no-space")]),
-              ]),
-              _c("div", [
-                _c("span", [_vm._v("    col ")]),
-                _c("span", { staticClass: "error-text" }, [
-                  _vm._v("min, max, s1..12, m1..12, l1..12"),
-                ]),
-              ]),
-              _c("div", [_c("span", [_vm._v("tabs ")])]),
-              _c("div", [_c("span", [_vm._v("toast ")])]),
-              _c("div", [_c("span", [_vm._v("tooltip ")])]),
-              _c("div", [
-                _c("span", [_vm._v("wave ")]),
-                _c("span", { staticClass: "error-text" }, [
-                  _vm._v("light, dark"),
-                ]),
-              ]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("div", [_c("span", [_vm._v("<article> ")])]),
-              _c("div", [_c("span", [_vm._v("<body> ")])]),
-              _c("div", [
-                _c("span", [_vm._v("<button> ")]),
-                _c("span", { staticClass: "error-text" }, [
-                  _vm._v("none, diamond, extend, extra"),
-                ]),
-              ]),
-              _c("div", [_c("span", [_vm._v("<details> ")])]),
-              _c("div", [
-                _c("span", [_vm._v("<i> ")]),
-                _c("span", { staticClass: "error-text" }, [
-                  _vm._v("tiny, extra, outlined"),
-                ]),
-              ]),
-              _c("div", [
-                _c("span", [_vm._v("<img> ")]),
-                _c("span", { staticClass: "error-text" }, [
-                  _vm._v("tiny, extra, responsive, empty-state"),
-                ]),
-              ]),
-              _c("div", [
-                _c("span", [_vm._v("<label> ")]),
-                _c("span", { staticClass: "error-text" }, [
-                  _vm._v("checkbox, radio, switch"),
-                ]),
-              ]),
-              _c("div", [_c("span", [_vm._v("<nav> ")])]),
-              _c("div", [
-                _c("span", [_vm._v("<summary> ")]),
-                _c("span", { staticClass: "error-text" }, [_vm._v("none")]),
-              ]),
-              _c("div", [_c("span", [_vm._v("<table> ")])]),
-              _c("div", [
-                _c("span", [_vm._v("<video> ")]),
-                _c("span", { staticClass: "error-text" }, [
-                  _vm._v("tiny, extra, responsive, empty-state"),
-                ]),
-              ]),
-            ]),
-          ]),
-          _c("div", { staticClass: "space" }),
-          _c("div", { staticClass: "error-text" }, [
-            _vm._v("* Element unique helpers"),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12" }, [
-        _c("div", { staticClass: "card flat round" }, [
-          _c("h5", [_vm._v("Settings")]),
-          _c("div", { staticClass: "large-divider" }),
-          _c("div", { staticClass: "row no-wrap" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Themes")]),
-              _c("div", [_vm._v("is-dark")]),
-              _c("div", [_vm._v("is-light")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Primary colors")]),
-              _c("div", [_vm._v("--primary")]),
-              _c("div", [_vm._v("--on-primary")]),
-              _c("div", [_vm._v("--primary-container")]),
-              _c("div", [_vm._v("--on-primary-container")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Secondary colors")]),
-              _c("div", [_vm._v("--secondary")]),
-              _c("div", [_vm._v("--on-secondary")]),
-              _c("div", [_vm._v("--secondary-container")]),
-              _c("div", [_vm._v("--on-secondary-container")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Tertiary colors")]),
-              _c("div", [_vm._v("--tertiary")]),
-              _c("div", [_vm._v("--on-tertiary")]),
-              _c("div", [_vm._v("--tertiary-container")]),
-              _c("div", [_vm._v("--on-tertiary-container")]),
-            ]),
-          ]),
-          _c("div", { staticClass: "row no-wrap" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Error colors")]),
-              _c("div", [_vm._v("--error")]),
-              _c("div", [_vm._v("--on-error")]),
-              _c("div", [_vm._v("--error-container")]),
-              _c("div", [_vm._v("--on-error-container")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Background colors")]),
-              _c("div", [_vm._v("--background")]),
-              _c("div", [_vm._v("--on-background")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Surface colors")]),
-              _c("div", [_vm._v("--surface")]),
-              _c("div", [_vm._v("--on-surface")]),
-              _c("div", [_vm._v("--surface-variant")]),
-              _c("div", [_vm._v("--on-surface-variant")]),
-              _c("div", [_vm._v("--outline")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Shadows")]),
-              _c("div", [_vm._v("--shadow1")]),
-              _c("div", [_vm._v("--shadow2")]),
-              _c("div", [_vm._v("--shadow3")]),
-            ]),
-          ]),
-          _c("div", { staticClass: "row no-wrap" }, [
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Speed")]),
-              _c("div", [_vm._v("--speed1")]),
-              _c("div", [_vm._v("--speed2")]),
-              _c("div", [_vm._v("--speed3")]),
-              _c("div", [_vm._v("--speed4")]),
-            ]),
-            _c("div", { staticClass: "col" }, [
-              _c("b", [_vm._v("Others")]),
-              _c("div", [_vm._v("--active")]),
-              _c("div", [_vm._v("--overlay")]),
-              _c("div", [_vm._v("--font")]),
-              _c("div", [_vm._v("--size")]),
-            ]),
-            _c("div", { staticClass: "col" }),
-            _c("div", { staticClass: "col" }),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("b", [
-      _vm._v("To change a theme at runtime, add"),
-      _c(
-        "a",
-        {
-          staticClass: "link",
-          attrs: {
-            href: "https://www.npmjs.com/package/material-dynamic-colors",
-          },
-        },
-        [_vm._v(" material-dynamic-colors")]
-      ),
-      _c("span", [_vm._v(" to your project and call a javascript function")]),
     ])
   },
   function () {
