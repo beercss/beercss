@@ -10,6 +10,10 @@ Modals inform users about a task and can contain critical information, required 
 
 ## Most used helpers
 
+**Forms**
+
+border, round, flat, left-round, right-round, top-round, bottom-round
+
 **Positions**
 
 left, right, top, bottom
