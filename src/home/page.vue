@@ -128,24 +128,31 @@ div
       .row
         #intro.col.s12
           article.flat.round.large-padding
+            h3 Get started 
             .medium-space
-            .row
-              .col.s12.m12.l6.center-align
-                h3 Beercss 
-                h5 Hope you enjoy it!
-                .medium-space.s.m
-              .col.s12.m12.l6.large-text
-                b A framework out of the box.&nbsp;
-                span This is a tech page and do not need to be a beautiful page. This page needs to be useful. We believe that this framework can be very useful for the community. This framework is calling for people that say things like:
-                .space
-                div - Yes they have a beer!
-                div - Only one page?
-                div - There is no documentation?
-                div - When I click on "<>" it shows the code for me?
-                div - How do they that with only 10kb?
-                div - I do not need an ecosystem to run this?
-                div - Wow, I did my work in record time!
+            h5 From CDN
+            pre.wrap(style="font-family: courier new")
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.0.12/dist/cdn/beer.min.css" rel="stylesheet">
+              |
+              | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.0.12/dist/cdn/beer.min.js" type="text/javascript"></script>
+              |
+              | &lt;script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
             .medium-space
+            h5 From NPM
+            pre.wrap(style="font-family: courier new")
+              | // installing
+              | npm i beercss
+              | npm i material-dynamic-colors
+              |
+              | // importing
+              | import "beercss";
+              | import "material-dynamic-colors";
+            .medium-space
+            b We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.
+            .medium-space
+            nav
+              a.button.left-round(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") See all documentation
+              a.button.right-round(href="https://codepen.io/collection/XydYMB") See on codepen
           .large-space
           .large-space
         #badges.col.s12
@@ -2944,7 +2951,7 @@ div
           .large-space
           h4
             span Toasts
-            a.chip.circle(@click="showSamples('#toasts .toast')")
+            a.chip.circle(@click="showSamples('#toasts .toast', null, 'The default hide time is 6 seconds, you can change it calling <b>ui(\"#toast\", millisecondsToHide)</b>')")
               i code
           nav.wrap
             label.radio
@@ -3023,309 +3030,6 @@ div
                 h2 Title
                 h1 Title
         .col.s12
-          .large-space
-          div
-            h4.center-align Has about 100 css classes to combine...
-            .large-space
-            #helpers.row
-              .col.s12
-                .card.flat.round
-                  h5 Helpers
-                  .large-divider
-                  .row.no-wrap
-                    .col
-                      b Position
-                      div left
-                      div right
-                      div center
-                      div top
-                      div bottom
-                      div middle
-                      div front
-                      div back
-                    .col
-                      b Alignment
-                      div left-align
-                      div right-align
-                      div center-align
-                      div top-align
-                      div bottom-align
-                      div middle-align
-                    .col
-                      b Size
-                      div small
-                      div medium
-                      div large
-                      div small-width
-                      div medium-width
-                      div large-width
-                      div small-height
-                      div medium-height
-                      div large-height
-                  .row.no-wrap
-                    .col
-                      b Margin
-                      div margin
-                      div no-margin
-                      div small-margin
-                      div medium-margin
-                      div large-margin
-                    .col
-                      b Padding
-                      div padding
-                      div no-padding
-                      div small-padding
-                      div medium-padding
-                      div large-padding
-                    .col
-                      b Spacing
-                      div space
-                      div small-space
-                      div medium-space
-                      div large-space
-                      div divider
-                      div small-divider
-                      div medium-divider
-                      div large-divider
-                  .row.no-wrap
-                    .col
-                      b Form
-                      div border
-                      div round
-                      div left-round
-                      div right-round
-                      div top-round
-                      div bottom-round
-                      div circle
-                      div flat
-                      div square
-                    .col
-                      b Texts
-                      div italic
-                      div bold
-                      div underline
-                      div overline
-                      div upper
-                      div lower
-                      div capitalize
-                      div link
-                      div small-text
-                      div medium-text
-                      div large-text
-                    .col
-                      b Shadows
-                      div shadow
-                      div right-shadow
-                      div left-shadow
-                      div bottom-shadow
-                      div top-shadow
-                      div no-shadow
-                      div small-shadow
-                      div medium-shadow
-                      div large-shadow
-                  .row.no-wrap
-                    .col
-                      b Others
-                      div active
-                      div wrap
-                      div no-wrap
-                      div scroll
-                      div no-scroll
-                      div wave
-                      div no-wave
-                      div s
-                      div m
-                      div l
-                    .col
-                    .col
-            .row
-              .col.s12
-                .card.flat.round
-                  h5 Elements
-                  .large-divider
-                  .row.no-wrap
-                    .col
-                      div
-                        span absolute&nbsp;
-                      div
-                        span badge&nbsp;
-                        span.error-text none
-                      div 
-                        span button&nbsp;
-                        span.error-text none, diamond, extend, extra
-                      div
-                        span chip&nbsp;
-                        span.error-text diamond
-                      div
-                        span card&nbsp;
-                      div 
-                        span container&nbsp;
-                        span.error-text min, max
-                      div 
-                        span dropdown&nbsp;
-                      div 
-                        span field&nbsp;
-                        span.error-text fill, prefix, suffix, label, invalid, textarea
-                      div
-                        span fixed&nbsp;
-                      div
-                        span loader&nbsp;
-                      div
-                        span menu&nbsp;
-                        span.error-text no-space
-                      div 
-                        span modal&nbsp;
-                      div 
-                        span page&nbsp;
-                      div 
-                        span overlay&nbsp;
-                        span.error-text light, dark
-                      div 
-                        span row&nbsp;
-                        span.error-text no-space
-                      div 
-                        span &nbsp;&nbsp;&nbsp;&nbsp;col&nbsp;
-                        span.error-text min, max, s1..12, m1..12, l1..12
-                      div 
-                        span tabs&nbsp;
-                      div 
-                        span toast&nbsp;
-                      div 
-                        span tooltip&nbsp;
-                      div 
-                        span wave&nbsp;
-                        span.error-text light, dark
-                    .col
-                      div 
-                        span &lt;article&gt;&nbsp;
-                      div 
-                        span &lt;body&gt;&nbsp;
-                      div 
-                        span &lt;button&gt;&nbsp;
-                        span.error-text none, diamond, extend, extra
-                      div 
-                        span &lt;details&gt;&nbsp;
-                      div 
-                        span &lt;i&gt;&nbsp;
-                        span.error-text tiny, extra, outlined
-                      div
-                        span &lt;img&gt;&nbsp;
-                        span.error-text tiny, extra, responsive, empty-state
-                      div
-                        span &lt;label&gt;&nbsp;
-                        span.error-text checkbox, radio, switch
-                      div 
-                        span &lt;nav&gt;&nbsp;
-                      div 
-                        span &lt;summary&gt;&nbsp;
-                        span.error-text none
-                      div 
-                        span &lt;table&gt;&nbsp;
-                      div
-                        span &lt;video&gt;&nbsp;
-                        span.error-text tiny, extra, responsive, empty-state
-                  .space
-                  .error-text * Element unique helpers
-            .row
-              .col.s12
-                .card.flat.round
-                  h5 Settings
-                  .large-divider
-                  .row.no-wrap
-                    .col
-                      b Themes
-                      div is-dark
-                      div is-light
-                    .col
-                      b Primary colors
-                      div --primary
-                      div --on-primary
-                      div --primary-container
-                      div --on-primary-container
-                    .col
-                      b Secondary colors
-                      div --secondary
-                      div --on-secondary
-                      div --secondary-container
-                      div --on-secondary-container
-                    .col
-                      b Tertiary colors
-                      div --tertiary
-                      div --on-tertiary
-                      div --tertiary-container
-                      div --on-tertiary-container
-                  .row.no-wrap
-                    .col
-                      b Error colors
-                      div --error
-                      div --on-error
-                      div --error-container
-                      div --on-error-container
-                    .col
-                      b Background colors
-                      div --background
-                      div --on-background
-                    .col
-                      b Surface colors
-                      div --surface
-                      div --on-surface
-                      div --surface-variant
-                      div --on-surface-variant
-                      div --outline
-                    .col
-                      b Shadows
-                      div --shadow1
-                      div --shadow2
-                      div --shadow3
-                  .row.no-wrap
-                    .col
-                      b Speed
-                      div --speed1
-                      div --speed2
-                      div --speed3
-                      div --speed4
-                    .col 
-                      b Others
-                      div --active
-                      div --overlay
-                      div --font
-                      div --size
-                    .col
-                    .col
-            .large-space
-            h4.center-align ...and 3 ways to trigger elements
-            .large-space
-            .row
-              .col.s12
-                .card.flat.round
-                  h5 API
-                  .large-divider
-                  b To trigger elements
-                  .space
-                  div 1) Add or remove class "active"
-                  pre(v-html="htmlSample")
-                  .space
-                  div 2) Or call a javascript function to activate/deactivate an element
-                  pre(v-html="jsSample")
-                  .space
-                  div 3) Or add an attribute "data-ui" and call a javascript function, to setup all automatically
-                  pre(v-html="autoSample")
-                  .space
-                  b This elements can accept options
-                  pre(v-html="extraSample")
-                  .space
-                  b To change a theme at runtime, add
-                    a.link(href="https://www.npmjs.com/package/material-dynamic-colors") &nbsp;material-dynamic-colors
-                    span &nbsp;to your project and call a javascript function
-                  pre(v-html="themeSample")
-                  .space
-                  b The returned theme is
-                  pre
-                    | {
-                    |   dark: "--primary: #D0BCFF;--on-primary: #371E73;--primary-container: #4F378B;--on-primary-container: #EADDFF;--secondary: #CCC2DC;--on-secondary: #332D41;--secondary-container: #4A4458;--on-secondary-container: #E8DEF8;--tertiary: #EFB8C8;--on-tertiary: #492532;--tertiary-container: #633B48;--on-tertiary-container: #FFD8E4;--error: #F2B8B5;--on-error: #601410;--error-container: #8C1D18;--on-error-container: #F9DEDC;--background: #1C1B1F;--on-background: #E6E1E5;--surface: #1C1B1F;--on-surface: #E6E1E5;--outline: #938F99;--surface-variant: #49454F;--on-surface-variant: #CAC4D0;--inverse-surface: #E6E1E5;--inverse-on-surface: #313033;--active: rgba(255,255,255,.2);--mode: dark;",
-                    |   light: "--primary: #6750A4;--on-primary: #FFFFFF;--primary-container: #EADDFF;--on-primary-container: #21005E;--secondary: #625B71;--on-secondary: #FFFFFF;--secondary-container: #E8DEF8;--on-secondary-container: #1E192B;--tertiary: #7D5260;--on-tertiary: #FFFFFF;--tertiary-container: #FFD8E4;--on-tertiary-container: #370B1E;--error: #B3261E;--on-error: #FFFFFF;--error-container: #F9DEDC;--on-error-container: #370B1E;--background: #FFFBFE;--on-background: #1C1B1F;--surface: #FFFBFE;--on-surface: #1C1B1F;--outline: #79747E;--surface-variant: #E7E0EC;--on-surface-variant: #49454E;--inverse-surface: #313033;--inverse-on-surface: #F4EFF4;--active: rgba(0,0,0,.1);--mode: light;",
-                    |   selected: "light"
-                    | }
           .large-space
           div
             h4.center-align Cheers 🍻
@@ -4441,6 +4145,10 @@ pre * {
 .logo-support {
   width: auto;
   height: 100rem;
+}
+
+pre.wrap {
+  white-space: pre-wrap;
 }
 
 @keyframes logo-intro {

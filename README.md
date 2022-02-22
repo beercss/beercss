@@ -87,14 +87,7 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 .element .helper {...}
 ```
 
-## Supporting Beercss
-
-Beercss is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider:
-
-- [Become a backer or sponsor on Patreon](https://www.patreon.com/beercss).
-- [Become a backer or sponsor on Open Collective](https://www.opencollective.com/beercss).
-
-## Getting Started
+## Get started
 
 ### CDN
 
@@ -103,6 +96,7 @@ From jsdelivr.net.
 ```html
 <link href="https://cdn.jsdelivr.net/npm/beercss@2.0.12/dist/cdn/beer.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/beercss@2.0.12/dist/cdn/beer.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
 ```
 
 ### NPM
@@ -112,18 +106,26 @@ You can get the latest release using NPM. This release contains source files as 
 ```js
 // installing
 npm i beercss
+npm i material-dynamic-colors
 ```
 
 ```js
 // importing
 import "beercss";
+import "material-dynamic-colors";
 ```
 
-## Documentation
-Complete documentation and examples available at https://www.beercss.com/
-- **[CodePen Template](https://codepen.io/collection/XydYMB)**
+**We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.**
 
-## Contributing Guide
+## Documentation
+
+Complete documentation and examples available at:
+
+- **[Documentation](https://github.com/beercss/beercss/blob/main/docs/INDEX.md)**
+- **[Codepen](https://codepen.io/collection/XydYMB)**
+- **[Homepage](https://www.beercss.com)**
+
+## Contributing guide
 
 Hi! We are really excited that you are interested in contributing to Beercss! Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
 
@@ -135,3 +137,10 @@ https://github.com/beercss/beercss/blob/main/CONTRIBUTING.md
 
 ## Cheers to all people here 🍻
 [![Stargazers repo roster for @beercss/beercss](https://reporoster.com/stars/notext/beercss/beercss)](https://github.com/beercss/beercss/stargazers)
+
+## Supporting us
+
+Beercss is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider:
+
+- [Become a backer or sponsor on Patreon](https://www.patreon.com/beercss).
+- [Become a backer or sponsor on Open Collective](https://www.opencollective.com/beercss).
