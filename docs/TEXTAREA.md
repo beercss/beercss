@@ -14,7 +14,7 @@ Textarea fields let users enter and edit long text.
 
 **Forms**
 
-label, textarea, border, round, fill
+label, textarea, border, round, fill, prefix, suffix
 
 **Sizes**
 

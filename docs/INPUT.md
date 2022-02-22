@@ -14,7 +14,7 @@ Input fields let users enter and edit text.
 
 **Forms**
 
-border, round, fill
+label, border, round, fill, prefix, suffix
 
 **Sizes**
 

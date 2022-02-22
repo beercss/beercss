@@ -14,7 +14,7 @@ Selects display a list of choices on temporary surfaces.
 
 **Forms**
 
-border, round, fill
+label, border, round, fill, prefix, suffix
 
 **Sizes**
 
