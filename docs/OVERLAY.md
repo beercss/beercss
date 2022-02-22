@@ -11,9 +11,11 @@ Overlays block user screen and can express an unspecified wait time.
 ## Most used helpers
 
 **Alignments**
+
 left-align, right-align, center-align, top-align, bottom-align, middle-align
 
 **Triggers**
+
 active
 
 ## Example

@@ -11,12 +11,15 @@ Tables display sets of data across rows and columns.
 ## Most used helpers
 
 **Alignments**
+
 left-align, right-align, center-align
 
 **Forms**
+
 border
 
 **Sizes**
+
 small, medium, large
 
 ## Example

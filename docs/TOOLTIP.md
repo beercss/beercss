@@ -13,6 +13,7 @@ Tooltips displays informative text when users hover over, focus on, or tap an el
 ## Most used helpers
 
 **Positions**
+
 left, right, top, bottom
 
 ## Example

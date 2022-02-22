@@ -13,12 +13,15 @@ Dropdowns display a list of choices on temporary surfaces.
 ## Most used helpers
 
 **Positions**
+
 left, right
 
 **Sizes**
+
 wrap, no-wrap
 
 **Triggers**
+
 active
 
 ## Example

@@ -11,6 +11,7 @@ Loader express an unspecified wait time.
 ## Most used helpers
 
 **Sizes**
+
 small, medium, large
 
 ## Example

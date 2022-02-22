@@ -11,18 +11,23 @@ Menus provide ergonomic movement between primary destinations in apps.
 ## Most used helpers
 
 **Alignments**
+
 left-align, right-align, center-align, top-align, bottom-align, middle-align
 
 **Forms**
+
 flat, border, round, left-round, right-round, top-round, bottom-round
 
 **Margins**
+
 no-margin, small-margin, medium-margin, large-margin
 
 **Positions**
+
 left, right, top, bottom
 
 **Sizes**
+
 no-space, small-space, medium-space, large-space
 
 ## Example

@@ -11,6 +11,7 @@ A container is the main content of page.
 ## Most used helpers
 
 **Sizes**
+
 min, max
 
 ## Example

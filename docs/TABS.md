@@ -11,9 +11,11 @@ Tabs organize content across different screens, data sets, and other interaction
 ## Most used helpers
 
 **Alignments**
+
 left-align, right-align, center-align
 
 **Triggers**
+
 active
 
 ## Example

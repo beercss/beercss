@@ -11,9 +11,11 @@ Pages are containers that can be a main page, multiple pages or just to animate 
 ## Most used helpers
 
 **Positions**
+
 left, right, top, bottom
 
 **Triggers**
+
 active
 
 ## Example

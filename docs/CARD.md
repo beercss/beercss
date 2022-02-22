@@ -12,12 +12,15 @@ Cards are surfaces that display content and actions on a single topic. They shou
 ## Most used helpers
 
 **Forms**
+
 border, flat, round, left-round, top-round, right-round, bottom-round
 
 **Paddings**
+
 no-padding, small-padding, medium-padding, large-padding
 
 **Sizes**
+
 small, medium, large
 
 ## Example

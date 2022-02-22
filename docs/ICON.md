@@ -11,6 +11,7 @@ Material design system icons are simple, modern, friendly, and sometimes quirky.
 ## Most used helpers
 
 **Sizes**
+
 tiny, small, medium, large, extra
 
 ## Example

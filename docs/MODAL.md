@@ -11,12 +11,15 @@ Modals inform users about a task and can contain critical information, required 
 ## Most used helpers
 
 **Positions**
+
 left, right, top, bottom
 
 **Sizes**
+
 small, medium, large
 
 **Triggers**
+
 active
 
 ## Example

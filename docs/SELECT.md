@@ -13,12 +13,15 @@ Selects display a list of choices on temporary surfaces.
 ## Most used helpers
 
 **Forms**
+
 border, round, fill
 
 **Sizes**
+
 small, medium, large, extra
 
 **Triggers**
+
 active
 
 ## Example

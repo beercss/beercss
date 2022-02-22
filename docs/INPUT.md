@@ -13,12 +13,15 @@ Input fields let users enter and edit text.
 ## Most used helpers
 
 **Forms**
+
 border, round, fill
 
 **Sizes**
+
 small, medium, large, extra
 
 **Triggers**
+
 active
 
 ## Example

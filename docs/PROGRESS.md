@@ -13,6 +13,7 @@ Progress display the length of a process.
 ## Most used helpers
 
 **Positions**
+
 left, right, top, bottom
 
 ## Example

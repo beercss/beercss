@@ -12,9 +12,11 @@ Buttons allow users to take actions, and make choices, with a single tap.
 ## Most used helpers
 
 **Forms**
+
 none, extend, border, flat, circle, square, round, left-round, right-round, top-round, bottom-round
 
 **Sizes**
+
 small, medium, large, extra
 
 ## Example

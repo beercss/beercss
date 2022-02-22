@@ -11,9 +11,11 @@ Navs are navigation containers that display actions placed horizontally. Element
 ## Most used helpers
 
 **Alignments**
+
 left-align, right-align, center-align, top-align, bottom-align, middle-align
 
 **Sizes**
+
 wrap, no-wrap
 
 ## Example

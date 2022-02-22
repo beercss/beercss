@@ -13,12 +13,15 @@ Textarea fields let users enter and edit long text.
 ## Most used helpers
 
 **Forms**
+
 label, textarea, border, round, fill
 
 **Sizes**
+
 small, medium, large, extra
 
 **Triggers**
+
 active
 
 ## Example

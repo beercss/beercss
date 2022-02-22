@@ -13,9 +13,11 @@ Badges are generally used to emphasize some elements and they are placed in elem
 ## Most used helpers
 
 **Forms**
+
 border, circle, square, round, left-round, right-round, top-round, bottom-round
 
 **Positions**
+
 left, right, top, bottom
 
 ## Example

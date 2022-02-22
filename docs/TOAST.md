@@ -11,9 +11,11 @@ Toasts provide brief messages about app processes at bottom or top of the screen
 ## Most used helpers
 
 **Positions**
+
 top, bottom
 
 **Triggers**
+
 active
 
 ## Example

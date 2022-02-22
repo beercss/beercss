@@ -13,9 +13,11 @@ Media can be a image or video element.
 ## Most used helpers
 
 **Forms**
+
 responsive, circle, round, left-round, right-round, top-round, bottom-round
 
 **Sizes**
+
 tiny, small, medium, large, extra
 
 ## Example

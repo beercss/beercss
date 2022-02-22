@@ -11,9 +11,11 @@ Chips are compact elements that represent an input, attribute, or action.
 ## Most used helpers
 
 **Forms**
+
 border, circle, square, round, left-round, right-round, top-round, bottom-round
 
 **Sizes**
+
 small, medium, large
 
 

@@ -18,6 +18,7 @@ Use typography to present your design and content as clearly and efficiently as 
 ## Most used helpers
 
 **texts**
+
 italic, bold, underline, overline, upper, lower, capitalize, link, small-text, medium-text, large-text
 
 ## Example
