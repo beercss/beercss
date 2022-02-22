@@ -24,3 +24,15 @@
 .large-height {
   height: 576rem !important;
 }
+
+.wrap {
+  display: block;
+}
+
+a.no-wrap {
+  flex-direction: row;
+}
+
+a.wrap {
+  flex-direction: column;
+}

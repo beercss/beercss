@@ -33,8 +33,10 @@
 @import "./helpers/margins.css";
 @import "./helpers/paddings.css";
 @import "./helpers/positions.css";
+@import "./helpers/scrolls.css";
 @import "./helpers/shadows.css";
 @import "./helpers/sizes.css";
 @import "./helpers/spaces.css";
+@import "./helpers/responsive.css";
 @import "./helpers/typography.css";
 @import "./helpers/waves.css";

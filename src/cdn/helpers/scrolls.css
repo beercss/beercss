@@ -1,0 +1,8 @@
+.scroll {
+  overflow: auto;
+  padding-bottom: 16rem;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
