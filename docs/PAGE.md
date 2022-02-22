@@ -80,7 +80,7 @@ ui('#page1');
 ```
 
 ## Related to
-[Button](https://github.com/beercss/beercss/blob/main/docs/BUTTON.md), [Chip](https://github.com/beercss/beercss/blob/main/docs/CHIP.md), [Container](https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md, [Nav](https://github.com/beercss/beercss/blob/main/docs/NAV.md)
+[Button](https://github.com/beercss/beercss/blob/main/docs/BUTTON.md), [Chip](https://github.com/beercss/beercss/blob/main/docs/CHIP.md), [Container](https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md), [Nav](https://github.com/beercss/beercss/blob/main/docs/NAV.md)
 
 ## Go to
 [Begin](https://github.com/beercss/beercss/blob/main/docs/INDEX.md), [Elements](https://github.com/beercss/beercss/blob/main/docs/ELEMENTS.md), [Helpers](https://github.com/beercss/beercss/blob/main/docs/HELPERS.md), [Settings](https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md), [beercss.com](https://www.beercss.com)
