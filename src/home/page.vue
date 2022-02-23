@@ -150,9 +150,9 @@ div
             .medium-space
             b We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.
             .medium-space
-            nav
-              a.button.left-round(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") See all documentation
-              a.button.right-round(href="https://codepen.io/collection/XydYMB") See on codepen
+            nav.wrap
+              a.button.left-round(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") All documentation
+              a.button.right-round(href="https://codepen.io/collection/XydYMB") Try on codepen
           .large-space
           .large-space
         #badges.col.s12

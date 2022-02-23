@@ -15331,7 +15331,7 @@ var staticRenderFns = [
           ),
         ]),
         _c("div", { staticClass: "medium-space" }),
-        _c("nav", [
+        _c("nav", { staticClass: "wrap" }, [
           _c(
             "a",
             {
@@ -15340,7 +15340,7 @@ var staticRenderFns = [
                 href: "https://github.com/beercss/beercss/blob/main/docs/INDEX.md",
               },
             },
-            [_vm._v("See all documentation")]
+            [_vm._v("All documentation")]
           ),
           _c(
             "a",
@@ -15348,7 +15348,7 @@ var staticRenderFns = [
               staticClass: "button right-round",
               attrs: { href: "https://codepen.io/collection/XydYMB" },
             },
-            [_vm._v("See on codepen")]
+            [_vm._v("Try on codepen")]
           ),
         ]),
       ]),
