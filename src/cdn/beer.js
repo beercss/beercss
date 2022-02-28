@@ -92,7 +92,7 @@
 
     if (toActive) {
       if (isBorder && label) {
-        let width = Math.round(label.offsetWidth / (label.offsetHeight / 14));
+        let width = hasClass(label, "active") ? label.offsetWidth : Math.round(label.offsetWidth / 1.33);
         let start = hasClass(parentTarget, "round") ? 20 : 12;
         let end = width + start + 8;
         target.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 8rem, ${end}rem 8rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
@@ -100,8 +100,8 @@
         target.style.clipPath = "";
       addClass(label, "active");
     } else {
-      target.style.clipPath = "";
       removeClass(label, "active");
+      target.style.clipPath = "";
     }
   }
 
