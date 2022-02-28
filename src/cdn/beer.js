@@ -85,16 +85,14 @@
   };
 
   const updateInput = (input, label, parentTarget) => {
-    if (!input.value && document.activeElement != input) return input.style.clipPath = "";
+    if (!hasClass(label, "active")) return input.style.clipPath = "";
 
-    if (label && hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill")) {
+    if (hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill")) {
       let width = Math.round(label.offsetWidth / (label.offsetHeight / 14));
       let start = hasClass(parentTarget, "round") ? 20 : 12;
       let end = width + start + 8;
       input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 8rem, ${end}rem 8rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
-    } else {
-      input.style.clipPath = "";
-    }  
+    }
   }
 
   const onClickElement = (e) => {
@@ -121,7 +119,7 @@
   const onBlurInput = (e) => {
     let label = query("label", parent(e.currentTarget));
 
-    if (!e.currentTarget.value) {
+    if (!e.currentTarget.value && e.currentTarget.type != "date") {
       removeClass(label, "active");
       e.currentTarget.style.clipPath = "";
     }
@@ -348,7 +346,7 @@
       on(x, "focus", onFocusInput);
       on(x, "blur", onBlurInput);
 
-      if (x.value) addClass(label, "active");
+      if (x.value || x.type =="date") addClass(label, "active");
       else removeClass(label, "active");
       updateInput(x, label, parentTarget);
     });

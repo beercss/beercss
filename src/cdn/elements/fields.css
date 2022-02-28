@@ -42,7 +42,7 @@
   transform: translateY(-50%);
   cursor: pointer;
   color: var(--on-background);
-  z-index: 10;
+  z-index: 0;
 }
 
 .field.border > i,
@@ -76,6 +76,30 @@
 }
 
 /* input, textarea and select */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.field.prefix > input[type="date"]::-webkit-inner-spin-button,
+.field.prefix > input[type="date"]::-webkit-calendar-picker-indicator,
+.field.suffix > input[type="date"]::-webkit-inner-spin-button,
+.field.suffix > input[type="date"]::-webkit-calendar-picker-indicator {
+  display: inherit;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
 input[type="file"] {
   position: absolute;
   top: 0;
@@ -91,7 +115,6 @@ input[type="file"] {
 .field > textarea,
 .field > select {
   border: 1rem solid transparent;
-  border-radius: 8rem 8rem 0 0;
   padding: 0 15rem;
   font-family: inherit;
   font-size: 16rem;
@@ -100,9 +123,10 @@ input[type="file"] {
   outline: none;
   z-index: 1;
   color: var(--on-background);
-  background-color: transparent;
+  background: none;
   box-sizing: border-box;
   resize: none;
+  border-radius: inherit;
 }
 
 .field > input:focus,
@@ -116,7 +140,6 @@ input[type="file"] {
 .field.border > textarea,
 .field.border > select {
   border-color: var(--outline);
-  border-radius: 8rem;
   box-shadow: none!important;
 }
 
@@ -129,7 +152,6 @@ input[type="file"] {
 .field.round > input,
 .field.round > textarea,
 .field.round > select {
-  border-radius: 32rem;
   box-shadow: var(--shadow1);
   padding-left: 23rem;
   padding-right: 23rem;
@@ -178,10 +200,6 @@ input[type="file"] {
   border-bottom-color: var(--primary);
 }
 
-.field.round > textarea {
-  border-radius: 24rem;
-}
-
 .field > select {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -189,10 +207,36 @@ input[type="file"] {
   cursor: pointer;
 }
 
-.field.fill > input,
-.field.fill > textarea,
-.field.fill > select {
+.field {
+  border-radius: 8rem 8rem 0 0;
+}
+
+.field.border {
+  border-radius: 8rem;
+}
+
+.field.round {
+  border-radius: 32rem;
+}
+
+.field.round.textarea {
+  border-radius: 24rem;
+}
+
+.field.fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: var(--surface-variant);
+  border-radius: inherit;
+}
+
+.field.fill > input,
+.field.fill > select,
+.field.fill > textarea {
   color: var(--on-surface-variant);
 }
 

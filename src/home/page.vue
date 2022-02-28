@@ -132,9 +132,9 @@ div
             .medium-space
             h5 From CDN
             pre.wrap(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.0.13/dist/cdn/beer.min.css" rel="stylesheet">
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.0.14/dist/cdn/beer.min.css" rel="stylesheet">
               |
-              | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.0.13/dist/cdn/beer.min.js" type="text/javascript"></script>
+              | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.0.14/dist/cdn/beer.min.js" type="text/javascript"></script>
               |
               | &lt;script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
             .medium-space
@@ -1796,6 +1796,9 @@ div
             label.radio
               input#file-inputs(type="radio", name="type-inputs")
               span file
+            label.radio
+              input#date-inputs(type="radio", name="type-inputs")
+              span date
           .space
           .row
             .col.s12.l4
@@ -3963,7 +3966,7 @@ export default {
     },
     inputSamples() {
       $(
-        "#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#extra-inputs,#text-inputs,#password-inputs,#file-inputs"
+        "#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#extra-inputs,#text-inputs,#password-inputs,#file-inputs,#date-inputs"
       ).on("click", function () {
         var ids = [
           "border",
@@ -3975,14 +3978,15 @@ export default {
           "text",
           "password",
           "file",
+          "date",
         ];
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-inputs";
 
-          if (["text", "password", "file"].indexOf(ids[i]) !== -1) {
+          if (["text", "password", "file", "date"].indexOf(ids[i]) !== -1) {
             if ($(selector).is(":checked")) {
               var inputs = $(
-                "#inputs input[type='text'], #inputs input[type='password']"
+                "#inputs input[type='text'], #inputs input[type='password'], #inputs input[type='date']"
               );
               var files = $("#inputs input[type='file']");
               var labels = $("#inputs .field.label > label");
@@ -4008,6 +4012,12 @@ export default {
                 labels.html("Password");
                 inputs.attr("type", ids[i]);
                 icons.html("visibility");
+              }
+
+              if (ids[i] == "date") {
+                labels.html("Date");
+                inputs.attr("type", ids[i]);
+                icons.html("today");
               }
             }
           } else {
