@@ -51,20 +51,6 @@
     return element.parentNode.insertBefore(newElement, element);
   };
 
-  const insert = (newElement, element) => {
-    return (element || document.body).append(newElement);
-  };
-
-  const remove = (element) => {
-    if (!element) return;
-    element.remove();
-  }
-
-  const clone = (element) => {
-    if (!element) return;
-    return element.cloneNode(true);
-  };
-
   const prev = (element) => {
     if (!element) return;
     return element.previousElementSibling;
