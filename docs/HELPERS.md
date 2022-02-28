@@ -108,11 +108,15 @@ border, circle, square, flat, diamond, none, fill, extend, round, left-round, ri
 
 ## Margins
 
-margin, small-margin, medium-margin, large-margin
+margin, no-margin, small-margin, medium-margin, large-margin
+
+## Opacities
+
+opacity, no-opacity
 
 ## Paddings
 
-padding, small-padding, medium-padding, large-padding
+padding, no-padding, small-padding, medium-padding, large-padding
 
 ## Positions
 
@@ -136,7 +140,7 @@ tiny, small, medium, large, extra, wrap, no-wrap, min, max, small-width, medium-
 
 ## Spaces
 
-no-space, small-space, medium-space, large-space
+space, no-space, small-space, medium-space, large-space
 
 ## Triggers
 
