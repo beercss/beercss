@@ -103,6 +103,9 @@
       removeClass(label, "active");
       target.style.clipPath = "";
     }
+
+    if (target.getAttribute("data-ui"))
+      open(target);
   }
 
   const onClickElement = (e) => {
@@ -117,16 +120,10 @@
 
   const onFocusInput = (e) => {
     updateInput(e.currentTarget);
-
-    if (e.currentTarget.getAttribute("data-ui"))
-      open(e.currentTarget);
   };
 
   const onBlurInput = (e) => {
     updateInput(e.currentTarget);
-
-    if (e.currentTarget.getAttribute("data-ui"))
-      open(e.currentTarget);
   };
 
   const onClickDocument = (e) => {
@@ -343,7 +340,6 @@
     inputs.forEach((x) => {
       on(x, "focus", onFocusInput);
       on(x, "blur", onBlurInput);
-
       updateInput(x);
     });
   };
