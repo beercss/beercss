@@ -15312,7 +15312,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              '<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.15/dist/cdn/beer.min.css" rel="stylesheet">\n\n<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.15/dist/cdn/beer.min.js" type="text/javascript">\n\n<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript">'
+              '<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.16/dist/cdn/beer.min.css" rel="stylesheet">\n\n<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.16/dist/cdn/beer.min.js" type="text/javascript">\n\n<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript">'
             ),
           ]
         ),
