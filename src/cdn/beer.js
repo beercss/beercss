@@ -101,7 +101,7 @@
   };
 
   const onClickLabel = (e) => {
-    let input = query('input:not([type=checkbox]):not([type=radio]), select, textarea', parent(e.currentTarget));
+    let input = query('input:not([type=file]):not([type=checkbox]):not([type=radio]), select, textarea', parent(e.currentTarget));
     input.focus();
   };
 
@@ -338,7 +338,7 @@
       on(x, "click", onClickLabel);
     });
 
-    let inputs = queryAll(".field > input:not([type=checkbox]):not([type=radio]), select, textarea");
+    let inputs = queryAll(".field > input:not([type=file]):not([type=checkbox]):not([type=radio], select, textarea");
     inputs.forEach((x) => {
       let parentTarget = parent(x);
       let label = query("label", parentTarget);
@@ -346,7 +346,7 @@
       on(x, "focus", onFocusInput);
       on(x, "blur", onBlurInput);
 
-      if (x.value || x.type =="date") addClass(label, "active");
+      if (x.value || x.type == "date") addClass(label, "active");
       else removeClass(label, "active");
       updateInput(x, label, parentTarget);
     });
