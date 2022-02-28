@@ -32,6 +32,23 @@
   margin-top: 40rem;
 }
 
+.field::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background-color: inherit;
+  color: inherit;
+}
+
+.field.fill::before {
+  background-color: var(--surface-variant);
+  color: var(--on-surface-variant);
+}
+
 /* icon */
 .field > i,
 .field > img {
@@ -41,7 +58,7 @@
   right: 16rem;
   transform: translateY(-50%);
   cursor: pointer;
-  color: var(--on-background);
+  color: inherit;
   z-index: 0;
 }
 
@@ -122,7 +139,7 @@ input[type="file"] {
   height: 100%;
   outline: none;
   z-index: 1;
-  color: var(--on-background);
+  color: inherit;
   background: none;
   box-sizing: border-box;
   resize: none;
@@ -223,28 +240,6 @@ input[type="file"] {
   border-radius: 24rem;
 }
 
-.field.fill::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--surface-variant);
-  border-radius: inherit;
-}
-
-.field.fill > input,
-.field.fill > select,
-.field.fill > textarea {
-  color: var(--on-surface-variant);
-}
-
-.field.fill > i,
-.field.fill > img {
-  color: var(--on-surface-variant);
-}
-
 .field.fill > input,
 .field.fill > textarea,
 .field.fill > select {
@@ -254,7 +249,7 @@ input[type="file"] {
 .field.flat > input,
 .field.flat > textarea,
 .field.flat > select {
-  border: none!important;
+  border-color: transparent!important;
   box-shadow: none!important;
 }
 
@@ -306,6 +301,7 @@ input[type="file"] {
 
 .field > select > option {
   background-color: var(--surface);
+  color: var(--on-surface);
 }
 
 .field.label > input,
@@ -367,6 +363,7 @@ input[type="file"] {
   transform: translateY(-50%);
   transition: all var(--speed1);
   z-index: 10;
+  color: inherit;
 }
 
 .field.label.textarea.small > label {

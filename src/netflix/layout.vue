@@ -68,10 +68,10 @@
     .row.no-wrap
       .col.m.l
       .col
-        .field.round.suffix.prefix.small.no-margin
-          i.front.black-text search
-          input.white.black-text(type="text")
-          i.front.black-text mic
+        .field.round.suffix.prefix.small.no-margin.white.black-text
+          i.fron search
+          input(type="text")
+          i.front mic
       .col.m.l
 
   #layout

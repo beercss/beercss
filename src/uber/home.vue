@@ -26,9 +26,9 @@ div
           i time_to_leave
           span Confirm
     .large-padding
-      .field.prefix.fill.flat.border
-        i.black-text search
-        input.white(:placeholder="from ? 'Destination' : 'Departure'", @click="go()")
+      .field.prefix.round.flat.white.black-text
+        i search
+        input(:placeholder="from ? 'Destination' : 'Departure'", @click="go()")
       .medium-space
       a.row.no-wrap(@click="go()")
         .col.min
@@ -60,9 +60,9 @@ div
           span Confirm
     .padding
       .space
-      .field.prefix.fill.flat.border
-        i.black-text search
-        input.white(:placeholder="from ? 'Destination' : 'Departure'", @click="go()")
+      .field.prefix.round.flat.white.black-text
+        i search
+        input(:placeholder="from ? 'Destination' : 'Departure'", @click="go()")
       .space
       a.row.no-wrap(@click="go()")
         .col.min

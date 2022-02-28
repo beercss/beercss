@@ -109,10 +109,10 @@
             img(v-show="!isDark", :src="'/gmail-light.png'")
             img(v-show="isDark", :src="'/gmail-dark.png'")
       .col
-        .field.round.fill.flat.suffix.prefix.small.no-margin.m.l
-          i.front.black-text search
-          input.white(type="text", data-ui="#dropdown-search")
-          i.front.black-text mic
+        .field.round.flat.suffix.prefix.small.no-margin.m.l.white.black-text
+          i.front search
+          input(type="text", data-ui="#dropdown-search")
+          i.front mic
       .col
         nav.right-align
           button.none.s(data-ui="#modal-search")
@@ -220,9 +220,9 @@
     .row.no-wrap
       .col.m.l
       .col
-        .field.round.flat.suffix.prefix.small.no-margin
+        .field.round.flat.suffix.prefix.small.no-margin.white.black-text
           i.front search
-          input.white.black-text(type="text")
+          input(type="text")
           i.front mic
       .col.m.l
 

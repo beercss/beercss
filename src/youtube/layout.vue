@@ -63,10 +63,10 @@ div
               :src="'/youtube-dark.png'"
             )
       .col
-        .field.round.suffix.prefix.small.no-margin.m.l
-          i.front.black-text search
-          input.white.black-text(type="text")
-          i.front.black-text mic
+        .field.round.suffix.prefix.small.no-margin.m.l.white.black-text
+          i.front search
+          input(type="text")
+          i.front mic
       .col
         nav.right-align
           button.none.s(data-ui="#modal-search")
@@ -173,10 +173,10 @@ div
         span Broadcast live
 
   #modal-search.modal.top.transparent.flat
-    .field.round.suffix.prefix.small.no-margin
-      i.front.black-text search
-      input.white.black-text(type="text")
-      i.front.black-text mic
+    .field.round.suffix.prefix.small.no-margin.white.black-text
+      i.front search
+      input(type="text")
+      i.front mic
 
   #layout
 </template>

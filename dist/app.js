@@ -15312,7 +15312,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              '<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.16/dist/cdn/beer.min.css" rel="stylesheet">\n\n<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.16/dist/cdn/beer.min.js" type="text/javascript">\n\n<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript">'
+              '<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.17/dist/cdn/beer.min.css" rel="stylesheet">\n\n<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.17/dist/cdn/beer.min.js" type="text/javascript">\n\n<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript">'
             ),
           ]
         ),
@@ -21041,14 +21041,14 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col" }, [
       _c(
         "div",
-        { staticClass: "field round suffix prefix small no-margin m l" },
+        {
+          staticClass:
+            "field round suffix prefix small no-margin m l white black-text",
+        },
         [
-          _c("i", { staticClass: "front black-text" }, [_vm._v("search")]),
-          _c("input", {
-            staticClass: "white black-text",
-            attrs: { type: "text" },
-          }),
-          _c("i", { staticClass: "front black-text" }, [_vm._v("mic")]),
+          _c("i", { staticClass: "front" }, [_vm._v("search")]),
+          _c("input", { attrs: { type: "text" } }),
+          _c("i", { staticClass: "front" }, [_vm._v("mic")]),
         ]
       ),
     ])
@@ -21306,14 +21306,14 @@ var staticRenderFns = [
       [
         _c(
           "div",
-          { staticClass: "field round suffix prefix small no-margin" },
+          {
+            staticClass:
+              "field round suffix prefix small no-margin white black-text",
+          },
           [
-            _c("i", { staticClass: "front black-text" }, [_vm._v("search")]),
-            _c("input", {
-              staticClass: "white black-text",
-              attrs: { type: "text" },
-            }),
-            _c("i", { staticClass: "front black-text" }, [_vm._v("mic")]),
+            _c("i", { staticClass: "front" }, [_vm._v("search")]),
+            _c("input", { attrs: { type: "text" } }),
+            _c("i", { staticClass: "front" }, [_vm._v("mic")]),
           ]
         ),
       ]
@@ -22710,16 +22710,14 @@ var staticRenderFns = [
           _c("div", { staticClass: "col" }, [
             _c(
               "div",
-              { staticClass: "field round suffix prefix small no-margin" },
+              {
+                staticClass:
+                  "field round suffix prefix small no-margin white black-text",
+              },
               [
-                _c("i", { staticClass: "front black-text" }, [
-                  _vm._v("search"),
-                ]),
-                _c("input", {
-                  staticClass: "white black-text",
-                  attrs: { type: "text" },
-                }),
-                _c("i", { staticClass: "front black-text" }, [_vm._v("mic")]),
+                _c("i", { staticClass: "fron" }, [_vm._v("search")]),
+                _c("input", { attrs: { type: "text" } }),
+                _c("i", { staticClass: "front" }, [_vm._v("mic")]),
               ]
             ),
           ]),
@@ -23650,15 +23648,14 @@ var staticRenderFns = [
         "div",
         {
           staticClass:
-            "field round fill flat suffix prefix small no-margin m l",
+            "field round flat suffix prefix small no-margin m l white black-text",
         },
         [
-          _c("i", { staticClass: "front black-text" }, [_vm._v("search")]),
+          _c("i", { staticClass: "front" }, [_vm._v("search")]),
           _c("input", {
-            staticClass: "white",
             attrs: { type: "text", "data-ui": "#dropdown-search" },
           }),
-          _c("i", { staticClass: "front black-text" }, [_vm._v("mic")]),
+          _c("i", { staticClass: "front" }, [_vm._v("mic")]),
         ]
       ),
     ])
@@ -23836,13 +23833,13 @@ var staticRenderFns = [
           _c("div", { staticClass: "col" }, [
             _c(
               "div",
-              { staticClass: "field round flat suffix prefix small no-margin" },
+              {
+                staticClass:
+                  "field round flat suffix prefix small no-margin white black-text",
+              },
               [
                 _c("i", { staticClass: "front" }, [_vm._v("search")]),
-                _c("input", {
-                  staticClass: "white black-text",
-                  attrs: { type: "text" },
-                }),
+                _c("input", { attrs: { type: "text" } }),
                 _c("i", { staticClass: "front" }, [_vm._v("mic")]),
               ]
             ),
@@ -25491,18 +25488,21 @@ exports.default = _default;
           ]),
         ]),
         _c("div", { staticClass: "large-padding" }, [
-          _c("div", { staticClass: "field prefix fill flat border" }, [
-            _c("i", { staticClass: "black-text" }, [_vm._v("search")]),
-            _c("input", {
-              staticClass: "white",
-              attrs: { placeholder: _vm.from ? "Destination" : "Departure" },
-              on: {
-                click: function ($event) {
-                  return _vm.go()
+          _c(
+            "div",
+            { staticClass: "field prefix round flat white black-text" },
+            [
+              _c("i", [_vm._v("search")]),
+              _c("input", {
+                attrs: { placeholder: _vm.from ? "Destination" : "Departure" },
+                on: {
+                  click: function ($event) {
+                    return _vm.go()
+                  },
                 },
-              },
-            }),
-          ]),
+              }),
+            ]
+          ),
           _c("div", { staticClass: "medium-space" }),
           _c(
             "a",
@@ -25679,10 +25679,9 @@ exports.default = _default;
       ]),
       _c("div", { staticClass: "padding" }, [
         _c("div", { staticClass: "space" }),
-        _c("div", { staticClass: "field prefix fill flat border" }, [
-          _c("i", { staticClass: "black-text" }, [_vm._v("search")]),
+        _c("div", { staticClass: "field prefix round flat white black-text" }, [
+          _c("i", [_vm._v("search")]),
           _c("input", {
-            staticClass: "white",
             attrs: { placeholder: _vm.from ? "Destination" : "Departure" },
             on: {
               click: function ($event) {
