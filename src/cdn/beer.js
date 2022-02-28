@@ -84,14 +84,24 @@
     return element;
   };
 
-  const updateInput = (input, label, parentTarget) => {
-    if (!hasClass(label, "active")) return input.style.clipPath = "";
+  const updateInput = (target) => {
+    let parentTarget = parent(target);
+    let label = query("label", parentTarget);
+    let isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
+    let toActive = document.activeElement == target || target.value || target.type == "date";
 
-    if (hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill")) {
-      let width = Math.round(label.offsetWidth / (label.offsetHeight / 14));
-      let start = hasClass(parentTarget, "round") ? 20 : 12;
-      let end = width + start + 8;
-      input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 8rem, ${end}rem 8rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
+    if (toActive) {
+      if (isBorder && label) {
+        let width = Math.round(label.offsetWidth / (label.offsetHeight / 14));
+        let start = hasClass(parentTarget, "round") ? 20 : 12;
+        let end = width + start + 8;
+        target.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 8rem, ${end}rem 8rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
+      } else
+        target.style.clipPath = "";
+      addClass(label, "active");
+    } else {
+      target.style.clipPath = "";
+      removeClass(label, "active");
     }
   }
 
@@ -106,23 +116,14 @@
   };
 
   const onFocusInput = (e) => {
-    let parentTarget = parent(e.currentTarget);
-    let label = query("label", parentTarget);
-
-    addClass(label, "active");
-    updateInput(e.currentTarget, label, parentTarget);
+    updateInput(e.currentTarget);
 
     if (e.currentTarget.getAttribute("data-ui"))
       open(e.currentTarget);
   };
 
   const onBlurInput = (e) => {
-    let label = query("label", parent(e.currentTarget));
-
-    if (!e.currentTarget.value && e.currentTarget.type != "date") {
-      removeClass(label, "active");
-      e.currentTarget.style.clipPath = "";
-    }
+    updateInput(e.currentTarget);
 
     if (e.currentTarget.getAttribute("data-ui"))
       open(e.currentTarget);
@@ -338,17 +339,12 @@
       on(x, "click", onClickLabel);
     });
 
-    let inputs = queryAll(".field > input:not([type=file]):not([type=checkbox]):not([type=radio], select, textarea");
+    let inputs = queryAll(".field > input:not([type=file]):not([type=checkbox]):not([type=radio]), .field > select, .field > textarea");
     inputs.forEach((x) => {
-      let parentTarget = parent(x);
-      let label = query("label", parentTarget);
-
       on(x, "focus", onFocusInput);
       on(x, "blur", onBlurInput);
 
-      if (x.value || x.type == "date") addClass(label, "active");
-      else removeClass(label, "active");
-      updateInput(x, label, parentTarget);
+      updateInput(x);
     });
   };
 
