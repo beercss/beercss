@@ -43,7 +43,7 @@ active
 
 #### Method 1
 
-Add/remove `active` class on label.
+Add/remove `active` class on label. On `field` element with `border` helper, use method 2.
 
 ```html
 <div class="field label border">
