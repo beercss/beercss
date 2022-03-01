@@ -17,7 +17,7 @@ border, flat, round, left-round, top-round, right-round, bottom-round
 
 **Paddings**
 
-no-padding, small-padding, medium-padding, large-padding
+no-padding, padding, small-padding, medium-padding, large-padding
 
 **Sizes**
 
