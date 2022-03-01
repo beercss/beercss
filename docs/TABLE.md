@@ -1,4 +1,4 @@
-# Nav
+# Table
 
 Tables display sets of data across rows and columns.
 
