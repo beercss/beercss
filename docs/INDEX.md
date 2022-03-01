@@ -28,6 +28,10 @@ import "beercss";
 
 **We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.**
 
+## [Settings](https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md)
+
+The settings affects all document.
+
 ## [Elements](https://github.com/beercss/beercss/blob/main/docs/ELEMENTS.md)
 
 The elements are the components, widgets or tags.
@@ -35,11 +39,6 @@ The elements are the components, widgets or tags.
 ## [Helpers](https://github.com/beercss/beercss/blob/main/docs/HELPERS.md)
 
 The common helpers makes the elements more scalable and customizable.
-
-## [Settings](https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md)
-
-The settings affects all document.
-
 ## 3 tips to master beercss
 
 1. Try use helpers first, before any custom css.
