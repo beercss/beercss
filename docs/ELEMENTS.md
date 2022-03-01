@@ -1,6 +1,6 @@
 # ELEMENTS
 
-## [Badge](https://github.com/beercss/beercss/blob/main/docs/BUTTON.md)
+## [Badge](https://github.com/beercss/beercss/blob/main/docs/BADGE.md)
 
 Badges are generally used to emphasize some elements and they are placed in element corners.
 
