@@ -93,17 +93,20 @@
 }
 
 /* input, textarea and select */
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-  display: none;
+.field > select,
+input[type^=date],
+input[type^=time] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
 }
 
-.field.prefix > input[type="date"]::-webkit-inner-spin-button,
-.field.prefix > input[type="date"]::-webkit-calendar-picker-indicator,
-.field.suffix > input[type="date"]::-webkit-inner-spin-button,
-.field.suffix > input[type="date"]::-webkit-calendar-picker-indicator {
-  display: inherit;
-  opacity: 0;
+input[type^=date]::-webkit-inner-spin-button,
+input[type^=date]::-webkit-calendar-picker-indicator,
+input[type^=time]::-webkit-inner-spin-button,
+input[type^=time]::-webkit-calendar-picker-indicator {
+  opacity: 0;   
   position: absolute;
   top: 0;
   bottom: 0;
@@ -117,7 +120,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-input[type="file"] {
+input[type=file] {
   position: absolute;
   top: 0;
   left: 0;
@@ -215,13 +218,6 @@ input[type="file"] {
 .field:not(.border, .flat, .round) > textarea:focus,
 .field:not(.border, .flat, .round) > select:focus {
   border-bottom-color: var(--primary);
-}
-
-.field > select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
 }
 
 .field {
