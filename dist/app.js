@@ -11101,15 +11101,15 @@ var _default = {
       });
     },
     inputSamples: function inputSamples() {
-      $("#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#extra-inputs,#text-inputs,#password-inputs,#file-inputs,#date-inputs").on("click", function () {
-        var ids = ["border", "fill", "round", "small", "large", "extra", "text", "password", "file", "date"];
+      $("#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#extra-inputs,#text-inputs,#password-inputs,#file-inputs,#date-inputs,#time-inputs").on("click", function () {
+        var ids = ["border", "fill", "round", "small", "large", "extra", "text", "password", "file", "date", "time"];
 
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-inputs";
 
-          if (["text", "password", "file", "date"].indexOf(ids[i]) !== -1) {
+          if (["text", "password", "file", "date", "time"].indexOf(ids[i]) !== -1) {
             if ($(selector).is(":checked")) {
-              var inputs = $("#inputs input[type='text'], #inputs input[type='password'], #inputs input[type='date']");
+              var inputs = $("#inputs input[type='text'], #inputs input[type='password'], #inputs input[type='date'], #inputs input[type='time']");
               var files = $("#inputs input[type='file']");
               var labels = $("#inputs .field.label > label");
               var icons = $("#inputs .field.label > i");
@@ -11141,6 +11141,12 @@ var _default = {
                 labels.html("Date");
                 inputs.attr("type", ids[i]);
                 icons.html("today");
+              }
+
+              if (ids[i] == "time") {
+                labels.html("Time");
+                inputs.attr("type", ids[i]);
+                icons.html("schedule");
               }
             }
           } else {
@@ -17767,6 +17773,12 @@ var staticRenderFns = [
           attrs: { id: "date-inputs", type: "radio", name: "type-inputs" },
         }),
         _c("span", [_vm._v("date")]),
+      ]),
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: { id: "time-inputs", type: "radio", name: "type-inputs" },
+        }),
+        _c("span", [_vm._v("time")]),
       ]),
     ])
   },

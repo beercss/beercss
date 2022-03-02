@@ -1799,6 +1799,9 @@ div
             label.radio
               input#date-inputs(type="radio", name="type-inputs")
               span date
+            label.radio
+              input#time-inputs(type="radio", name="type-inputs")
+              span time
           .space
           .row
             .col.s12.l4
@@ -3966,7 +3969,7 @@ export default {
     },
     inputSamples() {
       $(
-        "#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#extra-inputs,#text-inputs,#password-inputs,#file-inputs,#date-inputs"
+        "#border-inputs,#round-inputs,#fill-inputs,#small-inputs,#medium-inputs,#large-inputs,#extra-inputs,#text-inputs,#password-inputs,#file-inputs,#date-inputs,#time-inputs"
       ).on("click", function () {
         var ids = [
           "border",
@@ -3979,14 +3982,15 @@ export default {
           "password",
           "file",
           "date",
+          "time",
         ];
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-inputs";
 
-          if (["text", "password", "file", "date"].indexOf(ids[i]) !== -1) {
+          if (["text", "password", "file", "date", "time"].indexOf(ids[i]) !== -1) {
             if ($(selector).is(":checked")) {
               var inputs = $(
-                "#inputs input[type='text'], #inputs input[type='password'], #inputs input[type='date']"
+                "#inputs input[type='text'], #inputs input[type='password'], #inputs input[type='date'], #inputs input[type='time']"
               );
               var files = $("#inputs input[type='file']");
               var labels = $("#inputs .field.label > label");
@@ -4018,6 +4022,12 @@ export default {
                 labels.html("Date");
                 inputs.attr("type", ids[i]);
                 icons.html("today");
+              }
+
+              if (ids[i] == "time") {
+                labels.html("Time");
+                inputs.attr("type", ids[i]);
+                icons.html("schedule");
               }
             }
           } else {
