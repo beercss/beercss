@@ -74,7 +74,7 @@
     let parentTarget = parent(target);
     let label = query("label", parentTarget);
     let isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
-    let toActive = document.activeElement == target || target.value || target.type == "date";
+    let toActive = document.activeElement == target || target.value || /date|time/.test(target.type);
 
     if (toActive) {
       if (isBorder && label) {
