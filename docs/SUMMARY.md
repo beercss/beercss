@@ -1,6 +1,8 @@
-## It has about 100 classes to combine
+# Summary
 
-### Elements
+Use this page to learn. This page has the most used combinations of elements and helpers. This project has about 100 css classes.
+
+## Elements
 
 **absolute** left, right, top, bottom, front, back, small, medium, large
 
@@ -60,7 +62,7 @@
 
 **&lt;video&gt;** tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive
 
-### Helpers
+## Helpers
 
 **Alignments** left-align, right-align, center-align, top-align, bottom-align, middle-align
 
@@ -92,7 +94,7 @@
 
 **Waves** wave, no-wave, light, dark
 
-### Settings
+## Settings
 
 **Variables** --primary, --on-primary, --primary-container, --on-primary-container, --secondary, --on-secondary, --secondary-container, --on-secondary-container, --tertiary, --on-tertiary, --tertiary-container, --on-tertiary-container, --error, --on-error, --tertiary-error, --on-error-container, --background, --on-background, --surface, --on-surface, --surface-container, --on-surface-container, --on-surface-variant, --inverse-surface, --inverse-on-surface, --outline, --active, --overlay, --font, --size, --shadow1, --shadow2, --shadow3, --speed1, --speed2, --speed3, --speed4
 

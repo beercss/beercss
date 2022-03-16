@@ -150,9 +150,99 @@ div
             .medium-space
             b We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.
             .medium-space
+            .l
+              h5 Summary
+              .row
+                .col.s12.m12.l6
+                  p
+                    b absolute
+                    span &nbsp;left, right, top, bottom, front, back, small, medium, large
+                  p
+                    b badge
+                    span &nbsp;left, right, top, bottom, border, circle, square, round, left-round, right-round, top-round, bottom-round
+                  p
+                    b button or &lt;button&gt;
+                    span &nbsp;small, medium, large, extra, none, extend, border, flat, circle, square, round, left-round, right-round, top-round, bottom-round, responsive
+                  p
+                    b card or &lt;article&gt;
+                    span &nbsp;small, medium, large, border, flat, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding
+                  p
+                    b chip
+                    span &nbsp;small, medium, large, border, circle, square, round, left-round, right-round, top-round, bottom-round
+                  p
+                    b col
+                    span &nbsp;min, max, s1...s12, m1...m12, l1...l12
+                  p
+                    b container
+                    span &nbsp;min, max
+                  p
+                    b &lt;details&gt;
+                  p
+                    b dropdown
+                    span &nbsp;left, right, wrap, no-wrap, active
+                  p
+                    b field
+                    span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea 
+                  p
+                    b fixed
+                    span &nbsp;left, right, top, bottom, front, back, small, medium, large
+                  p
+                    b &lt;h1&gt;...&lt;h6&gt;
+                  p
+                    b &lt;i&gt;
+                    span &nbsp;tiny, small, medium, large, extra
+                  p
+                    b &lt;img&gt;
+                    span &nbsp;tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive
+                .col.s12.m12.l6
+                  p
+                    b &lt;label&gt;
+                    span &nbsp;active, radio, checkbox
+                  p
+                    b loader
+                    span &nbsp;small, medium, large
+                  p
+                    b menu
+                    span &nbsp;left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, flat, border, round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, no-margin, small-margin, medium-margin, large-margin
+                  p
+                    b modal
+                    span &nbsp;left, right, top, bottom, small, medium, large, border, round, flat, left-round, right-round, top-round, bottom-round, active
+                  p
+                    b &lt;nav&gt;
+                    span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, wrap, no-wrap
+                  p
+                    b overlay
+                    span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active
+                  p
+                    b page
+                    span &nbsp;left, right, top, bottom, active
+                  p
+                    b progress
+                    span &nbsp;left, right, top, bottom
+                  p
+                    b row
+                    span &nbsp;no-wrap
+                  p
+                    b &lt;summary&gt;
+                  p
+                    b &lt;table&gt;
+                    span &nbsp;left-align, right-align, center-align, small, medium, large, border
+                  p
+                    b tabs
+                    span &nbsp;left-align, right-align, center-align
+                  p
+                    b toast
+                    span &nbsp;top, bottom, active
+                  p
+                    b tooltip
+                    span &nbsp;left, right, top, bottom
+                  p
+                    b &lt;video&gt;
+                    span &nbsp;tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive
+              .medium-space
             nav.wrap
-              a.button.left-round(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") All documentation
-              a.button.right-round(href="https://codepen.io/collection/XydYMB") Try on codepen
+              a.button(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
+              a.button(href="https://codepen.io/collection/XydYMB") Codepen
           .large-space
           .large-space
         #badges.col.s12

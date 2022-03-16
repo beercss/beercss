@@ -15343,24 +15343,197 @@ var staticRenderFns = [
           ),
         ]),
         _c("div", { staticClass: "medium-space" }),
+        _c("div", { staticClass: "l" }, [
+          _c("h5", [_vm._v("Summary")]),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col s12 m12 l6" }, [
+              _c("p", [
+                _c("b", [_vm._v("absolute")]),
+                _c("span", [
+                  _vm._v(
+                    " left, right, top, bottom, front, back, small, medium, large"
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("badge")]),
+                _c("span", [
+                  _vm._v(
+                    " left, right, top, bottom, border, circle, square, round, left-round, right-round, top-round, bottom-round"
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("button or <button>")]),
+                _c("span", [
+                  _vm._v(
+                    " small, medium, large, extra, none, extend, border, flat, circle, square, round, left-round, right-round, top-round, bottom-round, responsive"
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("card or <article>")]),
+                _c("span", [
+                  _vm._v(
+                    " small, medium, large, border, flat, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding"
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("chip")]),
+                _c("span", [
+                  _vm._v(
+                    " small, medium, large, border, circle, square, round, left-round, right-round, top-round, bottom-round"
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("col")]),
+                _c("span", [_vm._v(" min, max, s1...s12, m1...m12, l1...l12")]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("container")]),
+                _c("span", [_vm._v(" min, max")]),
+              ]),
+              _c("p", [_c("b", [_vm._v("<details>")])]),
+              _c("p", [
+                _c("b", [_vm._v("dropdown")]),
+                _c("span", [_vm._v(" left, right, wrap, no-wrap, active")]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("field")]),
+                _c("span", [
+                  _vm._v(
+                    " small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea "
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("fixed")]),
+                _c("span", [
+                  _vm._v(
+                    " left, right, top, bottom, front, back, small, medium, large"
+                  ),
+                ]),
+              ]),
+              _c("p", [_c("b", [_vm._v("<h1>...<h6>")])]),
+              _c("p", [
+                _c("b", [_vm._v("<i>")]),
+                _c("span", [_vm._v(" tiny, small, medium, large, extra")]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("<img>")]),
+                _c("span", [
+                  _vm._v(
+                    " tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive"
+                  ),
+                ]),
+              ]),
+            ]),
+            _c("div", { staticClass: "col s12 m12 l6" }, [
+              _c("p", [
+                _c("b", [_vm._v("<label>")]),
+                _c("span", [_vm._v(" active, radio, checkbox")]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("loader")]),
+                _c("span", [_vm._v(" small, medium, large")]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("menu")]),
+                _c("span", [
+                  _vm._v(
+                    " left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, flat, border, round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, no-margin, small-margin, medium-margin, large-margin"
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("modal")]),
+                _c("span", [
+                  _vm._v(
+                    " left, right, top, bottom, small, medium, large, border, round, flat, left-round, right-round, top-round, bottom-round, active"
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("<nav>")]),
+                _c("span", [
+                  _vm._v(
+                    " left-align, right-align, center-align, top-align, bottom-align, middle-align, wrap, no-wrap"
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("overlay")]),
+                _c("span", [
+                  _vm._v(
+                    " left-align, right-align, center-align, top-align, bottom-align, middle-align, active"
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("page")]),
+                _c("span", [_vm._v(" left, right, top, bottom, active")]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("progress")]),
+                _c("span", [_vm._v(" left, right, top, bottom")]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("row")]),
+                _c("span", [_vm._v(" no-wrap")]),
+              ]),
+              _c("p", [_c("b", [_vm._v("<summary>")])]),
+              _c("p", [
+                _c("b", [_vm._v("<table>")]),
+                _c("span", [
+                  _vm._v(
+                    " left-align, right-align, center-align, small, medium, large, border"
+                  ),
+                ]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("tabs")]),
+                _c("span", [_vm._v(" left-align, right-align, center-align")]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("toast")]),
+                _c("span", [_vm._v(" top, bottom, active")]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("tooltip")]),
+                _c("span", [_vm._v(" left, right, top, bottom")]),
+              ]),
+              _c("p", [
+                _c("b", [_vm._v("<video>")]),
+                _c("span", [
+                  _vm._v(
+                    " tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive"
+                  ),
+                ]),
+              ]),
+            ]),
+          ]),
+          _c("div", { staticClass: "medium-space" }),
+        ]),
         _c("nav", { staticClass: "wrap" }, [
           _c(
             "a",
             {
-              staticClass: "button left-round",
+              staticClass: "button",
               attrs: {
                 href: "https://github.com/beercss/beercss/blob/main/docs/INDEX.md",
               },
             },
-            [_vm._v("All documentation")]
+            [_vm._v("Documentation")]
           ),
           _c(
             "a",
             {
-              staticClass: "button right-round",
+              staticClass: "button",
               attrs: { href: "https://codepen.io/collection/XydYMB" },
             },
-            [_vm._v("Try on codepen")]
+            [_vm._v("Codepen")]
           ),
         ]),
       ]),
