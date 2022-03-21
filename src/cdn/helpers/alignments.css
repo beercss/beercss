@@ -27,3 +27,19 @@
   text-align: center !important;
   justify-content: center;
 }
+
+.center-align > *,
+.center-align > .row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right-align > *,
+.right-align > .row {
+  margin-left: auto;
+}
+
+.left-align > *,
+.left-align > .row {
+  margin-right: auto;
+}
