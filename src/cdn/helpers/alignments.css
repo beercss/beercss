@@ -28,18 +28,18 @@
   justify-content: center;
 }
 
-.center-align > *,
-.center-align > .row {
+.center-align > .row,
+.center-align > table {
   margin-left: auto;
   margin-right: auto;
 }
 
-.right-align > *,
-.right-align > .row {
+.right-align > .row,
+.right-align > table {
   margin-left: auto;
 }
 
-.left-align > *,
-.left-align > .row {
+.left-align > .row,
+.left-align > table {
   margin-right: auto;
 }
