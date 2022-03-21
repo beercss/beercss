@@ -11091,7 +11091,7 @@ var _default = {
     },
     tableSamples: function tableSamples() {
       $("#table input").on("click", function () {
-        var ids = ["small", "large", "center-align", "right-align"];
+        var ids = ["no-space", "medium-space", "large-space", "center-align", "right-align", "min"];
         var table = $("#table table");
 
         for (var i = 0; i < ids.length; i++) {
@@ -11182,8 +11182,8 @@ var _default = {
       });
     },
     rowSamples: function rowSamples() {
-      $("#no-space-rows,#small-space-rows,#medium-space-rows,#large-space-rows").on("click", function () {
-        var ids = ["no-space", "medium-space", "large-space"];
+      $("#no-space-rows,#small-space-rows,#medium-space-rows,#large-space-rows,#min-rows").on("click", function () {
+        var ids = ["no-space", "medium-space", "large-space", "min"];
 
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-rows";
@@ -15057,7 +15057,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass: "border square round",
+                staticClass: "flat circle",
                 on: {
                   click: function ($event) {
                     return _vm.updateModal("modal active")
@@ -15069,7 +15069,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass: "border square round",
+                staticClass: "flat circle",
                 on: {
                   click: function ($event) {
                     return _vm.updateModal("modal left active")
@@ -15081,7 +15081,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass: "border square round",
+                staticClass: "flat circle",
                 on: {
                   click: function ($event) {
                     return _vm.updateModal("modal right active")
@@ -15093,7 +15093,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass: "border square round",
+                staticClass: "flat circle",
                 on: {
                   click: function ($event) {
                     return _vm.updateModal("modal top active")
@@ -15105,7 +15105,7 @@ exports.default = _default;
             _c(
               "button",
               {
-                staticClass: "border square round",
+                staticClass: "flat circle",
                 on: {
                   click: function ($event) {
                     return _vm.updateModal("modal bottom active")
@@ -15306,7 +15306,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col s12", attrs: { id: "intro" } }, [
-      _c("article", { staticClass: "flat round large-padding" }, [
+      _c("article", { staticClass: "flat large-padding" }, [
         _c("h3", [_vm._v("Get started ")]),
         _c("div", { staticClass: "medium-space" }),
         _c("h5", [_vm._v("From CDN")]),
@@ -15318,7 +15318,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              '<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.18/dist/cdn/beer.min.css" rel="stylesheet">\n\n<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.18/dist/cdn/beer.min.js" type="text/javascript">\n\n<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript">'
+              '<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.19/dist/cdn/beer.min.css" rel="stylesheet">\n\n<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.19/dist/cdn/beer.min.js" type="text/javascript">\n\n<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript">'
             ),
           ]
         ),
@@ -15416,7 +15416,15 @@ var staticRenderFns = [
                   ),
                 ]),
               ]),
+              _c("p", [
+                _c("b", [_vm._v("<footer>")]),
+                _c("span", [_vm._v(" fixed")]),
+              ]),
               _c("p", [_c("b", [_vm._v("<h1>...<h6>")])]),
+              _c("p", [
+                _c("b", [_vm._v("<header>")]),
+                _c("span", [_vm._v(" fixed")]),
+              ]),
               _c("p", [
                 _c("b", [_vm._v("<i>")]),
                 _c("span", [_vm._v(" tiny, small, medium, large, extra")]),
@@ -15481,14 +15489,18 @@ var staticRenderFns = [
               ]),
               _c("p", [
                 _c("b", [_vm._v("row")]),
-                _c("span", [_vm._v(" no-wrap")]),
+                _c("span", [
+                  _vm._v(
+                    " no-wrap, no-space, space, small-space, medium-space, large-space, min, max"
+                  ),
+                ]),
               ]),
               _c("p", [_c("b", [_vm._v("<summary>")])]),
               _c("p", [
                 _c("b", [_vm._v("<table>")]),
                 _c("span", [
                   _vm._v(
-                    " left-align, right-align, center-align, small, medium, large, border"
+                    " left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, min, max, border"
                   ),
                 ]),
               ]),
@@ -18881,6 +18893,12 @@ var staticRenderFns = [
         }),
         _c("span", [_vm._v("large-space")]),
       ]),
+      _c("label", { staticClass: "checkbox" }, [
+        _c("input", {
+          attrs: { id: "min-rows", type: "checkbox", name: "size-rows" },
+        }),
+        _c("span", [_vm._v("min")]),
+      ]),
     ])
   },
   function () {
@@ -18889,17 +18907,20 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("2")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("3")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("4")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("5")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("6")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("7")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("8")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("9")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("10")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("11")]),
-      _c("div", { staticClass: "col s1" }, [_vm._v("12")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s1" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s6" }, [_vm._v("6")]),
+      _c("div", { staticClass: "col s6" }, [_vm._v("6")]),
+      _c("div", { staticClass: "col s12" }, [_vm._v("12")]),
     ])
   },
   function () {
@@ -18907,8 +18928,8 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s6" }, [_vm._v("1")]),
-      _c("div", { staticClass: "col s6" }, [_vm._v("2")]),
+      _c("div", { staticClass: "col s6" }, [_vm._v("6")]),
+      _c("div", { staticClass: "col s6" }, [_vm._v("6")]),
     ])
   },
   function () {
@@ -18916,7 +18937,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12" }, [_vm._v("1")]),
+      _c("div", { staticClass: "col s12" }, [_vm._v("12")]),
     ])
   },
   function () {
@@ -18924,10 +18945,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col s12 m6 l3" }, [_vm._v("1")]),
-      _c("div", { staticClass: "col s12 m6 l3" }, [_vm._v("2")]),
-      _c("div", { staticClass: "col s12 m6 l3" }, [_vm._v("3")]),
-      _c("div", { staticClass: "col s12 m6 l3" }, [_vm._v("4")]),
+      _c("div", { staticClass: "col s12 m6 l3" }, [_vm._v("12/6/3")]),
+      _c("div", { staticClass: "col s12 m6 l3" }, [_vm._v("12/6/3")]),
+      _c("div", { staticClass: "col s12 m6 l3" }, [_vm._v("12/6/3")]),
+      _c("div", { staticClass: "col s12 m6 l3" }, [_vm._v("12/6/3")]),
     ])
   },
   function () {
@@ -19242,26 +19263,40 @@ var staticRenderFns = [
     return _c("nav", { staticClass: "wrap" }, [
       _c("label", { staticClass: "radio" }, [
         _c("input", {
-          attrs: { id: "small-tables", type: "radio", name: "size-tables" },
+          attrs: { id: "no-space-tables", type: "radio", name: "space-tables" },
         }),
-        _c("span", [_vm._v("small")]),
+        _c("span", [_vm._v("no-space")]),
       ]),
       _c("label", { staticClass: "radio" }, [
         _c("input", {
           attrs: {
-            id: "medium-tables",
+            id: "small-space-tables",
             type: "radio",
-            name: "size-tables",
+            name: "space-tables",
             checked: "checked",
           },
         }),
-        _c("span", [_vm._v("medium")]),
+        _c("span", [_vm._v("small-space")]),
       ]),
       _c("label", { staticClass: "radio" }, [
         _c("input", {
-          attrs: { id: "large-tables", type: "radio", name: "size-tables" },
+          attrs: {
+            id: "medium-space-tables",
+            type: "radio",
+            name: "space-tables",
+          },
         }),
-        _c("span", [_vm._v("large")]),
+        _c("span", [_vm._v("medium-space")]),
+      ]),
+      _c("label", { staticClass: "radio" }, [
+        _c("input", {
+          attrs: {
+            id: "large-space-tables",
+            type: "radio",
+            name: "space-tables",
+          },
+        }),
+        _c("span", [_vm._v("large-space")]),
       ]),
       _c("label", { staticClass: "radio" }, [
         _c("input", {
@@ -19293,6 +19328,12 @@ var staticRenderFns = [
           },
         }),
         _c("span", [_vm._v("right-align")]),
+      ]),
+      _c("label", { staticClass: "checkbox" }, [
+        _c("input", {
+          attrs: { id: "min-tables", type: "checkbox", name: "size-tables" },
+        }),
+        _c("span", [_vm._v("min")]),
       ]),
     ])
   },
@@ -20547,7 +20588,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "button",
-      { staticClass: "square round flat", attrs: { "data-ui": "#modal" } },
+      { staticClass: "flat circle", attrs: { "data-ui": "#modal" } },
       [_c("i", [_vm._v("close")])]
     )
   },
