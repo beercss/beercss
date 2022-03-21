@@ -127,7 +127,7 @@ div
     #begin
       .row
         #intro.col.s12
-          article.flat.round.large-padding
+          article.flat.large-padding
             h3 Get started 
             .medium-space
             h5 From CDN
@@ -187,7 +187,13 @@ div
                     b fixed
                     span &nbsp;left, right, top, bottom, front, back, small, medium, large
                   p
+                    b &lt;footer&gt;
+                    span &nbsp;fixed
+                  p
                     b &lt;h1&gt;...&lt;h6&gt;
+                  p
+                    b &lt;header&gt;
+                    span &nbsp;fixed
                   p
                     b &lt;i&gt;
                     span &nbsp;tiny, small, medium, large, extra
@@ -221,12 +227,12 @@ div
                     span &nbsp;left, right, top, bottom
                   p
                     b row
-                    span &nbsp;no-wrap
+                    span &nbsp;no-wrap, no-space, space, small-space, medium-space, large-space, min, max
                   p
                     b &lt;summary&gt;
                   p
                     b &lt;table&gt;
-                    span &nbsp;left-align, right-align, center-align, small, medium, large, border
+                    span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, min, max, border
                   p
                     b tabs
                     span &nbsp;left-align, right-align, center-align
@@ -2541,30 +2547,36 @@ div
             label.radio
               input#large-space-rows(type="radio", name="space-rows")
               span large-space
+            label.checkbox
+              input#min-rows(type="checkbox", name="size-rows")
+              span min
           .space
           .row
             .col.s1 1
-            .col.s1 2
-            .col.s1 3
-            .col.s1 4
-            .col.s1 5
-            .col.s1 6
-            .col.s1 7
-            .col.s1 8
-            .col.s1 9
-            .col.s1 10
-            .col.s1 11
-            .col.s1 12
+            .col.s1 1
+            .col.s1 1
+            .col.s1 1
+            .col.s1 1
+            .col.s1 1
+            .col.s1 1
+            .col.s1 1
+            .col.s1 1
+            .col.s1 1
+            .col.s1 1
+            .col.s1 1
+            .col.s6 6
+            .col.s6 6
+            .col.s12 12
           .row
-            .col.s6 1
-            .col.s6 2
+            .col.s6 6
+            .col.s6 6
           .row
-            .col.s12 1
+            .col.s12 12
           .row
-            .col.s12.m6.l3 1
-            .col.s12.m6.l3 2
-            .col.s12.m6.l3 3
-            .col.s12.m6.l3 4
+            .col.s12.m6.l3 12/6/3
+            .col.s12.m6.l3 12/6/3
+            .col.s12.m6.l3 12/6/3
+            .col.s12.m6.l3 12/6/3
           .row.no-wrap
             .col max
             .col max
@@ -2760,18 +2772,21 @@ div
               i code
           nav.wrap
             label.radio
-              input#small-tables(type="radio", name="size-tables")
-              span small
+              input#no-space-tables(type="radio", name="space-tables")
+              span no-space
             label.radio
-              input#medium-tables(
+              input#small-space-tables(
                 type="radio",
-                name="size-tables",
+                name="space-tables",
                 checked="checked"
               )
-              span medium
+              span small-space
             label.radio
-              input#large-tables(type="radio", name="size-tables")
-              span large
+              input#medium-space-tables(type="radio", name="space-tables")
+              span medium-space
+            label.radio
+              input#large-space-tables(type="radio", name="space-tables")
+              span large-space
             label.radio
               input#left-align-tables(
                 type="radio",
@@ -2785,6 +2800,9 @@ div
             label.radio
               input#right-align-tables(type="radio", name="align-tables")
               span right-align
+            label.checkbox
+              input#min-tables(type="checkbox", name="size-tables")
+              span min
           .space
           table.border
             thead
@@ -3498,17 +3516,17 @@ div
         h5 Title
         div Complementary text
         nav
-          button.border.square.round(@click="updateModal('modal active')")
+          button.flat.circle(@click="updateModal('modal active')")
             i zoom_in_map
-          button.border.square.round(@click="updateModal('modal left active')")
+          button.flat.circle(@click="updateModal('modal left active')")
             i arrow_backward
-          button.border.square.round(@click="updateModal('modal right active')")
+          button.flat.circle(@click="updateModal('modal right active')")
             i arrow_forward
-          button.border.square.round(@click="updateModal('modal top active')")
+          button.flat.circle(@click="updateModal('modal top active')")
             i arrow_upward
-          button.border.square.round(@click="updateModal('modal bottom active')")
+          button.flat.circle(@click="updateModal('modal bottom active')")
             i arrow_downward
-          button.square.round.flat(data-ui="#modal")
+          button.flat.circle(data-ui="#modal")
             i close
 
       #modal-samples.modal.right.large
@@ -4047,7 +4065,7 @@ export default {
     },
     tableSamples() {
       $("#table input").on("click", function () {
-        var ids = ["small", "large", "center-align", "right-align"];
+        var ids = ["no-space", "medium-space", "large-space", "center-align", "right-align", "min"];
         var table = $("#table table");
 
         for (var i = 0; i < ids.length; i++) {
@@ -4159,9 +4177,9 @@ export default {
     },
     rowSamples() {
       $(
-        "#no-space-rows,#small-space-rows,#medium-space-rows,#large-space-rows"
+        "#no-space-rows,#small-space-rows,#medium-space-rows,#large-space-rows,#min-rows"
       ).on("click", function () {
-        var ids = ["no-space", "medium-space", "large-space"];
+        var ids = ["no-space", "medium-space", "large-space", "min"];
         for (var i = 0; i < ids.length; i++) {
           var selector = "#" + ids[i] + "-rows";
           if ($(selector).is(":checked")) $("#rows .row").addClass(ids[i]);

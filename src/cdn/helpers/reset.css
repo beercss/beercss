@@ -3,6 +3,8 @@
   position: relative;
   vertical-align: middle;
   color: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {

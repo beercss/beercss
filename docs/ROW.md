@@ -16,19 +16,22 @@ Rows and cols are a system grid. They are most used to organize content.
 
 no-wrap, min, max, s1...s12, m1...m12, l1...l12
 
+**Spaces**
+no-space, space, small-space, medium-space, large-space
+
 ## Example
 
 This will render one or more lines, depends the user screen.
 
 ```html
 <div class="row">
-  <div class="col s12 m6 l4">
+  <div class="col s12 m6 l3">
     <h5>First</h5>
   </div>
-  <div class="col s12 m6 l4">
+  <div class="col s12 m6 l3">
     <h5>Second</h5>
   </div>
-  <div class="col s12 m6 l4">
+  <div class="col s12 m6 l3">
     <h5>Third</h5>
   </div>
 </div>

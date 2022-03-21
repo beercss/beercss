@@ -28,19 +28,21 @@
   margin: 0;
 }
 
+.row.min {
+  width: fit-content;
+  min-width: auto;
+}
+
 .row.space,
 .row.small-space {
-  height: auto;
   margin: 0 -8rem;
 }
 
 .row.medium-space {
-  height: auto;
   margin: 0 -12rem;
 }
 
 .row.large-space {
-  height: auto;
   margin: 0 -16rem;
 }
 

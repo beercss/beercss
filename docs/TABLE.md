@@ -20,7 +20,10 @@ border
 
 **Sizes**
 
-small, medium, large
+min, max
+
+**Spaces**
+no-space, space, small-space, medium-space, large-space
 
 ## Example
 

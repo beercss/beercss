@@ -26,7 +26,11 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **fixed** left, right, top, bottom, front, back, small, medium, large
 
+**&lt;footer&gt;** fixed
+
 **&lt;h1&gt;...&lt;h6&gt;**
+
+**&lt;header&gt;** fixed
 
 **&lt;i&gt;** tiny, small, medium, large, extra
 
@@ -48,11 +52,11 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **progress** left, right, top, bottom
 
-**row** no-wrap
+**row** no-wrap, no-space, space, small-space, medium-space, large-space, min, max
 
 **&lt;summary&gt;**
 
-**&lt;table&gt;** left-align, right-align, center-align, small, medium, large, border
+**&lt;table&gt;** left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, min, max, border
 
 **tabs** left-align, right-align, center-align
 

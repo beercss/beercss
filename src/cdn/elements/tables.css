@@ -3,21 +3,19 @@ table {
   border-spacing: 0;
   font-size: 14rem;
   color: var(--on-background);
+  text-align: left;
+}
+
+table td,
+table th {
+  width: 1%;
+  text-align: inherit;
+  padding: 8rem;
+  margin: 0;
 }
 
 table th {
-  width: 1%;
   font-weight: 500;
-  text-align: left;
-  padding: 8rem 4rem;
-  margin: 0;
-}
-
-table td {
-  width: 1%;
-  text-align: left;
-  padding: 8rem 4rem;
-  margin: 0;
 }
 
 table.border td, 
@@ -25,34 +23,31 @@ table.border th {
   border-bottom: 1rem solid var(--outline);
 }
 
-table.small td,
-table.small th {
-  padding: 4rem 4rem;
+table.min {
+  width: min-content;
+  min-width: auto;
 }
 
-table.medium td,
-table.medium th {
-  padding: 8rem 4rem;
+table.no-space td,
+table.no-space th {
+  padding: 0;
 }
 
-table.large td,
-table.large th {
-  padding: 12rem 4rem;
+table.space td,
+table.space th,
+table.small-space th,
+table.small-space td {
+  padding: 8rem;
 }
 
-table.center-align td,
-table.center-align th {
-  text-align: center;
+table.medium-space td,
+table.medium-space th {
+  padding: 12rem;
 }
 
-table.left-align td,
-table.left-align th {
-  text-align: left;
-}
-
-table.right-align td,
-table.right-align th {
-  text-align: right;
+table.large-space td,
+table.large-space th {
+  padding: 16rem;
 }
 
 td > .button,
