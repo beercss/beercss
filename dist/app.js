@@ -19966,7 +19966,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "modal right large", attrs: { id: "modal-colors" } },
+      { staticClass: "modal right medium", attrs: { id: "modal-colors" } },
       [
         _c("header", { staticClass: "fixed" }, [
           _c("nav", [
@@ -19978,9 +19978,8 @@ var staticRenderFns = [
             ]),
           ]),
         ]),
-        _c("div", { staticClass: "space" }),
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Theme")]),
             _c("div", { staticClass: "primary" }, [_vm._v("primary")]),
             _c("div", { staticClass: "primary-container" }, [
@@ -20006,8 +20005,30 @@ var staticRenderFns = [
             _c("div", { staticClass: "inverse-surface" }, [
               _vm._v("inverse-surface"),
             ]),
+            _c("div", { staticClass: "primary-border border" }, [
+              _vm._v("primary-border"),
+            ]),
+            _c("div", { staticClass: "secondary-border border" }, [
+              _vm._v("secondary-border"),
+            ]),
+            _c("div", { staticClass: "tertiary-border border" }, [
+              _vm._v("tertiary-border"),
+            ]),
+            _c("div", { staticClass: "error-border border" }, [
+              _vm._v("error-border"),
+            ]),
+            _c("div", { staticClass: "primary-text" }, [
+              _vm._v("primary-text"),
+            ]),
+            _c("div", { staticClass: "secondary-text" }, [
+              _vm._v("secondary-text"),
+            ]),
+            _c("div", { staticClass: "tertiary-text" }, [
+              _vm._v("tertiary-text"),
+            ]),
+            _c("div", { staticClass: "error-text" }, [_vm._v("error-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Red")]),
             _c("div", { staticClass: "black-text red1" }, [_vm._v("red1")]),
             _c("div", { staticClass: "black-text red2" }, [_vm._v("red2")]),
@@ -20026,7 +20047,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "red-text" }, [_vm._v("red-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Pink")]),
             _c("div", { staticClass: "black-text pink1" }, [_vm._v("pink1")]),
             _c("div", { staticClass: "black-text pink2" }, [_vm._v("pink2")]),
@@ -20045,7 +20066,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "pink-text" }, [_vm._v("pink-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Purple")]),
             _c("div", { staticClass: "black-text purple1" }, [
               _vm._v("purple1"),
@@ -20082,7 +20103,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "purple-text" }, [_vm._v("purple-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Deep-purple")]),
             _c("div", { staticClass: "black-text deep-purple1" }, [
               _vm._v("deep-purple1"),
@@ -20121,7 +20142,7 @@ var staticRenderFns = [
               _vm._v("deep-purple-text"),
             ]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Indigo")]),
             _c("div", { staticClass: "black-text indigo1" }, [
               _vm._v("indigo1"),
@@ -20158,7 +20179,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "indigo-text" }, [_vm._v("indigo-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Blue")]),
             _c("div", { staticClass: "black-text blue1" }, [_vm._v("blue1")]),
             _c("div", { staticClass: "black-text blue2" }, [_vm._v("blue2")]),
@@ -20177,7 +20198,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "blue-text" }, [_vm._v("blue-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Light-blue")]),
             _c("div", { staticClass: "black-text light-blue1" }, [
               _vm._v("light-blue1"),
@@ -20216,7 +20237,7 @@ var staticRenderFns = [
               _vm._v("light-blue-text"),
             ]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Cyan")]),
             _c("div", { staticClass: "black-text cyan1" }, [_vm._v("cyan1")]),
             _c("div", { staticClass: "black-text cyan2" }, [_vm._v("cyan2")]),
@@ -20235,7 +20256,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "cyan-text" }, [_vm._v("cyan-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Teal")]),
             _c("div", { staticClass: "black-text teal1" }, [_vm._v("teal1")]),
             _c("div", { staticClass: "black-text teal2" }, [_vm._v("teal2")]),
@@ -20254,7 +20275,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "teal-text" }, [_vm._v("teal-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Green")]),
             _c("div", { staticClass: "black-text green1" }, [_vm._v("green1")]),
             _c("div", { staticClass: "black-text green2" }, [_vm._v("green2")]),
@@ -20275,7 +20296,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "green-text" }, [_vm._v("green-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Light-green")]),
             _c("div", { staticClass: "black-text light-green1" }, [
               _vm._v("light-green1"),
@@ -20314,7 +20335,7 @@ var staticRenderFns = [
               _vm._v("light-green-text"),
             ]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Lime")]),
             _c("div", { staticClass: "black-text lime1" }, [_vm._v("lime1")]),
             _c("div", { staticClass: "black-text lime2" }, [_vm._v("lime2")]),
@@ -20333,7 +20354,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "lime-text" }, [_vm._v("lime-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Yellow")]),
             _c("div", { staticClass: "black-text yellow1" }, [
               _vm._v("yellow1"),
@@ -20370,7 +20391,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "yellow-text" }, [_vm._v("yellow-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Amber")]),
             _c("div", { staticClass: "black-text amber1" }, [_vm._v("amber1")]),
             _c("div", { staticClass: "black-text amber2" }, [_vm._v("amber2")]),
@@ -20391,7 +20412,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "amber-text" }, [_vm._v("amber-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Orange")]),
             _c("div", { staticClass: "black-text orange1" }, [
               _vm._v("orange1"),
@@ -20428,7 +20449,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "orange-text" }, [_vm._v("orange-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Deep-orange")]),
             _c("div", { staticClass: "black-text deep-orange1" }, [
               _vm._v("deep-orange1"),
@@ -20467,7 +20488,7 @@ var staticRenderFns = [
               _vm._v("deep-orange-text"),
             ]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Brown")]),
             _c("div", { staticClass: "black-text brown1" }, [_vm._v("brown1")]),
             _c("div", { staticClass: "black-text brown2" }, [_vm._v("brown2")]),
@@ -20488,7 +20509,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "brown-text" }, [_vm._v("brown-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Grey")]),
             _c("div", { staticClass: "black-text grey1" }, [_vm._v("grey1")]),
             _c("div", { staticClass: "black-text grey2" }, [_vm._v("grey2")]),
@@ -20507,7 +20528,7 @@ var staticRenderFns = [
             ]),
             _c("div", { staticClass: "grey-text" }, [_vm._v("grey-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Blue-grey")]),
             _c("div", { staticClass: "black-text blue-grey1" }, [
               _vm._v("blue-grey1"),
@@ -20546,37 +20567,29 @@ var staticRenderFns = [
               _vm._v("blue-grey-text"),
             ]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Black")]),
-            _c("div", { staticClass: "black grey-text" }, [_vm._v("black")]),
-            _c("div", { staticClass: "black-border border grey-text" }, [
+            _c("div", { staticClass: "black white-text" }, [_vm._v("black")]),
+            _c("div", { staticClass: "black-border border" }, [
               _vm._v("black-border"),
             ]),
-            _c("div", { staticClass: "black-text grey-text" }, [
-              _vm._v("black-text"),
-            ]),
+            _c("div", [_vm._v("black-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("White")]),
-            _c("div", { staticClass: "white grey-text" }, [_vm._v("white")]),
-            _c("div", { staticClass: "white-border border grey-text" }, [
+            _c("div", { staticClass: "white black-text" }, [_vm._v("white")]),
+            _c("div", { staticClass: "white-border border" }, [
               _vm._v("white-border"),
             ]),
-            _c("div", { staticClass: "white-text grey-text" }, [
-              _vm._v("white-text"),
-            ]),
+            _c("div", [_vm._v("white-text")]),
           ]),
-          _c("div", { staticClass: "col s6" }, [
+          _c("div", { staticClass: "col s12" }, [
             _c("h5", [_vm._v("Transparent")]),
-            _c("div", { staticClass: "transparent grey-text" }, [
-              _vm._v("transparent"),
-            ]),
-            _c("div", { staticClass: "transparent-border border grey-text" }, [
+            _c("div", { staticClass: "transparent" }, [_vm._v("transparent")]),
+            _c("div", { staticClass: "transparent-border border" }, [
               _vm._v("transparent-border"),
             ]),
-            _c("div", { staticClass: "transparent-text grey-text" }, [
-              _vm._v("transparent-text"),
-            ]),
+            _c("div", [_vm._v("transparent-text")]),
           ]),
         ]),
       ]

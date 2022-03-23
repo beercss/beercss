@@ -1,4 +1,5 @@
-:root {
+:root,
+.is-light {
   --primary: #6750A4;
   --on-primary: #FFFFFF;
   --primary-container: #EADDFF;
