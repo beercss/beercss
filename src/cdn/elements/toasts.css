@@ -59,7 +59,6 @@
 }
 
 .toast > * {
-  color: inherit;
   margin: 0;
   overflow: unset;
 }

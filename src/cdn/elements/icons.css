@@ -17,7 +17,6 @@ i {
   overflow: hidden;
   width: 24rem;
   margin: 0 auto;
-  color: var(--on-background);
 }
 
 i.outlined {

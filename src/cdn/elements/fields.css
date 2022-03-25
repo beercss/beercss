@@ -41,7 +41,6 @@
   bottom: 0;
   border-radius: inherit;
   background-color: inherit;
-  color: inherit;
 }
 
 .field.fill::before {
@@ -58,7 +57,6 @@
   right: 16rem;
   transform: translateY(-50%);
   cursor: pointer;
-  color: inherit;
   z-index: 0;
 }
 
@@ -142,7 +140,6 @@ input[type=file] {
   height: 100%;
   outline: none;
   z-index: 1;
-  color: inherit;
   background: none;
   box-sizing: border-box;
   resize: none;
@@ -359,7 +356,6 @@ input[type=file] {
   transform: translateY(-50%);
   transition: all var(--speed1);
   z-index: 10;
-  color: inherit;
 }
 
 .field.label.textarea.small > label {

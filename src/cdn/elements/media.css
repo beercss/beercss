@@ -96,12 +96,6 @@ video.responsive {
   height: 100% !important;
 }
 
-button > i,
-.button > i,
-.chip > i {
-  color: inherit;
-}
-
 button > img.responsive,
 .button > img.responsive,
 .chip > img.responsive {
