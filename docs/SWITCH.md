@@ -7,6 +7,7 @@ Switches toggle the state of a single item on or off.
 ```html
 <label class="switch">
   <input type="checkbox">
+  <span></span>
 </label>
 ```
 
@@ -15,6 +16,7 @@ Switches toggle the state of a single item on or off.
 ```html
 <label class="switch">
   <input type="checkbox">
+  <span></span>
 </label>
 
 <label class="switch">

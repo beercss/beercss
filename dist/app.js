@@ -17101,30 +17101,18 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col s12" }, [
         _c("div", { staticClass: "field middle-align" }, [
-          _c("nav", { staticClass: "wrap" }, [
+          _c("nav", [
             _c("label", { staticClass: "checkbox" }, [
               _c("input", { attrs: { type: "checkbox" } }),
-              _c("span", [_vm._v("Enabled")]),
+              _c("span", [_vm._v("Item 1")]),
             ]),
             _c("label", { staticClass: "checkbox" }, [
-              _c("input", { attrs: { type: "checkbox", checked: "checked" } }),
-              _c("span", [_vm._v("Enabled")]),
+              _c("input", { attrs: { type: "checkbox" } }),
+              _c("span", [_vm._v("Item 2")]),
             ]),
             _c("label", { staticClass: "checkbox" }, [
-              _c("input", {
-                attrs: { type: "checkbox", disabled: "disabled" },
-              }),
-              _c("span", [_vm._v("Disabled")]),
-            ]),
-            _c("label", { staticClass: "checkbox" }, [
-              _c("input", {
-                attrs: {
-                  type: "checkbox",
-                  checked: "checked",
-                  disabled: "disabled",
-                },
-              }),
-              _c("span", [_vm._v("Disabled")]),
+              _c("input", { attrs: { type: "checkbox" } }),
+              _c("span", [_vm._v("Item 3")]),
             ]),
           ]),
         ]),
@@ -18757,21 +18745,28 @@ var staticRenderFns = [
           [
             _c("nav", [
               _c("label", { staticClass: "radio" }, [
-                _c("input", { attrs: { type: "radio", name: "radio6" } }),
+                _c("input", { attrs: { type: "radio", name: "radio1" } }),
                 _c("span"),
               ]),
               _c("label", { staticClass: "radio" }, [
-                _c("input", { attrs: { type: "radio", name: "radio6" } }),
+                _c("input", { attrs: { type: "radio", name: "radio1" } }),
                 _c("span", [_vm._v("Enabled")]),
               ]),
               _c("label", { staticClass: "radio" }, [
-                _c("input", { attrs: { type: "radio", disabled: "disabled" } }),
+                _c("input", {
+                  attrs: {
+                    type: "radio",
+                    name: "radio2",
+                    disabled: "disabled",
+                  },
+                }),
                 _c("span", [_vm._v("Disabled")]),
               ]),
               _c("label", { staticClass: "radio" }, [
                 _c("input", {
                   attrs: {
                     type: "radio",
+                    name: "radio2",
                     checked: "checked",
                     disabled: "disabled",
                   },
@@ -18784,40 +18779,6 @@ var staticRenderFns = [
       ]),
       _c("div", { staticClass: "col s12" }, [
         _c("div", { staticClass: "field middle-align" }, [
-          _c("nav", { staticClass: "wrap" }, [
-            _c("label", { staticClass: "radio" }, [
-              _c("input", { attrs: { type: "radio", name: "radio1" } }),
-              _c("span", [_vm._v("Enabled")]),
-            ]),
-            _c("label", { staticClass: "radio" }, [
-              _c("input", {
-                attrs: { type: "radio", name: "radio1", checked: "checked" },
-              }),
-              _c("span", [_vm._v("Enabled")]),
-            ]),
-            _c("label", { staticClass: "radio" }, [
-              _c("input", {
-                attrs: { type: "radio", name: "radio2", disabled: "disabled" },
-              }),
-              _c("span", [_vm._v("Disabled")]),
-            ]),
-            _c("label", { staticClass: "radio" }, [
-              _c("input", {
-                attrs: {
-                  type: "radio",
-                  name: "radio2",
-                  checked: "checked",
-                  disabled: "disabled",
-                },
-              }),
-              _c("span", [_vm._v("Disabled")]),
-            ]),
-          ]),
-        ]),
-      ]),
-      _c("div", { staticClass: "col s12" }, [
-        _c("div", { staticClass: "field label middle-align" }, [
-          _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
             _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio3" } }),
@@ -18848,6 +18809,25 @@ var staticRenderFns = [
             ]),
             _c("label", { staticClass: "radio" }, [
               _c("input", { attrs: { type: "radio", name: "radio4" } }),
+              _c("span", [_vm._v("Item 3")]),
+            ]),
+          ]),
+        ]),
+      ]),
+      _c("div", { staticClass: "col s12" }, [
+        _c("div", { staticClass: "field label middle-align" }, [
+          _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
+          _c("nav", [
+            _c("label", { staticClass: "radio" }, [
+              _c("input", { attrs: { type: "radio", name: "radio5" } }),
+              _c("span", [_vm._v("Item 1")]),
+            ]),
+            _c("label", { staticClass: "radio" }, [
+              _c("input", { attrs: { type: "radio", name: "radio5" } }),
+              _c("span", [_vm._v("Item 2")]),
+            ]),
+            _c("label", { staticClass: "radio" }, [
+              _c("input", { attrs: { type: "radio", name: "radio5" } }),
               _c("span", [_vm._v("Item 3")]),
             ]),
           ]),
@@ -18859,15 +18839,15 @@ var staticRenderFns = [
           _c("label", { staticClass: "active" }, [_vm._v("A question?")]),
           _c("nav", [
             _c("label", { staticClass: "radio" }, [
-              _c("input", { attrs: { type: "radio", name: "radio5" } }),
+              _c("input", { attrs: { type: "radio", name: "radio6" } }),
               _c("span", [_vm._v("Item 1")]),
             ]),
             _c("label", { staticClass: "radio" }, [
-              _c("input", { attrs: { type: "radio", name: "radio5" } }),
+              _c("input", { attrs: { type: "radio", name: "radio6" } }),
               _c("span", [_vm._v("Item 2")]),
             ]),
             _c("label", { staticClass: "radio" }, [
-              _c("input", { attrs: { type: "radio", name: "radio5" } }),
+              _c("input", { attrs: { type: "radio", name: "radio6" } }),
               _c("span", [_vm._v("Item 3")]),
             ]),
           ]),

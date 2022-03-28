@@ -1262,19 +1262,16 @@ div
                     span Disabled
             .col.s12
               .field.middle-align
-                nav.wrap
+                nav
                   label.checkbox
                     input(type="checkbox")
-                    span Enabled
+                    span Item 1
                   label.checkbox
-                    input(type="checkbox", checked)
-                    span Enabled
+                    input(type="checkbox")
+                    span Item 2
                   label.checkbox
-                    input(type="checkbox", disabled)
-                    span Disabled
-                  label.checkbox
-                    input(type="checkbox", checked, disabled)
-                    span Disabled
+                    input(type="checkbox")
+                    span Item 3
             .col.s12
               .field.label.middle-align
                 label.active A question?
@@ -2391,25 +2388,10 @@ div
               .field.middle-align#radios1
                 nav
                   label.radio
-                    input(type="radio", name="radio6")
+                    input(type="radio", name="radio1")
                     span
                   label.radio
-                    input(type="radio", name="radio6")
-                    span Enabled
-                  label.radio
-                    input(type="radio", disabled)
-                    span Disabled
-                  label.radio
-                    input(type="radio", checked, disabled)
-                    span Disabled
-            .col.s12
-              .field.middle-align
-                nav.wrap
-                  label.radio
                     input(type="radio", name="radio1")
-                    span Enabled
-                  label.radio
-                    input(type="radio", name="radio1", checked)
                     span Enabled
                   label.radio
                     input(type="radio", name="radio2", disabled)
@@ -2418,8 +2400,7 @@ div
                     input(type="radio", name="radio2", checked, disabled)
                     span Disabled
             .col.s12
-              .field.label.middle-align
-                label.active A question?
+              .field.middle-align
                 nav
                   label.radio
                     input(type="radio", name="radio3")
@@ -2442,6 +2423,19 @@ div
                     span Item 2
                   label.radio
                     input(type="radio", name="radio4")
+                    span Item 3
+            .col.s12
+              .field.label.middle-align
+                label.active A question?
+                nav
+                  label.radio
+                    input(type="radio", name="radio5")
+                    span Item 1
+                  label.radio
+                    input(type="radio", name="radio5")
+                    span Item 2
+                  label.radio
+                    input(type="radio", name="radio5")
                     span Item 3
                 span.helper Complementary text
             .col.s12
@@ -2449,13 +2443,13 @@ div
                 label.active A question?
                 nav
                   label.radio
-                    input(type="radio", name="radio5")
+                    input(type="radio", name="radio6")
                     span Item 1
                   label.radio
-                    input(type="radio", name="radio5")
+                    input(type="radio", name="radio6")
                     span Item 2
                   label.radio
-                    input(type="radio", name="radio5")
+                    input(type="radio", name="radio6")
                     span Item 3
                 span.error Error text
         #responsive.col.s12
