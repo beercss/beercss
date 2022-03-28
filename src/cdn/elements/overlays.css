@@ -9,6 +9,8 @@
   color: var(--on-background);
   background-color: var(--overlay);
   z-index: 100;
+  will-change: opacity;
+  transition: var(--speed3) all;
 }
 
 .menu > .overlay {
@@ -18,20 +20,10 @@
 .overlay.active {
   opacity: 1;
   visibility: visible;
-  animation: var(--speed3) overlay-to-active;
 }
 
 .overlay.active.top-align,
 .overlay.active.middle-align,
 .overlay.active.bottom-align {
   display: flex;
-}
-
-@keyframes overlay-to-active {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
