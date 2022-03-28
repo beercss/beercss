@@ -2305,11 +2305,14 @@ div
           .large-space
           h4
             span Modals
-            a.chip.circle(@click="showSamples('#modal, #modal-calendar')")
+            a.chip.circle(@click="showSamples('#modal, #modal-left, #modal-right, #modal-top, #modal-bottom')")
               i code
           nav
-            button(data-ui="#modal") Modal
-            button(data-ui="#modal-calendar") Calendar
+            button(data-ui="#modal") Default
+            button(data-ui="#modal-left") Left
+            button(data-ui="#modal-right") Right
+            button(data-ui="#modal-top") Top
+            button(data-ui="#modal-bottom") Bottom
         #navs.col.s12
           .large-space
           h4
@@ -2329,12 +2332,26 @@ div
             a.chip.circle(@click="showSamples('#pages .page')")
               i code
           nav.wrap
-            button(@click="updatePage('page left active')") From left
-            button(@click="updatePage('page top active')") From top
-            button(@click="updatePage('page bottom active')") From bottom
-            button(@click="updatePage('page right active')") From right
-          div(style="display: none")
-            .page
+            button(@click="updatePage('#page')") Default
+            button(@click="updatePage('#page-left')") Left
+            button(@click="updatePage('#page-top')") Top
+            button(@click="updatePage('#page-bottom')") Bottom
+            button(@click="updatePage('#page-right')") Right
+          #page.page.active
+            h5 Default
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elementum ante sit amet risus accumsan, id luctus massa gravida. Morbi fermentum vehicula leo sed rhoncus. Donec sapien lacus, rhoncus ut turpis at, elementum laoreet est. Sed ut diam eget tellus dictum varius eget vel mi. Morbi mattis posuere turpis viverra pulvinar. Sed purus nibh, tempus et sem vel, egestas consectetur eros. Sed tempus neque est. Etiam vitae eros vitae risus suscipit accumsan sed sit amet ex. Quisque eget sodales augue. Nullam eget viverra nunc. In interdum aliquam egestas. Suspendisse ultricies ante euismod, aliquam nisl eu, sagittis libero. Quisque vel condimentum ligula.
+          #page-left.page.left
+            h5 Left
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elementum ante sit amet risus accumsan, id luctus massa gravida. Morbi fermentum vehicula leo sed rhoncus. Donec sapien lacus, rhoncus ut turpis at, elementum laoreet est. Sed ut diam eget tellus dictum varius eget vel mi. Morbi mattis posuere turpis viverra pulvinar. Sed purus nibh, tempus et sem vel, egestas consectetur eros. Sed tempus neque est. Etiam vitae eros vitae risus suscipit accumsan sed sit amet ex. Quisque eget sodales augue. Nullam eget viverra nunc. In interdum aliquam egestas. Suspendisse ultricies ante euismod, aliquam nisl eu, sagittis libero. Quisque vel condimentum ligula.
+          #page-top.page.top
+            h5 Top
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elementum ante sit amet risus accumsan, id luctus massa gravida. Morbi fermentum vehicula leo sed rhoncus. Donec sapien lacus, rhoncus ut turpis at, elementum laoreet est. Sed ut diam eget tellus dictum varius eget vel mi. Morbi mattis posuere turpis viverra pulvinar. Sed purus nibh, tempus et sem vel, egestas consectetur eros. Sed tempus neque est. Etiam vitae eros vitae risus suscipit accumsan sed sit amet ex. Quisque eget sodales augue. Nullam eget viverra nunc. In interdum aliquam egestas. Suspendisse ultricies ante euismod, aliquam nisl eu, sagittis libero. Quisque vel condimentum ligula.
+          #page-bottom.page.bottom
+            h5 Bottom
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elementum ante sit amet risus accumsan, id luctus massa gravida. Morbi fermentum vehicula leo sed rhoncus. Donec sapien lacus, rhoncus ut turpis at, elementum laoreet est. Sed ut diam eget tellus dictum varius eget vel mi. Morbi mattis posuere turpis viverra pulvinar. Sed purus nibh, tempus et sem vel, egestas consectetur eros. Sed tempus neque est. Etiam vitae eros vitae risus suscipit accumsan sed sit amet ex. Quisque eget sodales augue. Nullam eget viverra nunc. In interdum aliquam egestas. Suspendisse ultricies ante euismod, aliquam nisl eu, sagittis libero. Quisque vel condimentum ligula.
+          #page-right.page.right
+            h5 Right
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum elementum ante sit amet risus accumsan, id luctus massa gravida. Morbi fermentum vehicula leo sed rhoncus. Donec sapien lacus, rhoncus ut turpis at, elementum laoreet est. Sed ut diam eget tellus dictum varius eget vel mi. Morbi mattis posuere turpis viverra pulvinar. Sed purus nibh, tempus et sem vel, egestas consectetur eros. Sed tempus neque est. Etiam vitae eros vitae risus suscipit accumsan sed sit amet ex. Quisque eget sodales augue. Nullam eget viverra nunc. In interdum aliquam egestas. Suspendisse ultricies ante euismod, aliquam nisl eu, sagittis libero. Quisque vel condimentum ligula.
         #progress.col.s12
           .large-space
           h4
@@ -2883,13 +2900,13 @@ div
                 name="page-tabs",
                 checked="checked"
               )
-              span default
+              span page default
             label.radio
               input#left-tabs(type="radio", name="page-tabs")
-              span from left
+              span page left
             label.radio
               input#right-tabs(type="radio", name="page-tabs")
-              span from right
+              span page right
           p.space
           div
             .tabs
@@ -3522,19 +3539,37 @@ div
       #modal.modal
         h5 Title
         div Complementary text
-        nav
-          button.flat.circle(@click="updateModal('modal active')")
-            i zoom_in_map
-          button.flat.circle(@click="updateModal('modal left active')")
-            i arrow_backward
-          button.flat.circle(@click="updateModal('modal right active')")
-            i arrow_forward
-          button.flat.circle(@click="updateModal('modal top active')")
-            i arrow_upward
-          button.flat.circle(@click="updateModal('modal bottom active')")
-            i arrow_downward
-          button.flat.circle(data-ui="#modal")
-            i close
+        nav.right-align
+          button.border(data-ui="#modal") Cancel
+          button(data-ui="#modal") Confirm
+
+      #modal-left.modal.left
+        h5 Title
+        div Complementary text
+        nav.right-align
+          button.border(data-ui="#modal-left") Cancel
+          button(data-ui="#modal-left") Confirm
+
+      #modal-right.modal.right
+        h5 Title
+        div Complementary text
+        nav.right-align
+          button.border(data-ui="#modal-right") Cancel
+          button(data-ui="#modal-right") Confirm
+
+      #modal-top.modal.top
+        h5 Title
+        div Complementary text
+        nav.right-align
+          button.border(data-ui="#modal-top") Cancel
+          button(data-ui="#modal-top") Confirm
+
+      #modal-bottom.modal.bottom
+        h5 Title
+        div Complementary text
+        nav.right-align
+          button.border(data-ui="#modal-bottom") Cancel
+          button(data-ui="#modal-bottom") Confirm
 
       #modal-samples.modal.right.large
         header.fixed
@@ -3546,107 +3581,6 @@ div
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
           pre(v-html="exemplo.sourceCode")
-
-      #modal-calendar.modal
-        .row
-          .col.s12.m12.l4
-            div Selected date
-            h5 Tue,
-            h5 Month, 17
-          .col.s12.m12.l8
-            .row.no-wrap
-              .col.min
-                a
-                  i arrow_back
-              .col
-                h6.center-align Month / Year
-              .col.min
-                a
-                  i arrow_forward
-            table.center-align
-              tbody
-                tr
-                  td S
-                  td M
-                  td T
-                  td W
-                  td T
-                  td F
-                  td S
-                tr
-                  td
-                    button.none 1
-                  td
-                    button.none 2
-                  td
-                    button.none 3
-                  td
-                    button.none 4
-                  td
-                    button.none 5
-                  td
-                    button.none 6
-                  td
-                    button.none 7
-                tr
-                  td
-                    button.border.circle.medium.no-margin.absolute.middle.center 8
-                  td
-                    button.none 9
-                  td
-                    button.none 10
-                  td
-                    button.none 11
-                  td
-                    button.none 12
-                  td
-                    button.none 13
-                  td
-                    button.none 14
-                tr
-                  td
-                    button.none 15
-                  td
-                    button.none 16
-                  td
-                    button.circle.medium.no-margin.absolute.middle.center.flat 17
-                  td
-                    button.none 18
-                  td
-                    button.none 19
-                  td
-                    button.none 20
-                  td
-                    button.none 21
-                tr
-                  td
-                    button.none 22
-                  td
-                    button.none 23
-                  td
-                    button.none 24
-                  td
-                    button.none 25
-                  td
-                    button.none 26
-                  td
-                    button.none 27
-                  td
-                    button.none 28
-                tr
-                  td
-                    button.none 29
-                  td
-                    button.none 30
-                  td
-                    button.none 31
-                  td 1
-                  td 2
-                  td 3
-                  td 4
-        nav.right-align
-          button.border(data-ui="#modal-calendar") Cancel
-          button.flat(data-ui="#modal-calendar") Ok
 
       #modal-icons.modal.right.large
         header.fixed
@@ -3877,7 +3811,7 @@ export default {
       $(".container").attr("class", css ? "container " + css : "container");
     },
     updatePage(css) {
-      $("#begin").attr("class", css);
+      ui(css);
     },
     updateModal(css) {
       $("#modal").attr("class", css);
@@ -3917,8 +3851,8 @@ export default {
       return process(
         tag[0].outerHTML
           .replace(/\s+(onclick|style|data-v-\w+)\="[^\"]*"/gi, "")
-          .replace(/\s+id\="(\w+)"/gi, ' id="$1_"')
-          .replace(/\s+data-ui\="#(\w+)"/gi, ' data-ui="#$1_"')
+          .replace(/\s+id\="([a-z0-9-]+)"/gi, ' id="$1_"')
+          .replace(/\s+data-ui\="#([a-z0-9-]+)"/gi, ' data-ui="#$1_"')
           .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
           .replace(/\n\<\/(circle|th)\>/gi, "</$1>")
       ).replace(/^\s+/g, "");

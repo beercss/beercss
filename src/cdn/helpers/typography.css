@@ -14,18 +14,18 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  margin: 0 0 8rem 0;
+  margin-bottom: 8rem;
   display: flex;
   align-items: center;
 }
 
-*:not(.progress) + h1,
-*:not(.progress) + h2,
-*:not(.progress) + h3,
-*:not(.progress) + h4,
-*:not(.progress) + h5,
-*:not(.progress) + h6 {
-  margin: 8rem 0;
+*:not(.progress):not(.field) + h1,
+*:not(.progress):not(.field) + h2,
+*:not(.progress):not(.field) + h3,
+*:not(.progress):not(.field) + h4,
+*:not(.progress):not(.field) + h5,
+*:not(.progress):not(.field) + h6 {
+  margin-top: 8rem;
 }
 
 h1 {
