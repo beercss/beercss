@@ -26,7 +26,7 @@ div
     a(data-ui="#more1")
       i collections
       div Templates
-    a(@click="showSamples('.menu.m.l')")
+    a(@click="showSamples('.menu.m.l', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')")
       i code
       div Code
     themes(id="themes1", v-model="$data")
@@ -63,7 +63,7 @@ div
     a(data-ui="#more2")
       i collections
       div Templates
-    a(@click="showSamples('.menu.s')")
+    a(@click="showSamples('.menu.s', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')")
       i code
       div Code
     themes(id="themes2", v-model="$data")
@@ -203,7 +203,7 @@ div
                 .col.s12.m12.l6
                   p
                     b &lt;label&gt;
-                    span &nbsp;active, radio, checkbox
+                    span &nbsp;active, radio, checkbox, switch
                   p
                     b loader
                     span &nbsp;small, medium, large
@@ -254,7 +254,7 @@ div
         #badges.col.s12
           h4
             span Badges
-            a.chip.circle(@click="showSamples('#badges nav > a')")
+            a.chip.circle(@click="showSamples('#badges nav > a', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
               i code
           nav.wrap
             label.radio
@@ -430,12 +430,12 @@ div
           .large-space
           h4
             span Buttons
-            a.chip.circle(@click="showSamples('#buttons button')")
+            a.chip.circle(@click="showSamples('#buttons button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
               i code
           .medium-space
           h6.middle-align
             span FABs
-            a.chip.circle(@click="showSamples('#fabs button')")
+            a.chip.circle(@click="showSamples('#fabs button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
               i code
           selectionForButtons(context="fabs", selectedSize="extra")
           #fabs
@@ -530,7 +530,7 @@ div
           .medium-space
           h6.middle-align
             span Extended FABs
-            a.chip.circle(@click="showSamples('#extended-fabs button')")
+            a.chip.circle(@click="showSamples('#extended-fabs button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
               i code
           selectionForButtons(context="extended-fabs", :sizes="['extra']", selectedSize="extra")
           #extended-fabs.row
@@ -685,7 +685,7 @@ div
           .medium-space
           h6.middle-align
             span Buttons
-            a.chip.circle(@click="showSamples('#default-buttons button')")
+            a.chip.circle(@click="showSamples('#default-buttons button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
               i code
           selectionForButtons(context="default-buttons")
           #default-buttons
@@ -791,7 +791,7 @@ div
           .medium-space
           h6.middle-align
             span Responsive buttons
-            a.chip.circle(@click="showSamples('#responsive-buttons button')")
+            a.chip.circle(@click="showSamples('#responsive-buttons button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
               i code
           selectionForButtons(context="responsive-buttons")
           #responsive-buttons.row
@@ -887,7 +887,7 @@ div
           .large-space
           h4
             span Cards
-            a.chip.circle(@click="showSamples('#cards article:visible')")
+            a.chip.circle(@click="showSamples('#cards article:visible', null, 'https://github.com/beercss/beercss/blob/main/docs/CARD.md')")
               i code
           nav.wrap.m.l
             label.radio
@@ -1242,9 +1242,24 @@ div
           .large-space
           h4
             span Checkboxes
-            a.chip.circle(@click="showSamples('#checkboxes .field')")
+            a.chip.circle(@click="showSamples('#checkboxes .field:not(#checkboxes1), #checkboxes1 label', null, 'https://github.com/beercss/beercss/blob/main/docs/CHECKBOX.md')")
               i code
           .row
+            .col.s12
+              .field.middle-align#checkboxes1
+                nav
+                  label.checkbox
+                    input(type="checkbox")
+                    span
+                  label.checkbox
+                    input(type="checkbox")
+                    span Enabled
+                  label.checkbox
+                    input(type="checkbox", disabled)
+                    span Disabled
+                  label.checkbox
+                    input(type="checkbox", checked, disabled)
+                    span Disabled
             .col.s12
               .field.middle-align
                 nav.wrap
@@ -1305,7 +1320,7 @@ div
           .large-space
           h4
             span Chips
-            a.chip.circle(@click="showSamples('#chips nav .chip')")
+            a.chip.circle(@click="showSamples('#chips nav .chip', null, 'https://github.com/beercss/beercss/blob/main/docs/CHIP.md')")
               i code
           nav.wrap
             label.radio
@@ -1547,7 +1562,7 @@ div
           .large-space
           h4
             span Containers
-            a.chip.circle(@click="showSamples('#containers .container')")
+            a.chip.circle(@click="showSamples('#containers .container', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
               i code
           nav
             button(@click="updateContainer()") Default
@@ -1560,7 +1575,7 @@ div
           h4
             span Dropdowns
             a.chip.circle(
-              @click="showSamples('#dropdowns button, #dropdowns .field')"
+              @click="showSamples('#dropdowns button, #dropdowns .field', null, 'https://github.com/beercss/beercss/blob/main/docs/DROPDOWN.md')"
             )
               i code
           nav.wrap
@@ -1674,99 +1689,6 @@ div
                   .col
                     div Title
                     label Complementary text
-            button(data-ui="#dropdown5") 
-              span Calendar
-              #dropdown5.dropdown.small-padding.no-wrap(data-ui="#dropdown5")
-                .row.no-wrap
-                  .col.min
-                    a
-                      i arrow_back
-                  .col
-                    h6.center-align Month / Year
-                  .col.min
-                    a
-                      i arrow_forward
-                table.center-align
-                  tbody
-                    tr
-                      td S
-                      td M
-                      td T
-                      td W
-                      td T
-                      td F
-                      td S
-                    tr
-                      td
-                        a.button.none 1
-                      td
-                        a.button.none 2
-                      td
-                        a.button.none 3
-                      td
-                        a.button.none 4
-                      td
-                        a.button.none 5
-                      td
-                        a.button.none 6
-                      td
-                        a.button.none 7
-                    tr
-                      td
-                        a.button.border.circle.medium.no-margin.absolute.middle.center 8
-                      td
-                        a.button.none 9
-                      td
-                        a.button.none 10
-                      td
-                        a.button.none 11
-                      td
-                        a.button.none 12
-                      td
-                        a.button.none 13
-                      td
-                        a.button.none 14
-                    tr
-                      td
-                        a.button.none 15
-                      td
-                        a.button.none 16
-                      td
-                        a.button.circle.medium.no-margin.absolute.middle.center.flat 17
-                      td
-                        a.button.none 18
-                      td
-                        a.button.none 19
-                      td
-                        a.button.none 20
-                      td
-                        a.button.none 21
-                    tr
-                      td
-                        a.button.none 22
-                      td
-                        a.button.none 23
-                      td
-                        a.button.none 24
-                      td
-                        a.button.none 25
-                      td
-                        a.button.none 26
-                      td
-                        a.button.none 27
-                      td
-                        a.button.none 28
-                    tr
-                      td
-                        a.button.none 29
-                      td
-                        a.button.none 30
-                      td
-                        a.button.none 31
-                      td 1
-                      td 2
-                      td 3
-                      td 4
             button(data-ui="#dropdown6")
               span Video
               #dropdown6.dropdown.no-padding.small-width(data-ui="#dropdown6") 
@@ -1776,7 +1698,7 @@ div
           .large-space
           h4
             span Expansions
-            a.chip.circle(@click="showSamples('#expansions details')")
+            a.chip.circle(@click="showSamples('#expansions details', null, 'https://github.com/beercss/beercss/blob/main/docs/EXPANSION.md')")
               i code
           details
             summary Title
@@ -1812,7 +1734,7 @@ div
           .large-space
           h4
             span Icons
-            a.chip.circle(@click="showSamples('#icons nav', '#modal-icons')")
+            a.chip.circle(@click="showSamples('#icons nav', '#modal-icons', null, 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
               i code
           nav.wrap
             i.small home
@@ -1851,7 +1773,7 @@ div
           .large-space
           h4
             span Inputs
-            a.chip.circle(@click="showSamples('#inputs .field', null, 'After render a input with label call the js function <b>ui()</b>')")
+            a.chip.circle(@click="showSamples('#inputs .field', null, 'https://github.com/beercss/beercss/blob/main/docs/INPUT.md')")
               i code
           nav.wrap
             label.checkbox
@@ -1962,7 +1884,7 @@ div
           h4
             span Layouts
             a.chip.circle(
-              @click="layout = 0; showSamples('#layouts article')"
+              @click="layout = 0; showSamples('#layouts article', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
             )
               i code
           nav.wrap
@@ -2175,7 +2097,7 @@ div
           .large-space
           h4
             span Loaders
-            a.chip.circle(@click="showSamples('#loaders .loader')")
+            a.chip.circle(@click="showSamples('#loaders .loader', null, 'https://github.com/beercss/beercss/blob/main/docs/LOADER.md')")
               i code
           nav.wrap
             a.loader.small
@@ -2189,7 +2111,7 @@ div
           h4
             span Media
             a.chip.circle(
-              @click="showSamples('#media img:visible, #media video:visible')"
+              @click="showSamples('#media img:visible, #media video:visible', null, 'https://github.com/beercss/beercss/blob/main/docs/MEDIA.md')"
             )
               i code
           nav.wrap.m.l
@@ -2305,7 +2227,7 @@ div
           .large-space
           h4
             span Modals
-            a.chip.circle(@click="showSamples('#modal, #modal-left, #modal-right, #modal-top, #modal-bottom')")
+            a.chip.circle(@click="showSamples('#modal, #modal-left, #modal-right, #modal-top, #modal-bottom', null, 'https://github.com/beercss/beercss/blob/main/docs/MODAL.md')")
               i code
           nav
             button(data-ui="#modal") Default
@@ -2317,7 +2239,7 @@ div
           .large-space
           h4
             span Navs
-            a.chip.circle(@click="showSamples('#navs nav')")
+            a.chip.circle(@click="showSamples('#navs nav', null, 'https://github.com/beercss/beercss/blob/main/docs/NAV.md')")
               i code
           nav
             button Button
@@ -2329,7 +2251,7 @@ div
           .large-space
           h4
             span Pages
-            a.chip.circle(@click="showSamples('#pages .page')")
+            a.chip.circle(@click="showSamples('#pages .page', null, 'https://github.com/beercss/beercss/blob/main/docs/PAGE.md')")
               i code
           nav.wrap
             button(@click="updatePage('#page')") Default
@@ -2356,7 +2278,7 @@ div
           .large-space
           h4
             span Progress
-            a.chip.circle(@click="showSamples('#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, 'To change the progress call the js function <b>ui(\"#progress\", percentage)</b>')")
+            a.chip.circle(@click="showSamples('#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
               i code
           nav.wrap
             label.radio
@@ -2462,17 +2384,17 @@ div
           .large-space
           h4
             span Radios
-            a.chip.circle(@click="showSamples('#radios .field')")
+            a.chip.circle(@click="showSamples('#radios .field:not(#radios1), #radios1 label', null, 'https://github.com/beercss/beercss/blob/main/docs/RADIO.md')")
               i code
           .row
             .col.s12
-              .field.middle-align
-                nav.wrap
+              .field.middle-align#radios1
+                nav
                   label.radio
-                    input(type="radio", name="radio")
-                    span Enabled
+                    input(type="radio", name="radio6")
+                    span
                   label.radio
-                    input(type="radio", name="radio", checked)
+                    input(type="radio", name="radio6")
                     span Enabled
                   label.radio
                     input(type="radio", disabled)
@@ -2481,30 +2403,45 @@ div
                     input(type="radio", checked, disabled)
                     span Disabled
             .col.s12
+              .field.middle-align
+                nav.wrap
+                  label.radio
+                    input(type="radio", name="radio1")
+                    span Enabled
+                  label.radio
+                    input(type="radio", name="radio1", checked)
+                    span Enabled
+                  label.radio
+                    input(type="radio", name="radio2", disabled)
+                    span Disabled
+                  label.radio
+                    input(type="radio", name="radio2", checked, disabled)
+                    span Disabled
+            .col.s12
               .field.label.middle-align
                 label.active A question?
                 nav
                   label.radio
-                    input(type="radio", name="radio")
+                    input(type="radio", name="radio3")
                     span Item 1
                   label.radio
-                    input(type="radio", name="radio")
+                    input(type="radio", name="radio3")
                     span Item 2
                   label.radio
-                    input(type="radio", name="radio")
+                    input(type="radio", name="radio3")
                     span Item 3
             .col.s12
               .field.label.middle-align
                 label.active A question?
                 nav
                   label.radio
-                    input(type="radio", name="radio")
+                    input(type="radio", name="radio4")
                     span Item 1
                   label.radio
-                    input(type="radio", name="radio")
+                    input(type="radio", name="radio4")
                     span Item 2
                   label.radio
-                    input(type="radio", name="radio")
+                    input(type="radio", name="radio4")
                     span Item 3
                 span.helper Complementary text
             .col.s12
@@ -2512,20 +2449,20 @@ div
                 label.active A question?
                 nav
                   label.radio
-                    input(type="radio", name="radio")
+                    input(type="radio", name="radio5")
                     span Item 1
                   label.radio
-                    input(type="radio", name="radio")
+                    input(type="radio", name="radio5")
                     span Item 2
                   label.radio
-                    input(type="radio", name="radio")
+                    input(type="radio", name="radio5")
                     span Item 3
                 span.error Error text
         #responsive.col.s12
           .large-space
           h4 
             span Responsive
-            a.chip.circle(@click="showSamples('#responsive nav')")
+            a.chip.circle(@click="showSamples('#responsive nav', null, 'https://github.com/beercss/beercss/blob/main/docs/HELPERS.md')")
               i code
           div
             nav
@@ -2545,7 +2482,7 @@ div
           .large-space
           h4
             span Rows
-            a.chip.circle(@click="showSamples('#rows .row')")
+            a.chip.circle(@click="showSamples('#rows .row', null, 'https://github.com/beercss/beercss/blob/main/docs/ROW.md')")
               i code
           nav.wrap
             label.radio
@@ -2613,7 +2550,7 @@ div
           .large-space
           h4
             span Selects
-            a.chip.circle(@click="showSamples('#selects .field', null, 'After render a select with label call the js function <b>ui()</b>')")
+            a.chip.circle(@click="showSamples('#selects .field', null, 'https://github.com/beercss/beercss/blob/main/docs/SELECT.md')")
               i code
           nav.wrap
             label.checkbox
@@ -2722,17 +2659,17 @@ div
           .large-space
           h4
             span Switches
-            a.chip.circle(@click="showSamples('#switches .field')")
+            a.chip.circle(@click="showSamples('#switches .field:not(#switches1), #switches1 label', null, 'https://github.com/beercss/beercss/blob/main/docs/SWITCH.md')")
               i code
           .row
             .col.s12
-              .field.middle-align
+              .field.middle-align#switches1
                 nav
                   label.switch
                     input(type="checkbox")
-                    span Enabled
+                    span
                   label.switch
-                    input(type="checkbox", checked)
+                    input(type="checkbox")
                     span Enabled
                   label.switch
                     input(type="checkbox", disabled)
@@ -2740,6 +2677,18 @@ div
                   label.switch
                     input(type="checkbox", checked, disabled)
                     span Disabled
+            .col.s12
+              .field.middle-align
+                nav
+                  label.switch
+                    input(type="checkbox")
+                    span Item 1
+                  label.switch
+                    input(type="checkbox")
+                    span Item 2
+                  label.switch
+                    input(type="checkbox")
+                    span Item 3
             .col.s12
               .field.label.middle-align
                 label.active A question?
@@ -2785,7 +2734,7 @@ div
           .large-space
           h4
             span Tables
-            a.chip.circle(@click="showSamples('#table table')")
+            a.chip.circle(@click="showSamples('#table table', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
               i code
           nav.wrap
             label.radio
@@ -2874,7 +2823,7 @@ div
           h4
             span Tabs
             a.chip.circle(
-              @click="showSamples('#tabs > div:not(.large-space)')"
+              @click="showSamples('#tabs > div:not(.large-space)', null, 'https://github.com/beercss/beercss/blob/main/docs/TABS.md')"
             )
               i code
           nav.wrap
@@ -2991,7 +2940,7 @@ div
           .large-space
           h4
             span Textareas
-            a.chip.circle(@click="showSamples('#textareas .field', null, 'After render a textarea with label call the js function <b>ui()</b>')")
+            a.chip.circle(@click="showSamples('#textareas .field', null, 'https://github.com/beercss/beercss/blob/main/docs/TEXTAREA.md')")
               i code
           nav.wrap
             label.checkbox
@@ -3082,7 +3031,7 @@ div
           .large-space
           h4
             span Toasts
-            a.chip.circle(@click="showSamples('#toasts .toast', null, 'The default hide time is 6 seconds, you can change it calling <b>ui(\"#toast\", millisecondsToHide)</b>')")
+            a.chip.circle(@click="showSamples('#toasts .toast', null, 'https://github.com/beercss/beercss/blob/main/docs/TOAST.md')")
               i code
           nav.wrap
             label.radio
@@ -3116,7 +3065,7 @@ div
           .large-space
           h4
             span Tooltips
-            a.chip.circle(@click="showSamples('#tooltips nav a')")
+            a.chip.circle(@click="showSamples('#tooltips nav a', null, 'https://github.com/beercss/beercss/blob/main/docs/TOOLTIP.md')")
               i code
           nav.wrap
             a.chip.circle
@@ -3136,7 +3085,7 @@ div
           .large-space
           h4
             span Typography
-            a.chip.circle(@click="showSamples('#typography .col.s6 div')")
+            a.chip.circle(@click="showSamples('#typography .col.s6 div', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
               i code
           .row
             .col.s6
@@ -3573,10 +3522,11 @@ div
 
       #modal-samples.modal.right.large
         header.fixed
-          a(data-ui="#modal-samples")
-            i arrow_backward
-            h5.small-margin Back
-          div(v-show="textSample", v-html="textSample")
+          nav
+            a(data-ui="#modal-samples")
+              i arrow_backward
+              h5.small-margin Back
+            a.button.border(v-show="urlSample", :href="urlSample", target="_blank") Documentation
         article.border(v-for="exemplo in samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
@@ -3624,8 +3574,8 @@ export default {
       autoSample: null,
       extraSample: null,
       themeSample: null,
-      textSample: null,
       modalSample: null,
+      urlSample: null,
       mediaCard: 1,
       mediaImage: 1,
       layout: 0
@@ -3850,18 +3800,17 @@ export default {
 
       return process(
         tag[0].outerHTML
-          .replace(/\s+(onclick|style|data-v-\w+)\="[^\"]*"/gi, "")
-          .replace(/\s+id\="([a-z0-9-]+)"/gi, ' id="$1_"')
-          .replace(/\s+data-ui\="#([a-z0-9-]+)"/gi, ' data-ui="#$1_"')
+          .replace(/\s+(id|data-ui|onclick|style|data-v-\w+)\="[^\"]*"/gi, "")
+          .replace(/\s+name\="(\w+)"/gi, " name=\"$1_\"")
           .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
           .replace(/\n\<\/(circle|th)\>/gi, "</$1>")
       ).replace(/^\s+/g, "");
     },
-    showSamples(selector, modal, text) {
+    showSamples(selector, modal, url) {
       var elements = $(selector);
       this.samples = [];
-      this.textSample = text || null;
       this.modalSample = modal || "#modal-samples";
+      this.urlSample = url || null;
 
       for (var i = 0; i < elements.length; i++) {
         var element = $($(elements[i])[0].outerHTML);
