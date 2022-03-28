@@ -1,6 +1,6 @@
 .field {
   height: 48rem;
-  margin-bottom: 8rem;
+  margin-bottom: 16rem;
   border: none!important;
 }
 
@@ -20,7 +20,7 @@
   height: 64rem;
 }
 
-.field + .field {
+.field + * {
   margin-top: 24rem;
 }
 
@@ -354,7 +354,7 @@ input[type=file] {
   left: 16rem;
   font-size: 16rem;
   transform: translateY(-50%);
-  transition: all var(--speed1);
+  transition: var(--speed2) all;
   z-index: 10;
 }
 
