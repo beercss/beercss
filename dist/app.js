@@ -20812,7 +20812,134 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
+  mounted: function mounted() {
+    ui();
+  },
   methods: {
     updateTheme: function updateTheme() {
       var element = document.querySelector("html");
@@ -20834,7 +20961,6 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "space" }),
     _c("div", { staticClass: "row no-wrap middle-align" }, [
       _c("div", { staticClass: "col min" }, [
         _c(
@@ -20851,6 +20977,19 @@ exports.default = _default;
       ]),
       _vm._m(0),
     ]),
+    _vm._m(1),
+    _vm._m(2),
+    _vm._m(3),
+    _vm._m(4),
+    _vm._m(5),
+    _vm._m(6),
+    _vm._m(7),
+    _c("h5", [_vm._v("Without row")]),
+    _vm._m(8),
+    _vm._m(9),
+    _vm._m(10),
+    _c("h5", [_vm._v("With row")]),
+    _vm._m(11),
   ])
 }
 var staticRenderFns = [
@@ -20861,6 +21000,245 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col" }, [
       _c("h5", [_vm._v("Test your changes here")]),
       _c("div", [_vm._v("Click on icon to change theme")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "modal", attrs: { id: "default", "data-ui": "#default" } },
+      [
+        _c("h5", [_vm._v("Default modal")]),
+        _c("nav", { staticClass: "right-align" }, [
+          _c("button", { staticClass: "border" }, [_vm._v("Cancel")]),
+          _c("button", [_vm._v("Confirm")]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "modal left", attrs: { id: "left", "data-ui": "#left" } },
+      [
+        _c("h5", [_vm._v("Left modal")]),
+        _c("nav", { staticClass: "right-align" }, [
+          _c("button", { staticClass: "border" }, [_vm._v("Cancel")]),
+          _c("button", [_vm._v("Confirm")]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "modal top", attrs: { id: "top", "data-ui": "#top" } },
+      [
+        _c("h5", [_vm._v("Top modal")]),
+        _c("nav", { staticClass: "right-align" }, [
+          _c("button", { staticClass: "border" }, [_vm._v("Cancel")]),
+          _c("button", [_vm._v("Confirm")]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "modal right",
+        attrs: { id: "right", "data-ui": "#right" },
+      },
+      [
+        _c("h5", [_vm._v("Right modal")]),
+        _c("nav", { staticClass: "right-align" }, [
+          _c("button", { staticClass: "border" }, [_vm._v("Cancel")]),
+          _c("button", [_vm._v("Confirm")]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "modal bottom",
+        attrs: { id: "bottom", "data-ui": "#bottom" },
+      },
+      [
+        _c("h5", [_vm._v("Bottom modal")]),
+        _c("div", { staticClass: "small-height" }),
+        _c("nav", { staticClass: "right-align" }, [
+          _c("button", { staticClass: "border" }, [_vm._v("Cancel")]),
+          _c("button", [_vm._v("Confirm")]),
+        ]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field label border" }, [
+      _c("input"),
+      _c("label", [_vm._v("Label")]),
+      _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", [
+      _c("button", { attrs: { "data-ui": "#default" } }, [_vm._v("Default")]),
+      _c("button", { attrs: { "data-ui": "#left" } }, [_vm._v("Left")]),
+      _c("button", { attrs: { "data-ui": "#top" } }, [_vm._v("Top")]),
+      _c("button", { attrs: { "data-ui": "#right" } }, [_vm._v("Right")]),
+      _c("button", { attrs: { "data-ui": "#bottom" } }, [_vm._v("Bottom")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field label border" }, [
+      _c("input"),
+      _c("label", [_vm._v("Label")]),
+      _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field label border" }, [
+      _c("input"),
+      _c("label", [_vm._v("Label")]),
+      _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "field label border" }, [
+      _c("input"),
+      _c("label", [_vm._v("Label")]),
+      _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col s4" }, [
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+      ]),
+      _c("div", { staticClass: "col s4" }, [
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+      ]),
+      _c("div", { staticClass: "col s4" }, [
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+      ]),
+      _c("div", { staticClass: "col s4" }, [
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+      ]),
+      _c("div", { staticClass: "col s4" }, [
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+      ]),
+      _c("div", { staticClass: "col s4" }, [
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+      ]),
+      _c("div", { staticClass: "col s6" }, [
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+      ]),
+      _c("div", { staticClass: "col s6" }, [
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+      ]),
+      _c("div", { staticClass: "col s12" }, [
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+        _c("div", { staticClass: "field label border" }, [
+          _c("input"),
+          _c("label", [_vm._v("Label")]),
+          _c("span", { staticClass: "helper" }, [_vm._v("Helper")]),
+        ]),
+      ]),
     ])
   },
 ]
@@ -25545,9 +25923,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
-//
 var _default = {
   mounted: function mounted() {},
   data: function data() {
@@ -25704,7 +26079,6 @@ exports.default = _default;
               }),
             ]
           ),
-          _c("div", { staticClass: "medium-space" }),
           _c(
             "a",
             {
@@ -25878,8 +26252,7 @@ exports.default = _default;
           ]
         ),
       ]),
-      _c("div", { staticClass: "padding" }, [
-        _c("div", { staticClass: "space" }),
+      _c("div", { staticClass: "large-padding" }, [
         _c("div", { staticClass: "field prefix round flat white black-text" }, [
           _c("i", [_vm._v("search")]),
           _c("input", {
@@ -25891,7 +26264,6 @@ exports.default = _default;
             },
           }),
         ]),
-        _c("div", { staticClass: "space" }),
         _c(
           "a",
           {

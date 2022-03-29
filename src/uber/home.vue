@@ -29,7 +29,6 @@ div
       .field.prefix.round.flat.white.black-text
         i search
         input(:placeholder="from ? 'Destination' : 'Departure'", @click="go()")
-      .medium-space
       a.row.no-wrap(@click="go()")
         .col.min
           button.circle.small.flat.no-wave
@@ -58,12 +57,10 @@ div
         button.border.large.white-text.white-border(v-show="to", @click="clean()")
           i time_to_leave
           span Confirm
-    .padding
-      .space
+    .large-padding
       .field.prefix.round.flat.white.black-text
         i search
         input(:placeholder="from ? 'Destination' : 'Departure'", @click="go()")
-      .space
       a.row.no-wrap(@click="go()")
         .col.min
           button.circle.small.flat.no-wave
