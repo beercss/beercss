@@ -6,7 +6,7 @@
 
 *:not(.field) + .field,
 .field + *:not(.field) {
-  margin-top: 24rem;
+  margin-top: 16rem;
 }
 
 .row > .col > .field:last-child {

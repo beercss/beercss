@@ -5,8 +5,8 @@
 From jsdelivr.net.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.23/dist/cdn/beer.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.23/dist/cdn/beer.min.js" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.24/dist/cdn/beer.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.24/dist/cdn/beer.min.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
 ```
 
