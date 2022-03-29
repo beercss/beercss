@@ -4,8 +4,9 @@
   border: none!important;
 }
 
-*:not(.field) + .field {
-  margin-top: 16rem;
+*:not(.field) + .field,
+.field + *:not(.field) {
+  margin-top: 24rem;
 }
 
 .row > .col > .field:last-child {

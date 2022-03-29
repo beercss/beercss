@@ -25,7 +25,7 @@ h6 {
 *:not(.progress) + h4,
 *:not(.progress) + h5,
 *:not(.progress) + h6 {
-  margin-top: 16rem;
+  margin-top: 8rem;
 }
 
 h1 {
