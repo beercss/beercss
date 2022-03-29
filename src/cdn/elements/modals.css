@@ -16,7 +16,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   will-change: opacity, transform;
-  transition: var(--speed2) all;
+  transition: var(--speed3) all;
   transform: translate(-50%, -50%);
 }
 
@@ -83,6 +83,7 @@
 }
 
 .modal.top {
+  opacity: 1;
   top: 0;
   left: 0;
   right: auto;
@@ -91,10 +92,11 @@
   width: 100%;
   min-width: auto;
   max-height: 100%;
-  transform: translateY(-50%);
+  transform: translateY(-100%);
 }
 
 .modal.left {
+  opacity: 1;
   float: none;
   top: 0;
   left: 0;
@@ -103,10 +105,11 @@
   width: auto;
   height: 100%;
   max-height: 100%;
-  transform: translateX(-50%);
+  transform: translateX(-100%);
 }
 
 .modal.right {
+  opacity: 1;
   float: none;
   top: 0;
   left: auto;
@@ -115,10 +118,11 @@
   width: auto;
   height: 100%;
   max-height: 100%;
-  transform: translateX(50%);
+  transform: translateX(100%);
 }
 
 .modal.bottom {
+  opacity: 1;
   top: auto;
   left: 0;
   right: auto;
@@ -127,7 +131,7 @@
   width: 100%;
   min-width: auto;
   max-height: 100%;
-  transform: translateY(50%);
+  transform: translateY(100%);
 }
 
 .modal.left.small,
