@@ -1,7 +1,27 @@
 .field {
   height: 48rem;
-  margin-bottom: 16rem;
+  margin-bottom: 32rem;
   border: none!important;
+}
+
+*:not(.field) + .field {
+  margin-top: 16rem;
+}
+
+.row > .col > .field:last-child {
+  margin-bottom: 16rem;
+}
+
+.row.no-space > .col > .field:not(:last-child) {
+  margin-bottom: 16rem;
+}
+
+.row.medium-space > .col > .field:not(:last-child) {
+  margin-bottom: 40rem;
+}
+
+.row.large-space > .col > .field:not(:last-child) {
+  margin-bottom: 48rem;
 }
 
 .field.small {
@@ -18,18 +38,6 @@
 
 .field.extra {
   height: 64rem;
-}
-
-.field + * {
-  margin-top: 24rem;
-}
-
-.row.medium-space > .col > .field + .field {
-  margin-top: 32rem;
-}
-
-.row.large-space > .col > .field + .field {
-  margin-top: 40rem;
 }
 
 .field::before {

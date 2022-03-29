@@ -19,13 +19,13 @@ h6 {
   align-items: center;
 }
 
-*:not(.progress):not(.field) + h1,
-*:not(.progress):not(.field) + h2,
-*:not(.progress):not(.field) + h3,
-*:not(.progress):not(.field) + h4,
-*:not(.progress):not(.field) + h5,
-*:not(.progress):not(.field) + h6 {
-  margin-top: 8rem;
+*:not(.progress) + h1,
+*:not(.progress) + h2,
+*:not(.progress) + h3,
+*:not(.progress) + h4,
+*:not(.progress) + h5,
+*:not(.progress) + h6 {
+  margin-top: 16rem;
 }
 
 h1 {
