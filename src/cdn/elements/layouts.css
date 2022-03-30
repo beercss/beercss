@@ -13,12 +13,16 @@
 }
 
 .absolute.round,
-.fixed.round {
+.fixed.round,
+header.round,
+footer.round {
   border-radius: 24rem;
 }
 
 .absolute.border,
-.fixed.border {
+.fixed.border,
+header.border,
+footer.border {
   border: 1rem solid var(--outline);
 }
 
