@@ -14,6 +14,10 @@ Layouts are containers that you can place in any position. There are absolute an
 
 ## Most used helpers
 
+**Alignments**
+
+left-align, right-align, top-align, bottom-align
+
 **Positions**
 
 left, right, top, bottom, front, back
@@ -28,11 +32,11 @@ small, medium, large
 Absolute elements are relative to container.
 
 ```html
-<div class="card small">
+<article class="small">
   <div class="absolute left bottom right">
     <h5>Bottom of container</h5>
   </div>
-</div>
+</article>
 ```
 
 ## Fixed example
@@ -42,6 +46,97 @@ Fixed elements are relative to document.
 ```html
 <div class="fixed left bottom right">
   <h5>Bottom of document</h5>
+</div>
+```
+
+## Alignment example
+
+```html
+<article class="small center-align middle-align">
+  <span>Aligned</span>
+</article>
+```
+
+## Position example
+
+```html
+<article class="small">
+  <span class="absolute center middle">Positioned</span>
+</article>
+```
+
+## Header and footer examples
+
+Headers and footers are `position: sticky` when `fixed`.
+
+```html
+<article class="small-width small-height scroll">
+  <header class="fixed bold">Fixed header</header>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+  <footer class="fixed bold">Fixed footer</header>
+</article>
+```
+
+## App bar example
+
+```html
+<header class="primary padding">
+  <div class="row no-wrap middle-align">
+    <div class="col min">
+      <a>
+        <i>arrow_backward</i>
+      </a>
+    </div>
+    <div class="col">
+      <h5 class="no-margin">Title large</h5>
+    </div>
+    <div class="col min">
+      <a>
+        <i>attach_file</i>
+      </a>
+    </div>
+    <div class="col min">
+      <a>
+        <i>today</i>
+      </a>
+    </div>
+    <div class="col min">
+      <a>
+        <i>more_vert</i>
+      </a>
+    </div>
+  </div>
+</header>
+```
+
+## List example
+
+```html
+<div class="row no-wrap middle-align">
+  <div class="col min">
+    <a>
+      <i>warning</i>
+    </a>
+  </div>
+  <div class="col">
+    <div>Title</div>
+    <div class="small-text">Some text here</div>
+  </div>
+  <div class="col min">
+    <nav>
+      <a>
+        <i>edit</i>
+      </a>
+      <a>
+        <i>delete</i>
+      </a>
+    </nav>
+  </div>
 </div>
 ```
 
