@@ -30,6 +30,7 @@
 .row.min {
   width: fit-content;
   min-width: auto;
+  max-width: -webkit-fill-available;
 }
 
 .row.space,
@@ -93,9 +94,11 @@
   flex: 1;
   padding-top: 0;
   padding-bottom: 0;
+  margin: 0;
 }
 
-.row.no-wrap > .col.min {
+.row.no-wrap > .col.min,
+.row.no-wrap.scroll > .col {
   flex: 0;
 }
 

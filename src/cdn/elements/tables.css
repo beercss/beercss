@@ -26,6 +26,7 @@ table.border th {
 table.min {
   width: min-content;
   min-width: auto;
+  max-width: -webkit-fill-available;
 }
 
 table.no-space td,
