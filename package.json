@@ -5,67 +5,26 @@
   "version": "2.0.26",
   "name": "beercss",
   "license": "MIT",
-  "port": 1234,
   "scripts": {
-    "dev": "node build/dev.js",
-    "build": "node build/build.js",
-    "test": "jest"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "material-dynamic-colors": "^0.0.8"
+    "material-dynamic-colors": "^0.0.10",
+    "sass": "^1.49.9",
+    "uuid": "^8.3.2",
+    "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@vue/component-compiler-utils": "^3.3.0",
-    "babel-core": "^6.26.3",
-    "babel-jest": "^27.4.6",
-    "babel-preset-env": "^1.7.0",
-    "fs-extra": "^10.0.0",
+    "@types/uuid": "^8.3.4",
+    "@vitejs/plugin-vue": "^2.2.0",
+    "fs-extra": "^10.0.1",
+    "http": "0.0.1-security",
     "http-proxy": "^1.18.1",
-    "jest": "^27.4.7",
-    "minify": "7.2.2",
-    "open": "^8.4.0",
-    "parcel-bundler": "1.12.5",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "pug": "^3.0.2",
-    "vue": "^2.6.14",
-    "vue-hot-reload-api": "^2.3.4",
-    "vue-jest": "^3.0.7",
-    "vue-template-compiler": "^2.6.14"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "vue"
-    ],
-    "transform": {
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.vue$": "vue-jest"
-    }
-  },
-  "staticFiles": {
-    "staticPath": [
-      {
-        "staticPath": "src/static",
-        "staticOutDir": "/"
-      }
-    ]
-  },
-  "files": [
-    "dist/cdn",
-    "src/cdn",
-    "index.js"
-  ],
-  "keywords": [
-    "beercss",
-    "css",
-    "html",
-    "lightweight",
-    "web",
-    "pwa",
-    "material-design",
-    "beer",
-    "responsive",
-    "css-framework"
-  ]
+    "sass": "^1.49.9",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0",
+    "vue-tsc": "^0.29.8"
+  }
 }

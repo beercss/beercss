@@ -134,17 +134,13 @@
         span.helper Helper
 </template>
 
-<script>
-export default {
-  mounted() {
-    ui();
-  },
-  methods: {
-    updateTheme() {
-      let element = document.querySelector("html");
-      element.className =
-        element.className.indexOf("is-dark") != -1 ? "is-light" : "is-dark";
-    },
-  },
-};
+<script setup lang="ts">
+import { onMounted } from 'vue';
+
+const updateTheme = () => {
+  let element = document.querySelector("html");
+  if (element) element.className = element.className.indexOf("is-dark") != -1 ? "is-light" : "is-dark";
+}
+
+onMounted(ui);
 </script>

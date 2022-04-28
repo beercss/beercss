@@ -11,16 +11,16 @@ div
   .large-space
   .card.no-padding.large-margin.medium-width.m.l.page.left.active.medium-shadow
     .large-padding.black.white-text
-      p.bold From {{ from }}
-      p.bold To {{ to }}
-      h5.page.left.active(v-show="!from && !to") Where are you?
-      h5.page.left.active(v-show="from && !to") Where are you going?
-      h5.page.left.active(v-show="from && to") Confirm that ride?
+      p.bold From {{ data.from }}
+      p.bold To {{ data.to }}
+      h5.page.left.active(v-show="!data.from && !data.to") Where are you?
+      h5.page.left.active(v-show="data.from && !data.to") Where are you going?
+      h5.page.left.active(v-show="data.from && data.to") Confirm that ride?
       nav.right-align
         button.none.white-text.large.wave.light(@click="clean()")
           span Cancel
         button.border.white-border.white-text.large.wave.light(
-          v-show="to",
+          v-show="data.to",
           @click="clean()"
         )
           i time_to_leave
@@ -28,13 +28,13 @@ div
     .large-padding
       .field.prefix.round.flat.white.black-text
         i search
-        input(:placeholder="from ? 'Destination' : 'Departure'", @click="go()")
+        input(:placeholder="data.from ? 'Destination' : 'Departure'", @click="go()")
       a.row.no-wrap(@click="go()")
         .col.min
           button.circle.small.flat.no-wave
             i gps_fixed
         .col
-          h6.no-margin {{ street }}
+          h6.no-margin {{ data.street }}
           .link Your current location
       .divider
       a.row.no-wrap(@click="go()")
@@ -43,58 +43,52 @@ div
             i home
         .col
           h6.no-margin Home
-          div {{ street }}
+          div {{ data.street }}
   .modal.bottom.active.s.no-padding
     .padding.black.white-text
-      p.bold(v-show="from") From {{ from }}
-      p.bold(v-show="to") To {{ to }}
-      h5.page.left.active(v-show="!from && !to") Where are you?
-      h5.page.left.active(v-show="from && !to") Where are you going?
-      h5.page.left.active(v-show="from && to") Confirm that ride?
-      nav.right-align(v-show="from || to")
+      p.bold(v-show="data.from") From {{ data.from }}
+      p.bold(v-show="data.to") To {{ data.to }}
+      h5.page.left.active(v-show="!data.from && !data.to") Where are you?
+      h5.page.left.active(v-show="data.from && !data.to") Where are you going?
+      h5.page.left.active(v-show="data.from && data.to") Confirm that ride?
+      nav.right-align(v-show="data.from || data.to")
         button.none.white-text.large(@click="clean()")
           span Cancel
-        button.border.large.white-text.white-border(v-show="to", @click="clean()")
+        button.border.large.white-text.white-border(v-show="data.to", @click="clean()")
           i time_to_leave
           span Confirm
     .large-padding
       .field.prefix.round.flat.white.black-text
         i search
-        input(:placeholder="from ? 'Destination' : 'Departure'", @click="go()")
+        input(:placeholder="data.from ? 'Destination' : 'Departure'", @click="go()")
       a.row.no-wrap(@click="go()")
         .col.min
           button.circle.small.flat.no-wave
             i gps_fixed
         .col
-          h6.no-margin {{ street }}
+          h6.no-margin {{ data.street }}
           .link Your current location
 </template>
 
-<script>
-export default {
-  mounted() {},
-  data() {
-    return {
-      from: null,
-      to: null,
-      street: "Street address, 111",
-    };
-  },
-  methods: {
-    go() {
-      if (!this.from) {
-        this.from = this.street;
-        this.to = null;
-        return;
-      }
+<script setup lang="ts">
+import { onMounted } from "vue";
+import data from "./data";
 
-      this.from = this.street;
-      this.to = this.street;
-    },
-    clean() {
-      this.to = null;
-      this.from = null;
-    },
-  },
-};
+const go = () => {
+  if (!data.value.from) {
+    data.value.from = data.value.street;
+    data.value.to = "";
+    return;
+  }
+
+  data.value.from = data.value.street;
+  data.value.to = data.value.street;
+}
+
+const clean = () => {
+  data.value.to = "";
+  data.value.from = "";
+}
+
+onMounted(ui);
 </script>

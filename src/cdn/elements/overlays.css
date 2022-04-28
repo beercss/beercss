@@ -10,7 +10,7 @@
   background-color: var(--overlay);
   z-index: 100;
   will-change: opacity;
-  transition: var(--speed3) all;
+  transition: var(--speed3) all, 0s background-color;
 }
 
 .menu > .overlay {

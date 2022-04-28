@@ -12,6 +12,7 @@ Use typography to present your design and content as clearly and efficiently as 
 <h5>...</h5>
 <h6>...</h6>
 <b>...</b>
+<p>...</p>
 <...></...>
 ```
 
@@ -20,6 +21,9 @@ Use typography to present your design and content as clearly and efficiently as 
 **texts**
 
 italic, bold, underline, overline, upper, lower, capitalize, link, small-text, medium-text, large-text
+
+**Spaces**
+space, no-space, small-space, medium-space, large-space
 
 ## Example
 
@@ -42,6 +46,17 @@ italic, bold, underline, overline, upper, lower, capitalize, link, small-text, m
 <p class="small-text">small-text</p>
 <p class="medium-text">medium-text</p>
 <p class="large-text">large-text</p>
+```
+
+## Line spacing example
+
+It works only work for `<p>` element.
+
+```html
+<p class="no-space">no-space</p>
+<p class="small-space">small-space</p>
+<p class="medium-space">medium-space</p>
+<p class="large-space">large-space</p>
 ```
 
 ## Go to

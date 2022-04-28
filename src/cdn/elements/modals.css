@@ -16,7 +16,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   will-change: opacity, transform;
-  transition: var(--speed3) all;
+  transition: var(--speed3) all, 0s background-color;
   transform: translate(-50%, -50%);
 }
 

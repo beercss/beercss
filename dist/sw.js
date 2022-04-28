@@ -1,3 +1,0 @@
-self.addEventListener("fetch", () => {
-
-});

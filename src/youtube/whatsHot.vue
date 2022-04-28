@@ -1,9 +1,9 @@
 <template lang="pug">
-.container(v-show="isLoaded")
+.container(v-show="data.isLoaded")
   .page.right.active
     h5 What's hot
     .row
-      .col.s12(v-for="item in itens")
+      .col.s12(v-for="item in data.itens")
         .card.no-padding.flat.transparent
           .row
             .col.s12.m4
@@ -17,9 +17,6 @@
               div Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 </template>
 
-<script>
-import domain from "./domain";
-export default {
-  mixins: [domain],
-};
+<script setup lang="ts">
+import data from "./data";
 </script>

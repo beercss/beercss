@@ -357,13 +357,13 @@ input[type=file] {
 
 /* label */
 .field.label > label {
-  will-change: top, left;
   position: absolute;
   top: 50%;
   left: 16rem;
   font-size: 16rem;
   transform: translateY(-50%);
-  transition: var(--speed2) all;
+  will-change: top, left;
+  transition: var(--speed2) all, 0s background-color;
   z-index: 10;
 }
 
