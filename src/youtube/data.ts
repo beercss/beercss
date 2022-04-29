@@ -35,7 +35,8 @@ const data:IYoutube = {
     { title: "Alok, Zebra, Iro - Ocean", image: "/ocean-001.jpg" },
   ],
   isLoaded: false,
-  url: "/youtube"
+  url: "/youtube",
+  check: false
 };
 
 const dataAsRef:Ref<IYoutube> = ref(data);

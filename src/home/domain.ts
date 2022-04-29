@@ -149,7 +149,7 @@ const updateIcons = () => {
   else i.addClass("outlined");
 }
 
-const updateContainer = (css:string|undefined) => {
+const updateContainer = (css:string|null|undefined=undefined) => {
   $(".container").attr("class", css ? "container " + css : "container");
 }
 
@@ -205,11 +205,11 @@ const formatHtml = (element:any):string => {
   .replace(/\s+(checked|disabled)=""/gi, " $1");
 }
 
-const showSamples = (data: IHome, selector:string, modal:string|null, url:string) => {
+const showSamples = (data: IHome, selector:string, modal:string|null|undefined=undefined, url:string|null|undefined=undefined) => {
   var elements = $(selector);
   data.samples = [];
   data.modalSample = modal || "#modal-samples";
-  data.urlSample = url;
+  data.urlSample = url || "";
 
   for (var i = 0; i < elements.length; i++) {
     var element = $($(elements[i])[0].outerHTML);

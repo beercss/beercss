@@ -3,7 +3,7 @@
   .large-space
   h4
     span Icons
-    a.chip.circle(@click="domain.showSamples(data, '#icons nav', '#modal-icons', null, 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#icons nav', '#modal-icons', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
     i.small home

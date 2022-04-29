@@ -1,6 +1,6 @@
 import { ILayout } from "./interfaces";
 
-const updateTheme = async(data: ILayout, from: any, mode: string | undefined) => {
+const updateTheme = async(data: ILayout, from: any, mode: string|null|undefined=undefined) => {
   if (!from) from = data.theme;
 
   if (!mode) mode = data.theme?.selected;
