@@ -26,5 +26,22 @@
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
     "vue-tsc": "^0.29.8"
-  }
+  },
+  "files": [
+    "dist/cdn",
+    "src/cdn",
+    "index.js"
+  ],
+  "keywords": [
+    "beercss",
+    "css",
+    "html",
+    "lightweight",
+    "web",
+    "pwa",
+    "material-design",
+    "beer",
+    "responsive",
+    "css-framework"
+  ]
 }
