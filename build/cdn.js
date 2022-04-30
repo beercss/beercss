@@ -1,14 +1,13 @@
-import { createServer } from "vite";
-import vue from "@vitejs/plugin-vue";
+import { build } from "vite";
 
 (async () => {
-  const server = await createServer({
-    publicDir: "./src/static",
-    plugins: [vue()],
+  await build({
+    publicDir: "./src/cdn",
     build: {
+      outDir: "./dist/cdn",
       rollupOptions: {
         input: {
-          app: "./index.html"
+          "beer.min": "./src/cdn.ts"
         },
         output: {
           entryFileNames: "[name].js",
@@ -17,14 +16,6 @@ import vue from "@vitejs/plugin-vue";
           manualChunks: undefined
         }
       }
-    },
-    server: {
-      open: '/'
     }
   });
-
-  
-  await server.listen();
-
-  server.printUrls();
 })();

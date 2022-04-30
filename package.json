@@ -5,10 +5,10 @@
   "version": "2.0.26",
   "name": "beercss",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "dev": "node ./build/dev.js",
+    "build": "node ./build/build.js && node ./build/cdn.js"
   },
   "dependencies": {
     "material-dynamic-colors": "^0.0.10",
