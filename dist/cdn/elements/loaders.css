@@ -1,0 +1,148 @@
+.loader {
+	display: inline-block;
+	width: 40rem;
+	height: 40rem;
+	border-radius: 50%;
+	box-sizing: border-box;
+	border: 4rem solid var(--primary);
+	clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+	animation: 1.6s to-loader linear infinite;
+	background: none !important;
+}
+
+.loader.small {
+	width: 24rem;
+	height: 24rem;
+	border-width: 3rem;
+}
+
+.loader.medium {
+	width: 40rem;
+	height: 40rem;
+	border-width: 4rem;
+}
+
+.loader.large {
+	width: 56rem;
+	height: 56rem;
+	border-width: 5rem;
+}
+
+.loader.red {
+	border-color: #f44336 !important;
+}
+
+.loader.pink {
+	border-color: #e91e63 !important;
+}
+
+.loader.purple {
+	border-color: #9c27b0 !important;
+}
+
+.loader.deep-purple {
+	border-color: #673ab7 !important;
+}
+
+.loader.indigo {
+	border-color: #3f51b5 !important;
+}
+
+.loader.blue {
+	border-color: #2196f3 !important;
+}
+
+.loader.light-blue {
+	border-color: #03a9f4 !important;
+}
+
+.loader.cyan {
+	border-color: #00bcd4 !important;
+}
+
+.loader.teal {
+	border-color: #009688 !important;
+}
+
+.loader.green {
+	border-color: #4caf50 !important;
+}
+
+.loader.light-green {
+	border-color: #8bc34a !important;
+}
+
+.loader.lime {
+	border-color: #cddc39 !important;
+}
+
+.loader.yellow {
+	border-color: #ffeb3b !important;
+}
+
+.loader.amber {
+	border-color: #ffc107 !important;
+}
+
+.loader.orange {
+	border-color: #ff9800 !important;
+}
+
+.loader.deep-orange {
+	border-color: #ff5722 !important;
+}
+
+.loader.brown {
+	border-color: #795548 !important;
+}
+
+.loader.blue-grey {
+	border-color: #607d8b !important;
+}
+
+.loader.grey {
+	border-color: #9e9e9e !important;
+}
+
+.loader.black {
+	border-color: #000000 !important;
+}
+
+.loader.white {
+	border-color: #ffffff !important;
+}
+
+@keyframes to-loader {
+	0% {
+	  transform: rotate(0deg);
+	  clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+	}
+	20% {
+	  clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
+	}
+	30% {
+	  clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%);
+	}
+	40% {
+	  clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);    
+	}
+	50% {
+	  clip-path: polygon(50% 50%, 50% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
+	}
+	60% {
+	  clip-path: polygon(50% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
+	}
+	70% {
+	  clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%, 0% 50%);
+	}
+	80% {
+	  clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 50%);
+	}
+	90%{
+	  transform: rotate(360deg);
+	  clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+	}
+	100% {
+	  clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+	}
+}

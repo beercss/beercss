@@ -1,0 +1,110 @@
+.flat {
+  box-shadow: none;
+}
+
+.round {
+  border-radius: 24rem;
+}
+
+.top-round {
+  border-radius: 24rem 24rem 4rem 4rem !important;
+}
+
+.bottom-round {
+  border-radius: 4rem 4rem 24rem 24rem !important;
+}
+
+.left-round {
+  border-radius: 24rem 4rem 4rem 24rem !important;
+}
+
+.right-round {
+  border-radius: 4rem 24rem 24rem 4rem !important;
+}
+
+.top-round.left-round {
+  border-radius: 24rem 24rem 4rem 24rem !important;
+}
+
+.top-round.right-round {
+  border-radius: 24rem 24rem 24rem 4rem !important;
+}
+
+.bottom-round.left-round {
+  border-radius: 24rem 4rem 24rem 24rem !important;
+}
+
+.bottom-round.right-round {
+  border-radius: 4rem 24rem 24rem 24rem !important;
+}
+
+.circle,
+.square,
+.diamond {
+  min-width: 40rem;
+  min-height: 40rem;
+  max-width: 40rem;
+  max-height: 40rem;
+  height: 40rem;
+}
+
+.circle > span,
+.square > span,
+.diamond > span {
+  display: none;
+}
+
+.diamond.small,
+.square.small,
+.circle.small {
+  min-width: 32rem;
+  min-height: 32rem;
+  max-width: 32rem;
+  max-height: 32rem;
+  height: 32rem;
+}
+
+.diamond.large,
+.square.large,
+.circle.large {
+  min-width: 48rem;
+  min-height: 48rem;
+  max-width: 48rem;
+  max-height: 48rem;
+  height: 48rem;
+}
+
+.diamond.extra,
+.square.extra,
+.circle.extra {
+  min-width: 56rem;
+  min-height: 56rem;
+  max-width: 56rem;
+  max-height: 56rem;
+  height: 56rem;
+}
+
+.diamond {
+  transform: rotate(45deg);
+  border-radius: 4rem;
+  padding: 0;
+}
+
+.diamond > i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  margin: 0;
+  padding: 0;
+}
+
+.square.round,
+.circle.round,
+.diamond.round {
+  border-radius: 16rem;
+}
+
+.diamond.round {
+  transform: rotate(45deg);
+}

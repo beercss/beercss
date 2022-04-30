@@ -1,0 +1,40 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  vertical-align: middle;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--on-background);
+  background-color: var(--background);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+label {
+  font-size: 12rem;
+  vertical-align: baseline;
+}
+
+a,
+b,
+i,
+span {
+  vertical-align: bottom;
+}
+
+a,
+button,
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  font-family: inherit;
+  outline: inherit;
+  justify-content: center;
+}

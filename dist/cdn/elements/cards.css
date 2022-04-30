@@ -1,0 +1,52 @@
+.card,
+article {
+  box-shadow: var(--shadow1);
+  background-color: var(--surface-variant);
+  color: var(--on-surface-variant);
+  padding: 16rem;
+  border-radius: 4rem;
+  display: block;
+  transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
+}
+
+.card + .card,
+article + article {
+  margin-top: 16rem;
+}
+
+.row.medium-space > .col > .card + .card,
+.row.medium-space > .col > article + article {
+  margin-top: 24rem;
+}
+
+.row.large-space > .col > .card + .card,
+.row.large-space > .col > article + article {
+  margin-top: 32rem;
+}
+
+.card.small,
+article.small {
+  height: 192rem;
+}
+
+.card.medium,
+article.medium {
+  height: 320rem;
+}
+
+.card.large,
+article.large {
+  height: 512rem;
+}
+
+.card.border,
+article.border {
+  border: 1rem solid var(--outline);
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.card.round,
+article.round {
+  border-radius: 24rem;
+}

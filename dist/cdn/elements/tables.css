@@ -1,0 +1,78 @@
+table {
+  width: 100%;
+  border-spacing: 0;
+  font-size: 14rem;
+  color: var(--on-background);
+  text-align: left;
+}
+
+table td,
+table th {
+  width: 1%;
+  text-align: inherit;
+  padding: 8rem;
+  margin: 0;
+}
+
+table th {
+  font-weight: 500;
+}
+
+table.border td, 
+table.border th {
+  border-bottom: 1rem solid var(--outline);
+}
+
+table.min {
+  width: min-content;
+  min-width: auto;
+  max-width: -webkit-fill-available;
+}
+
+table.no-space td,
+table.no-space th {
+  padding: 0;
+}
+
+table.space td,
+table.space th,
+table.small-space th,
+table.small-space td {
+  padding: 8rem;
+}
+
+table.medium-space td,
+table.medium-space th {
+  padding: 12rem;
+}
+
+table.large-space td,
+table.large-space th {
+  padding: 16rem;
+}
+
+td > .button,
+td > nav > .button,
+td > button,
+td > nav > button,
+td > .none,
+td > nav > .none,
+td > .chip,
+td > nav > .chip {
+  min-height: 24rem;
+  max-height: 24rem;
+  box-sizing: border-box;
+}
+
+td > .circle:not(.tiny, .small, .medium, .large, .extra),
+td > nav > .circle:not(.tiny, .small, .medium, .large, .extra),
+td > .square:not(.tiny, .small, .medium, .large, .extra),
+td > nav > .square:not(.tiny, .small, .medium, .large, .extra),
+td > .diamond:not(.tiny, .small, .medium, .large, .extra),
+td > nav > .diamond:not(.tiny, .small, .medium, .large, .extra) {
+  min-width: 24rem;
+  max-width: 24rem;
+  min-height: 24rem;
+  max-height: 24rem;
+  box-sizing: border-box;
+}

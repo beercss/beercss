@@ -1,0 +1,125 @@
+.tooltip {
+  display: none;
+  background-color: rgba(0,0,0,.9);
+  color: #ffffff;
+  font-size: 12rem;
+  text-align: center;
+  border-radius: 4rem;
+  padding: 8rem;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, -100%);
+  width: auto;
+  white-space: nowrap;
+  line-height: normal;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.tooltip.round {
+  border-radius: 64rem;
+}
+
+.tooltip.border {
+  border: 1rem solid var(--outline);
+}
+
+.tooltip.left {
+  left: 0;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-100%, -50%);
+}
+
+.tooltip.right {
+  right: 0;
+  top: 50%;
+  bottom: auto;
+  left: auto;
+  transform: translate(100%, -50%);
+}
+
+.tooltip.top {
+  top: 0;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, -100%);
+}
+
+.tooltip.bottom {
+  bottom: 0;
+  left: 50%;
+  top: auto;
+  right: auto;
+  transform: translate(-50%, 100%);
+}
+
+.tooltip.small {
+  width: 128rem;
+  white-space: normal;
+}
+
+.tooltip.medium {
+  width: 192rem;
+  white-space: normal;
+}
+
+.tooltip.large {
+  width: 256rem;
+  white-space: normal;
+}
+
+*:hover > .tooltip {
+  display: initial;
+}
+
+.tooltip.margin,
+.tooltip.small-margin,
+.tooltip.medium-margin,
+.tooltip.large-margin {
+  max-width: none;
+  max-height: none;
+}
+
+.tooltip.small-margin {
+  margin: -8rem 0 !important;
+}
+
+.tooltip.margin,
+.tooltip.medium-margin {
+  margin: -16rem 0 !important;
+}
+
+.tooltip.large-margin {
+  margin: -24rem 0 !important;
+}
+
+.tooltip.left.small-margin,
+.tooltip.right.small-margin {
+  margin: 0 -8rem !important;
+}
+
+.tooltip.left.margin,
+.tooltip.left.medium-margin,
+.tooltip.right.margin,
+.tooltip.right.medium-margin {
+  margin: 0 -16rem !important;
+}
+
+.tooltip.left.large-margin,
+.tooltip.right.large-margin {
+  margin: 0 -24rem !important;
+}
+
+.dropdown:active ~ .tooltip,
+button:focus > .dropdown ~ .tooltip,
+.button:focus > .dropdown ~ .tooltip,
+.field > :focus ~ .dropdown ~ .tooltip {
+  display: none;
+}

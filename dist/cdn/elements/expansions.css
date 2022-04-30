@@ -1,0 +1,26 @@
+details[open] > :not(summary) {
+  animation: details-to-open var(--speed3) ease;
+}
+
+summary.none {
+  list-style-type: none;
+} 
+  
+summary {
+  cursor: pointer;
+} 
+  
+summary:focus {
+  outline: none;
+}
+  
+@keyframes details-to-open {
+  0% {
+    opacity: 0; 
+    transform: translateY(-8rem); 
+  }
+  100% {
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}

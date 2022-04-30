@@ -1,0 +1,44 @@
+.shadow {
+  background-color: #00000050 !important;
+  box-shadow: none !important;
+}
+
+.left-shadow {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  background-image: linear-gradient(to right, black, transparent) !important;
+}
+
+.right-shadow {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  background-image: linear-gradient(to left, black, transparent) !important;
+}
+
+.bottom-shadow {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  background-image: linear-gradient(to top, black, transparent) !important;
+}
+
+.top-shadow {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  background-image: linear-gradient(to bottom, black, transparent) !important;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
+
+.small-shadow {
+  box-shadow: var(--shadow1) !important;
+}
+
+.medium-shadow {
+  box-shadow: var(--shadow2) !important;
+}
+
+.large-shadow {
+  box-shadow: var(--shadow3) !important;
+}

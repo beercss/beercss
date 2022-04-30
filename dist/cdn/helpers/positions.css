@@ -1,0 +1,37 @@
+.front {
+  z-index: 10!important;
+}
+
+.back {
+  z-index: -10!important;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.middle.center {
+  transform: translate(-50%, -50%);
+}

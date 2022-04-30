@@ -1,0 +1,196 @@
+.button,
+button {
+  box-sizing: content-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow1);
+  min-height: 40rem;
+  height: 40rem;
+  font-size: 14rem;
+  font-weight: 500;
+  color: var(--on-primary);
+  padding: 0 16rem;
+  background-color: var(--primary);
+  margin: 0 8rem;
+  border-radius: 4rem;
+  transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
+  user-select: none;
+}
+
+.button > :not(.dropdown, .progress, .badge, .tooltip) + :not(.dropdown, .progress, .badge, .tooltip),
+button > :not(.dropdown, .progress, .badge, .tooltip) + :not(.dropdown, .progress, .badge, .tooltip) {
+  margin-left: 4rem;
+}
+
+.button.none,
+button.none {
+  box-shadow: none;
+  width: auto;
+  min-width: auto;
+  height: auto;
+  min-height: auto;
+  color: var(--primary);
+  padding: 0;
+  background-color: transparent;
+  margin: 0 8rem;
+}
+
+.button.small,
+button.small {
+  min-height: 32rem !important;
+  height: 32rem;
+  font-size: 14rem;
+}
+
+.button.medium,
+button.medium {
+  min-height: 40rem !important;
+  height: 40rem;
+}
+
+.button.large,
+button.large {
+  min-height: 48rem !important;
+  height: 48rem;
+}
+
+.button.extra,
+button.extra {
+  min-height: 56rem !important;
+  height: 56rem;
+  font-size: 16rem;
+}
+
+.button.border,
+button.border {
+  border: 1rem solid var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+  box-shadow: none;
+}
+
+.button.round,
+button.round {
+  transform: none;
+  border-radius: 32rem;
+}
+
+.button.top-round,
+button.top-round {
+  border-radius: 32rem 32rem 4rem 4rem !important;
+}
+
+.button.bottom-round,
+button.bottom-round {
+  border-radius: 4rem 4rem 32rem 32rem !important;
+}
+
+.button.left-round,
+button.left-round {
+  border-radius: 32rem 4rem 4rem 32rem !important;
+}
+
+.button.right-round,
+button.right-round {
+  border-radius: 4rem 32rem 32rem 4rem !important;
+}
+
+.button.top-round.left-round,
+button.top-round.left-round {
+  border-radius: 32rem 32rem 4rem 32rem !important;
+}
+
+.button.top-round.right-round,
+button.top-round.right-round {
+  border-radius: 32rem 32rem 32rem 4rem !important;
+}
+
+.button.bottom-round.left-round,
+button.bottom-round.left-round {
+  border-radius: 32rem 4rem 32rem 32rem !important;
+}
+
+.button.bottom-round.right-round,
+button.bottom-round.right-round {
+  border-radius: 4rem 32rem 32rem 32rem !important;
+}
+
+.button.circle,
+button.circle {
+  transform: none;
+  padding: 0;
+  border-radius: 40rem;
+  padding: 0;
+}
+
+.button.square, 
+button.square {
+  transform: none;
+  border-radius: 4rem;
+  padding: 0;
+}
+
+.button.extend,
+button.extend {
+  min-height: 56rem !important;
+  min-width: 56rem !important;
+  padding: 0;
+}
+
+.button.extend > span,
+button.extend > span {
+  display: none;
+}
+
+.button.extend:hover,
+button.extend:hover,
+.button.extend.active,
+button.extend.active {
+  width: auto;
+  max-width: none;  
+  min-width: auto;
+  padding: 0 16rem;
+}
+
+.button.extend:hover > i + span,
+button.extend:hover > i + span,
+.button.extend.active > i + span,
+button.extend.active > i + span {
+  display: inherit;
+  margin-left: 32rem;
+}
+
+.button.extend:hover > img + span,
+button.extend:hover > img + span,
+.button.extend.active > img + span,
+button.extend.active > img + span {
+  display: inherit;
+  margin-left: 48rem;
+}
+
+.button.square:not(.flat, .border),
+.button.circle:not(.flat, .border),
+.button.diamond:not(.flat, .border),
+button.square:not(.flat, .border),
+button.circle:not(.flat, .border),
+button.diamond:not(.flat, .border) {
+  box-shadow: var(--shadow2);
+}
+
+.button[disabled],
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.button[disabled] {
+  pointer-events: none;
+}
+
+.button[disabled]::before,
+button:disabled::before,
+.button[disabled]::after,
+button:disabled::after {
+  display: none;
+}

@@ -1,0 +1,61 @@
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 16rem;
+  white-space: nowrap;
+  border-bottom: 1rem solid var(--outline);
+}
+
+* > .tabs:first-child {
+  margin-top: 0;
+}
+
+.tabs > a {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14rem;
+  font-weight: 500;
+  color: var(--on-background);
+  padding: 0 16rem;
+  text-transform: uppercase;
+  border-bottom: 2rem solid transparent;
+  text-align: center;
+  min-height: 40rem;
+  width: 100%;
+}
+
+.tabs > a > span {
+  margin: 4rem;
+}
+
+.tabs.small > a {
+  min-height: 32rem;
+}
+
+.tabs.medium > a {
+  min-height: 40rem;
+}
+
+.tabs.large > a {
+  min-height: 48rem;
+}
+
+.tabs > a.active {
+  color: var(--primary);
+  border-bottom: 2rem solid var(--primary);
+}
+
+.tabs > a.active > i {
+  color: var(--primary);
+}
+
+.tabs > a > i,
+.tabs > a > img {
+  margin: 0;
+}
+
+.tabs.left-align > a,
+.tabs.center-align > a,
+.tabs.right-align > a {
+  width: auto;
+}

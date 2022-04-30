@@ -1,0 +1,199 @@
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  box-shadow: var(--shadow2);
+  color: var(--on-surface-variant);
+  background-color: var(--surface-variant);
+  padding: 16rem;
+  box-sizing: border-box;
+  z-index: 100;
+  left: 50%;
+  top: 10%;
+  min-width: 320rem;
+  max-width: 100%;
+  max-height: 80%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  will-change: opacity, transform;
+  transition: var(--speed3) all, 0s background-color;
+  transform: translate(-50%, -50%);
+}
+
+.modal.border {
+  border: 1rem solid var(--outline);
+  box-shadow: none;
+}
+
+.modal.round {
+  border-radius: 24rem;
+}
+
+.modal.bottom.round {
+  border-radius: 24rem 24rem 0 0;
+}
+
+.modal.top.round {
+  border-radius: 0 0 24rem 24rem;
+}
+
+.modal.left.round {
+  border-radius: 0 24rem 24rem 0;
+}
+
+.modal.right.round {
+  border-radius: 24rem 0 0 24rem;
+}
+
+.modal.small {
+  width: 25%;
+  height: 25%;
+}
+
+.modal.medium {
+  width: 50%;
+  height: 50%;
+}
+
+.modal.large {
+  width: 75%;
+  height: 75%;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.modal.active.left {
+  transform: translate(0, 0);
+}
+
+.modal.active.right {
+  transform: translate(0, 0);
+}
+
+.modal.active.top {
+  transform: translate(0, 0);
+}
+
+.modal.active.bottom {
+  transform: translate(0, 0);
+}
+
+.modal.top {
+  opacity: 1;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  height: auto;
+  width: 100%;
+  min-width: auto;
+  max-height: 100%;
+  transform: translateY(-100%);
+}
+
+.modal.left {
+  opacity: 1;
+  float: none;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: auto;
+  height: 100%;
+  max-height: 100%;
+  transform: translateX(-100%);
+}
+
+.modal.right {
+  opacity: 1;
+  float: none;
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: auto;
+  width: auto;
+  height: 100%;
+  max-height: 100%;
+  transform: translateX(100%);
+}
+
+.modal.bottom {
+  opacity: 1;
+  top: auto;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  min-width: auto;
+  max-height: 100%;
+  transform: translateY(100%);
+}
+
+.modal.left.small,
+.modal.right.small {
+  width: 320rem;
+}
+
+.modal.left.medium,
+.modal.right.medium {
+  width: 512rem;
+}
+
+.modal.left.large,
+.modal.right.large {
+  width: 704rem;
+}
+
+.modal.top.small,
+.modal.bottom.small {
+  height: 256rem;
+}
+
+.modal.top.medium,
+.modal.bottom.medium {
+  height: 384rem;
+}
+
+.modal.top.large,
+.modal.bottom.large {
+  height: 512rem;
+}
+
+.menu > .modal,
+.menu.left > .modal {
+  z-index: 0;
+  text-align: left;
+  padding: 16rem 16rem 16rem 80rem;
+  overflow-y: auto;
+  background-color: inherit;
+}
+
+.menu.right > .modal {
+  padding: 16rem 80rem 16rem 16rem;
+}
+
+.menu.top > .modal {
+  padding: 80rem 48rem 16rem 48rem;
+}
+
+.menu.bottom > .modal {
+  padding: 16rem 48rem 80rem 48rem;
+}
+
+.modal > a:not(button, .button, .chip):hover,
+.modal > a:not(button, .button, .chip).active {
+  background-color: var(--active);
+}
+
+.modal > a.row {
+  margin: 0 -8rem;
+}
+
+.modal > a:not(button, .button, .chip) {
+  padding: 12rem 0;
+}

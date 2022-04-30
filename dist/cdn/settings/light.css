@@ -1,0 +1,40 @@
+:root,
+.is-light {
+  --primary: #6750A4;
+  --on-primary: #FFFFFF;
+  --primary-container: #EADDFF;
+  --on-primary-container: #21005E;
+  --secondary: #625B71;
+  --on-secondary: #FFFFFF;
+  --secondary-container: #E8DEF8;
+  --on-secondary-container: #1E192B;
+  --tertiary: #7D5260;
+  --on-tertiary: #FFFFFF;
+  --tertiary-container: #FFD8E4;
+  --on-tertiary-container: #370B1E;
+  --error: #B3261E;
+  --on-error: #FFFFFF;
+  --error-container: #F9DEDC;
+  --on-error-container: #370B1E;
+  --background: #FFFBFE;
+  --on-background: #1C1B1F;
+  --surface: #FFFBFE;
+  --on-surface: #1C1B1F;
+  --outline: #79747E;
+  --surface-variant: #E7E0EC;
+  --on-surface-variant: #49454E;
+  --inverse-surface: #313033;
+  --inverse-on-surface: #F4EFF4;
+
+  --overlay: rgba(0,0,0,.5);
+  --active: rgba(0,0,0,.1);
+  --shadow1: 0 2rem 2rem 0 rgba(0, 0, 0, .14), 0 1rem 5rem 0 rgba(0, 0, 0, .12), 0 3rem 1rem -2rem rgba(0, 0, 0, .2);
+  --shadow2: 0 6rem 10rem 0 rgba(0, 0, 0, .14), 0 1rem 18rem 0 rgba(0, 0, 0, .12), 0 3rem 5rem -1rem rgba(0, 0, 0, .3);
+  --shadow3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);
+  --size: 1px;
+  --font: "Roboto", BlinkMacSystemFont, -apple-system, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --speed1: .1s;
+  --speed2: .2s;
+  --speed3: .3s;
+  --speed4: .4s;
+}

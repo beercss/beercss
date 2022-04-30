@@ -1,0 +1,74 @@
+.page,
+.modal:not(.active) .page.active,
+.page:not(.active) .page.active {
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  display: block;
+}
+
+.page.active {
+  opacity: 1;
+  position: inherit;
+  visibility: visible;
+}
+
+.page.top.active {
+  animation: var(--speed4) page-to-bottom ease;
+}
+
+.page.bottom.active  {
+  animation: var(--speed4) page-to-top ease;
+}
+
+.page.left.active {
+  animation: var(--speed4) page-to-right ease;
+}
+
+.page.right.active {
+  animation: var(--speed4) page-to-left ease;
+}
+
+@keyframes page-to-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(-64rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-to-top {
+  from {
+    opacity: 0;
+    transform: translateY(64rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-to-left {
+  from {
+    opacity: 0;
+    transform: translateX(64rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes page-to-right {
+  from {
+    opacity: 0;
+    transform: translateX(-64rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

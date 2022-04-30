@@ -1,0 +1,38 @@
+.small-width {
+  width: 192rem !important;
+  max-width: 100%;
+}
+
+.medium-width {
+  width: 384rem !important;
+  max-width: 100%;
+}
+
+.large-width {
+  width: 576rem !important;
+  max-width: 100%;
+}
+
+.small-height {
+  height: 192rem !important;
+}
+
+.medium-height {
+  height: 384rem !important;
+}
+
+.large-height {
+  height: 576rem !important;
+}
+
+.wrap {
+  display: block;
+}
+
+a.no-wrap {
+  flex-direction: row;
+}
+
+a.wrap {
+  flex-direction: column;
+}

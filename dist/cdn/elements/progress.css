@@ -1,0 +1,29 @@
+.progress {
+  position: absolute;
+  background-color: var(--active);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: inherit;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: var(--speed4) clip-path;
+  clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
+}
+
+.progress.left {
+  clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+}
+
+.progress.right {
+  clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
+}
+  
+.progress.top {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+
+.progress.bottom {
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}

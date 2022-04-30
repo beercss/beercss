@@ -1,0 +1,89 @@
+.dropdown {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  box-shadow: var(--shadow2);
+  background-color: var(--surface);
+  box-sizing: border-box;
+  z-index: 11;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  width: 100%;
+  max-height: 320rem;
+  transform: translateY(100%);
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-size: 14rem;
+  font-weight: normal;
+  text-transform: none;
+  color: var(--on-surface);
+  line-height: normal;
+  text-align: left;
+}
+
+.dropdown.no-wrap {
+  width: auto;
+}
+
+.dropdown.active,
+.dropdown:not([data-ui]):active,
+button:not([data-ui]):focus-within > .dropdown,
+.button:not([data-ui]):focus-within > .dropdown,
+.field > :not([data-ui]):focus-within ~ .dropdown {
+  opacity: 1;
+  visibility: visible;
+  max-width: none;
+  animation: var(--speed1) dropdown-to-bottom;
+}
+
+.dropdown.border {
+  border: 1rem solid var(--outline);
+  box-shadow: none;
+}
+
+.dropdown.round {
+  border-radius: 24rem;
+}
+
+.dropdown.right {
+  left: 0;
+  right: auto;
+}
+
+.dropdown.left {
+  left: auto;
+  right: 0;
+}
+
+.dropdown > a {
+  display: block;
+  padding: 8rem 16rem;
+}
+
+.dropdown > a:hover,
+.dropdown > a:focus,
+.dropdown > a.active {
+  background-color: var(--active);
+}
+
+.dropdown.no-wrap > a {
+  white-space: nowrap;
+}
+
+.dropdown > a.row.no-wrap,
+.dropdown > a.row.no-wrap + a.row.no-wrap {
+  margin: 0 -8rem;
+}
+
+@keyframes dropdown-to-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(75%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+}

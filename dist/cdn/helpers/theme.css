@@ -1,0 +1,127 @@
+.primary {
+  background-color: var(--primary)!important;
+  color: var(--on-primary)!important;
+}
+
+.primary-text {
+  color: var(--primary)!important;
+}
+
+.primary-border {
+  border-color: var(--primary)!important;
+}
+
+.primary-container {
+  background-color: var(--primary-container)!important;
+  color: var(--on-primary-container)!important;
+}
+
+.secondary {
+  background-color: var(--secondary)!important;
+  color: var(--on-secondary)!important;
+}
+
+.secondary-text {
+  color: var(--secondary)!important;
+}
+
+.secondary-border {
+  border-color: var(--secondary)!important;
+}
+
+.secondary-container {
+  background-color: var(--secondary-container)!important;
+  color: var(--on-secondary-container)!important;
+}
+
+.tertiary {
+  background-color: var(--tertiary)!important;
+  color: var(--on-tertiary)!important;
+}
+
+.tertiary-text {
+  color: var(--tertiary)!important;
+}
+
+.tertiary-border {
+  border-color: var(--tertiary)!important;
+}
+
+.tertiary-container {
+  background-color: var(--tertiary-container)!important;
+  color: var(--on-tertiary-container)!important;
+}
+
+.error {
+  background-color: var(--error)!important;
+  color: var(--on-error)!important;
+}
+
+.error-text {
+  color: var(--error)!important;
+}
+
+.error-border {
+  border-color: var(--error)!important;
+}
+
+.error-container {
+  background-color: var(--error-container)!important;
+  color: var(--on-error-container)!important;
+}
+
+.background {
+  background-color: var(--background)!important;
+  color: var(--on-background)!important;
+}
+
+.surface {
+  background-color: var(--surface)!important;
+  color: var(--on-surface)!important;
+}
+
+.surface-variant {
+  background-color: var(--surface-variant)!important;
+  color: var(--on-surface-variant)!important;
+}
+
+.inverse-surface {
+  background-color: var(--inverse-surface); 
+  color: var(--inverse-on-surface);
+}
+
+.black {
+  background-color: #000000 !important;
+}
+
+.black-border {
+  border-color: #000000 !important;
+}
+
+.black-text {
+  color: #000000 !important;
+}
+
+.white {
+  background-color: #ffffff !important;
+}
+
+.white-border {
+  border-color: #ffffff !important;
+}
+
+.white-text {
+  color: #ffffff !important;
+}
+
+.transparent {
+  background-color: transparent !important;
+}
+
+.transparent-border {
+  border-color: transparent !important;
+}
+
+.transparent-text {
+  color: transparent !important;
+}

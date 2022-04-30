@@ -1,0 +1,48 @@
+i {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24rem;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  width: 24rem;
+  margin: 0 auto;
+}
+
+i.outlined {
+  font-family: "Material Icons Outlined";
+}
+
+i.small {
+  font-size: 16rem;
+  width: 16rem;
+}
+
+i.medium {
+  font-size: 24rem;
+  width: 24rem;
+}
+
+i.large {
+  font-size: 32rem;
+  width: 32rem;
+}
+
+i.extra {
+  font-size: 48rem;
+  width: 48rem;
+}
+
+.circle > i {
+  vertical-align: unset;
+}

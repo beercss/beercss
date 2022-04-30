@@ -1,0 +1,221 @@
+img,
+video {
+  border-radius: inherit;
+  margin: 0 auto;
+}
+
+img.right,
+video.right,
+i.right {
+  position: absolute;
+  right: 0;
+}
+
+img.left,
+video.left,
+i.left {
+  position: absolute;
+  left: 0;
+}
+
+img.small,
+img.medium,
+img.large,
+img.tiny,
+img.extra,
+img.border,
+img.round,
+img.circle,
+img.responsive,
+video.small,
+video.medium,
+video.large,
+video.tiny,
+video.extra,
+video.border,
+video.round,
+video.circle,
+video.responsive {
+  object-fit: cover;
+  object-position: center;
+  transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
+}
+
+img.border,
+video.border {
+  border: 1rem solid var(--outline);
+}
+
+img.round,
+video.round {
+  border-radius: 8rem !important;
+  height: 48rem !important;
+  width: 48rem !important;
+}
+
+img.circle,
+video.circle {
+  border-radius: 50% !important;
+  height: 48rem !important;
+  width: 48rem !important;
+}
+
+img.tiny,
+video.tiny {
+  height: 32rem !important;
+  width: 32rem !important;
+}
+
+img.small,
+video.small {
+  height: 40rem !important;
+  width: 40rem !important;
+}
+
+img.medium,
+video.medium {
+  height: 48rem !important;
+  width: 48rem !important;
+}
+
+img.large,
+video.large {
+  height: 56rem !important;
+  width: 56rem !important;
+}
+
+img.extra,
+video.extra {
+  height: 64rem !important;
+  width: 64rem !important;
+}
+
+img.responsive,
+video.responsive {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+button > img.responsive,
+.button > img.responsive,
+.chip > img.responsive {
+  width: 40rem!important;
+  border: 2rem solid transparent;
+  box-sizing: border-box;
+}
+
+button.small > img.responsive,
+.button.small > img.responsive,
+.chip.small > img.responsive {
+  width: 32rem!important;
+}
+
+button.large > img.responsive,
+.button.large > img.responsive,
+.chip.large > img.responsive {
+  width: 48rem!important;
+}
+
+button.extra > img.responsive,
+.button.extra > img.responsive,
+.chip.extra > img.responsive {
+  width: 56rem!important;
+}
+
+img.responsive.tiny,
+video.responsive.tiny {
+  width: 100% !important;
+  height: 64rem !important;
+}
+
+img.responsive.small,
+video.responsive.small {
+  width: 100% !important;
+  height: 128rem !important;
+}
+
+img.responsive.medium,
+video.responsive.medium {
+  width: 100% !important;
+  height: 192rem !important;
+}
+
+img.responsive.large,
+video.responsive.large {
+  width: 100% !important;
+  height: 256rem !important;
+}
+
+img.responsive.extra,
+video.responsive.extra {
+  width: 100% !important;
+  height: 320rem !important;
+}
+
+img.empty-state,
+video.empty-state {
+  max-width: 100%;
+  width: 384rem;
+}
+
+button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+.button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+.chip > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+.field > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+.tabs > a > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+td img:not(.responsive, .tiny, .small, .medium, .large, .extra) {
+  min-width: 24rem!important;
+  max-width: 24rem!important;
+  min-height: 24rem!important;
+  max-height: 24rem!important;
+}
+
+.button.diamond > img,
+button.diamond > img,
+.button.circle > img,
+button.circle > img,
+.button.square > img,
+button.square > img {
+  margin: 0!important;
+  padding: 0!important;
+}
+
+.button > img.responsive:first-child, 
+button > img.responsive:first-child,
+.chip > img.responsive:first-child {
+  margin-left: -16rem;
+}
+
+.button > img.responsive:last-child, 
+button > img.responsive:last-child,
+.chip > img.responsive:last-child {
+  margin-right: -16rem;
+}
+
+.button.extend > i:first-child,
+.button.extend > img:first-child,
+button.extend > i:first-child,
+button.extend > img:first-child {
+  position: absolute;
+  left: 16rem;
+}
+
+.button.extend > i:last-child,
+.button.extend > img:last-child,
+button.extend > i:last-child,
+button.extend > img:last-child {
+  position: absolute;
+  right: 16rem;
+}
+
+.button.extend > img.responsive:first-child,
+button.extend > img.responsive:first-child {
+  position: absolute;
+  left: 0;
+}
+
+.button.extend > img.responsive:last-child,
+button.extend > img.responsive:last-child {
+  position: absolute;
+  right: 0;
+}

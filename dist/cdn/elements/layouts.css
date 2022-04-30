@@ -1,0 +1,113 @@
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute,
+.fixed {
+  border-radius: inherit;
+  float: none;
+}
+
+.absolute.round,
+.fixed.round,
+header.round,
+footer.round {
+  border-radius: 24rem;
+}
+
+.absolute.border,
+.fixed.border,
+header.border,
+footer.border {
+  border: 1rem solid var(--outline);
+}
+
+.absolute.left.right,
+.fixed.left.right {
+  width: auto;
+}
+
+.absolute.left.right.small,
+.fixed.left.right.small {
+  height: 320rem;
+}
+
+.absolute.left.right.medium,
+.fixed.left.right.medium {
+  height: 448rem;
+}
+
+.absolute.left.right.large,
+.fixed.left.right.large {
+  height: 704rem;
+}
+
+.absolute.top.bottom.small,
+.fixed.top.bottom.small {
+  width: 320rem;
+}
+
+.absolute.top.bottom.medium,
+.fixed.top.bottom.medium {
+  width: 448rem;
+}
+
+.absolute.top.bottom.large,
+.fixed.top.bottom.large {
+  width: 704rem;
+}
+
+header.fixed,
+footer.fixed {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  background-color: inherit;
+  padding: inherit;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.modal > header.fixed,
+.card > header.fixed,
+article > header.fixed,
+.padding > header.fixed,
+.medium-padding > header.fixed {
+  transform: translateY(-16rem);
+}
+
+.modal > footer.fixed,
+.card > footer.fixed,
+article > footer.fixed,
+.padding > footer.fixed,
+.medium-padding > footer.fixed {
+  transform: translateY(16rem);
+}
+
+.no-padding > header.fixed,
+.no-padding > footer.fixed {
+  transform: none;
+}
+
+.small-padding > header.fixed {
+  transform: translateY(-8rem);
+}
+
+.small-padding > footer.fixed {
+  transform: translateY(8rem);
+}
+
+.large-padding > header.fixed {
+  transform: translateY(-24rem);
+}
+
+.large-padding > footer.fixed {
+  transform: translateY(24rem);
+}

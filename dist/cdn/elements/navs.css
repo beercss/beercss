@@ -1,0 +1,31 @@
+nav {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0 -8rem;
+}
+
+*:not(.progress) + nav {
+  margin-top: 8rem;
+}
+
+nav > :not(.dropdown, .badge) {
+  margin: 0 8rem;
+}
+
+nav.wrap {
+  display: block;
+  white-space: normal;
+}
+
+*:not(.progress) + nav.wrap {
+  margin: 8rem -8rem;
+}
+
+nav.wrap > :not(.dropdown, .badge) {
+  margin: 8rem;
+}
+
+.field.label > nav {
+  margin-top: 20rem;
+}

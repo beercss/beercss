@@ -1,0 +1,107 @@
+html {
+  font-size: var(--size);
+}
+
+body {
+  font-family: var(--font);
+  font-size: 14rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  margin-bottom: 8rem;
+  display: flex;
+  align-items: center;
+}
+
+*:not(.progress) + h1,
+*:not(.progress) + h2,
+*:not(.progress) + h3,
+*:not(.progress) + h4,
+*:not(.progress) + h5,
+*:not(.progress) + h6 {
+  margin-top: 8rem;
+}
+
+h1 {
+  font-size: 96rem;
+}
+
+h2 {
+  font-size: 60rem;
+}
+
+h3 {
+  font-size: 48rem;
+}
+
+h4 {
+  font-size: 34rem;
+}
+
+h5 {
+  font-size: 24rem;
+}
+
+h6 {
+  font-size: 20rem;
+}
+
+.link {
+  color: var(--primary);
+}
+
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.small-text {
+  font-size: 12rem;
+}
+
+.medium-text {
+  font-size: 14rem;
+}
+
+.large-text {
+  font-size: 16rem;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.lower {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.overline {
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.italic {
+  font-style: italic;
+}
+
+p {
+  margin: 8rem 0;
+}

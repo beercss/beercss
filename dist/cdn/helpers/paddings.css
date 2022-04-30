@@ -1,0 +1,16 @@
+.no-padding {
+    padding: 0 !important;
+}
+
+.small-padding {
+  padding: 8rem !important;
+}
+
+.medium-padding,
+.padding {
+  padding: 16rem !important;
+}
+
+.large-padding {
+  padding: 24rem !important;
+}

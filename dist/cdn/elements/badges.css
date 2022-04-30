@@ -1,0 +1,123 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 10rem;
+  text-transform: none;
+  z-index: 1;
+  padding: 0 6rem;
+  background-color: var(--error);
+  color: var(--on-error);
+  top: 0;
+  left: auto;
+  bottom: auto;
+  right: 0;
+  transform: translate(50%, -100%);
+  width: 16rem;
+  height: 16rem;
+}
+
+.badge.none {
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  transform: none;
+  position: relative;
+  margin: 0 2rem;
+}
+
+.badge.top {
+  top: 0;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, -100%);
+}
+
+.badge.bottom {
+  top: auto;
+  left: 50%;
+  bottom: 0;
+  right: auto;
+  transform: translate(-50%, 100%);
+}
+
+.badge.left {
+  top: 50%;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  transform: translate(-100%, -50%);
+}
+
+.badge.right {
+  top: 50%;
+  left: auto;
+  bottom: auto;
+  right: 0;
+  transform: translate(100%, -50%);
+}
+
+.badge.top.left {
+  top: 0;
+  left: 0;
+  bottom: auto;
+  right: auto;
+  transform: translate(-50%, -100%);
+}
+
+.badge.top.right {
+  top: 0;
+  left: auto;
+  bottom: auto;
+  right: 0;
+  transform: translate(50%, -100%);
+}
+
+.badge.bottom.left {
+  top: auto;
+  left: 0;
+  bottom: 0;
+  right: auto;
+  transform: translate(-50%, 100%);
+}
+
+.badge.bottom.right {
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  transform: translate(50%, 100%);
+}
+
+.badge.border {
+  border: 1rem solid var(--error);
+  background-color: transparent;
+  color:var(--error);
+}
+
+.badge.round {
+  border-radius: 8rem;
+}
+
+.badge.circle,
+.badge.square {
+  padding: 0;
+  text-align: center;
+  width: 16rem;
+  height: 16rem;
+  min-width: auto;
+  min-height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.badge.circle {
+  border-radius: 50%;
+}
+
+.badge.square {
+  border-radius: 0;
+}

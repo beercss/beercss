@@ -1,0 +1,217 @@
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 0;
+  position: fixed;
+  box-shadow: var(--shadow2);
+  color: var(--on-surface-variant);
+  background-color: var(--surface-variant);
+  transform: none;
+  box-sizing: border-box;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+.menu.left,
+.menu.right {
+  width: 72rem;
+}
+
+.menu.top,
+.menu.bottom {
+  height: 64rem;
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+}
+
+.menu.border {
+  box-shadow: none;
+  border: 1rem solid var(--outline);
+}
+
+.menu.left.border {
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+.menu.right.border {
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+.menu.top.border {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
+
+.menu.bottom.border {
+  border-bottom: none;
+  border-right: none;
+  border-left: none;
+}
+
+.menu.active {
+  box-shadow: none;
+}
+
+.menu.top {
+  bottom: auto;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.menu.left {
+  right: auto;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.menu.right {
+  left: auto;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.menu.bottom {
+  top: auto;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.menu.left-align,
+.menu.top-align {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.menu.right-align,
+.menu.bottom-align {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu.center-align,
+.menu.middle-align {
+  align-items: center;
+  justify-content: center;
+}
+
+.menu > button,
+.menu > .button,
+.menu > .chip,
+.menu > img,
+.menu > video {
+  z-index: 1;
+}
+
+.menu > a:not(button, .button, .chip) {
+  border: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 12rem;
+  padding: 0;
+  margin: 4rem;
+  text-decoration: none;
+  text-align: center;
+  z-index: 1;
+  width: 56rem;
+  height: auto;
+  min-height: 56rem;
+}
+
+.menu.no-space:not(.left, .right) > a:not(button, .button, .chip) {
+  margin: 0;
+}
+
+.menu:not(.left, .right) > a:not(button, .button, .chip),
+.menu.small-space:not(.left, .right) > a:not(button, .button, .chip) {
+  margin: 0 8rem;
+}
+
+.menu.medium-space:not(.left, .right) > a:not(button, .button, .chip) {
+  margin: 0 12rem;
+}
+
+.menu.large-space:not(.left, .right) > a:not(button, .button, .chip) {
+  margin: 0 16rem;
+}
+
+.menu.no-space:not(.top, .bottom) > a:not(button, .button, .chip) {
+  margin: 0;
+}
+
+.menu:not(.top, .bottom) > a:not(button, .button, .chip),
+.menu.small-space:not(.top, .bottom) > a:not(button, .button, .chip) {
+  margin: 4rem 0;
+}
+
+.menu.medium-space:not(.top, .bottom) > a:not(button, .button, .chip) {
+  margin: 8rem 0;
+}
+
+.menu.large-space:not(.top, .bottom) > a:not(button, .button, .chip) {
+  margin: 12rem 0;
+}
+
+.menu > a:not(button, .button, .chip) > i {
+  margin-bottom: 4rem;
+  padding: 4rem;
+  border-radius: 32rem;
+  transition: var(--speed1) padding linear;
+}
+
+.menu > a:not(button, .button, .chip):hover > i,
+.menu > a:not(button, .button, .chip):focus > i,
+.menu > a:not(button, .button, .chip).active > i {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  padding: 4rem 16rem;
+}
+
+.menu > .row {
+  z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu.bottom {
+    justify-content: space-around;
+  }
+  .menu.top {
+    justify-content: space-around;
+  }
+
+  .menu.top > button,
+  .menu.top > .button,
+  .menu.top > .chip,
+  .menu.top > img,
+  .menu.top > video,
+  .menu.bottom > button,
+  .menu.bottom > .button,
+  .menu.bottom > .chip,
+  .menu.bottom > img,
+  .menu.bottom > video {
+    margin: 0;
+  }
+}

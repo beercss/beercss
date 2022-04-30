@@ -1,0 +1,34 @@
+.divider,
+.small-divider {
+  border-bottom: 1rem solid var(--outline);
+  display: block;
+  margin: 8rem 0;
+}
+
+.medium-divider {
+  border-bottom: 1rem solid var(--outline);
+  display: block;
+  margin: 16rem 0;
+}
+
+.large-divider {
+  border-bottom: 1rem solid var(--outline);
+  display: block;
+  margin: 24rem 0;
+}
+
+.row.divider,
+.row.small-divider {
+  margin: 0 -8rem !important;
+  padding: 8rem 0;
+}
+
+.row.medium-divider {
+  margin: 0 -8rem !important;
+  padding: 16rem 0;
+}
+
+.row.large-divider {
+  margin: 0 -8rem !important;
+  padding: 24rem 0;
+}

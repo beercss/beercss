@@ -1,0 +1,29 @@
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--on-background);
+  background-color: var(--overlay);
+  z-index: 100;
+  will-change: opacity;
+  transition: var(--speed3) all, 0s background-color;
+}
+
+.menu > .overlay {
+  z-index: 0;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay.active.top-align,
+.overlay.active.middle-align,
+.overlay.active.bottom-align {
+  display: flex;
+}

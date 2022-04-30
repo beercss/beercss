@@ -1,0 +1,16 @@
+.no-margin {
+  margin: 0 !important;
+}
+
+.small-margin {
+  margin: 8rem !important;
+}
+
+.medium-margin,
+.margin {
+  margin: 16rem !important;
+}
+
+.large-margin {
+  margin: 24rem !important;
+}

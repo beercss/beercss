@@ -1,0 +1,193 @@
+/* checkbox, radio and switch */
+.checkbox,
+.radio,
+.switch {
+  width: auto;
+  height: auto;
+  line-height: normal;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.checkbox > *,
+.radio > *,
+.switch > * {
+  margin: 0;
+  padding: 0;
+}
+
+.checkbox > input,
+.radio > input {
+  width: 24rem;
+  height: 24rem;
+  opacity: 0;
+}
+
+.checkbox > span,
+.radio > span,
+.switch > span {
+  display: inline-flex;
+  align-items: center;
+  color: var(--on-background);
+  font-size: 14rem;
+}
+
+.checkbox > span,
+.radio > span {
+  padding-left: 4rem;
+}
+
+.checkbox > input + span::before,
+.radio > input + span::before {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24rem;
+  line-height: inherit;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  width: 24rem;
+  height: 24rem;
+  margin: 0 auto;
+  padding: 0;
+  outline: none;
+  color: var(--primary);
+  position: absolute;
+  left: -24rem;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.checkbox > input + span::before {
+  content: "check_box_outline_blank";
+}
+
+.radio > input + span::before {
+  content: "radio_button_unchecked";
+}
+
+.checkbox:focus > input:not([disabled]) + span::before,
+.checkbox:hover > input:not([disabled]) + span::before,
+.checkbox > input:not([disabled]):focus + span::before,
+.checkbox > input:not([disabled]):hover + span::before,
+.radio:focus > input:not([disabled]) + span::before,
+.radio:hover > input:not([disabled]) + span::before,
+.radio > input:not([disabled]):focus + span::before,
+.radio > input:not([disabled]):hover + span::before {
+  background-color: var(--active);
+  box-shadow: 0 0 0 8rem var(--active);
+  animation: var(--speed1) to-checked ease-out;
+}
+
+.checkbox > input:checked + span::before {
+  color: var(--primary);
+  content: "check_box";
+}
+
+.radio > input:checked + span::before {
+  color: var(--primary);
+  content: "radio_button_checked";
+}
+
+.checkbox + .checkbox,
+.radio + .radio,
+.switch + .switch {
+  margin-left: 8rem;
+}
+
+.field > .checkbox,
+.field > .radio,
+.field > .switch {
+  margin: 0 12rem 0 4rem
+}
+
+.field > nav > .checkbox,
+.field > nav > .radio,
+.field > nav > .switch {
+  margin: 0 4rem 0 12rem;
+}
+
+.checkbox > span:empty,
+.radio > span:empty,
+.switch > span:empty {
+  padding: 0;
+}
+
+.switch > input {
+  width: 40rem;
+  height: 24rem;
+  opacity: 0;
+}
+
+.switch > input + span::before {
+  content: "";
+  position:absolute;
+  left: 0;
+  top: 50%;
+  background-color: var(--on-background);
+  opacity: .6;
+  width: 32rem;
+  height: 14rem;
+  border-radius: 8rem;
+  animation: none;
+  transform: translate(-40rem, -50%);
+}
+
+.switch > input:checked + span::before {
+  background-color: var(--primary);
+}
+
+.switch > input + span::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 20rem;
+  height: 20rem;
+  background-color: #ffffff;
+  box-shadow: var(--shadow1);
+  left: 0;
+  top: 50%;
+  transition: var(--speed1) transform, var(--speed1) background-color;
+  transform: translate(-44rem, -50%);
+}
+
+.switch > input:checked + span::after {
+  background-color: var(--primary);
+  transform: translate(-24rem, -50%);
+}
+
+.switch:focus > input:not([disabled]) + span::after,
+.switch:hover > input:not([disabled]) + span::after,
+.switch > input:not([disabled]):focus + span::after,
+.switch > input:not([disabled]):hover + span::after {
+  box-shadow: 0 0 0 8rem var(--active);
+  animation: var(--speed1) to-checked ease-out;
+}
+
+.checkbox > input:disabled + span,
+.radio > input:disabled + span,
+.switch > input:disabled + span {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+@keyframes to-checked {
+  from {
+    box-shadow: 0 0 0 0 var(--active);
+  }
+  to {
+    box-shadow: 0 0 0 8rem var(--active);
+  }
+}

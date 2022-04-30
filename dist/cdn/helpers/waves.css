@@ -1,0 +1,72 @@
+.wave::after,
+.wave.light::after,
+.chip::after,
+.button::after,
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-image: radial-gradient(circle, rgba(255,255,255,.4) 1%, transparent 1%);
+  opacity: 0;
+  transition: none;
+  will-change: background-size;
+}
+
+.wave.dark::after,
+.chip.border::after,
+.button.none::after,
+button.none::after,
+.button.border::after,
+button.border::after {
+  background-image: radial-gradient(circle, rgba(150,150,150,.2) 1%, transparent 1%);
+}
+
+.wave.none::after,
+.button.none::after,
+button.none::after {
+  top: 0;
+  left: -4rem;
+  padding: 0 4rem;
+}
+
+.wave.none:not(.small, .medium, .large, .extra)::after,
+.button.none:not(.small, .medium, .large, .extra)::after,
+button.none:not(.small, .medium, .large, .extra)::after {
+  top: -4rem;
+  left: -4rem;
+  padding: 4rem;
+}
+
+.wave:hover::after,
+.chip:hover::after,
+.button:hover::after,
+button:hover::after,
+.wave:focus::after,
+.chip:focus::after,
+.button:focus::after,
+button:focus::after {
+  background-size: 15000%;
+  opacity: 1;
+  transition: var(--speed2) background-size linear;
+}
+
+.wave:active::after,
+.chip:active::after,
+.button:active::after,
+button:active::after {
+  background-size: 5000%;
+  opacity: 0;
+  transition: none;
+}
+
+.no-wave::after,
+.no-wave:hover::after, 
+.no-wave:active::after{
+  display: none;
+}

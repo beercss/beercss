@@ -1,0 +1,464 @@
+.field {
+  height: 48rem;
+  margin-bottom: 32rem;
+  border: none!important;
+}
+
+*:not(.field) + .field,
+.field + *:not(.field) {
+  margin-top: 16rem;
+}
+
+.row > .col > .field:last-child {
+  margin-bottom: 16rem;
+}
+
+.row.no-space > .col > .field:not(:last-child) {
+  margin-bottom: 16rem;
+}
+
+.row.medium-space > .col > .field:not(:last-child) {
+  margin-bottom: 40rem;
+}
+
+.row.large-space > .col > .field:not(:last-child) {
+  margin-bottom: 48rem;
+}
+
+.field.small {
+  height: 40rem;
+}
+
+.field.medium {
+  height: 48rem;
+}
+
+.field.large {
+  height: 56rem;
+}
+
+.field.extra {
+  height: 64rem;
+}
+
+.field::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background-color: inherit;
+}
+
+.field.fill::before {
+  background-color: var(--surface-variant);
+  color: var(--on-surface-variant);
+}
+
+/* icon */
+.field > i,
+.field > img {
+  position: absolute;
+  top: 50%;
+  left: auto;
+  right: 16rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 0;
+}
+
+.field.border > i,
+.field.fill > i,
+.field.round > i,
+.field.border > img,
+.field.fill > img,
+.field.round > img {
+  left: auto;
+  right: 16rem;
+}
+
+.field > i:first-child,
+.field > img:first-child {
+  left: 16rem;
+  right: auto;
+}
+
+.field.border > i:first-child,
+.field.fill > i:first-child,
+.field.round > i:first-child,
+.field.border > img:first-child,
+.field.fill > img:first-child,
+.field.round > img:first-child {
+  left: 16rem;
+  right: auto;
+}
+
+.field.invalid > i {
+  color: var(--error)!important;
+}
+
+/* input, textarea and select */
+.field > select,
+input[type^=date],
+input[type^=time] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+input[type^=date]::-webkit-inner-spin-button,
+input[type^=date]::-webkit-calendar-picker-indicator,
+input[type^=time]::-webkit-inner-spin-button,
+input[type^=time]::-webkit-calendar-picker-indicator {
+  opacity: 0;   
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+input[type=file] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.field > input,
+.field > textarea,
+.field > select {
+  border: 1rem solid transparent;
+  padding: 0 15rem;
+  font-family: inherit;
+  font-size: 16rem;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  z-index: 1;
+  background: none;
+  box-sizing: border-box;
+  resize: none;
+  border-radius: inherit;
+}
+
+.field > input:focus,
+.field > textarea:focus,
+.field > select:focus {
+  border: 2rem solid transparent;
+  padding: 0 14rem;
+}
+
+.field.border > input,
+.field.border > textarea,
+.field.border > select {
+  border-color: var(--outline);
+  box-shadow: none!important;
+}
+
+.field.border > input:focus,
+.field.border > textarea:focus,
+.field.border > select:focus {
+  border-color: var(--primary);
+}
+
+.field.round > input,
+.field.round > textarea,
+.field.round > select {
+  box-shadow: var(--shadow1);
+  padding-left: 23rem;
+  padding-right: 23rem;
+}
+
+.field.round > input:focus,
+.field.round > textarea:focus,
+.field.round > select:focus {
+  padding-left: 22rem;
+  padding-right: 22rem;
+}
+
+.field.prefix > input,
+.field.prefix > textarea,
+.field.prefix > select {
+  padding-left: 47rem;
+}
+
+.field.prefix > input:focus,
+.field.prefix > textarea:focus,
+.field.prefix > select:focus {
+  padding-left: 46rem;
+}
+
+.field.suffix > input,
+.field.suffix > textarea,
+.field.suffix > select {
+  padding-right: 47rem;
+}
+
+.field.suffix > input:focus,
+.field.suffix > textarea:focus,
+.field.suffix > select:focus {
+  padding-right: 46rem;
+}
+
+.field:not(.border, .flat, .round) > input,
+.field:not(.border, .flat, .round) > textarea,
+.field:not(.border, .flat, .round) > select {
+  border-bottom-color: var(--outline);
+}
+
+.field:not(.border, .flat, .round) > input:focus,
+.field:not(.border, .flat, .round) > textarea:focus,
+.field:not(.border, .flat, .round) > select:focus {
+  border-bottom-color: var(--primary);
+}
+
+.field {
+  border-radius: 8rem 8rem 0 0;
+}
+
+.field.border {
+  border-radius: 8rem;
+}
+
+.field.round {
+  border-radius: 32rem;
+}
+
+.field.round.textarea {
+  border-radius: 24rem;
+}
+
+.field.fill > input,
+.field.fill > textarea,
+.field.fill > select {
+  box-shadow: none;
+}
+
+.field.flat > input,
+.field.flat > textarea,
+.field.flat > select {
+  border-color: transparent!important;
+  box-shadow: none!important;
+}
+
+.field.flat > input:focus,
+.field.flat > textarea:focus,
+.field.flat > select:focus {
+  box-shadow: var(--shadow1)!important;
+}
+
+.field.invalid:not(.border, .round, .flat) > input,
+.field.invalid:not(.border, .round, .flat) > textarea,
+.field.invalid:not(.border, .round, .flat) > select,
+.field.invalid:not(.border, .round, .flat) > input:focus,
+.field.invalid:not(.border, .round, .flat) > textarea:focus,
+.field.invalid:not(.border, .round, .flat) > select:focus {
+  border-bottom-color: var(--error);
+}
+
+.field.invalid.border > input,
+.field.invalid.border > textarea,
+.field.invalid.border > select,
+.field.invalid.border > input:focus,
+.field.invalid.border > textarea:focus,
+.field.invalid.border > select:focus {
+  border-color: var(--error);
+}
+
+.field > :disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.field.small.textarea {
+  height: 72rem;
+}
+
+.field.textarea,
+.field.medium.textarea {
+  height: 88rem;
+}
+
+.field.large.textarea {
+  height: 104rem;
+}
+
+.field.extra.textarea {
+  height: 120rem;
+}
+
+.field > select > option {
+  background-color: var(--surface);
+  color: var(--on-surface);
+}
+
+.field.label > input,
+.field.label > select {
+  padding-top: 16rem;
+}
+
+.field.label.border:not(.fill) > input,
+.field.label.border:not(.fill) > select {
+  padding-top: 0;
+}
+
+.field.label.small > textarea {
+  padding-top: 18rem;
+}
+
+.field.label > textarea,
+.field.label.medium > textarea {
+  padding-top: 22rem;
+}
+
+.field.label.large > textarea {
+  padding-top: 26rem;
+}
+
+.field.label.extra > textarea {
+  padding-top: 30rem;
+}
+
+.field.small:not(.label) > textarea,
+.field.small.border:not(.fill) > textarea {
+  padding-top: 10rem;
+}
+
+.field:not(.label) > textarea,
+.field.border:not(.fill) > textarea,
+.field.medium:not(.label) > textarea,
+.field.medium.border:not(.fill) > textarea {
+  padding-top: 14rem;
+}
+
+.field.large:not(.label) > textarea,
+.field.large.border:not(.fill) > textarea {
+  padding-top: 18rem;
+}
+
+.field.extra:not(.label) > textarea,
+.field.extra.border:not(.fill) > textarea {
+  padding-top: 22rem;
+}
+
+/* label */
+.field.label > label {
+  position: absolute;
+  top: 50%;
+  left: 16rem;
+  font-size: 16rem;
+  transform: translateY(-50%);
+  will-change: top, left;
+  transition: var(--speed2) all, 0s background-color;
+  z-index: 10;
+}
+
+.field.label.textarea.small > label {
+  top: 20rem;
+}
+
+.field.label.textarea > label,
+.field.label.textarea.medium > label {
+  top: 24rem;
+}
+
+.field.label.textarea.large > label {
+  top: 28rem;
+}
+
+.field.label.textarea.extra > label {
+  top: 32rem;
+}
+
+.field.label.round > label {
+  left: 24rem;
+}
+
+.field.label.prefix > label {
+  left: 48rem;
+}
+
+.field.label > label.active,
+.field.label > [placeholder]:focus ~ label,
+.field.label > [placeholder]:not(:placeholder-shown) ~ label {
+  font-size: 12rem;
+  transform: translateY(-120%);
+}
+
+.field.label.border:not(.fill) > label.active,
+.field.label.border:not(.fill) > [placeholder]:focus ~ label,
+.field.label.border:not(.fill) > [placeholder]:not(:placeholder-shown) ~ label {
+  font-size: 12rem;
+  top: 0%;
+  left: 16rem;
+  transform: translateY(-50%);
+}
+
+.field.label.border.round:not(.fill) > label.active,
+.field.label.border.round:not(.fill) > [placeholder]:focus ~ label,
+.field.label.border.round:not(.fill) > [placeholder]:not(:placeholder-shown) ~ label {
+  left: 24rem;
+}
+
+.field.label > :focus ~ label {
+  color: var(--primary);
+}
+
+.field.invalid > label {
+  color: var(--error)!important;
+}
+
+.field > label.required:after,
+.field.required > label:after {
+  content: " * ";
+}
+
+/* helper */
+.field > .helper,
+.field > .error {
+  position: absolute;
+  left: 16rem;
+  bottom: 0;
+  transform: translateY(100%);
+  font-size: 12rem;
+  background: none!important;
+  padding-top: 2rem;
+}
+
+a.helper {
+  color: var(--primary);
+}
+
+.field > .error {
+  color: var(--error)!important;
+}
+
+.field.round > .helper,
+.field.round > .error {
+  left: 24rem;
+}
+
+.field.invalid > .helper {
+  display: none;
+}
+
+table td > .field {
+  max-height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
