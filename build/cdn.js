@@ -2,7 +2,6 @@ import { build } from "vite";
 
 (async () => {
   await build({
-    publicDir: "./src/cdn",
     build: {
       outDir: "./dist/cdn",
       rollupOptions: {
