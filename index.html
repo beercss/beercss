@@ -20,7 +20,9 @@
   <div id="app"></div>
   <script type="module" src="/src/dev.ts"></script>
   <script>
-    page.redirect(window.location.pathname);
+    window.addEventListener("load", () => {
+      page.redirect(window.location.pathname);
+    })
   </script>
 </body>
 
