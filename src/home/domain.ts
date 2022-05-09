@@ -76,9 +76,9 @@ const appBarSamples = () => {
 }
 
 const layoutSamples = () => {
-  $("#layouts input").on("click", function (self:any) {
-    var id = $(self).attr("id");
-    var checked = $(self).is(":checked");
+  $("#layouts input").on("click", function () {
+    var id = $(this).attr("id");
+    var checked = $(this).is(":checked");
     var positions = ["left", "right", "center", "top", "bottom", "middle"];
     var alignments = [
       "left-align",
