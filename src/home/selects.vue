@@ -108,6 +108,27 @@
         label.active Label
         img.circle(:src="'/favicon.png'")
         span.error Error text
+    .col.s12.l4
+      .field.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        a.loader
+    .col.s12.l4
+      .field.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        a.loader
+    .col.s12.l4
+      .field.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        a.loader
 </template>
 
 <script setup lang="ts">

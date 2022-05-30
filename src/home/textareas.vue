@@ -90,6 +90,19 @@
         textarea
         label Label
         img.circle(:src="'/favicon.png'")
+    .col.s12.l4
+      .field.textarea.border.prefix
+        a.loader
+        textarea
+    .col.s12.l4
+      .field.textarea.border.suffix
+        textarea
+        a.loader
+    .col.s12.l4
+      .field.textarea.border.prefix.suffix
+        a.loader
+        textarea
+        a.loader
 </template>
 
 <script setup lang="ts">

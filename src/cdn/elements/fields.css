@@ -59,7 +59,8 @@
 
 /* icon */
 .field > i,
-.field > img {
+.field > img,
+.field > .loader {
   position: absolute;
   top: 50%;
   left: auto;
@@ -74,13 +75,17 @@
 .field.round > i,
 .field.border > img,
 .field.fill > img,
-.field.round > img {
+.field.round > img,
+.field.border > .loader,
+.field.fill > .loader,
+.field.round > .loader {
   left: auto;
   right: 16rem;
 }
 
 .field > i:first-child,
-.field > img:first-child {
+.field > img:first-child,
+.field > .loader:first-child {
   left: 16rem;
   right: auto;
 }
@@ -90,13 +95,22 @@
 .field.round > i:first-child,
 .field.border > img:first-child,
 .field.fill > img:first-child,
-.field.round > img:first-child {
+.field.round > img:first-child,
+.field.border > .loader:first-child,
+.field.fill > .loader:first-child,
+.field.round > .loader:first-child {
   left: 16rem;
   right: auto;
 }
 
 .field.invalid > i {
   color: var(--error)!important;
+}
+
+.field > .loader {
+  border-width: 3rem;
+  width: 24rem;
+  height: 24rem;
 }
 
 /* input, textarea and select */

@@ -109,6 +109,19 @@
         input(type="text")
         label Label
         img.circle(:src="'/favicon.png'")
+    .col.s12.l4
+      .field.border.prefix
+        a.loader
+        input(type="text")
+    .col.s12.l4
+      .field.border.suffix
+        input(type="text")
+        a.loader
+    .col.s12.l4
+      .field.border.prefix.suffix
+        a.loader
+        input(type="text")
+        a.loader
 </template>
 
 <script setup lang="ts">
