@@ -56,6 +56,11 @@
     return element.previousElementSibling;
   };
 
+  const next = (element) => {
+    if (!element) return;
+    return element.nextElementSibling;
+  };
+
   const parent = (element) => {
     if (!element) return;
     return element.parentNode;
@@ -128,6 +133,31 @@
       clearTimeout(timeoutToast);
   };
 
+  const onChangeFile = (e) => {
+    updateFile(e.currentTarget);
+  }
+
+  const onKeydownFile = (e) => {
+    updateFile(e.currentTarget, e);
+  }
+
+  const updateFile = (target, e) => {
+    if (e) {
+      if (e.key !== "Enter") return;
+
+      let nextTarget = next(e.currentTarget);
+      if (!nextTarget || !/file/i.test(nextTarget.type)) return;
+      return nextTarget.click();
+    }
+
+    let previousTarget = prev(target);
+    if (!previousTarget || !/text/i.test(previousTarget.type)) return;
+    previousTarget.value = Array.from(target.files).map((x) => x.name).join(", ");
+    previousTarget.setAttribute("readonly", true);
+    previousTarget.addEventListener("keydown", onKeydownFile);
+    updateInput(previousTarget);
+  }
+
   let timeoutToast = null;
 
   const open = (from, to, config) => {
@@ -147,7 +177,7 @@
     addClass(to, "active");
   };
 
-  const tab = (from, to, config) => {
+  const tab = (from) => {
     let container = parent(from);
     if (!hasClass(container, "tabs"))
       return;
@@ -327,6 +357,12 @@
       on(x, "focus", onFocusInput);
       on(x, "blur", onBlurInput);
       updateInput(x);
+    });
+
+    let files = queryAll(".field > input[type=file]");
+    files.forEach((x) => {
+      on(x, "change", onChangeFile);
+      updateFile(x);
     });
   };
 
