@@ -106,7 +106,7 @@
 
   const onClickLabel = (e) => {
     let input = query('input:not([type=file]):not([type=checkbox]):not([type=radio]), select, textarea', parent(e.currentTarget));
-    input.focus();
+    if (input) input.focus();
   };
 
   const onFocusInput = (e) => {
