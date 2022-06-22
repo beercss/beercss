@@ -126,8 +126,8 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 From jsdelivr.net.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.29/dist/cdn/beer.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.29/dist/cdn/beer.min.js" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.30/dist/cdn/beer.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.30/dist/cdn/beer.min.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
 ```
 
@@ -159,10 +159,10 @@ You can use this html to setup your project
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@2.0.29/dist/cdn/beer.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/beercss@2.0.29/dist/cdn/beer.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@2.0.30/dist/cdn/beer.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/beercss@2.0.30/dist/cdn/beer.min.js" type="text/javascript"></script>
   </head>
-  <body>    
+  <body>
     <div class="menu left m l">
       <img src="https://www.beercss.com/favicon.png" class="circle large margin">
       <a>
