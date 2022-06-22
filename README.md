@@ -197,7 +197,7 @@ You can use this html to setup your project
     
     <main class="container">
       <h3>Welcome</h3>
-      <h5>The beer is already!</h5>
+      <h5>The beer is ready!</h5>
     </main>
   </body>
 </html>
