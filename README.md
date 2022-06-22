@@ -62,7 +62,20 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 <element class="helper helper">...</element>
 <div class="element helper helper">...</div>
 
-// apply css rules like this
+// menu elements before a container element
+<body>
+  <div class="menu left m l">...</div>
+  <div class="menu bottom s">...</div>
+  <main class="container">...</main>
+</body>
+
+<div id="app">
+  <div class="menu left m l">...</div>
+  <div class="menu bottom s">...</div>
+  <main class="container">...</main>
+</div>
+
+// write css like this
 .element.helper {...}
 .element > .element {...}
 .element > .helper {...}
@@ -74,14 +87,33 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 // N elements to 1 tag
 <div class="element element helper">...</div>
 
-// avoid dependencies
+// element with dependencies
 <div class="element">
   <div class="element-header">...</div>
   <div class="element-content">...</div>
   <div class="element-footer">...</div>
 </div>
 
-// apply css rules like this
+// menu elements after or inside a container element
+<body>
+  <main class="container">...</main>
+  <div class="menu left m l">...</div>
+  <div class="menu bottom s">...</div>
+</body>
+
+<div id="app">
+  <main class="container">...</main>
+  <div class="menu left m l">...</div>
+  <div class="menu bottom s">...</div>
+</div>
+
+<main class="container">
+  <div class="menu left m l">...</div>
+  <div class="menu bottom s">...</div>
+  ...
+</main>
+
+// write css like this
 .element.element {...}
 .element .element {...}
 .element .helper {...}
@@ -113,6 +145,61 @@ npm i material-dynamic-colors
 // importing
 import "beercss";
 import "material-dynamic-colors";
+```
+
+### HTML
+
+You can use this html to setup your project
+
+```html
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" content="notranslate">
+    <title>Hello world</title>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@2.0.29/dist/cdn/beer.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/beercss@2.0.29/dist/cdn/beer.min.js" type="text/javascript"></script>
+  </head>
+  <body>    
+    <div class="menu left m l">
+      <img src="https://www.beercss.com/favicon.png" class="circle large margin">
+      <a>
+        <i>home</i>
+      </a>
+      <a>
+        <i>search</i>
+      </a>
+      <a>
+        <i>share</i>
+      </a>
+      <a>
+        <i>more_vert</i>
+      </a>
+    </div>
+    
+    <div class="menu bottom s">
+      <a>
+        <i>home</i>
+      </a>
+      <a>
+        <i>search</i>
+      </a>
+      <a>
+        <i>share</i>
+      </a>
+      <a>
+        <i>more_vert</i>
+      </a>
+    </div>
+    
+    <main class="container">
+      <h3>Welcome</h3>
+      <h5>The beer is already!</h5>
+    </main>
+  </body>
+</html>
 ```
 
 **We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.**
