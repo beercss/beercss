@@ -63,17 +63,18 @@
                   label 10k views
           a(href="/")
             img.circle(:src="'/favicon.png'")
-
-  #modal-search.modal.top.transparent.flat
-    .row.no-wrap
-      .col.m.l
-      .col
-        .field.round.suffix.prefix.small.no-margin.white.black-text
-          i.fron search
-          input(type="text")
-          i.front mic
-      .col.m.l
-  home
+  main
+    #modal-search.modal.top.transparent.flat
+      .row.no-wrap
+        .col.m.l
+        .col
+          .field.round.suffix.prefix.small.no-margin.white.black-text
+            i.fron search
+            input(type="text")
+            i.front mic
+        .col.m.l
+    
+    home
 </template>
 
 <script setup lang="ts">

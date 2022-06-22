@@ -123,7 +123,7 @@ div
       .large-space
       .large-space
       .large-space
-  .container
+  main.container
     #begin
       .row
         #intro.col.s12

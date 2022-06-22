@@ -1,5 +1,5 @@
 <template lang="pug">
-.container.max
+div
   .menu.left.flat.no-space.m.l
     .large-space
     .medium-space
@@ -151,87 +151,88 @@
                       p Contacts
           a(href="/")
             img.circle(:src="'/favicon.png'")
+  
+  main.container.max
+    #modal-add.modal.round
+      .row.no-wrap
+        .col
+          nav
+            a(data-ui="#modal-add")
+              i.outlined arrow_back
+            a
+              h5.no-margin New message
+        .col
+          nav.right-align
+            a(data-ui="#modal-add")
+              i.outlined attach_file
+            a(data-ui="#modal-add")
+              i.outlined send
+      .row
+        .col.s12
+          .field.label.border
+            input(type="text")
+            label From
+        .col.s12
+          .field.label.border
+            input(type="text")
+            label To
+        .col.s12
+          .field.label.border
+            input(type="text")
+            label Subject
+        .col.s12
+          .field.label.border.textarea
+            textarea
+            label Message
 
-  #modal-add.modal.round
-    .row.no-wrap
-      .col
-        nav
-          a(data-ui="#modal-add")
-            i.outlined arrow_back
-          a
-            h5.no-margin New message
-      .col
-        nav.right-align
-          a(data-ui="#modal-add")
-            i.outlined attach_file
-          a(data-ui="#modal-add")
-            i.outlined send
-    .row
-      .col.s12
-        .field.label.border
-          input(type="text")
-          label From
-      .col.s12
-        .field.label.border
-          input(type="text")
-          label To
-      .col.s12
-        .field.label.border
-          input(type="text")
-          label Subject
-      .col.s12
-        .field.label.border.textarea
-          textarea
-          label Message
+    #modal-add-small.modal.round.bottom
+      .row.no-wrap
+        .col
+          nav
+            a(data-ui="#modal-add-small")
+              i.outlined arrow_back
+            a
+              h5.no-margin New message
+        .col
+          nav.right-align
+            a(data-ui="#modal-add-small")
+              i.outlined attach_file
+            a(data-ui="#modal-add-small")
+              i.outlined send
+      .row
+        .col.s12
+          .field.label.border
+            input(type="text")
+            label From
+        .col.s12
+          .field.label.border
+            input(type="text")
+            label To
+        .col.s12
+          .field.label.border
+            input(type="text")
+            label Subject
+        .col.s12
+          .field.label.border.textarea
+            textarea
+            label Message
 
-  #modal-add-small.modal.round.bottom
-    .row.no-wrap
-      .col
-        nav
-          a(data-ui="#modal-add-small")
-            i.outlined arrow_back
-          a
-            h5.no-margin New message
-      .col
-        nav.right-align
-          a(data-ui="#modal-add-small")
-            i.outlined attach_file
-          a(data-ui="#modal-add-small")
-            i.outlined send
-    .row
-      .col.s12
-        .field.label.border
-          input(type="text")
-          label From
-      .col.s12
-        .field.label.border
-          input(type="text")
-          label To
-      .col.s12
-        .field.label.border
-          input(type="text")
-          label Subject
-      .col.s12
-        .field.label.border.textarea
-          textarea
-          label Message
+    #modal-search.modal.top.transparent.flat
+      .row.no-wrap
+        .col.m.l
+        .col
+          .field.round.flat.suffix.prefix.small.no-margin.white.black-text
+            i.front search
+            input(type="text")
+            i.front mic
+        .col.m.l
 
-  #modal-search.modal.top.transparent.flat
-    .row.no-wrap
-      .col.m.l
-      .col
-        .field.round.flat.suffix.prefix.small.no-margin.white.black-text
-          i.front search
-          input(type="text")
-          i.front mic
-      .col.m.l
-
-  home(v-if="data.url == '/gmail'")
-  drafts(v-if="data.url == '/gmail/drafts'")
-  important(v-if="data.url == '/gmail/important'")
-  sent(v-if="data.url == '/gmail/sent'")
-  snoozed(v-if="data.url == '/gmail/snoozed'")
-  spam(v-if="data.url == '/gmail/spam'")
+    home(v-if="data.url == '/gmail'")
+    drafts(v-if="data.url == '/gmail/drafts'")
+    important(v-if="data.url == '/gmail/important'")
+    sent(v-if="data.url == '/gmail/sent'")
+    snoozed(v-if="data.url == '/gmail/snoozed'")
+    spam(v-if="data.url == '/gmail/spam'")
 </template>
 
 <script setup lang="ts">

@@ -1,5 +1,5 @@
 <template lang="pug">
-.container(v-show="data.isLoaded")
+main.container(v-show="data.isLoaded")
   .page.right.active
     h5 Subscriptions
     .row

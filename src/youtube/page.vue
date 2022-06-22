@@ -171,6 +171,7 @@
       i.front search
       input(type="text")
       i.front mic
+  
   explore(v-if="data.url == '/youtube/explore'")
   home(v-if="data.url == '/youtube'")
   library(v-if="data.url == '/youtube/library'")

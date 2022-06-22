@@ -1,11 +1,5 @@
 <template lang="pug">
 div
-  themes(id="themes1", v-model="data")
-    .large-space
-    .medium-space
-
-  home
-
   .menu.top.black
     .row.no-wrap.middle-align
       .col
@@ -56,6 +50,11 @@ div
             i.white-text brightness_medium
           a(href="/")
             img.circle(:src="'/favicon.png'")
+
+  main.container.max
+    home
+    themes(id="themes1", v-model="data")
+
 </template>
 
 <script setup lang="ts">
