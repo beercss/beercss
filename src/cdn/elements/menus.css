@@ -18,6 +18,7 @@
   height: auto;
   width: auto;
   text-align: center;
+  margin: 0;
 }
 
 .menu.left,
@@ -27,19 +28,7 @@
 
 .menu.top,
 .menu.bottom {
-  height: 64rem;
-}
-
-.menu::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: inherit;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  border-radius: inherit;
+  height: 72rem;
 }
 
 .menu.border {
@@ -71,10 +60,6 @@
   border-left: none;
 }
 
-.menu.active {
-  box-shadow: none;
-}
-
 .menu.top {
   bottom: auto;
   justify-content: center;
@@ -99,84 +84,53 @@
   flex-direction: row;
 }
 
-.menu.left-align,
-.menu.top-align {
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.menu.right-align,
-.menu.bottom-align {
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.menu.center-align,
-.menu.middle-align {
-  align-items: center;
-  justify-content: center;
-}
-
-.menu > button,
-.menu > .button,
-.menu > .chip,
-.menu > img,
-.menu > video {
-  z-index: 1;
-}
-
-.menu > a:not(button, .button, .chip) {
-  border: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  font-size: 12rem;
-  padding: 0;
-  margin: 4rem;
-  text-decoration: none;
+.menu > a:not(button, .button, .chip, img, video) {
+  min-width: 56rem;
+  min-height: 48rem;
   text-align: center;
-  z-index: 1;
-  width: 56rem;
+  margin: 8rem;
+  display: grid;
+  font-size: 12rem;
+  z-index: 101;
+}
+
+.menu:not(.top, .bottom) > a:not(button, .button, .chip, img, video) {
+  width: auto;
+}
+
+.menu:not(.left, .right) > a:not(button, .button, .chip, img, video) {
   height: auto;
-  min-height: 56rem;
+  width: 56rem;
 }
 
-.menu.no-space:not(.left, .right) > a:not(button, .button, .chip) {
+.menu:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: inherit;
+  z-index: 101;
+}
+
+.menu > :not(.modal, .overlay) {
+  z-index: 101;  
+}
+
+.menu.no-space > a:not(button, .button, .chip) {
   margin: 0;
 }
 
-.menu:not(.left, .right) > a:not(button, .button, .chip),
-.menu.small-space:not(.left, .right) > a:not(button, .button, .chip) {
-  margin: 0 8rem;
+.menu.medium-space > a:not(button, .button, .chip) {
+  margin: 16rem;
 }
 
-.menu.medium-space:not(.left, .right) > a:not(button, .button, .chip) {
-  margin: 0 12rem;
-}
-
-.menu.large-space:not(.left, .right) > a:not(button, .button, .chip) {
-  margin: 0 16rem;
-}
-
-.menu.no-space:not(.top, .bottom) > a:not(button, .button, .chip) {
-  margin: 0;
-}
-
-.menu:not(.top, .bottom) > a:not(button, .button, .chip),
-.menu.small-space:not(.top, .bottom) > a:not(button, .button, .chip) {
-  margin: 4rem 0;
-}
-
-.menu.medium-space:not(.top, .bottom) > a:not(button, .button, .chip) {
-  margin: 8rem 0;
-}
-
-.menu.large-space:not(.top, .bottom) > a:not(button, .button, .chip) {
-  margin: 12rem 0;
+.menu.large-space > a:not(button, .button, .chip) {
+  margin: 24rem;
 }
 
 .menu > a:not(button, .button, .chip) > i {
-  margin-bottom: 4rem;
   padding: 4rem;
   border-radius: 32rem;
   transition: var(--speed1) padding linear;
@@ -190,28 +144,29 @@
   padding: 4rem 16rem;
 }
 
-.menu > .row {
-  z-index: 1;
-}
-
 @media only screen and (max-width: 600px) {
+  .menu.top,
   .menu.bottom {
     justify-content: space-around;
   }
-  .menu.top {
-    justify-content: space-around;
-  }
+}
 
-  .menu.top > button,
-  .menu.top > .button,
-  .menu.top > .chip,
-  .menu.top > img,
-  .menu.top > video,
-  .menu.bottom > button,
-  .menu.bottom > .button,
-  .menu.bottom > .chip,
-  .menu.bottom > img,
-  .menu.bottom > video {
-    margin: 0;
-  }
+.menu > .modal {
+  margin: 0;
+}
+
+.menu.left > .modal {
+  padding-left: 88rem;
+}
+
+.menu.right > .modal {
+  padding-right: 88rem;
+}
+
+.menu.top > .modal {
+  padding-top: 88rem;
+}
+
+.menu.right > .modal {
+  padding-bottom: 88rem;
 }
