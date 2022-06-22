@@ -4,7 +4,7 @@ var Ya=Object.defineProperty,Ja=Object.defineProperties;var Qa=Object.getOwnProp
 
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/beercss@2.0.19/dist/cdn/beer.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre><div class="medium-space"></div><h5>From NPM</h5><pre class="wrap" style="font-family:courier new;">// installing
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre><div class="medium-space"></div><h5>From NPM</h5><pre class="wrap" style="font-family:courier new;">// installing
 npm i beercss
 npm i material-dynamic-colors
 

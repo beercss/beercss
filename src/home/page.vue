@@ -136,7 +136,7 @@ div
               |
               | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.0.19/dist/cdn/beer.min.js" type="text/javascript"&gt;&lt;/script&gt;
               |
-              | &lt;script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"&gt;&lt;/script&gt;
+              | &lt;script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"&gt;&lt;/script&gt;
             .medium-space
             h5 From NPM
             pre.wrap(style="font-family: courier new")
