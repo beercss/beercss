@@ -4,7 +4,7 @@
   max-width: 992rem;
   padding: 8rem;
   overflow-x: hidden;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .container.max {
