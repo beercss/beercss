@@ -26,6 +26,62 @@ import "material-dynamic-colors";
 import "beercss";
 ```
 
+### HTML
+
+You can use this html to setup your project
+
+```html
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" content="notranslate">
+    <title>Hello world</title>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <nav class="left m l">
+      <img src="https://www.beercss.com/favicon.png" class="circle large margin">
+      <a>
+        <i>home</i>
+      </a>
+      <a>
+        <i>search</i>
+      </a>
+      <a>
+        <i>share</i>
+      </a>
+      <a>
+        <i>more_vert</i>
+      </a>
+    </nav>
+    
+    <nav class="bottom s">
+      <a>
+        <i>home</i>
+      </a>
+      <a>
+        <i>search</i>
+      </a>
+      <a>
+        <i>share</i>
+      </a>
+      <a>
+        <i>more_vert</i>
+      </a>
+    </nav>
+    
+    <main class="responsive">
+      <h3>Welcome</h3>
+      <h5>The beer is ready!</h5>
+    </main>
+  </body>
+</html>
+```
+
 **We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.**
 
 ## [Settings](https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md)
