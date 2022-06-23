@@ -95,11 +95,12 @@ The elements are the components, widgets or tags.
 ## [Helpers](https://github.com/beercss/beercss/blob/main/docs/HELPERS.md)
 
 The common helpers makes the elements more scalable and customizable.
+
 ## Tips to master beercss
 
 1. Try use helpers first, before any custom css.
-2. When you use the dynamic theme, save the last theme. You will need the current theme to change from light to dark.
-3. When the html output has a `data-ui` attribute or a field element, call `ui()` to trigger them. You can trigger it manually, but it can be a painful.
+2. Don't forget to call `ui()` after render a html with a `data-ui` attribute or a field element.
+3. To customize themes go to [Setting](https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md).
 4. To quick learn the project go to [Summary](https://github.com/beercss/beercss/blob/main/docs/SUMMARY.md).
 
 ## Go to
