@@ -1,5 +1,5 @@
 <template lang="pug">
-.modal.large-width.left.no-scroll(:id="id")
+.modal.large.left.no-scroll(:id="id")
   slot
   div(v-show="!data.showCssVariables")
     .row.no-wrap.middle-align.no-space
