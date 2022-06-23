@@ -100,7 +100,7 @@ The common helpers makes the elements more scalable and customizable.
 
 1. Try use helpers first, before any custom css.
 2. Don't forget to call `ui()` after render a html with a `data-ui` attribute or a field element.
-3. To customize themes go to [Setting](https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md).
+3. To customize themes go to [Settings](https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md).
 4. To quick learn the project go to [Summary](https://github.com/beercss/beercss/blob/main/docs/SUMMARY.md).
 
 ## Go to
