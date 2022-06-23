@@ -8,7 +8,7 @@
 @import "./elements/buttons.css";
 @import "./elements/cards.css";
 @import "./elements/chips.css";
-@import "./elements/containers.css";
+@import "./elements/mains.css";
 @import "./elements/dropdowns.css";
 @import "./elements/expansions.css";
 @import "./elements/fields.css";
@@ -16,7 +16,6 @@
 @import "./elements/layouts.css";
 @import "./elements/loaders.css";
 @import "./elements/media.css";
-@import "./elements/menus.css";
 @import "./elements/modals.css";
 @import "./elements/navs.css";
 @import "./elements/overlays.css";
