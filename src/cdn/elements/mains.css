@@ -1,5 +1,5 @@
-.container,
-.container.min {
+main.responsive,
+main.responsive.min {
   margin: 0 auto;
   max-width: 992rem;
   padding: 8rem;
@@ -7,73 +7,73 @@
   min-height: 100vh;
 }
 
-.container.max {
+main.responsive.max {
   max-width: 100%;
 }
 
-.menu.top:not(.s, .m, .l) ~ .container {
+nav.top:not(.s, .m, .l) ~ main.responsive {
   padding-top: 88rem;
 }
 
-.menu.bottom:not(.s, .m, .l) ~ .container {
+nav.bottom:not(.s, .m, .l) ~ main.responsive {
   padding-bottom: 88rem;
 }
 
-.menu.left:not(.s, .m, .l) ~ .container {
+nav.left:not(.s, .m, .l) ~ main.responsive {
   padding-left: 88rem;
 }
 
-.menu.right:not(.s, .m, .l) ~ .container {
+nav.right:not(.s, .m, .l) ~ main.responsive {
   padding-right: 88rem;
 }
 
 @media only screen and (max-width: 600px) {
-  .menu.s.bottom ~ .container {
+  nav.s.bottom ~ main.responsive {
     padding-bottom: 88rem;
   }
-  .menu.s.top ~ .container {
+  nav.s.top ~ main.responsive {
     padding-top: 88rem;
   }
-  .menu.s.left ~ .container {
+  nav.s.left ~ main.responsive {
     padding-left: 88rem;
   }
-  .menu.s.right ~ .container {
+  nav.s.right ~ main.responsive {
     padding-right: 88rem;
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-  .menu.m.bottom ~ .container {
+  nav.m.bottom ~ main.responsive {
     padding-bottom: 88rem;
   }
-  .menu.m.top ~ .container {
+  nav.m.top ~ main.responsive {
     padding-top: 88rem;
   }
-  .menu.m.left ~ .container {
+  nav.m.left ~ main.responsive {
     padding-left: 88rem;
   }
-  .menu.m.right ~ .container {
+  nav.m.right ~ main.responsive {
     padding-right: 88rem;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .menu.l.bottom ~ .container {
+  nav.l.bottom ~ main.responsive {
     padding-bottom: 88rem;
   }
-  .menu.l.top ~ .container {
+  nav.l.top ~ main.responsive {
     padding-top: 88rem;
   }
-  .menu.l.left ~ .container {
+  nav.l.left ~ main.responsive {
     padding-left: 88rem;
   }
-  .menu.l.right ~ .container {
+  nav.l.right ~ main.responsive {
     padding-right: 88rem;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
+  main.responsive {
     padding-right: 8rem;
     padding-left: 8rem;
   }
