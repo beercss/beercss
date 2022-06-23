@@ -1,6 +1,6 @@
 <template lang="pug">
 .grey10.white-text
-  .menu.top.top-shadow
+  nav.top.top-shadow
     .row.no-wrap.middle-align
       .col
         nav.padding

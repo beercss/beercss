@@ -1,5 +1,5 @@
 <template lang="pug">
-.modal.medium.left.no-scroll(:id="id")
+.modal.large-width.left.no-scroll(:id="id")
   slot
   div(v-show="!data.showCssVariables")
     .row.no-wrap.middle-align.no-space
@@ -62,7 +62,7 @@
       a(data-ui="")
         i arrow_backward
         h5.small-margin Back
-        a.button.border.link(href="https://m3.material.io/styles/color/overview", target="_blank") More about
+        a.button.border.link(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
     nav
       label.radio
         input(type="radio", value="light", v-model="data.theme.selected")

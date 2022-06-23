@@ -17,19 +17,11 @@ const addHomeScreen = () => {
     beercss.installEvent.prompt();
 }
 
-const updateMenu = (selector:string, css:string) => {
-  var menu = $(selector);
-  var dataUis = menu.find("a");
-  var modals = menu.find(".modal");
+const updateMenu = (event:any, css:string) => {
+  var menu = $(event.currentTarget.parentNode);
+  var actives = $(menu).find("> .active");
 
-  $(modals).removeClass("active");
-  $(dataUis).removeClass("active");
-
-  if (!css) {
-    return $(selector + " > a > div:visible").length
-      ? $(selector + " > a > div").hide()
-      : $(selector + " > a > div").show();
-  }
+  $(actives).removeClass("active");
 
   if (/left|right|top|bottom/.test(css)) {
     $(menu).removeClass("left right top bottom");
@@ -42,15 +34,6 @@ const updateMenu = (selector:string, css:string) => {
     for (var i = 0; i < menu.length; i++) {
       $(menu[i]).removeClass("small medium large");
       if (css != "medium") $(menu[i]).addClass(css);
-    }
-  }
-
-  if (/left-align|right-align|top-align|bottom-align/.test(css)) {
-    for (var i = 0; i < menu.length; i++) {
-      $(menu[i]).removeClass(
-        "left-align right-align top-align bottom-align"
-      );
-      $(menu[i]).addClass(css);
     }
   }
 }
@@ -150,7 +133,9 @@ const updateIcons = () => {
 }
 
 const updateContainer = (css:string|null|undefined=undefined) => {
-  $(".container").attr("class", css ? "container " + css : "container");
+  let element = document.querySelector("main.responsive");
+  element.classList.remove("min", "max");
+  element.classList.add(css);  
 }
 
 const updatePage = (css:string) => {
@@ -214,7 +199,7 @@ const showSamples = (data: IHome, selector:string, modal:string|null|undefined=u
   for (var i = 0; i < elements.length; i++) {
     var element = $($(elements[i])[0].outerHTML);
     
-    if (element.is(".menu")) {
+    if (element.is("nav.left") || element.is("nav.right") || element.is("nav.top") || element.is("nav.bottom")) {
       element.find(".modal").html("");
       var html = formatHtml(element);
       var htmlFormatted = hljs.highlight("html", html).value;
@@ -224,10 +209,13 @@ const showSamples = (data: IHome, selector:string, modal:string|null|undefined=u
     }
 
     if (
-      element.is(".menu") ||
+      element.is("nav.left") ||
+      element.is("nav.right") ||
+      element.is("nav.top") ||
+      element.is("nav.bottom") ||
       element.is(".modal") ||
       element.is(".toast") ||
-      element.is(".container") ||
+      element.is("main.responsive") ||
       element.is(".fixed:not(header)")
     )
       html = "";

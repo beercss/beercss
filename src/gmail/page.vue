@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  .menu.left.flat.no-space.m.l
+  nav.left.flat.no-space.m.l
     .large-space
     .medium-space
     a.button.white.circle.large(data-ui="#modal-add")
@@ -34,7 +34,7 @@ div
       .large-space
       .medium-space
 
-  .menu.right.flat.m.l
+  nav.right.flat.m.l
     .large-space
     .medium-space
     a.wave.dark
@@ -50,7 +50,7 @@ div
       img.tiny(:src="'/contacts.png'")
       span.tooltip.left Contacts
 
-  .menu.bottom.flat.s
+  nav.bottom.flat.s
     a(href="/gmail", :class="{ active: data.url == '/gmail' }")
       i.outlined inbox
       div Inbox
@@ -69,7 +69,7 @@ div
       .large-space
       .medium-space
 
-  .menu.top.flat
+  nav.top.flat
     .row.no-wrap.middle-align
       .col
         nav.padding
@@ -152,7 +152,7 @@ div
           a(href="/")
             img.circle(:src="'/favicon.png'")
   
-  main.container.max
+  main.responsive.max
     #modal-add.modal.round
       .row.no-wrap
         .col

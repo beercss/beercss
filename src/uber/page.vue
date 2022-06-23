@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  .menu.top.black
+  nav.top.black
     .row.no-wrap.middle-align
       .col
         nav.padding
@@ -51,7 +51,7 @@ div
           a(href="/")
             img.circle(:src="'/favicon.png'")
 
-  main.container.max
+  main.responsive.max
     home
     themes(id="themes1", v-model="data")
 

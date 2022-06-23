@@ -3,14 +3,14 @@
   .large-space
   h4
     span Containers
-    a.chip.circle(@click="domain.showSamples(data, '#containers .container', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#containers main.responsive', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
       i code
   nav
     button(@click="domain.updateContainer()") Default
     button(@click="domain.updateContainer('min')") Min
     button(@click="domain.updateContainer('max')") Max
   div(v-show="false")
-    .container
+    main.responsive
 </template>
 
 <script setup lang="ts">

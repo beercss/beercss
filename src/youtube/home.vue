@@ -1,5 +1,5 @@
 <template lang="pug">
-main.container(v-show="data.isLoaded")
+main.responsive(v-show="data.isLoaded")
   .page.right.active
     nav.scroll
       a.chip.active The best of 2020

@@ -1,23 +1,23 @@
-import { ILayout } from "./interfaces";
+import { ILayout, ITheme } from "./interfaces";
 
-const updateTheme = async(data: ILayout, from: any, mode: string|null|undefined=undefined) => {
-  if (!from) from = data.theme;
-
-  if (!mode) mode = data.theme?.selected;
-
-  let theme = data.themes.find(x => x. name == from);
-
-  data.theme = await ui("theme", { from: theme || from, mode: mode });
-  data.isDark = (mode || data.theme?.selected) == "dark";
+const updateTheme = async(data: ILayout, source: any) => {
+  let theme = await ui("theme", data.themes.find((x:ITheme) => x.name == source) || source);
+  let mode = ui("mode");
+  data.theme.dark = theme.dark;
+  data.theme.light = theme.light;
+  data.theme.selected = mode;
+  data.isDark = mode == "dark";
 }
 
 const updateMode = (data: ILayout) => {
-  let mode = data.theme?.selected == "dark" ? "light" : "dark";
-  updateTheme(data, data.theme, mode);
+  let mode = ui("mode", ui("mode") == "dark" ? "light" : "dark");
+
+  data.theme.selected = mode;
+  data.isDark = mode == "dark";
 }
 
-const initTheme = (data: ILayout) => {
-  data.isDark = /dark/.test(document.body.getAttribute("style") || "");
+const initTheme = async (data: ILayout) => {
+  updateTheme(data, null);
 }
 
 export default {

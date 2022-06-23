@@ -1,5 +1,5 @@
 <template lang="pug">
-.container
+main.responsive
   .row.no-wrap.middle-align
     .col.min
       a(@click="updateTheme()")
@@ -139,7 +139,7 @@ import { onMounted } from 'vue';
 
 const updateTheme = () => {
   let element = document.querySelector("html");
-  if (element) element.className = element.className.indexOf("is-dark") != -1 ? "is-light" : "is-dark";
+  if (element) element.className = element.className.indexOf("dark") != -1 ? "light" : "dark";
 }
 
 onMounted(ui);

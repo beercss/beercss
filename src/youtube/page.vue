@@ -1,6 +1,6 @@
 <template lang="pug">
 #layout
-  .menu.left.flat.m.l
+  nav.left.flat.m.l
     .large-space
     .large-space
     a(href="/youtube", :class="{ active: data.url == '/youtube' }")
@@ -22,7 +22,7 @@
       .large-space
       .medium-space
 
-  .menu.bottom.s
+  nav.bottom.s
     a(href="/youtube", :class="{ active: data.url == '/youtube' }")
       i home
       div Home
@@ -41,7 +41,7 @@
       .large-space
       .medium-space
 
-  .menu.top
+  nav.top
     .row.no-wrap.middle-align
       .col
         nav.padding

@@ -1,17 +1,17 @@
 <template lang="pug">
 div
-  .menu.left.m.l
+  nav.left.m.l
     img.circle.small-margin(:src="'/favicon.png'", @click="domain.addHomeScreen()")
-    a(@click="domain.updateMenu('.menu.m.l', 'top')")
+    a(@click="domain.updateMenu($event, 'top')")
       i arrow_upward
       div Top
-    a(@click="domain.updateMenu('.menu.m.l', 'bottom')")
+    a(@click="domain.updateMenu($event, 'bottom')")
       i arrow_downward
       div Bottom
-    a(@click="domain.updateMenu('.menu.m.l', 'left')")
+    a(@click="domain.updateMenu($event, 'left')")
       i arrow_back
       div Left
-    a(@click="domain.updateMenu('.menu.m.l', 'right')")
+    a(@click="domain.updateMenu($event, 'right')")
       i arrow_forward
       div Right
     a(@click="domain.updateIcons()")
@@ -26,7 +26,7 @@ div
     a(data-ui="#more1")
       i collections
       div Templates
-    a(@click="domain.showSamples(data, '.menu.m.l', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')")
+    a(@click="domain.showSamples(data, $event, null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')")
       i code
       div Code
     themes(id="themes1", v-model="data")
@@ -53,7 +53,7 @@ div
       a.wrap.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!data.isDark")
         img.logo-codepen(:src="'/codepen-light.png'")
 
-  .menu.bottom.s
+  nav.bottom.s
     a(@click="domain.updateIcons()")
       i image
       div Icons
@@ -63,7 +63,7 @@ div
     a(data-ui="#more2")
       i collections
       div Templates
-    a(@click="domain.showSamples(data, '.menu.s', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')")
+    a(@click="domain.showSamples(data, $event, null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')")
       i code
       div Code
     themes(id="themes2", v-model="data")
@@ -123,7 +123,7 @@ div
       .large-space
       .large-space
       .large-space
-  main.container
+  main.responsive
     #begin
       .row
         #intro.col.s12
@@ -173,9 +173,6 @@ div
                     b col
                     span &nbsp;min, max, s1...s12, m1...m12, l1...l12
                   p
-                    b container
-                    span &nbsp;min, max
-                  p
                     b &lt;details&gt;
                   p
                     b dropdown
@@ -208,14 +205,14 @@ div
                     b loader
                     span &nbsp;small, medium, large
                   p
-                    b menu
-                    span &nbsp;left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, flat, border, round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, no-margin, small-margin, medium-margin, large-margin
+                    b main
+                    span &nbsp;responsive, min, max
                   p
                     b modal
                     span &nbsp;left, right, top, bottom, small, medium, large, border, round, flat, left-round, right-round, top-round, bottom-round, active
                   p
                     b &lt;nav&gt;
-                    span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, wrap, no-wrap
+                    span &nbsp;left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, flat, border, round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, no-margin, small-margin, medium-margin, large-margin
                   p
                     b overlay
                     span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active
@@ -264,7 +261,7 @@ div
         .col.s12
           colors
         .col.s12
-          containers
+          mains
         .col.s12
           dropdowns
         .col.s12
@@ -399,7 +396,7 @@ import cards from "./cards.vue";
 import checkboxes from "./checkboxes.vue";
 import chips from "./chips.vue";
 import colors from "./colors.vue";
-import containers from "./containers.vue";
+import mains from "./mains.vue";
 import dropdowns from "./dropdowns.vue";
 import expansions from "./expansions.vue";
 import icons from "./icons.vue";
