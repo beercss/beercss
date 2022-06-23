@@ -56,23 +56,24 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 ```
 // 1 setting to 1 document
-<html class="settings">...</html>
+<body class="light">...</body>
+<body class="dark">...</body>
 
 // 1 element to N helpers
 <element class="helper helper">...</element>
 <div class="element helper helper">...</div>
 
-// menu elements before a container element
+// nav elements before a main element
 <body>
-  <div class="menu left m l">...</div>
-  <div class="menu bottom s">...</div>
-  <main class="container">...</main>
+  <nav class="left m l">...</nav>
+  <nav class="bottom s">...</nav>
+  <main class="responsive">...</main>
 </body>
 
 <div id="app">
-  <div class="menu left m l">...</div>
-  <div class="menu bottom s">...</div>
-  <main class="container">...</main>
+  <nav class="left m l">...</nav>
+  <nav class="bottom s">...</nav>
+  <main class="responsive">...</main>
 </div>
 
 // write css like this
@@ -94,22 +95,22 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
   <div class="element-footer">...</div>
 </div>
 
-// menu elements after or inside a container element
+// nav elements after or inside a main element
 <body>
-  <main class="container">...</main>
-  <div class="menu left m l">...</div>
-  <div class="menu bottom s">...</div>
+  <main class="responsive">...</main>
+  <nav class="left m l">...</nav>
+  <nav class="bottom s">...</nav>
 </body>
 
 <div id="app">
-  <main class="container">...</main>
-  <div class="menu left m l">...</div>
-  <div class="menu bottom s">...</div>
+  <main class="responsive">...</main>
+  <nav class="left m l">...</nav>
+  <nav class="bottom s">...</nav>
 </div>
 
-<main class="container">
-  <div class="menu left m l">...</div>
-  <div class="menu bottom s">...</div>
+<main class="responsive">
+  <nav class="left m l">...</nav>
+  <nav class="bottom s">...</nav>
   ...
 </main>
 
@@ -126,8 +127,8 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 From jsdelivr.net.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.31/dist/cdn/beer.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.31/dist/cdn/beer.min.js" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
 ```
 
@@ -159,12 +160,12 @@ You can use this html to setup your project
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@2.0.31/dist/cdn/beer.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/beercss@2.0.31/dist/cdn/beer.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
   </head>
   <body>
-    <div class="menu left m l">
+    <nav class="left m l">
       <img src="https://www.beercss.com/favicon.png" class="circle large margin">
       <a>
         <i>home</i>
@@ -178,9 +179,9 @@ You can use this html to setup your project
       <a>
         <i>more_vert</i>
       </a>
-    </div>
+    </nav>
     
-    <div class="menu bottom s">
+    <nav class="bottom s">
       <a>
         <i>home</i>
       </a>
@@ -193,9 +194,9 @@ You can use this html to setup your project
       <a>
         <i>more_vert</i>
       </a>
-    </div>
+    </nav>
     
-    <main class="container">
+    <main class="responsive">
       <h3>Welcome</h3>
       <h5>The beer is ready!</h5>
     </main>

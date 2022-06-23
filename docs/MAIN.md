@@ -1,25 +1,23 @@
-# Expansion
+# Main
 
-Expansion contain creation flows and allow lightweight editing of an element.
+A main is the main content of page.
 
 ## Element
 
 ```html
-<details>
-  <summary>...</summary>
-  <...>...</...>
-</details>
+<main class="responsive">...</main>
 ```
+
+## Most used helpers
+
+**Sizes**
+
+responsive, min, max
 
 ## Example
 
 ```html
-<details class="card">
-  <summary>
-    <h5>Title</h5>
-  </summary>
-  <p>Description that will be shown after click on summary</p>
-</details>
+<main class="responsive"></main>
 ```
 
 ## Go to
