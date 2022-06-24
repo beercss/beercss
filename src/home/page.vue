@@ -26,7 +26,7 @@ div
     a(data-ui="#more1")
       i collections
       div Templates
-    a(@click="domain.showSamples(data, $event, null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')")
+    a(@click="domain.showSamples(data, null, null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       div Code
     themes(id="themes1", v-model="data")
@@ -63,7 +63,7 @@ div
     a(data-ui="#more2")
       i collections
       div Templates
-    a(@click="domain.showSamples(data, $event, null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')")
+    a(@click="domain.showSamples(data, null, null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       div Code
     themes(id="themes2", v-model="data")
@@ -205,7 +205,7 @@ div
                     b loader
                     span &nbsp;small, medium, large
                   p
-                    b main
+                    b &lt;main&gt;
                     span &nbsp;responsive, min, max
                   p
                     b modal
@@ -261,7 +261,7 @@ div
         .col.s12
           colors
         .col.s12
-          mains
+          containers
         .col.s12
           dropdowns
         .col.s12
@@ -279,7 +279,7 @@ div
         .col.s12
           modals
         .col.s12
-          navs
+          navigations
         .col.s12
           pages
         .col.s12
@@ -396,7 +396,7 @@ import cards from "./cards.vue";
 import checkboxes from "./checkboxes.vue";
 import chips from "./chips.vue";
 import colors from "./colors.vue";
-import mains from "./mains.vue";
+import containers from "./containers.vue";
 import dropdowns from "./dropdowns.vue";
 import expansions from "./expansions.vue";
 import icons from "./icons.vue";
@@ -405,7 +405,7 @@ import layouts from "./layouts.vue";
 import loaders from "./loaders.vue";
 import media from "./media.vue";
 import modals from "./modals.vue";
-import navs from "./navs.vue";
+import navigations from "./navigations.vue";
 import pages from "./pages.vue";
 import progress1 from "./progress.vue";
 import radios from "./radios.vue";

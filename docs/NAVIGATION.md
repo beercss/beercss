@@ -1,97 +1,92 @@
-# Dropdown
+# Navigation
 
-Dropdowns display a list of choices on temporary surfaces.
+Navigations are containers that display actions placed horizontally (or vertically). Elements, like buttons, chips, images, checkboxes, radios and switches can be placed inside a nav. Some examples are navigation rail or navigation bar.
 
 ## Element
 
 ```html
-<...>
-  <div class="dropdown">...</div>
-</...>
+<nav>...</nav>
+<nav class="left">...</nav>
+<nav class="right">...</nav>
+<nav class="top">...</nav>
+<nav class="bottom">...</nav>
 ```
 
 ## Most used helpers
 
+**Alignments**
+
+left-align, right-align, center-align, top-align, bottom-align, middle-align
+
+**Alignments**
+
+left-align, right-align, center-align, top-align, bottom-align, middle-align
+
+**Forms**
+
+flat, border, round, left-round, right-round, top-round, bottom-round
+
+**Margins**
+
+no-margin, small-margin, medium-margin, large-margin
+
 **Positions**
 
-left, right
+left, right, top, bottom
 
 **Sizes**
 
-wrap, no-wrap
-
-**Triggers**
-
-active
+no-space, small-space, medium-space, large-space, wrap, no-wrap
 
 ## Example
 
 ```html
-<button>
-  <span>Button</span>
-  <div class="dropdown no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
-  </div>
-</button>
+<nav>
+  <button>Button</button>
+  <a class="chip">Chip</button>
+  <a>
+    <img class="circle" src="/image.png" />
+  </a>
+  <label class="checkbox">
+    <input type="checkbox">
+  </label>
+</nav>
 ```
 
-## Triggers 
-
-#### To open/close a dropdown
-
-#### Method 1
-
-Add/remove `active` class on dropdown.
-
+## Navigation rail example
 ```html
-<button>
-  <span>Button</span>
-  <div class="dropdown no-wrap active">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
-  </div>
-</button>
+<nav class="left">
+  <a>
+    <i>home</i>
+    div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    div>Search</div>
+  </a>
+  <a>
+    <i>more_vert</i>
+    div>More</div>
+  </a>
+</nav>
 ```
 
-#### Method 2
-
-Add `data-ui="dropdown-selector"` attribute on elements and call `ui()` after html output.
-
+## Navigation bar example
 ```html
-<button data-ui="#dropdown">
-  <span>Button</span>
-  <div id="dropdown" class="dropdown no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
-  </div>
-</button>
-```
-
-```js
-ui();
-```
-
-#### Method 3
-
-Call `ui("dropdown-selector")`.
-
-```html
-<button>
-  <span>Button</span>
-  <div id="dropdown" class="dropdown no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
-  </div>
-</button>
-```
-
-```js
-ui('#dropdown');
+<nav class="bottom">
+  <a>
+    <i>home</i>
+    div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    div>Search</div>
+  </a>
+  <a>
+    <i>more_vert</i>
+    div>More</div>
+  </a>
+</nav>
 ```
 
 ## Go to

@@ -1,9 +1,9 @@
 <template lang="pug">
-#navs
+#navigations
   .large-space
   h4
-    span Navs
-    a.chip.circle(@click="domain.showSamples(data, '#navs nav', null, 'https://github.com/beercss/beercss/blob/main/docs/NAV.md')")
+    span Navigations
+    a.chip.circle(@click="domain.showSamples(data, '#navigations nav', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
   nav
     button Button

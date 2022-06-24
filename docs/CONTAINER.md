@@ -1,97 +1,23 @@
-# Dropdown
+# Container
 
-Dropdowns display a list of choices on temporary surfaces.
+A container is the main content of page.
 
 ## Element
 
 ```html
-<...>
-  <div class="dropdown">...</div>
-</...>
+<main class="responsive">...</main>
 ```
 
 ## Most used helpers
 
-**Positions**
-
-left, right
-
 **Sizes**
 
-wrap, no-wrap
-
-**Triggers**
-
-active
+responsive, min, max
 
 ## Example
 
 ```html
-<button>
-  <span>Button</span>
-  <div class="dropdown no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
-  </div>
-</button>
-```
-
-## Triggers 
-
-#### To open/close a dropdown
-
-#### Method 1
-
-Add/remove `active` class on dropdown.
-
-```html
-<button>
-  <span>Button</span>
-  <div class="dropdown no-wrap active">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
-  </div>
-</button>
-```
-
-#### Method 2
-
-Add `data-ui="dropdown-selector"` attribute on elements and call `ui()` after html output.
-
-```html
-<button data-ui="#dropdown">
-  <span>Button</span>
-  <div id="dropdown" class="dropdown no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
-  </div>
-</button>
-```
-
-```js
-ui();
-```
-
-#### Method 3
-
-Call `ui("dropdown-selector")`.
-
-```html
-<button>
-  <span>Button</span>
-  <div id="dropdown" class="dropdown no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
-  </div>
-</button>
-```
-
-```js
-ui('#dropdown');
+<main class="responsive"></main>
 ```
 
 ## Go to
