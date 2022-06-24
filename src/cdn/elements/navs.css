@@ -225,6 +225,21 @@ nav.bottom > .modal {
   padding-bottom: 88rem;
 }
 
+nav.left-align,
+nav.top-align {
+  justify-content: flex-start;
+}
+
+nav.right-align,
+nav.bottom-align {
+  justify-content: flex-end;
+}
+
+nav.center-align,
+nav.middle-align {
+  justify-content: center;
+}
+
 @media only screen and (max-width: 600px) {
   nav.top,
   nav.bottom {
