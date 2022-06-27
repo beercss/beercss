@@ -6,9 +6,8 @@
     a.chip.circle(@click="domain.showSamples(data, '#containers main.responsive', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
       i code
   nav
-    button(@click="domain.updateSize()") Default
-    button(@click="domain.updateSize('min')") Min
-    button(@click="domain.updateSize('max')") Max
+    button(@click="domain.updateSize('main.responsive')") Min
+    button(@click="domain.updateSize('main.responsive', 'max')") Max
   div(v-show="false")
     main.responsive
 </template>
