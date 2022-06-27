@@ -419,7 +419,6 @@ import typography from "./typography.vue";
 
 onMounted(() => {
   sharedDomain.initTheme(data.value);
-  domain.resetTheme();
 
   setTimeout(() => {
     $("#logo").addClass("active");

@@ -269,10 +269,6 @@ const showSamples = (data: IHome, selector:string, modal:string|null|undefined=u
   });
 }
 
-const resetTheme = () => {
-  $("html")[0].className = "";
-}
-
 const goTo = (selector:string) => {
   setTimeout(() => {
     let element = document.querySelector(selector);
@@ -312,6 +308,5 @@ export default {
   addHomeScreen,
   formatHtml,
   goTo,
-  resetTheme,
   showSamples,
 }
