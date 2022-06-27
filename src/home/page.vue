@@ -14,9 +14,6 @@ div
     a(@click="domain.updateMenu($event, 'right')")
       i arrow_forward
       div Right
-    a(@click="domain.updateIcons()")
-      i image
-      div Icons
     a(@click="sharedDomain.updateMode(data)")
       i light_mode
       div Light/Dark
@@ -26,7 +23,7 @@ div
     a(data-ui="#more1")
       i collections
       div Templates
-    a(@click="domain.showSamples(data, null, null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a(@click="domain.showSamples(data, '#app > div > nav:visible', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       div Code
     themes(id="themes1", v-model="data")
@@ -54,16 +51,16 @@ div
         img.logo-codepen(:src="'/codepen-light.png'")
 
   nav.bottom.s
-    a(@click="domain.updateIcons()")
-      i image
-      div Icons
+    a(@click="sharedDomain.updateMode(data)")
+      i light_mode
+      div Light/Dark
     a(data-ui="#themes2")
       i brightness_medium
       div Themes
     a(data-ui="#more2")
       i collections
       div Templates
-    a(@click="domain.showSamples(data, null, null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a(@click="domain.showSamples(data, '#app > div > nav:visible', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       div Code
     themes(id="themes2", v-model="data")
@@ -423,19 +420,6 @@ import typography from "./typography.vue";
 onMounted(() => {
   sharedDomain.initTheme(data.value);
   domain.resetTheme();
-  domain.badgeSamples();
-  domain.chipSamples();
-  domain.inputSamples();
-  domain.listSamples();
-  domain.tableSamples();
-  domain.tabSamples();
-  domain.selectSamples();
-  domain.rowSamples();
-  domain.textareaSamples();
-  domain.layoutSamples();
-  domain.toastSamples();
-  domain.progressSamples();
-  domain.appBarSamples();
   ui();
 
   setTimeout(() => {

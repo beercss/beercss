@@ -7,36 +7,38 @@
       i code
   nav.wrap
     label.radio
-      input#default-chips(
+      input(
         type="radio",
         name="color-chips",
-        checked
+        checked,
+        @click="domain.updateElementColor('#chips nav .chip')"
       )
       span default
     label.radio
-      input#brown-chips(type="radio", name="color-chips")
+      input(type="radio", name="color-chips", @click="domain.updateElementColor('#chips nav .chip', 'brown')")
       span brown
     label.radio
-      input#indigo-chips(type="radio", name="color-chips")
+      input(type="radio", name="color-chips", @click="domain.updateElementColor('#chips nav .chip', 'indigo')")
       span indigo
     label.radio
-      input#red-chips(type="radio", name="color-chips")
+      input(type="radio", name="color-chips", @click="domain.updateElementColor('#chips nav .chip', 'red')")
       span red
     label.radio
-      input#small-chips(type="radio", name="size-chips")
+      input(type="radio", name="size-chips", @click="domain.updateSize('#chips nav .chip', 'small')")
       span small
     label.radio
-      input#medium-chips(
+      input(
         type="radio",
         name="size-chips",
-        checked
+        checked,
+        @click="domain.updateSize('#chips nav .chip')"
       )
       span medium
     label.radio
-      input#large-chips(type="radio", name="size-chips")
+      input(type="radio", name="size-chips", @click="domain.updateSize('#chips nav .chip', 'large')")
       span large
     label.checkbox
-      input#active-chips(type="checkbox", name="active-chips")
+      input(type="checkbox", name="active-chips", @click="domain.updateActive('#chips nav .chip', $event)")
       span active
   .row
     .col.s12.m12.l6

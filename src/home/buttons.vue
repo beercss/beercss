@@ -7,7 +7,7 @@
     span FABs
     a.chip.circle(@click="domain.showSamples(data, '#fabs button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="fabs", selectedSize="extra")
+  selectionForButtons(context="#fabs button", selectedSize="extra")
   #fabs
     nav.wrap
       button.square
@@ -102,7 +102,7 @@
     span Extended FABs
     a.chip.circle(@click="domain.showSamples(data, '#extended-fabs button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="extended-fabs", :sizes="['extra']", selectedSize="extra")
+  selectionForButtons(context="#extended-fabs button", :sizes="['extra']", selectedSize="extra")
   #extended-fabs.row
     .col.s6.m6.l3
       nav
@@ -257,7 +257,7 @@
     span Buttons
     a.chip.circle(@click="domain.showSamples(data, '#default-buttons button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="default-buttons")
+  selectionForButtons(context="#default-buttons button")
   #default-buttons
     nav.wrap
       button Button
@@ -363,7 +363,7 @@
     span Responsive buttons
     a.chip.circle(@click="domain.showSamples(data, '#responsive-buttons button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="responsive-buttons")
+  selectionForButtons(context="#responsive-buttons button")
   #responsive-buttons.row
     .col.s12.m6
       nav 

@@ -7,29 +7,30 @@
       i code
   nav.wrap
     label.checkbox
-      input#border-textareas(type="checkbox", checked)
+      input(type="checkbox", checked, @click="domain.updateBorder('#textareas .field', $event)")
       span border
     label.checkbox
-      input#round-textareas(type="checkbox")
+      input(type="checkbox", @click="domain.updateRound('#textareas .field', $event)")
       span round
     label.checkbox
-      input#fill-textareas(type="checkbox")
+      input(type="checkbox", @click="domain.updateFill('#textareas .field', $event)")
       span fill
     label.radio
-      input#small-textareas(type="radio", name="size-textareas")
+      input(type="radio", name="size-textareas", @click="domain.updateSize('#textareas .field', 'small')")
       span small
     label.radio
-      input#medium-textareas(
+      input(
         type="radio",
         name="size-textareas",
-        checked
+        checked,
+        @click="domain.updateSize('#textareas .field')"
       )
       span medium
     label.radio
-      input#large-textareas(type="radio", name="size-textareas")
+      input(type="radio", name="size-textareas", @click="domain.updateSize('#textareas .field', 'large')")
       span large
     label.radio
-      input#extra-textareas(type="radio", name="size-textareas")
+      input(type="radio", name="size-textareas", @click="domain.updateSize('#textareas .field', 'extra')")
       span extra
   .space
   .row

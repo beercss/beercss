@@ -7,23 +7,27 @@
       i code
   nav.wrap
     label.radio
-      input#no-space-rows(type="radio", name="space-rows")
+      input(type="radio", name="space-rows", @click="domain.updateSpace('#rows .row', 'no-space')")
       span no-space
     label.radio
-      input#small-space-rows(
+      input(
         type="radio",
         name="space-rows",
-        checked
+        checked,
+        @click="domain.updateSpace('#rows .row')"
       )
       span small-space
     label.radio
-      input#medium-space-rows(type="radio", name="space-rows")
+      input(type="radio", name="space-rows", @click="domain.updateSpace('#rows .row', 'medium-space')")
       span medium-space
     label.radio
-      input#large-space-rows(type="radio", name="space-rows")
+      input(type="radio", name="space-rows", @click="domain.updateSpace('#rows .row', 'large-space')")
       span large-space
-    label.checkbox
-      input#min-rows(type="checkbox", name="size-rows")
+    label.radio
+      input(type="radio", name="size-rows", checked, @click="domain.updateSize('#rows .row')")
+      span max
+    label.radio
+      input(type="radio", name="size-rows", @click="domain.updateSize('#rows .row', 'min')")
       span min
   .space
   .row

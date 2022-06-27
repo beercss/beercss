@@ -7,25 +7,25 @@
       i code
   nav.wrap
     label.radio
-      input#0-progress(type="radio", name="percent-progress", checked)
+      input(type="radio", name="percent-progress", checked, @click="domain.updateProgress(0)")
       span 0%
     label.radio
-      input#30-progress(type="radio", name="percent-progress")
+      input(type="radio", name="percent-progress", @click="domain.updateProgress(30)")
       span 30%
     label.radio
-      input#60-progress(type="radio", name="percent-progress")
+      input(type="radio", name="percent-progress", @click="domain.updateProgress(60)")
       span 60%
     label.radio
-      input#100-progress(type="radio", name="percent-progress")
+      input(type="radio", name="percent-progress", @click="domain.updateProgress(100)")
       span 100%
     label.radio
-      input#default-progress(type="radio", name="color-progress", checked)
+      input(type="radio", name="color-progress", checked, @click="domain.updateColor('#progress .progress')")
       span default
     label.radio
-      input#light-green-progress(type="radio", name="color-progress")
+      input(type="radio", name="color-progress", @click="domain.updateColor('#progress .progress', 'light-green')")
       span light-green
     label.radio
-      input#orange-progress(type="radio", name="color-progress")
+      input(type="radio", name="color-progress", @click="domain.updateColor('#progress .progress', 'orange')")
       span orange
   .space
   .small-space.primary-container.border

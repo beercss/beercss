@@ -10,27 +10,27 @@ div
       )
         i code
     nav.wrap
-      label.checkbox
-        input#center-layouts(type="checkbox", checked)
-        span center
-      label.checkbox
-        input#left-layouts(type="checkbox")
+      label.radio
+        input(type="radio", name="horizontal-position", @click="domain.updateHorizontalPosition('#positions .absolute', 'left')")
         span left
-      label.checkbox
-        input#right-layouts(type="checkbox")
+      label.radio
+        input(type="radio", name="horizontal-position", checked, @click="domain.updateHorizontalPosition('#positions .absolute', 'center')")
+        span center
+      label.radio
+        input(type="radio", name="horizontal-position", @click="domain.updateHorizontalPosition('#positions .absolute', 'right')")
         span right
-      label.checkbox
-        input#middle-layouts(type="checkbox", checked)
-        span middle
-      label.checkbox
-        input#top-layouts(type="checkbox")
+      label.radio
+        input(type="radio", name="vertical-position", @click="domain.updateVerticalPosition('#positions .absolute', 'top')")
         span top
-      label.checkbox
-        input#bottom-layouts(type="checkbox")
+      label.radio
+        input(type="radio", name="vertical-position", checked, @click="domain.updateVerticalPosition('#positions .absolute', 'middle')")
+        span middle
+      label.radio
+        input(type="radio", name="vertical-position", @click="domain.updateVerticalPosition('#positions .absolute', 'bottom')")
         span bottom
     #positions
       article.border.medium.no-padding
-        .padding.absolute.blue.white-text.center.middle.primary
+        .padding.primary.absolute.center.middle
           h5 Position
           div Lorem ipsum dolor...
     .medium-space
@@ -41,33 +41,32 @@ div
         i code
     nav.wrap
       label.radio
-        input#center-align-layouts(
+        input(type="radio", name="horizontal-layouts", @click="domain.updateHorizontalAlign('#alignments article', 'left-align')")
+        span left-align
+      label.radio
+        input(
           type="radio",
           name="horizontal-layouts",
-          checked
+          checked,
+          @click="domain.updateHorizontalAlign('#alignments article', 'center-align')"
         )
         span center-align
       label.radio
-        input#left-align-layouts(type="radio", name="horizontal-layouts")
-        span left-align
-      label.radio
-        input#right-align-layouts(
-          type="radio",
-          name="horizontal-layouts"
-        )
+        input(type="radio", name="horizontal-layouts", @click="domain.updateHorizontalAlign('#alignments article', 'right-align')")
         span right-align
       label.radio
-        input#middle-align-layouts(
+        input(type="radio", name="vertical-layouts", @click="domain.updateVerticalAlign('#alignments article', 'top-align')")
+        span top-align
+      label.radio
+        input(
           type="radio",
           name="vertical-layouts",
-          checked
+          checked,
+          @click="domain.updateVerticalAlign('#alignments article', 'middle-align')"
         )
         span middle-align
       label.radio
-        input#top-align-layouts(type="radio", name="vertical-layouts")
-        span top-align
-      label.radio
-        input#bottom-align-layouts(type="radio", name="vertical-layouts")
+        input(type="radio", name="vertical-layouts", @click="domain.updateVerticalAlign('#alignments article', 'bottom-align')")
         span bottom-align
     #alignments
       article.border.medium.no-padding.center-align.middle-align
@@ -104,22 +103,22 @@ div
         i code
     nav.wrap
       label.radio
-        input#blue-app-bars(type="radio", name="radio-app-bars")
+        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('blue white-text')")
         span blue
       label.radio
-        input#purple-app-bars(type="radio", name="radio-app-bars")
+        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('purple white-text')")
         span purple
       label.radio
-        input#teal-app-bars(type="radio", name="radio-app-bars", checked)
+        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('teal white-text')", checked)
         span teal
       label.radio
-        input#primary-app-bars(type="radio", name="radio-app-bars")
+        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('primary')")
         span primary
       label.radio
-        input#secondary-app-bars(type="radio", name="radio-app-bars")
+        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('secondary')")
         span secondary
       label.radio
-        input#tertiary-app-bars(type="radio", name="radio-app-bars")
+        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('tertiary')")
         span tertiary
     header.padding.primary
       .row.no-wrap.middle-align
@@ -190,20 +189,21 @@ div
         i code
     nav.wrap
       label.radio
-        input#top-align-lists(type="radio", name="align-lists")
+        input(type="radio", name="align-lists", @click="domain.updateVerticalAlign('#list .row', 'top-align')")
         span top-align
       label.radio
-        input#middle-align-lists(
+        input(
           type="radio",
           name="align-lists",
-          checked
+          checked,
+          @click="domain.updateVerticalAlign('#list .row', 'middle-align')"
         )
         span middle-align
       label.radio
-        input#bottom-align-lists(type="radio", name="align-lists")
+        input(type="radio", name="align-lists", @click="domain.updateVerticalAlign('#list .row', 'bottom-align')")
         span bottom-align
       label.checkbox
-        input#divider-lists(type="checkbox", name="divider-lists")
+        input(type="checkbox", name="divider-lists", @click="domain.updateDivider('#list .row', $event)")
         span divider
     label.large-space.middle-align Today
     .row.no-wrap.middle-align

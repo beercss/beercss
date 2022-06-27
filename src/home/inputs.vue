@@ -7,48 +7,50 @@
       i code
   nav.wrap
     label.checkbox
-      input#border-inputs(type="checkbox", checked)
+      input(type="checkbox", checked, @click="domain.updateBorder('#inputs .field', $event)")
       span border
     label.checkbox
-      input#round-inputs(type="checkbox")
+      input(type="checkbox", @click="domain.updateRound('#inputs .field', $event)")
       span round
     label.checkbox
-      input#fill-inputs(type="checkbox")
+      input(type="checkbox", @click="domain.updateFill('#inputs .field', $event)")
       span fill
     label.radio
-      input#small-inputs(type="radio", name="size-inputs")
+      input(type="radio", name="size-inputs", @click="domain.updateSize('#inputs .field', 'small')")
       span small
     label.radio
-      input#medium-inputs(
+      input(
         type="radio",
         name="size-inputs",
-        checked
+        checked,
+        @click="domain.updateSize('#inputs .field')"
       )
       span medium
     label.radio
-      input#large-inputs(type="radio", name="size-inputs")
+      input(type="radio", name="size-inputs", @click="domain.updateSize('#inputs .field', 'large')")
       span large
     label.radio
-      input#extra-inputs(type="radio", name="size-inputs")
+      input(type="radio", name="size-inputs", @click="domain.updateSize('#inputs .field', 'extra')")
       span extra
     label.radio
-      input#text-inputs(
+      input(
         type="radio",
         name="type-inputs",
-        checked
+        checked,
+        @click="domain.updateFieldType('#inputs .field', 'text')"
       )
       span text
     label.radio
-      input#password-inputs(type="radio", name="type-inputs")
+      input(type="radio", name="type-inputs", @click="domain.updateFieldType('#inputs .field', 'password')")
       span password
     label.radio
-      input#file-inputs(type="radio", name="type-inputs")
+      input(type="radio", name="type-inputs", @click="domain.updateFieldType('#inputs .field', 'file')")
       span file
     label.radio
-      input#date-inputs(type="radio", name="type-inputs")
+      input(type="radio", name="type-inputs", @click="domain.updateFieldType('#inputs .field', 'date')")
       span date
     label.radio
-      input#time-inputs(type="radio", name="type-inputs")
+      input(type="radio", name="type-inputs", @click="domain.updateFieldType('#inputs .field', 'time')")
       span time
   .space
   .row

@@ -6,16 +6,16 @@
       i code
   nav.wrap
     label.radio
-      input#default-badges(type="radio", name="color-badges", checked)
+      input(type="radio", name="color-badges", checked, @click="domain.updateElementColor('#badges .badge')")
       span default
     label.radio
-      input#blue-badges(type="radio", name="color-badges")
+      input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'blue')")
       span blue
     label.radio
-      input#purple-badges(type="radio", name="color-badges")
+      input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'purple')")
       span purple
     label.radio
-      input#teal-badges(type="radio", name="color-badges")
+      input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'teal')")
       span teal
   .space
   .row

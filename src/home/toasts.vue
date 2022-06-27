@@ -7,14 +7,15 @@
       i code
   nav.wrap
     label.radio
-      input#bottom-toasts(
+      input(
         type="radio",
         name="position-toasts",
-        checked
+        checked,
+        @click="domain.updatePosition('#toasts .toast')"
       )
       span bottom
     label.radio
-      input#top-toasts(type="radio", name="position-toasts")
+      input(type="radio", name="position-toasts", @click="domain.updatePosition('#toasts .toast', 'top')")
       span top
   nav.wrap
     button.pink.white-text(onclick="ui('.toast.pink')") Toast

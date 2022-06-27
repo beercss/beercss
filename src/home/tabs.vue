@@ -9,33 +9,35 @@
       i code
   nav.wrap
     label.radio
-      input#default-align-tabs(
+      input(
         type="radio",
         name="align-tabs",
-        checked
+        checked,
+        @click="domain.updateAlign('#tabs .tabs')"
       )
       span default
     label.radio
-      input#left-align-tabs(type="radio", name="align-tabs")
+      input(type="radio", name="align-tabs", @click="domain.updateAlign('#tabs .tabs', 'left-align')")
       span left-align
     label.radio
-      input#center-align-tabs(type="radio", name="align-tabs")
+      input(type="radio", name="align-tabs", @click="domain.updateAlign('#tabs .tabs', 'center-align')")
       span center-align
     label.radio
-      input#right-align-tabs(type="radio", name="align-tabs")
+      input(type="radio", name="align-tabs", @click="domain.updateAlign('#tabs .tabs', 'right-align')")
       span right-align
     label.radio
-      input#defaut-tabs(
+      input(
         type="radio",
         name="page-tabs",
-        checked
+        checked,
+        @click="domain.updatePosition('#tabs .page')"
       )
       span page default
     label.radio
-      input#left-tabs(type="radio", name="page-tabs")
+      input(type="radio", name="page-tabs", @click="domain.updatePosition('#tabs .page', 'left')")
       span page left
     label.radio
-      input#right-tabs(type="radio", name="page-tabs")
+      input(type="radio", name="page-tabs", @click="domain.updatePosition('#tabs .page', 'right')")
       span page right
   p.space
   div

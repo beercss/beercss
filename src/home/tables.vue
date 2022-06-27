@@ -7,36 +7,41 @@
       i code
   nav.wrap
     label.radio
-      input#no-space-tables(type="radio", name="space-tables")
+      input(type="radio", name="space-tables", @click="domain.updateSpace('#table table', 'no-space')")
       span no-space
     label.radio
-      input#small-space-tables(
+      input(
         type="radio",
         name="space-tables",
-        checked
+        checked,
+        @click="domain.updateSpace('#table table')"
       )
       span small-space
     label.radio
-      input#medium-space-tables(type="radio", name="space-tables")
+      input(type="radio", name="space-tables", @click="domain.updateSpace('#table table', 'medium-space')")
       span medium-space
     label.radio
-      input#large-space-tables(type="radio", name="space-tables")
+      input(type="radio", name="space-tables", @click="domain.updateSpace('#table table', 'large-space')")
       span large-space
     label.radio
-      input#left-align-tables(
+      input(
         type="radio",
         name="align-tables",
-        checked
+        checked,
+        @click="domain.updateAlign('#table table')"
       )
       span left-align
     label.radio
-      input#center-align-tables(type="radio", name="align-tables")
+      input(type="radio", name="align-tables", @click="domain.updateAlign('#table table', 'center-align')")
       span center-align
     label.radio
-      input#right-align-tables(type="radio", name="align-tables")
+      input(type="radio", name="align-tables", @click="domain.updateAlign('#table table', 'right-align')")
       span right-align
-    label.checkbox
-      input#min-tables(type="checkbox", name="size-tables")
+    label.radio
+      input(type="radio", name="size-tables", checked, @click="domain.updateSize('#table table')")
+      span max
+    label.radio
+      input(type="radio", name="size-tables", @click="domain.updateSize('#table table', 'min')")
       span min
   .space
   table.border
