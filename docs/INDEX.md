@@ -42,7 +42,7 @@ You can use this html to setup your project
     <script src="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
   </head>
-  <body>
+  <body class="light">
     <nav class="left m l">
       <img src="https://www.beercss.com/favicon.png" class="circle large margin">
       <a>
