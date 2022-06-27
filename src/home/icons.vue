@@ -7,10 +7,10 @@
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="alignment-navigations", checked, @click="domain.updateIcon()")
+      input(type="radio", name="form-icons", checked, @click="domain.updateIcon()")
       span default
     label.radio
-      input(type="radio", name="alignment-navigations", @click="domain.updateIcon('outlined')")
+      input(type="radio", name="form-icons", @click="domain.updateIcon('outlined')")
       span outlined
   #icons-sample
     nav.wrap
