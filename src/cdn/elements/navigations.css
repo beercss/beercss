@@ -58,12 +58,12 @@ nav.bottom {
 
 nav.left,
 nav.right {
-  width: 72rem;
+  width: 80rem;
 }
 
 nav.top,
 nav.bottom {
-  height: 72rem;
+  height: 80rem;
 }
 
 nav.border {
@@ -124,11 +124,10 @@ nav.right > a:not(button, .button, .chip, img, video),
 nav.top > a:not(button, .button, .chip, img, video),
 nav.bottom > a:not(button, .button, .chip, img, video) {
   min-width: 56rem;
-  min-height: 48rem;
+  min-height: 56rem;
   text-align: center;
   margin: 8rem;
   display: grid;
-  font-size: 12rem;
   z-index: 101;
 }
 
