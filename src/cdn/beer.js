@@ -319,7 +319,9 @@
     if (!source || !window.materialDynamicColors) return lastTheme();
 
     let mode = /dark/i.test(document.body.className) ? "dark" : "light";
-    if (source && source[mode]) {
+    if (source && source.light && source.dark) {
+      _lastTheme.light = source.light;
+      _lastTheme.dark = source.dark;
       document.body.setAttribute("style", source[mode]);
       return source;
     }
