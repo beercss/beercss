@@ -10,13 +10,13 @@
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="alignment-navigations", checked, @click="domain.updateAlign('#navigation-default > nav')")
+      input(type="radio", name="align-navigations", checked, @click="domain.updateAlign('#navigation-default > nav')")
       span left-align
     label.radio
-      input(type="radio", name="alignment-navigations", @click="domain.updateAlign('#navigation-default > nav', 'center-align')")
+      input(type="radio", name="align-navigations", @click="domain.updateAlign('#navigation-default > nav', 'center-align')")
       span center-align
     label.radio
-      input(type="radio", name="alignment-navigations", @click="domain.updateAlign('#navigation-default > nav', 'right-align')")
+      input(type="radio", name="align-navigations", @click="domain.updateAlign('#navigation-default > nav', 'right-align')")
       span right-align
   #navigation-default
     nav
@@ -33,17 +33,35 @@
         i code
     nav.wrap
       label.radio
-        input#left-navigations(type="radio", name="position-navigations", @click="domain.updateMenu('#app > div > nav:visible', 'left')", checked)
+        input#left-navigations(type="radio", name="position-navigations", @click="domain.updateMenu(data, 'left')", checked)
         span left
       label.radio
-        input#right-navigations(type="radio", name="position-navigations", @click="domain.updateMenu('#app > div > nav:visible', 'right')")
+        input#right-navigations(type="radio", name="position-navigations", @click="domain.updateMenu(data, 'right')")
         span right
       label.radio
-        input#top-navigations(type="radio", name="position-navigations", @click="domain.updateMenu('#app > div > nav:visible', 'top')")
+        input#top-navigations(type="radio", name="position-navigations", @click="domain.updateMenu(data, 'top')")
         span top
       label.radio
-        input#bottom-navigations(type="radio", name="position-navigations", @click="domain.updateMenu('#app > div > nav:visible', 'bottom')")
+        input#bottom-navigations(type="radio", name="position-navigations", @click="domain.updateMenu(data, 'bottom')")
         span bottom
+      label.radio(v-show="data.isHorizontal")
+        input(type="radio", name="horizontal-navigations", @click="domain.updateAlign('#app > div > nav:visible', 'left-align')")
+        span left-align
+      label.radio(v-show="data.isHorizontal")
+        input(type="radio", name="horizontal-navigations", @click="domain.updateAlign('#app > div > nav:visible', 'center-align')")
+        span center-align
+      label.radio(v-show="data.isHorizontal")
+        input(type="radio", name="horizontal-navigations", @click="domain.updateAlign('#app > div > nav:visible', 'right-align')")
+        span right-align
+      label.radio(v-show="!data.isHorizontal")
+        input(type="radio", name="vertical-navigations", @click="domain.updateAlign('#app > div > nav:visible', 'top-align')")
+        span top-align
+      label.radio(v-show="!data.isHorizontal")
+        input(type="radio", name="vertical-navigations", @click="domain.updateAlign('#app > div > nav:visible', 'middle-align')")
+        span middle-align
+      label.radio(v-show="!data.isHorizontal")
+        input(type="radio", name="vertical-navigations", @click="domain.updateAlign('#app > div > nav:visible', 'bottom-align')")
+        span bottom-align
 </template>
 
 <script setup lang="ts">

@@ -124,8 +124,8 @@ const updateFieldType = (selector:string, type:string) => {
   }
 }
 
-const updateMenu = (event:any, css:string) => {
-  var menu = $(event.currentTarget ? event.currentTarget.parentNode : event);
+const updateMenu = (data:IHome, css:string) => {
+  var menu = $('#app > div > nav:visible');
   var modals = $(menu).find("> .modal");
   var actives = $(menu).find("> .active");
   var radios = $("#navigation-rail input");
@@ -133,7 +133,9 @@ const updateMenu = (event:any, css:string) => {
 
   updatePosition(menu, css);
   updatePosition(modals, css);
+  updateAlign(menu, null);
 
+  data.isHorizontal = /top|bottom/i.test(css);
   actives.removeClass("active");
   radios.prop("checked", false);
   radio.prop("checked", true);

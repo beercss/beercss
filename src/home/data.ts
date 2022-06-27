@@ -10,7 +10,8 @@ const data:IHome = {
   urlSample: "",
   mediaCard: 1,
   mediaImage: 1,
-  layout: 0
+  layout: 0,
+  isHorizontal: false
 }
 
 const dataAsRef:Ref<IHome> = ref(data);

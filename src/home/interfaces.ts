@@ -12,5 +12,6 @@ export interface IHome extends ILayout {
   urlSample: string,
   mediaCard: number,
   mediaImage: number,
-  layout: number
+  layout: number,
+  isHorizontal: boolean
 }
