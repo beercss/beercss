@@ -127,20 +127,17 @@ const updateFieldType = (selector:string, type:string) => {
 
 const updateMenu = (event:any, css:string) => {
   var menu = $(event.currentTarget ? event.currentTarget.parentNode : event);
+  var modals = $(menu).find("> .modal");
+  var actives = $(menu).find("> .active");
   var radios = $("#navigation-rail input");
   var radio = $("#" + css + "-navigations");
-  var actives = $(menu).find("> .active");
 
-  $(actives).removeClass("active");
+  updatePosition(menu, css);
+  updatePosition(modals, css);
 
-  if (/left|right|top|bottom/.test(css)) {
-    $(radios).prop("checked", false);
-    $(menu).removeClass("left right top bottom");
-    $(menu).addClass(css);
-    $(menu).find("> .modal").removeClass("left right top bottom");
-    $(menu).find("> .modal").addClass(css);
-    $(radio).prop("checked", true);
-  }
+  actives.removeClass("active");
+  radios.prop("checked", false);
+  radio.prop("checked", true);
 }
 
 const updateAppBar = (css:string) => {
