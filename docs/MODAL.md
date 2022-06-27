@@ -60,7 +60,7 @@ Add/remove `active` class on modal.
 
 #### Method 2
 
-Add `data-ui="modal-selector"` attribute on elements and call `ui()` after html output.
+Add `data-ui="modal-selector"` attribute on elements.
 
 ```html
 <button data-ui="#modal">Open modal</button>
@@ -73,10 +73,6 @@ Add `data-ui="modal-selector"` attribute on elements and call `ui()` after html 
     <button data-ui="#modal">Confirm</button>
   </nav>
 </div>
-```
-
-```js
-ui();
 ```
 
 #### Method 3

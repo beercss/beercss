@@ -1,9 +1,11 @@
 (() => {
+  let _timeout = null;
+  let _mutation = null;
   let _lastTheme = {
     light: '',
     dark: ''
   };
-  
+
   const guid = () => {
     return "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
       let r = (Math.random() * 16) | 0,
@@ -144,6 +146,14 @@
 
   const onKeydownFile = (e) => {
     updateFile(e.currentTarget, e);
+  }
+
+  const onMutation = () => {
+    if (_timeout) clearTimeout(_timeout);
+    _timeout = setTimeout(() => {
+      console.log('onMutation');
+      ui();
+    }, 180);
   }
 
   const updateFile = (target, e) => {
@@ -347,12 +357,20 @@
     if (!value) return /dark/i.test(document.body.className) ? "dark" : "light";
     document.body.classList.remove("light", "dark");
     document.body.classList.add(value);
-    document.body.style = _lastTheme[value];
+    if (window.materialDynamicColors) document.body.style = _lastTheme[value];
     return value;
+  }
+
+  const setup = () => {
+    if (_mutation) return;
+    _mutation = new MutationObserver(onMutation);
+    _mutation.observe(document.body, { childList: true, subtree: true });
+    ui();
   }
 
   const ui = (selector, config) => {
     if (selector) {
+      if (selector == "setup") return setup();
       if (selector == "guid") return guid();
       if (selector == "mode") return mode(config);
       if (selector == "theme") return theme(config);
@@ -388,3 +406,7 @@
 
   window.ui = ui;
 })();
+
+window.addEventListener("load", () => {
+  ui("setup");
+});

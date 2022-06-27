@@ -194,7 +194,6 @@ import { onRoute } from "../shared/router";
 
 onMounted(async() => {
   sharedDomain.initTheme(data.value);
-  ui();
   
   data.value.isLoaded = false;
   await domain.waitForImages();

@@ -66,6 +66,5 @@ import sharedDomain from "../shared/domain";
 
 onMounted(() => {
   sharedDomain.initTheme(data.value);
-  ui();
 });
 </script>

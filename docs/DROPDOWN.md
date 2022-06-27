@@ -58,7 +58,7 @@ Add/remove `active` class on dropdown.
 
 #### Method 2
 
-Add `data-ui="dropdown-selector"` attribute on elements and call `ui()` after html output.
+Add `data-ui="dropdown-selector"` attribute on elements.
 
 ```html
 <button data-ui="#dropdown">
@@ -69,10 +69,6 @@ Add `data-ui="dropdown-selector"` attribute on elements and call `ui()` after ht
     <a>Item</a>
   </div>
 </button>
-```
-
-```js
-ui();
 ```
 
 #### Method 3

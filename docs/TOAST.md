@@ -44,7 +44,7 @@ Add/remove `active` class on toast.
 
 #### Method 2
 
-Add `data-ui="toast-selector"` attribute on elements and call `ui()` after html output.
+Add `data-ui="toast-selector"` attribute on elements.
 
 ```html
 <button data-ui="#toast">Open</button>
@@ -53,10 +53,6 @@ Add `data-ui="toast-selector"` attribute on elements and call `ui()` after html 
   <i>warning</i>
   <span>I'm a toast</span>
 </div>
-```
-
-```js
-ui();
 ```
 
 #### Method 3

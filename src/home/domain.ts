@@ -73,6 +73,7 @@ const updateBorder = (selector:string, event:any) => {
   var elements = $(selector);
   if (event.currentTarget.checked) elements.addClass("border");
   else elements.removeClass("border");
+  ui();
 }
 
 const updateRound = (selector:string, event:any) => {
@@ -121,8 +122,6 @@ const updateFieldType = (selector:string, type:string) => {
     inputs.attr("type", type);
     icons.html("search");
   }
-
-  ui();
 }
 
 const updateMenu = (event:any, css:string) => {
@@ -265,7 +264,6 @@ const showSamples = (data: IHome, selector:string, modal:string|null|undefined=u
   }
 
   nextTick(() => {
-    ui();
     ui(data.modalSample);
     $(data.modalSample).scrollTop(0);
   });

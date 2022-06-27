@@ -250,7 +250,6 @@ import { onRoute } from "../shared/router";
 
 onMounted(() => {
   sharedDomain.initTheme(data.value);
-  ui();
 });
 
 onRoute((url:string) => {

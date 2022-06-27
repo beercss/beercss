@@ -56,25 +56,6 @@ Add/remove `active` class on label. On `field` element with `border` helper, use
 </div>
 ```
 
-#### Method 2
-
-Call `ui()` after html output.
-
-```html
-<div class="field label border">
-  <select>
-    <option>Item</option>
-    <option>Item</option>
-    <option>Item</option>
-  </select>
-  <label>Label</label>
-</div>
-```
-
-```js
-ui();
-```
-
 ## Go to
 
 [Begin](https://github.com/beercss/beercss/blob/main/docs/INDEX.md), [Elements](https://github.com/beercss/beercss/blob/main/docs/ELEMENTS.md), [Helpers](https://github.com/beercss/beercss/blob/main/docs/HELPERS.md), [Settings](https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md), [Summary](https://github.com/beercss/beercss/blob/main/docs/SUMMARY.md), [beercss.com](https://www.beercss.com)

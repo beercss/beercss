@@ -66,7 +66,7 @@ Add/remove `active` class on tab and page elements.
 
 #### Method 2
 
-Add `data-ui="page-selector"` attribute on elements and call `ui()` after html output. All other pages that are in the same level will be hidden.
+Add `data-ui="page-selector"` attribute on elements. All other pages that are in the same level will be hidden.
 
 ```html
 <div class="tabs">
@@ -84,10 +84,6 @@ Add `data-ui="page-selector"` attribute on elements and call `ui()` after html o
 <div class="page" id="page3">
   <h5>Tab 3</h5>
 </div>
-```
-
-```js
-ui();
 ```
 
 ## Go to

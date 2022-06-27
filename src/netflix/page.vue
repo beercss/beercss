@@ -90,6 +90,5 @@ const scroll = (selector:string) => {
 
 onMounted(() => {
   sharedDomain.initTheme(data.value);
-  ui();
 });
 </script>

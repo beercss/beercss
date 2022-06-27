@@ -42,7 +42,7 @@ Add/remove `active` class on page.
 
 #### Method 2
 
-Add `data-ui="page-selector"` attribute on elements and call `ui()` after html output. All other pages that are in the same level will be hidden.
+Add `data-ui="page-selector"` attribute on elements. All other pages that are in the same level will be hidden.
 
 ```html
 <a data-ui="#page1">Open page 1</a>
@@ -55,10 +55,6 @@ Add `data-ui="page-selector"` attribute on elements and call `ui()` after html o
 <div class="page" id="page2">
   <h5>Page 2</h5>
 </div>
-```
-
-```js
-ui();
 ```
 
 #### Method 3

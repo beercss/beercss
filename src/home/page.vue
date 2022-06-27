@@ -420,7 +420,6 @@ import typography from "./typography.vue";
 onMounted(() => {
   sharedDomain.initTheme(data.value);
   domain.resetTheme();
-  ui();
 
   setTimeout(() => {
     $("#logo").addClass("active");

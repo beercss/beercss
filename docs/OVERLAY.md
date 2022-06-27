@@ -42,7 +42,7 @@ Add/remove `active` class on overlay.
 
 #### Method 2
 
-Add `data-ui="overlay-selector"` attribute on elements and call `ui()` after html output.
+Add `data-ui="overlay-selector"` attribute on elements.
 
 ```html
 <button data-ui="#overlay">Show overlay</button>
@@ -50,10 +50,6 @@ Add `data-ui="overlay-selector"` attribute on elements and call `ui()` after htm
 <div class="overlay center-align middle-align" id="overlay">
   <a class="loader"></a>
 </div>
-```
-
-```js
-ui();
 ```
 
 #### Method 3
