@@ -150,10 +150,7 @@
 
   const onMutation = () => {
     if (_timeout) clearTimeout(_timeout);
-    _timeout = setTimeout(() => {
-      console.log('onMutation');
-      ui();
-    }, 180);
+    _timeout = setTimeout(ui, 180);
   }
 
   const updateFile = (target, e) => {
