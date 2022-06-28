@@ -5,6 +5,7 @@ main.responsive.min {
   padding: 8rem;
   overflow-x: hidden;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 main.responsive.max {
