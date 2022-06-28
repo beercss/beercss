@@ -1,5 +1,5 @@
 .flat {
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 .round {
