@@ -28,7 +28,7 @@ import "beercss";
 
 ### HTML
 
-You can use this html to setup your project
+You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj).
 
 ```html
 <html>
