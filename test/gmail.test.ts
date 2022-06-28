@@ -21,7 +21,7 @@ beforeAll(() => {
   ]
 });
 
-test("checkAll())", () => {
+test("checkAll()", () => {
   domain.checkAll(emails, true);
   expect(emails.every((x) => x.check)).toBe(true);
 
@@ -29,7 +29,7 @@ test("checkAll())", () => {
   expect(emails.every((x) => !x.check)).toBe(true);
 });
 
-test("check())", () => {
+test("check()", () => {
   let firstEmail = emails[0];
   
   domain.check(firstEmail);
@@ -39,7 +39,7 @@ test("check())", () => {
   expect(firstEmail.check).toBe(false);
 });
 
-test("star())", () => {
+test("star()", () => {
   let firstEmail = emails[0];
   
   domain.star(firstEmail);
