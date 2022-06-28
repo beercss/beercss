@@ -21,7 +21,7 @@
           label.checkbox
             input(type="checkbox", checked, disabled)
             span Disabled
-    .col.s12
+    .col.s12.l4
       .field.middle-align
         nav
           label.checkbox
@@ -33,22 +33,8 @@
           label.checkbox
             input(type="checkbox")
             span Item 3
-    .col.s12
-      .field.label.middle-align
-        label.active A question?
-        nav
-          label.checkbox
-            input(type="checkbox")
-            span Item 1
-          label.checkbox
-            input(type="checkbox")
-            span Item 2
-          label.checkbox
-            input(type="checkbox")
-            span Item 3
-    .col.s12
-      .field.label.middle-align
-        label.active A question?
+    .col.s12.l4
+      .field.middle-align
         nav
           label.checkbox
             input(type="checkbox")
@@ -60,9 +46,8 @@
             input(type="checkbox")
             span Item 3
         span.helper Complementary text
-    .col.s12.l6
-      .field.label.middle-align.invalid
-        label.active A question?
+    .col.s12.l4
+      .field.middle-align.invalid
         nav
           label.checkbox
             input(type="checkbox")

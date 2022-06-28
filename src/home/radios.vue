@@ -21,7 +21,7 @@
           label.radio
             input(type="radio", name="radio2", checked, disabled)
             span Disabled
-    .col.s12
+    .col.s12.l4
       .field.middle-align
         nav
           label.radio
@@ -33,9 +33,8 @@
           label.radio
             input(type="radio", name="radio3")
             span Item 3
-    .col.s12
-      .field.label.middle-align
-        label.active A question?
+    .col.s12.l4
+      .field.middle-align
         nav
           label.radio
             input(type="radio", name="radio4")
@@ -45,24 +44,10 @@
             span Item 2
           label.radio
             input(type="radio", name="radio4")
-            span Item 3
-    .col.s12
-      .field.label.middle-align
-        label.active A question?
-        nav
-          label.radio
-            input(type="radio", name="radio5")
-            span Item 1
-          label.radio
-            input(type="radio", name="radio5")
-            span Item 2
-          label.radio
-            input(type="radio", name="radio5")
             span Item 3
         span.helper Complementary text
-    .col.s12
-      .field.label.middle-align.invalid
-        label.active A question?
+    .col.s12.l4
+      .field.middle-align.invalid
         nav
           label.radio
             input(type="radio", name="radio6")

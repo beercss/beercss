@@ -128,19 +128,87 @@ main.responsive
         input
         label Label
         span.helper Helper
-      .field.label.border
+      .field.border.label.border
         input
         label Label
         span.helper Helper
+    .col.s6
+      .field.border.label
+        input
+        label Label
+        span.helper Helper
+    .col.s6
+      .field.middle-align
+        nav
+          label.radio
+            input(type="radio")
+            span Item 1
+          label.radio
+            input(type="radio")
+            span Item 2
+          label.radio
+            input(type="radio")
+            span Item 3
+        span.helper Helper
+    .col.s6
+      .field.border.label.invalid
+        input
+        label Label
+        span.error Error
+    .col.s6
+      .field.middle-align.invalid
+        nav
+          label.radio
+            input(type="radio")
+            span Item 1
+          label.radio
+            input(type="radio")
+            span Item 2
+          label.radio
+            input(type="radio")
+            span Item 3
+        span.error Teste
+    .col.s6
+      .field.border.label
+        input
+        label Label
+        span.helper Helper
+    .col.s6
+      .field.middle-align
+        nav
+          label.checkbox
+            input(type="checkbox")
+            span Item 1
+          label.checkbox
+            input(type="checkbox")
+            span Item 2
+          label.checkbox
+            input(type="checkbox")
+            span Item 3
+        span.helper Helper
+    .col.s6
+      .field.border.label.invalid
+        input
+        label Label
+        span.error Error
+    .col.s6
+      .field.middle-align.invalid
+        nav
+          label.checkbox
+            input(type="checkbox")
+            span Item 1
+          label.checkbox
+            input(type="checkbox")
+            span Item 2
+          label.checkbox
+            input(type="checkbox")
+            span Item 3
+        span.error Teste
+
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
-
 const updateTheme = () => {
-  let element = document.querySelector("html");
-  if (element) element.className = element.className.indexOf("dark") != -1 ? "light" : "dark";
+  document.body.className =document.body.className.indexOf("dark") != -1 ? "light" : "dark";
 }
-
-onMounted(ui);
 </script>

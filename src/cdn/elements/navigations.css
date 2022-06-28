@@ -26,8 +26,8 @@ nav.wrap > :not(.dropdown, .badge) {
   margin: 8rem;
 }
 
-.field.label > nav:not(.left, .right, .top, .bottom) {
-  margin-top: 20rem;
+.field > nav {
+  padding: 0 8rem;
 }
 
 nav.left,
