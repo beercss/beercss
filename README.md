@@ -197,6 +197,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     </nav>
     
     <main class="responsive">
+      <img src="https://www.beercss.com/beer-and-woman.jpg" class="responsive">
       <h3>Welcome</h3>
       <h5>The beer is ready!</h5>
     </main>
