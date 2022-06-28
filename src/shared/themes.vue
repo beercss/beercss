@@ -78,7 +78,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 import sharedDomain from "./domain";
 
 export interface IProps {
@@ -92,8 +91,6 @@ const {
 } = defineProps<IProps>();
 
 const data = modelValue;
-
-onMounted(ui);
 </script>
 
 <style scoped>

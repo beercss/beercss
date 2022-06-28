@@ -5,3 +5,6 @@ import "./netflix";
 import "./test";
 import "./uber";
 import "./youtube";
+import utils from "./shared/utils";
+ 
+utils.firstRedirect();

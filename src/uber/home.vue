@@ -71,7 +71,6 @@ div
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 import data from "./data";
 
 const go = () => {
@@ -89,6 +88,4 @@ const clean = () => {
   data.value.to = "";
   data.value.from = "";
 }
-
-onMounted(ui);
 </script>

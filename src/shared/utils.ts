@@ -55,6 +55,12 @@ const queryAll = (selector:string|NodeListOf<Element>):NodeListOf<Element> => {
   return selector;
 }
 
+const firstRedirect = () => {
+  window.addEventListener("load", () => {
+    if (window.location.pathname != "/") page.redirect(window.location.pathname);
+  });
+}
+
 export default {
   id,
   wait,
@@ -67,5 +73,6 @@ export default {
   removeAttribute,
   setAttribute,
   query,
-  queryAll
+  queryAll,
+  firstRedirect
 }
