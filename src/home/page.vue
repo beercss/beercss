@@ -23,7 +23,7 @@ div
     a(data-ui="#more1")
       i collections
       div Templates
-    a(@click="domain.showSamples(data, '#app > div > nav:visible', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a(@click="domain.showSamples(data, '#app > div > nav.m.l', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       div Code
     themes(id="themes1", v-model="data")
@@ -60,7 +60,7 @@ div
     a(data-ui="#more2")
       i collections
       div Templates
-    a(@click="domain.showSamples(data, '#app > div > nav:visible', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a(@click="domain.showSamples(data, '#app > div > nav.m.l', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       div Code
     themes(id="themes2", v-model="data")
@@ -421,7 +421,7 @@ onMounted(() => {
   sharedDomain.initTheme(data.value);
 
   setTimeout(() => {
-    $("#logo").addClass("active");
+    document.getElementById("logo").classList.add("active");
   }, 1000);
 });
 </script>

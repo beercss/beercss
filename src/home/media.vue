@@ -4,7 +4,7 @@
   h4
     span Media
     a.chip.circle(
-      @click="domain.showSamples(data, '#media img:visible, #media video:visible', null, 'https://github.com/beercss/beercss/blob/main/docs/MEDIA.md')"
+      @click="domain.showSamples(data, '#media img, #media video', null, 'https://github.com/beercss/beercss/blob/main/docs/MEDIA.md')"
     )
       i code
   nav.wrap.m.l

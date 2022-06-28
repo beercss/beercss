@@ -103,13 +103,13 @@ div
         i code
     nav.wrap
       label.radio
-        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('blue white-text')")
+        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('blue')")
         span blue
       label.radio
-        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('purple white-text')")
+        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('purple')")
         span purple
       label.radio
-        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('teal white-text')", checked)
+        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('teal')", checked)
         span teal
       label.radio
         input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('primary')")

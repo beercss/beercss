@@ -2,7 +2,7 @@
 div
   nav.left.flat.no-space.m.l
     .large-space
-    .medium-space
+    .large-space
     a.button.white.circle.large(data-ui="#modal-add")
       img(:src="'/add.png'")
     .space
@@ -36,7 +36,7 @@ div
 
   nav.right.flat.m.l
     .large-space
-    .medium-space
+    .large-space
     a.wave.dark
       img.tiny(:src="'/calendar.png'")
       span.tooltip.left Calendar
@@ -69,10 +69,10 @@ div
       .large-space
       .medium-space
 
-  nav.top.flat
+  nav.top.flat.medium-padding
     .row.no-wrap.middle-align
       .col
-        nav.padding
+        nav
           button.none(data-ui="#dropdown-menu")
             i.outlined menu
             #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")

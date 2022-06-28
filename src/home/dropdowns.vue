@@ -9,91 +9,34 @@
       i code
   nav.wrap
     button(data-ui="#dropdown1")
-      span This is a large button
+      span Default
       i arrow_drop_down
       #dropdown1.dropdown(data-ui="#dropdown1")
-        a Title
-        a
-          div Title
-          label Complementary text
-        a.row.no-wrap.middle-align
-          .col.min
-            i home
-          .col Title
-        a.row.no-wrap.middle-align
-          .col.min
-            i home
-          .col
-            div Title
-            label Complementary text
-        a.row.no-wrap.middle-align
-          .col.min
-            img.circle.tiny(:src="'/beer-and-woman.jpg'")
-          .col Title
-        a.row.no-wrap.middle-align
-          .col.min
-            img.circle.tiny(:src="'/beer-and-woman.jpg'")
-          .col
-            div Title
-            label Complementary text
+        a Item 1
+        a Item 2
+        a Item 3
     button(data-ui="#dropdown2")
-      span Button
+      span No-wrap
       i arrow_drop_down
       #dropdown2.dropdown.no-wrap(data-ui="#dropdown2")
-        a Title
-        a
-          div Title
-          label Complementary text
-        a.row.no-wrap.middle-align
-          .col.min
-            i home
-          .col Title
-        a.row.no-wrap.middle-align
-          .col.min
-            i home
-          .col
-            div Title
-            label Complementary text
-        a.row.no-wrap.middle-align
-          .col.min
-            img.circle.tiny(:src="'/beer-and-woman.jpg'")
-          .col Title
-        a.row.no-wrap.middle-align
-          .col.min
-            img.circle.tiny(:src="'/beer-and-woman.jpg'")
-          .col
-            div Title
-            label Complementary text
+        a Lorem ipsum dolor sit amet
+        a Lorem ipsum dolor sit amet
+        a Lorem ipsum dolor sit amet
     button.circle(data-ui="#dropdown3")
       i arrow_back
       #dropdown3.dropdown.left.no-wrap(data-ui="#dropdown3")
-        a Title
-        a
-          div Title
-          label Complementary text
-        a.row.no-wrap.middle-align
-          .col.min
-            i home
-          .col Title
-        a.row.no-wrap.middle-align
-          .col.min
-            i home
-          .col
-            div Title
-            label Complementary text
-        a.row.no-wrap.middle-align
-          .col.min
-            img.circle.tiny(:src="'/beer-and-woman.jpg'")
-          .col Title
-        a.row.no-wrap.middle-align
-          .col.min
-            img.circle.tiny(:src="'/beer-and-woman.jpg'")
-          .col
-            div Title
-            label Complementary text
+        a Item 1
+        a Item 2
+        a Item 3
     button.circle(data-ui="#dropdown4")
       i arrow_forward
       #dropdown4.dropdown.right.no-wrap(data-ui="#dropdown4")
+        a Item 1
+        a Item 2
+        a Item 3
+    button(data-ui="#dropdown5")
+      span Images and icons
+      #dropdown5.dropdown.no-wrap(data-ui="#dropdown5")
         a Title
         a
           div Title

@@ -3,7 +3,7 @@
   .large-space
   h4
     span Cards
-    a.chip.circle(@click="domain.showSamples(data, '#cards article:visible', null, 'https://github.com/beercss/beercss/blob/main/docs/CARD.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#cards article', null, 'https://github.com/beercss/beercss/blob/main/docs/CARD.md')")
       i code
   nav.wrap.m.l
     label.radio

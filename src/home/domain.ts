@@ -1,180 +1,185 @@
 import { nextTick } from "vue";
 import { IHome } from "./interfaces";
+import utils from "../shared/utils";
 
-const updateColor = (selector:string, color:string) => {
-  var elements = $(selector);
-  elements.removeClass("primary secondary tertiary error amber blue blue-grey brown cyan deep-orange deep-purple green grey indigo light-blue light-green lime orange pink purple red teal yellow");
-  if (color) elements.addClass(color);
+const updateColor = (selector:any, color:string) => {
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["primary", "secondary", "tertiary", "error", "amber", "blue", "blue-grey", "brown", "cyan", "deep-orange", "deep-purple", "green", "grey", "indigo", "light-blue", "light-green", "lime", "orange", "pink", "purple", "red", "teal", "yellow"]);
+  if (color) utils.addClass(elements, [color]);
 }
 
-const updateBorderColor = (selector:string, borderColor:string) => {
-  var elements = $(selector);
-  elements.removeClass("primary-border secondary-border tertiary-border error-border amber-border blue-border blue-grey-border brown-border cyan-border deep-orange-border deep-purple-border green-border grey-border indigo-border light-blue-border light-green-border lime-border orange-border pink-border purple-border red-border teal-border yellow-border");
-  if (borderColor) elements.addClass(borderColor);
+const updateBorderColor = (selector:any, borderColor:string) => {
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["primary-border", "secondary-border", "tertiary-border", "error-border", "amber-border", "blue-border", "blue-grey-border", "brown-border", "cyan-border", "deep-orange-border", "deep-purple-border", "green-border", "grey-border", "indigo-border", "light-blue-border", "light-green-border", "lime-border", "orange-border", "pink-border", "purple-border", "red-border", "teal-border", "yellow-border"]);
+  if (borderColor) utils.addClass(elements, [borderColor]);
 }
 
-const updateTextColor = (selector:string, textColor:string) => {
-  var elements = $(selector);
-  elements.removeClass("primary-text secondary-text tertiary-text error-text amber-text blue-text blue-grey-text brown-text cyan-text deep-orange-text deep-purple-text green-text grey-text indigo-text light-blue-text light-green-text lime-text orange-text pink-text purple-text red-text teal-text yellow-text");
-  if (textColor) elements.addClass(textColor);
+const updateTextColor = (selector:any, textColor:string) => {
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["primary-text", "secondary-text", "tertiary-text", "error-text", "amber-text", "blue-text", "blue-grey-text", "brown-text", "cyan-text", "deep-orange-text", "deep-purple-text", "green-text", "grey-text", "indigo-text", "light-blue-text", "light-green-text", "lime-text", "orange-text", "pink-text", "purple-text", "red-text", "teal-text", "yellow-text"]);
+  if (textColor) utils.addClass(elements, [textColor]);
 }
 
 const updateElementColor = (selector:string, color:string) => {
-  var elementsWithBorder = $(selector+".border");
-  var elementsWithoutBorder = $(selector+":not(.border)");
+  let elementsWithBorder = utils.queryAll(selector + ".border");
+  let elementsWithoutBorder = utils.queryAll(selector + ":not(.border)");
+  updateBorderColor(elementsWithBorder, color ? color + "-border" : "");
+  updateTextColor(elementsWithBorder, color ? color + "-text" : "");
   updateColor(elementsWithoutBorder, color);
-  updateBorderColor(elementsWithBorder, color+"-border");
-  updateTextColor(elementsWithBorder, color+"-text");
 }
 
 const updateSize = (selector:string, size:string) => {
-  var elements = $(selector);
-  elements.removeClass("tiny small medium large extra min max");
-  if (size) elements.addClass(size);
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["tiny", "small", "medium", "large", "extra", "min", "max"]);
+  if (size) utils.addClass(elements, [size]);
 }
 
-const updatePosition = (selector:string, position:string) => {
-  var elements = $(selector);
-  elements.removeClass("left center right top middle bottom");
-  if (position) elements.addClass(position);
+const updatePosition = (selector:any, position:string) => {
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["left", "center", "right", "top", "middle", "bottom"]);
+  if (position) utils.addClass(elements, [position]);
 }
 
-const updateAlign = (selector:string, alignment:string) => {
-  var elements = $(selector);
-  elements.removeClass("left-align center-align right-align top-align middle-align bottom-align");
-  if (alignment) elements.addClass(alignment);
+const updateAlign = (selector:any, alignment:string) => {
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["left-align", "center-align", "right-align", "top-align", "middle-align", "bottom-align"]);
+  if (alignment) utils.addClass(elements, [alignment]);
 }
 
 const updateActive = (selector:string, event:any) => {
-  var elements = $(selector);
-  if (event.currentTarget.checked) elements.addClass("active");
-  else elements.removeClass("active");
+  let elements = utils.queryAll(selector);
+  if (event.currentTarget.checked) utils.addClass(elements, ["active"]);
+  else utils.removeClass(elements, ["active"]);
 }
 
 const updateDivider = (selector:string, event:any) => {
-  var elements = $(selector);
-  if (event.currentTarget.checked) elements.addClass("divider");
-  else elements.removeClass("divider");
+  let elements = utils.queryAll(selector);
+  if (event.currentTarget.checked) utils.addClass(elements, ["divider"]);
+  else utils.removeClass(elements, ["divider"]);
 }
 
 const updateSpace = (selector:string, space:string) => {
-  var elements = $(selector);
-  elements.removeClass("no-space small-space medium-space large-space");
-  if (space) elements.addClass(space);
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["no-space", "small-space", "medium-space", "large-space"]);
+  if (space) utils.addClass(elements, [space]);
 }
 
 const updateFill = (selector:string, event:any) => {
-  var elements = $(selector);
-  if (event.currentTarget.checked) elements.addClass("fill");
-  else elements.removeClass("fill");
+  let elements = utils.queryAll(selector);
+  if (event.currentTarget.checked) utils.addClass(elements, ["fill"]);
+  else utils.removeClass(elements, ["fill"]);
 }
 
 const updateBorder = (selector:string, event:any) => {
-  var elements = $(selector);
-  if (event.currentTarget.checked) elements.addClass("border");
-  else elements.removeClass("border");
+  let elements = utils.queryAll(selector);
+  if (event.currentTarget.checked) utils.addClass(elements, ["border"]);
+  else utils.removeClass(elements, ["border"]);
   ui();
 }
 
 const updateRound = (selector:string, event:any) => {
-  var elements = $(selector);
-  if (event.currentTarget.checked) elements.addClass("round");
-  else elements.removeClass("round");
+  let elements = utils.queryAll(selector);
+  if (event.currentTarget.checked) utils.addClass(elements, ["round"]);
+  else utils.removeClass(elements, ["round"]);
 }
 
 const updateFieldType = (selector:string, type:string) => {
-  var inputs = $(selector).find("input");
-  var files = $(selector).find("input[type='file']");
-  var labels = $(selector).find("label");
-  var icons = $(selector).find("i");
-  files.remove();
-  inputs.removeAttr("readonly");
+  let inputs = utils.queryAll(selector + " input");
+  let files = utils.queryAll(selector + " input[type='file']");
+  let labels = utils.queryAll(selector + " label");
+  let icons = utils.queryAll(selector + " i");
+  utils.remove(files);
+  utils.removeAttribute(inputs, "readonly");
 
   if (type == "file") {
-    inputs.attr("type", "text");
-    labels.html("File");
-    icons.html("attach_file");
+    utils.setAttribute(inputs, "type", "text");
+    utils.html(labels, "File");
+    utils.html(icons, "attach_file");
 
-    for (var j = 0; j < inputs.length; j++)
-      $("<input type='file' />").insertAfter(inputs[j]);
+    for (let j = 0; j < inputs.length; j++) {
+      let file = document.createElement("input");
+      file.type = "file";
+      inputs[j].insertAdjacentElement("afterend", file);
+    }
   }
 
   if (type == "text") {
-    labels.html("Label");
-    inputs.attr("type", type);
-    icons.html("search");
+    utils.html(labels, "Label");
+    utils.setAttribute(inputs, "type", type);
+    utils.html(icons, "search");
   }
 
   if (type == "password") {
-    labels.html("Password");
-    inputs.attr("type", type);
-    icons.html("visibility");
+    utils.html(labels, "Password");
+    utils.setAttribute(inputs, "type", type);
+    utils.html(icons, "visibility");
   }
 
   if (type == "date") {
-    labels.html("Date");
-    inputs.attr("type", type);
-    icons.html("today");
+    utils.html(labels, "Date");
+    utils.setAttribute(inputs, "type", type);
+    utils.html(icons, "today");
   }
 
   if (type == "time") {
-    labels.html("Time");
-    inputs.attr("type", type);
-    icons.html("search");
+    utils.html(labels, "Time");
+    utils.setAttribute(inputs, "type", type);
+    utils.html(icons, "search");
   }
 }
 
 const updateMenu = (data:IHome, css:string) => {
-  var menu = $('#app > div > nav:visible');
-  var modals = $(menu).find("> .modal");
-  var actives = $(menu).find("> .active");
-  var radios = $("#navigation-rail input");
-  var radio = $("#" + css + "-navigations");
+  let menu = utils.queryAll("#app > div > nav.m.l");
+  let modals = utils.queryAll("#app > div > nav.m.l > .modal");
+  let actives = utils.queryAll("#app > div > nav.m.l > .active");
+  let radios = utils.queryAll("#navigation-rail input");
+  let radio = utils.queryAll("#" + css + "-navigations");
 
   updatePosition(menu, css);
   updatePosition(modals, css);
   updateAlign(menu, null);
 
   data.isHorizontal = /top|bottom/i.test(css);
-  actives.removeClass("active");
-  radios.prop("checked", false);
-  radio.prop("checked", true);
+  utils.removeClass(actives, ["active"]);
+  utils.setAttribute(radios, "checked", false);
+  utils.setAttribute(radio, "checked", true);
 }
 
 const updateAppBar = (css:string) => {
-  var appBars = $("#app-bars header");
-  $(appBars).removeClass("white-text");
+  let appBars = utils.queryAll("#app-bars header");
   updateColor(appBars, css);
+  if (/blue|teal|purple/i.test(css)) utils.addClass(appBars, ["white-text"]);
+  else utils.removeClass(appBars, ["white-text"]);
 }
 
 const updateHorizontalPosition = (selector:string, position:string) => {
-  let elements = $(selector);
-  elements.removeClass("left right center");
-  if (position) elements.addClass(position);
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["left", "right", "center"]);
+  if (position) utils.addClass(elements, [position]);
 }
 
 const updateVerticalPosition = (selector:string, position:string) => {
-  let elements = $(selector);
-  elements.removeClass("top bottom middle");
-  if (position) elements.addClass(position);
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["top", "bottom", "middle"]);
+  if (position) utils.addClass(elements, [position]);
 }
 
 const updateHorizontalAlign = (selector:string, align:string) => {
-  let elements = $(selector);
-  elements.removeClass("left-align right-align center-align");
-  if (align) elements.addClass(align);
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["left-align", "right-align", "center-align"]);
+  if (align) utils.addClass(elements, [align]);
 }
 
 const updateVerticalAlign = (selector:string, align:string) => {
-  let elements = $(selector);
-  elements.removeClass("top-align bottom-align middle-align");
-  if (align) elements.addClass(align);
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["top-align", "bottom-align", "middle-align"]);
+  if (align) utils.addClass(elements, [align]);
 }
 
 const updateIcon = (css:string) => {
-  var elements = $("#icons-sample i");
-  elements.removeClass("outlined");
-  if (css) elements.addClass(css); 
+  let elements = utils.queryAll("#icons-sample i");
+  utils.removeClass(elements, ["outlined"]);
+  if (css) utils.addClass(elements, [css]); 
 }
 
 const updatePage = (selector:string) => {
@@ -182,23 +187,23 @@ const updatePage = (selector:string) => {
 }
 
 const updateProgress = (value:number) => {
-  document.querySelectorAll("#progress .progress").forEach((x) => ui(x, value));
+  utils.queryAll("#progress .progress").forEach((x) => ui(x, value));
 }
 
 const formatHtml = (element:any):string => {
   function process(str:string):string {
-    var div = document.createElement("div");
+    let div = document.createElement("div");
     div.innerHTML = str.trim();
 
     return format(div, 0).innerHTML;
   }
 
   function format(node:any, level:number):any {
-    var indentBefore = new Array(level++ + 1).join("  "),
+    let indentBefore = new Array(level++ + 1).join("  "),
       indentAfter = new Array(level - 1).join("  "),
       textNode;
 
-    for (var i = 0; i < node.children.length; i++) {
+    for (let i = 0; i < node.children.length; i++) {
       textNode = document.createTextNode("\n" + indentBefore);
       node.insertBefore(textNode, node.children[i]);
 
@@ -213,12 +218,12 @@ const formatHtml = (element:any):string => {
     return node;
   }
 
-  var tag = $(element).clone();
-  tag.find(".overlay").remove();
-  tag.find("[style*='none']").remove();
+  let tag = utils.clone(element);
+  utils.remove(tag.querySelectorAll(".overlay"));
+  utils.remove(tag.querySelectorAll("[style*='none']"));
 
   return process(
-    tag[0].outerHTML
+    tag.outerHTML
       .replace(/\s+(id|data-ui|onclick|style|data-v-\w+)\="[^\"]*"/gi, "")
       .replace(/\s+name\="(\w+)"/gi, " name=\"$1_\"")
       .replace(/\s+(checked|disabled)=""/gi, " $1")
@@ -230,50 +235,44 @@ const formatHtml = (element:any):string => {
 }
 
 const showSamples = (data: IHome, selector:string, modal:string|null|undefined=undefined, url:string|null|undefined=undefined) => {
-  var elements = $(selector);
+  let elements = utils.queryAll(selector);
+  let text = "";
+  let textFormatted = "";
   data.samples = [];
   data.modalSample = modal || "#modal-samples";
   data.urlSample = url || "";
 
-  for (var i = 0; i < elements.length; i++) {
-    var element = $($(elements[i])[0].outerHTML);
+  for (let i = 0; i < elements.length; i++) {
+    let element = utils.clone(elements[i]);
     
-    if (element.is("nav.left") || element.is("nav.right") || element.is("nav.top") || element.is("nav.bottom")) {
-      element.find(".modal").html("");
-      var html = formatHtml(element);
-      var htmlFormatted = hljs.highlight("html", html).value;
+    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom"])) {
+      utils.html(element.querySelectorAll(".modal"), "");
+      text = formatHtml(element);
+      textFormatted = hljs.highlight("html", text).value;
     } else {
-      var html = formatHtml(element);
-      var htmlFormatted = hljs.highlight("html", html).value;
+      text = formatHtml(element);
+      textFormatted = hljs.highlight("html", text).value;
     }
 
-    if (
-      element.is("nav.left") ||
-      element.is("nav.right") ||
-      element.is("nav.top") ||
-      element.is("nav.bottom") ||
-      element.is(".modal") ||
-      element.is(".toast") ||
-      element.is("main.responsive") ||
-      element.is(".fixed:not(header)")
-    )
-      html = "";
+    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", ".modal", ".toast", "main.responsive", ".fixed:not(header)"]))
+      text = "";
 
     data.samples.push({
-      html: html,
-      sourceCode: htmlFormatted,
+      html: text,
+      sourceCode: textFormatted,
     });
   }
 
   nextTick(() => {
     ui(data.modalSample);
-    $(data.modalSample).scrollTop(0);
+    let element = utils.query(data.modalSample);
+    element?.scrollTo(0, 0);
   });
 }
 
 const goTo = (selector:string) => {
   setTimeout(() => {
-    let element = document.querySelector(selector);
+    let element = utils.query(selector);
     element?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, 180);
 }

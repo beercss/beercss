@@ -2,10 +2,10 @@
 nav.wrap
   label.radio(v-for="color in colors")
     input(type="radio", :id="color + '-' + context", :name="'color-' + context", :checked="color == selectedColor", @click="domain.updateElementColor(context, color)")
-    span {{ color }}
+    span {{ color || "default" }}
   label.radio(v-for="size in sizes")
     input(type="radio", :id="size + '-' + context", :name="'size-' + context", :checked="size == selectedSize", @click="domain.updateSize(context, size)")
-    span {{ size }}
+    span {{ size || "medium" }}
 </template>
 
 <script setup lang="ts">
@@ -20,30 +20,30 @@ const props = defineProps({
   colors: {
     type: Array as () => Array<string>,
     default() {
-      return ["default", "green", "orange", "pink"];
+      return ["", "green", "orange", "pink"];
     }
   },
   sizes: {
     type: Array as () => Array<string>,
     default() {
-      return ["small", "medium", "large", "extra"]
+      return ["small", "", "large", "extra"]
     }
   },
   defaultColor: {
     type: String,
-    default: "default"
+    default: ""
   },
   defaultSize: {
     type: String,
-    default: "medium"
+    default: ""
   },
   selectedColor: {
     type: String,
-    default: "default"
+    default: ""
   },
   selectedSize: {
     type: String,
-    default: "medium"
+    default: ""
   }
 });
 
