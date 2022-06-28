@@ -2,16 +2,16 @@
 div
   nav.left.m.l
     img.circle.small-margin(:src="'/favicon.png'", @click="domain.addHomeScreen()")
-    a(@click="domain.updateMenu($event, 'top')")
+    a(@click="domain.updateMenu(data, 'top')")
       i arrow_upward
       div Top
-    a(@click="domain.updateMenu($event, 'bottom')")
+    a(@click="domain.updateMenu(data, 'bottom')")
       i arrow_downward
       div Bottom
-    a(@click="domain.updateMenu($event, 'left')")
+    a(@click="domain.updateMenu(data, 'left')")
       i arrow_back
       div Left
-    a(@click="domain.updateMenu($event, 'right')")
+    a(@click="domain.updateMenu(data, 'right')")
       i arrow_forward
       div Right
     a(@click="sharedDomain.updateMode(data)")
@@ -375,7 +375,7 @@ div
               i arrow_backward
               h5.small-margin Back
             a.button.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
-        article.border(v-for="exemplo in data.samples")
+        article.border(v-for="(exemplo in data.samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
           pre(v-html="exemplo.sourceCode")

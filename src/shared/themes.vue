@@ -78,18 +78,20 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted } from "vue";
 import sharedDomain from "./domain";
 
-const props = defineProps({
-  id: {
-    default: "themes",
-    type: String
-  },
-  modelValue: Object as () => any
-});
+export interface IProps {
+  id?: string,
+  modelValue?: any
+}
 
-const data = props.modelValue;
+const {
+  id = "themes",
+  modelValue = null
+} = defineProps<IProps>();
+
+const data = modelValue;
 
 onMounted(ui);
 </script>

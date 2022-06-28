@@ -12,43 +12,28 @@ nav.wrap
 import domain from './domain';
 import { onMounted } from 'vue';
 
-const props = defineProps({
-  context: {
-    type: String,
-    default: "buttons"
-  },
-  colors: {
-    type: Array as () => Array<string>,
-    default() {
-      return ["", "green", "orange", "pink"];
-    }
-  },
-  sizes: {
-    type: Array as () => Array<string>,
-    default() {
-      return ["small", "", "large", "extra"]
-    }
-  },
-  defaultColor: {
-    type: String,
-    default: ""
-  },
-  defaultSize: {
-    type: String,
-    default: ""
-  },
-  selectedColor: {
-    type: String,
-    default: ""
-  },
-  selectedSize: {
-    type: String,
-    default: ""
-  }
-});
+export interface IProps {
+  context?: string,
+  colors?: Array<string>,
+  sizes?: Array<string>,
+  defaultColor?: string,
+  defaultSize?: string,
+  selectedColor?: string,
+  selectedSize?: string,
+}
+
+const {
+  context = "buttons",
+  colors = ["", "green", "orange", "pink"],
+  sizes = ["small", "", "large", "extra"],
+  defaultColor = "",
+  defaultSize = "",
+  selectedColor = "",
+  selectedSize = ""
+} = defineProps<IProps>();
 
 onMounted(() => {
-  domain.updateElementColor(props.context, props.selectedColor);
-  domain.updateSize(props.context, props.selectedSize);
+  domain.updateElementColor(context, selectedColor);
+  domain.updateSize(context, selectedSize);
 });
 </script>

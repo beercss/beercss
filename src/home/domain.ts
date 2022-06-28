@@ -2,25 +2,25 @@ import { nextTick } from "vue";
 import { IHome } from "./interfaces";
 import utils from "../shared/utils";
 
-const updateColor = (selector:any, color:string) => {
+const updateColor = (selector:any, color?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["primary", "secondary", "tertiary", "error", "amber", "blue", "blue-grey", "brown", "cyan", "deep-orange", "deep-purple", "green", "grey", "indigo", "light-blue", "light-green", "lime", "orange", "pink", "purple", "red", "teal", "yellow"]);
   if (color) utils.addClass(elements, [color]);
 }
 
-const updateBorderColor = (selector:any, borderColor:string) => {
+const updateBorderColor = (selector:any, borderColor?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["primary-border", "secondary-border", "tertiary-border", "error-border", "amber-border", "blue-border", "blue-grey-border", "brown-border", "cyan-border", "deep-orange-border", "deep-purple-border", "green-border", "grey-border", "indigo-border", "light-blue-border", "light-green-border", "lime-border", "orange-border", "pink-border", "purple-border", "red-border", "teal-border", "yellow-border"]);
   if (borderColor) utils.addClass(elements, [borderColor]);
 }
 
-const updateTextColor = (selector:any, textColor:string) => {
+const updateTextColor = (selector:any, textColor?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["primary-text", "secondary-text", "tertiary-text", "error-text", "amber-text", "blue-text", "blue-grey-text", "brown-text", "cyan-text", "deep-orange-text", "deep-purple-text", "green-text", "grey-text", "indigo-text", "light-blue-text", "light-green-text", "lime-text", "orange-text", "pink-text", "purple-text", "red-text", "teal-text", "yellow-text"]);
   if (textColor) utils.addClass(elements, [textColor]);
 }
 
-const updateElementColor = (selector:string, color:string) => {
+const updateElementColor = (selector:string, color?:string) => {
   let elementsWithBorder = utils.queryAll(selector + ".border");
   let elementsWithoutBorder = utils.queryAll(selector + ":not(.border)");
   updateBorderColor(elementsWithBorder, color ? color + "-border" : "");
@@ -28,19 +28,19 @@ const updateElementColor = (selector:string, color:string) => {
   updateColor(elementsWithoutBorder, color);
 }
 
-const updateSize = (selector:string, size:string) => {
+const updateSize = (selector:string, size?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["tiny", "small", "medium", "large", "extra", "min", "max"]);
   if (size) utils.addClass(elements, [size]);
 }
 
-const updatePosition = (selector:any, position:string) => {
+const updatePosition = (selector:any, position?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["left", "center", "right", "top", "middle", "bottom"]);
   if (position) utils.addClass(elements, [position]);
 }
 
-const updateAlign = (selector:any, alignment:string) => {
+const updateAlign = (selector:any, alignment?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["left-align", "center-align", "right-align", "top-align", "middle-align", "bottom-align"]);
   if (alignment) utils.addClass(elements, [alignment]);
@@ -58,7 +58,7 @@ const updateDivider = (selector:string, event:any) => {
   else utils.removeClass(elements, ["divider"]);
 }
 
-const updateSpace = (selector:string, space:string) => {
+const updateSpace = (selector:string, space?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["no-space", "small-space", "medium-space", "large-space"]);
   if (space) utils.addClass(elements, [space]);
@@ -128,7 +128,7 @@ const updateFieldType = (selector:string, type:string) => {
   }
 }
 
-const updateMenu = (data:IHome, css:string) => {
+const updateMenu = (data:IHome, css?:string) => {
   let menu = utils.queryAll("#app > div > nav.m.l");
   let modals = utils.queryAll("#app > div > nav.m.l > .modal");
   let actives = utils.queryAll("#app > div > nav.m.l > .active");
@@ -145,38 +145,38 @@ const updateMenu = (data:IHome, css:string) => {
   utils.setAttribute(radio, "checked", true);
 }
 
-const updateAppBar = (css:string) => {
+const updateAppBar = (css?:string) => {
   let appBars = utils.queryAll("#app-bars header");
   updateColor(appBars, css);
   if (/blue|teal|purple/i.test(css)) utils.addClass(appBars, ["white-text"]);
   else utils.removeClass(appBars, ["white-text"]);
 }
 
-const updateHorizontalPosition = (selector:string, position:string) => {
+const updateHorizontalPosition = (selector:string, position?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["left", "right", "center"]);
   if (position) utils.addClass(elements, [position]);
 }
 
-const updateVerticalPosition = (selector:string, position:string) => {
+const updateVerticalPosition = (selector:string, position?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["top", "bottom", "middle"]);
   if (position) utils.addClass(elements, [position]);
 }
 
-const updateHorizontalAlign = (selector:string, align:string) => {
+const updateHorizontalAlign = (selector:string, align?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["left-align", "right-align", "center-align"]);
   if (align) utils.addClass(elements, [align]);
 }
 
-const updateVerticalAlign = (selector:string, align:string) => {
+const updateVerticalAlign = (selector:string, align?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["top-align", "bottom-align", "middle-align"]);
   if (align) utils.addClass(elements, [align]);
 }
 
-const updateIcon = (css:string) => {
+const updateIcon = (css?:string) => {
   let elements = utils.queryAll("#icons-sample i");
   utils.removeClass(elements, ["outlined"]);
   if (css) utils.addClass(elements, [css]); 
@@ -234,7 +234,7 @@ const formatHtml = (element:any):string => {
   .replace(/\s+(checked|disabled)=""/gi, " $1");
 }
 
-const showSamples = (data: IHome, selector:string, modal:string|null|undefined=undefined, url:string|null|undefined=undefined) => {
+const showSamples = (data: IHome, selector:string, modal?:string, url?:string) => {
   let elements = utils.queryAll(selector);
   let text = "";
   let textFormatted = "";
