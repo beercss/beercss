@@ -18,10 +18,6 @@ Navigations are containers that display actions placed horizontally (or vertical
 
 left-align, right-align, center-align, top-align, bottom-align, middle-align
 
-**Alignments**
-
-left-align, right-align, center-align, top-align, bottom-align, middle-align
-
 **Forms**
 
 flat, border, round, left-round, right-round, top-round, bottom-round
@@ -58,15 +54,15 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap
 <nav class="left">
   <a>
     <i>home</i>
-    div>Home</div>
+    <div>Home</div>
   </a>
   <a>
     <i>search</i>
-    div>Search</div>
+    <div>Search</div>
   </a>
   <a>
     <i>more_vert</i>
-    div>More</div>
+    <div>More</div>
   </a>
 </nav>
 ```
@@ -76,15 +72,15 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap
 <nav class="bottom">
   <a>
     <i>home</i>
-    div>Home</div>
+    <div>Home</div>
   </a>
   <a>
     <i>search</i>
-    div>Search</div>
+    <div>Search</div>
   </a>
   <a>
     <i>more_vert</i>
-    div>More</div>
+    <div>More</div>
   </a>
 </nav>
 ```
