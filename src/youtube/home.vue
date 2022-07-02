@@ -1,5 +1,5 @@
 <template lang="pug">
-.container(v-show="isLoaded")
+main.responsive(v-show="data.isLoaded")
   .page.right.active
     nav.scroll
       a.chip.active The best of 2020
@@ -8,7 +8,7 @@
       a.chip Others
     .space
     .row
-      .col.s12.m6.l3(v-for="(item, i) in itens")
+      .col.s12.m6.l3(v-for="(item, i) in data.itens")
         .card.no-padding.flat.transparent
           a.wave
             img.responsive(:src="item.image")
@@ -34,7 +34,7 @@
     .large-divider
     h5 What's hot
     .row.no-wrap.scroll
-      .col(v-for="item in whatsHot")
+      .col(v-for="item in data.whatsHot")
         .card.no-padding.border.transparent.small-width
           a.wave
             img.responsive(:src="item.image")
@@ -51,7 +51,7 @@
     .large-divider
     h5 Your videos
     .row.no-wrap.scroll
-      .col(v-for="item in yourVideos")
+      .col(v-for="item in data.yourVideos")
         .card.no-padding.border.transparent.small-width
           a.wave
             img.responsive(:src="item.image")
@@ -66,9 +66,6 @@
                   i thumb_up
 </template>
 
-<script>
-import domain from "./domain";
-export default {
-  mixins: [domain],
-};
+<script setup lang="ts">
+import data from "./data";
 </script>

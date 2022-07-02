@@ -16,9 +16,8 @@
 @import "./elements/layouts.css";
 @import "./elements/loaders.css";
 @import "./elements/media.css";
-@import "./elements/menus.css";
 @import "./elements/modals.css";
-@import "./elements/navs.css";
+@import "./elements/navigations.css";
 @import "./elements/overlays.css";
 @import "./elements/pages.css";
 @import "./elements/progress.css";

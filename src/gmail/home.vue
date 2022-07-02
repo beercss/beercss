@@ -4,7 +4,7 @@
     .col
       nav
         label.checkbox
-          input(type="checkbox", v-model="check")
+          input(type="checkbox", v-model="data.check", @change="domain.checkAll(data.inbox, data.check)")
           span
         a
           i refresh
@@ -12,19 +12,19 @@
           i more_vert
     .col
       nav.right-align
-        label from 1 to {{ emails.length }}
+        label from 1 to {{ data.inbox.length }}
         a
           i arrow_back
         a
           i arrow_forward
   .space.m.l
-  a.row.no-wrap.middle-align.divider(v-for="email in emails")
+  a.row.no-wrap.middle-align.divider(v-for="email in data.inbox")
     .col.min
       nav
         label.checkbox.m.l
           input(type="checkbox", v-model="email.check")
           span
-        a.m.l(@click="star(email)")
+        a.m.l(@click="domain.star(email)")
           i(v-show="!email.star") star_outline
           i.yellow-text(v-show="email.star") star
         button.small.flat.circle.s A
@@ -36,13 +36,7 @@
       label 12:03
 </template>
 
-<script>
+<script setup lang="ts">
 import domain from "./domain";
-
-export default {
-  mixins: [domain],
-  created() {
-    this.emails = this.inbox;
-  },
-};
+import data from "./data";
 </script>

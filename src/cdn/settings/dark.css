@@ -1,4 +1,4 @@
-.is-dark {
+body.dark {
   --primary: #D0BCFF;
   --on-primary: #371E73;
   --primary-container: #4F378B;

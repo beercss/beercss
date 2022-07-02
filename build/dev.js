@@ -1,10 +1,32 @@
-const clean = require("./clean.js");
-const open = require("open");
-const fs = require("fs-extra");
-const config = JSON.parse(fs.readFileSync("./package.json", "utf8"));
-const Bundler = require("parcel-bundler");
+import { createServer } from "vite";
+import vue from "@vitejs/plugin-vue";
 
-const bundler = new Bundler("./src/app.html");
-bundler.serve(config.port, false, "localhost").then(() => {
-  open("http://localhost:" + config.port);
-});
+(async () => {
+  const server = await createServer({
+    publicDir: "./src/static",
+    plugins: [vue({
+      reactivityTransform: true
+    })],
+    build: {
+      rollupOptions: {
+        input: {
+          app: "./index.html"
+        },
+        output: {
+          entryFileNames: "[name].js",
+          chunkFileNames: "[name].js",
+          assetFileNames: "[name].[ext]",
+          manualChunks: undefined
+        }
+      }
+    },
+    server: {
+      open: '/'
+    }
+  });
+
+  
+  await server.listen();
+
+  server.printUrls();
+})();

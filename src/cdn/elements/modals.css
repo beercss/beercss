@@ -16,7 +16,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   will-change: opacity, transform;
-  transition: var(--speed3) all;
+  transition: var(--speed3) all, 0s background-color;
   transform: translate(-50%, -50%);
 }
 
@@ -164,8 +164,8 @@
   height: 512rem;
 }
 
-.menu > .modal,
-.menu.left > .modal {
+nav > .modal,
+nav.left > .modal {
   z-index: 0;
   text-align: left;
   padding: 16rem 16rem 16rem 80rem;
@@ -173,15 +173,15 @@
   background-color: inherit;
 }
 
-.menu.right > .modal {
+nav.right > .modal {
   padding: 16rem 80rem 16rem 16rem;
 }
 
-.menu.top > .modal {
+nav.top > .modal {
   padding: 80rem 48rem 16rem 48rem;
 }
 
-.menu.bottom > .modal {
+nav.bottom > .modal {
   padding: 16rem 48rem 80rem 48rem;
 }
 

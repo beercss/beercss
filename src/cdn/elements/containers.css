@@ -1,18 +1,81 @@
-.container,
-.container.min {
+main.responsive,
+main.responsive.min {
   margin: 0 auto;
   max-width: 992rem;
-  padding: 80rem 88rem;
+  padding: 8rem;
   overflow-x: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-.container.max {
+main.responsive.max {
   max-width: 100%;
 }
 
+nav.top:not(.s, .m, .l) ~ main.responsive {
+  padding-top: 96rem;
+}
+
+nav.bottom:not(.s, .m, .l) ~ main.responsive {
+  padding-bottom: 96rem;
+}
+
+nav.left:not(.s, .m, .l) ~ main.responsive {
+  padding-left: 96rem;
+}
+
+nav.right:not(.s, .m, .l) ~ main.responsive {
+  padding-right: 96rem;
+}
+
 @media only screen and (max-width: 600px) {
-  .container,
-  .container.min {
-    padding: 80rem 8rem;
+  nav.s.bottom ~ main.responsive {
+    padding-bottom: 96rem;
+  }
+  nav.s.top ~ main.responsive {
+    padding-top: 96rem;
+  }
+  nav.s.left ~ main.responsive {
+    padding-left: 96rem;
+  }
+  nav.s.right ~ main.responsive {
+    padding-right: 96rem;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  nav.m.bottom ~ main.responsive {
+    padding-bottom: 96rem;
+  }
+  nav.m.top ~ main.responsive {
+    padding-top: 96rem;
+  }
+  nav.m.left ~ main.responsive {
+    padding-left: 96rem;
+  }
+  nav.m.right ~ main.responsive {
+    padding-right: 96rem;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  nav.l.bottom ~ main.responsive {
+    padding-bottom: 96rem;
+  }
+  nav.l.top ~ main.responsive {
+    padding-top: 96rem;
+  }
+  nav.l.left ~ main.responsive {
+    padding-left: 96rem;
+  }
+  nav.l.right ~ main.responsive {
+    padding-right: 96rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main.responsive {
+    padding-right: 8rem;
+    padding-left: 8rem;
   }
 }

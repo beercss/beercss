@@ -1,4 +1,11 @@
 (() => {
+  let _timeout = null;
+  let _mutation = null;
+  let _lastTheme = {
+    light: '',
+    dark: ''
+  };
+
   const guid = () => {
     return "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
       let r = (Math.random() * 16) | 0,
@@ -56,6 +63,11 @@
     return element.previousElementSibling;
   };
 
+  const next = (element) => {
+    if (!element) return;
+    return element.nextElementSibling;
+  };
+
   const parent = (element) => {
     if (!element) return;
     return element.parentNode;
@@ -101,7 +113,7 @@
 
   const onClickLabel = (e) => {
     let input = query('input:not([type=file]):not([type=checkbox]):not([type=radio]), select, textarea', parent(e.currentTarget));
-    input.focus();
+    if (input) input.focus();
   };
 
   const onFocusInput = (e) => {
@@ -128,6 +140,36 @@
       clearTimeout(timeoutToast);
   };
 
+  const onChangeFile = (e) => {
+    updateFile(e.currentTarget);
+  }
+
+  const onKeydownFile = (e) => {
+    updateFile(e.currentTarget, e);
+  }
+
+  const onMutation = () => {
+    if (_timeout) clearTimeout(_timeout);
+    _timeout = setTimeout(ui, 180);
+  }
+
+  const updateFile = (target, e) => {
+    if (e) {
+      if (e.key !== "Enter") return;
+
+      let nextTarget = next(e.currentTarget);
+      if (!nextTarget || !/file/i.test(nextTarget.type)) return;
+      return nextTarget.click();
+    }
+
+    let previousTarget = prev(target);
+    if (!previousTarget || !/text/i.test(previousTarget.type)) return;
+    previousTarget.value = Array.from(target.files).map((x) => x.name).join(", ");
+    previousTarget.setAttribute("readonly", true);
+    previousTarget.addEventListener("keydown", onKeydownFile);
+    updateInput(previousTarget);
+  }
+
   let timeoutToast = null;
 
   const open = (from, to, config) => {
@@ -147,7 +189,7 @@
     addClass(to, "active");
   };
 
-  const tab = (from, to, config) => {
+  const tab = (from) => {
     let container = parent(from);
     if (!hasClass(container, "tabs"))
       return;
@@ -203,8 +245,8 @@
 
     let isActive = hasClass(to, "active");
     let container = parent(to);
-    if (hasClass(container, "menu")) {
-      let elements = queryAll(".menu > .modal, .menu > a, .menu > .overlay");
+    if (/nav/i.test(container.tagName)) {
+      let elements = queryAll(".modal, a, .overlay", container);
       elements.forEach((x) => {
         removeClass(x, "active");
       });
@@ -256,55 +298,78 @@
       return to.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - config}%, 0% ${100 - config}%)`;
   };
 
-  const theme = (config) => {
-    let emptyTheme = {
-      light: "",
-      dark: "",
-      selected: "light"
+  const lastTheme = () => {
+    if (_lastTheme.light && _lastTheme.dark) return _lastTheme;
+
+    let light = document.createElement("body");
+    light.className = "light";
+    document.body.appendChild(light);
+
+    let dark = document.createElement("body");
+    dark.className = "dark";
+    document.body.appendChild(dark);
+
+    let fromLight = getComputedStyle(light);
+    let fromDark = getComputedStyle(dark);
+    let variables = ['--primary', '--on-primary', '--primary-container', '--on-primary-container', '--secondary', '--on-secondary', '--secondary-container', '--on-secondary-container', '--tertiary', '--on-tertiary', '--tertiary-container', '--on-tertiary-container', '--error', '--on-error', '--error-container', '--on-error-container', '--background', '--on-background', '--surface', '--on-surface', '--outline', '--surface-variant', '--on-surface-variant', '--inverse-surface', '--inverse-on-surface'];
+    for(let i=0; i<variables.length; i++) {
+      _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
+      _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
     }
 
-    if (!window.materialDynamicColors) return emptyTheme;
+    document.body.removeChild(light);
+    document.body.removeChild(dark);
+    return _lastTheme;
+  }
 
-    if (!config) {
-      document.body.removeAttribute("style");
-      return emptyTheme;
-    };
+  const theme = (source) => {
+    if (!source || !window.materialDynamicColors) return lastTheme();
 
-    if (config.from && config.mode && config.from[config.mode]) {
-      let newTheme = {
-        light: config.from.light,
-        dark: config.from.dark,
-        selected: config.mode
-      };
-      
-      document.body.setAttribute("style", newTheme[config.mode]);
-      return newTheme;
+    let mode = /dark/i.test(document.body.className) ? "dark" : "light";
+    if (source && source.light && source.dark) {
+      _lastTheme.light = source.light;
+      _lastTheme.dark = source.dark;
+      document.body.setAttribute("style", source[mode]);
+      return source;
     }
 
-    return window.materialDynamicColors(config.from).then((theme) => {
+    return window.materialDynamicColors(source).then((theme) => {
       const toCss = (data) => {
         let style = "";
         for (var i in data) {
           let kebabCase = i.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
-          style += "--"+kebabCase+": "+data[i]+";";
+          style += "--"+kebabCase+":"+data[i]+";";
         }
         return style;
       };
 
-      let newTheme = {
-        light: toCss(theme.light) + "--active: rgba(0,0,0,.1);--mode: light;",
-        dark: toCss(theme.dark) + "--active: rgba(255,255,255,.2);--mode: dark;",
-        selected: config.mode
-      };
-
-      document.body.setAttribute("style", newTheme[config.mode]);
-      return newTheme;
+      _lastTheme.light = toCss(theme.light);
+      _lastTheme.dark = toCss(theme.dark);
+      document.body.setAttribute("style", _lastTheme[mode]);
+      return _lastTheme;
     });
   };
 
+  const mode = (value) => {
+    if (!value) return /dark/i.test(document.body.className) ? "dark" : "light";
+    document.body.classList.remove("light", "dark");
+    document.body.classList.add(value);
+    if (window.materialDynamicColors) document.body.style = _lastTheme[value];
+    return value;
+  }
+
+  const setup = () => {
+    if (_mutation) return;
+    _mutation = new MutationObserver(onMutation);
+    _mutation.observe(document.body, { childList: true, subtree: true });
+    ui();
+  }
+
   const ui = (selector, config) => {
     if (selector) {
+      if (selector == "setup") return setup();
       if (selector == "guid") return guid();
+      if (selector == "mode") return mode(config);
       if (selector == "theme") return theme(config);
 
       let to = query(selector);
@@ -328,7 +393,17 @@
       on(x, "blur", onBlurInput);
       updateInput(x);
     });
+
+    let files = queryAll(".field > input[type=file]");
+    files.forEach((x) => {
+      on(x, "change", onChangeFile);
+      updateFile(x);
+    });
   };
 
   window.ui = ui;
 })();
+
+window.addEventListener("load", () => {
+  ui("setup");
+});

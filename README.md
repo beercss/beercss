@@ -56,13 +56,27 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 ```
 // 1 setting to 1 document
-<html class="settings">...</html>
+<body class="light">...</body>
+<body class="dark">...</body>
 
 // 1 element to N helpers
 <element class="helper helper">...</element>
 <div class="element helper helper">...</div>
 
-// apply css rules like this
+// nav elements before a main element
+<body>
+  <nav class="left m l">...</nav>
+  <nav class="bottom s">...</nav>
+  <main class="responsive">...</main>
+</body>
+
+<div id="app">
+  <nav class="left m l">...</nav>
+  <nav class="bottom s">...</nav>
+  <main class="responsive">...</main>
+</div>
+
+// write css like this
 .element.helper {...}
 .element > .element {...}
 .element > .helper {...}
@@ -74,14 +88,33 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 // N elements to 1 tag
 <div class="element element helper">...</div>
 
-// avoid dependencies
+// element with dependencies
 <div class="element">
   <div class="element-header">...</div>
   <div class="element-content">...</div>
   <div class="element-footer">...</div>
 </div>
 
-// apply css rules like this
+// nav elements after or inside a main element
+<body>
+  <main class="responsive">...</main>
+  <nav class="left m l">...</nav>
+  <nav class="bottom s">...</nav>
+</body>
+
+<div id="app">
+  <main class="responsive">...</main>
+  <nav class="left m l">...</nav>
+  <nav class="bottom s">...</nav>
+</div>
+
+<main class="responsive">
+  <nav class="left m l">...</nav>
+  <nav class="bottom s">...</nav>
+  ...
+</main>
+
+// write css like this
 .element.element {...}
 .element .element {...}
 .element .helper {...}
@@ -94,9 +127,9 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 From jsdelivr.net.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@2.0.26/dist/cdn/beer.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/beercss@2.0.26/dist/cdn/beer.min.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.9/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
 ```
 
 ### NPM
@@ -113,6 +146,63 @@ npm i material-dynamic-colors
 // importing
 import "beercss";
 import "material-dynamic-colors";
+```
+
+### HTML
+
+You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj).
+
+```html
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" content="notranslate">
+    <title>Hello world</title>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/beercss@2.1.0/dist/cdn/beer.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+  </head>
+  <body class="light">
+    <nav class="left m l">
+      <img src="https://www.beercss.com/favicon.png" class="circle large margin">
+      <a>
+        <i>home</i>
+      </a>
+      <a>
+        <i>search</i>
+      </a>
+      <a>
+        <i>share</i>
+      </a>
+      <a>
+        <i>more_vert</i>
+      </a>
+    </nav>
+    
+    <nav class="bottom s">
+      <a>
+        <i>home</i>
+      </a>
+      <a>
+        <i>search</i>
+      </a>
+      <a>
+        <i>share</i>
+      </a>
+      <a>
+        <i>more_vert</i>
+      </a>
+    </nav>
+    
+    <main class="responsive">
+      <img src="https://www.beercss.com/beer-and-woman.jpg" class="responsive">
+      <h3>Welcome</h3>
+      <h5>The beer is ready!</h5>
+    </main>
+  </body>
+</html>
 ```
 
 **We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.**

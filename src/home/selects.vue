@@ -1,0 +1,138 @@
+<template lang="pug">
+#selects
+  .large-space
+  h4
+    span Selects
+    a.chip.circle(@click="domain.showSamples(data, '#selects .field', null, 'https://github.com/beercss/beercss/blob/main/docs/SELECT.md')")
+      i code
+  nav.wrap
+    label.checkbox
+      input(type="checkbox", checked, @click="domain.updateBorder('#selects .field', $event)")
+      span border
+    label.checkbox
+      input(type="checkbox", @click="domain.updateRound('#selects .field', $event)")
+      span round
+    label.checkbox
+      input(type="checkbox", @click="domain.updateFill('#selects .field', $event)")
+      span fill
+    label.radio
+      input(type="radio", name="size-selects", @click="domain.updateSize('#selects .field', 'small')")
+      span small
+    label.radio
+      input(
+        type="radio",
+        name="size-selects",
+        checked,
+        @click="domain.updateSize('#selects .field')"
+      )
+      span medium
+    label.radio
+      input(type="radio", name="size-selects", @click="domain.updateSize('#selects .field', 'large')")
+      span large
+    label.radio
+      input(type="radio", name="size-selects", @click="domain.updateSize('#selects .field', 'extra')")
+      span extra
+  .space
+  .row
+    .col.s12.l4
+      .field.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        i arrow_drop_down
+    .col.s12.l4
+      .field.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        i arrow_drop_down
+        span.helper Complementary text
+    .col.s12.l4
+      .field.suffix.invalid.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        i arrow_drop_down
+        span.error Error text
+    .col.s12.l4
+      .field.label.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        label.active Label
+        i arrow_drop_down
+    .col.s12.l4
+      .field.label.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        label.active Label
+        i arrow_drop_down
+        span.helper Complementary text
+    .col.s12.l4
+      .field.label.suffix.invalid.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        label.active Label
+        i arrow_drop_down
+        span.error Error text
+    .col.s12.l4
+      .field.label.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        label.active Label
+        img.circle(:src="'/favicon.png'")
+    .col.s12.l4
+      .field.label.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        label.active Label
+        img.circle(:src="'/favicon.png'")
+        span.helper Complementary text
+    .col.s12.l4
+      .field.label.suffix.invalid.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        label.active Label
+        img.circle(:src="'/favicon.png'")
+        span.error Error text
+    .col.s12.l4
+      .field.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        a.loader
+    .col.s12.l4
+      .field.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        a.loader
+    .col.s12.l4
+      .field.suffix.border
+        select
+          option Item 1
+          option Item 2
+          option Item 3
+        a.loader
+</template>
+
+<script setup lang="ts">
+import domain from "./domain";
+import data from "./data";
+</script>
