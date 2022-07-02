@@ -4,7 +4,7 @@ article {
   background-color: var(--surface-variant);
   color: var(--on-surface-variant);
   padding: 16rem;
-  border-radius: 4rem;
+  border-radius: 0.75em;
   display: block;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
 }
