@@ -7,7 +7,7 @@
       i code
   nav.wrap
     label.checkbox
-      input(type="checkbox", checked, @click="domain.updateBorder('#selects .field', $event)")
+      input(type="checkbox", checked, @click="domain.updateBorder('#selects .field', $event);")
       span border
     label.checkbox
       input(type="checkbox", @click="domain.updateRound('#selects .field', $event)")

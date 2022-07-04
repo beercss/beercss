@@ -68,6 +68,7 @@ const updateFill = (selector:string, event:any) => {
   let elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["fill"]);
   else utils.removeClass(elements, ["fill"]);
+  ui();
 }
 
 const updateBorder = (selector:string, event:any) => {
@@ -81,6 +82,7 @@ const updateRound = (selector:string, event:any) => {
   let elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["round"]);
   else utils.removeClass(elements, ["round"]);
+  ui();
 }
 
 const updateFieldType = (selector:string, type:string) => {
