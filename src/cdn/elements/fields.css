@@ -378,7 +378,7 @@ input[type=file] {
   transform: translateY(-50%);
   will-change: top, left;
   transition: var(--speed2) all, 0s background-color;
-  z-index: 10;
+  z-index: 0;
 }
 
 .field.label.textarea.small > label {
