@@ -30,6 +30,10 @@ nav.wrap > :not(.dropdown, .badge) {
   padding: 0 8rem;
 }
 
+nav > .max {
+  flex-grow: 1;
+}
+
 nav.left,
 nav.right,
 nav.top,
