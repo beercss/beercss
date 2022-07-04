@@ -26,7 +26,7 @@ The default theme is light. Use dark to change the default theme to dark.
 
 ## Dynamic theme
 
-It sets the theme and mode at runtime. You need to use [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors).
+It sets the theme and mode at runtime. You need to use [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors). You can get a real example of dynamic theme [in this codepen](https://codepen.io/leo-bnu/pen/LYWxjVG).
 
 #### To change theme
 
