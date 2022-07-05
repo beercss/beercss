@@ -21,58 +21,22 @@
           label.switch
             input(type="checkbox", checked, disabled)
             span Disabled
-    .col.s12
+    .col.s12.l4
       .field.middle-align
-        nav
-          label.switch
-            input(type="checkbox")
-            span Item 1
-          label.switch
-            input(type="checkbox")
-            span Item 2
-          label.switch
-            input(type="checkbox")
-            span Item 3
-    .col.s12
-      .field.label.middle-align
-        label.active A question?
-        nav
-          label.switch
-            input(type="checkbox")
-            span Item 1
-          label.switch
-            input(type="checkbox")
-            span Item 2
-          label.switch
-            input(type="checkbox")
-            span Item 3
-    .col.s12
-      .field.label.middle-align
-        label.active A question?
-        nav
-          label.switch
-            input(type="checkbox")
-            span Item 1
-          label.switch
-            input(type="checkbox")
-            span Item 2
-          label.switch
-            input(type="checkbox")
-            span Item 3
+        label.switch
+          input(type="checkbox")
+          span Some text
+    .col.s12.l4
+      .field.middle-align
+        label.switch
+          input(type="checkbox")
+          span Some text
         span.helper Complementary text
-    .col.s12.l6
-      .field.label.middle-align.invalid
-        label.active A question?
-        nav
-          label.switch
-            input(type="checkbox")
-            span Item 1
-          label.switch
-            input(type="checkbox")
-            span Item 2
-          label.switch
-            input(type="checkbox")
-            span Item 3
+    .col.s12.l4
+      .field.middle-align.invalid
+        label.switch
+          input(type="checkbox")
+          span Some text
         span.error Error text
 </template>
 

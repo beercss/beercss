@@ -109,14 +109,14 @@
 
 .field > .checkbox,
 .field > .radio,
-.field > .switch {
-  margin: 0 12rem 0 4rem
+.field > nav > .checkbox,
+.field > nav > .radio {
+  margin: 0 4rem 0 12rem;
 }
 
-.field > nav > .checkbox,
-.field > nav > .radio,
+.field > .switch,
 .field > nav > .switch {
-  margin: 0 4rem 0 12rem;
+  margin: 0 4rem 0 16rem;
 }
 
 .checkbox > span:empty,
