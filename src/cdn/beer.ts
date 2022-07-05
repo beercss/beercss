@@ -22,15 +22,19 @@
     });
   }
 
-  const query = (selector:string, element?:Element):Element => {
+  const query = (selector:string|Element, element?:Element):Element => {
     try {
-      return (element || document).querySelector(selector);
+      return typeof selector == "string"
+        ? (element || document).querySelector(selector)
+        : selector;      
     } catch {}
   }
 
-  const queryAll = (selector:string, element?:Element) => {
+  const queryAll = (selector:string|NodeListOf<Element>, element?:Element) => {
     try {
-      return (element || document).querySelectorAll(selector);
+      return typeof selector == "string"
+        ? (element || document).querySelectorAll(selector)
+        : selector;      
     } catch {}
   }
 
