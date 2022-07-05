@@ -390,5 +390,5 @@
   }
 
   window["ui"] = ui;
-  window.addEventListener("load", () => setup);
+  window.addEventListener("load", () => ui("setup"));
 })();
