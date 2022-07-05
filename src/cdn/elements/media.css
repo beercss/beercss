@@ -2,6 +2,10 @@ img,
 video {
   border-radius: inherit;
   margin: 0 auto;
+  max-width: none !important;
+  max-height: none !important;
+  min-width: auto !important;
+  min-height: auto !important;
 }
 
 img.right,
@@ -46,8 +50,8 @@ video.border {
   border: 1rem solid var(--outline);
 }
 
-img.round:not(.responsive),
-video.round:not(.responsive) {
+img.round,
+video.round {
   border-radius: 8rem !important;
   height: 48rem !important;
   width: 48rem !important;
@@ -150,6 +154,11 @@ img.responsive.extra,
 video.responsive.extra {
   width: 100% !important;
   height: 320rem !important;
+}
+
+img.responsive.round,
+video.responsive.round {
+  border-radius: 24rem !important;
 }
 
 img.empty-state,

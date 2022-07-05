@@ -129,9 +129,9 @@ div
             .medium-space
             h5 From CDN
             pre.wrap(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.1.2/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.1.3/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.1.2/dist/cdn/beer.min.js" type="text/javascript"&gt;&lt;/script&gt;
+              | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.1.3/dist/cdn/beer.min.js" type="text/javascript"&gt;&lt;/script&gt;
               |
               | &lt;script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"&gt;&lt;/script&gt;
             .medium-space
