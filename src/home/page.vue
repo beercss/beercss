@@ -429,7 +429,7 @@ onMounted(() => {
 <style>
 #logo {
   display: none;
-  max-width: 100%;
+  max-width: 100% !important;
   width: 512rem;
 }
 
