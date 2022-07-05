@@ -1,2 +1,2 @@
 import "./cdn/beer.css";
-import "./cdn/beer.js";
+import "./cdn/beer.ts";

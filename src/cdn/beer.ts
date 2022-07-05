@@ -1,0 +1,394 @@
+(() => {
+  if (window["ui"]) return;
+
+  interface ILastTheme {
+    dark:string,
+    light:string
+  }
+
+  let _timeoutToast:NodeJS.Timeout = null;
+  let _timeoutMutation:NodeJS.Timeout = null;
+  let _mutation:MutationObserver = null;
+  let _lastTheme:ILastTheme = {
+    light: "",
+    dark: ""
+  }
+
+  const guid = ():string => {
+    return "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c:string) => {
+      let r = (Math.random() * 16) | 0,
+        v = c == "x" ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  }
+
+  const query = (selector:string, element?:Element):Element => {
+    try {
+      return (element || document).querySelector(selector);
+    } catch {}
+  }
+
+  const queryAll = (selector:string, element?:Element) => {
+    try {
+      return (element || document).querySelectorAll(selector);
+    } catch {}
+  }
+
+  const hasClass = (element:Element, name:string):boolean => {
+    if (!element) return false;
+    return element.classList.contains(name);
+  }
+
+  const addClass = (element:Element, name:string) => {
+    if (!element) return;
+    element.classList.add(name);
+  }
+
+  const removeClass = (element:Element, name:string) => {
+    if (!element) return;
+    element.classList.remove(name);
+  }
+
+  const on = (element:Element, name:string, callback:any) => {
+    element.addEventListener(name, callback, true);
+  }
+
+  const off = (element:Element, name:string, callback:any) => {
+    element.removeEventListener(name, callback, true);
+  }
+
+  const insertBefore = (newElement:Element, element:Element):Element => {
+    if (!element) return;
+    return element.parentNode.insertBefore(newElement, element);
+  }
+
+  const prev = (element:Element):Element => {
+    if (!element) return;
+    return element.previousElementSibling;
+  }
+
+  const next = (element:Element):Element => {
+    if (!element) return;
+    return element.nextElementSibling;
+  }
+
+  const parent = (element:Element):Element => {
+    if (!element) return;
+    return element.parentElement;
+  }
+
+  const create = (json:any) => {
+    let element = document.createElement("div");
+
+    for (let i in json)
+      element[i] = json[i];
+
+    return element;
+  }
+
+  const updateInput = (target:Element) => {
+    let input = target as HTMLInputElement;
+    let parentTarget = parent(target);
+    let label = query("label", parentTarget) as HTMLLabelElement;
+    let isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
+    let toActive = document.activeElement == target || input.value || /date|time/.test(input.type);
+
+    if (toActive) {
+      if (isBorder && label) {
+        let width = hasClass(label, "active") ? label.offsetWidth : Math.round(label.offsetWidth / 1.33);
+        let start = hasClass(parentTarget, "round") ? 20 : 12;
+        let end = width + start + 8;
+        input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 8rem, ${end}rem 8rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
+      } else
+      input.style.clipPath = "";
+      addClass(label, "active");
+    } else {
+      removeClass(label, "active");
+      input.style.clipPath = "";
+    }
+
+    if (target.getAttribute("data-ui")) open(target);
+  }
+
+  const onClickElement = (e:Event) => {
+    let target = e.currentTarget as HTMLElement;
+    if (/input/i.test(target.tagName)) return;
+    open(target);
+  }
+
+  const onClickLabel = (e:Event) => {
+    let target = e.currentTarget as Element;
+    let input = query('input:not([type=file]):not([type=checkbox]):not([type=radio]), select, textarea', parent(target)) as HTMLElement;
+    if (input) input.focus();
+  }
+
+  const onFocusInput = (e:Event) => {
+    let target = e.currentTarget as Element;
+    updateInput(target);
+  }
+
+  const onBlurInput = (e:Event) => {
+    let target = e.currentTarget as Element;
+    updateInput(target);
+  }
+
+  const onClickDocument = (e:Event) => {
+    let target = e.currentTarget as Element;
+    let dropdowns = queryAll(".dropdown.active");
+    dropdowns.forEach((x:Element) => removeClass(x, "active"));
+
+    off(target, "click", onClickDocument);
+  }
+
+  const onClickToast = (e:Event) => {
+    let target = e.currentTarget as Element;
+    removeClass(target, "active");
+
+    if (_timeoutToast) clearTimeout(_timeoutToast);
+  }
+
+  const onChangeFile = (e:Event) => {
+    let target = e.currentTarget as HTMLInputElement;
+    updateFile(target);
+  }
+
+  const onKeydownFile = (e:KeyboardEvent) => {
+    let target = e.currentTarget as HTMLInputElement;
+    updateFile(target, e);
+  }
+
+  const onMutation = () => {
+    if (_timeoutMutation) clearTimeout(_timeoutMutation);
+    _timeoutMutation = setTimeout(ui, 180);
+  }
+
+  const updateFile = (target:Element, e?:KeyboardEvent) => {
+    if (e) {
+      if (e.key !== "Enter") return;
+
+      let target = e.currentTarget as Element;
+      let nextTarget = next(target) as HTMLInputElement;
+      if (!nextTarget || !/file/i.test(nextTarget.type)) return;
+      return nextTarget.click();
+    }
+
+    let currentTarget = target as HTMLInputElement;
+    let previousTarget = prev(target) as HTMLInputElement;
+    if (!previousTarget || !/text/i.test(previousTarget.type)) return;
+    previousTarget.value = Array.from(currentTarget.files).map((x) => x.name).join(", ");
+    previousTarget.readOnly = true;
+    previousTarget.addEventListener("keydown", onKeydownFile);
+    updateInput(previousTarget);
+  }
+
+  const open = (from?:Element, to?:Element, config?:any) => {
+    if (!to) to = query(from.getAttribute("data-ui"))
+    if (hasClass(to, "modal")) return modal(from, to);
+    if (hasClass(to, "dropdown")) return dropdown(from, to);
+    if (hasClass(to, "toast")) return toast(from, to, config);
+    if (hasClass(to, "page")) return page(from, to);
+    if (hasClass(to, "progress")) return progress(to, config);
+
+    tab(from);
+
+    if (hasClass(to, "active")) return removeClass(to, "active");
+
+    addClass(to, "active");
+  }
+
+  const tab = (from:Element) => {
+    let container = parent(from);
+    if (!hasClass(container, "tabs")) return;
+
+    let tabs = queryAll("a", container);
+    tabs.forEach((x:Element) => removeClass(x, "active"));
+
+    addClass(from, "active");
+  }
+
+  const page = (from:Element, to:Element,) => {
+    tab(from);
+
+    let container = parent(to);
+    for (let i = 0; i < container.children.length; i++)
+      if (hasClass(container.children[i], "page")) removeClass(container.children[i], "active");
+
+    addClass(to, "active");
+  }
+
+  const dropdown = (from:Element, to:Element) => {
+    tab(from);
+
+    if (hasClass(to, "active")) return removeClass(to, "active");
+
+    let dropdowns = queryAll(".dropdown.active");
+    dropdowns.forEach((x:Element) => removeClass(x, "active"));
+
+    addClass(to, "active");
+    on(document.body, "click", onClickDocument);
+  }
+
+  const modal = (from:Element, to:Element) => {
+    tab(from);
+
+    let overlay = prev(to) as HTMLElement;
+    if (!hasClass(overlay, "overlay")) {
+      overlay = create({ className: "overlay active" });
+      insertBefore(overlay, to);
+    }
+
+    overlay.onclick = () => {
+      removeClass(from, "active");
+      removeClass(to, "active");
+      removeClass(overlay, "active");
+    }
+
+    let isActive = hasClass(to, "active");
+    let container = parent(to);
+    if (/nav/i.test(container.tagName)) {
+      let elements = queryAll(".modal, a, .overlay", container);
+      elements.forEach((x:Element) => removeClass(x, "active"));
+    }
+
+    if (isActive) {
+      removeClass(from, "active");
+      removeClass(overlay, "active");
+      removeClass(to, "active");
+    } else {
+      addClass(from, "active");
+      addClass(overlay, "active");
+      addClass(to, "active");
+    }
+  }
+
+  const toast = (from:Element, to:Element, config:any) => {
+    tab(from);
+
+    let elements = queryAll(".toast.active");
+    elements.forEach((x:Element) => removeClass(x, "active"));
+    addClass(to, "active");
+    on(to, "click", onClickToast);
+
+    if (_timeoutToast) clearTimeout(_timeoutToast);
+
+    if (config && config == -1) return;
+
+    _timeoutToast = setTimeout(() => {
+      removeClass(to, "active");
+    }, config && config ? config : 6000);
+  }
+
+  const progress = (to:Element, config:any) => {
+    let element = to as HTMLElement;
+    
+    if (hasClass(element, "left")) return  element.style.clipPath = `polygon(0% 0%, 0% 100%, ${config}% 100%, ${config}% 0%)`;
+
+    if (hasClass(element, "top")) return element.style.clipPath = `polygon(0% 0%, 100% 0%, 100% ${config}%, 0% ${config}%)`;
+
+    if (hasClass(element, "right")) return  element.style.clipPath = `polygon(100% 0%, 100% 100%, ${100 - config}% 100%, ${100 - config}% 0%)`;
+
+    if (hasClass(element, "bottom")) return element.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - config}%, 0% ${100 - config}%)`;
+  }
+
+  const lastTheme = ():ILastTheme => {
+    if (_lastTheme.light && _lastTheme.dark) return _lastTheme;
+
+    let light = document.createElement("body");
+    light.className = "light";
+    document.body.appendChild(light);
+
+    let dark = document.createElement("body");
+    dark.className = "dark";
+    document.body.appendChild(dark);
+
+    let fromLight = getComputedStyle(light);
+    let fromDark = getComputedStyle(dark);
+    let variables = ['--primary', '--on-primary', '--primary-container', '--on-primary-container', '--secondary', '--on-secondary', '--secondary-container', '--on-secondary-container', '--tertiary', '--on-tertiary', '--tertiary-container', '--on-tertiary-container', '--error', '--on-error', '--error-container', '--on-error-container', '--background', '--on-background', '--surface', '--on-surface', '--outline', '--surface-variant', '--on-surface-variant', '--inverse-surface', '--inverse-on-surface'];
+    for(let i=0; i<variables.length; i++) {
+      _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
+      _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
+    }
+
+    document.body.removeChild(light);
+    document.body.removeChild(dark);
+    return _lastTheme;
+  }
+
+  const theme = (source:any):ILastTheme => {
+    if (!source || !window["materialDynamicColors"]) return lastTheme();
+
+    let mode = /dark/i.test(document.body.className) ? "dark" : "light";
+    if (source && source.light && source.dark) {
+      _lastTheme.light = source.light;
+      _lastTheme.dark = source.dark;
+      document.body.setAttribute("style", source[mode]);
+      return source;
+    }
+
+    return window["materialDynamicColors"](source).then((theme) => {
+      const toCss = (data) => {
+        let style = "";
+        for (let i in data) {
+          let kebabCase = i.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase();
+          style += "--"+kebabCase+":"+data[i]+";";
+        }
+        return style;
+      }
+
+      _lastTheme.light = toCss(theme.light);
+      _lastTheme.dark = toCss(theme.dark);
+      document.body.setAttribute("style", _lastTheme[mode]);
+      return _lastTheme;
+    });
+  }
+
+  const mode = (value:string):string => {
+    if (!value) return /dark/i.test(document.body.className) ? "dark" : "light";
+    document.body.classList.remove("light", "dark");
+    document.body.classList.add(value);
+    if (window["materialDynamicColors"]) document.body.setAttribute("style", _lastTheme[value]);
+    return value;
+  }
+
+  const setup = () => {
+    if (_mutation) return;
+    _mutation = new MutationObserver(onMutation);
+    _mutation.observe(document.body, { childList: true, subtree: true });
+    ui();
+  }
+
+  const ui = (selector?:string, config?:any) => {
+    if (selector) {
+      if (selector == "setup") return setup();
+      if (selector == "guid") return guid();
+      if (selector == "mode") return mode(config);
+      if (selector == "theme") return theme(config);
+
+      let to = query(selector);
+      let from = query("[data-ui='#" + to.id + "']");
+      open(from, to, config);
+    }
+
+    let elements = queryAll("[data-ui]");
+    elements.forEach((x:Element) => on(x, "click", onClickElement));
+
+    let labels = queryAll(".field > label");
+    labels.forEach((x:HTMLLabelElement) => on(x, "click", onClickLabel));
+
+    let inputs = queryAll(".field > input:not([type=file]):not([type=checkbox]):not([type=radio]), .field > select, .field > textarea");
+    inputs.forEach((x:Element) => {
+      on(x, "focus", onFocusInput);
+      on(x, "blur", onBlurInput);
+      updateInput(x);
+    });
+
+    let files = queryAll(".field > input[type=file]");
+    files.forEach((x:Element) => {
+      on(x, "change", onChangeFile);
+      updateFile(x);
+    });
+  }
+
+  window["ui"] = ui;
+  window.addEventListener("load", () => setup);
+})();
