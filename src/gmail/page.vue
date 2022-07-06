@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  nav.left.flat.no-space.m.l
+  nav.left.no-space.no-shadow.m.l
     .large-space
     .large-space
     a.button.white.circle.large(data-ui="#modal-add")
@@ -34,7 +34,7 @@ div
       .large-space
       .medium-space
 
-  nav.right.flat.m.l
+  nav.right.no-shadow.m.l
     .large-space
     .large-space
     a.wave.dark
@@ -50,7 +50,7 @@ div
       img.tiny(:src="'/contacts.png'")
       span.tooltip.left Contacts
 
-  nav.bottom.flat.s
+  nav.bottom.s
     a(href="/gmail", :class="{ active: data.url == '/gmail' }")
       i.outlined inbox
       div Inbox
@@ -69,7 +69,7 @@ div
       .large-space
       .medium-space
 
-  nav.top.flat.medium-padding
+  nav.top.medium-padding.no-shadow
     .row.no-wrap.middle-align
       .col
         nav
@@ -109,7 +109,7 @@ div
             img(v-show="!data.isDark", :src="'/gmail-light.png'")
             img(v-show="data.isDark", :src="'/gmail-dark.png'")
       .col
-        .field.round.flat.suffix.prefix.small.no-margin.m.l.white.black-text
+        .field.round.suffix.prefix.small.no-margin.m.l.white.black-text
           i.front search
           input(type="text", data-ui="#dropdown-search")
           i.front mic
@@ -217,11 +217,11 @@ div
             textarea
             label Message
 
-    #modal-search.modal.top.transparent.flat
+    #modal-search.modal.top.transparent
       .row.no-wrap
         .col.m.l
         .col
-          .field.round.flat.suffix.prefix.small.no-margin.white.black-text
+          .field.round.suffix.prefix.small.no-margin.white.black-text
             i.front search
             input(type="text")
             i.front mic

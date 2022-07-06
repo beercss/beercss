@@ -2,6 +2,12 @@ import { nextTick } from "vue";
 import { IHome } from "./interfaces";
 import utils from "../shared/utils";
 
+const updateShadow = (selector:any, shadow?:string) => {
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["no-shadow", "small-shadow", "medium-shadow", "large-shadow"]);
+  if (shadow) utils.addClass(elements, [shadow]);
+}
+
 const updateColor = (selector:any, color?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["primary", "secondary", "tertiary", "error", "amber", "blue", "blue-grey", "brown", "cyan", "deep-orange", "deep-purple", "green", "grey", "indigo", "light-blue", "light-green", "lime", "orange", "pink", "purple", "red", "teal", "yellow"]);
@@ -285,6 +291,7 @@ const addHomeScreen = () => {
 }
 
 export default {
+  updateShadow,
   updateColor,
   updateBorderColor,
   updateTextColor,

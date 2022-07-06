@@ -27,7 +27,7 @@
         a.m.l(@click="domain.star(email)")
           i(v-show="!email.star") star_outline
           i.yellow-text(v-show="email.star") star
-        button.small.flat.circle.s A
+        button.small.circle.s A
     .col.truncate
       b From -&nbsp;
       b Subject -&nbsp;

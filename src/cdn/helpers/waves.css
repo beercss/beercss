@@ -19,11 +19,14 @@ button::after {
 }
 
 .wave.dark::after,
-.chip.border::after,
 .button.none::after,
 button.none::after,
+.chip.border::after,
 .button.border::after,
-button.border::after {
+button.border::after,
+.chip.transparent::after,
+.button.transparent::after,
+button.transparent::after {
   background-image: radial-gradient(circle, rgba(150,150,150,.2) 1%, transparent 1%);
 }
 

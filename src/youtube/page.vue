@@ -1,6 +1,6 @@
 <template lang="pug">
 #layout
-  nav.left.flat.m.l
+  nav.left.m.l
     .large-space
     .large-space
     a(href="/youtube", :class="{ active: data.url == '/youtube' }")
@@ -166,7 +166,7 @@
       .col
         span Broadcast live
 
-  #modal-search.modal.top.transparent.flat
+  #modal-search.modal.top.transparent
     .field.round.suffix.prefix.small.no-margin.white.black-text
       i.front search
       input(type="text")

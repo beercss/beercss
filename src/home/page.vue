@@ -124,14 +124,14 @@ div
     #begin
       .row
         #intro.col.s12
-          article.flat.large-padding
+          article.large-padding
             h3 Get started 
             .medium-space
             h5 From CDN
             pre.wrap(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.1.3/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.2.0/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.1.3/dist/cdn/beer.min.js" type="text/javascript"&gt;&lt;/script&gt;
+              | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.2.0/dist/cdn/beer.min.js" type="text/javascript"&gt;&lt;/script&gt;
               |
               | &lt;script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"&gt;&lt;/script&gt;
             .medium-space
@@ -156,13 +156,13 @@ div
                     span &nbsp;left, right, top, bottom, front, back, small, medium, large
                   p
                     b &lt;article&gt;
-                    span &nbsp;small, medium, large, border, flat, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding
+                    span &nbsp;small, medium, large, border, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding
                   p
                     b badge
                     span &nbsp;left, right, top, bottom, border, circle, square, round, left-round, right-round, top-round, bottom-round
                   p
                     b button or &lt;button&gt;
-                    span &nbsp;small, medium, large, extra, none, extend, border, flat, circle, square, round, left-round, right-round, top-round, bottom-round, responsive
+                    span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, left-round, right-round, top-round, bottom-round, responsive
                   p
                     b chip
                     span &nbsp;small, medium, large, border, circle, square, round, left-round, right-round, top-round, bottom-round
@@ -206,10 +206,10 @@ div
                     span &nbsp;responsive, min, max
                   p
                     b modal
-                    span &nbsp;left, right, top, bottom, small, medium, large, border, round, flat, left-round, right-round, top-round, bottom-round, active
+                    span &nbsp;left, right, top, bottom, small, medium, large, border, round, left-round, right-round, top-round, bottom-round, active
                   p
                     b &lt;nav&gt;
-                    span &nbsp;left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, flat, border, round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, no-margin, small-margin, medium-margin, large-margin
+                    span &nbsp;left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, no-margin, small-margin, medium-margin, large-margin
                   p
                     b overlay
                     span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active
@@ -429,7 +429,7 @@ onMounted(() => {
 <style>
 #logo {
   display: none;
-  max-width: 100% !important;
+  max-width: 100%;
   width: 512rem;
 }
 

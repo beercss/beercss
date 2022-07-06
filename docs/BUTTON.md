@@ -13,7 +13,7 @@ Buttons allow users to take actions, and make choices, with a single tap.
 
 **Forms**
 
-none, extend, border, flat, circle, square, round, left-round, right-round, top-round, bottom-round, responsive
+none, extend, border, circle, square, round, left-round, right-round, top-round, bottom-round, responsive
 
 **Sizes**
 

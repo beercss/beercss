@@ -33,29 +33,6 @@
       button.circle.right-round
         i add
     nav.wrap
-      button.flat.square
-        i add
-      button.flat.diamond
-        i add
-      button.flat.square.round
-        i add
-      button.flat.diamond.round
-        i add
-      button.flat.circle
-        i add
-      button.flat.circle.left-round.top-round
-        i add
-      button.flat.circle.left-round.bottom-round
-        i add
-      button.flat.circle.right-round.top-round
-        i add
-      button.flat.circle.right-round.bottom-round
-        i add
-      button.flat.circle.left-round
-        i add
-      button.flat.circle.right-round
-        i add
-    nav.wrap
       button.border.square
         i add
       button.border.diamond
@@ -104,7 +81,7 @@
       i code
   selectionForButtons(context="#extended-fabs button", :sizes="['extra']", selectedSize="extra")
   #extended-fabs.row
-    .col.s6.m6.l3
+    .col.s6.m6.l4
       nav
         button.extend.square
           i add
@@ -141,44 +118,7 @@
         button.extend.circle.right-round
           i add
           span Button
-    .col.s6.m6.l3
-      nav
-        button.extend.flat.square
-          i add
-          span Button
-      nav
-        button.extend.flat.square.round
-          i add
-          span Button
-      nav
-        button.extend.flat.circle
-          i add
-          span Button
-      nav
-        button.extend.flat.circle.left-round.top-round
-          i add
-          span Button
-      nav
-        button.extend.flat.circle.left-round.bottom-round
-          i add
-          span Button
-      nav
-        button.extend.flat.circle.right-round.top-round
-          i add
-          span Button
-      nav
-        button.extend.flat.circle.right-round.bottom-round
-          i add
-          span Button
-      nav
-        button.extend.flat.circle.left-round
-          i add
-          span Button
-      nav
-        button.extend.flat.circle.right-round
-          i add
-          span Button
-    .col.s6.m6.l3
+    .col.s6.m6.l4
       nav
         button.extend.border.square
           i add
@@ -215,7 +155,7 @@
         button.extend.border.circle.right-round
           i add
           span Button
-    .col.s6.m6.l3
+    .col.s6.m6.l4
       nav
         button.extend.border.square
           img.responsive(:src="'/favicon.png'")
@@ -279,28 +219,6 @@
         img(:src="'/favicon.png'")
         span Button
       button.round
-        img.responsive(:src="'/favicon.png'")
-        span Button
-    nav.wrap
-      button.flat Button
-      button.flat
-        i home
-        span Button
-      button.flat
-        img(:src="'/favicon.png'")
-        span Button
-      button.flat
-        img.responsive(:src="'/favicon.png'")
-        span Button
-    nav.wrap
-      button.flat.round Button
-      button.flat.round
-        i home
-        span Button
-      button.flat.round
-        img(:src="'/favicon.png'")
-        span Button
-      button.flat.round
         img.responsive(:src="'/favicon.png'")
         span Button
     nav.wrap
@@ -385,28 +303,6 @@
           span Button
       nav
         button.responsive.round
-          img(:src="'/favicon.png'")
-          span Button
-    .col.s12.m6
-      nav 
-        button.responsive.flat Button
-      nav
-        button.responsive.flat
-          i home
-          span Button
-      nav
-        button.responsive.flat
-          img(:src="'/favicon.png'")
-          span Button
-    .col.s12.m6
-      nav 
-        button.responsive.flat.round Button
-      nav
-        button.responsive.flat.round
-          i home
-          span Button
-      nav
-        button.responsive.flat.round
           img(:src="'/favicon.png'")
           span Button
     .col.s12.m6

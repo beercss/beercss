@@ -12,11 +12,15 @@ Cards are surfaces that display content and actions on a single topic. They shou
 
 **Forms**
 
-border, flat, round, left-round, top-round, right-round, bottom-round
+border, round, left-round, top-round, right-round, bottom-round
 
 **Paddings**
 
 no-padding, padding, small-padding, medium-padding, large-padding
+
+**Shadows**
+
+no-shadow, small-shadow, medium-shadow, large-shadow
 
 **Sizes**
 

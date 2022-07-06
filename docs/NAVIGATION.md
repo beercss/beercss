@@ -20,7 +20,7 @@ left-align, right-align, center-align, top-align, bottom-align, middle-align
 
 **Forms**
 
-flat, border, round, left-round, right-round, top-round, bottom-round
+border, round, left-round, right-round, top-round, bottom-round
 
 **Margins**
 
@@ -29,6 +29,10 @@ no-margin, small-margin, medium-margin, large-margin
 **Positions**
 
 left, right, top, bottom
+
+**Shadows**
+
+no-shadow, small-shadow, medium-shadow, large-shadow
 
 **Sizes**
 

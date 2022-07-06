@@ -12,11 +12,15 @@ Modals inform users about a task and can contain critical information, required 
 
 **Forms**
 
-border, round, flat, left-round, right-round, top-round, bottom-round
+border, round, left-round, right-round, top-round, bottom-round
 
 **Positions**
 
 left, right, top, bottom
+
+**Shadows**
+
+no-shadow, small-shadow, medium-shadow, large-shadow
 
 **Sizes**
 

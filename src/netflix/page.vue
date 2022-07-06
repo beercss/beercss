@@ -64,7 +64,7 @@
           a(href="/")
             img.circle(:src="'/favicon.png'")
   main
-    #modal-search.modal.top.transparent.flat
+    #modal-search.modal.top.transparent
       .row.no-wrap
         .col.m.l
         .col

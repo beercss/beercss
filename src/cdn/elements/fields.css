@@ -227,15 +227,15 @@ input[type=file] {
   padding-right: 46rem;
 }
 
-.field:not(.border, .flat, .round) > input,
-.field:not(.border, .flat, .round) > textarea,
-.field:not(.border, .flat, .round) > select {
+.field:not(.border, .round) > input,
+.field:not(.border, .round) > textarea,
+.field:not(.border, .round) > select {
   border-bottom-color: var(--outline);
 }
 
-.field:not(.border, .flat, .round) > input:focus,
-.field:not(.border, .flat, .round) > textarea:focus,
-.field:not(.border, .flat, .round) > select:focus {
+.field:not(.border, .round) > input:focus,
+.field:not(.border, .round) > textarea:focus,
+.field:not(.border, .round) > select:focus {
   border-bottom-color: var(--primary);
 }
 
@@ -261,25 +261,18 @@ input[type=file] {
   box-shadow: none;
 }
 
-.field.flat > input,
-.field.flat > textarea,
-.field.flat > select {
-  border-color: transparent!important;
-  box-shadow: none!important;
-}
-
-.field.flat > input:focus,
-.field.flat > textarea:focus,
-.field.flat > select:focus {
+.field.fill.round:not(.border) > input:focus,
+.field.fill.round:not(.border) > textarea:focus,
+.field.fill.round:not(.border) > select:focus {
   box-shadow: var(--shadow1)!important;
 }
 
-.field.invalid:not(.border, .round, .flat) > input,
-.field.invalid:not(.border, .round, .flat) > textarea,
-.field.invalid:not(.border, .round, .flat) > select,
-.field.invalid:not(.border, .round, .flat) > input:focus,
-.field.invalid:not(.border, .round, .flat) > textarea:focus,
-.field.invalid:not(.border, .round, .flat) > select:focus {
+.field.invalid:not(.border, .round) > input,
+.field.invalid:not(.border, .round) > textarea,
+.field.invalid:not(.border, .round) > select,
+.field.invalid:not(.border, .round) > input:focus,
+.field.invalid:not(.border, .round) > textarea:focus,
+.field.invalid:not(.border, .round) > select:focus {
   border-bottom-color: var(--error);
 }
 

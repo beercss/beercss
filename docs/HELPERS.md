@@ -50,7 +50,7 @@ divider, small-divider, medium-divider, large-divider
 
 ## Forms
 
-border, circle, square, flat, diamond, none, fill, extend, round, left-round, right-round, top-round, bottom-round
+border, circle, square, diamond, none, fill, extend, round, left-round, right-round, top-round, bottom-round
 
 ## Margins
 

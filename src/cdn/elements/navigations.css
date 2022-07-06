@@ -6,7 +6,7 @@ nav:not(.left, .right, .top, .bottom) {
 }
 
 *:not(.progress) + nav:not(.left, .right, .top, .bottom) {
-  margin-top: 8rem;
+  margin-top: 16rem;
 }
 
 nav:not(.left, .right, .top, .bottom) > :not(.dropdown, .badge) {
@@ -158,6 +158,7 @@ nav.bottom:before {
   bottom: 0;
   background-color: inherit;
   z-index: 101;
+  border-radius: inherit;
 }
 
 nav.left > :not(.modal, .overlay),

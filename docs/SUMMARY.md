@@ -6,11 +6,11 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **absolute** left, right, top, bottom, front, back, small, medium, large
 
-**&lt;article&gt;** small, medium, large, border, flat, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding
+**&lt;article&gt;** small, medium, large, border, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding
 
 **badge** left, right, top, bottom, border, circle, square, round, left-round, right-round, top-round, bottom-round
 
-**button or &lt;button&gt;** small, medium, large, extra, none, extend, border, flat, circle, square, round, left-round, right-round, top-round, bottom-round, responsive
+**button or &lt;button&gt;** small, medium, large, extra, none, extend, border, circle, square, round, left-round, right-round, top-round, bottom-round, responsive
 
 **chip** small, medium, large, border, circle, square, round, left-round, right-round, top-round, bottom-round
 
@@ -40,9 +40,9 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;main&gt;** responsive, min, max
 
-**modal** left, right, top, bottom, small, medium, large, border, round, flat, left-round, right-round, top-round, bottom-round, active
+**modal** left, right, top, bottom, small, medium, large, border, round, left-round, right-round, top-round, bottom-round, active
 
-**&lt;nav&gt;** left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, flat, border, round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, no-margin, small-margin, medium-margin, large-margin
+**&lt;nav&gt;** left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, no-margin, small-margin, medium-margin, large-margin
 
 **overlay** left-align, right-align, center-align, top-align, bottom-align, middle-align, active
 
@@ -72,7 +72,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Dividers** divider, small-divider, medium-divider, large-divider
 
-**Forms** border, circle, square, flat, diamond, none, fill, extend, round, left-round, right-round, top-round, bottom-round
+**Forms** border, circle, square, diamond, none, fill, extend, round, left-round, right-round, top-round, bottom-round
 
 **Margins** margin, no-margin, small-margin, medium-margin, large-margin
 

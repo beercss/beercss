@@ -196,30 +196,13 @@ button > img.responsive:last-child,
   margin-right: -16rem;
 }
 
-.button.extend > i:first-child,
-.button.extend > img:first-child,
-button.extend > i:first-child,
-button.extend > img:first-child {
+.extend > i,
+.extend > img {
   position: absolute;
   left: 16rem;
 }
 
-.button.extend > i:last-child,
-.button.extend > img:last-child,
-button.extend > i:last-child,
-button.extend > img:last-child {
-  position: absolute;
-  right: 16rem;
-}
-
-.button.extend > img.responsive:first-child,
-button.extend > img.responsive:first-child {
+.extend > img.responsive {
   position: absolute;
   left: 0;
-}
-
-.button.extend > img.responsive:last-child,
-button.extend > img.responsive:last-child {
-  position: absolute;
-  right: 0;
 }

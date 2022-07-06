@@ -4,7 +4,6 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow1);
   height: 40rem;
   font-size: 14rem;
   font-weight: 500;
@@ -24,7 +23,6 @@ button > :not(.dropdown, .progress, .badge, .tooltip) + :not(.dropdown, .progres
 
 .button.none,
 button.none {
-  box-shadow: none;
   width: auto;
   height: auto;
   color: var(--primary);
@@ -60,7 +58,6 @@ button.border {
   border: 1rem solid var(--primary);
   background-color: transparent;
   color: var(--primary);
-  box-shadow: none;
 }
 
 .button.round,
@@ -138,7 +135,7 @@ button.extend > span {
 button.extend:hover,
 .button.extend.active,
 button.extend.active {
-  width: auto;
+  width: auto !important;
   padding: 0 16rem;
 }
 
@@ -156,15 +153,6 @@ button.extend:hover > img + span,
 button.extend.active > img + span {
   display: inherit;
   margin-left: 48rem;
-}
-
-.button.square:not(.flat, .border),
-.button.circle:not(.flat, .border),
-.button.diamond:not(.flat, .border),
-button.square:not(.flat, .border),
-button.circle:not(.flat, .border),
-button.diamond:not(.flat, .border) {
-  box-shadow: var(--shadow2);
 }
 
 .button[disabled],

@@ -26,12 +26,12 @@ div
           i time_to_leave
           span Confirm
     .large-padding
-      .field.prefix.round.flat.white.black-text
+      .field.prefix.round.white.black-text
         i search
         input(:placeholder="data.from ? 'Destination' : 'Departure'", @click="go()")
       a.row.no-wrap(@click="go()")
         .col.min
-          button.circle.small.flat.no-wave
+          button.circle.small.no-wave
             i gps_fixed
         .col
           h6.no-margin {{ data.street }}
@@ -39,7 +39,7 @@ div
       .divider
       a.row.no-wrap(@click="go()")
         .col.min
-          button.circle.small.flat.no-wave
+          button.circle.small.no-wave
             i home
         .col
           h6.no-margin Home
@@ -58,12 +58,12 @@ div
           i time_to_leave
           span Confirm
     .large-padding
-      .field.prefix.round.flat.white.black-text
+      .field.prefix.round.white.black-text
         i search
         input(:placeholder="data.from ? 'Destination' : 'Departure'", @click="go()")
       a.row.no-wrap(@click="go()")
         .col.min
-          button.circle.small.flat.no-wave
+          button.circle.small.no-wave
             i gps_fixed
         .col
           h6.no-margin {{ data.street }}

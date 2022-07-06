@@ -4,6 +4,7 @@
   margin-top: 16rem;
   white-space: nowrap;
   border-bottom: 1rem solid var(--outline);
+  border-radius: 0;
 }
 
 * > .tabs:first-child {
