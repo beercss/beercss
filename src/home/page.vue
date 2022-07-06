@@ -155,14 +155,14 @@ div
                     b absolute
                     span &nbsp;left, right, top, bottom, front, back, small, medium, large
                   p
+                    b &lt;article&gt;
+                    span &nbsp;small, medium, large, border, flat, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding
+                  p
                     b badge
                     span &nbsp;left, right, top, bottom, border, circle, square, round, left-round, right-round, top-round, bottom-round
                   p
                     b button or &lt;button&gt;
                     span &nbsp;small, medium, large, extra, none, extend, border, flat, circle, square, round, left-round, right-round, top-round, bottom-round, responsive
-                  p
-                    b card or &lt;article&gt;
-                    span &nbsp;small, medium, large, border, flat, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding
                   p
                     b chip
                     span &nbsp;small, medium, large, border, circle, square, round, left-round, right-round, top-round, bottom-round

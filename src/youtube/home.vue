@@ -9,7 +9,7 @@ main.responsive(v-show="data.isLoaded")
     .space
     .row
       .col.s12.m6.l3(v-for="(item, i) in data.itens")
-        .card.no-padding.flat.transparent
+        article.no-padding.flat.transparent
           a.wave
             img.responsive(:src="item.image")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
@@ -35,7 +35,7 @@ main.responsive(v-show="data.isLoaded")
     h5 What's hot
     .row.no-wrap.scroll
       .col(v-for="item in data.whatsHot")
-        .card.no-padding.border.transparent.small-width
+        article.no-padding.border.transparent.small-width
           a.wave
             img.responsive(:src="item.image")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
@@ -52,7 +52,7 @@ main.responsive(v-show="data.isLoaded")
     h5 Your videos
     .row.no-wrap.scroll
       .col(v-for="item in data.yourVideos")
-        .card.no-padding.border.transparent.small-width
+        article.no-padding.border.transparent.small-width
           a.wave
             img.responsive(:src="item.image")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;

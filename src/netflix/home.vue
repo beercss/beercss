@@ -20,7 +20,7 @@
       h5.bold Today's ranking
       .row
         .col.s12.m6.l3(v-for="(item, i) in data.todaysRanking")
-          .card.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
+          article.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
             a.wave
               img.responsive(:src="item.image")
             button.circle.small.absolute.right.top.margin.black.white-text
@@ -38,7 +38,7 @@
       h5.bold Series
       .row.no-wrap.scroll
         .col(v-for="item in data.series")
-          .card.no-padding.small-width
+          article.no-padding.small-width
             a.wave
               img.responsive(:src="item.image")
 
@@ -46,7 +46,7 @@
       h5.bold Movies
       .row.no-wrap.scroll
         .col(v-for="item in data.movies")
-          .card.no-padding.small-width
+          article.no-padding.small-width
             a.wave
               img.responsive(:src="item.image")
 
@@ -54,7 +54,7 @@
       h5.bold Hot
       .row.no-wrap.scroll
         .col(v-for="item in data.hot")
-          .card.no-padding.small-width
+          article.no-padding.small-width
             a.wave
               img.responsive(:src="item.image")
 
@@ -62,7 +62,7 @@
       h5.bold My list
       .row.no-wrap.scroll
         .col(v-for="item in data.myList")
-          .card.no-padding.small-width
+          article.no-padding.small-width
             a.wave
               img.responsive(:src="item.image")
 </template>

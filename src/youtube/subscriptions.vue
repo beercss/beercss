@@ -4,7 +4,7 @@ main.responsive(v-show="data.isLoaded")
     h5 Subscriptions
     .row
       .col.s12(v-for="item in data.itens")
-        .card.no-padding.flat.transparent
+        article.no-padding.flat.transparent
           .row
             .col.s12.m4
               a.wave

@@ -6,7 +6,6 @@ Cards are surfaces that display content and actions on a single topic. They shou
 
 ```html
 <article>...</article>
-<div class="card">...</div>
 ```
 
 ## Most used helpers

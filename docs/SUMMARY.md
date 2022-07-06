@@ -6,11 +6,11 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **absolute** left, right, top, bottom, front, back, small, medium, large
 
+**&lt;article&gt;** small, medium, large, border, flat, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding
+
 **badge** left, right, top, bottom, border, circle, square, round, left-round, right-round, top-round, bottom-round
 
 **button or &lt;button&gt;** small, medium, large, extra, none, extend, border, flat, circle, square, round, left-round, right-round, top-round, bottom-round, responsive
-
-**card or &lt;article&gt;** small, medium, large, border, flat, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding
 
 **chip** small, medium, large, border, circle, square, round, left-round, right-round, top-round, bottom-round
 

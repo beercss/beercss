@@ -14,12 +14,14 @@ Expansion contain creation flows and allow lightweight editing of an element.
 ## Example
 
 ```html
-<details class="card">
-  <summary>
-    <h5>Title</h5>
-  </summary>
-  <p>Description that will be shown after click on summary</p>
-</details>
+<article>
+  <details>
+    <summary>
+      <h5>Title</h5>
+    </summary>
+    <p>Description that will be shown after click on summary</p>
+  </details>
+</article>
 ```
 
 ## Go to
