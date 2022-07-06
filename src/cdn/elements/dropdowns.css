@@ -21,6 +21,7 @@
   color: var(--on-surface);
   line-height: normal;
   text-align: left;
+  border-radius: 4rem;
 }
 
 .dropdown.no-wrap {
@@ -44,7 +45,7 @@ button:not([data-ui]):focus-within > .dropdown,
 }
 
 .dropdown.round {
-  border-radius: 24rem;
+  border-radius: 32rem;
 }
 
 .dropdown.right {

@@ -166,7 +166,6 @@ input[type=file] {
   background: none;
   box-sizing: border-box;
   resize: none;
-  border-radius: inherit;
 }
 
 .field > input:focus,
@@ -241,11 +240,11 @@ input[type=file] {
 }
 
 .field {
-  border-radius: 8rem 8rem 0 0;
+  border-radius: 4rem 4rem 0 0;
 }
 
 .field.border {
-  border-radius: 8rem;
+  border-radius: 4rem;
 }
 
 .field.round {
@@ -253,7 +252,7 @@ input[type=file] {
 }
 
 .field.round.textarea {
-  border-radius: 24rem;
+  border-radius: 32rem;
 }
 
 .field.fill > input,

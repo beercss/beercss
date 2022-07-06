@@ -5,7 +5,6 @@ button {
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow1);
-  min-height: 40rem;
   height: 40rem;
   font-size: 14rem;
   font-weight: 500;
@@ -27,9 +26,7 @@ button > :not(.dropdown, .progress, .badge, .tooltip) + :not(.dropdown, .progres
 button.none {
   box-shadow: none;
   width: auto;
-  min-width: auto;
   height: auto;
-  min-height: auto;
   color: var(--primary);
   padding: 0;
   background-color: transparent;
@@ -38,26 +35,22 @@ button.none {
 
 .button.small,
 button.small {
-  min-height: 32rem !important;
   height: 32rem;
   font-size: 14rem;
 }
 
 .button.medium,
 button.medium {
-  min-height: 40rem !important;
   height: 40rem;
 }
 
 .button.large,
 button.large {
-  min-height: 48rem !important;
   height: 48rem;
 }
 
 .button.extra,
 button.extra {
-  min-height: 56rem !important;
   height: 56rem;
   font-size: 16rem;
 }
@@ -78,42 +71,42 @@ button.round {
 
 .button.top-round,
 button.top-round {
-  border-radius: 32rem 32rem 4rem 4rem !important;
+  border-radius: 32rem 32rem 0 0 !important;
 }
 
 .button.bottom-round,
 button.bottom-round {
-  border-radius: 4rem 4rem 32rem 32rem !important;
+  border-radius: 0 0 32rem 32rem !important;
 }
 
 .button.left-round,
 button.left-round {
-  border-radius: 32rem 4rem 4rem 32rem !important;
+  border-radius: 32rem 0 0 32rem !important;
 }
 
 .button.right-round,
 button.right-round {
-  border-radius: 4rem 32rem 32rem 4rem !important;
+  border-radius: 0 32rem 32rem 0 !important;
 }
 
 .button.top-round.left-round,
 button.top-round.left-round {
-  border-radius: 32rem 32rem 4rem 32rem !important;
+  border-radius: 32rem 32rem 0 32rem !important;
 }
 
 .button.top-round.right-round,
 button.top-round.right-round {
-  border-radius: 32rem 32rem 32rem 4rem !important;
+  border-radius: 32rem 32rem 32rem 0 !important;
 }
 
 .button.bottom-round.left-round,
 button.bottom-round.left-round {
-  border-radius: 32rem 4rem 32rem 32rem !important;
+  border-radius: 32rem 0 32rem 32rem !important;
 }
 
 .button.bottom-round.right-round,
 button.bottom-round.right-round {
-  border-radius: 4rem 32rem 32rem 32rem !important;
+  border-radius: 0 32rem 32rem 32rem !important;
 }
 
 .button.circle,
@@ -127,14 +120,12 @@ button.circle {
 .button.square, 
 button.square {
   transform: none;
-  border-radius: 4rem;
+  border-radius: 0;
   padding: 0;
 }
 
 .button.extend,
 button.extend {
-  min-height: 56rem !important;
-  min-width: 56rem !important;
   padding: 0;
 }
 
@@ -148,8 +139,6 @@ button.extend:hover,
 .button.extend.active,
 button.extend.active {
   width: auto;
-  max-width: none;  
-  min-width: auto;
   padding: 0 16rem;
 }
 

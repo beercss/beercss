@@ -8,7 +8,6 @@
 
 .absolute,
 .fixed {
-  border-radius: inherit;
   float: none;
 }
 
@@ -16,7 +15,7 @@
 .fixed.round,
 header.round,
 footer.round {
-  border-radius: 24rem;
+  border-radius: 32rem;
 }
 
 .absolute.border,

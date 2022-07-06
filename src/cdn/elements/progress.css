@@ -5,7 +5,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  border-radius: inherit;
   margin: 0 !important;
   padding: 0 !important;
   transition: var(--speed4) clip-path;
