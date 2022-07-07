@@ -25,10 +25,6 @@
   box-shadow: none;
 }
 
-.modal.round {
-  border-radius: 32rem;
-}
-
 .modal.bottom.round {
   border-radius: 32rem 32rem 0 0;
 }

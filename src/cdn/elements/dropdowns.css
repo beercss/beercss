@@ -44,10 +44,6 @@ button:not([data-ui]):focus-within > .dropdown,
   box-shadow: none;
 }
 
-.dropdown.round {
-  border-radius: 32rem;
-}
-
 .dropdown.right {
   left: 0;
   right: auto;

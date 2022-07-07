@@ -98,10 +98,6 @@
   color:var(--error);
 }
 
-.badge.round {
-  border-radius: 8rem;
-}
-
 .badge.circle,
 .badge.square {
   padding: 0;

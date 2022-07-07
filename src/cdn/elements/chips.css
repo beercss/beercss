@@ -49,9 +49,12 @@
   border-radius: inherit;
 }
 
+.chip.round {
+  transform: none;
+}
+
 .chip.circle {
   transform: none;
-  padding: 0;
   border-radius: 40rem;
   padding: 0;
 }
@@ -60,8 +63,4 @@
   transform: none;
   border-radius: 0;
   padding: 0;
-}
-
-.chip.round {
-  border-radius: 32rem;
 }

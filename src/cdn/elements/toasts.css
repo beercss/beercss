@@ -55,10 +55,6 @@
   padding: 24rem;
 }
 
-.toast.round {
-  border-radius: 32rem;
-}
-
 .toast > * {
   margin: 0;
   overflow: unset;

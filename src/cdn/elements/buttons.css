@@ -63,53 +63,11 @@ button.border {
 .button.round,
 button.round {
   transform: none;
-  border-radius: 32rem;
-}
-
-.button.top-round,
-button.top-round {
-  border-radius: 32rem 32rem 0 0 !important;
-}
-
-.button.bottom-round,
-button.bottom-round {
-  border-radius: 0 0 32rem 32rem !important;
-}
-
-.button.left-round,
-button.left-round {
-  border-radius: 32rem 0 0 32rem !important;
-}
-
-.button.right-round,
-button.right-round {
-  border-radius: 0 32rem 32rem 0 !important;
-}
-
-.button.top-round.left-round,
-button.top-round.left-round {
-  border-radius: 32rem 32rem 0 32rem !important;
-}
-
-.button.top-round.right-round,
-button.top-round.right-round {
-  border-radius: 32rem 32rem 32rem 0 !important;
-}
-
-.button.bottom-round.left-round,
-button.bottom-round.left-round {
-  border-radius: 32rem 0 32rem 32rem !important;
-}
-
-.button.bottom-round.right-round,
-button.bottom-round.right-round {
-  border-radius: 0 32rem 32rem 32rem !important;
 }
 
 .button.circle,
 button.circle {
   transform: none;
-  padding: 0;
   border-radius: 40rem;
   padding: 0;
 }

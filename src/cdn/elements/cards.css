@@ -37,7 +37,3 @@ article.border {
   box-shadow: none;
   background-color: transparent;
 }
-
-article.round {
-  border-radius: 32rem;
-}

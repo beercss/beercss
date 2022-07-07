@@ -251,10 +251,6 @@ input[type=file] {
   border-radius: 32rem;
 }
 
-.field.round.textarea {
-  border-radius: 32rem;
-}
-
 .field.fill > input,
 .field.fill > textarea,
 .field.fill > select {
