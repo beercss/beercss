@@ -25,22 +25,6 @@
   box-shadow: none;
 }
 
-.modal.bottom.round {
-  border-radius: 32rem 32rem 0 0;
-}
-
-.modal.top.round {
-  border-radius: 0 0 32rem 32rem;
-}
-
-.modal.left.round {
-  border-radius: 0 32rem 32rem 0;
-}
-
-.modal.right.round {
-  border-radius: 32rem 0 0 32rem;
-}
-
 .modal.small {
   width: 25%;
   height: 25%;
