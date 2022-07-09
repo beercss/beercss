@@ -206,3 +206,8 @@ button > img.responsive:last-child,
   position: absolute;
   left: 0;
 }
+
+nav > img,
+nav > video {
+  margin: 0;
+}

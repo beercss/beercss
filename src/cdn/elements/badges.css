@@ -14,8 +14,7 @@
   bottom: auto;
   right: 0;
   transform: translate(50%, -100%);
-  width: 16rem;
-  height: 16rem;
+  height: 20rem;
 }
 
 .badge.none {
@@ -102,8 +101,8 @@
 .badge.square {
   padding: 0;
   text-align: center;
-  width: 16rem;
-  height: 16rem;
+  width: 20rem;
+  height: 20rem;
 }
 
 .badge.circle {

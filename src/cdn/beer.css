@@ -2,8 +2,6 @@
 @import "./settings/light.css";
 @import "./settings/dark.css";
 @import "./helpers/reset.css";
-@import "./helpers/colors.css";
-@import "./helpers/theme.css";
 @import "./elements/badges.css";
 @import "./elements/buttons.css";
 @import "./elements/cards.css";
@@ -28,6 +26,7 @@
 @import "./elements/toasts.css";
 @import "./elements/tooltips.css";
 @import "./helpers/alignments.css";
+@import "./helpers/colors.css";
 @import "./helpers/dividers.css";
 @import "./helpers/forms.css";
 @import "./helpers/margins.css";
@@ -39,5 +38,6 @@
 @import "./helpers/sizes.css";
 @import "./helpers/spaces.css";
 @import "./helpers/responsive.css";
+@import "./helpers/theme.css";
 @import "./helpers/typography.css";
 @import "./helpers/waves.css";

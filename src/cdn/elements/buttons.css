@@ -5,6 +5,7 @@ button {
   align-items: center;
   justify-content: center;
   height: 40rem;
+  min-width: 40rem;
   font-size: 14rem;
   font-weight: 500;
   color: var(--on-primary);
@@ -34,22 +35,26 @@ button.none {
 .button.small,
 button.small {
   height: 32rem;
+  min-width: 32rem;
   font-size: 14rem;
 }
 
 .button.medium,
 button.medium {
   height: 40rem;
+  min-width: 40rem;
 }
 
 .button.large,
 button.large {
   height: 48rem;
+  min-width: 48rem;
 }
 
 .button.extra,
 button.extra {
   height: 56rem;
+  min-width: 56rem;
   font-size: 16rem;
 }
 

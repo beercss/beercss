@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   height: 40rem;
+  min-width: 40rem;
   font-size: 14rem;
   font-weight: 500;
   color: var(--on-secondary);
@@ -22,14 +23,17 @@
 
 .chip.small {
   height: 32rem;
+  min-width: 32rem;
 }
 
 .chip.medium {
   height: 40rem;
+  min-width: 40rem;
 }
 
 .chip.large {
   height: 48rem;
+  min-width: 48rem;
 }
 
 .chip.border {

@@ -3,6 +3,7 @@ nav:not(.left, .right, .top, .bottom) {
   align-items: center;
   white-space: nowrap;
   margin: 0 -8rem;
+  border-radius: 0;
 }
 
 *:not(.progress) + nav:not(.left, .right, .top, .bottom) {
@@ -242,6 +243,18 @@ nav.bottom-align {
 nav.center-align,
 nav.middle-align {
   justify-content: center;
+}
+
+nav:not(.left, .right) > .space {
+  width: 8rem;
+}
+
+nav:not(.left, .right) > .medium-space {
+  width: 16rem;
+}
+
+nav:not(.left, .right) > .large-space {
+  width: 24rem;
 }
 
 @media only screen and (max-width: 600px) {
