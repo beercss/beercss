@@ -3,7 +3,7 @@
   .large-space
   h4
     span Progress
-    a.chip.circle(@click="domain.showSamples(data, '#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#progress .small-space, #progress article, #progress nav > button, #progress nav > .chip', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
       i code
   nav.wrap
     label.radio

@@ -42,68 +42,64 @@
       .medium-space
 
   nav.top
-    .row.no-wrap.middle-align
-      .col
-        nav.padding
-          button.none.m.l(data-ui="#modal-expanded")
-            i menu
-          a
-            img(
-              v-show="!data.isDark",
-              :src="'/youtube-light.png'"
-            )
-            img(
-              v-show="data.isDark",
-              :src="'/youtube-dark.png'"
-            )
-      .col
-        .field.round.suffix.prefix.small.no-margin.m.l.white.black-text
-          i.front search
-          input(type="text")
-          i.front mic
-      .col
-        nav.right-align
-          button.none.s(data-ui="#modal-search")
-            i search
-          button.none.m.l(data-ui="#dropdown-add")
-            i video_call
-            #dropdown-add.dropdown.left.no-wrap(data-ui="#dropdown-add")
-              a.row.no-wrap
-                .col.min
-                  i upload
-                .col Send a video
-              a.row.no-wrap
-                .col.min
-                  i sensors
-                .col Broadcast live
-          button.none.m.l(data-ui="#dropdown-apps")
-            i apps
-            #dropdown-apps.dropdown.left.no-wrap(data-ui="#dropdown-apps")
-              a.row.no-wrap
-                .col.min
-                  img(:src="'/youtube.png'")
-                .col Youtube TV
-              .divider
-              a.row.no-wrap
-                .col.min
-                  img(:src="'/youtube.png'")
-                .col Youtube Music
-              a.row.no-wrap
-                .col.min
-                  img(:src="'/youtube.png'")
-                .col Youtube Kids
-          button.none(data-ui="#modal-notifications")
-            i notifications
-          a(href="/")
-            img.circle(:src="'/favicon.png'")
+    .space
+    button.circle.large.transparent.m.l(data-ui="#modal-expanded")
+      i menu
+    .space
+    img(
+      v-show="!data.isDark",
+      :src="'/youtube-light.png'"
+    )
+    img(
+      v-show="data.isDark",
+      :src="'/youtube-dark.png'"
+    )
+    .max
+    .max.field.round.suffix.prefix.small.no-margin.m.l.white.black-text
+      i.front search
+      input(type="text")
+      i.front mic
+    .max
+    button.circle.large.transparent.s(data-ui="#modal-search")
+      i search
+    button.circle.large.transparent.m.l(data-ui="#dropdown-add")
+      i video_call
+      #dropdown-add.dropdown.left.no-wrap(data-ui="#dropdown-add")
+        a.row.no-wrap
+          .col.min
+            i upload
+          .col Send a video
+        a.row.no-wrap
+          .col.min
+            i sensors
+          .col Broadcast live
+    button.circle.large.transparent.m.l(data-ui="#dropdown-apps")
+      i apps
+      #dropdown-apps.dropdown.left.no-wrap(data-ui="#dropdown-apps")
+        a.row.no-wrap
+          .col.min
+            img(:src="'/youtube.png'")
+          .col Youtube TV
+        .divider
+        a.row.no-wrap
+          .col.min
+            img(:src="'/youtube.png'")
+          .col Youtube Music
+        a.row.no-wrap
+          .col.min
+            img(:src="'/youtube.png'")
+          .col Youtube Kids
+    button.circle.large.transparent(data-ui="#modal-notifications")
+      i notifications
+    button.circle.large.transparent(@click="redirect('/')")
+      img.responsive(:src="'/favicon.png'")
+    .space
 
   #modal-notifications.modal.right
-    .row.no-wrap.middle-align
-      .col
-        h5.no-margin Notifications
-      .col.min
-        a(data-ui="#modal-notifications")
-          i close
+    nav
+      h5.max Notifications
+      button.circle.transparent(data-ui="#modal-notifications")
+        i close
     p No new notifications here
 
   #modal-expanded.modal.left.small
@@ -148,13 +144,11 @@
         i watch_later
       .col Watch later
 
-  #modal-add.modal.bottom.round
-    .row.no-wrap.middle-align
-      .col
-        h5.no-margin New
-      .col.right-align
-        a(data-ui="#modal-add")
-          i close
+  #modal-add.modal.bottom.top-round
+    nav
+      h5.max New
+      button.circle.transparent(data-ui="#modal-add")
+        i close
     a.row.no-wrap
       .col.min
         i upload
@@ -190,7 +184,7 @@ import home from "./home.vue";
 import library from "./library.vue";
 import subscriptions from "./subscriptions.vue";
 import whatsHot from "./whatsHot.vue";
-import { onRoute } from "../shared/router";
+import { onRoute, redirect } from "../shared/router";
 
 onMounted(async() => {
   sharedDomain.initTheme(data.value);

@@ -11,6 +11,10 @@ export const onRoute = (callback:any) => {
   addEventListener(eventName, listener);
 }
 
+export const redirect = (path:string) => {
+  page.redirect(path);
+}
+
 export const router = (url:string, component:any) => {
   page(url, () => {
     let baseRoute = page.current.toLocaleLowerCase().split("/")[1] || "";

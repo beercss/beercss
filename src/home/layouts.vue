@@ -6,7 +6,7 @@ div
     .medium-space
     h6 Positions
       a.chip.circle(
-        @click="data.layout = 0; domain.showSamples(data, '#positions article', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
+        @click="data.layout = 0; domain.showSamples(data, '#positions article', 'Positions', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
         i code
     nav.wrap
@@ -36,7 +36,7 @@ div
     .medium-space
     h6 Alignments
       a.chip.circle(
-        @click="data.layout = 0; domain.showSamples(data, '#alignments article', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
+        @click="data.layout = 0; domain.showSamples(data, '#alignments article', 'Alignments', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
         i code
     nav.wrap
@@ -77,7 +77,7 @@ div
   #headers-footers
     h6 Headers and footers
       a.chip.circle(
-        @click="data.layout = 0; domain.showSamples(data, '#headers-footers article', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
+        @click="data.layout = 0; domain.showSamples(data, '#headers-footers article', 'Headers and footers', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
         i code
     .space
@@ -98,7 +98,7 @@ div
   #app-bars
     h6 App bars
       a.chip.circle(
-        @click="data.layout = 0; domain.showSamples(data, '#app-bars header', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
+        @click="data.layout = 0; domain.showSamples(data, '#app-bars header', 'App bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
         i code
     nav.wrap
@@ -185,7 +185,7 @@ div
   #list
     h6
       span Lists
-      a.chip.circle(@click="domain.showSamples(data, '#list .row')")
+      a.chip.circle(@click="domain.showSamples(data, '#list .row', 'Lists')")
         i code
     nav.wrap
       label.radio

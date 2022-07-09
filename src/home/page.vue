@@ -1,7 +1,9 @@
 <template lang="pug">
 div
   nav.left.m.l
-    img.circle.small-margin(:src="'/favicon.png'", @click="domain.addHomeScreen()")
+    .space
+    img.circle(:src="'/favicon.png'", @click="domain.addHomeScreen()")
+    .space
     a(@click="domain.updateMenu(data, 'top')")
       i arrow_upward
       div Top
@@ -23,7 +25,7 @@ div
     a(data-ui="#more1")
       i collections
       div Templates
-    a(@click="domain.showSamples(data, '#app > div > nav.m.l', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       div Code
     themes(id="themes1", v-model="data")
@@ -60,7 +62,7 @@ div
     a(data-ui="#more2")
       i collections
       div Templates
-    a(@click="domain.showSamples(data, '#app > div > nav.s', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a(@click="domain.showSamples(data, '#app > div > nav.s', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       div Code
     themes(id="themes2", v-model="data")
@@ -371,10 +373,13 @@ div
       #modal-samples.modal.right.large
         header.fixed.front
           nav
-            a(data-ui="#modal-samples")
-              i arrow_backward
-              h5.small-margin Back
-            a.button.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
+            h5.truncate {{data.name}}
+            a.m.l.button.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
+            .max
+            a.button.circle.transparent.s(v-show="data.urlSample", :href="data.urlSample", target="_blank")
+              i description
+            button.circle.transparent(data-ui="#modal-samples")
+              i close
         article.border(v-for="(exemplo in data.samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")

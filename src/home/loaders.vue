@@ -3,7 +3,7 @@
   .large-space
   h4
     span Loaders
-    a.chip.circle(@click="domain.showSamples(data, '#loaders .loader', null, 'https://github.com/beercss/beercss/blob/main/docs/LOADER.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#loaders .loader', 'Loaders', null, 'https://github.com/beercss/beercss/blob/main/docs/LOADER.md')")
       i code
   nav.wrap
     a.loader.small

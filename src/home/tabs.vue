@@ -4,7 +4,7 @@
   h4
     span Tabs
     a.chip.circle(
-      @click="domain.showSamples(data, '#tabs > div:not(.large-space)', null, 'https://github.com/beercss/beercss/blob/main/docs/TABS.md')"
+      @click="domain.showSamples(data, '#tabs > div:not(.large-space)', 'Tabs', null, 'https://github.com/beercss/beercss/blob/main/docs/TABS.md')"
     )
       i code
   nav.wrap

@@ -3,7 +3,7 @@
   .large-space
   h4
     span Inputs
-    a.chip.circle(@click="domain.showSamples(data, '#inputs .field', null, 'https://github.com/beercss/beercss/blob/main/docs/INPUT.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#inputs .field', 'Inputs', null, 'https://github.com/beercss/beercss/blob/main/docs/INPUT.md')")
       i code
   nav.wrap
     label.checkbox

@@ -3,7 +3,7 @@
   .large-space
   h4
     span Pages
-    a.chip.circle(@click="domain.showSamples(data, '#pages .page', null, 'https://github.com/beercss/beercss/blob/main/docs/PAGE.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#pages .page', 'Pages', null, 'https://github.com/beercss/beercss/blob/main/docs/PAGE.md')")
       i code
   nav.wrap
     button(@click="domain.updatePage('#page')") Default

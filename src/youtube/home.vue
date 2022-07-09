@@ -13,15 +13,12 @@ main.responsive(v-show="data.isLoaded")
           a.wave
             img.responsive(:src="item.image")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
-          .space
-          .row.no-wrap.middle-align
-            .col.min
-              img.small.circle(:src="item.image")
-            .col.truncate
-              .bold {{ item.title }}
-              div 10k views
-            .col.min
-              button.none(:data-ui="'#dropdown-' + i")
+          .small-padding
+            nav
+              .max.truncate
+                .bold {{ item.title }}
+                div 10k views
+              button.circle.transparent(:data-ui="'#dropdown-' + i")
                 i more_vert
                 .dropdown.left.no-wrap(
                   :id="'dropdown-' + i",
@@ -40,13 +37,12 @@ main.responsive(v-show="data.isLoaded")
             img.responsive(:src="item.image")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
-            .row.no-wrap.middle-align
-              .col.truncate
+            nav
+              .max.truncate
                 .bold {{ item.title }}
                 div 10k views
-              .col.min
-                a
-                  i thumb_up
+              button.circle.transparent
+                i thumb_up
 
     .large-divider
     h5 Your videos
@@ -57,13 +53,12 @@ main.responsive(v-show="data.isLoaded")
             img.responsive(:src="item.image")
             .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
-            .row.no-wrap.middle-align
-              .col.truncate
+            nav
+              .max.truncate
                 .bold {{ item.title }}
                 div 10k views
-              .col.min
-                a
-                  i thumb_up
+              button.circle.transparent
+                i thumb_up
 </template>
 
 <script setup lang="ts">

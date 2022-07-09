@@ -3,7 +3,7 @@
   .large-space
   h4
     span Expansions
-    a.chip.circle(@click="domain.showSamples(data, '#expansions details', null, 'https://github.com/beercss/beercss/blob/main/docs/EXPANSION.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#expansions details', 'Expansions', null, 'https://github.com/beercss/beercss/blob/main/docs/EXPANSION.md')")
       i code
   details
     summary Title

@@ -6,7 +6,7 @@
   .medium-space
   h6.middle-align
     span Navigations
-    a.chip.circle(@click="domain.showSamples(data, '#navigation-default nav', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#navigation-default nav', 'Navigations', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
   nav.wrap
     label.radio
@@ -29,7 +29,7 @@
     .medium-space
     h6.middle-align
       span Navigation rail/bar
-      a.chip.circle(@click="domain.showSamples(data, '#app > div > nav.m.l', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+      a.chip.circle(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
     nav.wrap
       label.radio

@@ -3,7 +3,7 @@
   .large-space
   h4
     span Radios
-    a.chip.circle(@click="domain.showSamples(data, '#radios .field:not(#radios1), #radios1 label', null, 'https://github.com/beercss/beercss/blob/main/docs/RADIO.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#radios .field:not(#radios1), #radios1 label', 'Radios', null, 'https://github.com/beercss/beercss/blob/main/docs/RADIO.md')")
       i code
   .row
     .col.s12

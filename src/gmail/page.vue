@@ -37,17 +37,20 @@ div
   nav.right.no-shadow.m.l
     .large-space
     .large-space
-    a.wave.dark
-      img.tiny(:src="'/calendar.png'")
+    button.circle.large.transparent
+      img(:src="'/calendar.png'")
       span.tooltip.left Calendar
-    a.wave.dark
-      img.tiny(:src="'/keep.png'")
+    .space
+    button.circle.large.transparent
+      img(:src="'/keep.png'")
       span.tooltip.left Keep
-    a.wave.dark
-      img.tiny(:src="'/tasks.png'")
+    .space
+    button.circle.large.transparent
+      img(:src="'/tasks.png'")
       span.tooltip.left Tasks
-    a.wave.dark
-      img.tiny(:src="'/contacts.png'")
+    .space
+    button.circle.large.transparent
+      img(:src="'/contacts.png'")
       span.tooltip.left Contacts
 
   nav.bottom.s
@@ -69,88 +72,85 @@ div
       .large-space
       .medium-space
 
-  nav.top.medium-padding.no-shadow
-    .row.no-wrap.middle-align
-      .col
-        nav
-          button.none(data-ui="#dropdown-menu")
-            i.outlined menu
-            #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
-              a.row.no-wrap(href="/gmail")
-                .col.min
-                  i.outlined inbox
-                .col Inbox
-              a.row.no-wrap(href="/gmail/snoozed")
-                .col.min
-                  i.outlined watch_later
-                .col Snoozed
-              a.row.no-wrap(href="/gmail/important")
-                .col.min
-                  i.outlined label_important
-                .col Important
-              a.row.no-wrap(href="/gmail/sent")
-                .col.min
-                  i.outlined send
-                .col Sent
-              a.row.no-wrap(href="/gmail/drafts")
-                .col.min
-                  i.outlined insert_drive_file
-                .col Drafts
-              a.row.no-wrap(href="/gmail/spam")
-                .col.min
-                  i.outlined error_outline
-                .col Spam
-              a.row.no-wrap(data-ui="#themes1")
-                .col.min
-                  i.outlined brightness_medium
-                .col Themes
-
-          a
-            img(v-show="!data.isDark", :src="'/gmail-light.png'")
-            img(v-show="data.isDark", :src="'/gmail-dark.png'")
-      .col
-        .field.round.suffix.prefix.small.no-margin.m.l.white.black-text
-          i.front search
-          input(type="text", data-ui="#dropdown-search")
-          i.front mic
-      .col
-        nav.right-align
-          button.none.s(data-ui="#modal-search")
-            i.outlined search
-          button.none.m.l(data-ui="#dropdown-settings")
-            i.outlined settings
-            #dropdown-settings.dropdown.left.no-wrap(
-              data-ui="#dropdown-settings"
-            )
-              a
-                div Account
-                label Change account
-              a
-                div Appearance
-                label Change display settings
-          button.none.m.l(data-ui="#dropdown-apps")
-            i.outlined apps
-            #dropdown-apps.dropdown.left.small-width(data-ui="#dropdown-apps")
-              .large-padding
-                .row
-                  a.wave.col.s6.middle-align
-                    .center-align
-                      img(:src="'/calendar.png'")
-                      p Calendar
-                  a.wave.col.s6.middle-align
-                    .center-align
-                      img(:src="'/keep.png'")
-                      p Keep
-                  a.wave.col.s6.middle-align
-                    .center-align
-                      img(:src="'/tasks.png'")
-                      p Tasks
-                  a.wave.col.s6.middle-align
-                    .center-align
-                      img(:src="'/contacts.png'")
-                      p Contacts
-          a(href="/")
-            img.circle(:src="'/favicon.png'")
+  nav.top.no-shadow
+    .space
+    button.circle.large.transparent(data-ui="#dropdown-menu")
+      i.outlined menu
+      #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
+        a.row.no-wrap(href="/gmail")
+          .col.min
+            i.outlined inbox
+          .col Inbox
+        a.row.no-wrap(href="/gmail/snoozed")
+          .col.min
+            i.outlined watch_later
+          .col Snoozed
+        a.row.no-wrap(href="/gmail/important")
+          .col.min
+            i.outlined label_important
+          .col Important
+        a.row.no-wrap(href="/gmail/sent")
+          .col.min
+            i.outlined send
+          .col Sent
+        a.row.no-wrap(href="/gmail/drafts")
+          .col.min
+            i.outlined insert_drive_file
+          .col Drafts
+        a.row.no-wrap(href="/gmail/spam")
+          .col.min
+            i.outlined error_outline
+          .col Spam
+        a.row.no-wrap(data-ui="#themes1")
+          .col.min
+            i.outlined brightness_medium
+          .col Themes
+    .space
+    img(v-show="!data.isDark", :src="'/gmail-light.png'")
+    img(v-show="data.isDark", :src="'/gmail-dark.png'")
+    .max
+    .max.field.round.suffix.prefix.small.no-margin.m.l.white.black-text
+      i.front search
+      input(type="text", data-ui="#dropdown-search")
+      i.front mic
+    .max
+    button.circle.large.transparent.s(data-ui="#modal-search")
+      i.outlined search
+    button.circle.large.transparent.m.l(data-ui="#dropdown-settings")
+      i.outlined settings
+      #dropdown-settings.dropdown.left.no-wrap(
+        data-ui="#dropdown-settings"
+      )
+        a
+          div Account
+          label Change account
+        a
+          div Appearance
+          label Change display settings
+    button.circle.large.transparent.m.l(data-ui="#dropdown-apps")
+      i.outlined apps
+      #dropdown-apps.dropdown.left.small-width(data-ui="#dropdown-apps")
+        .large-padding
+          .row
+            a.wave.col.s6.middle-align
+              .center-align
+                img(:src="'/calendar.png'")
+                p Calendar
+            a.wave.col.s6.middle-align
+              .center-align
+                img(:src="'/keep.png'")
+                p Keep
+            a.wave.col.s6.middle-align
+              .center-align
+                img(:src="'/tasks.png'")
+                p Tasks
+            a.wave.col.s6.middle-align
+              .center-align
+                img(:src="'/contacts.png'")
+                p Contacts
+    button.circle.large.transparent(@click="redirect('/')")
+      img.responsive(:src="'/favicon.png'")
+    .space
   
   main.responsive.max
     #modal-add.modal.round
@@ -185,7 +185,7 @@ div
             textarea
             label Message
 
-    #modal-add-small.modal.round.bottom
+    #modal-add-small.modal.top-round.bottom
       .row.no-wrap
         .col
           nav
@@ -218,14 +218,13 @@ div
             label Message
 
     #modal-search.modal.top.transparent
-      .row.no-wrap
-        .col.m.l
-        .col
-          .field.round.suffix.prefix.small.no-margin.white.black-text
-            i.front search
-            input(type="text")
-            i.front mic
-        .col.m.l
+      nav
+        .max.m.l
+        .max.field.round.suffix.prefix.small.no-margin.white.black-text
+          i.front search
+          input(type="text")
+          i.front mic
+        .max.m.l
 
     home(v-if="data.url == '/gmail'")
     drafts(v-if="data.url == '/gmail/drafts'")
@@ -246,7 +245,7 @@ import important from "./important.vue";
 import sent from "./sent.vue";
 import snoozed from "./snoozed.vue";
 import spam from "./spam.vue";
-import { onRoute } from "../shared/router";
+import { onRoute, redirect } from "../shared/router";
 
 onMounted(() => {
   sharedDomain.initTheme(data.value);

@@ -3,7 +3,7 @@
   .large-space
   h4
     span Containers
-    a.chip.circle(@click="domain.showSamples(data, '#containers main.responsive', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#containers main.responsive', 'Containers', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
       i code
   nav
     button(@click="domain.updateSize('main.responsive')") Min

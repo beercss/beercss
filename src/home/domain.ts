@@ -242,10 +242,11 @@ const formatHtml = (element:any):string => {
   .replace(/\s+(checked|disabled)=""/gi, " $1");
 }
 
-const showSamples = (data: IHome, selector:string, modal?:string, url?:string) => {
+const showSamples = (data: IHome, selector:string, name: string, modal?:string, url?:string) => {
   let elements = utils.queryAll(selector);
   let text = "";
   let textFormatted = "";
+  data.name = name;
   data.samples = [];
   data.modalSample = modal || "#modal-samples";
   data.urlSample = url || "";

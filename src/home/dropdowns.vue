@@ -4,7 +4,7 @@
   h4
     span Dropdowns
     a.chip.circle(
-      @click="domain.showSamples(data, '#dropdowns button, #dropdowns .field', null, 'https://github.com/beercss/beercss/blob/main/docs/DROPDOWN.md')"
+      @click="domain.showSamples(data, '#dropdowns button, #dropdowns .field', 'Dropdowns', null, 'https://github.com/beercss/beercss/blob/main/docs/DROPDOWN.md')"
     )
       i code
   nav.wrap

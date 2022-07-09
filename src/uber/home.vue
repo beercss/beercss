@@ -17,9 +17,9 @@ div
       h5.page.left.active(v-show="data.from && !data.to") Where are you going?
       h5.page.left.active(v-show="data.from && data.to") Confirm that ride?
       nav.right-align
-        button.none.white-text.large.wave.light(@click="clean()")
+        button.transparent.large(@click="clean()")
           span Cancel
-        button.border.white-border.white-text.large.wave.light(
+        button.large.border.white-border.white-text(
           v-show="data.to",
           @click="clean()"
         )

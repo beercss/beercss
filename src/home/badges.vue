@@ -2,7 +2,7 @@
 #badges
   h4
     span Badges
-    a.chip.circle(@click="domain.showSamples(data, '#badges nav > a', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#badges nav > a', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
       i code
   nav.wrap
     label.radio

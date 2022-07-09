@@ -3,7 +3,7 @@
   .large-space
   h4
     span Modals
-    a.chip.circle(@click="domain.showSamples(data, '#modal, #modal-left, #modal-right, #modal-top, #modal-bottom', null, 'https://github.com/beercss/beercss/blob/main/docs/MODAL.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#modal, #modal-left, #modal-right, #modal-top, #modal-bottom', 'Modals', null, 'https://github.com/beercss/beercss/blob/main/docs/MODAL.md')")
       i code
   nav
     button(data-ui="#modal") Default

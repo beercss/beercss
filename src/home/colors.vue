@@ -11,10 +11,10 @@
   #modal-colors.modal.right.medium
     header.fixed
       nav
-        a(data-ui="#modal-colors")
-          i arrow_back
-        a(data-ui="#modal-colors")
-          h5.no-margin Back
+        h5.max Colors
+        button.circle.transparent(data-ui="#modal-colors")
+          i close
+          
     .row
       .col.s12
         h5 Theme

@@ -3,7 +3,7 @@
   .large-space
   h4
     span Switches
-    a.chip.circle(@click="domain.showSamples(data, '#switches .field:not(#switches1), #switches1 label', null, 'https://github.com/beercss/beercss/blob/main/docs/SWITCH.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#switches .field:not(#switches1), #switches1 label', 'Switches', null, 'https://github.com/beercss/beercss/blob/main/docs/SWITCH.md')")
       i code
   .row
     .col.s12

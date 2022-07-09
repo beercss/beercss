@@ -3,7 +3,7 @@
   .large-space
   h4
     span Typography
-    a.chip.circle(@click="domain.showSamples(data, '#typography .col.s6 div', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#typography .col.s6 div', 'Typography', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
       i code
   .row
     .col.s6

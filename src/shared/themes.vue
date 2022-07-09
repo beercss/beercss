@@ -10,9 +10,9 @@
             i code
       .col.min
         nav.right-align
-          a(@click="sharedDomain.updateMode(data)")
+          button.circle.transparent(@click="sharedDomain.updateMode(data)")
             i light_mode
-          a(:data-ui="'#' + id")
+          button.circle.transparent(:data-ui="'#' + id")
             i close
     .tabs.left-align
       a.active(:data-ui="`#${id}-tab-image`") From image
@@ -59,10 +59,11 @@
         a.button.square.extra.white(@click="sharedDomain.updateTheme(data, '#ffffff')")
   div(v-if="data.showCssVariables && data.theme")
     header.fixed(@click="data.showCssVariables=false")
-      a(data-ui="")
-        i arrow_backward
-        h5.small-margin Back
-        a.button.border.link(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
+      nav
+        a(data-ui="")
+          i arrow_backward
+        h5 Back
+        a.button.border(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
     nav
       label.radio
         input(type="radio", value="light", v-model="data.theme.selected")

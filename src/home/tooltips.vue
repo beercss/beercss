@@ -3,7 +3,7 @@
   .large-space
   h4
     span Tooltips
-    a.chip.circle(@click="domain.showSamples(data, '#tooltips nav a', null, 'https://github.com/beercss/beercss/blob/main/docs/TOOLTIP.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#tooltips nav a', 'Tooltips', null, 'https://github.com/beercss/beercss/blob/main/docs/TOOLTIP.md')")
       i code
   nav.wrap
     a.chip.circle

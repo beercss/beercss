@@ -3,7 +3,7 @@
   .large-space
   h4
     span Cards
-    a.chip.circle(@click="domain.showSamples(data, '#cards article', null, 'https://github.com/beercss/beercss/blob/main/docs/CARD.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#cards article', 'Cards', null, 'https://github.com/beercss/beercss/blob/main/docs/CARD.md')")
       i code
   nav.wrap.m.l
     label.radio
@@ -304,7 +304,7 @@
             h5 Title
             .max
             button.circle.transparent
-              i share
+              i more_vert
     .col.s12.m6.l3
       article.no-padding.round
         video.responsive.medium(autoplay, loop, muted, playsinline)
@@ -314,7 +314,7 @@
             h5 Title
             .max
             button.circle.transparent
-              i share
+              i more_vert
     .col.s12.m6.l3
       article.no-padding.border
         video.responsive.medium(autoplay, loop, muted, playsinline)
@@ -324,7 +324,7 @@
             h5 Title
             .max
             button.circle.transparent
-              i share
+              i more_vert
     .col.s12.m6.l3
       article.no-padding.border.round
         video.responsive.medium(autoplay, loop, muted, playsinline)
@@ -334,7 +334,7 @@
             h5 Title
             .max
             button.circle.transparent
-              i share
+              i more_vert
     .col.s12.l6
       article.no-padding
         .row.no-wrap.no-space

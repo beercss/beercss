@@ -3,7 +3,7 @@
   .large-space
   h4
     span Icons
-    a.chip.circle(@click="domain.showSamples(data, '#icons-sample nav', '#modal-icons', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#icons-sample nav', 'Icons', '#modal-icons', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
     label.radio
@@ -50,15 +50,15 @@
   #modal-icons.modal.right.large
     header.fixed
       nav
-        a(data-ui="#modal-icons")
-          i arrow_back
-        a(data-ui="#modal-icons")
-          h5.no-margin Back
+        h5 Icons
         a.button.border(
           v-show="data.modalSample == '#modal-icons'"
           href="https://material.io/resources/icons/?style=baseline",
           target="_blank"
         ) More icons
+        .max
+        button.circle.transparent(data-ui="#modal-icons")
+          i close
     .space
     div(v-if="data.modalSample == '#modal-icons'")
       article.border(v-for="exemplo in data.samples")
