@@ -16,7 +16,7 @@
   .m:not(.s),
   .l:not(.s),
   .m.l:not(.s) {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -27,7 +27,7 @@
   .s:not(.m),
   .l:not(.m),
   .s.l:not(.m) {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -38,6 +38,6 @@
   .m:not(.l),
   .s:not(.l),
   .m.s:not(.l) {
-    display: none !important;
+    display: none;
   }
 }

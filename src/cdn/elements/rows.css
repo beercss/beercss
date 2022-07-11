@@ -3,11 +3,11 @@
   min-width: 100%;
 }
 
-.row .row:not(.no-wrap) {
+.row .row {
   margin-top: -8rem;
 }
 
-.row .row .row:not(.no-wrap) {
+.row .row .row {
   margin-top: 8rem;
 }
 
@@ -89,16 +89,11 @@
   margin-top: 16rem;
 }
 
-.row.no-wrap > .col {
-  float: none;
+.row.no-wrap > * {
   flex: 1;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 0;
 }
 
-.row.no-wrap > .col.min,
-.row.no-wrap.scroll > .col {
+.row.no-wrap > .min {
   flex: 0;
 }
 

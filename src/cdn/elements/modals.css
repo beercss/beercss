@@ -20,6 +20,10 @@
   transform: translate(-50%, -50%);
 }
 
+.modal:not(.left, .right, .top, .bottom) {
+  border-radius: 12rem;
+}
+
 .modal.border {
   border: 1rem solid var(--outline);
   box-shadow: none;

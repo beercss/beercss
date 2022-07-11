@@ -10,8 +10,13 @@ nav:not(.left, .right, .top, .bottom) {
   margin-top: 16rem;
 }
 
-nav:not(.left, .right, .top, .bottom) > :not(.dropdown, .badge) {
+nav:not(.left, .right, .top, .bottom) > :not(.max, .dropdown, .badge) {
   margin: 0 8rem;
+  flex: none;
+}
+
+nav > .max {
+  flex-grow: 1;
 }
 
 nav.wrap {
@@ -29,10 +34,6 @@ nav.wrap > :not(.dropdown, .badge) {
 
 .field > nav {
   padding: 0 8rem;
-}
-
-nav > .max {
-  flex-grow: 1;
 }
 
 nav.left,

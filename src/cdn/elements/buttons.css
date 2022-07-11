@@ -30,6 +30,8 @@ button.none {
   padding: 0;
   background-color: transparent;
   margin: 0 8rem;
+  min-width: auto;
+  min-height: 24rem;
 }
 
 .button.small,
@@ -98,7 +100,7 @@ button.extend > span {
 button.extend:hover,
 .button.extend.active,
 button.extend.active {
-  width: auto !important;
+  width: auto;
   padding: 0 16rem;
 }
 

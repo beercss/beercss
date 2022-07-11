@@ -121,66 +121,52 @@ div
         input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('tertiary')")
         span tertiary
     header.padding.primary
-      .row.no-wrap.middle-align
-        .col.min
-          a
-            i menu
-        .col
-          h5.no-margin.center-align Title large
-        .col.min
-          a
-            img.circle.small(:src="'/favicon.png'")
+      nav
+        button.circle.transparent
+          i menu
+        h5.max.center-align Title large
+        button.circle.transparent
+          img.responsive(:src="'/favicon.png'")
     .space
     header.padding.primary
-      .row.no-wrap.middle-align
-        .col.min
-          a
-            i arrow_backward
-        .col
-          h5.no-margin Title large
-        .col.min
-          a
-            i attach_file
-        .col.min
-          a
-            i today
-        .col.min
-          a
-            i more_vert
+      nav
+        button.circle.transparent
+          i arrow_backward
+        h5.max Title large
+        button.circle.transparent
+          i attach_file
+        button.circle.transparent
+          i today
+        button.circle.transparent
+          i more_vert
     .space
     header.padding.primary
-      .row.no-wrap.middle-align
-        .col
-          a
-            i arrow_backward
-        .col.min
-          a
-            i attach_file
-        .col.min
-          a
-            i today
-        .col.min
-          a
-            i more_vert
+      nav
+        button.circle.transparent
+          i arrow_backward
+        .max
+        button.circle.transparent
+          i attach_file
+        button.circle.transparent
+          i today
+        button.circle.transparent
+          i more_vert
       .small-space
-      h5 Headline small
+      h5.small-padding Headline small
     .space
     header.padding.primary
-      .row.no-wrap.middle-align
-        .col
-          a
-            i arrow_backward
-        .col.min
-          a
-            i attach_file
-        .col.min
-          a
-            i today
-        .col.min
-          a
-            i more_vert
+      nav
+        button.circle.transparent
+          i arrow_backward
+        .max
+        button.circle.transparent
+          i attach_file
+        button.circle.transparent
+          i today
+        button.circle.transparent
+          i more_vert
       .medium-space
-      h5 Headline medium
+      h5.small-padding Headline medium
   .medium-space
   #list
     h6
@@ -205,7 +191,7 @@ div
       label.checkbox
         input(type="checkbox", name="divider-lists", @click="domain.updateDivider('#list .row', $event)")
         span divider
-    label.large-space.middle-align Today
+    .large-space.middle-align Today
     .row.no-wrap.middle-align
       .col.min
         i.light-green-text check_circle
@@ -217,7 +203,7 @@ div
           button.none Button
           button.none
             i more_vert
-
+    .divider
     .row.no-wrap.middle-align
       .col.min
         i.orange-text warning
@@ -229,6 +215,7 @@ div
           button.none Button
           button.none
             i more_vert
+    .divider
     .row.no-wrap.middle-align
       .col.min
         i.grey-text schedule
@@ -240,7 +227,8 @@ div
           button.none Button
           button.none
             i more_vert
-    label.large-space.middle-align Yesterday
+    .divider
+    .large-space.middle-align Yesterday
     .row.no-wrap.middle-align
       .col.min
         label.checkbox
@@ -254,6 +242,7 @@ div
           button.none Button
           button.none
             i more_vert
+    .divider
     .row.no-wrap.middle-align
       .col.min
         label.checkbox
@@ -267,6 +256,7 @@ div
           button.none Button
           button.none
             i more_vert
+    .divider
     .row.no-wrap.middle-align
       .col.min
         label.checkbox
@@ -280,7 +270,7 @@ div
           button.none Button
           button.none
             i more_vert
-    label.large-space.middle-align Older
+    .large-space.middle-align Older
     .row.no-wrap.middle-align
       .col.min
         img.circle.tiny(:src="'/beer-and-woman.jpg'")
@@ -292,6 +282,7 @@ div
           button.none Button
           button.none
             i more_vert
+    .divider
     .row.no-wrap.middle-align
       .col.min
         img.circle.tiny(:src="'/beer-and-woman.jpg'")
@@ -303,6 +294,7 @@ div
           button.none Button
           button.none
             i more_vert
+    .divider
     .row.no-wrap.middle-align
       .col.min
         img.circle.tiny(:src="'/beer-and-woman.jpg'")

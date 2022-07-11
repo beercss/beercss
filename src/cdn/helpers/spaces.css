@@ -1,15 +1,12 @@
 .space:not(nav, .row, table),
 .small-space:not(nav, .row, table) {
   height: 16rem;
-  display: block;
 }
 
 .medium-space:not(nav, .row, table) {
   height: 32rem;
-  display: block;
 }
 
 .large-space:not(nav, .row, table) {
   height: 48rem;
-  display: block;
 }

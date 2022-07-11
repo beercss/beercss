@@ -88,33 +88,33 @@
 }
 
 .tooltip.small-margin {
-  margin: -8rem 0 !important;
+  margin: -8rem 0;
 }
 
 .tooltip.margin,
 .tooltip.medium-margin {
-  margin: -16rem 0 !important;
+  margin: -16rem 0;
 }
 
 .tooltip.large-margin {
-  margin: -24rem 0 !important;
+  margin: -24rem 0;
 }
 
 .tooltip.left.small-margin,
 .tooltip.right.small-margin {
-  margin: 0 -8rem !important;
+  margin: 0 -8rem;
 }
 
 .tooltip.left.margin,
 .tooltip.left.medium-margin,
 .tooltip.right.margin,
 .tooltip.right.medium-margin {
-  margin: 0 -16rem !important;
+  margin: 0 -16rem;
 }
 
 .tooltip.left.large-margin,
 .tooltip.right.large-margin {
-  margin: 0 -24rem !important;
+  margin: 0 -24rem;
 }
 
 .dropdown:active ~ .tooltip,

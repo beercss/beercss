@@ -1,10 +1,13 @@
 .tabs {
   display: flex;
-  justify-content: space-around;
   margin-top: 16rem;
   white-space: nowrap;
   border-bottom: 1rem solid var(--outline);
   border-radius: 0;
+}
+
+.tabs:not(.left-align, .right-align, .center-align) {
+  justify-content: space-around;
 }
 
 * > .tabs:first-child {

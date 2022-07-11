@@ -3,35 +3,35 @@
 }
 
 .top-round {
-  border-radius: 32rem 32rem 0 0 !important;
+  border-radius: 32rem 32rem 0 0;
 }
 
 .bottom-round {
-  border-radius: 0 0 32rem 32rem !important;
+  border-radius: 0 0 32rem 32rem;
 }
 
 .left-round {
-  border-radius: 32rem 0 0 32rem !important;
+  border-radius: 32rem 0 0 32rem;
 }
 
 .right-round {
-  border-radius: 0 32rem 32rem 0 !important;
+  border-radius: 0 32rem 32rem 0;
 }
 
 .top-round.left-round {
-  border-radius: 32rem 32rem 0 32rem !important;
+  border-radius: 32rem 32rem 0 32rem;
 }
 
 .top-round.right-round {
-  border-radius: 32rem 32rem 32rem 0 !important;
+  border-radius: 32rem 32rem 32rem 0;
 }
 
 .bottom-round.left-round {
-  border-radius: 32rem 0 32rem 32rem !important;
+  border-radius: 32rem 0 32rem 32rem;
 }
 
 .bottom-round.right-round {
-  border-radius: 0 32rem 32rem 32rem !important;
+  border-radius: 0 32rem 32rem 32rem;
 }
 
 .circle:not(img, video),
@@ -39,6 +39,7 @@
 .diamond:not(img, video) {
   height: 40rem;
   width: 40rem;
+  padding: 0;
 }
 
 .circle > span,
