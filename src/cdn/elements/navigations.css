@@ -72,11 +72,6 @@ nav.bottom {
   height: 80rem;
 }
 
-nav.border {
-  box-shadow: none;
-  border: 1rem solid var(--outline);
-}
-
 nav.left.border {
   border-top: none;
   border-bottom: none;

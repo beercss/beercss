@@ -434,7 +434,7 @@ input[type=file] {
   bottom: 0;
   transform: translateY(100%);
   font-size: 12rem;
-  background: none;
+  background: none !important;
   padding-top: 2rem;
 }
 
@@ -444,7 +444,6 @@ a.helper {
 
 .field > .error {
   color: var(--error) !important;
-  background: none !important;
 }
 
 .field.round > .helper,

@@ -13,7 +13,7 @@
   margin: 0 8rem;
   text-transform: none;
   border-radius: 8rem;
-  transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
+  transition: var(--speed3) border-radius, var(--speed3) padding;
   user-select: none;
 }
 
@@ -53,18 +53,12 @@
   border-radius: inherit;
 }
 
-.chip.round {
-  transform: none;
-}
-
 .chip.circle {
-  transform: none;
   border-radius: 40rem;
   padding: 0;
 }
 
 .chip.square {
-  transform: none;
   border-radius: 0;
   padding: 0;
 }

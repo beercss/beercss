@@ -39,11 +39,6 @@ button:not([data-ui]):focus-within > .dropdown,
   animation: var(--speed1) dropdown-to-bottom;
 }
 
-.dropdown.border {
-  border: 1rem solid var(--outline);
-  box-shadow: none;
-}
-
 .dropdown.right {
   left: 0;
   right: auto;

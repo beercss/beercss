@@ -11,13 +11,6 @@
   float: none;
 }
 
-.absolute.border,
-.fixed.border,
-header.border,
-footer.border {
-  border: 1rem solid var(--outline);
-}
-
 .absolute.left.right,
 .fixed.left.right {
   width: auto;

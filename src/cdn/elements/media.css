@@ -40,11 +40,6 @@ video.responsive {
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
 }
 
-img.border,
-video.border {
-  border: 1rem solid var(--outline);
-}
-
 img.round,
 video.round {
   border-radius: 8rem;

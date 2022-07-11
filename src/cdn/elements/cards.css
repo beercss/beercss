@@ -33,7 +33,5 @@ article.large {
 }
 
 article.border {
-  border: 1rem solid var(--outline);
-  box-shadow: none;
   background-color: transparent;
 }

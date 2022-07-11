@@ -93,3 +93,8 @@
 .diamond.round {
   transform: rotate(45deg);
 }
+
+.border:not(table, .field) { 
+  border: 1px solid var(--outline);
+  box-shadow: none;
+}

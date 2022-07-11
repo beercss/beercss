@@ -24,10 +24,6 @@
   border-radius: 64rem;
 }
 
-.tooltip.border {
-  border: 1rem solid var(--outline);
-}
-
 .tooltip.left {
   left: 0;
   top: 50%;

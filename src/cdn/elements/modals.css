@@ -24,11 +24,6 @@
   border-radius: 12rem;
 }
 
-.modal.border {
-  border: 1rem solid var(--outline);
-  box-shadow: none;
-}
-
 .modal.small {
   width: 25%;
   height: 25%;
