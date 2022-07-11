@@ -3,20 +3,6 @@ video {
   margin: 0 auto;
 }
 
-img.right,
-video.right,
-i.right {
-  position: absolute;
-  right: 0;
-}
-
-img.left,
-video.left,
-i.left {
-  position: absolute;
-  left: 0;
-}
-
 img.small,
 img.medium,
 img.large,
