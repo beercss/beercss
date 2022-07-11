@@ -147,9 +147,9 @@ nav > .modal,
 nav.left > .modal {
   z-index: 0;
   text-align: left;
-  padding: 16rem 16rem 16rem 80rem;
   overflow-y: auto;
   background-color: inherit;
+  padding: 16rem 16rem 16rem 80rem;
 }
 
 nav.right > .modal {
@@ -169,10 +169,6 @@ nav.bottom > .modal {
   background-color: var(--active);
 }
 
-.modal > a.row {
-  margin: 0 -8rem;
-}
-
-.modal > a:not(button, .button, .chip) {
+.modal > a:not(button, .button, .chip, .row) {
   padding: 12rem 0;
 }

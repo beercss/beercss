@@ -11,8 +11,8 @@
   margin-top: 8rem;
 }
 
-.row + .row,
-.row .row + .row {
+.row + .row:not(.no-wrap),
+.row .row + .row:not(.no-wrap) {
   margin-top: 16rem;
 }
 
@@ -83,10 +83,6 @@
 .modal > .row.no-wrap:only-child {
   min-height: 100%;
   height: max-content;
-}
-
-.row + .row {
-  margin-top: 16rem;
 }
 
 .row.no-wrap > * {
