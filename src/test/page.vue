@@ -1,10 +1,12 @@
 <template lang="pug">
 main.responsive
-  .row.no-wrap.middle-align
-    .col.min
-      a(@click="updateTheme()")
-        i.large brightness_medium
-    .col
+  label.switch
+    input(type="checkbox")
+    span teste
+  .row
+    a(@click="updateTheme()")
+      i.large brightness_medium
+    .max
       h5 Test your changes here
       div Click on icon to change theme
   .modal.round.large-padding#default(data-ui="#default")
@@ -63,51 +65,38 @@ main.responsive
     label Label
     span.helper Helper
   h5 With row
-  .row
-    .col.s4
+  .grid
+    .s4
       .field.label.border
         input
         label Label
         span.helper Helper
-    .col.s4
+    .s4
       .field.label.border
         input
         label Label
         span.helper Helper
-    .col.s4
+    .s4
       .field.label.border
         input
         label Label
         span.helper Helper
-    .col.s4
+    .s4
       .field.label.border
         input
         label Label
         span.helper Helper
-    .col.s4
+    .s4
       .field.label.border
         input
         label Label
         span.helper Helper
-    .col.s4
+    .s4
       .field.label.border
         input
         label Label
         span.helper Helper
-    .col.s6
-      .field.label.border
-        input
-        label Label
-        span.helper Helper
-      .field.label.border
-        input
-        label Label
-        span.helper Helper
-      .field.label.border
-        input
-        label Label
-        span.helper Helper
-    .col.s6
+    .s6
       .field.label.border
         input
         label Label
@@ -120,7 +109,20 @@ main.responsive
         input
         label Label
         span.helper Helper
-    .col.s12
+    .s6
+      .field.label.border
+        input
+        label Label
+        span.helper Helper
+      .field.label.border
+        input
+        label Label
+        span.helper Helper
+      .field.label.border
+        input
+        label Label
+        span.helper Helper
+    .s12
       .field.label.border
         input
         label Label
@@ -133,12 +135,12 @@ main.responsive
         input
         label Label
         span.helper Helper
-    .col.s6
+    .s12.m6
       .field.border.label
         input
         label Label
         span.helper Helper
-    .col.s6
+    .s12.m6
       .field.middle-align
         nav
           label.radio
@@ -151,12 +153,12 @@ main.responsive
             input(type="radio")
             span Item 3
         span.helper Helper
-    .col.s6
+    .s12.m6
       .field.border.label.invalid
         input
         label Label
         span.error Error
-    .col.s6
+    .s12.m6
       .field.middle-align.invalid
         nav
           label.radio
@@ -169,12 +171,12 @@ main.responsive
             input(type="radio")
             span Item 3
         span.error Teste
-    .col.s6
+    .s12.m6
       .field.border.label
         input
         label Label
         span.helper Helper
-    .col.s6
+    .s12.m6
       .field.middle-align
         nav
           label.checkbox
@@ -187,12 +189,12 @@ main.responsive
             input(type="checkbox")
             span Item 3
         span.helper Helper
-    .col.s6
+    .s12.m6
       .field.border.label.invalid
         input
         label Label
         span.error Error
-    .col.s6
+    .s12.m6
       .field.middle-align.invalid
         nav
           label.checkbox
@@ -205,6 +207,36 @@ main.responsive
             input(type="checkbox")
             span Item 3
         span.error Teste
+    .s12.m6
+      .field.border.label
+        input
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.middle-align
+        nav
+          .max
+            h6 Title
+            div Complementary text
+          label.switch
+            input(type="checkbox")
+            span
+        span.helper Helper
+    .s12.m6
+      .field.border.label.invalid
+        input
+        label Label
+        span.error Error
+    .s12.m6
+      .field.middle-align.invalid
+        nav
+          .max
+            h6 Title
+            div Complementary text
+          label.switch
+            input(type="checkbox")
+            span
+        span.error Error
 
 </template>
 

@@ -5,26 +5,75 @@
     span Navigations
   .medium-space
   h6.middle-align
-    span Navigations
-    a.chip.circle(@click="domain.showSamples(data, '#navigation-default nav', 'Navigations', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    span Navigations and rows
+    a.chip.circle(@click="domain.showSamples(data, '#navigation-default nav', 'Navigations and rows', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="align-navigations", checked, @click="domain.updateAlign('#navigation-default > nav')")
+      input(type="radio", name="horizontal-navigations", checked, @click="domain.updateHorizontalAlign('#navigation-default > nav')")
       span left-align
     label.radio
-      input(type="radio", name="align-navigations", @click="domain.updateAlign('#navigation-default > nav', 'center-align')")
+      input(type="radio", name="horizontal-navigations", @click="domain.updateHorizontalAlign('#navigation-default > nav', 'center-align')")
       span center-align
     label.radio
-      input(type="radio", name="align-navigations", @click="domain.updateAlign('#navigation-default > nav', 'right-align')")
+      input(type="radio", name="horizontal-navigations", @click="domain.updateHorizontalAlign('#navigation-default > nav', 'right-align')")
       span right-align
+  .medium-space
   #navigation-default
+    nav
+      a min
+      a min
+      a min
+    .divider
+    nav
+      a min
+      a min
+      .max max
+    .divider
+    nav
+      a min
+      .max max
+      a min
+    .divider
+    nav
+      .max max
+      a min
+      a min
+    .divider
     nav
       button Button
       a.chip Chip
       i home
-      a
-        img.circle(:src="'/beer-and-woman.jpg'")
+      img.circle(:src="'/beer-and-woman.jpg'")
+    .divider
+    nav
+      button Button
+      a.chip Chip
+      i home
+      .max max
+      img.circle(:src="'/beer-and-woman.jpg'")
+    .divider
+    nav
+      button Button
+      a.chip Chip
+      .max max
+      i home
+      img.circle(:src="'/beer-and-woman.jpg'")
+    .divider
+    nav
+      button Button
+      .max max
+      a.chip Chip
+      i home
+      img.circle(:src="'/beer-and-woman.jpg'")
+    .divider
+    nav
+      .max max
+      button Button
+      a.chip Chip
+      i home
+      img.circle(:src="'/beer-and-woman.jpg'")
+  .medium-space
   #navigation-rail.m.l
     .medium-space
     h6.middle-align

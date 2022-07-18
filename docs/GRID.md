@@ -1,93 +1,40 @@
-# Dropdown
+# Row
 
-Dropdowns display a list of choices on temporary surfaces.
+Rows and cols are a system grid. They are most used to organize content.
 
 ## Element
 
 ```html
-<...>
-  <div class="dropdown">...</div>
-</...>
+<div class="row">
+  <div class="col">...</div>
+</div>
 ```
 
 ## Most used helpers
 
-**Positions**
-
-left, right
-
 **Sizes**
 
-wrap, no-wrap
+s1...s12, m1...m12, l1...l12
 
-**Triggers**
-
-active
+**Spaces**
+no-space, space, small-space, medium-space, large-space
 
 ## Example
 
-```html
-<button>
-  <span>Button</span>
-  <div class="dropdown no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
-  </div>
-</button>
-```
-
-## Triggers 
-
-#### To open/close a dropdown
-
-#### Method 1
-
-Add/remove `active` class on dropdown.
+This will render one or more lines, depends the user screen.
 
 ```html
-<button>
-  <span>Button</span>
-  <div class="dropdown no-wrap active">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+<div class="grid">
+  <div class="s12 m6 l3">
+    <h5>First</h5>
   </div>
-</button>
-```
-
-#### Method 2
-
-Add `data-ui="dropdown-selector"` attribute on elements.
-
-```html
-<button data-ui="#dropdown">
-  <span>Button</span>
-  <div id="dropdown" class="dropdown no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+  <div class="s12 m6 l3">
+    <h5>Second</h5>
   </div>
-</button>
-```
-
-#### Method 3
-
-Call `ui("dropdown-selector")`.
-
-```html
-<button>
-  <span>Button</span>
-  <div id="dropdown" class="dropdown no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+  <div class="s12 m6 l3">
+    <h5>Third</h5>
   </div>
-</button>
-```
-
-```js
-ui('#dropdown');
+</div>
 ```
 
 ## Go to

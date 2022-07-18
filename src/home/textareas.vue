@@ -33,73 +33,73 @@
       input(type="radio", name="size-textareas", @click="domain.updateSize('#textareas .field', 'extra')")
       span extra
   .space
-  .row
-    .col.s12.l4
+  .grid
+    .s12.l4
       .field.textarea.border
         textarea
-    .col.s12.l4
+    .s12.l4
       .field.textarea.border
         textarea
-        span.helper Complementary text
-    .col.s12.l4
+        span.helper Helper text
+    .s12.l4
       .field.textarea.invalid.border
         textarea
         span.error Error text
-    .col.s12.l4
+    .s12.l4
       .field.textarea.label.border
         textarea
         label Label
-    .col.s12.l4
+    .s12.l4
       .field.textarea.label.border
         textarea
         label Label
-        span.helper Complementary text
-    .col.s12.l4
+        span.helper Helper text
+    .s12.l4
       .field.textarea.label.invalid.border
         textarea
         label Label
         span.error Error text
-    .col.s12.l4
+    .s12.l4
       .field.textarea.label.prefix.border
         i search
         textarea
         label Label
-    .col.s12.l4
+    .s12.l4
       .field.textarea.label.suffix.border
         textarea
         label Label
         i search
-    .col.s12.l4
+    .s12.l4
       .field.textarea.label.prefix.suffix.border
         i search
         textarea
         label Label
         i search
-    .col.s12.l4
+    .s12.l4
       .field.textarea.label.prefix.border
         img.circle(:src="'/favicon.png'")
         textarea
         label Label
-    .col.s12.l4
+    .s12.l4
       .field.textarea.label.suffix.border
         textarea
         label Label
         img.circle(:src="'/favicon.png'")
-    .col.s12.l4
+    .s12.l4
       .field.textarea.label.prefix.suffix.border
         img.circle(:src="'/favicon.png'")
         textarea
         label Label
         img.circle(:src="'/favicon.png'")
-    .col.s12.l4
+    .s12.l4
       .field.textarea.border.prefix
         a.loader
         textarea
-    .col.s12.l4
+    .s12.l4
       .field.textarea.border.suffix
         textarea
         a.loader
-    .col.s12.l4
+    .s12.l4
       .field.textarea.border.prefix.suffix
         a.loader
         textarea

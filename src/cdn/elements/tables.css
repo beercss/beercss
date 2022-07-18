@@ -4,6 +4,7 @@ table {
   font-size: 14rem;
   color: var(--on-background);
   text-align: left;
+  border-radius: 0;
 }
 
 table td,
@@ -21,12 +22,6 @@ table th {
 table.border td, 
 table.border th {
   border-bottom: 1rem solid var(--outline);
-}
-
-table.min {
-  width: min-content;
-  min-width: auto;
-  max-width: -webkit-fill-available;
 }
 
 table.no-space td,

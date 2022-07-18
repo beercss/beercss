@@ -33,23 +33,23 @@ div
       h5 Templates
       p This templates are only for tests purpose
       .space
-      a.wrap.padding(href="/youtube", v-show="data.isDark")
+      a.row.padding(href="/youtube", v-show="data.isDark")
         img.logo-template(:src="'/youtube-dark.png'")
-      a.wrap.padding(href="/youtube", v-show="!data.isDark")
+      a.row.padding(href="/youtube", v-show="!data.isDark")
         img.logo-template(:src="'/youtube-light.png'")
-      a.wrap.padding(href="/netflix")
+      a.row.padding(href="/netflix")
         img.logo-template(:src="'/netflix.png'")
-      a.wrap.padding(href="/gmail", v-show="data.isDark")
+      a.row.padding(href="/gmail", v-show="data.isDark")
         img.logo-template(:src="'/gmail-dark.png'")
-      a.wrap.padding(href="/gmail", v-show="!data.isDark")
+      a.row.padding(href="/gmail", v-show="!data.isDark")
         img.logo-template(:src="'/gmail-light.png'")
-      a.wrap.padding(href="/uber", v-show="data.isDark")
+      a.row.padding(href="/uber", v-show="data.isDark")
         img.logo-template(:src="'/uber-dark.png'")
-      a.wrap.padding(href="/uber", v-show="!data.isDark")
+      a.row.padding(href="/uber", v-show="!data.isDark")
         img.logo-template(:src="'/uber-light.png'")
-      a.wrap.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="data.isDark")
+      a.row.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="data.isDark")
         img.logo-codepen(:src="'/codepen-dark.png'")
-      a.wrap.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!data.isDark")
+      a.row.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!data.isDark")
         img.logo-codepen(:src="'/codepen-light.png'")
 
   nav.bottom.s
@@ -70,26 +70,26 @@ div
       h5 Templates
       p This templates are only for tests purpose
       .space
-      .row
-        .col.s6.middle-align.padding
+      .grid
+        .s6.middle-align.padding
           a(href="/youtube", v-show="data.isDark")
             img.logo-template(:src="'/youtube-dark.png'")
           a(href="/youtube", v-show="!data.isDark")
             img.logo-template(:src="'/youtube-light.png'")
-        .col.s6.middle-align.padding
+        .s6.middle-align.padding
           a(href="/netflix")
             img.logo-template(:src="'/netflix.png'")
-        .col.s6.middle-align.padding
+        .s6.middle-align.padding
           a(href="/gmail", v-show="data.isDark")
             img.logo-template(:src="'/gmail-dark.png'")
           a(href="/gmail", v-show="!data.isDark")
             img.logo-template(:src="'/gmail-light.png'")
-        .col.s6.middle-align.padding
+        .s6.middle-align.padding
           a(href="/uber", v-show="data.isDark")
             img.logo-template(:src="'/uber-dark.png'")
           a(href="/uber", v-show="!data.isDark")
             img.logo-template(:src="'/uber-light.png'")
-        .col.s6.middle-align.padding
+        .s6.middle-align.padding
           a(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="data.isDark")
             img.logo-codepen(:src="'/codepen-dark.png'")
           a(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!data.isDark")
@@ -124,8 +124,8 @@ div
       .large-space
   main.responsive
     #begin
-      .row
-        #intro.col.s12
+      .grid
+        #intro.s12
           article.large-padding
             h3 Get started 
             .medium-space
@@ -151,8 +151,8 @@ div
             .medium-space
             .l
               h5 Summary
-              .row
-                .col.s12.m12.l6
+              .grid
+                .s12.m12.l6
                   p
                     b absolute
                     span &nbsp;left, right, top, bottom, front, back, small, medium, large
@@ -196,7 +196,7 @@ div
                   p
                     b &lt;img&gt;
                     span &nbsp;tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive
-                .col.s12.m12.l6
+                .s12.m12.l6
                   p
                     b &lt;label&gt;
                     span &nbsp;active, radio, checkbox, switch
@@ -247,99 +247,103 @@ div
               a.button(href="https://codepen.io/collection/XydYMB") Codepen
           .large-space
           .large-space
-        .col.s12
+        .s12
           badges
-        .col.s12
+        .s12
           buttons
-        .col.s12
+        .s12
           cards
-        .col.s12
+        .s12
           checkboxes
-        .col.s12
+        .s12
           chips
-        .col.s12
+        .s12
           colors
-        .col.s12
+        .s12
           containers
-        .col.s12
+        .s12
+          dividers
+        .s12
           dropdowns
-        .col.s12
+        .s12
           expansions
-        .col.s12
+        .s12
+          grids
+        .s12
           icons  
-        .col.s12
+        .s12
           inputs
-        .col.s12
+        .s12
           layouts
-        .col.s12
+        .s12
           loaders
-        .col.s12
+        .s12
           media
-        .col.s12
+        .s12
           modals
-        .col.s12
+        .s12
           navigations
-        .col.s12
+        .s12
           pages
-        .col.s12
+        .s12
           progress1
-        .col.s12
+        .s12
           radios
-        .col.s12
+        .s12
           responsive
-        .col.s12
-          rows
-        .col.s12
+        .s12
           selects
-        .col.s12
+        .s12
+          spaces
+        .s12
           switches
-        .col.s12
+        .s12
           tables
-        .col.s12
+        .s12
           tabs
-        .col.s12
+        .s12
           textareas
-        .col.s12.l6
+        .s12.l6
           toasts
-        .col.s12.l6
+        .s12.l6
           tooltips
-        .col.s12
+        .s12
           typography
-        .col.s12
+        .s12
           .large-space
           div
             h4.center-align Cheers 🍻
             .large-space
-            .row
-              .col.s6.m4.l3.center-align
+            .grid
+              .s6.m4.l3.center-align
                 a(href="https://www.myrp.com.br", target="_self")
                   img.white.extra.border.circle(:src="'/myrp.png'")
                 p Myrp
-              .col.s6.m4.l3.center-align
+              .s6.m4.l3.center-align
                 a(href="https://www.inventti.com.br", target="_self")
                   img.white.extra.border.circle(:src="'/inventti.jpg'")
                 p Inventti
-              .col.s6.m4.l3.center-align
+              .s6.m4.l3.center-align
                 a
                   img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
                 p Sponsor 3
-              .col.s6.m4.l3.center-align
+              .s6.m4.l3.center-align
                 a
                   img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
                 p Sponsor 4
-              .col.s6.m4.l3.center-align
+              .s6.m4.l3.center-align
                 a
                   img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
                 p Sponsor 5
-              .col.s6.m4.l3.center-align
+              .s6.m4.l3.center-align
                 a
                   img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
                 p Sponsor 6
-              .col.s6.m4.l3.center-align
+              .s6.m4.l3.center-align
                 a
                   img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
                 p Sponsor 7
-              .col.s6.m4.l3.center-align
+              .s6.m4.l3.center-align
                 a
                   img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
                 p Sponsor 8
@@ -399,8 +403,10 @@ import checkboxes from "./checkboxes.vue";
 import chips from "./chips.vue";
 import colors from "./colors.vue";
 import containers from "./containers.vue";
+import dividers from "./dividers.vue";
 import dropdowns from "./dropdowns.vue";
 import expansions from "./expansions.vue";
+import grids from "./grids.vue";
 import icons from "./icons.vue";
 import inputs from "./inputs.vue";
 import layouts from "./layouts.vue";
@@ -412,8 +418,8 @@ import pages from "./pages.vue";
 import progress1 from "./progress.vue";
 import radios from "./radios.vue";
 import responsive from "./responsive.vue";
-import rows from "./rows.vue";
 import selects from "./selects.vue";
+import spaces from "./spaces.vue";
 import switches from "./switches.vue";
 import tables from "./tables.vue";
 import tabs from "./tabs.vue";
@@ -447,34 +453,16 @@ onMounted(() => {
   height: 256rem;
 }
 
-pre {
-  overflow: auto;
-  padding: 8rem;
-  margin: 0;
+#modal-colors .s12 > div {
+  padding: 16rem;
 }
 
-pre * {
-  vertical-align: text-bottom;
+#modal-colors .s12 > .border {
+  border: 1px solid var(--outline);
 }
 
 .hljs-string, .error-text {
   color: var(--error) !important;
-}
-
-#rows .row {
-  border: 1rem solid var(--outline);
-}
-
-#rows .col {
-  border: 1rem solid var(--outline);
-}
-
-#modal-colors .col > div {
-  padding: 12rem;
-}
-
-#modal-colors .col > .border {
-  border: 1px solid var(--outline);
 }
 
 .logo-template {
@@ -492,8 +480,19 @@ pre * {
   height: 100rem;
 }
 
+pre {
+  overflow: auto;
+  padding: 8rem;
+  margin: 0;
+}
+
+pre * {
+  vertical-align: text-bottom;
+}
+
 pre.wrap {
   white-space: pre-wrap;
+  word-break: break-all;
 }
 
 @keyframes logo-intro {

@@ -14,18 +14,18 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  margin-bottom: 8rem;
   display: flex;
   align-items: center;
+  margin-bottom: 8rem;
 }
 
-*:not(.progress) + h1,
-*:not(.progress) + h2,
-*:not(.progress) + h3,
-*:not(.progress) + h4,
-*:not(.progress) + h5,
-*:not(.progress) + h6 {
-  margin-top: 8rem;
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5,
+* + h6 {
+  margin-top: 16rem;
 }
 
 h1 {
@@ -60,6 +60,10 @@ h6 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.truncate > * {
+  white-space: nowrap !important;
 }
 
 .small-text {

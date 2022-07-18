@@ -1,45 +1,42 @@
 .middle-align {
   display: flex;
-  align-items: center;
+  align-items: center !important;
 }
 
 .bottom-align {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-end !important;
 }
 
 .top-align {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start !important;
 }
 
 .left-align {
   text-align: left;
-  justify-content: flex-start;
+  justify-content: flex-start !important;
 }
 
 .right-align {
   text-align: right;
-  justify-content: flex-end;
+  justify-content: flex-end !important;
 }
 
 .center-align {
   text-align: center;
-  justify-content: center;
+  justify-content: center !important;
 }
 
-.center-align > .row,
 .center-align > table {
   margin-left: auto;
   margin-right: auto;
 }
 
-.right-align > .row,
 .right-align > table {
   margin-left: auto;
 }
 
-.left-align > .row,
 .left-align > table {
   margin-right: auto;
 }

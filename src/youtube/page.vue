@@ -65,30 +65,30 @@
     button.circle.large.transparent.m.l(data-ui="#dropdown-add")
       i video_call
       #dropdown-add.dropdown.left.no-wrap(data-ui="#dropdown-add")
-        a.row.no-wrap
-          .col.min
+        a.row
+          .min
             i upload
-          .col Send a video
-        a.row.no-wrap
-          .col.min
+          .min Send a video
+        a.row
+          .min
             i sensors
-          .col Broadcast live
+          .min Broadcast live
     button.circle.large.transparent.m.l(data-ui="#dropdown-apps")
       i apps
       #dropdown-apps.dropdown.left.no-wrap(data-ui="#dropdown-apps")
-        a.row.no-wrap
-          .col.min
+        a.row
+          .min
             img(:src="'/youtube.png'")
-          .col Youtube TV
+          .min Youtube TV
         .divider
-        a.row.no-wrap
-          .col.min
+        a.row
+          .min
             img(:src="'/youtube.png'")
-          .col Youtube Music
-        a.row.no-wrap
-          .col.min
+          .min Youtube Music
+        a.row
+          .min
             img(:src="'/youtube.png'")
-          .col Youtube Kids
+          .min Youtube Kids
     button.circle.large.transparent(data-ui="#modal-notifications")
       i notifications
     button.circle.large.transparent(@click="redirect('/')")
@@ -110,54 +110,54 @@
         img(v-show="!data.isDark", :src="'/youtube-light.png'")
         img(v-show="data.isDark", :src="'/youtube-dark.png'")
     .medium-space
-    a.row.no-wrap(data-ui="#modal-expanded", href="/youtube")
-      .col.min
+    a.row(data-ui="#modal-expanded", href="/youtube")
+      .min
         i home
-      .col Home
-    a.row.no-wrap(data-ui="#modal-expanded", href="/youtube/whats-hot")
-      .col.min
+      .min Home
+    a.row(data-ui="#modal-expanded", href="/youtube/whats-hot")
+      .min
         i whatshot
-      .col What's hot
-    a.row.no-wrap(data-ui="#modal-expanded", href="/youtube/subscriptions")
-      .col.min
+      .min What's hot
+    a.row(data-ui="#modal-expanded", href="/youtube/subscriptions")
+      .min
         i subscriptions
-      .col Subscript
-    a.row.no-wrap(data-ui="#modal-expanded", href="/youtube/library")
-      .col.min
+      .min Subscript
+    a.row(data-ui="#modal-expanded", href="/youtube/library")
+      .min
         i video_library
-      .col Library
+      .min Library
     .divider
-    a.row.no-wrap(data-ui="#modal-expanded")
-      .col.min
+    a.row(data-ui="#modal-expanded")
+      .min
         i history
-      .col History
-    a.row.no-wrap(data-ui="#modal-expanded")
-      .col.min
+      .min History
+    a.row(data-ui="#modal-expanded")
+      .min
         i slideshow
-      .col Your videos
-    a.row.no-wrap(data-ui="#modal-expanded")
-      .col.min
+      .min Your videos
+    a.row(data-ui="#modal-expanded")
+      .min
         i playlist_play
-      .col Your albuns
-    a.row.no-wrap(data-ui="#modal-expanded")
-      .col.min
+      .min Your albuns
+    a.row(data-ui="#modal-expanded")
+      .min
         i watch_later
-      .col Watch later
+      .min Watch later
 
   #modal-add.modal.bottom.top-round
     nav
       h5.max New
       button.circle.transparent(data-ui="#modal-add")
         i close
-    a.row.no-wrap
-      .col.min
+    a.row
+      .min
         i upload
-      .col
+      .min
         span Send a video
-    a.row.no-wrap
-      .col.min
+    a.row
+      .min
         i sensors
-      .col
+      .min
         span Broadcast live
 
   #modal-search.modal.top.transparent

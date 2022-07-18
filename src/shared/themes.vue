@@ -2,18 +2,16 @@
 .modal.large.left.no-scroll(:id="id")
   slot
   div(v-show="!data.showCssVariables")
-    .row.no-wrap.middle-align.no-space
-      .col
-        h5.no-margin.middle-align
+    nav
+      .max
+        h5
           span Themes
           a.chip.circle(@click="data.showCssVariables=true")
             i code
-      .col.min
-        nav.right-align
-          button.circle.transparent(@click="sharedDomain.updateMode(data)")
-            i light_mode
-          button.circle.transparent(:data-ui="'#' + id")
-            i close
+      button.circle.transparent(@click="sharedDomain.updateMode(data)")
+        i light_mode
+      button.circle.transparent(:data-ui="'#' + id")
+        i close
     .tabs.left-align
       a.active(:data-ui="`#${id}-tab-image`") From image
       a(:data-ui="`#${id}-tab-color`") From color

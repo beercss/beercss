@@ -33,23 +33,23 @@
       input(type="radio", name="size-selects", @click="domain.updateSize('#selects .field', 'extra')")
       span extra
   .space
-  .row
-    .col.s12.l4
+  .grid
+    .s12.l4
       .field.suffix.border
         select
           option Item 1
           option Item 2
           option Item 3
         i arrow_drop_down
-    .col.s12.l4
+    .s12.l4
       .field.suffix.border
         select
           option Item 1
           option Item 2
           option Item 3
         i arrow_drop_down
-        span.helper Complementary text
-    .col.s12.l4
+        span.helper Helper text
+    .s12.l4
       .field.suffix.invalid.border
         select
           option Item 1
@@ -57,7 +57,7 @@
           option Item 3
         i arrow_drop_down
         span.error Error text
-    .col.s12.l4
+    .s12.l4
       .field.label.suffix.border
         select
           option Item 1
@@ -65,7 +65,7 @@
           option Item 3
         label.active Label
         i arrow_drop_down
-    .col.s12.l4
+    .s12.l4
       .field.label.suffix.border
         select
           option Item 1
@@ -73,8 +73,8 @@
           option Item 3
         label.active Label
         i arrow_drop_down
-        span.helper Complementary text
-    .col.s12.l4
+        span.helper Helper text
+    .s12.l4
       .field.label.suffix.invalid.border
         select
           option Item 1
@@ -83,7 +83,7 @@
         label.active Label
         i arrow_drop_down
         span.error Error text
-    .col.s12.l4
+    .s12.l4
       .field.label.suffix.border
         select
           option Item 1
@@ -91,7 +91,7 @@
           option Item 3
         label.active Label
         img.circle(:src="'/favicon.png'")
-    .col.s12.l4
+    .s12.l4
       .field.label.suffix.border
         select
           option Item 1
@@ -99,8 +99,8 @@
           option Item 3
         label.active Label
         img.circle(:src="'/favicon.png'")
-        span.helper Complementary text
-    .col.s12.l4
+        span.helper Helper text
+    .s12.l4
       .field.label.suffix.invalid.border
         select
           option Item 1
@@ -109,21 +109,21 @@
         label.active Label
         img.circle(:src="'/favicon.png'")
         span.error Error text
-    .col.s12.l4
+    .s12.l4
       .field.suffix.border
         select
           option Item 1
           option Item 2
           option Item 3
         a.loader
-    .col.s12.l4
+    .s12.l4
       .field.suffix.border
         select
           option Item 1
           option Item 2
           option Item 3
         a.loader
-    .col.s12.l4
+    .s12.l4
       .field.suffix.border
         select
           option Item 1

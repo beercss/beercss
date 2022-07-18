@@ -12,11 +12,11 @@ article + article {
   margin-top: 16rem;
 }
 
-.row.medium-space > .col > article + article {
+.grid.medium-space > * > article + article {
   margin-top: 24rem;
 }
 
-.row.large-space > .col > article + article {
+.grid.large-space > * > article + article {
   margin-top: 32rem;
 }
 

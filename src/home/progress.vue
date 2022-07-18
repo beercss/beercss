@@ -34,23 +34,23 @@
   .small-space.secondary-container.border
     .progress.left
   .space
-  .small-space.tertiary-container
+  .small-space.tertiary-container.border
     .progress.right
   .space
-  .row
-    .col.s12.m3
+  .grid
+    .s12.m3
       article.small
         .progress.left
         h5 Card
-    .col.s12.m3
+    .s12.m3
       article.small.round
         .progress.right
         h5 Card
-    .col.s12.m3
+    .s12.m3
       article.border.small
         .progress.top
         h5 Card
-    .col.s12.m3
+    .s12.m3
       article.small.border.round
         .progress.bottom
         h5 Card

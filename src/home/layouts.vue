@@ -81,14 +81,14 @@ div
       )
         i code
     .space
-    .row
-      .col.s12.m6
+    .grid
+      .s12.m6
         article.small.scroll
           header.fixed
             h5.no-margin Fixed header
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupILayoutt non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupILayoutt non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      .col.s12.m6
+      .s12.m6
         article.small.scroll
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupILayoutt non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupILayoutt non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -124,7 +124,7 @@ div
       nav
         button.circle.transparent
           i menu
-        h5.max.center-align Title large
+        h5.max.center-align Title
         button.circle.transparent
           img.responsive(:src="'/favicon.png'")
     .space
@@ -132,7 +132,7 @@ div
       nav
         button.circle.transparent
           i arrow_backward
-        h5.max Title large
+        h5.max Title
         button.circle.transparent
           i attach_file
         button.circle.transparent
@@ -188,124 +188,94 @@ div
       label.radio
         input(type="radio", name="align-lists", @click="domain.updateVerticalAlign('#list .row', 'bottom-align')")
         span bottom-align
-      label.checkbox
-        input(type="checkbox", name="divider-lists", @click="domain.updateDivider('#list .row', $event)")
-        span divider
     .large-space.middle-align Today
-    .row.no-wrap.middle-align
-      .col.min
-        i.light-green-text check_circle
-      .col
+    .row
+      i.light-green-text check_circle
+      .max
         div Title
         label Complementary text
-      .col.min
-        nav
-          button.none Button
-          button.none
-            i more_vert
+      button.none Button
+      button.none
+        i more_vert
     .divider
-    .row.no-wrap.middle-align
-      .col.min
-        i.orange-text warning
-      .col
+    .row
+      i.orange-text warning
+      .max
         div Title
         label Complementary text
-      .col.min
-        nav
-          button.none Button
-          button.none
-            i more_vert
+      button.none Button
+      button.none
+        i more_vert
     .divider
-    .row.no-wrap.middle-align
-      .col.min
-        i.grey-text schedule
-      .col
+    .row
+      i.grey-text schedule
+      .max
         div Title
         label Complementary text
-      .col.min
-        nav
-          button.none Button
-          button.none
-            i more_vert
+      button.none Button
+      button.none
+        i more_vert
     .divider
     .large-space.middle-align Yesterday
-    .row.no-wrap.middle-align
-      .col.min
-        label.checkbox
-          input(type="checkbox")
-          span
-      .col
+    .row
+      label.checkbox
+        input(type="checkbox")
+        span
+      .max
         div Title
         label Complementary text
-      .col.min
-        nav
-          button.none Button
-          button.none
-            i more_vert
+      button.none Button
+      button.none
+        i more_vert
     .divider
-    .row.no-wrap.middle-align
-      .col.min
-        label.checkbox
-          input(type="checkbox")
-          span
-      .col
+    .row
+      label.checkbox
+        input(type="checkbox")
+        span
+      .max
         div Title
         label Complementary text
-      .col.min
-        nav
-          button.none Button
-          button.none
-            i more_vert
+      button.none Button
+      button.none
+        i more_vert
     .divider
-    .row.no-wrap.middle-align
-      .col.min
-        label.checkbox
-          input(type="checkbox")
-          span
-      .col
+    .row
+      label.checkbox
+        input(type="checkbox")
+        span
+      .max
         div Title
         label Complementary text
-      .col.min
-        nav
-          button.none Button
-          button.none
-            i more_vert
+      button.none Button
+      button.none
+        i more_vert
     .large-space.middle-align Older
-    .row.no-wrap.middle-align
-      .col.min
-        img.circle.tiny(:src="'/beer-and-woman.jpg'")
-      .col
+    .row
+      img.circle.tiny(:src="'/beer-and-woman.jpg'")
+      .max
         div Title
         label Complementary text
-      .col.min
-        nav
-          button.none Button
-          button.none
-            i more_vert
+      button.none Button
+      button.none
+        i more_vert
     .divider
-    .row.no-wrap.middle-align
-      .col.min
-        img.circle.tiny(:src="'/beer-and-woman.jpg'")
-      .col
+    .row
+      img.circle.tiny(:src="'/beer-and-woman.jpg'")
+      .max
         div Title
         label Complementary text
-      .col.min
-        nav
-          button.none Button
-          button.none
-            i more_vert
+      button.none Button
+      button.none
+        i more_vert
     .divider
-    .row.no-wrap.middle-align
-      .col.min
-        img.circle.tiny(:src="'/beer-and-woman.jpg'")
-      .col
+    .row
+      img.circle.tiny(:src="'/beer-and-woman.jpg'")
+      .max
         div Title
         label Complementary text
-      .col.min
-        nav
-          button.none Button
-          button.none
-            i more_vert
+      button.none Button
+      button.none
+        i more_vert
 </template>
 
 <script setup lang="ts">

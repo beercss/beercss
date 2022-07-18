@@ -18,8 +18,8 @@
       input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'teal')")
       span teal
   .space
-  .row
-    .col.s12.m6
+  .grid
+    .s12.m6
       .space
       nav.wrap
         a
@@ -94,7 +94,7 @@
         a
           span.badge.square.left.bottom 10
           i apps
-    .col.s12.m6
+    .s12.m6
       .space
       nav.wrap
         a

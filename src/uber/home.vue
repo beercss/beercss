@@ -29,19 +29,19 @@ div
       .field.prefix.round.white.black-text
         i search
         input(:placeholder="data.from ? 'Destination' : 'Departure'", @click="go()")
-      a.row.no-wrap(@click="go()")
-        .col.min
+      a.row(@click="go()")
+        .min
           button.circle.small.no-wave
             i gps_fixed
-        .col
+        .min
           h6.no-margin {{ data.street }}
           .link Your current location
       .divider
-      a.row.no-wrap(@click="go()")
-        .col.min
+      a.row(@click="go()")
+        .min
           button.circle.small.no-wave
             i home
-        .col
+        .min
           h6.no-margin Home
           div {{ data.street }}
   .modal.bottom.active.s.no-padding
@@ -61,11 +61,11 @@ div
       .field.prefix.round.white.black-text
         i search
         input(:placeholder="data.from ? 'Destination' : 'Departure'", @click="go()")
-      a.row.no-wrap(@click="go()")
-        .col.min
+      a.row(@click="go()")
+        .min
           button.circle.small.no-wave
             i gps_fixed
-        .col
+        .min
           h6.no-margin {{ data.street }}
           .link Your current location
 </template>

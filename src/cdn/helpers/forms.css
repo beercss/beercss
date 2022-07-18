@@ -1,37 +1,37 @@
 .round {
-  border-radius: 32rem;
+  border-radius: 32rem !important;
 }
 
 .top-round {
-  border-radius: 32rem 32rem 0 0;
+  border-radius: 32rem 32rem 0 0 !important;
 }
 
 .bottom-round {
-  border-radius: 0 0 32rem 32rem;
+  border-radius: 0 0 32rem 32rem !important;
 }
 
 .left-round {
-  border-radius: 32rem 0 0 32rem;
+  border-radius: 32rem 0 0 32rem !important;
 }
 
 .right-round {
-  border-radius: 0 32rem 32rem 0;
+  border-radius: 0 32rem 32rem 0 !important;
 }
 
 .top-round.left-round {
-  border-radius: 32rem 32rem 0 32rem;
+  border-radius: 32rem 32rem 0 32rem !important;
 }
 
 .top-round.right-round {
-  border-radius: 32rem 32rem 32rem 0;
+  border-radius: 32rem 32rem 32rem 0 !important;
 }
 
 .bottom-round.left-round {
-  border-radius: 32rem 0 32rem 32rem;
+  border-radius: 32rem 0 32rem 32rem !important;
 }
 
 .bottom-round.right-round {
-  border-radius: 0 32rem 32rem 32rem;
+  border-radius: 0 32rem 32rem 32rem !important;
 }
 
 .circle:not(img, video),

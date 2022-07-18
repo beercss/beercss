@@ -77,34 +77,27 @@ div
     button.circle.large.transparent(data-ui="#dropdown-menu")
       i.outlined menu
       #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
-        a.row.no-wrap(href="/gmail")
-          .col.min
-            i.outlined inbox
-          .col Inbox
-        a.row.no-wrap(href="/gmail/snoozed")
-          .col.min
-            i.outlined watch_later
-          .col Snoozed
-        a.row.no-wrap(href="/gmail/important")
-          .col.min
-            i.outlined label_important
-          .col Important
-        a.row.no-wrap(href="/gmail/sent")
-          .col.min
-            i.outlined send
-          .col Sent
-        a.row.no-wrap(href="/gmail/drafts")
-          .col.min
-            i.outlined insert_drive_file
-          .col Drafts
-        a.row.no-wrap(href="/gmail/spam")
-          .col.min
-            i.outlined error_outline
-          .col Spam
-        a.row.no-wrap(data-ui="#themes1")
-          .col.min
-            i.outlined brightness_medium
-          .col Themes
+        a.row(href="/gmail")
+          i.outlined inbox
+          .max Inbox
+        a.row(href="/gmail/snoozed")
+          i.outlined watch_later
+          .max Snoozed
+        a.row(href="/gmail/important")
+          i.outlined label_important
+          .max Important
+        a.row(href="/gmail/sent")
+          i.outlined send
+          .max Sent
+        a.row(href="/gmail/drafts")
+          i.outlined insert_drive_file
+          .max Drafts
+        a.row(href="/gmail/spam")
+          i.outlined error_outline
+          .max Spam
+        a.row(data-ui="#themes1")
+          i.outlined brightness_medium
+          .max Themes
     .space
     img(v-show="!data.isDark", :src="'/gmail-light.png'")
     img(v-show="data.isDark", :src="'/gmail-dark.png'")
@@ -131,20 +124,20 @@ div
       i.outlined apps
       #dropdown-apps.dropdown.left.small-width(data-ui="#dropdown-apps")
         .large-padding
-          .row
-            a.wave.col.s6.middle-align
+          .grid
+            a.wave.s6.middle-align
               .center-align
                 img(:src="'/calendar.png'")
                 p Calendar
-            a.wave.col.s6.middle-align
+            a.wave.s6.middle-align
               .center-align
                 img(:src="'/keep.png'")
                 p Keep
-            a.wave.col.s6.middle-align
+            a.wave.s6.middle-align
               .center-align
                 img(:src="'/tasks.png'")
                 p Tasks
-            a.wave.col.s6.middle-align
+            a.wave.s6.middle-align
               .center-align
                 img(:src="'/contacts.png'")
                 p Contacts
@@ -154,65 +147,59 @@ div
   
   main.responsive.max
     #modal-add.modal.round
-      .row.no-wrap
-        .col
-          nav
-            a(data-ui="#modal-add")
-              i.outlined arrow_back
-            a
-              h5.no-margin New message
-        .col
-          nav.right-align
-            a(data-ui="#modal-add")
-              i.outlined attach_file
-            a(data-ui="#modal-add")
-              i.outlined send
-      .row
-        .col.s12
+      nav
+        a(data-ui="#modal-add")
+          i.outlined arrow_back
+        a
+          h5.no-margin New message
+        .max
+        a(data-ui="#modal-add")
+          i.outlined attach_file
+        a(data-ui="#modal-add")
+          i.outlined send
+      .grid
+        .s12
           .field.label.border
             input(type="text")
             label From
-        .col.s12
+        .s12
           .field.label.border
             input(type="text")
             label To
-        .col.s12
+        .s12
           .field.label.border
             input(type="text")
             label Subject
-        .col.s12
+        .s12
           .field.label.border.textarea
             textarea
             label Message
 
     #modal-add-small.modal.top-round.bottom
-      .row.no-wrap
-        .col
-          nav
-            a(data-ui="#modal-add-small")
-              i.outlined arrow_back
-            a
-              h5.no-margin New message
-        .col
-          nav.right-align
-            a(data-ui="#modal-add-small")
-              i.outlined attach_file
-            a(data-ui="#modal-add-small")
-              i.outlined send
-      .row
-        .col.s12
+      nav
+        a(data-ui="#modal-add-small")
+          i.outlined arrow_back
+        a
+          h5.no-margin New message
+        .max
+        a(data-ui="#modal-add-small")
+          i.outlined attach_file
+        a(data-ui="#modal-add-small")
+          i.outlined send
+      .grid
+        .s12
           .field.label.border
             input(type="text")
             label From
-        .col.s12
+        .s12
           .field.label.border
             input(type="text")
             label To
-        .col.s12
+        .s12
           .field.label.border
             input(type="text")
             label Subject
-        .col.s12
+        .s12
           .field.label.border.textarea
             textarea
             label Message

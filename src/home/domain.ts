@@ -58,15 +58,15 @@ const updateActive = (selector:string, event:any) => {
   else utils.removeClass(elements, ["active"]);
 }
 
-const updateDivider = (selector:string, event:any) => {
+const updateDivider = (selector:string, divider?:string) => {
   let elements = utils.queryAll(selector);
-  if (event.currentTarget.checked) utils.addClass(elements, ["divider"]);
-  else utils.removeClass(elements, ["divider"]);
+  utils.removeClass(elements, ["divider", "small-divider", "medium-divider", "large-divider"]);
+  if (divider) utils.addClass(elements, [divider]);
 }
 
 const updateSpace = (selector:string, space?:string) => {
   let elements = utils.queryAll(selector);
-  utils.removeClass(elements, ["no-space", "small-space", "medium-space", "large-space"]);
+  utils.removeClass(elements, ["space", "no-space", "small-space", "medium-space", "large-space"]);
   if (space) utils.addClass(elements, [space]);
 }
 

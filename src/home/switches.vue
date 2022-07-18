@@ -5,38 +5,48 @@
     span Switches
     a.chip.circle(@click="domain.showSamples(data, '#switches .field:not(#switches1), #switches1 label', 'Switches', null, 'https://github.com/beercss/beercss/blob/main/docs/SWITCH.md')")
       i code
-  .row
-    .col.s12
+  .grid
+    .s12
       .field.middle-align#switches1
-        nav
+        nav.wrap
           label.switch
             input(type="checkbox")
             span
           label.switch
             input(type="checkbox")
-            span Enabled
+            span
           label.switch
             input(type="checkbox", disabled)
-            span Disabled
+            span
           label.switch
             input(type="checkbox", checked, disabled)
-            span Disabled
-    .col.s12.l4
+            span
+    .s12.l6
       .field.middle-align
-        label.switch
-          input(type="checkbox")
-          span Some text
-    .col.s12.l4
+        nav
+          .max
+            h6 Title
+            div Complementary text
+          label.switch
+            input(type="checkbox")
+            span
       .field.middle-align
-        label.switch
-          input(type="checkbox")
-          span Some text
-        span.helper Complementary text
-    .col.s12.l4
+        nav
+          .max
+            h6 Title
+            div Complementary text
+          label.switch
+            input(type="checkbox")
+            span
+        span.helper Helper text
       .field.middle-align.invalid
-        label.switch
-          input(type="checkbox")
-          span Some text
+        nav
+          .max
+            h6 Title
+            div Complementary text
+          label.switch
+            input(type="checkbox")
+            span
         span.error Error text
 </template>
 

@@ -5,10 +5,10 @@
     span Radios
     a.chip.circle(@click="domain.showSamples(data, '#radios .field:not(#radios1), #radios1 label', 'Radios', null, 'https://github.com/beercss/beercss/blob/main/docs/RADIO.md')")
       i code
-  .row
-    .col.s12
+  .grid
+    .s12
       .field.middle-align#radios1
-        nav
+        nav.wrap
           label.radio
             input(type="radio", name="radio1")
             span
@@ -21,7 +21,7 @@
           label.radio
             input(type="radio", name="radio2", checked, disabled)
             span Disabled
-    .col.s12.l4
+    .s12.l4
       .field.middle-align
         nav
           label.radio
@@ -33,7 +33,7 @@
           label.radio
             input(type="radio", name="radio3")
             span Item 3
-    .col.s12.l4
+    .s12.l4
       .field.middle-align
         nav
           label.radio
@@ -45,8 +45,8 @@
           label.radio
             input(type="radio", name="radio4")
             span Item 3
-        span.helper Complementary text
-    .col.s12.l4
+        span.helper Helper text
+    .s12.l4
       .field.middle-align.invalid
         nav
           label.radio

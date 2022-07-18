@@ -3,25 +3,29 @@
   margin-bottom: 32rem;
 }
 
-*:not(.field) + .field,
+* + .field,
 .field + *:not(.field) {
   margin-top: 16rem;
 }
 
-.row > .col > .field:last-child {
+.grid > * > .field {
   margin-bottom: 16rem;
 }
 
-.row.no-space > .col > .field:not(:last-child) {
-  margin-bottom: 16rem;
+.grid > * > .field + .field {
+  margin-top: 32rem;
 }
 
-.row.medium-space > .col > .field:not(:last-child) {
-  margin-bottom: 40rem;
+.grid.no-space > * > .field + .field {
+  margin-top: 16rem;
 }
 
-.row.large-space > .col > .field:not(:last-child) {
-  margin-bottom: 48rem;
+.grid.medium-space > * > .field + .field {
+  margin-top: 40rem;
+}
+
+.grid.large-space > * > .field + .field {
+  margin-top: 48rem;
 }
 
 .field.small {

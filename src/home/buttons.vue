@@ -80,8 +80,8 @@
     a.chip.circle(@click="domain.showSamples(data, '#extended-fabs button', 'Extended FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#extended-fabs button", :sizes="['extra']", selectedSize="extra")
-  #extended-fabs.row
-    .col.s6.m6.l4
+  #extended-fabs.grid
+    .s6.m6.l4
       nav
         button.extend.square
           i add
@@ -118,7 +118,7 @@
         button.extend.circle.right-round
           i add
           span Button
-    .col.s6.m6.l4
+    .s6.m6.l4
       nav
         button.extend.border.square
           i add
@@ -155,7 +155,7 @@
         button.extend.border.circle.right-round
           i add
           span Button
-    .col.s6.m6.l4
+    .s6.m6.l4
       nav
         button.extend.border.square
           img.responsive(:src="'/favicon.png'")
@@ -282,8 +282,8 @@
     a.chip.circle(@click="domain.showSamples(data, '#responsive-buttons button', 'Reponsive buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#responsive-buttons button")
-  #responsive-buttons.row
-    .col.s12.m6
+  #responsive-buttons.grid
+    .s12.m6
       nav 
         button.responsive Button
       nav
@@ -294,7 +294,7 @@
         button.responsive
           img(:src="'/favicon.png'")
           span Button
-    .col.s12.m6
+    .s12.m6
       nav 
         button.responsive.round Button
       nav
@@ -305,7 +305,7 @@
         button.responsive.round
           img(:src="'/favicon.png'")
           span Button
-    .col.s12.m6
+    .s12.m6
       nav 
         button.responsive.border Button
       nav
@@ -316,7 +316,7 @@
         button.responsive.border
           img(:src="'/favicon.png'")
           span Button
-    .col.s12.m6
+    .s12.m6
       nav 
         button.responsive.border.round Button
       nav
@@ -327,7 +327,7 @@
         button.responsive.border.round
           img(:src="'/favicon.png'")
           span Button
-    .col.s12.m6
+    .s12.m6
       nav 
         button.responsive.border.left-round Button
       nav
@@ -338,7 +338,7 @@
         button.responsive.border.left-round
           img(:src="'/favicon.png'")
           span Button
-    .col.s12.m6
+    .s12.m6
       nav 
         button.responsive.border.right-round Button
       nav

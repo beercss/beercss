@@ -1,38 +1,49 @@
-nav:not(.left, .right, .top, .bottom) {
-  display: flex;
+nav:not(.left, .right, .top, .bottom),
+.row {
+  display: flex !important;
   align-items: center;
+  justify-content: flex-start;
   white-space: nowrap;
-  margin: 0 -8rem;
   border-radius: 0;
+  margin: 0 -8rem;
 }
 
-*:not(.progress) + nav:not(.left, .right, .top, .bottom) {
+* + nav:not(.left, .right, .top, .bottom),
+* + .row:not(a) {
   margin-top: 16rem;
 }
 
-nav:not(.left, .right, .top, .bottom) > :not(.max, .dropdown, .badge) {
+nav:not(.left, .right, .top, .bottom) *,
+.row * {
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: normal;
+}
+
+nav:not(.left, .right, .top, .bottom) > *,
+.row > * {
   margin: 0 8rem;
   flex: none;
 }
 
-nav > .max {
-  flex-grow: 1;
+nav > .max,
+.row > .max {
+  flex: auto;
 }
 
-nav.wrap {
-  display: block;
+nav.wrap,
+.row.wrap {
+  display: block !important;
   white-space: normal;
 }
 
-*:not(.progress) + nav.wrap {
-  margin: 8rem -8rem;
-}
-
-nav.wrap > :not(.dropdown, .badge) {
+nav.wrap > *,
+.row.wrap > * {
   margin: 8rem;
 }
 
-.field > nav {
+.field > nav,
+.field > .row {
   padding: 0 8rem;
 }
 
@@ -46,7 +57,6 @@ nav.bottom {
   flex-direction: column;
   border: 0;
   position: fixed;
-  box-shadow: var(--shadow2);
   color: var(--on-surface-variant);
   background-color: var(--surface-variant);
   transform: none;

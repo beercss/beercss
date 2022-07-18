@@ -7,26 +7,21 @@
     button.circle.large.transparent.s.m(data-ui="#dropdown-menu")
       i menu
       #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
-        a.row.no-wrap(@click="scroll('#home')")
-          .col.min
-            i home
-          .col Home
-        a.row.no-wrap(@click="scroll('#series')")
-          .col.min
-            i subscriptions
-          .col Series
-        a.row.no-wrap(@click="scroll('#movies')")
-          .col.min
-            i subscriptions
-          .col Movies
-        a.row.no-wrap(@click="scroll('#hot')")
-          .col.min
-            i whatshot
-          .col Hot
-        a.row.no-wrap(@click="scroll('#my-list')")
-          .col.min
-            i video_library
-          .col My list
+        a.row(@click="scroll('#home')")
+          i home
+          .max Home
+        a.row(@click="scroll('#series')")
+          i subscriptions
+          .max Series
+        a.row(@click="scroll('#movies')")
+          i subscriptions
+          .max Movies
+        a.row(@click="scroll('#hot')")
+          i whatshot
+          .max Hot
+        a.row(@click="scroll('#my-list')")
+          i video_library
+          .max My list
     button.large.transparent.l(@click="scroll('#home')") Home
     button.large.transparent.l(@click="scroll('#series')") Series
     button.large.transparent.l(@click="scroll('#movies')") Movies
@@ -40,22 +35,19 @@
       #dropdown-notifications.dropdown.left.no-wrap(
         data-ui="#dropdown-notifications"
       )
-        a.row.no-wrap
-          .col.min
-            img.round(:src="'alok-001.jpg'")
-          .col 
+        a.row
+          img.round(:src="'alok-001.jpg'")
+          .max 
             div Alok 01/2021
             label 10k views
-        a.row.no-wrap
-          .col.min
-            img.round(:src="'vintage-001.jpg'")
-          .col 
+        a.row
+          img.round(:src="'vintage-001.jpg'")
+          .max 
             div The best of 2021
             label 10k views
-        a.row.no-wrap
-          .col.min
-            img.round(:src="'ocean-001.jpg'")
-          .col 
+        a.row
+          img.round(:src="'ocean-001.jpg'")
+          .max 
             div Alok, Zebra, Iro - Ocean
             label 10k views
     button.circle.large.transparent(@click="redirect('/')")
@@ -63,14 +55,14 @@
     .large-space
   main
     #modal-search.modal.top.transparent
-      .row.no-wrap
-        .col.l
-        .col
+      .row
+        .max.l
+        .max
           .field.round.suffix.prefix.small.no-margin.white.black-text
             i.fron search
             input(type="text")
             i.front mic
-        .col.l
+        .max.l
     
     home
 </template>

@@ -7,8 +7,8 @@ main.responsive(v-show="data.isLoaded")
       a.chip Rock and roll
       a.chip Others
     .space
-    .row
-      .col.s12.m6.l3(v-for="(item, i) in data.itens")
+    .grid
+      .s12.m6.l3(v-for="(item, i) in data.itens")
         article.no-padding.transparent
           a.wave
             img.responsive(:src="item.image")
@@ -30,8 +30,8 @@ main.responsive(v-show="data.isLoaded")
 
     .large-divider
     h5 What's hot
-    .row.no-wrap.scroll
-      .col(v-for="item in data.whatsHot")
+    .row.scroll
+      .min(v-for="item in data.whatsHot")
         article.no-padding.border.transparent.small-width
           a.wave
             img.responsive(:src="item.image")
@@ -46,8 +46,8 @@ main.responsive(v-show="data.isLoaded")
 
     .large-divider
     h5 Your videos
-    .row.no-wrap.scroll
-      .col(v-for="item in data.yourVideos")
+    .row.scroll
+      .min(v-for="item in data.yourVideos")
         article.no-padding.border.transparent.small-width
           a.wave
             img.responsive(:src="item.image")

@@ -18,8 +18,8 @@
     .page.right.active
       .large-space
       h5.bold Today's ranking
-      .row
-        .col.s12.m6.l3(v-for="(item, i) in data.todaysRanking")
+      .grid
+        .s12.m6.l3(v-for="(item, i) in data.todaysRanking")
           article.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
             a.wave
               img.responsive(:src="item.image")
@@ -36,32 +36,32 @@
                     i thumb_up
       #series.large-space.page.active
       h5.bold Series
-      .row.no-wrap.scroll
-        .col(v-for="item in data.series")
+      .row.scroll
+        div(v-for="item in data.series")
           article.no-padding.small-width
             a.wave
               img.responsive(:src="item.image")
 
       #movies.large-space.page.active
       h5.bold Movies
-      .row.no-wrap.scroll
-        .col(v-for="item in data.movies")
+      .row.scroll
+        div(v-for="item in data.movies")
           article.no-padding.small-width
             a.wave
               img.responsive(:src="item.image")
 
       #hot.large-space.page.active
       h5.bold Hot
-      .row.no-wrap.scroll
-        .col(v-for="item in data.hot")
+      .row.scroll
+        div(v-for="item in data.hot")
           article.no-padding.small-width
             a.wave
               img.responsive(:src="item.image")
 
       #my-list.large-space.page.active
       h5.bold My list
-      .row.no-wrap.scroll
-        .col(v-for="item in data.myList")
+      .row.scroll
+        div(v-for="item in data.myList")
           article.no-padding.small-width
             a.wave
               img.responsive(:src="item.image")

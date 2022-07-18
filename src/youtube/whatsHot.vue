@@ -2,15 +2,15 @@
 main.responsive(v-show="data.isLoaded")
   .page.right.active
     h5 What's hot
-    .row
-      .col.s12(v-for="item in data.itens")
+    .grid
+      .s12(v-for="item in data.itens")
         article.no-padding.transparent
-          .row
-            .col.s12.m4
+          .grid
+            .s12.m4
               a.wave
                 img.empty-state(:src="item.image")
                 .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
-            .col.s12.m8
+            .s12.m8
               h5.no-margin {{ item.title }}
               div 10k views
               .space

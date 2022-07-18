@@ -5,10 +5,10 @@
     span Checkboxes
     a.chip.circle(@click="domain.showSamples(data, '#checkboxes .field:not(#checkboxes1), #checkboxes1 label', 'Checkboxes', null, 'https://github.com/beercss/beercss/blob/main/docs/CHECKBOX.md')")
       i code
-  .row
-    .col.s12
+  .grid
+    .s12
       .field.middle-align#checkboxes1
-        nav
+        nav.wrap
           label.checkbox
             input(type="checkbox")
             span
@@ -21,7 +21,7 @@
           label.checkbox
             input(type="checkbox", checked, disabled)
             span Disabled
-    .col.s12.l4
+    .s12.l4
       .field.middle-align
         nav
           label.checkbox
@@ -33,7 +33,7 @@
           label.checkbox
             input(type="checkbox")
             span Item 3
-    .col.s12.l4
+    .s12.l4
       .field.middle-align
         nav
           label.checkbox
@@ -45,8 +45,8 @@
           label.checkbox
             input(type="checkbox")
             span Item 3
-        span.helper Complementary text
-    .col.s12.l4
+        span.helper Helper text
+    .s12.l4
       .field.middle-align.invalid
         nav
           label.checkbox

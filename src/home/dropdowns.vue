@@ -41,24 +41,20 @@
         a
           div Title
           label Complementary text
-        a.row.no-wrap.middle-align
-          .col.min
-            i home
-          .col Title
-        a.row.no-wrap.middle-align
-          .col.min
-            i home
-          .col
+        a.row
+          i home
+          span Title
+        a.row
+          i home
+          .max
             div Title
             label Complementary text
-        a.row.no-wrap.middle-align
-          .col.min
-            img.circle.tiny(:src="'/beer-and-woman.jpg'")
-          .col Title
-        a.row.no-wrap.middle-align
-          .col.min
-            img.circle.tiny(:src="'/beer-and-woman.jpg'")
-          .col
+        a.row
+          img.circle.tiny(:src="'/beer-and-woman.jpg'")
+          span Title
+        a.row
+          img.circle.tiny(:src="'/beer-and-woman.jpg'")
+          .max
             div Title
             label Complementary text
     button(data-ui="#dropdown6")

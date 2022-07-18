@@ -3,10 +3,10 @@
   .large-space
   h4
     span Typography
-    a.chip.circle(@click="domain.showSamples(data, '#typography .col.s6 div', 'Typography', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#typography .s6 div', 'Typography', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
       i code
-  .row
-    .col.s6
+  .grid
+    .s6
       div
         p.italic italic
         p.bold bold
@@ -19,7 +19,7 @@
         p.small-text small-text
         p.medium-text medium-text
         p.large-text large-text
-    .col.s6
+    .s6
       div
         h6 Title
         h5 Title

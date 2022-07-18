@@ -169,6 +169,6 @@ nav.bottom > .modal {
   background-color: var(--active);
 }
 
-.modal > a:not(button, .button, .chip, .row) {
-  padding: 12rem 0;
+.modal > a:not(button, .button, .chip, .grid) {
+  padding: 8rem 0;
 }

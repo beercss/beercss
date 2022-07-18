@@ -26,6 +26,7 @@
 
 .dropdown.no-wrap {
   width: auto;
+  white-space: nowrap;
 }
 
 .dropdown.active,
@@ -49,6 +50,10 @@ button:not([data-ui]):focus-within > .dropdown,
   right: 0;
 }
 
+.dropdown * {
+  white-space: inherit !important;
+}
+
 .dropdown > a {
   display: block;
   padding: 8rem 16rem;
@@ -59,15 +64,6 @@ button:not([data-ui]):focus-within > .dropdown,
 .dropdown > a:focus,
 .dropdown > a.active {
   background-color: var(--active);
-}
-
-.dropdown.no-wrap > a {
-  white-space: nowrap;
-}
-
-.dropdown > a.row.no-wrap {
-  margin: 0 -8rem;
-  padding: 0 16rem;
 }
 
 @keyframes dropdown-to-bottom {

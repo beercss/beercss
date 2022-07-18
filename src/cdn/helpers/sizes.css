@@ -27,12 +27,10 @@
 
 .wrap {
   display: block;
+  white-space: normal;
 }
 
-a.no-wrap {
-  flex-direction: row;
-}
-
-a.wrap {
-  flex-direction: column;
+.no-wrap:not(.dropdown) {
+  display: flex;
+  white-space: nowrap;
 }

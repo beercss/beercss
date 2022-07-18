@@ -40,8 +40,8 @@
     label.checkbox
       input(type="checkbox", name="active-chips", @click="domain.updateActive('#chips nav .chip', $event)")
       span active
-  .row
-    .col.s12.m12.l6
+  .grid
+    .s12.m12.l6
       nav.wrap
         a.chip Chip
         a.chip
@@ -138,7 +138,7 @@
           img.responsive(:src="'/favicon.png'")
         a.chip.square.right-round
           img.responsive(:src="'/favicon.png'")
-    .col.s12.m12.l6
+    .s12.m12.l6
       nav.wrap
         a.chip.border Chip
         a.chip.border
