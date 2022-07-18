@@ -1,8 +1,5 @@
 <template lang="pug">
 main.responsive
-  label.switch
-    input(type="checkbox")
-    span teste
   .row
     a(@click="updateTheme()")
       i.large brightness_medium

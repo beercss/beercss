@@ -40,7 +40,8 @@
 }
 
 .checkbox > input + span::before,
-.radio > input + span::before {
+.radio > input + span::before,
+.switch > input + span::after {
   font-family: "Material Icons";
   font-weight: normal;
   font-style: normal;
@@ -141,17 +142,22 @@
 .switch > input + span::after {
   content: "";
   position: absolute;
-  border-radius: 50%;
   left: 0;
   top: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   transition: var(--speed2) all;
   background-color: var(--outline);
   width: 16rem;
   height: 16rem;
+  font-size: 16rem;
   transform: translate(-44rem, -50%);
 }
 
 .switch > input:checked + span::after {
+  content: "check";
   background-color: var(--on-primary);
   width: 24rem;
   height: 24rem;
