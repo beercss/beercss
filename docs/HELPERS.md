@@ -70,7 +70,7 @@ left, right, center, top, bottom, middle, front, back
 
 ## Responsive
 
-responsive, s, m, l, small-device, medium-device, large-device
+responsive, s, m, l
 
 ## Scrolls
 

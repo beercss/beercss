@@ -7,6 +7,8 @@
       i code
   .grid
     .s12
+      .space
+      h6 Checkbox
       .field.middle-align#checkboxes1
         nav.wrap
           label.checkbox
@@ -21,6 +23,8 @@
           label.checkbox
             input(type="checkbox", checked, disabled)
             span Disabled
+    .s12
+      h6 Checkbox in field elements
     .s12.l4
       .field.middle-align
         nav

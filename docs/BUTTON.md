@@ -64,6 +64,20 @@ The responsive button is a button that automatically adjust with the width of yo
 </button>
 ```
 
+## Transparent button example
+
+The transparent button is a button for navigation. The form of button will be revealed on button actions. Combine with icons and images.
+
+```html
+<button class="transparent circle">
+  <i>home</i>
+</button>
+
+<button class="transparent circle">
+  <img class="responsive" src="/image.png">
+</button>
+```
+
 ## Go to
 
 [Begin](https://github.com/beercss/beercss/blob/main/docs/INDEX.md), [Elements](https://github.com/beercss/beercss/blob/main/docs/ELEMENTS.md), [Helpers](https://github.com/beercss/beercss/blob/main/docs/HELPERS.md), [Settings](https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md), [Summary](https://github.com/beercss/beercss/blob/main/docs/SUMMARY.md), [beercss.com](https://www.beercss.com)

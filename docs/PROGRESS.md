@@ -20,11 +20,11 @@ left, right, top, bottom
 
 ```html
 <div class="small-space">
-  <div class="progress"></div>
+  <div class="progress left"></div>
 </div>
 
 <article>
-  <div class="progress"></div>
+  <div class="progress left"></div>
   <h5>Title</h5>
 </article>
 ```
@@ -39,11 +39,11 @@ Call `ui("progress-selector", percentage)`.
 
 ```html
 <div class="small-space">
-  <div class="progress" id="progress1"></div>
+  <div class="progress left" id="progress1"></div>
 </div>
 
 <article>
-  <div class="progress" id="progress2"></div>
+  <div class="progress left" id="progress2"></div>
   <h5>Title</h5>
 </article>
 ```

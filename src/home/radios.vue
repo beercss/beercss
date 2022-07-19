@@ -7,6 +7,8 @@
       i code
   .grid
     .s12
+      .space
+      h6 Radio
       .field.middle-align#radios1
         nav.wrap
           label.radio
@@ -21,6 +23,8 @@
           label.radio
             input(type="radio", name="radio2", checked, disabled)
             span Disabled
+    .s12
+      h6 Radio in field elements
     .s12.l4
       .field.middle-align
         nav

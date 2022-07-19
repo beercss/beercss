@@ -37,12 +37,6 @@
     label.radio
       input(type="radio", name="align-tables", @click="domain.updateAlign('#table table', 'right-align')")
       span right-align
-    label.radio
-      input(type="radio", name="size-tables", checked, @click="domain.updateSize('#table table')")
-      span max
-    label.radio
-      input(type="radio", name="size-tables", @click="domain.updateSize('#table table', 'min')")
-      span min
   .space
   table.border
     thead

@@ -7,6 +7,8 @@
       i code
   .grid
     .s12
+      .space
+      h6 Switch
       .field.middle-align#switches1
         nav.wrap
           label.switch
@@ -21,6 +23,8 @@
           label.switch
             input(type="checkbox", checked, disabled)
             span
+    .s12
+      h6 Switch in field elements
     .s12.l6
       .field.middle-align
         nav

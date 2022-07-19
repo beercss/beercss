@@ -27,16 +27,3 @@
   text-align: center;
   justify-content: center !important;
 }
-
-.center-align > table {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.right-align > table {
-  margin-left: auto;
-}
-
-.left-align > table {
-  margin-right: auto;
-}

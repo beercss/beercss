@@ -18,11 +18,6 @@ Switches toggle the state of a single item on or off.
   <input type="checkbox">
   <span></span>
 </label>
-
-<label class="switch">
-  <input type="checkbox">
-  <span>Click here</span>
-</label>
 ```
 
 ## Go to

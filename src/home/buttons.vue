@@ -349,6 +349,47 @@
         button.responsive.border.right-round
           img(:src="'/favicon.png'")
           span Button
+  .medium-space
+  h6.middle-align
+    span Transparent buttons
+    a.chip.circle(@click="domain.showSamples(data, '#transparent-buttons button', 'Transparent buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+      i code
+  selectionForButtons(context="#transparent-buttons button", :colors="[]", :shadows="[]")
+  #transparent-buttons
+    nav.wrap
+      button.transparent.square
+        i search
+      button.transparent.circle
+        i search
+      button.transparent.circle.left-round.top-round
+        i search
+      button.transparent.circle.left-round.bottom-round
+        i search
+      button.transparent.circle.right-round.top-round
+        i search
+      button.transparent.circle.right-round.bottom-round
+        i search
+      button.transparent.circle.left-round
+        i search
+      button.transparent.circle.right-round
+        i search
+    nav.wrap
+      button.transparent.square
+        img.responsive(:src="'/favicon.png'")
+      button.transparent.circle
+        img.responsive(:src="'/favicon.png'")
+      button.transparent.circle.left-round.top-round
+        img.responsive(:src="'/favicon.png'")
+      button.transparent.circle.left-round.bottom-round
+        img.responsive(:src="'/favicon.png'")
+      button.transparent.circle.right-round.top-round
+        img.responsive(:src="'/favicon.png'")
+      button.transparent.circle.right-round.bottom-round
+        img.responsive(:src="'/favicon.png'")
+      button.transparent.circle.left-round
+        img.responsive(:src="'/favicon.png'")
+      button.transparent.circle.right-round
+        img.responsive(:src="'/favicon.png'")
 </template>
 
 <script setup lang="ts">

@@ -495,6 +495,10 @@ pre.wrap {
   word-break: break-all;
 }
 
+#grids .grid > * {
+  border: 1px solid var(--outline);
+}
+
 @keyframes logo-intro {
   0% {
     opacity: 0;
