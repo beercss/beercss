@@ -66,7 +66,7 @@ The responsive button is a button that automatically adjust with the width of yo
 
 ## Transparent button example
 
-The transparent button is a button for navigation. The form of button will be revealed on button actions. Combine with icons and images.
+The transparent button is a button for navigation. The shape of button will be revealed on button actions. Combine with icons and images.
 
 ```html
 <button class="transparent circle">
