@@ -18,7 +18,35 @@ Switches toggle the state of a single item on or off.
   <input type="checkbox">
   <span></span>
 </label>
+
+<nav>
+  <div class="max">
+    <h6>Title</h6>
+    <div>Complementary text</div>
+  </div>
+  <label class="switch">
+    <input type="checkbox">
+    <span></span>
+  </label>
+</nav>
 ```
+
+## In field elements example
+```html
+<div class="field middle-align">
+  <nav>
+    <div class="max">
+      <h6>Title</h6>
+      <div>Complementary text</div>
+    </div>
+    <label class="switch">
+      <input type="checkbox">
+      <span></span>
+    </label>
+  </nav>
+</div>
+```
+
 
 ## Go to
 

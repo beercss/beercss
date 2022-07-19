@@ -14,35 +14,50 @@ Radio buttons allow users to select one option from a set.
 ## Example
 
 ```html
-<nav>
-  <label class="radio">
-    <input type="radio">
-    <span></span>
-  </label>
-  <label class="radio">
-    <input type="radio">
-    <span></span>
-  </label>
-  <label class="radio">
-    <input type="radio">
-    <span></span>
-  </label>
-</nav>
+<label class="radio">
+  <input type="radio">
+  <span></span>
+</label>
+
+<label class="radio">
+  <input type="radio">
+  <span>Click here</span>
+</label>
 
 <nav>
   <label class="radio">
     <input type="radio">
-    <span>Radio 1</span>
+    <span>Item 1</span>
   </label>
   <label class="radio">
     <input type="radio">
-    <span>Radio 2</span>
+    <span>Item 2</span>
   </label>
   <label class="radio">
     <input type="radio">
-    <span>Radio 3</span>
+    <span>Item 3</span>
   </label>
 </nav>
+```
+
+## In field elements example
+```html
+<div class="field middle-align">
+  <nav>
+    <label class="radio">
+      <input type="radio">
+      <span>Item 1</span>
+    </label>
+    <label class="radio">
+      <input type="radio">
+      <span>Item 2</span>
+    </label>
+    <label class="radio">
+      <input type="radio">
+      <span>Item 3</span>
+    </label>
+  </nav>
+</div>
 ```
 
 ## Go to

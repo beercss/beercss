@@ -23,6 +23,41 @@ Checkboxes allow users to select one or more items from a set. Checkboxes can tu
   <input type="checkbox">
   <span>Click here</span>
 </label>
+
+<nav>
+  <label class="checkbox">
+    <input type="checkbox">
+    <span>Item 1</span>
+  </label>
+  <label class="checkbox">
+    <input type="checkbox">
+    <span>Item 2</span>
+  </label>
+  <label class="checkbox">
+    <input type="checkbox">
+    <span>Item 3</span>
+  </label>
+</nav>
+```
+
+## In field elements example
+```html
+<div class="field middle-align">
+  <nav>
+    <label class="checkbox">
+      <input type="checkbox">
+      <span>Item 1</span>
+    </label>
+    <label class="checkbox">
+      <input type="checkbox">
+      <span>Item 2</span>
+    </label>
+    <label class="checkbox">
+      <input type="checkbox">
+      <span>Item 3</span>
+    </label>
+  </nav>
+</div>
 ```
 
 ## Go to
