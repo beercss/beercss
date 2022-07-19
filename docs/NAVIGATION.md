@@ -5,6 +5,7 @@ Navigations are containers that display actions placed horizontally (or vertical
 ## Element
 
 ```html
+<div class="row">...</div>
 <nav>...</nav>
 <nav class="left">...</nav>
 <nav class="right">...</nav>
@@ -38,7 +39,17 @@ no-shadow, small-shadow, medium-shadow, large-shadow
 
 no-space, small-space, medium-space, large-space, wrap, no-wrap
 
-## Example
+## Row example
+
+```html
+<div class="row">
+  <div>min</div>
+  <div>min</div>
+  <div class="max">max</div>
+</nav>
+```
+
+## Navigation example
 
 ```html
 <nav>

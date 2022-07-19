@@ -8,7 +8,7 @@
   .grid
     .s12
       .space
-      h6 Switch
+      h6 Default switch
       .field.middle-align#switches1
         nav.wrap
           label.switch

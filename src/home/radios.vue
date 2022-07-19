@@ -8,7 +8,7 @@
   .grid
     .s12
       .space
-      h6 Radio
+      h6 Default radio
       .field.middle-align#radios1
         nav.wrap
           label.radio

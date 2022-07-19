@@ -8,7 +8,7 @@
   .grid
     .s12
       .space
-      h6 Checkbox
+      h6 Default checkbox
       .field.middle-align#checkboxes1
         nav.wrap
           label.checkbox

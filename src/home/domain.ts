@@ -263,7 +263,7 @@ const showSamples = (data: IHome, selector:string, name: string, modal?:string, 
       textFormatted = hljs.highlight("html", text).value;
     }
 
-    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", ".modal", ".toast", "main.responsive", ".fixed:not(header)"]))
+    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", ".modal", ".toast", "main.responsive", ".fixed:not(header, footer)"]))
       text = "";
 
     data.samples.push({
