@@ -4,6 +4,7 @@ import { Ref, ref } from "vue";
 
 const data:IHome = {
   ...theme,
+  name: "",
   indexOfMenu: 1,
   samples: [],
   modalSample: "",
