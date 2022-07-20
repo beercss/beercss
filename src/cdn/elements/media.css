@@ -1,15 +1,8 @@
-img,
-video {
-  margin: 0;
-  padding: 0;
-}
-
 img.small,
 img.medium,
 img.large,
 img.tiny,
 img.extra,
-img.border,
 img.round,
 img.circle,
 img.responsive,
@@ -18,27 +11,24 @@ video.medium,
 video.large,
 video.tiny,
 video.extra,
-video.border,
 video.round,
 video.circle,
 video.responsive {
   object-fit: cover;
   object-position: center;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
+  height: 48rem;
+  width: 48rem;
 }
 
 img.round,
 video.round {
   border-radius: 8rem;
-  height: 48rem;
-  width: 48rem;
 }
 
 img.circle,
 video.circle {
   border-radius: 50%;
-  height: 48rem;
-  width: 48rem;
 }
 
 img.tiny,
@@ -51,12 +41,6 @@ img.small,
 video.small {
   height: 40rem;
   width: 40rem;
-}
-
-img.medium,
-video.medium {
-  height: 48rem;
-  width: 48rem;
 }
 
 img.large,

@@ -13,8 +13,8 @@ nav:not(.left, .right, .top, .bottom),
   margin-top: 16rem;
 }
 
-nav:not(.left, .right, .top, .bottom) *:not(.tooltip),
-.row *:not(.tooltip) {
+nav:not(.left, .right, .top, .bottom, .wrap) *:not(.tooltip),
+.row:not(.wrap) *:not(.tooltip) {
   margin-top: 0;
   margin-bottom: 0;
   white-space: normal;
@@ -69,7 +69,6 @@ nav.bottom {
   height: auto;
   width: auto;
   text-align: center;
-  margin: 0;
 }
 
 nav.left,
@@ -211,13 +210,6 @@ nav.bottom > a:not(button, .button, .chip).active > i {
   background-color: var(--primary);
   color: var(--on-primary);
   padding: 4rem 16rem;
-}
-
-nav.left > .modal,
-nav.right > .modal,
-nav.top > .modal,
-nav.bottom > .modal {
-  margin: 0;
 }
 
 nav.left > .modal {

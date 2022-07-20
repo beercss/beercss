@@ -11,13 +11,6 @@
   align-items: center;
 }
 
-.checkbox > *,
-.radio > *,
-.switch > * {
-  margin: 0;
-  padding: 0;
-}
-
 .checkbox > input,
 .radio > input {
   width: 24rem;
@@ -62,7 +55,6 @@
   width: 24rem;
   height: 24rem;
   margin: 0 auto;
-  padding: 0;
   outline: none;
   color: var(--primary);
   position: absolute;

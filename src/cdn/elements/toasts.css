@@ -14,7 +14,6 @@
   background-color: var(--error-background);
   padding: 16rem;
   opacity: 1;
-  margin: 0;
   cursor: pointer;
   transform: translate(-50%, 0);
   text-align: left;
@@ -56,7 +55,6 @@
 }
 
 .toast > * {
-  margin: 0;
   overflow: unset;
 }
 

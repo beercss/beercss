@@ -6,11 +6,6 @@
   position: fixed;
 }
 
-.absolute,
-.fixed {
-  float: none;
-}
-
 .absolute.left.right,
 .fixed.left.right {
   width: auto;

@@ -12,7 +12,6 @@ table th {
   width: 1%;
   text-align: inherit;
   padding: 8rem;
-  margin: 0;
 }
 
 table th {
@@ -27,13 +26,6 @@ table.border th {
 table.no-space td,
 table.no-space th {
   padding: 0;
-}
-
-table.space td,
-table.space th,
-table.small-space th,
-table.small-space td {
-  padding: 8rem;
 }
 
 table.medium-space td,

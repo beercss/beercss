@@ -53,11 +53,6 @@
   color: var(--primary);
 }
 
-.tabs > a > i,
-.tabs > a > img {
-  margin: 0;
-}
-
 .tabs.left-align > a,
 .tabs.center-align > a,
 .tabs.right-align > a {
