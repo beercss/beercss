@@ -87,7 +87,7 @@
 .square.round,
 .circle.round,
 .diamond.round {
-  border-radius: 16rem;
+  border-radius: 16rem !important;
 }
 
 .diamond.round {
@@ -96,5 +96,6 @@
 
 .border:not(table, .field) { 
   border: 1px solid var(--outline);
+  background-color: transparent;
   box-shadow: none;
 }

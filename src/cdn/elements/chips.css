@@ -17,18 +17,14 @@
   user-select: none;
 }
 
-.chip > :not(.dropdown, .progress, .badge, .tooltip) + :not(.dropdown, .progress, .badge, .tooltip) {
+.chip > span + i,
+.chip > i + span {
   margin-left: 4rem;
 }
 
 .chip.small {
   height: 32rem;
   min-width: 32rem;
-}
-
-.chip.medium {
-  height: 40rem;
-  min-width: 40rem;
 }
 
 .chip.large {
@@ -38,7 +34,6 @@
 
 .chip.border {
   border: 1rem solid var(--secondary);
-  background-color: transparent;
   color: var(--secondary);
 }
 

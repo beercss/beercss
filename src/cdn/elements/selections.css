@@ -34,8 +34,8 @@
   font-size: 14rem;
 }
 
-.checkbox > span,
-.radio > span {
+.checkbox > span:not(:empty),
+.radio > span:not(:empty) {
   padding-left: 4rem;
 }
 
@@ -79,12 +79,8 @@
   content: "radio_button_unchecked";
 }
 
-.checkbox:focus > input:not([disabled]) + span::before,
-.checkbox:hover > input:not([disabled]) + span::before,
 .checkbox > input:not([disabled]):focus + span::before,
 .checkbox > input:not([disabled]):hover + span::before,
-.radio:focus > input:not([disabled]) + span::before,
-.radio:hover > input:not([disabled]) + span::before,
 .radio > input:not([disabled]):focus + span::before,
 .radio > input:not([disabled]):hover + span::before {
   background-color: var(--active);
@@ -106,12 +102,6 @@
 .radio + .radio,
 .switch + .switch {
   margin-left: 8rem;
-}
-
-.checkbox > span:empty,
-.radio > span:empty,
-.switch > span:empty {
-  padding: 0;
 }
 
 .switch > input {
@@ -164,7 +154,8 @@
   transform: translate(-28rem, -50%);
 }
 
-.switch > input:focus + span::after {
+.switch > input:not([disabled]):focus + span::after,
+.switch > input:not([disabled]):hover + span::after {
   box-shadow: 0 0 0 12rem var(--active);
 }
 

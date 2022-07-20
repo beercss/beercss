@@ -12,14 +12,6 @@ article + article {
   margin-top: 16rem;
 }
 
-.grid.medium-space > * > article + article {
-  margin-top: 24rem;
-}
-
-.grid.large-space > * > article + article {
-  margin-top: 32rem;
-}
-
 article.small {
   height: 192rem;
 }
@@ -30,8 +22,4 @@ article.medium {
 
 article.large {
   height: 512rem;
-}
-
-article.border {
-  background-color: transparent;
 }

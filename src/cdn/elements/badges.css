@@ -93,8 +93,7 @@
 
 .badge.border {
   border: 1rem solid var(--error);
-  background-color: transparent;
-  color:var(--error);
+  color: var(--error);
 }
 
 .badge.circle,

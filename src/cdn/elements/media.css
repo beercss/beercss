@@ -1,6 +1,7 @@
 img,
 video {
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
 }
 
 img.small,
@@ -152,22 +153,12 @@ button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
 .button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
 .chip > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
 .field > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
-.tabs > a > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
+.tabs img:not(.responsive, .tiny, .small, .medium, .large, .extra),
 td img:not(.responsive, .tiny, .small, .medium, .large, .extra) {
   min-width: 24rem;
   max-width: 24rem;
   min-height: 24rem;
   max-height: 24rem;
-}
-
-.button.diamond > img,
-button.diamond > img,
-.button.circle > img,
-button.circle > img,
-.button.square > img,
-button.square > img {
-  margin: 0;
-  padding: 0;
 }
 
 .button:not(.extend) > img.responsive:first-child, 
@@ -189,11 +180,5 @@ button:not(.extend) > img.responsive:last-child,
 }
 
 .extend > img.responsive {
-  position: absolute;
   left: 0;
-}
-
-nav > img,
-nav > video {
-  margin: 0;
 }

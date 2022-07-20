@@ -13,8 +13,8 @@ nav:not(.left, .right, .top, .bottom),
   margin-top: 16rem;
 }
 
-nav:not(.left, .right, .top, .bottom) *,
-.row * {
+nav:not(.left, .right, .top, .bottom) *:not(.tooltip),
+.row *:not(.tooltip) {
   margin-top: 0;
   margin-bottom: 0;
   white-space: normal;

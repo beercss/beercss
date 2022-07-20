@@ -31,7 +31,6 @@ button.none {
   color: var(--primary);
   padding: 0;
   background-color: transparent;
-  margin: 0 8rem;
   min-width: auto;
   min-height: 24rem;
 }
@@ -41,12 +40,6 @@ button.small {
   height: 32rem;
   min-width: 32rem;
   font-size: 14rem;
-}
-
-.button.medium,
-button.medium {
-  height: 40rem;
-  min-width: 40rem;
 }
 
 .button.large,
@@ -65,7 +58,6 @@ button.extra {
 .button.border,
 button.border {
   border: 1rem solid var(--primary);
-  background-color: transparent;
   color: var(--primary);
 }
 

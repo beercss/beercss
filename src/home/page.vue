@@ -97,7 +97,7 @@ div
 
   .center-align.padding.yellow4
     div.black-text
-      .large-height.no-scroll.middle-align
+      .large-height.no-scroll.middle-align.center-align
         img#logo(:src="'/logo.png'", @click="domain.addHomeScreen()")
       h5.center-align Build material design
       h3.center-align in record time
