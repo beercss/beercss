@@ -390,6 +390,59 @@
         img.responsive(:src="'/favicon.png'")
       button.transparent.circle.right-round
         img.responsive(:src="'/favicon.png'")
+  .medium-space
+  h6.middle-align
+    span Segmented buttons
+    a.chip.circle(@click="domain.showSamples(data, '#segmented-buttons nav', 'Segmented buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+      i code
+  selectionForButtons(context="#segmented-buttons button", :colors="[]", :shadows="[]")
+  #segmented-buttons.grid
+    .s12.m6.l6
+      nav
+        button.border.no-margin.left-round
+          span Left
+        button.border.no-margin.rectangle
+          span Center
+        button.border.no-margin.right-round
+          span Right
+      nav
+        button.border.no-margin.left-round
+          i check
+          span Left
+        button.border.no-margin.rectangle
+          span Center
+        button.border.no-margin.right-round
+          span Right
+      nav
+        button.border.no-margin.left-round
+          i search
+        button.border.no-margin.rectangle
+          i edit
+        button.border.no-margin.right-round
+          i home
+    .s12.m6.l6
+      nav
+        button.border.no-margin.left-round.max
+          span Left
+        button.border.no-margin.rectangle.max
+          span Center
+        button.border.no-margin.right-round.max
+          span Right
+      nav
+        button.border.no-margin.left-round.max
+          i check
+          span Left
+        button.border.no-margin.rectangle.max
+          span Center
+        button.border.no-margin.right-round.max
+          span Right
+      nav
+        button.border.no-margin.left-round.max
+          i search
+        button.border.no-margin.rectangle.max
+          i edit
+        button.border.no-margin.right-round.max
+          i home
 </template>
 
 <script setup lang="ts">

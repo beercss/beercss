@@ -94,6 +94,10 @@
   transform: rotate(45deg);
 }
 
+.rectangle {
+  border-radius: 0;
+}
+
 .border:not(table, .field) { 
   border: 1px solid var(--outline);
   background-color: transparent;
