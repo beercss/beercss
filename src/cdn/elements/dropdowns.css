@@ -23,11 +23,13 @@
   line-height: normal;
   text-align: left;
   border-radius: 4rem;
+  transform: scale(.8) translateY(120%);
+  transition: var(--speed2) all;
 }
 
 .dropdown.no-wrap {
   width: auto;
-  white-space: nowrap;
+  white-space: nowrap !important;
 }
 
 .dropdown.active,
@@ -37,7 +39,7 @@ button:not([data-ui]):focus-within > .dropdown,
 .field > :not([data-ui]):focus-within ~ .dropdown {
   opacity: 1;
   visibility: visible;
-  animation: var(--speed1) dropdown-to-bottom;
+  transform: scale(1) translateY(100%);
 }
 
 .dropdown.left {
@@ -50,24 +52,16 @@ button:not([data-ui]):focus-within > .dropdown,
 }
 
 .dropdown > a {
-  display: block;
   padding: 8rem 16rem;
   border-radius: 0;
+}
+
+.dropdown > a:not(.row) {
+  display: block;
 }
 
 .dropdown > a:hover,
 .dropdown > a:focus,
 .dropdown > a.active {
   background-color: var(--active);
-}
-
-@keyframes dropdown-to-bottom {
-  from {
-    opacity: 0;
-    transform: translateY(75%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(100%);
-  }
 }

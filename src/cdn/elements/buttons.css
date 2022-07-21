@@ -17,11 +17,9 @@ button {
   user-select: none;
 }
 
-.button > span + i,
-.button > i + span,
-button > span + img,
-button > img + span {
-  margin-left: 4rem;  
+.button > span,
+button > span {
+  margin: 0 4rem;  
 }
 
 .button.none,

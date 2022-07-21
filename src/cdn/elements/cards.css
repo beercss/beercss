@@ -8,7 +8,7 @@ article {
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
 }
 
-article + article {
+* + article {
   margin-top: 16rem;
 }
 

@@ -17,9 +17,8 @@
   user-select: none;
 }
 
-.chip > span + i,
-.chip > i + span {
-  margin-left: 4rem;
+.chip > span {
+  margin: 0 4rem;
 }
 
 .chip.small {

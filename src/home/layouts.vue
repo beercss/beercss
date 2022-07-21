@@ -188,8 +188,9 @@ div
       label.radio
         input(type="radio", name="align-lists", @click="domain.updateVerticalAlign('#list .row', 'bottom-align')")
         span bottom-align
-    .large-space.middle-align Today
     .row
+      span Today
+    .row.small-padding
       i.light-green-text check_circle
       .max
         div Title
@@ -198,7 +199,7 @@ div
       button.none
         i more_vert
     .divider
-    .row
+    .row.small-padding
       i.orange-text warning
       .max
         div Title
@@ -207,7 +208,7 @@ div
       button.none
         i more_vert
     .divider
-    .row
+    .row.small-padding
       i.grey-text schedule
       .max
         div Title
@@ -215,9 +216,9 @@ div
       button.none Button
       button.none
         i more_vert
-    .divider
-    .large-space.middle-align Yesterday
     .row
+      span Yesterday
+    .row.small-padding
       label.checkbox
         input(type="checkbox")
         span
@@ -228,7 +229,7 @@ div
       button.none
         i more_vert
     .divider
-    .row
+    .row.small-padding
       label.checkbox
         input(type="checkbox")
         span
@@ -239,7 +240,7 @@ div
       button.none
         i more_vert
     .divider
-    .row
+    .row.small-padding
       label.checkbox
         input(type="checkbox")
         span
@@ -249,8 +250,9 @@ div
       button.none Button
       button.none
         i more_vert
-    .large-space.middle-align Older
     .row
+      span Older
+    .row.small-padding
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
       .max
         div Title
@@ -259,7 +261,7 @@ div
       button.none
         i more_vert
     .divider
-    .row
+    .row.small-padding
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
       .max
         div Title
@@ -268,7 +270,7 @@ div
       button.none
         i more_vert
     .divider
-    .row
+    .row.small-padding
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
       .max
         div Title

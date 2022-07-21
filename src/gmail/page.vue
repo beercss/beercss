@@ -37,21 +37,21 @@ div
   nav.right.no-shadow.m.l
     .large-space
     .large-space
-    button.circle.large.transparent
-      img(:src="'/calendar.png'")
+    button.square.transparent.small-padding
       span.tooltip.left Calendar
+      img.responsive(:src="'/calendar.png'")
     .space
-    button.circle.large.transparent
-      img(:src="'/keep.png'")
+    button.square.transparent.small-padding
       span.tooltip.left Keep
+      img.responsive(:src="'/keep.png'")
     .space
-    button.circle.large.transparent
-      img(:src="'/tasks.png'")
+    button.square.transparent.small-padding
       span.tooltip.left Tasks
+      img.responsive(:src="'/tasks.png'")
     .space
-    button.circle.large.transparent
-      img(:src="'/contacts.png'")
+    button.square.transparent.small-padding
       span.tooltip.left Contacts
+      img.responsive(:src="'/contacts.png'")
 
   nav.bottom.s
     a(href="/gmail", :class="{ active: data.url == '/gmail' }")
@@ -122,25 +122,23 @@ div
           label Change display settings
     button.circle.large.transparent.m.l(data-ui="#dropdown-apps")
       i.outlined apps
-      #dropdown-apps.dropdown.left.small-width(data-ui="#dropdown-apps")
-        .large-padding
-          .grid
-            a.wave.s6.middle-align
-              .center-align
-                img(:src="'/calendar.png'")
-                p Calendar
-            a.wave.s6.middle-align
-              .center-align
-                img(:src="'/keep.png'")
-                p Keep
-            a.wave.s6.middle-align
-              .center-align
-                img(:src="'/tasks.png'")
-                p Tasks
-            a.wave.s6.middle-align
-              .center-align
-                img(:src="'/contacts.png'")
-                p Contacts
+      #dropdown-apps.dropdown.left.padding.no-wrap(data-ui="#dropdown-apps")
+        .grid.no-space
+          .s4.center-align
+            button.transparent.square.small-padding
+              img.responsive(:src="'/calendar.png'")
+          .s4.center-align
+            button.transparent.square.small-padding
+              img.responsive(:src="'/keep.png'")
+          .s4.center-align
+            button.transparent.square.small-padding
+              img.responsive(:src="'/tasks.png'")
+          .s4.center-align
+            button.transparent.square.small-padding
+              img.responsive(:src="'/contacts.png'")
+          .s4.center-align
+            button.transparent.square.small-padding
+              img.responsive(:src="'/favicon.png'")
     button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
     .space

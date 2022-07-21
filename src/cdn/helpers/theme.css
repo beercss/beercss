@@ -117,7 +117,7 @@
 .transparent {
   background-color: transparent !important;
   box-shadow: none !important;
-  color: inherit;
+  color: inherit !important;
 }
 
 .transparent-border {

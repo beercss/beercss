@@ -1,6 +1,6 @@
 nav:not(.left, .right, .top, .bottom),
 .row {
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: flex-start;
   white-space: nowrap;
@@ -8,8 +8,8 @@ nav:not(.left, .right, .top, .bottom),
   margin: 0 -8rem;
 }
 
-* + nav:not(.left, .right, .top, .bottom),
-* + .row:not(a) {
+*:not(.divider, .small-divider, .medium-divider, .large-divider) + nav:not(.left, .right, .top, .bottom),
+*:not(.divider, .small-divider, .medium-divider, .large-divider) + .row {
   margin-top: 16rem;
 }
 
@@ -33,7 +33,7 @@ nav > .max,
 
 nav.wrap,
 .row.wrap {
-  display: block !important;
+  display: block;
   white-space: normal;
 }
 
@@ -193,6 +193,7 @@ nav.bottom > a:not(button, .button, .chip) > i {
   padding: 4rem;
   border-radius: 32rem;
   transition: var(--speed1) padding linear;
+  margin: 0 auto;
 }
 
 nav.left > a:not(button, .button, .chip):hover > i,

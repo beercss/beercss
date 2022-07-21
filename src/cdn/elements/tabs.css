@@ -1,6 +1,5 @@
 .tabs {
   display: flex;
-  margin-top: 16rem;
   white-space: nowrap;
   border-bottom: 1rem solid var(--outline);
   border-radius: 0;
@@ -10,8 +9,8 @@
   justify-content: space-around;
 }
 
-* > .tabs:first-child {
-  margin-top: 0;
+* + .tabs {
+  margin-top: 16rem;
 }
 
 .tabs > a {

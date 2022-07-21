@@ -59,6 +59,7 @@ img.responsive,
 video.responsive {
   width: 100%;
   height: 100%;
+  margin: 0 auto;
 }
 
 button > img.responsive,
@@ -147,13 +148,15 @@ td img:not(.responsive, .tiny, .small, .medium, .large, .extra) {
 
 .button:not(.extend) > img.responsive:first-child, 
 button:not(.extend) > img.responsive:first-child,
-.chip > img.responsive:first-child {
+.chip > img.responsive:first-child,
+.tooltip + img.responsive {
   margin-left: -16rem;
 }
 
 .button:not(.extend) > img.responsive:last-child, 
 button:not(.extend) > img.responsive:last-child,
-.chip:not(.extend) > img.responsive:last-child {
+.chip > img.responsive:last-child,
+.tooltip + img.responsive {
   margin-right: -16rem;
 }
 

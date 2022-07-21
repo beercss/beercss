@@ -1,18 +1,20 @@
 .divider,
-.small-divider {
+.small-divider,
+.medium-divider,
+.large-divider {
   border-bottom: 1rem solid var(--outline);
   display: block;
-  margin: 8rem 0;
+  margin: 0;
 }
 
 .medium-divider {
-  border-bottom: 1rem solid var(--outline);
-  display: block;
   margin: 16rem 0;
 }
 
 .large-divider {
-  border-bottom: 1rem solid var(--outline);
-  display: block;
   margin: 24rem 0;
+}
+
+.small-divider {
+  margin: 8rem 0;
 }

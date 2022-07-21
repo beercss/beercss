@@ -1,6 +1,8 @@
 @import "./settings/urls.css";
 @import "./settings/light.css";
 @import "./settings/dark.css";
+@import "./helpers/reset.css";
+@import "./helpers/theme.css";
 @import "./helpers/alignments.css";
 @import "./helpers/colors.css";
 @import "./helpers/dividers.css";
@@ -13,9 +15,7 @@
 @import "./helpers/shadows.css";
 @import "./helpers/sizes.css";
 @import "./helpers/spaces.css";
-@import "./helpers/reset.css";
 @import "./helpers/responsive.css";
-@import "./helpers/theme.css";
 @import "./helpers/typography.css";
 @import "./helpers/waves.css";
 @import "./elements/badges.css";

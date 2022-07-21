@@ -24,17 +24,17 @@
       div min
       div min
       div min
-    .divider
+    .small-divider
     .row
       div min
       div min
       .max max
-    .divider
+    .small-divider
     .row
       div min
       .max max
       div min
-    .divider
+    .small-divider
     .row
       .max max
       div min
@@ -61,28 +61,28 @@
       a.chip Chip
       i home
       img.circle(:src="'/beer-and-woman.jpg'")
-    .divider
+    .small-divider
     nav
       button Button
       a.chip Chip
       i home
       .max max
       img.circle(:src="'/beer-and-woman.jpg'")
-    .divider
+    .small-divider
     nav
       button Button
       a.chip Chip
       .max max
       i home
       img.circle(:src="'/beer-and-woman.jpg'")
-    .divider
+    .small-divider
     nav
       button Button
       .max max
       a.chip Chip
       i home
       img.circle(:src="'/beer-and-woman.jpg'")
-    .divider
+    .small-divider
     nav
       .max max
       button Button
