@@ -27,11 +27,11 @@
       span large-divider
   .space
   #divider
-    div Lorem ipsum dolor
+    div Some text here
     .small-divider
-    div Lorem ipsum dolor
+    div Some text here
     .small-divider
-    div Lorem ipsum dolor
+    div Some text here
 
 </template>
 

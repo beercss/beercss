@@ -26,34 +26,34 @@
     .s12.m4.l2
       article.left-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m4.l2
       article.top-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m4.l2
       article.right-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m4.l2
       article.bottom-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m4.l2
       article.top-round.left-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m4.l2
       article.bottom-round.right-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m6.l3
       article
         .row
           img.circle.large(:src="'/beer-and-woman.jpg'")
           .max
             h5 Title
-            p Complementary text
+            p Some text here
         nav
           button.round Button
     .s12.m6.l3
@@ -62,7 +62,7 @@
           img.circle.large(:src="'/beer-and-woman.jpg'")
           .max
             h5 Title
-            p Complementary text
+            p Some text here
         nav
           button.round Button
     .s12.m6.l3
@@ -71,7 +71,7 @@
           img.circle.large(:src="'/beer-and-woman.jpg'")
           .max
             h5 Title
-            p Complementary text
+            p Some text here
         nav
           button.round Button
     .s12.m6.l3
@@ -80,7 +80,7 @@
           img.circle.large(:src="'/beer-and-woman.jpg'")
           .max
             h5 Title
-            p Complementary text
+            p Some text here
         nav
           button.round Button
     .s12.m6.l3
@@ -88,7 +88,7 @@
         img.responsive.small(:src="'/beer-and-woman.jpg'")
         .padding
           h5 Title
-          p Complementary text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button.round Button
     .s12.m6.l3
@@ -96,7 +96,7 @@
         img.responsive.small.top-round(:src="'/beer-and-woman.jpg'")
         .padding
           h5 Title
-          p Complementary text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button.round Button
     .s12.m6.l3
@@ -104,7 +104,7 @@
         img.responsive.small(:src="'/beer-and-woman.jpg'")
         .padding
           h5 Title
-          p Complementary text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button.round Button
     .s12.m6.l3
@@ -112,7 +112,7 @@
         img.responsive.small.top-round(:src="'/beer-and-woman.jpg'")
         .padding
           h5 Title
-          p Complementary text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button.round Button
     .s12.m6.l3
@@ -169,7 +169,7 @@
             img.responsive(:src="'/beer-and-woman.jpg'")
             .absolute.top.left.right.padding.top-shadow.white-text
               h5 Title
-              p Complementary text
+              p Some text here
           .s6
             .padding
               h5 Title
@@ -180,27 +180,27 @@
     .s12.m4.l2
       article.left-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m4.l2
       article.top-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m4.l2
       article.right-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m4.l2
       article.bottom-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m4.l2
       article.top-round.left-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m4.l2
       article.bottom-round.right-round
         h5 Title
-        p Complementary text
+        p Some text here
     .s12.m6.l3
       article
         .row
@@ -209,7 +209,7 @@
               source(:src="'/dance.mp4'", type="video/mp4")
           .max
             h5 Title
-            p Complementary text
+            p Some text here
         nav
           button.round Button
     .s12.m6.l3
@@ -219,7 +219,7 @@
               source(:src="'/dance.mp4'", type="video/mp4")
           .max
             h5 Title
-            p Complementary text
+            p Some text here
         nav
           button.round Button
     .s12.m6.l3
@@ -229,7 +229,7 @@
               source(:src="'/dance.mp4'", type="video/mp4")
           .max
             h5 Title
-            p Complementary text
+            p Some text here
         nav
           button.round Button
     .s12.m6.l3
@@ -239,7 +239,7 @@
               source(:src="'/dance.mp4'", type="video/mp4")
           .max
             h5 Title
-            p Complementary text
+            p Some text here
         nav
           button.round Button
     .s12.m6.l3
@@ -248,7 +248,7 @@
           source(:src="'/dance.mp4'", type="video/mp4")
         .padding
           h5 Title
-          p Complementary text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button.round Button
     .s12.m6.l3
@@ -262,7 +262,7 @@
           source(:src="'/dance.mp4'", type="video/mp4")
         .padding
           h5 Title
-          p Complementary text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button.round Button
     .s12.m6.l3
@@ -271,7 +271,7 @@
           source(:src="'/dance.mp4'", type="video/mp4")
         .padding
           h5 Title
-          p Complementary text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button.round Button
     .s12.m6.l3
@@ -285,7 +285,7 @@
           source(:src="'/dance.mp4'", type="video/mp4")
         .padding
           h5 Title
-          p Complementary text
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button.round Button
     .s12.m6.l3
@@ -348,7 +348,7 @@
               source(:src="'/dance.mp4'", type="video/mp4")
             .absolute.top.left.right.padding.top-shadow.white-text
               h5 Title
-              p Complementary text
+              p Some text here
           .s6
             .padding
               h5 Title

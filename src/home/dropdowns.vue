@@ -8,39 +8,39 @@
     )
       i code
   nav.wrap
-    button(data-ui="#dropdown1")
+    button
       span Default
       i arrow_drop_down
-      #dropdown1.dropdown(data-ui="#dropdown1")
+      .dropdown
         a Item 1
         a Item 2
         a Item 3
-    button(data-ui="#dropdown2")
+    button
       span No-wrap
       i arrow_drop_down
-      #dropdown2.dropdown.no-wrap(data-ui="#dropdown2")
+      .dropdown.no-wrap
         a Lorem ipsum dolor sit amet
         a Lorem ipsum dolor sit amet
         a Lorem ipsum dolor sit amet
-    button.circle(data-ui="#dropdown3")
+    button.circle
       i arrow_back
-      #dropdown3.dropdown.left.no-wrap(data-ui="#dropdown3")
+      .dropdown.left.no-wrap
         a Item 1
         a Item 2
         a Item 3
-    button.circle(data-ui="#dropdown4")
+    button.circle
       i arrow_forward
-      #dropdown4.dropdown.right.no-wrap(data-ui="#dropdown4")
+      .dropdown.right.no-wrap
         a Item 1
         a Item 2
         a Item 3
-    button(data-ui="#dropdown5")
+    button
       span Images and icons
-      #dropdown5.dropdown.no-wrap(data-ui="#dropdown5")
+      .dropdown.no-wrap
         a Title
         a
           div Title
-          label Complementary text
+          label Some text here
         a.row
           i home
           span Title
@@ -48,7 +48,7 @@
           i home
           .max
             div Title
-            label Complementary text
+            label Some text here
         a.row
           img.circle.tiny(:src="'/beer-and-woman.jpg'")
           span Title
@@ -56,10 +56,10 @@
           img.circle.tiny(:src="'/beer-and-woman.jpg'")
           .max
             div Title
-            label Complementary text
-    button(data-ui="#dropdown6")
+            label Some text here
+    button
       span Video
-      #dropdown6.dropdown.no-padding.small-width(data-ui="#dropdown6") 
+      .dropdown.no-padding.small-width
         video.responsive(autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
 </template>

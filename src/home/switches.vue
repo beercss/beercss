@@ -30,7 +30,7 @@
         nav
           .max
             h6 Title
-            div Complementary text
+            div Some text here
           label.switch
             input(type="checkbox")
             span
@@ -38,7 +38,7 @@
         nav
           .max
             h6 Title
-            div Complementary text
+            div Some text here
           label.switch
             input(type="checkbox")
             span
@@ -47,7 +47,7 @@
         nav
           .max
             h6 Title
-            div Complementary text
+            div Some text here
           label.switch
             input(type="checkbox")
             span

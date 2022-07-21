@@ -24,11 +24,11 @@
       span large-space
   .space
   #space
-    div Lorem ipsum dolor
+    div Some text here
     .space
-    div Lorem ipsum dolor
+    div Some text here
     .space
-    div Lorem ipsum dolor
+    div Some text here
 
 </template>
 

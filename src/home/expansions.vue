@@ -20,7 +20,7 @@
         .row
           .max
             div Title
-            .small-text Complementary text
+            .small-text Some text here
           i more_vert
       p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
   .small-space
@@ -31,7 +31,7 @@
           img.circle(:src="'/favicon.png'")
           .max
             div Title
-            .small-text Complementary text
+            .small-text Some text here
           i more_vert
       .space
     article.border.round.transparent Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

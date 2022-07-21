@@ -214,7 +214,7 @@ main.responsive
         nav
           .max
             h6 Title
-            div Complementary text
+            div Some text here
           label.switch
             input(type="checkbox")
             span
@@ -229,7 +229,7 @@ main.responsive
         nav
           .max
             h6 Title
-            div Complementary text
+            div Some text here
           label.switch
             input(type="checkbox")
             span

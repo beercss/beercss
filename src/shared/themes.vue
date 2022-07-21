@@ -58,7 +58,7 @@
   div(v-if="data.showCssVariables && data.theme")
     header.fixed(@click="data.showCssVariables=false")
       nav
-        a(data-ui="")
+        button.transparent.circle(data-ui="")
           i arrow_backward
         h5 Back
         a.button.border(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation

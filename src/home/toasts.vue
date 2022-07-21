@@ -24,16 +24,16 @@
     button.blue.white-text(onclick="ui('.toast.blue')") Toast
   .toast.pink.white-text
     i error
-    span Complementary text
+    span Some text here
   .toast.orange.white-text
     i warning
-    span Complementary text
+    span Some text here
   .toast.green.white-text
     i done
-    span Complementary text
+    span Some text here
   .toast.blue.white-text
     i info
-    span Complementary text
+    span Some text here
 </template>
 
 <script setup lang="ts">

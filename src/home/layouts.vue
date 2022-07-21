@@ -194,7 +194,7 @@ div
       i.light-green-text check_circle
       .max
         div Title
-        label Complementary text
+        label Some text here
       button.none Button
       button.none
         i more_vert
@@ -203,7 +203,7 @@ div
       i.orange-text warning
       .max
         div Title
-        label Complementary text
+        label Some text here
       button.none Button
       button.none
         i more_vert
@@ -212,7 +212,7 @@ div
       i.grey-text schedule
       .max
         div Title
-        label Complementary text
+        label Some text here
       button.none Button
       button.none
         i more_vert
@@ -224,7 +224,7 @@ div
         span
       .max
         div Title
-        label Complementary text
+        label Some text here
       button.none Button
       button.none
         i more_vert
@@ -235,7 +235,7 @@ div
         span
       .max
         div Title
-        label Complementary text
+        label Some text here
       button.none Button
       button.none
         i more_vert
@@ -246,7 +246,7 @@ div
         span
       .max
         div Title
-        label Complementary text
+        label Some text here
       button.none Button
       button.none
         i more_vert
@@ -256,7 +256,7 @@ div
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
       .max
         div Title
-        label Complementary text
+        label Some text here
       button.none Button
       button.none
         i more_vert
@@ -265,7 +265,7 @@ div
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
       .max
         div Title
-        label Complementary text
+        label Some text here
       button.none Button
       button.none
         i more_vert
@@ -274,7 +274,7 @@ div
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
       .max
         div Title
-        label Complementary text
+        label Some text here
       button.none Button
       button.none
         i more_vert

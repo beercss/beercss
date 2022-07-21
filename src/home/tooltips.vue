@@ -8,16 +8,16 @@
   nav.wrap
     a.chip.circle
       i arrow_back
-      .tooltip.left Complementary text
+      .tooltip.left Some text here
     a.chip.circle
       i arrow_upward
-      .tooltip Complementary text
+      .tooltip Some text here
     a.chip.circle
       i arrow_downward
-      .tooltip.bottom Complementary text
+      .tooltip.bottom Some text here
     a.chip.circle
       i arrow_forward
-      .tooltip.right Complementary text
+      .tooltip.right Some text here
 </template>
 
 <script setup lang="ts">
