@@ -15,7 +15,6 @@ button::after {
   background-image: radial-gradient(circle, rgba(255,255,255,.4) 1%, transparent 1%);
   opacity: 0;
   transition: none;
-  will-change: background-size;
 }
 
 .wave.dark::after,

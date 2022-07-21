@@ -24,7 +24,7 @@
   text-align: left;
   border-radius: 4rem;
   transform: scale(.8) translateY(120%);
-  transition: var(--speed2) all;
+  transition: var(--speed2) all, 0s background-color;
 }
 
 .dropdown.no-wrap {
