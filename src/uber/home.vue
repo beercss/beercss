@@ -17,9 +17,9 @@ div
       h5.page.left.active(v-show="data.from && !data.to") Where are you going?
       h5.page.left.active(v-show="data.from && data.to") Confirm that ride?
       nav.right-align
-        button.transparent.large(@click="clean()")
+        button.transparent.large.white-text(@click="clean()")
           span Cancel
-        button.large.border.white-border.white-text(
+        button.large(
           v-show="data.to",
           @click="clean()"
         )
@@ -36,7 +36,7 @@ div
         .min
           h6.no-margin {{ data.street }}
           .link Your current location
-      .divider
+      .small-divider
       a.row(@click="go()")
         .min
           button.circle.small.no-wave
@@ -52,9 +52,9 @@ div
       h5.page.left.active(v-show="data.from && !data.to") Where are you going?
       h5.page.left.active(v-show="data.from && data.to") Confirm that ride?
       nav.right-align(v-show="data.from || data.to")
-        button.none.white-text.large(@click="clean()")
+        button.transparent.large.white-text(@click="clean()")
           span Cancel
-        button.border.large.white-text.white-border(v-show="data.to", @click="clean()")
+        button.large(v-show="data.to", @click="clean()")
           i time_to_leave
           span Confirm
     .large-padding

@@ -144,7 +144,7 @@ div
     .space
   
   main.responsive.max
-    #modal-add.modal.round
+    #modal-add.modal.round.large-width
       nav
         a(data-ui="#modal-add")
           i.outlined arrow_back

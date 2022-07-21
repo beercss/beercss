@@ -66,10 +66,9 @@ div
       i code
       div Code
     themes(id="themes2", v-model="data")
-    #more2.modal.bottom.medium(data-ui="#more2")
+    #more2.modal.bottom(data-ui="#more2")
       h5 Templates
       p This templates are only for tests purpose
-      .space
       .grid
         .s6.middle-align.padding
           a(href="/youtube", v-show="data.isDark")

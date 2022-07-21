@@ -9,7 +9,7 @@ nav:not(.left, .right, .top, .bottom),
 }
 
 *:not(.divider, .small-divider, .medium-divider, .large-divider) + nav:not(.left, .right, .top, .bottom),
-*:not(.divider, .small-divider, .medium-divider, .large-divider) + .row {
+*:not(.divider, .small-divider, .medium-divider, .large-divider) + .row:not(a) {
   margin-top: 16rem;
 }
 

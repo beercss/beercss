@@ -182,7 +182,7 @@ div
           type="radio",
           name="align-lists",
           checked,
-          @click="domain.updateVerticalAlign('#list .row', 'middle-align')"
+          @click="domain.updateVerticalAlign('#list .row')"
         )
         span middle-align
       label.radio
@@ -190,7 +190,7 @@ div
         span bottom-align
     .row
       span Today
-    .row.small-padding
+    .row
       i.light-green-text check_circle
       .max
         div Title
@@ -198,8 +198,8 @@ div
       button.none Button
       button.none
         i more_vert
-    .divider
-    .row.small-padding
+    .small-divider
+    .row
       i.orange-text warning
       .max
         div Title
@@ -207,8 +207,8 @@ div
       button.none Button
       button.none
         i more_vert
-    .divider
-    .row.small-padding
+    .small-divider
+    .row
       i.grey-text schedule
       .max
         div Title
@@ -218,7 +218,7 @@ div
         i more_vert
     .row
       span Yesterday
-    .row.small-padding
+    .row
       label.checkbox
         input(type="checkbox")
         span
@@ -228,8 +228,8 @@ div
       button.none Button
       button.none
         i more_vert
-    .divider
-    .row.small-padding
+    .small-divider
+    .row
       label.checkbox
         input(type="checkbox")
         span
@@ -239,8 +239,8 @@ div
       button.none Button
       button.none
         i more_vert
-    .divider
-    .row.small-padding
+    .small-divider
+    .row
       label.checkbox
         input(type="checkbox")
         span
@@ -252,7 +252,7 @@ div
         i more_vert
     .row
       span Older
-    .row.small-padding
+    .row
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
       .max
         div Title
@@ -260,8 +260,8 @@ div
       button.none Button
       button.none
         i more_vert
-    .divider
-    .row.small-padding
+    .small-divider
+    .row
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
       .max
         div Title
@@ -269,8 +269,8 @@ div
       button.none Button
       button.none
         i more_vert
-    .divider
-    .row.small-padding
+    .small-divider
+    .row
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
       .max
         div Title

@@ -80,7 +80,7 @@
           .min
             img(:src="'/youtube.png'")
           .min Youtube TV
-        .divider
+        .small-divider
         a.row
           .min
             img(:src="'/youtube.png'")
@@ -126,7 +126,7 @@
       .min
         i video_library
       .min Library
-    .divider
+    .small-divider
     a.row(data-ui="#modal-expanded")
       .min
         i history

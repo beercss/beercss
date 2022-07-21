@@ -9,13 +9,16 @@
       i code
   nav.wrap
     label.radio
+      input(type="radio", name="divider-dividers", @click="domain.updateDivider('#divider [class*=divider]', 'divider')")
+      span divider
+    label.radio
       input(
         type="radio",
         name="divider-dividers",
         checked,
-        @click="domain.updateDivider('#divider [class*=divider]', 'divider')"
+        @click="domain.updateDivider('#divider [class*=divider]', 'small-divider')"
       )
-      span divider / small-divider
+      span small-divider
     label.radio
       input(type="radio", name="divider-dividers", @click="domain.updateDivider('#divider [class*=divider]', 'medium-divider')")
       span medium-divider
@@ -25,9 +28,9 @@
   .space
   #divider
     div Lorem ipsum dolor
-    .divider
+    .small-divider
     div Lorem ipsum dolor
-    .divider
+    .small-divider
     div Lorem ipsum dolor
 
 </template>

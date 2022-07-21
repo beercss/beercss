@@ -14,7 +14,7 @@
       i arrow_back
     button.circle.transparent
       i arrow_forward
-  .space
+  .space.m.l
   template(v-for="email in data.inbox")
     a.row
       label.checkbox.m.l
@@ -29,7 +29,8 @@
         b Subject -&nbsp;
         span Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       label 12:03
-    .divider
+    .divider.m.l
+    .small-divider.s
 </template>
 
 <script setup lang="ts">
