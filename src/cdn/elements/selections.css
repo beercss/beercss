@@ -35,19 +35,18 @@
 .checkbox > input + span::before,
 .radio > input + span::before,
 .switch > input + span::after {
-  font-family: "Material Icons";
+  font-family: 'Material Icons Outlined';
   font-weight: normal;
   font-style: normal;
   font-size: 24rem;
-  line-height: inherit;
+  line-height: 1;
   letter-spacing: normal;
   text-transform: none;
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: "liga";
+  -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
   vertical-align: middle;
   text-align: center;

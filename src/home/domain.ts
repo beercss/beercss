@@ -10,7 +10,7 @@ const updateShadow = (selector:any, shadow?:string) => {
 
 const updateColor = (selector:any, color?:string) => {
   let elements = utils.queryAll(selector);
-  utils.removeClass(elements, ["primary", "secondary", "tertiary", "error", "amber", "blue", "blue-grey", "brown", "cyan", "deep-orange", "deep-purple", "green", "grey", "indigo", "light-blue", "light-green", "lime", "orange", "pink", "purple", "red", "teal", "yellow"]);
+  utils.removeClass(elements, ["surface-variant", "surface", "background", "primary", "secondary", "tertiary", "error", "amber", "blue", "blue-grey", "brown", "cyan", "deep-orange", "deep-purple", "green", "grey", "indigo", "light-blue", "light-green", "lime", "orange", "pink", "purple", "red", "teal", "yellow"]);
   if (color) utils.addClass(elements, [color]);
 }
 
@@ -36,7 +36,7 @@ const updateElementColor = (selector:string, color?:string) => {
 
 const updateSize = (selector:string, size?:string) => {
   let elements = utils.queryAll(selector);
-  utils.removeClass(elements, ["tiny", "small", "medium", "large", "extra", "min", "max"]);
+  utils.removeClass(elements, ["tiny", "small", "medium", "large", "extra"]);
   if (size) utils.addClass(elements, [size]);
 }
 
@@ -153,11 +153,11 @@ const updateMenu = (data:IHome, css?:string) => {
   utils.setAttribute(radio, "checked", true);
 }
 
-const updateAppBar = (css?:string) => {
-  let appBars = utils.queryAll("#app-bars header");
+const updateAppBar = (selector?:string, css?:string) => {
+  let appBars = utils.queryAll(selector);
+  let buttons = utils.queryAll(selector + " button.extra");
   updateColor(appBars, css);
-  if (/blue|teal|purple/i.test(css)) utils.addClass(appBars, ["white-text"]);
-  else utils.removeClass(appBars, ["white-text"]);
+  updateColor(buttons, css ? 'surface-variant' : '');
 }
 
 const updateHorizontalPosition = (selector:string, position?:string) => {

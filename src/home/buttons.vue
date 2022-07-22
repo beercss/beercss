@@ -395,28 +395,28 @@
     span Segmented buttons
     a.chip.circle(@click="domain.showSamples(data, '#segmented-buttons nav', 'Segmented buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#segmented-buttons button", :colors="[]", :shadows="[]")
+  selectionForButtons(context="#segmented-buttons button", :colors="[]", :shadows="[]", :active="true")
   #segmented-buttons.grid
     .s12.m6.l6
       nav
         button.border.no-margin.left-round
           span Left
-        button.border.no-margin.rectangle
+        button.border.no-margin.no-round
           span Center
         button.border.no-margin.right-round
           span Right
       nav
         button.border.no-margin.left-round
-          i check
+          i.small check
           span Left
-        button.border.no-margin.rectangle
+        button.border.no-margin.no-round
           span Center
         button.border.no-margin.right-round
           span Right
       nav
         button.border.no-margin.left-round
           i search
-        button.border.no-margin.rectangle
+        button.border.no-margin.no-round
           i edit
         button.border.no-margin.right-round
           i home
@@ -424,22 +424,22 @@
       nav
         button.border.no-margin.left-round.max
           span Left
-        button.border.no-margin.rectangle.max
+        button.border.no-margin.no-round.max
           span Center
         button.border.no-margin.right-round.max
           span Right
       nav
         button.border.no-margin.left-round.max
-          i check
+          i.small check
           span Left
-        button.border.no-margin.rectangle.max
+        button.border.no-margin.no-round.max
           span Center
         button.border.no-margin.right-round.max
           span Right
       nav
         button.border.no-margin.left-round.max
           i search
-        button.border.no-margin.rectangle.max
+        button.border.no-margin.no-round.max
           i edit
         button.border.no-margin.right-round.max
           i home

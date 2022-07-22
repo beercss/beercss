@@ -78,6 +78,24 @@ The transparent button is a button for navigation. The shape of button will be r
 </button>
 ```
 
+## Segmented button example
+
+Segmented buttons can have 2-5 segments. Each segment is clearly divided and contains label text, an icon, or both.
+
+```html
+<nav>
+  <button class="border no-margin left-round">Left</button>
+  <button class="border no-margin no-round">Center</button>
+  <button class="border no-margin right-round">Right</button>
+</nav>
+
+<nav>
+  <button class="border no-margin left-round max">Left</button>
+  <button class="border no-margin no-round max">Center</button>
+  <button class="border no-margin right-round max">Right</button>
+</nav>
+```
+
 ## Go to
 
 [Begin](https://github.com/beercss/beercss/blob/main/docs/INDEX.md), [Elements](https://github.com/beercss/beercss/blob/main/docs/ELEMENTS.md), [Helpers](https://github.com/beercss/beercss/blob/main/docs/HELPERS.md), [Settings](https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md), [Summary](https://github.com/beercss/beercss/blob/main/docs/SUMMARY.md), [beercss.com](https://www.beercss.com)

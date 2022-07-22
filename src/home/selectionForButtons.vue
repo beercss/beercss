@@ -9,6 +9,10 @@ nav.wrap
   label.radio(v-for="shadow in shadows")
     input(type="radio", :id="shadow + '-' + context", :name="'shadow-' + context", :checked="shadow == selectedShadow", @click="domain.updateShadow(context, shadow)")
     span {{ shadow || "no-shadow" }}
+  label.checkbox(v-show="active")
+    input(type="checkbox" @click="domain.updateActive(context, $event)")
+    span active
+  
 </template>
 
 <script setup lang="ts">
@@ -26,6 +30,7 @@ export interface IProps {
   selectedColor?: string,
   selectedSize?: string,
   selectedShadow?: string,
+  active?: boolean
 }
 
 const {
@@ -38,7 +43,8 @@ const {
   defaultShadow = "",
   selectedColor = "",
   selectedSize = "",
-  selectedShadow = ""
+  selectedShadow = "",
+  active = false
 } = defineProps<IProps>();
 
 onMounted(() => {

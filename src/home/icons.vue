@@ -14,6 +14,17 @@
       span outlined
   #icons-sample
     nav.wrap
+      i.tiny home
+      i.tiny account_circle
+      i.tiny search
+      i.tiny build
+      i.tiny done
+      i.tiny cached
+      i.tiny star_rate
+      i.tiny work
+      i.tiny update
+      i.tiny thumb_up
+    nav.wrap
       i.small home
       i.small account_circle
       i.small search
@@ -46,6 +57,17 @@
       i.large work
       i.large update
       i.large thumb_up
+    nav.wrap
+      i.extra home
+      i.extra account_circle
+      i.extra search
+      i.extra build
+      i.extra done
+      i.extra cached
+      i.extra star_rate
+      i.extra work
+      i.extra update
+      i.extra thumb_up
 
   #modal-icons.modal.right.large
     header.fixed

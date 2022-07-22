@@ -2,6 +2,10 @@
   border-radius: 32rem !important;
 }
 
+.no-round {
+  border-radius: 0 !important;
+}
+
 .top-round {
   border-radius: 32rem 32rem 0 0 !important;
 }
@@ -92,10 +96,6 @@
 
 .diamond.round {
   transform: rotate(45deg);
-}
-
-.rectangle {
-  border-radius: 0;
 }
 
 .border:not(table, .field) { 

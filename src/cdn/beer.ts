@@ -259,7 +259,7 @@
       removeClass(overlay, "active");
       removeClass(to, "active");
     } else {
-      addClass(from, "active");
+      if (!/button/i.test(from.tagName) && !hasClass(from, "button") && !hasClass(from, "chip")) addClass(from, "active");
       addClass(overlay, "active");
       addClass(to, "active");
     }

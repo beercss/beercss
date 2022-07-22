@@ -82,10 +82,10 @@ Headers and footers are `position: sticky` when `fixed`.
 </article>
 ```
 
-## App bar example
+## Top app bar example
 
 ```html
-<header class="primary padding">
+<header class="primary">
   <nav>
     <button class="circle transparent">
       <i>arrow_backward</i>
@@ -100,6 +100,31 @@ Headers and footers are `position: sticky` when `fixed`.
     </button>
     <button class="circle transparent">
       <i>more_vert</i>
+    </button>
+  </nav>
+</header>
+```
+
+## Bottom app bar example
+
+```html
+<footer>
+  <nav>
+    <button class="circle transparent">
+      <i>check_box_filled</i>
+    </button>
+    <button class="circle transparent">
+      <i>brush</i>
+    </button>
+    <button class="circle transparent">
+      <i>mic</i>
+    </button>
+    <button class="circle transparent">
+      <i>image</i>
+    </button>
+    <div class="max"></div>
+    <button class="square round extend">
+      <i>add</i>
     </button>
   </nav>
 </header>

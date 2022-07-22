@@ -2,16 +2,17 @@
 .modal.large.left.no-scroll(:id="id")
   slot
   div(v-show="!data.showCssVariables")
-    nav
-      .max
-        h5
-          span Themes
-          a.chip.circle(@click="data.showCssVariables=true")
-            i code
-      button.circle.transparent(@click="sharedDomain.updateMode(data)")
-        i light_mode
-      button.circle.transparent(:data-ui="'#' + id")
-        i close
+    header.fixed
+      nav
+        .max
+          h5
+            span Themes
+            a.chip.circle(@click="data.showCssVariables=true")
+              i code
+        button.circle.transparent(@click="sharedDomain.updateMode(data)")
+          i light_mode
+        button.circle.transparent(:data-ui="'#' + id")
+          i close
     .tabs.left-align
       a.active(:data-ui="`#${id}-tab-image`") From image
       a(:data-ui="`#${id}-tab-color`") From color
@@ -56,12 +57,13 @@
         button.round.square.extra.black(@click="sharedDomain.updateTheme(data, '#000000')")
         button.round.square.extra.white(@click="sharedDomain.updateTheme(data, '#ffffff')")
   div(v-if="data.showCssVariables && data.theme")
-    header.fixed(@click="data.showCssVariables=false")
+    header.fixed
       nav
-        button.transparent.circle(data-ui="")
-          i arrow_backward
-        h5 Back
+        h5 Themes
         a.button.border(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
+        .max
+        button.transparent.circle(@click="data.showCssVariables=false")
+          i arrow_backward
     nav
       label.radio
         input(type="radio", value="light", v-model="data.theme.selected")

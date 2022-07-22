@@ -7,28 +7,28 @@ div
       img(:src="'/add.png'")
     .space
     a(href="/gmail", :class="{ active: data.url == '/gmail' }")
-      i.outlined inbox
+      i inbox
       .tooltip.right Inbox
     a(href="/gmail/snoozed", :class="{ active: data.url == '/gmail/snoozed' }")
-      i.outlined watch_later
+      i watch_later
       .tooltip.right Snoozed
     a(
       href="/gmail/important",
       :class="{ active: data.url == '/gmail/important' }"
     )
-      i.outlined label_important
+      i label_important
       .tooltip.right Important
     a(href="/gmail/sent", :class="{ active: data.url == '/gmail/sent' }")
-      i.outlined send
+      i send
       .tooltip.right Sent
     a(href="/gmail/drafts", :class="{ active: data.url == '/gmail/drafts' }")
-      i.outlined insert_drive_file
+      i insert_drive_file
       .tooltip.right Drafts
     a(href="/gmail/spam", :class="{ active: data.url == '/gmail/spam' }")
-      i.outlined error_outline
+      i error_outline
       .tooltip.right Spam
     a(data-ui="#themes1")
-      i.outlined brightness_medium
+      i brightness_medium
       .tooltip.right Themes
     themes(id="themes1", v-model="data")
       .large-space
@@ -55,18 +55,18 @@ div
 
   nav.bottom.s
     a(href="/gmail", :class="{ active: data.url == '/gmail' }")
-      i.outlined inbox
+      i inbox
       div Inbox
     a(href="/gmail/sent", :class="{ active: data.url == '/gmail/sent' }")
-      i.outlined send
+      i send
       div Sent
     a.button.white.circle.large(data-ui="#modal-add-small")
       img(:src="'/add.png'")
     a(href="/gmail/drafts", :class="{ active: data.url == '/gmail/drafts' }")
-      i.outlined insert_drive_file
+      i insert_drive_file
       div Drafts
     a(data-ui="#themes2")
-      i.outlined brightness_medium
+      i brightness_medium
       div Theme
     themes(id="themes2", v-model="data")
       .large-space
@@ -75,28 +75,28 @@ div
   nav.top.no-shadow
     .space
     button.circle.large.transparent(data-ui="#dropdown-menu")
-      i.outlined menu
+      i menu
       #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
         a.row(href="/gmail")
-          i.outlined inbox
+          i inbox
           .max Inbox
         a.row(href="/gmail/snoozed")
-          i.outlined watch_later
+          i watch_later
           .max Snoozed
         a.row(href="/gmail/important")
-          i.outlined label_important
+          i label_important
           .max Important
         a.row(href="/gmail/sent")
-          i.outlined send
+          i send
           .max Sent
         a.row(href="/gmail/drafts")
-          i.outlined insert_drive_file
+          i insert_drive_file
           .max Drafts
         a.row(href="/gmail/spam")
-          i.outlined error_outline
+          i error_outline
           .max Spam
         a.row(data-ui="#themes1")
-          i.outlined brightness_medium
+          i brightness_medium
           .max Themes
     .space
     img(v-show="!data.isDark", :src="'/gmail-light.png'")
@@ -108,9 +108,9 @@ div
       i.front mic
     .max
     button.circle.large.transparent.s(data-ui="#modal-search")
-      i.outlined search
+      i search
     button.circle.large.transparent.m.l(data-ui="#dropdown-settings")
-      i.outlined settings
+      i settings
       #dropdown-settings.dropdown.left.no-wrap(
         data-ui="#dropdown-settings"
       )
@@ -121,7 +121,7 @@ div
           div Appearance
           label Change display settings
     button.circle.large.transparent.m.l(data-ui="#dropdown-apps")
-      i.outlined apps
+      i apps
       #dropdown-apps.dropdown.left.padding.no-wrap(data-ui="#dropdown-apps")
         .grid.no-space
           .s4.center-align
@@ -147,14 +147,14 @@ div
     #modal-add.modal.round.large-width
       nav
         a(data-ui="#modal-add")
-          i.outlined arrow_back
+          i arrow_back
         a
           h5.no-margin New message
         .max
         a(data-ui="#modal-add")
-          i.outlined attach_file
+          i attach_file
         a(data-ui="#modal-add")
-          i.outlined send
+          i send
       .grid
         .s12
           .field.label.border
@@ -176,14 +176,14 @@ div
     #modal-add-small.modal.top-round.bottom
       nav
         a(data-ui="#modal-add-small")
-          i.outlined arrow_back
+          i arrow_back
         a
           h5.no-margin New message
         .max
         a(data-ui="#modal-add-small")
-          i.outlined attach_file
+          i attach_file
         a(data-ui="#modal-add-small")
-          i.outlined send
+          i send
       .grid
         .s12
           .field.label.border

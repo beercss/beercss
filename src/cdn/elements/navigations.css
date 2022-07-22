@@ -47,6 +47,21 @@ nav.wrap > *,
   padding: 0 8rem;
 }
 
+header > nav,
+header > .row {
+  min-height: 64rem;
+}
+
+footer > nav,
+footer > .row {
+  min-height: 80rem;
+}
+
+nav > .border.no-margin + .border.no-margin,
+.row > .border.no-margin + .border.no-margin {
+  border-left: 0;
+}
+
 nav.left,
 nav.right,
 nav.top,

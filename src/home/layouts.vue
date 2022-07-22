@@ -95,32 +95,26 @@ div
           footer.fixed
             h5.no-margin Fixed footer
   .medium-space
-  #app-bars
-    h6 App bars
+  #top-app-bars
+    h6 Top app bars
       a.chip.circle(
-        @click="data.layout = 0; domain.showSamples(data, '#app-bars header', 'App bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
+        @click="data.layout = 0; domain.showSamples(data, '#top-app-bars header', 'Top app bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
         i code
     nav.wrap
       label.radio
-        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('blue')")
-        span blue
+        input(type="radio", name="radio-top-app-bars", @click="domain.updateAppBar('#top-app-bars header')", checked)
+        span default
       label.radio
-        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('purple')")
-        span purple
-      label.radio
-        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('teal')", checked)
-        span teal
-      label.radio
-        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('primary')")
+        input(type="radio", name="radio-top-app-bars", @click="domain.updateAppBar('#top-app-bars header', 'primary')")
         span primary
       label.radio
-        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('secondary')")
+        input(type="radio", name="radio-top-app-bars", @click="domain.updateAppBar('#top-app-bars header', 'secondary')")
         span secondary
       label.radio
-        input(type="radio", name="radio-app-bars", @click="domain.updateAppBar('tertiary')")
+        input(type="radio", name="radio-top-app-bars", @click="domain.updateAppBar('#top-app-bars header', 'tertiary')")
         span tertiary
-    header.padding.primary
+    header
       nav
         button.circle.transparent
           i menu
@@ -128,7 +122,7 @@ div
         button.circle.transparent
           img.responsive(:src="'/favicon.png'")
     .space
-    header.padding.primary
+    header
       nav
         button.circle.transparent
           i arrow_backward
@@ -140,7 +134,7 @@ div
         button.circle.transparent
           i more_vert
     .space
-    header.padding.primary
+    header
       nav
         button.circle.transparent
           i arrow_backward
@@ -154,7 +148,7 @@ div
       .small-space
       h5.small-padding Headline small
     .space
-    header.padding.primary
+    header
       nav
         button.circle.transparent
           i arrow_backward
@@ -167,6 +161,39 @@ div
           i more_vert
       .medium-space
       h5.small-padding Headline medium
+  .medium-space
+  #bottom-app-bars
+    h6 Bottom app bars
+      a.chip.circle(
+        @click="data.layout = 0; domain.showSamples(data, '#bottom-app-bars footer', 'Bottom app bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
+      )
+        i code
+    nav.wrap
+      label.radio
+        input(type="radio", name="radio-bottom-app-bars", @click="domain.updateAppBar('#bottom-app-bars footer')", checked)
+        span default
+      label.radio
+        input(type="radio", name="radio-bottom-app-bars", @click="domain.updateAppBar('#bottom-app-bars footer', 'primary')")
+        span primary
+      label.radio
+        input(type="radio", name="radio-bottom-app-bars", @click="domain.updateAppBar('#bottom-app-bars footer', 'secondary')")
+        span secondary
+      label.radio
+        input(type="radio", name="radio-bottom-app-bars", @click="domain.updateAppBar('#bottom-app-bars footer', 'tertiary')")
+        span tertiary
+    footer
+      nav
+        button.circle.transparent
+          i check_box_filled
+        button.circle.transparent
+          i brush
+        button.circle.transparent
+          i mic
+        button.circle.transparent
+          i image
+        .max
+        button.square.round.extra
+          i add
   .medium-space
   #list
     h6

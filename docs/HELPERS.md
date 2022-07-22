@@ -50,7 +50,7 @@ divider, small-divider, medium-divider, large-divider
 
 ## Forms
 
-border, circle, square, diamond, none, fill, extend, round, left-round, right-round, top-round, bottom-round
+border, circle, square, diamond, none, fill, extend, round, no-round, left-round, right-round, top-round, bottom-round
 
 ## Margins
 
@@ -82,13 +82,15 @@ no-shadow, small-shadow, medium-shadow, large-shadow, shadow, left-shadow, right
 
 ## Sizes
 
-tiny, small, medium, large, extra, wrap, no-wrap, min, max, small-width, medium-width, large-width, small-height, medium-height, large-height
+tiny, small, medium, large, extra, wrap, no-wrap, max, small-width, medium-width, large-width, small-height, medium-height, large-height
 
 ## Spaces
 
 space, no-space, small-space, medium-space, large-space
 
 ## Theme
+
+light, dark
 
 primary, primary-text, primary-border, primary-container
 

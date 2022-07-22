@@ -41,6 +41,12 @@
   width: 704rem;
 }
 
+header,
+footer {
+  padding: 0 16rem;
+  background-color: var(--surface-variant);
+}
+
 header.fixed,
 footer.fixed {
   position: sticky;
