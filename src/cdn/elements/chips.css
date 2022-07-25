@@ -36,17 +36,6 @@
   color: var(--secondary);
 }
 
-.chip.active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--active);
-  border-radius: inherit;
-}
-
 .chip.circle {
   border-radius: 40rem;
   padding: 0;
@@ -55,4 +44,14 @@
 .chip.square {
   border-radius: 0;
   padding: 0;
+}
+
+.chip.fill,
+.chip.active {
+  background-color: var(--secondary-container) !important;
+  color: var(--on-secondary-container) !important;
+}
+
+.chip.active.border {
+  border: 1px solid transparent !important;
 }

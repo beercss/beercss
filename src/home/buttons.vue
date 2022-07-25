@@ -222,6 +222,28 @@
         img.responsive(:src="'/favicon.png'")
         span Button
     nav.wrap
+      button.fill Button
+      button.fill
+        i home
+        span Button
+      button.fill
+        img(:src="'/favicon.png'")
+        span Button
+      button.fill
+        img.responsive(:src="'/favicon.png'")
+        span Button
+    nav.wrap
+      button.fill.round Button
+      button.fill.round
+        i home
+        span Button
+      button.fill.round
+        img(:src="'/favicon.png'")
+        span Button
+      button.fill.round
+        img.responsive(:src="'/favicon.png'")
+        span Button
+    nav.wrap
       button.border Button
       button.border
         i home

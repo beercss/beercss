@@ -122,14 +122,10 @@ button:disabled::after {
   display: none;
 }
 
-.button.active::before,
-button.active::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--active);
-  border-radius: inherit;
+.button.fill,
+button.fill,
+.button.active,
+button.active  {
+  background-color: var(--secondary-container) !important;
+  color: var(--on-secondary-container) !important;
 }
