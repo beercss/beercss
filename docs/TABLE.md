@@ -18,10 +18,6 @@ left-align, right-align, center-align
 
 border
 
-**Sizes**
-
-min, max
-
 **Spaces**
 no-space, space, small-space, medium-space, large-space
 

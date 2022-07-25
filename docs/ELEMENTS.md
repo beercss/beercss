@@ -32,6 +32,10 @@ Dropdowns display a list of choices on temporary surfaces.
 
 Expansion contain creation flows and allow lightweight editing of an element.
 
+## [Grid](https://github.com/beercss/beercss/blob/main/docs/GRID.md)
+
+Grids are rows and cols system grid. They are most used to organize content.
+
 ## [Icon](https://github.com/beercss/beercss/blob/main/docs/ICON.md)
 
 Material design system icons are simple, modern, friendly, and sometimes quirky. Each icon is created using our design guidelines to depict in simple and minimal forms the universal concepts used commonly throughout a UI. Ensuring readability and clarity at both large and small sizes, these icons have been optimized for beautiful display on all common platforms and display resolutions.
@@ -75,10 +79,6 @@ Progress display the length of a process.
 ## [Radio](https://github.com/beercss/beercss/blob/main/docs/RADIO.md)
 
 Radio buttons allow users to select one option from a set.
-
-## [Row](https://github.com/beercss/beercss/blob/main/docs/GRID.md)
-
-Rows and cols are a system grid. They are most used to organize content.
 
 ## [Select](https://github.com/beercss/beercss/blob/main/docs/SELECT.md)
 

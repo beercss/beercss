@@ -1,5 +1,5 @@
 i {
-  font-family: 'Material Icons Outlined';
+  font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
   font-size: 24rem;
@@ -36,4 +36,8 @@ i.large {
 i.extra {
   font-size: 32rem;
   width: 32rem;
+}
+
+i.fill {
+  font-variation-settings: 'FILL' 1;
 }

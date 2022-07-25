@@ -168,9 +168,6 @@ div
                     b chip
                     span &nbsp;small, medium, large, border, circle, square, round, left-round, right-round, top-round, bottom-round
                   p
-                    b col
-                    span &nbsp;min, max, s1...s12, m1...m12, l1...l12
-                  p
                     b &lt;details&gt;
                   p
                     b dropdown
@@ -191,7 +188,7 @@ div
                     span &nbsp;fixed
                   p
                     b &lt;i&gt;
-                    span &nbsp;tiny, small, medium, large, extra
+                    span &nbsp;tiny, small, medium, large, extra. fill
                   p
                     b &lt;img&gt;
                     span &nbsp;tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive
@@ -204,7 +201,7 @@ div
                     span &nbsp;small, medium, large
                   p
                     b &lt;main&gt;
-                    span &nbsp;responsive, min, max
+                    span &nbsp;responsive, max
                   p
                     b modal
                     span &nbsp;left, right, top, bottom, small, medium, large, border, round, left-round, right-round, top-round, bottom-round, active
@@ -222,12 +219,12 @@ div
                     span &nbsp;left, right, top, bottom
                   p
                     b row
-                    span &nbsp;no-wrap, no-space, space, small-space, medium-space, large-space, min, max
+                    span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align
                   p
                     b &lt;summary&gt;
                   p
                     b &lt;table&gt;
-                    span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, min, max, border
+                    span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border
                   p
                     b tabs
                     span &nbsp;left-align, right-align, center-align

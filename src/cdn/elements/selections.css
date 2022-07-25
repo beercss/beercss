@@ -35,7 +35,7 @@
 .checkbox > input + span::before,
 .radio > input + span::before,
 .switch > input + span::after {
-  font-family: 'Material Icons Outlined';
+  font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
   font-size: 24rem;
@@ -82,6 +82,7 @@
 .checkbox > input:checked + span::before {
   color: var(--primary);
   content: "check_box";
+  font-variation-settings: 'FILL' 1;
 }
 
 .radio > input:checked + span::before {

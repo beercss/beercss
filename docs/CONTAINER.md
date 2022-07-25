@@ -12,7 +12,7 @@ A container is the main content of page.
 
 **Sizes**
 
-responsive, min, max
+responsive, max
 
 ## Example
 

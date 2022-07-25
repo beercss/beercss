@@ -186,7 +186,7 @@ const updateVerticalAlign = (selector:string, align?:string) => {
 
 const updateIcon = (css?:string) => {
   let elements = utils.queryAll("#icons-sample i");
-  utils.removeClass(elements, ["outlined"]);
+  utils.removeClass(elements, ["fill"]);
   if (css) utils.addClass(elements, [css]); 
 }
 

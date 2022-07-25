@@ -10,8 +10,8 @@
       input(type="radio", name="form-icons", checked, @click="domain.updateIcon()")
       span default
     label.radio
-      input(type="radio", name="form-icons", @click="domain.updateIcon('outlined')")
-      span outlined
+      input(type="radio", name="form-icons", @click="domain.updateIcon('fill')")
+      span fill
   #icons-sample
     nav.wrap
       i.tiny home

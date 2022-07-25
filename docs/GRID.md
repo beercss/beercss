@@ -1,12 +1,12 @@
-# Row
+# Grid
 
-Rows and cols are a system grid. They are most used to organize content.
+Grids are rows and cols system grid. They are most used to organize content.
 
 ## Element
 
 ```html
-<div class="row">
-  <div class="col">...</div>
+<div class="grid">
+  <div>...</div>
 </div>
 ```
 

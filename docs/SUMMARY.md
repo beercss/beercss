@@ -14,8 +14,6 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **chip** small, medium, large, border, circle, square, round, left-round, right-round, top-round, bottom-round
 
-**col** min, max, s1...s12, m1...m12, l1...l12
-
 **&lt;details&gt;**
 
 **dropdown** left, right, wrap, no-wrap, active
@@ -30,7 +28,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;header&gt;** fixed
 
-**&lt;i&gt;** tiny, small, medium, large, extra
+**&lt;i&gt;** tiny, small, medium, large, extra, fill
 
 **&lt;img&gt;** tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive
 
@@ -38,7 +36,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **loader** small, medium, large
 
-**&lt;main&gt;** responsive, min, max
+**&lt;main&gt;** responsive, max
 
 **modal** left, right, top, bottom, small, medium, large, border, round, left-round, right-round, top-round, bottom-round, active
 
@@ -50,11 +48,11 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **progress** left, right, top, bottom
 
-**row** no-wrap, no-space, space, small-space, medium-space, large-space, min, max
+**row** left-align, right-align, center-align, top-align, bottom-align, middle-align
 
 **&lt;summary&gt;**
 
-**&lt;table&gt;** left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, min, max, border
+**&lt;table&gt;** left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border
 
 **tabs** left-align, right-align, center-align
 
@@ -88,11 +86,11 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Shadows** no-shadow, small-shadow, medium-shadow, large-shadow, shadow, left-shadow, right-shadow, top-shadow, bottom-shadow
 
-**Sizes** tiny, small, medium, large, extra, wrap, no-wrap, min, max, small-width, medium-width, large-width, small-height, medium-height, large-height
+**Sizes** tiny, small, medium, large, extra, wrap, no-wrap, max, small-width, medium-width, large-width, small-height, medium-height, large-height
 
 **Spaces** space, no-space, small-space, medium-space, large-space
 
-**Theme** primary, primary-text, primary-border, primary-container, secondary, secondary-text, secondary-border, secondary-container, tertiary, tertiary-text, tertiary-border, tertiary-container, error, error-text, error-border, error-container, background, surface, surface-variant, inverse-surface, black, black-text, black-border, white, white-text, white-border, transparent, transparent-text, transparent-border
+**Theme** light, dark, primary, primary-text, primary-border, primary-container, secondary, secondary-text, secondary-border, secondary-container, tertiary, tertiary-text, tertiary-border, tertiary-container, error, error-text, error-border, error-container, background, surface, surface-variant, inverse-surface, black, black-text, black-border, white, white-text, white-border, transparent, transparent-text, transparent-border
 
 **Triggers** active
 

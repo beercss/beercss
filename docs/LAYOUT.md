@@ -134,25 +134,19 @@ Headers and footers are `position: sticky` when `fixed`.
 
 ```html
 <div class="row">
-  <div class="col min">
-    <a>
-      <i>warning</i>
-    </a>
-  </div>
-  <div class="col">
+  <a>
+    <i>warning</i>
+  </a>
+  <div class="max">
     <div>Title</div>
     <div class="small-text">Some text here</div>
   </div>
-  <div class="col min">
-    <nav>
-      <a>
-        <i>edit</i>
-      </a>
-      <a>
-        <i>delete</i>
-      </a>
-    </nav>
-  </div>
+  <a>
+    <i>edit</i>
+  </a>
+  <a>
+    <i>delete</i>
+  </a>
 </div>
 ```
 
