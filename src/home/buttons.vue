@@ -398,14 +398,15 @@
   selectionForButtons(context="#segmented-buttons button", :colors="[]", :shadows="[]", :active="true")
   #segmented-buttons.grid
     .s12.m6.l6
-      nav
+      nav.no-margin
         button.border.no-margin.left-round
           span Left
         button.border.no-margin.no-round
           span Center
         button.border.no-margin.right-round
           span Right
-      nav
+      .space
+      nav.no-margin
         button.border.no-margin.left-round
           i.small check
           span Left
@@ -413,7 +414,8 @@
           span Center
         button.border.no-margin.right-round
           span Right
-      nav
+      .space
+      nav.no-margin
         button.border.no-margin.left-round
           i search
         button.border.no-margin.no-round
@@ -421,14 +423,15 @@
         button.border.no-margin.right-round
           i home
     .s12.m6.l6
-      nav
+      nav.no-margin
         button.border.no-margin.left-round.max
           span Left
         button.border.no-margin.no-round.max
           span Center
         button.border.no-margin.right-round.max
           span Right
-      nav
+      .space
+      nav.no-margin
         button.border.no-margin.left-round.max
           i.small check
           span Left
@@ -436,7 +439,8 @@
           span Center
         button.border.no-margin.right-round.max
           span Right
-      nav
+      .space
+      nav.no-margin
         button.border.no-margin.left-round.max
           i search
         button.border.no-margin.no-round.max
