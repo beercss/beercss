@@ -146,14 +146,13 @@ div
   main.responsive.max
     #modal-add.modal.round.large-width
       nav
-        a(data-ui="#modal-add")
+        button.circle.transparent(data-ui="#modal-add")
           i arrow_back
-        a
-          h5.no-margin New message
+        h5 New message
         .max
-        a(data-ui="#modal-add")
+        button.circle.transparent(data-ui="#modal-add")
           i attach_file
-        a(data-ui="#modal-add")
+        button.circle.transparent(data-ui="#modal-add")
           i send
       .grid
         .s12
@@ -175,14 +174,13 @@ div
 
     #modal-add-small.modal.top-round.bottom
       nav
-        a(data-ui="#modal-add-small")
+        button.circle.transparent(data-ui="#modal-add-small")
           i arrow_back
-        a
-          h5.no-margin New message
+        h5 New message
         .max
-        a(data-ui="#modal-add-small")
+        button.circle.transparent(data-ui="#modal-add-small")
           i attach_file
-        a(data-ui="#modal-add-small")
+        button.circle.transparent(data-ui="#modal-add-small")
           i send
       .grid
         .s12

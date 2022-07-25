@@ -226,6 +226,7 @@ nav.bottom > a:not(button, .button, .chip).active > i {
   background-color: var(--primary);
   color: var(--on-primary);
   padding: 4rem 16rem;
+  font-variation-settings: 'FILL' 1;
 }
 
 nav.left > .modal {
