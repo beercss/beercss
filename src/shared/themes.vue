@@ -60,10 +60,10 @@
     header.fixed
       nav
         h5 Themes
-        a.button.border(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
+        a.button.border.m.l(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
         .max
         button.transparent.circle(@click="data.showCssVariables=false")
-          i arrow_backward
+          i close
     nav
       label.radio
         input(type="radio", value="light", v-model="data.theme.selected")
