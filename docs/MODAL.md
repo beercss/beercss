@@ -18,9 +18,9 @@ border, round, left-round, right-round, top-round, bottom-round
 
 left, right, top, bottom
 
-**Shadows**
+**Elevates**
 
-no-shadow, small-shadow, medium-shadow, large-shadow
+no-elevate, small-elevate, medium-elevate, large-elevate
 
 **Sizes**
 

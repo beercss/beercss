@@ -2,11 +2,10 @@
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  box-shadow: var(--shadow2);
-  color: var(--on-surface-variant);
-  background-color: var(--surface-variant);
+  box-shadow: var(--elevate2);
+  color: var(--on-surface);
+  background-color: var(--surface);
   padding: 16rem;
-  box-sizing: border-box;
   z-index: 100;
   left: 50%;
   top: 10%;
@@ -163,11 +162,16 @@ nav.bottom > .modal {
   padding: 16rem 48rem 80rem 48rem;
 }
 
-.modal > a:not(button, .button, .chip):hover,
-.modal > a:not(button, .button, .chip).active {
-  background-color: var(--active);
+.modal > a.row:hover,
+.modal > a.row.active {
+  background-color: var(--secondary-container);
 }
 
-.modal > a:not(button, .button, .chip, .grid) {
-  padding: 8rem 0;
+.modal > .row {
+  padding: 12rem 8rem;
+}
+
+.modal > header,
+.modal > footer {
+  padding: 0;
 }

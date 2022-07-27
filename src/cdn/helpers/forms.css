@@ -99,6 +99,7 @@
 }
 
 .border:not(table, .field) { 
+  box-sizing: border-box;
   border: 1px solid var(--outline);
   background-color: transparent;
   box-shadow: none;

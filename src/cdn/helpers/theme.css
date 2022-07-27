@@ -127,3 +127,8 @@
 .transparent-text {
   color: transparent !important;
 }
+
+.fill {
+  background-color: var(--surface-variant) !important;
+  color: var(--on-surface-variant) !important;
+}

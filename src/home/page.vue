@@ -129,7 +129,7 @@ div
             h3 Get started 
             .medium-space
             h5 From CDN
-            pre.wrap(style="font-family: courier new")
+            pre.scroll.fill.no-round(style="font-family: courier new")
               | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.2.0/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
               | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.2.0/dist/cdn/beer.min.js" type="text/javascript"&gt;&lt;/script&gt;
@@ -137,7 +137,7 @@ div
               | &lt;script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"&gt;&lt;/script&gt;
             .medium-space
             h5 From NPM
-            pre.wrap(style="font-family: courier new")
+            pre.scroll.fill.no-round(style="font-family: courier new")
               | // installing
               | npm i beercss
               | npm i material-dynamic-colors
@@ -243,6 +243,8 @@ div
               a.button(href="https://codepen.io/collection/XydYMB") Codepen
           .large-space
           .large-space
+        .s12
+          appBars
         .s12
           badges
         .s12
@@ -392,6 +394,7 @@ import themes from "../shared/themes.vue";
 import data from "./data";
 import domain from "./domain";
 import sharedDomain from "../shared/domain";
+import appBars from "./appBars.vue";
 import badges from "./badges.vue";
 import buttons from "./buttons.vue";
 import cards from "./cards.vue";

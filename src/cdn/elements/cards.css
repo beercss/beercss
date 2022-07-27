@@ -1,7 +1,7 @@
 article {
-  box-shadow: var(--shadow1);
-  background-color: var(--surface-variant);
-  color: var(--on-surface-variant);
+  box-shadow: var(--elevate1);
+  background-color: var(--surface);
+  color: var(--on-surface);
   padding: 16rem;
   border-radius: 12rem;
   display: block;

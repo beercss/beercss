@@ -16,6 +16,7 @@ i {
   text-align: center;
   overflow: hidden;
   width: 24rem;
+  box-sizing: content-box;
 }
 
 i.tiny {

@@ -1,5 +1,6 @@
 <template lang="pug">
 #badges
+  .large-space
   h4
     span Badges
     a.chip.circle(@click="domain.showSamples(data, '#badges nav > a', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
@@ -9,14 +10,14 @@
       input(type="radio", name="color-badges", checked, @click="domain.updateElementColor('#badges .badge')")
       span default
     label.radio
-      input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'blue')")
-      span blue
+      input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'primary')")
+      span primary
     label.radio
-      input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'purple')")
-      span purple
+      input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'secondary')")
+      span secondary
     label.radio
-      input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'teal')")
-      span teal
+      input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'tertiary')")
+      span tertiary
   .space
   .grid
     .s12.m6

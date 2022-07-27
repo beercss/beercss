@@ -40,6 +40,7 @@ nav.wrap,
 nav.wrap > *,
 .row.wrap > * {
   margin: 8rem;
+  vertical-align: middle;
 }
 
 .field > nav,
@@ -72,10 +73,9 @@ nav.bottom {
   flex-direction: column;
   border: 0;
   position: fixed;
-  color: var(--on-surface-variant);
-  background-color: var(--surface-variant);
+  color: var(--on-surface);
+  background-color: var(--surface);
   transform: none;
-  box-sizing: border-box;
   z-index: 100;
   left: 0;
   top: 0;
@@ -94,30 +94,6 @@ nav.right {
 nav.top,
 nav.bottom {
   height: 80rem;
-}
-
-nav.left.border {
-  border-top: none;
-  border-bottom: none;
-  border-left: none;
-}
-
-nav.right.border {
-  border-top: none;
-  border-bottom: none;
-  border-right: none;
-}
-
-nav.top.border {
-  border-top: none;
-  border-right: none;
-  border-left: none;
-}
-
-nav.bottom.border {
-  border-bottom: none;
-  border-right: none;
-  border-left: none;
 }
 
 nav.top {
@@ -223,8 +199,8 @@ nav.top > a:not(button, .button, .chip).active > i,
 nav.bottom > a:not(button, .button, .chip):focus > i,
 nav.bottom > a:not(button, .button, .chip):hover > i,
 nav.bottom > a:not(button, .button, .chip).active > i {
-  background-color: var(--primary);
-  color: var(--on-primary);
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
   padding: 4rem 16rem;
   font-variation-settings: 'FILL' 1;
 }

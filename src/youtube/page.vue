@@ -103,46 +103,38 @@
     p No new notifications here
 
   #modal-expanded.modal.left.small
-    nav
-      a(data-ui="#modal-expanded")
-        i menu
-      a
-        img(v-show="!data.isDark", :src="'/youtube-light.png'")
-        img(v-show="data.isDark", :src="'/youtube-dark.png'")
-    .medium-space
-    a.row(data-ui="#modal-expanded", href="/youtube")
-      .min
-        i home
-      .min Home
-    a.row(data-ui="#modal-expanded", href="/youtube/whats-hot")
-      .min
-        i whatshot
-      .min What's hot
-    a.row(data-ui="#modal-expanded", href="/youtube/subscriptions")
-      .min
-        i subscriptions
-      .min Subscript
-    a.row(data-ui="#modal-expanded", href="/youtube/library")
-      .min
-        i video_library
-      .min Library
+    header.fixed
+      nav
+        button.transparent.circle(data-ui="#modal-expanded")
+          i menu
+        a
+          img(v-show="!data.isDark", :src="'/youtube-light.png'")
+          img(v-show="data.isDark", :src="'/youtube-dark.png'")
+    a.row.round(data-ui="#modal-expanded", href="/youtube")
+      i home
+      div Home
+    a.row.round(data-ui="#modal-expanded", href="/youtube/whats-hot")
+      i whatshot
+      div What's hot
+    a.row.round(data-ui="#modal-expanded", href="/youtube/subscriptions")
+      i subscriptions
+      div Subscript
+    a.row.round(data-ui="#modal-expanded", href="/youtube/library")
+      i video_library
+      div Library
     .small-divider
-    a.row(data-ui="#modal-expanded")
-      .min
-        i history
-      .min History
-    a.row(data-ui="#modal-expanded")
-      .min
-        i slideshow
-      .min Your videos
-    a.row(data-ui="#modal-expanded")
-      .min
-        i playlist_play
-      .min Your albuns
-    a.row(data-ui="#modal-expanded")
-      .min
-        i watch_later
-      .min Watch later
+    a.row.round(data-ui="#modal-expanded")
+      i history
+      div History
+    a.row.round(data-ui="#modal-expanded")
+      i slideshow
+      div Your videos
+    a.row.round(data-ui="#modal-expanded")
+      i playlist_play
+      div Your albuns
+    a.row.round(data-ui="#modal-expanded")
+      i watch_later
+      div Watch later
 
   #modal-add.modal.bottom.top-round
     nav

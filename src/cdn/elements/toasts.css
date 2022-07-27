@@ -9,7 +9,7 @@
   z-index: 200;
   visibility: hidden;
   display: inline-block;
-  box-shadow: var(--shadow2);
+  box-shadow: var(--elevate2);
   color: var(--on-error);
   background-color: var(--error-background);
   padding: 16rem;

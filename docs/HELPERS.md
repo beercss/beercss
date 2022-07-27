@@ -48,6 +48,10 @@ yellow1, yellow2, yellow3, yellow4, yellow5, yellow6, yellow7, yellow8, yellow9,
 
 divider, small-divider, medium-divider, large-divider
 
+## Elevates
+
+no-elevate, small-elevate, medium-elevate, large-elevate, 
+
 ## Forms
 
 border, circle, square, diamond, none, fill, extend, round, no-round, left-round, right-round, top-round, bottom-round
@@ -78,7 +82,7 @@ scroll, no-scroll
 
 ## Shadows
 
-no-shadow, small-shadow, medium-shadow, large-shadow, shadow, left-shadow, right-shadow, top-shadow, bottom-shadow
+shadow, left-shadow, right-shadow, top-shadow, bottom-shadow
 
 ## Sizes
 

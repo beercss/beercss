@@ -6,11 +6,12 @@
   margin: 0;
   padding: 0;
   border-radius: inherit;
+  box-sizing: border-box;
 }
 
 body {
   color: var(--on-background);
-  background-color: var(--background);
+  background-color: var(--base);
   overflow-x: hidden;
 }
 

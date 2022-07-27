@@ -4,13 +4,13 @@ import utils from "../shared/utils";
 
 const updateShadow = (selector:any, shadow?:string) => {
   let elements = utils.queryAll(selector);
-  utils.removeClass(elements, ["no-shadow", "small-shadow", "medium-shadow", "large-shadow"]);
+  utils.removeClass(elements, ["no-elevate", "small-elevate", "medium-elevate", "large-elevate"]);
   if (shadow) utils.addClass(elements, [shadow]);
 }
 
 const updateColor = (selector:any, color?:string) => {
   let elements = utils.queryAll(selector);
-  utils.removeClass(elements, ["surface-variant", "surface", "background", "primary", "secondary", "tertiary", "error", "amber", "blue", "blue-grey", "brown", "cyan", "deep-orange", "deep-purple", "green", "grey", "indigo", "light-blue", "light-green", "lime", "orange", "pink", "purple", "red", "teal", "yellow"]);
+  utils.removeClass(elements, ["fill", "surface-variant", "surface", "background", "primary", "primary-container", "secondary", "secondary-container", "tertiary", "tertiary-container", "error", "amber", "blue", "blue-grey", "brown", "cyan", "deep-orange", "deep-purple", "green", "grey", "indigo", "light-blue", "light-green", "lime", "orange", "pink", "purple", "red", "teal", "yellow"]);
   if (color) utils.addClass(elements, [color]);
 }
 
@@ -29,9 +29,10 @@ const updateTextColor = (selector:any, textColor?:string) => {
 const updateElementColor = (selector:string, color?:string) => {
   let elementsWithBorder = utils.queryAll(selector + ".border");
   let elementsWithoutBorder = utils.queryAll(selector + ":not(.border)");
-  updateBorderColor(elementsWithBorder, color ? color + "-border" : "");
-  updateTextColor(elementsWithBorder, color ? color + "-text" : "");
+  updateBorderColor(elementsWithBorder, color && color != "fill" ? color + "-border" : "");
+  updateTextColor(elementsWithBorder, color && color != "fill"  ? color + "-text" : "");
   updateColor(elementsWithoutBorder, color);
+  updateColor(elementsWithBorder, color == "fill" && selector.indexOf("chip") != -1 ? color : "");
 }
 
 const updateSize = (selector:string, size?:string) => {
@@ -153,11 +154,14 @@ const updateMenu = (data:IHome, css?:string) => {
   utils.setAttribute(radio, "checked", true);
 }
 
-const updateAppBar = (selector?:string, css?:string) => {
-  let appBars = utils.queryAll(selector);
-  let buttons = utils.queryAll(selector + " button.extra");
-  updateColor(appBars, css);
-  updateColor(buttons, css ? 'surface-variant' : '');
+const updateColorTheme = (selector?:string, css?:string) => {
+  let containers = utils.queryAll(selector);
+  let buttons = utils.queryAll(selector + " button:not(.transparent, .border)");
+
+  utils.removeClass(containers, ["fill"]);
+  utils.removeClass(buttons, ["fill"]);
+  updateColor(containers, css && css != "fill" ? css + "-container" : css);
+  updateColor(buttons, css && css != "fill" ? css : "");
 }
 
 const updateHorizontalPosition = (selector:string, position?:string) => {
@@ -312,7 +316,7 @@ export default {
   updateVerticalPosition,
   updateVerticalAlign,
   updateProgress,
-  updateAppBar,
+  updateColorTheme,
   updateIcon,
   updateMenu,
   updatePage,

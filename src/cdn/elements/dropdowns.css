@@ -2,16 +2,15 @@
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  box-shadow: var(--shadow2);
+  box-shadow: var(--elevate2);
   background-color: var(--surface);
-  box-sizing: border-box;
   z-index: 11;
   top: auto;
   bottom: 0;
   left: 0;
   right: auto;
   width: 100%;
-  max-height: 320rem;
+  max-height: 50vh;
   max-width: none;
   transform: translateY(100%);
   overflow-x: hidden;
@@ -52,7 +51,7 @@ button:not([data-ui]):focus-within > .dropdown,
 }
 
 .dropdown > a {
-  padding: 8rem 16rem;
+  padding: 12rem 16rem;
   border-radius: 0;
 }
 

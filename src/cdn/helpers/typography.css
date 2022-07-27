@@ -58,7 +58,7 @@ h6 {
 
 .truncate {
   overflow: hidden;
-  white-space: nowrap;
+  white-space: nowrap !important;
   text-overflow: ellipsis;
 }
 

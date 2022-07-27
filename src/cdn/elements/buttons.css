@@ -19,7 +19,7 @@ button {
 
 .button > span,
 button > span {
-  margin: 0 4rem;  
+  margin: 0 8rem;  
 }
 
 .button.none,
@@ -47,7 +47,9 @@ button.large {
 }
 
 .button.extra,
-button.extra {
+button.extra,
+.button.extend,
+button.extend {
   height: 56rem;
   min-width: 56rem;
   font-size: 16rem;
@@ -123,9 +125,7 @@ button:disabled::after {
 }
 
 .button.fill,
-button.fill,
-.button.active,
-button.active  {
+button.fill {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
 }

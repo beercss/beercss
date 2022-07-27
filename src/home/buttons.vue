@@ -79,7 +79,7 @@
     span Extended FABs
     a.chip.circle(@click="domain.showSamples(data, '#extended-fabs button', 'Extended FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#extended-fabs button", :sizes="['extra']", selectedSize="extra")
+  selectionForButtons(context="#extended-fabs button", :sizes="[]")
   #extended-fabs.grid
     .s6.m6.l4
       nav
@@ -222,28 +222,6 @@
         img.responsive(:src="'/favicon.png'")
         span Button
     nav.wrap
-      button.fill Button
-      button.fill
-        i home
-        span Button
-      button.fill
-        img(:src="'/favicon.png'")
-        span Button
-      button.fill
-        img.responsive(:src="'/favicon.png'")
-        span Button
-    nav.wrap
-      button.fill.round Button
-      button.fill.round
-        i home
-        span Button
-      button.fill.round
-        img(:src="'/favicon.png'")
-        span Button
-      button.fill.round
-        img.responsive(:src="'/favicon.png'")
-        span Button
-    nav.wrap
       button.border Button
       button.border
         i home
@@ -263,39 +241,6 @@
         img(:src="'/favicon.png'")
         span Button
       button.border.round
-        img.responsive(:src="'/favicon.png'")
-        span Button
-    nav.wrap
-      button.border.left-round.top-round Button
-      button.border.left-round.bottom-round
-        i home
-        span Button
-      button.border.right-round.top-round
-        img(:src="'/favicon.png'")
-        span Button
-      button.border.right-round.bottom-round
-        img.responsive(:src="'/favicon.png'")
-        span Button
-    nav.wrap
-      button.border.left-round Button
-      button.border.left-round
-        i home
-        span Button
-      button.border.left-round
-        img(:src="'/favicon.png'")
-        span Button
-      button.border.left-round
-        img.responsive(:src="'/favicon.png'")
-        span Button
-    nav.wrap
-      button.border.right-round Button
-      button.border.right-round
-        i home
-        span Button
-      button.border.right-round
-        img(:src="'/favicon.png'")
-        span Button
-      button.border.right-round
         img.responsive(:src="'/favicon.png'")
         span Button
   .medium-space
@@ -349,34 +294,12 @@
         button.responsive.border.round
           img(:src="'/favicon.png'")
           span Button
-    .s12.m6
-      nav 
-        button.responsive.border.left-round Button
-      nav
-        button.responsive.border.left-round
-          i home
-          span Button
-      nav
-        button.responsive.border.left-round
-          img(:src="'/favicon.png'")
-          span Button
-    .s12.m6
-      nav 
-        button.responsive.border.right-round Button
-      nav
-        button.responsive.border.right-round
-          i home
-          span Button
-      nav
-        button.responsive.border.right-round
-          img(:src="'/favicon.png'")
-          span Button
   .medium-space
   h6.middle-align
     span Transparent buttons
     a.chip.circle(@click="domain.showSamples(data, '#transparent-buttons button', 'Transparent buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#transparent-buttons button", :colors="[]", :shadows="[]")
+  selectionForButtons(context="#transparent-buttons button", :colors="[]", :elevates="[]")
   #transparent-buttons
     nav.wrap
       button.transparent.square
@@ -417,7 +340,7 @@
     span Segmented buttons
     a.chip.circle(@click="domain.showSamples(data, '#segmented-buttons nav', 'Segmented buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#segmented-buttons button", :colors="[]", :shadows="[]", :active="true")
+  selectionForButtons(context="#segmented-buttons button", :colors="[]", :elevates="[]")
   #segmented-buttons.grid
     .s12.m6.l6
       nav.no-margin
@@ -425,16 +348,16 @@
           span Left
         button.border.no-margin.no-round
           span Center
-        button.border.no-margin.right-round
+        button.border.no-margin.right-round.fill
           span Right
       .space
       nav.no-margin
         button.border.no-margin.left-round
-          i.small check
           span Left
         button.border.no-margin.no-round
           span Center
-        button.border.no-margin.right-round
+        button.border.no-margin.right-round.fill
+          i.small check
           span Right
       .space
       nav.no-margin
@@ -442,7 +365,7 @@
           i search
         button.border.no-margin.no-round
           i edit
-        button.border.no-margin.right-round
+        button.border.no-margin.right-round.fill
           i home
     .s12.m6.l6
       nav.no-margin
@@ -450,16 +373,16 @@
           span Left
         button.border.no-margin.no-round.max
           span Center
-        button.border.no-margin.right-round.max
+        button.border.no-margin.right-round.max.fill
           span Right
       .space
       nav.no-margin
         button.border.no-margin.left-round.max
-          i.small check
           span Left
         button.border.no-margin.no-round.max
           span Center
-        button.border.no-margin.right-round.max
+        button.border.no-margin.right-round.max.fill
+          i.small check
           span Right
       .space
       nav.no-margin
@@ -467,7 +390,7 @@
           i search
         button.border.no-margin.no-round.max
           i edit
-        button.border.no-margin.right-round.max
+        button.border.no-margin.right-round.max.fill
           i home
 </template>
 

@@ -28,7 +28,7 @@
 }
 
 .tabs > a > span {
-  margin: 4rem;
+  margin: 0 8rem;
 }
 
 .tabs.small > a {

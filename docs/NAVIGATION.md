@@ -31,9 +31,9 @@ no-margin, small-margin, medium-margin, large-margin
 
 left, right, top, bottom
 
-**Shadows**
+**Elevates**
 
-no-shadow, small-shadow, medium-shadow, large-shadow
+no-elevate, small-elevate, medium-elevate, large-elevate
 
 **Sizes**
 

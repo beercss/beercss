@@ -60,6 +60,7 @@
   left: -24rem;
   background-color: transparent;
   border-radius: 50%;
+  box-sizing: content-box;
 }
 
 .checkbox > input + span::before {
@@ -107,7 +108,6 @@
   position:absolute;
   left: 0;
   top: 50%;
-  box-sizing: border-box;
   background-color: var(--active);
   border: 2rem solid var(--outline);
   width: 52rem;

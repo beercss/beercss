@@ -66,13 +66,12 @@ button > img.responsive,
 .button > img.responsive,
 .chip > img.responsive {
   width: 40rem;
-  box-sizing: border-box;
 }
 
 button:not(.transparent) > img.responsive,
 .button:not(.transparent) > img.responsive,
 .chip:not(.transparent) > img.responsive {
-  border: 2rem solid transparent;
+  border: 4rem solid transparent;
 }
 
 button.small > img.responsive,
@@ -168,4 +167,9 @@ button:not(.extend) > img.responsive:last-child,
 
 .extend > img.responsive {
   left: 0;
+  width: 56rem;
+}
+
+.extend.border > img.responsive {
+  width: 54rem;
 }

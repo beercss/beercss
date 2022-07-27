@@ -1,9 +1,9 @@
 <template lang="pug">
 div
-  nav.left.no-space.no-shadow.m.l
+  nav.left.no-space.no-elevate.m.l
     .large-space
     .large-space
-    a.button.white.circle.large(data-ui="#modal-add")
+    a.button.white.circle.large.small-elevate(data-ui="#modal-add")
       img(:src="'/add.png'")
     .space
     a(href="/gmail", :class="{ active: data.url == '/gmail' }")
@@ -34,7 +34,7 @@ div
       .large-space
       .medium-space
 
-  nav.right.no-shadow.m.l
+  nav.right.no-elevate.m.l
     .large-space
     .large-space
     button.square.transparent.small-padding
@@ -72,7 +72,7 @@ div
       .large-space
       .medium-space
 
-  nav.top.no-shadow
+  nav.top.no-elevate
     .space
     button.circle.large.transparent(data-ui="#dropdown-menu")
       i menu

@@ -164,7 +164,6 @@ input[type=file] {
   outline: none;
   z-index: 1;
   background: none;
-  box-sizing: border-box;
   resize: none;
 }
 
@@ -255,13 +254,13 @@ input[type=file] {
 .field.round:not(.border) > input:focus,
 .field.round:not(.border) > textarea:focus,
 .field.round:not(.border) > select:focus {
-  box-shadow: var(--shadow1);
+  box-shadow: var(--elevate1);
 }
 
 .field.round:not(.border, .fill) > input:focus,
 .field.round:not(.border, .fill) > textarea:focus,
 .field.round:not(.border, .fill) > select:focus {
-  box-shadow: var(--shadow2);
+  box-shadow: var(--elevate2);
 }
 
 .field.invalid:not(.border, .round) > input,

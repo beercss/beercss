@@ -70,6 +70,8 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Dividers** divider, small-divider, medium-divider, large-divider
 
+**Elevates** no-elevate, small-elevate, medium-elevate, large-elevate
+
 **Forms** border, circle, square, diamond, none, fill, extend, round, left-round, right-round, top-round, bottom-round
 
 **Margins** margin, no-margin, small-margin, medium-margin, large-margin
@@ -84,7 +86,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Scrolls** scroll, no-scroll
 
-**Shadows** no-shadow, small-shadow, medium-shadow, large-shadow, shadow, left-shadow, right-shadow, top-shadow, bottom-shadow
+**Shadows** shadow, left-shadow, right-shadow, top-shadow, bottom-shadow
 
 **Sizes** tiny, small, medium, large, extra, wrap, no-wrap, max, small-width, medium-width, large-width, small-height, medium-height, large-height
 
@@ -100,7 +102,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 ## Settings
 
-**Variables** --primary, --on-primary, --primary-container, --on-primary-container, --secondary, --on-secondary, --secondary-container, --on-secondary-container, --tertiary, --on-tertiary, --tertiary-container, --on-tertiary-container, --error, --on-error, --tertiary-error, --on-error-container, --background, --on-background, --surface, --on-surface, --surface-container, --on-surface-container, --on-surface-variant, --inverse-surface, --inverse-on-surface, --outline, --active, --overlay, --font, --size, --shadow1, --shadow2, --shadow3, --speed1, --speed2, --speed3, --speed4
+**Variables** --primary, --on-primary, --primary-container, --on-primary-container, --secondary, --on-secondary, --secondary-container, --on-secondary-container, --tertiary, --on-tertiary, --tertiary-container, --on-tertiary-container, --error, --on-error, --tertiary-error, --on-error-container, --background, --on-background, --surface, --on-surface, --surface-container, --on-surface-container, --on-surface-variant, --inverse-surface, --inverse-on-surface, --outline, --active, --overlay, --font, --size, --elevate1, --elevate2, --elevate3, --speed1, --speed2, --speed3, --speed4
 
 ## Go to
 

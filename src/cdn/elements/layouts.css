@@ -44,7 +44,7 @@
 header,
 footer {
   padding: 0 16rem;
-  background-color: var(--surface-variant);
+  background-color: var(--surface);
 }
 
 header.fixed,

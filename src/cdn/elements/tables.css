@@ -48,7 +48,6 @@ td > .chip,
 td > nav > .chip {
   min-height: 24rem;
   max-height: 24rem;
-  box-sizing: border-box;
 }
 
 td > .circle:not(.tiny, .small, .medium, .large, .extra),
@@ -61,5 +60,4 @@ td > nav > .diamond:not(.tiny, .small, .medium, .large, .extra) {
   max-width: 24rem;
   min-height: 24rem;
   max-height: 24rem;
-  box-sizing: border-box;
 }
