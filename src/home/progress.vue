@@ -27,83 +27,60 @@
     label.radio
       input(type="radio", name="color-progress", @click="domain.updateColor('#progress .progress', 'orange')")
       span orange
-  .space
-  .small-space.primary-container.border
+  .medium-space
+  h6 Default
+  .small-space.border
     .progress.left
   .space
-  .small-space.secondary-container.border
-    .progress.left
-  .space
-  .small-space.tertiary-container.border
+  .small-space.border
     .progress.right
-  .space
+  .medium-space
+  h6 Cards
   .grid
-    .s12.m3
+    .s12.m6.l3
       article.small
         .progress.left
         h5 Card
-    .s12.m3
+    .s12.m6.l3
       article.small.round
         .progress.right
         h5 Card
-    .s12.m3
+    .s12.m6.l3
       article.border.small
         .progress.top
         h5 Card
-    .s12.m3
+    .s12.m6.l3
       article.small.border.round
         .progress.bottom
         h5 Card
-  nav.wrap
-    button
-      .progress.left
-      span Button
-    button.round
-      .progress.right
-      span Button
-    button.circle.extra
-      .progress.top
-      i home
-    button.square.extra
-      .progress.bottom
-      i home
-    button.border
-      .progress.left
-      span Button
-    button.border.round
-      .progress.right
-      span Button
-    button.border.circle.extra
-      .progress.top
-      i home
-    button.border.square.extra
-      .progress.bottom
-      i home
-  nav.wrap
-    a.chip
-      .progress.left
-      span Chip
-    a.chip.round
-      .progress.right
-      span Chip
-    a.chip.circle
-      .progress.top
-      i search
-    a.chip.square
-      .progress.bottom
-      i search
-    a.chip.border
-      .progress.left
-      span Chip
-    a.chip.border.round
-      .progress.right
-      span Chip
-    a.chip.border.circle
-      .progress.top
-      i search
-    a.chip.border.square
-      .progress.bottom
-      i search
+  .medium-space
+  h6 Buttons
+  div
+    nav.wrap
+      button
+        .progress.left
+        span Button
+      button.round
+        .progress.right
+        span Button
+      button.circle.extra
+        .progress.top
+        i home
+      button.square.extra
+        .progress.bottom
+        i home
+      button.border
+        .progress.left
+        span Button
+      button.border.round
+        .progress.right
+        span Button
+      button.border.circle.extra
+        .progress.top
+        i home
+      button.border.square.extra
+        .progress.bottom
+        i home
 </template>
 
 <script setup lang="ts">
