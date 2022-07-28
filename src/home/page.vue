@@ -290,6 +290,8 @@ div
         .s12
           responsive
         .s12
+          scrolls
+        .s12
           selects
         .s12
           spaces
@@ -417,6 +419,7 @@ import pages from "./pages.vue";
 import progress1 from "./progress.vue";
 import radios from "./radios.vue";
 import responsive from "./responsive.vue";
+import scrolls from "./scrolls.vue";
 import selects from "./selects.vue";
 import spaces from "./spaces.vue";
 import switches from "./switches.vue";

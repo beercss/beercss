@@ -37,7 +37,7 @@ const updateElementColor = (selector:string, color?:string) => {
 
 const updateSize = (selector:string, size?:string) => {
   let elements = utils.queryAll(selector);
-  utils.removeClass(elements, ["tiny", "small", "medium", "large", "extra"]);
+  utils.removeClass(elements, ["max", "tiny", "small", "medium", "large", "extra"]);
   if (size) utils.addClass(elements, [size]);
 }
 
