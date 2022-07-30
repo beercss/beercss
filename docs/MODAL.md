@@ -10,6 +10,10 @@ Modals inform users about a task and can contain critical information, required 
 
 ## Most used helpers
 
+**Colors**
+
+fill, primary-container, secondary-container, tertiary-container
+
 **Forms**
 
 border, round, left-round, right-round, top-round, bottom-round
@@ -20,7 +24,7 @@ left, right, top, bottom
 
 **Elevates**
 
-no-elevate, small-elevate, medium-elevate, large-elevate
+elevate, no-elevate, small-elevate, medium-elevate, large-elevate
 
 **Sizes**
 

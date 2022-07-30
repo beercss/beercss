@@ -50,7 +50,7 @@ divider, small-divider, medium-divider, large-divider
 
 ## Elevates
 
-no-elevate, small-elevate, medium-elevate, large-elevate, 
+elevate, no-elevate, small-elevate, medium-elevate, large-elevate, 
 
 ## Forms
 

@@ -10,6 +10,10 @@ Cards are surfaces that display content and actions on a single topic. They shou
 
 ## Most used helpers
 
+**Colors**
+
+fill, primary-container, secondary-container, tertiary-container
+
 **Forms**
 
 border, round, left-round, top-round, right-round, bottom-round
@@ -20,7 +24,7 @@ no-padding, padding, small-padding, medium-padding, large-padding
 
 **Elevates**
 
-no-elevate, small-elevate, medium-elevate, large-elevate
+elevate, no-elevate, small-elevate, medium-elevate, large-elevate
 
 **Sizes**
 

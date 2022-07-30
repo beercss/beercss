@@ -11,6 +11,10 @@ Buttons allow users to take actions, and make choices, with a single tap.
 
 ## Most used helpers
 
+**Colors**
+
+fill, primary, secondary, tertiary
+
 **Forms**
 
 none, extend, border, circle, square, round, left-round, right-round, top-round, bottom-round, responsive

@@ -19,6 +19,10 @@ Navigations are containers that display actions placed horizontally (or vertical
 
 left-align, right-align, center-align, top-align, bottom-align, middle-align
 
+**Colors**
+
+fill, primary-container, secondary-container, tertiary-container
+
 **Forms**
 
 border, round, left-round, right-round, top-round, bottom-round
@@ -33,7 +37,7 @@ left, right, top, bottom
 
 **Elevates**
 
-no-elevate, small-elevate, medium-elevate, large-elevate
+elevate, no-elevate, small-elevate, medium-elevate, large-elevate
 
 **Sizes**
 
