@@ -39,63 +39,38 @@
 }
 
 .circle:not(img, video),
-.square:not(img, video),
-.diamond:not(img, video) {
+.square:not(img, video) {
   height: 40rem;
   width: 40rem;
   padding: 0;
 }
 
 .circle > span,
-.square > span,
-.diamond > span {
+.square > span {
   display: none;
 }
 
-.diamond.small:not(img, video),
 .square.small:not(img, video),
 .circle.small:not(img, video) {
   height: 32rem;
   width: 32rem;
 }
 
-.diamond.large:not(img, video),
 .square.large:not(img, video),
 .circle.large:not(img, video) {
   height: 48rem;
   width: 48rem;
 }
 
-.diamond.extra:not(img, video),
 .square.extra:not(img, video),
 .circle.extra:not(img, video) {
   height: 56rem;
   width: 56rem;
 }
 
-.diamond {
-  transform: rotate(45deg);
-  border-radius: 4rem;
-  padding: 0;
-}
-
-.diamond > i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  margin: 0;
-  padding: 0;
-}
-
 .square.round,
-.circle.round,
-.diamond.round {
+.circle.round {
   border-radius: 16rem !important;
-}
-
-.diamond.round {
-  transform: rotate(45deg);
 }
 
 .border:not(table, .field) { 

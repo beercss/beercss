@@ -2,7 +2,8 @@
   box-shadow: none !important;
 }
 
-.small-elevate {
+.small-elevate,
+.elevate {
   box-shadow: var(--elevate1) !important;
 }
 

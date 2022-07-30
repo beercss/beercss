@@ -26,6 +26,18 @@ nav:not(.left, .right, .top, .bottom) > *,
   flex: none;
 }
 
+nav:not(.left, .right, .top, .bottom).no-space,
+nav:not(.left, .right, .top, .bottom).no-space > *,
+.row.no-space,
+.row.no-space > * {
+  margin: 0;
+}
+
+nav.no-space > .border + .border,
+.row.no-space > .border + .border {
+  border-left: 0;
+}
+
 nav > .max,
 .row > .max {
   flex: auto;

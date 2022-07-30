@@ -37,7 +37,7 @@ const updateElementColor = (selector:string, color?:string) => {
 
 const updateSize = (selector:string, size?:string) => {
   let elements = utils.queryAll(selector);
-  utils.removeClass(elements, ["max", "tiny", "small", "medium", "large", "extra"]);
+  utils.removeClass(elements, ["tiny", "small", "medium", "large", "extra"]);
   if (size) utils.addClass(elements, [size]);
 }
 
@@ -188,6 +188,12 @@ const updateVerticalAlign = (selector:string, align?:string) => {
   if (align) utils.addClass(elements, [align]);
 }
 
+const updateMinMax = (selector:string, css?:string) => {
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["min", "max"]);
+  if (css) utils.addClass(elements, [css]); 
+}
+
 const updateIcon = (css?:string) => {
   let elements = utils.queryAll("#icons-sample i");
   utils.removeClass(elements, ["fill"]);
@@ -320,6 +326,7 @@ export default {
   updateIcon,
   updateMenu,
   updatePage,
+  updateMinMax,
   addHomeScreen,
   formatHtml,
   goTo,

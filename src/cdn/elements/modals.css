@@ -43,24 +43,15 @@
   transform: translate(-50%, 0);
 }
 
-.modal.active.left {
-  transform: translate(0, 0);
-}
-
-.modal.active.right {
-  transform: translate(0, 0);
-}
-
-.modal.active.top {
-  transform: translate(0, 0);
-}
-
-.modal.active.bottom {
+.modal.active.left,
+.modal.active.right,
+.modal.active.top,
+.modal.active.bottom,
+.modal.active.max {
   transform: translate(0, 0);
 }
 
 .modal.top {
-  opacity: 1;
   top: 0;
   left: 0;
   right: auto;
@@ -73,8 +64,6 @@
 }
 
 .modal.left {
-  opacity: 1;
-  float: none;
   top: 0;
   left: 0;
   right: auto;
@@ -86,8 +75,6 @@
 }
 
 .modal.right {
-  opacity: 1;
-  float: none;
   top: 0;
   left: auto;
   right: 0;
@@ -99,7 +86,6 @@
 }
 
 .modal.bottom {
-  opacity: 1;
   top: auto;
   left: 0;
   right: auto;
@@ -109,6 +95,19 @@
   min-width: auto;
   max-height: 100%;
   transform: translateY(100%);
+}
+
+.modal.max {
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  transform: translateY(64rem);
+  border-radius: 0;
 }
 
 .modal.left.small,

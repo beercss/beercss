@@ -128,7 +128,7 @@
   color: transparent !important;
 }
 
-.fill {
+.fill:not(i) {
   background-color: var(--surface-variant) !important;
   color: var(--on-surface-variant) !important;
 }

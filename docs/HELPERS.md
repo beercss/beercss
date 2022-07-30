@@ -54,7 +54,7 @@ no-elevate, small-elevate, medium-elevate, large-elevate,
 
 ## Forms
 
-border, circle, square, diamond, none, fill, extend, round, no-round, left-round, right-round, top-round, bottom-round
+border, circle, square, none, fill, extend, round, no-round, left-round, right-round, top-round, bottom-round
 
 ## Margins
 

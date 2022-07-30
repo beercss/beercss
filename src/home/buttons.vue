@@ -4,6 +4,108 @@
   h4 Buttons
   .medium-space
   h6.middle-align
+    span Common buttons
+    a.chip.circle(@click="domain.showSamples(data, '#default-buttons button', 'Buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+      i code
+  selectionForButtons(context="#default-buttons button")
+  #default-buttons
+    nav.wrap
+      button Button
+      button
+        i home
+        span Button
+      button
+        img(:src="'/favicon.png'")
+        span Button
+      button
+        img.responsive(:src="'/favicon.png'")
+        span Button
+    nav.wrap
+      button.round Button
+      button.round
+        i home
+        span Button
+      button.round
+        img(:src="'/favicon.png'")
+        span Button
+      button.round
+        img.responsive(:src="'/favicon.png'")
+        span Button
+    nav.wrap
+      button.border Button
+      button.border
+        i home
+        span Button
+      button.border
+        img(:src="'/favicon.png'")
+        span Button
+      button.border
+        img.responsive(:src="'/favicon.png'")
+        span Button
+    nav.wrap
+      button.border.round Button
+      button.border.round
+        i home
+        span Button
+      button.border.round
+        img(:src="'/favicon.png'")
+        span Button
+      button.border.round
+        img.responsive(:src="'/favicon.png'")
+        span Button
+  .medium-space
+  h6.middle-align
+    span Responsive buttons
+    a.chip.circle(@click="domain.showSamples(data, '#responsive-buttons button', 'Reponsive buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+      i code
+  selectionForButtons(context="#responsive-buttons button")
+  #responsive-buttons.grid
+    .s12.m6
+      nav 
+        button.responsive Button
+      nav
+        button.responsive
+          i home
+          span Button
+      nav
+        button.responsive
+          img(:src="'/favicon.png'")
+          span Button
+    .s12.m6
+      nav 
+        button.responsive.round Button
+      nav
+        button.responsive.round
+          i home
+          span Button
+      nav
+        button.responsive.round
+          img(:src="'/favicon.png'")
+          span Button
+    .s12.m6
+      nav 
+        button.responsive.border Button
+      nav
+        button.responsive.border
+          i home
+          span Button
+      nav
+        button.responsive.border
+          img(:src="'/favicon.png'")
+          span Button
+    .s12.m6
+      nav 
+        button.responsive.border.round Button
+      nav
+        button.responsive.border.round
+          i home
+          span Button
+      nav
+        button.responsive.border.round
+          img(:src="'/favicon.png'")
+          span Button
+  .medium-space
+  h6.middle-align
     span FABs
     a.chip.circle(@click="domain.showSamples(data, '#fabs button', 'FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -12,11 +114,7 @@
     nav.wrap
       button.square
         i add
-      button.diamond
-        i add
       button.square.round
-        i add
-      button.diamond.round
         i add
       button.circle
         i add
@@ -35,11 +133,7 @@
     nav.wrap
       button.border.square
         i add
-      button.border.diamond
-        i add
       button.border.square.round
-        i add
-      button.border.diamond.round
         i add
       button.border.circle
         i add
@@ -194,109 +288,7 @@
           span Button
   .medium-space
   h6.middle-align
-    span Buttons
-    a.chip.circle(@click="domain.showSamples(data, '#default-buttons button', 'Buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
-      i code
-  selectionForButtons(context="#default-buttons button")
-  #default-buttons
-    nav.wrap
-      button Button
-      button
-        i home
-        span Button
-      button
-        img(:src="'/favicon.png'")
-        span Button
-      button
-        img.responsive(:src="'/favicon.png'")
-        span Button
-    nav.wrap
-      button.round Button
-      button.round
-        i home
-        span Button
-      button.round
-        img(:src="'/favicon.png'")
-        span Button
-      button.round
-        img.responsive(:src="'/favicon.png'")
-        span Button
-    nav.wrap
-      button.border Button
-      button.border
-        i home
-        span Button
-      button.border
-        img(:src="'/favicon.png'")
-        span Button
-      button.border
-        img.responsive(:src="'/favicon.png'")
-        span Button
-    nav.wrap
-      button.border.round Button
-      button.border.round
-        i home
-        span Button
-      button.border.round
-        img(:src="'/favicon.png'")
-        span Button
-      button.border.round
-        img.responsive(:src="'/favicon.png'")
-        span Button
-  .medium-space
-  h6.middle-align
-    span Responsive buttons
-    a.chip.circle(@click="domain.showSamples(data, '#responsive-buttons button', 'Reponsive buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
-      i code
-  selectionForButtons(context="#responsive-buttons button")
-  #responsive-buttons.grid
-    .s12.m6
-      nav 
-        button.responsive Button
-      nav
-        button.responsive
-          i home
-          span Button
-      nav
-        button.responsive
-          img(:src="'/favicon.png'")
-          span Button
-    .s12.m6
-      nav 
-        button.responsive.round Button
-      nav
-        button.responsive.round
-          i home
-          span Button
-      nav
-        button.responsive.round
-          img(:src="'/favicon.png'")
-          span Button
-    .s12.m6
-      nav 
-        button.responsive.border Button
-      nav
-        button.responsive.border
-          i home
-          span Button
-      nav
-        button.responsive.border
-          img(:src="'/favicon.png'")
-          span Button
-    .s12.m6
-      nav 
-        button.responsive.border.round Button
-      nav
-        button.responsive.border.round
-          i home
-          span Button
-      nav
-        button.responsive.border.round
-          img(:src="'/favicon.png'")
-          span Button
-  .medium-space
-  h6.middle-align
-    span Transparent buttons
+    span Icon buttons
     a.chip.circle(@click="domain.showSamples(data, '#transparent-buttons button', 'Transparent buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#transparent-buttons button", :colors="[]", :elevates="[]")
@@ -343,55 +335,59 @@
   selectionForButtons(context="#segmented-buttons button", :colors="[]", :elevates="[]")
   #segmented-buttons.grid
     .s12.m6.l6
-      nav.no-margin
-        button.border.no-margin.left-round
-          span Left
-        button.border.no-margin.no-round
-          span Center
-        button.border.no-margin.right-round.fill
-          span Right
+      nav.no-space
+        button.border.left-round
+          span Button
+        button.border.no-round
+          span Button
+        button.border.right-round.fill
+          span Button
       .space
-      nav.no-margin
-        button.border.no-margin.left-round
-          span Left
-        button.border.no-margin.no-round
-          span Center
-        button.border.no-margin.right-round.fill
-          i.small check
-          span Right
-      .space
-      nav.no-margin
-        button.border.no-margin.left-round
+      nav.no-space
+        button.border.left-round
           i search
-        button.border.no-margin.no-round
+        button.border.no-round
           i edit
-        button.border.no-margin.right-round.fill
+        button.border.right-round.fill
           i home
+      .space
+      nav.no-space
+        button.border.left-round
+          i.small check
+          span Button
+        button.border.no-round
+          i.small check
+          span Button
+        button.border.right-round.fill
+          i.small check
+          span Button
     .s12.m6.l6
-      nav.no-margin
-        button.border.no-margin.left-round.max
-          span Left
-        button.border.no-margin.no-round.max
-          span Center
-        button.border.no-margin.right-round.max.fill
-          span Right
+      nav.no-space
+        button.border.left-round.max
+          span Button
+        button.border.no-round.max
+          span Button
+        button.border.right-round.max.fill
+          span Button
       .space
-      nav.no-margin
-        button.border.no-margin.left-round.max
-          span Left
-        button.border.no-margin.no-round.max
-          span Center
-        button.border.no-margin.right-round.max.fill
-          i.small check
-          span Right
-      .space
-      nav.no-margin
-        button.border.no-margin.left-round.max
+      nav.no-space
+        button.border.left-round.max
           i search
-        button.border.no-margin.no-round.max
+        button.border.no-round.max
           i edit
-        button.border.no-margin.right-round.max.fill
+        button.border.right-round.max.fill
           i home
+      .space
+      nav.no-space
+        button.border.left-round.max
+          i.small check
+          span Button
+        button.border.no-round.max
+          i.small check
+          span Button
+        button.border.right-round.max.fill
+          i.small check
+          span Button
 </template>
 
 <script setup lang="ts">

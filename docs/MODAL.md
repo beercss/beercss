@@ -24,7 +24,7 @@ no-elevate, small-elevate, medium-elevate, large-elevate
 
 **Sizes**
 
-small, medium, large
+small, medium, large, max
 
 **Triggers**
 

@@ -125,7 +125,7 @@ div
     #begin
       .grid
         #intro.s12
-          article.large-padding
+          .div
             h3 Get started 
             .medium-space
             h5 From CDN
@@ -192,13 +192,13 @@ div
                   p
                     b &lt;img&gt;
                     span &nbsp;tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive
-                .s12.m12.l6
                   p
                     b &lt;label&gt;
                     span &nbsp;active, radio, checkbox, switch
                   p
                     b loader
                     span &nbsp;small, medium, large
+                .s12.m12.l6
                   p
                     b &lt;main&gt;
                     span &nbsp;responsive, max
@@ -241,8 +241,8 @@ div
             nav.wrap
               a.button(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
               a.button(href="https://codepen.io/collection/XydYMB") Codepen
-          .large-space
-          .large-space
+          .medium-space
+          .large-divider
         .s12
           appBars
         .s12

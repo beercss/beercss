@@ -53,9 +53,7 @@ td > nav > .chip {
 td > .circle:not(.tiny, .small, .medium, .large, .extra),
 td > nav > .circle:not(.tiny, .small, .medium, .large, .extra),
 td > .square:not(.tiny, .small, .medium, .large, .extra),
-td > nav > .square:not(.tiny, .small, .medium, .large, .extra),
-td > .diamond:not(.tiny, .small, .medium, .large, .extra),
-td > nav > .diamond:not(.tiny, .small, .medium, .large, .extra) {
+td > nav > .square:not(.tiny, .small, .medium, .large, .extra){
   min-width: 24rem;
   max-width: 24rem;
   min-height: 24rem;

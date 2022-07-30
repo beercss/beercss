@@ -30,6 +30,19 @@ small, medium, large, extra
 </button>
 ```
 
+## Responsive button example
+
+The responsive button is a button that automatically adjust with the width of your container.
+
+```html
+<button class="responsive">Button</button>
+
+<button class="responsive">
+  <i>home</i>
+  <span>Button</span>
+</button>
+```
+
 ## FAB example
 
 A floating action button (FAB) represents the primary action of a screen.
@@ -51,20 +64,7 @@ The extended FAB is wider, and it includes a text label.
 </button>
 ```
 
-## Responsive button example
-
-The responsive button is a button that automatically adjust with the width of your container.
-
-```html
-<button class="responsive">Button</button>
-
-<button class="responsive">
-  <i>home</i>
-  <span>Button</span>
-</button>
-```
-
-## Transparent button example
+## Icon button example
 
 The transparent button is a button for navigation. The shape of button will be revealed on button actions. Combine with icons and images.
 

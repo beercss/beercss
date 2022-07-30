@@ -3,7 +3,7 @@
   .large-space
   h4
     span Modals
-    a.chip.circle(@click="domain.showSamples(data, '#modal, #modal-left, #modal-right, #modal-top, #modal-bottom, #modal-navigation-drawer', 'Modals', null, 'https://github.com/beercss/beercss/blob/main/docs/MODAL.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#modal, #modal-left, #modal-right, #modal-top, #modal-bottom, #modal-max, #modal-navigation-drawer', 'Modals', null, 'https://github.com/beercss/beercss/blob/main/docs/MODAL.md')")
       i code
   nav.wrap
     button(data-ui="#modal") Default
@@ -11,48 +11,56 @@
     button(data-ui="#modal-right") Right
     button(data-ui="#modal-top") Top
     button(data-ui="#modal-bottom") Bottom
+    button(data-ui="#modal-max") Fullscreen
     button(data-ui="#modal-navigation-drawer") Navigation drawer
 
   #modal.modal
-    h5 Title
+    h5 Default modal
     div Some text here
     nav.right-align
       button.border(data-ui="#modal") Cancel
       button(data-ui="#modal") Confirm
 
   #modal-left.modal.left
-    h5 Title
+    h5 Left modal
     div Some text here
     nav.right-align
       button.border(data-ui="#modal-left") Cancel
       button(data-ui="#modal-left") Confirm
 
   #modal-right.modal.right
-    h5 Title
+    h5 Right modal
     div Some text here
     nav.right-align
       button.border(data-ui="#modal-right") Cancel
       button(data-ui="#modal-right") Confirm
 
   #modal-top.modal.top
-    h5 Title
+    h5 Top Modal
     div Some text here
     nav.right-align
       button.border(data-ui="#modal-top") Cancel
       button(data-ui="#modal-top") Confirm
 
   #modal-bottom.modal.bottom
-    h5 Title
+    h5 Bottom modal
     div Some text here
     nav.right-align
       button.border(data-ui="#modal-bottom") Cancel
       button(data-ui="#modal-bottom") Confirm
 
+  #modal-max.modal.max
+    h5 Fullscreen modal
+    div Some text here
+    nav.right-align
+      button.border(data-ui="#modal-max") Cancel
+      button(data-ui="#modal-max") Confirm
+
   #modal-navigation-drawer.modal.left
     header.fixed
       nav
         button.transparent.circle(data-ui="#modal-navigation-drawer")
-          i menu
+          i close
         h5.max Header
     a.row.round
       i inbox 
