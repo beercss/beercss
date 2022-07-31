@@ -15,7 +15,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   transition: var(--speed3) all, 0s background-color;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -64rem);
 }
 
 .modal:not(.left, .right, .top, .bottom) {
