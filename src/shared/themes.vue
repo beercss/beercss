@@ -1,5 +1,5 @@
 <template lang="pug">
-.modal.large.no-scroll(:id="id", :class="{ left: position == 'left', right: position == 'right' }")
+.modal.medium.no-scroll(:id="id", :class="{ left: position == 'left', right: position == 'right' }")
   slot
   header.fixed 
     nav(v-if="!data.showCssVariables")
