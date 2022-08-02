@@ -29,7 +29,7 @@ div
       .tooltip.right Spam
     a(data-ui="#themes1")
       i brightness_medium
-      .tooltip.right Dynamic theme
+      .tooltip.right Themes
     themes(id="themes1", v-model="data")
       .large-space
       .medium-space
@@ -97,7 +97,7 @@ div
           .max Spam
         a.row(data-ui="#themes1")
           i brightness_medium
-          .max Dynamic theme
+          .max Themes
     .space
     img(v-show="!data.isDark", :src="'/gmail-light.png'")
     img(v-show="data.isDark", :src="'/gmail-dark.png'")

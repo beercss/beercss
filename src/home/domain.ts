@@ -140,20 +140,12 @@ const updateFieldType = (selector:string, type:string) => {
 }
 
 const updateMenu = (data:IHome, css?:string) => {
-  let menu = utils.queryAll("#app > div > nav.m.l");
-  let modals = utils.queryAll("#app > div > nav.m.l > .modal");
-  let actives = utils.queryAll("#app > div > nav.m.l > .active");
-  let radios = utils.queryAll("#navigation-rail input");
-  let radio = utils.queryAll("#" + css + "-navigations");
+  const isHorizontal = /^(top|bottom)$/i.test(css);
+  const selector =  isHorizontal ? "#navigation-bar1" : "#navigation-rail1";
+  const menu = utils.queryAll(selector);
 
   updatePosition(menu, css);
-  updatePosition(modals, css);
-  updateAlign(menu, null);
-
-  data.isHorizontal = /top|bottom/i.test(css);
-  utils.removeClass(actives, ["active"]);
-  utils.setAttribute(radios, "checked", false);
-  utils.setAttribute(radio, "checked", true);
+  data.isHorizontal = isHorizontal;
 }
 
 const updateColorTheme = (selector?:string, css?:string) => {

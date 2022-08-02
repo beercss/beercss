@@ -6,6 +6,7 @@ nav:not(.left, .right, .top, .bottom),
   white-space: nowrap;
   border-radius: 0;
   margin: 0 -8rem;
+  max-width: 100%;
 }
 
 *:not(.divider, .small-divider, .medium-divider, .large-divider) + nav:not(.left, .right, .top, .bottom),

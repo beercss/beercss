@@ -90,43 +90,25 @@
       i home
       img.circle(:src="'/beer-and-woman.jpg'")
   .medium-space
-  #navigation-rail.m.l
+  #navigation-rail
     .medium-space
     h6.middle-align
       span Navigation rail/bar
       a.chip.circle(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
     nav.wrap
-      label.radio
+      label.radio(v-show="!data.isHorizontal")
         input#left-navigations(type="radio", name="position-navigations", @click="domain.updateMenu(data, 'left')", checked)
         span left
-      label.radio
+      label.radio(v-show="!data.isHorizontal")
         input#right-navigations(type="radio", name="position-navigations", @click="domain.updateMenu(data, 'right')")
         span right
-      label.radio
+      label.radio(v-show="data.isHorizontal")
         input#top-navigations(type="radio", name="position-navigations", @click="domain.updateMenu(data, 'top')")
         span top
-      label.radio
+      label.radio(v-show="data.isHorizontal")
         input#bottom-navigations(type="radio", name="position-navigations", @click="domain.updateMenu(data, 'bottom')")
         span bottom
-      label.radio(v-show="data.isHorizontal")
-        input(type="radio", name="horizontal-navigations", @click="domain.updateAlign('#app > div > nav.m.l', 'left-align')")
-        span left-align
-      label.radio(v-show="data.isHorizontal")
-        input(type="radio", name="horizontal-navigations", @click="domain.updateAlign('#app > div > nav.m.l', 'center-align')")
-        span center-align
-      label.radio(v-show="data.isHorizontal")
-        input(type="radio", name="horizontal-navigations", @click="domain.updateAlign('#app > div > nav.m.l', 'right-align')")
-        span right-align
-      label.radio(v-show="!data.isHorizontal")
-        input(type="radio", name="vertical-navigations", @click="domain.updateAlign('#app > div > nav.m.l', 'top-align')")
-        span top-align
-      label.radio(v-show="!data.isHorizontal")
-        input(type="radio", name="vertical-navigations", @click="domain.updateAlign('#app > div > nav.m.l', 'middle-align')")
-        span middle-align
-      label.radio(v-show="!data.isHorizontal")
-        input(type="radio", name="vertical-navigations", @click="domain.updateAlign('#app > div > nav.m.l', 'bottom-align')")
-        span bottom-align
 </template>
 
 <script setup lang="ts">

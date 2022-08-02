@@ -1,6 +1,42 @@
 <template lang="pug">
 div
-  header.fixed.yellow4.black-text.front(style="padding: 0 16rem")
+  nav#navigation-rail1.m.l.left
+    a
+      img.circle(:src="'/favicon.png'")
+    a
+      i home
+      span Home
+    a
+      i explore
+      span Explore
+    a(@click="domain.updateMenu(data, 'left')")
+      i arrow_back
+      span Left
+    a(@click="domain.updateMenu(data, 'right')")
+      i arrow_forward
+      span Right
+    a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+      i code
+      span Code
+  
+  nav#navigation-bar1.s.bottom
+    a
+      i home
+      span Home
+    a
+      i explore
+      span Explore
+    a(@click="domain.updateMenu(data, 'top')")
+      i arrow_upward
+      span Top
+    a(@click="domain.updateMenu(data, 'bottom')")
+      i arrow_downward
+      span Bottom
+    a(@click="domain.showSamples(data, '#navigation-bar1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+      i code
+      span Code
+
+  header.responsive.fixed.yellow4.black-text.front
     nav
       button.transparent.circle(data-ui="#modal-menu")
         i menu
@@ -27,7 +63,7 @@ div
       span Light / Dark
     a.row.round(data-ui="#themes3")
       i palette
-      span Dynamic theme
+      span Themes
     a.row.round(data-ui="#more3")
       i collections
       span Templates
@@ -163,7 +199,7 @@ div
         a.row(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!data.isDark")
           img.logo-codepen(:src="'/codepen-light.png'")
   
-  .center-align.padding.yellow4
+  .responsive.center-align.yellow4
     div.black-text
       .large-height.no-scroll.middle-align.center-align
         img#logo(:src="'/logo.png'", @click="domain.addHomeScreen()")
@@ -504,6 +540,7 @@ onMounted(() => {
   sharedDomain.initTheme(data.value);
 
   setTimeout(() => {
+    data.value.isHorizontal = window.outerWidth <= 600;
     document.getElementById("logo").classList.add("active");
   }, 1000);
 });

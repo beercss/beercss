@@ -5,7 +5,7 @@
     nav(v-if="!data.showCssVariables")
       .max
         h5
-          span Dynamic theme
+          span Themes
           a.chip.circle(@click="data.showCssVariables=true")
             i code
       button.circle.transparent(@click="sharedDomain.updateMode(data)")
@@ -13,7 +13,7 @@
       button.circle.transparent(:data-ui="'#' + id")
         i close
     nav(v-if="data.showCssVariables")
-      h5 Dynamic theme
+      h5 Themes
       a.button.border.m.l(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
       .max
       button.transparent.circle(@click="data.showCssVariables=false")
