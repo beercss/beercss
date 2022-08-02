@@ -54,11 +54,8 @@ footer.fixed {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 11;
+  z-index: 12;
   background-color: inherit;
-  padding: inherit;
-  padding-left: 0;
-  padding-right: 0;
   border-radius: 0;
 }
 
@@ -71,7 +68,21 @@ footer.fixed:before {
   right: 0;
   bottom: 0;
   margin: 0 -8rem;
+  max-width: 100%;
   background-color: inherit;
+}
+
+.modal > header,
+.modal > footer {
+  padding: 0;
+}
+
+article > header,
+article > footer {
+  padding: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 11 !important;
 }
 
 .modal > header.fixed,

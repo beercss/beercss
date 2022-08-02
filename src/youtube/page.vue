@@ -17,7 +17,7 @@
       div Library
     a(data-ui="#themes1")
       i brightness_medium
-      div Themes
+      div Dynamic theme
     themes(id="themes1", v-model="data")
       .large-space
       .medium-space
@@ -36,7 +36,7 @@
       div Library
     a(data-ui="#themes2")
       i brightness_medium
-      div Themes
+      div Dynamic theme
     themes(id="themes2", v-model="data")
       .large-space
       .medium-space

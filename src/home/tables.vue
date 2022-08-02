@@ -1,5 +1,5 @@
 <template lang="pug">
-#table
+#tables
   .large-space
   h4
     span Tables

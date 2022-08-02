@@ -1,99 +1,168 @@
 <template lang="pug">
 div
-  nav.left.m.l
-    .space
-    img.circle(:src="'/favicon.png'", @click="domain.addHomeScreen()")
-    .space
-    a(@click="domain.updateMenu(data, 'top')")
-      i arrow_upward
-      div Top
-    a(@click="domain.updateMenu(data, 'bottom')")
-      i arrow_downward
-      div Bottom
-    a(@click="domain.updateMenu(data, 'left')")
-      i arrow_back
-      div Left
-    a(@click="domain.updateMenu(data, 'right')")
-      i arrow_forward
-      div Right
-    a(@click="sharedDomain.updateMode(data)")
+  header.fixed.yellow4.black-text.front(style="padding: 0 16rem")
+    nav
+      button.transparent.circle(data-ui="#modal-menu")
+        i menu
+      .max
+      button.transparent.circle(@click="sharedDomain.updateMode(data)")
+        i light_mode
+      button.transparent.circle(data-ui="#themes3")
+        i palette
+      button.transparent.circle(data-ui="#more3")
+        i collections
+
+  #modal-menu.modal.left
+    header.fixed
+      nav
+        img.circle(:src="'/favicon.png'")
+        h5.max Beercss
+        button.transparent.circle(data-ui="#modal-menu")
+          i close
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#intro')")
+      i home
+      span Get started
+    a.row.round(@click="sharedDomain.updateMode(data)")
       i light_mode
-      div Light/Dark
-    a(data-ui="#themes1")
+      span Light / Dark
+    a.row.round(data-ui="#themes3")
       i palette
-      div Themes
-    a(data-ui="#more1")
+      span Dynamic theme
+    a.row.round(data-ui="#more3")
       i collections
-      div Templates
-    a(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
-      i code
-      div Code
-    themes(id="themes1", v-model="data")
-    #more1.modal.left(data-ui="#more1")
-      h5 Templates
-      p This templates are only for tests purpose
-      .space
-      a.row.padding(href="/youtube", v-show="data.isDark")
-        img.logo-template(:src="'/youtube-dark.png'")
-      a.row.padding(href="/youtube", v-show="!data.isDark")
-        img.logo-template(:src="'/youtube-light.png'")
-      a.row.padding(href="/netflix")
-        img.logo-template(:src="'/netflix.png'")
-      a.row.padding(href="/gmail", v-show="data.isDark")
-        img.logo-template(:src="'/gmail-dark.png'")
-      a.row.padding(href="/gmail", v-show="!data.isDark")
-        img.logo-template(:src="'/gmail-light.png'")
-      a.row.padding(href="/uber", v-show="data.isDark")
-        img.logo-template(:src="'/uber-dark.png'")
-      a.row.padding(href="/uber", v-show="!data.isDark")
-        img.logo-template(:src="'/uber-light.png'")
-      a.row.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="data.isDark")
-        img.logo-codepen(:src="'/codepen-dark.png'")
-      a.row.padding(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!data.isDark")
-        img.logo-codepen(:src="'/codepen-light.png'")
-
-  nav.bottom.s
-    a(@click="sharedDomain.updateMode(data)")
-      i light_mode
-      div Light/Dark
-    a(data-ui="#themes2")
-      i brightness_medium
-      div Themes
-    a(data-ui="#more2")
-      i collections
-      div Templates
-    a(@click="domain.showSamples(data, '#app > div > nav.s', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
-      i code
-      div Code
-    themes(id="themes2", v-model="data")
-    #more2.modal.bottom(data-ui="#more2")
-      h5 Templates
-      p This templates are only for tests purpose
-      .grid
-        .s6.middle-align.padding
-          a(href="/youtube", v-show="data.isDark")
-            img.logo-template(:src="'/youtube-dark.png'")
-          a(href="/youtube", v-show="!data.isDark")
-            img.logo-template(:src="'/youtube-light.png'")
-        .s6.middle-align.padding
-          a(href="/netflix")
-            img.logo-template(:src="'/netflix.png'")
-        .s6.middle-align.padding
-          a(href="/gmail", v-show="data.isDark")
-            img.logo-template(:src="'/gmail-dark.png'")
-          a(href="/gmail", v-show="!data.isDark")
-            img.logo-template(:src="'/gmail-light.png'")
-        .s6.middle-align.padding
-          a(href="/uber", v-show="data.isDark")
-            img.logo-template(:src="'/uber-dark.png'")
-          a(href="/uber", v-show="!data.isDark")
-            img.logo-template(:src="'/uber-light.png'")
-        .s6.middle-align.padding
-          a(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="data.isDark")
-            img.logo-codepen(:src="'/codepen-dark.png'")
-          a(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!data.isDark")
-            img.logo-codepen(:src="'/codepen-light.png'")
-
+      span Templates
+    .small-divider
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#app-bars')")
+      i widgets
+      span App bars
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#badges')")
+      i widgets
+      span Badges
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#buttons')")
+      i widgets
+      span Buttons
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#cards')")
+      i widgets
+      span Cards
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#checkboxes')")
+      i widgets
+      span Checkboxes
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#chips')")
+      i widgets
+      span Chips
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#colors')")
+      i widgets
+      span Colors
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#containers')")
+      i widgets
+      span Containers
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#dividers')")
+      i widgets
+      span Dividers
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#dropdowns')")
+      i widgets
+      span Dropdowns
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#expansions')")
+      i widgets
+      span Expansions
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#grids')")
+      i widgets
+      span Grids
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#icons')")
+      i widgets
+      span Icons
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#inputs')")
+      i widgets
+      span Inputs
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#layouts')")
+      i widgets
+      span Layouts
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#loaders')")
+      i widgets
+      span Loaders
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#media')")
+      i widgets
+      span Media
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#modals')")
+      i widgets
+      span Modals
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#navigations')")
+      i widgets
+      span Navigations
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#pages')")
+      i widgets
+      span Pages
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#progress')")
+      i widgets
+      span Progress
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#radios')")
+      i widgets
+      span Radios
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#responsive')")
+      i widgets
+      span Responsive
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#scrolls')")
+      i widgets
+      span Scrolls
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#selects')")
+      i widgets
+      span Selects
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#spaces')")
+      i widgets
+      span Spaces
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#switches')")
+      i widgets
+      span Switches
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#tables')")
+      i widgets
+      span Tables
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#tabs')")
+      i widgets
+      span Tabs
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#textareas')")
+      i widgets
+      span Textareas
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#toasts')")
+      i widgets
+      span Toasts
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#tooltips')")
+      i widgets
+      span Tooltips
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#typography')")
+      i widgets
+      span Typography
+  themes(id="themes3", v-model="data", position="right")
+  #more3.modal.right.medium(data-ui="#more3")
+    header.fixed
+      nav
+        h5.max Templates
+        button.transparent.circle
+          i close
+    .grid.large-space
+      .s12.m6.l4
+        a.row(href="/youtube", v-show="data.isDark")
+          img.logo-template(:src="'/youtube-dark.png'")
+        a.row(href="/youtube", v-show="!data.isDark")
+          img.logo-template(:src="'/youtube-light.png'")
+      .s12.m6.l4
+        a.row(href="/netflix")
+          img.logo-template(:src="'/netflix.png'")
+      .s12.m6.l4
+        a.row(href="/gmail", v-show="data.isDark")
+          img.logo-template(:src="'/gmail-dark.png'")
+        a.row(href="/gmail", v-show="!data.isDark")
+          img.logo-template(:src="'/gmail-light.png'")
+      .s12.m6.l4
+        a.row(href="/uber", v-show="data.isDark")
+          img.logo-template(:src="'/uber-dark.png'")
+        a.row(href="/uber", v-show="!data.isDark")
+          img.logo-template(:src="'/uber-light.png'")
+      .s12.m6.l4
+        a.row(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="data.isDark")
+          img.logo-codepen(:src="'/codepen-dark.png'")
+        a.row(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!data.isDark")
+          img.logo-codepen(:src="'/codepen-light.png'")
+  
   .center-align.padding.yellow4
     div.black-text
       .large-height.no-scroll.middle-align.center-align
@@ -122,6 +191,7 @@ div
       .large-space
       .large-space
   main.responsive
+    .large-space
     #begin
       .grid
         #intro.s12

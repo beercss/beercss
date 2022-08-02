@@ -3,7 +3,7 @@ div
   nav.left.no-space.no-elevate.m.l
     .large-space
     .large-space
-    a.button.white.circle.large.small-elevate(data-ui="#modal-add")
+    a.button.white.circle.large.elevate(data-ui="#modal-add")
       img(:src="'/add.png'")
     .space
     a(href="/gmail", :class="{ active: data.url == '/gmail' }")
@@ -29,7 +29,7 @@ div
       .tooltip.right Spam
     a(data-ui="#themes1")
       i brightness_medium
-      .tooltip.right Themes
+      .tooltip.right Dynamic theme
     themes(id="themes1", v-model="data")
       .large-space
       .medium-space
@@ -60,7 +60,7 @@ div
     a(href="/gmail/sent", :class="{ active: data.url == '/gmail/sent' }")
       i send
       div Sent
-    a.button.white.circle.large(data-ui="#modal-add-small")
+    a.button.white.circle.large.elevate(data-ui="#modal-add-small")
       img(:src="'/add.png'")
     a(href="/gmail/drafts", :class="{ active: data.url == '/gmail/drafts' }")
       i insert_drive_file
@@ -97,7 +97,7 @@ div
           .max Spam
         a.row(data-ui="#themes1")
           i brightness_medium
-          .max Themes
+          .max Dynamic theme
     .space
     img(v-show="!data.isDark", :src="'/gmail-light.png'")
     img(v-show="data.isDark", :src="'/gmail-dark.png'")

@@ -14,7 +14,7 @@ Media can be a image or video element.
 
 **Forms**
 
-responsive, circle, round, left-round, right-round, top-round, bottom-round
+circle, round, left-round, right-round, top-round, bottom-round, responsive
 
 **Sizes**
 

@@ -169,8 +169,3 @@ nav.bottom > .modal {
 .modal > .row {
   padding: 12rem 8rem;
 }
-
-.modal > header,
-.modal > footer {
-  padding: 0;
-}

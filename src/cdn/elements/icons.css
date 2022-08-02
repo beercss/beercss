@@ -39,6 +39,10 @@ i.extra {
   width: 32rem;
 }
 
-i.fill {
+i.fill,
+a.row:hover > i,
+a.row:focus > i,
+.transparent:hover > i,
+.transparent:focus > i {
   font-variation-settings: 'FILL' 1;
 }
