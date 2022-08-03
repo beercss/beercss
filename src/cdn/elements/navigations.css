@@ -5,8 +5,7 @@ nav:not(.left, .right, .top, .bottom),
   justify-content: flex-start;
   white-space: nowrap;
   border-radius: 0;
-  margin: 0 -8rem;
-  max-width: 100%;
+  gap: 16rem;
 }
 
 *:not(.divider, .small-divider, .medium-divider, .large-divider) + nav:not(.left, .right, .top, .bottom),
@@ -23,20 +22,28 @@ nav:not(.left, .right, .top, .bottom, .wrap) *:not(.tooltip),
 
 nav:not(.left, .right, .top, .bottom) > *,
 .row > * {
-  margin: 0 8rem;
+  margin: 0;
   flex: none;
 }
 
-nav:not(.left, .right, .top, .bottom).no-space,
-nav:not(.left, .right, .top, .bottom).no-space > *,
-.row.no-space,
-.row.no-space > * {
-  margin: 0;
+nav.no-space,
+.row.no-space {
+  gap: 0;
 }
 
 nav.no-space > .border + .border,
 .row.no-space > .border + .border {
   border-left: 0;
+}
+
+nav.medium-space,
+.row.medium-space {
+  gap: 24;
+}
+
+nav.large-space,
+.row.large-space {
+  gap: 32;
 }
 
 nav > .max,
@@ -46,14 +53,8 @@ nav > .max,
 
 nav.wrap,
 .row.wrap {
-  display: block;
+  flex-wrap: wrap;
   white-space: normal;
-}
-
-nav.wrap > *,
-.row.wrap > * {
-  margin: 8rem;
-  vertical-align: middle;
 }
 
 .field > nav,
@@ -176,18 +177,6 @@ nav.right > :not(.modal, .overlay),
 nav.top > :not(.modal, .overlay),
 nav.bottom > :not(.modal, .overlay) {
   z-index: 101;  
-}
-
-nav.no-space > a:not(button, .button, .chip) {
-  margin: 0;
-}
-
-nav.medium-space > a:not(button, .button, .chip) {
-  margin: 16rem;
-}
-
-nav.large-space > a:not(button, .button, .chip) {
-  margin: 24rem;
 }
 
 nav.left > a:not(button, .button, .chip) > i,

@@ -15,10 +15,7 @@
   border-radius: 8rem;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
   user-select: none;
-}
-
-.chip > span {
-  margin: 0 8rem;
+  gap: 8rem;
 }
 
 .chip.small {

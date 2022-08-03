@@ -1,7 +1,7 @@
 .toast {
   position: fixed;
   top: auto;
-  bottom: 72rem;
+  bottom: 96rem;
   left: 50%;
   right: auto;
   width: 80%;
@@ -23,7 +23,7 @@
 }
 
 .toast.top {
-  top: 72rem;
+  top: 96rem;
   bottom: auto;
 }
 

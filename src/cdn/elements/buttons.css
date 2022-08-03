@@ -9,17 +9,13 @@ button {
   font-size: 14rem;
   font-weight: 500;
   color: var(--on-primary);
-  padding: 0 16rem;
+  padding: 0 24rem;
   background-color: var(--primary);
   margin: 0 8rem;
   border-radius: 8rem;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
   user-select: none;
-}
-
-.button > span,
-button > span {
-  margin: 0 8rem;  
+  gap: 8rem;
 }
 
 .button.none,

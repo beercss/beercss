@@ -145,17 +145,39 @@ td img:not(.responsive, .tiny, .small, .medium, .large, .extra) {
   max-height: 24rem;
 }
 
-.button:not(.extend) > img.responsive:first-child, 
-button:not(.extend) > img.responsive:first-child,
-.chip > img.responsive:first-child,
-.tooltip + img.responsive {
+.button:not(.extend) > i + span,
+.button:not(.extend) > img + span,
+button:not(.extend) > i + span,
+button:not(.extend) > img + span,
+.chip > i + span,
+.chip > img + span {
+  margin-left: -8rem;
+}
+
+.button:not(.extend) > span + i,
+.button:not(.extend) > span + img,
+button:not(.extend) > span + i,
+button:not(.extend) > span + img,
+.chip > span + i,
+.chip > span + img {
+  margin-right: -8rem;
+}
+
+.button:not(.extend) > img.responsive + span, 
+button:not(.extend) > img.responsive + span {
+  margin-left: -24rem;
+}
+
+.button:not(.extend) > span + img.responsive,
+button:not(.extend) > span + img.responsive {
+  margin-right: -24rem;
+}
+
+.chip > img.responsive + span {
   margin-left: -16rem;
 }
 
-.button:not(.extend) > img.responsive:last-child, 
-button:not(.extend) > img.responsive:last-child,
-.chip > img.responsive:last-child,
-.tooltip + img.responsive {
+.chip > span + img.responsive {
   margin-right: -16rem;
 }
 
