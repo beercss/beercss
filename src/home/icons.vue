@@ -75,7 +75,7 @@
         h5 Icons
         a.button.border(
           v-show="data.modalSample == '#modal-icons'"
-          href="https://material.io/resources/icons/?style=baseline",
+          href="https://fonts.google.com/icons",
           target="_blank"
         ) More icons
         .max
