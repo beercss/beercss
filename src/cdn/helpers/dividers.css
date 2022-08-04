@@ -4,17 +4,17 @@
 .large-divider {
   border-bottom: 1rem solid var(--outline);
   display: block;
-  margin: 0;
+  margin: 0 !important;
 }
 
 .medium-divider {
-  margin: 16rem 0;
+  margin: 16rem 0 !important;
 }
 
 .large-divider {
-  margin: 24rem 0;
+  margin: 24rem 0 !important;
 }
 
 .small-divider {
-  margin: 8rem 0;
+  margin: 8rem 0 !important;
 }
