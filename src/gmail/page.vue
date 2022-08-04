@@ -91,7 +91,7 @@ div
         a.row(href="/gmail/spam")
           i error_outline
           .max Spam
-        a.row(data-ui="#themes1")
+        a.row(data-ui="#themes3")
           i brightness_medium
           .max Themes
     img(v-show="!data.isDark", :src="'/gmail-light.png'")
@@ -136,6 +136,7 @@ div
               img.responsive(:src="'/favicon.png'")
     button.circle.large.small-margin.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
+    themes(id="themes3", v-model="data")
   
   main.responsive.max
     #modal-add.modal.round.large-width
