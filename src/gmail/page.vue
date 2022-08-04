@@ -1,10 +1,10 @@
 <template lang="pug">
 div
-  nav.left.no-space.no-elevate.m.l
+  nav.left.no-space.m.l
     .large-space
-    .large-space
-    a.button.white.circle.large.elevate(data-ui="#modal-add")
-      img(:src="'/add.png'")
+    .medium-space
+    a.button.fill.square.round.extra(data-ui="#modal-add")
+      i add
     .space
     a(href="/gmail", :class="{ active: data.url == '/gmail' }")
       i inbox
@@ -34,22 +34,19 @@ div
       .large-space
       .medium-space
 
-  nav.right.no-elevate.m.l
+  nav.right.m.l.no-space
     .large-space
-    .large-space
-    button.square.transparent.small-padding
+    .medium-space
+    button.square.transparent.small.small-padding
       span.tooltip.left Calendar
       img.responsive(:src="'/calendar.png'")
-    .space
-    button.square.transparent.small-padding
+    button.square.transparent.small.small-padding
       span.tooltip.left Keep
       img.responsive(:src="'/keep.png'")
-    .space
-    button.square.transparent.small-padding
+    button.square.transparent.small.small-padding
       span.tooltip.left Tasks
       img.responsive(:src="'/tasks.png'")
-    .space
-    button.square.transparent.small-padding
+    button.square.transparent.small.small-padding
       span.tooltip.left Contacts
       img.responsive(:src="'/contacts.png'")
 
@@ -60,8 +57,8 @@ div
     a(href="/gmail/sent", :class="{ active: data.url == '/gmail/sent' }")
       i send
       div Sent
-    a.button.white.circle.large.elevate(data-ui="#modal-add-small")
-      img(:src="'/add.png'")
+    a.button.fill.square.round.extra(data-ui="#modal-add-small")
+      i add
     a(href="/gmail/drafts", :class="{ active: data.url == '/gmail/drafts' }")
       i insert_drive_file
       div Drafts
@@ -72,9 +69,8 @@ div
       .large-space
       .medium-space
 
-  nav.top.no-elevate
-    .space
-    button.circle.large.transparent(data-ui="#dropdown-menu")
+  nav.top
+    button.circle.large.small-margin.transparent(data-ui="#dropdown-menu")
       i menu
       #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
         a.row(href="/gmail")
@@ -98,7 +94,6 @@ div
         a.row(data-ui="#themes1")
           i brightness_medium
           .max Themes
-    .space
     img(v-show="!data.isDark", :src="'/gmail-light.png'")
     img(v-show="data.isDark", :src="'/gmail-dark.png'")
     .max
@@ -125,23 +120,22 @@ div
       #dropdown-apps.dropdown.left.padding.no-wrap(data-ui="#dropdown-apps")
         .grid.no-space
           .s4.center-align
-            button.transparent.square.small-padding
+            button.transparent.square.small.small-padding
               img.responsive(:src="'/calendar.png'")
           .s4.center-align
-            button.transparent.square.small-padding
+            button.transparent.square.small.small-padding
               img.responsive(:src="'/keep.png'")
           .s4.center-align
-            button.transparent.square.small-padding
+            button.transparent.square.small.small-padding
               img.responsive(:src="'/tasks.png'")
           .s4.center-align
-            button.transparent.square.small-padding
+            button.transparent.square.small.small-padding
               img.responsive(:src="'/contacts.png'")
           .s4.center-align
-            button.transparent.square.small-padding
+            button.transparent.square.small.small-padding
               img.responsive(:src="'/favicon.png'")
-    button.circle.large.transparent(@click="redirect('/')")
+    button.circle.large.small-margin.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
-    .space
   
   main.responsive.max
     #modal-add.modal.round.large-width

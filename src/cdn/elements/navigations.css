@@ -1,4 +1,4 @@
-nav:not(.left, .right, .top, .bottom),
+nav,
 .row {
   display: flex;
   align-items: center;
@@ -13,17 +13,17 @@ nav:not(.left, .right, .top, .bottom),
   margin-top: 16rem;
 }
 
-nav:not(.left, .right, .top, .bottom, .wrap) *:not(.tooltip),
-.row:not(.wrap) *:not(.tooltip) {
+nav *,
+.row * {
   margin-top: 0;
   margin-bottom: 0;
-  white-space: normal;
+  flex: none;
 }
 
-nav:not(.left, .right, .top, .bottom) > *,
+nav > *,
 .row > * {
-  margin: 0;
-  flex: none;
+  margin: 0 !important;
+  white-space: normal;
 }
 
 nav.no-space,
@@ -38,12 +38,12 @@ nav.no-space > .border + .border,
 
 nav.medium-space,
 .row.medium-space {
-  gap: 24;
+  gap: 24rem;
 }
 
 nav.large-space,
 .row.large-space {
-  gap: 32;
+  gap: 32rem;
 }
 
 nav > .max,
@@ -53,13 +53,8 @@ nav > .max,
 
 nav.wrap,
 .row.wrap {
+  display: flex;
   flex-wrap: wrap;
-  white-space: normal;
-}
-
-.field > nav,
-.field > .row {
-  padding: 0 8rem;
 }
 
 header > nav,
@@ -98,6 +93,7 @@ nav.bottom {
   height: auto;
   width: auto;
   text-align: center;
+  padding: 8rem;
 }
 
 nav.left,
@@ -141,7 +137,6 @@ nav.bottom > a:not(button, .button, .chip, img, video) {
   min-width: 56rem;
   min-height: 56rem;
   text-align: center;
-  margin: 8rem;
   display: grid;
   z-index: 101;
 }

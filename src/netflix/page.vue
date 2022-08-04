@@ -1,9 +1,7 @@
 <template lang="pug">
 .grey10.white-text
   nav.top.top-shadow.white-text
-    .large-space
     img(:src="'/netflix.png'")
-    .large-space
     button.circle.large.transparent.s.m(data-ui="#dropdown-menu")
       i menu
       #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
@@ -52,7 +50,6 @@
             label 10k views
     button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
-    .large-space
   main
     #modal-search.modal.top.transparent
       .row

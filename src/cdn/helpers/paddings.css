@@ -2,6 +2,10 @@
   padding: 0 !important;
 }
 
+.tiny-padding {
+  padding: 4rem !important;
+}
+
 .small-padding {
   padding: 8rem !important;
 }

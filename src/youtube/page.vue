@@ -1,8 +1,8 @@
 <template lang="pug">
 #layout
   nav.left.m.l
-    .large-space
-    .large-space
+    .medium-space
+    .space
     a(href="/youtube", :class="{ active: data.url == '/youtube' }")
       i home
       div Home
@@ -29,7 +29,7 @@
     a(href="/youtube/explore", :class="{ active: data.url == '/youtube/explore' }")
       i explore
       div Explore
-    a.button.circle.small.border(data-ui="#modal-add")
+    a.button.square.round.extra.fill(data-ui="#modal-add")
       i add
     a(href="/youtube/library", :class="{ active: data.url == '/youtube/library' }")
       i video_library
@@ -42,10 +42,8 @@
       .medium-space
 
   nav.top
-    .space
-    button.circle.large.transparent.m.l(data-ui="#modal-expanded")
+    button.circle.large.transparent.m.l.small-margin(data-ui="#modal-expanded")
       i menu
-    .space
     img(
       v-show="!data.isDark",
       :src="'/youtube-light.png'"
@@ -91,9 +89,8 @@
           .min Youtube Kids
     button.circle.large.transparent(data-ui="#modal-notifications")
       i notifications
-    button.circle.large.transparent(@click="redirect('/')")
+    button.circle.large.small-margin.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
-    .space
 
   #modal-notifications.modal.right
     nav

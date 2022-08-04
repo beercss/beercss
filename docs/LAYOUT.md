@@ -16,7 +16,7 @@ Layouts are containers that you can place in any position. There are absolute an
 
 **Alignments**
 
-left-align, right-align, top-align, bottom-align
+left-align, right-align, center-align, top-align, bottom-align, middle-align
 
 **Positions**
 
@@ -24,7 +24,7 @@ left, right, top, bottom, front, back
 
 **Sizes**
 
-small, medium, large
+small, medium, large, responsive
 
 
 ## Absolute example

@@ -10,7 +10,7 @@
 }
 
 .grid.no-space {
-  --row-gap: 0rem;
+  --row-gap: 0;
 }
 
 .grid.medium-space {

@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   nav.top.black.white-text
-    .large-space
+    .space
     img(height="24", :src="'/uber-dark.png'")
     button.large.transparent.m.l(
       data-ui="#dropdown-ride"
@@ -46,7 +46,7 @@ div
       i brightness_medium
     button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
-    .large-space
+    .space
 
   main.responsive.max
     home

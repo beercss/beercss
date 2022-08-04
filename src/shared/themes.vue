@@ -30,6 +30,9 @@
         img.responsive(:src="'/wallpaper-4.jpg'")
       button.round.square.transparent.extra(@click="sharedDomain.updateTheme(data, '/wallpaper-5.jpg')")
         img.responsive(:src="'/wallpaper-5.jpg'")
+      button.round.square.extra
+        i upload
+        input.absolute.top.left.right.bottom.no-opacity(type="file", @change="sharedDomain.updateTheme(data, $event)")
       button.round.square.extra.red(@click="sharedDomain.updateTheme(data, '#f44336')")
       button.round.square.extra.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
       button.round.square.extra.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')")
@@ -45,15 +48,12 @@
       button.round.square.extra.yellow(@click="sharedDomain.updateTheme(data, '#ffeb3b')")
       button.round.square.extra.amber(@click="sharedDomain.updateTheme(data, '#ffc107')")
       button.round.square.extra.orange(@click="sharedDomain.updateTheme(data, '#ff9800')")
-      button.round.square.extra.depp-orange(@click="sharedDomain.updateTheme(data, '#ff5722')")
+      button.round.square.extra.deep-orange(@click="sharedDomain.updateTheme(data, '#ff5722')")
       button.round.square.extra.brown(@click="sharedDomain.updateTheme(data, '#795548')")
       button.round.square.extra.grey(@click="sharedDomain.updateTheme(data, '#9e9e9e')")
       button.round.square.extra.blue-grey(@click="sharedDomain.updateTheme(data, '#607d8b')")
       button.round.square.extra.black(@click="sharedDomain.updateTheme(data, '#000000')")
       button.round.square.extra.white(@click="sharedDomain.updateTheme(data, '#ffffff')")
-      button.round.square.extra
-        i upload
-        input.absolute.top.left.right.bottom.no-opacity(type="file", @change="sharedDomain.updateTheme(data, $event)")
   div(v-if="data.showCssVariables")
     nav
       label.radio

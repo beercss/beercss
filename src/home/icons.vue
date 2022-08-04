@@ -12,6 +12,7 @@
     label.radio
       input(type="radio", name="form-icons", @click="domain.updateIcon('fill')")
       span fill
+  .space
   #icons-sample
     nav.wrap
       i.tiny home

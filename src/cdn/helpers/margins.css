@@ -2,6 +2,10 @@
   margin: 0 !important;
 }
 
+.tiny-margin {
+  padding: 4rem !important;
+}
+
 .small-margin {
   margin: 8rem !important;
 }

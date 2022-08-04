@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  nav#navigation-rail1.m.l.left
+  nav#navigation-rail1.m.l.left.tiny-padding
     a
       img.circle(:src="'/favicon.png'")
     a
@@ -36,7 +36,7 @@ div
       i code
       span Code
 
-  header.responsive.fixed.yellow4.black-text.front
+  header#top-app-bar1.responsive.fixed.yellow4.black-text
     nav
       button.transparent.circle(data-ui="#modal-menu")
         i menu
@@ -167,37 +167,32 @@ div
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#typography')")
       i widgets
       span Typography
+  
   themes(id="themes3", v-model="data", position="right")
-  #more3.modal.right.medium(data-ui="#more3")
+  
+  #more3.modal.right.small(data-ui="#more3")
     header.fixed
       nav
         h5.max Templates
         button.transparent.circle
           i close
-    .grid.large-space
-      .s12.m6.l4
-        a.row(href="/youtube", v-show="data.isDark")
-          img.logo-template(:src="'/youtube-dark.png'")
-        a.row(href="/youtube", v-show="!data.isDark")
-          img.logo-template(:src="'/youtube-light.png'")
-      .s12.m6.l4
-        a.row(href="/netflix")
-          img.logo-template(:src="'/netflix.png'")
-      .s12.m6.l4
-        a.row(href="/gmail", v-show="data.isDark")
-          img.logo-template(:src="'/gmail-dark.png'")
-        a.row(href="/gmail", v-show="!data.isDark")
-          img.logo-template(:src="'/gmail-light.png'")
-      .s12.m6.l4
-        a.row(href="/uber", v-show="data.isDark")
-          img.logo-template(:src="'/uber-dark.png'")
-        a.row(href="/uber", v-show="!data.isDark")
-          img.logo-template(:src="'/uber-light.png'")
-      .s12.m6.l4
-        a.row(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="data.isDark")
-          img.logo-codepen(:src="'/codepen-dark.png'")
-        a.row(href="https://codepen.io/search/pens?q=beercss", target="_self", v-show="!data.isDark")
-          img.logo-codepen(:src="'/codepen-light.png'")
+    p All templates listed below are only for tests purpose. Feel free to study them.
+    .space
+    a.row.round(href="/gmail")
+      i mail
+      span Gmail
+    a.row.round(href="/netflix")
+      i tv
+      span Netflix
+    a.row.round(href="/uber")
+      i directions_car
+      span Uber
+    a.row.round(href="/youtube")
+      i smart_display
+      span Youtube
+    a.row.round(href="https://codepen.io/search/pens?q=beercss")
+      i code
+      span Codepen
   
   .responsive.center-align.yellow4
     div.black-text
@@ -286,12 +281,12 @@ div
                     span &nbsp;left, right, top, bottom, front, back, small, medium, large
                   p
                     b &lt;footer&gt;
-                    span &nbsp;fixed
+                    span &nbsp;fixed, responsive
                   p
                     b &lt;h1&gt;...&lt;h6&gt;
                   p
                     b &lt;header&gt;
-                    span &nbsp;fixed
+                    span &nbsp;fixed, responsive
                   p
                     b &lt;i&gt;
                     span &nbsp;tiny, small, medium, large, extra. fill
@@ -415,70 +410,10 @@ div
           tooltips
         .s12
           typography
-        .s12
-          .large-space
-          div
-            h4.center-align Cheers 🍻
-            .large-space
-            .grid
-              .s6.m4.l3.center-align
-                a(href="https://www.myrp.com.br", target="_self")
-                  img.white.extra.border.circle(:src="'/myrp.png'")
-                p Myrp
-              .s6.m4.l3.center-align
-                a(href="https://www.inventti.com.br", target="_self")
-                  img.white.extra.border.circle(:src="'/inventti.jpg'")
-                p Inventti
-              .s6.m4.l3.center-align
-                a
-                  img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-                p Sponsor 3
-              .s6.m4.l3.center-align
-                a
-                  img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-                p Sponsor 4
-              .s6.m4.l3.center-align
-                a
-                  img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-                p Sponsor 5
-              .s6.m4.l3.center-align
-                a
-                  img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-                p Sponsor 6
-              .s6.m4.l3.center-align
-                a
-                  img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-                p Sponsor 7
-              .s6.m4.l3.center-align
-                a
-                  img.white.extra.border.circle(:src="'/beer-and-woman.jpg'")
-                p Sponsor 8
-            .large-space
-            nav.wrap.center-align
-              a.chip Leonardo Rafael Wehrmeister
-              a.chip Everton Alcides Buzzi
-              a.chip Sponsor 11
-              a.chip Sponsor 12
-              a.chip Sponsor 13
-              a.chip Sponsor 14
-              a.chip Sponsor 15
-              a.chip Sponsor 16
-              a.chip Sponsor 17
-              a.chip Sponsor 18
-              a.chip Sponsor 19
-              a.chip Sponsor 20
-              a.chip Sponsor 21
-              a.chip Sponsor 22
-              a.chip Sponsor 23
-              a.chip Sponsor 24
-          .large-space
-          div
-            h4.center-align Support us
-            nav.center-align.wrap
-              a(href="https://www.patreon.com/beercss" target="_self")
-                img.logo-support(:src="'/patreon.png'")
-              a(href="https://www.opencollective.com/beercss" target="_self")
-                img.logo-support(:src="'/open-collective.png'")
+
+      .large-space
+      div Maded with love and beer, cheers 💛🍻
+      .space
 
       #modal-samples.modal.right.large
         header.fixed.front

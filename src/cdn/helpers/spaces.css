@@ -1,34 +1,16 @@
-.space:not(nav, .grid, table),
-.small-space:not(nav, .grid, table) {
+.tiny-space:not(nav, .row, .grid, table) {
+  height: 8rem;
+}
+
+.space:not(nav, .row, .grid, table),
+.small-space:not(nav, .row, .grid, table) {
   height: 16rem;
 }
 
-.medium-space:not(nav, .grid, table) {
+.medium-space:not(nav, .row, .grid, table) {
   height: 32rem;
 }
 
-.large-space:not(nav, .grid, table) {
+.large-space:not(nav, .row, .grid, table) {
   height: 48rem;
-}
-
-.row.no-space,
-nav.no-space {
-  margin: 0;
-}
-
-.row.space > *,
-.row.small-space > *,
-nav.space > *,
-nav.small-space > * {
-  margin: 0 8rem;
-}
-
-.row.medium-space > *,
-nav.medium-space > * {
-  margin: 0 12rem;
-}
-
-.row.large-space > *,
-nav.large-space > * {
-  margin: 0 16rem;
 }

@@ -31,7 +31,7 @@
   h6.middle-align
     span Cards
   .row.scroll
-    article.small-width(v-for="i in [1,2,3,4,5,6,7,8,9,10]")
+    article.small-width.border(v-for="i in [1,2,3,4,5,6,7,8,9,10]")
       h5 Title
       p Some text here
       .space

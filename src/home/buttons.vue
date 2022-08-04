@@ -8,6 +8,7 @@
     a.chip.circle(@click="domain.showSamples(data, '#default-buttons button', 'Buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#default-buttons button")
+  .space
   #default-buttons
     nav.wrap
       button Button
@@ -110,6 +111,7 @@
     a.chip.circle(@click="domain.showSamples(data, '#fabs button', 'FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#fabs button", selectedSize="extra")
+  .space
   #fabs
     nav.wrap
       button.square
@@ -292,6 +294,7 @@
     a.chip.circle(@click="domain.showSamples(data, '#transparent-buttons button', 'Transparent buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#transparent-buttons button", :colors="[]", :elevates="[]")
+  .space
   #transparent-buttons
     nav.wrap
       button.transparent.square
@@ -334,7 +337,7 @@
       i code
   selectionForButtons(context="#segmented-buttons button", :colors="[]", :elevates="[]")
   #segmented-buttons.grid
-    .s12.m6.l6
+    .s12.m12.l6
       nav.no-space
         button.border.left-round
           span Button
@@ -361,7 +364,7 @@
         button.border.right-round.fill
           i.small check
           span Button
-    .s12.m6.l6
+    .s12.m12.l6
       nav.no-space
         button.border.left-round.max
           span Button

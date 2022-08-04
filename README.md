@@ -63,17 +63,21 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 <element class="helper helper">...</element>
 <div class="element helper helper">...</div>
 
-// nav elements before a main element
+// nav elements before all others
 <body>
   <nav class="left m l">...</nav>
   <nav class="bottom s">...</nav>
+  <header class="responsive">...</header>
   <main class="responsive">...</main>
+  <footer class="responsive">...</footer>
 </body>
 
 <div id="app">
   <nav class="left m l">...</nav>
   <nav class="bottom s">...</nav>
+  <header class="responsive">...</header>
   <main class="responsive">...</main>
+  <footer class="responsive">...</footer>
 </div>
 
 // write css like this
@@ -95,15 +99,19 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
   <div class="element-footer">...</div>
 </div>
 
-// nav elements after or inside a main element
+// nav elements after all others
 <body>
+  <header class="responsive">...</header>
   <main class="responsive">...</main>
+  <footer class="responsive">...</footer>
   <nav class="left m l">...</nav>
   <nav class="bottom s">...</nav>
 </body>
 
 <div id="app">
+  <header class="responsive">...</header>
   <main class="responsive">...</main>
+  <footer class="responsive">...</footer>
   <nav class="left m l">...</nav>
   <nav class="bottom s">...</nav>
 </div>

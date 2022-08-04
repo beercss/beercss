@@ -28,6 +28,7 @@ div
       label.radio
         input(type="radio", name="vertical-position", @click="domain.updateVerticalPosition('#positions .absolute', 'bottom')")
         span bottom
+    .space
     #positions
       article.border.medium.no-padding
         .padding.primary.absolute.center.middle
@@ -68,6 +69,7 @@ div
       label.radio
         input(type="radio", name="vertical-layouts", @click="domain.updateVerticalAlign('#alignments article', 'bottom-align')")
         span bottom-align
+    .space
     #alignments
       article.border.medium.no-padding.center-align.middle-align
         .padding

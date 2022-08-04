@@ -240,6 +240,7 @@ const formatHtml = (element:any):string => {
       .replace(/\s+name\="(\w+)"/gi, " name=\"$1_\"")
       .replace(/\s+(checked|disabled)=""/gi, " $1")
       .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
+      .replace(/\s+(tiny-padding)/gi, "")
       .replace(/\n\<\/(circle|th)\>/gi, "</$1>")
   )
   .replace(/^\s+/g, "")

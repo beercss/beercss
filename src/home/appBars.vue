@@ -25,6 +25,7 @@ div
       label.radio
         input(type="radio", name="radio-top-app-bars", @click="domain.updateColorTheme('#top-app-bars header', 'tertiary')")
         span tertiary
+    .space
     header.primary-container
       nav
         button.circle.transparent
@@ -95,6 +96,7 @@ div
       label.radio
         input(type="radio", name="radio-bottom-app-bars", @click="domain.updateColorTheme('#bottom-app-bars footer', 'tertiary')")
         span tertiary
+    .space
     footer.primary-container
       nav
         button.circle.transparent
