@@ -1,5 +1,5 @@
-.round {
-  border-radius: 32rem;
+.round:not(img, video) {
+  border-radius: 32rem !important;
 }
 
 .no-round {
