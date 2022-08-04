@@ -28,7 +28,7 @@ nav > *,
 
 nav.no-space,
 .row.no-space {
-  gap: 0;
+  gap: 0rem;
 }
 
 nav.no-space > .border + .border,
