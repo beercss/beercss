@@ -174,18 +174,22 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
   </head>
   <body class="light">
     <nav class="left m l">
-      <img src="https://www.beercss.com/favicon.png" class="circle large margin">
+      <img src="https://www.beercss.com/favicon.png" class="circle margin">
       <a>
         <i>home</i>
+        <div>Home</div>
       </a>
       <a>
         <i>search</i>
+        <div>Search</div>
       </a>
       <a>
         <i>share</i>
+        <div>Share</div>
       </a>
       <a>
         <i>more_vert</i>
+        <div>More</div>
       </a>
     </nav>
     
@@ -205,7 +209,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     </nav>
     
     <main class="responsive">
-      <img src="https://www.beercss.com/beer-and-woman.jpg" class="responsive">
+      <img src="https://www.beercss.com/beer-and-woman.jpg" class="responsive round">
       <h3>Welcome</h3>
       <h5>The beer is ready!</h5>
     </main>
