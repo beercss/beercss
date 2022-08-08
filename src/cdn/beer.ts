@@ -14,6 +14,10 @@
     dark: ""
   }
 
+  const wait = (milliseconds:number) => {
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
+  }
+
   const guid = ():string => {
     return "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c:string) => {
       let r = (Math.random() * 16) | 0,
@@ -232,13 +236,14 @@
     on(document.body, "click", onClickDocument);
   }
 
-  const modal = (from:Element, to:Element) => {
+  const modal = async (from:Element, to:Element) => {
     tab(from);
 
     let overlay = prev(to) as HTMLElement;
     if (!hasClass(overlay, "overlay")) {
-      overlay = create({ className: "overlay active" });
+      overlay = create({ className: "overlay" });
       insertBefore(overlay, to);
+      await wait(90);
     }
 
     overlay.onclick = () => {
