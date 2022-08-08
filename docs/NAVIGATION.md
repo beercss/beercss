@@ -25,11 +25,11 @@ fill, primary-container, secondary-container, tertiary-container
 
 **Forms**
 
-border, round, left-round, right-round, top-round, bottom-round
+border, round, no-round, left-round, right-round, top-round, bottom-round
 
 **Margins**
 
-no-margin, small-margin, medium-margin, large-margin
+margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
 **Positions**
 

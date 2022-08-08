@@ -258,16 +258,16 @@ div
                     span &nbsp;left, right, top, bottom, front, back, small, medium, large
                   p
                     b &lt;article&gt;
-                    span &nbsp;small, medium, large, border, round, left-round, top-round, right-round, bottom-round, no-padding, padding, small-padding, medium-padding, large-padding
+                    span &nbsp;small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, tiny-padding small-padding, medium-padding, large-padding
                   p
                     b badge
-                    span &nbsp;left, right, top, bottom, border, circle, square, round, left-round, right-round, top-round, bottom-round
+                    span &nbsp;left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
                   p
                     b button or &lt;button&gt;
-                    span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, left-round, right-round, top-round, bottom-round, responsive
+                    span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive
                   p
                     b chip
-                    span &nbsp;small, medium, large, border, circle, square, round, left-round, right-round, top-round, bottom-round
+                    span &nbsp;small, medium, large, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
                   p
                     b &lt;details&gt;
                   p
@@ -292,23 +292,23 @@ div
                     span &nbsp;tiny, small, medium, large, extra. fill
                   p
                     b &lt;img&gt;
-                    span &nbsp;tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive
+                    span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
                   p
                     b &lt;label&gt;
                     span &nbsp;active, radio, checkbox, switch
+                .s12.m12.l6
                   p
                     b loader
                     span &nbsp;small, medium, large
-                .s12.m12.l6
                   p
                     b &lt;main&gt;
                     span &nbsp;responsive, max
                   p
                     b modal
-                    span &nbsp;left, right, top, bottom, small, medium, large, border, round, left-round, right-round, top-round, bottom-round, active
+                    span &nbsp;left, right, top, bottom, small, medium, large, border, round, no-round, left-round, right-round, top-round, bottom-round, active
                   p
                     b &lt;nav&gt;
-                    span &nbsp;left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, no-margin, small-margin, medium-margin, large-margin
+                    span &nbsp;left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
                   p
                     b overlay
                     span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active
@@ -337,7 +337,7 @@ div
                     span &nbsp;left, right, top, bottom
                   p
                     b &lt;video&gt;
-                    span &nbsp;tiny, small, medium, large, extra, circle, round, left-round, right-round, top-round, bottom-round, responsive
+                    span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
               .medium-space
             nav.wrap
               a.button(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation

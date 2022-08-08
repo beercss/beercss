@@ -18,7 +18,7 @@ fill, primary, secondary, tertiary
 
 **Forms**
 
-border, circle, square, round, left-round, right-round, top-round, bottom-round
+border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
 
 **Positions**
 

@@ -16,7 +16,11 @@ fill, primary-container, secondary-container, tertiary-container
 
 **Forms**
 
-border, round, left-round, right-round, top-round, bottom-round
+border, round, no-round, left-round, right-round, top-round, bottom-round
+
+**Paddings**
+
+padding, no-padding, tiny-padding, small-padding, medium-padding, large-padding
 
 **Positions**
 

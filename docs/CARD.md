@@ -16,11 +16,11 @@ fill, primary-container, secondary-container, tertiary-container
 
 **Forms**
 
-border, round, left-round, top-round, right-round, bottom-round
+border, round, no-round, left-round, top-round, right-round, bottom-round
 
 **Paddings**
 
-no-padding, padding, small-padding, medium-padding, large-padding
+padding, no-padding, tiny-padding, small-padding, medium-padding, large-padding
 
 **Elevates**
 
