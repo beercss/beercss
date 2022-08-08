@@ -8,6 +8,7 @@
   .grid
     .s6
       div
+        a.link link
         p.italic italic
         p.bold bold
         p.underline underline
@@ -15,7 +16,6 @@
         p.upper upper
         p.lower lower
         p.capitalize capitalize
-        p.link link
         p.small-text small-text
         p.medium-text medium-text
         p.large-text large-text

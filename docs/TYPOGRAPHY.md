@@ -35,6 +35,7 @@ space, no-space, small-space, medium-space, large-space
 <h5>Title 5</h5>
 <h6>Title 6</h6>
 
+<a class="link">link</a>
 <p class="italic">italic</p>
 <p class="bold">bold</p>
 <p class="underline">underline</p>
@@ -42,7 +43,6 @@ space, no-space, small-space, medium-space, large-space
 <p class="upper">upper</p>
 <p class="lower">lower</p>
 <p class="capitalize">capitalize</p>
-<p class="link">link</p>
 <p class="small-text">small-text</p>
 <p class="medium-text">medium-text</p>
 <p class="large-text">large-text</p>
