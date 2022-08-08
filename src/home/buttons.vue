@@ -345,7 +345,6 @@
           span Button
         button.border.right-round.fill
           span Button
-      .space
       nav.no-space
         button.border.left-round
           i search
@@ -353,7 +352,6 @@
           i edit
         button.border.right-round.fill
           i home
-      .space
       nav.no-space
         button.border.left-round
           i.small check
@@ -372,7 +370,6 @@
           span Button
         button.border.right-round.max.fill
           span Button
-      .space
       nav.no-space
         button.border.left-round.max
           i search
@@ -380,7 +377,6 @@
           i edit
         button.border.right-round.max.fill
           i home
-      .space
       nav.no-space
         button.border.left-round.max
           i.small check
