@@ -87,16 +87,16 @@ The transparent button is a button for navigation. The shape of button will be r
 Segmented buttons can have 2-5 segments. Each segment is clearly divided and contains label text, an icon, or both.
 
 ```html
-<nav class="no-margin">
-  <button class="border no-margin left-round">Left</button>
-  <button class="border no-margin no-round">Center</button>
-  <button class="border no-margin right-round">Right</button>
+<nav class="no-space">
+  <button class="border left-round">Left</button>
+  <button class="border no-round">Center</button>
+  <button class="border right-round">Right</button>
 </nav>
 
-<nav class="no-margin">
-  <button class="border no-margin left-round max">Left</button>
-  <button class="border no-margin no-round max">Center</button>
-  <button class="border no-margin right-round max">Right</button>
+<nav class="no-space">
+  <button class="border left-round max">Left</button>
+  <button class="border no-round max">Center</button>
+  <button class="border right-round max">Right</button>
 </nav>
 ```
 
