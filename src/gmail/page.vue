@@ -34,21 +34,21 @@ div
       .large-space
       .medium-space
 
-  nav.right.m.l.no-space
-    .large-space
+  nav.right.m.l
     .medium-space
-    button.square.transparent.small.small-padding
+    .space
+    button.circle.transparent.large
       span.tooltip.left Calendar
-      img.responsive(:src="'/calendar.png'")
-    button.square.transparent.small.small-padding
+      img.no-round(:src="'/calendar.png'")
+    button.circle.transparent.large
       span.tooltip.left Keep
-      img.responsive(:src="'/keep.png'")
-    button.square.transparent.small.small-padding
+      img.no-round(:src="'/keep.png'")
+    button.circle.transparent.large
       span.tooltip.left Tasks
-      img.responsive(:src="'/tasks.png'")
-    button.square.transparent.small.small-padding
+      img.no-round(:src="'/tasks.png'")
+    button.circle.transparent.large
       span.tooltip.left Contacts
-      img.responsive(:src="'/contacts.png'")
+      img.no-round(:src="'/contacts.png'")
 
   nav.bottom.s
     a(href="/gmail", :class="{ active: data.url == '/gmail' }")
@@ -120,20 +120,20 @@ div
       #dropdown-apps.dropdown.left.padding.no-wrap(data-ui="#dropdown-apps")
         .grid.no-space
           .s4.center-align
-            button.transparent.square.small.small-padding
-              img.responsive(:src="'/calendar.png'")
+            button.transparent.circle.large
+              img.no-round(:src="'/calendar.png'")
           .s4.center-align
-            button.transparent.square.small.small-padding
-              img.responsive(:src="'/keep.png'")
+            button.transparent.circle.large
+              img.no-round(:src="'/keep.png'")
           .s4.center-align
-            button.transparent.square.small.small-padding
-              img.responsive(:src="'/tasks.png'")
+            button.transparent.circle.large
+              img.no-round(:src="'/tasks.png'")
           .s4.center-align
-            button.transparent.square.small.small-padding
-              img.responsive(:src="'/contacts.png'")
+            button.transparent.circle.large
+              img.no-round(:src="'/contacts.png'")
           .s4.center-align
-            button.transparent.square.small.small-padding
-              img.responsive(:src="'/favicon.png'")
+            button.transparent.circle.large
+              img.no-round(:src="'/favicon.png'")
     button.circle.large.small-margin.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
     themes(id="themes3", v-model="data")
