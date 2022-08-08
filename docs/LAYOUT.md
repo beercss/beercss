@@ -6,10 +6,10 @@ Layouts are containers that you can place in any position. There are absolute an
 
 ```html
 <...>
-  <div clas="absolute">...</div>
+  <div class="absolute">...</div>
 </...>
 
-<div clas="fixed">...</div>
+<div class="fixed">...</div>
 ```
 
 ## Most used helpers
