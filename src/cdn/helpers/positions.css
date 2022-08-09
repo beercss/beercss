@@ -1,9 +1,9 @@
 .front {
-  z-index: 10;
+  z-index: 10 !important;
 }
 
 .back {
-  z-index: -10;
+  z-index: -10 !important;
 }
 
 .left {
