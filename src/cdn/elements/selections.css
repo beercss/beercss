@@ -52,6 +52,8 @@
   text-align: center;
   overflow: hidden;
   width: 24rem;
+  min-width: 24rem;
+  box-sizing: content-box;
   height: 24rem;
   margin: 0 auto;
   outline: none;
@@ -60,7 +62,6 @@
   left: -24rem;
   background-color: transparent;
   border-radius: 50%;
-  box-sizing: content-box;
 }
 
 .checkbox > input + span::before {

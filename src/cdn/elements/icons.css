@@ -16,22 +16,26 @@ i {
   text-align: center;
   overflow: hidden;
   width: 24rem;
+  min-width: 24rem;
   box-sizing: content-box;
 }
 
 i.tiny {
   font-size: 16rem;
   width: 16rem;
+  min-width: 16rem;
 }
 
 i.small {
   font-size: 20rem;
   width: 20rem;
+  min-width: 20rem;
 }
 
 i.large {
   font-size: 28rem;
   width: 28rem;
+  min-width: 28rem;
 }
 
 i.extra {
