@@ -53,7 +53,7 @@ h6 {
 }
 
 .link {
-  color: var(--primary);
+  color: var(--primary) !important;
 }
 
 .truncate {

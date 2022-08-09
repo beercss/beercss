@@ -20,9 +20,3 @@ nav > .overlay {
   opacity: 1;
   visibility: visible;
 }
-
-.overlay.active.top-align,
-.overlay.active.middle-align,
-.overlay.active.bottom-align {
-  display: flex;
-}
