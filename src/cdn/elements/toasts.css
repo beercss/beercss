@@ -8,7 +8,7 @@
   height: auto;
   z-index: 200;
   visibility: hidden;
-  display: inline-block;
+  display: flex;
   box-shadow: var(--elevate2);
   color: var(--on-error);
   background-color: var(--error-background);
@@ -20,6 +20,7 @@
   display: flex;
   align-items: center;
   border-radius: 4rem;
+  gap: 8rem;
 }
 
 .toast.top {
@@ -40,26 +41,6 @@
 .toast.active.top {
   visibility: visible;
   animation: var(--speed2) toast-to-bottom;
-}
-
-.toast.small {
-  padding: 8rem;
-}
-
-.toast.medium {
-  padding: 16rem;
-}
-
-.toast.large {
-  padding: 24rem;
-}
-
-.toast > * {
-  overflow: unset;
-}
-
-.toast > * + * {
-  margin-left: 8rem;
 }
 
 @keyframes toast-to-top {
