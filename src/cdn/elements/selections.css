@@ -52,9 +52,8 @@
   text-align: center;
   overflow: hidden;
   width: 24rem;
-  min-width: 24rem;
-  box-sizing: content-box;
   height: 24rem;
+  box-sizing: content-box;
   margin: 0 auto;
   outline: none;
   color: var(--primary);

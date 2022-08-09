@@ -17,13 +17,13 @@ nav *,
 .row * {
   margin-top: 0;
   margin-bottom: 0;
-  flex: unset;
 }
 
 nav > *,
 .row > * {
   margin: 0 !important;
   white-space: normal;
+  flex: none;
 }
 
 nav.no-space,
