@@ -398,6 +398,7 @@ input[type=file] {
 .field.label > [placeholder]:not(:placeholder-shown) ~ label {
   font-size: 12rem;
   transform: translateY(-120%);
+  z-index: 1;
 }
 
 .field.label.border:not(.fill) > label.active,
@@ -407,12 +408,14 @@ input[type=file] {
   top: 0%;
   left: 16rem;
   transform: translateY(-50%);
+  z-index: 1;
 }
 
 .field.label.border.round:not(.fill) > label.active,
 .field.label.border.round:not(.fill) > [placeholder]:focus ~ label,
 .field.label.border.round:not(.fill) > [placeholder]:not(:placeholder-shown) ~ label {
   left: 24rem;
+  z-index: 1;
 }
 
 .field.label > :focus ~ label {
