@@ -1,13 +1,13 @@
 <template lang="pug">
 div
   nav#navigation-rail1.m.l.left.tiny-padding
-    a
+    a(@click="domain.addHomeScreen()")
       img.circle(:src="'/favicon.png'")
-    a
+    a(@click="domain.goTo('#intro')")
       i home
-      span Home
-    a
-      i explore
+      span Install
+    a(data-ui="#modal-menu")
+      i widgets
       span Explore
     a(@click="domain.updateMenu(data, 'left')")
       i arrow_back
@@ -20,11 +20,11 @@ div
       span Code
   
   nav#navigation-bar1.s.bottom
-    a
+    a(@click="domain.goTo('#intro')")
       i home
-      span Home
-    a
-      i explore
+      span Install
+    a(data-ui="#modal-menu")
+      i widgets
       span Explore
     a(@click="domain.updateMenu(data, 'top')")
       i arrow_upward
@@ -38,9 +38,9 @@ div
 
   header#top-app-bar1.responsive.fixed.yellow4.black-text
     nav
-      button.transparent.circle(data-ui="#modal-menu")
-        i menu
       .max
+        a.s(@click="domain.addHomeScreen()")
+          img.circle.border.white-border(:src="'/favicon.png'")
       button.transparent.circle(@click="sharedDomain.updateMode(data)")
         i light_mode
       button.transparent.circle(data-ui="#themes3")
@@ -52,12 +52,11 @@ div
     header.fixed
       nav
         img.circle(:src="'/favicon.png'")
-        h5.max Beercss
+        .max 
+          h6 Beercss
+          div v2.2.8
         button.transparent.circle(data-ui="#modal-menu")
           i close
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#intro')")
-      i home
-      span Get started
     a.row.round(@click="sharedDomain.updateMode(data)")
       i light_mode
       span Light / Dark
@@ -231,9 +230,9 @@ div
             .medium-space
             h5 From CDN
             pre.scroll.fill.no-round(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.2.7/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.2.8/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.2.7/dist/cdn/beer.min.js" type="text/javascript"&gt;&lt;/script&gt;
+              | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.2.8/dist/cdn/beer.min.js" type="text/javascript"&gt;&lt;/script&gt;
               |
               | &lt;script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"&gt;&lt;/script&gt;
             .medium-space

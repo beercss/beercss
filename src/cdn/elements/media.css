@@ -145,44 +145,44 @@ td img:not(.responsive, .tiny, .small, .medium, .large, .extra) {
   max-height: 24rem;
 }
 
-.button:not(.circle, .square, .none) > i,
-.button:not(.circle, .square, .none) > img,
-button:not(.circle, .square, .none) > i,
-button:not(.circle, .square, .none) > img,
-.chip:not(.circle, .square, .none) > i,
-.chip:not(.circle, .square, .none) > img {
-  margin: 0 0 0 -8rem;
+.button > i,
+.button > img,
+.button > img.responsive,
+button > i,
+button > img,
+button > img.responsive,
+.chip > i,
+.chip > img,
+.chip > img.responsive {
+  margin: 0 -8rem;
 }
 
-.button:not(.circle, .square, .none) > span + i,
-.button:not(.circle, .square, .none) > span + img,
-button:not(.circle, .square, .none) > span + i,
-button:not(.circle, .square, .none) > span + img,
-.chip:not(.circle, .square, .none) > span + i,
-.chip:not(.circle, .square, .none) > span + img {
-  margin: 0 -8rem 0 0;
+.button > img.responsive, 
+button > img.responsive {
+  margin-left: -24rem;
 }
 
-.button:not(.circle, .square, .none) > img.responsive, 
-button:not(.circle, .square, .none) > img.responsive {
-  margin: 0 0 0 -24rem;
+.button > span + img.responsive,
+button > span + img.responsive {
+  margin-right: -24rem;
 }
 
-.button:not(.circle, .square, .none) > span + img.responsive,
-button:not(.circle, .square, .none) > span + img.responsive {
-  margin: 0 -24rem 0 0;
+.chip > img.responsive {
+  margin-left: -16rem;
 }
 
-.chip:not(.circle, .square, .none) > img.responsive {
-  margin: 0 0 0 -16rem;
+.chip > span + img.responsive {
+  margin-right: -16rem;
 }
 
-.chip:not(.circle, .square, .none) > span + img.responsive {
-  margin: 0 -16rem 0 0;
+.circle > img.responsive,
+.square > img.responsive {
+  margin: 0;
 }
 
 .extend > i,
 .extend > img {
+  margin: 0;
   position: absolute;
   left: 16rem;
 }

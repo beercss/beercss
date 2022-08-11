@@ -15,7 +15,7 @@
   border-radius: 8rem;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
   user-select: none;
-  gap: 8rem;
+  gap: 16rem;
 }
 
 .chip.small {
