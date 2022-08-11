@@ -11,13 +11,13 @@ div
         i code
     nav.wrap
       label.radio
-        input(type="radio", name="radio-top-app-bars", @click="domain.updateColorTheme('#top-app-bars header')")
+        input(type="radio", name="radio-top-app-bars", @click="domain.updateColorTheme('#top-app-bars header')", checked)
         span default
       label.radio
         input(type="radio", name="radio-top-app-bars", @click="domain.updateColorTheme('#top-app-bars header', 'fill')")
         span fill
       label.radio
-        input(type="radio", name="radio-top-app-bars", @click="domain.updateColorTheme('#top-app-bars header', 'primary')", checked)
+        input(type="radio", name="radio-top-app-bars", @click="domain.updateColorTheme('#top-app-bars header', 'primary')")
         span primary
       label.radio
         input(type="radio", name="radio-top-app-bars", @click="domain.updateColorTheme('#top-app-bars header', 'secondary')")
@@ -26,7 +26,7 @@ div
         input(type="radio", name="radio-top-app-bars", @click="domain.updateColorTheme('#top-app-bars header', 'tertiary')")
         span tertiary
     .space
-    header.primary-container
+    header
       nav
         button.circle.transparent
           i menu
@@ -34,7 +34,7 @@ div
         button.circle.transparent
           img.responsive(:src="'/favicon.png'")
     .space
-    header.primary-container
+    header
       nav
         button.circle.transparent
           i arrow_backward
@@ -46,7 +46,7 @@ div
         button.circle.transparent
           i more_vert
     .space
-    header.primary-container
+    header
       nav
         button.circle.transparent
           i arrow_backward
@@ -60,7 +60,7 @@ div
       .small-space
       h5.small-padding Headline small
     .space
-    header.primary-container
+    header
       nav
         button.circle.transparent
           i arrow_backward
@@ -82,13 +82,13 @@ div
         i code
     nav.wrap
       label.radio
-        input(type="radio", name="radio-bottom-app-bars", @click="domain.updateColorTheme('#bottom-app-bars footer')")
+        input(type="radio", name="radio-bottom-app-bars", @click="domain.updateColorTheme('#bottom-app-bars footer')", checked)
         span default
       label.radio
         input(type="radio", name="radio-bottom-app-bars", @click="domain.updateColorTheme('#bottom-app-bars footer', 'fill')")
         span fill
       label.radio
-        input(type="radio", name="radio-bottom-app-bars", @click="domain.updateColorTheme('#bottom-app-bars footer', 'primary')", checked)
+        input(type="radio", name="radio-bottom-app-bars", @click="domain.updateColorTheme('#bottom-app-bars footer', 'primary')")
         span primary
       label.radio
         input(type="radio", name="radio-bottom-app-bars", @click="domain.updateColorTheme('#bottom-app-bars footer', 'secondary')")
@@ -97,7 +97,7 @@ div
         input(type="radio", name="radio-bottom-app-bars", @click="domain.updateColorTheme('#bottom-app-bars footer', 'tertiary')")
         span tertiary
     .space
-    footer.primary-container
+    footer
       nav
         button.circle.transparent
           i check_box_filled
