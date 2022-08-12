@@ -12,3 +12,7 @@ export interface ILayout {
   showCssVariables: boolean,
   isLoaded: boolean
 }
+
+export interface IInstallEvent extends Event {
+  prompt(): Promise<void>;
+}

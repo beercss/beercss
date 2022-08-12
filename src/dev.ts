@@ -11,3 +11,4 @@ import "./youtube";
 import utils from "./shared/utils";
  
 utils.firstRedirect();
+utils.waitForInstall();

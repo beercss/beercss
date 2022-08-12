@@ -9,5 +9,4 @@ declare module '*.vue' {
 
 declare let page: any;
 declare let ui: any;
-declare let beercss: any;
 declare let hljs:any;

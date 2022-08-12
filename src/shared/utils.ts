@@ -1,3 +1,7 @@
+import { IInstallEvent } from "./interfaces";
+
+let _installEvent:IInstallEvent;
+
 const id = ():string => {
   return "id" + (new Date().getTime() + "" + Math.floor(Math.random() * (999999 - 100000) + 100000)).padStart(22, "0");
 }
@@ -61,6 +65,24 @@ const firstRedirect = () => {
   });
 }
 
+const waitForInstall = ():IInstallEvent|null => {
+  if (_installEvent) return _installEvent;
+  
+  window.addEventListener("load", () => {
+    let url = "/sw.js";
+    navigator.serviceWorker.register(url);
+  });
+
+  window.addEventListener("beforeinstallprompt", (e:IInstallEvent) => {
+      e.preventDefault();
+      _installEvent = e;
+  });
+}
+
+const install = () => {
+  _installEvent?.prompt();
+}
+
 export default {
   id,
   wait,
@@ -74,5 +96,7 @@ export default {
   setAttribute,
   query,
   queryAll,
-  firstRedirect
+  firstRedirect,
+  waitForInstall,
+  install
 }

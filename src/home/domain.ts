@@ -292,8 +292,7 @@ const goTo = (selector:string) => {
 }
 
 const addHomeScreen = () => {
-  if (beercss && beercss.installEvent)
-    beercss.installEvent.prompt();
+  utils.install();
 }
 
 const updateTheme = (data: ILayout) => {
