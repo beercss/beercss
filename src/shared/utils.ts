@@ -66,7 +66,7 @@ const firstRedirect = () => {
 }
 
 const waitForInstall = () => {
-  if (_installEvent) return _installEvent;
+  if (_installEvent) return;
   
   window.addEventListener("load", () => {
     let url = "/sw.js";
