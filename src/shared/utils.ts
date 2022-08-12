@@ -65,7 +65,7 @@ const firstRedirect = () => {
   });
 }
 
-const waitForInstall = ():IInstallEvent|null => {
+const waitForInstall = () => {
   if (_installEvent) return _installEvent;
   
   window.addEventListener("load", () => {
