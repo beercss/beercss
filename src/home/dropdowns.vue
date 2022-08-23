@@ -8,35 +8,35 @@
     )
       i code
   nav.wrap
-    button
+    button(data-ui="#dropdown1")
       span Default
       i arrow_drop_down
-      .dropdown
+      #dropdown1.dropdown(data-ui="#dropdown1")
         a Item 1
         a Item 2
         a Item 3
-    button
+    button(data-ui="#dropdown2")
       span No-wrap
       i arrow_drop_down
-      .dropdown.no-wrap
+      #dropdown2.dropdown.no-wrap(data-ui="#dropdown2")
         a Lorem ipsum dolor sit amet
         a Lorem ipsum dolor sit amet
         a Lorem ipsum dolor sit amet
-    button.circle
+    button.circle(data-ui="#dropdown3")
       i arrow_back
-      .dropdown.left.no-wrap
+      #dropdown3.dropdown.left.no-wrap(data-ui="#dropdown3")
         a Item 1
         a Item 2
         a Item 3
-    button.circle
+    button.circle(data-ui="#dropdown4")
       i arrow_forward
-      .dropdown.right.no-wrap
+      #dropdown4.dropdown.right.no-wrap(data-ui="#dropdown4")
         a Item 1
         a Item 2
         a Item 3
-    button
+    button(data-ui="#dropdown5")
       span Images and icons
-      .dropdown.no-wrap
+      #dropdown5.dropdown.no-wrap(data-ui="#dropdown5")
         a Title
         a
           div Title
@@ -57,9 +57,9 @@
           .max
             div Title
             label Some text here
-    button
+    button(data-ui="#dropdown6")
       span Video
-      .dropdown.no-padding.small-width
+      #dropdown6.dropdown.no-padding.small-width(data-ui="#dropdown6")
         video.responsive(autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
 </template>
