@@ -139,7 +139,7 @@
 }
 
 .switch > input:checked + span::after {
-  content: "check";
+  content: var(--checked-icon, "check");
   background-color: var(--on-primary);
   width: 24rem;
   height: 24rem;
