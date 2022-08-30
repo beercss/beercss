@@ -31,6 +31,30 @@ Switches toggle the state of a single item on or off.
 </nav>
 ```
 
+## With icons
+
+```html
+<label class="switch">
+  <input type="checkbox">
+  <span>
+    <i>wifi</i>
+  </span>
+</label>
+
+<nav>
+  <div class="max">
+    <h6>Title</h6>
+    <div>Complementary text</div>
+  </div>
+  <label class="switch">
+    <input type="checkbox">
+    <span>
+      <i>wifi</i>
+    </span>
+  </label>
+</nav>
+```
+
 ## In field elements example
 ```html
 <div class="field middle-align">

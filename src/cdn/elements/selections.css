@@ -34,7 +34,8 @@
 
 .checkbox > input + span::before,
 .radio > input + span::before,
-.switch > input + span::after {
+.switch > input + span:empty::after,
+.switch > input + span > i {
   font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
@@ -53,7 +54,7 @@
   overflow: hidden;
   width: 24rem;
   height: 24rem;
-  box-sizing: content-box;
+  box-sizing: border-box;
   margin: 0 auto;
   outline: none;
   color: var(--primary);
@@ -110,6 +111,7 @@
   top: 50%;
   background-color: var(--active);
   border: 2rem solid var(--outline);
+  box-sizing: border-box;
   width: 52rem;
   height: 32rem;
   border-radius: 32rem;
@@ -121,8 +123,8 @@
   background-color: var(--primary);
 }
 
-.switch > input + span::after {
-  content: "";
+.switch > input + span:empty::after,
+.switch > input + span > i {
   position: absolute;
   left: 0;
   top: 50%;
@@ -131,24 +133,32 @@
   justify-content: center;
   border-radius: 50%;
   transition: var(--speed2) all;
-  background-color: var(--outline);
-  width: 16rem;
-  height: 16rem;
   font-size: 16rem;
-  transform: translate(-44rem, -50%);
+  user-select: none;
+  min-width: auto;
+  content: "";
+  color: var(--surface-variant);
+  background-color: var(--outline);
+  transform: translate(-48rem, -50%) scale(0.6);
 }
 
-.switch > input:checked + span::after {
-  content: var(--checked-icon, "check");
+.switch > input:checked + span:empty::after,
+.switch > input:checked + span > i {
+  content: "check";
+  color: var(--primary);
   background-color: var(--on-primary);
-  width: 24rem;
-  height: 24rem;
-  transform: translate(-28rem, -50%);
+  transform: translate(-28rem, -50%) scale(1);
 }
 
-.switch > input:not([disabled]):focus + span::after,
-.switch > input:not([disabled]):hover + span::after {
-  box-shadow: 0 0 0 12rem var(--active);
+.switch > input + span > i {
+  transform: translate(-48rem, -50%) scale(1);
+}
+
+.switch > input:not([disabled]):focus + span:empty::after,
+.switch > input:not([disabled]):hover + span:empty::after,
+.switch > input:not([disabled]):focus + span > i,
+.switch > input:not([disabled]):hover + span > i {
+  box-shadow: 0 0 0 8rem var(--active);
 }
 
 .checkbox > input:disabled + span,
