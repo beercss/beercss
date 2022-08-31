@@ -39,6 +39,11 @@
             input(type="checkbox")
             span
               i dark_mode
+          label.switch
+            input(type="checkbox")
+            span
+              i close
+              i done
     .s12
       h6 Switch in field elements
     .s12.l6

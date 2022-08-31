@@ -41,18 +41,13 @@ Switches toggle the state of a single item on or off.
   </span>
 </label>
 
-<nav>
-  <div class="max">
-    <h6>Title</h6>
-    <div>Complementary text</div>
-  </div>
-  <label class="switch">
-    <input type="checkbox">
-    <span>
-      <i>wifi</i>
-    </span>
-  </label>
-</nav>
+<label class="switch">
+  <input type="checkbox">
+  <span>
+    <i>close</i>
+    <i>done</i>
+  </span>
+</label>
 ```
 
 ## In field elements example

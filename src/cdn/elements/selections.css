@@ -154,6 +154,16 @@
   transform: translate(-48rem, -50%) scale(1);
 }
 
+.switch > input + span > i:last-child,
+.switch > input:checked + span > i:first-child {
+  opacity: 0;
+}
+
+.switch > input:checked + span > i:last-child,
+.switch > input + span > i:first-child {
+  opacity: 1;
+}
+
 .switch > input:not([disabled]):focus + span:empty::after,
 .switch > input:not([disabled]):hover + span:empty::after,
 .switch > input:not([disabled]):focus + span > i,
