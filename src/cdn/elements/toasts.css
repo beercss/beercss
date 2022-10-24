@@ -17,7 +17,6 @@
   cursor: pointer;
   transform: translate(-50%, 0);
   text-align: left;
-  display: flex;
   align-items: center;
   border-radius: 4rem;
   gap: 8rem;
@@ -39,7 +38,6 @@
 }
 
 .toast.active.top {
-  visibility: visible;
   animation: var(--speed2) toast-to-bottom;
 }
 
