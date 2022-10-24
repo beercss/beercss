@@ -14,6 +14,10 @@ Chips are compact elements that represent an input, attribute, or action.
 
 fill, primary, secondary, tertiary
 
+**Directions**
+
+horizontal, vertical
+
 **Forms**
 
 border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round

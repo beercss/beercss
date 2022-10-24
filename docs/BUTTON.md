@@ -15,6 +15,10 @@ Buttons allow users to take actions, and make choices, with a single tap.
 
 fill, primary, secondary, tertiary
 
+**Directions**
+
+horizontal, vertical
+
 **Forms**
 
 border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, none, extend

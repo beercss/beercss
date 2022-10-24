@@ -14,6 +14,10 @@ Tabs organize content across different screens, data sets, and other interaction
 
 left-align, right-align, center-align
 
+**Directions**
+
+horizontal, vertical
+
 **Triggers**
 
 active

@@ -150,6 +150,21 @@ Headers and footers are `position: sticky` when `fixed`.
 </div>
 ```
 
+## Empty state example
+```html
+<div class="fill medium-height middle-align center-align">
+  <div class="center-align">
+    <i class="extra">mail</i>
+    <h5>You have no new messages</h5>
+    <p>Click the button to start a conversation</p>
+    <div class="space"></div>
+    <nav class="center-align">
+      <button class="round">Send a message</button>
+    </nav>
+  </div>
+</div>
+```
+
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
