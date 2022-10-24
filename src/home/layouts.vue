@@ -207,6 +207,43 @@ div
       button.none Button
       button.none
         i more_vert
+  .medium-space
+  #empty-state
+    h6
+      span Empty states
+      a.chip.circle(@click="domain.showSamples(data, '#empty-state .fill', 'Empty states')")
+        i code
+    .grid
+      .s12.m12.l4
+        .fill.medium-height.middle-align.center-align
+          .center-align
+            i.extra mail
+            h5 You have no new messages
+            p Click the button to start a conversation
+            .space
+            nav.center-align
+              button.round Send a message
+      .s12.m12.l4
+        .fill.medium-height.middle-align.center-align
+          .center-align
+            i.extra mail
+            h5 You've successfully signed up
+            p Click the button to invite your friends
+            .space
+            nav.center-align
+              button.border.round Skip
+              button.round Invite your friends
+      .s12.m12.l4
+        .fill.medium-height.middle-align.center-align
+          .center-align
+            i.extra person
+            h5 You are not following anyone
+            p Start to meet new friends
+            .space
+            nav.no-space
+              .max.field.border.left-round
+                input
+              button.large.right-round Search
 </template>
 
 <script setup lang="ts">
