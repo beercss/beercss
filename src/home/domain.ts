@@ -182,6 +182,12 @@ const updateVerticalAlign = (selector:string, align?:string) => {
   if (align) utils.addClass(elements, [align]);
 }
 
+const updateDirection = (selector:string, direction?:string) => {
+  let elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["vertical", "horizontal"]);
+  if (direction && direction != "horizontal") utils.addClass(elements, [direction], (x) => !x.hasAttribute("no-direction"));
+}
+
 const updateMinMax = (selector:string, css?:string) => {
   let elements = utils.queryAll(selector);
   utils.removeClass(elements, ["min", "max"]);
@@ -321,6 +327,7 @@ export default {
   updateHorizontalAlign,
   updateVerticalPosition,
   updateVerticalAlign,
+  updateDirection,
   updateProgress,
   updateColorTheme,
   updateIcon,

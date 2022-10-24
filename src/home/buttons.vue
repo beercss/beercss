@@ -7,11 +7,11 @@
     span Common buttons
     a.chip.circle(@click="domain.showSamples(data, '#default-buttons button', 'Buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#default-buttons button")
+  selectionForButtons(context="#default-buttons button", :directions="['horizontal', 'vertical']", selectedDirection="horizontal")
   .space
   #default-buttons
     nav.wrap
-      button Button
+      button(no-direction="") Button
       button
         i home
         span Button
@@ -22,7 +22,7 @@
         img.responsive(:src="'/favicon.png'")
         span Button
     nav.wrap
-      button.round Button
+      button.round(no-direction="") Button
       button.round
         i home
         span Button
@@ -33,7 +33,7 @@
         img.responsive(:src="'/favicon.png'")
         span Button
     nav.wrap
-      button.border Button
+      button.border(no-direction="") Button
       button.border
         i home
         span Button
@@ -44,7 +44,7 @@
         img.responsive(:src="'/favicon.png'")
         span Button
     nav.wrap
-      button.border.round Button
+      button.border.round(no-direction="") Button
       button.border.round
         i home
         span Button
@@ -59,11 +59,11 @@
     span Responsive buttons
     a.chip.circle(@click="domain.showSamples(data, '#responsive-buttons button', 'Reponsive buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#responsive-buttons button")
+  selectionForButtons(context="#responsive-buttons button", :directions="['horizontal', 'vertical']", selectedDirection="horizontal")
   #responsive-buttons.grid
     .s12.m6
       nav 
-        button.responsive Button
+        button.responsive(no-direction="") Button
       nav
         button.responsive
           i home
@@ -74,7 +74,7 @@
           span Button
     .s12.m6
       nav 
-        button.responsive.round Button
+        button.responsive.round(no-direction="") Button
       nav
         button.responsive.round
           i home
@@ -85,7 +85,7 @@
           span Button
     .s12.m6
       nav 
-        button.responsive.border Button
+        button.responsive.border(no-direction="") Button
       nav
         button.responsive.border
           i home
@@ -96,7 +96,7 @@
           span Button
     .s12.m6
       nav 
-        button.responsive.border.round Button
+        button.responsive.border.round(no-direction="") Button
       nav
         button.responsive.border.round
           i home
@@ -335,22 +335,22 @@
     span Segmented buttons
     a.chip.circle(@click="domain.showSamples(data, '#segmented-buttons nav', 'Segmented buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#segmented-buttons button", :colors="[]", :elevates="[]")
+  selectionForButtons(context="#segmented-buttons button", :colors="[]", :elevates="[]", :directions="['horizontal', 'vertical']", selectedDirection="horizontal")
   #segmented-buttons.grid
     .s12.m12.l6
       nav.no-space
-        button.border.left-round
+        button.border.left-round(no-direction="")
           span Button
-        button.border.no-round
+        button.border.no-round(no-direction="")
           span Button
-        button.border.right-round.fill
+        button.border.right-round.fill(no-direction="")
           span Button
       nav.no-space
-        button.border.left-round
+        button.border.left-round(no-direction="")
           i search
-        button.border.no-round
+        button.border.no-round(no-direction="")
           i edit
-        button.border.right-round.fill
+        button.border.right-round.fill(no-direction="")
           i home
       nav.no-space
         button.border.left-round
@@ -364,18 +364,18 @@
           span Button
     .s12.m12.l6
       nav.no-space
-        button.border.left-round.max
+        button.border.left-round.max(no-direction="")
           span Button
-        button.border.no-round.max
+        button.border.no-round.max(no-direction="")
           span Button
-        button.border.right-round.max.fill
+        button.border.right-round.max.fill(no-direction="")
           span Button
       nav.no-space
-        button.border.left-round.max
+        button.border.left-round.max(no-direction="")
           i search
-        button.border.no-round.max
+        button.border.no-round.max(no-direction="")
           i edit
-        button.border.right-round.max.fill
+        button.border.right-round.max.fill(no-direction="")
           i home
       nav.no-space
         button.border.left-round.max

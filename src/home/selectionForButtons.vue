@@ -9,6 +9,9 @@ nav.wrap
   label.radio(v-for="elevate in elevates")
     input(type="radio", :id="elevate + '-' + context", :name="'elevate-' + context", :checked="elevate == selectedShadow", @click="domain.updateShadow(context, elevate)")
     span {{ elevate || "no-elevate" }}
+  label.radio(v-for="direction in directions")
+    input(type="radio", :id="direction + '-' + context", :name="'direction-' + context", :checked="direction == selectedDirection", @click="domain.updateDirection(context, direction)")
+    span {{ direction || "" }}
   
 </template>
 
@@ -21,12 +24,15 @@ export interface IProps {
   colors?: Array<string>,
   sizes?: Array<string>,
   elevates?: Array<string>,
+  directions?: Array<string>,
   defaultColor?: string,
   defaultSize?: string,
   defaultShadow?: string,
+  defaultDirection?: string,
   selectedColor?: string,
   selectedSize?: string,
-  selectedShadow?: string
+  selectedShadow?: string,
+  selectedDirection?: string
 }
 
 const {
@@ -34,17 +40,21 @@ const {
   colors = ["", "fill", "primary", "secondary", "tertiary"],
   sizes = ["small", "", "large", "extra"],
   elevates = ["", "small-elevate", "medium-elevate", "large-elevate"],
+  directions = [],
   defaultColor = "",
   defaultSize = "",
   defaultShadow = "",
+  defaultDirection = "",
   selectedColor = "",
   selectedSize = "",
-  selectedShadow = ""
+  selectedShadow = "",
+  selectedDirection = ""
 } = defineProps<IProps>();
 
 onMounted(() => {
   if (colors.length) domain.updateElementColor(context, selectedColor);
   if (sizes.length) domain.updateSize(context, selectedSize);
   if (elevates.length) domain.updateShadow(context, selectedShadow);
+  if (directions.length) domain.updateDirection(context, selectedDirection);
 });
 </script>

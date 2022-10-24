@@ -14,21 +14,16 @@
 }
 
 .tabs > a {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
   font-size: 14rem;
   font-weight: 500;
   color: var(--on-background);
-  padding: 0 16rem;
-  text-transform: uppercase;
+  padding: 8rem 16rem;
   border-bottom: 2rem solid transparent;
   text-align: center;
-  min-height: 40rem;
+  min-height: 48rem;
   width: 100%;
-}
-
-.tabs > a > span {
-  margin: 0 8rem;
+  gap: 4rem;
 }
 
 .tabs.small > a {
@@ -40,7 +35,7 @@
 }
 
 .tabs.large > a {
-  min-height: 48rem;
+  min-height: 64rem;
 }
 
 .tabs > a.active {

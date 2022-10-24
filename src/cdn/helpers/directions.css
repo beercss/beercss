@@ -1,0 +1,32 @@
+
+
+.horizontal {
+  display: inline-flex;
+  flex-direction: row !important;
+  gap: 16rem;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.horizontal > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.vertical,
+button.vertical,
+.button.vertical,
+.chip.vertical {
+  display: inline-flex;
+  flex-direction: column !important;
+  gap: 4rem;
+  height: auto !important;
+  max-height: none !important;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.vertical > * {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}

@@ -44,6 +44,10 @@ teal1, teal2, teal3, teal4, teal5, teal6, teal7, teal8, teal9, teal10, teal, tea
 
 yellow1, yellow2, yellow3, yellow4, yellow5, yellow6, yellow7, yellow8, yellow9, yellow10, yellow, yellow-border, yellow-text
 
+## Directions
+
+horizontal, vertical
+
 ## Dividers
 
 divider, small-divider, medium-divider, large-divider

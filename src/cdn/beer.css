@@ -5,6 +5,7 @@
 @import "./helpers/theme.css";
 @import "./helpers/alignments.css";
 @import "./helpers/colors.css";
+@import "./helpers/directions.css";
 @import "./helpers/dividers.css";
 @import "./helpers/elevates.css";
 @import "./helpers/forms.css";

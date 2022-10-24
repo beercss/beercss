@@ -39,12 +39,18 @@
     label.radio
       input(type="radio", name="page-tabs", @click="domain.updatePosition('#tabs .page', 'right')")
       span page right
+    label.radio
+      input(type="radio", name="direction-tabs", @click="domain.updateDirection('#tabs .tabs > a', '')", checked)
+      span horizontal
+    label.radio
+      input(type="radio", name="direction-tabs", @click="domain.updateDirection('#tabs .tabs > a', 'vertical')")
+      span vertical
   p.space
   div
     .tabs
-      a.active(data-ui="#tab1") Tab 1
-      a(data-ui="#tab2") Tab 2
-      a(data-ui="#tab3") Tab 3
+      a.active(data-ui="#tab1", no-direction="") Tab 1
+      a(data-ui="#tab2", no-direction="") Tab 2
+      a(data-ui="#tab3", no-direction="") Tab 3
     #tab1.page.padding.active
       h5 Tab 1
     #tab2.page.padding
@@ -70,23 +76,6 @@
       h5 Tab 3
   div
     .tabs
-      a.wrap.active(data-ui="#tab10") 
-        i home
-        span Tab 1
-      a.wrap(data-ui="#tab11")
-        i home
-        span Tab 2
-      a.wrap(data-ui="#tab12")
-        i home
-        span Tab 3
-    #tab10.page.padding.active
-      h5 Tab 1
-    #tab11.page.padding
-      h5 Tab 2
-    #tab12.page.padding
-      h5 Tab 3
-  div
-    .tabs
       a.active(data-ui="#tab7") 
         img.circle(:src="'/favicon.png'")
         span Tab 1
@@ -101,23 +90,6 @@
     #tab8.page.padding
       h5 Tab 2
     #tab9.page.padding
-      h5 Tab 3
-  div
-    .tabs
-      a.wrap.active(data-ui="#tab13") 
-        img.circle(:src="'/favicon.png'")
-        span Tab 1
-      a.wrap(data-ui="#tab14")
-        img.circle(:src="'/favicon.png'")
-        span Tab 2
-      a.wrap(data-ui="#tab15")
-        img.circle(:src="'/favicon.png'")
-        span Tab 3
-    #tab13.page.padding.active
-      h5 Tab 1
-    #tab14.page.padding
-      h5 Tab 2
-    #tab15.page.padding
       h5 Tab 3
 </template>
 

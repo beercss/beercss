@@ -91,6 +91,9 @@ div
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#containers')")
       i widgets
       span Containers
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#directions')")
+      i widgets
+      span Directions
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#dividers')")
       i widgets
       span Dividers
@@ -263,10 +266,10 @@ div
                     span &nbsp;left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
                   p
                     b button or &lt;button&gt;
-                    span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive
+                    span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
                   p
                     b chip
-                    span &nbsp;small, medium, large, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
+                    span &nbsp;small, medium, large, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
                   p
                     b &lt;details&gt;
                   p
@@ -327,7 +330,7 @@ div
                     span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border
                   p
                     b tabs
-                    span &nbsp;left-align, right-align, center-align
+                    span &nbsp;left-align, right-align, center-align, horizontal, vertical
                   p
                     b toast
                     span &nbsp;top, bottom, active
@@ -359,6 +362,8 @@ div
           colors
         .s12
           containers
+        .s12
+          directions
         .s12
           dividers
         .s12
@@ -444,6 +449,7 @@ import checkboxes from "./checkboxes.vue";
 import chips from "./chips.vue";
 import colors from "./colors.vue";
 import containers from "./containers.vue";
+import directions from "./directions.vue";
 import dividers from "./dividers.vue";
 import dropdowns from "./dropdowns.vue";
 import expansions from "./expansions.vue";

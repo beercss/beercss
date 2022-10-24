@@ -137,8 +137,9 @@ nav.bottom > a:not(button, .button, .chip, img, video) {
   min-width: 56rem;
   min-height: 56rem;
   text-align: center;
-  display: grid;
+  display: flex;
   z-index: 101;
+  flex-direction: column;
 }
 
 nav.left > a:not(button, .button, .chip, img, video),
