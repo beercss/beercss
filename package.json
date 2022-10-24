@@ -2,7 +2,7 @@
   "author": "Everton and Leonardo",
   "description": "Build material design interfaces in record time... without stress for devs.",
   "homepage": "https://www.beercss.com/",
-  "version": "2.2.11",
+  "version": "2.3.0",
   "name": "beercss",
   "license": "MIT",
   "type": "module",
