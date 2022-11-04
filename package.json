@@ -12,7 +12,9 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.8",
     "material-dynamic-colors": "^0.0.10",
+    "material-symbols": "^0.2.15",
     "sass": "^1.49.9",
     "uuid": "^8.3.2",
     "vue": "^3.2.31"
