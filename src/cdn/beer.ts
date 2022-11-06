@@ -27,70 +27,53 @@
   }
 
   const query = (selector:string|Element, element?:Element):Element => {
-    try {
-      return typeof selector == "string"
-        ? (element || document).querySelector(selector)
-        : selector;      
-    } catch {}
+    return typeof selector === "string" ? (element || document).querySelector(selector) : selector;
   }
 
   const queryAll = (selector:string|NodeListOf<Element>, element?:Element) => {
-    try {
-      return typeof selector == "string"
-        ? (element || document).querySelectorAll(selector)
-        : selector;      
-    } catch {}
+      return typeof selector === "string" ? (element || document).querySelectorAll(selector) : selector;
   }
 
   const hasClass = (element:Element, name:string):boolean => {
-    if (!element) return false;
-    return element.classList.contains(name);
+    return element?.classList?.contains(name) || false;
   }
 
   const addClass = (element:Element, name:string) => {
-    if (!element) return;
-    element.classList.add(name);
+    element?.classList?.add(name);
   }
 
   const removeClass = (element:Element, name:string) => {
-    if (!element) return;
-    element.classList.remove(name);
+    element?.classList?.remove(name);
   }
 
   const on = (element:Element, name:string, callback:any) => {
-    element.addEventListener(name, callback, true);
+    element?.addEventListener(name, callback, true);
   }
 
   const off = (element:Element, name:string, callback:any) => {
-    element.removeEventListener(name, callback, true);
+    element?.removeEventListener(name, callback, true);
   }
 
   const insertBefore = (newElement:Element, element:Element):Element => {
-    if (!element) return;
-    return element.parentNode.insertBefore(newElement, element);
+    return element?.parentNode?.insertBefore(newElement, element);
   }
 
   const prev = (element:Element):Element => {
-    if (!element) return;
-    return element.previousElementSibling;
+    return element?.previousElementSibling;
   }
 
   const next = (element:Element):Element => {
-    if (!element) return;
-    return element.nextElementSibling;
+    return element?.nextElementSibling;
   }
 
   const parent = (element:Element):Element => {
-    if (!element) return;
-    return element.parentElement;
+    return element?.parentElement;
   }
 
-  const create = (json:any) => {
+  const create = (json:{[key: string]: string|null|undefined}) => {
     let element = document.createElement("div");
-
     for (let i in json)
       element[i] = json[i];
-
     return element;
   }
 
@@ -107,12 +90,13 @@
         let start = hasClass(parentTarget, "round") ? 20 : 12;
         let end = width + start + 8;
         input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 8rem, ${end}rem 8rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
-      } else
-      input.style.clipPath = "";
+      } else {
+        input.style.clipPath = "";
+      }
       addClass(label, "active");
     } else {
-      removeClass(label, "active");
       input.style.clipPath = "";
+      removeClass(label, "active");
     }
 
     if (target.getAttribute("data-ui")) open(target);
@@ -173,7 +157,6 @@
   const updateFile = (target:Element, e?:KeyboardEvent) => {
     if (e) {
       if (e.key !== "Enter") return;
-
       let target = e.currentTarget as Element;
       let nextTarget = next(target) as HTMLInputElement;
       if (!nextTarget || !/file/i.test(nextTarget.type)) return;

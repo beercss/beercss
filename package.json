@@ -15,6 +15,8 @@
     "@fontsource/roboto": "^4.5.8",
     "material-dynamic-colors": "^0.0.10",
     "material-symbols": "^0.2.15",
+    "postcss-assets-rebase": "^0.4.0",
+    "postcss-url": "^10.1.3",
     "sass": "^1.49.9",
     "uuid": "^8.3.2",
     "vue": "^3.2.31"

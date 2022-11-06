@@ -42,6 +42,30 @@
 @import "./elements/tabs.css";
 @import "./elements/toasts.css";
 @import "./elements/tooltips.css";
-@import "material-symbols";
-@import "@fontsource/roboto/400.css";
-@import "@fontsource/roboto/500.css";
+/*@import "material-symbols";*/
+/*@import "@fontsource/roboto/400.css";*/
+/*@import "@fontsource/roboto/500.css";*/
+
+/* fallback */
+/*@font-face {*/
+/*    font-family: 'Material Symbols Outlined';*/
+/*    font-style: normal;*/
+/*    font-weight: 100 700;*/
+/*    src: url(https://assets.simplycompete.com/scmt/beercss/material-symbols-outlined.woff2) format('woff2');*/
+/*}*/
+
+/*.material-symbols-outlined {*/
+/*    font-family: 'Material Symbols Outlined';*/
+/*    font-weight: normal;*/
+/*    font-style: normal;*/
+/*    font-size: 24px;*/
+/*    line-height: 1;*/
+/*    letter-spacing: normal;*/
+/*    text-transform: none;*/
+/*    display: inline-block;*/
+/*    white-space: nowrap;*/
+/*    word-wrap: normal;*/
+/*    direction: ltr;*/
+/*    -webkit-font-feature-settings: 'liga';*/
+/*    -webkit-font-smoothing: antialiased;*/
+/*}*/
