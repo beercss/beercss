@@ -416,7 +416,7 @@ div
           typography
 
       .large-space
-      div Maded with love and beer, cheers 💛🍻
+      div Made with love and beer, cheers 💛🍻
       .space
 
       #modal-samples.modal.right.large
