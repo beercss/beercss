@@ -3,18 +3,18 @@
 }
 
 .tiny-margin {
-  padding: 4rem !important;
+  padding: 0.25rem !important;
 }
 
 .small-margin {
-  margin: 8rem !important;
+  margin: 0.5rem !important;
 }
 
 .medium-margin,
 .margin {
-  margin: 16rem !important;
+  margin: 1rem !important;
 }
 
 .large-margin {
-  margin: 24rem !important;
+  margin: 1.5rem !important;
 }

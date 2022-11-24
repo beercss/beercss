@@ -15,13 +15,13 @@
   transform: translateY(100%);
   overflow-x: hidden;
   overflow-y: auto;
-  font-size: 14rem;
+  font-size: 0.875rem;
   font-weight: normal;
   text-transform: none;
   color: var(--on-surface);
   line-height: normal;
   text-align: left;
-  border-radius: 4rem;
+  border-radius: 0.25rem;
   transform: scale(.8) translateY(120%);
   transition: var(--speed2) all, 0s background-color;
 }
@@ -33,9 +33,9 @@
 
 .dropdown.active,
 .dropdown:not([data-ui]):active,
-button:not([data-ui]):focus-within > .dropdown,
-.button:not([data-ui]):focus-within > .dropdown,
-.field > :not([data-ui]):focus-within ~ .dropdown {
+button:not([data-ui]):focus-within>.dropdown,
+.button:not([data-ui]):focus-within>.dropdown,
+.field> :not([data-ui]):focus-within~.dropdown {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(100%);
@@ -50,17 +50,17 @@ button:not([data-ui]):focus-within > .dropdown,
   white-space: inherit !important;
 }
 
-.dropdown > a {
-  padding: 12rem 16rem;
+.dropdown>a {
+  padding: 0.75rem 1rem;
   border-radius: 0;
 }
 
-.dropdown > a:not(.row) {
+.dropdown>a:not(.row) {
   display: block;
 }
 
-.dropdown > a:hover,
-.dropdown > a:focus,
-.dropdown > a.active {
+.dropdown>a:hover,
+.dropdown>a:focus,
+.dropdown>a.active {
   background-color: var(--active);
 }

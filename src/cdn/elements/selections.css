@@ -11,35 +11,35 @@
   align-items: center;
 }
 
-.checkbox > input,
-.radio > input {
-  width: 24rem;
-  height: 24rem;
+.checkbox>input,
+.radio>input {
+  width: 1.5rem;
+  height: 1.5rem;
   opacity: 0;
 }
 
-.checkbox > span,
-.radio > span,
-.switch > span {
+.checkbox>span,
+.radio>span,
+.switch>span {
   display: inline-flex;
   align-items: center;
   color: var(--on-background);
-  font-size: 14rem;
+  font-size: 0.875rem;
 }
 
-.checkbox > span:not(:empty),
-.radio > span:not(:empty) {
-  padding-left: 4rem;
+.checkbox>span:not(:empty),
+.radio>span:not(:empty) {
+  padding-left: 0.25rem;
 }
 
-.checkbox > input + span::before,
-.radio > input + span::before,
-.switch > input + span:empty::after,
-.switch > input + span > i {
+.checkbox>input+span::before,
+.radio>input+span::before,
+.switch>input+span:empty::after,
+.switch>input+span>i {
   font-family: 'Material Symbols Outlined';
   font-weight: normal;
   font-style: normal;
-  font-size: 24rem;
+  font-size: 1.5rem;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -52,79 +52,79 @@
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  width: 24rem;
-  height: 24rem;
+  width: 1.5rem;
+  height: 1.5rem;
   box-sizing: border-box;
   margin: 0 auto;
   outline: none;
   color: var(--primary);
   position: absolute;
-  left: -24rem;
+  left: -1.5rem;
   background-color: transparent;
   border-radius: 50%;
 }
 
-.checkbox > input + span::before {
+.checkbox>input+span::before {
   content: "check_box_outline_blank";
 }
 
-.radio > input + span::before {
+.radio>input+span::before {
   content: "radio_button_unchecked";
 }
 
-.checkbox > input:not([disabled]):focus + span::before,
-.checkbox > input:not([disabled]):hover + span::before,
-.radio > input:not([disabled]):focus + span::before,
-.radio > input:not([disabled]):hover + span::before {
+.checkbox>input:not([disabled]):focus+span::before,
+.checkbox>input:not([disabled]):hover+span::before,
+.radio>input:not([disabled]):focus+span::before,
+.radio>input:not([disabled]):hover+span::before {
   background-color: var(--active);
-  box-shadow: 0 0 0 8rem var(--active);
+  box-shadow: 0 0 0 0.5rem var(--active);
   animation: var(--speed1) to-checked ease-out;
 }
 
-.checkbox > input:checked + span::before {
+.checkbox>input:checked+span::before {
   color: var(--primary);
   content: "check_box";
   font-variation-settings: 'FILL' 1;
 }
 
-.radio > input:checked + span::before {
+.radio>input:checked+span::before {
   color: var(--primary);
   content: "radio_button_checked";
 }
 
-.checkbox + .checkbox,
-.radio + .radio,
-.switch + .switch {
-  margin-left: 8rem;
+.checkbox+.checkbox,
+.radio+.radio,
+.switch+.switch {
+  margin-left: 0.5rem;
 }
 
-.switch > input {
-  width: 52rem;
-  height: 32rem;
+.switch>input {
+  width: 3.25rem;
+  height: 2rem;
   opacity: 0;
 }
 
-.switch > input + span::before {
+.switch>input+span::before {
   content: "";
-  position:absolute;
+  position: absolute;
   left: 0;
   top: 50%;
   background-color: var(--active);
-  border: 2rem solid var(--outline);
+  border: 0.125rem solid var(--outline);
   box-sizing: border-box;
-  width: 52rem;
-  height: 32rem;
-  border-radius: 32rem;
-  transform: translate(-52rem, -50%);
+  width: 3.25rem;
+  height: 2rem;
+  border-radius: 2rem;
+  transform: translate(-3.25rem, -50%);
 }
 
-.switch > input:checked + span::before {
+.switch>input:checked+span::before {
   border: none;
   background-color: var(--primary);
 }
 
-.switch > input + span:empty::after,
-.switch > input + span > i {
+.switch>input+span:empty::after,
+.switch>input+span>i {
   position: absolute;
   left: 0;
   top: 50%;
@@ -133,68 +133,69 @@
   justify-content: center;
   border-radius: 50%;
   transition: var(--speed2) all;
-  font-size: 16rem;
+  font-size: 1rem;
   user-select: none;
   min-width: auto;
   content: "";
   color: var(--surface-variant);
   background-color: var(--outline);
-  transform: translate(-48rem, -50%) scale(0.6);
+  transform: translate(-3rem, -50%) scale(0.6);
 }
 
-.switch > input:checked + span:empty::after,
-.switch > input:checked + span > i {
+.switch>input:checked+span:empty::after,
+.switch>input:checked+span>i {
   content: "check";
   color: var(--primary);
   background-color: var(--on-primary);
-  transform: translate(-28rem, -50%) scale(1);
+  transform: translate(-1.75rem, -50%) scale(1);
 }
 
-.switch > input + span > i {
-  transform: translate(-48rem, -50%) scale(1);
+.switch>input+span>i {
+  transform: translate(-3rem, -50%) scale(1);
 }
 
-.switch > input + span > i:last-child,
-.switch > input:checked + span > i:first-child {
+.switch>input+span>i:last-child,
+.switch>input:checked+span>i:first-child {
   opacity: 0;
 }
 
-.switch > input:checked + span > i:last-child,
-.switch > input + span > i:first-child {
+.switch>input:checked+span>i:last-child,
+.switch>input+span>i:first-child {
   opacity: 1;
 }
 
-.switch > input:not([disabled]):focus + span:empty::after,
-.switch > input:not([disabled]):hover + span:empty::after,
-.switch > input:not([disabled]):focus + span > i,
-.switch > input:not([disabled]):hover + span > i {
-  box-shadow: 0 0 0 8rem var(--active);
+.switch>input:not([disabled]):focus+span:empty::after,
+.switch>input:not([disabled]):hover+span:empty::after,
+.switch>input:not([disabled]):focus+span>i,
+.switch>input:not([disabled]):hover+span>i {
+  box-shadow: 0 0 0 0.5rem var(--active);
 }
 
-.checkbox > input:disabled + span,
-.radio > input:disabled + span,
-.switch > input:disabled + span {
+.checkbox>input:disabled+span,
+.radio>input:disabled+span,
+.switch>input:disabled+span {
   opacity: .5;
   cursor: not-allowed;
 }
 
-.field > nav,
-.field > .row {
+.field>nav,
+.field>.row {
   flex-grow: 1;
-  padding: 0 16rem;
+  padding: 0 1rem;
 }
 
-.field.round > nav,
-.field.round > .row {
+.field.round>nav,
+.field.round>.row {
   flex-grow: 1;
-  padding: 0 24rem;
+  padding: 0 1.5rem;
 }
 
 @keyframes to-checked {
   from {
     box-shadow: 0 0 0 0 var(--active);
   }
+
   to {
-    box-shadow: 0 0 0 8rem var(--active);
+    box-shadow: 0 0 0 0.5rem var(--active);
   }
 }

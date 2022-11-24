@@ -16,7 +16,7 @@
   animation: var(--speed4) page-to-bottom ease;
 }
 
-.page.bottom.active  {
+.page.bottom.active {
   animation: var(--speed4) page-to-top ease;
 }
 
@@ -31,8 +31,9 @@
 @keyframes page-to-bottom {
   from {
     opacity: 0;
-    transform: translateY(-64rem);
+    transform: translateY(-4rem);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -42,8 +43,9 @@
 @keyframes page-to-top {
   from {
     opacity: 0;
-    transform: translateY(64rem);
+    transform: translateY(4rem);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -53,8 +55,9 @@
 @keyframes page-to-left {
   from {
     opacity: 0;
-    transform: translateX(64rem);
+    transform: translateX(4rem);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -64,8 +67,9 @@
 @keyframes page-to-right {
   from {
     opacity: 0;
-    transform: translateX(-64rem);
+    transform: translateX(-4rem);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
