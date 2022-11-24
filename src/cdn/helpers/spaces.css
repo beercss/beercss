@@ -1,16 +1,16 @@
 .tiny-space:not(nav, .row, .grid, table) {
-  height: 8rem;
+  height: 0.5rem;
 }
 
 .space:not(nav, .row, .grid, table),
 .small-space:not(nav, .row, .grid, table) {
-  height: 16rem;
+  height: 1rem;
 }
 
 .medium-space:not(nav, .row, .grid, table) {
-  height: 32rem;
+  height: 2rem;
 }
 
 .large-space:not(nav, .row, .grid, table) {
-  height: 48rem;
+  height: 3rem;
 }

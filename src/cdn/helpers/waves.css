@@ -12,7 +12,7 @@ button::after {
   width: 100%;
   height: 100%;
   background-position: center;
-  background-image: radial-gradient(circle, rgba(255,255,255,.4) 1%, transparent 1%);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, .4) 1%, transparent 1%);
   opacity: 0;
   transition: none;
 }
@@ -26,23 +26,23 @@ button.border::after,
 .chip.transparent::after,
 .button.transparent::after,
 button.transparent::after {
-  background-image: radial-gradient(circle, rgba(150,150,150,.2) 1%, transparent 1%);
+  background-image: radial-gradient(circle, rgba(150, 150, 150, .2) 1%, transparent 1%);
 }
 
 .wave.none::after,
 .button.none::after,
 button.none::after {
   top: 0;
-  left: -4rem;
-  padding: 0 4rem;
+  left: -0.25rem;
+  padding: 0 0.25rem;
 }
 
 .wave.none:not(.small, .medium, .large, .extra)::after,
 .button.none:not(.small, .medium, .large, .extra)::after,
 button.none:not(.small, .medium, .large, .extra)::after {
-  top: -4rem;
-  left: -4rem;
-  padding: 4rem;
+  top: -0.25rem;
+  left: -0.25rem;
+  padding: 0.25rem;
 }
 
 .wave:hover::after,
@@ -68,7 +68,7 @@ button:active::after {
 }
 
 .no-wave::after,
-.no-wave:hover::after, 
-.no-wave:active::after{
+.no-wave:hover::after,
+.no-wave:active::after {
   display: none;
 }

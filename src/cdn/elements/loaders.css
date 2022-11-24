@@ -1,25 +1,25 @@
 .loader {
   --loader-translateY: 0;
   display: inline-block;
-  width: 40rem;
-  height: 40rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
-  border: 4rem solid var(--primary);
+  border: 0.25rem solid var(--primary);
   clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
   animation: 1.6s to-loader linear infinite;
   background: none !important;
 }
 
 .loader.small {
-  width: 24rem;
-  height: 24rem;
-  border-width: 3rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 0.1875rem;
 }
 
 .loader.large {
-  width: 56rem;
-  height: 56rem;
-  border-width: 5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-width: 0.3125rem;
 }
 
 .loader.red {
@@ -106,7 +106,7 @@
   border-color: #ffffff;
 }
 
-.field > .loader {
+.field>.loader {
   --loader-translateY: -50%;
 }
 
@@ -115,31 +115,40 @@
     transform: translateY(var(--loader-translateY)) rotate(0deg);
     clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
   }
+
   20% {
     clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
   }
+
   30% {
     clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%);
   }
+
   40% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);    
+    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
   }
+
   50% {
     clip-path: polygon(50% 50%, 50% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
   }
+
   60% {
     clip-path: polygon(50% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
   }
+
   70% {
     clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%, 0% 50%);
   }
+
   80% {
     clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 50%);
   }
-  90%{
+
+  90% {
     transform: translateY(var(--loader-translateY)) rotate(360deg);
     clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
   }
+
   100% {
     clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
   }
