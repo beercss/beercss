@@ -1,5 +1,5 @@
 .grid {
-  --grid-gap: 16rem;
+  --grid-gap: 1rem;
 
   display: grid;
   grid-template-columns: repeat(12, calc(8.33% - var(--grid-gap) + (var(--grid-gap) / 12)));
@@ -7,7 +7,7 @@
 }
 
 * + .grid {
-  margin-top: 16rem;
+  margin-top: 1rem;
 }
 
 .grid.no-space {
@@ -15,11 +15,11 @@
 }
 
 .grid.medium-space {
-  --grid-gap: 24rem;
+  --grid-gap: 1.5rem;
 }
 
 .grid.large-space {
-  --grid-gap: 32rem;
+  --grid-gap: 2rem;
 }
 
 .s1 {

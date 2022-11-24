@@ -13,37 +13,37 @@
 
 .absolute.left.right.small,
 .fixed.left.right.small {
-  height: 320rem;
+  height: 20rem;
 }
 
 .absolute.left.right.medium,
 .fixed.left.right.medium {
-  height: 448rem;
+  height: 28rem;
 }
 
 .absolute.left.right.large,
 .fixed.left.right.large {
-  height: 704rem;
+  height: 44rem;
 }
 
 .absolute.top.bottom.small,
 .fixed.top.bottom.small {
-  width: 320rem;
+  width: 20rem;
 }
 
 .absolute.top.bottom.medium,
 .fixed.top.bottom.medium {
-  width: 448rem;
+  width: 28rem;
 }
 
 .absolute.top.bottom.large,
 .fixed.top.bottom.large {
-  width: 704rem;
+  width: 44rem;
 }
 
 header,
 footer {
-  padding: 0 16rem;
+  padding: 0 1rem;
   background-color: var(--surface);
 }
 
@@ -67,7 +67,7 @@ footer.fixed::before {
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 0 -8rem;
+  margin: 0 -0.5rem;
   max-width: 100%;
   background-color: inherit;
 }
@@ -89,14 +89,14 @@ article > footer {
 article > header.fixed,
 .padding > header.fixed,
 .medium-padding > header.fixed {
-  transform: translateY(-16rem);
+  transform: translateY(-1rem);
 }
 
 .modal > footer.fixed,
 article > footer.fixed,
 .padding > footer.fixed,
 .medium-padding > footer.fixed {
-  transform: translateY(16rem);
+  transform: translateY(1rem);
 }
 
 .no-padding > header.fixed,
@@ -105,17 +105,17 @@ article > footer.fixed,
 }
 
 .small-padding > header.fixed {
-  transform: translateY(-8rem);
+  transform: translateY(-0.5rem);
 }
 
 .small-padding > footer.fixed {
-  transform: translateY(8rem);
+  transform: translateY(0.5rem);
 }
 
 .large-padding > header.fixed {
-  transform: translateY(-24rem);
+  transform: translateY(-1.5rem);
 }
 
 .large-padding > footer.fixed {
-  transform: translateY(24rem);
+  transform: translateY(1.5rem);
 }

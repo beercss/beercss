@@ -490,7 +490,7 @@ onMounted(() => {
 #logo {
   display: none;
   max-width: 100%;
-  width: 512rem;
+  width: 32rem;
 }
 
 #logo.active {
@@ -499,15 +499,15 @@ onMounted(() => {
 }
 
 #container-logo {
-  height: 256rem;
+  height: 16rem;
 }
 
 #modal-colors .s12 > div {
-  padding: 16rem;
+  padding: 1rem;
 }
 
 #modal-colors .s12 > .border {
-  border: 1px solid var(--outline);
+  border: 0.0625rem solid var(--outline);
 }
 
 .hljs-string, .error-text {
@@ -516,12 +516,12 @@ onMounted(() => {
 
 .logo-template {
   width: auto;
-  height: 24rem;
+  height: 1.5rem;
 }
 
 .logo-codepen {
   width: auto;
-  height: 20rem;
+  height: 1.25rem;
 }
 
 .logo-support {
@@ -531,7 +531,7 @@ onMounted(() => {
 
 pre {
   overflow: auto;
-  padding: 8rem;
+  padding: 0.5rem;
   margin: 0;
 }
 
@@ -545,7 +545,7 @@ pre.wrap {
 }
 
 #grids .grid > * {
-  border: 1px solid var(--outline);
+  border: 0.0625rem solid var(--outline);
 }
 
 @keyframes logo-intro {

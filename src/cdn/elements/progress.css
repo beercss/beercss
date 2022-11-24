@@ -5,7 +5,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  transition: var(--speed4) clip-path;
+
+  /* transition: var(--speed4) clip-path; */
   clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%);
 }
 

@@ -33,16 +33,16 @@ button.transparent::after {
 .button.none::after,
 button.none::after {
   top: 0;
-  left: -4rem;
-  padding: 0 4rem;
+  left: -0.25rem;
+  padding: 0 0.25rem;
 }
 
 .wave.none:not(.small, .medium, .large, .extra)::after,
 .button.none:not(.small, .medium, .large, .extra)::after,
 button.none:not(.small, .medium, .large, .extra)::after {
-  top: -4rem;
-  left: -4rem;
-  padding: 4rem;
+  top: -0.25rem;
+  left: -0.25rem;
+  padding: 0.25rem;
 }
 
 .wave:hover::after,

@@ -1,7 +1,7 @@
 table {
   width: 100%;
   border-spacing: 0;
-  font-size: 14rem;
+  font-size: 0.875rem;
   color: var(--on-background);
   text-align: left;
   border-radius: 0;
@@ -11,7 +11,7 @@ table td,
 table th {
   width: 1%;
   text-align: inherit;
-  padding: 8rem;
+  padding: 0.5rem;
 }
 
 table th {
@@ -20,7 +20,7 @@ table th {
 
 table.border td,
 table.border th {
-  border-bottom: 1rem solid var(--outline);
+  border-bottom: 0.0625rem solid var(--outline);
 }
 
 table.no-space td,
@@ -30,12 +30,12 @@ table.no-space th {
 
 table.medium-space td,
 table.medium-space th {
-  padding: 12rem;
+  padding: 0.75rem;
 }
 
 table.large-space td,
 table.large-space th {
-  padding: 16rem;
+  padding: 1rem;
 }
 
 td > .button,
@@ -46,16 +46,16 @@ td > .none,
 td > nav > .none,
 td > .chip,
 td > nav > .chip {
-  min-height: 24rem;
-  max-height: 24rem;
+  min-height: 1.5rem;
+  max-height: 1.5rem;
 }
 
 td > .circle:not(.tiny, .small, .medium, .large, .extra),
 td > nav > .circle:not(.tiny, .small, .medium, .large, .extra),
 td > .square:not(.tiny, .small, .medium, .large, .extra),
 td > nav > .square:not(.tiny, .small, .medium, .large, .extra) {
-  min-width: 24rem;
-  max-width: 24rem;
-  min-height: 24rem;
-  max-height: 24rem;
+  min-width: 1.5rem;
+  max-width: 1.5rem;
+  min-height: 1.5rem;
+  max-height: 1.5rem;
 }
