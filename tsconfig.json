@@ -1,4 +1,7 @@
 {
+  "vueCompilerOptions": {
+    "plugins": ["@volar/vue-language-plugin-pug"]
+  },
   "compilerOptions": {
     "target": "esnext",
     "useDefineForClassFields": true,

@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/uuid": "^8.3.4",
     "@vitejs/plugin-vue": "^2.2.1",
+    "@volar/vue-language-plugin-pug": "^1.0.9",
     "fs-extra": "^10.0.1",
     "http": "0.0.1-security",
     "http-proxy": "^1.18.1",
