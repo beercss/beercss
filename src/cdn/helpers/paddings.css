@@ -3,18 +3,18 @@
 }
 
 .tiny-padding {
-  padding: 4rem !important;
+  padding: 0.25rem !important;
 }
 
 .small-padding {
-  padding: 8rem !important;
+  padding: 0.5rem !important;
 }
 
 .medium-padding,
 .padding {
-  padding: 16rem !important;
+  padding: 1rem !important;
 }
 
 .large-padding {
-  padding: 24rem !important;
+  padding: 1.5rem !important;
 }

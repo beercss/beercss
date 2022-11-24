@@ -1,11 +1,11 @@
 .tooltip {
   display: none;
-  background-color: rgba(0,0,0,.9);
+  background-color: rgba(0, 0, 0, .9);
   color: #ffffff;
-  font-size: 12rem;
+  font-size: 0.75rem;
   text-align: center;
-  border-radius: 4rem;
-  padding: 8rem;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
   position: absolute;
   z-index: 3;
   top: 0;
@@ -51,29 +51,29 @@
 }
 
 .tooltip.small {
-  width: 128rem;
+  width: 8rem;
   white-space: normal;
 }
 
 .tooltip.medium {
-  width: 192rem;
+  width: 12rem;
   white-space: normal;
 }
 
 .tooltip.large {
-  width: 256rem;
+  width: 16rem;
   white-space: normal;
 }
 
-*:hover > .tooltip {
+*:hover>.tooltip {
   display: flex;
   align-items: center;
-  gap: 8rem;
+  gap: 0.5rem;
 }
 
-.dropdown:active ~ .tooltip,
-button:focus > .dropdown ~ .tooltip,
-.button:focus > .dropdown ~ .tooltip,
-.field > :focus ~ .dropdown ~ .tooltip {
+.dropdown:active~.tooltip,
+button:focus>.dropdown~.tooltip,
+.button:focus>.dropdown~.tooltip,
+.field> :focus~.dropdown~.tooltip {
   display: none;
 }

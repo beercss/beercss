@@ -2,19 +2,19 @@
 .small-divider,
 .medium-divider,
 .large-divider {
-  border-bottom: 1rem solid var(--outline);
+  border-bottom: 0.0625rem solid var(--outline);
   display: block;
   margin: 0 !important;
 }
 
 .medium-divider {
-  margin: 16rem 0 !important;
+  margin: 1rem 0 !important;
 }
 
 .large-divider {
-  margin: 24rem 0 !important;
+  margin: 1.5rem 0 !important;
 }
 
 .small-divider {
-  margin: 8rem 0 !important;
+  margin: 0.5rem 0 !important;
 }
