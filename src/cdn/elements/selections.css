@@ -36,7 +36,7 @@
 .radio > input + span::before,
 .switch > input + span:empty::after,
 .switch > input + span > i {
-  font-family: 'Material Symbols Outlined';
+  font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
   font-size: 24rem;
@@ -47,7 +47,7 @@
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
   vertical-align: middle;
   text-align: center;
@@ -84,7 +84,7 @@
 .checkbox > input:checked + span::before {
   color: var(--primary);
   content: "check_box";
-  font-variation-settings: 'FILL' 1;
+  font-variation-settings: "FILL" 1;
 }
 
 .radio > input:checked + span::before {
@@ -106,7 +106,7 @@
 
 .switch > input + span::before {
   content: "";
-  position:absolute;
+  position: absolute;
   left: 0;
   top: 50%;
   background-color: var(--active);
@@ -139,7 +139,7 @@
   content: "";
   color: var(--surface-variant);
   background-color: var(--outline);
-  transform: translate(-48rem, -50%) scale(0.6);
+  transform: translate(-48rem, -50%) scale(.6);
 }
 
 .switch > input:checked + span:empty::after,
@@ -194,6 +194,7 @@
   from {
     box-shadow: 0 0 0 0 var(--active);
   }
+
   to {
     box-shadow: 0 0 0 8rem var(--active);
   }

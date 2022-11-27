@@ -30,12 +30,15 @@ nav.right:not(.s, .m, .l) ~ .responsive {
   nav.s.bottom ~ .responsive:not(header) {
     padding-bottom: 96rem;
   }
+
   nav.s.top ~ .responsive:not(footer) {
     padding-top: 96rem;
   }
+
   nav.s.left ~ .responsive {
     padding-left: 96rem;
   }
+
   nav.s.right ~ .responsive {
     padding-right: 96rem;
   }
@@ -45,12 +48,15 @@ nav.right:not(.s, .m, .l) ~ .responsive {
   nav.m.bottom ~ .responsive:not(header) {
     padding-bottom: 96rem;
   }
+
   nav.m.top ~ .responsive:not(footer) {
     padding-top: 96rem;
   }
+
   nav.m.left ~ .responsive {
     padding-left: 96rem;
   }
+
   nav.m.right ~ .responsive {
     padding-right: 96rem;
   }
@@ -60,12 +66,15 @@ nav.right:not(.s, .m, .l) ~ .responsive {
   nav.l.bottom ~ .responsive:not(header) {
     padding-bottom: 96rem;
   }
+
   nav.l.top ~ .responsive:not(footer) {
     padding-top: 96rem;
   }
+
   nav.l.left ~ .responsive {
     padding-left: 96rem;
   }
+
   nav.l.right ~ .responsive {
     padding-right: 96rem;
   }

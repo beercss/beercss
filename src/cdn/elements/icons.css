@@ -1,5 +1,5 @@
 i {
-  font-family: 'Material Symbols Outlined';
+  font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
   font-size: 24rem;
@@ -10,7 +10,7 @@ i {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
+  -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
   vertical-align: middle;
   text-align: center;
@@ -48,5 +48,5 @@ a.row:hover > i,
 a.row:focus > i,
 .transparent:hover > i,
 .transparent:focus > i {
-  font-variation-settings: 'FILL' 1;
+  font-variation-settings: "FILL" 1;
 }

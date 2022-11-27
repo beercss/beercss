@@ -60,8 +60,8 @@ footer.fixed {
 }
 
 header.fixed::before,
-footer.fixed:before {
-  content: '';
+footer.fixed::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
