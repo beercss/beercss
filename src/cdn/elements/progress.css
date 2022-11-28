@@ -16,7 +16,7 @@
 .progress.right {
   clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
 }
-  
+
 .progress.top {
   clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 }
