@@ -62,7 +62,7 @@
   selectionForButtons(context="#responsive-buttons button", :directions="['horizontal', 'vertical']", selectedDirection="horizontal")
   #responsive-buttons.grid
     .s12.m6
-      nav 
+      nav
         button.responsive(no-direction="") Button
       nav
         button.responsive
@@ -73,7 +73,7 @@
           img(:src="'/favicon.png'")
           span Button
     .s12.m6
-      nav 
+      nav
         button.responsive.round(no-direction="") Button
       nav
         button.responsive.round
@@ -84,7 +84,7 @@
           img(:src="'/favicon.png'")
           span Button
     .s12.m6
-      nav 
+      nav
         button.responsive.border(no-direction="") Button
       nav
         button.responsive.border
@@ -95,7 +95,7 @@
           img(:src="'/favicon.png'")
           span Button
     .s12.m6
-      nav 
+      nav
         button.responsive.border.round(no-direction="") Button
       nav
         button.responsive.border.round

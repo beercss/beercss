@@ -1,7 +1,7 @@
 import { ILayout } from "../shared/interfaces";
 
 export interface IImageNetflix {
-  image: string
+  image: string,
 }
 
 export interface INetflix extends ILayout {

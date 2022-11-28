@@ -76,7 +76,7 @@
       h5 Tab 3
   div
     .tabs
-      a.active(data-ui="#tab7") 
+      a.active(data-ui="#tab7")
         img.circle(:src="'/favicon.png'")
         span Tab 1
       a(data-ui="#tab8")

@@ -17,30 +17,30 @@
   .space
   nav#direction.wrap
     button
-      i home 
+      i home
       span Button
     a.chip
-      i home 
+      i home
       span Chip
     nav.no-space
       button.border.left-round.fill
-        i home 
+        i home
         span Button
       button.border.no-round
-        i home 
+        i home
         span Button
       button.border.right-round
-        i home 
+        i home
         span Button
     .tabs
       a.active(data-ui="")
-        i home 
+        i home
         span Tab 1
       a(data-ui="")
-        i home 
+        i home
         span Tab 2
       a(data-ui="")
-        i home 
+        i home
         span Tab 3
 
 </template>

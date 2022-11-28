@@ -137,7 +137,7 @@ div
     button.circle.large.small-margin.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
     themes(id="themes3", v-model="data")
-  
+
   main.responsive.max
     #modal-add.modal.round.large-width
       nav
