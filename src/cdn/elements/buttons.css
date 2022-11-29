@@ -105,7 +105,7 @@ button.extend.active > img + span {
 
 .button[disabled],
 button:disabled {
-  opacity: .5;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 

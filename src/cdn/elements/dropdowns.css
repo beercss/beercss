@@ -22,7 +22,7 @@
   line-height: normal;
   text-align: left;
   border-radius: 4rem;
-  transform: scale(.8) translateY(120%);
+  transform: scale(0.8) translateY(120%);
   transition: var(--speed2) all, 0s background-color;
 }
 

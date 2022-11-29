@@ -139,7 +139,7 @@
   content: "";
   color: var(--surface-variant);
   background-color: var(--outline);
-  transform: translate(-48rem, -50%) scale(.6);
+  transform: translate(-48rem, -50%) scale(0.6);
 }
 
 .switch > input:checked + span:empty::after,
@@ -174,7 +174,7 @@
 .checkbox > input:disabled + span,
 .radio > input:disabled + span,
 .switch > input:disabled + span {
-  opacity: .5;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
