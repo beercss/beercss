@@ -12,5 +12,13 @@
     "no-duplicate-selectors": null,
     "number-leading-zero": "never",
     "selector-attribute-quotes": "never"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/app.css"],
+      "rules": {
+        "no-empty-source": null
+      }
+    }
+  ]
 }
