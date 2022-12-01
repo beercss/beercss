@@ -2,23 +2,23 @@ import { expect, test, beforeAll } from "vitest";
 import domain from "../src/gmail/domain";
 import { IItemGmail } from "../src/gmail/interfaces";
 
-let emails:Array<IItemGmail>;
+let emails: Array<IItemGmail>;
 
 beforeAll(() => {
   emails = [
     {
       check: false,
-      star: false
+      star: false,
     },
     {
       check: false,
-      star: false
+      star: false,
     },
     {
       check: false,
-      star: false
-    }
-  ]
+      star: false,
+    },
+  ];
 });
 
 test("checkAll()", () => {
@@ -30,8 +30,8 @@ test("checkAll()", () => {
 });
 
 test("check()", () => {
-  let firstEmail = emails[0];
-  
+  const firstEmail = emails[0];
+
   domain.check(firstEmail);
   expect(firstEmail.check).toBe(true);
 
@@ -40,8 +40,8 @@ test("check()", () => {
 });
 
 test("star()", () => {
-  let firstEmail = emails[0];
-  
+  const firstEmail = emails[0];
+
   domain.star(firstEmail);
   expect(firstEmail.star).toBe(true);
 

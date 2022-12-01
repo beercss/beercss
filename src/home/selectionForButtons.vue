@@ -12,12 +12,12 @@ nav.wrap
   label.radio(v-for="direction in directions")
     input(type="radio", :id="direction + '-' + context", :name="'direction-' + context", :checked="direction == selectedDirection", @click="domain.updateDirection(context, direction)")
     span {{ direction || "" }}
-  
+
 </template>
 
 <script setup lang="ts">
-import domain from './domain';
-import { onMounted } from 'vue';
+import domain from "./domain";
+import { onMounted } from "vue";
 
 export interface IProps {
   context?: string,
@@ -32,7 +32,7 @@ export interface IProps {
   selectedColor?: string,
   selectedSize?: string,
   selectedShadow?: string,
-  selectedDirection?: string
+  selectedDirection?: string,
 }
 
 const {
@@ -48,7 +48,7 @@ const {
   selectedColor = "",
   selectedSize = "",
   selectedShadow = "",
-  selectedDirection = ""
+  selectedDirection = "",
 } = defineProps<IProps>();
 
 onMounted(() => {

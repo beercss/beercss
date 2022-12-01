@@ -2,7 +2,7 @@ import { ref, Ref } from "vue";
 import theme from "../shared/theme";
 import { IYoutube } from "./interfaces";
 
-const data:IYoutube = {
+const data: IYoutube = {
   ...theme,
   itens: [
     { title: "Alok 01/2021", image: "/alok-001.jpg" },
@@ -36,9 +36,9 @@ const data:IYoutube = {
   ],
   isLoaded: false,
   url: "/youtube",
-  check: false
+  check: false,
 };
 
-const dataAsRef:Ref<IYoutube> = ref(data);
+const dataAsRef: Ref<IYoutube> = ref(data);
 
 export default dataAsRef;

@@ -2,7 +2,7 @@ import { Ref, ref } from "vue";
 import { INetflix } from "./interfaces";
 import dataTheme from "../shared/theme";
 
-const data:INetflix = {
+const data: INetflix = {
   todaysRanking: [
     { image: "/alok-001.jpg" },
     { image: "/alok-002.jpg" },
@@ -61,9 +61,9 @@ const data:INetflix = {
     { image: "/radio-001.jpg" },
     { image: "/ocean-001.jpg" },
   ],
-  ...dataTheme
-}
+  ...dataTheme,
+};
 
-const dataAsRef:Ref<INetflix> = ref(data);
+const dataAsRef: Ref<INetflix> = ref(data);
 
 export default dataAsRef;

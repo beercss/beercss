@@ -21,7 +21,7 @@
     a.chip.border Suggestion
     a.chip.border Suggestion
     a.chip.border Suggestion
-    
+
   .medium-space
   h6.middle-align
     span Images

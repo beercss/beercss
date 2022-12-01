@@ -18,7 +18,7 @@ div
     a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       span Code
-  
+
   nav#navigation-bar1.s.bottom
     a(@click="domain.goTo('#intro')")
       i home
@@ -52,7 +52,7 @@ div
     header.fixed
       nav
         img.circle(:src="'/favicon.png'")
-        .max 
+        .max
           h6 Beercss
           div v2.3.0
         button.transparent.circle(data-ui="#modal-menu")
@@ -169,9 +169,9 @@ div
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#typography')")
       i widgets
       span Typography
-  
+
   themes(id="themes3", v-model="data", position="right")
-  
+
   #more3.modal.right.small(data-ui="#more3")
     header.fixed
       nav
@@ -195,7 +195,7 @@ div
     a.row.round(href="https://codepen.io/search/pens?q=beercss")
       i code
       span Codepen
-  
+
   .responsive.center-align.yellow4
     div.black-text
       .large-height.no-scroll.middle-align.center-align
@@ -229,7 +229,7 @@ div
       .grid
         #intro.s12
           .div
-            h3 Get started 
+            h3 Get started
             .medium-space
             h5 From CDN
             pre.scroll.fill.no-round(style="font-family: courier new")
@@ -277,7 +277,7 @@ div
                     span &nbsp;left, right, wrap, no-wrap, active
                   p
                     b field
-                    span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea 
+                    span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
                   p
                     b fixed
                     span &nbsp;left, right, top, bottom, front, back, small, medium, large
@@ -373,7 +373,7 @@ div
         .s12
           grids
         .s12
-          icons  
+          icons
         .s12
           inputs
         .s12

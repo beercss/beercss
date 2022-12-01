@@ -154,7 +154,7 @@
       i.front search
       input(type="text")
       i.front mic
-  
+
   explore(v-if="data.url == '/youtube/explore'")
   home(v-if="data.url == '/youtube'")
   library(v-if="data.url == '/youtube/library'")
@@ -175,9 +175,9 @@ import subscriptions from "./subscriptions.vue";
 import whatsHot from "./whatsHot.vue";
 import { onRoute, redirect } from "../shared/router";
 
-onMounted(async() => {
+onMounted(async () => {
   sharedDomain.initTheme(data.value);
-  
+
   data.value.isLoaded = false;
   await domain.waitForImages();
   data.value.isLoaded = true;

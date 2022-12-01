@@ -35,17 +35,17 @@
       )
         a.row
           img.round(:src="'alok-001.jpg'")
-          .max 
+          .max
             div Alok 01/2021
             label 10k views
         a.row
           img.round(:src="'vintage-001.jpg'")
-          .max 
+          .max
             div The best of 2021
             label 10k views
         a.row
           img.round(:src="'ocean-001.jpg'")
-          .max 
+          .max
             div Alok, Zebra, Iro - Ocean
             label 10k views
     button.circle.large.transparent(@click="redirect('/')")
@@ -60,7 +60,7 @@
             input(type="text")
             i.front mic
         .max.l
-    
+
     home
 </template>
 
@@ -72,9 +72,9 @@ import home from "./home.vue";
 import { redirect } from "../shared/router";
 
 const scroll = (selector:string) => {
-  let element = document.querySelector(selector);
-  if (element) element.scrollIntoView({block: "start", behavior: "smooth"});
-}
+  const element = document.querySelector(selector);
+  if (element) element.scrollIntoView({ block: "start", behavior: "smooth" });
+};
 
 onMounted(() => {
   sharedDomain.initTheme(data.value);
