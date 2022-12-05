@@ -1,7 +1,7 @@
 .toast {
   position: fixed;
   top: auto;
-  bottom: 96rem;
+  bottom: 6rem;
   left: 50%;
   right: auto;
   width: 80%;
@@ -12,24 +12,24 @@
   box-shadow: var(--elevate2);
   color: var(--on-error);
   background-color: var(--error-background);
-  padding: 16rem;
+  padding: 1rem;
   opacity: 1;
   cursor: pointer;
   transform: translate(-50%, 0);
   text-align: left;
   align-items: center;
-  border-radius: 4rem;
-  gap: 8rem;
+  border-radius: 0.25rem;
+  gap: 0.5rem;
 }
 
 .toast.top {
-  top: 96rem;
+  top: 6rem;
   bottom: auto;
 }
 
 .toast.bottom {
   top: auto;
-  bottom: 72rem;
+  bottom: 4.5rem;
 }
 
 .toast.active {
@@ -44,7 +44,7 @@
 @keyframes toast-to-top {
   0% {
     opacity: 0;
-    transform: translate(-50%, 16rem);
+    transform: translate(-50%, 1rem);
   }
 
   100% {
@@ -56,7 +56,7 @@
 @keyframes toast-to-bottom {
   0% {
     opacity: 0;
-    transform: translate(-50%, -16rem);
+    transform: translate(-50%, -1rem);
   }
 
   100% {

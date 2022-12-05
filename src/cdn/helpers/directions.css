@@ -1,7 +1,7 @@
 .horizontal {
   display: inline-flex;
   flex-direction: row !important;
-  gap: 16rem;
+  gap: 1rem;
   width: auto !important;
   max-width: none !important;
 }
@@ -17,11 +17,11 @@ button.vertical,
 .chip.vertical {
   display: inline-flex;
   flex-direction: column !important;
-  gap: 4rem;
+  gap: 0.25rem;
   height: auto !important;
   max-height: none !important;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .vertical > * {

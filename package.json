@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "lint:ts": "eslint --ext .cjs,.js,.ts,.vue --fix .",
-    "lint:style:cdn": "stylelint --fix src/cdn/**/*.css",
+    "lint:style": "stylelint --fix \"src/**/*.css\"",
     "dev": "node ./build/dev.js",
     "build": "node ./build/build.js && node ./build/cdn.js",
     "test": "vitest"

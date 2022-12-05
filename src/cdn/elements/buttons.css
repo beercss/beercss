@@ -4,18 +4,18 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40rem;
-  min-width: 40rem;
-  font-size: 14rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-primary);
-  padding: 0 24rem;
+  padding: 0 1.5rem;
   background-color: var(--primary);
-  margin: 0 8rem;
-  border-radius: 8rem;
+  margin: 0 0.5rem;
+  border-radius: 0.5rem;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
   user-select: none;
-  gap: 16rem;
+  gap: 1rem;
 }
 
 .button.none,
@@ -26,40 +26,40 @@ button.none {
   padding: 0;
   background-color: transparent;
   min-width: auto;
-  min-height: 24rem;
+  min-height: 1.5rem;
 }
 
 .button.small,
 button.small {
-  height: 32rem;
-  min-width: 32rem;
-  font-size: 14rem;
+  height: 2rem;
+  min-width: 2rem;
+  font-size: 0.875rem;
 }
 
 .button.large,
 button.large {
-  height: 48rem;
-  min-width: 48rem;
+  height: 3rem;
+  min-width: 3rem;
 }
 
 .button.extra,
 button.extra,
 .button.extend,
 button.extend {
-  height: 56rem;
-  min-width: 56rem;
-  font-size: 16rem;
+  height: 3.5rem;
+  min-width: 3.5rem;
+  font-size: 1rem;
 }
 
 .button.border,
 button.border {
-  border: 1rem solid var(--primary);
+  border: 0.0625rem solid var(--primary);
   color: var(--primary);
 }
 
 .button.circle,
 button.circle {
-  border-radius: 40rem;
+  border-radius: 2.5rem;
   padding: 0;
 }
 
@@ -84,7 +84,7 @@ button.extend:hover,
 .button.extend.active,
 button.extend.active {
   width: auto;
-  padding: 0 16rem;
+  padding: 0 1rem;
 }
 
 .button.extend:hover > i + span,
@@ -92,7 +92,7 @@ button.extend:hover > i + span,
 .button.extend.active > i + span,
 button.extend.active > i + span {
   display: inherit;
-  margin-left: 32rem;
+  margin-left: 2rem;
 }
 
 .button.extend:hover > img + span,
@@ -100,12 +100,12 @@ button.extend:hover > img + span,
 .button.extend.active > img + span,
 button.extend.active > img + span {
   display: inherit;
-  margin-left: 48rem;
+  margin-left: 3rem;
 }
 
 .button[disabled],
 button:disabled {
-  opacity: .5;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 

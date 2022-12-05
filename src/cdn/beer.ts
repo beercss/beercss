@@ -102,10 +102,11 @@
 
     if (toActive) {
       if (isBorder && label) {
-        const width = hasClass(label, "active") ? label.offsetWidth : Math.round(label.offsetWidth / 1.33);
-        const start = hasClass(parentTarget, "round") ? 20 : 12;
-        const end = width + start + 8;
-        input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 8rem, ${end}rem 8rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
+        let width = hasClass(label, "active") ? label.offsetWidth : Math.round(label.offsetWidth / 1.33);
+        width = width / 16; // 16px = 1rem, originally 1px = 1rem, hence the division
+        const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
+        const end = width + start + 0.5;
+        input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 0.5rem, ${end}rem 0.5rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
       } else { input.style.clipPath = ""; }
       addClass(label, "active");
     } else {

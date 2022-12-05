@@ -1,7 +1,7 @@
 main.responsive {
   margin: 0 auto;
-  max-width: 1200rem;
-  padding: 8rem;
+  max-width: 75rem;
+  padding: 0.5rem;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -11,78 +11,78 @@ main.responsive.max {
 }
 
 nav.bottom:not(.s, .m, .l) ~ .responsive:not(header) {
-  padding-bottom: 96rem;
+  padding-bottom: 6rem;
 }
 
 nav.top:not(.s, .m, .l) ~ .responsive:not(footer) {
-  padding-top: 96rem;
+  padding-top: 6rem;
 }
 
 nav.left:not(.s, .m, .l) ~ .responsive {
-  padding-left: 96rem;
+  padding-left: 6rem;
 }
 
 nav.right:not(.s, .m, .l) ~ .responsive {
-  padding-right: 96rem;
+  padding-right: 6rem;
 }
 
 @media only screen and (max-width: 600px) {
   nav.s.bottom ~ .responsive:not(header) {
-    padding-bottom: 96rem;
+    padding-bottom: 6rem;
   }
 
   nav.s.top ~ .responsive:not(footer) {
-    padding-top: 96rem;
+    padding-top: 6rem;
   }
 
   nav.s.left ~ .responsive {
-    padding-left: 96rem;
+    padding-left: 6rem;
   }
 
   nav.s.right ~ .responsive {
-    padding-right: 96rem;
+    padding-right: 6rem;
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
   nav.m.bottom ~ .responsive:not(header) {
-    padding-bottom: 96rem;
+    padding-bottom: 6rem;
   }
 
   nav.m.top ~ .responsive:not(footer) {
-    padding-top: 96rem;
+    padding-top: 6rem;
   }
 
   nav.m.left ~ .responsive {
-    padding-left: 96rem;
+    padding-left: 6rem;
   }
 
   nav.m.right ~ .responsive {
-    padding-right: 96rem;
+    padding-right: 6rem;
   }
 }
 
 @media only screen and (min-width: 993px) {
   nav.l.bottom ~ .responsive:not(header) {
-    padding-bottom: 96rem;
+    padding-bottom: 6rem;
   }
 
   nav.l.top ~ .responsive:not(footer) {
-    padding-top: 96rem;
+    padding-top: 6rem;
   }
 
   nav.l.left ~ .responsive {
-    padding-left: 96rem;
+    padding-left: 6rem;
   }
 
   nav.l.right ~ .responsive {
-    padding-right: 96rem;
+    padding-right: 6rem;
   }
 }
 
 @media only screen and (max-width: 600px) {
   main.responsive {
-    padding-right: 8rem;
-    padding-left: 8rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
 }

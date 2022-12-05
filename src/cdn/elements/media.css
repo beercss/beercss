@@ -17,13 +17,13 @@ video.responsive {
   object-fit: cover;
   object-position: center;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
-  height: 48rem;
-  width: 48rem;
+  height: 3rem;
+  width: 3rem;
 }
 
 img.round,
 video.round {
-  border-radius: 8rem;
+  border-radius: 0.5rem;
 }
 
 img.circle,
@@ -33,26 +33,26 @@ video.circle {
 
 img.tiny,
 video.tiny {
-  height: 32rem;
-  width: 32rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 img.small,
 video.small {
-  height: 40rem;
-  width: 40rem;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 img.large,
 video.large {
-  height: 56rem;
-  width: 56rem;
+  height: 3.5rem;
+  width: 3.5rem;
 }
 
 img.extra,
 video.extra {
-  height: 64rem;
-  width: 64rem;
+  height: 4rem;
+  width: 4rem;
 }
 
 img.responsive,
@@ -65,72 +65,72 @@ video.responsive {
 button > img.responsive,
 .button > img.responsive,
 .chip > img.responsive {
-  width: 40rem;
+  width: 2.5rem;
 }
 
 button:not(.transparent) > img.responsive,
 .button:not(.transparent) > img.responsive,
 .chip:not(.transparent) > img.responsive {
-  border: 4rem solid transparent;
+  border: 0.25rem solid transparent;
 }
 
 button.small > img.responsive,
 .button.small > img.responsive,
 .chip.small > img.responsive {
-  width: 32rem;
+  width: 2rem;
 }
 
 button.large > img.responsive,
 .button.large > img.responsive,
 .chip.large > img.responsive {
-  width: 48rem;
+  width: 3rem;
 }
 
 button.extra > img.responsive,
 .button.extra > img.responsive,
 .chip.extra > img.responsive {
-  width: 56rem;
+  width: 3.5rem;
 }
 
 img.responsive.tiny,
 video.responsive.tiny {
   width: 100%;
-  height: 64rem;
+  height: 4rem;
 }
 
 img.responsive.small,
 video.responsive.small {
   width: 100%;
-  height: 128rem;
+  height: 8rem;
 }
 
 img.responsive.medium,
 video.responsive.medium {
   width: 100%;
-  height: 192rem;
+  height: 12rem;
 }
 
 img.responsive.large,
 video.responsive.large {
   width: 100%;
-  height: 256rem;
+  height: 16rem;
 }
 
 img.responsive.extra,
 video.responsive.extra {
   width: 100%;
-  height: 320rem;
+  height: 20rem;
 }
 
 img.responsive.round,
 video.responsive.round {
-  border-radius: 32rem;
+  border-radius: 2rem;
 }
 
 img.empty-state,
 video.empty-state {
   max-width: 100%;
-  width: 384rem;
+  width: 24rem;
 }
 
 button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
@@ -139,10 +139,10 @@ button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
 .field > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
 .tabs img:not(.responsive, .tiny, .small, .medium, .large, .extra),
 td img:not(.responsive, .tiny, .small, .medium, .large, .extra) {
-  min-width: 24rem;
-  max-width: 24rem;
-  min-height: 24rem;
-  max-height: 24rem;
+  min-width: 1.5rem;
+  max-width: 1.5rem;
+  min-height: 1.5rem;
+  max-height: 1.5rem;
 }
 
 .button > i,
@@ -154,25 +154,25 @@ button > img.responsive,
 .chip > i,
 .chip > img,
 .chip > img.responsive {
-  margin: 0 -8rem;
+  margin: 0 -0.5rem;
 }
 
 .button > img.responsive,
 button > img.responsive {
-  margin-left: -24rem;
+  margin-left: -1.5rem;
 }
 
 .button > span + img.responsive,
 button > span + img.responsive {
-  margin-right: -24rem;
+  margin-right: -1.5rem;
 }
 
 .chip > img.responsive {
-  margin-left: -16rem;
+  margin-left: -1rem;
 }
 
 .chip > span + img.responsive {
-  margin-right: -16rem;
+  margin-right: -1rem;
 }
 
 .circle > img.responsive,
@@ -184,14 +184,14 @@ button > span + img.responsive {
 .extend > img {
   margin: 0;
   position: absolute;
-  left: 16rem;
+  left: 1rem;
 }
 
 .extend > img.responsive {
   left: 0;
-  width: 56rem;
+  width: 3.5rem;
 }
 
 .extend.border > img.responsive {
-  width: 54rem;
+  width: 3.375rem;
 }
