@@ -6,7 +6,7 @@
     a.chip.circle(@click="domain.showSamples(data, '#typography .s6 div', 'Typography', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
       i code
   .grid
-    .s6
+    .s3
       div
         a.link link
         p.italic italic
@@ -19,7 +19,7 @@
         p.small-text small-text
         p.medium-text medium-text
         p.large-text large-text
-    .s6
+    .s3
       div
         h6 Title
         h5 Title
@@ -27,6 +27,13 @@
         h3 Title
         h2 Title
         h1 Title
+    .s3
+      div
+        div.display Display
+        div.headline Headline
+        div.title Title
+        div.body Body
+        div.label Label
 </template>
 
 <script setup lang="ts">
