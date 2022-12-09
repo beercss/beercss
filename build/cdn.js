@@ -2,6 +2,7 @@ import { build } from "vite";
 
 (async () => {
   await build({
+    base: '',
     build: {
       outDir: "./dist/cdn",
       rollupOptions: {
