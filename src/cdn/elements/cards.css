@@ -2,24 +2,24 @@ article {
   box-shadow: var(--elevate1);
   background-color: var(--surface);
   color: var(--on-surface);
-  padding: 16rem;
-  border-radius: 12rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
   display: block;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
 }
 
 * + article {
-  margin-top: 16rem;
+  margin-top: 1rem;
 }
 
 article.small {
-  height: 192rem;
+  height: 12rem;
 }
 
 article.medium {
-  height: 320rem;
+  height: 20rem;
 }
 
 article.large {
-  height: 512rem;
+  height: 32rem;
 }

@@ -13,15 +13,15 @@ import url from 'postcss-url';
       outDir: "./dist/cdn",
       rollupOptions: {
         input: {
-          "beer.min": "./src/cdn.ts"
+          "beer.min": "./src/cdn.ts",
         },
         output: {
           entryFileNames: "[name].js",
           chunkFileNames: "[name].js",
           assetFileNames: "[name].[ext]",
-          manualChunks: undefined
-        }
-      }
-    }
+          manualChunks: undefined,
+        },
+      },
+    },
   });
 })();

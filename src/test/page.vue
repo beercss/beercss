@@ -11,13 +11,13 @@ main.responsive
     nav.right-align
       button.round.border Cancel
       button.round Confirm
-      
+
   .modal.left#left(data-ui="#left")
     h5 Left modal
     nav.right-align
       button.round.border Cancel
       button.round Confirm
-    
+
   .modal.top#top(data-ui="#top")
     h5 Top modal
     nav.right-align
@@ -29,7 +29,7 @@ main.responsive
     nav.right-align
       button.round.border Cancel
       button.round Confirm
-    
+
   .modal.bottom#bottom(data-ui="#bottom")
     h5 Bottom modal
     .small-height
@@ -239,6 +239,6 @@ main.responsive
 
 <script setup lang="ts">
 const updateTheme = () => {
-  document.body.className =document.body.className.indexOf("dark") != -1 ? "light" : "dark";
-}
+  document.body.className = document.body.className.indexOf("dark") != -1 ? "light" : "dark";
+};
 </script>

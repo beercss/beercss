@@ -2,7 +2,7 @@ i {
   font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
-  font-size: 24rem;
+  font-size: 1.5rem;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -15,32 +15,32 @@ i {
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  width: 24rem;
-  min-width: 24rem;
+  width: 1.5rem;
+  min-width: 1.5rem;
   box-sizing: content-box;
 }
 
 i.tiny {
-  font-size: 16rem;
-  width: 16rem;
-  min-width: 16rem;
+  font-size: 1rem;
+  width: 1rem;
+  min-width: 1rem;
 }
 
 i.small {
-  font-size: 20rem;
-  width: 20rem;
-  min-width: 20rem;
+  font-size: 1.25rem;
+  width: 1.25rem;
+  min-width: 1.25rem;
 }
 
 i.large {
-  font-size: 28rem;
-  width: 28rem;
-  min-width: 28rem;
+  font-size: 1.75rem;
+  width: 1.75rem;
+  min-width: 1.75rem;
 }
 
 i.extra {
-  font-size: 32rem;
-  width: 32rem;
+  font-size: 2rem;
+  width: 2rem;
 }
 
 i.fill,

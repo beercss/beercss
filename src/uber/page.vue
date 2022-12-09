@@ -5,7 +5,7 @@ div
     img(height="24", :src="'/uber-dark.png'")
     button.large.transparent.m.l(
       data-ui="#dropdown-ride"
-    ) 
+    )
       span Ride
       #dropdown-ride.dropdown.no-wrap(data-ui="#dropdown-ride")
         a Overview
@@ -18,7 +18,7 @@ div
         a Airports
     button.large.transparent.m.l(
       data-ui="#dropdown-drive"
-    ) 
+    )
       span Drive
       #dropdown-drive.dropdown.no-wrap(data-ui="#dropdown-drive")
         a Overview
@@ -32,7 +32,7 @@ div
         a Safety
     button.large.transparent.m.l(
       data-ui="#dropdown-more"
-    ) 
+    )
       span More
       #dropdown-more.dropdown.no-wrap(data-ui="#dropdown-more")
         a Uber Eats

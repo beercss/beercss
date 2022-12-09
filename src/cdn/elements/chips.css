@@ -3,38 +3,38 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 40rem;
-  min-width: 40rem;
-  font-size: 14rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-secondary);
-  padding: 0 16rem;
+  padding: 0 1rem;
   background-color: var(--secondary);
-  margin: 0 8rem;
+  margin: 0 0.5rem;
   text-transform: none;
-  border-radius: 8rem;
+  border-radius: 0.5rem;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
   user-select: none;
-  gap: 16rem;
+  gap: 1rem;
 }
 
 .chip.small {
-  height: 32rem;
-  min-width: 32rem;
+  height: 2rem;
+  min-width: 2rem;
 }
 
 .chip.large {
-  height: 48rem;
-  min-width: 48rem;
+  height: 3rem;
+  min-width: 3rem;
 }
 
 .chip.border {
-  border: 1rem solid var(--secondary);
+  border: 0.0625rem solid var(--secondary);
   color: var(--secondary);
 }
 
 .chip.circle {
-  border-radius: 40rem;
+  border-radius: 2.5rem;
   padding: 0;
 }
 

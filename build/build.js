@@ -5,20 +5,20 @@ import vue from "@vitejs/plugin-vue";
   await build({
     publicDir: "./src/static",
     plugins: [vue({
-      reactivityTransform: true
+      reactivityTransform: true,
     })],
     build: {
       rollupOptions: {
         input: {
-          app: "./src/build.ts"
+          app: "./src/build.ts",
         },
         output: {
           entryFileNames: "[name].js",
           chunkFileNames: "[name].js",
           assetFileNames: "[name].[ext]",
-          manualChunks: undefined
-        }
-      }
-    }
-  })
+          manualChunks: undefined,
+        },
+      },
+    },
+  });
 })();
