@@ -1,117 +1,117 @@
 .primary {
-  background-color: var(--primary)!important;
-  color: var(--on-primary)!important;
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
 }
 
 .primary-text {
-  color: var(--primary)!important;
+  color: var(--primary) !important;
 }
 
 .primary-border {
-  border-color: var(--primary)!important;
+  border-color: var(--primary) !important;
 }
 
 .primary-container {
-  background-color: var(--primary-container)!important;
-  color: var(--on-primary-container)!important;
+  background-color: var(--primary-container) !important;
+  color: var(--on-primary-container) !important;
 }
 
 .secondary {
-  background-color: var(--secondary)!important;
-  color: var(--on-secondary)!important;
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
 }
 
 .secondary-text {
-  color: var(--secondary)!important;
+  color: var(--secondary) !important;
 }
 
 .secondary-border {
-  border-color: var(--secondary)!important;
+  border-color: var(--secondary) !important;
 }
 
 .secondary-container {
-  background-color: var(--secondary-container)!important;
-  color: var(--on-secondary-container)!important;
+  background-color: var(--secondary-container) !important;
+  color: var(--on-secondary-container) !important;
 }
 
 .tertiary {
-  background-color: var(--tertiary)!important;
-  color: var(--on-tertiary)!important;
+  background-color: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
 }
 
 .tertiary-text {
-  color: var(--tertiary)!important;
+  color: var(--tertiary) !important;
 }
 
 .tertiary-border {
-  border-color: var(--tertiary)!important;
+  border-color: var(--tertiary) !important;
 }
 
 .tertiary-container {
-  background-color: var(--tertiary-container)!important;
-  color: var(--on-tertiary-container)!important;
+  background-color: var(--tertiary-container) !important;
+  color: var(--on-tertiary-container) !important;
 }
 
 .error {
-  background-color: var(--error)!important;
-  color: var(--on-error)!important;
+  background-color: var(--error) !important;
+  color: var(--on-error) !important;
 }
 
 .error-text {
-  color: var(--error)!important;
+  color: var(--error) !important;
 }
 
 .error-border {
-  border-color: var(--error)!important;
+  border-color: var(--error) !important;
 }
 
 .error-container {
-  background-color: var(--error-container)!important;
-  color: var(--on-error-container)!important;
+  background-color: var(--error-container) !important;
+  color: var(--on-error-container) !important;
 }
 
 .background {
-  background-color: var(--background)!important;
-  color: var(--on-background)!important;
+  background-color: var(--background) !important;
+  color: var(--on-background) !important;
 }
 
 .surface {
-  background-color: var(--surface)!important;
-  color: var(--on-surface)!important;
+  background-color: var(--surface) !important;
+  color: var(--on-surface) !important;
 }
 
 .surface-variant {
-  background-color: var(--surface-variant)!important;
-  color: var(--on-surface-variant)!important;
+  background-color: var(--surface-variant) !important;
+  color: var(--on-surface-variant) !important;
 }
 
 .inverse-surface {
-  background-color: var(--inverse-surface); 
+  background-color: var(--inverse-surface);
   color: var(--inverse-on-surface);
 }
 
 .black {
-  background-color: #000000 !important;
+  background-color: #000 !important;
 }
 
 .black-border {
-  border-color: #000000 !important;
+  border-color: #000 !important;
 }
 
 .black-text {
-  color: #000000 !important;
+  color: #000 !important;
 }
 
 .white {
-  background-color: #ffffff !important;
+  background-color: #FFF !important;
 }
 
 .white-border {
-  border-color: #ffffff !important;
+  border-color: #FFF !important;
 }
 
 .white-text {
-  color: #ffffff !important;
+  color: #FFF !important;
 }
 
 .transparent {

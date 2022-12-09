@@ -7,6 +7,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "lint:style:cdn": "stylelint --fix src/cdn/**/*.css",
     "dev": "node ./build/dev.js",
     "build": "node ./build/build.js && node ./build/cdn.js",
     "test": "vitest"
@@ -28,6 +29,8 @@
     "http": "0.0.1-security",
     "http-proxy": "^1.18.1",
     "sass": "^1.49.9",
+    "stylelint": "^14.15.0",
+    "stylelint-config-standard-scss": "^6.1.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
     "vitest": "^0.16.0",

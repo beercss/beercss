@@ -1,5 +1,6 @@
 .loader {
-  --loader-translateY: 0;
+  --loader-translate-y: 0;
+
   display: inline-block;
   width: 40rem;
   height: 40rem;
@@ -23,35 +24,35 @@
 }
 
 .loader.red {
-  border-color: #f44336;
+  border-color: #F44336;
 }
 
 .loader.pink {
-  border-color: #e91e63;
+  border-color: #E91E63;
 }
 
 .loader.purple {
-  border-color: #9c27b0;
+  border-color: #9C27B0;
 }
 
 .loader.deep-purple {
-  border-color: #673ab7;
+  border-color: #673AB7;
 }
 
 .loader.indigo {
-  border-color: #3f51b5;
+  border-color: #3F51B5;
 }
 
 .loader.blue {
-  border-color: #2196f3;
+  border-color: #2196F3;
 }
 
 .loader.light-blue {
-  border-color: #03a9f4;
+  border-color: #03A9F4;
 }
 
 .loader.cyan {
-  border-color: #00bcd4;
+  border-color: #00BCD4;
 }
 
 .loader.teal {
@@ -59,31 +60,31 @@
 }
 
 .loader.green {
-  border-color: #4caf50;
+  border-color: #4CAF50;
 }
 
 .loader.light-green {
-  border-color: #8bc34a;
+  border-color: #8BC34A;
 }
 
 .loader.lime {
-  border-color: #cddc39;
+  border-color: #CDDC39;
 }
 
 .loader.yellow {
-  border-color: #ffeb3b;
+  border-color: #FFEB3B;
 }
 
 .loader.amber {
-  border-color: #ffc107;
+  border-color: #FFC107;
 }
 
 .loader.orange {
-  border-color: #ff9800;
+  border-color: #FF9800;
 }
 
 .loader.deep-orange {
-  border-color: #ff5722;
+  border-color: #FF5722;
 }
 
 .loader.brown {
@@ -91,55 +92,64 @@
 }
 
 .loader.blue-grey {
-  border-color: #607d8b;
+  border-color: #607D8B;
 }
 
 .loader.grey {
-  border-color: #9e9e9e;
+  border-color: #9E9E9E;
 }
 
 .loader.black {
-  border-color: #000000;
+  border-color: #000;
 }
 
 .loader.white {
-  border-color: #ffffff;
+  border-color: #FFF;
 }
 
 .field > .loader {
-  --loader-translateY: -50%;
+  --loader-translate-y: -50%;
 }
 
 @keyframes to-loader {
   0% {
-    transform: translateY(var(--loader-translateY)) rotate(0deg);
+    transform: translateY(var(--loader-translate-y)) rotate(0deg);
     clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
   }
+
   20% {
     clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
   }
+
   30% {
     clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%);
   }
+
   40% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);    
+    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
   }
+
   50% {
     clip-path: polygon(50% 50%, 50% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
   }
+
   60% {
     clip-path: polygon(50% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
   }
+
   70% {
     clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%, 0% 50%);
   }
+
   80% {
     clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 50%);
   }
-  90%{
-    transform: translateY(var(--loader-translateY)) rotate(360deg);
+
+  90% {
+    transform: translateY(var(--loader-translate-y)) rotate(360deg);
     clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
   }
+
   100% {
     clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
   }

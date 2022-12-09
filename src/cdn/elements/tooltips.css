@@ -1,7 +1,7 @@
 .tooltip {
   display: none;
-  background-color: rgba(0,0,0,.9);
-  color: #ffffff;
+  background-color: rgb(0 0 0 / .9);
+  color: #FFF;
   font-size: 12rem;
   text-align: center;
   border-radius: 4rem;

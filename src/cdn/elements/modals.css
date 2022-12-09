@@ -158,11 +158,11 @@ nav.right > .modal {
 }
 
 nav.top > .modal {
-  padding: 80rem 48rem 16rem 48rem;
+  padding: 80rem 48rem 16rem;
 }
 
 nav.bottom > .modal {
-  padding: 16rem 48rem 80rem 48rem;
+  padding: 16rem 48rem 80rem;
 }
 
 .modal > a.row:hover,

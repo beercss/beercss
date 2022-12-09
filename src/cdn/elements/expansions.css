@@ -1,11 +1,15 @@
 summary.none {
   list-style-type: none;
-} 
-  
+}
+
+summary.none::-webkit-details-marker {
+  display: none;
+}
+
 summary {
   cursor: pointer;
-} 
-  
+}
+
 summary:focus {
   outline: none;
 }

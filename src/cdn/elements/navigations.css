@@ -28,7 +28,7 @@ nav > *,
 
 nav.no-space,
 .row.no-space {
-  gap: 0rem;
+  gap: 0;
 }
 
 nav.no-space > .border + .border,
@@ -153,11 +153,11 @@ nav.bottom > a:not(button, .button, .chip, img, video) {
   width: 56rem;
 }
 
-nav.left:before,
-nav.right:before,
-nav.top:before,
-nav.bottom:before {
-  content: '';
+nav.left::before,
+nav.right::before,
+nav.top::before,
+nav.bottom::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -172,7 +172,7 @@ nav.left > :not(.modal, .overlay),
 nav.right > :not(.modal, .overlay),
 nav.top > :not(.modal, .overlay),
 nav.bottom > :not(.modal, .overlay) {
-  z-index: 101;  
+  z-index: 101;
 }
 
 nav.left > a:not(button, .button, .chip) > i,
@@ -200,7 +200,7 @@ nav.bottom > a:not(button, .button, .chip).active > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
   padding: 4rem 16rem;
-  font-variation-settings: 'FILL' 1;
+  font-variation-settings: "FILL" 1;
 }
 
 nav.left > .modal {

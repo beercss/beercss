@@ -23,7 +23,7 @@
 }
 
 .top-round.left-round {
-  border-radius: 32rem 32rem 0 32rem !important;
+  border-radius: 32rem 32rem 0 !important;
 }
 
 .top-round.right-round {
@@ -35,7 +35,7 @@
 }
 
 .bottom-round.right-round {
-  border-radius: 0 32rem 32rem 32rem !important;
+  border-radius: 0 32rem 32rem !important;
 }
 
 .circle:not(img, video),
@@ -73,7 +73,7 @@
   border-radius: 16rem !important;
 }
 
-.border:not(table, .field) { 
+.border:not(table, .field) {
   box-sizing: border-box;
   border: 1rem solid var(--outline);
   background-color: transparent;

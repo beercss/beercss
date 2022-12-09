@@ -44,7 +44,7 @@
 }
 
 .field::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -129,7 +129,7 @@ input[type^=date]::-webkit-inner-spin-button,
 input[type^=date]::-webkit-calendar-picker-indicator,
 input[type^=time]::-webkit-inner-spin-button,
 input[type^=time]::-webkit-calendar-picker-indicator {
-  opacity: 0;   
+  opacity: 0;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -426,8 +426,8 @@ input[type=file] {
   color: var(--error) !important;
 }
 
-.field > label.required:after,
-.field.required > label:after {
+.field > label.required::after,
+.field.required > label::after {
   content: " * ";
 }
 
