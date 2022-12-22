@@ -1,6 +1,6 @@
 @import "./settings/light.css";
 @import "./settings/dark.css";
-@import "./settings/symbols.css";
+@import "./settings/fonts.css";
 @import "./helpers/reset.css";
 @import "./helpers/theme.css";
 @import "./helpers/alignments.css";
@@ -43,4 +43,3 @@
 @import "./elements/tabs.css";
 @import "./elements/toasts.css";
 @import "./elements/tooltips.css";
-@import "@fontsource/roboto-flex";
