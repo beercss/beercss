@@ -1,8 +1,8 @@
 import { build } from "vite";
+import fs from "fs";
 
 (async () => {
   await build({
-    base: '',
     build: {
       outDir: "./dist/cdn",
       rollupOptions: {
@@ -18,4 +18,12 @@ import { build } from "vite";
       },
     },
   });
+
+  // Removing relative paths starting with /
+  try {
+    const data = fs.readFileSync("./dist/cdn/beer.min.css", "utf-8");
+    fs.writeFileSync("./dist/cdn/beer.min.css", data.replace(/url\(\//g, "url("));
+  } catch (error) {
+    console.error(error);
+  }
 })();
