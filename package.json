@@ -14,7 +14,6 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@fontsource/roboto-flex": "^4.5.2",
     "material-dynamic-colors": "^0.0.10",
     "sass": "^1.49.9",
     "uuid": "^8.3.2",
