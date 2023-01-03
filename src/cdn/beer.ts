@@ -4,7 +4,7 @@ export default (() => {
     light: string,
   }
 
-  const _window: Window | any = typeof window !== 'undefined' ? window : {};
+  const _window = globalThis;
   let _timeoutToast: NodeJS.Timeout = null;
   let _timeoutMutation: NodeJS.Timeout = null;
   let _mutation: MutationObserver = null;
@@ -398,6 +398,5 @@ export default (() => {
   
   if (_window.addEventListener) _window.addEventListener("load", () => ui("setup"));
   _window.ui = ui;
-  _window.beercss = ui;
   return _window.ui;
 })();

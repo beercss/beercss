@@ -1,32 +1,53 @@
 <template lang="pug">
 #typography
   .large-space
-  h4
-    span Typography
-    a.chip.circle(@click="domain.showSamples(data, '#typography .s6 div', 'Typography', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
+  h4 Typography
+  .medium-space
+  h6.middle-align
+    span Formatting
+    a.chip.circle(@click="domain.showSamples(data, '#formatting nav *', 'Formatting', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  .grid
-    .s6
-      div
-        a.link link
-        p.italic italic
-        p.bold bold
-        p.underline underline
-        p.overline overline
-        p.upper upper
-        p.lower lower
-        p.capitalize capitalize
-        p.small-text small-text
-        p.medium-text medium-text
-        p.large-text large-text
-    .s6
-      div
-        h6 Title
-        h5 Title
-        h4 Title
-        h3 Title
-        h2 Title
-        h1 Title
+  #formatting
+    nav
+      a.link link
+      p.italic italic
+      p.bold bold
+      p.underline underline
+      p.overline overline
+      p.upper upper
+      p.lower lower
+      p.capitalize capitalize
+      p.small-text small-text
+      p.medium-text medium-text
+      p.large-text large-text
+  .medium-space
+  h6.middle-align
+    span Type scale
+    a.chip.circle(@click="domain.showSamples(data, '#type-scale h1, #type-scale h2, #type-scale h3, #type-scale h4, #type-scale h5, #type-scale h6', 'Type scale', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+      i code
+  div  
+    label.radio
+      input(type="radio", name="size-typography", @click="domain.updateSize('#type-scale *', 'small')")
+      span small
+    label.radio
+      input(
+        type="radio",
+        name="size-typography",
+        checked,
+        @click="domain.updateSize('#type-scale *')"
+      )
+      span medium
+    label.radio
+      input(type="radio", name="size-typography", @click="domain.updateSize('#type-scale *', 'large')")
+      span large
+    .space     
+    #type-scale.wrap
+      h1 Display
+      h2 Display
+      h3 Display
+      h4 Headline
+      h5 Headline
+      h6 Headline
 </template>
 
 <script setup lang="ts">
