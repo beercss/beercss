@@ -237,7 +237,7 @@ div
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"&gt;&lt;/script&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.4/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"&gt;&lt;/script&gt;
             .medium-space
             h5 From NPM
             pre.scroll.fill.no-round(style="font-family: courier new")

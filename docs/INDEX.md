@@ -7,7 +7,7 @@ From jsdelivr.net.
 ```html
 <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.css" rel="stylesheet" />
 <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.4/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
 ```
 
 #### NPM
@@ -21,9 +21,23 @@ npm i beercss
 ```
 
 ```js
-// importing
-import "material-dynamic-colors";
+// importing as window.beercss and window.materialDynamicColors
 import "beercss";
+import "material-dynamic-colors";
+
+// importing as beercss and materialDynamicColors
+import beercss from "beercss";
+import materialDynamicColors from "material-dynamic-colors";
+
+// importing manually from dist
+import "beercss/dist/cdn/beer.min.css";
+import beercss from "beercss/dist/cdn/beer.min.js";
+import materialDynamicColors from "material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js";
+
+// importing manually from src
+import "beercss/src/cdn/beer.css";
+import beercss from "beercss/src/cdn/beer.ts";
+import materialDynamicColors from "material-dynamic-colors/src/cdn/material-dynamic-colors.js";
 ```
 
 ### HTML
@@ -40,7 +54,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <title>Hello world</title>
     <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.css" rel="stylesheet">
     <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.4/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
   </head>
   <body class="light">
     <nav class="left m l">

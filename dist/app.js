@@ -4,7 +4,7 @@ var nl=Object.defineProperty,il=Object.defineProperties;var ol=Object.getOwnProp
 
 &lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 
-&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre><div class="medium-space"></div><h5>From NPM</h5><pre class="scroll fill no-round" style="font-family:courier new;">// installing
+&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.4/dist/cdn/material-dynamic-colors.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre><div class="medium-space"></div><h5>From NPM</h5><pre class="scroll fill no-round" style="font-family:courier new;">// installing
 npm i beercss
 npm i material-dynamic-colors
 

@@ -14,7 +14,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "material-dynamic-colors": "^0.0.10",
+    "material-dynamic-colors": "^0.1.4",
     "sass": "^1.49.9",
     "uuid": "^8.3.2",
     "vue": "^3.2.31"
