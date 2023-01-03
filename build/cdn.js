@@ -19,10 +19,12 @@ import fs from "fs";
     },
   });
 
-  // Removing relative paths starting with /
   try {
-    const data = fs.readFileSync("./dist/cdn/beer.min.css", "utf-8");
-    fs.writeFileSync("./dist/cdn/beer.min.css", data.replace(/url\(\//g, "url("));
+    const cssContent = fs.readFileSync("./dist/cdn/beer.min.css", "utf-8");
+    fs.writeFileSync("./dist/cdn/beer.min.css", cssContent.replace(/url\(\//g, "url("));
+
+    const jsContent = fs.readFileSync("./dist/cdn/beer.min.js", "utf-8");
+    fs.writeFileSync("./dist/cdn/beer.min.js", "export default" + jsContent);
   } catch (error) {
     console.error(error);
   }

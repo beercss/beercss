@@ -6,8 +6,8 @@ From jsdelivr.net.
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
 ```
 
 #### NPM
@@ -39,8 +39,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta name="google" content="notranslate">
     <title>Hello world</title>
     <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
   </head>
   <body class="light">
     <nav class="left m l">

@@ -1,18 +1,17 @@
-(() => {
-  if (window.ui) return;
-
+export default (() => {
   interface ILastTheme {
     dark: string,
     light: string,
   }
 
+  const _window: Window | any = typeof window !== 'undefined' ? window : {};
   let _timeoutToast: NodeJS.Timeout = null;
   let _timeoutMutation: NodeJS.Timeout = null;
   let _mutation: MutationObserver = null;
   const _lastTheme: ILastTheme = {
     light: "",
     dark: "",
-  };
+  }
 
   const wait = async (milliseconds: number) => {
     return await new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -322,7 +321,7 @@
   };
 
   const theme = (source: any): ILastTheme => {
-    if (!source || !window.materialDynamicColors) return lastTheme();
+    if (!source || !_window.materialDynamicColors) return lastTheme();
 
     const mode = /dark/i.test(document.body.className) ? "dark" : "light";
     if (source && source.light && source.dark) {
@@ -332,7 +331,7 @@
       return source;
     }
 
-    return window.materialDynamicColors(source).then((theme) => {
+    return _window.materialDynamicColors(source).then((theme) => {
       const toCss = (data) => {
         let style = "";
         for (const i in data) {
@@ -353,7 +352,7 @@
     if (!value) return /dark/i.test(document.body.className) ? "dark" : "light";
     document.body.classList.remove("light", "dark");
     document.body.classList.add(value);
-    if (window.materialDynamicColors) document.body.setAttribute("style", _lastTheme[value]);
+    if (_window.materialDynamicColors) document.body.setAttribute("style", _lastTheme[value]);
     return value;
   };
 
@@ -396,6 +395,9 @@
     });
   };
 
-  window.ui = ui;
-  window.addEventListener("load", () => ui("setup"));
+  
+  if (_window.addEventListener) _window.addEventListener("load", () => ui("setup"));
+  _window.ui = ui;
+  _window.beercss = ui;
+  return _window.ui;
 })();

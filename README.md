@@ -65,19 +65,15 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 // nav elements before all others
 <body>
-  <nav class="left m l">...</nav>
-  <nav class="bottom s">...</nav>
-  <header class="responsive">...</header>
-  <main class="responsive">...</main>
-  <footer class="responsive">...</footer>
+  <nav>...</nav>
+  <nav>...</nav>
+  ...
 </body>
 
 <div id="app">
-  <nav class="left m l">...</nav>
-  <nav class="bottom s">...</nav>
-  <header class="responsive">...</header>
-  <main class="responsive">...</main>
-  <footer class="responsive">...</footer>
+  <nav>...</nav>
+  <nav>...</nav>
+  ...
 </div>
 
 // write css like this
@@ -101,26 +97,16 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 // nav elements after all others
 <body>
-  <header class="responsive">...</header>
-  <main class="responsive">...</main>
-  <footer class="responsive">...</footer>
-  <nav class="left m l">...</nav>
-  <nav class="bottom s">...</nav>
+  ...
+  <nav>...</nav>
+  <nav>...</nav>
 </body>
 
 <div id="app">
-  <header class="responsive">...</header>
-  <main class="responsive">...</main>
-  <footer class="responsive">...</footer>
-  <nav class="left m l">...</nav>
-  <nav class="bottom s">...</nav>
-</div>
-
-<main class="responsive">
-  <nav class="left m l">...</nav>
-  <nav class="bottom s">...</nav>
   ...
-</main>
+  <nav>...</nav>
+  <nav>...</nav>
+</div>
 
 // write css like this
 .element.element {...}
@@ -136,8 +122,8 @@ From jsdelivr.net.
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
 ```
 
 ### NPM
@@ -151,9 +137,18 @@ npm i material-dynamic-colors
 ```
 
 ```js
-// importing
+// importing as window.beercss and window.materialDynamicColors
 import "beercss";
 import "material-dynamic-colors";
+
+// importing as beercss and materialDynamicColors
+import beercss from "beercss";
+import materialDynamicColors from "material-dynamic-colors";
+
+// importing as ui and materialDynamicColors
+import "beercss/dist/cdn/beer.css";
+import beercss from "beercss/dist/cdn/beer.js";
+import materialDynamicColors from "material-dynamic-colors";
 ```
 
 ### HTML
@@ -169,8 +164,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta name="google" content="notranslate">
     <title>Hello world</title>
     <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
   </head>
   <body class="light">
     <nav class="left m l">
