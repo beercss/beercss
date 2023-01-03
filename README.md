@@ -147,11 +147,25 @@ import materialDynamicColors from "material-dynamic-colors";
 
 // importing manually from dist
 import "beercss/dist/cdn/beer.min.css";
+import "beercss/dist/cdn/material-symbols-outlined.woff2";
+import "beercss/dist/cdn/roboto-flex-cyrillic-etc.woff2";
+import "beercss/dist/cdn/roboto-flex-cyrillic.woff2";
+import "beercss/dist/cdn/roboto-flex-greek.woff2";
+import "beercss/dist/cdn/roboto-flex-latin-ext.woff2";
+import "beercss/dist/cdn/roboto-flex-latin.woff2";
+import "beercss/dist/cdn/roboto-flex-vietnamese.woff2";
 import beercss from "beercss/dist/cdn/beer.min.js";
 import materialDynamicColors from "material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js";
 
 // importing manually from src
 import "beercss/src/cdn/beer.css";
+import "beercss/src/cdn/material-symbols-outlined.woff2";
+import "beercss/src/cdn/roboto-flex-cyrillic-etc.woff2";
+import "beercss/src/cdn/roboto-flex-cyrillic.woff2";
+import "beercss/src/cdn/roboto-flex-greek.woff2";
+import "beercss/src/cdn/roboto-flex-latin-ext.woff2";
+import "beercss/src/cdn/roboto-flex-latin.woff2";
+import "beercss/src/cdn/roboto-flex-vietnamese.woff2";
 import beercss from "beercss/src/cdn/beer.ts";
 import materialDynamicColors from "material-dynamic-colors/src/cdn/material-dynamic-colors.js";
 ```
