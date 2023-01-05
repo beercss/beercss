@@ -18,6 +18,10 @@ left-align, right-align, center-align
 
 horizontal, vertical
 
+**Sizes**
+
+min, max
+
 **Triggers**
 
 active

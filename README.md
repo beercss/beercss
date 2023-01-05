@@ -26,6 +26,7 @@ Cheers, www.beercss.com
 - It does a lot of combinations.
 - It's easy to work with Vue, React, Angular, Svelte and others.
 - **It has about 10kb.**
+- **It has semantic html.**
 - **It has the most simple html output around.**
 - It does not need tons of documentation to explain it.
 - It's fast to learn, read and write code.
@@ -56,8 +57,7 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 ```
 // 1 setting to 1 document
-<body class="light">...</body>
-<body class="dark">...</body>
+<body class="dark|light">...</body>
 
 // 1 element to N helpers
 <element class="helper helper">...</element>
@@ -65,14 +65,12 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 // nav elements before all others
 <body>
-  <nav>...</nav>
-  <nav>...</nav>
+  <nav class="left|right|top|bottom">...</nav>
   ...
 </body>
 
 <div id="app">
-  <nav>...</nav>
-  <nav>...</nav>
+  <nav class="left|right|top|bottom">...</nav>
   ...
 </div>
 
@@ -98,14 +96,12 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 // nav elements after all others
 <body>
   ...
-  <nav>...</nav>
-  <nav>...</nav>
+  <nav class="left|right|top|bottom">...</nav>
 </body>
 
 <div id="app">
   ...
-  <nav>...</nav>
-  <nav>...</nav>
+  <nav class="left|right|top|bottom">...</nav>
 </div>
 
 // write css like this
@@ -122,8 +118,8 @@ From jsdelivr.net.
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.4/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ### NPM
@@ -183,8 +179,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta name="google" content="notranslate">
     <title>Hello world</title>
     <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js" type="text/javascript"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.4/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.0/dist/cdn/beer.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="light">
     <nav class="left m l">
