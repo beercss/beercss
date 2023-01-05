@@ -54,7 +54,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;table&gt;** left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border
 
-**tabs** left-align, right-align, center-align, horizontal, vertical
+**tabs** left-align, right-align, center-align, horizontal, vertical, min, max
 
 **toast** top, bottom, active
 
