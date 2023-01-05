@@ -176,8 +176,6 @@ import whatsHot from "./whatsHot.vue";
 import { onRoute, redirect } from "../shared/router";
 
 onMounted(async () => {
-  sharedDomain.initTheme(data.value);
-
   data.value.isLoaded = false;
   await domain.waitForImages();
   data.value.isLoaded = true;

@@ -55,14 +55,9 @@ div
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 import themes from "../shared/themes.vue";
 import home from "./home.vue";
 import data from "./data";
 import sharedDomain from "../shared/domain";
 import { redirect } from "../shared/router";
-
-onMounted(() => {
-  sharedDomain.initTheme(data.value);
-});
 </script>

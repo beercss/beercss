@@ -477,8 +477,6 @@ import tooltips from "./tooltips.vue";
 import typography from "./typography.vue";
 
 onMounted(() => {
-  sharedDomain.initTheme(data.value);
-
   setTimeout(() => {
     data.value.isHorizontal = window.outerWidth <= 600;
     document.getElementById("logo").classList.add("active");

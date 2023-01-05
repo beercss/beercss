@@ -65,7 +65,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 import data from "./data";
 import sharedDomain from "../shared/domain";
 import home from "./home.vue";
@@ -75,8 +74,4 @@ const scroll = (selector:string) => {
   const element = document.querySelector(selector);
   if (element) element.scrollIntoView({ block: "start", behavior: "smooth" });
 };
-
-onMounted(() => {
-  sharedDomain.initTheme(data.value);
-});
 </script>

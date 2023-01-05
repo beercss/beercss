@@ -16,12 +16,7 @@ const updateMode = (data: ILayout) => {
   data.isDark = mode == "dark";
 };
 
-const initTheme = async (data: ILayout) => {
-  updateTheme(data, null);
-};
-
 export default {
   updateTheme,
-  updateMode,
-  initTheme,
+  updateMode
 };

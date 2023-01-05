@@ -213,7 +213,6 @@ div
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 import themes from "../shared/themes.vue";
 import data from "./data";
 import sharedDomain from "../shared/domain";
@@ -224,10 +223,6 @@ import sent from "./sent.vue";
 import snoozed from "./snoozed.vue";
 import spam from "./spam.vue";
 import { onRoute, redirect } from "../shared/router";
-
-onMounted(() => {
-  sharedDomain.initTheme(data.value);
-});
 
 onRoute((url:string) => {
   data.value.check = false;
