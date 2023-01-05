@@ -396,6 +396,7 @@ export default (() => {
   };
 
   if (_window.addEventListener) _window.addEventListener("load", () => ui("setup"));
+  _window.beercss= ui;
   _window.ui = ui;
   return _window.ui;
 })();
