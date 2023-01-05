@@ -17,6 +17,7 @@ Grids are rows and cols system grid. They are most used to organize content.
 s1...s12, m1...m12, l1...l12
 
 **Spaces**
+
 no-space, space, small-space, medium-space, large-space
 
 ## Example

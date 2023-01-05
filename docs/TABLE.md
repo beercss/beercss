@@ -19,6 +19,7 @@ left-align, right-align, center-align
 border
 
 **Spaces**
+
 no-space, space, small-space, medium-space, large-space
 
 ## Example
