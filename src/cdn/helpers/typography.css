@@ -108,6 +108,7 @@ h6.large {
   overflow: hidden;
   white-space: nowrap !important;
   text-overflow: ellipsis;
+  flex: inherit;
 }
 
 .truncate > * {

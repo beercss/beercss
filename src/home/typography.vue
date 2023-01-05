@@ -5,25 +5,25 @@
   .medium-space
   h6.middle-align
     span Display and headline
-    a.chip.circle(@click="domain.showSamples(data, '#type-scale h1, #type-scale h2, #type-scale h3, #type-scale h4, #type-scale h5, #type-scale h6', 'Type scale', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#display-headline h1, #display-headline h2, #display-headline h3, #display-headline h4, #display-headline h5, #display-headline h6', 'Display and headline', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
       i code
   div  
     label.radio
-      input(type="radio", name="size-typography", @click="domain.updateSize('#type-scale *', 'small')")
+      input(type="radio", name="size-typography", @click="domain.updateSize('#display-headline *', 'small')")
       span small
     label.radio
       input(
         type="radio",
         name="size-typography",
         checked,
-        @click="domain.updateSize('#type-scale *')"
+        @click="domain.updateSize('#display-headline *')"
       )
       span medium
     label.radio
-      input(type="radio", name="size-typography", @click="domain.updateSize('#type-scale *', 'large')")
+      input(type="radio", name="size-typography", @click="domain.updateSize('#display-headline *', 'large')")
       span large
     .space     
-    #type-scale.wrap
+    #display-headline.wrap
       h1 Display
       h2 Display
       h3 Display
