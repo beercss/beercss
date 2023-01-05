@@ -11,7 +11,7 @@ export default (() => {
   const _lastTheme: ILastTheme = {
     light: "",
     dark: "",
-  }
+  };
 
   const wait = async (milliseconds: number) => {
     return await new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -395,7 +395,6 @@ export default (() => {
     });
   };
 
-  
   if (_window.addEventListener) _window.addEventListener("load", () => ui("setup"));
   _window.ui = ui;
   return _window.ui;

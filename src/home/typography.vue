@@ -7,7 +7,7 @@
     span Display and headline
     a.chip.circle(@click="domain.showSamples(data, '#display-headline h1, #display-headline h2, #display-headline h3, #display-headline h4, #display-headline h5, #display-headline h6', 'Display and headline', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
       i code
-  div  
+  div
     label.radio
       input(type="radio", name="size-typography", @click="domain.updateSize('#display-headline *', 'small')")
       span small
@@ -22,7 +22,7 @@
     label.radio
       input(type="radio", name="size-typography", @click="domain.updateSize('#display-headline *', 'large')")
       span large
-    .space     
+    .space
     #display-headline.wrap
       h1 Display
       h2 Display
