@@ -23,7 +23,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-background);
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   border-bottom: 0.125rem solid transparent;
   text-align: center;
   min-height: 3rem;
@@ -32,8 +32,8 @@
 }
 
 .tabs.min > a {
-  flex-basis: content;
-  padding: 0.5rem 0;
+  width: auto;
+  padding: 0;
 }
 
 .tabs.small > a {
