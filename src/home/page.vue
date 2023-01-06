@@ -286,12 +286,13 @@ div
                     span &nbsp;fixed, responsive
                   p
                     b &lt;h1&gt;...&lt;h6&gt;
+                    span &nbsp;tiny, small, medium, large, extra, fill
                   p
                     b &lt;header&gt;
                     span &nbsp;fixed, responsive
                   p
                     b &lt;i&gt;
-                    span &nbsp;tiny, small, medium, large, extra. fill
+                    span &nbsp;tiny, small, medium, large, extra, fill
                   p
                     b &lt;img&gt;
                     span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive

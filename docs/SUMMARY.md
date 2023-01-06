@@ -24,7 +24,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;footer&gt;** fixed
 
-**&lt;h1&gt;...&lt;h6&gt;**
+**&lt;h1&gt;...&lt;h6&gt;** small, medium, large
 
 **&lt;header&gt;** fixed
 
