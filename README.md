@@ -4,7 +4,7 @@
 <p align="center">
     <a href="https://github.com/beercss/beercss/blob/main/LICENSE"><img src="https://img.shields.io/github/license/beercss/beercss" alt="License"></a>
     <img src="https://img.shields.io/jsdelivr/npm/hy/beercss" alt="Downloads">
-    <a href="https://bundlephobia.com/package/beercss"><img src="https://badgen.net/bundlephobia/minzip/beercss" alt="Size"></a>
+    <a href="https://img.badgesize.io/beercss/beercss/main/dist/cdn/beer.min.css?compression=brotli"><img src="https://img.badgesize.io/beercss/beercss/main/dist/cdn/beer.min.css?compression=brotli" alt="Size"></a>
     <a href="https://www.npmjs.com/package/beercss"><img src="https://img.shields.io/npm/v/beercss" alt="Version"></a>
     <a href="https://github.com/beercss/beercss/pulls"><img src="https://img.shields.io/github/issues-pr/beercss/beercss" alt="Pull Request"></a>
     <a href="https://github.com/beercss/beercss/issues"><img src="https://img.shields.io/github/issues/beercss/beercss" alt="Issues"></a>
