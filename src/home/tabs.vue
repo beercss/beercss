@@ -53,7 +53,7 @@
       span max
   p.space
   div
-    .tabs.scroll
+    .tabs
       a.active(data-ui="#tab1", no-direction="") Tab 1
       a(data-ui="#tab2", no-direction="") Tab 2
       a(data-ui="#tab3", no-direction="") Tab 3
@@ -64,7 +64,7 @@
     #tab3.page.padding
       h5 Tab 3
   div
-    .tabs.scroll
+    .tabs
       a.active(data-ui="#tab4")
         i home
         span Tab 1
@@ -81,7 +81,7 @@
     #tab6.page.padding
       h5 Tab 3
   div
-    .tabs.scroll
+    .tabs
       a.active(data-ui="#tab7")
         img.circle(:src="'/favicon.png'")
         span Tab 1
