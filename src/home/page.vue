@@ -286,7 +286,7 @@ div
                     span &nbsp;fixed, responsive
                   p
                     b &lt;h1&gt;...&lt;h6&gt;
-                    span &nbsp;tiny, small, medium, large, extra, fill
+                    span &nbsp;small, medium, large
                   p
                     b &lt;header&gt;
                     span &nbsp;fixed, responsive
