@@ -117,9 +117,21 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 From jsdelivr.net.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.0.2/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.2/dist/cdn/beer.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
+// with html
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
+```
+
+```css
+// with css
+@import "https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.css";
+```
+
+```js
+// with javascript
+import "https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.js";
+import "https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js";
 ```
 
 ### NPM
@@ -184,9 +196,9 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.2/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.2/dist/cdn/beer.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="light">
     <nav class="left m l">
