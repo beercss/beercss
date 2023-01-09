@@ -5,6 +5,7 @@
 From jsdelivr.net.
 
 ```html
+// with html
 <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.css" rel="stylesheet" />
 <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
