@@ -60,5 +60,12 @@
     "beer",
     "responsive",
     "css-framework"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beercss/beercss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beercss/beercss/issues"
+  }
 }
