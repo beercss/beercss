@@ -6,19 +6,19 @@ From jsdelivr.net.
 
 ```html
 // with html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.0.4/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.4/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ```css
 // with css
-@import "https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.css";
+@import "https://cdn.jsdelivr.net/npm/beercss@3.0.4/dist/cdn/beer.min.css";
 ```
 
 ```js
 // with javascript
-import "https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.js";
+import "https://cdn.jsdelivr.net/npm/beercss@3.0.4/dist/cdn/beer.min.js";
 import "https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js";
 ```
 
@@ -48,7 +48,7 @@ import materialDynamicColors from "material-dynamic-colors";
 // importing manually from dist
 import "beercss/dist/cdn/beer.min.css";
 import "beercss/dist/cdn/material-symbols-outlined.woff2";
-import "beercss/dist/cdn/roboto-flex-cyrillic-etc.woff2";
+import "beercss/dist/cdn/roboto-flex-cyrillic-ext.woff2";
 import "beercss/dist/cdn/roboto-flex-cyrillic.woff2";
 import "beercss/dist/cdn/roboto-flex-greek.woff2";
 import "beercss/dist/cdn/roboto-flex-latin-ext.woff2";
@@ -62,7 +62,7 @@ import materialDynamicColors from "material-dynamic-colors/dist/cdn/material-dyn
 // importing manually from src
 import "beercss/src/cdn/beer.css";
 import "beercss/src/cdn/material-symbols-outlined.woff2";
-import "beercss/src/cdn/roboto-flex-cyrillic-etc.woff2";
+import "beercss/src/cdn/roboto-flex-cyrillic-ext.woff2";
 import "beercss/src/cdn/roboto-flex-cyrillic.woff2";
 import "beercss/src/cdn/roboto-flex-greek.woff2";
 import "beercss/src/cdn/roboto-flex-latin-ext.woff2";
@@ -84,8 +84,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.3/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.4/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.4/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="light">
