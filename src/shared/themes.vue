@@ -64,7 +64,7 @@
         span Dark
     .space
     article.border
-      pre(v-html="data.theme[data.theme.selected]")
+      pre(v-html="sourceCode()")
 
 </template>
 
@@ -84,6 +84,10 @@ const {
 } = defineProps<IProps>();
 
 const data = modelValue;
+
+const sourceCode = () => {
+  return (data.theme[data.theme.selected] || "").replace("--shadow:#000000;", "");
+}
 </script>
 
 <style scoped>
