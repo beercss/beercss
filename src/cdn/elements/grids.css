@@ -11,7 +11,7 @@
 }
 
 .grid.no-space {
-  --grid-gap: 0;
+  --grid-gap: 0rem;
 }
 
 .grid.medium-space {
