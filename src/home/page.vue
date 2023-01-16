@@ -54,7 +54,7 @@ div
         img.circle(:src="'/favicon.png'")
         .max
           h6 Beercss
-          div v3.0.4
+          div v3.0.5
         button.transparent.circle(data-ui="#modal-menu")
           i close
     a.row.round(@click="sharedDomain.updateMode(data)")
@@ -233,9 +233,9 @@ div
             .medium-space
             h5 From CDN
             pre.scroll.fill.no-round(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.0.4/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.0.5/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.4/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.5/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
