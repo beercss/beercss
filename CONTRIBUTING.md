@@ -71,15 +71,9 @@ $ npm run test
 
   - **`static`**: contains static files.
 
-  - **`test`**: contains a blank test page for use in your tests. It will be available in `npm run dev` at url http://localhost:1234/test
+  - **`test`**: contains a blank test page for use in your tests. It will be available in `npm run dev` at url http://localhost:3030/test
 
-- **`tests`**: contains all tests. The unit tests are written with [Jest](https://jestjs.io/).
-
-## Financial Contribution
-
-As a pure community-driven project without major corporate backing, we also welcome financial contributions via Patreon.
-
-- [Become a backer or sponsor on Patreon](https://www.patreon.com/beercss)
+- **`tests`**: contains all tests. The unit tests are written with [Vitest](https://vitest.dev/).
 
 ## Credits
 

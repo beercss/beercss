@@ -267,10 +267,3 @@ https://github.com/beercss/beercss/blob/main/CONTRIBUTING.md
 
 ## Cheers to all people here 🍻
 [![Stargazers repo roster for @beercss/beercss](https://reporoster.com/stars/notext/beercss/beercss)](https://github.com/beercss/beercss/stargazers)
-
-## Supporting us
-
-Beercss is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider:
-
-- [Become a backer or sponsor on Patreon](https://www.patreon.com/beercss).
-- [Become a backer or sponsor on Open Collective](https://www.opencollective.com/beercss).
