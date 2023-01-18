@@ -18,6 +18,7 @@ button::after {
 }
 
 .wave.dark::after,
+.wave.row::after,
 .button.none::after,
 button.none::after,
 .chip.border::after,

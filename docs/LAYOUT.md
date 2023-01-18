@@ -137,16 +137,22 @@ Headers and footers are `position: sticky` when `fixed`.
   <a>
     <i>warning</i>
   </a>
-  <div class="max">
-    <div>Title</div>
-    <div class="small-text">Some text here</div>
-  </div>
+  <div class="max">Some text here</div>
   <a>
     <i>edit</i>
   </a>
   <a>
     <i>delete</i>
   </a>
+</div>
+```
+
+## Clickable list example
+
+```html
+<a class="row wave">
+  <i>home</i>
+  <div>Item</div>
 </div>
 ```
 

@@ -72,6 +72,10 @@ nav > .border.no-margin + .border.no-margin,
   border-left: 0;
 }
 
+a.row.wave {
+  padding: 0.5rem;
+}
+
 nav.left,
 nav.right,
 nav.top,

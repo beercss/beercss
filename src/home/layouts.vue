@@ -121,92 +121,119 @@ div
       span Today
     .row
       i.light-green-text check_circle
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       i.orange-text warning
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       i.grey-text schedule
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .row
       span Yesterday
     .row
       label.checkbox
         input(type="checkbox")
         span
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       label.checkbox
         input(type="checkbox")
         span
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       label.checkbox
         input(type="checkbox")
         span
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .row
       span Older
     .row
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
+  .medium-space
+  #clickable-list
+    h6
+      span Clickable lists
+      a.chip.circle(@click="domain.showSamples(data, '#clickable-list .row', 'Clickable lists')")
+        i code
+    .grid 
+      .s12.m6.l4
+        a.row.wave
+          i home
+          div Default 1
+        a.row.wave
+          i search
+          div Default 2
+        a.row.wave
+          i star
+          div Default 3
+        a.row.wave
+          i mail
+          .max Default 4
+          span.badge.circle.none 3
+      .s12.m6.l4
+        a.row.wave.round
+          i home
+          div Rounded 1
+        a.row.wave.round
+          i search
+          div Rounded 2
+        a.row.wave.round
+          i star
+          div Rounded 3
+        a.row.wave.round
+          i mail
+          .max Rounded 4 
+          span.badge.circle.none 3
+
   .medium-space
   #empty-state
     h6
@@ -214,7 +241,7 @@ div
       a.chip.circle(@click="domain.showSamples(data, '#empty-state .fill', 'Empty states')")
         i code
     .grid
-      .s12.m12.l4
+      .s12.m12.l6
         .fill.medium-height.middle-align.center-align
           .center-align
             i.extra mail
@@ -223,7 +250,7 @@ div
             .space
             nav.center-align
               button.round Send a message
-      .s12.m12.l4
+      .s12.m12.l6
         .fill.medium-height.middle-align.center-align
           .center-align
             i.extra mail
@@ -233,7 +260,7 @@ div
             nav.center-align
               button.border.round Skip
               button.round Invite your friends
-      .s12.m12.l4
+      .s12.m12.l6
         .fill.medium-height.middle-align.center-align
           .center-align
             i.extra person
