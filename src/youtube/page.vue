@@ -102,7 +102,7 @@
   #modal-expanded.modal.left.small
     header.fixed
       nav
-        button.transparent.circle(data-ui="#modal-expanded")
+        button.transparent.circle.large(data-ui="#modal-expanded")
           i menu
         a
           img(v-show="!data.isDark", :src="'/youtube-light.png'")
