@@ -59,7 +59,7 @@
   #modal-navigation-drawer.modal.left
     header.fixed
       nav
-        button.transparent.circle(data-ui="#modal-navigation-drawer")
+        button.transparent.circle.large(data-ui="#modal-navigation-drawer")
           i close
         h5.max Header
     a.row.round
