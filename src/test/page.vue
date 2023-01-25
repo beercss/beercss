@@ -139,6 +139,58 @@ main.responsive
         span.helper Helper
     .s12.m6
       .field.middle-align
+        label.slider
+          input(type="range")
+          span
+        span.helper Helper
+    .s12.m6
+      .field.border.label
+        input
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.middle-align
+        nav
+          label.slider
+            input(type="range")
+            span
+          label.slider
+            input(type="range")
+            span
+        span.helper Helper
+    .s12.m6
+      .field.border.label.invalid
+        input
+        label Label
+        span.error Error
+    .s12.m6
+      .field.middle-align.invalid
+        label.slider
+          input(type="range")
+          span
+        span.error Error
+    .s12.m6
+      .field.border.label.invalid
+        input
+        label Label
+        span.error Error
+    .s12.m6
+      .field.middle-align.invalid
+        nav
+          label.slider
+            input(type="range")
+            span
+          label.slider
+            input(type="range")
+            span
+        span.error Error
+    .s12.m6
+      .field.border.label
+        input
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.middle-align
         nav
           label.radio
             input(type="radio")
@@ -167,7 +219,7 @@ main.responsive
           label.radio
             input(type="radio")
             span Item 3
-        span.error Teste
+        span.error Error
     .s12.m6
       .field.border.label
         input
@@ -203,7 +255,7 @@ main.responsive
           label.checkbox
             input(type="checkbox")
             span Item 3
-        span.error Teste
+        span.error Error
     .s12.m6
       .field.border.label
         input

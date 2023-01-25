@@ -1,12 +1,12 @@
-# Checkbox
+# Slider
 
-Checkboxes allow users to select one or more items from a set. Checkboxes can turn an option on or off.
+Sliders allow users to make selections from a range of values. There are two types of sliders: continuous and discrete. Default range is 0-100.
 
 ## Element
 
 ```html
-<label class="checkbox">
-  <input type="checkbox">
+<label class="slider">
+  <input type="range">
   <span></span>
 </label>
 ```
@@ -14,48 +14,57 @@ Checkboxes allow users to select one or more items from a set. Checkboxes can tu
 ## Example
 
 ```html
-<label class="checkbox">
-  <input type="checkbox">
+<label class="slider">
+  <input type="range">
   <span></span>
 </label>
 
-<label class="checkbox">
-  <input type="checkbox">
-  <span>Click here</span>
+<label class="slider">
+  <input type="range" min="4" max="8">
+  <span></span>
 </label>
 
 <nav>
-  <label class="checkbox">
-    <input type="checkbox">
-    <span>Item 1</span>
+  <label class="slider">
+    <input type="range">
+    <span></span>
   </label>
-  <label class="checkbox">
-    <input type="checkbox">
-    <span>Item 2</span>
-  </label>
-  <label class="checkbox">
-    <input type="checkbox">
-    <span>Item 3</span>
+  <label class="slider">
+    <input type="range">
+    <span></span>
   </label>
 </nav>
+```
+
+## With tooltip example
+
+```html
+<label class="slider">
+  <input type="range">
+  <span></span>
+  <div class="tooltip"></div>
+</label>
 ```
 
 ## In field elements example
 
 ```html
 <div class="field middle-align">
+  <label class="slider">
+    <input type="range">
+    <span></span>
+  </label>
+</div>
+
+<div class="field middle-align">
   <nav>
-    <label class="checkbox">
-      <input type="checkbox">
-      <span>Item 1</span>
+    <label class="slider">
+      <input type="range">
+      <span></span>
     </label>
-    <label class="checkbox">
-      <input type="checkbox">
-      <span>Item 2</span>
-    </label>
-    <label class="checkbox">
-      <input type="checkbox">
-      <span>Item 3</span>
+    <label class="slider">
+      <input type="range">
+      <span></span>
     </label>
   </nav>
 </div>

@@ -163,6 +163,11 @@ export default (() => {
     updateFile(target, e);
   };
 
+  const onInputRange = (e: Event) => {
+    const target = e.currentTarget as HTMLInputElement;
+    updateRange(target);
+  };
+
   const onMutation = () => {
     if (_timeoutMutation) clearTimeout(_timeoutMutation);
     _timeoutMutation = setTimeout(ui, 180);
@@ -186,6 +191,35 @@ export default (() => {
     previousTarget.addEventListener("keydown", onKeydownFile);
     updateInput(previousTarget);
   };
+
+  const updateRange = (target: Element) => {
+    const parentTarget = parent(target);
+    const inputs = queryAll("input[type='range']", parentTarget) as NodeListOf<HTMLInputElement>;
+    const span = query(":not(.tooltip, input)", parentTarget) as HTMLElement;
+    const tooltip = query(".tooltip", parentTarget) as HTMLElement;
+    if (!inputs.length || !span) return;
+    
+    let percents:Array<number> = [];
+    let values:Array<number> = [];
+    for(let i=0; i<inputs.length; i++) {
+      let min = parseFloat(inputs[i].min || "0");
+      let max = parseFloat(inputs[i].max || "100");
+      let value = parseFloat(inputs[i].value || "0");
+      let percent = (value - min) * 100 / (max - min);
+      percents.push(percent);
+      values.push(value);
+    }
+    
+    if (tooltip) tooltip.textContent = values.join();
+    if (inputs.length === 1) return span.style.width = percents[0] + "%";
+
+    let width = Math.abs(percents[1] - percents[0]);
+    let left = percents[1] > percents[0] ? percents[0] : percents[1];
+    let right = 100 - left - width;
+    span.style.left = left + "%";
+    span.style.right = right + "%";
+    span.style.width = width + "%";
+  }
 
   const open = (from?: Element, to?: Element, config?: any) => {
     if (!to) to = query(from.getAttribute("data-ui"));
@@ -392,6 +426,12 @@ export default (() => {
     files.forEach((x: Element) => {
       on(x, "change", onChangeFile);
       updateFile(x);
+    });
+
+    const ranges = queryAll(".slider > input[type=range]");
+    ranges.forEach((x: Element) => {
+      on(x, "input", onInputRange);
+      updateRange(x);
     });
   };
 

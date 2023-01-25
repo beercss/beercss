@@ -145,6 +145,9 @@ div
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#selects')")
       i widgets
       span Selects
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#sliders')")
+      i widgets
+      span Sliders
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#spaces')")
       i widgets
       span Spaces
@@ -400,6 +403,8 @@ div
         .s12
           selects
         .s12
+          sliders
+        .s12
           spaces
         .s12
           switches
@@ -468,6 +473,7 @@ import radios from "./radios.vue";
 import responsive from "./responsive.vue";
 import scrolls from "./scrolls.vue";
 import selects from "./selects.vue";
+import sliders from "./sliders.vue";
 import spaces from "./spaces.vue";
 import switches from "./switches.vue";
 import tables from "./tables.vue";
