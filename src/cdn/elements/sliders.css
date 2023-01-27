@@ -17,6 +17,11 @@
   z-index: 1;
 }
 
+.slider > input:only-of-type {
+  cursor: pointer;
+  pointer-events: all;
+}
+
 .slider > input + input {
   position:absolute;
   top: 0.35rem;
