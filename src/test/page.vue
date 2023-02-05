@@ -144,21 +144,6 @@ main.responsive
           span
         span.helper Helper
     .s12.m6
-      .field.border.label
-        input
-        label Label
-        span.helper Helper
-    .s12.m6
-      .field.middle-align
-        nav
-          label.slider
-            input(type="range")
-            span
-          label.slider
-            input(type="range")
-            span
-        span.helper Helper
-    .s12.m6
       .field.border.label.invalid
         input
         label Label
@@ -168,21 +153,6 @@ main.responsive
         label.slider
           input(type="range")
           span
-        span.error Error
-    .s12.m6
-      .field.border.label.invalid
-        input
-        label Label
-        span.error Error
-    .s12.m6
-      .field.middle-align.invalid
-        nav
-          label.slider
-            input(type="range")
-            span
-          label.slider
-            input(type="range")
-            span
         span.error Error
     .s12.m6
       .field.border.label

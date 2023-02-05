@@ -193,11 +193,11 @@ export default (() => {
   };
 
   const updateRange = (target: Element) => {
-    const parentTarget = parent(target);
-    const inputs = queryAll("input[type='range']", parentTarget) as NodeListOf<HTMLInputElement>;
-    const span = query(":not(.tooltip, input)", parentTarget) as HTMLElement;
+    const parentTarget = parent(target) as HTMLElement;
+    const bar = query("span", parentTarget) as HTMLElement;
+    const inputs = queryAll("input", parentTarget) as NodeListOf<HTMLInputElement>;
     const tooltip = query(".tooltip", parentTarget) as HTMLElement;
-    if (!inputs.length || !span) return;
+    if (!inputs.length || !bar) return;
     
     let percents:Array<number> = [];
     let values:Array<number> = [];
@@ -211,14 +211,19 @@ export default (() => {
     }
     
     if (tooltip) tooltip.textContent = values.join();
-    if (inputs.length === 1) return span.style.width = percents[0] + "%";
-
-    let width = Math.abs(percents[1] - percents[0]);
-    let left = percents[1] > percents[0] ? percents[0] : percents[1];
+    
+    let width = percents[0];
+    let left = 0;
     let right = 100 - left - width;
-    span.style.left = left + "%";
-    span.style.right = right + "%";
-    span.style.width = width + "%";
+    if (inputs.length > 1) {
+      width = Math.abs(percents[1] - percents[0]);
+      left = percents[1] > percents[0] ? percents[0] : percents[1];
+      right = 100 - left - width;
+    }
+
+    bar.style.left = left + "%";
+    bar.style.right = right + "%";
+    bar.style.width = width + "%";
   }
 
   const open = (from?: Element, to?: Element, config?: any) => {
