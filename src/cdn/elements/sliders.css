@@ -120,11 +120,25 @@
   z-index: 0;
 }
 
-.slider > .tooltip {
+.slider > .tooltip,
+.slider > .tooltip.top,
+.slider > .tooltip.bottom,
+.slider > .tooltip.left,
+.slider > .tooltip.right {
+  top: -2.125rem;
+  left: 50%;
+  right: auto;
+  bottom: auto;
   border-radius: 1rem;
-  margin: -1.25rem 0;
   background: var(--primary);
   color: var(--on-primary);
+  transform: translate(-50%, -50%);
+}
+
+.slider.vertical > .tooltip {
+  top: auto;
+  left: calc(100% + 1.5rem);
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .slider > .tooltip::before {
