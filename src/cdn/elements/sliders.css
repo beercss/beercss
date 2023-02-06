@@ -1,8 +1,8 @@
 .slider {
   display: flex;
   align-items: center !important;
-  width: 100%;
-  margin: 0 1.125rem;
+  width: auto;
+  margin: 1.125rem;
 }
 
 .slider.small {
@@ -135,6 +135,10 @@
   transform: translate(-50%, -50%);
 }
 
+.slider > input:focus ~ .tooltip {
+  display: inherit;
+}
+
 .slider.vertical > .tooltip {
   top: auto;
   left: calc(100% + 1.5rem);
@@ -153,7 +157,6 @@
   transform: translateX(-50%);
 }
 
-nav > .slider,
-.row > .slider {
-  width: auto;
+.field > .slider {
+  width: 100%;
 }
