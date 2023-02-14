@@ -3,7 +3,7 @@ export default (() => {
   let _timeoutToast: ReturnType<typeof setTimeout> = null;
   let _timeoutMutation: ReturnType<typeof setTimeout> = null;
   let _mutation: MutationObserver = null;
-  const _lastTheme: IBeerCssLastTheme = {
+  const _lastTheme: IBeerCssTheme = {
     light: "",
     dark: "",
   };
@@ -339,7 +339,7 @@ export default (() => {
     if (hasClass(element, "bottom")) element.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - percentage}%, 0% ${100 - percentage}%)`;
   };
 
-  const lastTheme = (): IBeerCssLastTheme => {
+  const lastTheme = (): IBeerCssTheme => {
     if (_lastTheme.light && _lastTheme.dark) return _lastTheme;
 
     const light = document.createElement("body");
@@ -363,7 +363,7 @@ export default (() => {
     return _lastTheme;
   };
 
-  const theme = (source?: IBeerCssLastTheme | any): IBeerCssLastTheme | Promise<IBeerCssLastTheme> => {
+  const theme = (source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssTheme> => {
     if (!source || !_window.materialDynamicColors) return lastTheme();
 
     const mode = /dark/i.test(document.body.className) ? "dark" : "light";
@@ -407,7 +407,7 @@ export default (() => {
     ui();
   };
 
-  const ui = (selector?: string, options?: string | number | IBeerCssLastTheme): string | IBeerCssLastTheme | Promise<IBeerCssLastTheme> | void => {
+  const ui = (selector?: string, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | void => {
     if (selector) {
       if (selector === "setup") return setup();
       if (selector === "guid") return guid();
