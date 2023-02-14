@@ -1,9 +1,4 @@
 export default (() => {
-  interface ILastTheme {
-    dark: string,
-    light: string,
-  }
-
   const _window: Window | any = globalThis;
   let _timeoutToast: ReturnType<typeof setTimeout> = null;
   let _timeoutMutation: ReturnType<typeof setTimeout> = null;
@@ -226,13 +221,13 @@ export default (() => {
     bar.style.width = `${width}%`;
   };
 
-  const open = (from?: Element, to?: Element, config?: any): any => {
+  const open = (from?: Element, to?: Element, options?: any): any => {
     if (!to) to = query(from.getAttribute("data-ui"));
     if (hasClass(to, "modal")) return modal(from, to);
     if (hasClass(to, "dropdown")) return dropdown(from, to);
-    if (hasClass(to, "toast")) return toast(from, to, config);
+    if (hasClass(to, "toast")) return toast(from, to, options);
     if (hasClass(to, "page")) return page(from, to);
-    if (hasClass(to, "progress")) return progress(to, config);
+    if (hasClass(to, "progress")) return progress(to, options);
 
     tab(from);
 
@@ -306,7 +301,7 @@ export default (() => {
     }
   };
 
-  const toast = (from: Element, to: Element, config: any) => {
+  const toast = (from: Element, to: Element, milliseconds?: number) => {
     tab(from);
 
     const elements = queryAll(".toast.active");
@@ -316,32 +311,32 @@ export default (() => {
 
     if (_timeoutToast) clearTimeout(_timeoutToast);
 
-    if (config && config === -1) return;
+    if (milliseconds === -1) return;
 
     _timeoutToast = setTimeout(() => {
       removeClass(to, "active");
-    }, config && config ? config : 6000);
+    }, milliseconds ?? 6000);
   };
 
-  const progress = (to: Element, config: number) => {
+  const progress = (to: Element, percentage: number) => {
     const element = to as HTMLElement;
 
     if (hasClass(element, "left")) {
-      element.style.clipPath = `polygon(0% 0%, 0% 100%, ${config}% 100%, ${config}% 0%)`;
+      element.style.clipPath = `polygon(0% 0%, 0% 100%, ${percentage}% 100%, ${percentage}% 0%)`;
       return;
     }
 
     if (hasClass(element, "top")) {
-      element.style.clipPath = `polygon(0% 0%, 100% 0%, 100% ${config}%, 0% ${config}%)`;
+      element.style.clipPath = `polygon(0% 0%, 100% 0%, 100% ${percentage}%, 0% ${percentage}%)`;
       return;
     }
 
     if (hasClass(element, "right")) {
-      element.style.clipPath = `polygon(100% 0%, 100% 100%, ${100 - config}% 100%, ${100 - config}% 0%)`;
+      element.style.clipPath = `polygon(100% 0%, 100% 100%, ${100 - percentage}% 100%, ${100 - percentage}% 0%)`;
       return;
     }
 
-    if (hasClass(element, "bottom")) element.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - config}%, 0% ${100 - config}%)`;
+    if (hasClass(element, "bottom")) element.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - percentage}%, 0% ${100 - percentage}%)`;
   };
 
   const lastTheme = (): ILastTheme => {
@@ -368,7 +363,7 @@ export default (() => {
     return _lastTheme;
   };
 
-  const theme = (source: any): ILastTheme => {
+  const theme = (source?: ILastTheme | any): ILastTheme | Promise<ILastTheme> => {
     if (!source || !_window.materialDynamicColors) return lastTheme();
 
     const mode = /dark/i.test(document.body.className) ? "dark" : "light";
@@ -397,7 +392,7 @@ export default (() => {
     });
   };
 
-  const mode = (value: string): string => {
+  const mode = (value: string | any): string => {
     if (!value) return /dark/i.test(document.body.className) ? "dark" : "light";
     document.body.classList.remove("light", "dark");
     document.body.classList.add(value);
@@ -412,16 +407,16 @@ export default (() => {
     ui();
   };
 
-  const ui = (selector?: string, config?: any) => {
+  const ui = (selector?: string, options?: string | number | ILastTheme): string | ILastTheme | Promise<ILastTheme> | void => {
     if (selector) {
       if (selector === "setup") return setup();
       if (selector === "guid") return guid();
-      if (selector === "mode") return mode(config);
-      if (selector === "theme") return theme(config);
+      if (selector === "mode") return mode(options);
+      if (selector === "theme") return theme(options);
 
       const to = query(selector);
       const from = query("[data-ui='#" + to.id + "']");
-      open(from, to, config);
+      open(from, to, options);
     }
 
     const elements = queryAll("[data-ui]");
