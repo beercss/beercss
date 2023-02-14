@@ -46,7 +46,7 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap
 ## Row example
 
 ```html
-<div class="row">
+<nav class="row">
   <div>min</div>
   <div>min</div>
   <div class="max">max</div>
