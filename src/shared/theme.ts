@@ -39,7 +39,7 @@ const themes: Array<ITheme> = [
   },
 ];
 
-const defaultTheme = themes.find(x => x.name == "default");
+const defaultTheme = themes.find(x => x.name === "default");
 
 const data: ILayout = {
   themes,

@@ -204,7 +204,7 @@ div
       span Clickable lists
       a.chip.circle(@click="domain.showSamples(data, '#clickable-list .row', 'Clickable lists')")
         i code
-    .grid 
+    .grid
       .s12.m6.l4
         a.row.wave
           i home
@@ -231,7 +231,7 @@ div
           div Rounded 3
         a.row.wave.round
           i mail
-          .max Rounded 4 
+          .max Rounded 4
           span.badge.circle.none 3
 
   .medium-space

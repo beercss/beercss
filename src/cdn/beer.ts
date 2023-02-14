@@ -4,9 +4,9 @@ export default (() => {
     light: string,
   }
 
-  const _window = globalThis;
-  let _timeoutToast: NodeJS.Timeout = null;
-  let _timeoutMutation: NodeJS.Timeout = null;
+  const _window: Window | any = globalThis;
+  let _timeoutToast: ReturnType<typeof setTimeout> = null;
+  let _timeoutMutation: ReturnType<typeof setTimeout> = null;
   let _mutation: MutationObserver = null;
   const _lastTheme: ILastTheme = {
     light: "",
@@ -14,13 +14,13 @@ export default (() => {
   };
 
   const wait = async (milliseconds: number) => {
-    return await new Promise((resolve) => setTimeout(resolve, milliseconds));
+    return await new Promise((resolve: Function) => setTimeout(resolve, milliseconds));
   };
 
   const guid = (): string => {
     return "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c: string) => {
       const r = (Math.random() * 16) | 0;
-      const v = c == "x" ? r : (r & 0x3) | 0x8;
+      const v = c === "x" ? r : (r & 0x3) | 0x8;
       return v.toString(16);
     });
   };
@@ -28,7 +28,7 @@ export default (() => {
   const query = (selector: string | Element, element?: Element): Element => {
     try {
       return typeof selector === "string"
-        ? (element || document).querySelector(selector)
+        ? (element ?? document).querySelector(selector)
         : selector;
     } catch {}
   };
@@ -36,7 +36,7 @@ export default (() => {
   const queryAll = (selector: string | NodeListOf<Element>, element?: Element) => {
     try {
       return typeof selector === "string"
-        ? (element || document).querySelectorAll(selector)
+        ? (element ?? document).querySelectorAll(selector)
         : selector;
     } catch {}
   };
@@ -84,7 +84,7 @@ export default (() => {
     return element.parentElement;
   };
 
-  const create = (json: any) => {
+  const create = (json: any): HTMLElement => {
     const element = document.createElement("div");
 
     for (const i in json) { element[i] = json[i]; }
@@ -97,12 +97,12 @@ export default (() => {
     const parentTarget = parent(target);
     const label = query("label", parentTarget) as HTMLLabelElement;
     const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
-    const toActive = document.activeElement == target || input.value || /date|time/.test(input.type);
+    const toActive = document.activeElement === target || input.value || /date|time/.test(input.type);
 
     if (toActive) {
       if (isBorder && label) {
         let width = hasClass(label, "active") ? label.offsetWidth : Math.round(label.offsetWidth / 1.33);
-        width = width / 16; // 16px = 1rem, originally 1px = 1rem, hence the division
+        width = width / 16;
         const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
         const end = width + start + 0.5;
         input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 0.5rem, ${end}rem 0.5rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
@@ -198,20 +198,20 @@ export default (() => {
     const inputs = queryAll("input", parentTarget) as NodeListOf<HTMLInputElement>;
     const tooltip = query(".tooltip", parentTarget) as HTMLElement;
     if (!inputs.length || !bar) return;
-    
-    let percents:Array<number> = [];
-    let values:Array<number> = [];
-    for(let i=0; i<inputs.length; i++) {
-      let min = parseFloat(inputs[i].min || "0");
-      let max = parseFloat(inputs[i].max || "100");
-      let value = parseFloat(inputs[i].value || "0");
-      let percent = (value - min) * 100 / (max - min);
+
+    const percents: Array<number> = [];
+    const values: Array<number> = [];
+    for (let i = 0; i < inputs.length; i++) {
+      const min = parseFloat(inputs[i].min || "0");
+      const max = parseFloat(inputs[i].max || "100");
+      const value = parseFloat(inputs[i].value || "0");
+      const percent = (value - min) * 100 / (max - min);
       percents.push(percent);
       values.push(value);
     }
-    
+
     if (tooltip) tooltip.textContent = values.join();
-    
+
     let width = percents[0];
     let left = 0;
     let right = 100 - left - width;
@@ -221,12 +221,12 @@ export default (() => {
       right = 100 - left - width;
     }
 
-    bar.style.left = left + "%";
-    bar.style.right = right + "%";
-    bar.style.width = width + "%";
-  }
+    bar.style.left = `${left}%`;
+    bar.style.right = `${right}%`;
+    bar.style.width = `${width}%`;
+  };
 
-  const open = (from?: Element, to?: Element, config?: any) => {
+  const open = (from?: Element, to?: Element, config?: any): any => {
     if (!to) to = query(from.getAttribute("data-ui"));
     if (hasClass(to, "modal")) return modal(from, to);
     if (hasClass(to, "dropdown")) return dropdown(from, to);
@@ -316,23 +316,32 @@ export default (() => {
 
     if (_timeoutToast) clearTimeout(_timeoutToast);
 
-    if (config && config == -1) return;
+    if (config && config === -1) return;
 
     _timeoutToast = setTimeout(() => {
       removeClass(to, "active");
     }, config && config ? config : 6000);
   };
 
-  const progress = (to: Element, config: any) => {
+  const progress = (to: Element, config: number) => {
     const element = to as HTMLElement;
 
-    if (hasClass(element, "left")) return element.style.clipPath = `polygon(0% 0%, 0% 100%, ${config}% 100%, ${config}% 0%)`;
+    if (hasClass(element, "left")) {
+      element.style.clipPath = `polygon(0% 0%, 0% 100%, ${config}% 100%, ${config}% 0%)`;
+      return;
+    }
 
-    if (hasClass(element, "top")) return element.style.clipPath = `polygon(0% 0%, 100% 0%, 100% ${config}%, 0% ${config}%)`;
+    if (hasClass(element, "top")) {
+      element.style.clipPath = `polygon(0% 0%, 100% 0%, 100% ${config}%, 0% ${config}%)`;
+      return;
+    }
 
-    if (hasClass(element, "right")) return element.style.clipPath = `polygon(100% 0%, 100% 100%, ${100 - config}% 100%, ${100 - config}% 0%)`;
+    if (hasClass(element, "right")) {
+      element.style.clipPath = `polygon(100% 0%, 100% 100%, ${100 - config}% 100%, ${100 - config}% 0%)`;
+      return;
+    }
 
-    if (hasClass(element, "bottom")) return element.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - config}%, 0% ${100 - config}%)`;
+    if (hasClass(element, "bottom")) element.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - config}%, 0% ${100 - config}%)`;
   };
 
   const lastTheme = (): ILastTheme => {
@@ -363,7 +372,7 @@ export default (() => {
     if (!source || !_window.materialDynamicColors) return lastTheme();
 
     const mode = /dark/i.test(document.body.className) ? "dark" : "light";
-    if (source && source.light && source.dark) {
+    if (source?.light && source?.dark) {
       _lastTheme.light = source.light;
       _lastTheme.dark = source.dark;
       document.body.setAttribute("style", source[mode]);
@@ -371,11 +380,12 @@ export default (() => {
     }
 
     return _window.materialDynamicColors(source).then((theme) => {
-      const toCss = (data) => {
+      const toCss = (data: any) => {
         let style = "";
         for (const i in data) {
           const kebabCase = i.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
-          style += "--" + kebabCase + ":" + data[i] + ";";
+          const value: string = data[i];
+          style += "--" + kebabCase + ":" + value + ";";
         }
         return style;
       };
@@ -404,10 +414,10 @@ export default (() => {
 
   const ui = (selector?: string, config?: any) => {
     if (selector) {
-      if (selector == "setup") return setup();
-      if (selector == "guid") return guid();
-      if (selector == "mode") return mode(config);
-      if (selector == "theme") return theme(config);
+      if (selector === "setup") return setup();
+      if (selector === "guid") return guid();
+      if (selector === "mode") return mode(config);
+      if (selector === "theme") return theme(config);
 
       const to = query(selector);
       const from = query("[data-ui='#" + to.id + "']");
@@ -441,7 +451,7 @@ export default (() => {
   };
 
   if (_window.addEventListener) _window.addEventListener("load", () => ui("setup"));
-  _window.beercss= ui;
+  _window.beercss = ui;
   _window.ui = ui;
   return _window.ui;
 })();

@@ -3,16 +3,16 @@
   nav.left.m.l
     .medium-space
     .space
-    a(href="/youtube", :class="{ active: data.url == '/youtube' }")
+    a(href="/youtube", :class="{ active: data.url === '/youtube' }")
       i home
       div Home
-    a(href="/youtube/whats-hot", :class="{ active: data.url == '/youtube/whats-hot' }")
+    a(href="/youtube/whats-hot", :class="{ active: data.url === '/youtube/whats-hot' }")
       i whatshot
       div What's hot
-    a(href="/youtube/subscriptions", :class="{ active: data.url == '/youtube/subscriptions' }")
+    a(href="/youtube/subscriptions", :class="{ active: data.url === '/youtube/subscriptions' }")
       i subscriptions
       div Subscript
-    a(href="/youtube/library", :class="{ active: data.url == '/youtube/library' }")
+    a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
       div Library
     a(data-ui="#themes1")
@@ -23,15 +23,15 @@
       .medium-space
 
   nav.bottom.s
-    a(href="/youtube", :class="{ active: data.url == '/youtube' }")
+    a(href="/youtube", :class="{ active: data.url === '/youtube' }")
       i home
       div Home
-    a(href="/youtube/explore", :class="{ active: data.url == '/youtube/explore' }")
+    a(href="/youtube/explore", :class="{ active: data.url === '/youtube/explore' }")
       i explore
       div Explore
     a.button.square.round.extra.fill(data-ui="#modal-add")
       i add
-    a(href="/youtube/library", :class="{ active: data.url == '/youtube/library' }")
+    a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
       div Library
     a(data-ui="#themes2")
@@ -155,11 +155,11 @@
       input(type="text")
       i.front mic
 
-  explore(v-if="data.url == '/youtube/explore'")
-  home(v-if="data.url == '/youtube'")
-  library(v-if="data.url == '/youtube/library'")
-  subscriptions(v-if="data.url == '/youtube/subscriptions'")
-  whatsHot(v-if="data.url == '/youtube/whats-hot'")
+  explore(v-if="data.url === '/youtube/explore'")
+  home(v-if="data.url === '/youtube'")
+  library(v-if="data.url === '/youtube/library'")
+  subscriptions(v-if="data.url === '/youtube/subscriptions'")
+  whatsHot(v-if="data.url === '/youtube/whats-hot'")
 </template>
 
 <script setup lang="ts">

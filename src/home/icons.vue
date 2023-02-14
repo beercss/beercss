@@ -75,7 +75,7 @@
       nav
         h5 Icons
         a.button.border(
-          v-show="data.modalSample == '#modal-icons'"
+          v-show="data.modalSample === '#modal-icons'"
           href="https://fonts.google.com/icons",
           target="_blank"
         ) More icons
@@ -83,7 +83,7 @@
         button.circle.transparent(data-ui="#modal-icons")
           i close
     .space
-    div(v-if="data.modalSample == '#modal-icons'")
+    div(v-if="data.modalSample === '#modal-icons'")
       article.border(v-for="exemplo in data.samples")
         div(v-html="exemplo.html")
         .space(v-show="exemplo.html")

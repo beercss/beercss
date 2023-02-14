@@ -24,7 +24,7 @@
         name="media-images"
       )
       span videos
-  nav.wrap(v-if="data.mediaImage == 1")
+  nav.wrap(v-if="data.mediaImage === 1")
     a
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
     a
@@ -45,7 +45,7 @@
       img.round.large(:src="'/beer-and-woman.jpg'")
     a
       img.round.extra(:src="'/beer-and-woman.jpg'")
-  nav.wrap(v-if="data.mediaImage == 1")
+  nav.wrap(v-if="data.mediaImage === 1")
     a
       img.left-round.medium(:src="'/beer-and-woman.jpg'")
     a
@@ -58,7 +58,7 @@
       img.top-round.left-round.medium(:src="'/beer-and-woman.jpg'")
     a
       img.bottom-round.right-round.medium(:src="'/beer-and-woman.jpg'")
-  nav.wrap(v-if="data.mediaImage == 2")
+  nav.wrap(v-if="data.mediaImage === 2")
     a
       video.circle.tiny(autoplay, loop, muted, playsinline)
         source(:src="'/dance.mp4'", type="video/mp4")
@@ -89,7 +89,7 @@
     a
       video.round.extra(autoplay, loop, muted, playsinline)
         source(:src="'/dance.mp4'", type="video/mp4")
-  nav.wrap(v-if="data.mediaImage == 2")
+  nav.wrap(v-if="data.mediaImage === 2")
     a
       video.left-round.medium(autoplay, loop, muted, playsinline)
         source(:src="'/dance.mp4'", type="video/mp4")

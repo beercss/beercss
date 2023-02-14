@@ -1,5 +1,5 @@
 <template lang="pug">
-.modal.medium.no-scroll(:id="id", :class="{ left: position == 'left', right: position == 'right' }")
+.modal.medium.no-scroll(:id="id", :class="{ left: position === 'left', right: position === 'right' }")
   slot
   header.fixed
     nav(v-if="!data.showCssVariables")
@@ -87,7 +87,7 @@ const data = modelValue;
 
 const sourceCode = () => {
   return (data.theme[data.theme.selected] || "").replace("--shadow:#000000;", "");
-}
+};
 </script>
 
 <style scoped>

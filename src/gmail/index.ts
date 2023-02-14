@@ -1,5 +1,5 @@
 import { router } from "../shared/router.js";
-import gmail from "/src/gmail/page.vue";
+import gmail from "./page.vue";
 
 router("/gmail", gmail);
 router("/gmail/drafts", gmail);

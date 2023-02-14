@@ -31,10 +31,10 @@ const updateTextColor = (selector: any, textColor?: string) => {
 const updateElementColor = (selector: string, color?: string) => {
   const elementsWithBorder = utils.queryAll(selector + ".border");
   const elementsWithoutBorder = utils.queryAll(selector + ":not(.border)");
-  updateBorderColor(elementsWithBorder, color && color != "fill" ? color + "-border" : "");
-  updateTextColor(elementsWithBorder, color && color != "fill" ? color + "-text" : "");
+  updateBorderColor(elementsWithBorder, color && color !== "fill" ? color + "-border" : "");
+  updateTextColor(elementsWithBorder, color && color !== "fill" ? color + "-text" : "");
   updateColor(elementsWithoutBorder, color);
-  updateColor(elementsWithBorder, color == "fill" && selector.includes("chip") ? color : "");
+  updateColor(elementsWithBorder, color === "fill" && selector.includes("chip") ? color : "");
 };
 
 const updateSize = (selector: string, size?: string) => {
@@ -102,7 +102,7 @@ const updateFieldType = (selector: string, type: string) => {
   utils.remove(files);
   utils.removeAttribute(inputs, "readonly");
 
-  if (type == "file") {
+  if (type === "file") {
     utils.setAttribute(inputs, "type", "text");
     utils.html(labels, "File");
     utils.html(icons, "attach_file");
@@ -114,25 +114,25 @@ const updateFieldType = (selector: string, type: string) => {
     }
   }
 
-  if (type == "text") {
+  if (type === "text") {
     utils.html(labels, "Label");
     utils.setAttribute(inputs, "type", type);
     utils.html(icons, "search");
   }
 
-  if (type == "password") {
+  if (type === "password") {
     utils.html(labels, "Password");
     utils.setAttribute(inputs, "type", type);
     utils.html(icons, "visibility");
   }
 
-  if (type == "date") {
+  if (type === "date") {
     utils.html(labels, "Date");
     utils.setAttribute(inputs, "type", type);
     utils.html(icons, "today");
   }
 
-  if (type == "time") {
+  if (type === "time") {
     utils.html(labels, "Time");
     utils.setAttribute(inputs, "type", type);
     utils.html(icons, "search");
@@ -148,14 +148,14 @@ const updateMenu = (data: IHome, css?: string) => {
   data.isHorizontal = isHorizontal;
 };
 
-const updateColorTheme = (selector?: string, css?: string) => {
+const updateColorTheme = (selector: string, css?: string) => {
   const containers = utils.queryAll(selector);
-  const buttons = utils.queryAll(selector + " button:not(.transparent, .border)");
+  const buttons = utils.queryAll(`${selector} button:not(.transparent, .border)`);
 
   utils.removeClass(containers, ["fill"]);
   utils.removeClass(buttons, ["fill"]);
-  updateColor(containers, css && css != "fill" ? css + "-container" : css);
-  updateColor(buttons, css && css != "fill" ? css : "");
+  updateColor(containers, css && css !== "fill" ? css + "-container" : css);
+  updateColor(buttons, css && css !== "fill" ? css : "");
 };
 
 const updateHorizontalPosition = (selector: string, position?: string) => {
@@ -185,7 +185,7 @@ const updateVerticalAlign = (selector: string, align?: string) => {
 const updateDirection = (selector: string, direction?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["vertical", "horizontal"]);
-  if (direction && direction != "horizontal") utils.addClass(elements, [direction], (x) => !x.hasAttribute("no-direction"));
+  if (direction && direction !== "horizontal") utils.addClass(elements, [direction], (x) => !x.hasAttribute("no-direction"));
 };
 
 const updateMinMax = (selector: string, css?: string) => {
@@ -227,7 +227,7 @@ const formatHtml = (element: any): string => {
 
       format(node.children[i], level);
 
-      if (node.lastElementChild == node.children[i]) {
+      if (node.lastElementChild === node.children[i]) {
         textNode = document.createTextNode("\n" + indentAfter);
         node.appendChild(textNode);
       }
@@ -240,15 +240,13 @@ const formatHtml = (element: any): string => {
   utils.remove(tag.querySelectorAll(".overlay"));
   utils.remove(tag.querySelectorAll("[style*='none']"));
 
-  return process(
-    tag.outerHTML
-      .replace(/\s+(id|data-ui|onclick|style|data-v-\w+)\="[^\"]*"/gi, "")
-      .replace(/\s+name\="(\w+)"/gi, " name=\"$1_\"")
-      .replace(/\s+(checked|disabled)=""/gi, " $1")
-      .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
-      .replace(/\s+(tiny-padding)/gi, "")
-      .replace(/\n\<\/(circle|th)\>/gi, "</$1>"),
-  )
+  return process(tag.outerHTML
+    .replace(/\s+(id|data-ui|onclick|style|data-v-\w+)="[^"]*"/gi, "")
+    .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
+    .replace(/\s+(checked|disabled)=""/gi, " $1")
+    .replace(/\s+[a-z-]+=(""|"#")/gi, "")
+    .replace(/\s+(tiny-padding)/gi, "")
+    .replace(/\n<\/(circle|th)>/gi, "</$1>"))
     .replace(/^\s+/g, "")
     .replace(/\s+(checked|disabled)=""/gi, " $1");
 };
@@ -259,8 +257,8 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
   let textFormatted = "";
   data.name = name;
   data.samples = [];
-  data.modalSample = modal || "#modal-samples";
-  data.urlSample = url || "";
+  data.modalSample = modal ?? "#modal-samples";
+  data.urlSample = url ?? "";
 
   for (let i = 0; i < elements.length; i++) {
     const element = utils.clone(elements[i]);
@@ -282,7 +280,7 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
     });
   }
 
-  nextTick(() => {
+  void nextTick(() => {
     ui(data.modalSample);
     const element = utils.query(data.modalSample);
     element?.scrollTo(0, 0);
@@ -303,7 +301,7 @@ const addHomeScreen = () => {
 const updateTheme = (data: ILayout) => {
   const colors = ["#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4", "#009688", "#4caf50", "#8bc34a", "#cddc39", "#ffeb3b", "#ffc107", "#ff9800", "#ff5722", "#795548", "#9e9e9e", "#607d8b", "#000000", "#ffffff"];
   const color = colors[Math.floor(Math.random() * colors.length)];
-  sharedDomain.updateTheme(data, color);
+  void sharedDomain.updateTheme(data, color);
 };
 
 export default {
