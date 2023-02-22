@@ -406,7 +406,7 @@ export default (() => {
     ui();
   };
 
-  const ui = (selector?: string, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | void => {
+  const ui = (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | void => {
     if (selector) {
       if (selector === "setup") return setup();
       if (selector === "guid") return guid();
