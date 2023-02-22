@@ -15,5 +15,5 @@ export interface IHome extends ILayout {
   mediaImage: number,
   layout: number,
   isHorizontal: boolean,
-  isHorizontalSlider: boolean
+  isHorizontalSlider: boolean,
 }

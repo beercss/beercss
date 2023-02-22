@@ -192,5 +192,5 @@ import data from "./data";
 
 const updateHorizontalSlider = (isHorizontal: boolean) => {
   data.value.isHorizontalSlider = isHorizontal;
-}
+};
 </script>

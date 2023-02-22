@@ -165,7 +165,7 @@ export default (() => {
 
   const onMutation = () => {
     if (_timeoutMutation) clearTimeout(_timeoutMutation);
-    _timeoutMutation = setTimeout(ui, 180);
+    _timeoutMutation = setTimeout(() => { void ui(); }, 180);
   };
 
   const updateFile = (target: Element, e?: KeyboardEvent) => {
@@ -403,10 +403,10 @@ export default (() => {
     if (_mutation) return;
     _mutation = new MutationObserver(onMutation);
     _mutation.observe(document.body, { childList: true, subtree: true });
-    ui();
+    return ui();
   };
 
-  const ui = (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | void => {
+  const ui = (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> => {
     if (selector) {
       if (selector === "setup") return setup();
       if (selector === "guid") return guid();

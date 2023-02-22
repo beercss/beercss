@@ -13,7 +13,7 @@ const data: IHome = {
   mediaImage: 1,
   layout: 0,
   isHorizontal: false,
-  isHorizontalSlider: true
+  isHorizontalSlider: true,
 };
 
 const dataAsRef: Ref<IHome> = ref(data);

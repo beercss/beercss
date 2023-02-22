@@ -77,21 +77,21 @@ const updateFill = (selector: string, event: any) => {
   const elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["fill"]);
   else utils.removeClass(elements, ["fill"]);
-  ui();
+  void ui();
 };
 
 const updateBorder = (selector: string, event: any) => {
   const elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["border"]);
   else utils.removeClass(elements, ["border"]);
-  ui();
+  void ui();
 };
 
 const updateRound = (selector: string, event: any) => {
   const elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["round"]);
   else utils.removeClass(elements, ["round"]);
-  ui();
+  void ui();
 };
 
 const updateFieldType = (selector: string, type: string) => {
@@ -201,11 +201,11 @@ const updateIcon = (css?: string) => {
 };
 
 const updatePage = (selector: string) => {
-  ui(selector);
+  void ui(selector);
 };
 
 const updateProgress = (value: number) => {
-  utils.queryAll("#progress .progress").forEach((x) => ui(x, value));
+  utils.queryAll("#progress .progress").forEach((x) => { void ui(x, value); });
 };
 
 const formatHtml = (element: any): string => {
@@ -281,7 +281,7 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
   }
 
   void nextTick(() => {
-    ui(data.modalSample);
+    void ui(data.modalSample);
     const element = utils.query(data.modalSample);
     element?.scrollTo(0, 0);
   });

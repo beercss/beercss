@@ -261,6 +261,6 @@ main.responsive
 
 <script setup lang="ts">
 const updateTheme = () => {
-  document.body.className = document.body.className.indexOf("dark") != -1 ? "light" : "dark";
+  document.body.className = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
 };
 </script>
