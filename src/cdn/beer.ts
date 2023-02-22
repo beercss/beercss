@@ -207,18 +207,17 @@ export default (() => {
 
     if (tooltip) tooltip.textContent = values.join();
 
-    let width = percents[0];
+    let percent = percents[0];
     let left = 0;
-    let right = 100 - left - width;
+    let right = 100 - left - percent;
     if (inputs.length > 1) {
-      width = Math.abs(percents[1] - percents[0]);
+      percent = Math.abs(percents[1] - percents[0]);
       left = percents[1] > percents[0] ? percents[0] : percents[1];
-      right = 100 - left - width;
+      right = 100 - left - percent;
     }
 
     bar.style.left = `${left}%`;
     bar.style.right = `${right}%`;
-    bar.style.width = `${width}%`;
   };
 
   const open = (from?: Element, to?: Element, options?: any): any => {

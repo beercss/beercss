@@ -3,22 +3,26 @@
   align-items: center !important;
   width: auto;
   margin: 1.125rem;
+  flex: auto;
 }
 
 .slider.small {
   width: 4rem;
+  flex: none;
 }
 
 .slider.medium {
   width: 8rem;
+  flex: none;
 }
 
 .slider.large {
   width: 12rem;
+  flex: none;
 }
 
 .slider.vertical {
-  margin: 0 auto;
+  margin: 0.5rem auto !important;
   padding: 50% 0;
   transform: rotate(-90deg);
 }
@@ -38,7 +42,10 @@
   z-index: 1;
   padding: 0;
   margin: 0;
-  transform: translateY(-50%);
+}
+
+.slider > input:focus ~ .tooltip {
+  display: inherit;
 }
 
 .slider > input:only-of-type {
@@ -113,7 +120,7 @@
 
 .slider > span {
   position: absolute;
-  top: calc(50% - 0.25rem);
+  top: calc(50% - 0.125rem);
   height: 0.25rem;
   border-radius: 1rem;
   background: var(--primary);
@@ -121,40 +128,62 @@
 }
 
 .slider > .tooltip,
-.slider > .tooltip.top,
-.slider > .tooltip.bottom,
-.slider > .tooltip.left,
-.slider > .tooltip.right {
-  top: -2.125rem;
+.slider > .tooltip.top {
+  top: -1rem;
   left: 50%;
   right: auto;
   bottom: auto;
-  border-radius: 1rem;
-  background: var(--primary);
-  color: var(--on-primary);
-  transform: translate(-50%, -50%);
 }
 
-.slider > input:focus ~ .tooltip {
-  display: inherit;
-}
-
-.slider.vertical > .tooltip {
+.slider > .tooltip.bottom {
   top: auto;
+  left: 50%;
+  right: auto;
+  bottom: -1rem;
+}
+
+.slider > .tooltip.left {
+  top: 50%;
+  left: -0.5rem;
+  right: auto;
+  bottom: auto;
+}
+
+.slider > .tooltip.right {
+  top: 50%;
+  left: auto;
+  right: -0.5rem;
+  bottom: auto;
+}
+
+.slider.vertical > .tooltip,
+.slider.vertical > .tooltip.top {
+  top: 50%;
   left: calc(100% + 1.5rem);
+  right: auto;
+  bottom: auto;
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.slider > .tooltip::before {
-  content: '';
-  position: absolute;
+.slider.vertical > .tooltip.bottom {
+  top: 50%;
+  left: -1.5rem;
+  right: auto;
+  bottom: auto;
+}
+
+.slider.vertical > .tooltip.left {
+  top: calc(50% - 2rem);
   left: 50%;
-  top: 90%;
-  width: 60%;
-  height: 0.5rem;
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
-  background: var(--primary);
-  transform: translateX(-50%);
+  right: auto;
+  bottom: auto;
+}
+
+.slider.vertical > .tooltip.right {
+  top: calc(50% + 2rem);
+  left: 50%;
+  right: auto;
+  bottom: auto;
 }
 
 .field > .slider {

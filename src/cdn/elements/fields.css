@@ -206,6 +206,10 @@ input[type=file] {
   padding-left: 2.9375rem;
 }
 
+.field.prefix > .slider {
+  margin-left: 3.5rem;
+}
+
 .field.prefix > input:focus,
 .field.prefix > textarea:focus,
 .field.prefix > select:focus {
@@ -216,6 +220,10 @@ input[type=file] {
 .field.suffix > textarea,
 .field.suffix > select {
   padding-right: 2.9375rem;
+}
+
+.field.suffix > .slider {
+  margin-right: 3.5rem;
 }
 
 .field.suffix > input:focus,

@@ -23,17 +23,6 @@ Sliders allow users to make selections from a range of values. There are two typ
   <input type="range" min="4" max="8">
   <span></span>
 </label>
-
-<nav>
-  <label class="slider">
-    <input type="range">
-    <span></span>
-  </label>
-  <label class="slider">
-    <input type="range">
-    <span></span>
-  </label>
-</nav>
 ```
 
 ## With tooltip example
@@ -46,6 +35,19 @@ Sliders allow users to make selections from a range of values. There are two typ
 </label>
 ```
 
+## With icon example
+
+```html
+<nav>
+  <i>sunny</i>
+  <label class="slider">
+    <input type="range">
+    <span></span>
+  </label>
+  <i>rainy</i>
+</nav>
+```
+
 ## In field elements example
 
 ```html
@@ -54,19 +56,6 @@ Sliders allow users to make selections from a range of values. There are two typ
     <input type="range">
     <span></span>
   </label>
-</div>
-
-<div class="field middle-align">
-  <nav>
-    <label class="slider">
-      <input type="range">
-      <span></span>
-    </label>
-    <label class="slider">
-      <input type="range">
-      <span></span>
-    </label>
-  </nav>
 </div>
 ```
 
