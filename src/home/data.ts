@@ -9,6 +9,7 @@ const data: IHome = {
   samples: [],
   modalSample: "",
   urlSample: "",
+  svgSample: "",
   mediaCard: 1,
   mediaImage: 1,
   layout: 0,

@@ -11,7 +11,7 @@
     label.radio
       input(
         v-model="data.mediaImage",
-        value="1",
+        :value="1",
         type="radio",
         name="media-images"
       )
@@ -19,7 +19,7 @@
     label.radio
       input(
         v-model="data.mediaImage",
-        value="2",
+        :value="2",
         type="radio",
         name="media-images"
       )

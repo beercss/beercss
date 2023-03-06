@@ -11,6 +11,7 @@ export interface IHome extends ILayout {
   name: string,
   modalSample: string,
   urlSample: string,
+  svgSample: string,
   mediaCard: number,
   mediaImage: number,
   layout: number,

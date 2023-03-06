@@ -1,4 +1,4 @@
-.round:not(img, video) {
+.round:not(i, img, video) {
   border-radius: 2rem !important;
 }
 
@@ -38,8 +38,8 @@
   border-radius: 0 2rem 2rem !important;
 }
 
-.circle:not(img, video),
-.square:not(img, video) {
+.circle:not(i, img, video),
+.square:not(i, img, video) {
   height: 2.5rem;
   width: 2.5rem;
   padding: 0;
@@ -50,20 +50,20 @@
   display: none;
 }
 
-.square.small:not(img, video),
-.circle.small:not(img, video) {
+.square.small:not(i, img, video),
+.circle.small:not(i, img, video) {
   height: 2rem;
   width: 2rem;
 }
 
-.square.large:not(img, video),
-.circle.large:not(img, video) {
+.square.large:not(i, img, video),
+.circle.large:not(i, img, video) {
   height: 3rem;
   width: 3rem;
 }
 
-.square.extra:not(img, video),
-.circle.extra:not(img, video) {
+.square.extra:not(i, img, video),
+.circle.extra:not(i, img, video) {
   height: 3.5rem;
   width: 3.5rem;
 }

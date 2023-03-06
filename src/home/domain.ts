@@ -195,7 +195,7 @@ const updateMinMax = (selector: string, css?: string) => {
 };
 
 const updateIcon = (css?: string) => {
-  const elements = utils.queryAll("#icons-sample i");
+  const elements = utils.queryAll("#icons-default i");
   utils.removeClass(elements, ["fill"]);
   if (css) utils.addClass(elements, [css]);
 };
@@ -208,7 +208,7 @@ const updateProgress = (value: number) => {
   utils.queryAll("#progress .progress").forEach((x) => { void ui(x, value); });
 };
 
-const formatHtml = (element: any): string => {
+const formatHtml = (element: any, raw: boolean = false): string => {
   function process (str: string): string {
     const div = document.createElement("div");
     div.innerHTML = str.trim();
@@ -237,6 +237,8 @@ const formatHtml = (element: any): string => {
   }
 
   const tag = utils.clone(element);
+  if (raw) return process(tag.outerHTML);
+
   utils.remove(tag.querySelectorAll(".overlay"));
   utils.remove(tag.querySelectorAll("[style*='none']"));
 
@@ -259,6 +261,8 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
   data.samples = [];
   data.modalSample = modal ?? "#modal-samples";
   data.urlSample = url ?? "";
+  if (!data.svgSample) data.svgSample = hljs.highlight("html", formatHtml(utils.query("#svg-sample > svg"), true)).value;
+  console.log(data.svgSample);
 
   for (let i = 0; i < elements.length; i++) {
     const element = utils.clone(elements[i]);
