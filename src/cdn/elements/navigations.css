@@ -42,12 +42,12 @@ nav > *,
   gap: 2rem;
 }
 
-nav.max,
-.row.max {
+nav > .max,
+.row > .max {
   flex: auto;
 }
 
-nav.max,
+nav.wrap,
 .row.wrap {
   display: flex;
   flex-wrap: wrap;
