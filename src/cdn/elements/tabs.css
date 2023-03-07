@@ -57,8 +57,6 @@
   color: var(--primary);
 }
 
-.tabs.left-align > a,
-.tabs.center-align > a,
-.tabs.right-align > a {
+.tabs:is(.left-align, .center-align .right-align) > a {
   width: auto;
 }

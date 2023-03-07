@@ -11,29 +11,24 @@
   align-items: center;
 }
 
-.checkbox > input,
-.radio > input {
+:is(.checkbox, .radio) > input {
   width: 1.5rem;
   height: 1.5rem;
   opacity: 0;
 }
 
-.checkbox > span,
-.radio > span,
-.switch > span {
+:is(.checkbox, .radio, .switch) > span {
   display: inline-flex;
   align-items: center;
   color: var(--on-background);
   font-size: 0.875rem;
 }
 
-.checkbox > span:not(:empty),
-.radio > span:not(:empty) {
+:is(.checkbox, .radio) > span:not(:empty) {
   padding-left: 0.25rem;
 }
 
-.checkbox > input + span::before,
-.radio > input + span::before,
+:is(.checkbox, .radio) > input + span::before,
 .switch > input + span:empty::after,
 .switch > input + span > i {
   font-family: "Material Symbols Outlined";
@@ -72,10 +67,8 @@
   content: "radio_button_unchecked";
 }
 
-.checkbox > input:not([disabled]):focus + span::before,
-.checkbox > input:not([disabled]):hover + span::before,
-.radio > input:not([disabled]):focus + span::before,
-.radio > input:not([disabled]):hover + span::before {
+:is(.checkbox, .radio) > input:not([disabled]):focus + span::before,
+:is(.checkbox, .radio) > input:not([disabled]):hover + span::before {
   background-color: var(--active);
   box-shadow: 0 0 0 0.5rem var(--active);
   animation: var(--speed1) to-checked ease-out;
@@ -171,21 +164,17 @@
   box-shadow: 0 0 0 0.5rem var(--active);
 }
 
-.checkbox > input:disabled + span,
-.radio > input:disabled + span,
-.switch > input:disabled + span {
+:is(.checkbox, .radio, .switch) > input:disabled + span {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.field > nav,
-.field > .row {
+.field > :is(nav, .row) {
   flex-grow: 1;
   padding: 0 1rem;
 }
 
-.field.round > nav,
-.field.round > .row {
+.field.round  > :is(nav, .row) {
   flex-grow: 1;
   padding: 0 1.5rem;
 }

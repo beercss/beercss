@@ -96,8 +96,7 @@
   color: var(--error);
 }
 
-.badge.circle,
-.badge.square {
+.badge:is(.circle, .square) {
   padding: 0;
   text-align: center;
   width: 1.25rem;

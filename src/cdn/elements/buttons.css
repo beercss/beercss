@@ -79,7 +79,8 @@ button {
   margin-left: 2rem;
 }
 
-:is(.button, button).extend:hover > img + span, :is(.button, button).extend.active > img + span {
+:is(.button, button).extend:hover > :is(img, svg) + span,
+:is(.button, button).extend.active > :is(img, svg) + span {
   display: inherit;
   margin-left: 3rem;
 }

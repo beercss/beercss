@@ -1,3 +1,7 @@
+svg {
+  fill: currentColor;
+}
+
 :is(img, svg, video):is(.small, .medium, .large, .tiny, .extra, .round, .circle, .responsive) {
   object-fit: cover;
   object-position: center;

@@ -1,4 +1,4 @@
-.round:not(i, img, video) {
+.round:not(i, img, video, svg) {
   border-radius: 2rem !important;
 }
 
@@ -38,38 +38,32 @@
   border-radius: 0 2rem 2rem !important;
 }
 
-.circle:not(i, img, video),
-.square:not(i, img, video) {
+:is(.circle, .square):not(i, img, video, svg) {
   height: 2.5rem;
   width: 2.5rem;
   padding: 0;
 }
 
-.circle > span,
-.square > span {
+:is(.circle, .square) > span {
   display: none;
 }
 
-.square.small:not(i, img, video),
-.circle.small:not(i, img, video) {
+:is(.circle, .square).small:not(i, img, video, svg) {
   height: 2rem;
   width: 2rem;
 }
 
-.square.large:not(i, img, video),
-.circle.large:not(i, img, video) {
+:is(.circle, .square).large:not(i, img, video, svg) {
   height: 3rem;
   width: 3rem;
 }
 
-.square.extra:not(i, img, video),
-.circle.extra:not(i, img, video) {
+:is(.circle, .square).extra:not(i, img, video, svg) {
   height: 3.5rem;
   width: 3.5rem;
 }
 
-.square.round,
-.circle.round {
+:is(.circle, .square).round {
   border-radius: 1rem !important;
 }
 

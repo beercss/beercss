@@ -7,8 +7,7 @@ table {
   border-radius: 0;
 }
 
-table td,
-table th {
+table :is(th, td) {
   width: 1%;
   text-align: inherit;
   padding: 0.5rem;
@@ -18,42 +17,30 @@ table th {
   font-weight: 500;
 }
 
-table.border td,
-table.border th {
+table.border :is(th, td) {
   border-bottom: 0.0625rem solid var(--outline);
 }
 
-table.no-space td,
-table.no-space th {
+table.no-space :is(th, td) {
   padding: 0;
 }
 
-table.medium-space td,
-table.medium-space th {
+table.medium-space :is(th, td) {
   padding: 0.75rem;
 }
 
-table.large-space td,
-table.large-space th {
+table.large-space :is(th, td) {
   padding: 1rem;
 }
 
-td > .button,
-td > nav > .button,
-td > button,
-td > nav > button,
-td > .none,
-td > nav > .none,
-td > .chip,
-td > nav > .chip {
+td > :is(.button, button, .none, .chip),
+td > nav > :is(.button, button, .none, .chip) {
   min-height: 1.5rem;
   max-height: 1.5rem;
 }
 
-td > .circle:not(.tiny, .small, .medium, .large, .extra),
-td > nav > .circle:not(.tiny, .small, .medium, .large, .extra),
-td > .square:not(.tiny, .small, .medium, .large, .extra),
-td > nav > .square:not(.tiny, .small, .medium, .large, .extra) {
+td > :is(.circle, .square):not(.tiny, .small, .medium, .large, .extra),
+td > nav > :is(.circle, .square):not(.tiny, .small, .medium, .large, .extra) {
   min-width: 1.5rem;
   max-width: 1.5rem;
   min-height: 1.5rem;

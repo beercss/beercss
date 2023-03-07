@@ -65,15 +65,14 @@
   white-space: normal;
 }
 
-*:hover > .tooltip {
+:hover > .tooltip {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .dropdown:active ~ .tooltip,
-button:focus > .dropdown ~ .tooltip,
-.button:focus > .dropdown ~ .tooltip,
+:is(button, .button):focus > .dropdown ~ .tooltip,
 .field > :focus ~ .dropdown ~ .tooltip {
   display: none;
 }
