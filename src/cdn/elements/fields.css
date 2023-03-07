@@ -62,6 +62,7 @@
 /* icon */
 .field > i,
 .field > img,
+.field > svg,
 .field > .loader {
   position: absolute;
   top: 50%;
@@ -78,6 +79,9 @@
 .field.border > img,
 .field.fill > img,
 .field.round > img,
+.field.border > svg,
+.field.fill > svg,
+.field.round > svg,
 .field.border > .loader,
 .field.fill > .loader,
 .field.round > .loader {
@@ -87,6 +91,7 @@
 
 .field > i:first-child,
 .field > img:first-child,
+.field > svg:first-child,
 .field > .loader:first-child {
   left: 1rem;
   right: auto;
@@ -98,6 +103,9 @@
 .field.border > img:first-child,
 .field.fill > img:first-child,
 .field.round > img:first-child,
+.field.border > svg:first-child,
+.field.fill > svg:first-child,
+.field.round > svg:first-child,
 .field.border > .loader:first-child,
 .field.fill > .loader:first-child,
 .field.round > .loader:first-child {

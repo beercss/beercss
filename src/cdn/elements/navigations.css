@@ -134,10 +134,10 @@ nav.bottom {
   flex-direction: row;
 }
 
-nav.left > a:not(button, .button, .chip, img, video),
-nav.right > a:not(button, .button, .chip, img, video),
-nav.top > a:not(button, .button, .chip, img, video),
-nav.bottom > a:not(button, .button, .chip, img, video) {
+nav.left > a:not(button, .button, .chip, img, video, svg),
+nav.right > a:not(button, .button, .chip, img, video, svg),
+nav.top > a:not(button, .button, .chip, img, video, svg),
+nav.bottom > a:not(button, .button, .chip, img, video, svg) {
   min-width: 3.5rem;
   min-height: 3.5rem;
   text-align: center;
@@ -146,13 +146,13 @@ nav.bottom > a:not(button, .button, .chip, img, video) {
   flex-direction: column;
 }
 
-nav.left > a:not(button, .button, .chip, img, video),
-nav.right > a:not(button, .button, .chip, img, video) {
+nav.left > a:not(button, .button, .chip, img, video, svg),
+nav.right > a:not(button, .button, .chip, img, video, svg) {
   width: auto;
 }
 
-nav.top > a:not(button, .button, .chip, img, video),
-nav.bottom > a:not(button, .button, .chip, img, video) {
+nav.top > a:not(button, .button, .chip, img, video, svg),
+nav.bottom > a:not(button, .button, .chip, img, video, svg) {
   height: auto;
   width: 3.5rem;
 }
