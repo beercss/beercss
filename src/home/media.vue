@@ -128,57 +128,42 @@
         source(:src="'/dance.mp4'", type="video/mp4")
   nav.wrap(v-if="data.mediaImage === 3")
     a
-      svg(viewBox="0 0 24 24").circle.tiny.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill circle tiny primary")
     a
-      svg(viewBox="0 0 24 24").circle.small.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill circle small primary")
     a
-      svg(viewBox="0 0 24 24").circle.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill circle primary")
     a
-      svg(viewBox="0 0 24 24").circle.large.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill circle large primary")
     a
-      svg(viewBox="0 0 24 24").circle.extra.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill circle extra primary")
     a
-      svg(viewBox="0 0 24 24").round.tiny.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill round tiny primary")
     a
-      svg(viewBox="0 0 24 24").round.small.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill round small primary")
     a
-      svg(viewBox="0 0 24 24").round.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill round primary")
     a
-      svg(viewBox="0 0 24 24").round.large.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill round large primary")
     a
-      svg(viewBox="0 0 24 24").round.extra.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill round extra primary")
   nav.wrap(v-if="data.mediaImage === 3")
     a
-      svg(viewBox="0 0 24 24").left-round.medium.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill left-round medium primary")
     a
-      svg(viewBox="0 0 24 24").top-round.medium.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill top-round medium primary")
     a
-      svg(viewBox="0 0 24 24").right-round.medium.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill right-round medium primary")
     a
-      svg(viewBox="0 0 24 24").bottom-round.medium.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill bottom-round medium primary")
     a
-      svg(viewBox="0 0 24 24").top-round.left-round.medium.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill top-round left-round medium primary")
     a
-      svg(viewBox="0 0 24 24").bottom-round.right-round.medium.primary
-        use(href="#account_circle")
+      svgMountains(viewBox="450 0 900 900", className="fill bottom-round right-round medium primary")
 </template>
 
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";
+import svgMountains from "./svgMountains.vue";
 </script>

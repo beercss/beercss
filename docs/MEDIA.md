@@ -28,6 +28,10 @@ tiny, small, medium, large, extra
 <video class="circle extra">
   <source src="/video.mp4" type="video/mp4">
 </video>
+
+<svg class="circle extra" viewBox="0 0 24 24">
+  <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path>
+</svg>
 ```
 
 ## Responsive media example
@@ -40,6 +44,10 @@ The responsive media is a image/video that automatically adjust with the width/h
 <video class="responsive">
   <source src="/video.mp4" type="video/mp4">
 </video>
+
+<svg class="responsive" viewBox="0 0 24 24">
+  <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path>
+</svg>
 ```
 
 ## Go to

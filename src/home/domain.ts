@@ -241,8 +241,10 @@ const formatHtml = (element: any, raw: boolean = false): string => {
 
   utils.remove(tag.querySelectorAll(".overlay"));
   utils.remove(tag.querySelectorAll("[style*='none']"));
+  console.log(tag);
 
   return process(tag.outerHTML
+    .replace(/\<\!--v-if--\>/gi, "")
     .replace(/\s+(id|data-ui|onclick|style|data-v-\w+)="[^"]*"/gi, "")
     .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
     .replace(/\s+(checked|disabled)=""/gi, " $1")

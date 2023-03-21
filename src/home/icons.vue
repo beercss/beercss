@@ -120,7 +120,7 @@
         a.button.border(
           href="https://fonts.google.com/icons",
           target="_blank"
-        ) More icons
+        ) Get font icons
         .max
         button.circle.transparent(data-ui="#modal-icons")
           i close
@@ -138,7 +138,7 @@
         a.button.border(
           href="https://pictogrammers.com/library/mdi/",
           target="_blank"
-        ) More icons
+        ) Get svg icons
         .max
         button.circle.transparent(data-ui="#modal-icons-svg")
           i close
