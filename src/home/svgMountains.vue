@@ -14,16 +14,15 @@ svg(:viewBox="viewBox", :class="className")
   polygon(fill="#aa00aa", points="1210 900 971 687 725 900")
   polygon(fill="#880088", points="943 900 1210 900 971 687")
 </template>
-    
+
 <script setup lang="ts">
 export interface IProps {
   className: string,
-  viewBox: string
+  viewBox: string,
 }
 
 const {
   className = "",
-  viewBox = "0 0 1600 900"
+  viewBox = "0 0 1600 900",
 } = defineProps<IProps>();
 </script>
-    

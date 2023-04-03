@@ -33,16 +33,6 @@
   color: var(--secondary);
 }
 
-.chip.circle {
-  border-radius: 2.5rem;
-  padding: 0;
-}
-
-.chip.square {
-  border-radius: 0;
-  padding: 0;
-}
-
 .chip.fill {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;

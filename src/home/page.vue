@@ -142,6 +142,9 @@ div
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#scrolls')")
       i widgets
       span Scrolls
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#search')")
+      i widgets
+      span Search
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#selects')")
       i widgets
       span Selects
@@ -240,7 +243,7 @@ div
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.1.0/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.7/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
             h5 From NPM
             pre.scroll.fill.no-round(style="font-family: courier new")
@@ -401,6 +404,8 @@ div
         .s12
           scrolls
         .s12
+          search
+        .s12
           selects
         .s12
           sliders
@@ -472,6 +477,7 @@ import progress1 from "./progress.vue";
 import radios from "./radios.vue";
 import responsive from "./responsive.vue";
 import scrolls from "./scrolls.vue";
+import search from "./search.vue";
 import selects from "./selects.vue";
 import sliders from "./sliders.vue";
 import spaces from "./spaces.vue";

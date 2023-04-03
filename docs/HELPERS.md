@@ -4,6 +4,10 @@
 
 left-align, right-align, center-align, top-align, bottom-align, middle-align
 
+## Blurs
+
+blur, small-blur, medium-blur, large-blur, light, dark
+
 ## Colors
 
 amber1, amber2, amber3, amber4, amber5, amber6, amber7, amber8, amber9, amber10, amber, amber-border, amber-text

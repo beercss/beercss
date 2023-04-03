@@ -244,8 +244,8 @@ const formatHtml = (element: any, raw: boolean = false): string => {
   console.log(tag);
 
   return process(tag.outerHTML
-    .replace(/\<\!--v-if--\>/gi, "")
-    .replace(/\s+(id|data-ui|onclick|style|data-v-\w+)="[^"]*"/gi, "")
+    .replace(/<!--v-if-->/gi, "")
+    .replace(/\s+(wfd-id|id|data-ui|onclick|style|data-v-\w+)="[^"]*"/gi, "")
     .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
     .replace(/\s+(checked|disabled)=""/gi, " $1")
     .replace(/\s+[a-z-]+=(""|"#")/gi, "")
@@ -289,13 +289,14 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
   void nextTick(() => {
     void ui(data.modalSample);
     const element = utils.query(data.modalSample);
-    if(data.name === 'Badges')
+    if (data.name === "Badges") {
       for (let i = 0; i < element.children.length; i++) {
         const elementChild = element.children[i];
         if (elementChild.tagName.toLowerCase() === "article") {
           elementChild.classList.add("large-padding");
-        } 
+        }
       }
+    }
     element?.scrollTo(0, 0);
   });
 };

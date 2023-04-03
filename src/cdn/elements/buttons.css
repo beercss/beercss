@@ -50,20 +50,6 @@ button {
   color: var(--primary);
 }
 
-:is(button, .button).circle {
-  border-radius: 2.5rem;
-  padding: 0;
-}
-
-:is(button, .button).square {
-  border-radius: 0;
-  padding: 0;
-}
-
-:is(button, .button).extend {
-  padding: 0;
-}
-
 :is(.button, button).extend > span {
   display: none;
 }

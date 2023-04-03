@@ -38,6 +38,14 @@
   border-radius: 0 2rem 2rem !important;
 }
 
+.circle {
+  border-radius: 50%;
+}
+
+:is(button, .button, .chip).circle {
+  border-radius: 2.5rem;
+}
+
 :is(.circle, .square):not(i, img, video, svg) {
   height: 2.5rem;
   width: 2.5rem;

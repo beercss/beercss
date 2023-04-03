@@ -18,7 +18,7 @@ left, right
 
 **Sizes**
 
-wrap, no-wrap
+wrap, no-wrap, min, max
 
 **Triggers**
 

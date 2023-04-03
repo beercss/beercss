@@ -63,8 +63,9 @@ footer {
   background-color: inherit;
 }
 
-.modal > :is(header, footer) {
+:is(.modal, .dropdown) > :is(header, footer) {
   padding: 0;
+  background-color: inherit;
 }
 
 article > :is(header, footer) {
