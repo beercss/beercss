@@ -3,7 +3,7 @@
 }
 
 :is(.left-shadow, .right-shadow, .top-shadow, .bottom-shadow) {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .left-shadow {
