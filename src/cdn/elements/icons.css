@@ -40,15 +40,12 @@ i.extra {
 }
 
 i.fill,
-a.row:hover > i,
-a.row:focus > i,
-.transparent:hover > i,
-.transparent:focus > i {
+a.row:is(:hover, :focus) > i,
+.transparent:is(:hover, :focus) > i {
   font-variation-settings: "FILL" 1;
 }
 
-i > img,
-i > svg {
+i > :is(img, svg) {
   width: 100%;
   height: 100%;
   background-size: 100%;

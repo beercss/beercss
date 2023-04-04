@@ -37,8 +37,7 @@
   padding: 0.25rem;
 }
 
-:is(.wave, .chip, .button, button):hover::after,
-:is(.wave, .chip, .button, button):focus::after {
+:is(.wave, .chip, .button, button):is(:focus, :hover)::after {
   background-size: 15000%;
   opacity: 1;
   transition: var(--speed2) background-size linear;
@@ -51,7 +50,6 @@
 }
 
 .no-wave::after,
-.no-wave:hover::after,
-.no-wave:active::after {
+.no-wave:is(:hover, :active)::after {
   display: none;
 }

@@ -56,9 +56,7 @@
   display: block;
 }
 
-.dropdown > a:hover,
-.dropdown > a:focus,
-.dropdown > a.active {
+.dropdown > a:is(:hover, :focus, .active) {
   background-color: var(--active);
 }
 

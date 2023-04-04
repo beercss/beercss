@@ -164,9 +164,7 @@ nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip) > i {
   margin: 0 auto;
 }
 
-nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip):hover > i,
-nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip):focus > i,
-nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip).active > i {
+nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip):is(:hover, :focus, .active) > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
   padding: 0.25rem 1rem;

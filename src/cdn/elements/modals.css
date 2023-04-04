@@ -155,8 +155,7 @@ nav.bottom > .modal {
   padding: 1rem 3rem 5rem;
 }
 
-.modal > a.row:hover,
-.modal > a.row.active {
+.modal > a.row:is(:hover, .active) {
   background-color: var(--secondary-container);
 }
 
