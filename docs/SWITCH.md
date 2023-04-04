@@ -34,14 +34,14 @@ Switches toggle the state of a single item on or off.
 ## With icons
 
 ```html
-<label class="switch">
+<label class="switch icon">
   <input type="checkbox">
   <span>
     <i>wifi</i>
   </span>
 </label>
 
-<label class="switch">
+<label class="switch icon">
   <input type="checkbox">
   <span>
     <i>close</i>

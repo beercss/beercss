@@ -24,6 +24,14 @@ Checkboxes allow users to select one or more items from a set. Checkboxes can tu
   <span>Click here</span>
 </label>
 
+<label class="checkbox icon">
+  <input type="checkbox">
+  <span>
+    <i>close</i>
+    <i>done</i>
+  </span>
+</label>
+
 <nav>
   <label class="checkbox">
     <input type="checkbox">

@@ -24,6 +24,14 @@ Radio buttons allow users to select one option from a set.
   <span>Click here</span>
 </label>
 
+<label class="radio icon">
+  <input type="radio">
+  <span>
+    <i>close</i>
+    <i>done</i>
+  </span>
+</label>
+
 <nav>
   <label class="radio">
     <input type="radio">

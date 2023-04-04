@@ -17,6 +17,12 @@
   opacity: 0;
 }
 
+.switch > input {
+  width: 3.25rem;
+  height: 2rem;
+  opacity: 0;
+}
+
 :is(.checkbox, .radio, .switch) > span {
   display: inline-flex;
   align-items: center;
@@ -28,9 +34,8 @@
   padding-left: 0.25rem;
 }
 
-:is(.checkbox, .radio) > input + span::before,
-.switch > input + span:empty::after,
-.switch > input + span > i {
+:is(.checkbox, .radio, .switch) > span::before,
+.icon > span > i {  
   font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
@@ -57,67 +62,14 @@
   left: -1.5rem;
   background-color: transparent;
   border-radius: 50%;
+  user-select: none;
+  z-index: 1;
+  box-shadow: 0 0 0 0 var(--active);
+  transition: var(--speed1) all;
 }
 
-.checkbox > input + span::before {
-  content: "check_box_outline_blank";
-}
-
-.radio > input + span::before {
-  content: "radio_button_unchecked";
-}
-
-:is(.checkbox, .radio) > input:not([disabled]):focus + span::before,
-:is(.checkbox, .radio) > input:not([disabled]):hover + span::before {
-  background-color: var(--active);
-  box-shadow: 0 0 0 0.5rem var(--active);
-  animation: var(--speed1) to-checked ease-out;
-}
-
-.checkbox > input:checked + span::before {
-  color: var(--primary);
-  content: "check_box";
-  font-variation-settings: "FILL" 1;
-}
-
-.radio > input:checked + span::before {
-  color: var(--primary);
-  content: "radio_button_checked";
-}
-
-.checkbox + .checkbox,
-.radio + .radio,
-.switch + .switch {
-  margin-left: 0.5rem;
-}
-
-.switch > input {
-  width: 3.25rem;
-  height: 2rem;
-  opacity: 0;
-}
-
-.switch > input + span::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  background-color: var(--active);
-  border: 0.125rem solid var(--outline);
-  box-sizing: border-box;
-  width: 3.25rem;
-  height: 2rem;
-  border-radius: 2rem;
-  transform: translate(-3.25rem, -50%);
-}
-
-.switch > input:checked + span::before {
-  border: none;
-  background-color: var(--primary);
-}
-
-.switch > input + span:empty::after,
-.switch > input + span > i {
+.switch > span::before,
+.switch.icon > span > i {  
   position: absolute;
   left: 0;
   top: 50%;
@@ -135,38 +87,93 @@
   transform: translate(-3rem, -50%) scale(0.6);
 }
 
-.switch > input:checked + span:empty::after,
-.switch > input:checked + span > i {
+.switch.icon > span > i {
+  transform: translate(-3rem, -50%) scale(1);
+}
+
+.checkbox > span::before {
+  content: "check_box_outline_blank";
+}
+
+.radio > span::before {
+  content: "radio_button_unchecked";
+}
+
+.checkbox > input:checked + span::before {
+  content: "check_box";
+  font-variation-settings: "FILL" 1;
+}
+
+.radio > input:checked + span::before {
+  content: "radio_button_checked";
+}
+
+:is(.radio, .checkbox, .switch).icon > span::before {
+  content: "" !important;
+  font-variation-settings: unset !important;
+}
+
+:is(.checkbox, .radio) > input:is(:focus, :hover) + span::before {
+  background-color: var(--active);
+  box-shadow: 0 0 0 0.5rem var(--active);
+}
+
+.switch > input:is(:focus, :hover) + span::before,
+.switch.icon > input:is(:focus, :hover) + span > i {  
+  box-shadow: 0 0 0 0.5rem var(--active);
+}
+
+:is(.checkbox, .radio) > input:checked + span::before,
+:is(.checkbox, .radio).icon > input:checked + span > i {
+  color: var(--primary);
+}
+
+.icon > input:checked + span > i:first-child,
+.icon > span > i:last-child {
+  opacity: 0;
+}
+
+.icon > input:checked + span > i:last-child,
+.icon > span > i:first-child {
+  opacity: 1;
+}
+
+.switch > input:checked + span::after {
+  border: none;
+  background-color: var(--primary);
+}
+
+.switch > input:checked + span::before,
+.switch.icon > input:checked + span > i {
   content: "check";
   color: var(--primary);
   background-color: var(--on-primary);
   transform: translate(-1.75rem, -50%) scale(1);
 }
 
-.switch > input + span > i {
-  transform: translate(-3rem, -50%) scale(1);
-}
-
-.switch > input + span > i:last-child,
-.switch > input:checked + span > i:first-child {
-  opacity: 0;
-}
-
-.switch > input:checked + span > i:last-child,
-.switch > input + span > i:first-child {
-  opacity: 1;
-}
-
-.switch > input:not([disabled]):focus + span:empty::after,
-.switch > input:not([disabled]):hover + span:empty::after,
-.switch > input:not([disabled]):focus + span > i,
-.switch > input:not([disabled]):hover + span > i {
-  box-shadow: 0 0 0 0.5rem var(--active);
-}
-
 :is(.checkbox, .radio, .switch) > input:disabled + span {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.checkbox + .checkbox,
+.radio + .radio,
+.switch + .switch {
+  margin-left: 0.5rem;
+}
+
+.switch > span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  background-color: var(--active);
+  border: 0.125rem solid var(--outline);
+  box-sizing: border-box;
+  width: 3.25rem;
+  height: 2rem;
+  border-radius: 2rem;
+  transform: translate(-3.25rem, -50%);
 }
 
 .field > :is(nav, .row) {
@@ -177,14 +184,4 @@
 .field.round  > :is(nav, .row) {
   flex-grow: 1;
   padding: 0 1.5rem;
-}
-
-@keyframes to-checked {
-  from {
-    box-shadow: 0 0 0 0 var(--active);
-  }
-
-  to {
-    box-shadow: 0 0 0 0.5rem var(--active);
-  }
 }

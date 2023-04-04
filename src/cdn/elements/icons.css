@@ -53,4 +53,7 @@ i > svg {
   height: 100%;
   background-size: 100%;
   border-radius: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
 }

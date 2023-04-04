@@ -27,19 +27,19 @@
       h6 Switch with icons
       .field.middle-align#switches1
         nav.wrap
-          label.switch
+          label.switch.icon
             input(type="checkbox")
             span
               i wifi
-          label.switch
+          label.switch.icon
             input(type="checkbox")
             span
               i bluetooth
-          label.switch
+          label.switch.icon
             input(type="checkbox")
             span
               i dark_mode
-          label.switch
+          label.switch.icon
             input(type="checkbox")
             span
               i close
