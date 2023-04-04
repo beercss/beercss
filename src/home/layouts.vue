@@ -271,6 +271,91 @@ div
               .max.field.border.left-round
                 input
               button.large.right-round Search
+  .medium-space
+  h6
+    span Blurred elements
+    a.chip.circle(@click="domain.showSamples(data, '#blurs > header, #blurs > article, #blurs > nav > *', 'Blured elements')")
+      i code
+  nav.wrap
+    label.radio
+      input(type="radio", name="blur-elements", @click="domain.updateBlur('#blurs > header, #blurs > article, #blurs > nav > *', 'small-blur')")
+      span small-blur
+    label.radio
+      input(
+        type="radio",
+        name="blur-elements",
+        checked,
+        @click="domain.updateBlur('#blurs > header, #blurs > article, #blurs > nav > *', 'blur')"
+      )
+      span medium-blur
+    label.radio
+      input(type="radio", name="blur-elements", @click="domain.updateBlur('#blurs > header, #blurs > article, #blurs > nav > *', 'large-blur')")
+      span large-blur
+  .medium-space
+  #blurs.large-padding(style="background-image: url(beer-and-woman.jpg)")
+    header.blur
+      nav
+        button.circle.transparent
+          i arrow_backward
+        h5.max App bar
+        button.circle.transparent
+          i attach_file
+        button.circle.transparent
+          i today
+        button.circle.transparent
+          i more_vert
+    article.blur
+      h5 Card
+      p Some text here 
+      nav.right-align
+        button Button
+    nav
+      button.blur Button
+      a.chip.blur Chip
+  .medium-space
+  h6
+    span Shadowed elements
+    a.chip.circle(@click="domain.showSamples(data, '#shadows > header, #shadows > article, #shadows > nav > *', 'Blured elements')")
+      i code
+  nav.wrap
+    label.radio
+      input(
+        type="radio", 
+        name="shadow-elements", 
+        checked,
+        @click="domain.updateShadow('#shadows > header, #shadows > article, #shadows > nav > *', 'left-shadow')"
+      )
+      span left-shadow
+    label.radio
+      input(type="radio", name="shadow-elements", @click="domain.updateShadow('#shadows > header, #shadows > article, #shadows > nav > *', 'right-shadow')")
+      span right-shadow
+    label.radio
+      input(type="radio", name="shadow-elements", @click="domain.updateBlur('#shadows > header, #shadows > article, #shadows > nav > *', 'top-shadow')")
+      span top-shadow
+    label.radio
+      input(type="radio", name="shadow-elements", @click="domain.updateShadow('#shadows > header, #shadows > article, #shadows > nav > *', 'bottom-shadow')")
+      span bottom-shadow
+  .medium-space
+  #shadows.large-padding(style="background-image: url(beer-and-woman.jpg)")
+    header.white-text.left-shadow
+      nav
+        button.circle.transparent
+          i arrow_backward
+        h5.max App bar
+        button.circle.transparent
+          i attach_file
+        button.circle.transparent
+          i today
+        button.circle.transparent
+          i more_vert
+    article.white-text.left-shadow
+      h5 Card
+      p Some text here 
+      nav.right-align
+        button Button
+    nav
+      button.white-text.left-shadow Button
+      a.chip.white-text.left-shadow Chip
 </template>
 
 <script setup lang="ts">

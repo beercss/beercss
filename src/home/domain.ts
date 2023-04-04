@@ -4,10 +4,10 @@ import utils from "../shared/utils";
 import sharedDomain from "../shared/domain";
 import { ILayout } from "../shared/interfaces";
 
-const updateShadow = (selector: any, shadow?: string) => {
+const updateElevate = (selector: any, elevate?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["no-elevate", "small-elevate", "medium-elevate", "large-elevate"]);
-  if (shadow) utils.addClass(elements, [shadow]);
+  if (elevate) utils.addClass(elements, [elevate]);
 };
 
 const updateColor = (selector: any, color?: string) => {
@@ -318,8 +318,20 @@ const updateTheme = (data: ILayout) => {
   void sharedDomain.updateTheme(data, color);
 };
 
+const updateBlur = (selector: string, blur?: string) => {
+  const elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["blur", "small-blur", "medium-blur", "large-blur"]);
+  if (blur) utils.addClass(elements, [blur]);
+};
+
+const updateShadow = (selector: any, shadow?: string) => {
+  const elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["shadow", "no-shadow", "top-shadow", "bottom-shadow", "left-shadow", "right-shadow"]);
+  if (shadow) utils.addClass(elements, [shadow]);
+};
+
 export default {
-  updateShadow,
+  updateElevate,
   updateColor,
   updateBorderColor,
   updateTextColor,
@@ -350,4 +362,6 @@ export default {
   goTo,
   showSamples,
   updateTheme,
+  updateBlur,
+  updateShadow,
 };

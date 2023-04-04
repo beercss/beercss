@@ -13,10 +13,11 @@
 
 :is(.blur, .small-blur, .medium-blur, .large-blur),
 :is(.blur, .small-blur, .medium-blur, .large-blur).light {
-  background-color: rgba(255,255,255,.5) !important;
+  color: var(--on-background);
+  background-color: rgba(255,255,255,.5);
 }
 
 .dark :is(.blur, .small-blur, .medium-blur, .large-blur),
 :is(.blur, .small-blur, .medium-blur, .large-blur).dark {
-  background-color: rgba(0,0,0,.5) !important;
+  background-color: rgba(0,0,0,.5);
 }

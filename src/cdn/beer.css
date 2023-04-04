@@ -4,7 +4,6 @@
 @import "./helpers/reset.css";
 @import "./helpers/theme.css";
 @import "./helpers/alignments.css";
-@import "./helpers/blurs.css";
 @import "./helpers/colors.css";
 @import "./helpers/directions.css";
 @import "./helpers/dividers.css";
@@ -15,7 +14,6 @@
 @import "./helpers/paddings.css";
 @import "./helpers/positions.css";
 @import "./helpers/scrolls.css";
-@import "./helpers/shadows.css";
 @import "./helpers/sizes.css";
 @import "./helpers/spaces.css";
 @import "./helpers/responsive.css";
@@ -45,3 +43,5 @@
 @import "./elements/tabs.css";
 @import "./elements/toasts.css";
 @import "./elements/tooltips.css";
+@import "./helpers/blurs.css";
+@import "./helpers/shadows.css";

@@ -7,7 +7,7 @@ nav.wrap
     input(type="radio", :id="size + '-' + context", :name="'size-' + context", :checked="size === selectedSize", @click="domain.updateSize(context, size)")
     span {{ size || "medium" }}
   label.radio(v-for="elevate in elevates")
-    input(type="radio", :id="elevate + '-' + context", :name="'elevate-' + context", :checked="elevate === selectedShadow", @click="domain.updateShadow(context, elevate)")
+    input(type="radio", :id="elevate + '-' + context", :name="'elevate-' + context", :checked="elevate === selectedShadow", @click="domain.updateElevate(context, elevate)")
     span {{ elevate || "no-elevate" }}
   label.radio(v-for="direction in directions")
     input(type="radio", :id="direction + '-' + context", :name="'direction-' + context", :checked="direction === selectedDirection", @click="domain.updateDirection(context, direction)")
@@ -54,7 +54,7 @@ const {
 onMounted(() => {
   if (colors.length) domain.updateElementColor(context, selectedColor);
   if (sizes.length) domain.updateSize(context, selectedSize);
-  if (elevates.length) domain.updateShadow(context, selectedShadow);
+  if (elevates.length) domain.updateElevate(context, selectedShadow);
   if (directions.length) domain.updateDirection(context, selectedDirection);
 });
 </script>
