@@ -299,10 +299,6 @@ div
           i arrow_backward
         h5.max App bar
         button.circle.transparent
-          i attach_file
-        button.circle.transparent
-          i today
-        button.circle.transparent
           i more_vert
     article.blur
       h5 Card
@@ -342,10 +338,6 @@ div
         button.circle.transparent
           i arrow_backward
         h5.max App bar
-        button.circle.transparent
-          i attach_file
-        button.circle.transparent
-          i today
         button.circle.transparent
           i more_vert
     article.white-text.left-shadow
