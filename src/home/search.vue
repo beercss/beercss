@@ -33,7 +33,7 @@
           div Item 3
     button.extra.circle.fill(data-ui="#search2")
       i search
-      #search2.dropdown.no-wrap.min
+      #search2.dropdown.no-wrap.left.min
         header.fixed
           .field.large.prefix.suffix.no-margin
             i.front(data-ui="#search2") arrow_backward
