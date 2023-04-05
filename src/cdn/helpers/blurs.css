@@ -12,11 +12,6 @@
   background-color: rgb(0 0 0 / 0.5);
 }
 
-.blur,
-.medium-blur {
-  --blur-size: 1rem;
-}
-
 .small-blur {
   --blur-size: 0.5rem;
 }
