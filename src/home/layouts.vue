@@ -274,7 +274,7 @@ div
   .medium-space
   h6
     span Blurred elements
-    a.chip.circle(@click="domain.showSamples(data, '#blurs > header, #blurs > article, #blurs > nav > *', 'Blured elements')")
+    a.chip.circle(@click="domain.showSamples(data, '#blurs > header, #blurs > article, #blurs > nav > *', 'Blurred elements')")
       i code
   nav.wrap
     label.radio
@@ -311,7 +311,7 @@ div
   .medium-space
   h6
     span Shadowed elements
-    a.chip.circle(@click="domain.showSamples(data, '#shadows > header, #shadows > article, #shadows > nav > *', 'Blured elements')")
+    a.chip.circle(@click="domain.showSamples(data, '#shadows > header, #shadows > article, #shadows > nav > *', 'Shadowed elements')")
       i code
   nav.wrap
     label.radio
