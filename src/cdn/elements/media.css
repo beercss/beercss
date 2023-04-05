@@ -14,7 +14,7 @@ svg {
   border-radius: 0.5rem;
 }
 
-:is(img, svg, video).circle{
+:is(img, svg, video).circle {
   border-radius: 50%;
 }
 

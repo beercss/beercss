@@ -306,7 +306,7 @@ div
           i more_vert
     article.blur
       h5 Card
-      p Some text here 
+      p Some text here
       nav.right-align
         button Button
     nav
@@ -320,8 +320,8 @@ div
   nav.wrap
     label.radio
       input(
-        type="radio", 
-        name="shadow-elements", 
+        type="radio",
+        name="shadow-elements",
         checked,
         @click="domain.updateShadow('#shadows > header, #shadows > article, #shadows > nav > *', 'left-shadow')"
       )
@@ -350,7 +350,7 @@ div
           i more_vert
     article.white-text.left-shadow
       h5 Card
-      p Some text here 
+      p Some text here
       nav.right-align
         button Button
     nav

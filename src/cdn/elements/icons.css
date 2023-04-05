@@ -1,5 +1,6 @@
 i {
   --i-size: 1.5rem;
+
   font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
@@ -11,7 +12,7 @@ i {
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: "liga";
+  font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
   vertical-align: middle;
   text-align: center;

@@ -114,7 +114,7 @@
   width: 20rem;
 }
 
-.modal.medium:is(.left, .right){
+.modal.medium:is(.left, .right) {
   width: 32rem;
 }
 

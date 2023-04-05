@@ -1,5 +1,6 @@
 .loader {
   --loader-translate-y: 0;
+
   display: inline-block;
   width: 2.5rem;
   height: 2.5rem;

@@ -28,8 +28,6 @@
 }
 
 .slider > input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   box-shadow: none;
   border: none;
@@ -54,12 +52,10 @@
 }
 
 .slider > input + input {
-  position:absolute;
+  position: absolute;
 }
 
 .slider > input::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   box-shadow: none;
   border: none;
@@ -74,8 +70,6 @@
 }
 
 .slider > input::-moz-range-thumb {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   box-shadow: none;
   border: none;

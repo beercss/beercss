@@ -35,7 +35,7 @@
 }
 
 :is(.checkbox, .radio, .switch) > span::before,
-.icon > span > i {  
+.icon > span > i {
   font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
@@ -69,7 +69,7 @@
 }
 
 .switch > span::before,
-.switch.icon > span > i {  
+.switch.icon > span > i {
   position: absolute;
   left: 0;
   top: 50%;
@@ -119,7 +119,7 @@
 }
 
 .switch > input:is(:focus, :hover) + span::before,
-.switch.icon > input:is(:focus, :hover) + span > i {  
+.switch.icon > input:is(:focus, :hover) + span > i {
   box-shadow: 0 0 0 0.5rem var(--active);
 }
 
@@ -181,7 +181,7 @@
   padding: 0 1rem;
 }
 
-.field.round  > :is(nav, .row) {
+.field.round > :is(nav, .row) {
   flex-grow: 1;
   padding: 0 1.5rem;
 }
