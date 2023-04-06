@@ -12,7 +12,7 @@
       i code
 
   nav#search-compact
-    .field.large.prefix.suffix.round.fill(data-ui="#search1")
+    .field.large.prefix.round.fill(data-ui="#search1")
       i.front search
       input(placeholder="Search text")
 
@@ -58,7 +58,7 @@
       i code
 
   nav#search-fullscreen
-    .field.large.prefix.suffix.round.fill(data-ui="#search3")
+    .field.large.prefix.round.fill(data-ui="#search3")
       i.front search
       input(placeholder="Search text")
 
