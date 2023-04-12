@@ -54,7 +54,8 @@ button {
   display: none;
 }
 
-:is(.button, button).extend:hover, :is(.button, button).extend.active {
+:is(.button, button).extend:hover,
+:is(.button, button).extend.active {
   width: auto;
   padding: 0 1rem;
 }

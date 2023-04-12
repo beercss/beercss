@@ -11,7 +11,8 @@
     "no-descending-specificity": null,
     "no-duplicate-selectors": null,
     "number-leading-zero": "always",
-    "selector-attribute-quotes": "never"
+    "selector-attribute-quotes": "never",
+    "custom-property-pattern": null
   },
   "overrides": [
     {
