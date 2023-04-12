@@ -71,9 +71,87 @@
   gap: 8rem;
 }
 
+.tooltip.tiny-gap
+{
+  transform: translate(-50%, calc(-100% - 4px))
+}
+.tooltip.small-gap
+{
+  transform: translate(-50%, calc(-100% - 8px))
+}
+.tooltip.gap, .tooltip.medium-gap
+{
+  transform: translate(-50%, calc(-100% - 16px))
+}
+.tooltip.large-gap
+{
+  transform: translate(-50%, calc(-100% - 24px))
+}
+
+.tooltip.bottom.tiny-gap
+{
+  transform: translate(-50%, calc(100% + 4px));
+}
+.tooltip.bottom.small-gap
+{
+  transform: translate(-50%, calc(100% + 8px));
+}
+.tooltip.bottom.gap, .tooltip.bottom.medium-gap
+{
+  transform: translate(-50%, calc(100% + 16px));
+}
+.tooltip.bottom.large-gap
+{
+  transform: translate(-50%, calc(100% + 4px));
+}
+
+.tooltip.right.tiny-gap
+{
+  transform: translate(calc(100% + 4px), -50%);
+}
+.tooltip.right.small-gap
+{
+  transform: translate(calc(100% + 8px), -50%);
+}
+.tooltip.right.gap, .tooltip.right.medium-gap
+{
+  transform: translate(calc(100% + 16px), -50%);
+}
+.tooltip.right.large-gap
+{
+  transform: translate(calc(100% + 24px), -50%);
+}
+
+.tooltip.left.tiny-gap
+{
+  transform: translate(calc(-100% - 4px), -50%);
+}
+.tooltip.left.small-gap
+{
+  transform: translate(calc(-100% - 8px), -50%);
+}
+.tooltip.left.gap, .tooltip.left.medium-gap
+{
+  transform: translate(calc(-100% - 16px), -50%);
+}
+.tooltip.left.large-gap
+{
+  transform: translate(calc(-100% - 24px), -50%);
+}
+
 .dropdown:active ~ .tooltip,
 button:focus > .dropdown ~ .tooltip,
 .button:focus > .dropdown ~ .tooltip,
 .field > :focus ~ .dropdown ~ .tooltip {
   display: none;
+}
+
+.tooltip.fade
+{
+  transition: opacity 0.25s ease;
+  opacity: 0;
+}
+*:hover > .tooltip.fade
+{
+  opacity: 1;
 }
