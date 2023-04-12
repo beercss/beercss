@@ -1,8 +1,8 @@
 :is(.blur, .small-blur, .medium-blur, .large-blur),
 :is(.blur, .small-blur, .medium-blur, .large-blur).light {
-  --blur-size: 1rem;
-  -webkit-backdrop-filter: blur(var(--blur-size));
-  backdrop-filter: blur(var(--blur-size));
+  ---blur: 1rem;
+  -webkit-backdrop-filter: blur(var(---blur));
+  backdrop-filter: blur(var(---blur));
   color: var(--on-background);
   background-color: rgb(255 255 255 / 0.5);
 }
@@ -13,9 +13,9 @@
 }
 
 .small-blur {
-  --blur-size: 0.5rem;
+  ---blur: 0.5rem;
 }
 
 .large-blur {
-  --blur-size: 1.5rem;
+  ---blur: 1.5rem;
 }

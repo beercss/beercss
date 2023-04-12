@@ -1,10 +1,10 @@
 i {
-  --i-size: 1.5rem;
+  ---size: 1.5rem;
 
   font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
-  font-size: var(--i-size);
+  font-size: var(---size);
   letter-spacing: normal;
   text-transform: none;
   display: inline-flex;
@@ -17,27 +17,27 @@ i {
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  width: var(--i-size);
-  min-width: var(--i-size);
-  height: var(--i-size);
-  min-height: var(--i-size);
+  width: var(---size);
+  min-width: var(---size);
+  height: var(---size);
+  min-height: var(---size);
   box-sizing: content-box;
 }
 
 i.tiny {
-  --i-size: 1rem;
+  ---size: 1rem;
 }
 
 i.small {
-  --i-size: 1.25rem;
+  ---size: 1.25rem;
 }
 
 i.large {
-  --i-size: 1.75rem;
+  ---size: 1.75rem;
 }
 
 i.extra {
-  --i-size: 2rem;
+  ---size: 2rem;
 }
 
 i.fill,
