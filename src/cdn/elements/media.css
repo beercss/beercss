@@ -1,197 +1,147 @@
-img.small,
-img.medium,
-img.large,
-img.tiny,
-img.extra,
-img.round,
-img.circle,
-img.responsive,
-video.small,
-video.medium,
-video.large,
-video.tiny,
-video.extra,
-video.round,
-video.circle,
-video.responsive {
+svg {
+  fill: currentColor;
+}
+
+:is(img, svg, video):is(.small, .medium, .large, .tiny, .extra, .round, .circle, .responsive) {
   object-fit: cover;
   object-position: center;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
-  height: 48rem;
-  width: 48rem;
+  height: 3rem;
+  width: 3rem;
 }
 
-img.round,
-video.round {
-  border-radius: 8rem;
+:is(img, svg, video).round {
+  border-radius: 0.5rem;
 }
 
-img.circle,
-video.circle {
+:is(img, svg, video).circle {
   border-radius: 50%;
 }
 
-img.tiny,
-video.tiny {
-  height: 32rem;
-  width: 32rem;
+:is(img, svg, video).tiny {
+  height: 2rem;
+  width: 2rem;
 }
 
-img.small,
-video.small {
-  height: 40rem;
-  width: 40rem;
+:is(img, svg, video).small {
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
-img.large,
-video.large {
-  height: 56rem;
-  width: 56rem;
+:is(img, svg, video).large {
+  height: 3.5rem;
+  width: 3.5rem;
 }
 
-img.extra,
-video.extra {
-  height: 64rem;
-  width: 64rem;
+:is(img, svg, video).extra {
+  height: 4rem;
+  width: 4rem;
 }
 
-img.responsive,
-video.responsive {
+:is(img, svg, video).responsive {
   width: 100%;
   height: 100%;
   margin: 0 auto;
 }
 
-button > img.responsive,
-.button > img.responsive,
-.chip > img.responsive {
-  width: 40rem;
+:is(button, .button, .chip) > :is(img, svg).responsive {
+  width: 2.5rem;
 }
 
-button:not(.transparent) > img.responsive,
-.button:not(.transparent) > img.responsive,
-.chip:not(.transparent) > img.responsive {
-  border: 4rem solid transparent;
+:is(button, .button, .chip):not(.transparent) > :is(img, svg).responsive {
+  border: 0.25rem solid transparent;
 }
 
-button.small > img.responsive,
-.button.small > img.responsive,
-.chip.small > img.responsive {
-  width: 32rem;
+:is(button, .button, .chip).small > :is(img, svg).responsive {
+  width: 2rem;
 }
 
-button.large > img.responsive,
-.button.large > img.responsive,
-.chip.large > img.responsive {
-  width: 48rem;
+:is(button, .button, .chip).large > :is(img, svg).responsive {
+  width: 3rem;
 }
 
-button.extra > img.responsive,
-.button.extra > img.responsive,
-.chip.extra > img.responsive {
-  width: 56rem;
+:is(button, .button, .chip).extra > :is(img, svg).responsive {
+  width: 3.5rem;
 }
 
-img.responsive.tiny,
-video.responsive.tiny {
+:is(img, svg, video).responsive.tiny {
   width: 100%;
-  height: 64rem;
+  height: 4rem;
 }
 
-img.responsive.small,
-video.responsive.small {
+:is(img, svg, video).responsive.small {
   width: 100%;
-  height: 128rem;
+  height: 8rem;
 }
 
-img.responsive.medium,
-video.responsive.medium {
+:is(img, svg, video).responsive.medium {
   width: 100%;
-  height: 192rem;
+  height: 12rem;
 }
 
-img.responsive.large,
-video.responsive.large {
+:is(img, svg, video).responsive.large {
   width: 100%;
-  height: 256rem;
+  height: 16rem;
 }
 
-img.responsive.extra,
-video.responsive.extra {
+:is(img, svg, video).responsive.extra {
   width: 100%;
-  height: 320rem;
+  height: 20rem;
 }
 
-img.responsive.round,
-video.responsive.round {
-  border-radius: 32rem;
+:is(img, svg, video).responsive.round {
+  border-radius: 2rem;
 }
 
-img.empty-state,
-video.empty-state {
+:is(img, svg, video).empty-state {
   max-width: 100%;
-  width: 384rem;
+  width: 24rem;
 }
 
-button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
-.button > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
-.chip > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
-.field > img:not(.responsive, .tiny, .small, .medium, .large, .extra),
-.tabs img:not(.responsive, .tiny, .small, .medium, .large, .extra),
-td img:not(.responsive, .tiny, .small, .medium, .large, .extra) {
-  min-width: 24rem;
-  max-width: 24rem;
-  min-height: 24rem;
-  max-height: 24rem;
+:is(button, .button, .chip, .field) > :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra),
+:is(.tabs, td) :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra) {
+  min-width: 1.5rem;
+  max-width: 1.5rem;
+  min-height: 1.5rem;
+  max-height: 1.5rem;
 }
 
-.button > i,
-.button > img,
-.button > img.responsive,
-button > i,
-button > img,
-button > img.responsive,
-.chip > i,
-.chip > img,
-.chip > img.responsive {
-  margin: 0 -8rem;
+:is(button, .button, .chip) > :is(i, img, svg),
+:is(button, .button, .chip) > :is(img, svg).responsive {
+  margin: 0 -0.5rem;
 }
 
-.button > img.responsive, 
-button > img.responsive {
-  margin-left: -24rem;
+:is(button, .button) > :is(img, svg).responsive {
+  margin-left: -1.5rem;
 }
 
-.button > span + img.responsive,
-button > span + img.responsive {
-  margin-right: -24rem;
+:is(button, .button) > span + :is(img, svg).responsive {
+  margin-right: -1.5rem;
 }
 
-.chip > img.responsive {
-  margin-left: -16rem;
+.chip > :is(img, svg).responsive {
+  margin-left: -1rem;
 }
 
-.chip > span + img.responsive {
-  margin-right: -16rem;
+.chip > span + :is(img, svg).responsive {
+  margin-right: -1rem;
 }
 
-.circle > img.responsive,
-.square > img.responsive {
+:is(.circle, .square) > :is(img, svg).responsive {
   margin: 0;
 }
 
-.extend > i,
-.extend > img {
+.extend > :is(i, img, svg) {
   margin: 0;
   position: absolute;
-  left: 16rem;
+  left: 1rem;
 }
 
-.extend > img.responsive {
+.extend > :is(img, svg).responsive {
   left: 0;
-  width: 56rem;
+  width: 3.5rem;
 }
 
-.extend.border > img.responsive {
-  width: 54rem;
+.extend.border > :is(img, svg).responsive {
+  width: 3.375rem;
 }

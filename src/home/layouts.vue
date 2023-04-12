@@ -121,92 +121,233 @@ div
       span Today
     .row
       i.light-green-text check_circle
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       i.orange-text warning
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       i.grey-text schedule
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .row
       span Yesterday
     .row
       label.checkbox
         input(type="checkbox")
         span
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       label.checkbox
         input(type="checkbox")
         span
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       label.checkbox
         input(type="checkbox")
         span
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .row
       span Older
     .row
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
     .small-divider
     .row
       img.circle.tiny(:src="'/beer-and-woman.jpg'")
-      .max
-        h6 Title
-        p Some text here
-      button.none Button
-      button.none
-        i more_vert
+      .max Some text here
+      a
+        i edit
+      a
+        i delete
+  .medium-space
+  #clickable-list
+    h6
+      span Clickable lists
+      a.chip.circle(@click="domain.showSamples(data, '#clickable-list .row', 'Clickable lists')")
+        i code
+    .grid
+      .s12.m6.l4
+        a.row.wave
+          i home
+          div Default 1
+        a.row.wave
+          i search
+          div Default 2
+        a.row.wave
+          i star
+          div Default 3
+        a.row.wave
+          i mail
+          .max Default 4
+          span.badge.circle.none 3
+      .s12.m6.l4
+        a.row.wave.round
+          i home
+          div Rounded 1
+        a.row.wave.round
+          i search
+          div Rounded 2
+        a.row.wave.round
+          i star
+          div Rounded 3
+        a.row.wave.round
+          i mail
+          .max Rounded 4
+          span.badge.circle.none 3
+
+  .medium-space
+  #empty-state
+    h6
+      span Empty states
+      a.chip.circle(@click="domain.showSamples(data, '#empty-state .fill', 'Empty states')")
+        i code
+    .grid
+      .s12.m12.l6
+        .fill.medium-height.middle-align.center-align
+          .center-align
+            i.extra mail
+            h5 You have no new messages
+            p Click the button to start a conversation
+            .space
+            nav.center-align
+              button.round Send a message
+      .s12.m12.l6
+        .fill.medium-height.middle-align.center-align
+          .center-align
+            i.extra mail
+            h5 You've successfully signed up
+            p Click the button to invite your friends
+            .space
+            nav.center-align
+              button.border.round Skip
+              button.round Invite your friends
+      .s12.m12.l6
+        .fill.medium-height.middle-align.center-align
+          .center-align
+            i.extra person
+            h5 You are not following anyone
+            p Start to meet new friends
+            .space
+            nav.no-space
+              .max.field.border.left-round
+                input
+              button.large.right-round Search
+  .medium-space
+  h6
+    span Blurred elements
+    a.chip.circle(@click="domain.showSamples(data, '#blurs > header, #blurs > article, #blurs > nav > *', 'Blurred elements')")
+      i code
+  nav.wrap
+    label.radio
+      input(type="radio", name="blur-elements", @click="domain.updateBlur('#blurs > header, #blurs > article, #blurs > nav > *', 'small-blur')")
+      span small-blur
+    label.radio
+      input(
+        type="radio",
+        name="blur-elements",
+        checked,
+        @click="domain.updateBlur('#blurs > header, #blurs > article, #blurs > nav > *', 'blur')"
+      )
+      span medium-blur
+    label.radio
+      input(type="radio", name="blur-elements", @click="domain.updateBlur('#blurs > header, #blurs > article, #blurs > nav > *', 'large-blur')")
+      span large-blur
+  .medium-space
+  #blurs.large-padding(style="background-image: url(beer-and-woman.jpg)")
+    header.blur
+      nav
+        button.circle.transparent
+          i arrow_backward
+        h5.max App bar
+        button.circle.transparent
+          i more_vert
+    article.blur
+      h5 Card
+      p Some text here
+      nav.right-align
+        button Button
+    nav
+      button.blur Button
+      a.chip.blur Chip
+  .medium-space
+  h6
+    span Shadowed elements
+    a.chip.circle(@click="domain.showSamples(data, '#shadows > header, #shadows > article, #shadows > nav > *', 'Shadowed elements')")
+      i code
+  nav.wrap
+    label.radio
+      input(
+        type="radio",
+        name="shadow-elements",
+        checked,
+        @click="domain.updateShadow('#shadows > header, #shadows > article, #shadows > nav > *', 'left-shadow')"
+      )
+      span left-shadow
+    label.radio
+      input(type="radio", name="shadow-elements", @click="domain.updateShadow('#shadows > header, #shadows > article, #shadows > nav > *', 'right-shadow')")
+      span right-shadow
+    label.radio
+      input(type="radio", name="shadow-elements", @click="domain.updateBlur('#shadows > header, #shadows > article, #shadows > nav > *', 'top-shadow')")
+      span top-shadow
+    label.radio
+      input(type="radio", name="shadow-elements", @click="domain.updateShadow('#shadows > header, #shadows > article, #shadows > nav > *', 'bottom-shadow')")
+      span bottom-shadow
+  .medium-space
+  #shadows.large-padding(style="background-image: url(beer-and-woman.jpg)")
+    header.white-text.left-shadow
+      nav
+        button.circle.transparent
+          i arrow_backward
+        h5.max App bar
+        button.circle.transparent
+          i more_vert
+    article.white-text.left-shadow
+      h5 Card
+      p Some text here
+      nav.right-align
+        button Button
+    nav
+      button.white-text.left-shadow Button
+      a.chip.white-text.left-shadow Chip
 </template>
 
 <script setup lang="ts">

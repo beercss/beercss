@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss"
+  ],
+  "rules": {
+    "alpha-value-notation": "number",
+    "color-hex-case": "upper",
+    "font-family-no-missing-generic-family-keyword": null,
+    "import-notation": "string",
+    "max-line-length": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "number-leading-zero": "always",
+    "selector-attribute-quotes": "never"
+  },
+  "overrides": [
+    {
+      "files": ["src/app.css"],
+      "rules": {
+        "no-empty-source": null
+      }
+    }
+  ]
+}

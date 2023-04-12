@@ -6,49 +6,41 @@
   position: fixed;
 }
 
-.absolute.left.right,
-.fixed.left.right {
+:is(.absolute, .fixed).left.right {
   width: auto;
 }
 
-.absolute.left.right.small,
-.fixed.left.right.small {
-  height: 320rem;
+:is(.absolute, .fixed).left.right.small {
+  height: 20rem;
 }
 
-.absolute.left.right.medium,
-.fixed.left.right.medium {
-  height: 448rem;
+:is(.absolute, .fixed).left.right.medium {
+  height: 28rem;
 }
 
-.absolute.left.right.large,
-.fixed.left.right.large {
-  height: 704rem;
+:is(.absolute, .fixed).left.right.large {
+  height: 44rem;
 }
 
-.absolute.top.bottom.small,
-.fixed.top.bottom.small {
-  width: 320rem;
+:is(.absolute, .fixed).top.bottom.small {
+  width: 20rem;
 }
 
-.absolute.top.bottom.medium,
-.fixed.top.bottom.medium {
-  width: 448rem;
+:is(.absolute, .fixed).top.bottom.medium {
+  width: 28rem;
 }
 
-.absolute.top.bottom.large,
-.fixed.top.bottom.large {
-  width: 704rem;
+:is(.absolute, .fixed).top.bottom.large {
+  width: 44rem;
 }
 
 header,
 footer {
-  padding: 0 16rem;
+  padding: 0 1rem;
   background-color: var(--surface);
 }
 
-header.fixed,
-footer.fixed {
+:is(header, footer).fixed {
   position: sticky;
   top: 0;
   bottom: 0;
@@ -59,63 +51,54 @@ footer.fixed {
   border-radius: 0;
 }
 
-header.fixed::before,
-footer.fixed:before {
-  content: '';
+:is(header, footer).fixed::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 0 -8rem;
+  margin: 0 -0.5rem;
   max-width: 100%;
   background-color: inherit;
 }
 
-.modal > header,
-.modal > footer {
+:is(.modal, .dropdown) > :is(header, footer) {
   padding: 0;
+  background-color: inherit;
 }
 
-article > header,
-article > footer {
+article > :is(header, footer) {
   padding: inherit;
   padding-left: 0;
   padding-right: 0;
   z-index: 11 !important;
 }
 
-.modal > header.fixed,
-article > header.fixed,
-.padding > header.fixed,
-.medium-padding > header.fixed {
-  transform: translateY(-16rem);
+:is(.modal, article, .padding, .medium-padding) > header.fixed {
+  transform: translateY(-1rem);
 }
 
-.modal > footer.fixed,
-article > footer.fixed,
-.padding > footer.fixed,
-.medium-padding > footer.fixed {
-  transform: translateY(16rem);
+:is(.modal, article, .padding, .medium-padding) > footer.fixed {
+  transform: translateY(1rem);
 }
 
-.no-padding > header.fixed,
-.no-padding > footer.fixed {
+.no-padding > :is(header, footer).fixed {
   transform: none;
 }
 
 .small-padding > header.fixed {
-  transform: translateY(-8rem);
+  transform: translateY(-0.5rem);
 }
 
 .small-padding > footer.fixed {
-  transform: translateY(8rem);
+  transform: translateY(0.5rem);
 }
 
 .large-padding > header.fixed {
-  transform: translateY(-24rem);
+  transform: translateY(-1.5rem);
 }
 
 .large-padding > footer.fixed {
-  transform: translateY(24rem);
+  transform: translateY(1.5rem);
 }

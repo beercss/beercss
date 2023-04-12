@@ -1,7 +1,7 @@
 <template lang="pug">
 #responsive
   .large-space
-  h4 
+  h4
     span Responsive
     a.chip.circle(@click="domain.showSamples(data, '#responsive nav', 'Responsive', null, 'https://github.com/beercss/beercss/blob/main/docs/HELPERS.md')")
       i code

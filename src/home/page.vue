@@ -18,7 +18,7 @@ div
     a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       span Code
-  
+
   nav#navigation-bar1.s.bottom
     a(@click="domain.goTo('#intro')")
       i home
@@ -52,9 +52,9 @@ div
     header.fixed
       nav
         img.circle(:src="'/favicon.png'")
-        .max 
+        .max
           h6 Beercss
-          div v2.2.9
+          div v3.1.0
         button.transparent.circle(data-ui="#modal-menu")
           i close
     a.row.round(@click="sharedDomain.updateMode(data)")
@@ -91,6 +91,9 @@ div
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#containers')")
       i widgets
       span Containers
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#directions')")
+      i widgets
+      span Directions
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#dividers')")
       i widgets
       span Dividers
@@ -139,9 +142,15 @@ div
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#scrolls')")
       i widgets
       span Scrolls
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#search')")
+      i widgets
+      span Search
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#selects')")
       i widgets
       span Selects
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#sliders')")
+      i widgets
+      span Sliders
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#spaces')")
       i widgets
       span Spaces
@@ -166,9 +175,9 @@ div
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#typography')")
       i widgets
       span Typography
-  
+
   themes(id="themes3", v-model="data", position="right")
-  
+
   #more3.modal.right.small(data-ui="#more3")
     header.fixed
       nav
@@ -192,7 +201,7 @@ div
     a.row.round(href="https://codepen.io/search/pens?q=beercss")
       i code
       span Codepen
-  
+
   .responsive.center-align.yellow4
     div.black-text
       .large-height.no-scroll.middle-align.center-align
@@ -226,15 +235,15 @@ div
       .grid
         #intro.s12
           .div
-            h3 Get started 
+            h3 Get started
             .medium-space
             h5 From CDN
             pre.scroll.fill.no-round(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@2.2.9/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.1.0/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script src="https://cdn.jsdelivr.net/npm/beercss@2.2.9/dist/cdn/beer.min.js" type="text/javascript"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.1.0/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
-              | &lt;script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.7/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
             h5 From NPM
             pre.scroll.fill.no-round(style="font-family: courier new")
@@ -263,10 +272,10 @@ div
                     span &nbsp;left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
                   p
                     b button or &lt;button&gt;
-                    span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive
+                    span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
                   p
                     b chip
-                    span &nbsp;small, medium, large, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
+                    span &nbsp;small, medium, large, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
                   p
                     b &lt;details&gt;
                   p
@@ -274,7 +283,7 @@ div
                     span &nbsp;left, right, wrap, no-wrap, active
                   p
                     b field
-                    span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea 
+                    span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
                   p
                     b fixed
                     span &nbsp;left, right, top, bottom, front, back, small, medium, large
@@ -283,12 +292,13 @@ div
                     span &nbsp;fixed, responsive
                   p
                     b &lt;h1&gt;...&lt;h6&gt;
+                    span &nbsp;small, medium, large
                   p
                     b &lt;header&gt;
                     span &nbsp;fixed, responsive
                   p
                     b &lt;i&gt;
-                    span &nbsp;tiny, small, medium, large, extra. fill
+                    span &nbsp;tiny, small, medium, large, extra, fill
                   p
                     b &lt;img&gt;
                     span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
@@ -327,7 +337,7 @@ div
                     span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border
                   p
                     b tabs
-                    span &nbsp;left-align, right-align, center-align
+                    span &nbsp;left-align, right-align, center-align, horizontal, vertical, min, max
                   p
                     b toast
                     span &nbsp;top, bottom, active
@@ -360,6 +370,8 @@ div
         .s12
           containers
         .s12
+          directions
+        .s12
           dividers
         .s12
           dropdowns
@@ -368,7 +380,7 @@ div
         .s12
           grids
         .s12
-          icons  
+          icons
         .s12
           inputs
         .s12
@@ -392,7 +404,11 @@ div
         .s12
           scrolls
         .s12
+          search
+        .s12
           selects
+        .s12
+          sliders
         .s12
           spaces
         .s12
@@ -411,7 +427,7 @@ div
           typography
 
       .large-space
-      div Maded with love and beer, cheers 💛🍻
+      div Made with love and beer, cheers 💛🍻
       .space
 
       #modal-samples.modal.right.large
@@ -444,6 +460,7 @@ import checkboxes from "./checkboxes.vue";
 import chips from "./chips.vue";
 import colors from "./colors.vue";
 import containers from "./containers.vue";
+import directions from "./directions.vue";
 import dividers from "./dividers.vue";
 import dropdowns from "./dropdowns.vue";
 import expansions from "./expansions.vue";
@@ -460,7 +477,9 @@ import progress1 from "./progress.vue";
 import radios from "./radios.vue";
 import responsive from "./responsive.vue";
 import scrolls from "./scrolls.vue";
+import search from "./search.vue";
 import selects from "./selects.vue";
+import sliders from "./sliders.vue";
 import spaces from "./spaces.vue";
 import switches from "./switches.vue";
 import tables from "./tables.vue";
@@ -484,7 +503,7 @@ onMounted(() => {
 #logo {
   display: none;
   max-width: 100%;
-  width: 512rem;
+  width: 32rem;
 }
 
 #logo.active {
@@ -493,15 +512,15 @@ onMounted(() => {
 }
 
 #container-logo {
-  height: 256rem;
+  height: 16rem;
 }
 
 #modal-colors .s12 > div {
-  padding: 16rem;
+  padding: 1rem;
 }
 
 #modal-colors .s12 > .border {
-  border: 1px solid var(--outline);
+  border: 0.0625rem solid var(--outline);
 }
 
 .hljs-string, .error-text {
@@ -510,12 +529,12 @@ onMounted(() => {
 
 .logo-template {
   width: auto;
-  height: 24rem;
+  height: 1.5rem;
 }
 
 .logo-codepen {
   width: auto;
-  height: 20rem;
+  height: 1.25rem;
 }
 
 .logo-support {
@@ -525,7 +544,7 @@ onMounted(() => {
 
 pre {
   overflow: auto;
-  padding: 8rem;
+  padding: 0.5rem;
   margin: 0;
 }
 
@@ -539,7 +558,7 @@ pre.wrap {
 }
 
 #grids .grid > * {
-  border: 1px solid var(--outline);
+  border: 0.0625rem solid var(--outline);
 }
 
 @keyframes logo-intro {

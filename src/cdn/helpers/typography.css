@@ -4,7 +4,7 @@ html {
 
 body {
   font-family: var(--font);
-  font-size: 14rem;
+  font-size: 0.875rem;
 }
 
 h1,
@@ -16,7 +16,7 @@ h6 {
   font-weight: 400;
   display: flex;
   align-items: center;
-  margin-bottom: 8rem;
+  margin-bottom: 0.5rem;
 }
 
 * + h1,
@@ -25,31 +25,79 @@ h6 {
 * + h4,
 * + h5,
 * + h6 {
-  margin-top: 16rem;
+  margin-top: 1rem;
 }
 
 h1 {
-  font-size: 96rem;
+  font-size: 3.5625rem;
 }
 
 h2 {
-  font-size: 60rem;
+  font-size: 2.8125rem;
 }
 
 h3 {
-  font-size: 48rem;
+  font-size: 2.25rem;
 }
 
 h4 {
-  font-size: 34rem;
+  font-size: 2rem;
 }
 
 h5 {
-  font-size: 24rem;
+  font-size: 1.75rem;
 }
 
 h6 {
-  font-size: 20rem;
+  font-size: 1.5rem;
+}
+
+h1.small {
+  font-size: 3.0625rem;
+}
+
+h2.small {
+  font-size: 2.3125rem;
+}
+
+h3.small {
+  font-size: 1.75rem;
+}
+
+h4.small {
+  font-size: 1.5rem;
+}
+
+h5.small {
+  font-size: 1.25rem;
+}
+
+h6.small {
+  font-size: 1rem;
+}
+
+h1.large {
+  font-size: 4.0625rem;
+}
+
+h2.large {
+  font-size: 3.3125rem;
+}
+
+h3.large {
+  font-size: 2.75rem;
+}
+
+h4.large {
+  font-size: 2.5rem;
+}
+
+h5.large {
+  font-size: 2.25rem;
+}
+
+h6.large {
+  font-size: 2rem;
 }
 
 .link {
@@ -60,6 +108,7 @@ h6 {
   overflow: hidden;
   white-space: nowrap !important;
   text-overflow: ellipsis;
+  flex: inherit;
 }
 
 .truncate > * {
@@ -67,15 +116,15 @@ h6 {
 }
 
 .small-text {
-  font-size: 12rem;
+  font-size: 0.75rem;
 }
 
 .medium-text {
-  font-size: 14rem;
+  font-size: 0.875rem;
 }
 
 .large-text {
-  font-size: 16rem;
+  font-size: 1rem;
 }
 
 .upper {
@@ -107,5 +156,5 @@ h6 {
 }
 
 p {
-  margin: 8rem 0;
+  margin: 0.5rem 0;
 }

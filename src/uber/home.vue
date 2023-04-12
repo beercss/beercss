@@ -82,10 +82,10 @@ const go = () => {
 
   data.value.from = data.value.street;
   data.value.to = data.value.street;
-}
+};
 
 const clean = () => {
   data.value.to = "";
   data.value.from = "";
-}
+};
 </script>

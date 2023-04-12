@@ -1,7 +1,7 @@
 <template lang="pug">
 #colors
   .large-space
-  h4 
+  h4
     span Colors
     a.chip.circle(data-ui="#modal-colors")
       i code
@@ -14,7 +14,7 @@
         h5.max Colors
         button.circle.transparent(data-ui="#modal-colors")
           i close
-          
+
     .grid
       .s12
         h5 Theme

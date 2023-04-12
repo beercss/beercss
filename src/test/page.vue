@@ -11,13 +11,13 @@ main.responsive
     nav.right-align
       button.round.border Cancel
       button.round Confirm
-      
+
   .modal.left#left(data-ui="#left")
     h5 Left modal
     nav.right-align
       button.round.border Cancel
       button.round Confirm
-    
+
   .modal.top#top(data-ui="#top")
     h5 Top modal
     nav.right-align
@@ -29,7 +29,7 @@ main.responsive
     nav.right-align
       button.round.border Cancel
       button.round Confirm
-    
+
   .modal.bottom#bottom(data-ui="#bottom")
     h5 Bottom modal
     .small-height
@@ -139,6 +139,28 @@ main.responsive
         span.helper Helper
     .s12.m6
       .field.middle-align
+        label.slider
+          input(type="range")
+          span
+        span.helper Helper
+    .s12.m6
+      .field.border.label.invalid
+        input
+        label Label
+        span.error Error
+    .s12.m6
+      .field.middle-align.invalid
+        label.slider
+          input(type="range")
+          span
+        span.error Error
+    .s12.m6
+      .field.border.label
+        input
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.middle-align
         nav
           label.radio
             input(type="radio")
@@ -167,7 +189,7 @@ main.responsive
           label.radio
             input(type="radio")
             span Item 3
-        span.error Teste
+        span.error Error
     .s12.m6
       .field.border.label
         input
@@ -203,7 +225,7 @@ main.responsive
           label.checkbox
             input(type="checkbox")
             span Item 3
-        span.error Teste
+        span.error Error
     .s12.m6
       .field.border.label
         input
@@ -239,6 +261,6 @@ main.responsive
 
 <script setup lang="ts">
 const updateTheme = () => {
-  document.body.className =document.body.className.indexOf("dark") != -1 ? "light" : "dark";
-}
+  document.body.className = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
+};
 </script>

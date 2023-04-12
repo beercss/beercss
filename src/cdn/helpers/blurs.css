@@ -1,0 +1,21 @@
+:is(.blur, .small-blur, .medium-blur, .large-blur),
+:is(.blur, .small-blur, .medium-blur, .large-blur).light {
+  --blur-size: 1rem;
+  -webkit-backdrop-filter: blur(var(--blur-size));
+  backdrop-filter: blur(var(--blur-size));
+  color: var(--on-background);
+  background-color: rgb(255 255 255 / 0.5);
+}
+
+.dark :is(.blur, .small-blur, .medium-blur, .large-blur),
+:is(.blur, .small-blur, .medium-blur, .large-blur).dark {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.small-blur {
+  --blur-size: 0.5rem;
+}
+
+.large-blur {
+  --blur-size: 1.5rem;
+}

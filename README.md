@@ -4,7 +4,7 @@
 <p align="center">
     <a href="https://github.com/beercss/beercss/blob/main/LICENSE"><img src="https://img.shields.io/github/license/beercss/beercss" alt="License"></a>
     <img src="https://img.shields.io/jsdelivr/npm/hy/beercss" alt="Downloads">
-    <a href="https://bundlephobia.com/package/beercss"><img src="https://badgen.net/bundlephobia/minzip/beercss" alt="Size"></a>
+    <a href="https://img.badgesize.io/beercss/beercss/main/dist/cdn/beer.min.css?compression=brotli"><img src="https://img.badgesize.io/beercss/beercss/main/dist/cdn/beer.min.css?compression=brotli" alt="Size"></a>
     <a href="https://www.npmjs.com/package/beercss"><img src="https://img.shields.io/npm/v/beercss" alt="Version"></a>
     <a href="https://github.com/beercss/beercss/pulls"><img src="https://img.shields.io/github/issues-pr/beercss/beercss" alt="Pull Request"></a>
     <a href="https://github.com/beercss/beercss/issues"><img src="https://img.shields.io/github/issues/beercss/beercss" alt="Issues"></a>
@@ -26,6 +26,7 @@ Cheers, www.beercss.com
 - It does a lot of combinations.
 - It's easy to work with Vue, React, Angular, Svelte and others.
 - **It has about 10kb.**
+- **It has semantic html.**
 - **It has the most simple html output around.**
 - It does not need tons of documentation to explain it.
 - It's fast to learn, read and write code.
@@ -56,8 +57,7 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 ```
 // 1 setting to 1 document
-<body class="light">...</body>
-<body class="dark">...</body>
+<body class="dark|light">...</body>
 
 // 1 element to N helpers
 <element class="helper helper">...</element>
@@ -65,19 +65,13 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 // nav elements before all others
 <body>
-  <nav class="left m l">...</nav>
-  <nav class="bottom s">...</nav>
-  <header class="responsive">...</header>
-  <main class="responsive">...</main>
-  <footer class="responsive">...</footer>
+  <nav class="left|right|top|bottom">...</nav>
+  ...
 </body>
 
 <div id="app">
-  <nav class="left m l">...</nav>
-  <nav class="bottom s">...</nav>
-  <header class="responsive">...</header>
-  <main class="responsive">...</main>
-  <footer class="responsive">...</footer>
+  <nav class="left|right|top|bottom">...</nav>
+  ...
 </div>
 
 // write css like this
@@ -101,26 +95,14 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 // nav elements after all others
 <body>
-  <header class="responsive">...</header>
-  <main class="responsive">...</main>
-  <footer class="responsive">...</footer>
-  <nav class="left m l">...</nav>
-  <nav class="bottom s">...</nav>
+  ...
+  <nav class="left|right|top|bottom">...</nav>
 </body>
 
 <div id="app">
-  <header class="responsive">...</header>
-  <main class="responsive">...</main>
-  <footer class="responsive">...</footer>
-  <nav class="left m l">...</nav>
-  <nav class="bottom s">...</nav>
-</div>
-
-<main class="responsive">
-  <nav class="left m l">...</nav>
-  <nav class="bottom s">...</nav>
   ...
-</main>
+  <nav class="left|right|top|bottom">...</nav>
+</div>
 
 // write css like this
 .element.element {...}
@@ -135,9 +117,21 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 From jsdelivr.net.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@2.2.9/dist/cdn/beer.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/beercss@2.2.9/dist/cdn/beer.min.js" type="text/javascript"></script>
-<script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+// with html
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.1.0/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.1.0/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.7/dist/cdn/material-dynamic-colors.min.js"></script>
+```
+
+```css
+// with css
+@import "https://cdn.jsdelivr.net/npm/beercss@3.1.0/dist/cdn/beer.min.css";
+```
+
+```js
+// with javascript
+import "https://cdn.jsdelivr.net/npm/beercss@3.1.0/dist/cdn/beer.min.js";
+import "https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.7/dist/cdn/material-dynamic-colors.min.js";
 ```
 
 ### NPM
@@ -151,9 +145,43 @@ npm i material-dynamic-colors
 ```
 
 ```js
-// importing
+// importing as window.beercss and window.materialDynamicColors
 import "beercss";
 import "material-dynamic-colors";
+```
+
+```js
+// importing as beercss and materialDynamicColors
+import beercss from "beercss";
+import materialDynamicColors from "material-dynamic-colors";
+```
+
+```js
+// importing manually from dist
+import "beercss/dist/cdn/beer.min.css";
+import "beercss/dist/cdn/material-symbols-outlined.woff2";
+import "beercss/dist/cdn/roboto-flex-cyrillic-ext.woff2";
+import "beercss/dist/cdn/roboto-flex-cyrillic.woff2";
+import "beercss/dist/cdn/roboto-flex-greek.woff2";
+import "beercss/dist/cdn/roboto-flex-latin-ext.woff2";
+import "beercss/dist/cdn/roboto-flex-latin.woff2";
+import "beercss/dist/cdn/roboto-flex-vietnamese.woff2";
+import beercss from "beercss/dist/cdn/beer.min.js";
+import materialDynamicColors from "material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js";
+```
+
+```js
+// importing manually from src
+import "beercss/src/cdn/beer.css";
+import "beercss/src/cdn/material-symbols-outlined.woff2";
+import "beercss/src/cdn/roboto-flex-cyrillic-ext.woff2";
+import "beercss/src/cdn/roboto-flex-cyrillic.woff2";
+import "beercss/src/cdn/roboto-flex-greek.woff2";
+import "beercss/src/cdn/roboto-flex-latin-ext.woff2";
+import "beercss/src/cdn/roboto-flex-latin.woff2";
+import "beercss/src/cdn/roboto-flex-vietnamese.woff2";
+import beercss from "beercss/src/cdn/beer.ts";
+import materialDynamicColors from "material-dynamic-colors/src/cdn/material-dynamic-colors.js";
 ```
 
 ### HTML
@@ -168,9 +196,9 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@2.2.9/dist/cdn/beer.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/beercss@2.2.9/dist/cdn/beer.min.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.1.0/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.1.0/dist/cdn/beer.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.7/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="light">
     <nav class="left m l">
@@ -239,10 +267,3 @@ https://github.com/beercss/beercss/blob/main/CONTRIBUTING.md
 
 ## Cheers to all people here 🍻
 [![Stargazers repo roster for @beercss/beercss](https://reporoster.com/stars/notext/beercss/beercss)](https://github.com/beercss/beercss/stargazers)
-
-## Supporting us
-
-Beercss is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider:
-
-- [Become a backer or sponsor on Patreon](https://www.patreon.com/beercss).
-- [Become a backer or sponsor on Open Collective](https://www.opencollective.com/beercss).

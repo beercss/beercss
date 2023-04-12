@@ -59,11 +59,11 @@
   #modal-navigation-drawer.modal.left
     header.fixed
       nav
-        button.transparent.circle(data-ui="#modal-navigation-drawer")
+        button.transparent.circle.large(data-ui="#modal-navigation-drawer")
           i close
         h5.max Header
     a.row.round
-      i inbox 
+      i inbox
       span Inbox
       .max
       div 24
@@ -73,18 +73,18 @@
       .max
       div 100+
     a.row.round
-      i favorite 
+      i favorite
       span Favorities
     a.row.round
-      i delete 
+      i delete
       span Trash
     .small-divider
     .row Labels
     a.row.round
-      i fiber_manual_record 
+      i fiber_manual_record
       span Label
     a.row.round
-      i change_history 
+      i change_history
       span Label
     a.row.round
       i stop

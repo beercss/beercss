@@ -5,7 +5,7 @@
     span Chips
     a.chip.circle(@click="domain.showSamples(data, '#chips nav .chip', 'Chips', null, 'https://github.com/beercss/beercss/blob/main/docs/CHIP.md')")
       i code
-  selectionForButtons(context="#chips nav .chip", :sizes="['small', '', 'large']")
+  selectionForButtons(context="#chips nav .chip", :sizes="['small', '', 'large']", :directions="['horizontal', 'vertical']", selectedDirection="horizontal")
   nav.wrap
     a.chip
       i.small today
@@ -16,7 +16,7 @@
     a.chip
       span Input
       i.small close
-    a.chip Suggestion
+    a.chip(no-direction="") Suggestion
     a.chip
       img(:src="'favicon.png'")
       span Image
@@ -33,7 +33,7 @@
     a.chip.round
       span Input
       i.small close
-    a.chip.round Suggestion
+    a.chip.round(no-direction="") Suggestion
     a.chip.round
       img(:src="'favicon.png'")
       span Image
@@ -50,7 +50,7 @@
     a.chip.border
       span Input
       i.small close
-    a.chip.border Suggestion
+    a.chip.border(no-direction="") Suggestion
     a.chip.border
       img(:src="'favicon.png'")
       span Image
@@ -67,7 +67,7 @@
     a.chip.border.round
       span Input
       i.small close
-    a.chip.border.round Suggestion
+    a.chip.border.round(no-direction="") Suggestion
     a.chip.border.round
       img(:src="'favicon.png'")
       span Image

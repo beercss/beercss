@@ -1,7 +1,7 @@
 <template lang="pug">
-.modal.medium.no-scroll(:id="id", :class="{ left: position == 'left', right: position == 'right' }")
+.modal.medium.no-scroll(:id="id", :class="{ left: position === 'left', right: position === 'right' }")
   slot
-  header.fixed 
+  header.fixed
     nav(v-if="!data.showCssVariables")
       .max
         h5
@@ -64,8 +64,8 @@
         span Dark
     .space
     article.border
-      pre(v-html="data.theme[data.theme.selected]")
-    
+      pre(v-html="sourceCode()")
+
 </template>
 
 <script setup lang="ts">
@@ -74,16 +74,20 @@ import sharedDomain from "./domain";
 export interface IProps {
   id?: string,
   modelValue?: any,
-  position?: string
+  position?: string,
 }
 
 const {
   id = "themes",
   modelValue = null,
-  position = "left"
+  position = "left",
 } = defineProps<IProps>();
 
 const data = modelValue;
+
+const sourceCode = () => {
+  return (data.theme[data.theme.selected] || "").replace("--shadow:#000000;", "");
+};
 </script>
 
 <style scoped>

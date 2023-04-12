@@ -137,10 +137,7 @@ Headers and footers are `position: sticky` when `fixed`.
   <a>
     <i>warning</i>
   </a>
-  <div class="max">
-    <div>Title</div>
-    <div class="small-text">Some text here</div>
-  </div>
+  <div class="max">Some text here</div>
   <a>
     <i>edit</i>
   </a>
@@ -150,8 +147,32 @@ Headers and footers are `position: sticky` when `fixed`.
 </div>
 ```
 
+## Clickable list example
+
+```html
+<a class="row wave">
+  <i>home</i>
+  <div>Item</div>
+</div>
+```
+
+## Empty state example
+```html
+<div class="fill medium-height middle-align center-align">
+  <div class="center-align">
+    <i class="extra">mail</i>
+    <h5>You have no new messages</h5>
+    <p>Click the button to start a conversation</p>
+    <div class="space"></div>
+    <nav class="center-align">
+      <button class="round">Send a message</button>
+    </nav>
+  </div>
+</div>
+```
+
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dropdown](DROPDOWN.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Loader](LOADER.md), [Media](MEDIA.md), [Modal](MODAL.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Toast](TOAST.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dropdown](DROPDOWN.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Loader](LOADER.md), [Media](MEDIA.md), [Modal](MODAL.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Toast](TOAST.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

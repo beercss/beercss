@@ -1,4 +1,4 @@
-/* checkbox, radio and switch */
+/* checkbox, radio, switch */
 .checkbox,
 .radio,
 .switch {
@@ -11,34 +11,35 @@
   align-items: center;
 }
 
-.checkbox > input,
-.radio > input {
-  width: 24rem;
-  height: 24rem;
+:is(.checkbox, .radio) > input {
+  width: 1.5rem;
+  height: 1.5rem;
   opacity: 0;
 }
 
-.checkbox > span,
-.radio > span,
-.switch > span {
+.switch > input {
+  width: 3.25rem;
+  height: 2rem;
+  opacity: 0;
+}
+
+:is(.checkbox, .radio, .switch) > span {
   display: inline-flex;
   align-items: center;
   color: var(--on-background);
-  font-size: 14rem;
+  font-size: 0.875rem;
 }
 
-.checkbox > span:not(:empty),
-.radio > span:not(:empty) {
-  padding-left: 4rem;
+:is(.checkbox, .radio) > span:not(:empty) {
+  padding-left: 0.25rem;
 }
 
-.checkbox > input + span::before,
-.radio > input + span::before,
-.switch > input + span::after {
-  font-family: 'Material Symbols Outlined';
+:is(.checkbox, .radio, .switch) > span::before,
+.icon > span > i {
+  font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
-  font-size: 24rem;
+  font-size: 1.5rem;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -46,83 +47,29 @@
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  width: 24rem;
-  height: 24rem;
-  box-sizing: content-box;
+  width: 1.5rem;
+  height: 1.5rem;
+  box-sizing: border-box;
   margin: 0 auto;
   outline: none;
   color: var(--primary);
   position: absolute;
-  left: -24rem;
+  left: -1.5rem;
   background-color: transparent;
   border-radius: 50%;
+  user-select: none;
+  z-index: 1;
+  box-shadow: 0 0 0 0 var(--active);
+  transition: var(--speed1) all;
 }
 
-.checkbox > input + span::before {
-  content: "check_box_outline_blank";
-}
-
-.radio > input + span::before {
-  content: "radio_button_unchecked";
-}
-
-.checkbox > input:not([disabled]):focus + span::before,
-.checkbox > input:not([disabled]):hover + span::before,
-.radio > input:not([disabled]):focus + span::before,
-.radio > input:not([disabled]):hover + span::before {
-  background-color: var(--active);
-  box-shadow: 0 0 0 8rem var(--active);
-  animation: var(--speed1) to-checked ease-out;
-}
-
-.checkbox > input:checked + span::before {
-  color: var(--primary);
-  content: "check_box";
-  font-variation-settings: 'FILL' 1;
-}
-
-.radio > input:checked + span::before {
-  color: var(--primary);
-  content: "radio_button_checked";
-}
-
-.checkbox + .checkbox,
-.radio + .radio,
-.switch + .switch {
-  margin-left: 8rem;
-}
-
-.switch > input {
-  width: 52rem;
-  height: 32rem;
-  opacity: 0;
-}
-
-.switch > input + span::before {
-  content: "";
-  position:absolute;
-  left: 0;
-  top: 50%;
-  background-color: var(--active);
-  border: 2rem solid var(--outline);
-  width: 52rem;
-  height: 32rem;
-  border-radius: 32rem;
-  transform: translate(-52rem, -50%);
-}
-
-.switch > input:checked + span::before {
-  border: none;
-  background-color: var(--primary);
-}
-
-.switch > input + span::after {
-  content: "";
+.switch > span::before,
+.switch.icon > span > i {
   position: absolute;
   left: 0;
   top: 50%;
@@ -131,50 +78,110 @@
   justify-content: center;
   border-radius: 50%;
   transition: var(--speed2) all;
+  font-size: 1rem;
+  user-select: none;
+  min-width: auto;
+  content: "";
+  color: var(--surface-variant);
   background-color: var(--outline);
-  width: 16rem;
-  height: 16rem;
-  font-size: 16rem;
-  transform: translate(-44rem, -50%);
+  transform: translate(-3rem, -50%) scale(0.6);
+}
+
+.switch.icon > span > i {
+  transform: translate(-3rem, -50%) scale(1);
+}
+
+.checkbox > span::before {
+  content: "check_box_outline_blank";
+}
+
+.radio > span::before {
+  content: "radio_button_unchecked";
+}
+
+.checkbox > input:checked + span::before {
+  content: "check_box";
+  font-variation-settings: "FILL" 1;
+}
+
+.radio > input:checked + span::before {
+  content: "radio_button_checked";
+}
+
+:is(.radio, .checkbox, .switch).icon > span::before {
+  content: "" !important;
+  font-variation-settings: unset !important;
+}
+
+:is(.checkbox, .radio) > input:is(:focus, :hover) + span::before {
+  background-color: var(--active);
+  box-shadow: 0 0 0 0.5rem var(--active);
+}
+
+.switch > input:is(:focus, :hover) + span::before,
+.switch.icon > input:is(:focus, :hover) + span > i {
+  box-shadow: 0 0 0 0.5rem var(--active);
+}
+
+:is(.checkbox, .radio) > input:checked + span::before,
+:is(.checkbox, .radio).icon > input:checked + span > i {
+  color: var(--primary);
+}
+
+.icon > input:checked + span > i:first-child,
+.icon > span > i:last-child {
+  opacity: 0;
+}
+
+.icon > input:checked + span > i:last-child,
+.icon > span > i:first-child {
+  opacity: 1;
 }
 
 .switch > input:checked + span::after {
-  content: var(--checked-icon, "check");
+  border: none;
+  background-color: var(--primary);
+}
+
+.switch > input:checked + span::before,
+.switch.icon > input:checked + span > i {
+  content: "check";
+  color: var(--primary);
   background-color: var(--on-primary);
-  width: 24rem;
-  height: 24rem;
-  transform: translate(-28rem, -50%);
+  transform: translate(-1.75rem, -50%) scale(1);
 }
 
-.switch > input:not([disabled]):focus + span::after,
-.switch > input:not([disabled]):hover + span::after {
-  box-shadow: 0 0 0 12rem var(--active);
-}
-
-.checkbox > input:disabled + span,
-.radio > input:disabled + span,
-.switch > input:disabled + span {
-  opacity: .5;
+:is(.checkbox, .radio, .switch) > input:disabled + span {
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.field > nav,
-.field > .row {
-  flex-grow: 1;
-  padding: 0 16rem;
+.checkbox + .checkbox,
+.radio + .radio,
+.switch + .switch {
+  margin-left: 0.5rem;
 }
 
-.field.round > nav,
-.field.round > .row {
-  flex-grow: 1;
-  padding: 0 24rem;
+.switch > span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  background-color: var(--active);
+  border: 0.125rem solid var(--outline);
+  box-sizing: border-box;
+  width: 3.25rem;
+  height: 2rem;
+  border-radius: 2rem;
+  transform: translate(-3.25rem, -50%);
 }
 
-@keyframes to-checked {
-  from {
-    box-shadow: 0 0 0 0 var(--active);
-  }
-  to {
-    box-shadow: 0 0 0 8rem var(--active);
-  }
+.field > :is(nav, .row) {
+  flex-grow: 1;
+  padding: 0 1rem;
+}
+
+.field.round > :is(nav, .row) {
+  flex-grow: 1;
+  padding: 0 1.5rem;
 }

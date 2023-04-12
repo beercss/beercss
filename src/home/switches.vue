@@ -24,6 +24,27 @@
             input(type="checkbox", checked, disabled)
             span
     .s12
+      h6 Switch with icons
+      .field.middle-align#switches1
+        nav.wrap
+          label.switch.icon
+            input(type="checkbox")
+            span
+              i wifi
+          label.switch.icon
+            input(type="checkbox")
+            span
+              i bluetooth
+          label.switch.icon
+            input(type="checkbox")
+            span
+              i dark_mode
+          label.switch.icon
+            input(type="checkbox")
+            span
+              i close
+              i done
+    .s12
       h6 Switch in field elements
     .s12.l6
       .field.middle-align

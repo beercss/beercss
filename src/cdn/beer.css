@@ -1,10 +1,11 @@
-@import "./settings/urls.css";
 @import "./settings/light.css";
 @import "./settings/dark.css";
+@import "./settings/fonts.css";
 @import "./helpers/reset.css";
 @import "./helpers/theme.css";
 @import "./helpers/alignments.css";
 @import "./helpers/colors.css";
+@import "./helpers/directions.css";
 @import "./helpers/dividers.css";
 @import "./helpers/elevates.css";
 @import "./helpers/forms.css";
@@ -13,7 +14,6 @@
 @import "./helpers/paddings.css";
 @import "./helpers/positions.css";
 @import "./helpers/scrolls.css";
-@import "./helpers/shadows.css";
 @import "./helpers/sizes.css";
 @import "./helpers/spaces.css";
 @import "./helpers/responsive.css";
@@ -38,7 +38,10 @@
 @import "./elements/pages.css";
 @import "./elements/progress.css";
 @import "./elements/selections.css";
+@import "./elements/sliders.css";
 @import "./elements/tables.css";
 @import "./elements/tabs.css";
 @import "./elements/toasts.css";
 @import "./elements/tooltips.css";
+@import "./helpers/blurs.css";
+@import "./helpers/shadows.css";

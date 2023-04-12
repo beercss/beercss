@@ -6,25 +6,25 @@ div
     a.button.fill.square.round.extra(data-ui="#modal-add")
       i add
     .space
-    a(href="/gmail", :class="{ active: data.url == '/gmail' }")
+    a(href="/gmail", :class="{ active: data.url === '/gmail' }")
       i inbox
       .tooltip.right Inbox
-    a(href="/gmail/snoozed", :class="{ active: data.url == '/gmail/snoozed' }")
+    a(href="/gmail/snoozed", :class="{ active: data.url === '/gmail/snoozed' }")
       i watch_later
       .tooltip.right Snoozed
     a(
       href="/gmail/important",
-      :class="{ active: data.url == '/gmail/important' }"
+      :class="{ active: data.url === '/gmail/important' }"
     )
       i label_important
       .tooltip.right Important
-    a(href="/gmail/sent", :class="{ active: data.url == '/gmail/sent' }")
+    a(href="/gmail/sent", :class="{ active: data.url === '/gmail/sent' }")
       i send
       .tooltip.right Sent
-    a(href="/gmail/drafts", :class="{ active: data.url == '/gmail/drafts' }")
+    a(href="/gmail/drafts", :class="{ active: data.url === '/gmail/drafts' }")
       i insert_drive_file
       .tooltip.right Drafts
-    a(href="/gmail/spam", :class="{ active: data.url == '/gmail/spam' }")
+    a(href="/gmail/spam", :class="{ active: data.url === '/gmail/spam' }")
       i error_outline
       .tooltip.right Spam
     a(data-ui="#themes1")
@@ -51,15 +51,15 @@ div
       img.no-round(:src="'/contacts.png'")
 
   nav.bottom.s
-    a(href="/gmail", :class="{ active: data.url == '/gmail' }")
+    a(href="/gmail", :class="{ active: data.url === '/gmail' }")
       i inbox
       div Inbox
-    a(href="/gmail/sent", :class="{ active: data.url == '/gmail/sent' }")
+    a(href="/gmail/sent", :class="{ active: data.url === '/gmail/sent' }")
       i send
       div Sent
     a.button.fill.square.round.extra(data-ui="#modal-add-small")
       i add
-    a(href="/gmail/drafts", :class="{ active: data.url == '/gmail/drafts' }")
+    a(href="/gmail/drafts", :class="{ active: data.url === '/gmail/drafts' }")
       i insert_drive_file
       div Drafts
     a(data-ui="#themes2")
@@ -137,7 +137,7 @@ div
     button.circle.large.small-margin.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
     themes(id="themes3", v-model="data")
-  
+
   main.responsive.max
     #modal-add.modal.round.large-width
       nav
@@ -204,12 +204,12 @@ div
           i.front mic
         .max.m.l
 
-    home(v-if="data.url == '/gmail'")
-    drafts(v-if="data.url == '/gmail/drafts'")
-    important(v-if="data.url == '/gmail/important'")
-    sent(v-if="data.url == '/gmail/sent'")
-    snoozed(v-if="data.url == '/gmail/snoozed'")
-    spam(v-if="data.url == '/gmail/spam'")
+    home(v-if="data.url === '/gmail'")
+    drafts(v-if="data.url === '/gmail/drafts'")
+    important(v-if="data.url === '/gmail/important'")
+    sent(v-if="data.url === '/gmail/sent'")
+    snoozed(v-if="data.url === '/gmail/snoozed'")
+    spam(v-if="data.url === '/gmail/spam'")
 </template>
 
 <script setup lang="ts">

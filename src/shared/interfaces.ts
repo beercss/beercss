@@ -1,8 +1,8 @@
-export interface ITheme  {
+export interface ITheme {
   name: string,
   dark: string,
   light: string,
-  selected: string
+  selected: string,
 }
 
 export interface ILayout {
@@ -10,9 +10,9 @@ export interface ILayout {
   theme: ITheme | undefined,
   isDark: boolean,
   showCssVariables: boolean,
-  isLoaded: boolean
+  isLoaded: boolean,
 }
 
 export interface IInstallEvent extends Event {
-  prompt(): Promise<void>;
+  prompt: () => Promise<void>,
 }

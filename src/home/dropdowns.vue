@@ -62,6 +62,18 @@
       #dropdown6.dropdown.no-padding.small-width(data-ui="#dropdown6")
         video.responsive(autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
+    button(data-ui="#dropdown8")
+      span Docked
+      #dropdown8.dropdown.min(data-ui="#dropdown8")
+        a Item 1
+        a Item 2
+        a Item 3
+    button(data-ui="#dropdown7")
+      span Fullscreen
+      #dropdown7.dropdown.max(data-ui="#dropdown7")
+        a Item 1
+        a Item 2
+        a Item 3
 </template>
 
 <script setup lang="ts">

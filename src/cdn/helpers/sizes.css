@@ -1,28 +1,28 @@
 .small-width {
-  width: 192rem !important;
+  width: 12rem !important;
   max-width: 100%;
 }
 
 .medium-width {
-  width: 384rem !important;
+  width: 24rem !important;
   max-width: 100%;
 }
 
 .large-width {
-  width: 576rem !important;
+  width: 36rem !important;
   max-width: 100%;
 }
 
 .small-height {
-  height: 192rem !important;
+  height: 12rem !important;
 }
 
 .medium-height {
-  height: 384rem !important;
+  height: 24rem !important;
 }
 
 .large-height {
-  height: 576rem !important;
+  height: 36rem !important;
 }
 
 .wrap {

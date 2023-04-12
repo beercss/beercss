@@ -57,9 +57,10 @@
         td Line 1
         td
           nav.right-align
-            button.none.m.l Button
-            button.none
-              i more_vert
+            a
+              i edit
+            a
+              i delete
       tr
         td
           label.checkbox
@@ -70,9 +71,10 @@
         td Line 2
         td
           nav.right-align
-            button.none.m.l Button
-            button.none
-              i more_vert
+            a
+              i edit
+            a
+              i delete
       tr
         td
           label.checkbox
@@ -83,9 +85,10 @@
         td Line 3
         td
           nav.right-align
-            button.none.m.l Button
-            button.none
-              i more_vert
+            a
+              i edit
+            a
+              i delete
 </template>
 
 <script setup lang="ts">

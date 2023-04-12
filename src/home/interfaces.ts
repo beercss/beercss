@@ -1,18 +1,20 @@
 import { ILayout } from "../shared/interfaces";
 
 export interface ISample {
-  html:string,
-  sourceCode:string
+  html: string,
+  sourceCode: string,
 }
 
 export interface IHome extends ILayout {
-  indexOfMenu:number,
+  indexOfMenu: number,
   samples: Array<ISample>,
   name: string,
   modalSample: string,
   urlSample: string,
+  svgSample: string,
   mediaCard: number,
   mediaImage: number,
   layout: number,
-  isHorizontal: boolean
+  isHorizontal: boolean,
+  isHorizontalSlider: boolean,
 }

@@ -1,2 +1,10 @@
-import "beercss/dist/cdn/beer.min.css";
-import "beercss/dist/cdn/beer.min.js";
+import "./dist/cdn/beer.min.css";
+import "./dist/cdn/material-symbols-outlined.woff2";
+import "./dist/cdn/roboto-flex-cyrillic-ext.woff2";
+import "./dist/cdn/roboto-flex-cyrillic.woff2";
+import "./dist/cdn/roboto-flex-greek.woff2";
+import "./dist/cdn/roboto-flex-latin-ext.woff2";
+import "./dist/cdn/roboto-flex-latin.woff2";
+import "./dist/cdn/roboto-flex-vietnamese.woff2";
+import beercss from "./dist/cdn/beer.min.js";
+export default beercss;

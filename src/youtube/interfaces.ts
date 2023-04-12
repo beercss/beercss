@@ -1,8 +1,8 @@
-import { ILayout } from "../shared/interfaces"
+import { ILayout } from "../shared/interfaces";
 
 export interface IItemYoutube {
   title: string,
-  image: string
+  image: string,
 }
 
 export interface IYoutube extends ILayout {
@@ -11,5 +11,5 @@ export interface IYoutube extends ILayout {
   yourVideos: Array<IItemYoutube>,
   isLoaded: boolean,
   url: string,
-  check: boolean
+  check: boolean,
 }

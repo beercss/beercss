@@ -1,52 +1,57 @@
 i {
-  font-family: 'Material Symbols Outlined';
+  --i-size: 1.5rem;
+
+  font-family: "Material Symbols Outlined";
   font-weight: normal;
   font-style: normal;
-  font-size: 24rem;
-  line-height: 1;
+  font-size: var(--i-size);
   letter-spacing: normal;
   text-transform: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
-  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  width: 24rem;
-  min-width: 24rem;
+  width: var(--i-size);
+  min-width: var(--i-size);
+  height: var(--i-size);
+  min-height: var(--i-size);
   box-sizing: content-box;
 }
 
 i.tiny {
-  font-size: 16rem;
-  width: 16rem;
-  min-width: 16rem;
+  --i-size: 1rem;
 }
 
 i.small {
-  font-size: 20rem;
-  width: 20rem;
-  min-width: 20rem;
+  --i-size: 1.25rem;
 }
 
 i.large {
-  font-size: 28rem;
-  width: 28rem;
-  min-width: 28rem;
+  --i-size: 1.75rem;
 }
 
 i.extra {
-  font-size: 32rem;
-  width: 32rem;
+  --i-size: 2rem;
 }
 
 i.fill,
-a.row:hover > i,
-a.row:focus > i,
-.transparent:hover > i,
-.transparent:focus > i {
-  font-variation-settings: 'FILL' 1;
+a.row:is(:hover, :focus) > i,
+.transparent:is(:hover, :focus) > i {
+  font-variation-settings: "FILL" 1;
+}
+
+i > :is(img, svg) {
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  border-radius: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
