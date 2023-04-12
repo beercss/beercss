@@ -147,6 +147,7 @@
 
 .tooltip.fade
 {
+  display: flex;
   transition: opacity 0.25s ease;
   opacity: 0;
 }
