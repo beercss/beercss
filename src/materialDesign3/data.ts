@@ -4,7 +4,7 @@ import theme from "../shared/theme";
 
 const data: IMaterialDesign3 = {
   ...theme,
-  showPage: false
+  showPage: false,
 };
 
 const dataAsRef: Ref<IMaterialDesign3> = ref(data);
