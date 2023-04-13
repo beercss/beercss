@@ -330,6 +330,12 @@ const updateShadow = (selector: any, shadow?: string) => {
   if (shadow) utils.addClass(elements, [shadow]);
 };
 
+const updateLine = (selector: string, line?: string) => {
+  const elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["no-line", "tiny-line", "small-line", "medium-line", "large-line", "extra-line"]);
+  if (line) utils.addClass(elements, [line]);
+};
+
 export default {
   updateElevate,
   updateColor,
@@ -364,4 +370,5 @@ export default {
   updateTheme,
   updateBlur,
   updateShadow,
+  updateLine,
 };

@@ -18,20 +18,20 @@ div
       i book
       span.small-text Foundations
     a
-      i palette 
+      i palette
       span.small-text Styles
     a
-      i add_circle 
+      i add_circle
       span.small-text Components
     a
-      i pages 
+      i pages
       span.small-text Blog
     .max
     button.circle.border.primary-text(@click="sharedDomain.updateMode(data)")
-      i(v-if="data.isDark") light_mode
-      i(v-else) dark_mode
+      i.page.bottom.active(v-if="data.isDark") light_mode
+      i.page.bottom.active(v-else) dark_mode
     themes(id="themes1", v-model="data")
-  
+
   nav.top.s.m.left-align
     button.circle.transparent
       i menu
@@ -42,8 +42,8 @@ div
     .large-text.m Material Design 3
     .max
     button.circle.border.primary-text(@click="sharedDomain.updateMode(data)")
-      i(v-if="data.isDark") light_mode
-      i(v-else) dark_mode
+      i.page.top.active(v-if="data.isDark") light_mode
+      i.page.top.active(v-else) dark_mode
     button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
     themes(id="themes2", v-model="data", position="right")

@@ -3,9 +3,9 @@ main.responsive.max.medium-line(v-show="data.showPage")
   article.no-elevate.round.no-padding.large.page.bottom.active
     img.responsive(src="https://lh3.googleusercontent.com/7GLFdt-EPWPY2k7WvjHd-LDFITELyr8fAe3vEh80sG26wjcDLt7bnzg70U7Tq2O7j0MOjD1g8sj4J8mFEcEPJv2ml3wwJ9wAEucr-kgPCWVCCGwGADw=w2400-rj")
     .absolute.middle.center.center-align.black-text
-      h1.center-align Material Design 
+      h1.center-align Material Design
       h6 Material 3 is the latest version of Google’s open-source design system. Design and build beautiful, usable products with Material 3.
-      nav.center-align 
+      nav.center-align
         button.round.extra(@click="reloadAnimation()") Get started
   .large-space
   .large-space
@@ -84,7 +84,7 @@ main.responsive.max.medium-line(v-show="data.showPage")
               p New color mappings and motion examples included in updates
     .large-space
     .large-space
-    h2 Resources 
+    h2 Resources
     .grid
       .s12.l6
         a.wave.round.wrap
@@ -151,5 +151,5 @@ const reloadAnimation = async () => {
   data.value.showPage = false;
   await utils.wait(100);
   data.value.showPage = true;
-}
+};
 </script>

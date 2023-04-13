@@ -553,6 +553,7 @@ pre {
   overflow: auto;
   padding: 0.5rem;
   margin: 0;
+  line-height: normal;
 }
 
 pre * {

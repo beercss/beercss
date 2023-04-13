@@ -54,6 +54,17 @@ small, medium, large
 <p class="large-text">large-text</p>
 ```
 
+## Line spacing example
+
+```html
+<div class="no-line">...</div>
+<div class="tiny-line">...</div>
+<div class="small-line">...</div>
+<div class="medium-line">...</div>
+<div class="large-line">...</div>
+<div class="extra-line">...</div>
+```
+
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
