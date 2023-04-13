@@ -17,6 +17,7 @@ h6 {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  line-height: normal;
 }
 
 * + h1,
@@ -157,4 +158,16 @@ h6.large {
 
 p {
   margin: 0.5rem 0;
+}
+
+.small-line {
+  line-height: 1rem;
+}
+
+.medium-line {
+  line-height: 1.5rem;
+}
+
+.large-line {
+  line-height: 2rem;
 }
