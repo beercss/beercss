@@ -2,7 +2,7 @@
 main.responsive
   .row
     a(@click="updateTheme()")
-      i.large brightness_medium
+      i.large palette
     .max
       h5 Test your changes here
       div Click on icon to change theme

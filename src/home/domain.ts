@@ -289,14 +289,6 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
   void nextTick(() => {
     void ui(data.modalSample);
     const element = utils.query(data.modalSample);
-    if (data.name === "Badges") {
-      for (let i = 0; i < element.children.length; i++) {
-        const elementChild = element.children[i];
-        if (elementChild.tagName.toLowerCase() === "article") {
-          elementChild.classList.add("large-padding");
-        }
-      }
-    }
     element?.scrollTo(0, 0);
   });
 };

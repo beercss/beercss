@@ -28,7 +28,7 @@ div
       i error_outline
       .tooltip.right Spam
     a(data-ui="#themes1")
-      i brightness_medium
+      i palette
       .tooltip.right Themes
     themes(id="themes1", v-model="data")
       .large-space
@@ -63,7 +63,7 @@ div
       i insert_drive_file
       div Drafts
     a(data-ui="#themes2")
-      i brightness_medium
+      i palette
       div Theme
     themes(id="themes2", v-model="data")
       .large-space
@@ -92,7 +92,7 @@ div
           i error_outline
           .max Spam
         a.row(data-ui="#themes3")
-          i brightness_medium
+          i palette
           .max Themes
     img(v-show="!data.isDark", :src="'/gmail-light.png'")
     img(v-show="data.isDark", :src="'/gmail-dark.png'")

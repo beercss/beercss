@@ -9,7 +9,8 @@
           a.chip.circle(@click="data.showCssVariables=true")
             i code
       button.circle.transparent(@click="sharedDomain.updateMode(data)")
-        i light_mode
+        i.page.top.active(v-if="data.isDark") light_mode
+        i.page.top.active(v-else) dark_mode
       button.circle.transparent(:data-ui="'#' + id")
         i close
     nav(v-if="data.showCssVariables")
@@ -64,7 +65,7 @@
         span Dark
     .space
     article.border
-      pre(v-html="sourceCode()")
+      pre.scroll.large-padding.fill(v-html="sourceCode()")
 
 </template>
 

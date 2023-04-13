@@ -128,7 +128,7 @@
     article.border(v-for="exemplo in data.samples")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
-      pre(v-html="exemplo.sourceCode")
+      pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .space
 
   #modal-icons-svg.modal.right.large
@@ -146,17 +146,17 @@
     article.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
-      pre(v-html="exemplo.sourceCode")
+      pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .medium-space
     h5 Multiple icons in a single svg
     .medium-space
     article.border
-      pre(v-html="data.svgSample")
+      pre.scroll.large-padding.fill(v-html="data.svgSample")
     .space
     article.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
-      pre(v-html="exemplo.sourceCode")
+      pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .space
 </template>
 

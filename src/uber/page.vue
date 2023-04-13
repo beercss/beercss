@@ -43,7 +43,7 @@ div
         a Uber Freight
     .max
     button.circle.large.transparent.m.l(data-ui="#themes1")
-      i brightness_medium
+      i palette
     button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
     .space

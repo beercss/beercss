@@ -16,7 +16,7 @@
       i video_library
       div Library
     a(data-ui="#themes1")
-      i brightness_medium
+      i palette
       div Themes
     themes(id="themes1", v-model="data")
       .large-space
@@ -35,7 +35,7 @@
       i video_library
       div Library
     a(data-ui="#themes2")
-      i brightness_medium
+      i palette
       div Themes
     themes(id="themes2", v-model="data")
       .large-space
