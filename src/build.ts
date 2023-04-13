@@ -1,6 +1,7 @@
 import "material-dynamic-colors";
 import "./home";
 import "./gmail";
+import "./materialDesign3";
 import "./netflix";
 import "./test";
 import "./uber";
