@@ -118,20 +118,30 @@ main.responsive.max.medium-line(v-show="data.showPage")
         .grid.large-line
           .s4
             p.bold Social
-            p.link GitHub
-            p.link Twitter
-            p.link Youtube
-            p.link Blog RSS
+            p
+              a.link GitHub
+            p
+              a.link Twitter
+            p
+              a.link Youtube
+            p
+              a.link Blog RSS
           .s4
             p.bold Libraries
-            p.link Android
-            p.link Compose
-            p.link Flutter
-            p.link Web
+            p
+              a.link Android
+            p
+              a.link Compose
+            p
+              a.link Flutter
+            p
+              a.link Web
           .s4
             p.bold Archived versions
-            p.link Material Design 1
-            p.link Material Design 2
+            p
+              a.link Material Design 1
+            p
+              a.link Material Design 2
     .large-space
     .row.large-space.wrap
       svg(width="71", height="23")
