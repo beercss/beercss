@@ -4,6 +4,7 @@ import "./cdn/beer.ts";
 import "./app.css";
 import "./home";
 import "./gmail";
+import "./materialDesign3";
 import "./netflix";
 import "./test";
 import "./uber";
