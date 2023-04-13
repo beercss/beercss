@@ -37,7 +37,6 @@ main.responsive.max.medium-line(v-show="data.showPage")
     .large-space
     .large-space
     h2 Design system updates
-    themes(id="themes1", v-model="data")
     .space
     .grid
       .s12.m6.l4

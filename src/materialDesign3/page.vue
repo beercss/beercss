@@ -30,7 +30,6 @@ div
     button.circle.border.primary-text(@click="sharedDomain.updateMode(data)")
       i.page.bottom.active(v-if="data.isDark") light_mode
       i.page.bottom.active(v-else) dark_mode
-    themes(id="themes1", v-model="data")
 
   nav.top.s.m.left-align
     button.circle.transparent
@@ -46,13 +45,11 @@ div
       i.page.top.active(v-else) dark_mode
     button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
-    themes(id="themes2", v-model="data", position="right")
   home
 </template>
 
 <script setup lang="ts">
 import { onMounted } from "vue";
-import themes from "../shared/themes.vue";
 import home from "./home.vue";
 import data from "./data";
 import sharedDomain from "../shared/domain";
