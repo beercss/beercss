@@ -160,6 +160,8 @@ import materialDynamicColors from "material-dynamic-colors";
 // importing manually from dist
 import "beercss/dist/cdn/beer.min.css";
 import "beercss/dist/cdn/material-symbols-outlined.woff2";
+import "beercss/dist/cdn/material-symbols-rounded.woff2";
+import "beercss/dist/cdn/material-symbols-sharp.woff2";
 import "beercss/dist/cdn/roboto-flex-cyrillic-ext.woff2";
 import "beercss/dist/cdn/roboto-flex-cyrillic.woff2";
 import "beercss/dist/cdn/roboto-flex-greek.woff2";
@@ -174,6 +176,8 @@ import materialDynamicColors from "material-dynamic-colors/dist/cdn/material-dyn
 // importing manually from src
 import "beercss/src/cdn/beer.css";
 import "beercss/src/cdn/material-symbols-outlined.woff2";
+import "beercss/src/cdn/material-symbols-rounded.woff2";
+import "beercss/src/cdn/material-symbols-sharp.woff2";
 import "beercss/src/cdn/roboto-flex-cyrillic-ext.woff2";
 import "beercss/src/cdn/roboto-flex-cyrillic.woff2";
 import "beercss/src/cdn/roboto-flex-greek.woff2";

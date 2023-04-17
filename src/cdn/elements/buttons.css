@@ -70,20 +70,13 @@ button {
   margin-left: 3rem;
 }
 
-.button[disabled],
-button:disabled {
+:is(.button, button):is(:disabled, [disabled]) {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.button[disabled] {
-  pointer-events: none;
-}
-
-.button[disabled]::before,
-button:disabled::before,
-.button[disabled]::after,
-button:disabled::after {
+:is(.button, button):is(:disabled, [disabled])::before,
+:is(.button, button):is(:disabled, [disabled])::after {
   display: none;
 }
 

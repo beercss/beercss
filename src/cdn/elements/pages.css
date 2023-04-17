@@ -1,5 +1,7 @@
 .page,
 :is(.page, .modal):not(.active) .page.active {
+  ---transform: translate(0, 0);
+
   opacity: 0;
   position: absolute;
   display: none;
@@ -9,68 +11,33 @@
   opacity: 1;
   position: inherit;
   display: inherit;
+  animation: var(--speed4) to-page ease;
 }
 
-.page.top.active {
-  animation: var(--speed4) page-to-bottom ease;
+.page.active.top {
+  ---transform: translate(0, -4rem);
 }
 
-.page.bottom.active {
-  animation: var(--speed4) page-to-top ease;
+.page.active.bottom {
+  ---transform: translate(0, 4rem);
 }
 
-.page.left.active {
-  animation: var(--speed4) page-to-right ease;
+.page.active.left {
+  ---transform: translate(-4rem, 0);
 }
 
-.page.right.active {
-  animation: var(--speed4) page-to-left ease;
+.page.active.right {
+  ---transform: translate(4rem, 0);
 }
 
-@keyframes page-to-bottom {
+@keyframes to-page {
   from {
     opacity: 0;
-    transform: translateY(-4rem);
+    transform: var(---transform);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes page-to-top {
-  from {
-    opacity: 0;
-    transform: translateY(4rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes page-to-left {
-  from {
-    opacity: 0;
-    transform: translateX(4rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes page-to-right {
-  from {
-    opacity: 0;
-    transform: translateX(-4rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
+    transform: translate(0, 0);
   }
 }

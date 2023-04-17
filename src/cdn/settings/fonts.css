@@ -1,10 +1,28 @@
-/* fallback */
+/* outlined icons */
 @font-face {
   font-family: "Material Symbols Outlined";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url("../material-symbols-outlined.woff2") format("woff2");
+}
+
+/* rounded icons */
+@font-face {
+  font-family: "Material Symbols Rounded";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../material-symbols-rounded.woff2") format("woff2");
+}
+
+/* sharp icons */
+@font-face {
+  font-family: "Material Symbols Sharp";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../material-symbols-sharp.woff2") format("woff2");
 }
 
 /* cyrillic-ext */

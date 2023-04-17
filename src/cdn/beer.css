@@ -1,3 +1,4 @@
+@import "./settings/globals.css";
 @import "./settings/light.css";
 @import "./settings/dark.css";
 @import "./settings/fonts.css";

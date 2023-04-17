@@ -508,6 +508,10 @@ onMounted(() => {
 </script>
 
 <style>
+:root {
+  --font-icon: "Material Symbols Rounded";
+}
+
 #logo {
   display: none;
   max-width: 100%;
