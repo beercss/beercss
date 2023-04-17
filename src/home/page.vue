@@ -69,8 +69,7 @@ div
       i collections
       span Templates
     a.row.round(@click="sharedDomain.updateMode(data)")
-      i.page.left.active(v-if="data.isDark") light_mode
-      i.page.left.active(v-else) dark_mode
+      i {{ data.isDark ? "light_mode" : "dark_mode" }}
       span Light / Dark
     .small-divider
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#app-bars')")

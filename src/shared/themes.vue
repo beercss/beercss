@@ -9,8 +9,7 @@
           a.chip.circle(@click="data.showCssVariables=true")
             i code
       button.circle.transparent(@click="sharedDomain.updateMode(data)")
-        i.page.top.active(v-if="data.isDark") light_mode
-        i.page.top.active(v-else) dark_mode
+        i {{ data.isDark ? "light_mode" : "dark_mode" }}
       button.circle.transparent(:data-ui="'#' + id")
         i close
     nav(v-if="data.showCssVariables")
