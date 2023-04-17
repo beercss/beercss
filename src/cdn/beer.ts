@@ -92,7 +92,7 @@ export default (() => {
     const parentTarget = parent(target);
     const label = query("label", parentTarget) as HTMLLabelElement;
     const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
-    const toActive = document.activeElement === target || input.value || /date|time/.test(input.type);
+    const toActive = document.activeElement === target || input.value || query("[selected]", input) || /date|time/.test(input.type);
 
     if (toActive) {
       if (isBorder && label) {
@@ -101,7 +101,7 @@ export default (() => {
         const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
         const end = width + start + 0.5;
         input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 0.5rem, ${end}rem 0.5rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
-      } else { input.style.clipPath = ""; }
+      } else input.style.clipPath = "";
       addClass(label, "active");
     } else {
       removeClass(label, "active");

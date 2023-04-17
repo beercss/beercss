@@ -10,7 +10,7 @@ light, dark
 
 #### Variables
 
---primary, --on-primary, --primary-container, --on-primary-container, --secondary, --on-secondary, --secondary-container, --on-secondary-container, --tertiary, --on-tertiary, --tertiary-container, --on-tertiary-container, --error, --on-error, --tertiary-error, --on-error-container, --background, --on-background, --surface, --on-surface, --surface-container, --on-surface-container, --on-surface-variant, --inverse-surface, --inverse-on-surface, --outline, --active, --overlay, --font, --size, --elevate1, --elevate2, --elevate3, --speed1, --speed2, --speed3, --speed4
+--primary, --on-primary, --primary-container, --on-primary-container, --secondary, --on-secondary, --secondary-container, --on-secondary-container, --tertiary, --on-tertiary, --tertiary-container, --on-tertiary-container, --error, --on-error, --tertiary-error, --on-error-container, --background, --on-background, --surface, --on-surface, --surface-container, --on-surface-container, --on-surface-variant, --inverse-surface, --inverse-on-surface, --outline, --active, --overlay, --elevate1, --elevate2, --elevate3, --size, --font, --font-icon, --speed1, --speed2, --speed3, --speed4
 
 #### Example
 
@@ -121,10 +121,11 @@ body.light {
   --elevate3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);
   --size: 16px;
   --font: "Roboto Flex", "Roboto", sans-serif , system-ui, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial";
+  --font-icon: "Material Symbols Outlined"; /* "Material Symbols Outlined" | "Material Symbols Rounded" | "Material Symbols Sharp" */
   --speed1: .1s;
   --speed2: .2s;
   --speed3: .3s;
-  --speed4: .4s;
+  --speed4: .4s;  
 }
 
 body.dark {
@@ -158,12 +159,6 @@ body.dark {
   --elevate1: 0 2rem 2rem 0 rgba(0, 0, 0, .14), 0 1rem 5rem 0 rgba(0, 0, 0, .12), 0 3rem 1rem -2rem rgba(0, 0, 0, .2);
   --elevate2: 0 6rem 10rem 0 rgba(0, 0, 0, .14), 0 1rem 18rem 0 rgba(0, 0, 0, .12), 0 3rem 5rem -1rem rgba(0, 0, 0, .3);
   --elevate3: 0 10rem 16rem 0 rgba(0, 0, 0, .14), 0 1rem 31rem 0 rgba(0, 0, 0, .12), 0 3rem 9rem 0rem rgba(0, 0, 0, .4);
-  --size: 16px;
-  --font: "Roboto Flex", "Roboto", sans-serif , system-ui, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial";
-  --speed1: .1s;
-  --speed2: .2s;
-  --speed3: .3s;
-  --speed4: .4s;
 }
 ```
 
@@ -173,7 +168,15 @@ It sets the hover background, the overlay background, the font family order and 
 
 #### Variables
 
---active, --overlay, --font, --size
+--active, --overlay, --size
+
+## Fonts
+
+It sets the font and icon font of project.
+
+#### Variables
+
+--font ("Roboto Flex"), --font-icon ("Material Symbols Outlined" | "Material Symbols Rounded" | "Material Symbols Sharp")
 
 ## Elevates
 
