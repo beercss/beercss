@@ -210,7 +210,7 @@ div
       span Material.io
     a.row.round(href="/dynamic-colors")
       i format_paint
-      span Dynamic Colors
+      span Material Dynamic Colors
     .small-divider
     a.row.round(href="https://codepen.io/search/pens?q=beercss")
       i code
