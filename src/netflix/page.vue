@@ -77,6 +77,7 @@ const scroll = (selector:string) => {
 };
 
 onMounted(() => {
+  document.title = "Netflix Template - Beercss";
   sharedDomain.initTheme(data.value);
 });
 </script>
