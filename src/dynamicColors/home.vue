@@ -1,7 +1,7 @@
 <template lang="pug">
 main.responsive
   h2.bold.page.top.active Material Dynamic colors
-  
+
   .large-space
   h3.bold.page.right.active Build whatever you want, seriously.
   .large-divider
@@ -63,8 +63,8 @@ main.responsive
         img.responsive.extra(:src="'/dogtooth-style-jacket.jpg'", @click="sharedDomain.updateTheme(data, '/dogtooth-style-jacket.jpg')")
       .s12.m8.large-padding
         h5.no-margin Dogtooth Style Jacket
-        h6.middle-align 
-          span $39,00 
+        h6.middle-align
+          span $39,00
           label &nbsp;In stock
         nav
           a.chip.circle XS
@@ -87,7 +87,7 @@ main.responsive
         img.responsive.large(:src="'/retro-shoe.jpg'", @click="sharedDomain.updateTheme(data, '/retro-shoe.jpg')")
       .s12.m8.padding
         h5.no-margin Retro Shoe
-        h6.middle-align $39,00 
+        h6.middle-align $39,00
           label.bold &nbsp;In stock
         nav
           a.chip.circle.bottom-round.right-round XS
@@ -103,11 +103,11 @@ main.responsive
           button.transparent.circle
             i.primary-text favorite
         p Free shipping on all continental US orders.
-  
+
   .large-space
   h3.bold Responsive everything.
   .large-divider
-  
+
   article.no-padding.fill.no-elevate.round
     .grid
       .s12.s

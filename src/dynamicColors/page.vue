@@ -24,7 +24,7 @@ div
     button.circle(@click="reloadAnimation()")
       i refresh
     button.circle.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")      
+      img.responsive(:src="'/favicon.png'")
 
   home(v-show="data.showPage")
 </template>

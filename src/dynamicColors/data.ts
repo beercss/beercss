@@ -4,7 +4,7 @@ import theme from "../shared/theme";
 
 const data: IDynamicColors = {
   ...theme,
-  showPage: false
+  showPage: false,
 };
 
 const dataAsRef: Ref<IDynamicColors> = ref(data);
