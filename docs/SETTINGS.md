@@ -176,7 +176,7 @@ It sets the font and icon font of project.
 
 #### Variables
 
---font ("Roboto Flex"), --font-icon ("Material Symbols Outlined" | "Material Symbols Rounded" | "Material Symbols Sharp")
+--font, --font-icon
 
 ## Elevates
 
