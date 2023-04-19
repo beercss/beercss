@@ -63,7 +63,7 @@ import sharedDomain from "../shared/domain";
 import { redirect } from "../shared/router";
 
 onMounted(() => {
-  document.title = "Uber Template - Beercss";
+  document.title = "Uber - Beer CSS";
   sharedDomain.initTheme(data.value);
 });
 </script>

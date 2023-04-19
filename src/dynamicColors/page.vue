@@ -38,7 +38,7 @@ import { redirect } from "../shared/router";
 import utils from "../shared/utils";
 
 onMounted(async () => {
-  document.title = "Material Dynamic Colors Template - Beercss";
+  document.title = "Material Dynamic Colors - Beer CSS";
   await sharedDomain.updateTheme(data.value, "#f9bd49", "dark");
   data.value.showPage = true;
 });

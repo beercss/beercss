@@ -226,7 +226,7 @@ import spam from "./spam.vue";
 import { onRoute, redirect } from "../shared/router";
 
 onMounted(() => {
-  document.title = "Gmail Template - Beercss";
+  document.title = "Gmail - Beer CSS";
   sharedDomain.initTheme(data.value);
 });
 

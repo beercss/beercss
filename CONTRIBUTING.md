@@ -1,6 +1,6 @@
-# Beercss Contributing Guide
+# Beer CSS Contributing Guide
 
-Hi! We are really excited that you are interested in contributing to Beercss! Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
+Hi! We are really excited that you are interested in contributing to Beer CSS! Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
 
 - [Issue Reporting Guidelines](#issue-reporting-guidelines)
 - [Pull Request Guidelines](#pull-request-guidelines)
@@ -77,6 +77,6 @@ $ npm run test
 
 ## Credits
 
-Thank you to all the people who have already contributed to Beercss!
+Thank you to all the people who have already contributed to Beer CSS!
 
 - https://github.com/beercss/beercss/graphs/contributors

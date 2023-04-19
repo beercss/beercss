@@ -176,7 +176,7 @@ import whatsHot from "./whatsHot.vue";
 import { onRoute, redirect } from "../shared/router";
 
 onMounted(async () => {
-  document.title = "Youtube Template - Beercss";
+  document.title = "Youtube - Beer CSS";
   sharedDomain.initTheme(data.value);
 
   data.value.isLoaded = false;
