@@ -41,6 +41,11 @@ export default (() => {
     return element.classList.contains(name);
   };
 
+  const hasTag = (element: Element, name: string): boolean => {
+    if (!element) return false;
+    return element.tagName.toLocaleLowerCase() == name;
+  };
+
   const addClass = (element: Element, name: string) => {
     if (!element) return;
     element.classList.add(name);
@@ -113,7 +118,7 @@ export default (() => {
 
   const onClickElement = (e: Event) => {
     const target = e.currentTarget as HTMLElement;
-    if (/input/i.test(target.tagName)) return;
+    if (hasTag(target, "input")) return;
     open(target);
   };
 
@@ -284,7 +289,7 @@ export default (() => {
 
     const isActive = hasClass(to, "active");
     const container = parent(to);
-    if (/nav/i.test(container.tagName)) {
+    if (hasTag(container, "nav")) {
       const elements = queryAll(".modal, a, .overlay", container);
       elements.forEach((x: Element) => removeClass(x, "active"));
     }
@@ -294,7 +299,7 @@ export default (() => {
       removeClass(overlay, "active");
       removeClass(to, "active");
     } else {
-      if (!/button/i.test(from.tagName) && !hasClass(from, "button") && !hasClass(from, "chip")) addClass(from, "active");
+      if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip")) addClass(from, "active");
       addClass(overlay, "active");
       addClass(to, "active");
     }
