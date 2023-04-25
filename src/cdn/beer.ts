@@ -41,7 +41,7 @@ export default (() => {
   };
 
   const hasTag = (element: Element, name: string): boolean => {
-    return element?.tagName === name;
+    return element?.tagName.toLowerCase() === name;
   };
 
   const hasType = (element: HTMLInputElement, name: string): boolean => {
@@ -136,9 +136,8 @@ export default (() => {
 
   const onClickDocument = (e: Event) => {
     const target = e.currentTarget as Element;
-    const dropdowns = queryAll(".dropdown.active");
-    dropdowns.forEach((x: Element) => removeClass(x, "active"));
-
+    const menus = queryAll("menu.active");
+    menus.forEach((x: Element) => removeClass(x, "active"));
     off(target, "click", onClickDocument);
   };
 
@@ -224,7 +223,7 @@ export default (() => {
   const open = (from?: Element, to?: Element, options?: any): any => {
     if (!to) to = query(from.getAttribute("data-ui"));
     if (hasClass(to, "modal")) return modal(from, to);
-    if (hasClass(to, "dropdown")) return dropdown(from, to);
+    if (hasTag(to, "menu")) return menu(from, to);
     if (hasClass(to, "toast")) return toast(from, to, options);
     if (hasClass(to, "page")) return page(from, to);
     if (hasClass(to, "progress")) return progress(to, options);
@@ -255,13 +254,13 @@ export default (() => {
     addClass(to, "active");
   };
 
-  const dropdown = (from: Element, to: Element) => {
+  const menu = (from: Element, to: Element) => {
     tab(from);
 
     if (hasClass(to, "active")) return removeClass(to, "active");
 
-    const dropdowns = queryAll(".dropdown.active");
-    dropdowns.forEach((x: Element) => removeClass(x, "active"));
+    const menus = queryAll("menu.active");
+    menus.forEach((x: Element) => removeClass(x, "active"));
 
     addClass(to, "active");
     on(document.body, "click", onClickDocument);

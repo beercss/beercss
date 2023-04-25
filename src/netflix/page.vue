@@ -2,9 +2,9 @@
 .grey10.white-text
   nav.top.top-shadow.white-text
     img(:src="'/netflix.png'")
-    button.circle.large.transparent.s.m(data-ui="#dropdown-menu")
+    button.circle.large.transparent.s.m(data-ui="#menu-menu")
       i menu
-      #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
+      menu#menu-menu.no-wrap(data-ui="#menu-menu")
         a.row(@click="scroll('#home')")
           i home
           .max Home
@@ -28,10 +28,10 @@
     .max
     button.circle.large.transparent(data-ui="#modal-search")
       i search
-    button.circle.large.transparent.m.l(data-ui="#dropdown-notifications")
+    button.circle.large.transparent.m.l(data-ui="#menu-notifications")
       i notifications
-      #dropdown-notifications.dropdown.left.no-wrap(
-        data-ui="#dropdown-notifications"
+      menu#menu-notifications.left.no-wrap(
+        data-ui="#menu-notifications"
       )
         a.row
           img.round(:src="'alok-001.jpg'")

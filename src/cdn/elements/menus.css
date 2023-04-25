@@ -1,4 +1,4 @@
-.dropdown {
+menu {
   opacity: 0;
   visibility: hidden;
   position: absolute;
@@ -11,7 +11,7 @@
   right: auto;
   width: 100%;
   max-height: 50vh;
-  max-width: none;
+  max-width: none !important;
   overflow-x: hidden;
   overflow-y: auto;
   font-size: 0.875rem;
@@ -25,49 +25,49 @@
   transition: var(--speed2) all, 0s background-color;
 }
 
-.dropdown.no-wrap {
-  width: auto;
+menu.no-wrap {
+  width: max-content;
   white-space: nowrap !important;
 }
 
-.dropdown.active,
-.dropdown:not([data-ui]):active,
-:not([data-ui]):focus-within > .dropdown {
+menu.active,
+menu:not([data-ui]):active,
+:not([data-ui]):focus-within > menu {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(100%);
 }
 
-.dropdown.left {
+menu.left {
   left: auto;
   right: 0;
 }
 
-.dropdown * {
+menu * {
   white-space: inherit !important;
 }
 
-.dropdown > a {
+menu > a {
   padding: 0.75rem 1rem;
   border-radius: 0;
 }
 
-.dropdown > a:not(.row) {
+menu > a:not(.row) {
   display: block;
 }
 
-.dropdown > a:is(:hover, :focus, .active) {
+menu > a:is(:hover, :focus, .active) {
   background-color: var(--active);
 }
 
-.dropdown.min {
+menu.min {
   top: 0;
   bottom: auto;
   transform: none !important;
   border-radius: inherit;
 }
 
-.dropdown.max {
+menu.max {
   position: fixed;
   top: 0;
   left: 0;
@@ -81,25 +81,25 @@
   transform: none !important;
 }
 
-.dropdown.no-wrap:is(.min, .max) {
+menu.no-wrap:is(.min, .max) {
   min-width: 16rem;
 }
 
-:is(.round, .circle):not(.square).small.field > .dropdown.min,
-:is(.round, .circle):not(.square):is(button, .button, .chip) > .dropdown.min {
+:is(.round, .circle):not(.square).small.field > menu.min,
+:is(.round, .circle):not(.square):is(button, .button, .chip) > menu.min {
   border-radius: 1.25rem;
 }
 
-:is(.round, .circle):not(.square).field > .dropdown.min,
-:is(.round, .circle):not(.square):is(button, .button, .chip).large > .dropdown.min {
+:is(.round, .circle):not(.square).field > menu.min,
+:is(.round, .circle):not(.square):is(button, .button, .chip).large > menu.min {
   border-radius: 1.5rem;
 }
 
-:is(.round, .circle):not(.square).large.field > .dropdown.min,
-:is(.round, .circle):not(.square):is(button, .button, .chip).extra > .dropdown.min {
+:is(.round, .circle):not(.square).large.field > menu.min,
+:is(.round, .circle):not(.square):is(button, .button, .chip).extra > menu.min {
   border-radius: 1.75rem;
 }
 
-:is(.round, .circle):not(.square).extra.field > .dropdown.min {
+:is(.round, .circle):not(.square).extra.field > menu.min {
   border-radius: 2rem;
 }

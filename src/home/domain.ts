@@ -241,7 +241,6 @@ const formatHtml = (element: any, raw: boolean = false): string => {
 
   utils.remove(tag.querySelectorAll(".overlay"));
   utils.remove(tag.querySelectorAll("[style*='none']"));
-  console.log(tag);
 
   return process(tag.outerHTML
     .replace(/<!--v-if-->/gi, "")
@@ -264,7 +263,6 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
   data.modalSample = modal ?? "#modal-samples";
   data.urlSample = url ?? "";
   if (!data.svgSample) data.svgSample = hljs.highlight("html", formatHtml(utils.query("#svg-sample > svg"), true)).value;
-  console.log(data.svgSample);
 
   for (let i = 0; i < elements.length; i++) {
     const element = utils.clone(elements[i]);

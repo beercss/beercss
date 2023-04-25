@@ -60,9 +60,9 @@
     .max
     button.circle.large.transparent.s(data-ui="#modal-search")
       i search
-    button.circle.large.transparent.m.l(data-ui="#dropdown-add")
+    button.circle.large.transparent.m.l(data-ui="#menu-add")
       i video_call
-      #dropdown-add.dropdown.left.no-wrap(data-ui="#dropdown-add")
+      menu#menu-add.left.no-wrap(data-ui="#menu-add")
         a.row
           .min
             i upload
@@ -71,9 +71,9 @@
           .min
             i sensors
           .min Broadcast live
-    button.circle.large.transparent.m.l(data-ui="#dropdown-apps")
+    button.circle.large.transparent.m.l(data-ui="#menu-apps")
       i apps
-      #dropdown-apps.dropdown.left.no-wrap(data-ui="#dropdown-apps")
+      menu#menu-apps.left.no-wrap(data-ui="#menu-apps")
         a.row
           .min
             img(:src="'/youtube.png'")

@@ -1,12 +1,12 @@
-# Progress
+# Menu
 
-Progress display the length of a process.
+Menus display a list of choices on temporary surfaces.
 
 ## Element
 
 ```html
 <...>
-  <div class="progress">...</div>
+  <menu>...</menu>
 </...>
 ```
 
@@ -14,43 +14,80 @@ Progress display the length of a process.
 
 **Positions**
 
-left, right, top, bottom
+left, right
+
+**Sizes**
+
+wrap, no-wrap, min, max
+
+**Triggers**
+
+active
 
 ## Example
 
 ```html
-<div class="small-space">
-  <div class="progress left"></div>
-</div>
-
-<article>
-  <div class="progress left"></div>
-  <h5>Title</h5>
-</article>
+<button>
+  <span>Button</span>
+  <menu class="no-wrap">
+    <a>Item</a>
+    <a>Item</a>
+    <a>Item</a>
+  </menu>
+</button>
 ```
 
 ## Triggers 
 
-#### To change a progress
+#### To open/close a menu
 
-#### Unique method
+#### Method 1
 
-Call `ui("progress-selector", percentage)`.
+Add/remove `active` class on menu.
 
 ```html
-<div class="small-space">
-  <div class="progress left" id="progress1"></div>
-</div>
+<button>
+  <span>Button</span>
+  <menu class="no-wrap active">
+    <a>Item</a>
+    <a>Item</a>
+    <a>Item</a>
+  </menu>
+</button>
+```
 
-<article>
-  <div class="progress left" id="progress2"></div>
-  <h5>Title</h5>
-</article>
+#### Method 2
+
+Add `data-ui="menu-selector"` attribute on elements.
+
+```html
+<button data-ui="#menu">
+  <span>Button</span>
+  <menu id="menu" class="no-wrap">
+    <a>Item</a>
+    <a>Item</a>
+    <a>Item</a>
+  </menu>
+</button>
+```
+
+#### Method 3
+
+Call `ui("menu-selector")`.
+
+```html
+<button>
+  <span>Button</span>
+  <menu id="menu" class="no-wrap">
+    <a>Item</a>
+    <a>Item</a>
+    <a>Item</a>
+  </menu>
+</button>
 ```
 
 ```js
-ui("#progress1", 10);
-ui("#progress2", 30);
+ui('#menu');
 ```
 
 ## Go to

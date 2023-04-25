@@ -101,9 +101,6 @@ div
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#dividers')")
       i widgets
       span Dividers
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#dropdowns')")
-      i widgets
-      span Dropdowns
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#expansions')")
       i widgets
       span Expansions
@@ -125,6 +122,9 @@ div
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#media')")
       i widgets
       span Media
+    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#menus')")
+      i widgets
+      span Menus
     a.row.round(data-ui="#modal-menu", @click="domain.goTo('#modals')")
       i widgets
       span Modals
@@ -296,8 +296,8 @@ div
                   p
                     b &lt;details&gt;
                   p
-                    b dropdown
-                    span &nbsp;left, right, wrap, no-wrap, active
+                    b menu
+                    span &nbsp;left, right, wrap, no-wrap, active, min, max
                   p
                     b field
                     span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
@@ -391,8 +391,6 @@ div
         .s12
           dividers
         .s12
-          dropdowns
-        .s12
           expansions
         .s12
           grids
@@ -406,6 +404,8 @@ div
           loaders
         .s12
           media
+        .s12
+          menus
         .s12
           modals
         .s12
@@ -479,7 +479,7 @@ import colors from "./colors.vue";
 import containers from "./containers.vue";
 import directions from "./directions.vue";
 import dividers from "./dividers.vue";
-import dropdowns from "./dropdowns.vue";
+import menus from "./menus.vue";
 import expansions from "./expansions.vue";
 import grids from "./grids.vue";
 import icons from "./icons.vue";

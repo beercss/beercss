@@ -62,7 +62,7 @@
         type="radio",
         name="line-typography",
         checked,
-        @click="domain.updateLine('#spacing > *', 'tiny-line')"
+        @click="domain.updateLine('#spacing > *')"
       )
       span tiny-line
     label.radio

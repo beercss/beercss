@@ -112,9 +112,9 @@
   margin-bottom: var(---space) !important;
 }
 
-.dropdown:active ~ .tooltip,
-:is(button, .button):focus > .dropdown ~ .tooltip,
-.field > :focus ~ .dropdown ~ .tooltip {
+menu:active ~ .tooltip,
+:is(button, .button):focus > menu ~ .tooltip,
+.field > :focus ~ menu ~ .tooltip {
   visibility: hidden;
 }
 

@@ -70,9 +70,9 @@ div
       .medium-space
 
   nav.top
-    button.circle.large.small-margin.transparent(data-ui="#dropdown-menu")
+    button.circle.large.small-margin.transparent(data-ui="#menu-menu")
       i menu
-      #dropdown-menu.dropdown.no-wrap(data-ui="#dropdown-menu")
+      menu#menu-menu.no-wrap(data-ui="#menu-menu")
         a.row(href="/gmail")
           i inbox
           .max Inbox
@@ -99,15 +99,15 @@ div
     .max
     .max.field.round.suffix.prefix.small.no-margin.m.l.white.black-text
       i.front search
-      input(type="text", data-ui="#dropdown-search")
+      input(type="text", data-ui="#menu-search")
       i.front mic
     .max
     button.circle.large.transparent.s(data-ui="#modal-search")
       i search
-    button.circle.large.transparent.m.l(data-ui="#dropdown-settings")
+    button.circle.large.transparent.m.l(data-ui="#menu-settings")
       i settings
-      #dropdown-settings.dropdown.left.no-wrap(
-        data-ui="#dropdown-settings"
+      menu#menu-settings.left.no-wrap(
+        data-ui="#menu-settings"
       )
         a
           div Account
@@ -115,9 +115,9 @@ div
         a
           div Appearance
           label Change display settings
-    button.circle.large.transparent.m.l(data-ui="#dropdown-apps")
+    button.circle.large.transparent.m.l(data-ui="#menu-apps")
       i apps
-      #dropdown-apps.dropdown.left.padding.no-wrap(data-ui="#dropdown-apps")
+      menu#menu-apps.left.padding.no-wrap(data-ui="#menu-apps")
         .grid.no-space
           .s4.center-align
             button.transparent.circle.large
