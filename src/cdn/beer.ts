@@ -37,23 +37,23 @@ export default (() => {
   };
 
   const hasClass = (element: Element, name: string): boolean => {
-    if (!element) return false;
-    return element.classList.contains(name);
+    return element?.classList.contains(name);
   };
 
   const hasTag = (element: Element, name: string): boolean => {
-    if (!element) return false;
-    return element.tagName.toLocaleLowerCase() == name;
+    return element?.tagName === name;
+  };
+
+  const hasType = (element: HTMLInputElement, name: string): boolean => {
+    return element?.type.toLowerCase() === name;
   };
 
   const addClass = (element: Element, name: string) => {
-    if (!element) return;
-    element.classList.add(name);
+    element?.classList.add(name);
   };
 
   const removeClass = (element: Element, name: string) => {
-    if (!element) return;
-    element.classList.remove(name);
+    element?.classList.remove(name);
   };
 
   const on = (element: Element, name: string, callback: any) => {
@@ -65,23 +65,19 @@ export default (() => {
   };
 
   const insertBefore = (newElement: Element, element: Element): Element => {
-    if (!element) return;
-    return element.parentNode.insertBefore(newElement, element);
+    return element?.parentNode.insertBefore(newElement, element);
   };
 
   const prev = (element: Element): Element => {
-    if (!element) return;
-    return element.previousElementSibling;
+    return element?.previousElementSibling;
   };
 
   const next = (element: Element): Element => {
-    if (!element) return;
-    return element.nextElementSibling;
+    return element?.nextElementSibling;
   };
 
   const parent = (element: Element): Element => {
-    if (!element) return;
-    return element.parentElement;
+    return element?.parentElement;
   };
 
   const create = (json: any): HTMLElement => {
@@ -97,7 +93,7 @@ export default (() => {
     const parentTarget = parent(target);
     const label = query("label", parentTarget) as HTMLLabelElement;
     const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
-    const toActive = document.activeElement === target || input.value || query("[selected]", input) || /date|time/.test(input.type);
+    const toActive = document.activeElement === target || input.value || query("[selected]", input) || hasType(input, "date") || hasType(input, "time");
 
     if (toActive) {
       if (isBorder && label) {
@@ -179,13 +175,13 @@ export default (() => {
 
       const target = e.currentTarget as Element;
       const nextTarget = next(target) as HTMLInputElement;
-      if (!nextTarget || !/file/i.test(nextTarget.type)) return;
+      if (!nextTarget || !hasType(nextTarget, "file")) return;
       return nextTarget.click();
     }
 
     const currentTarget = target as HTMLInputElement;
     const previousTarget = prev(target) as HTMLInputElement;
-    if (!previousTarget || !/text/i.test(previousTarget.type)) return;
+    if (!previousTarget || !hasType(previousTarget, "text")) return;
     previousTarget.value = Array.from(currentTarget.files).map((x) => x.name).join(", ");
     previousTarget.readOnly = true;
     previousTarget.addEventListener("keydown", onKeydownFile);
