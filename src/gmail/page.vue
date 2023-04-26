@@ -143,7 +143,7 @@ div
       nav
         button.circle.transparent(data-ui="#modal-add")
           i arrow_back
-        h5 New message
+        h5 New mail
         .max
         button.circle.transparent(data-ui="#modal-add")
           i attach_file
@@ -171,7 +171,7 @@ div
       nav
         button.circle.transparent(data-ui="#modal-add-small")
           i arrow_back
-        h5 New message
+        h5 New mail
         .max
         button.circle.transparent(data-ui="#modal-add-small")
           i attach_file

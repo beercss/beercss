@@ -11,7 +11,7 @@
   .space
   #default-buttons
     nav.wrap
-      button(no-direction="") Button
+      button Button
       button
         i home
         span Button
@@ -22,18 +22,18 @@
         img.responsive(:src="'/favicon.png'")
         span Button
     nav.wrap
-      button.round(no-direction="") Button
-      button.round
+      button.small-round Button
+      button.small-round
         i home
         span Button
-      button.round
+      button.small-round
         img(:src="'/favicon.png'")
         span Button
-      button.round
+      button.small-round
         img.responsive(:src="'/favicon.png'")
         span Button
     nav.wrap
-      button.border(no-direction="") Button
+      button.border Button
       button.border
         i home
         span Button
@@ -44,14 +44,14 @@
         img.responsive(:src="'/favicon.png'")
         span Button
     nav.wrap
-      button.border.round(no-direction="") Button
-      button.border.round
+      button.border.small-round Button
+      button.border.small-round
         i home
         span Button
-      button.border.round
+      button.border.small-round
         img(:src="'/favicon.png'")
         span Button
-      button.border.round
+      button.border.small-round
         img.responsive(:src="'/favicon.png'")
         span Button
   .medium-space
@@ -63,7 +63,7 @@
   #responsive-buttons.grid
     .s12.m6
       nav
-        button.responsive(no-direction="") Button
+        button.responsive Button
       nav
         button.responsive
           i home
@@ -74,7 +74,7 @@
           span Button
     .s12.m6
       nav
-        button.responsive.round(no-direction="") Button
+        button.responsive.round Button
       nav
         button.responsive.round
           i home
@@ -85,7 +85,7 @@
           span Button
     .s12.m6
       nav
-        button.responsive.border(no-direction="") Button
+        button.responsive.border Button
       nav
         button.responsive.border
           i home
@@ -96,7 +96,7 @@
           span Button
     .s12.m6
       nav
-        button.responsive.border.round(no-direction="") Button
+        button.responsive.border.round Button
       nav
         button.responsive.border.round
           i home
@@ -339,18 +339,18 @@
   #segmented-buttons.grid
     .s12.m12.l6
       nav.no-space
-        button.border.left-round(no-direction="")
+        button.border.left-round
           span Button
-        button.border.no-round(no-direction="")
+        button.border.no-round
           span Button
-        button.border.right-round.fill(no-direction="")
+        button.border.right-round.fill
           span Button
       nav.no-space
-        button.border.left-round(no-direction="")
+        button.border.left-round
           i search
-        button.border.no-round(no-direction="")
+        button.border.no-round
           i edit
-        button.border.right-round.fill(no-direction="")
+        button.border.right-round.fill
           i home
       nav.no-space
         button.border.left-round
@@ -364,18 +364,18 @@
           span Button
     .s12.m12.l6
       nav.no-space
-        button.border.left-round.max(no-direction="")
+        button.border.left-round.max
           span Button
-        button.border.no-round.max(no-direction="")
+        button.border.no-round.max
           span Button
-        button.border.right-round.max.fill(no-direction="")
+        button.border.right-round.max.fill
           span Button
       nav.no-space
-        button.border.left-round.max(no-direction="")
+        button.border.left-round.max
           i search
-        button.border.no-round.max(no-direction="")
+        button.border.no-round.max
           i edit
-        button.border.right-round.max.fill(no-direction="")
+        button.border.right-round.max.fill
           i home
       nav.no-space
         button.border.left-round.max

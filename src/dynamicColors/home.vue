@@ -29,7 +29,7 @@ main.responsive
         nav
           button.no-round Buy now
           button.border.no-round Add to bag
-          button.border.square
+          button.border.square.no-round
             i favorite
         p Free shipping on all continental US orders.
 
@@ -51,8 +51,8 @@ main.responsive
           label.l Size guide
         .large-divider
         nav
-          button.round Buy now
-          button.round Add to bag
+          button Buy now
+          button Add to bag
           button.circle
             i favorite
         p Free shipping on all continental US orders.
@@ -98,9 +98,9 @@ main.responsive
           label.l Size guide
         .large-divider
         nav
-          button Buy now
-          button.border Add to bag
-          button.transparent.circle
+          button.large.bottom-round.right-round Buy now
+          button.large.bottom-round.right-round.border Add to bag
+          button.large.transparent.circle.bottom-round.right-round
             i.primary-text favorite
         p Free shipping on all continental US orders.
 

@@ -6,7 +6,7 @@ main.responsive.max.medium-line(v-show="data.showPage")
       h1.center-align Material Design
       h6 Material 3 is the latest version of Google’s open-source design system. Design and build beautiful, usable products with Material 3.
       nav.center-align
-        button.round.extra(@click="reloadAnimation()") Get started
+        button.extra(@click="reloadAnimation()") Get started
   .large-space
   .large-space
   main.responsive.page.left.active

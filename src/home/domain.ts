@@ -46,7 +46,7 @@ const updateSize = (selector: string, size?: string) => {
 const updatePosition = (selector: any, position?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["left", "center", "right", "top", "middle", "bottom"]);
-  if (position) utils.addClass(elements, [position]);
+  if (position) utils.addClass(elements, (position || "").split(" "));
 };
 
 const updateAlign = (selector: any, alignment?: string) => {

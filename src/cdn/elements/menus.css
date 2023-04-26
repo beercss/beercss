@@ -84,22 +84,3 @@ menu.max {
 menu.no-wrap:is(.min, .max) {
   min-width: 16rem;
 }
-
-:is(.round, .circle):not(.square).small.field > menu.min,
-:is(.round, .circle):not(.square):is(button, .button, .chip) > menu.min {
-  border-radius: 1.25rem;
-}
-
-:is(.round, .circle):not(.square).field > menu.min,
-:is(.round, .circle):not(.square):is(button, .button, .chip).large > menu.min {
-  border-radius: 1.5rem;
-}
-
-:is(.round, .circle):not(.square).large.field > menu.min,
-:is(.round, .circle):not(.square):is(button, .button, .chip).extra > menu.min {
-  border-radius: 1.75rem;
-}
-
-:is(.round, .circle):not(.square).extra.field > menu.min {
-  border-radius: 2rem;
-}

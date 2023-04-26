@@ -20,11 +20,11 @@
         a.row(@click="scroll('#my-list')")
           i video_library
           .max My list
-    button.large.transparent.l(@click="scroll('#home')") Home
-    button.large.transparent.l(@click="scroll('#series')") Series
-    button.large.transparent.l(@click="scroll('#movies')") Movies
-    button.large.transparent.l(@click="scroll('#hot')") Hot
-    button.large.transparent.l(@click="scroll('#my-list')") My list
+    button.small-round.large.transparent.l(@click="scroll('#home')") Home
+    button.small-round.large.transparent.l(@click="scroll('#series')") Series
+    button.small-round.large.transparent.l(@click="scroll('#movies')") Movies
+    button.small-round.large.transparent.l(@click="scroll('#hot')") Hot
+    button.small-round.large.transparent.l(@click="scroll('#my-list')") My list
     .max
     button.circle.large.transparent(data-ui="#modal-search")
       i search

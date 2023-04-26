@@ -9,33 +9,33 @@ main.responsive
   .modal.round.large-padding#default(data-ui="#default")
     h5 Default modal
     nav.right-align
-      button.round.border Cancel
-      button.round Confirm
+      button.border Cancel
+      button Confirm
 
   .modal.left#left(data-ui="#left")
     h5 Left modal
     nav.right-align
-      button.round.border Cancel
-      button.round Confirm
+      button.border Cancel
+      button Confirm
 
   .modal.top#top(data-ui="#top")
     h5 Top modal
     nav.right-align
-      button.round.border Cancel
-      button.round Confirm
+      button.border Cancel
+      button Confirm
 
   .modal.right#right(data-ui="#right")
     h5 Right modal
     nav.right-align
-      button.round.border Cancel
-      button.round Confirm
+      button.border Cancel
+      button Confirm
 
   .modal.bottom#bottom(data-ui="#bottom")
     h5 Bottom modal
     .small-height
     nav.right-align
-      button.round.border Cancel
-      button.round Confirm
+      button.border Cancel
+      button Confirm
 
   .field.label.border
     input
@@ -43,11 +43,11 @@ main.responsive
     span.helper Helper
 
   nav
-    button.round(data-ui="#default") Default
-    button.round(data-ui="#left") Left
-    button.round(data-ui="#top") Top
-    button.round(data-ui="#right") Right
-    button.round(data-ui="#bottom") Bottom
+    button(data-ui="#default") Default
+    button(data-ui="#left") Left
+    button(data-ui="#top") Top
+    button(data-ui="#right") Right
+    button(data-ui="#bottom") Bottom
   h5 Without row
   .field.label.border
     input

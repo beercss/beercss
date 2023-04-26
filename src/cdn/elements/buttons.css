@@ -12,10 +12,11 @@ button {
   padding: 0 1.5rem;
   background-color: var(--primary);
   margin: 0 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 1.25rem;
   transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
   user-select: none;
   gap: 1rem;
+  line-height: normal;
 }
 
 :is(button, .button).none {
@@ -32,17 +33,20 @@ button {
   height: 2rem;
   min-width: 2rem;
   font-size: 0.875rem;
+  border-radius: 1rem;
 }
 
 :is(button, .button).large {
   height: 3rem;
   min-width: 3rem;
+  border-radius: 1.5rem;
 }
 
 :is(.button, button):is(.extra, .extend) {
   height: 3.5rem;
   min-width: 3.5rem;
   font-size: 1rem;
+  border-radius: 1.75rem;
 }
 
 :is(button, .button).border {
@@ -83,4 +87,8 @@ button {
 :is(.button, button).fill {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
+}
+
+:is(.button, button).vertical {
+  border-radius: 2rem;
 }

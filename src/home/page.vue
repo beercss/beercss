@@ -225,8 +225,8 @@ div
       .large-space
       .large-space
       nav.center-align
-        a.button.black-text.border.black-border.large(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
-        a.button.black.white-text.large(
+        a.button.small-round.black-text.border.black-border.large(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
+        a.button.small-round.black.white-text.large(
           href="https://github.com/beercss/beercss",
           target="_self"
         )
@@ -366,8 +366,8 @@ div
                     span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
               .medium-space
             nav.wrap
-              a.button(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
-              a.button(href="https://codepen.io/collection/XydYMB") Codepen
+              a.button.small-round(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
+              a.button.small-round(href="https://codepen.io/collection/XydYMB") Codepen
           .medium-space
           .large-divider
         .s12
@@ -451,7 +451,7 @@ div
         header.fixed.front
           nav
             h5.truncate {{data.name}}
-            a.m.l.button.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
+            a.m.l.button.small-round.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
             .max
             a.button.circle.transparent.s(v-show="data.urlSample", :href="data.urlSample", target="_blank")
               i description
