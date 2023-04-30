@@ -24,6 +24,8 @@ body.dark {
   --on-surface-variant: #CAC4D0;
   --inverse-surface: #E6E1E5;
   --inverse-on-surface: #313033;
+  --inverse-primary: #6750A4;
+  --inverse-on-primary: #FFF;
   --body: #000;
   --overlay: rgb(0 0 0 / 0.5);
   --active: rgb(255 255 255 / 0.2);

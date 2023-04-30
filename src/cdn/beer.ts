@@ -351,7 +351,7 @@ export default (() => {
 
     const fromLight = getComputedStyle(light);
     const fromDark = getComputedStyle(dark);
-    const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--outline", "--surface-variant", "--on-surface-variant", "--inverse-surface", "--inverse-on-surface"];
+    const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--outline", "--surface-variant", "--on-surface-variant", "--inverse-surface", "--inverse-on-surface", "--inverse-primary", "--inverse-on-primary"];
     for (let i = 0; i < variables.length; i++) {
       _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
       _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";

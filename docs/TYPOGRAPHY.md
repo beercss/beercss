@@ -42,6 +42,7 @@ small, medium, large
 ## Formatting example
 ```html
 <a class="link">link</a>
+<a class="inverse-link">inverse-link</a>
 <p class="italic">italic</p>
 <p class="bold">bold</p>
 <p class="underline">underline</p>

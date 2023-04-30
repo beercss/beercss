@@ -38,6 +38,7 @@
   #formatting
     nav
       a.link link
+      a.inverse-link inverse-link
       p.italic italic
       p.bold bold
       p.underline underline

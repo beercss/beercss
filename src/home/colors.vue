@@ -30,14 +30,17 @@
         .surface surface
         .surface-variant surface-variant
         .inverse-surface inverse-surface
+        .inverse-primary inverse-primary
         .primary-border.border primary-border
         .secondary-border.border secondary-border
         .tertiary-border.border tertiary-border
         .error-border.border error-border
+        .inverse-primary-border.border inverse-primary-border
         .primary-text primary-text
         .secondary-text secondary-text
         .tertiary-text tertiary-text
         .error-text error-text
+        .inverse-primary-text inverse-primary-text
       .s12
         h5 Red
         .black-text.red1 red1

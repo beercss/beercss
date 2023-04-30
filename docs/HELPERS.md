@@ -62,7 +62,7 @@ elevate, no-elevate, small-elevate, medium-elevate, large-elevate,
 
 ## Forms
 
-border, circle, square, none, fill, extend, round, no-round, no-round, left-round, right-round, top-round, bottom-round
+border, circle, square, none, fill, extend, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
 
 ## Margins
 
@@ -113,6 +113,8 @@ tertiary, tertiary-text, tertiary-border, tertiary-container
 error, error-text, error-border, error-container
 
 background, surface, surface-variant, inverse-surface
+
+inverse-primary, inverse-primary-text, inverse-primary-border
 
 black, black-text, black-border
 
