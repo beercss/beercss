@@ -43,7 +43,7 @@
       .tooltip Some text here
     button.chip.round
       span Rich tooltip
-      #t.tooltip.max.active(data-ui="#t")
+      .tooltip.max
         b Title
         p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         nav
