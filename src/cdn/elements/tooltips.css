@@ -6,8 +6,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: rgb(0 0 0 / 0.9);
-  color: #FFF;
+  background-color: var(--inverse-surface);
+  color: var(--inverse-on-surface);
   font-size: 0.75rem;
   text-align: center;
   border-radius: 0.25rem;
@@ -148,4 +148,15 @@ menu:active ~ .tooltip,
 
 .slider.vertical > .tooltip:is(.left, .right) {
   ---space: -0.5rem;
+}
+
+.tooltip.max {
+  display: block;
+  font-size: inherit;
+  white-space: normal;
+  text-align: left;
+  width: 20rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: var(--elevate2);
 }

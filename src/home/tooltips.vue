@@ -3,7 +3,7 @@
   .large-space
   h4
     span Tooltips
-    a.chip.circle(@click="domain.showSamples(data, '#tooltips nav a', 'Tooltips', null, 'https://github.com/beercss/beercss/blob/main/docs/TOOLTIP.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#tooltip-code .chip', 'Tooltips', null, 'https://github.com/beercss/beercss/blob/main/docs/TOOLTIP.md')")
       i code
   nav.wrap
     label.radio
@@ -23,7 +23,8 @@
     label.radio
       input(type="radio", name="space-toasts", @click="domain.updateSpace('#tooltips .tooltip', 'large-space')")
       span large-space
-  nav.wrap
+  #tooltip-code
+    .space
     a.chip.circle
       i arrow_back
       .tooltip.left Some text here
@@ -36,6 +37,18 @@
     a.chip.circle
       i arrow_forward
       .tooltip.right Some text here
+    .space
+    button.chip.round
+      span Plain tooltip
+      .tooltip Some text here
+    button.chip.round
+      span Rich tooltip
+      #t.tooltip.max.active(data-ui="#t")
+        b Title
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        nav
+          a.inverse-link Action
+
 </template>
 
 <script setup lang="ts">
