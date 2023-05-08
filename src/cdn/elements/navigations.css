@@ -13,8 +13,8 @@ nav,
   margin-top: 1rem;
 }
 
-nav *,
-.row * {
+:is(nav, .row) > *,
+:is(nav, .row) > :not(.tooltip, menu) > * {
   margin-top: 0;
   margin-bottom: 0;
 }
