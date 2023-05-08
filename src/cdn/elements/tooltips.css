@@ -1,5 +1,5 @@
 .tooltip {
-  ---space: 0;
+  ---space: -0.5rem;
 
   visibility: hidden;
   display: flex;
@@ -83,9 +83,8 @@
   transform: translate(-50%, 100%) scale(1);
 }
 
-.tooltip.small-space,
-.tooltip.space {
-  ---space: -0.5rem;
+.tooltip.no-space {
+  ---space: 0rem;
 }
 
 .tooltip.medium-space {

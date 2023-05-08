@@ -7,15 +7,10 @@
       i code
   nav.wrap
     label.radio
-      input(
-        type="radio",
-        name="space-toasts",
-        checked,
-        @click="domain.updateSpace('#tooltips .tooltip')"
-      )
+      input(type="radio", name="space-toasts", @click="domain.updateSpace('#tooltips .tooltip', 'no-space')")
       span no-space
     label.radio
-      input(type="radio", name="space-toasts", @click="domain.updateSpace('#tooltips .tooltip', 'small-space')")
+      input(type="radio", name="space-toasts", @click="domain.updateSpace('#tooltips .tooltip')", checked)
       span small-space
     label.radio
       input(type="radio", name="space-toasts", @click="domain.updateSpace('#tooltips .tooltip', 'medium-space')")
@@ -23,24 +18,10 @@
     label.radio
       input(type="radio", name="space-toasts", @click="domain.updateSpace('#tooltips .tooltip', 'large-space')")
       span large-space
-  #tooltip-code
-    .space
-    a.chip.circle
-      i arrow_back
-      .tooltip.left Some text here
-    a.chip.circle
-      i arrow_upward
-      .tooltip Some text here
-    a.chip.circle
-      i arrow_downward
-      .tooltip.bottom Some text here
-    a.chip.circle
-      i arrow_forward
-      .tooltip.right Some text here
-    .space
+  nav#tooltip-code.wrap
     button.chip.round
       span Plain tooltip
-      .tooltip Some text here
+      .tooltip Tooltip
     button.chip.round
       span Rich tooltip
       .tooltip.max
@@ -48,6 +29,18 @@
         p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         nav
           a.inverse-link Action
+    a.chip.circle
+      i arrow_back
+      .tooltip.left Tooltip
+    a.chip.circle
+      i arrow_upward
+      .tooltip.top Tooltip
+    a.chip.circle
+      i arrow_downward
+      .tooltip.bottom Tooltip
+    a.chip.circle
+      i arrow_forward
+      .tooltip.right Tooltip
 
 </template>
 
