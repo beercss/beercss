@@ -40,5 +40,5 @@ import data from "./data";
 
 const showToast = (selector: string) => {
   ui(selector);
-}
+};
 </script>
