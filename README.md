@@ -21,7 +21,7 @@ Cheers, www.beercss.com
 ## Why? ##
 
 - The first CSS framework based on Material Design 3.
-- Up to 10 times smaller than others CSS frameworks.
+- 10x smaller than others CSS frameworks based on Material Design.
 - Uses a HTML semantic version of Material Design.
 - Ready to use with any JS framework.
 - Highly focused on DX.
