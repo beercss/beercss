@@ -122,7 +122,7 @@ body.light {
   --elevate2: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.4);
   --elevate3: 0 0.375rem 0.75rem 0 rgb(0 0 0 / 0.48);
   --size: 16px;
-  --font: "Roboto Flex", "Roboto", sans-serif , system-ui, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial";
+  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
   --font-icon: "Material Symbols Outlined"; /* "Material Symbols Outlined" | "Material Symbols Rounded" | "Material Symbols Sharp" */
   --speed1: .1s;
   --speed2: .2s;
