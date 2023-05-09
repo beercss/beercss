@@ -36,7 +36,7 @@
     a.chip.circle(@click="domain.showSamples(data, '#formatting nav *', 'Formatting', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   #formatting
-    nav
+    nav.wrap
       a.link link
       a.inverse-link inverse-link
       p.italic italic
