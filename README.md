@@ -20,19 +20,11 @@ Cheers, www.beercss.com
 
 ## Why? ##
 
-- It's based on latest material design patterns.
-- It's themeable.
-- **It has zero dependencies.**
-- It does a lot of combinations.
-- It's easy to work with Vue, React, Angular, Svelte and others.
-- **It has about 10kb.**
-- **It has semantic html.**
-- **It has the most simple html output around.**
-- It does not need tons of documentation to explain it.
-- It's fast to learn, read and write code.
-- **It's like pure malt beer, only native and standard code.**
-- No tricks, no build steps and no abstraction layers to try reduce your final code.
-- It's well designed and we hope that you can do a lot with it.
+- The first CSS framework based on Material Design 3.
+- Up to 10 times smaller than others CSS frameworks.
+- Uses a HTML semantic version of Material Design.
+- Ready to use with any JS framework.
+- Highly focused on DX.
 
 ## Applying "the beer way" in css?
 
