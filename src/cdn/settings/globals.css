@@ -1,6 +1,6 @@
 :root {
   --size: 16px;
-  --font: "Roboto Flex", "Roboto", sans-serif, system-ui, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial";
+  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
   --font-icon: "Material Symbols Outlined";
   --speed1: 0.1s;
   --speed2: 0.2s;
