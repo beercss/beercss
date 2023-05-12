@@ -90,6 +90,8 @@ export default (() => {
 
   const updateInput = (target: Element) => {
     const input = target as HTMLInputElement;
+    if (hasType(input, "number") && !input.value) input.value = "";
+
     const parentTarget = parent(target);
     const label = query("label", parentTarget) as HTMLLabelElement;
     const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
