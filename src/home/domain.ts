@@ -120,6 +120,12 @@ const updateFieldType = (selector: string, type: string) => {
     utils.html(icons, "search");
   }
 
+  if (type === "number") {
+    utils.html(labels, "Number");
+    utils.setAttribute(inputs, "type", type);
+    utils.html(icons, "visibility");
+  }
+
   if (type === "password") {
     utils.html(labels, "Password");
     utils.setAttribute(inputs, "type", type);
