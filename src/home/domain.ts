@@ -260,13 +260,13 @@ const formatHtml = (element: any, raw: boolean = false): string => {
     .replace(/\s+(checked|disabled)=""/gi, " $1");
 };
 
-const showSamples = (data: IHome, selector: string, name: string, modal?: string, url?: string) => {
+const showSamples = (data: IHome, selector: string, name: string, dialog?: string, url?: string) => {
   const elements = utils.queryAll(selector);
   let text = "";
   let textFormatted = "";
   data.name = name;
   data.samples = [];
-  data.modalSample = modal ?? "#modal-samples";
+  data.dialogSample = dialog ?? "#dialog-samples";
   data.urlSample = url ?? "";
   if (!data.svgSample) data.svgSample = hljs.highlight("html", formatHtml(utils.query("#svg-sample > svg"), true)).value;
 
@@ -274,7 +274,7 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
     const element = utils.clone(elements[i]);
 
     if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom"])) {
-      utils.html(element.querySelectorAll(".modal"), "");
+      utils.html(element.querySelectorAll("dialog"), "");
       text = formatHtml(element);
       textFormatted = hljs.highlight("html", text).value;
     } else {
@@ -282,7 +282,7 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
       textFormatted = hljs.highlight("html", text).value;
     }
 
-    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", ".modal", ".toast", "main.responsive", ".fixed:not(header, footer)"])) { text = ""; }
+    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", "dialog", ".toast", "main.responsive", ".fixed:not(header, footer)"])) { text = ""; }
 
     data.samples.push({
       html: text,
@@ -291,8 +291,8 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
   }
 
   void nextTick(() => {
-    void ui(data.modalSample);
-    const element = utils.query(data.modalSample);
+    void ui(data.dialogSample);
+    const element = utils.query(data.dialogSample);
     element?.scrollTo(0, 0);
   });
 };

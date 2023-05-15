@@ -25,6 +25,7 @@
 @import "./elements/cards.css";
 @import "./elements/chips.css";
 @import "./elements/containers.css";
+@import "./elements/dialogs.css";
 @import "./elements/expansions.css";
 @import "./elements/fields.css";
 @import "./elements/grids.css";
@@ -33,7 +34,6 @@
 @import "./elements/loaders.css";
 @import "./elements/media.css";
 @import "./elements/menus.css";
-@import "./elements/modals.css";
 @import "./elements/navigations.css";
 @import "./elements/overlays.css";
 @import "./elements/pages.css";

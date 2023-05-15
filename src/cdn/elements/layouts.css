@@ -63,7 +63,7 @@ footer {
   background-color: inherit;
 }
 
-:is(.modal, menu) > :is(header, footer) {
+:is(dialog, menu) > :is(header, footer) {
   padding: 0;
   background-color: inherit;
 }
@@ -75,11 +75,11 @@ article > :is(header, footer) {
   z-index: 11 !important;
 }
 
-:is(.modal, article, .padding, .medium-padding) > header.fixed {
+:is(dialog, article, .padding, .medium-padding) > header.fixed {
   transform: translateY(-1rem);
 }
 
-:is(.modal, article, .padding, .medium-padding) > footer.fixed {
+:is(dialog, article, .padding, .medium-padding) > footer.fixed {
   transform: translateY(1rem);
 }
 

@@ -6,33 +6,32 @@ main.responsive
     .max
       h5 Test your changes here
       div Click on icon to change theme
-  .modal.round.large-padding#default(data-ui="#default")
-    h5 Default modal
+  dialog.round.large-padding#default(data-ui="#default")
+    h5 Default dialog
     nav.right-align
       button.border Cancel
       button Confirm
 
-  .modal.left#left(data-ui="#left")
-    h5 Left modal
+  dialog.left#left(data-ui="#left")
+    h5 Left dialog
     nav.right-align
       button.border Cancel
       button Confirm
 
-  .modal.top#top(data-ui="#top")
-    h5 Top modal
+  dialog.top#top(data-ui="#top")
+    h5 Top dialog
     nav.right-align
       button.border Cancel
       button Confirm
 
-  .modal.right#right(data-ui="#right")
-    h5 Right modal
+  dialog.right#right(data-ui="#right")
+    h5 Right dialog
     nav.right-align
       button.border Cancel
       button Confirm
 
-  .modal.bottom#bottom(data-ui="#bottom")
-    h5 Bottom modal
-    .small-height
+  dialog.bottom#bottom(data-ui="#bottom")
+    h5 Bottom dialog
     nav.right-align
       button.border Cancel
       button Confirm

@@ -26,7 +26,7 @@
     button.small-round.large.transparent.l(@click="scroll('#hot')") Hot
     button.small-round.large.transparent.l(@click="scroll('#my-list')") My list
     .max
-    button.circle.large.transparent(data-ui="#modal-search")
+    button.circle.large.transparent(data-ui="#dialog-search")
       i search
     button.circle.large.transparent.m.l(data-ui="#menu-notifications")
       i notifications
@@ -51,7 +51,7 @@
     button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
   main
-    #modal-search.modal.top.transparent
+    dialog#dialog-search.top.transparent
       .row
         .max.l
         .max

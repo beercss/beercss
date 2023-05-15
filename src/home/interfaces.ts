@@ -9,7 +9,7 @@ export interface IHome extends ILayout {
   indexOfMenu: number,
   samples: Array<ISample>,
   name: string,
-  modalSample: string,
+  dialogSample: string,
   urlSample: string,
   svgSample: string,
   mediaCard: number,

@@ -3,16 +3,16 @@
   .large-space
   h4
     span Colors
-    a.chip.circle(data-ui="#modal-colors")
+    a.chip.circle(data-ui="#dialog-colors")
       i code
   nav
-    button(data-ui="#modal-colors") Colors
+    button(data-ui="#dialog-colors") Colors
 
-  #modal-colors.modal.right.medium
+  dialog#dialog-colors.right.medium
     header.fixed
       nav
         h5.max Colors
-        button.circle.transparent(data-ui="#modal-colors")
+        button.circle.transparent(data-ui="#dialog-colors")
           i close
 
     .grid

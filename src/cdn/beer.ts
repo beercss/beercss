@@ -224,7 +224,7 @@ export default (() => {
 
   const open = (from?: Element, to?: Element, options?: any): any => {
     if (!to) to = query(from.getAttribute("data-ui"));
-    if (hasClass(to, "modal")) return modal(from, to);
+    if (hasTag(to, "dialog")) return dialog(from, to);
     if (hasTag(to, "menu")) return menu(from, to);
     if (hasClass(to, "toast")) return toast(from, to, options);
     if (hasClass(to, "page")) return page(from, to);
@@ -268,10 +268,16 @@ export default (() => {
     on(document.body, "click", onClickDocument);
   };
 
-  const modal = async (from: Element, to: Element) => {
+  const dialog = async (from: Element, to: Element) => {
     tab(from);
 
     let overlay = prev(to) as HTMLElement;
+    const target = to as HTMLDialogElement;
+    const isActive = hasClass(to, "active") || target.open;
+    const isModal = hasClass(to, "modal");
+    const container = parent(to);
+    const isNav = hasTag(container, "nav");
+
     if (!hasClass(overlay, "overlay")) {
       overlay = create({ className: "overlay" });
       insertBefore(overlay, to);
@@ -279,26 +285,34 @@ export default (() => {
     }
 
     overlay.onclick = () => {
+      if (isModal) return;
+
       removeClass(from, "active");
       removeClass(to, "active");
       removeClass(overlay, "active");
+      target.close();
     };
-
-    const isActive = hasClass(to, "active");
-    const container = parent(to);
-    if (hasTag(container, "nav")) {
-      const elements = queryAll(".modal, a, .overlay", container);
-      elements.forEach((x: Element) => removeClass(x, "active"));
+    
+    if (isNav) {
+      const elements = queryAll("dialog, a, .overlay", container);
+      elements.forEach((x: any) => {
+        x.removeClass(x, "active");
+        if (x.open) x.close();
+      });
     }
 
     if (isActive) {
       removeClass(from, "active");
       removeClass(overlay, "active");
       removeClass(to, "active");
+      target.close();
     } else {
       if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip")) addClass(from, "active");
       addClass(overlay, "active");
       addClass(to, "active");
+
+      if (isModal) target.showModal();
+      else target.show();
     }
   };
 

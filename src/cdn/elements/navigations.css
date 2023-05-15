@@ -153,7 +153,7 @@ nav:is(.left, .right, .top, .bottom)::before {
   border-radius: inherit;
 }
 
-nav:is(.left, .right, .top, .bottom) > :not(.modal, .overlay) {
+nav:is(.left, .right, .top, .bottom) > :not(dialog, .overlay) {
   z-index: 101;
 }
 
@@ -171,19 +171,19 @@ nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip):is(:hover, 
   font-variation-settings: "FILL" 1;
 }
 
-nav.left > .modal {
+nav.left > dialog {
   padding-left: 5.5rem;
 }
 
-nav.right > .modal {
+nav.right > dialog {
   padding-right: 5.5rem;
 }
 
-nav.top > .modal {
+nav.top > dialog {
   padding-top: 5.5rem;
 }
 
-nav.bottom > .modal {
+nav.bottom > dialog {
   padding-bottom: 5.5rem;
 }
 
