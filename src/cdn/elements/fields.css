@@ -43,6 +43,14 @@
   height: 4rem;
 }
 
+.field {
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.field.border {
+  border-radius: 0.25rem;
+}
+
 .field.round.small {
   border-radius: 1.25rem;
 }
@@ -227,14 +235,6 @@ input[type=search]::-webkit-search-results-decoration {
 
 .field:not(.border, .round) > :is(input, textarea, select):focus {
   border-bottom-color: var(--primary);
-}
-
-.field {
-  border-radius: 0.25rem 0.25rem 0 0;
-}
-
-.field.border {
-  border-radius: 0.25rem;
 }
 
 .field.round:not(.border, .fill) > :is(input, textarea, select),
