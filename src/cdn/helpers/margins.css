@@ -3,7 +3,7 @@
 }
 
 .tiny-margin {
-  padding: 0.25rem !important;
+  margin: 0.25rem !important;
 }
 
 .small-margin {
@@ -17,4 +17,76 @@
 
 .large-margin {
   margin: 1.5rem !important;
+}
+
+.no-margin-top {
+  margin-top: 0 !important;
+}
+.tiny-margin-top {
+  margin-top: 0.25rem !important;
+}
+.small-margin-top {
+  margin-top: 0.5rem !important;
+}
+.medium-margin-top,
+.margin-top {
+  margin-top: 1rem !important;
+}
+.large-margin-top {
+  margin-top: 1.5rem !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+.tiny-margin-bottom {
+  margin-bottom: 0.25rem !important;
+}
+.small-margin-bottom {
+  margin-bottom: 0.5rem !important;
+}
+.medium-margin-bottom,
+.margin-bottom {
+  margin-bottom: 1rem !important;
+}
+.large-margin-bottom {
+  margin-bottom: 1.5rem !important;
+}
+
+.no-margin-left {
+  margin-left: 0 !important;
+}
+.tiny-margin-left {
+  margin-left: 0.25rem !important;
+}
+.small-margin-left {
+  margin-left: 0.5rem !important;
+}
+.medium-margin-left,
+.margin-left {
+  margin-left: 1rem !important;
+}
+.large-margin-left {
+  margin-left: 1.5rem !important;
+}
+
+.no-margin-right {
+  margin-right: 0 !important;
+}
+.tiny-margin-right {
+  margin-right: 0.25rem !important;
+}
+.small-margin-right {
+  margin-right: 0.5rem !important;
+}
+.medium-margin-right,
+.margin-right {
+  margin-right: 1rem !important;
+}
+.large-margin-right {
+  margin-right: 1.5rem !important;
+}
+
+.auto-margin {
+  margin: auto !important;
 }

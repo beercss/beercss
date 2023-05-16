@@ -18,3 +18,71 @@
 .large-padding {
   padding: 1.5rem !important;
 }
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+.tiny-padding-top {
+  padding-top: 0.25rem !important;
+}
+.small-padding-top {
+  padding-top: 0.5rem !important;
+}
+.medium-padding-top,
+.padding-top {
+  padding-top: 1rem !important;
+}
+.large-padding-top {
+  padding-top: 1.5rem !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+.tiny-padding-bottom {
+  padding-bottom: 0.25rem !important;
+}
+.small-padding-bottom {
+  padding-bottom: 0.5rem !important;
+}
+.medium-padding-bottom,
+.padding-bottom {
+  padding-bottom: 1rem !important;
+}
+.large-padding-bottom {
+  padding-bottom: 1.5rem !important;
+}
+
+.no-padding-left {
+  padding-left: 0 !important;
+}
+.tiny-padding-left {
+  padding-left: 0.25rem !important;
+}
+.small-padding-left {
+  padding-left: 0.5rem !important;
+}
+.medium-padding-left,
+.padding-left {
+  padding-left: 1rem !important;
+}
+.large-padding-left {
+  padding-left: 1.5rem !important;
+}
+
+.no-padding-right {
+  padding-right: 0 !important;
+}
+.tiny-padding-right {
+  padding-right: 0.25rem !important;
+}
+.small-padding-right {
+  padding-right: 0.5rem !important;
+}
+.medium-padding-right,
+.padding-right {
+  padding-right: 1rem !important;
+}
+.large-padding-right {
+  padding-right: 1.5rem !important;
+}
