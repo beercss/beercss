@@ -24,9 +24,9 @@ Chips are compact elements that represent an input, attribute, or action.
 
 A container is the main content of page.
 
-## [Menu](MENU.md)
+## [Dialog](DIALOG.md)
 
-Menus display a list of choices on temporary surfaces.
+Dialogs inform users about a task and can contain critical information, required decisions, involve multiple tasks, provide access to destinations in your app and contain a small forms to submit.
 
 ## [Expansion](EXPANSION.md)
 
@@ -56,9 +56,9 @@ Loader express an unspecified wait time.
 
 Media can be a image or video element.
 
-## [Dialog](DIALOG.md)
+## [Menu](MENU.md)
 
-Dialogs inform users about a task and can contain critical information, required decisions, involve multiple tasks, provide access to destinations in your app and contain a small forms to submit.
+Menus display a list of choices on temporary surfaces.
 
 ## [Navigation](NAVIGATION.md)
 

@@ -76,7 +76,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Elevates** elevate, no-elevate, small-elevate, medium-elevate, large-elevate
 
-**Forms** border, circle, square, none, fill, extend, round, no-round, left-round, right-round, top-round, bottom-round
+**Forms** border, circle, square, none, fill, extend, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
 
 **Margins** margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
