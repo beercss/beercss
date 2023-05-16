@@ -292,7 +292,7 @@ export default (() => {
       removeClass(overlay, "active");
       target.close();
     };
-    
+
     if (isNav) {
       const elements = queryAll("dialog, a, .overlay", container);
       elements.forEach((x: any) => {
