@@ -36,7 +36,7 @@ small, medium, large, max
 
 **Triggers**
 
-active, modal
+active
 
 ## Example
 
