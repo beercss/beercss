@@ -141,7 +141,7 @@ const updateFieldType = (selector: string, type: string) => {
   if (type === "time") {
     utils.html(labels, "Time");
     utils.setAttribute(inputs, "type", type);
-    utils.html(icons, "search");
+    utils.html(icons, "schedule");
   }
 };
 
