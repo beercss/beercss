@@ -7,7 +7,7 @@ const data: IHome = {
   name: "",
   indexOfMenu: 1,
   samples: [],
-  modalSample: "",
+  dialogSample: "",
   urlSample: "",
   svgSample: "",
   mediaCard: 1,

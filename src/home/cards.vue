@@ -73,7 +73,7 @@
             h5 Title
             p Some text here
         nav
-          button.round Button
+          button Button
     .s12.m6.l3
       article.round
         .row
@@ -85,7 +85,7 @@
             h5 Title
             p Some text here
         nav
-          button.round Button
+          button Button
     .s12.m6.l3
       article.border
         .row
@@ -97,7 +97,7 @@
             h5 Title
             p Some text here
         nav
-          button.round Button
+          button Button
     .s12.m6.l3
       article.border.round
         .row
@@ -109,7 +109,7 @@
             h5 Title
             p Some text here
         nav
-          button.round Button
+          button Button
     .s12.m6.l3
       article.no-padding
         img.responsive.small(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
@@ -120,7 +120,7 @@
           h5 Title
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
-            button.round Button
+            button Button
     .s12.m6.l3
       article.no-padding.round
         img.responsive.small.top-round(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
@@ -131,7 +131,7 @@
           h5 Title
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
-            button.round Button
+            button Button
     .s12.m6.l3
       article.no-padding.border
         img.responsive.small(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
@@ -142,7 +142,7 @@
           h5 Title
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
-            button.round Button
+            button Button
     .s12.m6.l3
       article.no-padding.border.round
         img.responsive.small.top-round(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
@@ -153,7 +153,7 @@
           h5 Title
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
-            button.round Button
+            button Button
     .s12.m6.l3
       article.no-padding
         img.responsive.medium(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")

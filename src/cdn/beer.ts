@@ -37,18 +37,23 @@ export default (() => {
   };
 
   const hasClass = (element: Element, name: string): boolean => {
-    if (!element) return false;
-    return element.classList.contains(name);
+    return element?.classList.contains(name);
+  };
+
+  const hasTag = (element: Element, name: string): boolean => {
+    return element?.tagName.toLowerCase() === name;
+  };
+
+  const hasType = (element: HTMLInputElement, name: string): boolean => {
+    return element?.type.toLowerCase() === name;
   };
 
   const addClass = (element: Element, name: string) => {
-    if (!element) return;
-    element.classList.add(name);
+    element?.classList.add(name);
   };
 
   const removeClass = (element: Element, name: string) => {
-    if (!element) return;
-    element.classList.remove(name);
+    element?.classList.remove(name);
   };
 
   const on = (element: Element, name: string, callback: any) => {
@@ -60,23 +65,19 @@ export default (() => {
   };
 
   const insertBefore = (newElement: Element, element: Element): Element => {
-    if (!element) return;
-    return element.parentNode.insertBefore(newElement, element);
+    return element?.parentNode.insertBefore(newElement, element);
   };
 
   const prev = (element: Element): Element => {
-    if (!element) return;
-    return element.previousElementSibling;
+    return element?.previousElementSibling;
   };
 
   const next = (element: Element): Element => {
-    if (!element) return;
-    return element.nextElementSibling;
+    return element?.nextElementSibling;
   };
 
   const parent = (element: Element): Element => {
-    if (!element) return;
-    return element.parentElement;
+    return element?.parentElement;
   };
 
   const create = (json: any): HTMLElement => {
@@ -89,10 +90,12 @@ export default (() => {
 
   const updateInput = (target: Element) => {
     const input = target as HTMLInputElement;
+    if (hasType(input, "number") && !input.value) input.value = "";
+
     const parentTarget = parent(target);
     const label = query("label", parentTarget) as HTMLLabelElement;
     const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
-    const toActive = document.activeElement === target || input.value || /date|time/.test(input.type);
+    const toActive = document.activeElement === target || input.value || query("[selected]", input) || hasType(input, "date") || hasType(input, "time");
 
     if (toActive) {
       if (isBorder && label) {
@@ -101,7 +104,7 @@ export default (() => {
         const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
         const end = width + start + 0.5;
         input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 0.5rem, ${end}rem 0.5rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
-      } else { input.style.clipPath = ""; }
+      } else input.style.clipPath = "";
       addClass(label, "active");
     } else {
       removeClass(label, "active");
@@ -113,7 +116,7 @@ export default (() => {
 
   const onClickElement = (e: Event) => {
     const target = e.currentTarget as HTMLElement;
-    if (/input/i.test(target.tagName)) return;
+    if (hasTag(target, "input")) return;
     open(target);
   };
 
@@ -135,9 +138,8 @@ export default (() => {
 
   const onClickDocument = (e: Event) => {
     const target = e.currentTarget as Element;
-    const dropdowns = queryAll(".dropdown.active");
-    dropdowns.forEach((x: Element) => removeClass(x, "active"));
-
+    const menus = queryAll("menu.active");
+    menus.forEach((x: Element) => removeClass(x, "active"));
     off(target, "click", onClickDocument);
   };
 
@@ -174,13 +176,13 @@ export default (() => {
 
       const target = e.currentTarget as Element;
       const nextTarget = next(target) as HTMLInputElement;
-      if (!nextTarget || !/file/i.test(nextTarget.type)) return;
+      if (!nextTarget || !hasType(nextTarget, "file")) return;
       return nextTarget.click();
     }
 
     const currentTarget = target as HTMLInputElement;
     const previousTarget = prev(target) as HTMLInputElement;
-    if (!previousTarget || !/text/i.test(previousTarget.type)) return;
+    if (!previousTarget || !hasType(previousTarget, "text")) return;
     previousTarget.value = Array.from(currentTarget.files).map((x) => x.name).join(", ");
     previousTarget.readOnly = true;
     previousTarget.addEventListener("keydown", onKeydownFile);
@@ -222,8 +224,8 @@ export default (() => {
 
   const open = (from?: Element, to?: Element, options?: any): any => {
     if (!to) to = query(from.getAttribute("data-ui"));
-    if (hasClass(to, "modal")) return modal(from, to);
-    if (hasClass(to, "dropdown")) return dropdown(from, to);
+    if (hasTag(to, "dialog")) return dialog(from, to);
+    if (hasTag(to, "menu")) return menu(from, to);
     if (hasClass(to, "toast")) return toast(from, to, options);
     if (hasClass(to, "page")) return page(from, to);
     if (hasClass(to, "progress")) return progress(to, options);
@@ -254,22 +256,28 @@ export default (() => {
     addClass(to, "active");
   };
 
-  const dropdown = (from: Element, to: Element) => {
+  const menu = (from: Element, to: Element) => {
     tab(from);
 
     if (hasClass(to, "active")) return removeClass(to, "active");
 
-    const dropdowns = queryAll(".dropdown.active");
-    dropdowns.forEach((x: Element) => removeClass(x, "active"));
+    const menus = queryAll("menu.active");
+    menus.forEach((x: Element) => removeClass(x, "active"));
 
     addClass(to, "active");
     on(document.body, "click", onClickDocument);
   };
 
-  const modal = async (from: Element, to: Element) => {
+  const dialog = async (from: Element, to: Element) => {
     tab(from);
 
     let overlay = prev(to) as HTMLElement;
+    const target = to as HTMLDialogElement;
+    const isActive = hasClass(to, "active") || target.open;
+    const isModal = hasClass(to, "modal");
+    const container = parent(to);
+    const isNav = hasTag(container, "nav");
+
     if (!hasClass(overlay, "overlay")) {
       overlay = create({ className: "overlay" });
       insertBefore(overlay, to);
@@ -277,26 +285,34 @@ export default (() => {
     }
 
     overlay.onclick = () => {
+      if (isModal) return;
+
       removeClass(from, "active");
       removeClass(to, "active");
       removeClass(overlay, "active");
+      target.close();
     };
-
-    const isActive = hasClass(to, "active");
-    const container = parent(to);
-    if (/nav/i.test(container.tagName)) {
-      const elements = queryAll(".modal, a, .overlay", container);
-      elements.forEach((x: Element) => removeClass(x, "active"));
+    
+    if (isNav) {
+      const elements = queryAll("dialog, a, .overlay", container);
+      elements.forEach((x: any) => {
+        x.removeClass(x, "active");
+        if (x.open) x.close();
+      });
     }
 
     if (isActive) {
       removeClass(from, "active");
       removeClass(overlay, "active");
       removeClass(to, "active");
+      target.close();
     } else {
-      if (!/button/i.test(from.tagName) && !hasClass(from, "button") && !hasClass(from, "chip")) addClass(from, "active");
+      if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip")) addClass(from, "active");
       addClass(overlay, "active");
       addClass(to, "active");
+
+      if (isModal) target.showModal();
+      else target.show();
     }
   };
 
@@ -351,7 +367,7 @@ export default (() => {
 
     const fromLight = getComputedStyle(light);
     const fromDark = getComputedStyle(dark);
-    const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--outline", "--surface-variant", "--on-surface-variant", "--inverse-surface", "--inverse-on-surface"];
+    const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--outline", "--surface-variant", "--on-surface-variant", "--inverse-surface", "--inverse-on-surface", "--inverse-primary", "--inverse-on-primary"];
     for (let i = 0; i < variables.length; i++) {
       _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
       _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";

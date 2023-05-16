@@ -36,7 +36,7 @@
 
 :is(.checkbox, .radio, .switch) > span::before,
 .icon > span > i {
-  font-family: "Material Symbols Outlined";
+  font-family: var(--font-icon);
   font-weight: normal;
   font-style: normal;
   font-size: 1.5rem;

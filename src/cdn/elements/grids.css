@@ -1,9 +1,9 @@
 .grid {
-  --grid-gap: 1rem;
+  ---gap: 1rem;
 
   display: grid;
-  grid-template-columns: repeat(12, calc(8.33% - var(--grid-gap) + (var(--grid-gap) / 12)));
-  gap: var(--grid-gap);
+  grid-template-columns: repeat(12, calc(8.33% - var(---gap) + (var(---gap) / 12)));
+  gap: var(---gap);
 }
 
 * + .grid {
@@ -11,15 +11,15 @@
 }
 
 .grid.no-space {
-  --grid-gap: 0rem;
+  ---gap: 0rem;
 }
 
 .grid.medium-space {
-  --grid-gap: 1.5rem;
+  ---gap: 1.5rem;
 }
 
 .grid.large-space {
-  --grid-gap: 2rem;
+  ---gap: 2rem;
 }
 
 .s1 {

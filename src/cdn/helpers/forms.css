@@ -1,8 +1,18 @@
-.round:not(i, img, video, svg) {
+.medium-round:not(i, img, video, svg),
+.round:not(i, img, video, svg, button, .button, .chip, .field) {
   border-radius: 2rem !important;
 }
 
-.no-round {
+.small-round:not(i, img, video, svg) {
+  border-radius: 0.5rem !important;
+}
+
+.large-round:not(i, img, video, svg) {
+  border-radius: 3.5rem !important;
+}
+
+.no-round,
+.square {
   border-radius: 0 !important;
 }
 
@@ -80,4 +90,8 @@
   border: 0.0625rem solid var(--outline);
   background-color: transparent;
   box-shadow: none;
+}
+
+.badge.square {
+  border-radius: 0;
 }

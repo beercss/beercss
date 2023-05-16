@@ -5,6 +5,7 @@ html {
 body {
   font-family: var(--font);
   font-size: 0.875rem;
+  line-height: 1.25;
 }
 
 h1,
@@ -17,6 +18,7 @@ h6 {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  line-height: normal;
 }
 
 * + h1,
@@ -104,6 +106,10 @@ h6.large {
   color: var(--primary) !important;
 }
 
+.inverse-link {
+  color: var(--inverse-primary) !important;
+}
+
 .truncate {
   overflow: hidden;
   white-space: nowrap !important;
@@ -157,4 +163,28 @@ h6.large {
 
 p {
   margin: 0.5rem 0;
+}
+
+.no-line {
+  line-height: normal;
+}
+
+.tiny-line {
+  line-height: 1.25;
+}
+
+.small-line {
+  line-height: 1.5;
+}
+
+.medium-line {
+  line-height: 1.75;
+}
+
+.large-line {
+  line-height: 2;
+}
+
+.extra-line {
+  line-height: 2.25;
 }

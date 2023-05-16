@@ -36,8 +36,9 @@
     a.chip.circle(@click="domain.showSamples(data, '#formatting nav *', 'Formatting', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   #formatting
-    nav
+    nav.wrap
       a.link link
+      a.inverse-link inverse-link
       p.italic italic
       p.bold bold
       p.underline underline
@@ -48,6 +49,40 @@
       p.small-text small-text
       p.medium-text medium-text
       p.large-text large-text
+  .medium-space
+  h6.middle-align
+    span Line spacing
+    a.chip.circle(@click="domain.showSamples(data, '#spacing > :not(.bold, .small-divider, .space)', 'Line spacing', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+      i code
+  div
+    label.radio
+      input( type="radio", name="line-typography", @click="domain.updateLine('#spacing > *', 'no-line')")
+      span no-line
+    label.radio
+      input(
+        type="radio",
+        name="line-typography",
+        checked,
+        @click="domain.updateLine('#spacing > *')"
+      )
+      span tiny-line
+    label.radio
+      input(type="radio", name="line-typography", @click="domain.updateLine('#spacing > *', 'small-line')")
+      span small-line
+    label.radio
+      input(type="radio", name="line-typography", @click="domain.updateLine('#spacing > *', 'medium-line')")
+      span medium-line
+    label.radio
+      input(type="radio", name="line-typography", @click="domain.updateLine('#spacing > *', 'large-line')")
+      span large-line
+    label.radio
+      input(type="radio", name="line-typography", @click="domain.updateLine('#spacing > *', 'extra-line')")
+      span extra-line
+  .medium-space
+  #spacing
+    div
+      h5 Title
+      p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 </template>
 
 <script setup lang="ts">

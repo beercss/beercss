@@ -43,7 +43,7 @@
 }
 
 .slider > input:focus ~ .tooltip {
-  display: inherit;
+  visibility: visible;
 }
 
 .slider > input:only-of-type {
@@ -117,65 +117,6 @@
   border-radius: 1rem;
   background: var(--primary);
   z-index: 0;
-}
-
-.slider > .tooltip,
-.slider > .tooltip.top {
-  top: -1rem;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-}
-
-.slider > .tooltip.bottom {
-  top: auto;
-  left: 50%;
-  right: auto;
-  bottom: -1rem;
-}
-
-.slider > .tooltip.left {
-  top: 50%;
-  left: -0.5rem;
-  right: auto;
-  bottom: auto;
-}
-
-.slider > .tooltip.right {
-  top: 50%;
-  left: auto;
-  right: -0.5rem;
-  bottom: auto;
-}
-
-.slider.vertical > .tooltip,
-.slider.vertical > .tooltip.top {
-  top: 50%;
-  left: calc(100% + 1.5rem);
-  right: auto;
-  bottom: auto;
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.slider.vertical > .tooltip.bottom {
-  top: 50%;
-  left: -1.5rem;
-  right: auto;
-  bottom: auto;
-}
-
-.slider.vertical > .tooltip.left {
-  top: calc(50% - 2rem);
-  left: 50%;
-  right: auto;
-  bottom: auto;
-}
-
-.slider.vertical > .tooltip.right {
-  top: calc(50% + 2rem);
-  left: 50%;
-  right: auto;
-  bottom: auto;
 }
 
 .field > .slider {

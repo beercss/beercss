@@ -46,7 +46,7 @@ const updateSize = (selector: string, size?: string) => {
 const updatePosition = (selector: any, position?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["left", "center", "right", "top", "middle", "bottom"]);
-  if (position) utils.addClass(elements, [position]);
+  if (position) utils.addClass(elements, (position || "").split(" "));
 };
 
 const updateAlign = (selector: any, alignment?: string) => {
@@ -118,6 +118,12 @@ const updateFieldType = (selector: string, type: string) => {
     utils.html(labels, "Label");
     utils.setAttribute(inputs, "type", type);
     utils.html(icons, "search");
+  }
+
+  if (type === "number") {
+    utils.html(labels, "Number");
+    utils.setAttribute(inputs, "type", type);
+    utils.html(icons, "visibility");
   }
 
   if (type === "password") {
@@ -241,7 +247,6 @@ const formatHtml = (element: any, raw: boolean = false): string => {
 
   utils.remove(tag.querySelectorAll(".overlay"));
   utils.remove(tag.querySelectorAll("[style*='none']"));
-  console.log(tag);
 
   return process(tag.outerHTML
     .replace(/<!--v-if-->/gi, "")
@@ -255,22 +260,21 @@ const formatHtml = (element: any, raw: boolean = false): string => {
     .replace(/\s+(checked|disabled)=""/gi, " $1");
 };
 
-const showSamples = (data: IHome, selector: string, name: string, modal?: string, url?: string) => {
+const showSamples = (data: IHome, selector: string, name: string, dialog?: string, url?: string) => {
   const elements = utils.queryAll(selector);
   let text = "";
   let textFormatted = "";
   data.name = name;
   data.samples = [];
-  data.modalSample = modal ?? "#modal-samples";
+  data.dialogSample = dialog ?? "#dialog-samples";
   data.urlSample = url ?? "";
   if (!data.svgSample) data.svgSample = hljs.highlight("html", formatHtml(utils.query("#svg-sample > svg"), true)).value;
-  console.log(data.svgSample);
 
   for (let i = 0; i < elements.length; i++) {
     const element = utils.clone(elements[i]);
 
     if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom"])) {
-      utils.html(element.querySelectorAll(".modal"), "");
+      utils.html(element.querySelectorAll("dialog"), "");
       text = formatHtml(element);
       textFormatted = hljs.highlight("html", text).value;
     } else {
@@ -278,7 +282,7 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
       textFormatted = hljs.highlight("html", text).value;
     }
 
-    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", ".modal", ".toast", "main.responsive", ".fixed:not(header, footer)"])) { text = ""; }
+    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", "dialog", ".toast", "main.responsive", ".fixed:not(header, footer)"])) { text = ""; }
 
     data.samples.push({
       html: text,
@@ -287,16 +291,8 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
   }
 
   void nextTick(() => {
-    void ui(data.modalSample);
-    const element = utils.query(data.modalSample);
-    if (data.name === "Badges") {
-      for (let i = 0; i < element.children.length; i++) {
-        const elementChild = element.children[i];
-        if (elementChild.tagName.toLowerCase() === "article") {
-          elementChild.classList.add("large-padding");
-        }
-      }
-    }
+    void ui(data.dialogSample);
+    const element = utils.query(data.dialogSample);
     element?.scrollTo(0, 0);
   });
 };
@@ -328,6 +324,12 @@ const updateShadow = (selector: any, shadow?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["shadow", "no-shadow", "top-shadow", "bottom-shadow", "left-shadow", "right-shadow"]);
   if (shadow) utils.addClass(elements, [shadow]);
+};
+
+const updateLine = (selector: string, line?: string) => {
+  const elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["no-line", "tiny-line", "small-line", "medium-line", "large-line", "extra-line"]);
+  if (line) utils.addClass(elements, [line]);
 };
 
 export default {
@@ -364,4 +366,5 @@ export default {
   updateTheme,
   updateBlur,
   updateShadow,
+  updateLine,
 };

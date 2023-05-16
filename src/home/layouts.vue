@@ -249,7 +249,7 @@ div
             p Click the button to start a conversation
             .space
             nav.center-align
-              button.round Send a message
+              button Send a message
       .s12.m12.l6
         .fill.medium-height.middle-align.center-align
           .center-align
@@ -259,7 +259,7 @@ div
             .space
             nav.center-align
               button.border.round Skip
-              button.round Invite your friends
+              button Invite your friends
       .s12.m12.l6
         .fill.medium-height.middle-align.center-align
           .center-align

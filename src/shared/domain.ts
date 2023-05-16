@@ -1,17 +1,15 @@
 import { ILayout, ITheme } from "./interfaces";
 
-const updateTheme = async (data: ILayout, source: any) => {
-  const theme = await ui("theme", data.themes.find((x: ITheme) => x.name === source) ?? source);
-  const mode = ui("mode");
+const updateTheme = async (data: ILayout, source: any, newMode?: string) => {
+  const theme = await ui("theme", data.themes.find((x: ITheme) => x.name === source) ?? source) as IBeerCssTheme;
   data.theme.dark = theme.dark;
   data.theme.light = theme.light;
-  data.theme.selected = mode;
-  data.isDark = mode === "dark";
+  updateMode(data, newMode ?? ui("mode") as string);
 };
 
-const updateMode = (data: ILayout) => {
-  const mode = ui("mode", ui("mode") === "dark" ? "light" : "dark");
-
+const updateMode = (data: ILayout, newMode?: string) => {
+  const mode = newMode ?? (ui("mode") === "dark" ? "light" : "dark");
+  void ui("mode", mode);
   data.theme.selected = mode;
   data.isDark = mode === "dark";
 };

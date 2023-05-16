@@ -1,5 +1,5 @@
 .loader {
-  --loader-translate-y: 0;
+  ---translate-y: 0;
 
   display: inline-block;
   width: 2.5rem;
@@ -108,12 +108,12 @@
 }
 
 .field > .loader {
-  --loader-translate-y: -50%;
+  ---translate-y: -50%;
 }
 
 @keyframes to-loader {
   0% {
-    transform: translateY(var(--loader-translate-y)) rotate(0deg);
+    transform: translateY(var(---translate-y)) rotate(0deg);
     clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
   }
 
@@ -146,7 +146,7 @@
   }
 
   90% {
-    transform: translateY(var(--loader-translate-y)) rotate(360deg);
+    transform: translateY(var(---translate-y)) rotate(360deg);
     clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
   }
 

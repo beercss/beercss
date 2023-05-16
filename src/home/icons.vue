@@ -13,7 +13,7 @@
     span Icons
   .medium-space
   h6 Default icons
-    a.chip.circle(@click="domain.showSamples(data, '#icons-default i', 'Icons', '#modal-icons', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#icons-default i', 'Icons', '#dialog-icons', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
     label.radio
@@ -45,7 +45,7 @@
   .medium-space
   h6
     span SVG icons
-    a.chip.circle(@click="domain.showSamples(data, '#icons-svg i, #icons-svg > svg', 'SVG icons', '#modal-icons-svg', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#icons-svg i, #icons-svg > svg', 'SVG icons', '#dialog-icons-svg', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
     label.radio
@@ -113,7 +113,7 @@
       i.extra
         img(:src="'/favicon.png'")
 
-  #modal-icons.modal.right.large
+  dialog#dialog-icons.right.large
     header.fixed
       nav
         h5 Icons
@@ -122,16 +122,16 @@
           target="_blank"
         ) Get font icons
         .max
-        button.circle.transparent(data-ui="#modal-icons")
+        button.circle.transparent(data-ui="#dialog-icons")
           i close
     .space
     article.border(v-for="exemplo in data.samples")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
-      pre(v-html="exemplo.sourceCode")
+      pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .space
 
-  #modal-icons-svg.modal.right.large
+  dialog#dialog-icons-svg.right.large
     header.fixed
       nav
         h5 SVG icons
@@ -140,23 +140,23 @@
           target="_blank"
         ) Get svg icons
         .max
-        button.circle.transparent(data-ui="#modal-icons-svg")
+        button.circle.transparent(data-ui="#dialog-icons-svg")
           i close
     .space
     article.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
-      pre(v-html="exemplo.sourceCode")
+      pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .medium-space
     h5 Multiple icons in a single svg
     .medium-space
     article.border
-      pre(v-html="data.svgSample")
+      pre.scroll.large-padding.fill(v-html="data.svgSample")
     .space
     article.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
-      pre(v-html="exemplo.sourceCode")
+      pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .space
 </template>
 

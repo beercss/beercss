@@ -44,7 +44,7 @@ div
         .min
           h6.no-margin Home
           div {{ data.street }}
-  .modal.bottom.active.s.no-padding
+  dialog.bottom.active.s.no-padding
     .padding.black.white-text
       p.bold(v-show="data.from") From {{ data.from }}
       p.bold(v-show="data.to") To {{ data.to }}

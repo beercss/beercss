@@ -16,7 +16,7 @@
       i.front search
       input(placeholder="Search text")
 
-      #search1.dropdown.min
+      menu#search1.min
         header.fixed
           .field.large.prefix.suffix.no-margin
             i.front(data-ui="#search1") arrow_backward
@@ -33,7 +33,7 @@
           div Item 3
     button.extra.circle.fill(data-ui="#search2")
       i search
-      #search2.dropdown.no-wrap.left.min
+      menu#search2.no-wrap.left.min
         header.fixed
           .field.large.prefix.suffix.no-margin
             i.front(data-ui="#search2") arrow_backward
@@ -62,7 +62,7 @@
       i.front search
       input(placeholder="Search text")
 
-      #search3.dropdown.max
+      menu#search3.max
         header.fixed
           .field.large.prefix.suffix.no-margin
             i.front(data-ui="#search3") arrow_backward
@@ -79,7 +79,7 @@
           div Item 3
     button.extra.circle.fill(data-ui="#search4")
       i search
-      #search4.dropdown.max
+      menu#search4.max
         header.fixed
           .field.large.prefix.suffix.no-margin
             i.front(data-ui="#search4") arrow_backward
@@ -99,6 +99,4 @@
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";
-
-const log = console.log;
 </script>

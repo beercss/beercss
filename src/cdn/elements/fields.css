@@ -43,6 +43,22 @@
   height: 4rem;
 }
 
+.field.round.small {
+  border-radius: 1.25rem;
+}
+
+.field.round {
+  border-radius: 1.5rem;
+}
+
+.field.round.large {
+  border-radius: 1.75rem;
+}
+
+.field.round.extra {
+  border-radius: 2rem;
+}
+
 .field::before {
   content: "";
   position: absolute;
@@ -99,7 +115,7 @@
 .field > select,
 input[type^=date],
 input[type^=time],
-input[type^=search] {
+input[type=search] {
   appearance: none;
   cursor: pointer;
 }
@@ -118,6 +134,13 @@ input[type^=time]::-webkit-calendar-picker-indicator {
   height: 100%;
   z-index: -1;
   cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type=number] {
+  appearance: none;
+  -moz-appearance: textfield;
 }
 
 input[type=file] {
