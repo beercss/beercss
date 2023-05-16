@@ -1,5 +1,5 @@
 .page,
-:is(.page, .modal):not(.active) .page.active {
+:is(.page, dialog):not(.active) .page.active {
   ---transform: translate(0, 0);
 
   opacity: 0;

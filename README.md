@@ -20,19 +20,11 @@ Cheers, www.beercss.com
 
 ## Why? ##
 
-- It's based on latest material design patterns.
-- It's themeable.
-- **It has zero dependencies.**
-- It does a lot of combinations.
-- It's easy to work with Vue, React, Angular, Svelte and others.
-- **It has about 10kb.**
-- **It has semantic html.**
-- **It has the most simple html output around.**
-- It does not need tons of documentation to explain it.
-- It's fast to learn, read and write code.
-- **It's like pure malt beer, only native and standard code.**
-- No tricks, no build steps and no abstraction layers to try reduce your final code.
-- It's well designed and we hope that you can do a lot with it.
+- The first CSS framework based on Material Design 3.
+- 10x smaller than others CSS frameworks based on Material Design.
+- Translates Material Design to HTML semantic standard.
+- Ready to use with any JS framework.
+- Highly focused on DX.
 
 ## Applying "the beer way" in css?
 
@@ -118,19 +110,19 @@ From jsdelivr.net.
 
 ```html
 // with html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.1.3/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.1.3/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.2.0/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.2.0/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.7/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ```css
 // with css
-@import "https://cdn.jsdelivr.net/npm/beercss@3.1.3/dist/cdn/beer.min.css";
+@import "https://cdn.jsdelivr.net/npm/beercss@3.2.0/dist/cdn/beer.min.css";
 ```
 
 ```js
 // with javascript
-import "https://cdn.jsdelivr.net/npm/beercss@3.1.3/dist/cdn/beer.min.js";
+import "https://cdn.jsdelivr.net/npm/beercss@3.2.0/dist/cdn/beer.min.js";
 import "https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.7/dist/cdn/material-dynamic-colors.min.js";
 ```
 
@@ -162,12 +154,6 @@ import "beercss/dist/cdn/beer.min.css";
 import "beercss/dist/cdn/material-symbols-outlined.woff2";
 import "beercss/dist/cdn/material-symbols-rounded.woff2";
 import "beercss/dist/cdn/material-symbols-sharp.woff2";
-import "beercss/dist/cdn/roboto-flex-cyrillic-ext.woff2";
-import "beercss/dist/cdn/roboto-flex-cyrillic.woff2";
-import "beercss/dist/cdn/roboto-flex-greek.woff2";
-import "beercss/dist/cdn/roboto-flex-latin-ext.woff2";
-import "beercss/dist/cdn/roboto-flex-latin.woff2";
-import "beercss/dist/cdn/roboto-flex-vietnamese.woff2";
 import beercss from "beercss/dist/cdn/beer.min.js";
 import materialDynamicColors from "material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js";
 ```
@@ -178,12 +164,6 @@ import "beercss/src/cdn/beer.css";
 import "beercss/src/cdn/material-symbols-outlined.woff2";
 import "beercss/src/cdn/material-symbols-rounded.woff2";
 import "beercss/src/cdn/material-symbols-sharp.woff2";
-import "beercss/src/cdn/roboto-flex-cyrillic-ext.woff2";
-import "beercss/src/cdn/roboto-flex-cyrillic.woff2";
-import "beercss/src/cdn/roboto-flex-greek.woff2";
-import "beercss/src/cdn/roboto-flex-latin-ext.woff2";
-import "beercss/src/cdn/roboto-flex-latin.woff2";
-import "beercss/src/cdn/roboto-flex-vietnamese.woff2";
 import beercss from "beercss/src/cdn/beer.ts";
 import materialDynamicColors from "material-dynamic-colors/src/cdn/material-dynamic-colors.js";
 ```
@@ -196,12 +176,12 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.1.3/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.1.3/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.2.0/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.2.0/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.7/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="light">

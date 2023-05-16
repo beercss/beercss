@@ -1,13 +1,13 @@
 .tooltip {
-  ---space: 0;
+  ---space: -0.5rem;
 
   visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: rgb(0 0 0 / 0.9);
-  color: #FFF;
+  background-color: var(--inverse-surface);
+  color: var(--inverse-on-surface);
   font-size: 0.75rem;
   text-align: center;
   border-radius: 0.25rem;
@@ -83,9 +83,8 @@
   transform: translate(-50%, 100%) scale(1);
 }
 
-.tooltip.small-space,
-.tooltip.space {
-  ---space: -0.5rem;
+.tooltip.no-space {
+  ---space: 0rem;
 }
 
 .tooltip.medium-space {
@@ -112,9 +111,9 @@
   margin-bottom: var(---space) !important;
 }
 
-.dropdown:active ~ .tooltip,
-:is(button, .button):focus > .dropdown ~ .tooltip,
-.field > :focus ~ .dropdown ~ .tooltip {
+menu:active ~ .tooltip,
+:is(button, .button):focus > menu ~ .tooltip,
+.field > :focus ~ menu ~ .tooltip {
   visibility: hidden;
 }
 
@@ -148,4 +147,15 @@
 
 .slider.vertical > .tooltip:is(.left, .right) {
   ---space: -0.5rem;
+}
+
+.tooltip.max {
+  display: block;
+  font-size: inherit;
+  white-space: normal;
+  text-align: left;
+  width: 20rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: var(--elevate2);
 }

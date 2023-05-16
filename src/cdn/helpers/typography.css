@@ -106,6 +106,10 @@ h6.large {
   color: var(--primary) !important;
 }
 
+.inverse-link {
+  color: var(--inverse-primary) !important;
+}
+
 .truncate {
   overflow: hidden;
   white-space: nowrap !important;

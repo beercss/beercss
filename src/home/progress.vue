@@ -60,7 +60,7 @@
       button
         .progress.left
         span Button
-      button.round
+      button
         .progress.right
         span Button
       button.circle.extra

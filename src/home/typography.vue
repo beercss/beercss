@@ -36,8 +36,9 @@
     a.chip.circle(@click="domain.showSamples(data, '#formatting nav *', 'Formatting', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   #formatting
-    nav
+    nav.wrap
       a.link link
+      a.inverse-link inverse-link
       p.italic italic
       p.bold bold
       p.underline underline
@@ -62,7 +63,7 @@
         type="radio",
         name="line-typography",
         checked,
-        @click="domain.updateLine('#spacing > *', 'tiny-line')"
+        @click="domain.updateLine('#spacing > *')"
       )
       span tiny-line
     label.radio

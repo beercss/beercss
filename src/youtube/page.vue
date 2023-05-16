@@ -29,7 +29,7 @@
     a(href="/youtube/explore", :class="{ active: data.url === '/youtube/explore' }")
       i explore
       div Explore
-    a.button.square.round.extra.fill(data-ui="#modal-add")
+    a.button.square.round.extra.fill(data-ui="#dialog-add")
       i add
     a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
@@ -42,7 +42,7 @@
       .medium-space
 
   nav.top
-    button.circle.large.transparent.m.l.small-margin(data-ui="#modal-expanded")
+    button.circle.large.transparent.m.l.small-margin(data-ui="#dialog-expanded")
       i menu
     img(
       v-show="!data.isDark",
@@ -58,11 +58,11 @@
       input(type="text")
       i.front mic
     .max
-    button.circle.large.transparent.s(data-ui="#modal-search")
+    button.circle.large.transparent.s(data-ui="#dialog-search")
       i search
-    button.circle.large.transparent.m.l(data-ui="#dropdown-add")
+    button.circle.large.transparent.m.l(data-ui="#menu-add")
       i video_call
-      #dropdown-add.dropdown.left.no-wrap(data-ui="#dropdown-add")
+      menu#menu-add.left.no-wrap(data-ui="#menu-add")
         a.row
           .min
             i upload
@@ -71,9 +71,9 @@
           .min
             i sensors
           .min Broadcast live
-    button.circle.large.transparent.m.l(data-ui="#dropdown-apps")
+    button.circle.large.transparent.m.l(data-ui="#menu-apps")
       i apps
-      #dropdown-apps.dropdown.left.no-wrap(data-ui="#dropdown-apps")
+      menu#menu-apps.left.no-wrap(data-ui="#menu-apps")
         a.row
           .min
             img(:src="'/youtube.png'")
@@ -87,56 +87,56 @@
           .min
             img(:src="'/youtube.png'")
           .min Youtube Kids
-    button.circle.large.transparent(data-ui="#modal-notifications")
+    button.circle.large.transparent(data-ui="#dialog-notifications")
       i notifications
     button.circle.large.small-margin.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
 
-  #modal-notifications.modal.right
+  dialog#dialog-notifications.right
     nav
       h5.max Notifications
-      button.circle.transparent(data-ui="#modal-notifications")
+      button.circle.transparent(data-ui="#dialog-notifications")
         i close
     p No new notifications here
 
-  #modal-expanded.modal.left.small
+  dialog#dialog-expanded.left.small
     header.fixed
       nav
-        button.transparent.circle.large(data-ui="#modal-expanded")
+        button.transparent.circle.large(data-ui="#dialog-expanded")
           i menu
         a
           img(v-show="!data.isDark", :src="'/youtube-light.png'")
           img(v-show="data.isDark", :src="'/youtube-dark.png'")
-    a.row.round(data-ui="#modal-expanded", href="/youtube")
+    a.row.round(data-ui="#dialog-expanded", href="/youtube")
       i home
       div Home
-    a.row.round(data-ui="#modal-expanded", href="/youtube/whats-hot")
+    a.row.round(data-ui="#dialog-expanded", href="/youtube/whats-hot")
       i whatshot
       div What's hot
-    a.row.round(data-ui="#modal-expanded", href="/youtube/subscriptions")
+    a.row.round(data-ui="#dialog-expanded", href="/youtube/subscriptions")
       i subscriptions
       div Subscript
-    a.row.round(data-ui="#modal-expanded", href="/youtube/library")
+    a.row.round(data-ui="#dialog-expanded", href="/youtube/library")
       i video_library
       div Library
     .small-divider
-    a.row.round(data-ui="#modal-expanded")
+    a.row.round(data-ui="#dialog-expanded")
       i history
       div History
-    a.row.round(data-ui="#modal-expanded")
+    a.row.round(data-ui="#dialog-expanded")
       i slideshow
       div Your videos
-    a.row.round(data-ui="#modal-expanded")
+    a.row.round(data-ui="#dialog-expanded")
       i playlist_play
       div Your albuns
-    a.row.round(data-ui="#modal-expanded")
+    a.row.round(data-ui="#dialog-expanded")
       i watch_later
       div Watch later
 
-  #modal-add.modal.bottom.top-round
+  dialog#dialog-add.bottom.top-round
     nav
       h5.max New
-      button.circle.transparent(data-ui="#modal-add")
+      button.circle.transparent(data-ui="#dialog-add")
         i close
     a.row
       .min
@@ -149,7 +149,7 @@
       .min
         span Broadcast live
 
-  #modal-search.modal.top.transparent
+  dialog#dialog-search.top.transparent
     .field.round.suffix.prefix.small.no-margin.white.black-text
       i.front search
       input(type="text")

@@ -1,18 +1,24 @@
-# Page
+# Menu
 
-Pages are containers that can be a main page, multiple pages or just to animate an element.
+Menus display a list of choices on temporary surfaces.
 
 ## Element
 
 ```html
-<div class="page">...</div>
+<...>
+  <menu>...</menu>
+</...>
 ```
 
 ## Most used helpers
 
 **Positions**
 
-left, right, top, bottom
+left, right
+
+**Sizes**
+
+wrap, no-wrap, min, max
 
 **Triggers**
 
@@ -21,58 +27,67 @@ active
 ## Example
 
 ```html
-<div class="page">
-  <h5>Title</h5>
-</div>
+<button>
+  <span>Button</span>
+  <menu class="no-wrap">
+    <a>Item</a>
+    <a>Item</a>
+    <a>Item</a>
+  </menu>
+</button>
 ```
 
 ## Triggers 
 
-#### To show/hide a page
+#### To open/close a menu
 
 #### Method 1
 
-Add/remove `active` class on page.
+Add/remove `active` class on menu.
 
 ```html
-<div class="page active">
-  <h5>Title</h5>
-</div>
+<button>
+  <span>Button</span>
+  <menu class="no-wrap active">
+    <a>Item</a>
+    <a>Item</a>
+    <a>Item</a>
+  </menu>
+</button>
 ```
 
 #### Method 2
 
-Add `data-ui="page-selector"` attribute on elements. All other pages that are in the same level will be hidden.
+Add `data-ui="menu-selector"` attribute on elements.
 
 ```html
-<a data-ui="#page1">Open page 1</a>
-<a data-ui="#page2">Open page 2</a>
-
-<div class="page" id="page1">
-  <h5>Page 1</h5>
-</div>
-
-<div class="page" id="page2">
-  <h5>Page 2</h5>
-</div>
+<button data-ui="#menu">
+  <span>Button</span>
+  <menu id="menu" class="no-wrap">
+    <a>Item</a>
+    <a>Item</a>
+    <a>Item</a>
+  </menu>
+</button>
 ```
 
 #### Method 3
 
-Call `ui("page-selector")`. All other pages that are in the same level will be hidden.
+Call `ui("menu-selector")`.
 
 ```html
-<div class="page" id="page1">
-  <h5>Page 1</h5>
-</div>
-
-<div class="page" id="page2">
-  <h5>Page 2</h5>
-</div>
+<button>
+  <span>Button</span>
+  <menu id="menu" class="no-wrap">
+    <a>Item</a>
+    <a>Item</a>
+    <a>Item</a>
+  </menu>
+</button>
 ```
 
 ```js
-ui('#page1');
+ui('#menu');
 ```
 
 ## Go to

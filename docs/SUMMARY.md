@@ -16,7 +16,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;details&gt;**
 
-**dropdown** left, right, wrap, no-wrap, min, max, active
+**&lt;dialog&gt;** left, right, top, bottom, small, medium, large, modal, border, round, no-round, left-round, right-round, top-round, bottom-round, max, active
 
 **field** small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea 
 
@@ -38,7 +38,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;main&gt;** responsive, max
 
-**modal** left, right, top, bottom, small, medium, large, border, round, no-round, left-round, right-round, top-round, bottom-round, max, active
+**&lt;menu&gt;** left, right, wrap, no-wrap, min, max, active
 
 **&lt;nav&gt;** left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
@@ -58,7 +58,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **toast** top, bottom, active
 
-**tooltip** left, right, top, bottom
+**tooltip** left, right, top, bottom, max
 
 **&lt;video&gt;** tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
 
@@ -76,7 +76,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Elevates** elevate, no-elevate, small-elevate, medium-elevate, large-elevate
 
-**Forms** border, circle, square, none, fill, extend, round, no-round, left-round, right-round, top-round, bottom-round
+**Forms** border, circle, square, none, fill, extend, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
 
 **Margins** margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
@@ -96,7 +96,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Spaces** space, no-space, small-space, medium-space, large-space
 
-**Theme** light, dark, primary, primary-text, primary-border, primary-container, secondary, secondary-text, secondary-border, secondary-container, tertiary, tertiary-text, tertiary-border, tertiary-container, error, error-text, error-border, error-container, background, surface, surface-variant, inverse-surface, black, black-text, black-border, white, white-text, white-border, transparent, transparent-text, transparent-border
+**Theme** light, dark, primary, primary-text, primary-border, primary-container, secondary, secondary-text, secondary-border, secondary-container, tertiary, tertiary-text, tertiary-border, tertiary-container, error, error-text, error-border, error-container, background, surface, surface-variant, inverse-surface, inverse-primary, inverse-primary-text, inverse-primary-border, black, black-text, black-border, white, white-text, white-border, transparent, transparent-text, transparent-border
 
 **Triggers** active
 
@@ -106,10 +106,10 @@ Use this page to learn. This page has the most used combinations of elements and
 
 ## Settings
 
-**Variables** --primary, --on-primary, --primary-container, --on-primary-container, --secondary, --on-secondary, --secondary-container, --on-secondary-container, --tertiary, --on-tertiary, --tertiary-container, --on-tertiary-container, --error, --on-error, --tertiary-error, --on-error-container, --background, --on-background, --surface, --on-surface, --surface-container, --on-surface-container, --on-surface-variant, --inverse-surface, --inverse-on-surface, --outline, --active, --overlay, --font, --size, --elevate1, --elevate2, --elevate3, --speed1, --speed2, --speed3, --speed4
+**Variables** --primary, --on-primary, --primary-container, --on-primary-container, --secondary, --on-secondary, --secondary-container, --on-secondary-container, --tertiary, --on-tertiary, --tertiary-container, --on-tertiary-container, --error, --on-error, --tertiary-error, --on-error-container, --background, --on-background, --surface, --on-surface, --surface-container, --on-surface-container, --on-surface-variant, --inverse-surface, --inverse-on-surface, --inverse-primary, --inverse-on-primary, --outline, --active, --overlay, --font, --size, --elevate1, --elevate2, --elevate3, --speed1, --speed2, --speed3, --speed4
 
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dropdown](DROPDOWN.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Loader](LOADER.md), [Media](MEDIA.md), [Modal](MODAL.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Toast](TOAST.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Loader](LOADER.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Toast](TOAST.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

@@ -6,7 +6,7 @@ div
     a(@click="domain.goTo('#intro')")
       i home
       span Install
-    a(data-ui="#modal-menu")
+    a(data-ui="#dialog-menu")
       i widgets
       span Explore
     a(@click="domain.updateMenu(data, 'left')")
@@ -23,7 +23,7 @@ div
     a(@click="domain.goTo('#intro')")
       i home
       span Install
-    a(data-ui="#modal-menu")
+    a(data-ui="#dialog-menu")
       i widgets
       span Explore
     a(@click="domain.updateMenu(data, 'top')")
@@ -53,13 +53,13 @@ div
         i.page.top.active(v-if="data.isDark") light_mode
         i.page.top.active(v-else) dark_mode
 
-  #modal-menu.modal.left
+  dialog#dialog-menu.left
     header.fixed
       nav
         img.circle(:src="'/favicon.png'")
         .max
           h6 Beer CSS
-        button.transparent.circle(data-ui="#modal-menu")
+        button.transparent.circle(data-ui="#dialog-menu")
           i close
     a.row.round(data-ui="#themes3")
       i palette
@@ -71,118 +71,118 @@ div
       i {{ data.isDark ? "light_mode" : "dark_mode" }}
       span Light / Dark
     .small-divider
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#app-bars')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#app-bars')")
       i widgets
       span App bars
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#badges')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#badges')")
       i widgets
       span Badges
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#buttons')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#buttons')")
       i widgets
       span Buttons
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#cards')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#cards')")
       i widgets
       span Cards
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#checkboxes')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#checkboxes')")
       i widgets
       span Checkboxes
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#chips')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#chips')")
       i widgets
       span Chips
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#colors')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#colors')")
       i widgets
       span Colors
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#containers')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#containers')")
       i widgets
       span Containers
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#directions')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#dialogs')")
+      i widgets
+      span Dialogs
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#directions')")
       i widgets
       span Directions
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#dividers')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#dividers')")
       i widgets
       span Dividers
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#dropdowns')")
-      i widgets
-      span Dropdowns
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#expansions')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#expansions')")
       i widgets
       span Expansions
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#grids')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#grids')")
       i widgets
       span Grids
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#icons')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#icons')")
       i widgets
       span Icons
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#inputs')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#inputs')")
       i widgets
       span Inputs
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#layouts')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#layouts')")
       i widgets
       span Layouts
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#loaders')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#loaders')")
       i widgets
       span Loaders
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#media')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#media')")
       i widgets
       span Media
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#modals')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#menus')")
       i widgets
-      span Modals
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#navigations')")
+      span Menus
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#navigations')")
       i widgets
       span Navigations
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#pages')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#pages')")
       i widgets
       span Pages
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#progress')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#progress')")
       i widgets
       span Progress
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#radios')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#radios')")
       i widgets
       span Radios
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#responsive')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#responsive')")
       i widgets
       span Responsive
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#scrolls')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#scrolls')")
       i widgets
       span Scrolls
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#search')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#search')")
       i widgets
       span Search
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#selects')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#selects')")
       i widgets
       span Selects
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#sliders')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#sliders')")
       i widgets
       span Sliders
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#spaces')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#spaces')")
       i widgets
       span Spaces
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#switches')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#switches')")
       i widgets
       span Switches
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#tables')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#tables')")
       i widgets
       span Tables
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#tabs')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#tabs')")
       i widgets
       span Tabs
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#textareas')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#textareas')")
       i widgets
       span Textareas
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#toasts')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#toasts')")
       i widgets
       span Toasts
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#tooltips')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#tooltips')")
       i widgets
       span Tooltips
-    a.row.round(data-ui="#modal-menu", @click="domain.goTo('#typography')")
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#typography')")
       i widgets
       span Typography
 
   themes(id="themes3", v-model="data", position="right")
 
-  #more3.modal.right.small(data-ui="#more3")
+  dialog#more3.right.small(data-ui="#more3")
     header.fixed
       nav
         h5.max Templates
@@ -225,8 +225,8 @@ div
       .large-space
       .large-space
       nav.center-align
-        a.button.black-text.border.black-border.large(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
-        a.button.black.white-text.large(
+        a.button.small-round.black-text.border.black-border.large(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
+        a.button.small-round.black.white-text.large(
           href="https://github.com/beercss/beercss",
           target="_self"
         )
@@ -256,9 +256,9 @@ div
             .medium-space
             h5 From CDN
             pre.scroll.large-padding.fill(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.1.3/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.2.0/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.1.3/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.2.0/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.7/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
@@ -296,8 +296,8 @@ div
                   p
                     b &lt;details&gt;
                   p
-                    b dropdown
-                    span &nbsp;left, right, wrap, no-wrap, active
+                    b &lt;dialog&gt;
+                    span &nbsp;left, right, top, bottom, small, medium, large, modal, border, round, no-round, left-round, right-round, top-round, bottom-round, active
                   p
                     b field
                     span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
@@ -319,10 +319,10 @@ div
                   p
                     b &lt;img&gt;
                     span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
+                .s12.m12.l6
                   p
                     b &lt;label&gt;
                     span &nbsp;active, radio, checkbox, switch
-                .s12.m12.l6
                   p
                     b loader
                     span &nbsp;small, medium, large
@@ -330,8 +330,8 @@ div
                     b &lt;main&gt;
                     span &nbsp;responsive, max
                   p
-                    b modal
-                    span &nbsp;left, right, top, bottom, small, medium, large, border, round, no-round, left-round, right-round, top-round, bottom-round, active
+                    b &lt;menu&gt;
+                    span &nbsp;left, right, wrap, no-wrap, active, min, max
                   p
                     b &lt;nav&gt;
                     span &nbsp;left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
@@ -360,14 +360,14 @@ div
                     span &nbsp;top, bottom, active
                   p
                     b tooltip
-                    span &nbsp;left, right, top, bottom
+                    span &nbsp;left, right, top, bottom, max
                   p
                     b &lt;video&gt;
                     span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
               .medium-space
             nav.wrap
-              a.button(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
-              a.button(href="https://codepen.io/collection/XydYMB") Codepen
+              a.button.small-round(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
+              a.button.small-round(href="https://codepen.io/collection/XydYMB") Codepen
           .medium-space
           .large-divider
         .s12
@@ -387,11 +387,11 @@ div
         .s12
           containers
         .s12
+          dialogs
+        .s12
           directions
         .s12
           dividers
-        .s12
-          dropdowns
         .s12
           expansions
         .s12
@@ -407,7 +407,7 @@ div
         .s12
           media
         .s12
-          modals
+          menus
         .s12
           navigations
         .s12
@@ -447,15 +447,15 @@ div
       div Made with love and beer, cheers 💛🍻
       .space
 
-      #modal-samples.modal.right.large
+      dialog#dialog-samples.right.large
         header.fixed.front
           nav
             h5.truncate {{data.name}}
-            a.m.l.button.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
+            a.m.l.button.small-round.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
             .max
             a.button.circle.transparent.s(v-show="data.urlSample", :href="data.urlSample", target="_blank")
               i description
-            button.circle.transparent(data-ui="#modal-samples")
+            button.circle.transparent(data-ui="#dialog-samples")
               i close
         article.large-padding.border(v-for="(exemplo in data.samples")
           div(v-html="exemplo.html")
@@ -479,7 +479,7 @@ import colors from "./colors.vue";
 import containers from "./containers.vue";
 import directions from "./directions.vue";
 import dividers from "./dividers.vue";
-import dropdowns from "./dropdowns.vue";
+import menus from "./menus.vue";
 import expansions from "./expansions.vue";
 import grids from "./grids.vue";
 import icons from "./icons.vue";
@@ -487,7 +487,7 @@ import inputs from "./inputs.vue";
 import layouts from "./layouts.vue";
 import loaders from "./loaders.vue";
 import media from "./media.vue";
-import modals from "./modals.vue";
+import dialogs from "./dialogs.vue";
 import navigations from "./navigations.vue";
 import pages from "./pages.vue";
 import progress1 from "./progress.vue";
@@ -533,11 +533,11 @@ onMounted(() => {
   height: 16rem;
 }
 
-#modal-colors .s12 > div {
+dialog#dialog-colors .s12 > div {
   padding: 1rem;
 }
 
-#modal-colors .s12 > .border {
+dialog#dialog-colors .s12 > .border {
   border: 0.0625rem solid var(--outline);
 }
 

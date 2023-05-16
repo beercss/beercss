@@ -20,11 +20,11 @@ main.responsive(v-show="data.isLoaded")
               .max.truncate
                 .bold {{ item.title }}
                 div 10k views
-              button.circle.transparent(:data-ui="'#dropdown-' + i")
+              button.circle.transparent(:data-ui="'#menu-' + i")
                 i more_vert
-                .dropdown.left.no-wrap(
-                  :id="'dropdown-' + i",
-                  :data-ui="'#dropdown-' + i"
+                menu.left.no-wrap(
+                  :id="'menu-' + i",
+                  :data-ui="'#menu-' + i"
                 )
                   a Save to library
                   a Watch later

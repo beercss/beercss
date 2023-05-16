@@ -25,6 +25,8 @@ body.light {
   --on-surface-variant: #49454E;
   --inverse-surface: #313033;
   --inverse-on-surface: #F4EFF4;
+  --inverse-primary: #D0BCFF;
+  --inverse-on-primary: #371E73;
   --body: #FFF;
   --overlay: rgb(0 0 0 / 0.5);
   --active: rgb(0 0 0 / 0.1);

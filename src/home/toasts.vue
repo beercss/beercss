@@ -18,25 +18,27 @@
       input(type="radio", name="position-toasts", @click="domain.updatePosition('#toasts .toast', 'top')")
       span top
   nav.wrap
-    button.pink.white-text(onclick="ui('.toast.pink')") Toast
-    button.orange.white-text(onclick="ui('.toast.orange')") Toast
-    button.green.white-text(onclick="ui('.toast.green')") Toast
-    button.blue.white-text(onclick="ui('.toast.blue')") Toast
-  .toast.pink.white-text
-    i error
-    span Some text here
-  .toast.orange.white-text
-    i warning
-    span Some text here
-  .toast.green.white-text
-    i done
-    span Some text here
-  .toast.blue.white-text
-    i info
-    span Some text here
+    button.inverse-surface(@click="showToast('#toast-default')") Default
+    button.error(@click="showToast('.toast.error')") Error
+    button.primary(@click="showToast('.toast.primary')") Primary
+    button.secondary(@click="showToast('.toast.secondary')") Secondary
+    button.tertiary(@click="showToast('.toast.tertiary')") Tertiary
+    button.inverse-surface(@click="showToast('#toast-action')") With action
+  .toast#toast-default Some text here
+  .toast.error Some text here
+  .toast.primary Some text here
+  .toast.secondary Some text here
+  .toast.tertiary Some text here
+  .toast#toast-action
+    .max Some text here
+    a.inverse-link Action
 </template>
 
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";
+
+const showToast = (selector: string) => {
+  ui(selector);
+};
 </script>
