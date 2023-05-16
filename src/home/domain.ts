@@ -123,7 +123,7 @@ const updateFieldType = (selector: string, type: string) => {
   if (type === "number") {
     utils.html(labels, "Number");
     utils.setAttribute(inputs, "type", type);
-    utils.html(icons, "visibility");
+    utils.html(icons, "numbers");
   }
 
   if (type === "password") {
