@@ -296,7 +296,7 @@ export default (() => {
     if (isNav) {
       const elements = queryAll("dialog, a, .overlay", container);
       elements.forEach((x: any) => {
-        x.removeClass(x, "active");
+        removeClass(x, "active");
         if (x.open) x.close();
       });
     }
