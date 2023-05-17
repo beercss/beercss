@@ -123,7 +123,7 @@ body.light {
   --elevate3: 0 0.375rem 0.75rem 0 rgb(0 0 0 / 0.48);
   --size: 16px;
   --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
-  --font-icon: "Material Symbols Outlined"; /* "Material Symbols Outlined" | "Material Symbols Rounded" | "Material Symbols Sharp" */
+  --font-icon: "Material Symbols Outlined";
   --speed1: .1s;
   --speed2: .2s;
   --speed3: .3s;
@@ -181,6 +181,30 @@ It sets the font and icon font of project.
 #### Variables
 
 --font, --font-icon
+
+#### Examples
+
+```css
+ /* To import your custom font */
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap";
+
+:root {
+  /* To use your custom font */
+  --font: "Roboto Flex";
+
+  /* To remove default icons */
+  --font-icon: none;
+
+  /* To use default outlined icons */
+  --font-icon: "Material Symbols Outlined";
+
+  /* To use default rounded icons */
+  --font-icon: "Material Symbols Rounded";
+
+  /* To use default sharp icons */
+  --font-icon: "Material Symbols Sharp";
+}
+```
 
 ## Elevates
 
