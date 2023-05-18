@@ -3,6 +3,7 @@ export default (() => {
   let _timeoutToast: ReturnType<typeof setTimeout> = null;
   let _timeoutMutation: ReturnType<typeof setTimeout> = null;
   let _mutation: MutationObserver = null;
+  let _canvas:CanvasRenderingContext2D;
   const _lastTheme: IBeerCssTheme = {
     light: "",
     dark: "",
@@ -88,6 +89,20 @@ export default (() => {
     return element;
   };
 
+  const textWidth = (element: HTMLElement, font: string): number => {
+    if (element.offsetWidth > 0) return element.offsetWidth;
+
+    if (!_canvas) {
+      const canvasElement = document.createElement("canvas") as HTMLCanvasElement;
+      canvasElement.style.display = "none";
+      document.body.append(canvasElement);
+      _canvas = canvasElement.getContext("2d");
+    }
+
+    _canvas.font = font;
+    return _canvas.measureText(element.textContent).width;
+  }
+
   const updateInput = (target: Element) => {
     const input = target as HTMLInputElement;
     if (hasType(input, "number") && !input.value) input.value = "";
@@ -99,7 +114,8 @@ export default (() => {
 
     if (toActive) {
       if (isBorder && label) {
-        let width = hasClass(label, "active") ? label.offsetWidth : Math.round(label.offsetWidth / 1.33);
+        let labelWidth = textWidth(label, "0.75rem Arial");
+        let width = hasClass(label, "active") ? labelWidth : Math.round(labelWidth / 1.33);
         width = width / 16;
         const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
         const end = width + start + 0.5;
@@ -122,7 +138,7 @@ export default (() => {
 
   const onClickLabel = (e: Event) => {
     const target = e.currentTarget as Element;
-    const input = query("input:not([type=file]):not([type=checkbox]):not([type=radio]), select, textarea", parent(target)) as HTMLElement;
+    const input = query("input:not([type=file], [type=checkbox], [type=radio]), select, textarea", parent(target)) as HTMLElement;
     if (input) input.focus();
   };
 
@@ -207,7 +223,7 @@ export default (() => {
       values.push(value);
     }
 
-    if (tooltip) tooltip.textContent = values.join();
+    if (tooltip && tooltip.textContent != values.join()) tooltip.innerHTML = values.join();
 
     let percent = percents[0];
     let left = 0;
@@ -419,12 +435,12 @@ export default (() => {
     if (_mutation) return;
     _mutation = new MutationObserver(onMutation);
     _mutation.observe(document.body, { childList: true, subtree: true });
-    return ui();
+    return onMutation();
   };
 
   const ui = (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> => {
     if (selector) {
-      if (selector === "setup") return setup();
+      if (selector === "setup") return void setup();
       if (selector === "guid") return guid();
       if (selector === "mode") return mode(options);
       if (selector === "theme") return theme(options);
@@ -440,7 +456,7 @@ export default (() => {
     const labels = queryAll(".field > label");
     labels.forEach((x: HTMLLabelElement) => on(x, "click", onClickLabel));
 
-    const inputs = queryAll(".field > input:not([type=file]):not([type=checkbox]):not([type=radio]), .field > select, .field > textarea");
+    const inputs = queryAll(".field > input:not([type=file], [type=checkbox], [type=radio]), .field > select, .field > textarea");
     inputs.forEach((x: Element) => {
       on(x, "focus", onFocusInput);
       on(x, "blur", onBlurInput);
