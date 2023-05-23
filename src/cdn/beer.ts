@@ -3,97 +3,97 @@ export default (() => {
   let _timeoutToast: ReturnType<typeof setTimeout> = null;
   let _timeoutMutation: ReturnType<typeof setTimeout> = null;
   let _mutation: MutationObserver = null;
-  let _canvas:CanvasRenderingContext2D;
+  let _canvas: CanvasRenderingContext2D;
   const _lastTheme: IBeerCssTheme = {
     light: "",
     dark: "",
   };
 
-  const wait = async (milliseconds: number) => {
+  async function wait (milliseconds: number) {
     return await new Promise((resolve: Function) => setTimeout(resolve, milliseconds));
-  };
+  }
 
-  const guid = (): string => {
+  function guid (): string {
     return "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c: string) => {
       const r = (Math.random() * 16) | 0;
       const v = c === "x" ? r : (r & 0x3) | 0x8;
       return v.toString(16);
     });
-  };
+  }
 
-  const query = (selector: string | Element, element?: Element): Element => {
+  function query (selector: string | Element, element?: Element): Element {
     try {
       return typeof selector === "string"
         ? (element ?? document).querySelector(selector)
         : selector;
     } catch {}
-  };
+  }
 
-  const queryAll = (selector: string | NodeListOf<Element>, element?: Element) => {
+  function queryAll (selector: string | NodeListOf<Element>, element?: Element) {
     try {
       return typeof selector === "string"
         ? (element ?? document).querySelectorAll(selector)
         : selector;
     } catch {}
-  };
+  }
 
-  const hasClass = (element: Element, name: string): boolean => {
+  function hasClass (element: Element, name: string): boolean {
     return element?.classList.contains(name);
-  };
+  }
 
-  const hasTag = (element: Element, name: string): boolean => {
+  function hasTag (element: Element, name: string): boolean {
     return element?.tagName.toLowerCase() === name;
-  };
+  }
 
-  const hasType = (element: HTMLInputElement, name: string): boolean => {
+  function hasType (element: HTMLInputElement, name: string): boolean {
     return element?.type.toLowerCase() === name;
-  };
+  }
 
-  const addClass = (element: Element, name: string) => {
+  function addClass (element: Element, name: string) {
     element?.classList.add(name);
-  };
+  }
 
-  const removeClass = (element: Element, name: string) => {
+  function removeClass (element: Element, name: string) {
     element?.classList.remove(name);
-  };
+  }
 
-  const on = (element: Element, name: string, callback: any) => {
+  function on (element: Element, name: string, callback: any) {
     element.addEventListener(name, callback, true);
-  };
+  }
 
-  const off = (element: Element, name: string, callback: any) => {
+  function off (element: Element, name: string, callback: any) {
     element.removeEventListener(name, callback, true);
-  };
+  }
 
-  const insertBefore = (newElement: Element, element: Element): Element => {
+  function insertBefore (newElement: Element, element: Element): Element {
     return element?.parentNode.insertBefore(newElement, element);
-  };
+  }
 
-  const prev = (element: Element): Element => {
+  function prev (element: Element): Element {
     return element?.previousElementSibling;
-  };
+  }
 
-  const next = (element: Element): Element => {
+  function next (element: Element): Element {
     return element?.nextElementSibling;
-  };
+  }
 
-  const parent = (element: Element): Element => {
+  function parent (element: Element): Element {
     return element?.parentElement;
-  };
+  }
 
-  const create = (json: any): HTMLElement => {
+  function create (json: any): HTMLElement {
     const element = document.createElement("div");
 
     for (const i in json) { element[i] = json[i]; }
 
     return element;
-  };
+  }
 
-  const textWidth = (element: HTMLElement, font: string): number => {
+  function textWidth (element: HTMLElement, font: string): number {
     if (element.offsetWidth > 0) return element.offsetWidth;
 
     if (!_canvas) {
-      const canvasElement = document.createElement("canvas") as HTMLCanvasElement;
+      const canvasElement = document.createElement("canvas");
       canvasElement.style.display = "none";
       document.body.append(canvasElement);
       _canvas = canvasElement.getContext("2d");
@@ -103,7 +103,7 @@ export default (() => {
     return _canvas.measureText(element.textContent).width;
   }
 
-  const updateInput = (target: Element) => {
+  function updateInput (target: Element) {
     const input = target as HTMLInputElement;
     if (hasType(input, "number") && !input.value) input.value = "";
 
@@ -114,7 +114,7 @@ export default (() => {
 
     if (toActive) {
       if (isBorder && label) {
-        let labelWidth = textWidth(label, "0.75rem Arial");
+        const labelWidth = textWidth(label, "0.75rem Arial");
         let width = hasClass(label, "active") ? labelWidth : Math.round(labelWidth / 1.33);
         width = width / 16;
         const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
@@ -128,65 +128,64 @@ export default (() => {
     }
 
     if (target.getAttribute("data-ui")) open(target);
-  };
+  }
 
-  const onClickElement = (e: Event) => {
+  function onClickElement (e: Event) {
     const target = e.currentTarget as HTMLElement;
-    if (hasTag(target, "input")) return;
-    open(target);
-  };
+    open(target, null, null, e);
+  }
 
-  const onClickLabel = (e: Event) => {
+  function onClickLabel (e: Event) {
     const target = e.currentTarget as Element;
     const input = query("input:not([type=file], [type=checkbox], [type=radio]), select, textarea", parent(target)) as HTMLElement;
     if (input) input.focus();
-  };
+  }
 
-  const onFocusInput = (e: Event) => {
+  function onFocusInput (e: Event) {
     const target = e.currentTarget as Element;
     updateInput(target);
-  };
+  }
 
-  const onBlurInput = (e: Event) => {
+  function onBlurInput (e: Event) {
     const target = e.currentTarget as Element;
     updateInput(target);
-  };
+  }
 
-  const onClickDocument = (e: Event) => {
-    const target = e.currentTarget as Element;
+  function onClickDocument (e: Event) {
+    off(document.body, "click", onClickDocument);
+    const target = e.target as Element;
     const menus = queryAll("menu.active");
-    menus.forEach((x: Element) => removeClass(x, "active"));
-    off(target, "click", onClickDocument);
-  };
+    menus.forEach((x: Element) => menu(target, x, e));
+  }
 
-  const onClickToast = (e: Event) => {
+  function onClickToast (e: Event) {
     const target = e.currentTarget as Element;
     removeClass(target, "active");
 
     if (_timeoutToast) clearTimeout(_timeoutToast);
-  };
+  }
 
-  const onChangeFile = (e: Event) => {
+  function onChangeFile (e: Event) {
     const target = e.currentTarget as HTMLInputElement;
     updateFile(target);
-  };
+  }
 
-  const onKeydownFile = (e: KeyboardEvent) => {
+  function onKeydownFile (e: KeyboardEvent) {
     const target = e.currentTarget as HTMLInputElement;
     updateFile(target, e);
-  };
+  }
 
-  const onInputRange = (e: Event) => {
+  function onInputRange (e: Event) {
     const target = e.currentTarget as HTMLInputElement;
     updateRange(target);
-  };
+  }
 
-  const onMutation = () => {
+  function onMutation () {
     if (_timeoutMutation) clearTimeout(_timeoutMutation);
     _timeoutMutation = setTimeout(() => { void ui(); }, 180);
-  };
+  }
 
-  const updateFile = (target: Element, e?: KeyboardEvent) => {
+  function updateFile (target: Element, e?: KeyboardEvent) {
     if (e) {
       if (e.key !== "Enter") return;
 
@@ -203,9 +202,9 @@ export default (() => {
     previousTarget.readOnly = true;
     previousTarget.addEventListener("keydown", onKeydownFile);
     updateInput(previousTarget);
-  };
+  }
 
-  const updateRange = (target: Element) => {
+  function updateRange (target: Element) {
     const parentTarget = parent(target) as HTMLElement;
     const bar = query("span", parentTarget) as HTMLElement;
     const inputs = queryAll("input", parentTarget) as NodeListOf<HTMLInputElement>;
@@ -223,7 +222,7 @@ export default (() => {
       values.push(value);
     }
 
-    if (tooltip && tooltip.textContent != values.join()) tooltip.innerHTML = values.join();
+    if (tooltip && tooltip.textContent !== values.join()) tooltip.innerHTML = values.join();
 
     let percent = percents[0];
     let left = 0;
@@ -236,12 +235,12 @@ export default (() => {
 
     bar.style.left = `${left}%`;
     bar.style.right = `${right}%`;
-  };
+  }
 
-  const open = (from?: Element, to?: Element, options?: any): any => {
+  function open (from?: Element, to?: Element, options?: any, e?: Event): any {
     if (!to) to = query(from.getAttribute("data-ui"));
     if (hasTag(to, "dialog")) return dialog(from, to);
-    if (hasTag(to, "menu")) return menu(from, to);
+    if (hasTag(to, "menu")) return menu(from, to, e);
     if (hasClass(to, "toast")) return toast(from, to, options);
     if (hasClass(to, "page")) return page(from, to);
     if (hasClass(to, "progress")) return progress(to, options);
@@ -251,9 +250,9 @@ export default (() => {
     if (hasClass(to, "active")) return removeClass(to, "active");
 
     addClass(to, "active");
-  };
+  }
 
-  const tab = (from: Element) => {
+  function tab (from: Element) {
     const container = parent(from);
     if (!hasClass(container, "tabs")) return;
 
@@ -261,30 +260,41 @@ export default (() => {
     tabs.forEach((x: Element) => removeClass(x, "active"));
 
     addClass(from, "active");
-  };
+  }
 
-  const page = (from: Element, to: Element) => {
+  function page (from: Element, to: Element) {
     tab(from);
 
     const container = parent(to);
     for (let i = 0; i < container.children.length; i++) { if (hasClass(container.children[i], "page")) removeClass(container.children[i], "active"); }
 
     addClass(to, "active");
-  };
+  }
 
-  const menu = (from: Element, to: Element) => {
+  function menu (from: Element, to: Element, e?: Event) {
+    e?.stopPropagation();
     tab(from);
 
-    if (hasClass(to, "active")) return removeClass(to, "active");
+    if (hasClass(to, "active")) {
+      if (!e) return removeClass(to, "active");
+
+      const trustedFrom = e.target as Element;
+      const trustedTo = query(trustedFrom.getAttribute("data-ui"));
+      const trustedMenu = trustedFrom.closest("menu");
+      const trustedActive = !query("menu", trustedFrom.closest("[data-ui]"));
+
+      if (trustedTo && trustedTo !== trustedMenu) return menu(trustedFrom, trustedTo);
+      if (!trustedTo && !trustedActive && trustedMenu) return false;
+      return removeClass(to, "active");
+    }
 
     const menus = queryAll("menu.active");
     menus.forEach((x: Element) => removeClass(x, "active"));
-
     addClass(to, "active");
     on(document.body, "click", onClickDocument);
-  };
+  }
 
-  const dialog = async (from: Element, to: Element) => {
+  async function dialog (from: Element, to: Element) {
     tab(from);
 
     let overlay = prev(to) as HTMLElement;
@@ -330,9 +340,9 @@ export default (() => {
       if (isModal) target.showModal();
       else target.show();
     }
-  };
+  }
 
-  const toast = (from: Element, to: Element, milliseconds?: number) => {
+  function toast (from: Element, to: Element, milliseconds?: number) {
     tab(from);
 
     const elements = queryAll(".toast.active");
@@ -347,9 +357,9 @@ export default (() => {
     _timeoutToast = setTimeout(() => {
       removeClass(to, "active");
     }, milliseconds ?? 6000);
-  };
+  }
 
-  const progress = (to: Element, percentage: number) => {
+  function progress (to: Element, percentage: number) {
     const element = to as HTMLElement;
 
     if (hasClass(element, "left")) {
@@ -368,9 +378,9 @@ export default (() => {
     }
 
     if (hasClass(element, "bottom")) element.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - percentage}%, 0% ${100 - percentage}%)`;
-  };
+  }
 
-  const lastTheme = (): IBeerCssTheme => {
+  function lastTheme (): IBeerCssTheme {
     if (_lastTheme.light && _lastTheme.dark) return _lastTheme;
 
     const light = document.createElement("body");
@@ -392,9 +402,9 @@ export default (() => {
     document.body.removeChild(light);
     document.body.removeChild(dark);
     return _lastTheme;
-  };
+  }
 
-  const theme = (source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssTheme> => {
+  function theme (source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssTheme> {
     if (!source || !_window.materialDynamicColors) return lastTheme();
 
     const mode = /dark/i.test(document.body.className) ? "dark" : "light";
@@ -421,26 +431,26 @@ export default (() => {
       document.body.setAttribute("style", _lastTheme[mode]);
       return _lastTheme;
     });
-  };
+  }
 
-  const mode = (value: string | any): string => {
+  function mode (value: string | any): string {
     if (!value) return /dark/i.test(document.body.className) ? "dark" : "light";
     document.body.classList.remove("light", "dark");
     document.body.classList.add(value);
     if (_window.materialDynamicColors) document.body.setAttribute("style", _lastTheme[value]);
     return value;
-  };
+  }
 
-  const setup = () => {
+  function setup () {
     if (_mutation) return;
     _mutation = new MutationObserver(onMutation);
     _mutation.observe(document.body, { childList: true, subtree: true });
-    return onMutation();
-  };
+    onMutation();
+  }
 
-  const ui = (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> => {
+  function ui (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> {
     if (selector) {
-      if (selector === "setup") return void setup();
+      if (selector === "setup") return setup() as undefined;
       if (selector === "guid") return guid();
       if (selector === "mode") return mode(options);
       if (selector === "theme") return theme(options);
@@ -474,7 +484,7 @@ export default (() => {
       on(x, "input", onInputRange);
       updateRange(x);
     });
-  };
+  }
 
   if (_window.addEventListener) _window.addEventListener("load", () => ui("setup"));
   _window.beercss = ui;

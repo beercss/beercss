@@ -23,13 +23,13 @@
       span default
     label.radio
       input(type="radio", name="position-badges", @click="domain.updatePosition('#badges .badge', 'top left')")
-      span top/left
+      span top left
     label.radio
       input(type="radio", name="position-badges", @click="domain.updatePosition('#badges .badge', 'bottom left')")
-      span bottom/left
+      span bottom left
     label.radio
       input(type="radio", name="position-badges", @click="domain.updatePosition('#badges .badge', 'bottom right')")
-      span bottom/right
+      span bottom right
   .medium-space
   nav.wrap.large-space
     a
