@@ -272,6 +272,7 @@ export default (() => {
   }
 
   function menu (from: Element, to: Element, e?: Event) {
+    on(document.body, "click", onClickDocument);
     e?.stopPropagation();
     tab(from);
 
@@ -291,7 +292,6 @@ export default (() => {
     const menus = queryAll("menu.active");
     menus.forEach((x: Element) => removeClass(x, "active"));
     addClass(to, "active");
-    on(document.body, "click", onClickDocument);
   }
 
   async function dialog (from: Element, to: Element) {
