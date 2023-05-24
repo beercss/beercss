@@ -110,7 +110,7 @@ export default (() => {
     const parentTarget = parent(target);
     const label = query("label", parentTarget) as HTMLLabelElement;
     const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
-    const toActive = document.activeElement === target || input.value || query("[selected]", input) || hasType(input, "date") || hasType(input, "time");
+    const toActive = document.activeElement === target || input.value || query("[selected]", input) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
 
     if (toActive) {
       if (isBorder && label) {
