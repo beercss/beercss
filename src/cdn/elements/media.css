@@ -135,6 +135,7 @@ svg {
   margin: 0;
   position: absolute;
   left: 1rem;
+  z-index: 1;
 }
 
 .extend > :is(img, svg).responsive {

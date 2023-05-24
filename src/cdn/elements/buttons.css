@@ -61,17 +61,17 @@ button {
 :is(.button, button).extend:hover,
 :is(.button, button).extend.active {
   width: auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 :is(button, .button):is(:hover, .active).extend > i + span {
   display: inherit;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
 }
 
 :is(.button, button):is(:hover, .active).extend > :is(img, svg) + span {
   display: inherit;
-  margin-left: 3rem;
+  margin-left: 2.5rem;
 }
 
 :is(.button, button):is([disabled]) {
