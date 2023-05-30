@@ -84,7 +84,7 @@ tiny, small, medium, large, extra
 ```html
 // To work as expected, you need to load the Font Awesome/Pictogrammer lib manually.
 
-// Fontawesome
+// Font Awesome
 <i class="fa-regular fa-clock"></i>
 
 // Pictogrammers
