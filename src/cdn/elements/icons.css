@@ -9,6 +9,7 @@ i {
   text-transform: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   white-space: nowrap;
   word-wrap: normal;
   direction: ltr;
@@ -22,6 +23,7 @@ i {
   height: var(---size);
   min-height: var(---size);
   box-sizing: content-box;
+  line-height: normal;
 }
 
 i.tiny {
@@ -55,4 +57,11 @@ i > :is(img, svg) {
   top: 0;
   left: 0;
   padding: inherit;
+}
+
+i[class*="fa-"] {
+  font-size: calc(var(---size) * 0.85);
+  line-height: normal;
+  height: auto;
+  min-height: auto;
 }

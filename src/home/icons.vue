@@ -112,12 +112,64 @@
         img(:src="'/favicon.png'")
       i.extra
         img(:src="'/favicon.png'")
+  .medium-space
+  h6
+    span Fontawesome icons
+    a.chip.circle(@click="domain.showSamples(data, '#icons-fontawesome i', 'Fontawesome icons', '#dialog-icons-fontawesome', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+      i code
+  nav.wrap
+    label.radio
+      input(type="radio", name="color-fontawesome", checked, @click="domain.updateTextColor('#icons-fontawesome i')")
+      span default
+    label.radio
+      input(type="radio", name="color-fontawesome", @click="domain.updateTextColor('#icons-fontawesome i', 'primary-text')")
+      span primary
+    label.radio
+      input(type="radio", name="color-fontawesome", @click="domain.updateTextColor('#icons-fontawesome i', 'secondary-text')")
+      span secondary
+    label.radio
+      input(type="radio", name="color-fontawesome", @click="domain.updateTextColor('#icons-fontawesome i', 'tertiary-text')")
+      span tertiary
+  .medium-space
+  #icons-fontawesome
+    nav.wrap
+      i.fa-regular.fa-circle-user.tiny
+      i.fa-regular.fa-circle-user.small
+      i.fa-regular.fa-circle-user
+      i.fa-regular.fa-circle-user.large
+      i.fa-regular.fa-circle-user.extra
+  .medium-space
+  h6
+    span Pictogrammer icons
+    a.chip.circle(@click="domain.showSamples(data, '#icons-pictogrammer i', 'Pictogrammer icons', '#dialog-icons-pictogrammer', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+      i code
+  nav.wrap
+    label.radio
+      input(type="radio", name="color-pictogrammer", checked, @click="domain.updateTextColor('#icons-pictogrammer i')")
+      span default
+    label.radio
+      input(type="radio", name="color-pictogrammer", @click="domain.updateTextColor('#icons-pictogrammer i', 'primary-text')")
+      span primary
+    label.radio
+      input(type="radio", name="color-pictogrammer", @click="domain.updateTextColor('#icons-pictogrammer i', 'secondary-text')")
+      span secondary
+    label.radio
+      input(type="radio", name="color-pictogrammer", @click="domain.updateTextColor('#icons-pictogrammer i', 'tertiary-text')")
+      span tertiary
+  .medium-space
+  #icons-pictogrammer
+    nav.wrap
+      i.mdi.mdi-account-circle-outline.tiny
+      i.mdi.mdi-account-circle-outline.small
+      i.mdi.mdi-account-circle-outline
+      i.mdi.mdi-account-circle-outline.large
+      i.mdi.mdi-account-circle-outline.extra
 
   dialog#dialog-icons.right.large
     header.fixed
       nav
         h5 Icons
-        a.button.border(
+        a.button.border.small-round(
           href="https://fonts.google.com/icons",
           target="_blank"
         ) Get font icons
@@ -135,7 +187,7 @@
     header.fixed
       nav
         h5 SVG icons
-        a.button.border(
+        a.button.border.small-round(
           href="https://pictogrammers.com/library/mdi/",
           target="_blank"
         ) Get svg icons
@@ -154,6 +206,44 @@
       pre.scroll.large-padding.fill(v-html="data.svgSample")
     .space
     article.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
+      div(v-html="exemplo.html")
+      .space(v-show="exemplo.html")
+      pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
+    .space
+
+  dialog#dialog-icons-fontawesome.right.large
+    header.fixed
+      nav
+        h5 Fontawesome icons
+        a.button.border.small-round(
+          href="https://fontawesome.com/search?m=free&o=r",
+          target="_blank"
+        ) Get fontawesome icons
+        .max
+        button.circle.transparent(data-ui="#dialog-icons-fontawesome")
+          i close
+    .space
+    p To work as expected, you need to load the Fontawesome lib manually.
+    article.border(v-for="exemplo in data.samples")
+      div(v-html="exemplo.html")
+      .space(v-show="exemplo.html")
+      pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
+    .space
+
+  dialog#dialog-icons-pictogrammer.right.large
+    header.fixed
+      nav
+        h5 Pictogrammer icons
+        a.button.border.small-round(
+          href="https://pictogrammers.com/library/mdi/",
+          target="_blank"
+        ) Get pictogrammer icons
+        .max
+        button.circle.transparent(data-ui="#dialog-icons-pictogrammer")
+          i close
+    .space
+    p To work as expected, you need to load the Pictogrammer lib manually.
+    article.border(v-for="exemplo in data.samples")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")

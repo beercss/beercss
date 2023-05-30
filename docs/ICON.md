@@ -79,6 +79,18 @@ tiny, small, medium, large, extra
 </i>
 ```
 
+## Other libs example
+
+```html
+// To work as expected, you need to load the Fontawesome/Pictogrammer lib manually.
+
+// Fontawesome
+<i class="fa-regular fa-clock"></i>
+
+// Pictogrammers
+<i class="mdi mdi-clock-outline"></i>
+```
+
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
