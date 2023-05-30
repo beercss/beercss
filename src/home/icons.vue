@@ -97,7 +97,7 @@
   .medium-space
   h6
     span Image icons
-    a.chip.circle(@click="domain.showSamples(data, '#icons-image i', 'Image icons', null, 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#icons-image i', 'Image', null, 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   .medium-space
   #icons-image
@@ -114,8 +114,8 @@
         img(:src="'/favicon.png'")
   .medium-space
   h6
-    span Fontawesome icons
-    a.chip.circle(@click="domain.showSamples(data, '#icons-fontawesome i', 'Fontawesome icons', '#dialog-icons-fontawesome', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    span Font Awesome
+    a.chip.circle(@click="domain.showSamples(data, '#icons-fontawesome i', 'Font Awesome', '#dialog-icons-fontawesome', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
     label.radio
@@ -140,8 +140,8 @@
       i.fa-regular.fa-circle-user.extra
   .medium-space
   h6
-    span Pictogrammer icons
-    a.chip.circle(@click="domain.showSamples(data, '#icons-pictogrammer i', 'Pictogrammer icons', '#dialog-icons-pictogrammer', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    span Pictogrammer
+    a.chip.circle(@click="domain.showSamples(data, '#icons-pictogrammer i', 'Pictogrammer', '#dialog-icons-pictogrammer', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
     label.radio
@@ -168,12 +168,21 @@
   dialog#dialog-icons.right.large
     header.fixed
       nav
-        h5 Icons
-        a.button.border.small-round(
+        h5 Default
+        a.button.border.small-round.m.l(
           href="https://fonts.google.com/icons",
           target="_blank"
-        ) Get font icons
+        ) Get icons
+        a.button.border.small-round.m.l(
+          href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
+          target="_blank"
+        ) Documentation
         .max
+        a.button.circle.transparent.s(
+          href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
+          target="_blank"
+        )
+          i description
         button.circle.transparent(data-ui="#dialog-icons")
           i close
     .space
@@ -186,12 +195,21 @@
   dialog#dialog-icons-svg.right.large
     header.fixed
       nav
-        h5 SVG icons
-        a.button.border.small-round(
+        h5 SVG
+        a.button.border.small-round.m.l(
           href="https://pictogrammers.com/library/mdi/",
           target="_blank"
-        ) Get svg icons
+        ) Get SVG
+        a.button.border.small-round.m.l(
+          href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
+          target="_blank"
+        ) Documentation
         .max
+        a.button.circle.transparent.s(
+          href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
+          target="_blank"
+        )
+          i description
         button.circle.transparent(data-ui="#dialog-icons-svg")
           i close
     .space
@@ -214,16 +232,25 @@
   dialog#dialog-icons-fontawesome.right.large
     header.fixed
       nav
-        h5 Fontawesome icons
-        a.button.border.small-round(
+        h5 Font Awesome
+        a.button.border.small-round.m.l(
           href="https://fontawesome.com/search?m=free&o=r",
           target="_blank"
-        ) Get fontawesome icons
+        ) Get Font Awesome
+        a.button.border.small-round.m.l(
+          href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
+          target="_blank"
+        ) Documentation
         .max
+        a.button.circle.transparent.s(
+          href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
+          target="_blank"
+        )
+          i description
         button.circle.transparent(data-ui="#dialog-icons-fontawesome")
           i close
     .space
-    p To work as expected, you need to load the Fontawesome lib manually.
+    p To work as expected, you need to load the Font Awesome lib manually.
     article.border(v-for="exemplo in data.samples")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
@@ -233,12 +260,21 @@
   dialog#dialog-icons-pictogrammer.right.large
     header.fixed
       nav
-        h5 Pictogrammer icons
-        a.button.border.small-round(
+        h5 Pictogrammer
+        a.button.border.small-round.m.l(
           href="https://pictogrammers.com/library/mdi/",
           target="_blank"
-        ) Get pictogrammer icons
+        ) Get Pictogrammer
+        a.button.border.small-round.m.l(
+          href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
+          target="_blank"
+        ) Documentation
         .max
+        a.button.circle.transparent.s(
+          href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
+          target="_blank"
+        )
+          i description
         button.circle.transparent(data-ui="#dialog-icons-pictogrammer")
           i close
     .space

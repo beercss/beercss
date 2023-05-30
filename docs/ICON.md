@@ -82,7 +82,7 @@ tiny, small, medium, large, extra
 ## Other libs example
 
 ```html
-// To work as expected, you need to load the Fontawesome/Pictogrammer lib manually.
+// To work as expected, you need to load the Font Awesome/Pictogrammer lib manually.
 
 // Fontawesome
 <i class="fa-regular fa-clock"></i>
