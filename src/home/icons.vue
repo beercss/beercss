@@ -114,50 +114,40 @@
         img(:src="'/favicon.png'")
   .medium-space
   h6
-    span Font Awesome
-    a.chip.circle(@click="domain.showSamples(data, '#icons-fontawesome i', 'Font Awesome', '#dialog-icons-fontawesome', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    span Other libs
+    a.chip.circle(@click="domain.showSamples(data, '#icons-libs > nav > i', 'Pictogrammer', '#dialog-icons-libs', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="color-fontawesome", checked, @click="domain.updateTextColor('#icons-fontawesome i')")
+      input(type="radio", name="color-libs", checked, @click="domain.updateTextColor('#icons-libs > nav > i')")
       span default
     label.radio
-      input(type="radio", name="color-fontawesome", @click="domain.updateTextColor('#icons-fontawesome i', 'primary-text')")
+      input(type="radio", name="color-libs", @click="domain.updateTextColor('#icons-libs > nav > i', 'primary-text')")
       span primary
     label.radio
-      input(type="radio", name="color-fontawesome", @click="domain.updateTextColor('#icons-fontawesome i', 'secondary-text')")
+      input(type="radio", name="color-libs", @click="domain.updateTextColor('#icons-libs > nav > i', 'secondary-text')")
       span secondary
     label.radio
-      input(type="radio", name="color-fontawesome", @click="domain.updateTextColor('#icons-fontawesome i', 'tertiary-text')")
+      input(type="radio", name="color-libs", @click="domain.updateTextColor('#icons-libs > nav > i', 'tertiary-text')")
       span tertiary
   .medium-space
-  #icons-fontawesome
+  #icons-libs
+    .space
+    h6 
+      span Font Awesome
+      a.link(href="https://fontawesome.com/search?m=free&o=r", target="_blank")
+        i open_in_new
     nav.wrap
       i.fa-regular.fa-circle-user.tiny
       i.fa-regular.fa-circle-user.small
       i.fa-regular.fa-circle-user
       i.fa-regular.fa-circle-user.large
       i.fa-regular.fa-circle-user.extra
-  .medium-space
-  h6
-    span Pictogrammer
-    a.chip.circle(@click="domain.showSamples(data, '#icons-pictogrammer i', 'Pictogrammer', '#dialog-icons-pictogrammer', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
-      i code
-  nav.wrap
-    label.radio
-      input(type="radio", name="color-pictogrammer", checked, @click="domain.updateTextColor('#icons-pictogrammer i')")
-      span default
-    label.radio
-      input(type="radio", name="color-pictogrammer", @click="domain.updateTextColor('#icons-pictogrammer i', 'primary-text')")
-      span primary
-    label.radio
-      input(type="radio", name="color-pictogrammer", @click="domain.updateTextColor('#icons-pictogrammer i', 'secondary-text')")
-      span secondary
-    label.radio
-      input(type="radio", name="color-pictogrammer", @click="domain.updateTextColor('#icons-pictogrammer i', 'tertiary-text')")
-      span tertiary
-  .medium-space
-  #icons-pictogrammer
+    .medium-space
+    h6 
+      span Pictogrammers
+      a.link(href="https://pictogrammers.com/library/mdi/", target="_blank")
+        i open_in_new
     nav.wrap
       i.mdi.mdi-account-circle-outline.tiny
       i.mdi.mdi-account-circle-outline.small
@@ -218,7 +208,7 @@
       .space(v-show="exemplo.html")
       pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .medium-space
-    h5 Multiple icons in a single svg
+    h6 Multiple icons in a single SVG
     .medium-space
     article.border
       pre.scroll.large-padding.fill(v-html="data.svgSample")
@@ -229,14 +219,10 @@
       pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .space
 
-  dialog#dialog-icons-fontawesome.right.large
+  dialog#dialog-icons-libs.right.large
     header.fixed
       nav
-        h5 Font Awesome
-        a.button.border.small-round.m.l(
-          href="https://fontawesome.com/search?m=free&o=r",
-          target="_blank"
-        ) Get Font Awesome
+        h5 Other libs
         a.button.border.small-round.m.l(
           href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
           target="_blank"
@@ -247,39 +233,27 @@
           target="_blank"
         )
           i description
-        button.circle.transparent(data-ui="#dialog-icons-fontawesome")
+        button.circle.transparent(data-ui="#dialog-icons-libs")
           i close
     .space
-    p To work as expected, you need to load the Font Awesome lib manually.
-    article.border(v-for="exemplo in data.samples")
+    h6 
+      span Font Awesome
+      a.link(href="https://fontawesome.com/search?m=free&o=r", target="_blank")
+        i open_in_new
+    p To work as expected, you need to load the lib manually.
+    .space
+    article.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
-    .space
-
-  dialog#dialog-icons-pictogrammer.right.large
-    header.fixed
-      nav
-        h5 Pictogrammer
-        a.button.border.small-round.m.l(
-          href="https://pictogrammers.com/library/mdi/",
-          target="_blank"
-        ) Get Pictogrammer
-        a.button.border.small-round.m.l(
-          href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
-          target="_blank"
-        ) Documentation
-        .max
-        a.button.circle.transparent.s(
-          href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
-          target="_blank"
-        )
-          i description
-        button.circle.transparent(data-ui="#dialog-icons-pictogrammer")
-          i close
-    .space
-    p To work as expected, you need to load the Pictogrammer lib manually.
-    article.border(v-for="exemplo in data.samples")
+    .medium-space
+    h6 
+      span Pictogrammers
+      a.link(href="https://pictogrammers.com/library/mdi/", target="_blank")
+        i open_in_new
+    p To work as expected, you need to load the lib manually.
+    .medium-space
+    article.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
