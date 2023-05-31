@@ -86,13 +86,13 @@ tiny, small, medium, large, extra
 
 To work as expected, you need to load the libs manually.
 
-#### [Font Awesome](https://fontawesome.com/search?m=free&o=r)
+### [Font Awesome](https://fontawesome.com/search?m=free&o=r)
 
 ```html
 <i class="fa-regular fa-clock"></i>
 ```
 
-#### [Pictogrammers](https://pictogrammers.com/library/mdi/)
+### [Pictogrammers](https://pictogrammers.com/library/mdi/)
 
 ```html
 <i class="mdi mdi-clock-outline"></i>
