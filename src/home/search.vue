@@ -19,7 +19,7 @@
       menu#search1.min
         header.fixed
           .field.large.prefix.suffix.no-margin
-            i.front(data-ui="#search1") arrow_backward
+            i.front(data-ui="#search1") arrow_back
             input(placeholder="Search text")
             i.front(data-ui="#search1") close
         a.row(data-ui="#search1")
@@ -36,7 +36,7 @@
       menu#search2.no-wrap.left.min
         header.fixed
           .field.large.prefix.suffix.no-margin
-            i.front(data-ui="#search2") arrow_backward
+            i.front(data-ui="#search2") arrow_back
             input(placeholder="Search text")
             i.front(data-ui="#search2") close
         a.row(data-ui="#search2")
@@ -65,7 +65,7 @@
       menu#search3.max
         header.fixed
           .field.large.prefix.suffix.no-margin
-            i.front(data-ui="#search3") arrow_backward
+            i.front(data-ui="#search3") arrow_back
             input(placeholder="Search text")
             i.front(data-ui="#search3") close
         a.row(data-ui="#search3")
@@ -82,7 +82,7 @@
       menu#search4.max
         header.fixed
           .field.large.prefix.suffix.no-margin
-            i.front(data-ui="#search4") arrow_backward
+            i.front(data-ui="#search4") arrow_back
             input(placeholder="Search text")
             i.front(data-ui="#search4") close
         a.row(data-ui="#search4")

@@ -296,7 +296,7 @@ div
     header.blur
       nav
         button.circle.transparent
-          i arrow_backward
+          i arrow_back
         h5.max App bar
         button.circle.transparent
           i more_vert
@@ -336,7 +336,7 @@ div
     header.white-text.left-shadow
       nav
         button.circle.transparent
-          i arrow_backward
+          i arrow_back
         h5.max App bar
         button.circle.transparent
           i more_vert

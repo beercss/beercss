@@ -88,7 +88,7 @@ Headers and footers are `position: sticky` when `fixed`.
 <header class="primary">
   <nav>
     <button class="circle transparent">
-      <i>arrow_backward</i>
+      <i>arrow_back</i>
     </button>
     <h5>Title large</h5>
     <div class="max"></div>
