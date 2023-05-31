@@ -111,7 +111,7 @@ Headers and footers are `position: sticky` when `fixed`.
 <footer>
   <nav>
     <button class="circle transparent">
-      <i>check_box_filled</i>
+      <i>check_box</i>
     </button>
     <button class="circle transparent">
       <i>brush</i>

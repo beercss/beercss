@@ -100,7 +100,7 @@ div
     footer
       nav
         button.circle.transparent
-          i check_box_filled
+          i check_box
         button.circle.transparent
           i brush
         button.circle.transparent
