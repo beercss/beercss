@@ -1,0 +1,9 @@
+:root {
+  --size: 16px;
+  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  --font-icon: "Material Symbols Outlined";
+  --speed1: 0.1s;
+  --speed2: 0.2s;
+  --speed3: 0.3s;
+  --speed4: 0.4s;
+}

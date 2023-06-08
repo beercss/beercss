@@ -30,7 +30,7 @@
   white-space: normal;
 }
 
-.no-wrap:not(.dropdown) {
+.no-wrap:not(menu) {
   display: flex;
   white-space: nowrap;
 }

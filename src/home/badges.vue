@@ -18,158 +18,44 @@
     label.radio
       input(type="radio", name="color-badges", @click="domain.updateElementColor('#badges .badge', 'tertiary')")
       span tertiary
-  .space
-  .grid
-    .s12.m6
-      .space
-      nav.wrap
-        a
-          span.badge New
-          i search
-        a
-          span.badge.round New
-          i notifications
-        a
-          span.badge.circle 10
-          i apps
-        a
-          span.badge.square 10
-          i search
-        a
-          span.badge.top New
-          i notifications
-        a
-          span.badge.round.top New
-          i apps
-        a
-          span.badge.circle.top 10
-          i search
-        a
-          span.badge.square.top 10
-          i notifications
-        a
-          span.badge.left.top New
-          i apps
-        a
-          span.badge.round.left.top New
-          i search
-        a
-          span.badge.circle.left.top 10
-          i notifications
-        a
-          span.badge.square.left.top 10
-          i apps
-        a
-          span.badge.bottom.right New
-          i search
-        a
-          span.badge.round.bottom.right New
-          i notifications
-        a
-          span.badge.circle.bottom.right 10
-          i apps
-        a
-          span.badge.square.bottom.right 10
-          i search
-        a
-          span.badge.bottom New
-          i notifications
-        a
-          span.badge.round.bottom New
-          i apps
-        a
-          span.badge.circle.bottom 10
-          i search
-        a
-          span.badge.square.bottom 10
-          i notifications
-        a
-          span.badge.left.bottom New
-          i apps
-        a
-          span.badge.round.left.bottom New
-          i search
-        a
-          span.badge.circle.left.bottom 10
-          i notifications
-        a
-          span.badge.square.left.bottom 10
-          i apps
-    .s12.m6
-      .space
-      nav.wrap
-        a
-          span.badge.border New
-          i help_outline
-        a
-          span.badge.border.round New
-          i home
-        a
-          span.badge.circle.border 10
-          i account_circle
-        a
-          span.badge.square.border 10
-          i help_outline
-        a
-          span.badge.border.top New
-          i home
-        a
-          span.badge.border.round.top New
-          i account_circle
-        a
-          span.badge.circle.border.top 10
-          i help_outline
-        a
-          span.badge.square.border.top 10
-          i home
-        a
-          span.badge.border.left.top New
-          i account_circle
-        a
-          span.badge.border.round.left.top New
-          i help_outline
-        a
-          span.badge.circle.border.left.top 10
-          i home
-        a
-          span.badge.square.border.left.top 10
-          i account_circle
-        a
-          span.badge.border.bottom.right New
-          i help_outline
-        a
-          span.badge.border.round.bottom.right New
-          i home
-        a
-          span.badge.circle.border.bottom.right 10
-          i account_circle
-        a
-          span.badge.square.border.bottom.right 10
-          i help_outline
-        a
-          span.badge.border.bottom New
-          i home
-        a
-          span.badge.border.round.bottom New
-          i account_circle
-        a
-          span.badge.circle.border.bottom 10
-          i help_outline
-        a
-          span.badge.square.border.bottom 10
-          i home
-        a
-          span.badge.border.left.bottom New
-          i account_circlec
-        a
-          span.badge.border.round.left.bottom New
-          i help_outline
-        a
-          span.badge.circle.border.left.bottom 10
-          i home
-        a
-          span.badge.square.border.left.bottom 10
-          i account_circle
+    label.radio
+      input(type="radio", name="position-badges", @click="domain.updatePosition('#badges .badge')", checked)
+      span default
+    label.radio
+      input(type="radio", name="position-badges", @click="domain.updatePosition('#badges .badge', 'top left')")
+      span top left
+    label.radio
+      input(type="radio", name="position-badges", @click="domain.updatePosition('#badges .badge', 'bottom left')")
+      span bottom left
+    label.radio
+      input(type="radio", name="position-badges", @click="domain.updatePosition('#badges .badge', 'bottom right')")
+      span bottom right
+  .medium-space
+  nav.wrap.large-space
+    a
+      span.badge New
+      i notifications
+    a
+      span.badge.square 10
+      i notifications
+    a
+      span.badge.round New
+      i notifications
+    a
+      span.badge.circle 10
+      i notifications
+    a
+      span.badge.border New
+      i notifications
+    a
+      span.badge.border.square 10
+      i notifications
+    a
+      span.badge.border.round New
+      i notifications
+    a
+      span.badge.border.circle 10
+      i notifications
 </template>
 
 <script setup lang="ts">

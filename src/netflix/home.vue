@@ -8,10 +8,10 @@
         h5.bold Started in 1983
         div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         nav
-          button.large.white.black-text
+          button.small-round.large.white.black-text
             i play_arrow
             span &nbsp;Watch
-          button.large.border.white-border.white-text
+          button.small-round.large.border.white-border.white-text
             i info_outline
             span &nbsp;More info
   main.responsive.max

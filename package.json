@@ -2,7 +2,7 @@
   "author": "Everton and Leonardo",
   "description": "Build material design interfaces in record time... without stress for devs.",
   "homepage": "https://www.beercss.com/",
-  "version": "2.3.0",
+  "version": "3.2.9",
   "name": "beercss",
   "license": "MIT",
   "type": "module",
@@ -14,13 +14,10 @@
     "test": "vitest"
   },
   "dependencies": {
-    "material-dynamic-colors": "^0.0.10",
-    "sass": "^1.49.9",
-    "uuid": "^8.3.2",
+    "material-dynamic-colors": "^0.1.7",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
     "@vitejs/plugin-vue": "^2.2.1",
@@ -32,10 +29,6 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.8.0",
     "fs-extra": "^10.0.1",
-    "http": "0.0.1-security",
-    "http-proxy": "^1.18.1",
-    "postcss": "^8.4.19",
-    "sass": "^1.49.9",
     "stylelint": "^14.15.0",
     "stylelint-config-standard-scss": "^6.1.0",
     "typescript": "^4.5.4",
@@ -47,6 +40,7 @@
   "files": [
     "dist/cdn",
     "src/cdn",
+    "index.d.ts",
     "index.js"
   ],
   "keywords": [
@@ -60,5 +54,12 @@
     "beer",
     "responsive",
     "css-framework"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beercss/beercss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beercss/beercss/issues"
+  }
 }

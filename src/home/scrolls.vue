@@ -36,7 +36,7 @@
       p Some text here
       .space
       nav
-        button.round Button
+        button Button
 
 </template>
 

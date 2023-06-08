@@ -1,16 +1,15 @@
-.tiny-space:not(nav, .row, .grid, table) {
+.tiny-space:not(nav, .row, .grid, table, .tooltip) {
   height: 0.5rem;
 }
 
-.space:not(nav, .row, .grid, table),
-.small-space:not(nav, .row, .grid, table) {
+:is(.space, .small-space):not(nav, .row, .grid, table, .tooltip) {
   height: 1rem;
 }
 
-.medium-space:not(nav, .row, .grid, table) {
+.medium-space:not(nav, .row, .grid, table, .tooltip) {
   height: 2rem;
 }
 
-.large-space:not(nav, .row, .grid, table) {
+.large-space:not(nav, .row, .grid, table, .tooltip) {
   height: 3rem;
 }

@@ -1,6 +1,7 @@
-@import "./settings/urls.css";
+@import "./settings/globals.css";
 @import "./settings/light.css";
 @import "./settings/dark.css";
+@import "./settings/fonts.css";
 @import "./helpers/reset.css";
 @import "./helpers/theme.css";
 @import "./helpers/alignments.css";
@@ -14,7 +15,6 @@
 @import "./helpers/paddings.css";
 @import "./helpers/positions.css";
 @import "./helpers/scrolls.css";
-@import "./helpers/shadows.css";
 @import "./helpers/sizes.css";
 @import "./helpers/spaces.css";
 @import "./helpers/responsive.css";
@@ -25,7 +25,7 @@
 @import "./elements/cards.css";
 @import "./elements/chips.css";
 @import "./elements/containers.css";
-@import "./elements/dropdowns.css";
+@import "./elements/dialogs.css";
 @import "./elements/expansions.css";
 @import "./elements/fields.css";
 @import "./elements/grids.css";
@@ -33,13 +33,16 @@
 @import "./elements/layouts.css";
 @import "./elements/loaders.css";
 @import "./elements/media.css";
-@import "./elements/modals.css";
+@import "./elements/menus.css";
 @import "./elements/navigations.css";
 @import "./elements/overlays.css";
 @import "./elements/pages.css";
 @import "./elements/progress.css";
 @import "./elements/selections.css";
+@import "./elements/sliders.css";
 @import "./elements/tables.css";
 @import "./elements/tabs.css";
 @import "./elements/toasts.css";
 @import "./elements/tooltips.css";
+@import "./helpers/blurs.css";
+@import "./helpers/shadows.css";

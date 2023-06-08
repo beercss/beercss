@@ -6,38 +6,31 @@
   position: fixed;
 }
 
-.absolute.left.right,
-.fixed.left.right {
+:is(.absolute, .fixed).left.right {
   width: auto;
 }
 
-.absolute.left.right.small,
-.fixed.left.right.small {
+:is(.absolute, .fixed).left.right.small {
   height: 20rem;
 }
 
-.absolute.left.right.medium,
-.fixed.left.right.medium {
+:is(.absolute, .fixed).left.right.medium {
   height: 28rem;
 }
 
-.absolute.left.right.large,
-.fixed.left.right.large {
+:is(.absolute, .fixed).left.right.large {
   height: 44rem;
 }
 
-.absolute.top.bottom.small,
-.fixed.top.bottom.small {
+:is(.absolute, .fixed).top.bottom.small {
   width: 20rem;
 }
 
-.absolute.top.bottom.medium,
-.fixed.top.bottom.medium {
+:is(.absolute, .fixed).top.bottom.medium {
   width: 28rem;
 }
 
-.absolute.top.bottom.large,
-.fixed.top.bottom.large {
+:is(.absolute, .fixed).top.bottom.large {
   width: 44rem;
 }
 
@@ -47,8 +40,7 @@ footer {
   background-color: var(--surface);
 }
 
-header.fixed,
-footer.fixed {
+:is(header, footer).fixed {
   position: sticky;
   top: 0;
   bottom: 0;
@@ -59,8 +51,7 @@ footer.fixed {
   border-radius: 0;
 }
 
-header.fixed::before,
-footer.fixed::before {
+:is(header, footer).fixed::before {
   content: "";
   position: absolute;
   top: 0;
@@ -72,35 +63,27 @@ footer.fixed::before {
   background-color: inherit;
 }
 
-.modal > header,
-.modal > footer {
+:is(dialog, menu) > :is(header, footer) {
   padding: 0;
+  background-color: inherit;
 }
 
-article > header,
-article > footer {
+article > :is(header, footer) {
   padding: inherit;
   padding-left: 0;
   padding-right: 0;
   z-index: 11 !important;
 }
 
-.modal > header.fixed,
-article > header.fixed,
-.padding > header.fixed,
-.medium-padding > header.fixed {
+:is(dialog, article, .padding, .medium-padding) > header.fixed {
   transform: translateY(-1rem);
 }
 
-.modal > footer.fixed,
-article > footer.fixed,
-.padding > footer.fixed,
-.medium-padding > footer.fixed {
+:is(dialog, article, .padding, .medium-padding) > footer.fixed {
   transform: translateY(1rem);
 }
 
-.no-padding > header.fixed,
-.no-padding > footer.fixed {
+.no-padding > :is(header, footer).fixed {
   transform: none;
 }
 

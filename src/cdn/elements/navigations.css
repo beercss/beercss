@@ -8,13 +8,13 @@ nav,
   gap: 1rem;
 }
 
-*:not(.divider, .small-divider, .medium-divider, .large-divider) + nav:not(.left, .right, .top, .bottom),
-*:not(.divider, .small-divider, .medium-divider, .large-divider) + .row:not(a) {
+:not(.divider, .small-divider, .medium-divider, .large-divider) + nav:not(.left, .right, .top, .bottom),
+:not(.divider, .small-divider, .medium-divider, .large-divider) + .row:not(a) {
   margin-top: 1rem;
 }
 
-nav *,
-.row * {
+:is(nav, .row) > *,
+:is(nav, .row) > :not(.tooltip, menu) > * {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -26,23 +26,19 @@ nav > *,
   flex: none;
 }
 
-nav.no-space,
-.row.no-space {
+:is(nav, .row).no-space {
   gap: 0;
 }
 
-nav.no-space > .border + .border,
-.row.no-space > .border + .border {
+:is(nav, .row).no-space > .border + .border {
   border-left: 0;
 }
 
-nav.medium-space,
-.row.medium-space {
+:is(nav, .row).medium-space {
   gap: 1.5rem;
 }
 
-nav.large-space,
-.row.large-space {
+:is(nav, .row).large-space {
   gap: 2rem;
 }
 
@@ -57,25 +53,23 @@ nav.wrap,
   flex-wrap: wrap;
 }
 
-header > nav,
-header > .row {
+header > :is(nav, .row) {
   min-height: 4rem;
 }
 
-footer > nav,
-footer > .row {
+footer > :is(nav, .row) {
   min-height: 5rem;
 }
 
-nav > .border.no-margin + .border.no-margin,
-.row > .border.no-margin + .border.no-margin {
+:is(nav, .row) > .border.no-margin + .border.no-margin {
   border-left: 0;
 }
 
-nav.left,
-nav.right,
-nav.top,
-nav.bottom {
+a.row.wave {
+  padding: 0.75rem;
+}
+
+nav:is(.left, .right, .top, .bottom) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,8 +95,7 @@ nav.right {
   width: 5rem;
 }
 
-nav.top,
-nav.bottom {
+nav:is(.top, .bottom) {
   height: 5rem;
 }
 
@@ -130,10 +123,7 @@ nav.bottom {
   flex-direction: row;
 }
 
-nav.left > a:not(button, .button, .chip, img, video),
-nav.right > a:not(button, .button, .chip, img, video),
-nav.top > a:not(button, .button, .chip, img, video),
-nav.bottom > a:not(button, .button, .chip, img, video) {
+nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip, img, video, svg) {
   min-width: 3.5rem;
   min-height: 3.5rem;
   text-align: center;
@@ -142,21 +132,16 @@ nav.bottom > a:not(button, .button, .chip, img, video) {
   flex-direction: column;
 }
 
-nav.left > a:not(button, .button, .chip, img, video),
-nav.right > a:not(button, .button, .chip, img, video) {
+nav:is(.left, .right) > a:not(button, .button, .chip, img, video, svg) {
   width: auto;
 }
 
-nav.top > a:not(button, .button, .chip, img, video),
-nav.bottom > a:not(button, .button, .chip, img, video) {
+nav:is(.top, .bottom) > a:not(button, .button, .chip, img, video, svg) {
   height: auto;
   width: 3.5rem;
 }
 
-nav.left::before,
-nav.right::before,
-nav.top::before,
-nav.bottom::before {
+nav:is(.left, .right, .top, .bottom)::before {
   content: "";
   position: absolute;
   top: 0;
@@ -168,54 +153,37 @@ nav.bottom::before {
   border-radius: inherit;
 }
 
-nav.left > :not(.modal, .overlay),
-nav.right > :not(.modal, .overlay),
-nav.top > :not(.modal, .overlay),
-nav.bottom > :not(.modal, .overlay) {
+nav:is(.left, .right, .top, .bottom) > :not(dialog, .overlay) {
   z-index: 101;
 }
 
-nav.left > a:not(button, .button, .chip) > i,
-nav.right > a:not(button, .button, .chip) > i,
-nav.top > a:not(button, .button, .chip) > i,
-nav.bottom > a:not(button, .button, .chip) > i {
+nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip) > i {
   padding: 0.25rem;
   border-radius: 2rem;
   transition: var(--speed1) padding linear;
   margin: 0 auto;
 }
 
-nav.left > a:not(button, .button, .chip):hover > i,
-nav.left > a:not(button, .button, .chip):focus > i,
-nav.left > a:not(button, .button, .chip).active > i,
-nav.right > a:not(button, .button, .chip):hover > i,
-nav.right > a:not(button, .button, .chip):focus > i,
-nav.right > a:not(button, .button, .chip).active > i,
-nav.top > a:not(button, .button, .chip):hover > i,
-nav.top > a:not(button, .button, .chip):focus > i,
-nav.top > a:not(button, .button, .chip).active > i,
-nav.bottom > a:not(button, .button, .chip):focus > i,
-nav.bottom > a:not(button, .button, .chip):hover > i,
-nav.bottom > a:not(button, .button, .chip).active > i {
+nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip):is(:hover, :focus, .active) > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
   padding: 0.25rem 1rem;
   font-variation-settings: "FILL" 1;
 }
 
-nav.left > .modal {
+nav.left > dialog {
   padding-left: 5.5rem;
 }
 
-nav.right > .modal {
+nav.right > dialog {
   padding-right: 5.5rem;
 }
 
-nav.top > .modal {
+nav.top > dialog {
   padding-top: 5.5rem;
 }
 
-nav.bottom > .modal {
+nav.bottom > dialog {
   padding-bottom: 5.5rem;
 }
 

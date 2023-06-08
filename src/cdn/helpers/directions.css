@@ -12,9 +12,7 @@
 }
 
 .vertical,
-button.vertical,
-.button.vertical,
-.chip.vertical {
+.vertical:is(button, .button, .chip) {
   display: inline-flex;
   flex-direction: column !important;
   gap: 0.25rem;

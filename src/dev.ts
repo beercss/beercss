@@ -1,9 +1,11 @@
 import "material-dynamic-colors";
 import "./cdn/beer.css";
-import "./cdn/beer.js";
+import "./cdn/beer.ts";
 import "./app.css";
 import "./home";
+import "./dynamicColors";
 import "./gmail";
+import "./materialDesign3";
 import "./netflix";
 import "./test";
 import "./uber";

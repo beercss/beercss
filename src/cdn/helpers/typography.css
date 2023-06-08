@@ -5,6 +5,7 @@ html {
 body {
   font-family: var(--font);
   font-size: 0.875rem;
+  line-height: 1.25;
 }
 
 h1,
@@ -17,6 +18,7 @@ h6 {
   display: flex;
   align-items: center;
   margin-bottom: 0.5rem;
+  line-height: normal;
 }
 
 * + h1,
@@ -29,37 +31,90 @@ h6 {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 3.5625rem;
 }
 
 h2 {
-  font-size: 3.75rem;
+  font-size: 2.8125rem;
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: 2.25rem;
 }
 
 h4 {
-  font-size: 2.125rem;
+  font-size: 2rem;
 }
 
 h5 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 h6 {
+  font-size: 1.5rem;
+}
+
+h1.small {
+  font-size: 3.0625rem;
+}
+
+h2.small {
+  font-size: 2.3125rem;
+}
+
+h3.small {
+  font-size: 1.75rem;
+}
+
+h4.small {
+  font-size: 1.5rem;
+}
+
+h5.small {
   font-size: 1.25rem;
+}
+
+h6.small {
+  font-size: 1rem;
+}
+
+h1.large {
+  font-size: 4.0625rem;
+}
+
+h2.large {
+  font-size: 3.3125rem;
+}
+
+h3.large {
+  font-size: 2.75rem;
+}
+
+h4.large {
+  font-size: 2.5rem;
+}
+
+h5.large {
+  font-size: 2.25rem;
+}
+
+h6.large {
+  font-size: 2rem;
 }
 
 .link {
   color: var(--primary) !important;
 }
 
+.inverse-link {
+  color: var(--inverse-primary) !important;
+}
+
 .truncate {
   overflow: hidden;
   white-space: nowrap !important;
   text-overflow: ellipsis;
+  flex: inherit;
 }
 
 .truncate > * {
@@ -108,4 +163,28 @@ h6 {
 
 p {
   margin: 0.5rem 0;
+}
+
+.no-line {
+  line-height: normal;
+}
+
+.tiny-line {
+  line-height: 1.25;
+}
+
+.small-line {
+  line-height: 1.5;
+}
+
+.medium-line {
+  line-height: 1.75;
+}
+
+.large-line {
+  line-height: 2;
+}
+
+.extra-line {
+  line-height: 2.25;
 }

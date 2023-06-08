@@ -15,6 +15,7 @@
   right: 0;
   transform: translate(50%, -100%);
   height: 1.25rem;
+  line-height: normal;
 }
 
 .badge.none {
@@ -67,20 +68,20 @@
   transform: translate(-50%, -100%);
 }
 
-.badge.top.right {
-  top: 0;
-  left: auto;
-  bottom: auto;
-  right: 0;
-  transform: translate(50%, -100%);
-}
-
 .badge.bottom.left {
   top: auto;
   left: 0;
   bottom: 0;
   right: auto;
   transform: translate(-50%, 100%);
+}
+
+.badge.top.right {
+  top: 0;
+  left: auto;
+  bottom: auto;
+  right: 0;
+  transform: translate(50%, -100%);
 }
 
 .badge.bottom.right {
@@ -96,8 +97,7 @@
   color: var(--error);
 }
 
-.badge.circle,
-.badge.square {
+.badge:is(.circle, .square) {
   padding: 0;
   text-align: center;
   width: 1.25rem;
@@ -106,8 +106,4 @@
 
 .badge.circle {
   border-radius: 50%;
-}
-
-.badge.square {
-  border-radius: 0;
 }

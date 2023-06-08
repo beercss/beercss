@@ -34,8 +34,12 @@ module.exports = {
     }],
     // Array<T>
     "@typescript-eslint/array-type": ["error", { default: "generic" }],
+    // allow undef variables
+    "no-undef": "warn",
     // allow unused variables
     "no-unused-vars": "warn",
+    // allow no-setup-props-destructure variables
+    "vue/no-setup-props-destructure": "warn",
     // allow functions without return type
     "@typescript-eslint/explicit-function-return-type": 0,
     // allow non-strict boolean expressions

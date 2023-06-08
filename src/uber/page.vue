@@ -4,10 +4,10 @@ div
     .space
     img(height="24", :src="'/uber-dark.png'")
     button.large.transparent.m.l(
-      data-ui="#dropdown-ride"
+      data-ui="#menu-ride"
     )
       span Ride
-      #dropdown-ride.dropdown.no-wrap(data-ui="#dropdown-ride")
+      menu#menu-ride.no-wrap(data-ui="#menu-ride")
         a Overview
         a Price calculator
         a Cities
@@ -17,10 +17,10 @@ div
         a Safety
         a Airports
     button.large.transparent.m.l(
-      data-ui="#dropdown-drive"
+      data-ui="#menu-drive"
     )
       span Drive
-      #dropdown-drive.dropdown.no-wrap(data-ui="#dropdown-drive")
+      menu#menu-drive.no-wrap(data-ui="#menu-drive")
         a Overview
         a Partner app
         a Safe
@@ -31,10 +31,10 @@ div
         a Vehicle solutions
         a Safety
     button.large.transparent.m.l(
-      data-ui="#dropdown-more"
+      data-ui="#menu-more"
     )
       span More
-      #dropdown-more.dropdown.no-wrap(data-ui="#dropdown-more")
+      menu#menu-more.no-wrap(data-ui="#menu-more")
         a Uber Eats
         a Make deliveries
         a Uber Health
@@ -43,7 +43,7 @@ div
         a Uber Freight
     .max
     button.circle.large.transparent.m.l(data-ui="#themes1")
-      i brightness_medium
+      i palette
     button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
     .space
@@ -63,6 +63,7 @@ import sharedDomain from "../shared/domain";
 import { redirect } from "../shared/router";
 
 onMounted(() => {
+  document.title = "Uber - Beer CSS";
   sharedDomain.initTheme(data.value);
 });
 </script>

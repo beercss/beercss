@@ -90,6 +90,19 @@
   color: var(--inverse-on-surface);
 }
 
+.inverse-primary {
+  background-color: var(--inverse-primary);
+  color: var(--inverse-on-primary);
+}
+
+.inverse-primary-text {
+  color: var(--inverse-primary) !important;
+}
+
+.inverse-primary-border {
+  border-color: var(--inverse-primary) !important;
+}
+
 .black {
   background-color: #000 !important;
 }

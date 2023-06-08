@@ -4,10 +4,10 @@ import utils from "../shared/utils";
 import sharedDomain from "../shared/domain";
 import { ILayout } from "../shared/interfaces";
 
-const updateShadow = (selector: any, shadow?: string) => {
+const updateElevate = (selector: any, elevate?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["no-elevate", "small-elevate", "medium-elevate", "large-elevate"]);
-  if (shadow) utils.addClass(elements, [shadow]);
+  if (elevate) utils.addClass(elements, [elevate]);
 };
 
 const updateColor = (selector: any, color?: string) => {
@@ -31,10 +31,10 @@ const updateTextColor = (selector: any, textColor?: string) => {
 const updateElementColor = (selector: string, color?: string) => {
   const elementsWithBorder = utils.queryAll(selector + ".border");
   const elementsWithoutBorder = utils.queryAll(selector + ":not(.border)");
-  updateBorderColor(elementsWithBorder, color && color != "fill" ? color + "-border" : "");
-  updateTextColor(elementsWithBorder, color && color != "fill" ? color + "-text" : "");
+  updateBorderColor(elementsWithBorder, color && color !== "fill" ? color + "-border" : "");
+  updateTextColor(elementsWithBorder, color && color !== "fill" ? color + "-text" : "");
   updateColor(elementsWithoutBorder, color);
-  updateColor(elementsWithBorder, color == "fill" && selector.includes("chip") ? color : "");
+  updateColor(elementsWithBorder, color === "fill" && selector.includes("chip") ? color : "");
 };
 
 const updateSize = (selector: string, size?: string) => {
@@ -46,7 +46,7 @@ const updateSize = (selector: string, size?: string) => {
 const updatePosition = (selector: any, position?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["left", "center", "right", "top", "middle", "bottom"]);
-  if (position) utils.addClass(elements, [position]);
+  if (position) utils.addClass(elements, (position || "").split(" "));
 };
 
 const updateAlign = (selector: any, alignment?: string) => {
@@ -77,21 +77,21 @@ const updateFill = (selector: string, event: any) => {
   const elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["fill"]);
   else utils.removeClass(elements, ["fill"]);
-  ui();
+  void ui();
 };
 
 const updateBorder = (selector: string, event: any) => {
   const elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["border"]);
   else utils.removeClass(elements, ["border"]);
-  ui();
+  void ui();
 };
 
 const updateRound = (selector: string, event: any) => {
   const elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["round"]);
   else utils.removeClass(elements, ["round"]);
-  ui();
+  void ui();
 };
 
 const updateFieldType = (selector: string, type: string) => {
@@ -102,7 +102,7 @@ const updateFieldType = (selector: string, type: string) => {
   utils.remove(files);
   utils.removeAttribute(inputs, "readonly");
 
-  if (type == "file") {
+  if (type === "file") {
     utils.setAttribute(inputs, "type", "text");
     utils.html(labels, "File");
     utils.html(icons, "attach_file");
@@ -114,28 +114,34 @@ const updateFieldType = (selector: string, type: string) => {
     }
   }
 
-  if (type == "text") {
+  if (type === "text") {
     utils.html(labels, "Label");
     utils.setAttribute(inputs, "type", type);
     utils.html(icons, "search");
   }
 
-  if (type == "password") {
+  if (type === "number") {
+    utils.html(labels, "Number");
+    utils.setAttribute(inputs, "type", type);
+    utils.html(icons, "numbers");
+  }
+
+  if (type === "password") {
     utils.html(labels, "Password");
     utils.setAttribute(inputs, "type", type);
     utils.html(icons, "visibility");
   }
 
-  if (type == "date") {
+  if (type === "date") {
     utils.html(labels, "Date");
     utils.setAttribute(inputs, "type", type);
     utils.html(icons, "today");
   }
 
-  if (type == "time") {
+  if (type === "time") {
     utils.html(labels, "Time");
     utils.setAttribute(inputs, "type", type);
-    utils.html(icons, "search");
+    utils.html(icons, "schedule");
   }
 };
 
@@ -148,14 +154,14 @@ const updateMenu = (data: IHome, css?: string) => {
   data.isHorizontal = isHorizontal;
 };
 
-const updateColorTheme = (selector?: string, css?: string) => {
+const updateColorTheme = (selector: string, css?: string) => {
   const containers = utils.queryAll(selector);
-  const buttons = utils.queryAll(selector + " button:not(.transparent, .border)");
+  const buttons = utils.queryAll(`${selector} button:not(.transparent, .border)`);
 
   utils.removeClass(containers, ["fill"]);
   utils.removeClass(buttons, ["fill"]);
-  updateColor(containers, css && css != "fill" ? css + "-container" : css);
-  updateColor(buttons, css && css != "fill" ? css : "");
+  updateColor(containers, css && css !== "fill" ? css + "-container" : css);
+  updateColor(buttons, css && css !== "fill" ? css : "");
 };
 
 const updateHorizontalPosition = (selector: string, position?: string) => {
@@ -185,7 +191,7 @@ const updateVerticalAlign = (selector: string, align?: string) => {
 const updateDirection = (selector: string, direction?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["vertical", "horizontal"]);
-  if (direction && direction != "horizontal") utils.addClass(elements, [direction], (x) => !x.hasAttribute("no-direction"));
+  if (direction && direction !== "horizontal") utils.addClass(elements, [direction], (x) => !x.hasAttribute("no-direction"));
 };
 
 const updateMinMax = (selector: string, css?: string) => {
@@ -195,20 +201,20 @@ const updateMinMax = (selector: string, css?: string) => {
 };
 
 const updateIcon = (css?: string) => {
-  const elements = utils.queryAll("#icons-sample i");
+  const elements = utils.queryAll("#icons-default i");
   utils.removeClass(elements, ["fill"]);
   if (css) utils.addClass(elements, [css]);
 };
 
 const updatePage = (selector: string) => {
-  ui(selector);
+  void ui(selector);
 };
 
 const updateProgress = (value: number) => {
-  utils.queryAll("#progress .progress").forEach((x) => ui(x, value));
+  utils.queryAll("#progress .progress").forEach((x) => { void ui(x, value); });
 };
 
-const formatHtml = (element: any): string => {
+const formatHtml = (element: any, raw: boolean = false): string => {
   function process (str: string): string {
     const div = document.createElement("div");
     div.innerHTML = str.trim();
@@ -227,7 +233,7 @@ const formatHtml = (element: any): string => {
 
       format(node.children[i], level);
 
-      if (node.lastElementChild == node.children[i]) {
+      if (node.lastElementChild === node.children[i]) {
         textNode = document.createTextNode("\n" + indentAfter);
         node.appendChild(textNode);
       }
@@ -237,36 +243,38 @@ const formatHtml = (element: any): string => {
   }
 
   const tag = utils.clone(element);
+  if (raw) return process(tag.outerHTML);
+
   utils.remove(tag.querySelectorAll(".overlay"));
   utils.remove(tag.querySelectorAll("[style*='none']"));
 
-  return process(
-    tag.outerHTML
-      .replace(/\s+(id|data-ui|onclick|style|data-v-\w+)\="[^\"]*"/gi, "")
-      .replace(/\s+name\="(\w+)"/gi, " name=\"$1_\"")
-      .replace(/\s+(checked|disabled)=""/gi, " $1")
-      .replace(/\s+[a-z-]+\=(""|"#")/gi, "")
-      .replace(/\s+(tiny-padding)/gi, "")
-      .replace(/\n\<\/(circle|th)\>/gi, "</$1>"),
-  )
+  return process(tag.outerHTML
+    .replace(/<!--v-if-->/gi, "")
+    .replace(/\s+(wfd-id|id|data-ui|onclick|style|data-v-\w+)="[^"]*"/gi, "")
+    .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
+    .replace(/\s+(checked|disabled)=""/gi, " $1")
+    .replace(/\s+[a-z-]+=(""|"#")/gi, "")
+    .replace(/\s+(tiny-padding)/gi, "")
+    .replace(/\n<\/(circle|th)>/gi, "</$1>"))
     .replace(/^\s+/g, "")
     .replace(/\s+(checked|disabled)=""/gi, " $1");
 };
 
-const showSamples = (data: IHome, selector: string, name: string, modal?: string, url?: string) => {
+const showSamples = (data: IHome, selector: string, name: string, dialog?: string, url?: string) => {
   const elements = utils.queryAll(selector);
   let text = "";
   let textFormatted = "";
   data.name = name;
   data.samples = [];
-  data.modalSample = modal || "#modal-samples";
-  data.urlSample = url || "";
+  data.dialogSample = dialog ?? "#dialog-samples";
+  data.urlSample = url ?? "";
+  if (!data.svgSample) data.svgSample = hljs.highlight("html", formatHtml(utils.query("#svg-sample > svg"), true)).value;
 
   for (let i = 0; i < elements.length; i++) {
     const element = utils.clone(elements[i]);
 
     if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom"])) {
-      utils.html(element.querySelectorAll(".modal"), "");
+      utils.html(element.querySelectorAll("dialog"), "");
       text = formatHtml(element);
       textFormatted = hljs.highlight("html", text).value;
     } else {
@@ -274,7 +282,7 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
       textFormatted = hljs.highlight("html", text).value;
     }
 
-    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", ".modal", ".toast", "main.responsive", ".fixed:not(header, footer)"])) { text = ""; }
+    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", "dialog", ".toast", "main.responsive", ".fixed:not(header, footer)"])) { text = ""; }
 
     data.samples.push({
       html: text,
@@ -282,9 +290,9 @@ const showSamples = (data: IHome, selector: string, name: string, modal?: string
     });
   }
 
-  nextTick(() => {
-    ui(data.modalSample);
-    const element = utils.query(data.modalSample);
+  void nextTick(() => {
+    void ui(data.dialogSample);
+    const element = utils.query(data.dialogSample);
     element?.scrollTo(0, 0);
   });
 };
@@ -303,11 +311,29 @@ const addHomeScreen = () => {
 const updateTheme = (data: ILayout) => {
   const colors = ["#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4", "#009688", "#4caf50", "#8bc34a", "#cddc39", "#ffeb3b", "#ffc107", "#ff9800", "#ff5722", "#795548", "#9e9e9e", "#607d8b", "#000000", "#ffffff"];
   const color = colors[Math.floor(Math.random() * colors.length)];
-  sharedDomain.updateTheme(data, color);
+  void sharedDomain.updateTheme(data, color);
+};
+
+const updateBlur = (selector: string, blur?: string) => {
+  const elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["blur", "small-blur", "medium-blur", "large-blur"]);
+  if (blur) utils.addClass(elements, [blur]);
+};
+
+const updateShadow = (selector: any, shadow?: string) => {
+  const elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["shadow", "no-shadow", "top-shadow", "bottom-shadow", "left-shadow", "right-shadow"]);
+  if (shadow) utils.addClass(elements, [shadow]);
+};
+
+const updateLine = (selector: string, line?: string) => {
+  const elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["no-line", "tiny-line", "small-line", "medium-line", "large-line", "extra-line"]);
+  if (line) utils.addClass(elements, [line]);
 };
 
 export default {
-  updateShadow,
+  updateElevate,
   updateColor,
   updateBorderColor,
   updateTextColor,
@@ -338,4 +364,7 @@ export default {
   goTo,
   showSamples,
   updateTheme,
+  updateBlur,
+  updateShadow,
+  updateLine,
 };

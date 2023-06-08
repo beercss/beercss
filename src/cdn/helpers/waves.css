@@ -1,8 +1,6 @@
 .wave::after,
 .wave.light::after,
-.chip::after,
-.button::after,
-button::after {
+:is(.chip, .button, button)::after {
   content: "";
   position: absolute;
   top: 0;
@@ -18,57 +16,40 @@ button::after {
 }
 
 .wave.dark::after,
-.button.none::after,
-button.none::after,
-.chip.border::after,
-.button.border::after,
-button.border::after,
-.chip.transparent::after,
-.button.transparent::after,
-button.transparent::after {
+.wave.row::after,
+:is(.button, button).none::after,
+:is(.chip, .button, button).border::after,
+:is(.chip, .button, button).transparent::after {
   background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
 }
 
 .wave.none::after,
-.button.none::after,
-button.none::after {
+:is(.button, button).none::after {
   top: 0;
   left: -0.25rem;
   padding: 0 0.25rem;
 }
 
 .wave.none:not(.small, .medium, .large, .extra)::after,
-.button.none:not(.small, .medium, .large, .extra)::after,
-button.none:not(.small, .medium, .large, .extra)::after {
+:is(.button, button).none:not(.small, .medium, .large, .extra)::after {
   top: -0.25rem;
   left: -0.25rem;
   padding: 0.25rem;
 }
 
-.wave:hover::after,
-.chip:hover::after,
-.button:hover::after,
-button:hover::after,
-.wave:focus::after,
-.chip:focus::after,
-.button:focus::after,
-button:focus::after {
+:is(.wave, .chip, .button, button):is(:focus, :hover)::after {
   background-size: 15000%;
   opacity: 1;
   transition: var(--speed2) background-size linear;
 }
 
-.wave:active::after,
-.chip:active::after,
-.button:active::after,
-button:active::after {
+:is(.wave, .chip, .button, button):active::after {
   background-size: 5000%;
   opacity: 0;
   transition: none;
 }
 
 .no-wave::after,
-.no-wave:hover::after,
-.no-wave:active::after {
+.no-wave:is(:hover, :active)::after {
   display: none;
 }

@@ -24,8 +24,7 @@ export default (() => {
   function query (selector: string | Element, element?: Element): Element | null | undefined {
     try {
       return typeof selector === "string"
-        ? (element ?? document).querySelector(selector)
-        : selector;
+        ? (element ?? document).querySelector(selector) : selector;
     } catch {
       return null;
     }
@@ -56,7 +55,7 @@ export default (() => {
   }
 
   function removeClass (element: Element, name: string) {
-    element?.classList.remove(name);
+    element?.classList?.remove(name);
   }
 
   function on (element: Element, name: string, callback: any) {
@@ -79,7 +78,7 @@ export default (() => {
     return element?.nextElementSibling;
   }
 
-  function parent (element?: Element | null): Element | null | undefined {
+  function parent (element: Element): Element | null {
     return element?.parentElement;
   }
 

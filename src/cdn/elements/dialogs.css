@@ -1,4 +1,6 @@
-.modal {
+dialog {
+  display: block;
+  border: none;
   opacity: 0;
   visibility: hidden;
   position: fixed;
@@ -18,40 +20,40 @@
   transform: translate(-50%, -4rem);
 }
 
-.modal:not(.left, .right, .top, .bottom) {
+dialog::backdrop {
+  display: none;
+}
+
+dialog:not(.left, .right, .top, .bottom) {
   border-radius: 0.75rem;
 }
 
-.modal.small {
+dialog.small {
   width: 25%;
   height: 25%;
 }
 
-.modal.medium {
+dialog.medium {
   width: 50%;
   height: 50%;
 }
 
-.modal.large {
+dialog.large {
   width: 75%;
   height: 75%;
 }
 
-.modal.active {
+dialog:is(.active, [open]) {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, 0);
 }
 
-.modal.active.left,
-.modal.active.right,
-.modal.active.top,
-.modal.active.bottom,
-.modal.active.max {
+dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
 }
 
-.modal.top {
+dialog.top {
   opacity: 1;
   top: 0;
   left: 0;
@@ -64,7 +66,7 @@
   transform: translateY(-100%);
 }
 
-.modal.left {
+dialog.left {
   opacity: 1;
   top: 0;
   left: 0;
@@ -76,7 +78,7 @@
   transform: translateX(-100%);
 }
 
-.modal.right {
+dialog.right {
   opacity: 1;
   top: 0;
   left: auto;
@@ -88,7 +90,7 @@
   transform: translateX(100%);
 }
 
-.modal.bottom {
+dialog.bottom {
   opacity: 1;
   top: auto;
   left: 0;
@@ -101,7 +103,7 @@
   transform: translateY(100%);
 }
 
-.modal.max {
+dialog.max {
   top: 0;
   left: 0;
   right: auto;
@@ -114,38 +116,32 @@
   border-radius: 0;
 }
 
-.modal.left.small,
-.modal.right.small {
+dialog.small:is(.left, .right) {
   width: 20rem;
 }
 
-.modal.left.medium,
-.modal.right.medium {
+dialog.medium:is(.left, .right) {
   width: 32rem;
 }
 
-.modal.left.large,
-.modal.right.large {
+dialog.large:is(.left, .right) {
   width: 44rem;
 }
 
-.modal.top.small,
-.modal.bottom.small {
+dialog.small:is(.top, .bottom) {
   height: 16rem;
 }
 
-.modal.top.medium,
-.modal.bottom.medium {
+dialog.medium:is(.top, .bottom) {
   height: 24rem;
 }
 
-.modal.top.large,
-.modal.bottom.large {
+dialog.large:is(.top, .bottom) {
   height: 32rem;
 }
 
-nav > .modal,
-nav.left > .modal {
+nav > dialog,
+nav.left > dialog {
   z-index: 0;
   text-align: left;
   overflow-y: auto;
@@ -153,23 +149,22 @@ nav.left > .modal {
   padding: 1rem 1rem 1rem 5rem;
 }
 
-nav.right > .modal {
+nav.right > dialog {
   padding: 1rem 5rem 1rem 1rem;
 }
 
-nav.top > .modal {
+nav.top > dialog {
   padding: 5rem 3rem 1rem;
 }
 
-nav.bottom > .modal {
+nav.bottom > dialog {
   padding: 1rem 3rem 5rem;
 }
 
-.modal > a.row:hover,
-.modal > a.row.active {
+dialog > a.row:is(:hover, .active) {
   background-color: var(--secondary-container);
 }
 
-.modal > .row {
-  padding: 0.75rem 0.5rem;
+dialog > .row {
+  padding: 0.75rem;
 }

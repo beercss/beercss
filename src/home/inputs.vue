@@ -41,6 +41,9 @@
       )
       span text
     label.radio
+      input(type="radio", name="type-inputs", @click="domain.updateFieldType('#inputs .field', 'number')")
+      span number
+    label.radio
       input(type="radio", name="type-inputs", @click="domain.updateFieldType('#inputs .field', 'password')")
       span password
     label.radio

@@ -37,7 +37,7 @@ div
     header
       nav
         button.circle.transparent
-          i arrow_backward
+          i arrow_back
         h5.max Title
         button.circle.transparent
           i attach_file
@@ -49,7 +49,7 @@ div
     header
       nav
         button.circle.transparent
-          i arrow_backward
+          i arrow_back
         .max
         button.circle.transparent
           i attach_file
@@ -63,7 +63,7 @@ div
     header
       nav
         button.circle.transparent
-          i arrow_backward
+          i arrow_back
         .max
         button.circle.transparent
           i attach_file
@@ -100,7 +100,7 @@ div
     footer
       nav
         button.circle.transparent
-          i check_box_filled
+          i check_box
         button.circle.transparent
           i brush
         button.circle.transparent

@@ -5,6 +5,11 @@
   border-radius: 0;
 }
 
+.tabs.min {
+  padding: 0 1rem;
+  gap: 2rem;
+}
+
 .tabs:not(.left-align, .right-align, .center-align) {
   justify-content: space-around;
 }
@@ -24,6 +29,11 @@
   min-height: 3rem;
   width: 100%;
   gap: 0.25rem;
+}
+
+.tabs.min > a {
+  width: auto;
+  padding: 0.5rem 0;
 }
 
 .tabs.small > a {
@@ -47,8 +57,6 @@
   color: var(--primary);
 }
 
-.tabs.left-align > a,
-.tabs.center-align > a,
-.tabs.right-align > a {
+.tabs:is(.left-align, .center-align .right-align) > a {
   width: auto;
 }

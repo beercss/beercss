@@ -43,6 +43,30 @@
   height: 4rem;
 }
 
+.field {
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.field.border {
+  border-radius: 0.25rem;
+}
+
+.field.round.small {
+  border-radius: 1.25rem;
+}
+
+.field.round {
+  border-radius: 1.5rem;
+}
+
+.field.round.large {
+  border-radius: 1.75rem;
+}
+
+.field.round.extra {
+  border-radius: 2rem;
+}
+
 .field::before {
   content: "";
   position: absolute;
@@ -60,9 +84,7 @@
 }
 
 /* icon */
-.field > i,
-.field > img,
-.field > .loader {
+.field > :is(i, img, svg, .loader) {
   position: absolute;
   top: 50%;
   left: auto;
@@ -72,35 +94,17 @@
   z-index: 0;
 }
 
-.field.border > i,
-.field.fill > i,
-.field.round > i,
-.field.border > img,
-.field.fill > img,
-.field.round > img,
-.field.border > .loader,
-.field.fill > .loader,
-.field.round > .loader {
+.field:is(.border, .fill, .round) > :is(i, img, svg, .loader) {
   left: auto;
   right: 1rem;
 }
 
-.field > i:first-child,
-.field > img:first-child,
-.field > .loader:first-child {
+.field > :is(i, img, svg, .loader):first-child {
   left: 1rem;
   right: auto;
 }
 
-.field.border > i:first-child,
-.field.fill > i:first-child,
-.field.round > i:first-child,
-.field.border > img:first-child,
-.field.fill > img:first-child,
-.field.round > img:first-child,
-.field.border > .loader:first-child,
-.field.fill > .loader:first-child,
-.field.round > .loader:first-child {
+.field:is(.border, .fill, .round) > :is(i, img, svg, .loader):first-child {
   left: 1rem;
   right: auto;
 }
@@ -118,9 +122,8 @@
 /* input, textarea and select */
 .field > select,
 input[type^=date],
-input[type^=time] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+input[type^=time],
+input[type=search] {
   appearance: none;
   cursor: pointer;
 }
@@ -141,6 +144,13 @@ input[type^=time]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type=number] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
 input[type=file] {
   position: absolute;
   top: 0;
@@ -152,9 +162,14 @@ input[type=file] {
   cursor: pointer;
 }
 
-.field > input,
-.field > textarea,
-.field > select {
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.field > :is(input, textarea, select) {
   border: 0.0625rem solid transparent;
   padding: 0 0.9375rem;
   font-family: inherit;
@@ -167,117 +182,77 @@ input[type=file] {
   resize: none;
 }
 
-.field > input:focus,
-.field > textarea:focus,
-.field > select:focus {
+.field > :is(input, textarea, select):focus {
   border: 0.125rem solid transparent;
   padding: 0 0.875rem;
 }
 
-.field.border > input,
-.field.border > textarea,
-.field.border > select {
+.field.border > :is(input, textarea, select) {
   border-color: var(--outline);
 }
 
-.field.border > input:focus,
-.field.border > textarea:focus,
-.field.border > select:focus {
+.field.border > :is(input, textarea, select):focus {
   border-color: var(--primary);
 }
 
-.field.round > input,
-.field.round > textarea,
-.field.round > select {
+.field.round > :is(input, textarea, select) {
   padding-left: 1.4376rem;
   padding-right: 1.4376rem;
 }
 
-.field.round > input:focus,
-.field.round > textarea:focus,
-.field.round > select:focus {
+.field.round > :is(input, textarea, select):focus {
   padding-left: 1.375rem;
   padding-right: 1.375rem;
 }
 
-.field.prefix > input,
-.field.prefix > textarea,
-.field.prefix > select {
+.field.prefix > :is(input, textarea, select) {
   padding-left: 2.9375rem;
 }
 
-.field.prefix > input:focus,
-.field.prefix > textarea:focus,
-.field.prefix > select:focus {
+.field.prefix > .slider {
+  margin-left: 3.5rem;
+}
+
+.field.prefix > :is(input, textarea, select):focus {
   padding-left: 2.875rem;
 }
 
-.field.suffix > input,
-.field.suffix > textarea,
-.field.suffix > select {
+.field.suffix > :is(input, textarea, select) {
   padding-right: 2.9375rem;
 }
 
-.field.suffix > input:focus,
-.field.suffix > textarea:focus,
-.field.suffix > select:focus {
+.field.suffix > .slider {
+  margin-right: 3.5rem;
+}
+
+.field.suffix > :is(input, textarea, select):focus {
   padding-right: 2.875rem;
 }
 
-.field:not(.border, .round) > input,
-.field:not(.border, .round) > textarea,
-.field:not(.border, .round) > select {
+.field:not(.border, .round) > :is(input, textarea, select) {
   border-bottom-color: var(--outline);
 }
 
-.field:not(.border, .round) > input:focus,
-.field:not(.border, .round) > textarea:focus,
-.field:not(.border, .round) > select:focus {
+.field:not(.border, .round) > :is(input, textarea, select):focus {
   border-bottom-color: var(--primary);
 }
 
-.field {
-  border-radius: 0.25rem 0.25rem 0 0;
-}
-
-.field.border {
-  border-radius: 0.25rem;
-}
-
-.field.round {
-  border-radius: 2rem;
-}
-
-.field.round:not(.border, .fill) > input,
-.field.round:not(.border, .fill) > textarea,
-.field.round:not(.border, .fill) > select,
-.field.round:not(.border) > input:focus,
-.field.round:not(.border) > textarea:focus,
-.field.round:not(.border) > select:focus {
+.field.round:not(.border, .fill) > :is(input, textarea, select),
+.field.round:not(.border) > :is(input, textarea, select):focus {
   box-shadow: var(--elevate1);
 }
 
-.field.round:not(.border, .fill) > input:focus,
-.field.round:not(.border, .fill) > textarea:focus,
-.field.round:not(.border, .fill) > select:focus {
+.field.round:not(.border, .fill) > :is(input, textarea, select):focus {
   box-shadow: var(--elevate2);
 }
 
-.field.invalid:not(.border, .round) > input,
-.field.invalid:not(.border, .round) > textarea,
-.field.invalid:not(.border, .round) > select,
-.field.invalid:not(.border, .round) > input:focus,
-.field.invalid:not(.border, .round) > textarea:focus,
-.field.invalid:not(.border, .round) > select:focus {
+.field.invalid:not(.border, .round) > :is(input, textarea, select),
+.field.invalid:not(.border, .round) > :is(input, textarea, select):focus {
   border-bottom-color: var(--error);
 }
 
-.field.invalid.border > input,
-.field.invalid.border > textarea,
-.field.invalid.border > select,
-.field.invalid.border > input:focus,
-.field.invalid.border > textarea:focus,
-.field.invalid.border > select:focus {
+.field.invalid.border > :is(input, textarea, select),
+.field.invalid.border > :is(input, textarea, select):focus {
   border-color: var(--error);
 }
 
@@ -313,8 +288,7 @@ input[type=file] {
   padding-top: 1rem;
 }
 
-.field.label.border:not(.fill) > input,
-.field.label.border:not(.fill) > select {
+.field.label.border:not(.fill) > :is(input, select) {
   padding-top: 0;
 }
 
@@ -432,8 +406,7 @@ input[type=file] {
 }
 
 /* helper */
-.field > .helper,
-.field > .error {
+.field > :is(.helper, .error) {
   position: absolute;
   left: 1rem;
   bottom: 0;
@@ -451,8 +424,7 @@ a.helper {
   color: var(--error) !important;
 }
 
-.field.round > .helper,
-.field.round > .error {
+.field.round > :is(.helper, .error) {
   left: 1.5rem;
 }
 

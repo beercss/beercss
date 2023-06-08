@@ -1,4 +1,4 @@
-.dropdown {
+menu {
   opacity: 0;
   visibility: hidden;
   position: absolute;
@@ -11,8 +11,7 @@
   right: auto;
   width: 100%;
   max-height: 50vh;
-  max-width: none;
-  transform: translateY(100%);
+  max-width: none !important;
   overflow-x: hidden;
   overflow-y: auto;
   font-size: 0.875rem;
@@ -26,41 +25,62 @@
   transition: var(--speed2) all, 0s background-color;
 }
 
-.dropdown.no-wrap {
-  width: auto;
+menu.no-wrap {
+  width: max-content;
   white-space: nowrap !important;
 }
 
-.dropdown.active,
-.dropdown:not([data-ui]):active,
-button:not([data-ui]):focus-within > .dropdown,
-.button:not([data-ui]):focus-within > .dropdown,
-.field > :not([data-ui]):focus-within ~ .dropdown {
+menu.active,
+menu:not([data-ui]):active,
+:not([data-ui]):focus-within > menu {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(100%);
 }
 
-.dropdown.left {
+menu.left {
   left: auto;
   right: 0;
 }
 
-.dropdown * {
+menu * {
   white-space: inherit !important;
 }
 
-.dropdown > a {
+menu > a {
   padding: 0.75rem 1rem;
   border-radius: 0;
 }
 
-.dropdown > a:not(.row) {
+menu > a:not(.row) {
   display: block;
 }
 
-.dropdown > a:hover,
-.dropdown > a:focus,
-.dropdown > a.active {
+menu > a:is(:hover, :focus, .active) {
   background-color: var(--active);
+}
+
+menu.min {
+  top: 0;
+  bottom: auto;
+  transform: none !important;
+  border-radius: inherit;
+}
+
+menu.max {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  max-height: none;
+  min-height: auto;
+  z-index: 100;
+  border-radius: 0;
+  transform: none !important;
+}
+
+menu.no-wrap:is(.min, .max) {
+  min-width: 16rem;
 }

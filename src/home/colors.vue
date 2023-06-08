@@ -3,16 +3,16 @@
   .large-space
   h4
     span Colors
-    a.chip.circle(data-ui="#modal-colors")
+    a.chip.circle(data-ui="#dialog-colors")
       i code
   nav
-    button(data-ui="#modal-colors") Colors
+    button(data-ui="#dialog-colors") Colors
 
-  #modal-colors.modal.right.medium
+  dialog#dialog-colors.right.medium
     header.fixed
       nav
         h5.max Colors
-        button.circle.transparent(data-ui="#modal-colors")
+        button.circle.transparent(data-ui="#dialog-colors")
           i close
 
     .grid
@@ -30,14 +30,17 @@
         .surface surface
         .surface-variant surface-variant
         .inverse-surface inverse-surface
+        .inverse-primary inverse-primary
         .primary-border.border primary-border
         .secondary-border.border secondary-border
         .tertiary-border.border tertiary-border
         .error-border.border error-border
+        .inverse-primary-border.border inverse-primary-border
         .primary-text primary-text
         .secondary-text secondary-text
         .tertiary-text tertiary-text
         .error-text error-text
+        .inverse-primary-text inverse-primary-text
       .s12
         h5 Red
         .black-text.red1 red1

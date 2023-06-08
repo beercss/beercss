@@ -3,17 +3,17 @@ import { IInstallEvent } from "./interfaces";
 let _installEvent: IInstallEvent;
 
 const id = (): string => {
-  return "id" + (new Date().getTime() + "" + Math.floor(Math.random() * (999999 - 100000) + 100000)).padStart(22, "0");
+  return `id${(new Date().getTime().toString() + Math.floor(Math.random() * (999999 - 100000) + 100000).toString()).padStart(22, "0")}`;
 };
 
-const wait = async (milliseconds: number) => await new Promise((resolve: any) => setTimeout(resolve, milliseconds));
+const wait = async (milliseconds: number) => await new Promise((resolve: Function) => setTimeout(resolve, milliseconds));
 
 const html = (elements: NodeListOf<Element>, html: string) => {
-  elements.forEach((x: Element) => x.innerHTML = html);
+  elements.forEach((x: Element) => { x.innerHTML = html; });
 };
 
 const remove = (elements: NodeListOf<Element>) => {
-  elements.forEach((x: Element) => x.remove());
+  elements.forEach((x: Element) => { x.remove(); });
 };
 
 const clone = (element: Element) => {
@@ -44,7 +44,7 @@ const removeAttribute = (elements: NodeListOf<Element>, attribute: string) => {
 };
 
 const setAttribute = (elements: NodeListOf<Element>, key: string, value: any) => {
-  if (/checked|selected|readonly/i.test(key)) elements.forEach((x: Element) => x[key] = value);
+  if (/checked|selected|readonly/i.test(key)) elements.forEach((x: Element) => { x[key] = value; });
   else elements.forEach((x: Element) => x.setAttribute(key, value));
 };
 
@@ -60,7 +60,7 @@ const queryAll = (selector: string | NodeListOf<Element>): NodeListOf<Element> =
 
 const firstRedirect = () => {
   window.addEventListener("load", () => {
-    if (window.location.pathname != "/") page.redirect(window.location.pathname);
+    if (window.location.pathname !== "/") page.redirect(window.location.pathname);
   });
 };
 
@@ -69,7 +69,7 @@ const waitForInstall = () => {
 
   window.addEventListener("load", () => {
     const url = "/sw.js";
-    navigator.serviceWorker.register(url);
+    void navigator.serviceWorker.register(url);
   });
 
   window.addEventListener("beforeinstallprompt", (e: IInstallEvent) => {
@@ -79,7 +79,7 @@ const waitForInstall = () => {
 };
 
 const install = () => {
-  _installEvent?.prompt();
+  void _installEvent?.prompt();
 };
 
 export default {

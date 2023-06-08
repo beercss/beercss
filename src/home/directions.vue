@@ -4,7 +4,7 @@
   h4
     span Directions
     a.chip.circle(
-      @click="domain.showSamples(data, '#direction > button, #direction > .chip, #direction > .tabs', 'Directions', null, null)"
+      @click="domain.showSamples(data, '#direction > button, #direction > .chip, #direction > nav, #direction > .tabs', 'Directions', null, null)"
     )
       i code
   nav.wrap

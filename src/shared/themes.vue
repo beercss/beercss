@@ -1,5 +1,5 @@
 <template lang="pug">
-.modal.medium.no-scroll(:id="id", :class="{ left: position == 'left', right: position == 'right' }")
+dialog.medium.no-scroll(:id="id", :class="{ left: position === 'left', right: position === 'right' }")
   slot
   header.fixed
     nav(v-if="!data.showCssVariables")
@@ -9,7 +9,7 @@
           a.chip.circle(@click="data.showCssVariables=true")
             i code
       button.circle.transparent(@click="sharedDomain.updateMode(data)")
-        i light_mode
+        i {{ data.isDark ? "light_mode" : "dark_mode" }}
       button.circle.transparent(:data-ui="'#' + id")
         i close
     nav(v-if="data.showCssVariables")
@@ -64,7 +64,7 @@
         span Dark
     .space
     article.border
-      pre(v-html="data.theme[data.theme.selected]")
+      pre.scroll.large-padding.fill(v-html="sourceCode()")
 
 </template>
 
@@ -84,6 +84,10 @@ const {
 } = defineProps<IProps>();
 
 const data = modelValue;
+
+const sourceCode = () => {
+  return (data.theme[data.theme.selected] || "").replace("--shadow:#000000;", "");
+};
 </script>
 
 <style scoped>

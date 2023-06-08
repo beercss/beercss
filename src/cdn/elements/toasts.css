@@ -1,4 +1,6 @@
 .toast {
+  ---transform: translate(-50%, 1rem);
+
   position: fixed;
   top: auto;
   bottom: 6rem;
@@ -10,8 +12,8 @@
   visibility: hidden;
   display: flex;
   box-shadow: var(--elevate2);
-  color: var(--on-error);
-  background-color: var(--error-background);
+  color: var(--inverse-on-surface);
+  background-color: var(--inverse-surface);
   padding: 1rem;
   opacity: 1;
   cursor: pointer;
@@ -27,36 +29,23 @@
   bottom: auto;
 }
 
-.toast.bottom {
-  top: auto;
-  bottom: 4.5rem;
-}
-
 .toast.active {
   visibility: visible;
-  animation: var(--speed2) toast-to-top;
+  animation: var(--speed2) to-toast;
 }
 
 .toast.active.top {
-  animation: var(--speed2) toast-to-bottom;
+  ---transform: translate(-50%, -1rem);
 }
 
-@keyframes toast-to-top {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
+.toast > .max {
+  flex: auto;
 }
 
-@keyframes toast-to-bottom {
+@keyframes to-toast {
   0% {
     opacity: 0;
-    transform: translate(-50%, -1rem);
+    transform: var(---transform);
   }
 
   100% {
