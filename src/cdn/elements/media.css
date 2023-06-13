@@ -99,7 +99,7 @@ svg {
 }
 
 :is(button, .button, .chip, .field) > :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra),
-:is(.tabs, td) :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra) {
+:is(.tabs) :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra) {
   min-width: 1.5rem;
   max-width: 1.5rem;
   min-height: 1.5rem;

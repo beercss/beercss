@@ -32,17 +32,3 @@ table.medium-space :is(th, td) {
 table.large-space :is(th, td) {
   padding: 1rem;
 }
-
-td > :is(.button, button, .none, .chip),
-td > nav > :is(.button, button, .none, .chip) {
-  min-height: 1.5rem;
-  max-height: 1.5rem;
-}
-
-td > :is(.circle, .square):not(.tiny, .small, .medium, .large, .extra),
-td > nav > :is(.circle, .square):not(.tiny, .small, .medium, .large, .extra) {
-  min-width: 1.5rem;
-  max-width: 1.5rem;
-  min-height: 1.5rem;
-  max-height: 1.5rem;
-}
