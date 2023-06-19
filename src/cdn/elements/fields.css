@@ -433,6 +433,5 @@ a.helper {
 }
 
 table td > .field {
-  max-height: 100%;
-  height: 100%;
+  margin: 0;
 }
