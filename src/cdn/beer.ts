@@ -55,7 +55,7 @@ export default (() => {
   }
 
   function removeClass (element: Element, name: string) {
-    element?.classList?.remove(name);
+    element?.classList.remove(name);
   }
 
   function on (element: Element, name: string, callback: any) {
