@@ -114,7 +114,7 @@ export default (() => {
 
     if (toActive) {
       if (isBorder && label) {
-        label.style.paddingInline = "unset"
+        label.style.paddingInline = "0px"
         const labelWidth = textWidth(label, "0.75rem Arial");
         let width = hasClass(label, "active") ? labelWidth : Math.round(labelWidth / 1.33);
         width = width / 16;
