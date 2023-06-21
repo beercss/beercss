@@ -53,7 +53,7 @@ Add/remove `active` class on label with JavaScript. Automagically done when usin
 ```html
 <div class="field label">
   <input type="text" placeholder=" ">
-  <label class="active">Label</label>
+  <label>Label</label>
 </div>
 ```
 
