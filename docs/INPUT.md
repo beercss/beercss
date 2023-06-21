@@ -33,13 +33,13 @@ active
 </div>
 ```
 
-## Triggers 
+## Triggers
 
-#### To up/down a label
+### To up/down a label
 
-#### Method 1
+#### Method 1: JavaScript
 
-Add/remove `active` class on label. On `field` element with `border` helper, use method 2.
+Add/remove `active` class on label with JavaScript. Automagically done when using the Beercss JavaScript bundle.
 
 ```html
 <div class="field label">
@@ -47,7 +47,27 @@ Add/remove `active` class on label. On `field` element with `border` helper, use
   <label class="active">Label</label>
 </div>
 ```
+#### Method 2: pure CSS
 
+- **If the field has no border**, simply add a non-empty placeholder (a space) to the input:
+```html
+<div class="field label">
+  <input type="text" placeholder=" ">
+  <label class="active">Label</label>
+</div>
+```
+
+- **If the field does have a border**, add a non-empty placeholder but also add a [color class](https://www.beercss.com/#colors) to the label that matches the field container background color (`background` in the example below):
+```html
+<body class="background">
+  <main class="responsive">
+    <div class="field label border">
+      <input type="text" placeholder=" ">
+      <label class="background">Label</label>
+    </div>
+  </main>
+</body>
+```
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
