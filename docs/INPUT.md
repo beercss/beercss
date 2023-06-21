@@ -58,7 +58,7 @@ Add/remove `active` class on label with JavaScript. Automagically done when usin
 </div>
 ```
 
-- **If the field does have a border**, add a non-empty placeholder but also add a [color class](https://www.beercss.com/#colors) to the label that matches the field container background color (`background` in the example below):
+- **If the field does have a border**, add a non-empty placeholder but also add a [color class](https://www.beercss.com/#colors) to the label so its background color matches the field container background color (`background` in the example below):
 
 ```html
 <body class="background">
