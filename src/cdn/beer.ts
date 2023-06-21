@@ -114,10 +114,10 @@ export default (() => {
 
     if (toActive) {
       if (isBorder && label) {
-        label.style.paddingInline = "0px"
+        label.style.paddingInline = "0px";
+        const fontSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--size')) || 16;
         const labelWidth = textWidth(label, "0.75rem Arial");
-        let width = hasClass(label, "active") ? labelWidth : Math.round(labelWidth / 1.33);
-        width = width / 16;
+        const width = hasClass(label, "active") ? labelWidth / fontSize : Math.round(labelWidth / 1.33) / fontSize;
         const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
         const end = width + start + 0.5;
         input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 0.5rem, ${end}rem 0.5rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
