@@ -379,6 +379,7 @@ input[type=search]::-webkit-search-results-decoration {
 .field.label.border:not(.fill) > [placeholder]:focus ~ label,
 .field.label.border:not(.fill) > [placeholder]:not(:placeholder-shown) ~ label {
   font-size: 0.75rem;
+  padding-inline: 0.3rem;
   top: 0%;
   left: 1rem;
   transform: translateY(-50%);
