@@ -1,14 +1,25 @@
-.medium-round:not(i, img, video, svg),
-.round:not(i, img, video, svg, button, .button, .chip, .field) {
-  border-radius: 2rem !important;
+.small-round,
+.medium-round,
+.large-round,
+.round {
+  border-radius: var(---round);
 }
 
-.small-round:not(i, img, video, svg) {
-  border-radius: 0.5rem !important;
+.top-round,
+.bottom-round,
+.left-round,
+.right-round,
+.medium-round,
+.round {
+  ---round: 2rem;
 }
 
-.large-round:not(i, img, video, svg) {
-  border-radius: 3.5rem !important;
+.small-round {
+  ---round: 0.5rem;
+}
+
+.large-round {
+  ---round: 3.5rem;
 }
 
 .no-round,
@@ -16,100 +27,36 @@
   border-radius: 0 !important;
 }
 
-.top-round, .top-medium-round {
-  border-radius: 2rem 2rem 0 0 !important;
+.top-round {
+  border-radius: var(---round) var(---round) 0 0 !important;
 }
 
-.bottom-round, .bottom-medium-round {
-  border-radius: 0 0 2rem 2rem !important;
+.bottom-round {
+  border-radius: 0 0 var(---round) var(---round) !important;
 }
 
-.left-round, .left-medium-round {
-  border-radius: 2rem 0 0 2rem !important;
+.left-round {
+  border-radius: var(---round) 0 0 var(---round) !important;
 }
 
-.right-round, .right-medium-round {
-  border-radius: 0 2rem 2rem 0 !important;
+.right-round {
+  border-radius: 0 var(---round) var(---round) 0 !important;
 }
 
-.top-round.left-round, .top-medium-round.left-medium-round {
-  border-radius: 2rem 2rem 0 !important;
+.top-round.left-round {
+  border-radius: var(---round) var(---round) 0 !important;
 }
 
-.top-round.right-round, .top-medium-round.right-medium-round {
-  border-radius: 2rem 2rem 2rem 0 !important;
+.top-round.right-round {
+  border-radius: var(---round) var(---round) var(---round) 0 !important;
 }
 
-.bottom-round.left-round, .bottom-medium-round.left-medium-round {
-  border-radius: 2rem 0 2rem 2rem !important;
+.bottom-round.left-round {
+  border-radius: var(---round) 0 var(---round) var(---round) !important;
 }
 
-.bottom-round.right-round, .bottom-medium-round.right-medium-round {
-  border-radius: 0 2rem 2rem !important;
-}
-
-.top-small-round {
-  border-radius: 0.5rem 0.5rem 0 0 !important;
-}
-
-.bottom-small-round {
-  border-radius: 0 0 0.5rem 0.5rem !important;
-}
-
-.left-small-round {
-  border-radius: 0.5rem 0 0 0.5rem !important;
-}
-
-.right-small-round {
-  border-radius: 0 0.5rem 0.5rem 0 !important;
-}
-
-.top-small-round.left-small-round {
-  border-radius: 0.5rem 0.5rem 0 !important;
-}
-
-.top-small-round.right-small-round {
-  border-radius: 0.5rem 0.5rem 0.5rem 0 !important;
-}
-
-.bottom-small-round.left-small-round {
-  border-radius: 0.5rem 0 0.5rem 0.5rem !important;
-}
-
-.bottom-small-round.right-small-round {
-  border-radius: 0 0.5rem 0.5rem !important;
-}
-
-.top-large-round {
-  border-radius: 3.5rem 3.5rem 0 0 !important;
-}
-
-.bottom-large-round {
-  border-radius: 0 0 3.5rem 3.5rem !important;
-}
-
-.left-large-round {
-  border-radius: 3.5rem 0 0 3.5rem !important;
-}
-
-.right-large-round {
-  border-radius: 0 3.5rem 3.5rem 0 !important;
-}
-
-.top-large-round.left-large-round {
-  border-radius: 3.5rem 3.5rem 0 !important;
-}
-
-.top-large-round.right-large-round {
-  border-radius: 3.5rem 3.5rem 3.5rem 0 !important;
-}
-
-.bottom-large-round.left-large-round {
-  border-radius: 3.5rem 0 3.5rem 3.5rem !important;
-}
-
-.bottom-large-round.right-large-round {
-  border-radius: 0 3.5rem 3.5rem !important;
+.bottom-round.right-round {
+  border-radius: 0 var(---round) var(---round) !important;
 }
 
 .circle {
