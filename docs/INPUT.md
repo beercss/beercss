@@ -50,6 +50,7 @@ Add/remove `active` class on label with JavaScript. Automagically done when usin
 #### Method 2: pure CSS
 
 - **If the field has no border**, simply add a non-empty placeholder (a space) to the input:
+
 ```html
 <div class="field label">
   <input type="text" placeholder=" ">
@@ -58,6 +59,7 @@ Add/remove `active` class on label with JavaScript. Automagically done when usin
 ```
 
 - **If the field does have a border**, add a non-empty placeholder but also add a [color class](https://www.beercss.com/#colors) to the label that matches the field container background color (`background` in the example below):
+
 ```html
 <body class="background">
   <main class="responsive">
