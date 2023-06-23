@@ -8,9 +8,10 @@ export default (() => {
     light: "",
     dark: "",
   };
+  const EMPTY_NODE_LIST = document.querySelectorAll("non-existing-elements");
 
-  async function wait (milliseconds: number) {
-    return await new Promise((resolve: Function) => setTimeout(resolve, milliseconds));
+  async function wait (milliseconds?: number | null): Promise<Function> {
+    return await new Promise((resolve: Function) => setTimeout(resolve, milliseconds ?? 0));
   }
 
   function guid (): string {
@@ -21,53 +22,52 @@ export default (() => {
     });
   }
 
-  function query (selector: string | Element, element?: Element): Element | null | undefined {
+  function query (selector: string | Element | null, element?: Element): Element | null {
     try {
-      return typeof selector === "string"
-        ? (element ?? document).querySelector(selector) : selector;
+      return typeof selector === "string" ? (element ?? document).querySelector(selector) : selector;
     } catch {
       return null;
     }
   }
 
-  function queryAll (selector: string | NodeListOf<Element>, element?: Element) {
+  function queryAll (selector: string | NodeListOf<Element> | null, element?: Element | null): NodeListOf<Element> {
     try {
-      return typeof selector === "string"
-        ? (element ?? document).querySelectorAll(selector)
-        : selector;
-    } catch {}
+      return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : (selector ?? EMPTY_NODE_LIST);
+    } catch {
+      return EMPTY_NODE_LIST;
+    }
   }
 
-  function hasClass (element: Element, name: string): boolean {
-    return element?.classList.contains(name);
+  function hasClass (element: Element | null, name: string): boolean {
+    return element?.classList?.contains(name) ?? false;
   }
 
-  function hasTag (element: Element, name: string): boolean {
-    return element?.tagName.toLowerCase() === name;
+  function hasTag (element: Element | null, name: string): boolean {
+    return element?.tagName?.toLowerCase() === name;
   }
 
-  function hasType (element: HTMLInputElement, name: string): boolean {
-    return element?.type.toLowerCase() === name;
+  function hasType (element: HTMLInputElement | null, name: string): boolean {
+    return element?.type?.toLowerCase() === name;
   }
 
-  function addClass (element: Element, name: string) {
-    element?.classList.add(name);
+  function addClass (element: Element | null, name: string): void {
+    element?.classList?.add(name);
   }
 
-  function removeClass (element: Element, name: string) {
-    element?.classList.remove(name);
+  function removeClass (element: Element | null, name: string): void {
+    element?.classList?.remove(name);
   }
 
-  function on (element: Element, name: string, callback: any) {
-    element.addEventListener(name, callback, true);
+  function on (element: Element | null, name: string, callback: any): void {
+    element?.addEventListener(name, callback, true);
   }
 
-  function off (element: Element, name: string, callback: any) {
-    element.removeEventListener(name, callback, true);
+  function off (element: Element | null, name: string, callback: any): void {
+    element?.removeEventListener(name, callback, true);
   }
 
-  function insertBefore (newElement: Element, element: Element): Element | undefined {
-    return element?.parentNode?.insertBefore(newElement, element);
+  function insertBefore (newElement: Element, element: Element | null): void {
+    element?.parentNode?.insertBefore(newElement, element);
   }
 
   function prev (element: Element): Element | null {
@@ -82,12 +82,10 @@ export default (() => {
     return element?.parentElement;
   }
 
-  function create (json: { [key: string]: string | null }): HTMLElement {
+  function create (json: { [key: string]: string }): HTMLElement {
     const element = document.createElement("div");
-    if (!element) return element;
     for (const attr in json) {
-      const value = json[attr];
-      if (value) element.setAttribute(attr, value);
+      element.setAttribute(attr, json[attr]);
     }
     return element;
   }
@@ -101,18 +99,18 @@ export default (() => {
       document.body.append(canvasElement);
       _canvas = canvasElement.getContext("2d");
     }
-    if (!_canvas) return 0; // Should never happen
+    if (!_canvas) return 0;
     _canvas.font = font;
     return _canvas.measureText(element.textContent ?? "").width;
   }
 
-  function updateInput (target: Element) {
+  function updateInput (target: Element): void {
     const input = target as HTMLInputElement;
     if (hasType(input, "number") && !input.value) input.value = "";
 
     const parentTarget = parent(target);
     const label: HTMLLabelElement | null = parentTarget ? query("label", parentTarget) as HTMLLabelElement : null;
-    const isBorder = parentTarget ? hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill") : false;
+    const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
     const toActive = document.activeElement === target || input.value || query("[selected]", input) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
 
     if (toActive) {
@@ -133,12 +131,12 @@ export default (() => {
     if (target.getAttribute("data-ui")) open(target);
   }
 
-  function onClickElement (e: Event) {
+  function onClickElement (e: Event): void {
     const target = e.currentTarget as HTMLElement;
     open(target, undefined, null, e);
   }
 
-  function onClickLabel (e: Event) {
+  function onClickLabel (e: Event): void {
     const target = e.currentTarget as Element;
     if (!target) return;
     const targetsParent = parent(target);
@@ -147,52 +145,51 @@ export default (() => {
     if (input) input.focus();
   }
 
-  function onFocusInput (e: Event) {
+  function onFocusInput (e: Event): void {
     const target = e.currentTarget as Element;
     updateInput(target);
   }
 
-  function onBlurInput (e: Event) {
+  function onBlurInput (e: Event): void {
     const target = e.currentTarget as Element;
     updateInput(target);
   }
 
-  function onClickDocument (e: Event) {
+  function onClickDocument (e: Event): void {
     off(document.body, "click", onClickDocument);
     const target = e.target as Element;
     const menus = queryAll("menu.active");
-    if (!menus) return;
     menus.forEach((x: Element) => menu(target, x, e));
   }
 
-  function onClickToast (e: Event) {
+  function onClickToast (e: Event): void {
     const target = e.currentTarget as Element;
     removeClass(target, "active");
 
     if (_timeoutToast) clearTimeout(_timeoutToast);
   }
 
-  function onChangeFile (e: Event) {
+  function onChangeFile (e: Event): void {
     const target = e.currentTarget as HTMLInputElement;
     updateFile(target);
   }
 
-  function onKeydownFile (e: KeyboardEvent) {
+  function onKeydownFile (e: KeyboardEvent): void {
     const target = e.currentTarget as HTMLInputElement;
     updateFile(target, e);
   }
 
-  function onInputRange (e: Event) {
+  function onInputRange (e: Event): void {
     const target = e.currentTarget as HTMLInputElement;
     updateRange(target);
   }
 
-  function onMutation () {
+  function onMutation (): void {
     if (_timeoutMutation) clearTimeout(_timeoutMutation);
     _timeoutMutation = setTimeout(() => { void ui(); }, 180);
   }
 
-  function updateFile (target: Element, e?: KeyboardEvent) {
+  function updateFile (target: Element, e?: KeyboardEvent): void {
     if (e) {
       if (e.key !== "Enter") return;
 
@@ -211,7 +208,7 @@ export default (() => {
     updateInput(previousTarget);
   }
 
-  function updateRange (target: Element) {
+  function updateRange (target: Element): void {
     const parentTarget = parent(target) as HTMLElement;
     const bar = query("span", parentTarget) as HTMLElement;
     const inputs = queryAll("input", parentTarget) as NodeListOf<HTMLInputElement>;
@@ -263,16 +260,16 @@ export default (() => {
     addClass(to, "active");
   }
 
-  function tab (from: Element) {
+  function tab (from: Element): void {
     const container = parent(from);
     if (!container) return;
     if (!hasClass(container, "tabs")) return;
     const tabs = queryAll("a", container);
-    tabs?.forEach((x: Element) => removeClass(x, "active"));
+    tabs.forEach((x: Element) => removeClass(x, "active"));
     addClass(from, "active");
   }
 
-  function page (from: Element, to: Element) {
+  function page (from: Element, to: Element): void {
     tab(from);
     const container = parent(to);
     if (!container) return;
@@ -299,11 +296,11 @@ export default (() => {
     }
 
     const menus = queryAll("menu.active");
-    menus?.forEach((x: Element) => removeClass(x, "active"));
+    menus.forEach((x: Element) => removeClass(x, "active"));
     addClass(to, "active");
   }
 
-  async function dialog (from: Element, to: Element) {
+  async function dialog (from: Element, to: Element): Promise<void> {
     tab(from);
 
     let overlay = prev(to) as HTMLElement;
@@ -331,7 +328,7 @@ export default (() => {
 
     if (isNav) {
       const elements = queryAll("dialog, a, .overlay", container);
-      elements?.forEach((x: any) => {
+      elements.forEach((x: any) => {
         removeClass(x, "active");
         if (x.open) x.close();
       });
@@ -352,11 +349,11 @@ export default (() => {
     }
   }
 
-  function toast (from: Element, to: Element, milliseconds?: number) {
+  function toast (from: Element, to: Element, milliseconds?: number): void {
     tab(from);
 
     const elements = queryAll(".toast.active");
-    elements?.forEach((x: Element) => removeClass(x, "active"));
+    elements.forEach((x: Element) => removeClass(x, "active"));
     addClass(to, "active");
     on(to, "click", onClickToast);
 
@@ -369,7 +366,7 @@ export default (() => {
     }, milliseconds ?? 6000);
   }
 
-  function progress (to: Element, percentage: number) {
+  function progress (to: Element, percentage: number): void {
     const element = to as HTMLElement;
 
     if (hasClass(element, "left")) {
@@ -452,7 +449,7 @@ export default (() => {
     return value;
   }
 
-  function setup () {
+  function setup (): void {
     if (_mutation) return;
     _mutation = new MutationObserver(onMutation);
     _mutation.observe(document.body, { childList: true, subtree: true });
@@ -474,26 +471,26 @@ export default (() => {
     }
 
     const elements = queryAll("[data-ui]");
-    elements?.forEach((x: Element) => on(x, "click", onClickElement));
+    elements.forEach((x: Element) => on(x, "click", onClickElement));
 
     const labels = queryAll(".field > label");
-    labels?.forEach((x: Element) => on(x, "click", onClickLabel));
+    labels.forEach((x: Element) => on(x, "click", onClickLabel));
 
     const inputs = queryAll(".field > input:not([type=file], [type=checkbox], [type=radio]), .field > select, .field > textarea");
-    inputs?.forEach((x: Element) => {
+    inputs.forEach((x: Element) => {
       on(x, "focus", onFocusInput);
       on(x, "blur", onBlurInput);
       updateInput(x);
     });
 
     const files = queryAll(".field > input[type=file]");
-    files?.forEach((x: Element) => {
+    files.forEach((x: Element) => {
       on(x, "change", onChangeFile);
       updateFile(x);
     });
 
     const ranges = queryAll(".slider > input[type=range]");
-    ranges?.forEach((x: Element) => {
+    ranges.forEach((x: Element) => {
       on(x, "input", onInputRange);
       updateRange(x);
     });
