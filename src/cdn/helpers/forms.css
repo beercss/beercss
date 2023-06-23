@@ -1,14 +1,25 @@
-.medium-round:not(i, img, video, svg),
-.round:not(i, img, video, svg, button, .button, .chip, .field) {
-  border-radius: 2rem !important;
+.small-round,
+.medium-round,
+.large-round,
+.round {
+  border-radius: var(---round);
 }
 
-.small-round:not(i, img, video, svg) {
-  border-radius: 0.5rem !important;
+.top-round,
+.bottom-round,
+.left-round,
+.right-round,
+.medium-round,
+.round {
+  ---round: 2rem;
 }
 
-.large-round:not(i, img, video, svg) {
-  border-radius: 3.5rem !important;
+.small-round {
+  ---round: 0.5rem;
+}
+
+.large-round {
+  ---round: 3.5rem;
 }
 
 .no-round,
@@ -17,35 +28,35 @@
 }
 
 .top-round {
-  border-radius: 2rem 2rem 0 0 !important;
+  border-radius: var(---round) var(---round) 0 0 !important;
 }
 
 .bottom-round {
-  border-radius: 0 0 2rem 2rem !important;
+  border-radius: 0 0 var(---round) var(---round) !important;
 }
 
 .left-round {
-  border-radius: 2rem 0 0 2rem !important;
+  border-radius: var(---round) 0 0 var(---round) !important;
 }
 
 .right-round {
-  border-radius: 0 2rem 2rem 0 !important;
+  border-radius: 0 var(---round) var(---round) 0 !important;
 }
 
 .top-round.left-round {
-  border-radius: 2rem 2rem 0 !important;
+  border-radius: var(---round) var(---round) 0 !important;
 }
 
 .top-round.right-round {
-  border-radius: 2rem 2rem 2rem 0 !important;
+  border-radius: var(---round) var(---round) var(---round) 0 !important;
 }
 
 .bottom-round.left-round {
-  border-radius: 2rem 0 2rem 2rem !important;
+  border-radius: var(---round) 0 var(---round) var(---round) !important;
 }
 
 .bottom-round.right-round {
-  border-radius: 0 2rem 2rem !important;
+  border-radius: 0 var(---round) var(---round) !important;
 }
 
 .circle {
