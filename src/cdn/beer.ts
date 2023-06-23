@@ -455,26 +455,18 @@ export default (() => {
     onMutation();
   }
 
-  async function ui (selector?: string | Element, options?: string | number | IBeerCssTheme): Promise<void> {
+  function ui (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
     if (selector) {
       if (selector === "setup") return setup() as undefined;
-      if (selector === "guid") {
-        guid();
-        return;
-      }
-      if (selector === "mode") {
-        mode(options);
-        return;
-      }
-      if (selector === "theme") {
-        await theme(options);
-        return;
-      }
+      if (selector === "guid") return guid();
+      if (selector === "mode") return mode(options);
+      if (selector === "theme") return theme(options);
+
       const to = query(selector);
       if (!to) return;
       const from = query("[data-ui='#" + to.id + "']");
       if (!from) return;
-      await open(from, to, options);
+      void open(from, to, options);
     }
 
     const elements = queryAll("[data-ui]");
@@ -489,13 +481,11 @@ export default (() => {
       on(x, "blur", onBlurInput);
       updateInput(x);
     });
-
     const files = queryAll(".field > input[type=file]");
     files.forEach((x: Element) => {
       on(x, "change", onChangeFile);
       updateFile(x);
     });
-
     const ranges = queryAll(".slider > input[type=range]");
     ranges.forEach((x: Element) => {
       on(x, "input", onInputRange);
