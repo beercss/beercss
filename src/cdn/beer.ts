@@ -128,12 +128,11 @@ export default (() => {
       input.style.clipPath = "";
     }
 
-    if (target.getAttribute("data-ui")) open(target);
+    if (target.getAttribute("data-ui")) void open(target);
   }
 
   function onClickElement (e: Event): void {
-    const target = e.currentTarget as HTMLElement;
-    open(target, undefined, null, e);
+    void open(e.currentTarget as HTMLElement, undefined, null, e);
   }
 
   function onClickLabel (e: Event): void {
@@ -241,13 +240,13 @@ export default (() => {
     bar.style.right = `${right}%`;
   }
 
-  function open (from?: Element, to?: Element, options?: any, e?: Event): any {
+  async function open (from?: Element, to?: Element, options?: any, e?: Event): Promise<void> {
     if (!from) return;
     const dataUi = from.getAttribute("data-ui");
     if (!dataUi) return;
     if (!to) to = query(dataUi) ?? undefined;
     if (!to) return;
-    if (hasTag(to, "dialog")) return dialog(from, to);
+    if (hasTag(to, "dialog")) return await dialog(from, to);
     if (hasTag(to, "menu")) return menu(from, to, e);
     if (hasClass(to, "toast")) return toast(from, to, options);
     if (hasClass(to, "page")) return page(from, to);
@@ -456,18 +455,26 @@ export default (() => {
     onMutation();
   }
 
-  function ui (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
+  async function ui (selector?: string | Element, options?: string | number | IBeerCssTheme): Promise<void> {
     if (selector) {
       if (selector === "setup") return setup() as undefined;
-      if (selector === "guid") return guid();
-      if (selector === "mode") return mode(options);
-      if (selector === "theme") return theme(options);
-
+      if (selector === "guid") {
+        guid();
+        return;
+      }
+      if (selector === "mode") {
+        mode(options);
+        return;
+      }
+      if (selector === "theme") {
+        await theme(options);
+        return;
+      }
       const to = query(selector);
       if (!to) return;
       const from = query("[data-ui='#" + to.id + "']");
       if (!from) return;
-      open(from, to, options);
+      await open(from, to, options);
     }
 
     const elements = queryAll("[data-ui]");
