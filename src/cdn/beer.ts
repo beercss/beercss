@@ -42,6 +42,10 @@ export default (() => {
     }
   }
 
+  function hasQuery (selector: string | Element | null, element?: Element | null): boolean {
+    return !!(query(selector, element));
+  }
+
   function hasClass (element: Element | null, name: string): boolean {
     return element?.classList?.contains(name) ?? false;
   }
@@ -114,7 +118,7 @@ export default (() => {
     const parentTarget = parent(target);
     const label = query("label", parentTarget) as HTMLLabelElement;
     const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
-    const toActive = document.activeElement === target || input.value || (query("[selected]", input) ?? false) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
+    const toActive = document.activeElement === target || input.value || hasQuery("[selected]", input) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
 
     if (toActive) {
       if (isBorder && label) {
