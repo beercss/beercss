@@ -117,6 +117,7 @@ export default (() => {
     const label = query("label", parentTarget) as HTMLLabelElement;
     const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
     const toActive = document.activeElement === target || input.value || hasQuery("[selected]", input) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
+
     if (toActive) {
       if (isBorder && label) {
         label.style.paddingInline = "0px";
