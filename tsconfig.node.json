@@ -3,6 +3,9 @@
     "composite": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitAny": true,
     "jsx": "preserve"
   }
 }
