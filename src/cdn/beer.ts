@@ -1,17 +1,17 @@
 export default (() => {
   const _window: Window | any = globalThis;
-  let _timeoutToast: ReturnType<typeof setTimeout> | null = null;
-  let _timeoutMutation: ReturnType<typeof setTimeout> | null = null;
-  let _mutation: MutationObserver | null = null;
+  let _timeoutToast: ReturnType<typeof setTimeout>;
+  let _timeoutMutation: ReturnType<typeof setTimeout>;
+  let _mutation: MutationObserver | null;
   let _canvas: CanvasRenderingContext2D | null;
   const _lastTheme: IBeerCssTheme = {
     light: "",
     dark: "",
   };
-  const EMPTY_NODE_LIST = document.querySelectorAll("non-existing-elements");
+  const _emptyNodeList = [] as unknown as NodeListOf<Element>;
 
-  async function wait (milliseconds?: number | null): Promise<Function> {
-    return await new Promise((resolve: Function) => setTimeout(resolve, milliseconds ?? 0));
+  async function wait (milliseconds: number): Promise<Function> {
+    return await new Promise((resolve: Function) => setTimeout(resolve, milliseconds));
   }
 
   function guid (): string {
@@ -22,9 +22,11 @@ export default (() => {
     });
   }
 
-  function query (selector: string | Element | null, element?: Element): Element | null {
+  function query (selector: string | Element | null, element?: Element | null): Element | null {
     try {
-      return typeof selector === "string" ? (element ?? document).querySelector(selector) : selector;
+      return (typeof selector === "string")
+        ? (element ?? document).querySelector(selector)
+        : selector;
     } catch {
       return null;
     }
@@ -32,9 +34,11 @@ export default (() => {
 
   function queryAll (selector: string | NodeListOf<Element> | null, element?: Element | null): NodeListOf<Element> {
     try {
-      return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : (selector ?? EMPTY_NODE_LIST);
+      return (typeof selector === "string")
+        ? (element ?? document).querySelectorAll(selector)
+        : selector ?? _emptyNodeList;
     } catch {
-      return EMPTY_NODE_LIST;
+      return _emptyNodeList;
     }
   }
 
@@ -82,11 +86,9 @@ export default (() => {
     return element?.parentElement;
   }
 
-  function create (json: { [key: string]: string }): HTMLElement {
+  function create (htmlAttributesAsJson: any): HTMLElement {
     const element = document.createElement("div");
-    for (const attr in json) {
-      element.setAttribute(attr, json[attr]);
-    }
+    for (const key in htmlAttributesAsJson) element.setAttribute(key, htmlAttributesAsJson[key]);
     return element;
   }
 
@@ -98,8 +100,9 @@ export default (() => {
       canvasElement.style.display = "none";
       document.body.append(canvasElement);
       _canvas = canvasElement.getContext("2d");
+      if (!_canvas) return 0;
     }
-    if (!_canvas) return 0;
+
     _canvas.font = font;
     return _canvas.measureText(element.textContent ?? "").width;
   }
@@ -109,14 +112,14 @@ export default (() => {
     if (hasType(input, "number") && !input.value) input.value = "";
 
     const parentTarget = parent(target);
-    const label: HTMLLabelElement | null = parentTarget ? query("label", parentTarget) as HTMLLabelElement : null;
+    const label = query("label", parentTarget) as HTMLLabelElement;
     const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
-    const toActive = document.activeElement === target || input.value || query("[selected]", input) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
+    const toActive = document.activeElement === target || input.value || (query("[selected]", input) ?? false) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
 
     if (toActive) {
       if (isBorder && label) {
         label.style.paddingInline = "0px";
-        const fontSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--size')) || 16;
+        const fontSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
         const labelWidth = textWidth(label, "0.75rem Arial");
         const width = hasClass(label, "active") ? labelWidth / fontSize : Math.round(labelWidth / 1.33) / fontSize;
         const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
@@ -129,19 +132,17 @@ export default (() => {
       input.style.clipPath = "";
     }
 
-    if (target.getAttribute("data-ui")) void open(target);
+    if (target.getAttribute("data-ui")) void open(target, null);
   }
 
   function onClickElement (e: Event): void {
-    void open(e.currentTarget as HTMLElement, undefined, null, e);
+    void open(e.currentTarget as HTMLElement, null, null, e);
   }
 
   function onClickLabel (e: Event): void {
     const target = e.currentTarget as Element;
-    if (!target) return;
-    const targetsParent = parent(target);
-    if (!targetsParent) return;
-    const input = query("input:not([type=file], [type=checkbox], [type=radio]), select, textarea", targetsParent) as HTMLElement;
+    const parentTarget = parent(target);
+    const input = query("input:not([type=file], [type=checkbox], [type=radio]), select, textarea", parentTarget) as HTMLElement;
     if (input) input.focus();
   }
 
@@ -195,13 +196,13 @@ export default (() => {
 
       const target = e.currentTarget as Element;
       const nextTarget = next(target) as HTMLInputElement;
-      if (!nextTarget || !hasType(nextTarget, "file")) return;
+      if (!hasType(nextTarget, "file")) return;
       return nextTarget.click();
     }
 
     const currentTarget = target as HTMLInputElement;
     const previousTarget = prev(target) as HTMLInputElement;
-    if (!previousTarget || !hasType(previousTarget, "text")) return;
+    if (!hasType(previousTarget, "text")) return;
     previousTarget.value = currentTarget.files ? Array.from(currentTarget.files).map((x) => x.name).join(", ") : "";
     previousTarget.readOnly = true;
     previousTarget.addEventListener("keydown", onKeydownFile);
@@ -241,12 +242,12 @@ export default (() => {
     bar.style.right = `${right}%`;
   }
 
-  async function open (from?: Element, to?: Element, options?: any, e?: Event): Promise<void> {
-    if (!from) return;
-    const dataUi = from.getAttribute("data-ui");
-    if (!dataUi) return;
-    if (!to) to = query(dataUi) ?? undefined;
-    if (!to) return;
+  async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
+    if (!to) {
+      to = query(from.getAttribute("data-ui"));
+      if (!to) return;
+    }
+
     if (hasTag(to, "dialog")) return await dialog(from, to);
     if (hasTag(to, "menu")) return menu(from, to, e);
     if (hasClass(to, "toast")) return toast(from, to, options);
@@ -262,7 +263,6 @@ export default (() => {
 
   function tab (from: Element): void {
     const container = parent(from);
-    if (!container) return;
     if (!hasClass(container, "tabs")) return;
     const tabs = queryAll("a", container);
     tabs.forEach((x: Element) => removeClass(x, "active"));
@@ -272,8 +272,7 @@ export default (() => {
   function page (from: Element, to: Element): void {
     tab(from);
     const container = parent(to);
-    if (!container) return;
-    for (let i = 0; i < container.children.length; i++) { if (hasClass(container.children[i], "page")) removeClass(container.children[i], "active"); }
+    if (container) for (let i = 0; i < container.children.length; i++) if (hasClass(container.children[i], "page")) removeClass(container.children[i], "active");
     addClass(to, "active");
   }
 
@@ -308,11 +307,10 @@ export default (() => {
     const isActive = hasClass(to, "active") || target.open;
     const isModal = hasClass(to, "modal");
     const container = parent(to);
-    if (!container) return;
     const isNav = hasTag(container, "nav");
 
     if (!hasClass(overlay, "overlay")) {
-      overlay = create({ className: "overlay" });
+      overlay = create({ class: "overlay" });
       insertBefore(overlay, to);
       await wait(90);
     }
@@ -415,7 +413,7 @@ export default (() => {
     if (!source || !_window.materialDynamicColors) return lastTheme();
 
     const mode = /dark/i.test(document.body.className) ? "dark" : "light";
-    if (source?.light && source?.dark) {
+    if (source.light && source.dark) {
       _lastTheme.light = source.light;
       _lastTheme.dark = source.dark;
       document.body.setAttribute("style", source[mode]);
@@ -465,9 +463,7 @@ export default (() => {
 
       const to = query(selector);
       if (!to) return;
-      const from = query("[data-ui='#" + to.id + "']");
-      if (!from) return;
-      void open(from, to, options);
+      void open(to, to, options);
     }
 
     const elements = queryAll("[data-ui]");

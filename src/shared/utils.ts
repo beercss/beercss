@@ -8,17 +8,17 @@ const id = (): string => {
 
 const wait = async (milliseconds: number) => await new Promise((resolve: Function) => setTimeout(resolve, milliseconds));
 
-const html = (elements: NodeListOf<Element>, html: string) => {
-  elements.forEach((x: Element) => { x.innerHTML = html; });
+const html = (elements?: NodeListOf<Element>, html: string = "") => {
+  elements?.forEach((x: Element) => { x.innerHTML = html; });
 };
 
-const remove = (elements: NodeListOf<Element>) => {
-  elements.forEach((x: Element) => { x.remove(); });
+const remove = (elements?: NodeListOf<Element>) => {
+  elements?.forEach((x: Element) => { x.remove(); });
 };
 
-const clone = (element: Element) => {
+const clone = (element: Element | null) => {
   const newElement = document.createElement("div");
-  newElement.innerHTML = element.outerHTML;
+  newElement.innerHTML = element?.outerHTML ?? "";
   return newElement.firstElementChild;
 };
 
@@ -30,9 +30,9 @@ const addClass = (elements: NodeListOf<Element>, classes: Array<string>, filter:
   elements.forEach((x: Element) => filter(x) ? x.classList.add(...classes) : null);
 };
 
-const is = (element: Element, selectors: Array<string>) => {
+const is = (element: Element | null, selectors: Array<string>) => {
   const newElement = document.createElement("div");
-  newElement.innerHTML = element.outerHTML;
+  newElement.innerHTML = element?.outerHTML ?? "";
 
   for (let i = 0; i < selectors.length; i++) { if (newElement.querySelector(selectors[i])) return true; }
 
@@ -44,11 +44,11 @@ const removeAttribute = (elements: NodeListOf<Element>, attribute: string) => {
 };
 
 const setAttribute = (elements: NodeListOf<Element>, key: string, value: any) => {
-  if (/checked|selected|readonly/i.test(key)) elements.forEach((x: Element) => { x[key] = value; });
+  if (/checked|selected|readonly/i.test(key)) elements.forEach((x: any) => { x[key] = value; });
   else elements.forEach((x: Element) => x.setAttribute(key, value));
 };
 
-const query = (selector: string | Element): Element => {
+const query = (selector: string | Element): Element | null => {
   if (typeof selector === "string") return document.querySelector(selector);
   return selector;
 };
@@ -72,9 +72,9 @@ const waitForInstall = () => {
     void navigator.serviceWorker.register(url);
   });
 
-  window.addEventListener("beforeinstallprompt", (e: IInstallEvent) => {
+  window.addEventListener("beforeinstallprompt", (e: Event) => {
     e.preventDefault();
-    _installEvent = e;
+    _installEvent = e as IInstallEvent;
   });
 };
 

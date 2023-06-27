@@ -512,7 +512,7 @@ onMounted(() => {
 
   setTimeout(() => {
     data.value.isHorizontal = window.outerWidth <= 600;
-    document.getElementById("logo").classList.add("active");
+    document.getElementById("logo")?.classList?.add("active");
   }, 1000);
 });
 </script>

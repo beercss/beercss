@@ -133,7 +133,7 @@
   .medium-space
   #icons-libs
     .space
-    h6 
+    h6
       span Font Awesome
       a.link(href="https://fontawesome.com/search?m=free&o=r", target="_blank")
         i open_in_new
@@ -144,7 +144,7 @@
       i.fa-regular.fa-circle-user.large
       i.fa-regular.fa-circle-user.extra
     .medium-space
-    h6 
+    h6
       span Pictogrammers
       a.link(href="https://pictogrammers.com/library/mdi/", target="_blank")
         i open_in_new
@@ -236,7 +236,7 @@
         button.circle.transparent(data-ui="#dialog-icons-libs")
           i close
     .space
-    h6 
+    h6
       span Font Awesome
       a.link(href="https://fontawesome.com/search?m=free&o=r", target="_blank")
         i open_in_new
@@ -247,7 +247,7 @@
       .space(v-show="exemplo.html")
       pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .medium-space
-    h6 
+    h6
       span Pictogrammers
       a.link(href="https://pictogrammers.com/library/mdi/", target="_blank")
         i open_in_new

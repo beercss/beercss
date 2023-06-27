@@ -145,7 +145,7 @@ const updateFieldType = (selector: string, type: string) => {
   }
 };
 
-const updateMenu = (data: IHome, css?: string) => {
+const updateMenu = (data: IHome, css: string = "") => {
   const isHorizontal = /^(top|bottom)$/i.test(css);
   const selector = isHorizontal ? "#navigation-bar1" : "#navigation-rail1";
   const menu = utils.queryAll(selector);
@@ -154,7 +154,7 @@ const updateMenu = (data: IHome, css?: string) => {
   data.isHorizontal = isHorizontal;
 };
 
-const updateColorTheme = (selector: string, css?: string) => {
+const updateColorTheme = (selector: string, css: string = "") => {
   const containers = utils.queryAll(selector);
   const buttons = utils.queryAll(`${selector} button:not(.transparent, .border)`);
 
@@ -191,16 +191,16 @@ const updateVerticalAlign = (selector: string, align?: string) => {
 const updateDirection = (selector: string, direction?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["vertical", "horizontal"]);
-  if (direction && direction !== "horizontal") utils.addClass(elements, [direction], (x) => !x.hasAttribute("no-direction"));
+  if (direction && direction !== "horizontal") utils.addClass(elements, [direction], (x: Element) => !x.hasAttribute("no-direction"));
 };
 
-const updateMinMax = (selector: string, css?: string) => {
+const updateMinMax = (selector: string, css: string = "") => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["min", "max"]);
   if (css) utils.addClass(elements, [css]);
 };
 
-const updateIcon = (css?: string) => {
+const updateIcon = (css: string = "") => {
   const elements = utils.queryAll("#icons-default i");
   utils.removeClass(elements, ["fill"]);
   if (css) utils.addClass(elements, [css]);
@@ -243,12 +243,13 @@ const formatHtml = (element: any, raw: boolean = false): string => {
   }
 
   const tag = utils.clone(element);
-  if (raw) return process(tag.outerHTML);
+  const text = tag?.outerHTML ?? "";
+  if (raw) return process(text);
 
-  utils.remove(tag.querySelectorAll(".overlay"));
-  utils.remove(tag.querySelectorAll("[style*='none']"));
+  utils.remove(tag?.querySelectorAll(".overlay"));
+  utils.remove(tag?.querySelectorAll("[style*='none']"));
 
-  return process(tag.outerHTML
+  return process(text
     .replace(/<!--v-if-->/gi, "")
     .replace(/\s+(wfd-id|id|data-ui|onclick|style|data-v-\w+)="[^"]*"/gi, "")
     .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
@@ -274,7 +275,7 @@ const showSamples = (data: IHome, selector: string, name: string, dialog?: strin
     const element = utils.clone(elements[i]);
 
     if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom"])) {
-      utils.html(element.querySelectorAll("dialog"), "");
+      utils.html(element?.querySelectorAll("dialog"), "");
       text = formatHtml(element);
       textFormatted = hljs.highlight("html", text).value;
     } else {
