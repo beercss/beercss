@@ -10,19 +10,17 @@ export default (() => {
   };
   const _emptyNodeList = [] as unknown as NodeListOf<Element>;
 
-  async function wait (milliseconds: number): Promise<Function> {
-    return await new Promise((resolve: Function) => setTimeout(resolve, milliseconds));
-  }
+  const wait = async (milliseconds: number): Promise<Function> =>
+    await new Promise((resolve: Function) => setTimeout(resolve, milliseconds));
 
-  function guid (): string {
-    return "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c: string) => {
+  const guid = (): string =>
+    "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c: string) => {
       const r = (Math.random() * 16) | 0;
       const v = c === "x" ? r : (r & 0x3) | 0x8;
       return v.toString(16);
     });
-  }
 
-  function query (selector: string | Element | null, element?: Element | null): Element | null {
+  const query = (selector: string | Element | null, element?: Element | null): Element | null => {
     try {
       return (typeof selector === "string")
         ? (element ?? document).querySelector(selector)
@@ -30,9 +28,9 @@ export default (() => {
     } catch {
       return null;
     }
-  }
+  };
 
-  function queryAll (selector: string | NodeListOf<Element> | null, element?: Element | null): NodeListOf<Element> {
+  const queryAll = (selector: string | NodeListOf<Element> | null, element?: Element | null): NodeListOf<Element> => {
     try {
       return (typeof selector === "string")
         ? (element ?? document).querySelectorAll(selector)
@@ -40,59 +38,59 @@ export default (() => {
     } catch {
       return _emptyNodeList;
     }
-  }
+  };
 
-  function hasClass (element: Element | null, name: string): boolean {
+  const hasClass = (element: Element | null, name: string): boolean => {
     return element?.classList?.contains(name) ?? false;
-  }
+  };
 
-  function hasTag (element: Element | null, name: string): boolean {
+  const hasTag = (element: Element | null, name: string): boolean => {
     return element?.tagName?.toLowerCase() === name;
-  }
+  };
 
-  function hasType (element: HTMLInputElement | null, name: string): boolean {
+  const hasType = (element: HTMLInputElement | null, name: string): boolean => {
     return element?.type?.toLowerCase() === name;
-  }
+  };
 
-  function addClass (element: Element | null, name: string): void {
+  const addClass = (element: Element | null, name: string): void => {
     element?.classList?.add(name);
-  }
+  };
 
-  function removeClass (element: Element | null, name: string): void {
+  const removeClass = (element: Element | null, name: string): void => {
     element?.classList?.remove(name);
-  }
+  };
 
-  function on (element: Element | null, name: string, callback: any): void {
+  const on = (element: Element | null, name: string, callback: any): void => {
     element?.addEventListener(name, callback, true);
-  }
+  };
 
-  function off (element: Element | null, name: string, callback: any): void {
+  const off = (element: Element | null, name: string, callback: any): void => {
     element?.removeEventListener(name, callback, true);
-  }
+  };
 
-  function insertBefore (newElement: Element, element: Element | null): void {
+  const insertBefore = (newElement: Element, element: Element | null): void => {
     element?.parentNode?.insertBefore(newElement, element);
-  }
+  };
 
-  function prev (element: Element): Element | null {
+  const prev = (element: Element): Element | null => {
     return element?.previousElementSibling;
-  }
+  };
 
-  function next (element: Element): Element | null {
+  const next = (element: Element): Element | null => {
     return element?.nextElementSibling;
-  }
+  };
 
-  function parent (element: Element): Element | null {
+  const parent = (element: Element): Element | null => {
     return element?.parentElement;
-  }
+  };
 
-  function create (htmlAttributesAsJson: any): HTMLElement {
+  const create = (htmlAttributesAsJson: any): HTMLElement => {
     const element = document.createElement("div");
     for (const key in htmlAttributesAsJson) element.setAttribute(key, htmlAttributesAsJson[key]);
     return element;
-  }
+  };
 
-  function textWidth (element: HTMLElement, font: string): number {
+  const textWidth = (element: HTMLElement, font: string): number => {
     if (element.offsetWidth > 0) return element.offsetWidth;
 
     if (!_canvas) {
@@ -105,9 +103,9 @@ export default (() => {
 
     _canvas.font = font;
     return _canvas.measureText(element.textContent ?? "").width;
-  }
+  };
 
-  function updateInput (target: Element): void {
+  const updateInput = (target: Element): void => {
     const input = target as HTMLInputElement;
     if (hasType(input, "number") && !input.value) input.value = "";
 
@@ -123,74 +121,75 @@ export default (() => {
         const labelWidth = textWidth(label, "0.75rem Arial");
         const width = hasClass(label, "active") ? labelWidth / fontSize : Math.round(labelWidth / 1.33) / fontSize;
         const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
-        const end = width + start + 0.5;
-        input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 0.5rem, ${end}rem 0.5rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
-      } else input.style.clipPath = "";
-      if (label) addClass(label, "active");
+        const end = hasClass(parentTarget, "round") ? 1.25 : 0.75;
+        const paddingInline = `${start + width + end}rem`;
+        label.style.paddingInline = paddingInline;
+      }
+      addClass(parentTarget, "active");
     } else {
-      if (label) removeClass(label, "active");
-      input.style.clipPath = "";
+      if (isBorder && label) {
+        label.style.paddingInline = "0px";
+      }
+      removeClass(parentTarget, "active");
     }
+  };
 
-    if (target.getAttribute("data-ui")) void open(target, null);
-  }
-
-  function onClickElement (e: Event): void {
+  const onClickElement = (e: Event): void => {
     void open(e.currentTarget as HTMLElement, null, null, e);
-  }
+  };
 
-  function onClickLabel (e: Event): void {
+  const onClickLabel = (e: Event): void => {
     const target = e.currentTarget as Element;
     const parentTarget = parent(target);
     const input = query("input:not([type=file], [type=checkbox], [type=radio]), select, textarea", parentTarget) as HTMLElement;
     if (input) input.focus();
-  }
+  };
 
-  function onFocusInput (e: Event): void {
+  const onFocusInput = (e: Event): void => {
     const target = e.currentTarget as Element;
     updateInput(target);
-  }
+  };
 
-  function onBlurInput (e: Event): void {
+  const onBlurInput = (e: Event): void => {
     const target = e.currentTarget as Element;
     updateInput(target);
-  }
+  };
 
-  function onClickDocument (e: Event): void {
+  const onClickDocument = (e: Event): void => {
     off(document.body, "click", onClickDocument);
     const target = e.target as Element;
     const menus = queryAll("menu.active");
     menus.forEach((x: Element) => menu(target, x, e));
-  }
+  };
 
-  function onClickToast (e: Event): void {
+  const onClickToast = (e: Event): void => {
     const target = e.currentTarget as Element;
     removeClass(target, "active");
 
     if (_timeoutToast) clearTimeout(_timeoutToast);
-  }
+  };
 
-  function onChangeFile (e: Event): void {
+  const onChangeFile = (e: Event): void => {
     const target = e.currentTarget as HTMLInputElement;
     updateFile(target);
-  }
+  };
 
-  function onKeydownFile (e: KeyboardEvent): void {
+  const onKeydownFile = (e: KeyboardEvent): void => {
     const target = e.currentTarget as HTMLInputElement;
     updateFile(target, e);
-  }
+  };
 
-  function onInputRange (e: Event): void {
+  const onInputRange = (e: Event): void => {
     const target = e.currentTarget as HTMLInputElement;
     updateRange(target);
-  }
+  };
 
-  function onMutation (): void {
+  const onMutation = (): void => {
     if (_timeoutMutation) clearTimeout(_timeoutMutation);
     _timeoutMutation = setTimeout(() => { void ui(); }, 180);
-  }
+  };
 
-  function updateFile (target: Element, e?: KeyboardEvent): void {
+  const updateFile = (target: Element, e?: KeyboardEvent): void => {
     if (e) {
       if (e.key !== "Enter") return;
 
@@ -207,9 +206,9 @@ export default (() => {
     previousTarget.readOnly = true;
     previousTarget.addEventListener("keydown", onKeydownFile);
     updateInput(previousTarget);
-  }
+  };
 
-  function updateRange (target: Element): void {
+  const updateRange = (target: Element): void => {
     const parentTarget = parent(target) as HTMLElement;
     const bar = query("span", parentTarget) as HTMLElement;
     const inputs = queryAll("input", parentTarget) as NodeListOf<HTMLInputElement>;
@@ -240,9 +239,9 @@ export default (() => {
 
     bar.style.left = `${left}%`;
     bar.style.right = `${right}%`;
-  }
+  };
 
-  async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
+  const open = async (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> => {
     if (!to) {
       to = query(from.getAttribute("data-ui"));
       if (!to) return;
@@ -259,24 +258,24 @@ export default (() => {
     if (hasClass(to, "active")) return removeClass(to, "active");
 
     addClass(to, "active");
-  }
+  };
 
-  function tab (from: Element): void {
+  const tab = (from: Element): void => {
     const container = parent(from);
     if (!hasClass(container, "tabs")) return;
     const tabs = queryAll("a", container);
     tabs.forEach((x: Element) => removeClass(x, "active"));
     addClass(from, "active");
-  }
+  };
 
-  function page (from: Element, to: Element): void {
+  const page = (from: Element, to: Element): void => {
     tab(from);
     const container = parent(to);
     if (container) for (let i = 0; i < container.children.length; i++) if (hasClass(container.children[i], "page")) removeClass(container.children[i], "active");
     addClass(to, "active");
-  }
+  };
 
-  function menu (from: Element, to: Element, e?: Event): any {
+  const menu = (from: Element, to: Element, e?: Event): any => {
     on(document.body, "click", onClickDocument);
     e?.stopPropagation();
     tab(from);
@@ -297,9 +296,9 @@ export default (() => {
     const menus = queryAll("menu.active");
     menus.forEach((x: Element) => removeClass(x, "active"));
     addClass(to, "active");
-  }
+  };
 
-  async function dialog (from: Element, to: Element): Promise<void> {
+  const dialog = async (from: Element, to: Element): Promise<void> => {
     tab(from);
 
     let overlay = prev(to) as HTMLElement;
@@ -345,9 +344,9 @@ export default (() => {
       if (isModal) target.showModal();
       else target.show();
     }
-  }
+  };
 
-  function toast (from: Element, to: Element, milliseconds?: number): void {
+  const toast = (from: Element, to: Element, milliseconds?: number): void => {
     tab(from);
 
     const elements = queryAll(".toast.active");
@@ -362,9 +361,9 @@ export default (() => {
     _timeoutToast = setTimeout(() => {
       removeClass(to, "active");
     }, milliseconds ?? 6000);
-  }
+  };
 
-  function progress (to: Element, percentage: number): void {
+  const progress = (to: Element, percentage: number): void => {
     const element = to as HTMLElement;
 
     if (hasClass(element, "left")) {
@@ -383,9 +382,9 @@ export default (() => {
     }
 
     if (hasClass(element, "bottom")) element.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - percentage}%, 0% ${100 - percentage}%)`;
-  }
+  };
 
-  function lastTheme (): IBeerCssTheme {
+  const lastTheme = (): IBeerCssTheme => {
     if (_lastTheme.light && _lastTheme.dark) return _lastTheme;
 
     const light = document.createElement("body");
@@ -407,9 +406,9 @@ export default (() => {
     document.body.removeChild(light);
     document.body.removeChild(dark);
     return _lastTheme;
-  }
+  };
 
-  function theme (source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssTheme> {
+  const theme = (source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssTheme> => {
     if (!source || !_window.materialDynamicColors) return lastTheme();
 
     const mode = /dark/i.test(document.body.className) ? "dark" : "light";
@@ -436,25 +435,25 @@ export default (() => {
       document.body.setAttribute("style", _lastTheme[mode]);
       return _lastTheme;
     });
-  }
+  };
 
-  function mode (value: string | any): string {
+  const mode = (value: string | any): string => {
     if (!value) return /dark/i.test(document.body.className) ? "dark" : "light";
     document.body.classList.remove("light", "dark");
     document.body.classList.add(value);
     const lastThemeStyle = value === "light" ? _lastTheme.light : _lastTheme.dark;
     if (_window.materialDynamicColors) document.body.setAttribute("style", lastThemeStyle);
     return value;
-  }
+  };
 
-  function setup (): void {
+  const setup = (): void => {
     if (_mutation) return;
     _mutation = new MutationObserver(onMutation);
     _mutation.observe(document.body, { childList: true, subtree: true });
     onMutation();
-  }
+  };
 
-  function ui (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
+  const ui = (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined => {
     if (selector) {
       if (selector === "setup") return setup() as undefined;
       if (selector === "guid") return guid();
@@ -488,7 +487,7 @@ export default (() => {
       on(x, "input", onInputRange);
       updateRange(x);
     });
-  }
+  };
 
   if (_window.addEventListener) _window.addEventListener("load", async () => await ui("setup"));
   _window.beercss = ui;
