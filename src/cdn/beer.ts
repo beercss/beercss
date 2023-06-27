@@ -117,7 +117,6 @@ export default (() => {
     const label = query("label", parentTarget) as HTMLLabelElement;
     const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
     const toActive = document.activeElement === target || input.value || hasQuery("[selected]", input) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
-
     if (toActive) {
       if (isBorder && label) {
         label.style.paddingInline = "0px";
@@ -125,17 +124,15 @@ export default (() => {
         const labelWidth = textWidth(label, "0.75rem Arial");
         const width = hasClass(label, "active") ? labelWidth / fontSize : Math.round(labelWidth / 1.33) / fontSize;
         const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
-        const end = hasClass(parentTarget, "round") ? 1.25 : 0.75;
-        const paddingInline = `${start + width + end}rem`;
-        label.style.paddingInline = paddingInline;
-      }
-      addClass(parentTarget, "active");
+        const end = width + start + 0.5;
+        input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 0.5rem, ${end}rem 0.5rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
+      } else input.style.clipPath = "";
+      if (label) addClass(label, "active");
     } else {
-      if (isBorder && label) {
-        label.style.paddingInline = "0px";
-      }
-      removeClass(parentTarget, "active");
+      if (label) removeClass(label, "active");
+      input.style.clipPath = "";
     }
+    if (target.getAttribute("data-ui")) void open(target, null);
   };
 
   const onClickElement = (e: Event): void => {
