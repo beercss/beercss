@@ -3,7 +3,6 @@ export default (() => {
   let _timeoutToast: ReturnType<typeof setTimeout>;
   let _timeoutMutation: ReturnType<typeof setTimeout>;
   let _mutation: MutationObserver | null;
-  let _canvas: CanvasRenderingContext2D | null;
   const _lastTheme: IBeerCssTheme = {
     light: "",
     dark: "",
@@ -96,21 +95,6 @@ export default (() => {
     return element;
   }
 
-  function textWidth (element: HTMLElement, font: string): number {
-    if (element.offsetWidth > 0) return element.offsetWidth;
-
-    if (!_canvas) {
-      const canvasElement = document.createElement("canvas");
-      canvasElement.style.display = "none";
-      document.body.append(canvasElement);
-      _canvas = canvasElement.getContext("2d");
-      if (!_canvas) return 0;
-    }
-
-    _canvas.font = font;
-    return _canvas.measureText(element.textContent ?? "").width;
-  }
-
   function updateInput (target: Element): void {
     const input = target as HTMLInputElement;
     if (hasType(input, "number") && !input.value) input.value = "";
@@ -121,19 +105,11 @@ export default (() => {
     const toActive = document.activeElement === target || input.value || hasQuery("[selected]", input) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
 
     if (toActive) {
-      if (isBorder && label) {
-        label.style.paddingInline = "0px";
-        const fontSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
-        const labelWidth = textWidth(label, "0.75rem Arial");
-        const width = hasClass(label, "active") ? labelWidth / fontSize : Math.round(labelWidth / 1.33) / fontSize;
-        const start = hasClass(parentTarget, "round") ? 1.25 : 0.75;
-        const end = width + start + 0.5;
-        input.style.clipPath = `polygon(0% 0%, ${start}rem 0%, ${start}rem 0.5rem, ${end}rem 0.5rem, ${end}rem 0%, 100% 0%, 100% 100%, 0% 100%)`;
-      } else input.style.clipPath = "";
-      if (label) addClass(label, "active");
+      if (isBorder) addClass(input, "active");
+      addClass(label, "active");
     } else {
-      if (label) removeClass(label, "active");
-      input.style.clipPath = "";
+      if (isBorder) removeClass(input, "active");
+      removeClass(label, "active");
     }
 
     if (target.getAttribute("data-ui")) void open(target, null);

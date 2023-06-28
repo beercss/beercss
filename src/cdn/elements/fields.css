@@ -31,10 +31,6 @@
   height: 2.5rem;
 }
 
-.field.medium {
-  height: 3rem;
-}
-
 .field.large {
   height: 3.5rem;
 }
@@ -256,8 +252,12 @@ input[type=search]::-webkit-search-results-decoration {
   border-color: var(--error);
 }
 
-.field > :disabled {
+.field:has(> :disabled) {
   opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.field > :disabled {
   cursor: not-allowed;
 }
 
@@ -265,8 +265,7 @@ input[type=search]::-webkit-search-results-decoration {
   height: 4.5rem;
 }
 
-.field.textarea,
-.field.medium.textarea {
+.field.textarea {
   height: 5.5rem;
 }
 
@@ -283,8 +282,7 @@ input[type=search]::-webkit-search-results-decoration {
   color: var(--on-surface);
 }
 
-.field.label > input,
-.field.label > select {
+.field.label > :is(input, select) {
   padding-top: 1rem;
 }
 
@@ -296,8 +294,7 @@ input[type=search]::-webkit-search-results-decoration {
   padding-top: 1.125rem;
 }
 
-.field.label > textarea,
-.field.label.medium > textarea {
+.field.label > textarea {
   padding-top: 1.375rem;
 }
 
@@ -315,9 +312,7 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 .field:not(.label) > textarea,
-.field.border:not(.fill) > textarea,
-.field.medium:not(.label) > textarea,
-.field.medium.border:not(.fill) > textarea {
+.field.border:not(.fill) > textarea {
   padding-top: 0.875rem;
 }
 
@@ -332,73 +327,84 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 /* label */
-.field.label > label {
+.field > label {
   position: absolute;
-  top: 50%;
+  top: -0.5rem;
   left: 1rem;
+  display: flex;
+  width: calc(100% - 5rem);
+  height: 100%;
   font-size: 1rem;
-  transform: translateY(-50%);
-  transition: var(--speed2) all, 0s background-color;
-  z-index: 0;
+  line-height: 4rem;
+  transition: left 0.2s, font-size 0.2s, line-height 0.2s;
 }
 
-.field.label.textarea.small > label {
-  top: 1.25rem;
+.field.small > label {
+  line-height: 3.5rem;
 }
 
-.field.label.textarea > label,
-.field.label.textarea.medium > label {
-  top: 1.5rem;
+.field.large > label {
+  line-height: 4.5rem;
 }
 
-.field.label.textarea.large > label {
-  top: 1.75rem;
+.field.extra > label {
+  line-height: 5rem;
 }
 
-.field.label.textarea.extra > label {
-  top: 2rem;
+.field.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+  left: 1rem;
 }
 
-.field.label.round > label {
+.field.round > label,
+.field.border.prefix.round:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
   left: 1.5rem;
 }
 
-.field.label.prefix > label {
+.field.prefix > label {
   left: 3rem;
 }
 
-.field.label > label.active,
-.field.label > [placeholder]:focus ~ label,
-.field.label > [placeholder]:not(:placeholder-shown) ~ label {
+.field > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+  line-height: 2.5rem;
   font-size: 0.75rem;
-  transform: translateY(-120%);
-  z-index: 1;
 }
 
-.field.label.border:not(.fill) > label.active,
-.field.label.border:not(.fill) > [placeholder]:focus ~ label,
-.field.label.border:not(.fill) > [placeholder]:not(:placeholder-shown) ~ label {
-  font-size: 0.75rem;
-  padding-inline: 0.3rem;
-  top: 0%;
-  left: 1rem;
-  transform: translateY(-50%);
-  z-index: 1;
+.field.border:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+  line-height: 1rem;
 }
 
-.field.label.border.round:not(.fill) > label.active,
-.field.label.border.round:not(.fill) > [placeholder]:focus ~ label,
-.field.label.border.round:not(.fill) > [placeholder]:not(:placeholder-shown) ~ label {
-  left: 1.5rem;
-  z-index: 1;
+.field.border:not(.fill) > label::after {
+  content: "";
+  display: block;
+  margin-top: 0.5rem;
+  border-top: 0.0625rem solid var(--outline);
+  min-width: 1rem;
+  height: 1rem;
+  transition: none;
+  flex: auto;
+  margin-left: 0.25rem;
 }
 
-.field.label > :focus ~ label {
+.field.border:not(.fill) > :focus + label::after {
+  border-top: 0.125rem solid var(--primary);
+}
+
+.field.label.border:not(.fill) > :is(input, select, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active) {
+  clip-path: polygon(0% 0%, 0.75rem 0%, 0.75rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.field.label.border.round:not(.fill) > :is(input, select, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active) {
+  clip-path: polygon(0% 0%, 1.25rem 0%, 1.25rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.field > :is(label.active, :focus + label) {
   color: var(--primary);
 }
 
-.field.invalid > label {
+.field.invalid > label,
+.field.invalid > label::after {
   color: var(--error) !important;
+  border-color: var(--error) !important;
 }
 
 .field > label.required::after,

@@ -47,19 +47,61 @@ main.responsive
     button(data-ui="#top") Top
     button(data-ui="#right") Right
     button(data-ui="#bottom") Bottom
-  h5 Without row
-  .field.label.border
-    input
-    label Label
-    span.helper Helper
-  .field.label.border
-    input
-    label Label
-    span.helper Helper
-  .field.label.border
-    input
-    label Label
-    span.helper Helper
+  h5 With pure CSS
+  nav
+    button(@click="domain.updateSize('#with-pure-css .field', 'small')") small
+    button(@click="domain.updateSize('#with-pure-css .field', '')") medium
+    button(@click="domain.updateSize('#with-pure-css .field', 'large')") large
+    button(@click="domain.updateSize('#with-pure-css .field', 'extra')") extra
+  .space
+  #with-pure-css.grid
+    .s12.m6
+      .field.label.fill
+        input(placeholder=" ")
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.label.fill.prefix
+        i home
+        input(placeholder=" ", disabled, value="100")
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.label.fill.round
+        input(placeholder=" ")
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.label.fill.prefix.round
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.label.border
+        input(placeholder=" ")
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.label.border.prefix
+        i home
+        input(placeholder=" ", disabled, value="100")
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.label.border.round
+        input(placeholder=" ")
+        label Label
+        span.helper Helper
+    .s12.m6
+      .field.label.border.prefix.round
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+          i.tiny info
+          .tooltip.bottom Testando tooltip
   h5 With row
   .grid
     .s4
@@ -259,6 +301,7 @@ main.responsive
 </template>
 
 <script setup lang="ts">
+import domain from "../home/domain";
 const updateTheme = () => {
   document.body.className = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
 };

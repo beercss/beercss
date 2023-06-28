@@ -40,10 +40,6 @@
   min-height: 2rem;
 }
 
-.tabs.medium > a {
-  min-height: 2.5rem;
-}
-
 .tabs.large > a {
   min-height: 4rem;
 }
