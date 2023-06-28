@@ -33,18 +33,40 @@ active
 </div>
 ```
 
-## Triggers 
+## Triggers
 
-#### To up/down a label
+### To up/down a label
 
 #### Method 1
 
-Add/remove `active` class on label. On `field` element with `border` helper, use method 2.
+Add/remove `active` class on label/textarea (the JS file of beer do this automatically).
 
 ```html
-<div class="field textarea label border">
+<div class="field label">
   <textarea></textarea>
   <label class="active">Label</label>
+</div>
+
+<div class="field label border">
+  <textarea class="active"></textarea>
+  <label class="active">Label</label>
+</div>
+```
+#### Method 2
+
+- Add `placehholder=" "` on textarea (a pure CSS solution).
+
+```html
+<div class="field label">
+  <textarea placeholder=" "></textarea>
+  <label>Label</label>
+</div>
+```
+
+```html
+<div class="field label border">
+  <textarea placeholder=" "></textarea>
+  <label>Label</label>
 </div>
 ```
 

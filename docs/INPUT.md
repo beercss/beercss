@@ -37,19 +37,24 @@ active
 
 ### To up/down a label
 
-#### Method 1: JavaScript
+#### Method 1
 
-Add/remove `active` class on label with JavaScript. Automagically done when using the Beercss JavaScript bundle.
+Add/remove `active` class on label/input (the JS file of beer do this automatically).
 
 ```html
 <div class="field label">
   <input type="text">
   <label class="active">Label</label>
 </div>
-```
-#### Method 2: pure CSS
 
-- **If the field has no border**, simply add a non-empty placeholder (a space) to the input:
+<div class="field label border">
+  <input type="text" class="active">
+  <label class="active">Label</label>
+</div>
+```
+#### Method 2
+
+- Add `placehholder=" "` on input (a pure CSS solution).
 
 ```html
 <div class="field label">
@@ -58,17 +63,11 @@ Add/remove `active` class on label with JavaScript. Automagically done when usin
 </div>
 ```
 
-- **If the field does have a border**, add a non-empty placeholder but also add a [color class](https://www.beercss.com/#colors) to the label so its background color matches the field container background color (`background` in the example below):
-
 ```html
-<body class="background">
-  <main class="responsive">
-    <div class="field label border">
-      <input type="text" placeholder=" ">
-      <label class="background">Label</label>
-    </div>
-  </main>
-</body>
+<div class="field label border">
+  <input type="text" placeholder=" ">
+  <label>Label</label>
+</div>
 ```
 ## Go to
 

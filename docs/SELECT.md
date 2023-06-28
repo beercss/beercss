@@ -37,17 +37,26 @@ active
 </div>
 ```
 
-## Triggers 
+## Triggers
 
-#### To up/down a label
+### To up/down a label
 
 #### Method 1
 
-Add/remove `active` class on label. On `field` element with `border` helper, use method 2.
+Add/remove `active` class on label/select (the JS file of beer do this automatically).
 
 ```html
-<div class="field label border">
+<div class="field label">
   <select>
+    <option>Item</option>
+    <option>Item</option>
+    <option>Item</option>
+  </select>
+  <label class="active">Label</label>
+</div>
+
+<div class="field label border">
+  <select class="active">
     <option>Item</option>
     <option>Item</option>
     <option>Item</option>
