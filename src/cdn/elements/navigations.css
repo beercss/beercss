@@ -4,7 +4,6 @@ nav,
   align-items: center;
   justify-content: flex-start;
   white-space: nowrap;
-  border-radius: 0;
   gap: 1rem;
 }
 

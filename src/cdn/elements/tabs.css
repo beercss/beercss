@@ -2,7 +2,6 @@
   display: flex;
   white-space: nowrap;
   border-bottom: 0.0625rem solid var(--outline);
-  border-radius: 0;
 }
 
 .tabs.min {

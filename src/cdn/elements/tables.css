@@ -4,7 +4,6 @@ table {
   font-size: 0.875rem;
   color: var(--on-background);
   text-align: left;
-  border-radius: 0;
 }
 
 table :is(th, td) {

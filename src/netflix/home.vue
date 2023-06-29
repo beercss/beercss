@@ -10,10 +10,10 @@
         nav
           button.small-round.large.white.black-text
             i play_arrow
-            span &nbsp;Watch
+            span Watch
           button.small-round.large.border.white-border.white-text
-            i info_outline
-            span &nbsp;More info
+            i info
+            span More info
   main.responsive.max
     .page.right.active
       .large-space

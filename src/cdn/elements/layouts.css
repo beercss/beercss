@@ -48,7 +48,6 @@ footer {
   right: 0;
   z-index: 12;
   background-color: inherit;
-  border-radius: 0;
 }
 
 :is(header, footer).fixed::before {

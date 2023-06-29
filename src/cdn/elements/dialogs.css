@@ -113,7 +113,6 @@ dialog.max {
   max-width: 100%;
   max-height: 100%;
   transform: translateY(4rem);
-  border-radius: 0;
 }
 
 dialog.small:is(.left, .right) {
