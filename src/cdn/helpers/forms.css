@@ -1,8 +1,11 @@
-.small-round,
-.medium-round,
-.large-round,
 .round {
   border-radius: var(---round);
+}
+
+.small-round,
+.medium-round,
+.large-round {
+  border-radius: var(---round) !important;
 }
 
 .top-round,

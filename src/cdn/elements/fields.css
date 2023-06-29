@@ -306,22 +306,23 @@ input[type=search]::-webkit-search-results-decoration {
   padding-top: 1.875rem;
 }
 
-.field.small:not(.label) > textarea,
+.field.small > textarea,
 .field.small.border:not(.fill) > textarea {
   padding-top: 0.625rem;
 }
 
-.field:not(.label) > textarea,
+.field > textarea,
+.field > textarea:focus,
 .field.border:not(.fill) > textarea {
   padding-top: 0.875rem;
 }
 
-.field.large:not(.label) > textarea,
+.field.large > textarea,
 .field.large.border:not(.fill) > textarea {
   padding-top: 1.125rem;
 }
 
-.field.extra:not(.label) > textarea,
+.field.extra > textarea,
 .field.extra.border:not(.fill) > textarea {
   padding-top: 1.375rem;
 }
