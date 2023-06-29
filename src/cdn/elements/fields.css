@@ -390,14 +390,14 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 .field.label.border:not(.fill) > :is(input, select, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active) {
-  clip-path: polygon(0% 0%, 0.75rem 0%, 0.75rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% -1%, 0.75rem -1%, 0.75rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 100% -1%, 100% 101%, 0% 101%);
 }
 
 .field.label.border.round:not(.fill) > :is(input, select, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active) {
-  clip-path: polygon(0% 0%, 1.25rem 0%, 1.25rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% -1%, 1.25rem -1%, 1.25rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 100% -1%, 100% 101%, 0% 101%);
 }
 
-.field > :is(label.active, :focus + label) {
+.field > :focus + label {
   color: var(--primary);
 }
 
@@ -405,11 +405,6 @@ input[type=search]::-webkit-search-results-decoration {
 .field.invalid > label::after {
   color: var(--error) !important;
   border-color: var(--error) !important;
-}
-
-.field > label.required::after,
-.field.required > label::after {
-  content: " * ";
 }
 
 /* helper */
