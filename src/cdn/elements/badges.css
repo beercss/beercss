@@ -93,7 +93,7 @@
 }
 
 .badge.border {
-  border: 0.0625rem solid var(--error);
+  border-color: var(--error);
   color: var(--error);
 }
 

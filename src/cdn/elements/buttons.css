@@ -50,7 +50,7 @@ button {
 }
 
 :is(button, .button).border {
-  border: 0.0625rem solid var(--primary);
+  border-color: var(--primary);
   color: var(--primary);
 }
 
