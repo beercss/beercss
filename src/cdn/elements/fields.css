@@ -390,11 +390,11 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 .field.label.border:not(.fill) > :is(input, select, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active) {
-  clip-path: polygon(0% -1%, 0.75rem -1%, 0.75rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 100% -1%, 100% 101%, 0% 101%);
+  clip-path: polygon(-1% -1%, 0.75rem -1%, 0.75rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 101% -1%, 101% 101%, -1% 101%);
 }
 
 .field.label.border.round:not(.fill) > :is(input, select, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active) {
-  clip-path: polygon(0% -1%, 1.25rem -1%, 1.25rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 100% -1%, 100% 101%, 0% 101%);
+  clip-path: polygon(-1% -1%, 1.25rem -1%, 1.25rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 101% -1%, 101% 101%, -1% 101%);
 }
 
 .field > :focus + label {
