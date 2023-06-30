@@ -280,6 +280,7 @@ export default (() => {
   }
 
   async function dialog (from: Element, to: Element): Promise<void> {
+    (document.activeElement as HTMLElement)?.blur();
     tab(from);
 
     let overlay = prev(to) as HTMLElement;
