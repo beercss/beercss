@@ -106,6 +106,6 @@
   box-shadow: none;
 }
 
-:is(nav, .row, .dialog.max, header.fixed, footer.fixed, menu > a, menu.max, table, .tabs):not(.round, .small-round, .medium-round, .large-round) {
+:is(nav, .row, .dialog.max, header.fixed, footer.fixed, menu > a, menu.max, table, .tabs):not(.round) {
   border-radius: 0;
 }
