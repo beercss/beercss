@@ -8,6 +8,7 @@
   gap: 0.5rem;
   background-color: var(--inverse-surface);
   color: var(--inverse-on-surface);
+  font-size: 0.75rem;
   text-align: center;
   border-radius: 0.25rem;
   padding: 0.5rem;
@@ -150,6 +151,7 @@ menu:active ~ .tooltip,
 
 .tooltip.max {
   display: block;
+  font-size: inherit;
   white-space: normal;
   text-align: left;
   width: 20rem;
