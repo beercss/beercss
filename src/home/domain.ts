@@ -286,7 +286,7 @@ const showSamples = (data: IHome, selector: string, name: string, dialog?: strin
     if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", "dialog", ".toast", "main.responsive", ".fixed:not(header, footer)"])) { text = ""; }
 
     data.samples.push({
-      html: text,
+      html: (name === "Tooltips") ? `<div class="center-align">${text}</div>` : text,
       sourceCode: textFormatted,
     });
   }
