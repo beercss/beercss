@@ -453,7 +453,7 @@ export default (() => {
     const labels = queryAll(".field > label");
     labels.forEach((x: Element) => on(x, "click", onClickLabel));
 
-    const inputs = queryAll(".field > input:not([type=file], [type=checkbox], [type=radio]), .field > select, .field > textarea");
+    const inputs = queryAll(".field > input:not([type=file]), .field > select, .field > textarea");
     inputs.forEach((x: Element) => {
       on(x, "focus", onFocusInput);
       on(x, "blur", onBlurInput);
