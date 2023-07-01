@@ -128,19 +128,3 @@ svg {
 :is(.circle, .square) > .responsive {
   margin: 0;
 }
-
-.extend > .responsive {
-  margin: 0;
-  position: absolute;
-  left: 1rem;
-  z-index: 1;
-}
-
-.extend > .responsive {
-  left: 0;
-  width: 3.5rem;
-}
-
-.extend.border > .responsive {
-  width: 3.375rem;
-}

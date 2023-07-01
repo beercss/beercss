@@ -54,24 +54,39 @@ button {
   color: var(--primary);
 }
 
-:is(.button, button).extend > span {
+.extend > span {
   display: none;
 }
 
-:is(.button, button).extend:hover,
-:is(.button, button).extend.active {
+.extend:is(:hover, .active) {
   width: auto;
   padding: 0 1.5rem;
 }
 
-:is(button, .button):is(:hover, .active).extend > i + span {
+.extend:is(:hover, .active) > i + span {
   display: inherit;
   margin-left: 1.5rem;
 }
 
-:is(.button, button):is(:hover, .active).extend > :is(img, svg) + span {
+.extend:is(:hover, .active) > :is(img, svg) + span {
   display: inherit;
   margin-left: 2.5rem;
+}
+
+.extend > :is(.responsive, i) {
+  margin: 0;
+  position: absolute;
+  left: 1rem;
+  z-index: 1;
+}
+
+.extend > .responsive {
+  left: 0;
+  width: 3.5rem;
+}
+
+.extend.border > .responsive {
+  width: 3.375rem;
 }
 
 :is(.button, button):is([disabled]) {
