@@ -40,23 +40,23 @@ svg {
   margin: 0 auto;
 }
 
-:is(button, .button, .chip) > :is(img, svg).responsive {
+:is(button, .button, .chip) > .responsive {
   width: 2.5rem;
 }
 
-:is(button, .button, .chip):not(.transparent) > :is(img, svg).responsive {
+:is(button, .button, .chip):not(.transparent) > .responsive {
   border: 0.25rem solid transparent;
 }
 
-:is(button, .button, .chip).small > :is(img, svg).responsive {
+:is(button, .button, .chip).small > .responsive {
   width: 2rem;
 }
 
-:is(button, .button, .chip).large > :is(img, svg).responsive {
+:is(button, .button, .chip).large > .responsive {
   width: 3rem;
 }
 
-:is(button, .button, .chip).extra > :is(img, svg).responsive {
+:is(button, .button, .chip).extra > .responsive {
   width: 3.5rem;
 }
 
@@ -103,42 +103,44 @@ svg {
 }
 
 :is(button, .button, .chip) > :is(i, img, svg),
-:is(button, .button, .chip) > :is(img, svg).responsive {
+:is(button, .button, .chip) > .responsive {
   margin: 0 -0.5rem;
 }
 
-:is(button, .button) > :is(img, svg).responsive {
+:is(button, .button) > .responsive {
   margin-left: -1.5rem;
 }
 
-:is(button, .button) > span + :is(img, svg).responsive {
+:is(button, .button) > span + .responsive {
+  margin-left: -0.5rem;
   margin-right: -1.5rem;
 }
 
-.chip > :is(img, svg).responsive {
+.chip > .responsive {
   margin-left: -1rem;
 }
 
-.chip > span + :is(img, svg).responsive {
+.chip > span + .responsive {
+  margin-left: -0.5rem;
   margin-right: -1rem;
 }
 
-:is(.circle, .square) > :is(img, svg).responsive {
+:is(.circle, .square) > .responsive {
   margin: 0;
 }
 
-.extend > :is(i, img, svg) {
+.extend > .responsive {
   margin: 0;
   position: absolute;
   left: 1rem;
   z-index: 1;
 }
 
-.extend > :is(img, svg).responsive {
+.extend > .responsive {
   left: 0;
   width: 3.5rem;
 }
 
-.extend.border > :is(img, svg).responsive {
+.extend.border > .responsive {
   width: 3.375rem;
 }
