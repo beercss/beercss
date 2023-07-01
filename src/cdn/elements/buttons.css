@@ -73,22 +73,6 @@ button {
   margin-left: 2.5rem;
 }
 
-.extend > :is(.responsive, i) {
-  margin: 0;
-  position: absolute;
-  left: 1rem;
-  z-index: 1;
-}
-
-.extend > .responsive {
-  left: 0;
-  width: 3.5rem;
-}
-
-.extend.border > .responsive {
-  width: 3.375rem;
-}
-
 :is(.button, button):is([disabled]) {
   opacity: 0.5;
   cursor: not-allowed;
