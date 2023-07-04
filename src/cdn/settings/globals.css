@@ -1,6 +1,8 @@
 :root {
   --size: 16px;
   --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;  
   --font-icon: "Material Symbols Outlined";
   --speed1: 0.1s;
   --speed2: 0.2s;

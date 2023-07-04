@@ -149,6 +149,14 @@ h6.large {
   font-weight: bold;
 }
 
+.serif {
+  font-family: var(--serif-font);
+}
+
+.mono {
+  font-family: var(--mono-font);
+}
+
 .overline {
   text-decoration: line-through;
 }
