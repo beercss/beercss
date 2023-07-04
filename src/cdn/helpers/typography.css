@@ -150,11 +150,11 @@ h6.large {
 }
 
 .serif {
-  font-family: var(--serif-font);
+  font-family: var(--font-serif);
 }
 
 .mono {
-  font-family: var(--mono-font);
+  font-family: var(--font-mono);
 }
 
 .overline {
