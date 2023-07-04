@@ -53,6 +53,8 @@ small, medium, large
 <p class="small-text">small-text</p>
 <p class="medium-text">medium-text</p>
 <p class="large-text">large-text</p>
+<p class="serif">serif</p>
+<p class="mono">monospace</p>
 ```
 
 ## Line spacing example
