@@ -260,7 +260,7 @@ div
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.2.12/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.0.0/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.0.1/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
             h5 From NPM
             pre.scroll.large-padding.fill(style="font-family: courier new")
