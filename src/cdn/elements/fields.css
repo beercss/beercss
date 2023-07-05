@@ -328,7 +328,7 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 /* label */
-.field > label {
+.field.label > label {
   position: absolute;
   top: -0.5rem;
   left: 1rem;
@@ -340,41 +340,41 @@ input[type=search]::-webkit-search-results-decoration {
   transition: left 0.2s, font-size 0.2s, line-height 0.2s;
 }
 
-.field.small > label {
+.field.label.small > label {
   line-height: 3.5rem;
 }
 
-.field.large > label {
+.field.label.large > label {
   line-height: 4.5rem;
 }
 
-.field.extra > label {
+.field.label.extra > label {
   line-height: 5rem;
 }
 
-.field.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+.field.label.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
   left: 1rem;
 }
 
-.field.round > label,
-.field.border.prefix.round:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+.field.label.round > label,
+.field.label.border.prefix.round:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
   left: 1.5rem;
 }
 
-.field.prefix > label {
+.field.label.prefix > label {
   left: 3rem;
 }
 
-.field > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+.field.label > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
   line-height: 2.5rem;
   font-size: 0.75rem;
 }
 
-.field.border:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+.field.label.border:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
   line-height: 1rem;
 }
 
-.field.border:not(.fill) > label::after {
+.field.label.border:not(.fill) > label::after {
   content: "";
   display: block;
   margin-top: 0.5rem;
@@ -386,7 +386,7 @@ input[type=search]::-webkit-search-results-decoration {
   margin-left: 0.25rem;
 }
 
-.field.border:not(.fill) > :focus + label::after {
+.field.label.border:not(.fill) > :focus + label::after {
   border-top: 0.125rem solid var(--primary);
 }
 
@@ -398,12 +398,12 @@ input[type=search]::-webkit-search-results-decoration {
   clip-path: polygon(-1% -1%, 1.25rem -1%, 1.25rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 101% -1%, 101% 101%, -1% 101%);
 }
 
-.field > :focus + label {
+.field.label > :focus + label {
   color: var(--primary);
 }
 
-.field.invalid > label,
-.field.invalid > label::after {
+.field.label.invalid > label,
+.field.label.invalid > label::after {
   color: var(--error) !important;
   border-color: var(--error) !important;
 }
