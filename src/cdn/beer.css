@@ -40,9 +40,9 @@
 @import "./elements/progress.css";
 @import "./elements/selections.css";
 @import "./elements/sliders.css";
+@import "./elements/snackbars.css";
 @import "./elements/tables.css";
 @import "./elements/tabs.css";
-@import "./elements/toasts.css";
 @import "./elements/tooltips.css";
 @import "./helpers/blurs.css";
 @import "./helpers/shadows.css";

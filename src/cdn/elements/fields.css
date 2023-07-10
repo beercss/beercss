@@ -307,22 +307,25 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 .field.small > textarea,
+.field.small:not(.label) > textarea:focus,
 .field.small.border:not(.fill) > textarea {
   padding-top: 0.625rem;
 }
 
 .field > textarea,
-.field > textarea:focus,
+.field:not(.label) > textarea:focus,
 .field.border:not(.fill) > textarea {
   padding-top: 0.875rem;
 }
 
 .field.large > textarea,
+.field.large:not(.label) > textarea:focus,
 .field.large.border:not(.fill) > textarea {
   padding-top: 1.125rem;
 }
 
 .field.extra > textarea,
+.field.extra:not(.label) > textarea:focus,
 .field.extra.border:not(.fill) > textarea {
   padding-top: 1.375rem;
 }

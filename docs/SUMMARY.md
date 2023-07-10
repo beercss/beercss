@@ -56,7 +56,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **tabs** left-align, right-align, center-align, horizontal, vertical, min, max
 
-**toast** top, bottom, active
+**snackbar** top, bottom, active
 
 **tooltip** left, right, top, bottom, max
 
@@ -106,10 +106,10 @@ Use this page to learn. This page has the most used combinations of elements and
 
 ## Settings
 
-**Variables** --primary, --on-primary, --primary-container, --on-primary-container, --secondary, --on-secondary, --secondary-container, --on-secondary-container, --tertiary, --on-tertiary, --tertiary-container, --on-tertiary-container, --error, --on-error, --tertiary-error, --on-error-container, --background, --on-background, --surface, --on-surface, --surface-container, --on-surface-container, --on-surface-variant, --inverse-surface, --inverse-on-surface, --inverse-primary, --inverse-on-primary, --outline, --active, --overlay, --font, --size, --elevate1, --elevate2, --elevate3, --speed1, --speed2, --speed3, --speed4
+**Variables** --primary, --on-primary, --primary-container, --on-primary-container, --secondary, --on-secondary, --secondary-container, --on-secondary-container, --tertiary, --on-tertiary, --tertiary-container, --on-tertiary-container, --error, --on-error, --error-container, --on-error-container, --background, --on-background, --surface, --on-surface, --surface-variant, --on-surface-variant, --outline, --outline-variant, --shadow, --scrim, --inverse-surface, --inverse-on-surface, --inverse-primary, --outline, --active, --overlay, --font, --size, --elevate1, --elevate2, --elevate3, --speed1, --speed2, --speed3, --speed4
 
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Loader](LOADER.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Toast](TOAST.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Loader](LOADER.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

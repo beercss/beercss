@@ -1,4 +1,4 @@
-let _timeoutToast: ReturnType<typeof setTimeout>;
+let _timeoutSnackbar: ReturnType<typeof setTimeout>;
 let _timeoutMutation: ReturnType<typeof setTimeout>;
 let _mutation: MutationObserver | null;
 const _lastTheme: IBeerCssTheme = {
@@ -141,11 +141,11 @@ function onClickDocument (e: Event): void {
   menus.forEach((x: Element) => menu(target, x, e));
 }
 
-function onClickToast (e: Event): void {
+function onClickSnackbar (e: Event): void {
   const target = e.currentTarget as Element;
   removeClass(target, "active");
 
-  if (_timeoutToast) clearTimeout(_timeoutToast);
+  if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
 }
 
 function onChangeFile (e: Event): void {
@@ -228,7 +228,7 @@ async function open (from: Element, to: Element | null, options?: any, e?: Event
 
   if (hasTag(to, "dialog")) return await dialog(from, to);
   if (hasTag(to, "menu")) return menu(from, to, e);
-  if (hasClass(to, "toast")) return toast(from, to, options);
+  if (hasClass(to, "snackbar")) return snackbar(from, to, options);
   if (hasClass(to, "page")) return page(from, to);
   if (hasClass(to, "progress")) return progress(to, options);
 
@@ -326,19 +326,20 @@ async function dialog (from: Element, to: Element): Promise<void> {
   }
 }
 
-function toast (from: Element, to: Element, milliseconds?: number): void {
+function snackbar (from: Element, to: Element, milliseconds?: number): void {
+  (document.activeElement as HTMLElement)?.blur();
   tab(from);
 
-  const elements = queryAll(".toast.active");
+  const elements = queryAll(".snackbar.active");
   elements.forEach((x: Element) => removeClass(x, "active"));
   addClass(to, "active");
-  on(to, "click", onClickToast);
+  on(to, "click", onClickSnackbar);
 
-  if (_timeoutToast) clearTimeout(_timeoutToast);
+  if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
 
   if (milliseconds === -1) return;
 
-  _timeoutToast = setTimeout(() => {
+  _timeoutSnackbar = setTimeout(() => {
     removeClass(to, "active");
   }, milliseconds ?? 6000);
 }
@@ -377,7 +378,7 @@ function lastTheme (): IBeerCssTheme {
 
   const fromLight = getComputedStyle(light);
   const fromDark = getComputedStyle(dark);
-  const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--outline", "--surface-variant", "--on-surface-variant", "--inverse-surface", "--inverse-on-surface", "--inverse-primary", "--inverse-on-primary"];
+  const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--surface-variant", "--on-surface-variant", "--outline", "--outline-variant", "--shadow", "--scrim", "--inverse-surface", "--inverse-on-surface", "--inverse-primary"];
   for (let i = 0; i < variables.length; i++) {
     _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
     _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";

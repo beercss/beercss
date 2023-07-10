@@ -1,18 +1,18 @@
-# Overlay
+# Snackbar
 
-Overlays block user screen and can express an unspecified wait time.
+Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recomended to show two or more snackbars at same time.
 
 ## Element
 
 ```html
-<div class="overlay">...</div>
+<div class="snackbar">...</div>
 ```
 
 ## Most used helpers
 
-**Alignments**
+**Positions**
 
-left-align, right-align, center-align, top-align, bottom-align, middle-align
+top, bottom
 
 **Triggers**
 
@@ -21,49 +21,53 @@ active
 ## Example
 
 ```html
-<div class="overlay center-align middle-align">
-  <a class="loader"></a>
+<div class="snackbar">
+  <i>warning</i>
+  <span>I'm a snackbar</span>
 </div>
 ```
 
 ## Triggers 
 
-#### To show/hide a overlay
+#### To open/close a menu
 
 #### Method 1
 
-Add/remove `active` class on overlay.
+Add/remove `active` class on snackbar.
 
 ```html
-<div class="overlay center-align middle-align active">
-  <a class="loader"></a>
+<div class="snackbar active">
+  <i>warning</i>
+  <span>I'm a snackbar</span>
 </div>
 ```
 
 #### Method 2
 
-Add `data-ui="overlay-selector"` attribute on elements.
+Add `data-ui="snackbar-selector"` attribute on elements.
 
 ```html
-<button data-ui="#overlay">Show overlay</button>
+<button data-ui="#snackbar">Open</button>
 
-<div class="overlay center-align middle-align" id="overlay">
-  <a class="loader"></a>
+<div class="snackbar" id="snackbar">
+  <i>warning</i>
+  <span>I'm a snackbar</span>
 </div>
 ```
 
 #### Method 3
 
-Call `ui("overlay-selector")`.
+Call `ui("snackbar-selector", millisecondsToHide)`. The default value for millisecondsToHide is 6000.
 
 ```html
-<div class="overlay center-align middle-align" id="overlay">
-  <a class="loader"></a>
+<div class="snackbar" id="snackbar">
+  <i>warning</i>
+  <span>I'm a snackbar</span>
 </div>
 ```
 
 ```js
-ui('#overlay');
+ui("#snackbar");
 ```
 
 ## Go to

@@ -39,3 +39,11 @@ button,
   outline: inherit;
   justify-content: center;
 }
+
+a,
+button, 
+.button,
+i,
+label {
+  user-select: none;
+}
