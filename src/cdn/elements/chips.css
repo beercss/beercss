@@ -30,8 +30,8 @@
 }
 
 .chip.border {
-  border-color: var(--secondary);
-  color: var(--secondary);
+  border-color: var(--outline);
+  color: var(--on-surface);
 }
 
 .chip.fill {

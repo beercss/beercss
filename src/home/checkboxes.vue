@@ -87,7 +87,6 @@
             input(type="checkbox")
             span Item 3
         span.error Error text
-            span Disabled
 </template>
 
 <script setup lang="ts">
