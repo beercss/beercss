@@ -47,3 +47,14 @@ i,
 label {
   user-select: none;
 }
+
+body *::-webkit-scrollbar,
+body *::-webkit-scrollbar-button {
+  background: none;
+  width: 0.5rem;
+}
+
+body *::-webkit-scrollbar-thumb {
+  background: var(--outline);
+  border-radius: 1rem;
+}
