@@ -12,7 +12,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **button or &lt;button&gt;** small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
 
-**chip** small, medium, large, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
+**chip** small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
 
 **&lt;details&gt;**
 
@@ -76,7 +76,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Elevates** elevate, no-elevate, small-elevate, medium-elevate, large-elevate
 
-**Forms** border, circle, square, none, fill, extend, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
+**Forms** border, no-border, circle, square, none, fill, extend, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
 
 **Margins** margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
