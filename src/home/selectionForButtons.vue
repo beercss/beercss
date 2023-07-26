@@ -5,7 +5,7 @@ nav.wrap
     span {{ color || "default" }}
   label.radio(v-for="size in sizes")
     input(type="radio", :id="size + '-' + context", :name="'size-' + context", :checked="size === selectedSize", @click="domain.updateSize(context, size)")
-    span {{ size || "medium" }}
+    span {{ size || emptySize || "medium" }}
   label.radio(v-for="elevate in elevates")
     input(type="radio", :id="elevate + '-' + context", :name="'elevate-' + context", :checked="elevate === selectedShadow", @click="domain.updateElevate(context, elevate)")
     span {{ elevate || "no-elevate" }}
@@ -33,6 +33,7 @@ export interface IProps {
   selectedSize?: string,
   selectedShadow?: string,
   selectedDirection?: string,
+  emptySize?: string
 }
 
 const {
@@ -49,6 +50,7 @@ const {
   selectedSize = "",
   selectedShadow = "",
   selectedDirection = "",
+  labelSizes = ["small", "", "large", "extra"],
 } = defineProps<IProps>();
 
 onMounted(() => {

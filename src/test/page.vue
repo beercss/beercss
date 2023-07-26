@@ -1,5 +1,10 @@
 <template lang="pug">
 main.responsive
+  
+  button 
+    span Date
+    menu.round.no-wrap
+      datePicker
   .row
     a(@click="updateTheme()")
       i.large palette
@@ -302,6 +307,7 @@ main.responsive
 
 <script setup lang="ts">
 import domain from "../home/domain";
+import datePicker from "./datePicker/datePicker.vue";
 const updateTheme = () => {
   document.body.className = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
 };

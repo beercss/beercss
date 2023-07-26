@@ -2,12 +2,12 @@
 main.responsive(v-show="data.isLoaded")
   .page.right.active
     nav.scroll
-      a.chip.border.fill
+      a.chip.fill
         i.small done
         span The best of 2020
-      a.chip.border Documentaries
-      a.chip.border Rock and roll
-      a.chip.border Others
+      a.chip Documentaries
+      a.chip Rock and roll
+      a.chip Others
     .space
     .grid
       .s12.m6.l3(v-for="(item, i) in data.itens")
