@@ -262,7 +262,18 @@ function menu (from: Element, to: Element, e?: Event): any {
     on(document.body, "click", onClickDocument);
     tab(from);
   
-    if (hasClass(to, "active")) return removeClass(to, "active");
+    if (hasClass(to, "active")) {
+      if (!e) return removeClass(to, "active");
+
+      const trustedFrom = e.target as Element;
+      const trustedTo = query(trustedFrom.getAttribute("data-ui") ?? "");
+      const trustedMenu = trustedFrom.closest("menu");
+      const trustedActive = !query("menu", trustedFrom.closest("[data-ui]") ?? undefined);
+  
+      if (trustedTo && trustedTo !== trustedMenu) return menu(trustedFrom, trustedTo);
+      if (!trustedTo && !trustedActive && trustedMenu) return false;
+      return removeClass(to, "active");      
+    }
   
     const menus = queryAll("menu.active");
     menus.forEach((x: Element) => removeClass(x, "active"));
