@@ -52,6 +52,7 @@ body *::-webkit-scrollbar,
 body *::-webkit-scrollbar-button {
   background: none;
   width: 0.5rem;
+  height: 0.5rem;
 }
 
 body *::-webkit-scrollbar-thumb {

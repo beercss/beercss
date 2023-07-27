@@ -34,13 +34,6 @@
       span large
   .medium-space
   nav.scroll
-    button First
-    .max.divider
-    button Second
-    .max.divider
-    button Third
-  .medium-space
-  nav.scroll
     button.circle 1
     .max.divider
     button.circle 2
