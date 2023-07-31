@@ -97,20 +97,7 @@ function create (htmlAttributesAsJson: any): HTMLElement {
 function updateInput (target: Element): void {
   const input = target as HTMLInputElement;
   if (hasType(input, "number") && !input.value) input.value = "";
-
-  const parentTarget = parent(target);
-  const label = query("label", parentTarget) as HTMLLabelElement;
-  const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
-  const toActive = document.activeElement === target || input.value || hasQuery("[selected]", input) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
-
-  if (toActive) {
-    if (isBorder) addClass(input, "active");
-    addClass(label, "active");
-  } else {
-    if (isBorder) removeClass(input, "active");
-    removeClass(label, "active");
-  }
-
+  if (!input.placeholder) input.placeholder = " ";
   if (target.getAttribute("data-ui")) void open(target, null);
 }
 
@@ -456,7 +443,7 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
   const labels = queryAll(".field > label");
   labels.forEach((x: Element) => on(x, "click", onClickLabel));
 
-  const inputs = queryAll(".field > input:not([type=file]), .field > select, .field > textarea");
+  const inputs = queryAll(".field > input:not([type=file]):not([type=range]), .field > select, .field > textarea");
   inputs.forEach((x: Element) => {
     on(x, "focus", onFocusInput);
     on(x, "blur", onBlurInput);
