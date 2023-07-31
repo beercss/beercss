@@ -355,12 +355,12 @@ input[type=search]::-webkit-search-results-decoration {
   line-height: 5rem;
 }
 
-.field.label.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+.field.label.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
   left: 1rem;
 }
 
 .field.label.round > label,
-.field.label.border.prefix.round:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+.field.label.border.prefix.round:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
   left: 1.5rem;
 }
 
@@ -368,12 +368,12 @@ input[type=search]::-webkit-search-results-decoration {
   left: 3rem;
 }
 
-.field.label > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+.field.label > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
   line-height: 2.5rem;
   font-size: 0.75rem;
 }
 
-.field.label.border:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label) {
+.field.label.border:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
   line-height: 1rem;
 }
 
@@ -382,7 +382,6 @@ input[type=search]::-webkit-search-results-decoration {
   display: block;
   margin-top: 0.5rem;
   border-top: 0.0625rem solid var(--outline);
-  min-width: 1rem;
   height: 1rem;
   transition: none;
   flex: auto;
@@ -393,11 +392,13 @@ input[type=search]::-webkit-search-results-decoration {
   border-top: 0.125rem solid var(--primary);
 }
 
-.field.label.border:not(.fill) > :is(input, select, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active) {
+.field.label.border:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
+.field.label.border:not(.fill) > select {
   clip-path: polygon(-1% -1%, 0.75rem -1%, 0.75rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 101% -1%, 101% 101%, -1% 101%);
 }
 
-.field.label.border.round:not(.fill) > :is(input, select, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active) {
+.field.label.border.round:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
+.field.label.border.round:not(.fill) > select {
   clip-path: polygon(-1% -1%, 1.25rem -1%, 1.25rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 101% -1%, 101% 101%, -1% 101%);
 }
 

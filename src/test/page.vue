@@ -5,6 +5,33 @@ main.responsive
     span Date
     menu.round.no-wrap
       datePicker
+
+  .row
+    label.slider.large.min
+      input(type="range", v-model="number" min="0" max="10" step="1")
+      span
+    .field.border.small.min
+      input(type="number", v-model="number", min="0", max="10", step="1")
+  .row
+    .field.label.border
+      input(v-model="text")
+      label Test
+    .field.border
+      input(v-model="text")
+  .row
+    .field.label.border.max
+      select(v-model="select")
+        option
+        option(value="1") Item 1
+        option(value="2") Item 2
+        option(value="3") Item 3
+      label Test
+    .field.border
+      select(v-model="select")
+        option
+        option(value="1") Item 1
+        option(value="2") Item 2
+        option(value="3") Item 3
   .row
     a(@click="updateTheme()")
       i.large palette
@@ -306,9 +333,13 @@ main.responsive
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import domain from "../home/domain";
 import datePicker from "./datePicker/datePicker.vue";
 const updateTheme = () => {
   document.body.className = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
 };
+const number = ref(0);
+const text = ref();
+const select = ref();
 </script>

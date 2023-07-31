@@ -50,7 +50,6 @@ const {
   selectedSize = "",
   selectedShadow = "",
   selectedDirection = "",
-  labelSizes = ["small", "", "large", "extra"],
 } = defineProps<IProps>();
 
 onMounted(() => {
