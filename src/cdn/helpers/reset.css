@@ -49,13 +49,14 @@ label {
 }
 
 body *::-webkit-scrollbar,
+body *::-webkit-scrollbar-thumb,
 body *::-webkit-scrollbar-button {
   background: none;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.4rem;
+  height: 0.4rem;
 }
 
-body *::-webkit-scrollbar-thumb {
+body *:is(:hover,:focus)::-webkit-scrollbar-thumb {
   background: var(--outline);
   border-radius: 1rem;
 }
