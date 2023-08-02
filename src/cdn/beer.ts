@@ -40,10 +40,6 @@ function queryAll (selector: string | NodeListOf<Element> | null, element?: Elem
   }
 }
 
-function hasQuery (selector: string | Element | null, element?: Element | null): boolean {
-  return !!(query(selector, element));
-}
-
 function hasClass (element: Element | null, name: string): boolean {
   return element?.classList?.contains(name) ?? false;
 }
@@ -218,7 +214,7 @@ async function open (from: Element, to: Element | null, options?: any, e?: Event
   if (hasTag(to, "menu")) return menu(from, to, e);
   if (hasClass(to, "snackbar")) return snackbar(from, to, options);
   if (hasClass(to, "page")) return page(from, to);
-  if (hasClass(to, "progress")) return progress(to, options);
+  if (hasTag(to, "progress")) return progress(to, options);
 
   tab(from);
 
@@ -336,24 +332,8 @@ function snackbar (from: Element, to: Element, milliseconds?: number): void {
 }
 
 function progress (to: Element, percentage: number): void {
-  const element = to as HTMLElement;
-
-  if (hasClass(element, "left")) {
-    element.style.clipPath = `polygon(0% 0%, 0% 100%, ${percentage}% 100%, ${percentage}% 0%)`;
-    return;
-  }
-
-  if (hasClass(element, "top")) {
-    element.style.clipPath = `polygon(0% 0%, 100% 0%, 100% ${percentage}%, 0% ${percentage}%)`;
-    return;
-  }
-
-  if (hasClass(element, "right")) {
-    element.style.clipPath = `polygon(100% 0%, 100% 100%, ${100 - percentage}% 100%, ${100 - percentage}% 0%)`;
-    return;
-  }
-
-  if (hasClass(element, "bottom")) element.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - percentage}%, 0% ${100 - percentage}%)`;
+  const element = to as HTMLProgressElement;
+  element.value = percentage;
 }
 
 function lastTheme (): IBeerCssTheme {

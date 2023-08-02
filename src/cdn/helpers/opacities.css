@@ -1,7 +1,19 @@
 .no-opacity {
-  opacity: 0;
+  opacity: 1;
 }
 
 .opacity {
-  opacity: 1;
+  opacity: 0;
+}
+
+.small-opacity {
+  opacity: 0.75;
+}
+
+.medium-opacity {
+  opacity: 0.5;
+}
+
+.large-opacity {
+  opacity: 0.25;
 }
