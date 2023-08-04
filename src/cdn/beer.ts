@@ -174,19 +174,23 @@ function updateFile (target: Element, e?: KeyboardEvent): void {
 function updateRange (target: Element): void {
   const parentTarget = parent(target) as HTMLElement;
   const bar = query("span", parentTarget) as HTMLElement;
-  const inputs = queryAll("input", parentTarget) as NodeListOf<HTMLInputElement>;
+  const inputs = queryAll("input", parentTarget) as NodeListOf<any>;
   const tooltip = query(".tooltip", parentTarget) as HTMLElement;
   if (!inputs.length || !bar) return;
 
   const percents: Array<number> = [];
   const values: Array<number> = [];
   for (let i = 0; i < inputs.length; i++) {
-    const min = parseFloat(inputs[i].min || "0");
-    const max = parseFloat(inputs[i].max || "100");
-    const value = parseFloat(inputs[i].value || "0");
+    const min = parseFloat(inputs[i].min) || 0;
+    const max = parseFloat(inputs[i].max) || 100;
+    const value = parseFloat(inputs[i].value) || 0;
     const percent = (value - min) * 100 / (max - min);
     percents.push(percent);
     values.push(value);
+    
+    if (inputs[i].min != min) inputs[i].min = min;
+    if (inputs[i].max != max) inputs[i].max = max;
+    if (inputs[i].value != value) inputs[i].value = value;
   }
 
   if (tooltip && tooltip.textContent !== values.join()) tooltip.innerHTML = values.join();
@@ -408,7 +412,7 @@ function mode (value: string | any): string {
 function setup (): void {
   if (_mutation) return;
   _mutation = new MutationObserver(onMutation);
-  _mutation.observe(document.body, { attributeFilter: ["value", "max", "min"], childList: true, subtree: true });
+  _mutation.observe(document.body, { attributes: true, attributeFilter: ["value", "max", "min"], childList: true, subtree: true });
   onMutation();
 }
 
@@ -424,7 +428,6 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
     void open(to, to, options);
   }
 
-  console.log('ui');
   const elements = queryAll("[data-ui]");
   elements.forEach((x: Element) => on(x, "click", onClickElement));
 
