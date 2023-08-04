@@ -1,4 +1,28 @@
 progress {
+  position: relative;
+  width: 100%;
+  height: 0.5rem;
+  color: var(--primary);
+  background-color: currentColor;
+  border-radius: inherit;
+  flex: none;
+}
+
+progress.small {
+  width: 4rem;
+}
+
+progress.medium {
+  width: 8rem;
+}
+
+progress.large {
+  width: 12rem;
+}
+
+progress::after,
+progress::before {
+  content: '';
   position: absolute;
   top: 0;
   bottom: 0;
@@ -6,450 +30,116 @@ progress {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--primary);
   border-radius: inherit;
-  transition: var(--speed4) clip-path;
-  clip-path: polygon(0% 0%, 0% 100%, var(---value) 100%, var(---value) 0%);
+  transition: var(--speed4) all;
+  clip-path: none;
+}
+
+progress::after {
+  left: 0;
+  right: auto;
+  top: 0;
+  bottom: 0;
+  width: var(--value);
+  height: 100%;
+  background-color: inherit;
+}
+
+progress:not(.circle)::before {
+  background-color: var(--surface-variant);
+}
+
+progress:not(.circle):not([value])::after {
+  animation: 1.6s to-linear ease infinite;
 }
 
 progress::-webkit-progress-bar,
 progress::-webkit-progress-value {
-  visibility: hidden;
+  all: unset;
 }
 
-progress.right {
-  clip-path: polygon(100% 0%, 100% 100%, calc(100% - var(---value)) 100%, calc(100% - var(---value)) 0%);
+progress.circle {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 0.3rem solid currentColor;
+  animation: 1.6s to-circular linear infinite;
+  background: none !important;
+  flex: none;
 }
 
-progress.top {
-  clip-path: polygon(0% 0%, 100% 0%, 100% var(---value), 0% var(---value));
+progress.circle.small {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 0.2rem;
 }
 
-progress.bottom {
-  clip-path: polygon(0% 100%, 100% 100%, 100% calc(100% - var(---value)), 0% calc(100% - var(---value)))
+progress.circle.large {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-width: 0.4rem;
 }
 
-progress + * {
-  margin-top: 0;
+:is(nav, .row) > progress:not(.circle, .small, .medium, .large) {
+  flex: auto;
 }
 
-progress:not([value]) {
-  clip-path: none;
-  animation: 1.6s ease to-progress infinite;
-}
-
-@keyframes to-progress {
+@keyframes to-linear {
   0% {
-    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+    left: 0%;
+    width: 0%;
   }
   50% {
-    clip-path: polygon(10% 0%, 10% 100%, 90% 100%, 90% 0%);
+    left: 10%;
+    width: 80%;
   }
   100% {
-    clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
+    left: 100%;
+    width: 0%;
   }
 }
 
-progress[value] {
-  ---value: 0%;
-}
-
-progress[value='1'] {
-  ---value: 1%;
-}
-
-progress[value='2'] {
-  ---value: 2%;
-}
-
-progress[value='3'] {
-  ---value: 3%;
-}
-
-progress[value='4'] {
-  ---value: 4%;
-}
-
-progress[value='5'] {
-  ---value: 5%;
-}
-
-progress[value='6'] {
-  ---value: 6%;
-}
-
-progress[value='7'] {
-  ---value: 7%;
-}
-
-progress[value='8'] {
-  ---value: 8%;
-}
-
-progress[value='9'] {
-  ---value: 9%;
-}
-
-progress[value='10'] {
-  ---value: 10%;
-}
-
-progress[value='11'] {
-  ---value: 11%;
-}
-
-progress[value='12'] {
-  ---value: 12%;
-}
-
-progress[value='13'] {
-  ---value: 13%;
-}
-
-progress[value='14'] {
-  ---value: 14%;
-}
-
-progress[value='15'] {
-  ---value: 15%;
-}
-
-progress[value='16'] {
-  ---value: 16%;
-}
-
-progress[value='17'] {
-  ---value: 17%;
-}
-
-progress[value='18'] {
-  ---value: 18%;
-}
-
-progress[value='19'] {
-  ---value: 19%;
-}
-
-progress[value='20'] {
-  ---value: 20%;
-}
-
-progress[value='21'] {
-  ---value: 21%;
-}
-
-progress[value='22'] {
-  ---value: 22%;
-}
-
-progress[value='23'] {
-  ---value: 23%;
-}
-
-progress[value='24'] {
-  ---value: 24%;
-}
-
-progress[value='25'] {
-  ---value: 25%;
-}
-
-progress[value='26'] {
-  ---value: 26%;
-}
-
-progress[value='27'] {
-  ---value: 27%;
-}
-
-progress[value='28'] {
-  ---value: 28%;
-}
-
-progress[value='29'] {
-  ---value: 29%;
-}
-
-progress[value='30'] {
-  ---value: 30%;
-}
-
-progress[value='31'] {
-  ---value: 31%;
-}
-
-progress[value='32'] {
-  ---value: 32%;
-}
-
-progress[value='33'] {
-  ---value: 33%;
-}
-
-progress[value='34'] {
-  ---value: 34%;
-}
-
-progress[value='35'] {
-  ---value: 35%;
-}
-
-progress[value='36'] {
-  ---value: 36%;
-}
-
-progress[value='37'] {
-  ---value: 37%;
-}
-
-progress[value='38'] {
-  ---value: 38%;
-}
-
-progress[value='39'] {
-  ---value: 39%;
-}
-
-progress[value='40'] {
-  ---value: 40%;
-}
-
-progress[value='41'] {
-  ---value: 41%;
-}
-
-progress[value='42'] {
-  ---value: 42%;
-}
-
-progress[value='43'] {
-  ---value: 43%;
-}
-
-progress[value='44'] {
-  ---value: 44%;
-}
-
-progress[value='45'] {
-  ---value: 45%;
-}
-
-progress[value='46'] {
-  ---value: 46%;
-}
-
-progress[value='47'] {
-  ---value: 47%;
-}
-
-progress[value='48'] {
-  ---value: 48%;
-}
-
-progress[value='49'] {
-  ---value: 49%;
-}
-
-progress[value='50'] {
-  ---value: 50%;
-}
-
-progress[value='51'] {
-  ---value: 51%;
-}
-
-progress[value='52'] {
-  ---value: 52%;
-}
-
-progress[value='53'] {
-  ---value: 53%;
-}
-
-progress[value='54'] {
-  ---value: 54%;
-}
-
-progress[value='55'] {
-  ---value: 55%;
-}
-
-progress[value='56'] {
-  ---value: 56%;
-}
-
-progress[value='57'] {
-  ---value: 57%;
-}
-
-progress[value='58'] {
-  ---value: 58%;
-}
-
-progress[value='59'] {
-  ---value: 59%;
-}
-
-progress[value='60'] {
-  ---value: 60%;
-}
-
-progress[value='61'] {
-  ---value: 61%;
-}
-
-progress[value='62'] {
-  ---value: 62%;
-}
-
-progress[value='63'] {
-  ---value: 63%;
-}
-
-progress[value='64'] {
-  ---value: 64%;
-}
-
-progress[value='65'] {
-  ---value: 65%;
-}
-
-progress[value='66'] {
-  ---value: 66%;
-}
-
-progress[value='67'] {
-  ---value: 67%;
-}
-
-progress[value='68'] {
-  ---value: 68%;
-}
-
-progress[value='69'] {
-  ---value: 69%;
-}
-
-progress[value='70'] {
-  ---value: 70%;
-}
-
-progress[value='71'] {
-  ---value: 71%;
-}
-
-progress[value='72'] {
-  ---value: 72%;
-}
-
-progress[value='73'] {
-  ---value: 73%;
-}
-
-progress[value='74'] {
-  ---value: 74%;
-}
-
-progress[value='75'] {
-  ---value: 75%;
-}
-
-progress[value='76'] {
-  ---value: 76%;
-}
-
-progress[value='77'] {
-  ---value: 77%;
-}
-
-progress[value='78'] {
-  ---value: 78%;
-}
-
-progress[value='79'] {
-  ---value: 79%;
-}
-
-progress[value='80'] {
-  ---value: 80%;
-}
-
-progress[value='81'] {
-  ---value: 81%;
-}
-
-progress[value='82'] {
-  ---value: 82%;
-}
-
-progress[value='83'] {
-  ---value: 83%;
-}
-
-progress[value='84'] {
-  ---value: 84%;
-}
-
-progress[value='85'] {
-  ---value: 85%;
-}
-
-progress[value='86'] {
-  ---value: 86%;
-}
-
-progress[value='87'] {
-  ---value: 87%;
-}
-
-progress[value='88'] {
-  ---value: 88%;
-}
-
-progress[value='89'] {
-  ---value: 89%;
-}
-
-progress[value='90'] {
-  ---value: 90%;
-}
-
-progress[value='91'] {
-  ---value: 91%;
-}
-
-progress[value='92'] {
-  ---value: 92%;
-}
-
-progress[value='93'] {
-  ---value: 93%;
-}
-
-progress[value='94'] {
-  ---value: 94%;
-}
-
-progress[value='95'] {
-  ---value: 95%;
-}
-
-progress[value='96'] {
-  ---value: 96%;
-}
-
-progress[value='97'] {
-  ---value: 97%;
-}
-
-progress[value='98'] {
-  ---value: 98%;
-}
-
-progress[value='99'] {
-  ---value: 99%;
-}
-
-progress[value='100'] {
-  ---value: 100%;
+@keyframes to-circular {
+  0% {
+    transform: rotate(0deg);
+    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  }
+
+  20% {
+    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+  }
+
+  30% {
+    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
+  }
+
+  40% {
+    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 50% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%);
+  }
+
+  60% {
+    clip-path: polygon(50% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 100%);
+  }
+
+  70% {
+    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%, 0% 50%);
+  }
+
+  80% {
+    clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 50%);
+  }
+
+  90% {
+    transform: rotate(360deg);
+    clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+  }
 }

@@ -214,7 +214,6 @@ async function open (from: Element, to: Element | null, options?: any, e?: Event
   if (hasTag(to, "menu")) return menu(from, to, e);
   if (hasClass(to, "snackbar")) return snackbar(from, to, options);
   if (hasClass(to, "page")) return page(from, to);
-  if (hasTag(to, "progress")) return progress(to, options);
 
   tab(from);
 
@@ -331,9 +330,17 @@ function snackbar (from: Element, to: Element, milliseconds?: number): void {
   }, milliseconds ?? 6000);
 }
 
-function progress (to: Element, percentage: number): void {
+function updateProgress (to: Element): void {
   const element = to as HTMLProgressElement;
-  element.value = percentage;
+  if (!element.hasAttribute("value")) return;
+
+  const value = element.value || 0;
+  const max = !element.hasAttribute("max") ? 100 : element.max;
+  const variable = (value * 100 / max) + '%';
+
+  if (element.value != value) element.value = value;
+  if (element.max != max) element.max = max;
+  if (element.style.getPropertyValue("--value") != variable) element.style.setProperty("--value", variable);
 }
 
 function lastTheme (): IBeerCssTheme {
@@ -401,7 +408,7 @@ function mode (value: string | any): string {
 function setup (): void {
   if (_mutation) return;
   _mutation = new MutationObserver(onMutation);
-  _mutation.observe(document.body, { childList: true, subtree: true });
+  _mutation.observe(document.body, { attributeFilter: ["value", "max", "min"], childList: true, subtree: true });
   onMutation();
 }
 
@@ -417,6 +424,7 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
     void open(to, to, options);
   }
 
+  console.log('ui');
   const elements = queryAll("[data-ui]");
   elements.forEach((x: Element) => on(x, "click", onClickElement));
 
@@ -429,15 +437,22 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
     on(x, "blur", onBlurInput);
     updateInput(x);
   });
+  
   const files = queryAll(".field > input[type=file]");
   files.forEach((x: Element) => {
     on(x, "change", onChangeFile);
     updateFile(x);
   });
+  
   const ranges = queryAll(".slider > input[type=range]");
   ranges.forEach((x: Element) => {
     on(x, "input", onInputRange);
     updateRange(x);
+  });
+  
+  const progresses = queryAll("progress[value]");
+  progresses.forEach((x: Element) => {
+    updateProgress(x);
   });
 }
 

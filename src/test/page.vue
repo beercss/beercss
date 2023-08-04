@@ -5,33 +5,6 @@ main.responsive
     span Date
     menu.round.no-wrap
       datePicker
-
-  .row
-    label.slider.large.min
-      input(type="range", v-model="number" min="0" max="10" step="1")
-      span
-    .field.border.small.min
-      input(type="number", v-model="number", min="0", max="10", step="1")
-  .row
-    .field.label.border
-      input(v-model="text")
-      label Test
-    .field.border
-      input(v-model="text")
-  .row
-    .field.label.border.max
-      select(v-model="select")
-        option
-        option(value="1") Item 1
-        option(value="2") Item 2
-        option(value="3") Item 3
-      label Test
-    .field.border
-      select(v-model="select")
-        option
-        option(value="1") Item 1
-        option(value="2") Item 2
-        option(value="3") Item 3
   .row
     a(@click="updateTheme()")
       i.large palette
@@ -79,6 +52,32 @@ main.responsive
     button(data-ui="#top") Top
     button(data-ui="#right") Right
     button(data-ui="#bottom") Bottom
+  h5 Binding
+  .row
+    .field.label.border
+      input(v-model="number")
+      label Input
+    .field.label.border
+      input(v-model="number")
+      label Test
+    label.slider.large.min
+      input(type="range", v-model="number", min="4", max="8")
+      span
+    progress(:value="number")
+  .row
+    .field.label.border.max
+      select(v-model="select")
+        option
+        option(value="1") Item 1
+        option(value="2") Item 2
+        option(value="3") Item 3
+      label Test
+    .field.border
+      select(v-model="select")
+        option
+        option(value="1") Item 1
+        option(value="2") Item 2
+        option(value="3") Item 3
   h5 With pure CSS
   nav
     button(@click="domain.updateSize('#with-pure-css .field', 'small')") small

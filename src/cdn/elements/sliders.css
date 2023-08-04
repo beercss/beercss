@@ -3,22 +3,19 @@
   align-items: center !important;
   width: auto;
   margin: 1.125rem;
-  flex: auto;
+  flex: none;
 }
 
 .slider.small {
   width: 4rem;
-  flex: none;
 }
 
 .slider.medium {
   width: 8rem;
-  flex: none;
 }
 
 .slider.large {
   width: 12rem;
-  flex: none;
 }
 
 .slider.vertical {
@@ -129,4 +126,8 @@
   height: 0.25rem;
   border-radius: 1rem;
   background: var(--active);
+}
+
+:is(nav, .row) > .slider:not(.circle, .small, .medium, .large) {
+  flex: auto;
 }
