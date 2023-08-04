@@ -211,7 +211,7 @@ const updatePage = (selector: string) => {
 };
 
 const updateProgress = (value: number) => {
-  utils.queryAll("#progress progress[value]").forEach((x) => { void ui(x, value); });
+  utils.queryAll("#progress progress[value]").forEach((x:any) => { x.value = value; });
 };
 
 const formatHtml = (element: any, raw: boolean = false): string => {
