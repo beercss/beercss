@@ -61,7 +61,7 @@ main.responsive
       input(v-model="number")
       label Test
     label.slider.large.min
-      input(type="range", v-model="number", min="4", max="8")
+      input(type="range", v-model="number")
       span
     progress(:value="number")
   .row

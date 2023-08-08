@@ -1,7 +1,13 @@
 .slider {
+  ---left: 0%;
+  ---right: 0%;
+  ---first: '';
+  ---second: '';
+
   display: flex;
   align-items: center !important;
   width: auto;
+  height: 1.25rem;
   margin: 1.125rem;
   flex: none;
 }
@@ -113,6 +119,8 @@
   border-radius: 1rem;
   background: var(--primary);
   z-index: 0;
+  left: var(---left);
+  right: var(---right);
 }
 
 .field > .slider {
@@ -128,6 +136,32 @@
   background: var(--active);
 }
 
-:is(nav, .row) > .slider:not(.circle, .small, .medium, .large) {
+.slider:hover > input + input + span::before,
+.slider:hover > span::after {
+  color: var(--on-primary);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -2.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: inherit;
+  border-radius: 50% 50% 50% 0;
+}
+
+.slider:hover > input + input + span::before {
+  content: var(---second);
+  left: 0;
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+.slider:hover > span::after {
+  content: var(---first);
+  right: 0;
+  transform: translate(50%, 0) rotate(-45deg);
+}
+
+:is(nav, .row, .field) > .slider:not(.circle, .small, .medium, .large) {
   flex: auto;
 }

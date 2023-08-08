@@ -22,10 +22,10 @@
       input(type="radio", name="color-progress", checked, @click="domain.updateTextColor('#progress progress')")
       span default
     label.radio
-      input(type="radio", name="color-progress", @click="domain.updateTextColor('#progress progress', 'light-green')")
+      input(type="radio", name="color-progress", @click="domain.updateTextColor('#progress progress', 'light-green-text')")
       span light-green
     label.radio
-      input(type="radio", name="color-progress", @click="domain.updateTextColor('#progress progress', 'orange')")
+      input(type="radio", name="color-progress", @click="domain.updateTextColor('#progress progress', 'orange-text')")
       span orange
   .medium-space
   #default-progress

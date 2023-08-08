@@ -175,9 +175,10 @@ function updateRange (target: Element): void {
   const parentTarget = parent(target) as HTMLElement;
   const bar = query("span", parentTarget) as HTMLElement;
   const inputs = queryAll("input", parentTarget) as NodeListOf<any>;
-  const tooltip = query(".tooltip", parentTarget) as HTMLElement;
   if (!inputs.length || !bar) return;
 
+  const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--size')) || 16;
+  const thumb = 1.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents: Array<number> = [];
   const values: Array<number> = [];
   for (let i = 0; i < inputs.length; i++) {
@@ -185,7 +186,8 @@ function updateRange (target: Element): void {
     const max = parseFloat(inputs[i].max) || 100;
     const value = parseFloat(inputs[i].value) || 0;
     const percent = (value - min) * 100 / (max - min);
-    percents.push(percent);
+    const fix = thumb/2 - thumb*percent/100;
+    percents.push(percent + fix);
     values.push(value);
     
     if (inputs[i].min != min) inputs[i].min = min;
@@ -193,19 +195,39 @@ function updateRange (target: Element): void {
     if (inputs[i].value != value) inputs[i].value = value;
   }
 
-  if (tooltip && tooltip.textContent !== values.join()) tooltip.innerHTML = values.join();
-
   let percent = percents[0];
   let left = 0;
   let right = 100 - left - percent;
+  let firstTooltip = values[0];
+  let secondTooltip = values[1] || 0;
   if (inputs.length > 1) {
     percent = Math.abs(percents[1] - percents[0]);
     left = percents[1] > percents[0] ? percents[0] : percents[1];
     right = 100 - left - percent;
-  }
 
-  bar.style.left = `${left}%`;
-  bar.style.right = `${right}%`;
+    if (secondTooltip > firstTooltip) {
+      firstTooltip = values[1] || 0;
+      secondTooltip = values[0]
+    }
+  }
+ 
+  parentTarget.style.setProperty("---left", `${left}%`);
+  parentTarget.style.setProperty("---right", `${right}%`);
+  parentTarget.style.setProperty("---first", `'${firstTooltip}'`);
+  parentTarget.style.setProperty("---second", `'${secondTooltip}'`);
+}
+
+function updateProgress (to: Element): void {
+  const element = to as HTMLProgressElement;
+  if (!element.hasAttribute("value")) return;
+
+  const value = element.value || 0;
+  const max = !element.hasAttribute("max") ? 100 : element.max;
+  const variable = (value * 100 / max) + '%';
+
+  if (element.value != value) element.value = value;
+  if (element.max != max) element.max = max;
+  if (element.style.getPropertyValue("--value") != variable) element.style.setProperty("--value", variable);
 }
 
 async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
@@ -332,19 +354,6 @@ function snackbar (from: Element, to: Element, milliseconds?: number): void {
   _timeoutSnackbar = setTimeout(() => {
     removeClass(to, "active");
   }, milliseconds ?? 6000);
-}
-
-function updateProgress (to: Element): void {
-  const element = to as HTMLProgressElement;
-  if (!element.hasAttribute("value")) return;
-
-  const value = element.value || 0;
-  const max = !element.hasAttribute("max") ? 100 : element.max;
-  const variable = (value * 100 / max) + '%';
-
-  if (element.value != value) element.value = value;
-  if (element.max != max) element.max = max;
-  if (element.style.getPropertyValue("--value") != variable) element.style.setProperty("--value", variable);
 }
 
 function lastTheme (): IBeerCssTheme {

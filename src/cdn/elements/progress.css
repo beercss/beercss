@@ -81,7 +81,7 @@ progress.circle.large {
   border-width: 0.4rem;
 }
 
-:is(nav, .row) > progress:not(.circle, .small, .medium, .large) {
+:is(nav, .row, .field) > progress:not(.circle, .small, .medium, .large) {
   flex: auto;
 }
 

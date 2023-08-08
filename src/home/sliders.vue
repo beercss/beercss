@@ -52,56 +52,6 @@
         span
   .medium-space
   h6
-    span Slider with tooltip
-    a.chip.circle(@click="domain.showSamples(data, '#sliders2 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
-      i code
-  nav.wrap
-    label.radio
-      input(type="radio", name="size-sliders2", checked="checked", @click="domain.updateSize('#sliders2 .slider')")
-      span default
-    label.radio
-      input(type="radio", name="size-sliders2", @click="domain.updateSize('#sliders2 .slider', 'small')")
-      span small
-    label.radio
-      input(
-        type="radio",
-        name="size-sliders2",
-        @click="domain.updateSize('#sliders2 .slider', 'medium')"
-      )
-      span medium
-    label.radio
-      input(type="radio", name="size-sliders2", @click="domain.updateSize('#sliders2 .slider', 'large')")
-      span large
-    label.radio
-      input(type="radio", name="direction-sliders2", @click="domain.updateDirection('#sliders2 .slider', '')", checked)
-      span horizontal
-    label.radio
-      input(type="radio", name="direction-sliders2", @click="domain.updateDirection('#sliders2 .slider', 'vertical')")
-      span vertical
-  .medium-space
-  .grid#sliders2
-    .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
-        span
-        .tooltip
-    .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
-        span
-        .tooltip.bottom
-    .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
-        span
-        .tooltip.left
-    .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
-        span
-        .tooltip.right
-  .medium-space
-  h6
     span Slider with icon
     a.chip.circle(@click="domain.showSamples(data, '#sliders4 nav', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
