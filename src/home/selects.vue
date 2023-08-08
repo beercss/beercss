@@ -115,21 +115,21 @@
           option Item 1
           option Item 2
           option Item 3
-        a.loader
+        progress.circle
     .s12.l4
       .field.suffix.border
         select
           option Item 1
           option Item 2
           option Item 3
-        a.loader
+        progress.circle
     .s12.l4
       .field.suffix.border
         select
           option Item 1
           option Item 2
           option Item 3
-        a.loader
+        progress.circle
 </template>
 
 <script setup lang="ts">

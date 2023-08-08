@@ -406,8 +406,6 @@ div
         .s12
           layouts
         .s12
-          loaders
-        .s12
           media
         .s12
           menus
@@ -490,7 +488,6 @@ import grids from "./grids.vue";
 import icons from "./icons.vue";
 import inputs from "./inputs.vue";
 import layouts from "./layouts.vue";
-import loaders from "./loaders.vue";
 import media from "./media.vue";
 import dialogs from "./dialogs.vue";
 import navigations from "./navigations.vue";

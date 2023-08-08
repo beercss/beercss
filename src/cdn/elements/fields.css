@@ -80,7 +80,7 @@
 }
 
 /* icon */
-.field > :is(i, img, svg, .loader) {
+.field > :is(i, img, svg, progress) {
   position: absolute;
   top: 50%;
   left: auto;
@@ -90,17 +90,17 @@
   z-index: 0;
 }
 
-.field:is(.border, .fill, .round) > :is(i, img, svg, .loader) {
+.field:is(.border, .fill, .round) > :is(i, img, svg, progress) {
   left: auto;
   right: 1rem;
 }
 
-.field > :is(i, img, svg, .loader):first-child {
+.field > :is(i, img, svg, progress):first-child {
   left: 1rem;
   right: auto;
 }
 
-.field:is(.border, .fill, .round) > :is(i, img, svg, .loader):first-child {
+.field:is(.border, .fill, .round) > :is(i, img, svg, progress):first-child {
   left: 1rem;
   right: auto;
 }
@@ -109,7 +109,8 @@
   color: var(--error);
 }
 
-.field > .loader {
+.field > progress.circle {
+  top: calc(50% - 0.75rem);
   border-width: 0.1875rem;
   width: 1.5rem;
   height: 1.5rem;

@@ -93,17 +93,17 @@
         img.circle(:src="'/favicon.png'")
     .s12.l4
       .field.textarea.border.prefix
-        a.loader
+        progress.circle
         textarea
     .s12.l4
       .field.textarea.border.suffix
         textarea
-        a.loader
+        progress.circle
     .s12.l4
       .field.textarea.border.prefix.suffix
-        a.loader
+        progress.circle
         textarea
-        a.loader
+        progress.circle
 </template>
 
 <script setup lang="ts">
