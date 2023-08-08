@@ -40,7 +40,7 @@ progress::after {
   right: auto;
   top: 0;
   bottom: 0;
-  width: var(--value);
+  width: var(---end);
   height: 100%;
   background-color: inherit;
 }

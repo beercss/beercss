@@ -1,7 +1,7 @@
 <template lang="pug">
 #steppers
   .large-space
-  h4 
+  h4
     span Steppers
     a.chip.circle(
       @click="domain.showSamples(data, '#steppers > nav.scroll', 'Steppers', null, null)"
@@ -68,4 +68,3 @@
 import domain from "./domain";
 import data from "./data";
 </script>
-  

@@ -3,16 +3,16 @@
   nav.no-space.padding
     button.small.circle.transparent(:class="{ hidden: isMonthsOrYears() }", @click="reload(data.year, --data.month)")
       i chevron_left
-    button.small.transparent.max(@click="select('#months')", :disabled="data.selectedPage == '#years'")
+    button.small.transparent.max(@click="select('#months')", :disabled="data.selectedPage === '#years'")
       span.capitalize {{ data.months[data.month].value }}
-      i(:class="{ hidden: data.selectedPage == '#years' }") {{ data.selectedPage == '#months' ? 'arrow_drop_up' :  'arrow_drop_down' }}
+      i(:class="{ hidden: data.selectedPage === '#years' }") {{ data.selectedPage === '#months' ? 'arrow_drop_up' :  'arrow_drop_down' }}
     button.small.circle.transparent(:class="{ hidden: isMonthsOrYears() }", @click="reload(data.year, ++data.month)")
       i chevron_right
     button.small.circle.transparent(:class="{ hidden: isMonthsOrYears() }", @click="reload(--data.year, data.month)")
       i chevron_left
-    button.small.transparent.max(@click="select('#years')", :disabled="data.selectedPage == '#months'")
+    button.small.transparent.max(@click="select('#years')", :disabled="data.selectedPage === '#months'")
       span {{ data.year }}
-      i(:class="{ hidden: data.selectedPage == '#months' }") {{ data.selectedPage == '#years' ? 'arrow_drop_up' :  'arrow_drop_down' }}
+      i(:class="{ hidden: data.selectedPage === '#months' }") {{ data.selectedPage === '#years' ? 'arrow_drop_up' :  'arrow_drop_down' }}
     button.small.circle.transparent(:class="{ hidden: isMonthsOrYears() }", @click="reload(++data.year, data.month)")
       i chevron_right
   .divider(v-show="!isMonthsOrYears()")
@@ -20,11 +20,11 @@
     .page#empty
     .page.top#months
       a.row.wave.padding.capitalize(v-for="month in data.months", @click="reload(data.year, month.key)")
-        i.small(:class="{ hidden: month.key != data.month }") done
+        i.small(:class="{ hidden: month.key !== data.month }") done
         span {{ month.value }}
     .page.top#years
       a.row.wave.padding(v-for="year in data.years", @click="reload(year.key, data.month)")
-        i.small(:class="{ hidden: year.key != data.year }") done
+        i.small(:class="{ hidden: year.key !== data.year }") done
         span {{ year.value }}
     .page.right#days
       .space
@@ -47,37 +47,37 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted } from "vue";
 import data from "./data";
 import domain from "./domain";
 import type { IKeyValue } from "./interfaces";
 
 const select = (page: string, date?: IKeyValue) => {
-  data.value.selectedPage = (data.value.selectedPage != page) ? page : "#days";
+  data.value.selectedPage = (data.value.selectedPage !== page) ? page : "#days";
   ui(data.value.selectedPage);
 
   if (!date) return;
-  
+
   data.value.selectedDate = date.key;
-}
+};
 
 const reload = (year: number, month: number) => {
   data.value = domain.getData(year, month, data.value.selectedDate);
   select("#empty");
   setTimeout(() => select("#days"), 100);
-}
+};
 
 const isToday = (day: IKeyValue) => {
-  return day.key == data.value.todayDate;
-}
+  return day.key === data.value.todayDate;
+};
 
 const isSelected = (day: IKeyValue) => {
-  return day.key == data.value.selectedDate;
-}
+  return day.key === data.value.selectedDate;
+};
 
 const isMonthsOrYears = () => {
-  return data.value.selectedPage == "#months" || data.value.selectedPage == "#years";
-}
+  return data.value.selectedPage === "#months" || data.value.selectedPage === "#years";
+};
 
 onMounted(() => {
   select("#days");
@@ -100,4 +100,3 @@ onMounted(() => {
   visibility: hidden;
 }
 </style>
-  

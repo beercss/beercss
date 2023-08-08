@@ -177,7 +177,7 @@ function updateRange (target: Element): void {
   const inputs = queryAll("input", parentTarget) as NodeListOf<any>;
   if (!inputs.length || !bar) return;
 
-  const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--size')) || 16;
+  const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
   const thumb = 1.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents: Array<number> = [];
   const values: Array<number> = [];
@@ -186,13 +186,13 @@ function updateRange (target: Element): void {
     const max = parseFloat(inputs[i].max) || 100;
     const value = parseFloat(inputs[i].value) || 0;
     const percent = (value - min) * 100 / (max - min);
-    const fix = thumb/2 - thumb*percent/100;
+    const fix = thumb / 2 - thumb * percent / 100;
     percents.push(percent + fix);
     values.push(value);
-    
-    if (inputs[i].min != min) inputs[i].min = min;
-    if (inputs[i].max != max) inputs[i].max = max;
-    if (inputs[i].value != value) inputs[i].value = value;
+
+    if (inputs[i].min !== min) inputs[i].min = min;
+    if (inputs[i].max !== max) inputs[i].max = max;
+    if (inputs[i].value !== value) inputs[i].value = value;
   }
 
   let percent = percents[0];
@@ -207,10 +207,10 @@ function updateRange (target: Element): void {
 
     if (value2 > value1) {
       value1 = values[1] || 0;
-      value2 = values[0]
+      value2 = values[0];
     }
   }
- 
+
   parentTarget.style.setProperty("---start", `${start}%`);
   parentTarget.style.setProperty("---end", `${end}%`);
   parentTarget.style.setProperty("---value1", `'${value1}'`);
@@ -223,11 +223,11 @@ function updateProgress (to: Element): void {
 
   const value = element.value || 0;
   const max = !element.hasAttribute("max") ? 100 : element.max;
-  const variable = (value * 100 / max) + '%';
+  const end = `${value * 100 / max}%`;
 
-  if (element.value != value) element.value = value;
-  if (element.max != max) element.max = max;
-  if (element.style.getPropertyValue("--value") != variable) element.style.setProperty("--value", variable);
+  if (element.value !== value) element.value = value;
+  if (element.max !== max) element.max = max;
+  if (element.style.getPropertyValue("---end") !== end) element.style.setProperty("---end", end);
 }
 
 async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
@@ -265,11 +265,11 @@ function page (from: Element, to: Element): void {
 
 function menu (from: Element, to: Element, e?: Event): any {
   if (_timeoutMenu) clearTimeout(_timeoutMenu);
-  
+
   _timeoutMenu = setTimeout(() => {
     on(document.body, "click", onClickDocument);
     tab(from);
-  
+
     if (hasClass(to, "active")) {
       if (!e) return removeClass(to, "active");
 
@@ -277,12 +277,12 @@ function menu (from: Element, to: Element, e?: Event): any {
       const trustedTo = query(trustedFrom.getAttribute("data-ui") ?? "");
       const trustedMenu = trustedFrom.closest("menu");
       const trustedActive = !query("menu", trustedFrom.closest("[data-ui]") ?? undefined);
-  
+
       if (trustedTo && trustedTo !== trustedMenu) return menu(trustedFrom, trustedTo);
       if (!trustedTo && !trustedActive && trustedMenu) return false;
-      return removeClass(to, "active");      
+      return removeClass(to, "active");
     }
-  
+
     const menus = queryAll("menu.active");
     menus.forEach((x: Element) => removeClass(x, "active"));
     addClass(to, "active");
@@ -449,19 +449,19 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
     on(x, "blur", onBlurInput);
     updateInput(x);
   });
-  
+
   const files = queryAll(".field > input[type=file]");
   files.forEach((x: Element) => {
     on(x, "change", onChangeFile);
     updateFile(x);
   });
-  
+
   const ranges = queryAll(".slider > input[type=range]");
   ranges.forEach((x: Element) => {
     on(x, "input", onInputRange);
     updateRange(x);
   });
-  
+
   const progresses = queryAll("progress[value]");
   progresses.forEach((x: Element) => {
     updateProgress(x);

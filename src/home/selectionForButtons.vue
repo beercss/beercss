@@ -33,7 +33,7 @@ export interface IProps {
   selectedSize?: string,
   selectedShadow?: string,
   selectedDirection?: string,
-  emptySize?: string
+  emptySize?: string,
 }
 
 const {

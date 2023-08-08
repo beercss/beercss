@@ -15,7 +15,7 @@
     a.chip.fill Selected
     a.chip Suggestion
     a.chip.fill Selected
-    a.chip Suggestion 
+    a.chip Suggestion
     a.chip Suggestion
     a.chip Suggestion
     a.chip Suggestion

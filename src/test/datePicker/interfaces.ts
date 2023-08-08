@@ -1,6 +1,6 @@
 export interface IKeyValue {
   key: number,
-  value: string
+  value: string,
 }
 
 export interface IDatePicker {

@@ -1,7 +1,7 @@
 <template lang="pug">
 main.responsive
-  
-  button 
+
+  button
     span Date
     menu.round.no-wrap
       datePicker
