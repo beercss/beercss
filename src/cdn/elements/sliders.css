@@ -1,8 +1,8 @@
 .slider {
-  ---left: 0%;
-  ---right: 0%;
-  ---first: '';
-  ---second: '';
+  ---start: 0%;
+  ---end: 0%;
+  ---value1: '';
+  ---value2: '';
 
   display: flex;
   align-items: center !important;
@@ -108,7 +108,7 @@
   cursor: not-allowed;
 }
 
-.slider > input:disabled + span {
+.slider > input:disabled ~ :is(span, .tooltip) {
   background: #9E9E9E;
 }
 
@@ -119,8 +119,8 @@
   border-radius: 1rem;
   background: var(--primary);
   z-index: 0;
-  left: var(---left);
-  right: var(---right);
+  left: var(---start);
+  right: var(---end);
 }
 
 .field > .slider {
@@ -136,30 +136,42 @@
   background: var(--active);
 }
 
-.slider:hover > input + input + span::before,
-.slider:hover > span::after {
-  color: var(--on-primary);
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: -2.75rem;
+.slider > .tooltip {
+  top: 0.25rem;
+  opacity: 0;
+  left: calc(100% - var(---end));
+  right: auto;
+  bottom: auto;
   width: 1.75rem;
   height: 1.75rem;
-  background-color: inherit;
-  border-radius: 50% 50% 50% 0;
+  background-color: var(--primary);
+  border-radius: 50% 50% 0;
+  transition: var(--speed2) ease top, var(--speed2) ease opacity;
+  transform: translate(-50%, -50%) rotate(45deg) !important;
 }
 
-.slider:hover > input + input + span::before {
-  content: var(---second);
-  left: 0;
-  transform: translate(-50%, 0) rotate(-45deg);
+.slider > .tooltip + .tooltip {
+  left: auto;
+  right: calc(100% - var(---start));
+  transform: translate(50%, -50%) rotate(45deg) !important;
 }
 
-.slider:hover > span::after {
-  content: var(---first);
-  right: 0;
-  transform: translate(50%, 0) rotate(-45deg);
+.slider > .tooltip::before {
+  content: var(---value1);
+  transform: rotate(-45deg);
+}
+
+.slider > .tooltip + .tooltip::before {
+  content: var(---value2);
+}
+
+.slider:hover > .tooltip {
+  top: -0.25rem;
+  opacity: 1;
+}
+
+.slider.vertical > .tooltip {
+  display: none;
 }
 
 :is(nav, .row, .field) > .slider:not(.circle, .small, .medium, .large) {

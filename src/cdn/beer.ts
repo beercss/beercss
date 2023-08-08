@@ -196,25 +196,25 @@ function updateRange (target: Element): void {
   }
 
   let percent = percents[0];
-  let left = 0;
-  let right = 100 - left - percent;
-  let firstTooltip = values[0];
-  let secondTooltip = values[1] || 0;
+  let start = 0;
+  let end = 100 - start - percent;
+  let value1 = values[0];
+  let value2 = values[1] || 0;
   if (inputs.length > 1) {
     percent = Math.abs(percents[1] - percents[0]);
-    left = percents[1] > percents[0] ? percents[0] : percents[1];
-    right = 100 - left - percent;
+    start = percents[1] > percents[0] ? percents[0] : percents[1];
+    end = 100 - start - percent;
 
-    if (secondTooltip > firstTooltip) {
-      firstTooltip = values[1] || 0;
-      secondTooltip = values[0]
+    if (value2 > value1) {
+      value1 = values[1] || 0;
+      value2 = values[0]
     }
   }
  
-  parentTarget.style.setProperty("---left", `${left}%`);
-  parentTarget.style.setProperty("---right", `${right}%`);
-  parentTarget.style.setProperty("---first", `'${firstTooltip}'`);
-  parentTarget.style.setProperty("---second", `'${secondTooltip}'`);
+  parentTarget.style.setProperty("---start", `${start}%`);
+  parentTarget.style.setProperty("---end", `${end}%`);
+  parentTarget.style.setProperty("---value1", `'${value1}'`);
+  parentTarget.style.setProperty("---value2", `'${value2}'`);
 }
 
 function updateProgress (to: Element): void {

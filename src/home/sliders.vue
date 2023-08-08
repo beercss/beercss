@@ -50,6 +50,51 @@
       label.slider
         input(type="range", value="25", disabled)
         span
+  h6
+    span Slider with tooltip
+    a.chip.circle(@click="domain.showSamples(data, '#sliders2 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+      i code
+  nav.wrap
+    label.radio
+      input(type="radio", name="size-sliders2", checked="checked", @click="domain.updateSize('#sliders2 .slider')")
+      span default
+    label.radio
+      input(type="radio", name="size-sliders2", @click="domain.updateSize('#sliders2 .slider', 'small')")
+      span small
+    label.radio
+      input(
+        type="radio",
+        name="size-sliders2",
+        @click="domain.updateSize('#sliders2 .slider', 'medium')"
+      )
+      span medium
+    label.radio
+      input(type="radio", name="size-sliders2", @click="domain.updateSize('#sliders2 .slider', 'large')")
+      span large
+  .medium-space
+  .grid#sliders2
+    .s12.m6.l3.center-align
+      label.slider
+        input(type="range", value="25")
+        span
+        .tooltip
+    .s12.m6.l3.center-align
+      label.slider
+        input(type="range", value="5", min="4", max="8")
+        span
+        .tooltip
+    .s12.m6.l3.center-align
+      label.slider
+        input(type="range", value="25")
+        input(type="range", value="50")
+        span
+        .tooltip
+        .tooltip
+    .s12.m6.l3.center-align
+      label.slider
+        input(type="range", value="25", disabled)
+        span
+        .tooltip
   .medium-space
   h6
     span Slider with icon
