@@ -34,8 +34,6 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;label&gt;** active, radio, checkbox, switch
 
-**loader** small, medium, large
-
 **&lt;main&gt;** responsive, max
 
 **&lt;menu&gt;** left, right, wrap, no-wrap, min, max, active
@@ -46,7 +44,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **page** left, right, top, bottom, active
 
-**progress** left, right, top, bottom
+***&lt;progress&gt;** small, medium, large, circle
 
 **row** left-align, right-align, center-align, top-align, bottom-align, middle-align
 

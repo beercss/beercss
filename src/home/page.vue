@@ -339,7 +339,7 @@ div
                     b page
                     span &nbsp;left, right, top, bottom, active
                   p
-                    b progress
+                    b &lt;progress&gt;
                     span &nbsp;small, medium, large, circle
                   p
                     b row
