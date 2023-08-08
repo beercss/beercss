@@ -1,60 +1,39 @@
 # Progress
 
-Progress display the length of a process.
+Progress display the length of a process or an unspecified wait time.
 
 ## Element
 
 ```html
-<...>
-  <div class="progress">...</div>
-</...>
+<progress>...</progress>
 ```
 
 ## Most used helpers
 
-**Positions**
+**Forms**
 
-left, right, top, bottom
+circle
 
-## Example
+**Sizes**
 
-```html
-<div class="small-space">
-  <div class="progress left"></div>
-</div>
+small, medium, large
 
-<article>
-  <div class="progress left"></div>
-  <h5>Title</h5>
-</article>
-```
-
-## Triggers 
-
-#### To change a progress
-
-#### Unique method
-
-Call `ui("progress-selector", percentage)`.
+## Linear example
 
 ```html
-<div class="small-space">
-  <div class="progress left" id="progress1"></div>
-</div>
-
-<article>
-  <div class="progress left" id="progress2"></div>
-  <h5>Title</h5>
-</article>
+<progress></progress>
+<progress value="25"></progress>
+<progress value="4" max="8"></progress>
 ```
 
-```js
-ui("#progress1", 10);
-ui("#progress2", 30);
+## Circular example
+
+```html
+<progress class="circle"></progress>
 ```
 
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Loader](LOADER.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

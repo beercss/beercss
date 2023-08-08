@@ -119,9 +119,6 @@ div
     a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#layouts')")
       i widgets
       span Layouts
-    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#loaders')")
-      i widgets
-      span Loaders
     a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#media')")
       i widgets
       span Media
@@ -327,9 +324,6 @@ div
                     b &lt;label&gt;
                     span &nbsp;active, radio, checkbox, switch
                   p
-                    b loader
-                    span &nbsp;small, medium, large
-                  p
                     b &lt;main&gt;
                     span &nbsp;responsive, max
                   p
@@ -346,7 +340,7 @@ div
                     span &nbsp;left, right, top, bottom, active
                   p
                     b progress
-                    span &nbsp;left, right, top, bottom
+                    span &nbsp;small, medium, large, circle
                   p
                     b row
                     span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align
