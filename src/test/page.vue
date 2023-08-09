@@ -64,6 +64,7 @@ main.responsive
       input(type="range", v-model="number")
       span
     progress(:value="number")
+    progress
   .row
     .field.label.border.max
       select(v-model="select")

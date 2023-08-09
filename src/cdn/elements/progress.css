@@ -54,6 +54,10 @@ progress:not(.circle, [value])::after {
   animation: 1.6s to-linear ease infinite;
 }
 
+progress:not(.circle, [value])::-moz-progress-bar {
+  animation: 1.6s to-linear ease infinite;
+}
+
 progress::-webkit-progress-bar,
 progress::-webkit-progress-value {
   all: unset;
@@ -96,18 +100,13 @@ progress.circle.large {
 
 @keyframes to-linear {
   0% {
-    left: 0%;
+    transform: translate(0%);
     width: 0%;
-  }
-
-  50% {
-    left: 10%;
-    width: 80%;
   }
 
   100% {
-    left: 100%;
-    width: 0%;
+    transform: translate(100%);
+    width: 100%;
   }
 }
 
