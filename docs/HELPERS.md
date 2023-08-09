@@ -66,7 +66,7 @@ border, no-border, circle, square, none, fill, extend, round, no-round, small-ro
 
 ## Margins
 
-margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+margin, no-margin, auto-margin, tiny-margin, small-margin, medium-margin, large-margin, left-margin, right-margin, top-margin, bottom-margin, horizontal-margin, vertical-margin
 
 ## Opacities
 
@@ -74,7 +74,7 @@ opacity, no-opacity
 
 ## Paddings
 
-padding, no-padding, tiny-padding, small-padding, medium-padding, large-padding
+padding, no-padding, auto-padding, tiny-padding, small-padding, medium-padding, large-padding, left-padding, right-padding, top-padding, bottom-padding, horizontal-padding, vertical-padding
 
 ## Positions
 
