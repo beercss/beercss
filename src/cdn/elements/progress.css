@@ -56,7 +56,7 @@ progress:not(.circle, [value])::-moz-progress-bar {
 
 progress::-webkit-progress-bar,
 progress::-webkit-progress-value {
-  all: unset;
+  background: none;
 }
 
 progress::-moz-progress-bar {
@@ -70,7 +70,7 @@ progress.circle {
   border-radius: 50%;
   border: 0.3rem solid currentColor;
   animation: 1.6s to-circular linear infinite;
-  background: none !important;
+  background: none;
   flex: none;
   clip-path: none;
 }
