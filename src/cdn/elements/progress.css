@@ -3,7 +3,7 @@ progress {
   width: 100%;
   height: 0.5rem;
   color: var(--primary);
-  background: var(--active);
+  background: var(--surface-variant);
   border-radius: inherit;
   flex: none;
   border: none;
@@ -22,8 +22,7 @@ progress.large {
   width: 12rem;
 }
 
-progress:not(.circle)::after,
-progress:not(.circle)::before {
+progress:not(.circle)::after {
   content: "";
   position: absolute;
   top: 0;
@@ -40,10 +39,6 @@ progress:not(.circle)::after {
   width: var(---end);
   height: 100%;
   background: currentColor;
-}
-
-progress:not(.circle)::before {
-  background: var(--surface-variant);
 }
 
 progress:not(.circle, [value])::after { 
