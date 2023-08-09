@@ -182,17 +182,20 @@ function updateRange (target: Element): void {
   const percents: Array<number> = [];
   const values: Array<number> = [];
   for (let i = 0; i < inputs.length; i++) {
-    const min = parseFloat(inputs[i].min) || 0;
-    const max = parseFloat(inputs[i].max) || 100;
-    const value = parseFloat(inputs[i].value) || 0;
+    const oldMin = parseFloat(inputs[i].min);
+    const oldMax = parseFloat(inputs[i].max);
+    const oldValue = parseFloat(inputs[i].value);
+    const min = oldMin || 0;
+    const max = oldMax || 100;
+    const value = oldValue || 0;
     const percent = (value - min) * 100 / (max - min);
     const fix = thumb / 2 - thumb * percent / 100;
     percents.push(percent + fix);
     values.push(value);
 
-    if (inputs[i].min !== min) inputs[i].min = min;
-    if (inputs[i].max !== max) inputs[i].max = max;
-    if (inputs[i].value !== value) inputs[i].value = value;
+    if (oldMin !== min) inputs[i].min = min;
+    if (oldMax !== max) inputs[i].max = max;
+    if (oldValue !== value) inputs[i].value = value;
   }
 
   let percent = percents[0];
@@ -221,13 +224,15 @@ function updateProgress (to: Element): void {
   const element = to as HTMLProgressElement;
   if (!element.hasAttribute("value")) return;
 
-  const value = element.value || 0;
-  const max = !element.hasAttribute("max") ? 100 : element.max;
+  const oldValue = element.value;
+  const oldMax = element.max;
+  const value = oldValue || 0;
+  const max = !element.hasAttribute("max") ? 100 : oldMax;
   const end = `${value * 100 / max}%`;
 
-  if (element.value !== value) element.value = value;
-  if (element.max !== max) element.max = max;
-  if (element.style.getPropertyValue("---end") !== end) element.style.setProperty("---end", end);
+  if (oldValue !== value) element.value = value;
+  if (oldMax !== max) element.max = max;
+  element.style.setProperty("---end", end);
 }
 
 async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
