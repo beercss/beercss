@@ -22,8 +22,8 @@ small, medium, large
 
 ```html
 <progress></progress>
-<progress value="25"></progress>
-<progress value="4" max="8"></progress>
+<progress value="0.25"></progress>
+<progress value="25" max="100"></progress>
 ```
 
 ## Circular example
