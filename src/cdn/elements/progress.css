@@ -7,6 +7,7 @@ progress {
   border-radius: inherit;
   flex: none;
   border: none;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 progress.small {
@@ -21,8 +22,8 @@ progress.large {
   width: 12rem;
 }
 
-progress::after,
-progress::before {
+progress:not(.circle)::after,
+progress:not(.circle)::before {
   content: "";
   position: absolute;
   top: 0;
@@ -35,11 +36,7 @@ progress::before {
   clip-path: none;
 }
 
-progress::after {
-  left: 0;
-  right: auto;
-  top: 0;
-  bottom: 0;
+progress:not(.circle)::after {
   width: var(---end);
   height: 100%;
   background: currentColor;
@@ -49,7 +46,7 @@ progress:not(.circle)::before {
   background: var(--surface-variant);
 }
 
-progress:not(.circle, [value])::after {
+progress:not(.circle, [value])::after { 
   animation: 1.6s to-linear ease infinite;
 }
 
@@ -75,6 +72,7 @@ progress.circle {
   animation: 1.6s to-circular linear infinite;
   background: none !important;
   flex: none;
+  clip-path: none;
 }
 
 progress.circle::-moz-progress-bar {
