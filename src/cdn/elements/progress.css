@@ -22,7 +22,7 @@ progress.large {
   width: 12rem;
 }
 
-progress:not(.circle)::after {
+progress:not(.circle, [value])::after {
   content: "";
   position: absolute;
   top: 0;
@@ -33,15 +33,7 @@ progress:not(.circle)::after {
   height: 100%;
   border-radius: inherit;
   clip-path: none;
-}
-
-progress:not(.circle)::after {
-  width: var(---end);
-  height: 100%;
   background: currentColor;
-}
-
-progress:not(.circle, [value])::after { 
   animation: 1.6s to-linear ease infinite;
 }
 
@@ -49,9 +41,13 @@ progress:not(.circle, [value])::-moz-progress-bar {
   animation: 1.6s to-linear ease infinite;
 }
 
-progress::-webkit-progress-bar,
-progress::-webkit-progress-value {
+progress::-webkit-progress-bar {
   background: none;
+}
+
+
+progress::-webkit-progress-value {
+  background: currentColor;
 }
 
 progress::-moz-progress-bar {

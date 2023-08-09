@@ -33,7 +33,7 @@
     .medium-space
     progress
     .space
-    progress(value="0")
+    progress(value="0", max="100")
     .medium-space
     h6 Circular
     nav

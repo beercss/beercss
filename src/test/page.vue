@@ -63,7 +63,7 @@ main.responsive
     label.slider.large.min
       input(type="range", v-model="number")
       span
-    progress(:value="number")
+    progress(:value="number", max="100")
     progress
   .row
     .field.label.border.max

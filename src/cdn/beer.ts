@@ -220,21 +220,6 @@ function updateRange (target: Element): void {
   parentTarget.style.setProperty("---value2", `'${value2}'`);
 }
 
-function updateProgress (to: Element): void {
-  const element = to as HTMLProgressElement;
-  if (!element.hasAttribute("value")) return;
-
-  const oldValue = element.value;
-  const oldMax = element.max;
-  const value = oldValue || 0;
-  const max = !element.hasAttribute("max") ? 100 : oldMax;
-  const end = `${value * 100 / max}%`;
-
-  if (oldValue !== value) element.value = value;
-  if (oldMax !== max) element.max = max;
-  element.style.setProperty("---end", end);
-}
-
 async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
   if (!to) {
     to = query(from.getAttribute("data-ui"));
@@ -465,11 +450,6 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
   ranges.forEach((x: Element) => {
     on(x, "input", onInputRange);
     updateRange(x);
-  });
-
-  const progresses = queryAll("progress[value]");
-  progresses.forEach((x: Element) => {
-    updateProgress(x);
   });
 }
 
