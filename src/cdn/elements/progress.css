@@ -3,9 +3,10 @@ progress {
   width: 100%;
   height: 0.5rem;
   color: var(--primary);
-  background-color: currentColor;
+  background: var(--active);
   border-radius: inherit;
   flex: none;
+  border: none;
 }
 
 progress.small {
@@ -42,11 +43,11 @@ progress::after {
   bottom: 0;
   width: var(---end);
   height: 100%;
-  background-color: inherit;
+  background: currentColor;
 }
 
 progress:not(.circle)::before {
-  background-color: var(--surface-variant);
+  background: var(--surface-variant);
 }
 
 progress:not(.circle, [value])::after {
@@ -58,6 +59,10 @@ progress::-webkit-progress-value {
   all: unset;
 }
 
+progress::-moz-progress-bar {
+  background: currentColor;
+}
+
 progress.circle {
   display: inline-block;
   width: 2.5rem;
@@ -67,6 +72,10 @@ progress.circle {
   animation: 1.6s to-circular linear infinite;
   background: none !important;
   flex: none;
+}
+
+progress.circle::-moz-progress-bar {
+  background: none;
 }
 
 progress.circle.small {
