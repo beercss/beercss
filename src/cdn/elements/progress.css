@@ -4,7 +4,7 @@ progress {
   height: 0.5rem;
   color: var(--primary);
   background: var(--surface-variant);
-  border-radius: inherit;
+  border-radius: 0;
   flex: none;
   border: none;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
@@ -31,7 +31,6 @@ progress:not(.circle, [value])::after {
   right: 0;
   width: 100%;
   height: 100%;
-  border-radius: inherit;
   clip-path: none;
   background: currentColor;
   animation: 1.6s to-linear ease infinite;
