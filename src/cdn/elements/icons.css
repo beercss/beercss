@@ -30,8 +30,13 @@ i.tiny {
   ---size: 1rem;
 }
 
+.chip > i,
 i.small {
   ---size: 1.25rem;
+}
+
+i.medium {
+  ---size: 1.5rem;
 }
 
 i.large {

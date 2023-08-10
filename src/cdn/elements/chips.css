@@ -9,7 +9,7 @@
   font-weight: 500;
   background-color: transparent;
   border: 0.0625rem solid var(--outline);
-  color: var(--on-surface);
+  color: var(--on-surface-variant);
   padding: 0 1rem;
   margin: 0 0.5rem;
   text-transform: none;
@@ -32,7 +32,6 @@
 
 .chip.fill {
   background-color: var(--secondary-container) !important;
-  color: var(--on-secondary-container) !important;
   border-color: transparent;
 }
 
