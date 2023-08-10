@@ -80,7 +80,7 @@
 }
 
 /* icon */
-.field > :is(i, img, svg, progress) {
+.field > :is(i, img, svg, progress, a:not(.helper, .error)) {
   position: absolute;
   top: 50%;
   left: auto;
@@ -88,19 +88,11 @@
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 0;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-.field:is(.border, .fill, .round) > :is(i, img, svg, progress) {
-  left: auto;
-  right: 1rem;
-}
-
-.field > :is(i, img, svg, progress):first-child {
-  left: 1rem;
-  right: auto;
-}
-
-.field:is(.border, .fill, .round) > :is(i, img, svg, progress):first-child {
+.field > :is(i, img, svg, progress, a:not(.helper, .error)):first-child {
   left: 1rem;
   right: auto;
 }
@@ -112,6 +104,13 @@
 .field > progress.circle {
   top: calc(50% - 0.75rem);
   border-width: 0.1875rem;
+}
+
+.field > a:not(.helper, .error) {
+  z-index: 10;
+}
+
+.field > a > :is(i, img, svg, progress, a:not(.helper, .error)) {
   width: 1.5rem;
   height: 1.5rem;
 }
