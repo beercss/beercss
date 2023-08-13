@@ -174,7 +174,7 @@ function updateFile (target: Element, e?: KeyboardEvent): void {
 function updateRange (target: Element): void {
   const parentTarget = parent(target) as HTMLElement;
   const bar = query("span", parentTarget) as HTMLElement;
-  const inputs = queryAll("input", parentTarget) as NodeListOf<any>;
+  const inputs = queryAll("input", parentTarget) as NodeListOf<HTMLInputElement>;
   if (!inputs.length || !bar) return;
 
   const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
@@ -193,9 +193,9 @@ function updateRange (target: Element): void {
     percents.push(percent + fix);
     values.push(value);
 
-    if (oldMin !== min) inputs[i].min = min;
-    if (oldMax !== max) inputs[i].max = max;
-    if (oldValue !== value) inputs[i].value = value;
+    if (oldMin !== min) inputs[i].min = `${min}`;
+    if (oldMax !== max) inputs[i].max = `${max}`;
+    if (oldValue !== value) inputs[i].value = `${value}`;
   }
 
   let percent = percents[0];
