@@ -1,6 +1,6 @@
 # Snackbar
 
-Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recomended to show two or more snackbars at same time.
+Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recomended to show two or more snackbars at same time. Snackbars appear without warning, and don't require user interaction. They automatically disappear from the screen after a minimum of four seconds, and a maximum of ten seconds.
 
 ## Element
 
