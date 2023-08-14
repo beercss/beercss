@@ -18,7 +18,7 @@ circle
 
 small, medium, large
 
-## Linear example
+## Linear example (default)
 
 ```html
 <progress></progress>

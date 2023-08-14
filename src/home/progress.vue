@@ -29,7 +29,7 @@
       span orange
   .medium-space
   #default-progress
-    h6 Linear
+    h6 Linear (default)
     .medium-space
     progress
     .space
