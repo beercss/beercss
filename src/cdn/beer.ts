@@ -1,5 +1,6 @@
-let _timeoutToast: ReturnType<typeof setTimeout>;
+let _timeoutSnackbar: ReturnType<typeof setTimeout>;
 let _timeoutMutation: ReturnType<typeof setTimeout>;
+let _timeoutMenu: ReturnType<typeof setTimeout>;
 let _mutation: MutationObserver | null;
 const _lastTheme: IBeerCssTheme = {
   light: "",
@@ -37,10 +38,6 @@ function queryAll (selector: string | NodeListOf<Element> | null, element?: Elem
   } catch {
     return _emptyNodeList;
   }
-}
-
-function hasQuery (selector: string | Element | null, element?: Element | null): boolean {
-  return !!(query(selector, element));
 }
 
 function hasClass (element: Element | null, name: string): boolean {
@@ -96,20 +93,7 @@ function create (htmlAttributesAsJson: any): HTMLElement {
 function updateInput (target: Element): void {
   const input = target as HTMLInputElement;
   if (hasType(input, "number") && !input.value) input.value = "";
-
-  const parentTarget = parent(target);
-  const label = query("label", parentTarget) as HTMLLabelElement;
-  const isBorder = hasClass(parentTarget, "border") && !hasClass(parentTarget, "fill");
-  const toActive = document.activeElement === target || input.value || hasQuery("[selected]", input) || hasType(input, "date") || hasType(input, "time") || hasType(input, "datetime-local");
-
-  if (toActive) {
-    if (isBorder) addClass(input, "active");
-    addClass(label, "active");
-  } else {
-    if (isBorder) removeClass(input, "active");
-    removeClass(label, "active");
-  }
-
+  if (!input.placeholder) input.placeholder = " ";
   if (target.getAttribute("data-ui")) void open(target, null);
 }
 
@@ -141,11 +125,11 @@ function onClickDocument (e: Event): void {
   menus.forEach((x: Element) => menu(target, x, e));
 }
 
-function onClickToast (e: Event): void {
+function onClickSnackbar (e: Event): void {
   const target = e.currentTarget as Element;
   removeClass(target, "active");
 
-  if (_timeoutToast) clearTimeout(_timeoutToast);
+  if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
 }
 
 function onChangeFile (e: Event): void {
@@ -191,33 +175,49 @@ function updateRange (target: Element): void {
   const parentTarget = parent(target) as HTMLElement;
   const bar = query("span", parentTarget) as HTMLElement;
   const inputs = queryAll("input", parentTarget) as NodeListOf<HTMLInputElement>;
-  const tooltip = query(".tooltip", parentTarget) as HTMLElement;
   if (!inputs.length || !bar) return;
 
+  const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
+  const thumb = 1.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents: Array<number> = [];
   const values: Array<number> = [];
   for (let i = 0; i < inputs.length; i++) {
-    const min = parseFloat(inputs[i].min || "0");
-    const max = parseFloat(inputs[i].max || "100");
-    const value = parseFloat(inputs[i].value || "0");
+    const oldMin = parseFloat(inputs[i].min);
+    const oldMax = parseFloat(inputs[i].max);
+    const oldValue = parseFloat(inputs[i].value);
+    const min = oldMin || 0;
+    const max = oldMax || 100;
+    const value = oldValue || 0;
     const percent = (value - min) * 100 / (max - min);
-    percents.push(percent);
+    const fix = thumb / 2 - thumb * percent / 100;
+    percents.push(percent + fix);
     values.push(value);
-  }
 
-  if (tooltip && tooltip.textContent !== values.join()) tooltip.innerHTML = values.join();
+    if (oldMin !== min) inputs[i].min = `${min}`;
+    if (oldMax !== max) inputs[i].max = `${max}`;
+    if (oldValue !== value) inputs[i].value = `${value}`;
+  }
 
   let percent = percents[0];
-  let left = 0;
-  let right = 100 - left - percent;
+  let start = 0;
+  let end = 100 - start - percent;
+  let value1 = values[0];
+  let value2 = values[1] || 0;
   if (inputs.length > 1) {
     percent = Math.abs(percents[1] - percents[0]);
-    left = percents[1] > percents[0] ? percents[0] : percents[1];
-    right = 100 - left - percent;
+    start = percents[1] > percents[0] ? percents[0] : percents[1];
+    end = 100 - start - percent;
+
+    if (value2 > value1) {
+      value1 = values[1] || 0;
+      value2 = values[0];
+    }
   }
 
-  bar.style.left = `${left}%`;
-  bar.style.right = `${right}%`;
+  parentTarget.style.setProperty("---start", `${start}%`);
+  parentTarget.style.setProperty("---end", `${end}%`);
+  parentTarget.style.setProperty("---value1", `'${value1}'`);
+  parentTarget.style.setProperty("---value2", `'${value2}'`);
 }
 
 async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
@@ -228,9 +228,8 @@ async function open (from: Element, to: Element | null, options?: any, e?: Event
 
   if (hasTag(to, "dialog")) return await dialog(from, to);
   if (hasTag(to, "menu")) return menu(from, to, e);
-  if (hasClass(to, "toast")) return toast(from, to, options);
+  if (hasClass(to, "snackbar")) return snackbar(from, to, options);
   if (hasClass(to, "page")) return page(from, to);
-  if (hasClass(to, "progress")) return progress(to, options);
 
   tab(from);
 
@@ -255,26 +254,29 @@ function page (from: Element, to: Element): void {
 }
 
 function menu (from: Element, to: Element, e?: Event): any {
-  on(document.body, "click", onClickDocument);
-  e?.stopPropagation();
-  tab(from);
+  if (_timeoutMenu) clearTimeout(_timeoutMenu);
 
-  if (hasClass(to, "active")) {
-    if (!e) return removeClass(to, "active");
+  _timeoutMenu = setTimeout(() => {
+    on(document.body, "click", onClickDocument);
+    tab(from);
 
-    const trustedFrom = e.target as Element;
-    const trustedTo = query(trustedFrom.getAttribute("data-ui") ?? "");
-    const trustedMenu = trustedFrom.closest("menu");
-    const trustedActive = !query("menu", trustedFrom.closest("[data-ui]") ?? undefined);
+    if (hasClass(to, "active")) {
+      if (!e) return removeClass(to, "active");
 
-    if (trustedTo && trustedTo !== trustedMenu) return menu(trustedFrom, trustedTo);
-    if (!trustedTo && !trustedActive && trustedMenu) return false;
-    return removeClass(to, "active");
-  }
+      const trustedFrom = e.target as Element;
+      const trustedTo = query(trustedFrom.getAttribute("data-ui") ?? "");
+      const trustedMenu = trustedFrom.closest("menu");
+      const trustedActive = !query("menu", trustedFrom.closest("[data-ui]") ?? undefined);
 
-  const menus = queryAll("menu.active");
-  menus.forEach((x: Element) => removeClass(x, "active"));
-  addClass(to, "active");
+      if (trustedTo && trustedTo !== trustedMenu) return menu(trustedFrom, trustedTo);
+      if (!trustedTo && !trustedActive && trustedMenu) return false;
+      return removeClass(to, "active");
+    }
+
+    const menus = queryAll("menu.active");
+    menus.forEach((x: Element) => removeClass(x, "active"));
+    addClass(to, "active");
+  }, 90);
 }
 
 async function dialog (from: Element, to: Element): Promise<void> {
@@ -326,42 +328,22 @@ async function dialog (from: Element, to: Element): Promise<void> {
   }
 }
 
-function toast (from: Element, to: Element, milliseconds?: number): void {
+function snackbar (from: Element, to: Element, milliseconds?: number): void {
+  (document.activeElement as HTMLElement)?.blur();
   tab(from);
 
-  const elements = queryAll(".toast.active");
+  const elements = queryAll(".snackbar.active");
   elements.forEach((x: Element) => removeClass(x, "active"));
   addClass(to, "active");
-  on(to, "click", onClickToast);
+  on(to, "click", onClickSnackbar);
 
-  if (_timeoutToast) clearTimeout(_timeoutToast);
+  if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
 
   if (milliseconds === -1) return;
 
-  _timeoutToast = setTimeout(() => {
+  _timeoutSnackbar = setTimeout(() => {
     removeClass(to, "active");
   }, milliseconds ?? 6000);
-}
-
-function progress (to: Element, percentage: number): void {
-  const element = to as HTMLElement;
-
-  if (hasClass(element, "left")) {
-    element.style.clipPath = `polygon(0% 0%, 0% 100%, ${percentage}% 100%, ${percentage}% 0%)`;
-    return;
-  }
-
-  if (hasClass(element, "top")) {
-    element.style.clipPath = `polygon(0% 0%, 100% 0%, 100% ${percentage}%, 0% ${percentage}%)`;
-    return;
-  }
-
-  if (hasClass(element, "right")) {
-    element.style.clipPath = `polygon(100% 0%, 100% 100%, ${100 - percentage}% 100%, ${100 - percentage}% 0%)`;
-    return;
-  }
-
-  if (hasClass(element, "bottom")) element.style.clipPath = `polygon(0% 100%, 100% 100%, 100% ${100 - percentage}%, 0% ${100 - percentage}%)`;
 }
 
 function lastTheme (): IBeerCssTheme {
@@ -377,7 +359,7 @@ function lastTheme (): IBeerCssTheme {
 
   const fromLight = getComputedStyle(light);
   const fromDark = getComputedStyle(dark);
-  const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--outline", "--surface-variant", "--on-surface-variant", "--inverse-surface", "--inverse-on-surface", "--inverse-primary", "--inverse-on-primary"];
+  const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--surface-variant", "--on-surface-variant", "--outline", "--outline-variant", "--shadow", "--scrim", "--inverse-surface", "--inverse-on-surface", "--inverse-primary"];
   for (let i = 0; i < variables.length; i++) {
     _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
     _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
@@ -429,7 +411,7 @@ function mode (value: string | any): string {
 function setup (): void {
   if (_mutation) return;
   _mutation = new MutationObserver(onMutation);
-  _mutation.observe(document.body, { childList: true, subtree: true });
+  _mutation.observe(document.body, { attributes: true, attributeFilter: ["value", "max", "min"], childList: true, subtree: true });
   onMutation();
 }
 
@@ -451,17 +433,19 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
   const labels = queryAll(".field > label");
   labels.forEach((x: Element) => on(x, "click", onClickLabel));
 
-  const inputs = queryAll(".field > input:not([type=file]), .field > select, .field > textarea");
+  const inputs = queryAll(".field > input:not([type=file]):not([type=range]), .field > select, .field > textarea");
   inputs.forEach((x: Element) => {
     on(x, "focus", onFocusInput);
     on(x, "blur", onBlurInput);
     updateInput(x);
   });
+
   const files = queryAll(".field > input[type=file]");
   files.forEach((x: Element) => {
     on(x, "change", onChangeFile);
     updateFile(x);
   });
+
   const ranges = queryAll(".slider > input[type=range]");
   ranges.forEach((x: Element) => {
     on(x, "input", onInputRange);

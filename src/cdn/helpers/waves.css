@@ -1,6 +1,7 @@
 .wave::after,
+.chip::after,
 .wave.light::after,
-:is(.chip, .button, button)::after {
+:is(.button, button)::after {
   content: "";
   position: absolute;
   top: 0;
@@ -17,9 +18,10 @@
 
 .wave.dark::after,
 .wave.row::after,
+.chip::after,
 :is(.button, button).none::after,
-:is(.chip, .button, button).border::after,
-:is(.chip, .button, button).transparent::after {
+:is(.button, button).border::after,
+:is(.button, button).transparent::after {
   background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
 }
 

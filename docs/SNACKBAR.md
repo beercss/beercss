@@ -1,18 +1,18 @@
-# Page
+# Snackbar
 
-Pages are containers that can be a main page, multiple pages or just to animate an element.
+Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recomended to show two or more snackbars at same time. Snackbars appear without warning, and don't require user interaction. It's recommended that they disappear from the screen after a minimum of four seconds, and a maximum of ten seconds.
 
 ## Element
 
 ```html
-<div class="page">...</div>
+<div class="snackbar">...</div>
 ```
 
 ## Most used helpers
 
 **Positions**
 
-left, right, top, bottom
+top, bottom
 
 **Triggers**
 
@@ -21,58 +21,53 @@ active
 ## Example
 
 ```html
-<div class="page">
-  <h5>Title</h5>
+<div class="snackbar">
+  <i>warning</i>
+  <span>I'm a snackbar</span>
 </div>
 ```
 
 ## Triggers 
 
-#### To show/hide a page
+#### To open/close a menu
 
 #### Method 1
 
-Add/remove `active` class on page.
+Add/remove `active` class on snackbar.
 
 ```html
-<div class="page active">
-  <h5>Title</h5>
+<div class="snackbar active">
+  <i>warning</i>
+  <span>I'm a snackbar</span>
 </div>
 ```
 
 #### Method 2
 
-Add `data-ui="page-selector"` attribute on elements. All other pages that are in the same level will be hidden.
+Add `data-ui="snackbar-selector"` attribute on elements.
 
 ```html
-<a data-ui="#page1">Open page 1</a>
-<a data-ui="#page2">Open page 2</a>
+<button data-ui="#snackbar">Open</button>
 
-<div class="page" id="page1">
-  <h5>Page 1</h5>
-</div>
-
-<div class="page" id="page2">
-  <h5>Page 2</h5>
+<div class="snackbar" id="snackbar">
+  <i>warning</i>
+  <span>I'm a snackbar</span>
 </div>
 ```
 
 #### Method 3
 
-Call `ui("page-selector")`. All other pages that are in the same level will be hidden.
+Call `ui("snackbar-selector", millisecondsToHide)`. The default value for millisecondsToHide is 6000.
 
 ```html
-<div class="page" id="page1">
-  <h5>Page 1</h5>
-</div>
-
-<div class="page" id="page2">
-  <h5>Page 2</h5>
+<div class="snackbar" id="snackbar">
+  <i>warning</i>
+  <span>I'm a snackbar</span>
 </div>
 ```
 
 ```js
-ui('#page1');
+ui("#snackbar");
 ```
 
 ## Go to

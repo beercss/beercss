@@ -18,14 +18,11 @@ dialog {
   overflow-y: auto;
   transition: var(--speed3) all, 0s background-color;
   transform: translate(-50%, -4rem);
+  border-radius: 1rem;
 }
 
 dialog::backdrop {
   display: none;
-}
-
-dialog:not(.left, .right, .top, .bottom) {
-  border-radius: 0.75rem;
 }
 
 dialog.small {
@@ -64,6 +61,7 @@ dialog.top {
   min-width: auto;
   max-height: 100%;
   transform: translateY(-100%);
+  border-radius: 0 0 1rem 1rem;
 }
 
 dialog.left {
@@ -76,6 +74,7 @@ dialog.left {
   height: 100%;
   max-height: 100%;
   transform: translateX(-100%);
+  border-radius: 0 1rem 1rem 0;
 }
 
 dialog.right {
@@ -88,6 +87,7 @@ dialog.right {
   height: 100%;
   max-height: 100%;
   transform: translateX(100%);
+  border-radius: 1rem 0 0 1rem;
 }
 
 dialog.bottom {
@@ -101,6 +101,7 @@ dialog.bottom {
   min-width: auto;
   max-height: 100%;
   transform: translateY(100%);
+  border-radius: 1rem 1rem 0 0;
 }
 
 dialog.max {

@@ -1,4 +1,4 @@
-.toast {
+.snackbar {
   ---transform: translate(-50%, 1rem);
 
   position: fixed;
@@ -24,25 +24,25 @@
   gap: 0.5rem;
 }
 
-.toast.top {
+.snackbar.top {
   top: 6rem;
   bottom: auto;
 }
 
-.toast.active {
+.snackbar.active {
   visibility: visible;
-  animation: var(--speed2) to-toast;
+  animation: var(--speed2) to-snackbar;
 }
 
-.toast.active.top {
+.snackbar.active.top {
   ---transform: translate(-50%, -1rem);
 }
 
-.toast > .max {
+.snackbar > .max {
   flex: auto;
 }
 
-@keyframes to-toast {
+@keyframes to-snackbar {
   0% {
     opacity: 0;
     transform: var(---transform);
@@ -55,7 +55,7 @@
 }
 
 @media only screen and (min-width: 993px) {
-  .toast {
+  .snackbar {
     width: 40%;
   }
 }

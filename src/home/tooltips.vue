@@ -7,16 +7,16 @@
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="space-toasts", @click="domain.updateSpace('#tooltips .tooltip', 'no-space')")
+      input(type="radio", name="space-snackbars", @click="domain.updateSpace('#tooltips .tooltip', 'no-space')")
       span no-space
     label.radio
-      input(type="radio", name="space-toasts", @click="domain.updateSpace('#tooltips .tooltip')", checked)
+      input(type="radio", name="space-snackbars", @click="domain.updateSpace('#tooltips .tooltip')", checked)
       span small-space
     label.radio
-      input(type="radio", name="space-toasts", @click="domain.updateSpace('#tooltips .tooltip', 'medium-space')")
+      input(type="radio", name="space-snackbars", @click="domain.updateSpace('#tooltips .tooltip', 'medium-space')")
       span medium-space
     label.radio
-      input(type="radio", name="space-toasts", @click="domain.updateSpace('#tooltips .tooltip', 'large-space')")
+      input(type="radio", name="space-snackbars", @click="domain.updateSpace('#tooltips .tooltip', 'large-space')")
       span large-space
   nav#tooltip-code.wrap
     button.chip.round

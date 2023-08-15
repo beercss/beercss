@@ -211,7 +211,10 @@ const updatePage = (selector: string) => {
 };
 
 const updateProgress = (value: number) => {
-  utils.queryAll("#progress .progress").forEach((x) => { void ui(x, value); });
+  utils.queryAll("#progress progress[value]").forEach((x) => {
+    const progress = x as HTMLProgressElement;
+    progress.value = value;
+  });
 };
 
 const formatHtml = (element: any, raw: boolean = false): string => {
@@ -283,7 +286,7 @@ const showSamples = (data: IHome, selector: string, name: string, dialog?: strin
       textFormatted = hljs.highlight("html", text).value;
     }
 
-    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", "dialog", ".toast", "main.responsive", ".fixed:not(header, footer)"])) { text = ""; }
+    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", "dialog", ".snackbar", "main.responsive", ".fixed:not(header, footer)"])) { text = ""; }
 
     data.samples.push({
       html: (name === "Tooltips") ? `<div class="center-align">${text}</div>` : text,

@@ -50,7 +50,7 @@ button {
 }
 
 :is(button, .button).border {
-  border-color: var(--primary);
+  border-color: var(--outline);
   color: var(--primary);
 }
 

@@ -1,20 +1,59 @@
+:is(.no-margin, .auto-margin, .tiny-margin, .small-margin, .medium-margin, .margin, .large-margin):not(.left-margin, .right-margin, .top-margin, .bottom-margin, .horizontal-margin, .vertical-margin) {
+  margin: var(---margin) !important;
+}
+
+.no-margin,
+.auto-margin,
+.tiny-margin,
+.small-margin,
+.medium-margin,
+.margin,
+.large-margin,
+.left-margin,
+.right-margin,
+.top-margin,
+.bottom-margin,
+.horizontal-margin,
+.vertical-margin {
+  ---margin: 1rem;
+}
+
 .no-margin {
-  margin: 0 !important;
+  ---margin: 0;
+}
+
+.auto-margin {
+  ---margin: auto;
 }
 
 .tiny-margin {
-  margin: 0.25rem !important;
+  ---margin: 0.25rem;
 }
 
 .small-margin {
-  margin: 0.5rem !important;
-}
-
-.medium-margin,
-.margin {
-  margin: 1rem !important;
+  ---margin: 0.5rem;
 }
 
 .large-margin {
-  margin: 1.5rem !important;
+  ---margin: 1.5rem;
+}
+
+.left-margin,
+.horizontal-margin {
+  margin-left: var(---margin) !important;
+}
+
+.right-margin,
+.horizontal-margin {
+  margin-right: var(---margin) !important;
+}
+
+.top-margin,
+.vertical-margin {
+  margin-top: var(---margin) !important;
+}
+
+.bottom-margin,
+.vertical-margin {
+  margin-bottom: var(---margin) !important;
 }

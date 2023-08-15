@@ -1,5 +1,10 @@
 <template lang="pug">
 main.responsive
+
+  button
+    span Date
+    menu.round.no-wrap
+      datePicker
   .row
     a(@click="updateTheme()")
       i.large palette
@@ -47,6 +52,33 @@ main.responsive
     button(data-ui="#top") Top
     button(data-ui="#right") Right
     button(data-ui="#bottom") Bottom
+  h5 Binding
+  .row
+    .field.label.border
+      input(v-model="number")
+      label Input
+    .field.label.border
+      input(v-model="number")
+      label Test
+    label.slider.large.min
+      input(type="range", v-model="number")
+      span
+    progress(:value="number", max="100")
+    progress
+  .row
+    .field.label.border.max
+      select(v-model="select")
+        option
+        option(value="1") Item 1
+        option(value="2") Item 2
+        option(value="3") Item 3
+      label Test
+    .field.border
+      select(v-model="select")
+        option
+        option(value="1") Item 1
+        option(value="2") Item 2
+        option(value="3") Item 3
   h5 With pure CSS
   nav
     button(@click="domain.updateSize('#with-pure-css .field', 'small')") small
@@ -301,8 +333,13 @@ main.responsive
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import domain from "../home/domain";
+import datePicker from "./datePicker/datePicker.vue";
 const updateTheme = () => {
   document.body.className = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
 };
+const number = ref(0);
+const text = ref();
+const select = ref();
 </script>

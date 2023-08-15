@@ -1,20 +1,59 @@
+:is(.no-padding, .auto-padding, .tiny-padding, .small-padding, .medium-padding, .padding, .large-padding):not(.left-padding, .right-padding, .top-padding, .bottom-padding, .horizontal-padding, .vertical-padding) {
+  padding: var(---padding) !important;
+}
+
+.no-padding,
+.auto-padding,
+.tiny-padding,
+.small-padding,
+.medium-padding,
+.padding,
+.large-padding,
+.left-padding,
+.right-padding,
+.top-padding,
+.bottom-padding,
+.horizontal-padding,
+.vertical-padding {
+  ---padding: 1rem;
+}
+
 .no-padding {
-  padding: 0 !important;
+  ---padding: 0;
+}
+
+.auto-padding {
+  ---padding: auto;
 }
 
 .tiny-padding {
-  padding: 0.25rem !important;
+  ---padding: 0.25rem;
 }
 
 .small-padding {
-  padding: 0.5rem !important;
-}
-
-.medium-padding,
-.padding {
-  padding: 1rem !important;
+  ---padding: 0.5rem;
 }
 
 .large-padding {
-  padding: 1.5rem !important;
+  ---padding: 1.5rem;
+}
+
+.left-padding,
+.horizontal-padding {
+  padding-left: var(---padding) !important;
+}
+
+.right-padding,
+.horizontal-padding {
+  padding-right: var(---padding) !important;
+}
+
+.top-padding,
+.vertical-padding {
+  padding-top: var(---padding) !important;
+}
+
+.bottom-padding,
+.vertical-padding {
+  padding-bottom: var(---padding) !important;
 }

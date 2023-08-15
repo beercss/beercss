@@ -63,7 +63,7 @@
           option Item 1
           option Item 2
           option Item 3
-        label.active Label
+        label Label
         i arrow_drop_down
     .s12.l4
       .field.label.suffix.border
@@ -71,7 +71,7 @@
           option Item 1
           option Item 2
           option Item 3
-        label.active Label
+        label Label
         i arrow_drop_down
         span.helper Helper text
     .s12.l4
@@ -80,7 +80,7 @@
           option Item 1
           option Item 2
           option Item 3
-        label.active Label
+        label Label
         i arrow_drop_down
         span.error Error text
     .s12.l4
@@ -89,7 +89,7 @@
           option Item 1
           option Item 2
           option Item 3
-        label.active Label
+        label Label
         img.circle(:src="'/favicon.png'")
     .s12.l4
       .field.label.suffix.border
@@ -97,7 +97,7 @@
           option Item 1
           option Item 2
           option Item 3
-        label.active Label
+        label Label
         img.circle(:src="'/favicon.png'")
         span.helper Helper text
     .s12.l4
@@ -106,7 +106,7 @@
           option Item 1
           option Item 2
           option Item 3
-        label.active Label
+        label Label
         img.circle(:src="'/favicon.png'")
         span.error Error text
     .s12.l4
@@ -115,21 +115,21 @@
           option Item 1
           option Item 2
           option Item 3
-        a.loader
+        progress.circle
     .s12.l4
       .field.suffix.border
         select
           option Item 1
           option Item 2
           option Item 3
-        a.loader
+        progress.circle
     .s12.l4
       .field.suffix.border
         select
           option Item 1
           option Item 2
           option Item 3
-        a.loader
+        progress.circle
 </template>
 
 <script setup lang="ts">

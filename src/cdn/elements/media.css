@@ -40,16 +40,16 @@ svg {
   margin: 0 auto;
 }
 
-:is(button, .button, .chip) > .responsive {
-  width: 2.5rem;
-}
-
 :is(button, .button, .chip):not(.transparent) > .responsive {
   border: 0.25rem solid transparent;
 }
 
-:is(button, .button, .chip).small > .responsive {
+:is(button.small, .button.small, .chip) > .responsive {
   width: 2rem;
+}
+
+:is(button, .button, .chip.medium) > .responsive {
+  width: 2.5rem;
 }
 
 :is(button, .button, .chip).large > .responsive {

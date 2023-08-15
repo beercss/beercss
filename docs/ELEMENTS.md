@@ -48,10 +48,6 @@ Input fields let users enter and edit text.
 
 Layouts are containers that you can place in any position. There are absolute and fixed elements.
 
-## [Loader](LOADER.md)
-
-Loader express an unspecified wait time.
-
 ## [Media](MEDIA.md)
 
 Media can be a image or video element.
@@ -74,7 +70,7 @@ Pages are containers that can be a main page, multiple pages or just to animate 
 
 ## [Progress](PROGRESS.md)
 
-Progress display the length of a process.
+Progress display the length of a process or an unspecified wait time.
 
 ## [Radio](RADIO.md)
 
@@ -100,9 +96,9 @@ Tabs organize content across different screens, data sets, and other interaction
 
 Textarea fields let users enter and edit long text.
 
-## [Toast](TOAST.md)
+## [Snackbar](SNACKBAR.md)
 
-Toasts provide brief messages about app processes at bottom or top of the screen. It's not recomended to show two or more toasts at same time.
+Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recomended to show two or more snackbars at same time.
 
 ## [Tooltip](TOOLTIP.md)
 
@@ -116,4 +112,4 @@ Use typography to present your design and content as clearly and efficiently as 
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Loader](LOADER.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Toast](TOAST.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

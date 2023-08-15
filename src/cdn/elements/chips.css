@@ -3,13 +3,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 2.5rem;
-  min-width: 2.5rem;
+  height: 2rem;
+  min-width: 2rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--on-secondary);
+  background-color: transparent;
+  border: 0.0625rem solid var(--outline);
+  color: var(--on-surface-variant);
   padding: 0 1rem;
-  background-color: var(--secondary);
   margin: 0 0.5rem;
   text-transform: none;
   border-radius: 0.5rem;
@@ -19,9 +20,9 @@
   line-height: normal;
 }
 
-.chip.small {
-  height: 2rem;
-  min-width: 2rem;
+.chip.medium {
+  height: 2.5rem;
+  min-width: 2.5rem;
 }
 
 .chip.large {
@@ -29,15 +30,13 @@
   min-width: 3rem;
 }
 
-.chip.border {
-  border-color: var(--secondary);
-  color: var(--secondary);
-}
-
 .chip.fill {
   background-color: var(--secondary-container) !important;
-  color: var(--on-secondary-container) !important;
-  border: none;
+  border-color: transparent;
+}
+
+.chip.border {
+  border-color: var(--outline);
 }
 
 .chip.round.small {

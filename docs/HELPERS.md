@@ -62,11 +62,11 @@ elevate, no-elevate, small-elevate, medium-elevate, large-elevate,
 
 ## Forms
 
-border, circle, square, none, fill, extend, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
+border, no-border, circle, square, none, fill, extend, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
 
 ## Margins
 
-margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+margin, no-margin, auto-margin, tiny-margin, small-margin, medium-margin, large-margin, left-margin, right-margin, top-margin, bottom-margin, horizontal-margin, vertical-margin
 
 ## Opacities
 
@@ -74,7 +74,7 @@ opacity, no-opacity
 
 ## Paddings
 
-padding, no-padding, tiny-padding, small-padding, medium-padding, large-padding
+padding, no-padding, auto-padding, tiny-padding, small-padding, medium-padding, large-padding, left-padding, right-padding, top-padding, bottom-padding, horizontal-padding, vertical-padding
 
 ## Positions
 
@@ -138,4 +138,4 @@ wave, no-wave, light, dark
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Loader](LOADER.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Toast](TOAST.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

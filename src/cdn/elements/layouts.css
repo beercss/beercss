@@ -40,7 +40,7 @@ footer {
   background-color: var(--surface);
 }
 
-:is(header, footer).fixed {
+:is(header, footer, menu > *).fixed {
   position: sticky;
   top: 0;
   bottom: 0;

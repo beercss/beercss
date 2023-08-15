@@ -119,9 +119,6 @@ div
     a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#layouts')")
       i widgets
       span Layouts
-    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#loaders')")
-      i widgets
-      span Loaders
     a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#media')")
       i widgets
       span Media
@@ -155,9 +152,15 @@ div
     a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#sliders')")
       i widgets
       span Sliders
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#snackbars')")
+      i widgets
+      span Snackbars
     a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#spaces')")
       i widgets
       span Spaces
+    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#steppers')")
+      i widgets
+      span Steppers
     a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#switches')")
       i widgets
       span Switches
@@ -170,9 +173,6 @@ div
     a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#textareas')")
       i widgets
       span Textareas
-    a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#toasts')")
-      i widgets
-      span Toasts
     a.row.round(data-ui="#dialog-menu", @click="domain.goTo('#tooltips')")
       i widgets
       span Tooltips
@@ -256,9 +256,9 @@ div
             .medium-space
             h5 From CDN
             pre.scroll.large-padding.fill(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.2.13/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.3.0/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.2.13/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.3.0/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.0.1/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
@@ -292,7 +292,7 @@ div
                     span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
                   p
                     b chip
-                    span &nbsp;small, medium, large, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
+                    span &nbsp;small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
                   p
                     b &lt;details&gt;
                   p
@@ -324,9 +324,6 @@ div
                     b &lt;label&gt;
                     span &nbsp;active, radio, checkbox, switch
                   p
-                    b loader
-                    span &nbsp;small, medium, large
-                  p
                     b &lt;main&gt;
                     span &nbsp;responsive, max
                   p
@@ -342,11 +339,14 @@ div
                     b page
                     span &nbsp;left, right, top, bottom, active
                   p
-                    b progress
-                    span &nbsp;left, right, top, bottom
+                    b &lt;progress&gt;
+                    span &nbsp;small, medium, large, circle
                   p
                     b row
                     span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align
+                  p
+                    b snackbar
+                    span &nbsp;top, bottom, active
                   p
                     b &lt;summary&gt;
                   p
@@ -355,9 +355,6 @@ div
                   p
                     b tabs
                     span &nbsp;left-align, right-align, center-align, horizontal, vertical, min, max
-                  p
-                    b toast
-                    span &nbsp;top, bottom, active
                   p
                     b tooltip
                     span &nbsp;left, right, top, bottom, max
@@ -403,8 +400,6 @@ div
         .s12
           layouts
         .s12
-          loaders
-        .s12
           media
         .s12
           menus
@@ -427,7 +422,11 @@ div
         .s12
           sliders
         .s12
+          snackbars
+        .s12
           spaces
+        .s12
+          steppers
         .s12
           switches
         .s12
@@ -436,9 +435,7 @@ div
           tabs
         .s12
           textareas
-        .s12.l6
-          toasts
-        .s12.l6
+        .s12
           tooltips
         .s12
           typography
@@ -485,7 +482,6 @@ import grids from "./grids.vue";
 import icons from "./icons.vue";
 import inputs from "./inputs.vue";
 import layouts from "./layouts.vue";
-import loaders from "./loaders.vue";
 import media from "./media.vue";
 import dialogs from "./dialogs.vue";
 import navigations from "./navigations.vue";
@@ -497,12 +493,13 @@ import scrolls from "./scrolls.vue";
 import search from "./search.vue";
 import selects from "./selects.vue";
 import sliders from "./sliders.vue";
+import snackbars from "./snackbars.vue";
 import spaces from "./spaces.vue";
+import steppers from "./steppers.vue";
 import switches from "./switches.vue";
 import tables from "./tables.vue";
 import tabs from "./tabs.vue";
 import textareas from "./textareas.vue";
-import toasts from "./toasts.vue";
 import tooltips from "./tooltips.vue";
 import typography from "./typography.vue";
 

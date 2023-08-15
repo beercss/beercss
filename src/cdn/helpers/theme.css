@@ -92,7 +92,7 @@
 
 .inverse-primary {
   background-color: var(--inverse-primary);
-  color: var(--inverse-on-primary);
+  color: var(--primary);
 }
 
 .inverse-primary-text {

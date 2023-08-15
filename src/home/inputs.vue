@@ -116,17 +116,17 @@
         img.circle(:src="'/favicon.png'")
     .s12.l4
       .field.border.prefix
-        a.loader
+        progress.circle
         input(type="text")
     .s12.l4
       .field.border.suffix
         input(type="text")
-        a.loader
+        progress.circle
     .s12.l4
       .field.border.prefix.suffix
-        a.loader
+        progress.circle
         input(type="text")
-        a.loader
+        progress.circle
 </template>
 
 <script setup lang="ts">

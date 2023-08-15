@@ -70,7 +70,8 @@
   border-radius: 2.5rem;
 }
 
-:is(.circle, .square):not(i, img, video, svg) {
+:is(.circle, .square):not(i, img, video, svg),
+:is(.circle, .square).chip.medium {
   height: 2.5rem;
   width: 2.5rem;
   padding: 0;
@@ -80,7 +81,8 @@
   display: none;
 }
 
-:is(.circle, .square).small:not(i, img, video, svg) {
+:is(.circle, .square).small:not(i, img, video, svg),
+:is(.circle, .square).chip {
   height: 2rem;
   width: 2rem;
 }
@@ -104,6 +106,10 @@
   border: 0.0625rem solid var(--outline);
   background-color: transparent;
   box-shadow: none;
+}
+
+.no-border {
+  border-color: transparent !important;
 }
 
 :is(nav, .row, dialog.max, header.fixed, footer.fixed, menu > a, menu.max, table, .tabs):not(.round) {
