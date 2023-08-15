@@ -7,7 +7,6 @@ progress {
   border-radius: 0;
   flex: none;
   border: none;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 progress.small {
@@ -40,10 +39,13 @@ progress:not(.circle, [value])::-moz-progress-bar {
   animation: 1.6s to-linear ease infinite;
 }
 
+progress:not(.circle, [value])::-webkit-progress-value {
+  animation: 1.6s to-linear ease infinite;
+}
+
 progress::-webkit-progress-bar {
   background: none;
 }
-
 
 progress::-webkit-progress-value {
   background: currentColor;
@@ -58,11 +60,12 @@ progress.circle {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  border: 0.3rem solid currentColor;
+  border-width: 0.3rem;
+  border-style: solid;
+  border-color: currentColor;
   animation: 1.6s to-circular linear infinite;
   background: none;
   flex: none;
-  clip-path: none;
 }
 
 progress.circle::-moz-progress-bar {
@@ -87,13 +90,18 @@ progress.circle.large {
 
 @keyframes to-linear {
   0% {
-    transform: translate(0%);
+    margin-left: 0%;
     width: 0%;
+  }
+  
+  50% {
+    margin-left: 10%;
+    width: 80%;
   }
 
   100% {
-    transform: translate(100%);
-    width: 100%;
+    margin-left: 100%;
+    width: 0%;
   }
 }
 
