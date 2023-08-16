@@ -32,7 +32,7 @@ dialog.medium.no-scroll(:id="id", :class="{ left: position === 'left', right: po
         img.responsive(:src="'/wallpaper-5.jpg'")
       button.round.square.extra
         i upload
-        input.absolute.top.left.right.bottom.no-opacity(type="file", @change="sharedDomain.updateTheme(data, $event)")
+        input.absolute.top.left.right.bottom.opacity(type="file", @change="sharedDomain.updateTheme(data, $event)")
       button.round.square.extra.red(@click="sharedDomain.updateTheme(data, '#f44336')")
       button.round.square.extra.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
       button.round.square.extra.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')")

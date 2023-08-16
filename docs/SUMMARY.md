@@ -78,7 +78,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Margins** margin, no-margin, auto-margin, tiny-margin, small-margin, medium-margin, large-margin, left-margin, right-margin, top-margin, bottom-margin, horizontal-margin, vertical-margin
 
-**Opacities** opacity, no-opacity
+**Opacities** opacity, no-opacity, small-opacity, medium-opacity, large-opacity
 
 **Paddings** padding, no-padding, auto-padding, tiny-padding small-padding, medium-padding, large-padding, left-padding, right-padding, top-padding, bottom-padding, horizontal-padding, vertical-padding
 

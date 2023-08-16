@@ -70,7 +70,7 @@ margin, no-margin, auto-margin, tiny-margin, small-margin, medium-margin, large-
 
 ## Opacities
 
-opacity, no-opacity
+opacity, no-opacity, small-opacity, medium-opacity, large-opacity
 
 ## Paddings
 
