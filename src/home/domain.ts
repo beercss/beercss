@@ -254,7 +254,7 @@ const formatHtml = (element: any, raw: boolean = false): string => {
 
   return process(text
     .replace(/<!--v-if-->/gi, "")
-    .replace(/\s+(wfd-id|id|data-ui|onclick|style|data-v-\w+)="[^"]*"/gi, "")
+    .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|data-v-\w+)="[^"]*"/gi, "")
     .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
     .replace(/\s+(checked|disabled)=""/gi, " $1")
     .replace(/\s+[a-z-]+=(""|"#")/gi, "")
