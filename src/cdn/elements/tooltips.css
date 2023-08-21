@@ -24,6 +24,7 @@
   font-weight: 500;
   opacity: 0;
   transition: var(--speed2) all;
+  line-height: normal;
 }
 
 .tooltip.left {
