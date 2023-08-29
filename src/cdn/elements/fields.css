@@ -427,7 +427,7 @@ input[type=search]::-webkit-search-results-decoration {
 
 .field.label > label > a > :is(i, img, svg) {
   height: 1rem;
-  line-height: 1rem;;
+  line-height: 1rem;
   width: 1rem;
   font-size: 1rem;
 }
