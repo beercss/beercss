@@ -306,28 +306,28 @@ input[type=search]::-webkit-search-results-decoration {
   padding-top: 1.875rem;
 }
 
-.field.small > textarea,
-.field.small:not(.label) > textarea:focus,
-.field.small.border:not(.fill) > textarea {
-  padding-top: 0.625rem;
+.field.label.small > textarea:focus {
+  padding-top: 1.0625rem;
 }
 
-.field > textarea,
-.field:not(.label) > textarea:focus,
-.field.border:not(.fill) > textarea {
+.field.label > textarea:focus {
+  padding-top: 1.3125rem;
+}
+
+.field.label.large > textarea:focus {
+  padding-top: 1.5625rem;
+}
+
+.field.label.extra > textarea:focus {
+  padding-top: 1.8125rem;
+}
+
+.field.label.border:not(.fill) > textarea {
   padding-top: 0.875rem;
 }
 
-.field.large > textarea,
-.field.large:not(.label) > textarea:focus,
-.field.large.border:not(.fill) > textarea {
-  padding-top: 1.125rem;
-}
-
-.field.extra > textarea,
-.field.extra:not(.label) > textarea:focus,
-.field.extra.border:not(.fill) > textarea {
-  padding-top: 1.375rem;
+.field.label.border:not(.fill) > textarea:focus {
+  padding-top: 0.8125rem;
 }
 
 /* label */
@@ -392,7 +392,6 @@ input[type=search]::-webkit-search-results-decoration {
   height: 1rem;
   transition: none;
   flex: auto;
-  margin-left: 0.25rem;
 }
 
 .field.label.border:not(.fill) > :focus + label::after {
