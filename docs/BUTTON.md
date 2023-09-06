@@ -66,7 +66,7 @@ A floating action button (FAB) represents the primary action of a screen.
 The extended FAB is wider, and it includes a text label.
 
 ```html
-<button class="extend circle extra">
+<button class="extend circle">
   <i>home</i>
   <span>Button</span>
 </button>
