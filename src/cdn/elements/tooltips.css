@@ -14,12 +14,12 @@
   padding: 0.5rem;
   position: absolute;
   z-index: 3;
-  top: 0;
-  left: 50%;
-  bottom: auto;
-  right: auto;
+  inset-block-start: 0;
+  inset-inline-start: 50%;
+  inset-block-end: auto;
+  inset-inline-end: auto;
   transform: translate(-50%, -100%) scale(0.9);
-  width: auto;
+  inline-size: auto;
   white-space: nowrap;
   font-weight: 500;
   opacity: 0;
@@ -28,41 +28,41 @@
 }
 
 .tooltip.left {
-  left: 0;
-  top: 50%;
-  bottom: auto;
-  right: auto;
+  inset-inline-start: 0;
+  inset-block-start: 50%;
+  inset-block-end: auto;
+  inset-inline-end: auto;
   transform: translate(-100%, -50%) scale(0.9);
 }
 
 .tooltip.right {
-  right: 0;
-  top: 50%;
-  bottom: auto;
-  left: auto;
+  inset-inline-end: 0;
+  inset-block-start: 50%;
+  inset-block-end: auto;
+  inset-inline-start: auto;
   transform: translate(100%, -50%) scale(0.9);
 }
 
 .tooltip.bottom {
-  bottom: 0;
-  left: 50%;
-  top: auto;
-  right: auto;
+  inset-block-end: 0;
+  inset-inline-start: 50%;
+  inset-block-start: auto;
+  inset-inline-end: auto;
   transform: translate(-50%, 100%) scale(0.9);
 }
 
 .tooltip.small {
-  width: 8rem;
+  inline-size: 8rem;
   white-space: normal;
 }
 
 .tooltip.medium {
-  width: 12rem;
+  inline-size: 12rem;
   white-space: normal;
 }
 
 .tooltip.large {
-  width: 16rem;
+  inline-size: 16rem;
   white-space: normal;
 }
 
@@ -97,19 +97,19 @@
 }
 
 .tooltip:not(.left, .right, .bottom) {
-  margin-top: var(---space) !important;
+  margin-block-start: var(---space) !important;
 }
 
 .tooltip.left {
-  margin-left: var(---space) !important;
+  margin-inline-start: var(---space) !important;
 }
 
 .tooltip.right {
-  margin-right: var(---space) !important;
+  margin-inline-end: var(---space) !important;
 }
 
 .tooltip.bottom {
-  margin-bottom: var(---space) !important;
+  margin-block-end: var(---space) !important;
 }
 
 menu:active ~ .tooltip,
@@ -119,22 +119,22 @@ menu:active ~ .tooltip,
 }
 
 .vertical > .tooltip:not(.left, .right, .bottom) {
-  top: calc(50% + var(---space));
+  inset-block-start: calc(50% + var(---space));
   transform: translate(-50%, -100%) scale(1) rotate(90deg);
 }
 
 .vertical > .tooltip.left {
-  left: var(---space);
+  inset-inline-start: var(---space);
   transform: translate(-100%, -50%) scale(1) rotate(90deg);
 }
 
 .vertical > .tooltip.right {
-  right: var(---space);
+  inset-inline-end: var(---space);
   transform: translate(100%, -50%) scale(1) rotate(90deg);
 }
 
 .vertical > .tooltip.bottom {
-  bottom: calc(50% + var(---space));
+  inset-block-end: calc(50% + var(---space));
   transform: translate(-50%, 100%) scale(1) rotate(90deg);
 }
 
@@ -154,8 +154,8 @@ menu:active ~ .tooltip,
   display: block;
   font-size: inherit;
   white-space: normal;
-  text-align: left;
-  width: 20rem;
+  text-align: start;
+  inline-size: 20rem;
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: var(--elevate2);

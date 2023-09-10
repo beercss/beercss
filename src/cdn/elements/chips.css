@@ -3,8 +3,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 2rem;
-  min-width: 2rem;
+  block-size: 2rem;
+  min-inline-size: 2rem;
   font-size: 0.875rem;
   font-weight: 500;
   background-color: transparent;
@@ -21,13 +21,13 @@
 }
 
 .chip.medium {
-  height: 2.5rem;
-  min-width: 2.5rem;
+  block-size: 2.5rem;
+  min-inline-size: 2.5rem;
 }
 
 .chip.large {
-  height: 3rem;
-  min-width: 3rem;
+  block-size: 3rem;
+  min-inline-size: 3rem;
 }
 
 .chip.fill {

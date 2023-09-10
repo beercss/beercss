@@ -72,8 +72,8 @@
 
 :is(.circle, .square):not(i, img, video, svg),
 :is(.circle, .square).chip.medium {
-  height: 2.5rem;
-  width: 2.5rem;
+  block-size: 2.5rem;
+  inline-size: 2.5rem;
   padding: 0;
 }
 
@@ -83,18 +83,18 @@
 
 :is(.circle, .square).small:not(i, img, video, svg),
 :is(.circle, .square).chip {
-  height: 2rem;
-  width: 2rem;
+  block-size: 2rem;
+  inline-size: 2rem;
 }
 
 :is(.circle, .square).large:not(i, img, video, svg) {
-  height: 3rem;
-  width: 3rem;
+  block-size: 3rem;
+  inline-size: 3rem;
 }
 
 :is(.circle, .square).extra:not(i, img, video, svg) {
-  height: 3.5rem;
-  width: 3.5rem;
+  block-size: 3.5rem;
+  inline-size: 3.5rem;
 }
 
 :is(.circle, .square).round {

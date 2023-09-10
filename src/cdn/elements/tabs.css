@@ -1,7 +1,7 @@
 .tabs {
   display: flex;
   white-space: nowrap;
-  border-bottom: 0.0625rem solid var(--outline);
+  border-block-end: 0.0625rem solid var(--outline);
 }
 
 .tabs.min {
@@ -14,7 +14,7 @@
 }
 
 * + .tabs {
-  margin-top: 1rem;
+  margin-block-start: 1rem;
 }
 
 .tabs > a {
@@ -23,29 +23,29 @@
   font-weight: 500;
   color: var(--on-background);
   padding: 0.5rem 1rem;
-  border-bottom: 0.125rem solid transparent;
+  border-block-end: 0.125rem solid transparent;
   text-align: center;
-  min-height: 3rem;
-  width: 100%;
+  min-block-size: 3rem;
+  inline-size: 100%;
   gap: 0.25rem;
 }
 
 .tabs.min > a {
-  width: auto;
+  inline-size: auto;
   padding: 0.5rem 0;
 }
 
 .tabs.small > a {
-  min-height: 2rem;
+  min-block-size: 2rem;
 }
 
 .tabs.large > a {
-  min-height: 4rem;
+  min-block-size: 4rem;
 }
 
 .tabs > a.active {
   color: var(--primary);
-  border-bottom: 0.125rem solid var(--primary);
+  border-block-end: 0.125rem solid var(--primary);
 }
 
 .tabs > a.active > i {
@@ -53,5 +53,5 @@
 }
 
 .tabs:is(.left-align, .center-align, .right-align) > a {
-  width: auto;
+  inline-size: auto;
 }

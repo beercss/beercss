@@ -2,8 +2,8 @@
 .checkbox,
 .radio,
 .switch {
-  width: auto;
-  height: auto;
+  inline-size: auto;
+  block-size: auto;
   line-height: normal;
   white-space: nowrap;
   cursor: pointer;
@@ -12,14 +12,14 @@
 }
 
 :is(.checkbox, .radio) > input {
-  width: 1.5rem;
-  height: 1.5rem;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
   opacity: 0;
 }
 
 .switch > input {
-  width: 3.25rem;
-  height: 2rem;
+  inline-size: 3.25rem;
+  block-size: 2rem;
   opacity: 0;
 }
 
@@ -31,7 +31,7 @@
 }
 
 :is(.checkbox, .radio) > span:not(:empty) {
-  padding-left: 0.25rem;
+  padding-inline-start: 0.25rem;
 }
 
 :is(.checkbox, .radio, .switch) > span::before,
@@ -52,14 +52,14 @@
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  width: 1.5rem;
-  height: 1.5rem;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
   box-sizing: border-box;
   margin: 0 auto;
   outline: none;
   color: var(--primary);
   position: absolute;
-  left: -1.5rem;
+  inset-inline-start: -1.5rem;
   background-color: transparent;
   border-radius: 50%;
   user-select: none;
@@ -71,8 +71,8 @@
 .switch > span::before,
 .switch.icon > span > i {
   position: absolute;
-  left: 0;
-  top: 50%;
+  inset-inline-start: 0;
+  inset-block-start: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -80,7 +80,7 @@
   transition: var(--speed2) all;
   font-size: 1rem;
   user-select: none;
-  min-width: auto;
+  min-inline-size: auto;
   content: "";
   color: var(--surface-variant);
   background-color: var(--outline);
@@ -159,19 +159,19 @@
 .checkbox + .checkbox,
 .radio + .radio,
 .switch + .switch {
-  margin-left: 0.5rem;
+  margin-inline-start: 0.5rem;
 }
 
 .switch > span::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 50%;
+  inset-inline-start: 0;
+  inset-block-start: 50%;
   background-color: var(--active);
   border: 0.125rem solid var(--outline);
   box-sizing: border-box;
-  width: 3.25rem;
-  height: 2rem;
+  inline-size: 3.25rem;
+  block-size: 2rem;
   border-radius: 2rem;
   transform: translate(-3.25rem, -50%);
 }
