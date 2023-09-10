@@ -100,6 +100,16 @@
   inset-inline-end: auto;
 }
 
+*[dir=rtl] .field > :is(i) {
+  inset-inline-end: auto;
+  inset-inline-start: 1rem;
+}
+
+*[dir=rtl] .field > :is(i):first-child {
+  inset-inline-end: 1rem;
+  inset-inline-start: auto;
+}
+
 .field.invalid > i {
   color: var(--error);
 }
@@ -170,7 +180,7 @@ input[type=search]::-webkit-search-results-decoration {
 
 .field > :is(input, textarea, select) {
   border: 0.0625rem solid transparent;
-  padding-inline: 0 0.9375rem;
+  padding-inline: 0.9375rem;
   padding-block: 0;
   font-family: inherit;
   font-size: 1rem;
