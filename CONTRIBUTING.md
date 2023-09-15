@@ -65,13 +65,13 @@ $ npm run test
 
   - **`cdn`**: contains files that will be used for cdn/npm
   
-  - **`home`**: contains a homepage for [Beer css!](https://www.beercss.com)
+  - **`home`**: contains a homepage for [Beer CSS](https://www.beercss.com)
 
   - **`shared`**: contains utilities shared across the entire codebase.
 
   - **`static`**: contains static files.
 
-  - **`test`**: contains a blank test page for use in your tests. It will be available in `npm run dev` at url http://localhost:3030/test
+  - **`test`**: contains a blank test page for use in your tests. It will be available in `npm run dev` at url http://localhost:3000/test
 
 - **`tests`**: contains all tests. The unit tests are written with [Vitest](https://vitest.dev/).
 
