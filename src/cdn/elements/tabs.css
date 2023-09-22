@@ -1,7 +1,7 @@
 .tabs {
   display: flex;
   white-space: nowrap;
-  border-bottom: 0.0625rem solid var(--outline);
+  border-bottom: 0.0625rem solid var(--surface-variant);
 }
 
 .tabs.min {

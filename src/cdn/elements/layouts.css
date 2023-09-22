@@ -37,7 +37,7 @@
 header,
 footer {
   padding: 0 1rem;
-  background-color: var(--surface);
+  background-color: var(--surface-container);
 }
 
 :is(header, footer, menu > *).fixed {

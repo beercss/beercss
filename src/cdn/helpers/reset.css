@@ -11,7 +11,7 @@
 
 body {
   color: var(--on-background);
-  background-color: var(--body);
+  background-color: var(--background);
   overflow-x: hidden;
 }
 

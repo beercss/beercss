@@ -75,7 +75,7 @@
 }
 
 .field.fill::before {
-  background-color: var(--surface-variant);
+  background-color: var(--surface-container-highest);
   color: var(--on-surface-variant);
 }
 
@@ -278,7 +278,7 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 .field > select > option {
-  background-color: var(--surface);
+  background-color: var(--surface-container);
   color: var(--on-surface);
 }
 

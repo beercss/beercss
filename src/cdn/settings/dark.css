@@ -28,7 +28,13 @@ body.dark {
   --inverse-surface: #e6e1e6;
   --inverse-on-surface: #313033;
   --inverse-primary: #6750a4;
-  --body: #000;
+  --surface-dim: #141218;
+  --surface-bright: #3B383E;
+  --surface-container-lowest: #0F0D13;
+  --surface-container-low: #1D1B20;
+  --surface-container: #211F26;
+  --surface-container-high: #2B2930;
+  --surface-container-highest: #36343B;
   --overlay: rgb(0 0 0 / 0.5);
   --active: rgb(255 255 255 / 0.2);
   --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);

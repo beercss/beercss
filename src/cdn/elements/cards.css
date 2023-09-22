@@ -1,6 +1,6 @@
 article {
   box-shadow: var(--elevate1);
-  background-color: var(--surface);
+  background-color: var(--surface-container-low);
   color: var(--on-surface);
   padding: 1rem;
   border-radius: 0.75rem;

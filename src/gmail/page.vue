@@ -227,7 +227,6 @@ import { onRoute, redirect } from "../shared/router";
 
 onMounted(() => {
   document.title = "Gmail - Beer CSS";
-  sharedDomain.initTheme(data.value);
 });
 
 onRoute((url:string) => {

@@ -29,7 +29,13 @@ body.light {
   --inverse-surface: #313033;
   --inverse-on-surface: #f4eff4;
   --inverse-primary: #cfbcff;
-  --body: #FFF;
+  --surface-dim: #DED8E1;
+  --surface-bright: #FEF7FF;
+  --surface-container-lowest: #FFFFFF;
+  --surface-container-low: #F7F2FA;
+  --surface-container: #F3EDF7;
+  --surface-container-high: #ECE6F0;
+  --surface-container-highest: #E6E0E9;
   --overlay: rgb(0 0 0 / 0.5);
   --active: rgb(0 0 0 / 0.1);
   --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);
