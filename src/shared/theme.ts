@@ -4,7 +4,7 @@ const data: ILayout = {
   theme: {
     light: "",
     dark: "",
-    selected: ""
+    selected: "",
   },
   isDark: false,
   showCssVariables: false,

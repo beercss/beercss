@@ -1,4 +1,4 @@
-import { ILayout, ITheme } from "./interfaces";
+import { ILayout } from "./interfaces";
 
 const updateTheme = async (data: ILayout, source: any, newMode?: string) => {
   const theme = await ui("theme", source) as IBeerCssTheme;
@@ -16,5 +16,5 @@ const updateMode = (data: ILayout, newMode?: string) => {
 
 export default {
   updateTheme,
-  updateMode
+  updateMode,
 };
