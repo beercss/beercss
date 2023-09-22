@@ -4,9 +4,9 @@ const data: ILayout = {
   theme: {
     light: "",
     dark: "",
-    selected: "",
+    selected: "dark",
   },
-  isDark: false,
+  isDark: true,
   showCssVariables: false,
   isLoaded: false,
 };
