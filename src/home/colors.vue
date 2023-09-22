@@ -5,8 +5,57 @@
     span Colors
     a.chip.circle(data-ui="#dialog-colors")
       i code
-  nav
-    button(data-ui="#dialog-colors") Colors
+  .space
+  .grid
+    .s12.m6.l3
+      h6 Primary
+      .padding.primary primary
+      .padding.primary-container primary-container
+      .padding.border.primary-border primary-border
+      .padding.primary-text primary-text
+    .s12.m6.l3
+      h6 Secondary
+      .padding.secondary secondary
+      .padding.secondary-container secondary-container
+      .padding.border.secondary-border secondary-border
+      .padding.secondary-text secondary-text
+    .s12.m6.l3
+      h6 Tertiary
+      .padding.tertiary tertiary
+      .padding.tertiary-container tertiary-container
+      .padding.border.tertiary-border tertiary-border
+      .padding.tertiary-text tertiary-text
+    .s12.m6.l3
+      h6 Error
+      .padding.error error
+      .padding.error-container error-container
+      .padding.border.error-border error-border
+      .padding.error-text error-text
+  .medium-space
+  .grid
+    .s12.m6
+      h6 Neutral
+      .grid
+        .s12.l6
+          .padding.surface-dim surface-dim
+          .padding.surface-bright surface-bright
+          .padding.surface-variant surface-variant
+          .padding.inverse-surface inverse-surface
+          .padding.surface surface
+          .padding.background background
+        .s12.l6
+          .padding.surface-container-lowest surface-container-lowest
+          .padding.surface-container-low surface-container-low
+          .padding.surface-container surface-container
+          .padding.surface-container-high surface-container-high
+          .padding.surface-container-highest surface-container-highest
+    .s12.m6.l3
+      h6 Others
+      .grid 
+        .s12
+          .padding.inverse-primary inverse-primary
+          .padding.inverse-primary-border.border inverse-primary-border
+          .padding.inverse-primary-text inverse-primary-text
 
   dialog#dialog-colors.right.medium
     header.fixed
@@ -15,32 +64,44 @@
         button.circle.transparent(data-ui="#dialog-colors")
           i close
 
-    .grid
+    .grid.no-round
       .s12
-        h5 Theme
-        .primary primary
-        .primary-container primary-container
-        .secondary secondary
-        .secondary-container secondary-container
-        .tertiary tertiary
-        .tertiary-container tertiary-container
-        .error error
-        .error-container error-container
-        .background background
-        .surface surface
-        .surface-variant surface-variant
-        .inverse-surface inverse-surface
-        .inverse-primary inverse-primary
-        .primary-border.border primary-border
-        .secondary-border.border secondary-border
-        .tertiary-border.border tertiary-border
-        .error-border.border error-border
-        .inverse-primary-border.border inverse-primary-border
-        .primary-text primary-text
-        .secondary-text secondary-text
-        .tertiary-text tertiary-text
-        .error-text error-text
-        .inverse-primary-text inverse-primary-text
+        h5 Primary
+        .padding.primary primary
+        .padding.primary-container primary-container
+        .padding.border.primary-border primary-border
+        .padding.primary-text primary-text
+        h5 Secondary
+        .padding.secondary secondary
+        .padding.secondary-container secondary-container
+        .padding.border.secondary-border secondary-border
+        .padding.secondary-text secondary-text
+        h5 Tertiary
+        .padding.tertiary tertiary
+        .padding.tertiary-container tertiary-container
+        .padding.border.tertiary-border tertiary-border
+        .padding.tertiary-text tertiary-text
+        h5 Error
+        .padding.error error
+        .padding.error-container error-container
+        .padding.border.error-border error-border
+        .padding.error-text error-text
+        h5 Neutral
+        .padding.surface-dim surface-dim
+        .padding.surface-bright surface-bright
+        .padding.surface-variant surface-variant
+        .padding.inverse-surface inverse-surface
+        .padding.surface-container-lowest surface-container-lowest
+        .padding.surface-container-low surface-container-low
+        .padding.surface-container surface-container
+        .padding.surface-container-high surface-container-high
+        .padding.surface-container-highest surface-container-highest
+        .padding.surface surface
+        .padding.background background
+        h5 Others
+        .padding.inverse-primary inverse-primary
+        .padding.inverse-primary-border.border inverse-primary-border
+        .padding.inverse-primary-text inverse-primary-text
       .s12
         h5 Red
         .black-text.red1 red1
