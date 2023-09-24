@@ -204,7 +204,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
         <div>More</div>
       </a>
     </nav>
-    
+
     <nav class="bottom s">
       <a>
         <i>home</i>
@@ -219,7 +219,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
         <i>more_vert</i>
       </a>
     </nav>
-    
+
     <main class="responsive">
       <img src="https://www.beercss.com/beer-and-woman.jpg" class="responsive round">
       <h3>Welcome</h3>
@@ -235,7 +235,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 
 Complete documentation and examples available at:
 
-- **[Documentation](https://github.com/beercss/beercss/blob/main/docs/INDEX.md)**
+- **[Documentation](docs/INDEX.md)**
 - **[Codepen](https://codepen.io/collection/XydYMB)**
 - **[Homepage](https://www.beercss.com)**
 
@@ -243,7 +243,7 @@ Complete documentation and examples available at:
 
 Hi! We are really excited that you are interested in contributing to Beer CSS! Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
 
-https://github.com/beercss/beercss/blob/main/CONTRIBUTING.md
+[Beer CSS Contributing Guidelines](CONTRIBUTING.md)
 
 ## License
 
