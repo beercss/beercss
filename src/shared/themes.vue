@@ -85,7 +85,7 @@ onMounted(() => {
 })
 
 const sourceCode = () => {
-  return (modelValue.theme as any)[modelValue.theme.selected] || "";
+  return ((modelValue.theme as any)[modelValue.theme.selected] || "").replace(/\;/g, ";<br/>");
 };
 </script>
 

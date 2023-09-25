@@ -432,7 +432,7 @@ import data from "./data";
 import { onMounted } from "vue";
 
 const sourceCode = () => {
-  return (data.value.theme as any)[data.value.theme.selected] || "";
+  return ((data.value.theme as any)[data.value.theme.selected] || "").replace(/\;/g, ";<br/>");
 };
 </script>
 
