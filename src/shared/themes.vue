@@ -92,7 +92,7 @@ onMounted(() => {
 })
 
 const sourceCode = () => {
-  return ((modelValue.theme as any)[modelValue.theme.selected] || "").replace("--shadow:#000000;", "");
+  return (modelValue.theme as any)[modelValue.theme.selected] || "";
 };
 </script>
 
