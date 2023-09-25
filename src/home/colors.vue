@@ -8,18 +8,11 @@
     a.chip.circle(@click="sharedDomain.updateMode(data)")
       i {{ data.isDark ? "light_mode" : "dark_mode" }}
     a.chip.circle
+      i palette
+      input.absolute.top.left.right.bottom.opacity.front(type="color", @change="sharedDomain.updateTheme(data, $event)")
+    a.chip.circle
       i upload
-      input.absolute.top.left.right.bottom.opacity(type="file", @change="sharedDomain.updateTheme(data, $event)")
-    button.circle.small.transparent(@click="sharedDomain.updateTheme(data, '/wallpaper-1.jpg')")
-      img.responsive(:src="'/wallpaper-1.jpg'")
-    button.circle.small.transparent(@click="sharedDomain.updateTheme(data, '/wallpaper-2.jpg')")
-      img.responsive(:src="'/wallpaper-2.jpg'")
-    button.circle.small.transparent(@click="sharedDomain.updateTheme(data, '/wallpaper-3.jpg')")
-      img.responsive(:src="'/wallpaper-3.jpg'")
-    button.circle.small.transparent(@click="sharedDomain.updateTheme(data, '/wallpaper-4.jpg')")
-      img.responsive(:src="'/wallpaper-4.jpg'")
-    button.circle.small.transparent(@click="sharedDomain.updateTheme(data, '/wallpaper-5.jpg')")
-      img.responsive(:src="'/wallpaper-5.jpg'")
+      input.absolute.top.left.right.bottom.opacity.front(type="file", @change="sharedDomain.updateTheme(data, $event)")
     button.circle.small.red(@click="sharedDomain.updateTheme(data, '#f44336')")
     button.circle.small.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
     button.circle.small.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')")
