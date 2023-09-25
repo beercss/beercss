@@ -18,7 +18,6 @@
   inset-inline-start: 50%;
   inset-block-end: auto;
   inset-inline-end: auto;
-  transform: translate(-50%, -100%) scale(0.9);
   inline-size: auto;
   white-space: nowrap;
   font-weight: 500;
@@ -27,12 +26,27 @@
   line-height: normal;
 }
 
+:is(:not([dir]), [dir=ltr]) .tooltip {
+  transform: translate(-50%, -100%) scale(0.9);
+}
+
+[dir=rtl] .tooltip {
+  transform: translate(50%, -100%) scale(0.9);
+}
+
 .tooltip.left {
   inset-inline-start: 0;
   inset-block-start: 50%;
   inset-block-end: auto;
   inset-inline-end: auto;
+}
+
+:is(:not([dir]), [dir=ltr]) .tooltip.left {
   transform: translate(-100%, -50%) scale(0.9);
+}
+
+[dir=rtl] .tooltip.left {
+  transform: translate(100%, -50%) scale(0.9);
 }
 
 .tooltip.right {
@@ -40,7 +54,14 @@
   inset-block-start: 50%;
   inset-block-end: auto;
   inset-inline-start: auto;
+}
+
+:is(:not([dir]), [dir=ltr]) .tooltip.right {
   transform: translate(100%, -50%) scale(0.9);
+}
+
+[dir=rtl] .tooltip.right {
+  transform: translate(-100%, -50%) scale(0.9);
 }
 
 .tooltip.bottom {
@@ -48,7 +69,14 @@
   inset-inline-start: 50%;
   inset-block-start: auto;
   inset-inline-end: auto;
+}
+
+:is(:not([dir]), [dir=ltr]) .tooltip.bottom {
   transform: translate(-50%, 100%) scale(0.9);
+}
+
+[dir=rtl] .tooltip.bottom {
+  transform: translate(50%, 100%) scale(0.9);
 }
 
 .tooltip.small {
@@ -72,20 +100,40 @@
   transform: translate(-50%, -100%) scale(1);
 }
 
-:hover > .tooltip.left {
+:is(:not([dir]), [dir=ltr]) :hover > .tooltip {
+  transform: translate(-50%, -100%) scale(1);
+}
+
+[dir=rtl] :hover > .tooltip {
+  transform: translate(50%, -100%) scale(1);
+}
+
+:is(:not([dir]), [dir=ltr]) :hover > .tooltip.left {
   transform: translate(-100%, -50%) scale(1);
 }
 
-:hover > .tooltip.right {
+[dir=rtl] :hover > .tooltip.left {
   transform: translate(100%, -50%) scale(1);
 }
 
-:hover > .tooltip.bottom {
+:is(:not([dir]), [dir=ltr]) :hover > .tooltip.right {
+  transform: translate(100%, -50%) scale(1);
+}
+
+[dir=rtl] :hover > .tooltip.right {
+  transform: translate(-100%, -50%) scale(1);
+}
+
+:is(:not([dir]), [dir=ltr]) :hover > .tooltip.bottom {
   transform: translate(-50%, 100%) scale(1);
 }
 
+[dir=rtl] :hover > .tooltip.bottom {
+  transform: translate(50%, 100%) scale(1);
+}
+
 .tooltip.no-space {
-  ---space: 0rem;
+  ---space: 0;
 }
 
 .tooltip.medium-space {
@@ -120,22 +168,50 @@ menu:active ~ .tooltip,
 
 .vertical > .tooltip:not(.left, .right, .bottom) {
   inset-block-start: calc(50% + var(---space));
+}
+
+:is(:not([dir]), [dir=ltr]) .vertical > .tooltip:not(.left, .right, .bottom) {
   transform: translate(-50%, -100%) scale(1) rotate(90deg);
+}
+
+[dir=rtl] .vertical > .tooltip:not(.left, .right, .bottom) {
+  transform: translate(50%, -100%) scale(1) rotate(90deg);
 }
 
 .vertical > .tooltip.left {
   inset-inline-start: var(---space);
+}
+
+:is(:not([dir]), [dir=ltr]) .vertical > .tooltip.left {
   transform: translate(-100%, -50%) scale(1) rotate(90deg);
+}
+
+[dir=rtl] .vertical > .tooltip.left {
+  transform: translate(100%, -50%) scale(1) rotate(90deg);
 }
 
 .vertical > .tooltip.right {
   inset-inline-end: var(---space);
+}
+
+:is(:not([dir]), [dir=ltr]) .vertical > .tooltip.right {
   transform: translate(100%, -50%) scale(1) rotate(90deg);
+}
+
+[dir=rtl] .vertical > .tooltip.right {
+  transform: translate(-100%, -50%) scale(1) rotate(90deg);
 }
 
 .vertical > .tooltip.bottom {
   inset-block-end: calc(50% + var(---space));
+}
+
+:is(:not([dir]), [dir=ltr]) .vertical > .tooltip.bottom {
   transform: translate(-50%, 100%) scale(1) rotate(90deg);
+}
+
+[dir=rtl] .vertical > .tooltip.bottom {
+  transform: translate(50%, 100%) scale(1) rotate(90deg);
 }
 
 .slider > .tooltip {

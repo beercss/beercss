@@ -13,9 +13,16 @@
   inset-inline-start: auto;
   inset-block-end: auto;
   inset-inline-end: 0;
-  transform: translate(50%, -100%);
   block-size: 1.25rem;
   line-height: normal;
+}
+
+:is(:not([dir]), [dir=ltr]) .badge {
+  transform: translate(50%, -100%);
+}
+
+[dir=rtl] .badge {
+  transform: translate(-50%, -100%);
 }
 
 .badge.none {
@@ -33,7 +40,14 @@
   inset-inline-start: 50%;
   inset-block-end: auto;
   inset-inline-end: auto;
+}
+
+:is(:not([dir]), [dir=ltr]) .badge.top {
   transform: translate(-50%, -100%);
+}
+
+[dir=rtl] .badge.top {
+  transform: translate(50%, -100%);
 }
 
 .badge.bottom {
@@ -41,7 +55,14 @@
   inset-inline-start: 50%;
   inset-block-end: 0;
   inset-inline-end: auto;
+}
+
+:is(:not([dir]), [dir=ltr]) .badge.bottom {
   transform: translate(-50%, 100%);
+}
+
+[dir=rtl] .badge.bottom {
+  transform: translate(50%, 100%);
 }
 
 .badge.left {
@@ -49,7 +70,14 @@
   inset-inline-start: 0;
   inset-block-end: auto;
   inset-inline-end: auto;
+}
+
+:is(:not([dir]), [dir=ltr]) .badge.left {
   transform: translate(-100%, -50%);
+}
+
+[dir=rtl] .badge.left {
+  transform: translate(100%, -50%);
 }
 
 .badge.right {
@@ -57,7 +85,14 @@
   inset-inline-start: auto;
   inset-block-end: auto;
   inset-inline-end: 0;
+}
+
+:is(:not([dir]), [dir=ltr]) .badge.right {
   transform: translate(100%, -50%);
+}
+
+[dir=rtl] .badge.right {
+  transform: translate(-100%, -50%);
 }
 
 .badge.top.left {
@@ -65,7 +100,14 @@
   inset-inline-start: 0;
   inset-block-end: auto;
   inset-inline-end: auto;
+}
+
+:is(:not([dir]), [dir=ltr]) .badge.top.left {
   transform: translate(-50%, -100%);
+}
+
+[dir=rtl] .badge.top.left {
+  transform: translate(50%, -100%);
 }
 
 .badge.bottom.left {
@@ -73,7 +115,14 @@
   inset-inline-start: 0;
   inset-block-end: 0;
   inset-inline-end: auto;
+}
+
+:is(:not([dir]), [dir=ltr]) .badge.bottom.left {
   transform: translate(-50%, 100%);
+}
+
+[dir=rtl] .badge.bottom.left {
+  transform: translate(50%, 100%);
 }
 
 .badge.top.right {
@@ -81,7 +130,14 @@
   inset-inline-start: auto;
   inset-block-end: auto;
   inset-inline-end: 0;
+}
+
+:is(:not([dir]), [dir=ltr]) .badge.top.right {
   transform: translate(50%, -100%);
+}
+
+[dir=rtl] .badge.top.right {
+  transform: translate(-50%, -100%);
 }
 
 .badge.bottom.right {
@@ -89,8 +145,16 @@
   inset-inline-start: auto;
   inset-block-end: 0;
   inset-inline-end: 0;
+}
+
+:is(:not([dir]), [dir=ltr]) .badge.bottom.right {
   transform: translate(50%, 100%);
 }
+
+[dir=rtl] .badge.bottom.right {
+  transform: translate(-50%, 100%);
+}
+
 
 .badge.border {
   border-color: var(--error);

@@ -100,12 +100,12 @@
   inset-inline-end: auto;
 }
 
-*[dir=rtl] .field > :is(i) {
+[dir=rtl] .field > :is(i) {
   inset-inline-end: auto;
   inset-inline-start: 1rem;
 }
 
-*[dir=rtl] .field > :is(i):first-child {
+[dir=rtl] .field > :is(i):first-child {
   inset-inline-end: 1rem;
   inset-inline-start: auto;
 }
@@ -157,7 +157,7 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button,
 input[type=number] {
   appearance: none;
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 input[type=file] {
@@ -429,26 +429,23 @@ input[type=search]::-webkit-search-results-decoration {
   border-block-start: 0.125rem solid var(--primary);
 }
 
-
-
 .field.label.border:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
 .field.label.border:not(.fill) > select {
   clip-path: polygon(-1% -1%, 0.75rem -1%, 0.75rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 101% -1%, 101% 101%, -1% 101%);
 }
 
-*[dir=rtl] .field.label.border:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
-*[dir=rtl] .field.label.border:not(.fill) > select {
+[dir=rtl] .field.label.border:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
+[dir=rtl] .field.label.border:not(.fill) > select {
   clip-path: polygon(-1% -1%, 5rem -1%, 5rem 0.5rem, calc(100% - 0.75rem) 0.5rem, calc(100% - 0.75rem) -1%, 101% -1%, 101% 101%, -1% 101%);
 }
-
 
 .field.label.border.round:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
 .field.label.border.round:not(.fill) > select {
   clip-path: polygon(-1% -1%, 1.25rem -1%, 1.25rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -1%, 101% -1%, 101% 101%, -1% 101%);
 }
 
-*[dir=rtl] .field.label.border.round:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
-*[dir=rtl] .field.label.border.round:not(.fill) > select {
+[dir=rtl] .field.label.border.round:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
+[dir=rtl] .field.label.border.round:not(.fill) > select {
   clip-path: polygon(-1% -1%, 5rem -1%, 5rem 0.5rem, calc(100% - 1.25rem) 0.5rem, calc(100% - 1.25rem) -1%, 101% -1%, 101% 101%, -1% 101%);
 }
 

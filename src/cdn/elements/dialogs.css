@@ -17,8 +17,15 @@ dialog {
   overflow-inline: hidden;
   overflow-block: auto;
   transition: var(--speed3) all, 0s background-color;
-  transform: translate(-50%, -4rem);
   border-radius: 1rem;
+}
+
+:is(:not([dir]), [dir=ltr]) dialog {
+  transform: translate(-50%, -4rem);
+}
+
+[dir=rtl] dialog {
+  transform: translate(50%, -4rem);
 }
 
 dialog::backdrop {
@@ -43,10 +50,21 @@ dialog.large {
 dialog:is(.active, [open]) {
   opacity: 1;
   visibility: visible;
+}
+
+:is(:not([dir]), [dir=ltr]) dialog:is(.active, [open]) {
   transform: translate(-50%, 0);
 }
 
-dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
+[dir=rtl] dialog:is(.active, [open]) {
+  transform: translate(50%, 0);
+}
+
+:is(:not([dir]), [dir=ltr]) dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
+  transform: translate(0, 0);
+}
+
+[dir=rtl] dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
 }
 
@@ -61,7 +79,9 @@ dialog.top {
   min-inline-size: auto;
   max-block-size: 100%;
   transform: translateY(-100%);
-  border-radius: 0 0 1rem 1rem;
+  border-radius: unset;
+  border-end-start-radius: 1rem;
+  border-end-end-radius: 1rem;
 }
 
 dialog.left {
@@ -73,8 +93,17 @@ dialog.left {
   inline-size: auto;
   block-size: 100%;
   max-block-size: 100%;
+  border-radius: unset;
+  border-start-end-radius: 1rem;
+  border-end-end-radius: 1rem;
+}
+
+:is(:not([dir]), [dir=ltr]) dialog.left {
   transform: translateX(-100%);
-  border-radius: 0 1rem 1rem 0;
+}
+
+[dir=rtl] dialog.left {
+  transform: translateX(100%);
 }
 
 dialog.right {
@@ -86,8 +115,17 @@ dialog.right {
   inline-size: auto;
   block-size: 100%;
   max-block-size: 100%;
+  border-radius: unset;
+  border-start-start-radius: 1rem;
+  border-end-start-radius: 1rem;
+}
+
+:is(:not([dir]), [dir=ltr]) dialog.right {
   transform: translateX(100%);
-  border-radius: 1rem 0 0 1rem;
+}
+
+[dir=rtl] dialog.right {
+  transform: translateX(-100%);
 }
 
 dialog.bottom {
@@ -101,7 +139,9 @@ dialog.bottom {
   min-inline-size: auto;
   max-block-size: 100%;
   transform: translateY(100%);
-  border-radius: 1rem 1rem 0 0;
+  border-radius: unset;
+  border-start-start-radius: 1rem;
+  border-start-end-radius: 1rem;
 }
 
 dialog.max {

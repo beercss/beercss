@@ -147,13 +147,27 @@
   background-color: var(--primary);
   border-radius: 50% 50% 0;
   transition: var(--speed2) ease top, var(--speed2) ease opacity;
+}
+
+:is(:not([dir]), [dir=ltr]) .slider > .tooltip {
   transform: translate(-50%, -50%) rotate(45deg) !important;
+}
+
+[dir=rtl] .slider > .tooltip {
+  transform: translate(50%, -50%) rotate(45deg) !important;
 }
 
 .slider > .tooltip + .tooltip {
   inset-inline-start: auto;
   inset-inline-end: calc(100% - var(---start));
+}
+
+:is(:not([dir]), [dir=ltr]) .slider > .tooltip + .tooltip {
   transform: translate(50%, -50%) rotate(45deg) !important;
+}
+
+[dir=rtl] .slider > .tooltip + .tooltip {
+  transform: translate(-50%, -50%) rotate(45deg) !important;
 }
 
 .slider > .tooltip::before {

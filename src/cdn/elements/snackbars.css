@@ -1,6 +1,14 @@
-.snackbar {
+:is(:not([dir]), [dir=ltr]) .snackbar {
   ---transform: translate(-50%, 1rem);
+  transform: translate(-50%, 0);
+}
 
+[dir=rtl] .snackbar {
+  ---transform: translate(50%, 1rem);
+  transform: translate(50%, 0);
+}
+
+.snackbar {
   position: fixed;
   inset-block-start: auto;
   inset-block-end: 6rem;
@@ -17,7 +25,6 @@
   padding: 1rem;
   opacity: 1;
   cursor: pointer;
-  transform: translate(-50%, 0);
   text-align: start;
   align-items: center;
   border-radius: 0.25rem;
@@ -31,18 +38,29 @@
 
 .snackbar.active {
   visibility: visible;
-  animation: var(--speed2) to-snackbar;
 }
 
-.snackbar.active.top {
-  ---transform: translate(-50%, -1rem);
+:is(:not([dir]), [dir=ltr]) .snackbar.active {
+  animation: var(--speed2) to-snackbar-ltr;
+}
+
+[dir=rtl] .snackbar.active {
+  animation: var(--speed2) to-snackbar-rtl;
+}
+
+:is(:not([dir]), [dir=ltr]) .snackbar.active.top {
+  transform: translate(-50%, -1rem);
+}
+
+[dir=rtl] .snackbar.active.top {
+  transform: translate(50%, -1rem);
 }
 
 .snackbar > .max {
   flex: auto;
 }
 
-@keyframes to-snackbar {
+@keyframes to-snackbar-ltr {
   0% {
     opacity: 0;
     transform: var(---transform);
@@ -51,6 +69,18 @@
   100% {
     opacity: 1;
     transform: translate(-50%, 0);
+  }
+}
+
+@keyframes to-snackbar-rtl {
+  0% {
+    opacity: 0;
+    transform: var(---transform);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(50%, 0);
   }
 }
 
