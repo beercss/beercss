@@ -2,7 +2,7 @@ main.responsive {
   margin: 0 auto;
   max-inline-size: 75rem;
   padding: 0.5rem;
-  overflow-inline: hidden;
+  overflow-x: hidden;
   min-block-size: 100vh;
 }
 

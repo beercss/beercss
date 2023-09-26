@@ -14,8 +14,8 @@ dialog {
   min-inline-size: 20rem;
   max-inline-size: 100%;
   max-block-size: 80%;
-  overflow-inline: hidden;
-  overflow-block: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   transition: var(--speed3) all, 0s background-color;
   border-radius: 1rem;
 }
@@ -184,7 +184,7 @@ nav > dialog,
 nav.left > dialog {
   z-index: 0;
   text-align: start;
-  overflow-block: auto;
+  overflow-y: auto;
   background-color: inherit;
   padding: 1rem 1rem 1rem 5rem;
 }

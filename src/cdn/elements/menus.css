@@ -12,8 +12,8 @@ menu {
   inline-size: 100%;
   max-block-size: 50vh;
   max-inline-size: none !important;
-  overflow-inline: hidden;
-  overflow-block: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-size: 0.875rem;
   font-weight: normal;
   text-transform: none;

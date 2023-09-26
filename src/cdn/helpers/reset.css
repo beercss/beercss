@@ -12,7 +12,7 @@
 body {
   color: var(--on-background);
   background-color: var(--body);
-  overflow-inline: hidden;
+  overflow-x: hidden;
 }
 
 label {
