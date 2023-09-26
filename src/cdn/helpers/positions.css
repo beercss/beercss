@@ -24,7 +24,14 @@
 
 .center {
   inset-inline-start: 50%;
+}
+
+:is(:not([dir]), [dir=ltr]) .center {
   transform: translateX(-50%);
+}
+
+[dir=rtl] .center {
+  transform: translateX(50%);
 }
 
 .middle {
@@ -32,6 +39,10 @@
   transform: translateY(-50%);
 }
 
-.middle.center {
+:is(:not([dir]), [dir=ltr]) .middle.center {
   transform: translate(-50%, -50%);
+}
+
+[dir=rtl] .middle.center {
+  transform: translate(50%, -50%);
 }

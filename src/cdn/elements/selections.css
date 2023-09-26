@@ -90,8 +90,9 @@
   transform: translate(-3rem, -50%) scale(0.6);
 }
 
-[dir=rtl] .switch > span::before, [dir=rtl] .switch.icon > span > i {
-  transform: translate(3rem, -50%) scale(0.6);
+[dir=rtl] .switch > span::before,
+[dir=rtl] .switch.icon > span > i {
+  transform: translate(0.25rem, -50%) scale(0.6);
 }
 
 :is(:not([dir]), [dir="ltr"]) .switch.icon > span > i {
@@ -99,7 +100,7 @@
 }
 
 [dir=rtl] .switch.icon > span > i {
-  transform: translate(3rem, -50%) scale(1);
+  transform: translate(0.25rem, -50%) scale(1);
 }
 
 .checkbox > span::before {
@@ -167,7 +168,7 @@
 
 [dir=rtl] .switch > input:checked + span::before,
 [dir=rtl] .switch.icon > input:checked + span > i {
-  transform: translate(1.75rem, -50%) scale(1);
+  transform: translate(1.5rem, -50%) scale(1);
 }
 
 :is(.checkbox, .radio, .switch) > input:disabled + span {
