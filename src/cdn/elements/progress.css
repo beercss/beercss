@@ -3,7 +3,7 @@ progress {
   inline-size: 100%;
   block-size: 0.5rem;
   color: var(--primary);
-  background: var(--surface-variant);
+  background: var(--surface-container-highest);
   border-radius: 0;
   flex: none;
   border: none;

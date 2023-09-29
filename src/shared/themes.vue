@@ -1,5 +1,5 @@
 <template lang="pug">
-dialog.medium.no-scroll(:id="id", :class="{ insetInlineStart: position === 'left', insetInlineEnd: position === 'right' }")
+dialog.medium.no-scroll(:id="id", :class="{ left: position === 'left', right: position === 'right' }")
   slot
   header.fixed
     nav(v-if="!data.showCssVariables")
@@ -8,8 +8,6 @@ dialog.medium.no-scroll(:id="id", :class="{ insetInlineStart: position === 'left
           span Themes
           a.chip.circle(@click="data.showCssVariables=true")
             i code
-      button.circle.transparent(@click="sharedDomain.updateMode(data)")
-        i {{ data.isDark ? "light_mode" : "dark_mode" }}
       button.circle.transparent(:data-ui="'#' + id")
         i close
     nav(v-if="data.showCssVariables")
@@ -20,40 +18,35 @@ dialog.medium.no-scroll(:id="id", :class="{ insetInlineStart: position === 'left
         i close
   div(v-if="!data.showCssVariables")
     nav.wrap
-      button.round.square.transparent.extra(@click="sharedDomain.updateTheme(data, '/wallpaper-1.jpg')")
-        img.responsive(:src="'/wallpaper-1.jpg'")
-      button.round.square.transparent.extra(@click="sharedDomain.updateTheme(data, '/wallpaper-2.jpg')")
-        img.responsive(:src="'/wallpaper-2.jpg'")
-      button.round.square.transparent.extra(@click="sharedDomain.updateTheme(data, '/wallpaper-3.jpg')")
-        img.responsive(:src="'/wallpaper-3.jpg'")
-      button.round.square.transparent.extra(@click="sharedDomain.updateTheme(data, '/wallpaper-4.jpg')")
-        img.responsive(:src="'/wallpaper-4.jpg'")
-      button.round.square.transparent.extra(@click="sharedDomain.updateTheme(data, '/wallpaper-5.jpg')")
-        img.responsive(:src="'/wallpaper-5.jpg'")
-      button.round.square.extra
+      a.chip.circle.small(@click="sharedDomain.updateMode(data)")
+        i {{ data.isDark ? "light_mode" : "dark_mode" }}
+      a.chip.circle
+        i palette
+        input.absolute.top.left.right.bottom.opacity.front(type="color", @change="sharedDomain.updateTheme(data, $event)")
+      a.chip.circle
         i upload
-        input.absolute.top.left.right.bottom.opacity(type="file", @change="sharedDomain.updateTheme(data, $event)")
-      button.round.square.extra.red(@click="sharedDomain.updateTheme(data, '#f44336')")
-      button.round.square.extra.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
-      button.round.square.extra.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')")
-      button.round.square.extra.deep-purple(@click="sharedDomain.updateTheme(data, '#673ab7')")
-      button.round.square.extra.indigo(@click="sharedDomain.updateTheme(data, '#3f51b5')")
-      button.round.square.extra.blue(@click="sharedDomain.updateTheme(data, '#2196f3')")
-      button.round.square.extra.light-blue(@click="sharedDomain.updateTheme(data, '#03a9f4')")
-      button.round.square.extra.cyan(@click="sharedDomain.updateTheme(data, '#00bcd4')")
-      button.round.square.extra.teal(@click="sharedDomain.updateTheme(data, '#009688')")
-      button.round.square.extra.green(@click="sharedDomain.updateTheme(data, '#4caf50')")
-      button.round.square.extra.light-green(@click="sharedDomain.updateTheme(data, '#8bc34a')")
-      button.round.square.extra.lime(@click="sharedDomain.updateTheme(data, '#cddc39')")
-      button.round.square.extra.yellow(@click="sharedDomain.updateTheme(data, '#ffeb3b')")
-      button.round.square.extra.amber(@click="sharedDomain.updateTheme(data, '#ffc107')")
-      button.round.square.extra.orange(@click="sharedDomain.updateTheme(data, '#ff9800')")
-      button.round.square.extra.deep-orange(@click="sharedDomain.updateTheme(data, '#ff5722')")
-      button.round.square.extra.brown(@click="sharedDomain.updateTheme(data, '#795548')")
-      button.round.square.extra.grey(@click="sharedDomain.updateTheme(data, '#9e9e9e')")
-      button.round.square.extra.blue-grey(@click="sharedDomain.updateTheme(data, '#607d8b')")
-      button.round.square.extra.black(@click="sharedDomain.updateTheme(data, '#000000')")
-      button.round.square.extra.white(@click="sharedDomain.updateTheme(data, '#ffffff')")
+        input.absolute.top.left.right.bottom.opacity.front(type="file", @change="sharedDomain.updateTheme(data, $event)")
+      button.circle.small.red(@click="sharedDomain.updateTheme(data, '#f44336')")
+      button.circle.small.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
+      button.circle.small.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')")
+      button.circle.small.deep-purple(@click="sharedDomain.updateTheme(data, '#673ab7')")
+      button.circle.small.indigo(@click="sharedDomain.updateTheme(data, '#3f51b5')")
+      button.circle.small.blue(@click="sharedDomain.updateTheme(data, '#2196f3')")
+      button.circle.small.light-blue(@click="sharedDomain.updateTheme(data, '#03a9f4')")
+      button.circle.small.cyan(@click="sharedDomain.updateTheme(data, '#00bcd4')")
+      button.circle.small.teal(@click="sharedDomain.updateTheme(data, '#009688')")
+      button.circle.small.green(@click="sharedDomain.updateTheme(data, '#4caf50')")
+      button.circle.small.light-green(@click="sharedDomain.updateTheme(data, '#8bc34a')")
+      button.circle.small.lime(@click="sharedDomain.updateTheme(data, '#cddc39')")
+      button.circle.small.yellow(@click="sharedDomain.updateTheme(data, '#ffeb3b')")
+      button.circle.small.amber(@click="sharedDomain.updateTheme(data, '#ffc107')")
+      button.circle.small.orange(@click="sharedDomain.updateTheme(data, '#ff9800')")
+      button.circle.small.deep-orange(@click="sharedDomain.updateTheme(data, '#ff5722')")
+      button.circle.small.brown(@click="sharedDomain.updateTheme(data, '#795548')")
+      button.circle.small.grey(@click="sharedDomain.updateTheme(data, '#9e9e9e')")
+      button.circle.small.blue-grey(@click="sharedDomain.updateTheme(data, '#607d8b')")
+      button.circle.small.black(@click="sharedDomain.updateTheme(data, '#000000')")
+      button.circle.small.white(@click="sharedDomain.updateTheme(data, '#ffffff')")
   div(v-if="data.showCssVariables")
     nav
       label.radio
@@ -69,6 +62,7 @@ dialog.medium.no-scroll(:id="id", :class="{ insetInlineStart: position === 'left
 </template>
 
 <script setup lang="ts">
+import { onMounted } from "vue";
 import sharedDomain from "./domain";
 
 export interface IProps {
@@ -85,8 +79,13 @@ const {
 
 const data = modelValue;
 
+onMounted(() => {
+  if (!modelValue.theme || !modelValue.theme.light || !modelValue.theme.dark || !modelValue.theme.selected)
+    sharedDomain.updateTheme(modelValue, null);
+})
+
 const sourceCode = () => {
-  return (data.theme[data.theme.selected] || "").replace("--shadow:#000000;", "");
+  return ((modelValue.theme as any)[modelValue.theme.selected] || "").replace(/\;/g, ";<br/>");
 };
 </script>
 

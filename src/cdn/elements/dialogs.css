@@ -6,7 +6,7 @@ dialog {
   position: fixed;
   box-shadow: var(--elevate2);
   color: var(--on-surface);
-  background-color: var(--surface);
+  background-color: var(--surface-container-high);
   padding: 1rem;
   z-index: 100;
   inset-inline-start: 50%;
@@ -96,6 +96,8 @@ dialog.left {
   border-radius: unset;
   border-start-end-radius: 1rem;
   border-end-end-radius: 1rem;
+  border-radius: 0 1rem 1rem 0;
+  background-color: var(--surface);
 }
 
 :is(:not([dir]), [dir=ltr]) dialog.left {
@@ -118,6 +120,8 @@ dialog.right {
   border-radius: unset;
   border-start-start-radius: 1rem;
   border-end-start-radius: 1rem;
+  border-radius: 1rem 0 0 1rem;
+  background-color: var(--surface);
 }
 
 :is(:not([dir]), [dir=ltr]) dialog.right {
@@ -154,6 +158,7 @@ dialog.max {
   max-inline-size: 100%;
   max-block-size: 100%;
   transform: translateY(4rem);
+  background-color: var(--surface);
 }
 
 dialog.small:is(.left, .right) {

@@ -2,7 +2,7 @@ table {
   inline-size: 100%;
   border-spacing: 0;
   font-size: 0.875rem;
-  color: var(--on-background);
+  color: var(--on-surface);
   text-align: start;
 }
 

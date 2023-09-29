@@ -57,7 +57,6 @@ import { redirect } from "../shared/router";
 
 onMounted(() => {
   document.title = "Material Design 3 - Beer CSS";
-  sharedDomain.initTheme(data.value);
   data.value.showPage = true;
 });
 </script>

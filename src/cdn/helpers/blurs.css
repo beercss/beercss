@@ -3,7 +3,7 @@
   ---blur: 1rem;
   -webkit-backdrop-filter: blur(var(---blur));
   backdrop-filter: blur(var(---blur));
-  color: var(--on-background);
+  color: var(--on-surface);
   background-color: rgb(255 255 255 / 0.5);
 }
 

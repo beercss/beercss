@@ -76,7 +76,6 @@ nav:is(.left, .right, .top, .bottom) {
   border: 0;
   position: fixed;
   color: var(--on-surface);
-  background-color: var(--surface);
   transform: none;
   z-index: 100;
   inset-inline-start: 0;
@@ -89,37 +88,34 @@ nav:is(.left, .right, .top, .bottom) {
   padding: 0.5rem;
 }
 
-nav.left,
-nav.right {
+nav:is(.left, .right) {
   inline-size: 5rem;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: var(--surface);
 }
 
 nav:is(.top, .bottom) {
   block-size: 5rem;
+  justify-content: center;
+  flex-direction: row;
+  background-color: var(--surface-container);
 }
 
 nav.top {
   inset-block-end: auto;
-  justify-content: center;
-  flex-direction: row;
 }
 
 nav.left {
   inset-inline-end: auto;
-  justify-content: flex-start;
-  flex-direction: column;
 }
 
 nav.right {
   inset-inline-start: auto;
-  justify-content: flex-start;
-  flex-direction: column;
 }
 
 nav.bottom {
   inset-block-start: auto;
-  justify-content: center;
-  flex-direction: row;
 }
 
 nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip, img, video, svg) {

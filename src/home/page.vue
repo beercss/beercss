@@ -256,11 +256,11 @@ div
             .medium-space
             h5 From CDN
             pre.scroll.large-padding.fill(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.3.5/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.4.0/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.3.5/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.0/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.0.1/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.0.5/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
             h5 From NPM
             pre.scroll.large-padding.fill(style="font-family: courier new")
@@ -505,7 +505,6 @@ import typography from "./typography.vue";
 
 onMounted(() => {
   document.title = "Beer CSS - Build material design in record time, without stress for devs";
-  sharedDomain.initTheme(data.value);
 
   setTimeout(() => {
     data.value.isHorizontal = window.outerWidth <= 600;

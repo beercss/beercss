@@ -26,7 +26,7 @@
 :is(.checkbox, .radio, .switch) > span {
   display: inline-flex;
   align-items: center;
-  color: var(--on-background);
+  color: var(--on-surface);
   font-size: 0.875rem;
 }
 
@@ -125,13 +125,13 @@
   font-variation-settings: unset !important;
 }
 
-:is(.checkbox, .radio) > input:is(:focus, :hover) + span::before {
+:is(.checkbox, .radio) > input:not(:disabled):is(:focus, :hover) + span::before {
   background-color: var(--active);
   box-shadow: 0 0 0 0.5rem var(--active);
 }
 
-.switch > input:is(:focus, :hover) + span::before,
-.switch.icon > input:is(:focus, :hover) + span > i {
+.switch > input:not(:disabled):is(:focus, :hover) + span::before,
+.switch.icon > input:not(:disabled):is(:focus, :hover) + span > i {
   box-shadow: 0 0 0 0.5rem var(--active);
 }
 

@@ -3,7 +3,7 @@ menu {
   visibility: hidden;
   position: absolute;
   box-shadow: var(--elevate2);
-  background-color: var(--surface);
+  background-color: var(--surface-container);
   z-index: 11;
   inset-block-start: auto;
   inset-block-end: 0;

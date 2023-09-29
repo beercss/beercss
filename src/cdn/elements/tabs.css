@@ -1,7 +1,7 @@
 .tabs {
   display: flex;
   white-space: nowrap;
-  border-block-end: 0.0625rem solid var(--outline);
+  border-block-end: 0.0625rem solid var(--surface-variant);
 }
 
 .tabs.min {
@@ -21,7 +21,7 @@
   display: flex;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--on-background);
+  color: var(--on-surface-variant);
   padding: 0.5rem 1rem;
   border-block-end: 0.125rem solid transparent;
   text-align: center;

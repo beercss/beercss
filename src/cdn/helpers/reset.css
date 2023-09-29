@@ -10,8 +10,8 @@
 }
 
 body {
-  color: var(--on-background);
-  background-color: var(--body);
+  color: var(--on-surface);
+  background-color: var(--surface);
   overflow-x: hidden;
 }
 

@@ -46,9 +46,9 @@ main.responsive
     label.front
       span Label
       a
-        i info 
+        i info
         .tooltip Tooltip
-      a 
+      a
         img.circle(:src="'/favicon.png'")
         .tooltip Tooltip
       a
