@@ -6,7 +6,7 @@
   inset-inline-start: 0;
   inline-size: 100%;
   block-size: 100%;
-  color: var(--on-background);
+  color: var(--on-surface);
   background-color: var(--overlay);
   z-index: 100;
   transition: var(--speed3) all, 0s background-color;

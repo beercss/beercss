@@ -21,7 +21,7 @@
   display: flex;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--on-background);
+  color: var(--on-surface-variant);
   padding: 0.5rem 1rem;
   border-block-end: 0.125rem solid transparent;
   text-align: center;

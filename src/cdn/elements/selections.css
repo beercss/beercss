@@ -26,7 +26,7 @@
 :is(.checkbox, .radio, .switch) > span {
   display: inline-flex;
   align-items: center;
-  color: var(--on-background);
+  color: var(--on-surface);
   font-size: 0.875rem;
 }
 
