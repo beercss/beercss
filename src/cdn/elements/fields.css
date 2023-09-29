@@ -147,6 +147,11 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.field.border > input[type=color] {
+  clip-path: polygon(-1% -0.15%, 0.75rem -0.15%, 0.75rem 0.15rem, calc(100% - 5rem) 0.15rem, calc(100% - 5rem) -0.25%, 101% -0.15%, 101% 101%, -0.15% 101%) !important;
+  padding-block-start: 0.5rem;
+}
+
 input[type=file] {
   position: absolute;
   top: 0;
