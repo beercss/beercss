@@ -394,7 +394,7 @@
 
 &lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/beercss@3.4.0/dist/cdn/beer.min.js&quot;&gt;&lt;/script&gt;
 
-&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.0.4/dist/cdn/material-dynamic-colors.min.js&quot;&gt;&lt;/script&gt;</pre><div class="medium-space"></div><h5>From NPM</h5><pre class="scroll large-padding fill" style="font-family:courier new;">// installing
+&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.0.5/dist/cdn/material-dynamic-colors.min.js&quot;&gt;&lt;/script&gt;</pre><div class="medium-space"></div><h5>From NPM</h5><pre class="scroll large-padding fill" style="font-family:courier new;">// installing
 npm i beercss
 npm i material-dynamic-colors
 

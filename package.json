@@ -14,7 +14,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "material-dynamic-colors": "^1.0.4",
+    "material-dynamic-colors": "^1.0.5",
     "vue": "^3.2.31"
   },
   "devDependencies": {
