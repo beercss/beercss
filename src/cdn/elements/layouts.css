@@ -7,31 +7,31 @@
 }
 
 :is(.absolute, .fixed).left.right {
-  width: auto;
+  inline-size: auto;
 }
 
 :is(.absolute, .fixed).left.right.small {
-  height: 20rem;
+  block-size: 20rem;
 }
 
 :is(.absolute, .fixed).left.right.medium {
-  height: 28rem;
+  block-size: 28rem;
 }
 
 :is(.absolute, .fixed).left.right.large {
-  height: 44rem;
+  block-size: 44rem;
 }
 
 :is(.absolute, .fixed).top.bottom.small {
-  width: 20rem;
+  inline-size: 20rem;
 }
 
 :is(.absolute, .fixed).top.bottom.medium {
-  width: 28rem;
+  inline-size: 28rem;
 }
 
 :is(.absolute, .fixed).top.bottom.large {
-  width: 44rem;
+  inline-size: 44rem;
 }
 
 header,
@@ -42,10 +42,10 @@ footer {
 
 :is(header, footer, menu > *).fixed {
   position: sticky;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
   z-index: 12;
   background-color: inherit;
 }
@@ -53,12 +53,12 @@ footer {
 :is(header, footer).fixed::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-end: 0;
   margin: 0 -0.5rem;
-  max-width: 100%;
+  max-inline-size: 100%;
   background-color: inherit;
 }
 
@@ -69,8 +69,8 @@ footer {
 
 article > :is(header, footer) {
   padding: inherit;
-  padding-left: 0;
-  padding-right: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
   z-index: 11 !important;
 }
 

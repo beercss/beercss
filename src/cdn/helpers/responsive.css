@@ -1,6 +1,6 @@
 .responsive {
-  width: -webkit-fill-available;
-  width: -moz-available;
+  inline-size: -webkit-fill-available;
+  inline-size: -moz-available;
 }
 
 @media only screen and (max-width: 600px) {

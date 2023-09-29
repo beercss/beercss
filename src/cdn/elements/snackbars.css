@@ -1,13 +1,21 @@
-.snackbar {
+:is(:not([dir]), [dir=ltr]) .snackbar {
   ---transform: translate(-50%, 1rem);
+  transform: translate(-50%, 0);
+}
 
+[dir=rtl] .snackbar {
+  ---transform: translate(50%, 1rem);
+  transform: translate(50%, 0);
+}
+
+.snackbar {
   position: fixed;
-  top: auto;
-  bottom: 6rem;
-  left: 50%;
-  right: auto;
-  width: 80%;
-  height: auto;
+  inset-block-start: auto;
+  inset-block-end: 6rem;
+  inset-inline-start: 50%;
+  inset-inline-end: auto;
+  inline-size: 80%;
+  block-size: auto;
   z-index: 200;
   visibility: hidden;
   display: flex;
@@ -17,32 +25,42 @@
   padding: 1rem;
   opacity: 1;
   cursor: pointer;
-  transform: translate(-50%, 0);
-  text-align: left;
+  text-align: start;
   align-items: center;
   border-radius: 0.25rem;
   gap: 0.5rem;
 }
 
 .snackbar.top {
-  top: 6rem;
-  bottom: auto;
+  inset-block-start: 6rem;
+  inset-block-end: auto;
 }
 
 .snackbar.active {
   visibility: visible;
-  animation: var(--speed2) to-snackbar;
 }
 
-.snackbar.active.top {
-  ---transform: translate(-50%, -1rem);
+:is(:not([dir]), [dir=ltr]) .snackbar.active {
+  animation: var(--speed2) to-snackbar-ltr;
+}
+
+[dir=rtl] .snackbar.active {
+  animation: var(--speed2) to-snackbar-rtl;
+}
+
+:is(:not([dir]), [dir=ltr]) .snackbar.active.top {
+  transform: translate(-50%, -1rem);
+}
+
+[dir=rtl] .snackbar.active.top {
+  transform: translate(50%, -1rem);
 }
 
 .snackbar > .max {
   flex: auto;
 }
 
-@keyframes to-snackbar {
+@keyframes to-snackbar-ltr {
   0% {
     opacity: 0;
     transform: var(---transform);
@@ -54,8 +72,20 @@
   }
 }
 
+@keyframes to-snackbar-rtl {
+  0% {
+    opacity: 0;
+    transform: var(---transform);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(50%, 0);
+  }
+}
+
 @media only screen and (min-width: 993px) {
   .snackbar {
-    width: 40%;
+    inline-size: 40%;
   }
 }

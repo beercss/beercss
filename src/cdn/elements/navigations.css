@@ -9,13 +9,13 @@ nav,
 
 :not(.divider, .small-divider, .medium-divider, .large-divider) + nav:not(.left, .right, .top, .bottom),
 :not(.divider, .small-divider, .medium-divider, .large-divider) + .row:not(a) {
-  margin-top: 1rem;
+  margin-block-start: 1rem;
 }
 
 :is(nav, .row) > *,
 :is(nav, .row) > :not(.tooltip, menu) > * {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 nav > *,
@@ -30,7 +30,7 @@ nav > *,
 }
 
 :is(nav, .row).no-space > .border + .border {
-  border-left: 0;
+  border-inline-start: 0;
 }
 
 :is(nav, .row).medium-space {
@@ -53,15 +53,15 @@ nav.wrap,
 }
 
 header > :is(nav, .row) {
-  min-height: 4rem;
+  min-block-size: 4rem;
 }
 
 footer > :is(nav, .row) {
-  min-height: 5rem;
+  min-block-size: 5rem;
 }
 
 :is(nav, .row) > .border.no-margin + .border.no-margin {
-  border-left: 0;
+  border-inline-start: 0;
 }
 
 a.row.wave {
@@ -78,49 +78,49 @@ nav:is(.left, .right, .top, .bottom) {
   color: var(--on-surface);
   transform: none;
   z-index: 100;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  height: auto;
-  width: auto;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  block-size: auto;
+  inline-size: auto;
   text-align: center;
   padding: 0.5rem;
 }
 
 nav:is(.left, .right) {
-  width: 5rem;
+  inline-size: 5rem;
   justify-content: flex-start;
   flex-direction: column;
   background-color: var(--surface);
 }
 
 nav:is(.top, .bottom) {
-  height: 5rem;
+  block-size: 5rem;
   justify-content: center;
   flex-direction: row;
   background-color: var(--surface-container);
 }
 
 nav.top {
-  bottom: auto;
+  inset-block-end: auto;
 }
 
 nav.left {
-  right: auto;
+  inset-inline-end: auto;
 }
 
 nav.right {
-  left: auto;
+  inset-inline-start: auto;
 }
 
 nav.bottom {
-  top: auto;
+  inset-block-start: auto;
 }
 
 nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip, img, video, svg) {
-  min-width: 3.5rem;
-  min-height: 3.5rem;
+  min-inline-size: 3.5rem;
+  min-block-size: 3.5rem;
   text-align: center;
   display: flex;
   z-index: 101;
@@ -128,21 +128,21 @@ nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip, img, video,
 }
 
 nav:is(.left, .right) > a:not(button, .button, .chip, img, video, svg) {
-  width: auto;
+  inline-size: auto;
 }
 
 nav:is(.top, .bottom) > a:not(button, .button, .chip, img, video, svg) {
-  height: auto;
-  width: 3.5rem;
+  block-size: auto;
+  inline-size: 3.5rem;
 }
 
 nav:is(.left, .right, .top, .bottom)::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inset-block-end: 0;
   background-color: inherit;
   z-index: 101;
   border-radius: inherit;
@@ -167,19 +167,19 @@ nav:is(.left, .right, .top, .bottom) > a:not(button, .button, .chip):is(:hover, 
 }
 
 nav.left > dialog {
-  padding-left: 5.5rem;
+  padding-inline-start: 5.5rem;
 }
 
 nav.right > dialog {
-  padding-right: 5.5rem;
+  padding-inline-end: 5.5rem;
 }
 
 nav.top > dialog {
-  padding-top: 5.5rem;
+  padding-block-start: 5.5rem;
 }
 
 nav.bottom > dialog {
-  padding-bottom: 5.5rem;
+  padding-block-end: 5.5rem;
 }
 
 nav.left-align,
@@ -198,15 +198,15 @@ nav.middle-align {
 }
 
 nav:not(.left, .right) > .space {
-  width: 0.5rem;
+  inline-size: 0.5rem;
 }
 
 nav:not(.left, .right) > .medium-space {
-  width: 1rem;
+  inline-size: 1rem;
 }
 
 nav:not(.left, .right) > .large-space {
-  width: 1.5rem;
+  inline-size: 1.5rem;
 }
 
 @media only screen and (max-width: 600px) {

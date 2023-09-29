@@ -516,8 +516,8 @@ onMounted(() => {
 <style>
 #logo {
   display: none;
-  max-width: 100%;
-  width: 32rem;
+  max-inline-size: 100%;
+  inline-size: 32rem;
 }
 
 #logo.active {
@@ -526,7 +526,7 @@ onMounted(() => {
 }
 
 #container-logo {
-  height: 16rem;
+  block-size: 16rem;
 }
 
 dialog#dialog-colors .s12 > div {
@@ -542,18 +542,18 @@ dialog#dialog-colors .s12 > .border {
 }
 
 .logo-template {
-  width: auto;
-  height: 1.5rem;
+  inline-size: auto;
+  block-size: 1.5rem;
 }
 
 .logo-codepen {
-  width: auto;
-  height: 1.25rem;
+  inline-size: auto;
+  block-size: 1.25rem;
 }
 
 .logo-support {
-  width: auto;
-  height: 100rem;
+  inline-size: auto;
+  block-size: 100rem;
 }
 
 #grids .grid > * {

@@ -22,12 +22,20 @@
   ---transform: translate(0, 4rem);
 }
 
-.page.active.left {
+:is(:not([dir]), [dir=ltr]) .page.active.left {
   ---transform: translate(-4rem, 0);
 }
 
-.page.active.right {
+[dir=rtl] .page.active.left {
   ---transform: translate(4rem, 0);
+}
+
+:is(:not([dir]), [dir=ltr]) .page.active.right {
+  ---transform: translate(4rem, 0);
+}
+
+[dir=rtl] .page.active.right {
+  ---transform: translate(-4rem, 0);
 }
 
 @keyframes to-page {

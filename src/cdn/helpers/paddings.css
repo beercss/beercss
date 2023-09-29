@@ -40,20 +40,20 @@
 
 .left-padding,
 .horizontal-padding {
-  padding-left: var(---padding) !important;
+  padding-inline-start: var(---padding) !important;
 }
 
 .right-padding,
 .horizontal-padding {
-  padding-right: var(---padding) !important;
+  padding-inline-end: var(---padding) !important;
 }
 
 .top-padding,
 .vertical-padding {
-  padding-top: var(---padding) !important;
+  padding-block-start: var(---padding) !important;
 }
 
 .bottom-padding,
 .vertical-padding {
-  padding-bottom: var(---padding) !important;
+  padding-block-end: var(---padding) !important;
 }
