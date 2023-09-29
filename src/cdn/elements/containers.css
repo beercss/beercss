@@ -1,88 +1,88 @@
 main.responsive {
   margin: 0 auto;
-  max-width: 75rem;
+  max-inline-size: 75rem;
   padding: 0.5rem;
   overflow-x: hidden;
-  min-height: 100vh;
+  min-block-size: 100vh;
 }
 
 main.responsive.max {
-  max-width: 100%;
+  max-inline-size: 100%;
 }
 
 nav.bottom:not(.s, .m, .l) ~ .responsive:not(header) {
-  padding-bottom: 5rem;
+  padding-block-end: 5rem;
 }
 
 nav.top:not(.s, .m, .l) ~ .responsive:not(footer) {
-  padding-top: 5rem;
+  padding-block-start: 5rem;
 }
 
 nav.left:not(.s, .m, .l) ~ .responsive {
-  padding-left: 6rem;
+  padding-inline-start: 6rem;
 }
 
 nav.right:not(.s, .m, .l) ~ .responsive {
-  padding-right: 6rem;
+  padding-inline-end: 6rem;
 }
 
 @media only screen and (max-width: 600px) {
   nav.s.bottom ~ .responsive:not(header) {
-    padding-bottom: 5rem;
+    padding-block-end: 5rem;
   }
 
   nav.s.top ~ .responsive:not(footer) {
-    padding-top: 5rem;
+    padding-block-start: 5rem;
   }
 
   nav.s.left ~ .responsive {
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
   }
 
   nav.s.right ~ .responsive {
-    padding-right: 6rem;
+    padding-inline-end: 6rem;
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
   nav.m.bottom ~ .responsive:not(header) {
-    padding-bottom: 5rem;
+    padding-block-end: 5rem;
   }
 
   nav.m.top ~ .responsive:not(footer) {
-    padding-top: 5rem;
+    padding-block-start: 5rem;
   }
 
   nav.m.left ~ .responsive {
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
   }
 
   nav.m.right ~ .responsive {
-    padding-right: 6rem;
+    padding-inline-end: 6rem;
   }
 }
 
 @media only screen and (min-width: 993px) {
   nav.l.bottom ~ .responsive:not(header) {
-    padding-bottom: 5rem;
+    padding-block-end: 5rem;
   }
 
   nav.l.top ~ .responsive:not(footer) {
-    padding-top: 5rem;
+    padding-block-start: 5rem;
   }
 
   nav.l.left ~ .responsive {
-    padding-left: 6rem;
+    padding-inline-start: 6rem;
   }
 
   nav.l.right ~ .responsive {
-    padding-right: 6rem;
+    padding-inline-end: 6rem;
   }
 }
 
 @media only screen and (max-width: 600px) {
   main.responsive {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-inline-end: 0.5rem;
+    padding-inline-start: 0.5rem;
   }
 }

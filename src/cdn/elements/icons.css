@@ -18,10 +18,10 @@ i {
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  width: var(---size);
-  min-width: var(---size);
-  height: var(---size);
-  min-height: var(---size);
+  inline-size: var(---size);
+  min-inline-size: var(---size);
+  block-size: var(---size);
+  min-block-size: var(---size);
   box-sizing: content-box;
   line-height: normal;
 }
@@ -54,19 +54,19 @@ a.row:is(:hover, :focus) > i,
 }
 
 i > :is(img, svg) {
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   background-size: 100%;
   border-radius: inherit;
   position: absolute;
-  top: 0;
-  left: 0;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   padding: inherit;
 }
 
 i[class*="fa-"] {
   font-size: calc(var(---size) * 0.85);
   line-height: normal;
-  height: auto;
-  min-height: auto;
+  block-size: auto;
+  min-block-size: auto;
 }
