@@ -57,8 +57,8 @@ let theme = await ui("theme");
 
 // The returned theme is
 {
-  dark: "--primary: #cfbcff;--on-primary: #381e72;--primary-container: #4f378a;--on-primary-container: #e9ddff;--secondary: #cbc2db;--on-secondary: #332d41;--secondary-container: #4a4458;--on-secondary-container: #e8def8;--tertiary: #efb8c8;--on-tertiary: #4a2532;--tertiary-container: #633b48;--on-tertiary-container: d9e3;--error: #ffb4ab;--on-error: #690005;--error-container: #93000a;--on-error-container: #ffb4ab;--background: #1c1b1e;--on-background: #e6e1e6;--surface: #1c1b1e;--on-surface: #e6e1e6;--surface-variant: #49454e;--on-surface-variant: #cac4cf;--outline: #948f99;--outline-variant: #49454e;--shadow: #000000;--scrim: #000000;--inverse-surface: #e6e1e6;--inverse-on-surface: #313033;--inverse-primary: #6750a4;",
-  light: "--primary: #6750a4;--on-primary: #ffffff;--primary-container: #e9ddff;--on-primary-container: #22005d;--secondary: #625b71;--on-secondary: #ffffff;--secondary-container: #e8def8;--on-secondary-container: #1e192b;--tertiary: #7e5260;--on-tertiary: #ffffff;--tertiary-container: #ffd9e3;--on-tertiary-container: #31101d;--error: #ba1a1a;--on-error: #ffffff;--error-container: #ffdad6;--on-error-container: #410002;--background: #fffbff;--on-background: #1c1b1e;--surface: #fffbff;--on-surface: #1c1b1e;--surface-variant: #e7e0eb;--on-surface-variant: #49454e;--outline: #7a757f;--outline-variant: #cac4cf;--shadow: #000000;--scrim: #000000;--inverse-surface: #313033;--inverse-on-surface: #f4eff4;--inverse-primary: #cfbcff;"
+  dark: "--primary:#cfbcff;--on-primary:#381e72;--primary-container:#4f378a;--on-primary-container:#e9ddff;--secondary:#cbc2db;--on-secondary:#332d41;--secondary-container:#4a4458;--on-secondary-container:#e8def8;--tertiary:#efb8c8;--on-tertiary:#4a2532;--tertiary-container:#633b48;--on-tertiary-container:#ffd9e3;--error:#ffb4ab;--on-error:#690005;--error-container:#93000a;--on-error-container:#ffb4ab;--background:#1c1b1e;--on-background:#e6e1e6;--surface:#141316;--on-surface:#e6e1e6;--surface-variant:#49454e;--on-surface-variant:#cac4cf;--outline:#948f99;--outline-variant:#49454e;--shadow:#000000;--scrim:#000000;--inverse-surface:#e6e1e6;--inverse-on-surface:#313033;--inverse-primary:#6750a4;--surface-dim:#141316;--surface-bright:#3a383c;--surface-container-lowest:#0f0e11;--surface-container-low:#1c1b1e;--surface-container:#201f22;--surface-container-high:#2b292d;--surface-container-highest:#363438;",
+  light: "--primary:#6750a4;--on-primary:#ffffff;--primary-container:#e9ddff;--on-primary-container:#22005d;--secondary:#625b71;--on-secondary:#ffffff;--secondary-container:#e8def8;--on-secondary-container:#1e192b;--tertiary:#7e5260;--on-tertiary:#ffffff;--tertiary-container:#ffd9e3;--on-tertiary-container:#31101d;--error:#ba1a1a;--on-error:#ffffff;--error-container:#ffdad6;--on-error-container:#410002;--background:#fffbff;--on-background:#1c1b1e;--surface:#fdf8fd;--on-surface:#1c1b1e;--surface-variant:#e7e0eb;--on-surface-variant:#49454e;--outline:#7a757f;--outline-variant:#cac4cf;--shadow:#000000;--scrim:#000000;--inverse-surface:#313033;--inverse-on-surface:#f4eff4;--inverse-primary:#cfbcff;--surface-dim:#ddd8dd;--surface-bright:#fdf8fd;--surface-container-lowest:#ffffff;--surface-container-low:#f7f2f7;--surface-container:#f2ecf1;--surface-container-high:#ece7eb;--surface-container-highest:#e6e1e6;"
 }
 ```
 
@@ -107,7 +107,7 @@ body.light {
   --on-error-container: #410002;
   --background: #fffbff;
   --on-background: #1c1b1e;
-  --surface: #fffbff;
+  --surface: #fdf8fd;
   --on-surface: #1c1b1e;
   --surface-variant: #e7e0eb;
   --on-surface-variant: #49454e;
@@ -118,19 +118,18 @@ body.light {
   --inverse-surface: #313033;
   --inverse-on-surface: #f4eff4;
   --inverse-primary: #cfbcff;
-  --outline: #79747E;
-  --active: rgba(0,0,0,.1);
-  --overlay: rgba(0,0,0,.5);
+  --surface-dim: #ddd8dd;
+  --surface-bright: #fdf8fd;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f7f2f7;
+  --surface-container: #f2ecf1;
+  --surface-container-high: #ece7eb;
+  --surface-container-highest: #e6e1e6;
+  --overlay: rgb(0 0 0 / 0.5);
+  --active: rgb(0 0 0 / 0.1);
   --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);
   --elevate2: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.4);
   --elevate3: 0 0.375rem 0.75rem 0 rgb(0 0 0 / 0.48);
-  --size: 16px;
-  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
-  --font-icon: "Material Symbols Outlined";
-  --speed1: .1s;
-  --speed2: .2s;
-  --speed3: .3s;
-  --speed4: .4s;  
 }
 
 body.dark {
@@ -152,7 +151,7 @@ body.dark {
   --on-error-container: #ffb4ab;
   --background: #1c1b1e;
   --on-background: #e6e1e6;
-  --surface: #1c1b1e;
+  --surface: #141316;
   --on-surface: #e6e1e6;
   --surface-variant: #49454e;
   --on-surface-variant: #cac4cf;
@@ -163,8 +162,15 @@ body.dark {
   --inverse-surface: #e6e1e6;
   --inverse-on-surface: #313033;
   --inverse-primary: #6750a4;
-  --active: rgba(255,255,255,.2);
-  --overlay: rgba(0,0,0,.5);
+  --surface-dim: #141316;
+  --surface-bright: #3a383c;
+  --surface-container-lowest: #0f0e11;
+  --surface-container-low: #1c1b1e;
+  --surface-container: #201f22;
+  --surface-container-high: #2b292d;
+  --surface-container-highest: #363438;
+  --overlay: rgb(0 0 0 / 0.5);
+  --active: rgb(255 255 255 / 0.2);
   --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);
   --elevate2: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.4);
   --elevate3: 0 0.375rem 0.75rem 0 rgb(0 0 0 / 0.48);
