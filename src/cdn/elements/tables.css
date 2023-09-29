@@ -1,13 +1,13 @@
 table {
-  width: 100%;
+  inline-size: 100%;
   border-spacing: 0;
   font-size: 0.875rem;
   color: var(--on-background);
-  text-align: left;
+  text-align: start;
 }
 
 table :is(th, td) {
-  width: 1%;
+  inline-size: 1%;
   text-align: inherit;
   padding: 0.5rem;
 }
@@ -17,7 +17,7 @@ table th {
 }
 
 table.border :is(th, td) {
-  border-bottom: 0.0625rem solid var(--outline);
+  border-block-end: 0.0625rem solid var(--outline);
 }
 
 table.no-space :is(th, td) {

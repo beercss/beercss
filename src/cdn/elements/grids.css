@@ -7,7 +7,7 @@
 }
 
 * + .grid {
-  margin-top: 1rem;
+  margin-block-start: 1rem;
 }
 
 .grid.no-space {

@@ -2,13 +2,13 @@
   display: inline-flex;
   flex-direction: row !important;
   gap: 1rem;
-  width: auto !important;
-  max-width: none !important;
+  inline-size: auto !important;
+  max-inline-size: none !important;
 }
 
 .horizontal > * {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
 }
 
 .vertical,
@@ -16,13 +16,13 @@
   display: inline-flex;
   flex-direction: column !important;
   gap: 0.25rem;
-  height: auto !important;
-  max-height: none !important;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  block-size: auto !important;
+  max-block-size: none !important;
+  padding-block-start: 0.5rem;
+  padding-block-end: 0.5rem;
 }
 
 .vertical > * {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
 }

@@ -1,5 +1,5 @@
 <template lang="pug">
-dialog.medium.no-scroll(:id="id", :class="{ left: position === 'left', right: position === 'right' }")
+dialog.medium.no-scroll(:id="id", :class="{ insetInlineStart: position === 'left', insetInlineEnd: position === 'right' }")
   slot
   header.fixed
     nav(v-if="!data.showCssVariables")

@@ -86,14 +86,14 @@ onMounted(() => {
 
 <style scoped>
 .date > .scroll {
-  width: 22.5rem;
-  height: 19rem;
-  overflow-y: auto;
-  overflow-x: hidden;
+  inline-size: 22.5rem;
+  block-size: 19rem;
+  overflow-block: auto;
+  overflow-inline: hidden;
 }
 .date {
   display: inline-block;
-  width: auto;
+  inline-size: auto;
   background-color: var(--surface-variant);
 }
 .hidden {

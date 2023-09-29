@@ -1,28 +1,28 @@
 .small-width {
-  width: 12rem !important;
-  max-width: 100%;
+  inline-size: 12rem !important;
+  max-inline-size: 100%;
 }
 
 .medium-width {
-  width: 24rem !important;
-  max-width: 100%;
+  inline-size: 24rem !important;
+  max-inline-size: 100%;
 }
 
 .large-width {
-  width: 36rem !important;
-  max-width: 100%;
+  inline-size: 36rem !important;
+  max-inline-size: 100%;
 }
 
 .small-height {
-  height: 12rem !important;
+  block-size: 12rem !important;
 }
 
 .medium-height {
-  height: 24rem !important;
+  block-size: 24rem !important;
 }
 
 .large-height {
-  height: 36rem !important;
+  block-size: 36rem !important;
 }
 
 .wrap {

@@ -4,8 +4,8 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 2.5rem;
-  min-width: 2.5rem;
+  block-size: 2.5rem;
+  min-inline-size: 2.5rem;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-primary);
@@ -20,31 +20,31 @@ button {
 }
 
 :is(button, .button).none {
-  width: auto;
-  height: auto;
+  inline-size: auto;
+  block-size: auto;
   color: var(--primary);
   padding: 0;
   background-color: transparent;
-  min-width: auto;
-  min-height: 1.5rem;
+  min-inline-size: auto;
+  min-block-size: 1.5rem;
 }
 
 :is(button, .button).small {
-  height: 2rem;
-  min-width: 2rem;
+  block-size: 2rem;
+  min-inline-size: 2rem;
   font-size: 0.875rem;
   border-radius: 1rem;
 }
 
 :is(button, .button).large {
-  height: 3rem;
-  min-width: 3rem;
+  block-size: 3rem;
+  min-inline-size: 3rem;
   border-radius: 1.5rem;
 }
 
 :is(.button, button):is(.extra, .extend) {
-  height: 3.5rem;
-  min-width: 3.5rem;
+  block-size: 3.5rem;
+  min-inline-size: 3.5rem;
   font-size: 1rem;
   border-radius: 1.75rem;
 }
@@ -59,18 +59,18 @@ button {
 }
 
 .extend:is(:hover, .active) {
-  width: auto;
+  inline-size: auto;
   padding: 0 1.5rem;
 }
 
 .extend:is(:hover, .active) > i + span {
   display: inherit;
-  margin-left: 1.5rem;
+  margin-inline-start: 1.5rem;
 }
 
 .extend:is(:hover, .active) > :is(img, svg) + span {
   display: inherit;
-  margin-left: 2.5rem;
+  margin-inline-start: 2.5rem;
 }
 
 :is(.button, button):is([disabled]) {
