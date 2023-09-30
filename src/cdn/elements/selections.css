@@ -95,7 +95,7 @@
   transform: translate(0.25rem, -50%) scale(0.6);
 }
 
-:is(:not([dir]), [dir="ltr"]) .switch.icon > span > i {
+.switch.icon > span > i {
   transform: translate(-3rem, -50%) scale(1);
 }
 
