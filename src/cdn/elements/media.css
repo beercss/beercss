@@ -132,12 +132,12 @@ svg {
 .extend > :is(.responsive, i) {
   margin: 0;
   position: absolute;
-  inset-inline-start: 1rem;
+  inset-inline: 1rem;
   z-index: 1;
 }
 
 .extend > .responsive {
-  inset-inline-start: 0;
+  inset-inline: 0;
   inline-size: 3.5rem;
 }
 
