@@ -60,3 +60,8 @@ body *:is(:hover,:focus)::-webkit-scrollbar-thumb {
   background: var(--outline);
   border-radius: 1rem;
 }
+
+pre,
+code {
+  direction: ltr;
+}

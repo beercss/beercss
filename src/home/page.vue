@@ -276,91 +276,89 @@ div
             .medium-space
             .l
               h5 Summary
-              .grid
-                .s12.m12.l6
-                  p
-                    b absolute
-                    span &nbsp;left, right, top, bottom, front, back, small, medium, large
-                  p
-                    b &lt;article&gt;
-                    span &nbsp;small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, tiny-padding small-padding, medium-padding, large-padding
-                  p
-                    b badge
-                    span &nbsp;left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
-                  p
-                    b button or &lt;button&gt;
-                    span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
-                  p
-                    b chip
-                    span &nbsp;small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
-                  p
-                    b &lt;details&gt;
-                  p
-                    b &lt;dialog&gt;
-                    span &nbsp;left, right, top, bottom, small, medium, large, modal, border, round, no-round, left-round, right-round, top-round, bottom-round, active
-                  p
-                    b field
-                    span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
-                  p
-                    b fixed
-                    span &nbsp;left, right, top, bottom, front, back, small, medium, large
-                  p
-                    b &lt;footer&gt;
-                    span &nbsp;fixed, responsive
-                  p
-                    b &lt;h1&gt;...&lt;h6&gt;
-                    span &nbsp;small, medium, large
-                  p
-                    b &lt;header&gt;
-                    span &nbsp;fixed, responsive
-                  p
-                    b &lt;i&gt;
-                    span &nbsp;tiny, small, medium, large, extra, fill
-                  p
-                    b &lt;img&gt;
-                    span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
-                .s12.m12.l6
-                  p
-                    b &lt;label&gt;
-                    span &nbsp;active, radio, checkbox, switch
-                  p
-                    b &lt;main&gt;
-                    span &nbsp;responsive, max
-                  p
-                    b &lt;menu&gt;
-                    span &nbsp;left, right, wrap, no-wrap, active, min, max
-                  p
-                    b &lt;nav&gt;
-                    span &nbsp;left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
-                  p
-                    b overlay
-                    span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active
-                  p
-                    b page
-                    span &nbsp;left, right, top, bottom, active
-                  p
-                    b &lt;progress&gt;
-                    span &nbsp;small, medium, large, circle
-                  p
-                    b row
-                    span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align
-                  p
-                    b snackbar
-                    span &nbsp;top, bottom, active
-                  p
-                    b &lt;summary&gt;
-                  p
-                    b &lt;table&gt;
-                    span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border
-                  p
-                    b tabs
-                    span &nbsp;left-align, right-align, center-align, horizontal, vertical, min, max
-                  p
-                    b tooltip
-                    span &nbsp;left, right, top, bottom, max
-                  p
-                    b &lt;video&gt;
-                    span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
+              pre.scroll.large-padding.fill
+                p
+                  b absolute
+                  span &nbsp;left, right, top, bottom, front, back, small, medium, large
+                p
+                  b &lt;article&gt;
+                  span &nbsp;small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, tiny-padding small-padding, medium-padding, large-padding
+                p
+                  b badge
+                  span &nbsp;left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
+                p
+                  b button or &lt;button&gt;
+                  span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
+                p
+                  b chip
+                  span &nbsp;small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
+                p
+                  b &lt;details&gt;
+                p
+                  b &lt;dialog&gt;
+                  span &nbsp;left, right, top, bottom, small, medium, large, modal, border, round, no-round, left-round, right-round, top-round, bottom-round, active
+                p
+                  b field
+                  span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
+                p
+                  b fixed
+                  span &nbsp;left, right, top, bottom, front, back, small, medium, large
+                p
+                  b &lt;footer&gt;
+                  span &nbsp;fixed, responsive
+                p
+                  b &lt;h1&gt;...&lt;h6&gt;
+                  span &nbsp;small, medium, large
+                p
+                  b &lt;header&gt;
+                  span &nbsp;fixed, responsive
+                p
+                  b &lt;i&gt;
+                  span &nbsp;tiny, small, medium, large, extra, fill
+                p
+                  b &lt;img&gt;
+                  span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
+                p
+                  b &lt;label&gt;
+                  span &nbsp;active, radio, checkbox, switch
+                p
+                  b &lt;main&gt;
+                  span &nbsp;responsive, max
+                p
+                  b &lt;menu&gt;
+                  span &nbsp;left, right, wrap, no-wrap, active, min, max
+                p
+                  b &lt;nav&gt;
+                  span &nbsp;left, right, top, bottom, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+                p
+                  b overlay
+                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active
+                p
+                  b page
+                  span &nbsp;left, right, top, bottom, active
+                p
+                  b &lt;progress&gt;
+                  span &nbsp;small, medium, large, circle
+                p
+                  b row
+                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align
+                p
+                  b snackbar
+                  span &nbsp;top, bottom, active
+                p
+                  b &lt;summary&gt;
+                p
+                  b &lt;table&gt;
+                  span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border
+                p
+                  b tabs
+                  span &nbsp;left-align, right-align, center-align, horizontal, vertical, min, max
+                p
+                  b tooltip
+                  span &nbsp;left, right, top, bottom, max
+                p
+                  b &lt;video&gt;
+                  span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
               .medium-space
             nav.wrap
               a.button.small-round(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
