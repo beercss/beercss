@@ -15,9 +15,6 @@
   inset-inline-end: 0;
   block-size: 1.25rem;
   line-height: normal;
-}
-
-.badge {
   transform: translate(50%, -100%);
 }
 
@@ -40,9 +37,6 @@
   inset-inline-start: 50%;
   inset-block-end: auto;
   inset-inline-end: auto;
-}
-
-.badge.top {
   transform: translate(-50%, -100%);
 }
 
@@ -55,9 +49,6 @@
   inset-inline-start: 50%;
   inset-block-end: 0;
   inset-inline-end: auto;
-}
-
-.badge.bottom {
   transform: translate(-50%, 100%);
 }
 
@@ -70,9 +61,6 @@
   inset-inline-start: 0;
   inset-block-end: auto;
   inset-inline-end: auto;
-}
-
-.badge.left {
   transform: translate(-100%, -50%);
 }
 
@@ -85,9 +73,6 @@
   inset-inline-start: auto;
   inset-block-end: auto;
   inset-inline-end: 0;
-}
-
-.badge.right {
   transform: translate(100%, -50%);
 }
 
@@ -100,9 +85,6 @@
   inset-inline-start: 0;
   inset-block-end: auto;
   inset-inline-end: auto;
-}
-
-.badge.top.left {
   transform: translate(-50%, -100%);
 }
 
@@ -115,9 +97,6 @@
   inset-inline-start: 0;
   inset-block-end: 0;
   inset-inline-end: auto;
-}
-
-.badge.bottom.left {
   transform: translate(-50%, 100%);
 }
 
@@ -130,9 +109,6 @@
   inset-inline-start: auto;
   inset-block-end: auto;
   inset-inline-end: 0;
-}
-
-.badge.top.right {
   transform: translate(50%, -100%);
 }
 
@@ -145,9 +121,6 @@
   inset-inline-start: auto;
   inset-block-end: 0;
   inset-inline-end: 0;
-}
-
-.badge.bottom.right {
   transform: translate(50%, 100%);
 }
 

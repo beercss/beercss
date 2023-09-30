@@ -1,14 +1,7 @@
 .snackbar {
-  ---transform: translate(-50%, 1rem);
-  transform: translate(-50%, 0);
-}
+  ---transform-start: translate(-50%, 1rem);
+  ---transform-end: translate(-50%, 0);
 
-[dir=rtl] .snackbar {
-  ---transform: translate(50%, 1rem);
-  transform: translate(50%, 0);
-}
-
-.snackbar {
   position: fixed;
   inset-block-start: auto;
   inset-block-end: 6rem;
@@ -29,6 +22,12 @@
   align-items: center;
   border-radius: 0.25rem;
   gap: 0.5rem;
+  transform: var(---transform-end);
+}
+
+[dir=rtl] .snackbar {
+  ---transform-start: translate(50%, 1rem);
+  ---transform-end: translate(50%, 0);
 }
 
 .snackbar.top {
@@ -38,49 +37,30 @@
 
 .snackbar.active {
   visibility: visible;
-}
-
-.snackbar.active {
-  animation: var(--speed2) to-snackbar-ltr;
-}
-
-[dir=rtl] .snackbar.active {
-  animation: var(--speed2) to-snackbar-rtl;
+  animation: var(--speed2) to-snackbar;
 }
 
 .snackbar.active.top {
-  transform: translate(-50%, -1rem);
+  ---transform-end: translate(-50%, -1rem);
 }
 
 [dir=rtl] .snackbar.active.top {
-  transform: translate(50%, -1rem);
+  ---transform-end: translate(50%, -1rem);
 }
 
 .snackbar > .max {
   flex: auto;
 }
 
-@keyframes to-snackbar-ltr {
+@keyframes to-snackbar {
   0% {
     opacity: 0;
-    transform: var(---transform);
+    transform: var(---transform-start);
   }
 
   100% {
     opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-
-@keyframes to-snackbar-rtl {
-  0% {
-    opacity: 0;
-    transform: var(---transform);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(50%, 0);
+    transform: var(---transform-end);
   }
 }
 

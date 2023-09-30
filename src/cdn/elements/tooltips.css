@@ -24,9 +24,6 @@
   opacity: 0;
   transition: var(--speed2) all;
   line-height: normal;
-}
-
-.tooltip {
   transform: translate(-50%, -100%) scale(0.9);
 }
 
@@ -39,9 +36,6 @@
   inset-block-start: 50%;
   inset-block-end: auto;
   inset-inline-end: auto;
-}
-
-.tooltip.left {
   transform: translate(-100%, -50%) scale(0.9);
 }
 
@@ -54,9 +48,6 @@
   inset-block-start: 50%;
   inset-block-end: auto;
   inset-inline-start: auto;
-}
-
-.tooltip.right {
   transform: translate(100%, -50%) scale(0.9);
 }
 
@@ -69,9 +60,6 @@
   inset-inline-start: 50%;
   inset-block-start: auto;
   inset-inline-end: auto;
-}
-
-.tooltip.bottom {
   transform: translate(-50%, 100%) scale(0.9);
 }
 
@@ -97,10 +85,6 @@
 :hover > .tooltip {
   visibility: visible;
   opacity: 1;
-  transform: translate(-50%, -100%) scale(1);
-}
-
-:hover > .tooltip {
   transform: translate(-50%, -100%) scale(1);
 }
 
@@ -168,9 +152,6 @@ menu:active ~ .tooltip,
 
 .vertical > .tooltip:not(.left, .right, .bottom) {
   inset-block-start: calc(50% + var(---space));
-}
-
-.vertical > .tooltip:not(.left, .right, .bottom) {
   transform: translate(-50%, -100%) scale(1) rotate(90deg);
 }
 
@@ -180,9 +161,6 @@ menu:active ~ .tooltip,
 
 .vertical > .tooltip.left {
   inset-inline-start: var(---space);
-}
-
-.vertical > .tooltip.left {
   transform: translate(-100%, -50%) scale(1) rotate(90deg);
 }
 
@@ -192,9 +170,6 @@ menu:active ~ .tooltip,
 
 .vertical > .tooltip.right {
   inset-inline-end: var(---space);
-}
-
-.vertical > .tooltip.right {
   transform: translate(100%, -50%) scale(1) rotate(90deg);
 }
 
@@ -204,9 +179,6 @@ menu:active ~ .tooltip,
 
 .vertical > .tooltip.bottom {
   inset-block-end: calc(50% + var(---space));
-}
-
-.vertical > .tooltip.bottom {
   transform: translate(-50%, 100%) scale(1) rotate(90deg);
 }
 

@@ -24,9 +24,6 @@
 
 .center {
   inset-inline-start: 50%;
-}
-
-.center {
   transform: translateX(-50%);
 }
 
