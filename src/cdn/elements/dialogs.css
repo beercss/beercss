@@ -20,7 +20,7 @@ dialog {
   border-radius: 1rem;
 }
 
-:is(:not([dir]), [dir=ltr]) dialog {
+dialog {
   transform: translate(-50%, -4rem);
 }
 
@@ -52,7 +52,7 @@ dialog:is(.active, [open]) {
   visibility: visible;
 }
 
-:is(:not([dir]), [dir=ltr]) dialog:is(.active, [open]) {
+dialog:is(.active, [open]) {
   transform: translate(-50%, 0);
 }
 
@@ -60,7 +60,7 @@ dialog:is(.active, [open]) {
   transform: translate(50%, 0);
 }
 
-:is(:not([dir]), [dir=ltr]) dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
+dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
 }
 
@@ -100,7 +100,7 @@ dialog.left {
   background-color: var(--surface);
 }
 
-:is(:not([dir]), [dir=ltr]) dialog.left {
+dialog.left {
   transform: translateX(-100%);
 }
 
@@ -124,7 +124,7 @@ dialog.right {
   background-color: var(--surface);
 }
 
-:is(:not([dir]), [dir=ltr]) dialog.right {
+dialog.right {
   transform: translateX(100%);
 }
 

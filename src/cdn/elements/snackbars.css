@@ -1,4 +1,4 @@
-:is(:not([dir]), [dir=ltr]) .snackbar {
+.snackbar {
   ---transform: translate(-50%, 1rem);
   transform: translate(-50%, 0);
 }
@@ -40,7 +40,7 @@
   visibility: visible;
 }
 
-:is(:not([dir]), [dir=ltr]) .snackbar.active {
+.snackbar.active {
   animation: var(--speed2) to-snackbar-ltr;
 }
 
@@ -48,7 +48,7 @@
   animation: var(--speed2) to-snackbar-rtl;
 }
 
-:is(:not([dir]), [dir=ltr]) .snackbar.active.top {
+.snackbar.active.top {
   transform: translate(-50%, -1rem);
 }
 

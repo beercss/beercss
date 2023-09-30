@@ -22,7 +22,7 @@
   ---transform: translate(0, 4rem);
 }
 
-:is(:not([dir]), [dir=ltr]) .page.active.left {
+.page.active.left {
   ---transform: translate(-4rem, 0);
 }
 
@@ -30,7 +30,7 @@
   ---transform: translate(4rem, 0);
 }
 
-:is(:not([dir]), [dir=ltr]) .page.active.right {
+.page.active.right {
   ---transform: translate(4rem, 0);
 }
 

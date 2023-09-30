@@ -26,7 +26,7 @@
   line-height: normal;
 }
 
-:is(:not([dir]), [dir=ltr]) .tooltip {
+.tooltip {
   transform: translate(-50%, -100%) scale(0.9);
 }
 
@@ -41,7 +41,7 @@
   inset-inline-end: auto;
 }
 
-:is(:not([dir]), [dir=ltr]) .tooltip.left {
+.tooltip.left {
   transform: translate(-100%, -50%) scale(0.9);
 }
 
@@ -56,7 +56,7 @@
   inset-inline-start: auto;
 }
 
-:is(:not([dir]), [dir=ltr]) .tooltip.right {
+.tooltip.right {
   transform: translate(100%, -50%) scale(0.9);
 }
 
@@ -71,7 +71,7 @@
   inset-inline-end: auto;
 }
 
-:is(:not([dir]), [dir=ltr]) .tooltip.bottom {
+.tooltip.bottom {
   transform: translate(-50%, 100%) scale(0.9);
 }
 
@@ -100,7 +100,7 @@
   transform: translate(-50%, -100%) scale(1);
 }
 
-:is(:not([dir]), [dir=ltr]) :hover > .tooltip {
+:hover > .tooltip {
   transform: translate(-50%, -100%) scale(1);
 }
 
@@ -108,7 +108,7 @@
   transform: translate(50%, -100%) scale(1);
 }
 
-:is(:not([dir]), [dir=ltr]) :hover > .tooltip.left {
+:hover > .tooltip.left {
   transform: translate(-100%, -50%) scale(1);
 }
 
@@ -116,7 +116,7 @@
   transform: translate(100%, -50%) scale(1);
 }
 
-:is(:not([dir]), [dir=ltr]) :hover > .tooltip.right {
+:hover > .tooltip.right {
   transform: translate(100%, -50%) scale(1);
 }
 
@@ -124,7 +124,7 @@
   transform: translate(-100%, -50%) scale(1);
 }
 
-:is(:not([dir]), [dir=ltr]) :hover > .tooltip.bottom {
+:hover > .tooltip.bottom {
   transform: translate(-50%, 100%) scale(1);
 }
 
@@ -170,7 +170,7 @@ menu:active ~ .tooltip,
   inset-block-start: calc(50% + var(---space));
 }
 
-:is(:not([dir]), [dir=ltr]) .vertical > .tooltip:not(.left, .right, .bottom) {
+.vertical > .tooltip:not(.left, .right, .bottom) {
   transform: translate(-50%, -100%) scale(1) rotate(90deg);
 }
 
@@ -182,7 +182,7 @@ menu:active ~ .tooltip,
   inset-inline-start: var(---space);
 }
 
-:is(:not([dir]), [dir=ltr]) .vertical > .tooltip.left {
+.vertical > .tooltip.left {
   transform: translate(-100%, -50%) scale(1) rotate(90deg);
 }
 
@@ -194,7 +194,7 @@ menu:active ~ .tooltip,
   inset-inline-end: var(---space);
 }
 
-:is(:not([dir]), [dir=ltr]) .vertical > .tooltip.right {
+.vertical > .tooltip.right {
   transform: translate(100%, -50%) scale(1) rotate(90deg);
 }
 
@@ -206,7 +206,7 @@ menu:active ~ .tooltip,
   inset-block-end: calc(50% + var(---space));
 }
 
-:is(:not([dir]), [dir=ltr]) .vertical > .tooltip.bottom {
+.vertical > .tooltip.bottom {
   transform: translate(-50%, 100%) scale(1) rotate(90deg);
 }
 

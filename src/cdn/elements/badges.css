@@ -17,7 +17,7 @@
   line-height: normal;
 }
 
-:is(:not([dir]), [dir=ltr]) .badge {
+.badge {
   transform: translate(50%, -100%);
 }
 
@@ -42,7 +42,7 @@
   inset-inline-end: auto;
 }
 
-:is(:not([dir]), [dir=ltr]) .badge.top {
+.badge.top {
   transform: translate(-50%, -100%);
 }
 
@@ -57,7 +57,7 @@
   inset-inline-end: auto;
 }
 
-:is(:not([dir]), [dir=ltr]) .badge.bottom {
+.badge.bottom {
   transform: translate(-50%, 100%);
 }
 
@@ -72,7 +72,7 @@
   inset-inline-end: auto;
 }
 
-:is(:not([dir]), [dir=ltr]) .badge.left {
+.badge.left {
   transform: translate(-100%, -50%);
 }
 
@@ -87,7 +87,7 @@
   inset-inline-end: 0;
 }
 
-:is(:not([dir]), [dir=ltr]) .badge.right {
+.badge.right {
   transform: translate(100%, -50%);
 }
 
@@ -102,7 +102,7 @@
   inset-inline-end: auto;
 }
 
-:is(:not([dir]), [dir=ltr]) .badge.top.left {
+.badge.top.left {
   transform: translate(-50%, -100%);
 }
 
@@ -117,7 +117,7 @@
   inset-inline-end: auto;
 }
 
-:is(:not([dir]), [dir=ltr]) .badge.bottom.left {
+.badge.bottom.left {
   transform: translate(-50%, 100%);
 }
 
@@ -132,7 +132,7 @@
   inset-inline-end: 0;
 }
 
-:is(:not([dir]), [dir=ltr]) .badge.top.right {
+.badge.top.right {
   transform: translate(50%, -100%);
 }
 
@@ -147,7 +147,7 @@
   inset-inline-end: 0;
 }
 
-:is(:not([dir]), [dir=ltr]) .badge.bottom.right {
+.badge.bottom.right {
   transform: translate(50%, 100%);
 }
 

@@ -85,8 +85,8 @@
   background-color: var(--outline);
 }
 
-:is(:not([dir]), [dir=ltr]) .switch > span::before,
-:is(:not([dir]), [dir=ltr]) .switch.icon > span > i {
+.switch > span::before,
+.switch.icon > span > i {
   transform: translate(-3rem, -50%) scale(0.6);
 }
 
@@ -161,8 +161,8 @@
   background-color: var(--on-primary);
 }
 
-:is(:not([dir]), [dir=ltr]) .switch > input:checked + span::before,
-:is(:not([dir]), [dir=ltr]) .switch.icon > input:checked + span > i {
+.switch > input:checked + span::before,
+.switch.icon > input:checked + span > i {
   transform: translate(-1.75rem, -50%) scale(1);
 }
 
@@ -195,7 +195,7 @@
   border-radius: 2rem;
 }
 
-:is(:not([dir]), [dir=ltr]) .switch > span::after {
+.switch > span::after {
   transform: translate(-3.25rem, -50%);
 }
 
