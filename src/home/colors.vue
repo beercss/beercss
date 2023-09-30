@@ -9,10 +9,10 @@
       i {{ data.isDark ? "light_mode" : "dark_mode" }}
     a.chip.circle
       i palette
-      input.absolute.top.left.right.bottom.opacity.front(type="color", @change="sharedDomain.updateTheme(data, $event)")
+      input(type="color", @change="sharedDomain.updateTheme(data, $event)")
     a.chip.circle
       i upload
-      input.absolute.top.left.right.bottom.opacity.front(type="file", @change="sharedDomain.updateTheme(data, $event)")
+      input(type="file", @change="sharedDomain.updateTheme(data, $event)")
     button.circle.small.red(@click="sharedDomain.updateTheme(data, '#f44336')")
     button.circle.small.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
     button.circle.small.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')")
@@ -439,5 +439,16 @@ const sourceCode = () => {
 <style scoped>
 pre {
   white-space: normal;
+}
+
+input[type=color] {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
 }
 </style>
