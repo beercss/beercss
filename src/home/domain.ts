@@ -110,7 +110,7 @@ const updateFieldType = (selector: string, type: string) => {
     for (let j = 0; j < inputs.length; j++) {
       const file = document.createElement("input");
       file.type = "file";
-      inputs[j].insertAdjacentElement("afterend", file);
+      inputs[j].insertAdjacentElement("beforebegin", file);
     }
   }
 

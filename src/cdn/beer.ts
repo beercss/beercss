@@ -153,22 +153,18 @@ function onMutation (): void {
 }
 
 function updateFile (target: Element, e?: KeyboardEvent): void {
-  if (e) {
-    if (e.key !== "Enter") return;
-
-    const target = e.currentTarget as Element;
-    const nextTarget = next(target) as HTMLInputElement;
-    if (!hasType(nextTarget, "file")) return;
-    return nextTarget.click();
+  if (e && e.key === "Enter") {
+    const previousTarget = prev(target) as HTMLInputElement;
+    if (previousTarget) previousTarget.click();
   }
 
   const currentTarget = target as HTMLInputElement;
-  const previousTarget = prev(target) as HTMLInputElement;
-  if (!hasType(previousTarget, "text")) return;
-  previousTarget.value = currentTarget.files ? Array.from(currentTarget.files).map((x) => x.name).join(", ") : "";
-  previousTarget.readOnly = true;
-  previousTarget.addEventListener("keydown", onKeydownFile);
-  updateInput(previousTarget);
+  const nextTarget = next(target) as HTMLInputElement;
+  if (!hasType(nextTarget, "text")) return;
+  nextTarget.value = currentTarget.files ? Array.from(currentTarget.files).map((x) => x.name).join(", ") : "";
+  nextTarget.readOnly = true;
+  nextTarget.addEventListener("keydown", onKeydownFile)
+  updateInput(nextTarget);
 }
 
 function updateRange (target: Element): void {
