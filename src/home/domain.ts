@@ -103,6 +103,7 @@ const updateFieldType = (selector: string, type: string) => {
   utils.remove(files);
   utils.remove(colors);
   utils.removeAttribute(inputs, "readonly");
+  utils.removeValue(inputs);
 
   if (type === "file") {
     utils.setAttribute(inputs, "type", "text");
