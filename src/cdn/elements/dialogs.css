@@ -96,11 +96,7 @@ dialog.left {
   border-radius: unset;
   border-start-end-radius: 1rem;
   border-end-end-radius: 1rem;
-  border-radius: 0 1rem 1rem 0;
   background-color: var(--surface);
-}
-
-dialog.left {
   transform: translateX(-100%);
 }
 
@@ -120,11 +116,7 @@ dialog.right {
   border-radius: unset;
   border-start-start-radius: 1rem;
   border-end-start-radius: 1rem;
-  border-radius: 1rem 0 0 1rem;
   background-color: var(--surface);
-}
-
-dialog.right {
   transform: translateX(100%);
 }
 

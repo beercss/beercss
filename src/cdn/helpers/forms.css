@@ -26,52 +26,31 @@
 }
 
 .no-round,
-.square {
+.square,
+.top-round,
+.bottom-round,
+.left-round,
+.right-round {
   border-radius: 0 !important;
 }
 
 .top-round {
   border-start-start-radius: var(---round) !important;
   border-start-end-radius: var(---round) !important;
-  border-end-end-radius: 0 !important;
-  border-end-start-radius: 0 !important;
 }
 
 .bottom-round {
-  border-start-start-radius: 0 !important;
-  border-start-end-radius: 0 !important;
   border-end-end-radius: var(---round) !important;
   border-end-start-radius: var(---round) !important;
 }
 
 .left-round {
   border-start-start-radius: var(---round) !important;
-  border-start-end-radius: 0 !important;
-  border-end-end-radius: 0 !important;
   border-end-start-radius: var(---round) !important;
 }
 
 .right-round {
-  border-radius: 0 var(---round) var(---round) 0 !important;
-  border-start-start-radius: 0 !important;
   border-start-end-radius: var(---round) !important;
-  border-end-end-radius: var(---round) !important;
-  border-end-start-radius: 0 !important;
-}
-
-.top-round.left-round {
-  border-start-start-radius: var(---round) !important;
-}
-
-.top-round.right-round {
-  border-start-end-radius: var(---round) !important;
-}
-
-.bottom-round.left-round {
-  border-end-start-radius: var(---round) !important;
-}
-
-.bottom-round.right-round {
   border-end-end-radius: var(---round) !important;
 }
 
