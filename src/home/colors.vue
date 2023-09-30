@@ -440,15 +440,4 @@ const sourceCode = () => {
 pre {
   white-space: normal;
 }
-
-input[type=color] {
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  z-index: 2;
-  opacity: 0;
-  cursor: pointer;
-}
 </style>
