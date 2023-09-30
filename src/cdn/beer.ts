@@ -137,9 +137,19 @@ function onChangeFile (e: Event): void {
   updateFile(target);
 }
 
+function onInputColor (e: Event): void {
+  const target = e.currentTarget as HTMLInputElement;
+  updateColor(target);
+}
+
 function onKeydownFile (e: KeyboardEvent): void {
   const target = e.currentTarget as HTMLInputElement;
   updateFile(target, e);
+}
+
+function onKeydownColor (e: KeyboardEvent): void {
+  const target = e.currentTarget as HTMLInputElement;
+  updateColor(target, e);
 }
 
 function onInputRange (e: Event): void {
@@ -152,23 +162,50 @@ function onMutation (): void {
   _timeoutMutation = setTimeout(() => { void ui(); }, 180);
 }
 
-function updateFile (target: Element, e?: KeyboardEvent): void {
+function updateInputHelper (target: Element, inputType: "file"|"color", updaterFunction:
+    (currentTarget: HTMLInputElement) => string, onKeyDown:(e: KeyboardEvent) => void, e?: KeyboardEvent): void {
   if (e) {
     if (e.key !== "Enter") return;
 
     const target = e.currentTarget as Element;
     const nextTarget = next(target) as HTMLInputElement;
-    if (!hasType(nextTarget, "file")) return;
+    if (!hasType(nextTarget, inputType)) return;
     return nextTarget.click();
   }
-
   const currentTarget = target as HTMLInputElement;
   const previousTarget = prev(target) as HTMLInputElement;
   if (!hasType(previousTarget, "text")) return;
-  previousTarget.value = currentTarget.files ? Array.from(currentTarget.files).map((x) => x.name).join(", ") : "";
+  previousTarget.value = updaterFunction(currentTarget);
   previousTarget.readOnly = true;
-  previousTarget.addEventListener("keydown", onKeydownFile);
+  previousTarget.addEventListener("keydown", onKeyDown);
   updateInput(previousTarget);
+}
+
+function updateFile (target: Element, e?: KeyboardEvent): void {
+  updateInputHelper(target, "file", (currentTarget: HTMLInputElement) => {
+    const retVal = currentTarget.files ? Array.from(currentTarget.files).map((x) => x.name).join(", ") : "";
+    const parentOfTarget = parent(currentTarget) as HTMLInputElement|null;
+    const labels = queryAll("label", parentOfTarget) as NodeListOf<HTMLElement>;
+    if (retVal) {
+      labels?.forEach((label: HTMLElement) => {
+        label.classList.add("active", "background");
+      });
+    } else {
+      labels?.forEach((label: HTMLElement) => {
+        label.classList.remove("active", "background");
+      });
+    }
+    return retVal;
+  }, onKeydownFile, e);
+}
+
+function updateColor (target: Element, e?: KeyboardEvent): void {
+  updateInputHelper(target, "color", (currentTarget: HTMLInputElement) => {
+    const color = currentTarget.value;
+    const parentOfTarget = parent(currentTarget) as HTMLInputElement|null;
+    if (parentOfTarget) parentOfTarget.style.color = color;
+    return color;
+    }, onKeydownColor, e);
 }
 
 function updateRange (target: Element): void {
@@ -433,24 +470,35 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
   const labels = queryAll(".field > label");
   labels.forEach((x: Element) => on(x, "click", onClickLabel));
 
-  const inputs = queryAll(".field > input:not([type=file]):not([type=range]), .field > select, .field > textarea");
-  inputs.forEach((x: Element) => {
-    on(x, "focus", onFocusInput);
-    on(x, "blur", onBlurInput);
-    updateInput(x);
-  });
+  attachEventHandlersAndUpdateField(".field > input:not([type=file]):not([type=range]):not([type=color])," +
+    " .field > select, .field > textarea", [{ eventType: "focus", eventHandler: onFocusInput },
+    { eventType: "blur", eventHandler: onBlurInput },], updateInput);
 
-  const files = queryAll(".field > input[type=file]");
-  files.forEach((x: Element) => {
-    on(x, "change", onChangeFile);
-    updateFile(x);
-  });
+  attachEventHandlersAndUpdateField(".field > input[type=file]", [{ eventType: "change",
+    eventHandler: onChangeFile }], updateFile);
 
-  const ranges = queryAll(".slider > input[type=range]");
-  ranges.forEach((x: Element) => {
-    on(x, "input", onInputRange);
-    updateRange(x);
-  });
+  attachEventHandlersAndUpdateField(".slider > input[type=range]", [{ eventType: "input",
+    eventHandler: onInputRange }], updateRange);
+
+  attachEventHandlersAndUpdateField(".field > input[type=color]", [{ eventType: "input",
+    eventHandler: onInputColor }], updateColor);
+}
+
+interface EventAndHandler {
+  eventType: string;
+  eventHandler: (e: Event) => void;
+}
+
+const attachEventHandlersAndUpdateField = (selector: string, eventAndHandlerList: EventAndHandler[], updater: (x: Element) => void) => {
+  const elements = queryAll(selector);
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    for (let j = 0; j < eventAndHandlerList.length; j++) {
+      const { eventType, eventHandler } = eventAndHandlerList[j];
+      on(element, eventType, eventHandler);
+    }
+    updater(element);
+  }
 }
 
 if ((globalThis as any).addEventListener) (globalThis as any).addEventListener("load", async () => await ui("setup"));
