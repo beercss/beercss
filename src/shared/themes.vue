@@ -22,10 +22,10 @@ dialog.medium.no-scroll(:id="id", :class="{ left: position === 'left', right: po
         i {{ data.isDark ? "light_mode" : "dark_mode" }}
       a.chip.circle
         i palette
-        input.absolute.top.left.right.bottom.opacity.front(type="color", @change="sharedDomain.updateTheme(data, $event)")
+        input(type="color", @change="sharedDomain.updateTheme(data, $event)")
       a.chip.circle
         i upload
-        input.absolute.top.left.right.bottom.opacity.front(type="file", @change="sharedDomain.updateTheme(data, $event)")
+        input(type="file", @change="sharedDomain.updateTheme(data, $event)")
       button.circle.small.red(@click="sharedDomain.updateTheme(data, '#f44336')")
       button.circle.small.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
       button.circle.small.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')")
