@@ -97,9 +97,11 @@ const updateRound = (selector: string, event: any) => {
 const updateFieldType = (selector: string, type: string) => {
   const inputs = utils.queryAll(selector + " input");
   const files = utils.queryAll(selector + " input[type='file']");
+  const colors = utils.queryAll(selector + " input[type='color']");
   const labels = utils.queryAll(selector + " label");
   const icons = utils.queryAll(selector + " i");
   utils.remove(files);
+  utils.remove(colors);
   utils.removeAttribute(inputs, "readonly");
 
   if (type === "file") {
@@ -111,6 +113,18 @@ const updateFieldType = (selector: string, type: string) => {
       const file = document.createElement("input");
       file.type = "file";
       inputs[j].insertAdjacentElement("beforebegin", file);
+    }
+  }
+
+  if (type === "color") {
+    utils.setAttribute(inputs, "type", "text");
+    utils.html(labels, "Color");
+    utils.html(icons, "palette");
+
+    for (let j = 0; j < inputs.length; j++) {
+      const color = document.createElement("input");
+      color.type = "color";
+      inputs[j].insertAdjacentElement("beforebegin", color);
     }
   }
 

@@ -160,7 +160,8 @@ input[type=number] {
   appearance: textfield;
 }
 
-input[type=file] {
+input[type=file],
+input[type=color] {
   position: absolute;
   inset-block-start: 0;
   inset-inline-start: 0;

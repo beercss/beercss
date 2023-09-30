@@ -137,9 +137,19 @@ function onChangeFile (e: Event): void {
   updateFile(target);
 }
 
+function onChangeColor (e: Event): void {
+  const target = e.currentTarget as HTMLInputElement;
+  updateColor(target);
+}
+
 function onKeydownFile (e: KeyboardEvent): void {
   const target = e.currentTarget as HTMLInputElement;
   updateFile(target, e);
+}
+
+function onKeydownColor (e: KeyboardEvent): void {
+  const target = e.currentTarget as HTMLInputElement;
+  updateColor(target, e);
 }
 
 function onInputRange (e: Event): void {
@@ -155,7 +165,8 @@ function onMutation (): void {
 function updateFile (target: Element, e?: KeyboardEvent): void {
   if (e && e.key === "Enter") {
     const previousTarget = prev(target) as HTMLInputElement;
-    if (previousTarget) previousTarget.click();
+    if (!hasType(previousTarget, "file")) return;
+    return previousTarget.click();
   }
 
   const currentTarget = target as HTMLInputElement;
@@ -164,6 +175,22 @@ function updateFile (target: Element, e?: KeyboardEvent): void {
   nextTarget.value = currentTarget.files ? Array.from(currentTarget.files).map((x) => x.name).join(", ") : "";
   nextTarget.readOnly = true;
   nextTarget.addEventListener("keydown", onKeydownFile)
+  updateInput(nextTarget);
+}
+
+function updateColor (target: Element, e?: KeyboardEvent): void {
+  if (e && e.key === "Enter") {
+    const previousTarget = prev(target) as HTMLInputElement;
+    if (!hasType(previousTarget, "color")) return;
+    return previousTarget.click();
+  }
+
+  const currentTarget = target as HTMLInputElement;
+  const nextTarget = next(target) as HTMLInputElement;
+  if (!hasType(nextTarget, "text")) return;
+  nextTarget.readOnly = true;
+  nextTarget.value = currentTarget.value;
+  nextTarget.addEventListener("keydown", onKeydownColor)
   updateInput(nextTarget);
 }
 
@@ -429,7 +456,7 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
   const labels = queryAll(".field > label");
   labels.forEach((x: Element) => on(x, "click", onClickLabel));
 
-  const inputs = queryAll(".field > input:not([type=file]):not([type=range]), .field > select, .field > textarea");
+  const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range]), .field > select, .field > textarea");
   inputs.forEach((x: Element) => {
     on(x, "focus", onFocusInput);
     on(x, "blur", onBlurInput);
@@ -440,6 +467,12 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
   files.forEach((x: Element) => {
     on(x, "change", onChangeFile);
     updateFile(x);
+  });
+
+  const colors = queryAll(".field > input[type=color]");
+  colors.forEach((x: Element) => {
+    on(x, "change", onChangeColor);
+    updateColor(x);
   });
 
   const ranges = queryAll(".slider > input[type=range]");

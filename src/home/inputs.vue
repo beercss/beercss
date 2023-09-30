@@ -50,6 +50,9 @@
       input(type="radio", name="type-inputs", @click="domain.updateFieldType('#inputs .field', 'file')")
       span file
     label.radio
+      input(type="radio", name="type-inputs", @click="domain.updateFieldType('#inputs .field', 'color')")
+      span color
+    label.radio
       input(type="radio", name="type-inputs", @click="domain.updateFieldType('#inputs .field', 'date')")
       span date
     label.radio
