@@ -130,6 +130,42 @@
         progress.circle
         input(type="text")
         progress.circle
+  .medium-space 
+  h6 
+    span Custom inputs
+    a.chip.circle(@click="domain.showSamples(data, '#inputs-custom nav > *', 'Custom inputs', null, null)")
+      i code
+  .medium-space 
+  #inputs-custom
+    nav.wrap
+      button.circle
+        i attach_file
+        input(type="file")
+      button.circle
+        i palette
+        input(type="color")
+      button.circle
+        i today
+        input(type="date")
+      button.circle
+        i schedule
+        input(type="time")
+      button
+        i attach_file
+        span File
+        input(type="file")
+      button
+        i palette
+        span Color
+        input(type="color")
+      button
+        i today
+        span Date
+        input(type="date")
+      button
+        i schedule
+        span Time
+        input(type="time")
 </template>
 
 <script setup lang="ts">
