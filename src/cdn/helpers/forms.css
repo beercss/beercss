@@ -26,40 +26,32 @@
 }
 
 .no-round,
-.square {
+.square,
+.top-round,
+.bottom-round,
+.left-round,
+.right-round {
   border-radius: 0 !important;
 }
 
 .top-round {
-  border-radius: var(---round) var(---round) 0 0 !important;
+  border-start-start-radius: var(---round) !important;
+  border-start-end-radius: var(---round) !important;
 }
 
 .bottom-round {
-  border-radius: 0 0 var(---round) var(---round) !important;
+  border-end-end-radius: var(---round) !important;
+  border-end-start-radius: var(---round) !important;
 }
 
 .left-round {
-  border-radius: var(---round) 0 0 var(---round) !important;
+  border-start-start-radius: var(---round) !important;
+  border-end-start-radius: var(---round) !important;
 }
 
 .right-round {
-  border-radius: 0 var(---round) var(---round) 0 !important;
-}
-
-.top-round.left-round {
-  border-radius: var(---round) var(---round) 0 !important;
-}
-
-.top-round.right-round {
-  border-radius: var(---round) var(---round) var(---round) 0 !important;
-}
-
-.bottom-round.left-round {
-  border-radius: var(---round) 0 var(---round) var(---round) !important;
-}
-
-.bottom-round.right-round {
-  border-radius: 0 var(---round) var(---round) !important;
+  border-start-end-radius: var(---round) !important;
+  border-end-end-radius: var(---round) !important;
 }
 
 .circle {
@@ -72,8 +64,8 @@
 
 :is(.circle, .square):not(i, img, video, svg),
 :is(.circle, .square).chip.medium {
-  height: 2.5rem;
-  width: 2.5rem;
+  block-size: 2.5rem;
+  inline-size: 2.5rem;
   padding: 0;
 }
 
@@ -83,18 +75,18 @@
 
 :is(.circle, .square).small:not(i, img, video, svg),
 :is(.circle, .square).chip {
-  height: 2rem;
-  width: 2rem;
+  block-size: 2rem;
+  inline-size: 2rem;
 }
 
 :is(.circle, .square).large:not(i, img, video, svg) {
-  height: 3rem;
-  width: 3rem;
+  block-size: 3rem;
+  inline-size: 3rem;
 }
 
 :is(.circle, .square).extra:not(i, img, video, svg) {
-  height: 3.5rem;
-  width: 3.5rem;
+  block-size: 3.5rem;
+  inline-size: 3.5rem;
 }
 
 :is(.circle, .square).round {

@@ -17,7 +17,7 @@ body.dark {
   --on-error-container: #ffb4ab;
   --background: #1c1b1e;
   --on-background: #e6e1e6;
-  --surface: #1c1b1e;
+  --surface: #141316;
   --on-surface: #e6e1e6;
   --surface-variant: #49454e;
   --on-surface-variant: #cac4cf;
@@ -28,7 +28,13 @@ body.dark {
   --inverse-surface: #e6e1e6;
   --inverse-on-surface: #313033;
   --inverse-primary: #6750a4;
-  --body: #000;
+  --surface-dim: #141316;
+  --surface-bright: #3a383c;
+  --surface-container-lowest: #0f0e11;
+  --surface-container-low: #1c1b1e;
+  --surface-container: #201f22;
+  --surface-container-high: #2b292d;
+  --surface-container-highest: #363438;
   --overlay: rgb(0 0 0 / 0.5);
   --active: rgb(255 255 255 / 0.2);
   --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);

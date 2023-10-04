@@ -1,6 +1,6 @@
 article {
   box-shadow: var(--elevate1);
-  background-color: var(--surface);
+  background-color: var(--surface-container-low);
   color: var(--on-surface);
   padding: 1rem;
   border-radius: 0.75rem;
@@ -9,17 +9,17 @@ article {
 }
 
 * + article {
-  margin-top: 1rem;
+  margin-block-start: 1rem;
 }
 
 article.small {
-  height: 12rem;
+  block-size: 12rem;
 }
 
 article.medium {
-  height: 20rem;
+  block-size: 20rem;
 }
 
 article.large {
-  height: 32rem;
+  block-size: 32rem;
 }

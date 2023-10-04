@@ -7,31 +7,39 @@
 }
 
 .left {
-  left: 0;
+  inset-inline-start: 0;
 }
 
 .right {
-  right: 0;
+  inset-inline-end: 0;
 }
 
 .top {
-  top: 0;
+  inset-block-start: 0;
 }
 
 .bottom {
-  bottom: 0;
+  inset-block-end: 0;
 }
 
 .center {
-  left: 50%;
+  inset-inline-start: 50%;
   transform: translateX(-50%);
 }
 
+[dir=rtl] .center {
+  transform: translateX(50%);
+}
+
 .middle {
-  top: 50%;
+  inset-block-start: 50%;
   transform: translateY(-50%);
 }
 
 .middle.center {
   transform: translate(-50%, -50%);
+}
+
+[dir=rtl] .middle.center {
+  transform: translate(50%, -50%);
 }

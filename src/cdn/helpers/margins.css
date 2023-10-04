@@ -40,20 +40,20 @@
 
 .left-margin,
 .horizontal-margin {
-  margin-left: var(---margin) !important;
+  margin-inline-start: var(---margin) !important;
 }
 
 .right-margin,
 .horizontal-margin {
-  margin-right: var(---margin) !important;
+  margin-inline-end: var(---margin) !important;
 }
 
 .top-margin,
 .vertical-margin {
-  margin-top: var(---margin) !important;
+  margin-block-start: var(---margin) !important;
 }
 
 .bottom-margin,
 .vertical-margin {
-  margin-bottom: var(---margin) !important;
+  margin-block-end: var(---margin) !important;
 }

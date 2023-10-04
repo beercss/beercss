@@ -1,13 +1,11 @@
 export interface ITheme {
-  name: string,
   dark: string,
   light: string,
   selected: string,
 }
 
 export interface ILayout {
-  themes: Array<ITheme>,
-  theme: ITheme | undefined,
+  theme: ITheme,
   isDark: boolean,
   showCssVariables: boolean,
   isLoaded: boolean,

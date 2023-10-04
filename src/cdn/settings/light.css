@@ -18,7 +18,7 @@ body.light {
   --on-error-container: #410002;
   --background: #fffbff;
   --on-background: #1c1b1e;
-  --surface: #fffbff;
+  --surface: #fdf8fd;
   --on-surface: #1c1b1e;
   --surface-variant: #e7e0eb;
   --on-surface-variant: #49454e;
@@ -29,7 +29,13 @@ body.light {
   --inverse-surface: #313033;
   --inverse-on-surface: #f4eff4;
   --inverse-primary: #cfbcff;
-  --body: #FFF;
+  --surface-dim: #ddd8dd;
+  --surface-bright: #fdf8fd;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f7f2f7;
+  --surface-container: #f2ecf1;
+  --surface-container-high: #ece7eb;
+  --surface-container-highest: #e6e1e6;
   --overlay: rgb(0 0 0 / 0.5);
   --active: rgb(0 0 0 / 0.1);
   --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);

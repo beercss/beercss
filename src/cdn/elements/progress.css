@@ -1,35 +1,35 @@
 progress {
   position: relative;
-  width: 100%;
-  height: 0.5rem;
+  inline-size: 100%;
+  block-size: 0.5rem;
   color: var(--primary);
-  background: var(--surface-variant);
+  background: var(--surface-container-highest);
   border-radius: 0;
   flex: none;
   border: none;
 }
 
 progress.small {
-  width: 4rem;
+  inline-size: 4rem;
 }
 
 progress.medium {
-  width: 8rem;
+  inline-size: 8rem;
 }
 
 progress.large {
-  width: 12rem;
+  inline-size: 12rem;
 }
 
 progress:not(.circle, [value])::after {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  inline-size: 100%;
+  block-size: 100%;
   clip-path: none;
   background: currentColor;
   animation: 1.6s to-linear ease infinite;
@@ -57,8 +57,8 @@ progress::-moz-progress-bar {
 
 progress.circle {
   display: inline-block;
-  width: 2.5rem;
-  height: 2.5rem;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
   border-radius: 50%;
   border-width: 0.3rem;
   border-style: solid;
@@ -73,14 +73,14 @@ progress.circle::-moz-progress-bar {
 }
 
 progress.circle.small {
-  width: 1.5rem;
-  height: 1.5rem;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
   border-width: 0.2rem;
 }
 
 progress.circle.large {
-  width: 3.5rem;
-  height: 3.5rem;
+  inline-size: 3.5rem;
+  block-size: 3.5rem;
   border-width: 0.4rem;
 }
 
@@ -90,18 +90,18 @@ progress.circle.large {
 
 @keyframes to-linear {
   0% {
-    margin-left: 0%;
-    width: 0%;
+    margin-inline-start: 0%;
+    inline-size: 0%;
   }
-  
+
   50% {
-    margin-left: 10%;
-    width: 80%;
+    margin-inline-start: 10%;
+    inline-size: 80%;
   }
 
   100% {
-    margin-left: 100%;
-    width: 0%;
+    margin-inline-start: 100%;
+    inline-size: 0%;
   }
 }
 

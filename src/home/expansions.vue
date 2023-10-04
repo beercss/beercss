@@ -9,20 +9,21 @@
   details
     summary With icon
     p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  .medium-space
+  .large-divider
   details
     summary.none Without icon
     p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-  .medium-space
-  article
-    details
-      summary.none
-        .row
-          img.circle(:src="'/favicon.png'")
-          .max
-            h5 Custom
-          i arrow_drop_down
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  .large-divider
+  details
+    summary.none
+      article.round.primary.no-elevate
+        nav
+          .max Custom
+          i expand_more
+    
+    article.round.border First
+    article.round.border Second
+    article.round.border Third
 </template>
 
 <script setup lang="ts">

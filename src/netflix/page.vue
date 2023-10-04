@@ -78,6 +78,5 @@ const scroll = (selector:string) => {
 
 onMounted(() => {
   document.title = "Netflix - Beer CSS";
-  sharedDomain.initTheme(data.value);
 });
 </script>

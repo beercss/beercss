@@ -177,7 +177,6 @@ import { onRoute, redirect } from "../shared/router";
 
 onMounted(async () => {
   document.title = "Youtube - Beer CSS";
-  sharedDomain.initTheme(data.value);
 
   data.value.isLoaded = false;
   await domain.waitForImages();

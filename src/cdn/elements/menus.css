@@ -3,15 +3,15 @@ menu {
   visibility: hidden;
   position: absolute;
   box-shadow: var(--elevate2);
-  background-color: var(--surface);
+  background-color: var(--surface-container);
   z-index: 11;
-  top: auto;
-  bottom: 0;
-  left: 0;
-  right: auto;
-  width: 100%;
-  max-height: 50vh;
-  max-width: none !important;
+  inset-block-start: auto;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  inline-size: 100%;
+  max-block-size: 50vh;
+  max-inline-size: none !important;
   overflow-x: hidden;
   overflow-y: auto;
   font-size: 0.875rem;
@@ -19,14 +19,14 @@ menu {
   text-transform: none;
   color: var(--on-surface);
   line-height: normal;
-  text-align: left;
+  text-align: start;
   border-radius: 0.25rem;
   transform: scale(0.8) translateY(120%);
   transition: var(--speed2) all, 0s background-color;
 }
 
 menu.no-wrap {
-  width: max-content;
+  inline-size: max-content;
   white-space: nowrap !important;
 }
 
@@ -39,8 +39,8 @@ menu:not([data-ui]):active,
 }
 
 menu.left {
-  left: auto;
-  right: 0;
+  inset-inline-start: auto;
+  inset-inline-end: 0;
 }
 
 menu * {
@@ -60,25 +60,25 @@ menu > a:is(:hover, :focus, .active) {
 }
 
 menu.min {
-  top: 0;
-  bottom: auto;
+  inset-block-start: 0;
+  inset-block-end: auto;
   transform: none !important;
   border-radius: inherit;
 }
 
 menu.max {
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  max-height: none;
-  min-height: auto;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  block-size: 100%;
+  max-block-size: none;
+  min-block-size: auto;
   z-index: 100;
   transform: none !important;
 }
 
 menu.no-wrap:is(.min, .max) {
-  min-width: 16rem;
+  min-inline-size: 16rem;
 }

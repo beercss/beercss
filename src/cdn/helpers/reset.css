@@ -10,8 +10,8 @@
 }
 
 body {
-  color: var(--on-background);
-  background-color: var(--body);
+  color: var(--on-surface);
+  background-color: var(--surface);
   overflow-x: hidden;
 }
 
@@ -52,11 +52,16 @@ body *::-webkit-scrollbar,
 body *::-webkit-scrollbar-thumb,
 body *::-webkit-scrollbar-button {
   background: none;
-  width: 0.4rem;
-  height: 0.4rem;
+  inline-size: 0.4rem;
+  block-size: 0.4rem;
 }
 
 body *:is(:hover,:focus)::-webkit-scrollbar-thumb {
   background: var(--outline);
   border-radius: 1rem;
+}
+
+pre,
+code {
+  direction: ltr;
 }

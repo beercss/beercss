@@ -48,6 +48,10 @@ const setAttribute = (elements: NodeListOf<Element>, key: string, value: any) =>
   else elements.forEach((x: Element) => x.setAttribute(key, value));
 };
 
+const removeValue = (elements: NodeListOf<Element>) => {
+  elements.forEach((x: any) => { x.value = ""; });
+}
+
 const query = (selector: string | Element): Element | null => {
   if (typeof selector === "string") return document.querySelector(selector);
   return selector;
@@ -93,6 +97,7 @@ export default {
   is,
   removeAttribute,
   setAttribute,
+  removeValue,
   query,
   queryAll,
   firstRedirect,

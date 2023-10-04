@@ -1,12 +1,90 @@
 <template lang="pug">
 #colors
   .large-space
-  h4
-    span Colors
+  nav.wrap
+    h4 Colors
     a.chip.circle(data-ui="#dialog-colors")
       i code
-  nav
-    button(data-ui="#dialog-colors") Colors
+    a.chip.circle(@click="sharedDomain.updateMode(data)")
+      i {{ data.isDark ? "light_mode" : "dark_mode" }}
+    a.chip.circle
+      i palette
+      input(type="color", @change="sharedDomain.updateTheme(data, $event)")
+    a.chip.circle
+      i upload
+      input(type="file", @change="sharedDomain.updateTheme(data, $event)")
+    button.circle.small.red(@click="sharedDomain.updateTheme(data, '#f44336')")
+    button.circle.small.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
+    button.circle.small.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')")
+    button.circle.small.deep-purple(@click="sharedDomain.updateTheme(data, '#673ab7')")
+    button.circle.small.indigo(@click="sharedDomain.updateTheme(data, '#3f51b5')")
+    button.circle.small.blue(@click="sharedDomain.updateTheme(data, '#2196f3')")
+    button.circle.small.light-blue(@click="sharedDomain.updateTheme(data, '#03a9f4')")
+    button.circle.small.cyan(@click="sharedDomain.updateTheme(data, '#00bcd4')")
+    button.circle.small.teal(@click="sharedDomain.updateTheme(data, '#009688')")
+    button.circle.small.green(@click="sharedDomain.updateTheme(data, '#4caf50')")
+    button.circle.small.light-green(@click="sharedDomain.updateTheme(data, '#8bc34a')")
+    button.circle.small.lime(@click="sharedDomain.updateTheme(data, '#cddc39')")
+    button.circle.small.yellow(@click="sharedDomain.updateTheme(data, '#ffeb3b')")
+    button.circle.small.amber(@click="sharedDomain.updateTheme(data, '#ffc107')")
+    button.circle.small.orange(@click="sharedDomain.updateTheme(data, '#ff9800')")
+    button.circle.small.deep-orange(@click="sharedDomain.updateTheme(data, '#ff5722')")
+    button.circle.small.brown(@click="sharedDomain.updateTheme(data, '#795548')")
+    button.circle.small.grey(@click="sharedDomain.updateTheme(data, '#9e9e9e')")
+    button.circle.small.blue-grey(@click="sharedDomain.updateTheme(data, '#607d8b')")
+    button.circle.small.black(@click="sharedDomain.updateTheme(data, '#000000')")
+    button.circle.small.white(@click="sharedDomain.updateTheme(data, '#ffffff')")
+  .large-space
+  .grid
+    .s12.m6.l3
+      h6 Primary
+      .padding.primary primary
+      .padding.primary-container primary-container
+      .padding.border.primary-border primary-border
+      .padding.primary-text primary-text
+    .s12.m6.l3
+      h6 Secondary
+      .padding.secondary secondary
+      .padding.secondary-container secondary-container
+      .padding.border.secondary-border secondary-border
+      .padding.secondary-text secondary-text
+    .s12.m6.l3
+      h6 Tertiary
+      .padding.tertiary tertiary
+      .padding.tertiary-container tertiary-container
+      .padding.border.tertiary-border tertiary-border
+      .padding.tertiary-text tertiary-text
+    .s12.m6.l3
+      h6 Error
+      .padding.error error
+      .padding.error-container error-container
+      .padding.border.error-border error-border
+      .padding.error-text error-text
+  .medium-space
+  .grid
+    .s12.m6
+      h6 Neutral
+      .grid
+        .s12.l6
+          .padding.surface-dim surface-dim
+          .padding.surface-bright surface-bright
+          .padding.surface-variant surface-variant
+          .padding.inverse-surface inverse-surface
+          .padding.surface surface
+          .padding.background background
+        .s12.l6
+          .padding.surface-container-lowest surface-container-lowest
+          .padding.surface-container-low surface-container-low
+          .padding.surface-container surface-container
+          .padding.surface-container-high surface-container-high
+          .padding.surface-container-highest surface-container-highest
+    .s12.m6.l3
+      h6 Others
+      .grid 
+        .s12
+          .padding.inverse-primary inverse-primary
+          .padding.inverse-primary-border.border inverse-primary-border
+          .padding.inverse-primary-text inverse-primary-text
 
   dialog#dialog-colors.right.medium
     header.fixed
@@ -14,33 +92,56 @@
         h5.max Colors
         button.circle.transparent(data-ui="#dialog-colors")
           i close
+    div
+      nav
+        label.radio
+          input(type="radio", value="light", v-model="data.theme.selected")
+          span Light
+        label.radio
+          input(type="radio", value="dark", v-model="data.theme.selected")
+          span Dark
+    .space
+    article.border
+      pre.scroll.large-padding.fill(v-html="sourceCode()")
 
-    .grid
+    .grid.no-round
       .s12
-        h5 Theme
-        .primary primary
-        .primary-container primary-container
-        .secondary secondary
-        .secondary-container secondary-container
-        .tertiary tertiary
-        .tertiary-container tertiary-container
-        .error error
-        .error-container error-container
-        .background background
-        .surface surface
-        .surface-variant surface-variant
-        .inverse-surface inverse-surface
-        .inverse-primary inverse-primary
-        .primary-border.border primary-border
-        .secondary-border.border secondary-border
-        .tertiary-border.border tertiary-border
-        .error-border.border error-border
-        .inverse-primary-border.border inverse-primary-border
-        .primary-text primary-text
-        .secondary-text secondary-text
-        .tertiary-text tertiary-text
-        .error-text error-text
-        .inverse-primary-text inverse-primary-text
+        h5 Primary
+        .padding.primary primary
+        .padding.primary-container primary-container
+        .padding.border.primary-border primary-border
+        .padding.primary-text primary-text
+        h5 Secondary
+        .padding.secondary secondary
+        .padding.secondary-container secondary-container
+        .padding.border.secondary-border secondary-border
+        .padding.secondary-text secondary-text
+        h5 Tertiary
+        .padding.tertiary tertiary
+        .padding.tertiary-container tertiary-container
+        .padding.border.tertiary-border tertiary-border
+        .padding.tertiary-text tertiary-text
+        h5 Error
+        .padding.error error
+        .padding.error-container error-container
+        .padding.border.error-border error-border
+        .padding.error-text error-text
+        h5 Neutral
+        .padding.surface-dim surface-dim
+        .padding.surface-bright surface-bright
+        .padding.surface-variant surface-variant
+        .padding.inverse-surface inverse-surface
+        .padding.surface-container-lowest surface-container-lowest
+        .padding.surface-container-low surface-container-low
+        .padding.surface-container surface-container
+        .padding.surface-container-high surface-container-high
+        .padding.surface-container-highest surface-container-highest
+        .padding.surface surface
+        .padding.background background
+        h5 Others
+        .padding.inverse-primary inverse-primary
+        .padding.inverse-primary-border.border inverse-primary-border
+        .padding.inverse-primary-text inverse-primary-text
       .s12
         h5 Red
         .black-text.red1 red1
@@ -326,5 +427,17 @@
 
 <script setup lang="ts">
 import domain from "./domain";
+import sharedDomain from "../shared/domain";
 import data from "./data";
+import { onMounted } from "vue";
+
+const sourceCode = () => {
+  return ((data.value.theme as any)[data.value.theme.selected] || "").replace(/\;/g, ";<br/>");
+};
 </script>
+
+<style scoped>
+pre {
+  white-space: normal;
+}
+</style>

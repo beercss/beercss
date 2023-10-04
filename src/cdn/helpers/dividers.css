@@ -2,8 +2,8 @@
 .small-divider,
 .medium-divider,
 .large-divider {
-  height: 0.0625rem;
-  background-color: var(--outline);
+  block-size: 0.0625rem;
+  background-color: var(--outline-variant);
   display: block;
   margin: 0 !important;
 }

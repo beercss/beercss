@@ -75,7 +75,14 @@
   color: var(--on-background) !important;
 }
 
-.surface {
+.surface,
+.surface-dim,
+.surface-bright,
+.surface-container-lowest,
+.surface-container-low,
+.surface-container,
+.surface-container-high,
+.surface-container-highest {
   background-color: var(--surface) !important;
   color: var(--on-surface) !important;
 }
@@ -101,6 +108,38 @@
 
 .inverse-primary-border {
   border-color: var(--inverse-primary) !important;
+}
+
+.surface-dim {
+  background-color: var(--surface-dim) !important;
+}
+
+.surface-bright {
+  background-color: var(--surface-bright) !important;
+}
+
+.surface-container-lowest {
+  background-color: var(--surface-container-lowest) !important;
+}
+
+.surface-container-low {
+  background-color: var(--surface-container-low) !important;
+}
+
+.surface-container {
+  background-color: var(--surface-container) !important;
+}
+
+.surface-container-high {
+  background-color: var(--surface-container-high) !important;
+}
+
+.surface-container-highest {
+  background-color: var(--surface-container-highest) !important;
+}
+
+.surface-container-low {
+  background-color: var(--surface-container-low) !important;
 }
 
 .black {
