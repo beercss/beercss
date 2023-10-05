@@ -1,9 +1,5 @@
 <template lang="pug">
 div
-  .field.border.prefix
-    i palette
-    input(placeholder="Select a color")
-    input(type="color")
   #app-bars
     h4 App bars
     .medium-space
