@@ -22,6 +22,7 @@
             span Disabled
           label.checkbox
             input(type="checkbox", checked, disabled)
+            span Disabled
     .s12
       h6 Checkbox with icons
       .field.middle-align#checkboxes1
