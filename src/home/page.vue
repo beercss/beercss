@@ -216,6 +216,10 @@ div
       span Codepen
 
   .responsive.center-align.yellow4
+    nav.row.primary-container.white-text.center-align.no-space.no-margin.no-padding
+      div.max max1
+      div.divider.horizontal.white-border.white.white-text
+      div.min min1
     div.black-text
       .large-height.no-scroll.middle-align.center-align
         img#logo(:src="'/logo.png'", @click="domain.addHomeScreen()")
