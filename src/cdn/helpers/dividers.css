@@ -20,44 +20,11 @@
   margin: 0.5rem 0 !important;
 }
 
-.horizontal:is(.divider) {
-  inline-size: 0.8em !important;
-  block-size: 0.125rem !important;
-  writing-mode: vertical-lr !important;
+.divider.vertical {
+  inline-size: 0.0625rem;
 }
 
-.no-line .horizontal {
-  inline-size: 1rem !important;
-}
-
-.tiny-line .horizontal {
-  inline-size: 1.25rem !important;
-}
-
-.small-line .horizontal {
-  inline-size: 1.5rem !important;
-}
-
-.medium-line .horizontal {
-  inline-size: 1.75rem !important;
-}
-
-.large-line .horizontal {
-  inline-size: 2rem !important;
-}
-
-.extra-line .horizontal {
-  inline-size: 2.25rem !important;
-}
-
-.horizontal:is(.small-height) {
-  inline-size: 12rem !important;
-}
-
-.horizontal:is(.medium-height) {
-  inline-size: 24rem !important;
-}
-
-.horizontal:is(.large-height) {
-  inline-size: 36rem !important;
+.divider.vertical.max {
+  align-self: stretch;
+  flex: none;
 }
