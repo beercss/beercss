@@ -4,6 +4,7 @@ main.responsive {
   padding: 0.5rem;
   overflow-x: hidden;
   min-block-size: 100vh;
+  min-inline-size: fit-content;
 }
 
 main.responsive.max {
