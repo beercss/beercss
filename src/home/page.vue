@@ -276,7 +276,7 @@ div
             .medium-space
             .l
               h5 Summary
-              pre.scroll.large-padding.fill
+              pre.wrap.large-padding.fill
                 p
                   b absolute
                   span &nbsp;left, right, top, bottom, front, back, small, medium, large
