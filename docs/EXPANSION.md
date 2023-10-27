@@ -11,17 +11,30 @@ Expansion contain creation flows and allow lightweight editing of an element.
 </details>
 ```
 
-## Example
+## Example multiple levels
 
 ```html
-<article>
+<details>
+  <summary>...</summary>
   <details>
-    <summary>
-      <h5>Title</h5>
-    </summary>
-    <p>Description that will be shown after click on summary</p>
+    <summary>...</summary>
+    <details>
+      <summary>...</summary>
+      <...>...</...>
+    </details>
   </details>
-</article>
+</details>
+```
+
+## Example custom summary
+
+```html
+<details>
+  <summary class="none">
+    <...>...</...>
+  </summary>
+  <...>...</...>
+</details>
 ```
 
 ## Go to
