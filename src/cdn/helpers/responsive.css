@@ -26,3 +26,27 @@
     display: none;
   }
 }
+
+@media only screen and (max-height: 12rem) {
+  .mh:not(.sh),
+  .lh:not(.sh),
+  .mh.lh:not(.sh) {
+    display: none;
+  }
+}
+
+@media only screen and (min-height: 12rem) and (max-height: 24rem) {
+  .sh:not(.mh),
+  .lh:not(.mh),
+  .sh.lh:not(.mh) {
+    display: none;
+  }
+}
+
+@media only screen and (min-height: 24rem) {
+  .mh:not(.lh),
+  .sh:not(.lh),
+  .mh.sh:not(.lh) {
+    display: none;
+  }
+}
