@@ -69,7 +69,8 @@
   transition: var(--speed1) all;
 }
 
-.switch > span::before, .switch.icon > span > i {
+.switch > span::before,
+.switch.icon > span > i {
   position: absolute;
   inset-inline-start: 0;
   inset-block-start: 50%;
@@ -147,7 +148,8 @@
   background-color: var(--primary);
 }
 
-.switch > input:checked + span::before, .switch.icon > input:checked + span > i {
+.switch > input:checked + span::before,
+.switch.icon > input:checked + span > i {
   content: "check";
   color: var(--primary);
   background-color: var(--on-primary);

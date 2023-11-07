@@ -98,7 +98,7 @@ svg {
 :is(.tabs) :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra) {
   min-inline-size: 1.5rem;
   max-inline-size: 1.5rem;
-  max-block-size: 1.5rem;
+  min-block-size: 1.5rem;
   max-block-size: 1.5rem;
 }
 

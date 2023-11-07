@@ -128,7 +128,6 @@
   transform: translate(-50%, 100%);
 }
 
-
 .badge.border {
   border-color: var(--error);
   color: var(--error);

@@ -14,7 +14,7 @@ nav#navigation-drawer.left.drawer
     span Share
   .divider
   label Subtitle
-  a(data-ui="#menu")
+  a
     i widgets
     span Widgets
   a
@@ -167,8 +167,8 @@ main.responsive
       .divider
       label Subtitle
       a(data-ui="#menu")
-        i widgets
-        span Widgets
+        i arrow_drop_down
+        span Menu
       div
         menu#menu
           a Item 1
