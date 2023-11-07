@@ -1,11 +1,10 @@
 <template lang="pug">
 div
-  nav.left.no-space.m.l
-    .large-space
-    .medium-space
+  nav.left.m.l.medium-space
+    .space
+    .space
     a.button.fill.square.round.extra(data-ui="#dialog-add")
       i add
-    .space
     a(href="/gmail", :class="{ active: data.url === '/gmail' }")
       i inbox
       .tooltip.right Inbox

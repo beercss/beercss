@@ -232,7 +232,7 @@ const updateProgress = (value: number) => {
   });
 };
 
-const formatHtml = (element: any, raw: boolean = false): string => {
+const formatHtml = (element: any, raw: boolean = false, useInnerHtml: boolean = false): string => {
   function process (str: string): string {
     const div = document.createElement("div");
     div.innerHTML = str.trim();
@@ -261,7 +261,7 @@ const formatHtml = (element: any, raw: boolean = false): string => {
   }
 
   const tag = utils.clone(element);
-  const text = tag?.outerHTML ?? "";
+  const text = useInnerHtml ? tag?.innerHTML ?? "" : tag?.outerHTML ?? "";
   if (raw) return process(text);
 
   utils.remove(tag?.querySelectorAll(".overlay"));
@@ -294,10 +294,10 @@ const showSamples = (data: IHome, selector: string, name: string, dialog?: strin
 
     if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom"])) {
       utils.html(element?.querySelectorAll("dialog"), "");
-      text = formatHtml(element);
+      text = formatHtml(element, false, name === "Main layouts");
       textFormatted = hljs.highlight("html", text).value;
     } else {
-      text = formatHtml(element);
+      text = formatHtml(element, false, name === "Main layouts");
       textFormatted = hljs.highlight("html", text).value;
     }
 

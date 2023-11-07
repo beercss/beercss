@@ -168,27 +168,6 @@ dialog.large:is(.top, .bottom) {
   block-size: 32rem;
 }
 
-nav > dialog,
-nav.left > dialog {
-  z-index: 0;
-  text-align: start;
-  overflow-y: auto;
-  background-color: inherit;
-  padding: 1rem 1rem 1rem 5rem;
-}
-
-nav.right > dialog {
-  padding: 1rem 5rem 1rem 1rem;
-}
-
-nav.top > dialog {
-  padding: 5rem 3rem 1rem;
-}
-
-nav.bottom > dialog {
-  padding: 1rem 3rem 5rem;
-}
-
 dialog > a.row:is(:hover, .active) {
   background-color: var(--secondary-container);
 }

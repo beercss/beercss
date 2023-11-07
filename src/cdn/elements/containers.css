@@ -1,6 +1,10 @@
+:is(main, header, footer).responsive {
+  ---padding: 6rem;
+}
+
 main.responsive {
   margin: 0 auto;
-  max-inline-size: 75rem;
+  max-inline-size: calc(75rem + var(---padding));
   padding: 0.5rem;
   overflow-x: hidden;
   min-block-size: 100vh;
@@ -19,11 +23,15 @@ nav.top:not(.s, .m, .l) ~ .responsive:not(footer) {
 }
 
 nav.left:not(.s, .m, .l) ~ .responsive {
-  padding-inline-start: 6rem;
+  padding-inline-start: var(---padding);
 }
 
 nav.right:not(.s, .m, .l) ~ .responsive {
-  padding-inline-end: 6rem;
+  padding-inline-end: var(---padding);
+}
+
+nav.drawer:not(.s, .m, .l) ~ .responsive {
+  ---padding: 20rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -35,12 +43,16 @@ nav.right:not(.s, .m, .l) ~ .responsive {
     padding-block-start: 5rem;
   }
 
+  nav.drawer.s ~ .responsive {
+    ---padding: 20rem;
+  }
+
   nav.s.left ~ .responsive {
-    padding-inline-start: 6rem;
+    padding-inline-start: var(---padding);
   }
 
   nav.s.right ~ .responsive {
-    padding-inline-end: 6rem;
+    padding-inline-end: var(---padding);
   }
 }
 
@@ -53,12 +65,16 @@ nav.right:not(.s, .m, .l) ~ .responsive {
     padding-block-start: 5rem;
   }
 
+  nav.drawer.m ~ .responsive {
+    ---padding: 20rem;
+  }
+
   nav.m.left ~ .responsive {
-    padding-inline-start: 6rem;
+    padding-inline-start: var(---padding);
   }
 
   nav.m.right ~ .responsive {
-    padding-inline-end: 6rem;
+    padding-inline-end: var(---padding);
   }
 }
 
@@ -71,12 +87,16 @@ nav.right:not(.s, .m, .l) ~ .responsive {
     padding-block-start: 5rem;
   }
 
+  nav.drawer.l ~ .responsive {
+    ---padding: 20rem;
+  }
+
   nav.l.left ~ .responsive {
-    padding-inline-start: 6rem;
+    padding-inline-start: var(---padding);
   }
 
   nav.l.right ~ .responsive {
-    padding-inline-end: 6rem;
+    padding-inline-end: var(---padding);
   }
 }
 

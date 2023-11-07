@@ -4,7 +4,8 @@
 .large-divider {
   block-size: 0.0625rem;
   background-color: var(--outline-variant);
-  display: block;
+  display: flex;
+  align-self: normal;
   margin: 0 !important;
 }
 
@@ -21,10 +22,11 @@
 }
 
 .divider.vertical {
+  align-self: auto;
   inline-size: 0.0625rem;
 }
 
 .divider.vertical.max {
-  align-self: stretch;
+  align-self: normal;
   flex: none;
 }

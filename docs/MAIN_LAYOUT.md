@@ -1,0 +1,139 @@
+# Main layout
+
+The main layout is a common html structure to setup your pages.
+
+## Compact example
+
+```html
+<nav class="bottom">
+  <a>
+    <i>home</i>
+    <div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    <div>Search</div>
+  </a>
+  <a>
+    <i>share</i>
+    <div>share</div>
+  </a>
+</nav>
+<main class="responsive">
+  <h3>Compact</h3>
+</main>
+```
+
+## Medium example
+
+```html
+<nav class="left">
+  <a>
+    <i>home</i>
+    <div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    <div>Search</div>
+  </a>
+  <a>
+    <i>share</i>
+    <div>share</div>
+  </a>
+</nav>
+<main class="responsive">
+  <h3>Medium</h3>
+</main>
+```
+
+## Extended example
+
+```html
+<nav class="left drawer">
+  <a>
+    <i>home</i>
+    <div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    <div>Search</div>
+  </a>
+  <a>
+    <i>share</i>
+    <div>share</div>
+  </a>
+</nav>
+<main class="responsive">
+  <h3>Extended</h3>
+</main>
+```
+
+## Multi panel example
+
+```html
+<nav class="left">
+  <a>
+    <i>home</i>
+    <div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    <div>Search</div>
+  </a>
+  <a>
+    <i>share</i>
+    <div>share</div>
+  </a>
+</nav>
+<main class="responsive">
+  <div class="grid">
+    <div class="s6">
+      <h3>Panel 1</h3>
+    </div>
+    <div class="s6">
+      <h3>Panel 2</h3>
+    </div>
+  </div>
+</main>
+```
+
+## Custom example
+
+```html
+<nav class="left">
+  <a>
+    <i>home</i>
+    <div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    <div>Search</div>
+  </a>
+  <a>
+    <i>share</i>
+    <div>share</div>
+  </a>
+</nav>
+<main class="responsive">
+  <div class="grid">
+    <div class="s12 m12 l6">
+      <h3>Panel 1</h3>
+    </div>
+    <div class="s12 m12 l6">
+      <h3>Panel 2</h3>
+    </div>
+    <div class="s12 m12 l6">
+      <h3>Panel 3</h3>
+    </div>
+    <div class="s12 m12 l6">
+      <h3>Panel 4</h3>
+    </div>
+  </div>
+</main>
+```
+
+## Go to
+
+[Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
+
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

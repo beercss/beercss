@@ -1,10 +1,27 @@
 <template lang="pug">
-main.responsive
+nav#navigation-drawer.left.drawer
+  a(@click="updateTheme()")
+    i palette
+    span Theme
+  a
+    i home
+    span Home
+  a
+    i search
+    span Search
+  a
+    i share
+    span Share
+  .divider
+  label Subtitle
+  a(data-ui="#menu")
+    i widgets
+    span Widgets
+  a
+    i more_vert
+    span More
 
-  button
-    span Date
-    menu.round.no-wrap
-      datePicker
+main.responsive
   .row
     a(@click="updateTheme()")
       i.large palette
@@ -41,6 +58,31 @@ main.responsive
       button.border Cancel
       button Confirm
 
+  dialog.left#navigation.no-padding(data-ui="#navigation")
+    nav.drawer
+      a(@click="updateTheme()")
+        i palette
+        span Theme
+      a
+        i home
+        span Home
+      a
+        i search
+        span Search
+      a
+        i share
+        span Share
+      .divider
+      label Subtitle
+      a
+        i widgets
+        span Widgets
+      a
+        i more_vert
+        span More
+
+  .large-space
+  h5 Field with tooltip
   .field.label.border
     input
     label.front
@@ -55,16 +97,26 @@ main.responsive
         svg(viewBox="0 0 24 24")
           path(d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z")
         .tooltip Tooltip
+    .helper
+      span Helper
+      i.tiny info
+      .tooltip.bottom Testando tooltip
 
-    span.helper Helper
-
+  .large-space
+  h5 Dialogs and date picker
   nav
     button(data-ui="#default") Default
     button(data-ui="#left") Left
     button(data-ui="#top") Top
     button(data-ui="#right") Right
     button(data-ui="#bottom") Bottom
-  h5 Binding
+    button
+      span Date picker
+      menu.round.no-wrap
+        datePicker
+  
+  .large-space
+  h5 Slider, progress and field bindings
   .row
     .field.label.border
       input(v-model="number")
@@ -91,7 +143,66 @@ main.responsive
         option(value="1") Item 1
         option(value="2") Item 2
         option(value="3") Item 3
-  h5 With pure CSS
+  
+  .large-space
+  h5 Navigation drawer inside elements
+  .row
+    button(@click="updateNavigationDrawer('left')") left
+    button(@click="updateNavigationDrawer('right')") right
+    button(data-ui="#navigation") dialog
+  .row
+    nav.drawer
+      a(@click="updateTheme()")
+        i palette
+        span Theme
+      a
+        i home
+        span Home
+      a
+        i search
+        span Search
+      a
+        i share
+        span Share
+      .divider
+      label Subtitle
+      a(data-ui="#menu")
+        i widgets
+        span Widgets
+      div
+        menu#menu
+          a Item 1
+          a Item 2
+          a Item 3
+      details
+        summary.none
+          a
+            i expand_more
+            span Expand
+        a
+          i arrow_downward
+          span More
+        a
+          i arrow_downward
+          span More
+        details
+          summary.none
+            a
+              i expand_more
+              span Expand
+          a
+            i arrow_downward
+            span More
+          a
+            i arrow_downward
+            span More
+          a
+            i arrow_upward
+            span End
+    
+
+  .large-space
+  h5 Fields
   nav
     button(@click="domain.updateSize('#with-pure-css .field', 'small')") small
     button(@click="domain.updateSize('#with-pure-css .field', '')") medium
@@ -144,9 +255,9 @@ main.responsive
         label Label
         span.helper
           span Helper
-          i.tiny info
-          .tooltip.bottom Testando tooltip
-  h5 With row
+  
+  .large-space
+  h5 Fields inside grid
   .grid
     .s4
       .field.label.border
@@ -351,6 +462,10 @@ import datePicker from "./datePicker/datePicker.vue";
 const updateTheme = () => {
   document.body.className = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
 };
+const updateNavigationDrawer = (direction: string) => {
+  const elemento = document.getElementById("navigation-drawer");
+  if (elemento) elemento.className = "drawer " + direction;
+}
 const number = ref(0);
 const text = ref();
 const select = ref();

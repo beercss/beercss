@@ -64,39 +64,39 @@
       button.border(data-ui="#dialog-max") Cancel
       button(data-ui="#dialog-max") Confirm
 
-  dialog#dialog-navigation-drawer.left
-    header.fixed
-      nav
-        button.transparent.circle.large(data-ui="#dialog-navigation-drawer")
-          i close
-        h5.max Header
-    a.row.round
-      i inbox
-      span Inbox
-      .max
-      div 24
-    a.row.round
-      i send
-      span Outbox
-      .max
-      div 100+
-    a.row.round
-      i favorite
-      span Favorities
-    a.row.round
-      i delete
-      span Trash
-    .small-divider
-    .row Labels
-    a.row.round
-      i fiber_manual_record
-      span Label
-    a.row.round
-      i change_history
-      span Label
-    a.row.round
-      i stop
-      span Label
+  dialog#dialog-navigation-drawer.left.no-padding
+    nav.drawer
+      header
+        nav
+          img.circle(:src="'/favicon.png'")
+          h6.max Title
+          button.transparent.circle.large(data-ui="#dialog-navigation-drawer")
+            i close
+      label Mail
+      a
+        i inbox
+        span.max Inbox
+        b 24
+      a
+        i send
+        span Outbox
+      a
+        i favorite
+        span favorities
+      a
+        i delete
+        span Trash
+      .divider
+      label Labels
+      a
+        i fiber_manual_record
+        span Label
+      a
+        i change_history
+        span Label
+      a
+        i stop
+        span Label
 </template>
 
 <script setup lang="ts">
