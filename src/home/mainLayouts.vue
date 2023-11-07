@@ -18,14 +18,14 @@ div
           .max 
             article.fill.no-elevate.center-align.middle-align.height-15
       h6.no-margin.absolute.middle.center Medium
-    article#main-layout-extended.s12.m6.l4.center-align.no-elevate.no-margin
+    article#main-layout-expanded.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row
           article.fill.no-elevate.height-15.width-6
           .max 
             article.fill.no-elevate.center-align.middle-align.height-15
-      h6.no-margin.absolute.middle.center Extended
-    article#main-layout-muti-panel.s12.m6.l4.center-align.no-elevate.no-margin
+      h6.no-margin.absolute.middle.center Expanded
+    article#main-layout-muti-panes.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row
           article.fill.no-elevate.height-15
@@ -35,7 +35,7 @@ div
                 article.fill.no-elevate.center-align.middle-align.height-15
               .max 
                 article.fill.no-elevate.center-align.middle-align.height-15
-      h6.no-margin.absolute.middle.center Multi panel
+      h6.no-margin.absolute.middle.center Multi panes
     article#main-layout-custom.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row
@@ -78,7 +78,7 @@ div
           div share
       main.responsive
         h3 Medium
-    #large
+    #expanded
       nav.left.drawer
         a 
           i home
@@ -90,8 +90,8 @@ div
           i share
           div share
       main.responsive
-        h3 Extended
-    #multi-panel
+        h3 Expanded
+    #multi-panes
       nav.left
         a 
           i home
@@ -105,9 +105,9 @@ div
       main.responsive
         .grid
           .s6
-            h3 Panel 1
+            h3 Pane 1
           .s6
-            h3 Panel 2
+            h3 Pane 2
     #custom
       nav.left
         a 
@@ -122,13 +122,13 @@ div
       main.responsive
         .grid
           .s12.m12.l6
-            h3 Panel 1
+            h3 Pane 1
           .s12.m12.l6
-            h3 Panel 2
+            h3 Pane 2
           .s12.m12.l6
-            h3 Panel 3
+            h3 Pane 3
           .s12.m12.l6
-            h3 Panel 4
+            h3 Pane 4
   dialog#dialog-main-layouts.right.large
     header.fixed
       nav
@@ -162,7 +162,7 @@ import domain from "./domain";
 import data from "./data";
 import { ref } from "vue";
 
-const layoutNames = ref(["Compact", "Medium", "Extended", "Multi panel", "Custom"]);
+const layoutNames = ref(["Compact", "Medium", "Expanded", "Multi panes", "Custom"]);
 </script>
 
 <style scoped>

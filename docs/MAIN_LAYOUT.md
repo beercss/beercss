@@ -46,7 +46,7 @@ The main layout is a common html structure to setup your pages.
 </main>
 ```
 
-## Extended example
+## Expanded example
 
 ```html
 <nav class="left drawer">
@@ -64,11 +64,11 @@ The main layout is a common html structure to setup your pages.
   </a>
 </nav>
 <main class="responsive">
-  <h3>Extended</h3>
+  <h3>Expanded</h3>
 </main>
 ```
 
-## Multi panel example
+## Multi panes example
 
 ```html
 <nav class="left">
@@ -88,10 +88,10 @@ The main layout is a common html structure to setup your pages.
 <main class="responsive">
   <div class="grid">
     <div class="s6">
-      <h3>Panel 1</h3>
+      <h3>Pane 1</h3>
     </div>
     <div class="s6">
-      <h3>Panel 2</h3>
+      <h3>Pane 2</h3>
     </div>
   </div>
 </main>
@@ -117,16 +117,16 @@ The main layout is a common html structure to setup your pages.
 <main class="responsive">
   <div class="grid">
     <div class="s12 m12 l6">
-      <h3>Panel 1</h3>
+      <h3>Pane 1</h3>
     </div>
     <div class="s12 m12 l6">
-      <h3>Panel 2</h3>
+      <h3>Pane 2</h3>
     </div>
     <div class="s12 m12 l6">
-      <h3>Panel 3</h3>
+      <h3>Pane 3</h3>
     </div>
     <div class="s12 m12 l6">
-      <h3>Panel 4</h3>
+      <h3>Pane 4</h3>
     </div>
   </div>
 </main>
