@@ -104,6 +104,24 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap
 </nav>
 ```
 
+## Navigation drawer example
+```html
+<nav class="drawer">
+  <a>
+    <i>home</i>
+    <div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    <div>Search</div>
+  </a>
+  <a>
+    <i>more_vert</i>
+    <div>More</div>
+  </a>
+</nav>
+```
+
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)
