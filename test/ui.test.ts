@@ -3,11 +3,11 @@ import { JSDOM } from "jsdom";
 import beer from "../src/cdn/beer";
 import "material-dynamic-colors";
 
-test("checking all variables from theme", async() => {
+test("checking all variables from theme", async () => {
   const dom = new JSDOM();
   global.document = dom.window.document;
   global.getComputedStyle = dom.window.getComputedStyle;
-  
+
   const colors = [
     "--primary",
     "--on-primary",
@@ -44,12 +44,12 @@ test("checking all variables from theme", async() => {
     "--surface-container-low",
     "--surface-container",
     "--surface-container-high",
-    "--surface-container-highest"
+    "--surface-container-highest",
   ];
 
   const theme = await beer("theme", "#ffd700") as IBeerCssTheme;
-  for(let color of colors) {
-    let colorWithValue = new RegExp(`${color}\:[#0-9a-f]+\;`, "i");
+  for (const color of colors) {
+    const colorWithValue = new RegExp(`${color}:[#0-9a-f]+;`, "i");
     expect(theme.light).toMatch(colorWithValue);
     expect(theme.dark).toMatch(colorWithValue);
   }

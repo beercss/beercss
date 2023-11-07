@@ -130,12 +130,12 @@
         progress.circle
         input(type="text")
         progress.circle
-  .medium-space 
-  h6 
+  .medium-space
+  h6
     span Custom inputs
     a.chip.circle(@click="domain.showSamples(data, '#inputs-custom nav > *', 'Custom inputs', null, null)")
       i code
-  .medium-space 
+  .medium-space
   #inputs-custom
     nav.wrap
       button.circle

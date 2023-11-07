@@ -1,7 +1,7 @@
 import { ILayout } from "./interfaces";
 
 const updateTheme = async (data: ILayout, source: any, newMode?: string) => {
-  if (source?.target?.type == "color" && source?.target?.value) source = source.target.value;
+  if (source?.target?.type === "color" && source?.target?.value) source = source.target.value;
   const theme = await ui("theme", source) as IBeerCssTheme;
   data.theme.dark = theme.dark;
   data.theme.light = theme.light;

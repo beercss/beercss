@@ -114,7 +114,7 @@ main.responsive
       span Date picker
       menu.round.no-wrap
         datePicker
-  
+
   .large-space
   h5 Slider, progress and field bindings
   .row
@@ -143,7 +143,7 @@ main.responsive
         option(value="1") Item 1
         option(value="2") Item 2
         option(value="3") Item 3
-  
+
   .large-space
   h5 Navigation drawer inside elements
   .row
@@ -199,7 +199,6 @@ main.responsive
           a
             i arrow_upward
             span End
-    
 
   .large-space
   h5 Fields
@@ -255,7 +254,7 @@ main.responsive
         label Label
         span.helper
           span Helper
-  
+
   .large-space
   h5 Fields inside grid
   .grid
@@ -465,7 +464,7 @@ const updateTheme = () => {
 const updateNavigationDrawer = (direction: string) => {
   const elemento = document.getElementById("navigation-drawer");
   if (elemento) elemento.className = "drawer " + direction;
-}
+};
 const number = ref(0);
 const text = ref();
 const select = ref();

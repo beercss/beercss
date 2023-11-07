@@ -33,7 +33,7 @@ div(v-show="show")
       span Grafico
     a
       i music_note
-      span Multimídia 
+      span Multimídia
     a
       i sports_esports
       span Jogos
@@ -74,7 +74,7 @@ div(v-show="show")
       label Grafico
     a
       i music_note
-      label Multimídia 
+      label Multimídia
     a
       i sports_esports
       label Jogos
@@ -251,22 +251,22 @@ onMounted(() => {
 });
 
 const updateTheme = () => {
-  let darkOrLight = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
+  const darkOrLight = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
   mode.value = darkOrLight;
   ui("mode", mode.value);
-}
+};
 
 const updateColors = (url: string) => {
   setTimeout(() => {
     console.log("updateColors");
     ui("theme", url);
   }, 360);
-}
+};
 
 const refresh = () => {
   show.value = false;
   setTimeout(() => {
-    show.value = true
+    show.value = true;
   }, 180);
-}
+};
 </script>

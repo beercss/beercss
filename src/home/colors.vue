@@ -80,7 +80,7 @@
           .padding.surface-container-highest surface-container-highest
     .s12.m6.l3
       h6 Others
-      .grid 
+      .grid
         .s12
           .padding.inverse-primary inverse-primary
           .padding.inverse-primary-border.border inverse-primary-border
@@ -432,7 +432,7 @@ import data from "./data";
 import { onMounted } from "vue";
 
 const sourceCode = () => {
-  return ((data.value.theme as any)[data.value.theme.selected] || "").replace(/\;/g, ";<br/>");
+  return ((data.value.theme as any)[data.value.theme.selected] || "").replace(/;/g, ";<br/>");
 };
 </script>
 

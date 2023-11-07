@@ -174,7 +174,7 @@ function updateFile (target: Element, e?: KeyboardEvent): void {
   if (!hasType(nextTarget, "text")) return;
   nextTarget.value = currentTarget.files ? Array.from(currentTarget.files).map((x) => x.name).join(", ") : "";
   nextTarget.readOnly = true;
-  nextTarget.addEventListener("keydown", onKeydownFile)
+  nextTarget.addEventListener("keydown", onKeydownFile);
   updateInput(nextTarget);
 }
 
@@ -190,7 +190,7 @@ function updateColor (target: Element, e?: KeyboardEvent): void {
   if (!hasType(nextTarget, "text")) return;
   nextTarget.readOnly = true;
   nextTarget.value = currentTarget.value;
-  nextTarget.addEventListener("keydown", onKeydownColor)
+  nextTarget.addEventListener("keydown", onKeydownColor);
   updateInput(nextTarget);
 }
 

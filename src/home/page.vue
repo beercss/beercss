@@ -17,7 +17,7 @@ div
       span Right
     a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
-      span Code        
+      span Code
 
   nav#navigation-bar1.s.bottom
     a(@click="domain.goTo('#intro')")

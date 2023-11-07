@@ -15,14 +15,14 @@ div
       .medium-width
         .row
           article.fill.no-elevate.height-15
-          .max 
+          .max
             article.fill.no-elevate.center-align.middle-align.height-15
       h6.no-margin.absolute.middle.center Medium
     article#main-layout-expanded.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row
           article.fill.no-elevate.height-15.width-6
-          .max 
+          .max
             article.fill.no-elevate.center-align.middle-align.height-15
       h6.no-margin.absolute.middle.center Expanded
     article#main-layout-muti-panes.s12.m6.l4.center-align.no-elevate.no-margin
@@ -33,7 +33,7 @@ div
             .row
               .max
                 article.fill.no-elevate.center-align.middle-align.height-15
-              .max 
+              .max
                 article.fill.no-elevate.center-align.middle-align.height-15
       h6.no-margin.absolute.middle.center Multi panes
     article#main-layout-custom.s12.m6.l4.center-align.no-elevate.no-margin
@@ -44,17 +44,17 @@ div
             .grid
               .s6
                 article.fill.no-elevate.center-align.middle-align.height-7
-              .s6 
+              .s6
                 article.fill.no-elevate.center-align.middle-align.height-7
               .s6
                 article.fill.no-elevate.center-align.middle-align.height-7
-              .s6 
+              .s6
                 article.fill.no-elevate.center-align.middle-align.height-7
       h6.no-margin.absolute.middle.center Custom
   #main-layouts
     #compact
       nav.bottom
-        a 
+        a
           i home
           div Home
         a
@@ -67,7 +67,7 @@ div
         h3 Compact
     #medium
       nav.left
-        a 
+        a
           i home
           div Home
         a
@@ -80,7 +80,7 @@ div
         h3 Medium
     #expanded
       nav.left.drawer
-        a 
+        a
           i home
           div Home
         a
@@ -93,7 +93,7 @@ div
         h3 Expanded
     #multi-panes
       nav.left
-        a 
+        a
           i home
           div Home
         a
@@ -110,7 +110,7 @@ div
             h3 Pane 2
     #custom
       nav.left
-        a 
+        a
           i home
           div Home
         a
@@ -154,7 +154,7 @@ div
       h6 {{ layoutNames[i] }}
       pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .space
-    
+
 </template>
 
 <script setup lang="ts">

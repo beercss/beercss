@@ -50,7 +50,7 @@ const setAttribute = (elements: NodeListOf<Element>, key: string, value: any) =>
 
 const removeValue = (elements: NodeListOf<Element>) => {
   elements.forEach((x: any) => { x.value = ""; });
-}
+};
 
 const query = (selector: string | Element): Element | null => {
   if (typeof selector === "string") return document.querySelector(selector);

@@ -80,12 +80,11 @@ const {
 const data = modelValue;
 
 onMounted(() => {
-  if (!modelValue.theme || !modelValue.theme.light || !modelValue.theme.dark || !modelValue.theme.selected)
-    sharedDomain.updateTheme(modelValue, null);
-})
+  if (!modelValue.theme || !modelValue.theme.light || !modelValue.theme.dark || !modelValue.theme.selected) { sharedDomain.updateTheme(modelValue, null); }
+});
 
 const sourceCode = () => {
-  return ((modelValue.theme as any)[modelValue.theme.selected] || "").replace(/\;/g, ";<br/>");
+  return ((modelValue.theme as any)[modelValue.theme.selected] || "").replace(/;/g, ";<br/>");
 };
 </script>
 
