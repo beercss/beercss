@@ -2,30 +2,30 @@
 div
   h5 Main layouts
     a.chip.circle(
-      @click="data.layout = 0; domain.showSamples(data, '#main-layouts > div', 'Main layouts', null, 'https://github.com/beercss/beercss/blob/main/docs/MAIN_LAYOUT.md')"
+      @click="domain.showSamples(data, '#main-layouts > div', 'Main layouts', '#dialog-main-layouts', null)"
     )
       i code
-  .row.scroll.top-align.small-padding
-    article.no-elevate#main-layout-compact
-      .width-8
+  .grid
+    article#main-layout-compact.s12.m6.l4.center-align.no-elevate.no-margin
+      .width-8.auto-margin
         article.fill.no-elevate.center-align.middle-align.height-12
         article.fill.no-elevate.top-margin
       h6.no-margin.absolute.middle.center Compact
-    article.no-elevate#main-layout-medium
+    article#main-layout-medium.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row
           article.fill.no-elevate.height-15
           .max 
             article.fill.no-elevate.center-align.middle-align.height-15
       h6.no-margin.absolute.middle.center Medium
-    article.no-elevatemain-layout-extended
+    article#main-layout-extended.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row
           article.fill.no-elevate.height-15.width-6
           .max 
             article.fill.no-elevate.center-align.middle-align.height-15
       h6.no-margin.absolute.middle.center Extended
-    article.no-elevatemain-layout-muti-panel
+    article#main-layout-muti-panel.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row
           article.fill.no-elevate.height-15
@@ -36,7 +36,7 @@ div
               .max 
                 article.fill.no-elevate.center-align.middle-align.height-15
       h6.no-margin.absolute.middle.center Multi panel
-    article.no-elevatemain-layout-custom
+    article#main-layout-custom.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row
           article.fill.no-elevate.height-15
@@ -129,11 +129,40 @@ div
             h3 Panel 3
           .s12.m12.l6
             h3 Panel 4
+  dialog#dialog-main-layouts.right.large
+    header.fixed
+      nav
+        h5 Main layouts
+        a.button.border.small-round.m.l(
+          href="https://codepen.io/leo-bnu/pen/yLKLPxj",
+          target="_blank"
+        ) Codepen
+        a.button.border.small-round.m.l(
+          href="https://github.com/beercss/beercss/blob/main/docs/MAIN_LAYOUT.md",
+          target="_blank"
+        ) Documentation
+        .max
+        a.button.circle.transparent.s(
+          href="https://github.com/beercss/beercss/blob/main/docs/MAIN_LAYOUT.md",
+          target="_blank"
+        )
+          i description
+        button.circle.transparent(data-ui="#dialog-main-layouts")
+          i close
+    .space
+    article.border(v-for="(exemplo, i) in data.samples")
+      h6 {{ layoutNames[i] }}
+      pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
+    .space
+    
 </template>
 
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";
+import { ref } from "vue";
+
+const layoutNames = ref(["Compact", "Medium", "Extended", "Multi panel", "Custom"]);
 </script>
 
 <style scoped>
