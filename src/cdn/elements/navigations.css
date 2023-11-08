@@ -147,6 +147,10 @@ nav.drawer > header {
   align-self: start;
 }
 
+nav.drawer:not(.left, .right) > header {
+  align-self: stretch;
+}
+
 nav.drawer > :is(a, label),
 nav.drawer :is(summary, details) > a,
 a.row.wave {

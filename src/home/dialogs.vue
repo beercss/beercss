@@ -72,7 +72,6 @@
           h6.max Title
           button.transparent.circle.large(data-ui="#dialog-navigation-drawer")
             i close
-      label Mail
       a
         i inbox
         span.max Inbox
