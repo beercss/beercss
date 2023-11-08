@@ -139,10 +139,11 @@ nav.drawer.max {
 nav > header {
   padding: 0;
   background-color: inherit;
+  block-size: 4rem;
 }
 
 nav.drawer > header {
-  margin-block-end: 0.5rem !important;
+  block-size: 4.5rem;
   align-self: start;
 }
 
