@@ -132,7 +132,6 @@
           nav
             img.circle(:src="'/favicon.png'")
             h6 Title
-        label Mail
         a
           i inbox
           span.max Inbox
