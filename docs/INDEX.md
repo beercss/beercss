@@ -80,9 +80,50 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.4/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
-  <body class="light">
-    <nav class="left m l">
-      <img src="https://www.beercss.com/favicon.png" class="circle margin">
+  <body class="dark">
+    <nav class="left drawer l">
+      <header>
+        <nav>
+          <img src="https://www.beercss.com/favicon.png" class="circle">
+          <h6>Cheers</h6>
+        </nav>
+      </header>
+      <a>
+        <i>home</i>
+        <div>Home</div>
+      </a>
+      <a>
+        <i>search</i>
+        <div>Search</div>
+      </a>
+      <a>
+        <i>share</i>
+        <div>Share</div>
+      </a>
+      <a>
+        <i>more_vert</i>
+        <div>More</div>
+      </a>
+      <div class="divider"></div>
+      <label>Label</label>
+      <a>
+        <i>widgets</i>
+        <div>Widgets</div>
+      </a>
+      <a>
+        <i>chat</i>
+        <div>Chat</div>
+      </a>
+      <a>
+        <i>help</i>
+        <div>Help</div>
+      </a>  
+    </nav>
+
+    <nav class="left m">
+      <header>
+        <img src="https://www.beercss.com/favicon.png" class="circle">
+      </header>
       <a>
         <i>home</i>
         <div>Home</div>
@@ -100,7 +141,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
         <div>More</div>
       </a>
     </nav>
-    
+
     <nav class="bottom s">
       <a>
         <i>home</i>
@@ -115,7 +156,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
         <i>more_vert</i>
       </a>
     </nav>
-    
+
     <main class="responsive">
       <img src="https://www.beercss.com/beer-and-woman.jpg" class="responsive round">
       <h3>Welcome</h3>
