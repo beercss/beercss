@@ -150,42 +150,6 @@ menu:active ~ .tooltip,
   visibility: hidden;
 }
 
-.vertical > .tooltip:not(.left, .right, .bottom) {
-  inset-block-start: calc(50% + var(---space));
-  transform: translate(-50%, -100%) scale(1) rotate(90deg);
-}
-
-[dir=rtl] .vertical > .tooltip:not(.left, .right, .bottom) {
-  transform: translate(50%, -100%) scale(1) rotate(90deg);
-}
-
-.vertical > .tooltip.left {
-  inset-inline-start: var(---space);
-  transform: translate(-100%, -50%) scale(1) rotate(90deg);
-}
-
-[dir=rtl] .vertical > .tooltip.left {
-  transform: translate(100%, -50%) scale(1) rotate(90deg);
-}
-
-.vertical > .tooltip.right {
-  inset-inline-end: var(---space);
-  transform: translate(100%, -50%) scale(1) rotate(90deg);
-}
-
-[dir=rtl] .vertical > .tooltip.right {
-  transform: translate(-100%, -50%) scale(1) rotate(90deg);
-}
-
-.vertical > .tooltip.bottom {
-  inset-block-end: calc(50% + var(---space));
-  transform: translate(-50%, 100%) scale(1) rotate(90deg);
-}
-
-[dir=rtl] .vertical > .tooltip.bottom {
-  transform: translate(50%, 100%) scale(1) rotate(90deg);
-}
-
 .slider > .tooltip {
   ---space: -1.25rem;
 }

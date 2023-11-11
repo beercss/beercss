@@ -25,6 +25,7 @@
 }
 
 .slider.vertical {
+  flex-direction: row !important;
   margin: 0.5rem auto !important;
   padding: 50% 0;
   transform: rotate(-90deg);

@@ -11,10 +11,13 @@
   margin-block-end: 0 !important;
 }
 
-.vertical,
-.vertical:is(button, .button, .chip) {
-  display: inline-flex;
+.vertical {
+  display: flex;
   flex-direction: column !important;
+}
+
+:is(a, button, .button, .chip).vertical {
+  display: inline-flex;
   gap: 0.25rem;
   block-size: auto !important;
   max-block-size: none !important;
