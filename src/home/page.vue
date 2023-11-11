@@ -212,7 +212,7 @@ div
         i format_paint
         span Material Dynamic Colors
       .small-divider
-      a(href="https://codepen.io/search/pens?q=beercss")
+      a(href="https://codepen.io/search/pens?q=beercss" target="_blank")
         i code
         span Codepen
 
@@ -363,9 +363,9 @@ div
             .large-space
             mainLayouts
             .medium-space
-            nav.wrap
-              a.button.small-round(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
-              a.button.small-round(href="https://codepen.io/collection/XydYMB") Codepen
+            nav.scroll
+              a.button.small-round(href="https://codepen.io/leo-bnu/pen/yLKLPxj" target="_blank") Main layout on Codepen
+              a.button.small-round(href="https://codepen.io/collection/XydYMB" target="_blank") All Codepen
           .medium-space
           .large-divider
         .s12
