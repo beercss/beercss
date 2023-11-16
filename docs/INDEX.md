@@ -6,19 +6,19 @@ From jsdelivr.net.
 
 ```html
 // with html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.4.5/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.5/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.4.6/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.6/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ```css
 // with css
-@import "https://cdn.jsdelivr.net/npm/beercss@3.4.5/dist/cdn/beer.min.css";
+@import "https://cdn.jsdelivr.net/npm/beercss@3.4.6/dist/cdn/beer.min.css";
 ```
 
 ```js
 // with javascript
-import "https://cdn.jsdelivr.net/npm/beercss@3.4.5/dist/cdn/beer.min.js";
+import "https://cdn.jsdelivr.net/npm/beercss@3.4.6/dist/cdn/beer.min.js";
 import "https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js";
 ```
 
@@ -47,9 +47,6 @@ import materialDynamicColors from "material-dynamic-colors";
 ```js
 // importing manually from dist
 import "beercss/dist/cdn/beer.min.css";
-import "beercss/dist/cdn/material-symbols-outlined.woff2";
-import "beercss/dist/cdn/material-symbols-rounded.woff2";
-import "beercss/dist/cdn/material-symbols-sharp.woff2";
 import beercss from "beercss/dist/cdn/beer.min.js";
 import materialDynamicColors from "material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js";
 ```
@@ -57,9 +54,6 @@ import materialDynamicColors from "material-dynamic-colors/dist/cdn/material-dyn
 ```js
 // importing manually from src
 import "beercss/src/cdn/beer.css";
-import "beercss/src/cdn/material-symbols-outlined.woff2";
-import "beercss/src/cdn/material-symbols-rounded.woff2";
-import "beercss/src/cdn/material-symbols-sharp.woff2";
 import beercss from "beercss/src/cdn/beer.ts";
 import materialDynamicColors from "material-dynamic-colors/src/cdn/material-dynamic-colors.js";
 ```
@@ -76,8 +70,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.4.5/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.5/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.4.6/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.6/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">
