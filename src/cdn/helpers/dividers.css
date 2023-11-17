@@ -2,10 +2,11 @@
 .small-divider,
 .medium-divider,
 .large-divider {
+  min-inline-size: 1.5rem;
+  min-block-size: auto;
   block-size: 0.0625rem;
   background-color: var(--outline-variant);
-  display: flex;
-  align-self: normal;
+  display: block;
   margin: 0 !important;
 }
 
@@ -22,11 +23,7 @@
 }
 
 .divider.vertical {
-  align-self: auto;
+  min-inline-size: auto;
+  min-block-size: 1.5rem;
   inline-size: 0.0625rem;
-}
-
-.divider.vertical.max {
-  align-self: normal;
-  flex: none;
 }

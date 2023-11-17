@@ -1,5 +1,5 @@
 <template lang="pug">
-nav#navigation-drawer.left.drawer
+nav#navigation-drawer.left
   a(@click="updateTheme()")
     i palette
     span Theme
@@ -199,6 +199,20 @@ main.responsive
           a
             i arrow_upward
             span End
+
+  .large-space
+  h5 Steppers
+  nav
+    button.circle 1
+    .divider.max
+    button.circle 1
+    .divider.max
+    button.circle 1
+
+  nav
+    button Button
+    .divider.vertical 
+    button.chip Chip
 
   .large-space
   h5 Fields
