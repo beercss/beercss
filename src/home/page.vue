@@ -350,7 +350,7 @@ div
                   b &lt;summary&gt;
                 p
                   b &lt;table&gt;
-                  span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border
+                  span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border, stripes, min, fixed
                 p
                   b tabs
                   span &nbsp;left-align, right-align, center-align, horizontal, vertical, min, max
