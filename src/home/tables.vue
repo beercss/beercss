@@ -138,7 +138,7 @@
         span Scroll
         a.chip.circle(@click="domain.showSamples(data, '#table-scroll > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
-      article.small.scroll
+      .small-height.scroll
         table.border
           thead.fixed
             tr
