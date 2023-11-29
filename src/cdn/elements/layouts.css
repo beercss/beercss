@@ -54,8 +54,7 @@ footer {
 
 article > :is(header, footer) {
   padding: inherit;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
+  padding-inline: 0;
   z-index: 11 !important;
 }
 

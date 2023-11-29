@@ -119,8 +119,7 @@
 .field > :is(input, textarea, select) {
   appearance: none;
   border: 0.0625rem solid transparent;
-  padding-inline: 0.9375rem;
-  padding-block: 0;
+  padding: 0 0.9375rem;
   font-family: inherit;
   font-size: 1rem;
   inline-size: 100%;
@@ -133,8 +132,7 @@
 
 .field > :is(input, textarea, select):focus {
   border: 0.125rem solid transparent;
-  padding-block: 0;
-  padding-inline: 0.875rem;
+  padding: 0 0.875rem;
 }
 
 input[type=file],
@@ -172,13 +170,11 @@ input::-webkit-search-results-decoration {
 }
 
 .field.round > :is(input, textarea, select) {
-  padding-inline-start: 1.4376rem;
-  padding-inline-end: 1.4376rem;
+  padding-inline: 1.4376rem;
 }
 
 .field.round > :is(input, textarea, select):focus {
-  padding-inline-start: 1.375rem;
-  padding-inline-end: 1.375rem;
+  padding-inline: 1.375rem;
 }
 
 .field.prefix > :is(input, textarea, select) {
