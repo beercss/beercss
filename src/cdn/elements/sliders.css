@@ -115,13 +115,11 @@
 
 .slider > span {
   position: absolute;
-  inset-block-start: calc(50% - 0.1875rem);
   block-size: 0.375rem;
   border-radius: 1rem;
   background: var(--primary);
   z-index: 0;
-  inset-inline-start: var(---start);
-  inset-inline-end: var(---end);
+  inset: calc(50% - 0.1875rem) var(---end) auto var(---start);
 }
 
 .field > .slider {
@@ -138,11 +136,8 @@
 }
 
 .slider > .tooltip {
-  inset-block-start: 0.25rem;
   opacity: 0;
-  inset-inline-start: calc(100% - var(---end));
-  inset-inline-end: auto;
-  inset-block-end: auto;
+  inset: 0.25rem auto auto calc(100% - var(---end));
   inline-size: 1.75rem;
   block-size: 1.75rem;
   background-color: var(--primary);
@@ -156,8 +151,7 @@
 }
 
 .slider > .tooltip + .tooltip {
-  inset-inline-start: auto;
-  inset-inline-end: calc(100% - var(---start));
+  inset: 0.25rem calc(100% - var(---start)) auto auto;
   transform: translate(50%, -50%) rotate(45deg) !important;
 }
 

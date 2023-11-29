@@ -57,12 +57,12 @@ table > .fixed,
 th.fixed {
   position: sticky;
   z-index: 1;
-  inset-block-start: 0rem;
+  inset-block-start: 0;
 }
 
 tfoot.fixed,
 tfoot th.fixed {
-  inset-block-end: 0rem;
+  inset-block-end: 0;
 }
 
 :is(td, th).min {

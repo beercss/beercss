@@ -14,10 +14,7 @@
   padding: 0.5rem;
   position: absolute;
   z-index: 3;
-  inset-block-start: 0;
-  inset-inline-start: 50%;
-  inset-block-end: auto;
-  inset-inline-end: auto;
+  inset: 0 auto auto 50%;
   inline-size: auto;
   white-space: nowrap;
   font-weight: 500;
@@ -32,10 +29,7 @@
 }
 
 .tooltip.left {
-  inset-inline-start: 0;
-  inset-block-start: 50%;
-  inset-block-end: auto;
-  inset-inline-end: auto;
+  inset: 50% auto auto 0;
   transform: translate(-100%, -50%) scale(0.9);
 }
 
@@ -44,10 +38,7 @@
 }
 
 .tooltip.right {
-  inset-inline-end: 0;
-  inset-block-start: 50%;
-  inset-block-end: auto;
-  inset-inline-start: auto;
+  inset: 50% 0 auto auto;
   transform: translate(100%, -50%) scale(0.9);
 }
 
@@ -56,10 +47,7 @@
 }
 
 .tooltip.bottom {
-  inset-block-end: 0;
-  inset-inline-start: 50%;
-  inset-block-start: auto;
-  inset-inline-end: auto;
+  inset: auto auto 0 50%;
   transform: translate(-50%, 100%) scale(0.9);
 }
 

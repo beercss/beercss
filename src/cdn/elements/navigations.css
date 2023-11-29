@@ -80,10 +80,6 @@ nav:is(.left, .right, .top, .bottom) {
   color: var(--on-surface);
   transform: none;
   z-index: 100;
-  inset-inline-start: 0;
-  inset-block-start: 0;
-  inset-block-end: 0;
-  inset-inline-end: 0;
   block-size: auto;
   inline-size: auto;
   text-align: center;
@@ -105,19 +101,19 @@ nav:is(.top, .bottom) {
 }
 
 nav.top {
-  inset-block-end: auto;
+  inset: 0 0 auto 0;
 }
 
 nav.left {
-  inset-inline-end: auto;
+  inset: 0 auto 0 0;
 }
 
 nav.right {
-  inset-inline-start: auto;
+  inset: 0 0 0 auto;
 }
 
 nav.bottom {
-  inset-block-start: auto;
+  inset: auto 0 0 0;
 }
 
 nav.drawer {

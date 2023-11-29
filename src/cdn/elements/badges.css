@@ -9,10 +9,7 @@
   padding: 0 0.375rem;
   background-color: var(--error);
   color: var(--on-error);
-  inset-block-start: 0;
-  inset-inline-start: auto;
-  inset-block-end: auto;
-  inset-inline-end: 0;
+  inset: 0 0 auto auto;
   block-size: 1.25rem;
   line-height: normal;
   transform: translate(50%, -100%);
@@ -23,20 +20,14 @@
 }
 
 .badge.none {
-  inset-block-start: auto;
-  inset-inline-start: auto;
-  inset-block-end: auto;
-  inset-inline-end: auto;
+  inset: auto;
   transform: none;
   position: relative;
   margin: 0 0.125rem;
 }
 
 .badge.top {
-  inset-block-start: 0;
-  inset-inline-start: 50%;
-  inset-block-end: auto;
-  inset-inline-end: auto;
+  inset: 0 auto auto 50%;
   transform: translate(-50%, -100%);
 }
 
@@ -45,10 +36,7 @@
 }
 
 .badge.bottom {
-  inset-block-start: auto;
-  inset-inline-start: 50%;
-  inset-block-end: 0;
-  inset-inline-end: auto;
+  inset: auto auto 0 50%;
   transform: translate(-50%, 100%);
 }
 
@@ -57,10 +45,7 @@
 }
 
 .badge.left {
-  inset-block-start: 50%;
-  inset-inline-start: 0;
-  inset-block-end: auto;
-  inset-inline-end: auto;
+  inset: 50% auto auto 0;
   transform: translate(-100%, -50%);
 }
 
@@ -69,10 +54,7 @@
 }
 
 .badge.right {
-  inset-block-start: 50%;
-  inset-inline-start: auto;
-  inset-block-end: auto;
-  inset-inline-end: 0;
+  inset: 50% 0 auto auto;
   transform: translate(100%, -50%);
 }
 
@@ -81,10 +63,7 @@
 }
 
 .badge.top.left {
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  inset-block-end: auto;
-  inset-inline-end: auto;
+  inset: 0 auto auto 0;
   transform: translate(-50%, -100%);
 }
 
@@ -93,10 +72,7 @@
 }
 
 .badge.bottom.left {
-  inset-block-start: auto;
-  inset-inline-start: 0;
-  inset-block-end: 0;
-  inset-inline-end: auto;
+  inset: auto auto 0 0;
   transform: translate(-50%, 100%);
 }
 
@@ -105,10 +81,7 @@
 }
 
 .badge.top.right {
-  inset-block-start: 0;
-  inset-inline-start: auto;
-  inset-block-end: auto;
-  inset-inline-end: 0;
+  inset: 0 0 auto auto;
   transform: translate(50%, -100%);
 }
 
@@ -117,10 +90,7 @@
 }
 
 .badge.bottom.right {
-  inset-block-start: auto;
-  inset-inline-start: auto;
-  inset-block-end: 0;
-  inset-inline-end: 0;
+  inset: auto 0 0 auto;
   transform: translate(50%, 100%);
 }
 
