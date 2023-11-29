@@ -15,12 +15,12 @@
 
 .left-align {
   text-align: start;
-  justify-content: start !important;
+  justify-content: flex-start !important;
 }
 
 .right-align {
   text-align: end;
-  justify-content: end !important;
+  justify-content: flex-end !important;
 }
 
 .center-align {

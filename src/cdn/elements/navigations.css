@@ -6,7 +6,7 @@ nav.drawer :is(summary, details) > :is(a, label) {
   align-items: center;
   align-self: normal;
   text-align: start;
-  justify-content: start;
+  justify-content: flex-start;
   white-space: nowrap;
   gap: 1rem;
 }
@@ -92,7 +92,7 @@ nav:is(.left, .right, .top, .bottom) {
 
 nav:is(.left, .right) {
   inline-size: 5rem;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
   background-color: var(--surface);
 }
@@ -199,12 +199,12 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(button, .button, .chip
 
 nav.left-align,
 nav.top-align {
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 nav.right-align,
 nav.bottom-align {
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 nav.center-align,
