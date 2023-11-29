@@ -3,9 +3,26 @@
   .large-space
   h4
     span Tables
-    a.chip.circle(@click="domain.showSamples(data, '#tables .grid table, #tables .grid .small-height', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#tables > .grid > * > table, #tables > .grid > * > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
       i code
   nav.wrap
+    label.checkbox
+      input(type="checkbox", @click="domain.updateMinMax('#tables table :is(td, th):first-child', $event.target.checked ? 'min' : '')")
+      span min
+    label.radio
+      input(
+        type="radio",
+        name="align-tables",
+        checked,
+        @click="domain.updateAlign('#tables table')"
+      )
+      span left-align
+    label.radio
+      input(type="radio", name="align-tables", @click="domain.updateAlign('#tables table', 'center-align')")
+      span center-align
+    label.radio
+      input(type="radio", name="align-tables", @click="domain.updateAlign('#tables table', 'right-align')")
+      span right-align
     label.radio
       input(type="radio", name="space-tables", @click="domain.updateSpace('#tables table', 'no-space')")
       span no-space
@@ -23,23 +40,6 @@
     label.radio
       input(type="radio", name="space-tables", @click="domain.updateSpace('#tables table', 'large-space')")
       span large-space
-    label.radio
-      input(
-        type="radio",
-        name="align-tables",
-        checked,
-        @click="domain.updateAlign('#tables table')"
-      )
-      span left-align
-    label.radio
-      input(type="radio", name="align-tables", @click="domain.updateAlign('#tables table', 'center-align')")
-      span center-align
-    label.radio
-      input(type="radio", name="align-tables", @click="domain.updateAlign('#tables table', 'right-align')")
-      span right-align
-    label.checkbox
-      input(type="checkbox", @click="domain.updateMinMax('#tables table :is(td, th):first-child', $event.target.checked ? 'min' : '')")
-      span min
 
   .grid.large-space
     .s12.m12.l6
@@ -91,8 +91,10 @@
             td Cell
             td
               nav.right-align
-                i edit
-                i delete
+                a
+                  i edit
+                a
+                  i delete
         tfoot
           tr
             th
@@ -148,8 +150,10 @@
             td Cell
             td
               nav.right-align
-                i edit
-                i delete
+                a
+                  i edit
+                a
+                  i delete
         tfoot
           tr
             th
@@ -205,8 +209,10 @@
             td Cell
             td
               nav.right-align
-                i edit
-                i delete
+                a
+                  i edit
+                a
+                  i delete
         tfoot
           tr
             th
@@ -263,8 +269,10 @@
               td Cell
               td
                 nav.right-align
-                  i edit
-                  i delete
+                  a
+                    i edit
+                  a
+                    i delete
             tr
               td
                 label.checkbox
@@ -274,8 +282,10 @@
               td Cell
               td
                 nav.right-align
-                  i edit
-                  i delete
+                  a
+                    i edit
+                  a
+                    i delete
             tr
               td
                 label.checkbox
@@ -285,8 +295,10 @@
               td Cell
               td
                 nav.right-align
-                  i edit
-                  i delete
+                  a
+                    i edit
+                  a
+                    i delete
             tr
               td
                 label.checkbox
@@ -296,8 +308,10 @@
               td Cell
               td
                 nav.right-align
-                  i edit
-                  i delete
+                  a
+                    i edit
+                  a
+                    i delete
           tfoot.fixed
             tr
               th
