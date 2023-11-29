@@ -42,282 +42,139 @@
       span large-space
 
   .grid.large-space
-    .s12.m12.l6
+    #table-default.s12.m12.l6
       .medium-space
-      h6 Default
+      h6
+        span Default
+        a.chip.circle(@click="domain.showSamples(data, '#table-default > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+          i code
       table
         thead
           tr
-            th
-              label.checkbox
-                input(type="checkbox")
-                span
             th Header
             th Header
-            th
+            th Header
         tbody
           tr
-            td
-              label.checkbox
-                input(type="checkbox")
-                span
             td Cell
             td Cell
-            td
-              nav.right-align
-                a
-                  i edit
-                a
-                  i delete
+            td Cell
           tr
-            td
-              label.checkbox
-                input(type="checkbox")
-                span
             td Cell
             td Cell
-            td
-              nav.right-align
-                a
-                  i edit
-                a
-                  i delete
+            td Cell
           tr
-            td
-              label.checkbox
-                input(type="checkbox")
-                span
             td Cell
             td Cell
-            td
-              nav.right-align
-                a
-                  i edit
-                a
-                  i delete
+            td Cell
         tfoot
           tr
-            th
             th Footer
             th Footer
-            th
-    .s12.m12.l6
+            th Footer
+    #table-stripes.s12.m12.l6
       .medium-space
-      h6 Stripes
+      h6
+        span Stripes
+        a.chip.circle(@click="domain.showSamples(data, '#table-stripes > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+          i code
       table.stripes
         thead
           tr
-            th
-              label.checkbox
-                input(type="checkbox")
-                span
             th Header
             th Header
-            th
+            th Header
         tbody
           tr
-            td
-              label.checkbox
-                input(type="checkbox")
-                span
             td Cell
             td Cell
-            td
-              nav.right-align
-                a
-                  i edit
-                a
-                  i delete
+            td Cell
           tr
-            td
-              label.checkbox
-                input(type="checkbox")
-                span
             td Cell
             td Cell
-            td
-              nav.right-align
-                a
-                  i edit
-                a
-                  i delete
+            td Cell
           tr
-            td
-              label.checkbox
-                input(type="checkbox")
-                span
             td Cell
             td Cell
-            td
-              nav.right-align
-                a
-                  i edit
-                a
-                  i delete
+            td Cell
         tfoot
           tr
-            th
             th Footer
             th Footer
-            th
-    .s12.m12.l6
+            th Footer
+    #table-border.s12.m12.l6
       .medium-space
-      h6 Border
+      h6
+        span Border
+        a.chip.circle(@click="domain.showSamples(data, '#table-border > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+          i code
       table.border
         thead
           tr
-            th
-              label.checkbox
-                input(type="checkbox")
-                span
             th Header
             th Header
-            th
+            th Header
         tbody
           tr
-            td
-              label.checkbox
-                input(type="checkbox")
-                span
             td Cell
             td Cell
-            td
-              nav.right-align
-                a
-                  i edit
-                a
-                  i delete
+            td Cell
           tr
-            td
-              label.checkbox
-                input(type="checkbox")
-                span
             td Cell
             td Cell
-            td
-              nav.right-align
-                a
-                  i edit
-                a
-                  i delete
+            td Cell
           tr
-            td
-              label.checkbox
-                input(type="checkbox")
-                span
             td Cell
             td Cell
-            td
-              nav.right-align
-                a
-                  i edit
-                a
-                  i delete
+            td Cell
         tfoot
           tr
-            th
             th Footer
             th Footer
-            th
-    .s12.m12.l6
+            th Footer
+    #table-scroll.s12.m12.l6
       .medium-space
-      h6 Scroll
+      h6
+        span Scroll
+        a.chip.circle(@click="domain.showSamples(data, '#table-scroll > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+          i code
       .small-height.scroll
         table.border
           thead.fixed
             tr
-              th
-                label.checkbox
-                  input(type="checkbox")
-                  span
               th Header
               th Header
-              th
+              th Header
           tbody
             tr
-              td
-                label.checkbox
-                  input(type="checkbox")
-                  span
               td Cell
               td Cell
-              td
-                nav.right-align
-                  a
-                    i edit
-                  a
-                    i delete
+              td Cell
             tr
-              td
-                label.checkbox
-                  input(type="checkbox")
-                  span
               td Cell
               td Cell
-              td
-                nav.right-align
-                  a
-                    i edit
-                  a
-                    i delete
+              td Cell
             tr
-              td
-                label.checkbox
-                  input(type="checkbox")
-                  span
               td Cell
               td Cell
-              td
-                nav.right-align
-                  a
-                    i edit
-                  a
-                    i delete
+              td Cell
             tr
-              td
-                label.checkbox
-                  input(type="checkbox")
-                  span
               td Cell
               td Cell
-              td
-                nav.right-align
-                  a
-                    i edit
-                  a
-                    i delete
+              td Cell
             tr
-              td
-                label.checkbox
-                  input(type="checkbox")
-                  span
               td Cell
               td Cell
-              td
-                nav.right-align
-                  a
-                    i edit
-                  a
-                    i delete
+              td Cell
             tr
-              td
-                label.checkbox
-                  input(type="checkbox")
-                  span
               td Cell
               td Cell
-              td
-                nav.right-align
-                  a
-                    i edit
-                  a
-                    i delete
+              td Cell
           tfoot.fixed
             tr
-              th
               th Footer
               th Footer
-              th
+              th Footer
         
 </template>
 
