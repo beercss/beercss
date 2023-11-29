@@ -175,7 +175,7 @@
               th Footer
               th Footer
               th Footer
-        
+
 </template>
 
 <script setup lang="ts">

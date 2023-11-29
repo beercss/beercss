@@ -211,7 +211,7 @@ main.responsive
 
   nav
     button Button
-    .divider.vertical 
+    .divider.vertical
     button.chip Chip
 
   .large-space
@@ -465,7 +465,7 @@ main.responsive
             input(type="checkbox")
             span
         span.error Error
- 
+
   .large-space
   h5 Tables
 

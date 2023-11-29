@@ -1,5 +1,6 @@
 table {
-  ---stripes: rgba(0, 0, 0, 0.05);
+  ---stripes: rgb(0 0 0 / 0.05);
+
   inline-size: 100%;
   border-spacing: 0;
   font-size: 0.875rem;
@@ -9,7 +10,7 @@ table {
 }
 
 .dark table {
-  ---stripes: rgba(255, 255, 255, 0.05);
+  ---stripes: rgb(255 255 255 / 0.05);
 }
 
 table :is(thead, tbody, tfoot, tr, th) {
@@ -66,7 +67,7 @@ tfoot th.fixed {
 }
 
 :is(td, th).min {
-  inline-size: 0rem;
+  inline-size: 0;
   max-inline-size: 0%;
   white-space: nowrap;
 }
