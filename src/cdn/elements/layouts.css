@@ -50,18 +50,6 @@ footer {
   background-color: inherit;
 }
 
-:is(header, footer).fixed::before {
-  content: "";
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  inset-inline-end: 0;
-  inset-block-end: 0;
-  margin: 0 -0.5rem;
-  max-inline-size: 100%;
-  background-color: inherit;
-}
-
 :is(dialog, menu) > :is(header, footer) {
   padding: 0;
   background-color: inherit;
