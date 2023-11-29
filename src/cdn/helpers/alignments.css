@@ -5,12 +5,12 @@
 
 .bottom-align {
   display: flex;
-  align-items: end !important;
+  align-items: flex-end !important;
 }
 
 .top-align {
   display: flex;
-  align-items: start !important;
+  align-items: flex-start !important;
 }
 
 .left-align {
