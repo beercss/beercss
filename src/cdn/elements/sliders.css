@@ -12,6 +12,14 @@
   flex: none;
 }
 
+.slider.vertical {
+  flex-direction: row !important;
+  margin: 0.5rem auto !important;
+  padding: 50% 0;
+  transform: rotate(-90deg);
+  inline-size: 100%;
+}
+
 .slider.small {
   inline-size: 4rem;
 }
@@ -22,13 +30,6 @@
 
 .slider.large {
   inline-size: 12rem;
-}
-
-.slider.vertical {
-  flex-direction: row !important;
-  margin: 0.5rem auto !important;
-  padding: 50% 0;
-  transform: rotate(-90deg);
 }
 
 .slider > input {
