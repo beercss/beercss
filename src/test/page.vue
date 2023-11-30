@@ -211,7 +211,7 @@ main.responsive
 
   nav
     button Button
-    .divider.vertical 
+    .divider.vertical
     button.chip Chip
 
   .large-space
@@ -466,6 +466,123 @@ main.responsive
             span
         span.error Error
 
+  .large-space
+  h5 Tables
+
+  .grid.large-space
+    .s12.m12.l6
+      table
+        thead
+          tr
+            th.min Header
+            th Header
+            th Header
+        tbody
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+        tfoot
+          tr
+            th Footer
+            th Footer
+            th Footer
+    .s12.m12.l6
+      table.stripes
+        thead
+          tr
+            th.min Header
+            th Header
+            th Header
+        tbody
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+        tfoot
+          tr
+            th Footer
+            th Footer
+            th Footer
+    .s12.m12.l6
+      table.border
+        thead
+          tr
+            th.min Header
+            th Header
+            th Header
+        tbody
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+        tfoot
+          tr
+            th Footer
+            th Footer
+            th Footer
+    .s12.m12.l6
+      .small-height.scroll
+        table.stripes.border
+          thead.fixed
+            tr
+              th.min Header
+              th Header
+              th Header
+          tbody
+            tr
+              td Cell
+              td Cell
+              td Cell
+            tr
+              td Cell
+              td Cell
+              td Cell
+            tr
+              td Cell
+              td Cell
+              td Cell
+            tr
+              td Cell
+              td Cell
+              td Cell
+            tr
+              td Cell
+              td Cell
+              td Cell
+            tr
+              td Cell
+              td Cell
+              td Cell
+          tfoot.fixed
+            tr
+              th Footer
+              th Footer
+              th Footer
 </template>
 
 <script setup lang="ts">

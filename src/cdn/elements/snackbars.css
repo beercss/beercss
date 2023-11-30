@@ -3,10 +3,7 @@
   ---transform-end: translate(-50%, 0);
 
   position: fixed;
-  inset-block-start: auto;
-  inset-block-end: 6rem;
-  inset-inline-start: 50%;
-  inset-inline-end: auto;
+  inset: auto auto 6rem 50%;
   inline-size: 80%;
   block-size: auto;
   z-index: 200;
@@ -31,8 +28,7 @@
 }
 
 .snackbar.top {
-  inset-block-start: 6rem;
-  inset-block-end: auto;
+  inset: 6rem auto auto 50%;
 }
 
 .snackbar.active {

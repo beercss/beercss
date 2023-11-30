@@ -16,7 +16,7 @@ left-align, right-align, center-align
 
 **Forms**
 
-border
+border, stripes, min, fixed
 
 **Spaces**
 
@@ -28,23 +28,167 @@ no-space, space, small-space, medium-space, large-space
 <table>
   <thead>
     <tr>
-      <th>Header 1</th>
-      <th>Header 2</th>
-      <th>Header 3</th>
+      <th>Header</th>
+      <th>Header</th>
+      <th>Header</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Column 1</td>
-      <td>Column 2</td>
-      <td>
-        <button class="none">
-          <i>home</i>
-        </button>
-      </td>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <th>Footer</th>
+      <th>Footer</th>
+      <th>Footer</th>
+    </tr>
+  </tfoot>
 </table>
+```
+
+## Stripes Example
+
+```html
+<table class="stripes">
+  <thead>
+    <tr>
+      <th>Header</th>
+      <th>Header</th>
+      <th>Header</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Footer</th>
+      <th>Footer</th>
+      <th>Footer</th>
+    </tr>
+  </tfoot>
+</table>
+```
+
+## Border Example
+
+```html
+<table class="border">
+  <thead>
+    <tr>
+      <th>Header</th>
+      <th>Header</th>
+      <th>Header</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+    <tr>
+      <td>Cell</td>
+      <td>Cell</td>
+      <td>Cell</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Footer</th>
+      <th>Footer</th>
+      <th>Footer</th>
+    </tr>
+  </tfoot>
+</table>
+```
+
+## Scroll Example
+
+```html
+<div class="scroll small-height">
+  <table>
+    <thead class="fixed">
+      <tr>
+        <th>Header</th>
+        <th>Header</th>
+        <th>Header</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+      <tr>
+        <td>Cell</td>
+        <td>Cell</td>
+        <td>Cell</td>
+      </tr>
+    </tbody>
+    <tfoot class="fixed">
+      <tr>
+        <th>Footer</th>
+        <th>Footer</th>
+        <th>Footer</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
 ```
 
 ## Go to

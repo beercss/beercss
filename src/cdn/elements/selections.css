@@ -60,7 +60,7 @@
   outline: none;
   color: var(--primary);
   position: absolute;
-  inset-inline-start: -1.5rem;
+  inset: auto auto auto -1.5rem;
   background-color: transparent;
   border-radius: 50%;
   user-select: none;
@@ -72,8 +72,7 @@
 .switch > span::before,
 .switch.icon > span > i {
   position: absolute;
-  inset-inline-start: 0;
-  inset-block-start: 50%;
+  inset: 50% auto auto 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -174,8 +173,7 @@
 .switch > span::after {
   content: "";
   position: absolute;
-  inset-inline-start: 0;
-  inset-block-start: 50%;
+  inset: 50% auto auto 0;
   background-color: var(--active);
   border: 0.125rem solid var(--outline);
   box-sizing: border-box;

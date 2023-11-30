@@ -3,9 +3,26 @@
   .large-space
   h4
     span Tables
-    a.chip.circle(@click="domain.showSamples(data, '#tables table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#tables > .grid > * > table, #tables > .grid > * > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
       i code
   nav.wrap
+    label.checkbox
+      input(type="checkbox", @click="domain.updateMinMax('#tables table :is(td, th):first-child', $event.target.checked ? 'min' : '')")
+      span min
+    label.radio
+      input(
+        type="radio",
+        name="align-tables",
+        checked,
+        @click="domain.updateAlign('#tables table')"
+      )
+      span left-align
+    label.radio
+      input(type="radio", name="align-tables", @click="domain.updateAlign('#tables table', 'center-align')")
+      span center-align
+    label.radio
+      input(type="radio", name="align-tables", @click="domain.updateAlign('#tables table', 'right-align')")
+      span right-align
     label.radio
       input(type="radio", name="space-tables", @click="domain.updateSpace('#tables table', 'no-space')")
       span no-space
@@ -23,72 +40,142 @@
     label.radio
       input(type="radio", name="space-tables", @click="domain.updateSpace('#tables table', 'large-space')")
       span large-space
-    label.radio
-      input(
-        type="radio",
-        name="align-tables",
-        checked,
-        @click="domain.updateAlign('#tables table')"
-      )
-      span left-align
-    label.radio
-      input(type="radio", name="align-tables", @click="domain.updateAlign('#tables table', 'center-align')")
-      span center-align
-    label.radio
-      input(type="radio", name="align-tables", @click="domain.updateAlign('#tables table', 'right-align')")
-      span right-align
-  .space
-  table.border
-    thead
-      tr
-        th
-        th Column 1
-        th Column 2
-        th Column 3
-        th
-    tbody
-      tr
-        td
-          label.checkbox
-            input(type="checkbox")
-            span
-        td Line 1
-        td Line 1
-        td Line 1
-        td
-          nav.right-align
-            a
-              i edit
-            a
-              i delete
-      tr
-        td
-          label.checkbox
-            input(type="checkbox")
-            span
-        td Line 2
-        td Line 2
-        td Line 2
-        td
-          nav.right-align
-            a
-              i edit
-            a
-              i delete
-      tr
-        td
-          label.checkbox
-            input(type="checkbox")
-            span
-        td Line 3
-        td Line 3
-        td Line 3
-        td
-          nav.right-align
-            a
-              i edit
-            a
-              i delete
+
+  .grid.large-space
+    #table-default.s12.m12.l6
+      .medium-space
+      h6
+        span Default
+        a.chip.circle(@click="domain.showSamples(data, '#table-default > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+          i code
+      table
+        thead
+          tr
+            th Header
+            th Header
+            th Header
+        tbody
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+        tfoot
+          tr
+            th Footer
+            th Footer
+            th Footer
+    #table-stripes.s12.m12.l6
+      .medium-space
+      h6
+        span Stripes
+        a.chip.circle(@click="domain.showSamples(data, '#table-stripes > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+          i code
+      table.stripes
+        thead
+          tr
+            th Header
+            th Header
+            th Header
+        tbody
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+        tfoot
+          tr
+            th Footer
+            th Footer
+            th Footer
+    #table-border.s12.m12.l6
+      .medium-space
+      h6
+        span Border
+        a.chip.circle(@click="domain.showSamples(data, '#table-border > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+          i code
+      table.border
+        thead
+          tr
+            th Header
+            th Header
+            th Header
+        tbody
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+          tr
+            td Cell
+            td Cell
+            td Cell
+        tfoot
+          tr
+            th Footer
+            th Footer
+            th Footer
+    #table-scroll.s12.m12.l6
+      .medium-space
+      h6
+        span Scroll
+        a.chip.circle(@click="domain.showSamples(data, '#table-scroll > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+          i code
+      .small-height.scroll
+        table.border
+          thead.fixed
+            tr
+              th Header
+              th Header
+              th Header
+          tbody
+            tr
+              td Cell
+              td Cell
+              td Cell
+            tr
+              td Cell
+              td Cell
+              td Cell
+            tr
+              td Cell
+              td Cell
+              td Cell
+            tr
+              td Cell
+              td Cell
+              td Cell
+            tr
+              td Cell
+              td Cell
+              td Cell
+            tr
+              td Cell
+              td Cell
+              td Cell
+          tfoot.fixed
+            tr
+              th Footer
+              th Footer
+              th Footer
+
 </template>
 
 <script setup lang="ts">

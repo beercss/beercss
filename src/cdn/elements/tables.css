@@ -1,23 +1,45 @@
 table {
+  ---stripes: rgb(0 0 0 / 0.05);
+
   inline-size: 100%;
   border-spacing: 0;
   font-size: 0.875rem;
   color: var(--on-surface);
   text-align: start;
+  background-color: var(--surface);
 }
 
-table :is(th, td) {
-  inline-size: 1%;
+.dark table {
+  ---stripes: rgb(255 255 255 / 0.05);
+}
+
+table :is(thead, tbody, tfoot, tr, th) {
+  background-color: inherit;
+}
+
+:is(th, td) {
+  inline-size: auto;
+  max-inline-size: 1rem;
   text-align: inherit;
   padding: 0.5rem;
 }
 
-table th {
-  font-weight: 500;
+:is(th, td) > * {
+  vertical-align: middle;
+  z-index: 0;
 }
 
-table.border :is(th, td) {
+table.border > tbody > tr:not(:last-child) > td,
+thead > tr > th {
   border-block-end: 0.0625rem solid var(--outline);
+}
+
+tfoot > tr > th {
+  border-block-start: 0.0625rem solid var(--outline);
+}
+
+table.stripes > tbody > tr:nth-child(odd) {
+  background-color: var(---stripes);
 }
 
 table.no-space :is(th, td) {
@@ -30,4 +52,22 @@ table.medium-space :is(th, td) {
 
 table.large-space :is(th, td) {
   padding: 1rem;
+}
+
+table > .fixed,
+th.fixed {
+  position: sticky;
+  z-index: 1;
+  inset-block-start: 0;
+}
+
+tfoot.fixed,
+tfoot th.fixed {
+  inset-block-end: 0;
+}
+
+:is(td, th).min {
+  inline-size: 0;
+  max-inline-size: 0%;
+  white-space: nowrap;
 }

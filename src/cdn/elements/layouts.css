@@ -42,23 +42,8 @@ footer {
 
 :is(header, footer, menu > *).fixed {
   position: sticky;
-  inset-block-start: 0;
-  inset-block-end: 0;
-  inset-inline-start: 0;
-  inset-inline-end: 0;
+  inset: 0;
   z-index: 12;
-  background-color: inherit;
-}
-
-:is(header, footer).fixed::before {
-  content: "";
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  inset-inline-end: 0;
-  inset-block-end: 0;
-  margin: 0 -0.5rem;
-  max-inline-size: 100%;
   background-color: inherit;
 }
 
@@ -69,8 +54,7 @@ footer {
 
 article > :is(header, footer) {
   padding: inherit;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
+  padding-inline: 0;
   z-index: 11 !important;
 }
 

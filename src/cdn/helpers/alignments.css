@@ -5,22 +5,22 @@
 
 .bottom-align {
   display: flex;
-  align-items: end !important;
+  align-items: flex-end !important;
 }
 
 .top-align {
   display: flex;
-  align-items: start !important;
+  align-items: flex-start !important;
 }
 
 .left-align {
   text-align: start;
-  justify-content: start !important;
+  justify-content: flex-start !important;
 }
 
 .right-align {
   text-align: end;
-  justify-content: end !important;
+  justify-content: flex-end !important;
 }
 
 .center-align {

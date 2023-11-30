@@ -5,10 +5,7 @@ menu {
   box-shadow: var(--elevate2);
   background-color: var(--surface-container);
   z-index: 11;
-  inset-block-start: auto;
-  inset-block-end: 0;
-  inset-inline-start: 0;
-  inset-inline-end: auto;
+  inset: auto auto 0 0;
   inline-size: 100%;
   max-block-size: 50vh;
   max-inline-size: none !important;
@@ -39,8 +36,7 @@ menu:not([data-ui]):active,
 }
 
 menu.left {
-  inset-inline-start: auto;
-  inset-inline-end: 0;
+  inset: auto 0 0 auto;
 }
 
 menu * {
@@ -60,18 +56,14 @@ menu > a:is(:hover, :focus, .active) {
 }
 
 menu.min {
-  inset-block-start: 0;
-  inset-block-end: auto;
+  inset: 0 auto auto auto;
   transform: none !important;
   border-radius: inherit;
 }
 
 menu.max {
   position: fixed;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  inset-block-end: 0;
-  inset-inline-end: 0;
+  inset: 0;
   block-size: 100%;
   max-block-size: none;
   min-block-size: auto;

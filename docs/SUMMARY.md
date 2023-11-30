@@ -50,7 +50,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;summary&gt;**
 
-**&lt;table&gt;** left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border
+**&lt;table&gt;** left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border, stripes, min, fixed
 
 **tabs** left-align, right-align, center-align, horizontal, vertical, min, max
 
