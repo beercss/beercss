@@ -36,7 +36,7 @@ div
       i code
       span Code
 
-  header#top-app-bar1.responsive.fixed.yellow4.black-text
+  header#top-app-bar1.fixed.yellow4.black-text
     nav
       .max
         a.s(@click="domain.addHomeScreen()")
@@ -257,9 +257,9 @@ div
             .medium-space
             h5 From CDN
             pre.scroll.large-padding.fill(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.4.8/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.4.9/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.8/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.9/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space

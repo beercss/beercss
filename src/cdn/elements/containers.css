@@ -1,16 +1,16 @@
 :is(main, header, footer).responsive {
   ---padding: 6rem;
+  max-inline-size: calc(75rem + var(---padding));
+  margin: 0 auto;
 }
 
 main.responsive {
-  margin: 0 auto;
-  max-inline-size: calc(75rem + var(---padding));
   padding: 0.5rem;
   overflow-x: hidden;
   min-block-size: 100vh;
 }
 
-main.responsive.max {
+:is(main, header, footer).responsive.max {
   max-inline-size: 100%;
 }
 
