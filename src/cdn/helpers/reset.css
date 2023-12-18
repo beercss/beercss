@@ -23,7 +23,8 @@ label {
 a,
 b,
 i,
-span {
+span,
+strong {
   vertical-align: bottom;
 }
 
