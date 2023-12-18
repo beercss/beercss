@@ -18,9 +18,9 @@
   dialog#dialog
     h5 Default
     div Some text here
-    nav.right-align
-      button.border(data-ui="#dialog") Cancel
-      button(data-ui="#dialog") Confirm
+    nav.right-align.no-space
+      button.transparent.link(data-ui="#dialog") Cancel
+      button.transparent.link(data-ui="#dialog") Confirm
 
   dialog#dialog-left.left
     h5 Left
@@ -53,9 +53,9 @@
   dialog#dialog-modal.modal
     h5 Modal
     div Some text here
-    nav.right-align
-      button.border(data-ui="#dialog-modal") Cancel
-      button(data-ui="#dialog-modal") Confirm
+    nav.right-align.no-space
+      button.transparent.link(data-ui="#dialog-modal") Cancel
+      button.transparent.link(data-ui="#dialog-modal") Confirm
 
   dialog#dialog-max.max
     h5 Fullscreen
