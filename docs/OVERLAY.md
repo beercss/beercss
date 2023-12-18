@@ -14,6 +14,10 @@ Overlays block user screen and can express an unspecified wait time.
 
 left-align, right-align, center-align, top-align, bottom-align, middle-align
 
+**Forms**
+
+blur, small-blur, medium-blur, large-blur
+
 **Triggers**
 
 active

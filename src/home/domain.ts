@@ -269,6 +269,7 @@ const formatHtml = (element: any, raw: boolean = false, useInnerHtml: boolean = 
 
   return process(text
     .replace(/<!--v-if-->/gi, "")
+    .replace(/<div class=\"overlay\"><\/div>/gi, "")
     .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|data-v-\w+)="[^"]*"/gi, "")
     .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
     .replace(/\s+(checked|disabled)=""/gi, " $1")
@@ -279,7 +280,7 @@ const formatHtml = (element: any, raw: boolean = false, useInnerHtml: boolean = 
     .replace(/\s+(checked|disabled)=""/gi, " $1");
 };
 
-const showSamples = (data: IHome, selector: string, name: string, dialog?: string, url?: string) => {
+const showSamples = (data: IHome, selector: string, name: string, dialog?: string, url?: string, useInnerHtml: boolean = false) => {
   const elements = utils.queryAll(selector);
   let text = "";
   let textFormatted = "";
@@ -294,10 +295,10 @@ const showSamples = (data: IHome, selector: string, name: string, dialog?: strin
 
     if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom"])) {
       utils.html(element?.querySelectorAll("dialog"), "");
-      text = formatHtml(element, false, name === "Main layouts");
+      text = formatHtml(element, false, useInnerHtml);
       textFormatted = hljs.highlight("html", text).value;
     } else {
-      text = formatHtml(element, false, name === "Main layouts");
+      text = formatHtml(element, false, useInnerHtml);
       textFormatted = hljs.highlight("html", text).value;
     }
 

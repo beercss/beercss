@@ -333,7 +333,7 @@ div
                   span &nbsp;left, right, top, bottom, drawer, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
                 p
                   b overlay
-                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active
+                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active, blur, small-blur, medium-blur, large-blur
                 p
                   b page
                   span &nbsp;left, right, top, bottom, active
