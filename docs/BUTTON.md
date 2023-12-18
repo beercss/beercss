@@ -21,7 +21,7 @@ horizontal, vertical
 
 **Forms**
 
-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, none, extend
+border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, extend
 
 **Sizes**
 

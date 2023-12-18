@@ -10,7 +10,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **badge** left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
 
-**button or &lt;button&gt;** small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
+**button or &lt;button&gt;** small, medium, large, extra, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
 
 **chip** small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
 

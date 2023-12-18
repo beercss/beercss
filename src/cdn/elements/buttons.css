@@ -19,16 +19,6 @@ button {
   line-height: normal;
 }
 
-:is(button, .button).none {
-  inline-size: auto;
-  block-size: auto;
-  color: var(--primary);
-  padding: 0;
-  background-color: transparent;
-  min-inline-size: auto;
-  min-block-size: 1.5rem;
-}
-
 :is(button, .button).small {
   block-size: 2rem;
   min-inline-size: 2rem;
