@@ -2,7 +2,7 @@
 div
   h5 Main layouts
     a.chip.circle(
-      @click="domain.showSamples(data, '#main-layouts > div', 'Main layouts', '#dialog-main-layouts', null)"
+      @click="domain.showSamples(data, '#main-layouts > div', 'Main layouts', '#dialog-main-layouts', null, true)"
     )
       i code
   .grid

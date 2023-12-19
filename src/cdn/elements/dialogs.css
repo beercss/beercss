@@ -7,7 +7,7 @@ dialog {
   box-shadow: var(--elevate2);
   color: var(--on-surface);
   background-color: var(--surface-container-high);
-  padding: 1rem;
+  padding: 1.5rem;
   z-index: 100;
   inset: 10% auto auto 50%;
   min-inline-size: 20rem;
@@ -16,7 +16,7 @@ dialog {
   overflow-x: hidden;
   overflow-y: auto;
   transition: var(--speed3) all, 0s background-color;
-  border-radius: 1rem;
+  border-radius: 1.75rem;
   transform: translate(-50%, -4rem);
 }
 
@@ -60,26 +60,24 @@ dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max),
 
 dialog.top {
   opacity: 1;
+  padding: 1rem;
   inset: 0 auto auto 0;
   block-size: auto;
   inline-size: 100%;
   min-inline-size: auto;
   max-block-size: 100%;
   transform: translateY(-100%);
-  border-radius: unset;
-  border-end-start-radius: 1rem;
-  border-end-end-radius: 1rem;
+  border-radius: 0 0 1rem 1rem;
 }
 
 dialog.left {
   opacity: 1;
+  padding: 1rem;
   inset: 0 auto auto 0;
   inline-size: auto;
   block-size: 100%;
   max-block-size: 100%;
-  border-radius: unset;
-  border-start-end-radius: 1rem;
-  border-end-end-radius: 1rem;
+  border-radius: 0 1rem 1rem 0;
   background-color: var(--surface);
   transform: translateX(-100%);
 }
@@ -90,13 +88,12 @@ dialog.left {
 
 dialog.right {
   opacity: 1;
+  padding: 1rem;
   inset: 0 0 auto auto;
   inline-size: auto;
   block-size: 100%;
   max-block-size: 100%;
-  border-radius: unset;
-  border-start-start-radius: 1rem;
-  border-end-start-radius: 1rem;
+  border-radius: 1rem 0 0 1rem;
   background-color: var(--surface);
   transform: translateX(100%);
 }
@@ -107,15 +104,14 @@ dialog.right {
 
 dialog.bottom {
   opacity: 1;
+  padding: 1rem;
   inset: auto auto 0 0;
   block-size: auto;
   inline-size: 100%;
   min-inline-size: auto;
   max-block-size: 100%;
   transform: translateY(100%);
-  border-radius: unset;
-  border-start-start-radius: 1rem;
-  border-start-end-radius: 1rem;
+  border-radius: 1rem 1rem 0 0;
 }
 
 dialog.max {

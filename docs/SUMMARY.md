@@ -10,7 +10,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **badge** left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
 
-**button or &lt;button&gt;** small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
+**button or &lt;button&gt;** small, medium, large, extra, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
 
 **chip** small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
 
@@ -40,7 +40,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;nav&gt;** left, right, top, bottom, drawer, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
-**overlay** left-align, right-align, center-align, top-align, bottom-align, middle-align, active
+**overlay** left-align, right-align, center-align, top-align, bottom-align, middle-align, active, blur, small-blur, medium-blur, large-blur
 
 **page** left, right, top, bottom, active
 

@@ -257,9 +257,9 @@ div
             .medium-space
             h5 From CDN
             pre.scroll.large-padding.fill(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.4.9/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.4.10/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.9/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.10/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
@@ -289,7 +289,7 @@ div
                   span &nbsp;left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
                 p
                   b button or &lt;button&gt;
-                  span &nbsp;small, medium, large, extra, none, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
+                  span &nbsp;small, medium, large, extra, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
                 p
                   b chip
                   span &nbsp;small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
@@ -333,7 +333,7 @@ div
                   span &nbsp;left, right, top, bottom, drawer, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
                 p
                   b overlay
-                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active
+                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active, blur, small-blur, medium-blur, large-blur
                 p
                   b page
                   span &nbsp;left, right, top, bottom, active
