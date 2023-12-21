@@ -44,6 +44,7 @@ div
         .min
           h6.no-margin Home
           div {{ data.street }}
+  .overlay
   dialog.bottom.active.s.no-padding
     .padding.black.white-text
       p.bold(v-show="data.from") From {{ data.from }}

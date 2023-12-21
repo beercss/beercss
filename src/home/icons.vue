@@ -155,6 +155,7 @@
       i.mdi.mdi-account-circle-outline.large
       i.mdi.mdi-account-circle-outline.extra
 
+  .overlay
   dialog#dialog-icons.right.large
     header.fixed
       nav
@@ -182,6 +183,7 @@
       pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .space
 
+  .overlay
   dialog#dialog-icons-svg.right.large
     header.fixed
       nav
@@ -219,6 +221,7 @@
       pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
     .space
 
+  .overlay
   dialog#dialog-icons-libs.right.large
     header.fixed
       nav

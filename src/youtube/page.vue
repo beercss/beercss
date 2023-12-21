@@ -92,6 +92,7 @@
     button.circle.large.small-margin.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
 
+  .overlay
   dialog#dialog-notifications.right
     nav
       h5.max Notifications
@@ -99,6 +100,7 @@
         i close
     p No new notifications here
 
+  .overlay
   dialog#dialog-expanded.left.small
     header.fixed
       nav
@@ -133,6 +135,7 @@
       i watch_later
       div Watch later
 
+  .overlay
   dialog#dialog-add.bottom.top-round
     nav
       h5.max New
@@ -149,6 +152,7 @@
       .min
         span Broadcast live
 
+  .overlay
   dialog#dialog-search.top.transparent
     .field.round.suffix.prefix.small.no-margin.white.black-text
       i.front search

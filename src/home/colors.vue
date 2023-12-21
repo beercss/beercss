@@ -86,6 +86,7 @@
           .padding.inverse-primary-border.border inverse-primary-border
           .padding.inverse-primary-text inverse-primary-text
 
+  .overlay
   dialog#dialog-colors.right.medium
     header.fixed
       nav

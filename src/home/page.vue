@@ -53,6 +53,7 @@ div
         i.page.top.active(v-if="data.isDark") light_mode
         i.page.top.active(v-else) dark_mode
 
+  .overlay
   dialog#dialog-menu.left.scroll
     header.fixed
       nav
@@ -183,6 +184,7 @@ div
 
   themes(id="themes3", v-model="data", position="right")
 
+  .overlay
   dialog#more3.right.small(data-ui="#more3")
     header.fixed
       nav
@@ -445,6 +447,7 @@ div
       div Made with love and beer, cheers 💛🍻
       .space
 
+      .overlay
       dialog#dialog-samples.right.large
         header.fixed.front
           nav

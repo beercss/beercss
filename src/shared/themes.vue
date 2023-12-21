@@ -1,4 +1,5 @@
 <template lang="pug">
+.overlay
 dialog.medium(:id="id", :class="{ left: position === 'left', right: position === 'right' }")
   slot
   header.fixed
@@ -58,7 +59,6 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
     .space
     article.border
       pre.scroll.large-padding.fill(v-html="sourceCode()")
-
 </template>
 
 <script setup lang="ts">

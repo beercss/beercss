@@ -51,6 +51,7 @@
     button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
   main
+    .overlay
     dialog#dialog-search.top.transparent
       .row
         .max.l

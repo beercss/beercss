@@ -129,6 +129,7 @@ div
             h3 Pane 3
           .s12.m12.l6
             h3 Pane 4
+  .overlay
   dialog#dialog-main-layouts.right.large
     header.fixed
       nav

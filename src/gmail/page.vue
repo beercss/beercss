@@ -138,6 +138,7 @@ div
     themes(id="themes3", v-model="data")
 
   main.responsive.max
+    .overlay
     dialog#dialog-add.round.large-width
       nav
         button.circle.transparent(data-ui="#dialog-add")
@@ -166,6 +167,7 @@ div
             textarea
             label Message
 
+    .overlay
     dialog#dialog-add-small.top-round.bottom
       nav
         button.circle.transparent(data-ui="#dialog-add-small")
@@ -194,6 +196,7 @@ div
             textarea
             label Message
 
+    .overlay
     dialog#dialog-search.top.transparent
       nav
         .max.m.l
