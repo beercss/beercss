@@ -102,7 +102,7 @@
 }
 
 .field > progress.circle {
-  inset-block-start: calc(50% - 0.75rem);
+  inset-block-start: calc(50% - 0.75rem) !important;
   border-width: 0.1875rem;
 }
 
