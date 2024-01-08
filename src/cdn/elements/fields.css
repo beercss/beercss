@@ -88,12 +88,12 @@
 }
 
 .field > :is(i, img, svg, progress, a:not(.helper, .error)),
-[dir=rtl] .field > :is(i, a:not(.helper, .error)):first-child {
+[dir=rtl] .field > :is(i, img, svg, progress, a:not(.helper, .error)):first-child {
   inset: 50% 1rem auto auto;
 }
 
 .field > :is(i, img, svg, progress, a:not(.helper, .error)):first-child,
-[dir=rtl] .field > :is(i, a:not(.helper, .error)) {
+[dir=rtl] .field > :is(i, img, svg, progress, a:not(.helper, .error)) {
   inset: 50% auto auto 1rem;
 }
 
@@ -334,6 +334,10 @@ input::-webkit-search-results-decoration {
   transition: all 0.2s;
   gap: 0.25rem;
   white-space: nowrap;
+}
+
+[dir="rtl"] .field.label > label {
+  inset: -0.5rem 1rem auto auto;
 }
 
 .field.label.small > label {

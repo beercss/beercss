@@ -20,10 +20,6 @@ dialog {
   transform: translate(-50%, -4rem);
 }
 
-[dir=rtl] dialog {
-  transform: translate(50%, -4rem);
-}
-
 dialog::backdrop {
   display: none;
 }
@@ -49,12 +45,7 @@ dialog:is(.active, [open]) {
   transform: translate(-50%, 0);
 }
 
-[dir=rtl] dialog:is(.active, [open]) {
-  transform: translate(50%, 0);
-}
-
-dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max),
-[dir=rtl] dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
+dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
 }
 
@@ -82,10 +73,6 @@ dialog.left {
   transform: translateX(-100%);
 }
 
-[dir=rtl] dialog.left {
-  transform: translateX(100%);
-}
-
 dialog.right {
   opacity: 1;
   padding: 1rem;
@@ -96,10 +83,6 @@ dialog.right {
   border-radius: 1rem 0 0 1rem;
   background-color: var(--surface);
   transform: translateX(100%);
-}
-
-[dir=rtl] dialog.right {
-  transform: translateX(-100%);
 }
 
 dialog.bottom {

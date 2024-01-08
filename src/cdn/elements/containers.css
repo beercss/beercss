@@ -15,19 +15,19 @@ main.responsive {
 }
 
 nav.bottom:not(.s, .m, .l) ~ .responsive:not(header) {
-  padding-block-end: 6rem;
+  padding-bottom: 6rem;
 }
 
 nav.top:not(.s, .m, .l) ~ .responsive:not(footer) {
-  padding-block-start: 6rem;
+  padding-top: 6rem;
 }
 
 nav.left:not(.s, .m, .l) ~ .responsive {
-  padding-inline-start: var(---padding);
+  padding-left: var(---padding);
 }
 
 nav.right:not(.s, .m, .l) ~ .responsive {
-  padding-inline-end: var(---padding);
+  padding-right: var(---padding);
 }
 
 nav.drawer:not(.s, .m, .l) ~ .responsive {
@@ -36,11 +36,11 @@ nav.drawer:not(.s, .m, .l) ~ .responsive {
 
 @media only screen and (max-width: 600px) {
   nav.s.bottom ~ .responsive:not(header) {
-    padding-block-end: 6rem;
+    padding-bottom: 6rem;
   }
 
   nav.s.top ~ .responsive:not(footer) {
-    padding-block-start: 6rem;
+    padding-top: 6rem;
   }
 
   nav.drawer.s ~ .responsive {
@@ -48,21 +48,21 @@ nav.drawer:not(.s, .m, .l) ~ .responsive {
   }
 
   nav.s.left ~ .responsive {
-    padding-inline-start: var(---padding);
+    padding-left: var(---padding);
   }
 
   nav.s.right ~ .responsive {
-    padding-inline-end: var(---padding);
+    padding-right: var(---padding);
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
   nav.m.bottom ~ .responsive:not(header) {
-    padding-block-end: 6rem;
+    padding-bottom: 6rem;
   }
 
   nav.m.top ~ .responsive:not(footer) {
-    padding-block-start: 6rem;
+    padding-top: 6rem;
   }
 
   nav.drawer.m ~ .responsive {
@@ -70,21 +70,21 @@ nav.drawer:not(.s, .m, .l) ~ .responsive {
   }
 
   nav.m.left ~ .responsive {
-    padding-inline-start: var(---padding);
+    padding-left: var(---padding);
   }
 
   nav.m.right ~ .responsive {
-    padding-inline-end: var(---padding);
+    padding-right: var(---padding);
   }
 }
 
 @media only screen and (min-width: 993px) {
   nav.l.bottom ~ .responsive:not(header) {
-    padding-block-end: 6rem;
+    padding-bottom: 6rem;
   }
 
   nav.l.top ~ .responsive:not(footer) {
-    padding-block-start: 6rem;
+    padding-top: 6rem;
   }
 
   nav.drawer.l ~ .responsive {
@@ -92,17 +92,17 @@ nav.drawer:not(.s, .m, .l) ~ .responsive {
   }
 
   nav.l.left ~ .responsive {
-    padding-inline-start: var(---padding);
+    padding-left: var(---padding);
   }
 
   nav.l.right ~ .responsive {
-    padding-inline-end: var(---padding);
+    padding-right: var(---padding);
   }
 }
 
 @media only screen and (max-width: 600px) {
   main.responsive {
-    padding-inline-end: 0.5rem;
-    padding-inline-start: 0.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
 }
