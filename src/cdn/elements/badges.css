@@ -15,10 +15,6 @@
   transform: translate(50%, -100%);
 }
 
-[dir=rtl] .badge {
-  transform: translate(-50%, -100%);
-}
-
 .badge.none {
   inset: auto;
   transform: none;
@@ -31,17 +27,9 @@
   transform: translate(-50%, -100%);
 }
 
-[dir=rtl] .badge.top {
-  transform: translate(50%, -100%);
-}
-
 .badge.bottom {
   inset: auto auto 0 50%;
   transform: translate(-50%, 100%);
-}
-
-[dir=rtl] .badge.bottom {
-  transform: translate(50%, 100%);
 }
 
 .badge.left {
@@ -49,17 +37,9 @@
   transform: translate(-100%, -50%);
 }
 
-[dir=rtl] .badge.left {
-  transform: translate(100%, -50%);
-}
-
 .badge.right {
   inset: 50% 0 auto auto;
   transform: translate(100%, -50%);
-}
-
-[dir=rtl] .badge.right {
-  transform: translate(-100%, -50%);
 }
 
 .badge.top.left {
@@ -67,17 +47,9 @@
   transform: translate(-50%, -100%);
 }
 
-[dir=rtl] .badge.top.left {
-  transform: translate(50%, -100%);
-}
-
 .badge.bottom.left {
   inset: auto auto 0 0;
   transform: translate(-50%, 100%);
-}
-
-[dir=rtl] .badge.bottom.left {
-  transform: translate(50%, 100%);
 }
 
 .badge.top.right {
@@ -85,17 +57,9 @@
   transform: translate(50%, -100%);
 }
 
-[dir=rtl] .badge.top.right {
-  transform: translate(-50%, -100%);
-}
-
 .badge.bottom.right {
   inset: auto 0 0 auto;
   transform: translate(50%, 100%);
-}
-
-[dir=rtl] .badge.bottom.right {
-  transform: translate(-50%, 100%);
 }
 
 .badge.border {

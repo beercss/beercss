@@ -123,6 +123,10 @@
   inset: calc(50% - 0.1875rem) var(---end) auto var(---start);
 }
 
+[dir=rtl] .slider > span {
+  inset: calc(50% - 0.1875rem) var(---start) auto var(---end);
+}
+
 .field > .slider {
   inline-size: 100%;
 }
@@ -148,7 +152,7 @@
 }
 
 [dir=rtl] .slider > .tooltip {
-  transform: translate(50%, -50%) rotate(45deg) !important;
+  inset: 0.25rem auto auto var(---end);
 }
 
 .slider > .tooltip + .tooltip {
@@ -157,7 +161,7 @@
 }
 
 [dir=rtl] .slider > .tooltip + .tooltip {
-  transform: translate(-50%, -50%) rotate(45deg) !important;
+  inset: 0.25rem var(---start) auto auto;
 }
 
 .slider > .tooltip::before {
@@ -170,7 +174,7 @@
 }
 
 .slider:hover > .tooltip {
-  inset-block-start: -0.25rem;
+  inset-block-start: -0.25rem !important;
   opacity: 1;
 }
 

@@ -336,7 +336,7 @@ input::-webkit-search-results-decoration {
   white-space: nowrap;
 }
 
-[dir="rtl"] .field.label > label {
+[dir=rtl] .field.label > label {
   inset: -0.5rem 1rem auto auto;
 }
 

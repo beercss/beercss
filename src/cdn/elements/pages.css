@@ -26,16 +26,8 @@
   ---transform: translate(-4rem, 0);
 }
 
-[dir=rtl] .page.active.left {
-  ---transform: translate(4rem, 0);
-}
-
 .page.active.right {
   ---transform: translate(4rem, 0);
-}
-
-[dir=rtl] .page.active.right {
-  ---transform: translate(-4rem, 0);
 }
 
 @keyframes to-page {

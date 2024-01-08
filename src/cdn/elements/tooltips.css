@@ -24,17 +24,9 @@
   transform: translate(-50%, -100%) scale(0.9);
 }
 
-[dir=rtl] .tooltip {
-  transform: translate(50%, -100%) scale(0.9);
-}
-
 .tooltip.left {
   inset: 50% auto auto 0;
   transform: translate(-100%, -50%) scale(0.9);
-}
-
-[dir=rtl] .tooltip.left {
-  transform: translate(100%, -50%) scale(0.9);
 }
 
 .tooltip.right {
@@ -42,17 +34,9 @@
   transform: translate(100%, -50%) scale(0.9);
 }
 
-[dir=rtl] .tooltip.right {
-  transform: translate(-100%, -50%) scale(0.9);
-}
-
 .tooltip.bottom {
   inset: auto auto 0 50%;
   transform: translate(-50%, 100%) scale(0.9);
-}
-
-[dir=rtl] .tooltip.bottom {
-  transform: translate(50%, 100%) scale(0.9);
 }
 
 .tooltip.small {
@@ -76,32 +60,16 @@
   transform: translate(-50%, -100%) scale(1);
 }
 
-[dir=rtl] :hover > .tooltip {
-  transform: translate(50%, -100%) scale(1);
-}
-
 :hover > .tooltip.left {
   transform: translate(-100%, -50%) scale(1);
-}
-
-[dir=rtl] :hover > .tooltip.left {
-  transform: translate(100%, -50%) scale(1);
 }
 
 :hover > .tooltip.right {
   transform: translate(100%, -50%) scale(1);
 }
 
-[dir=rtl] :hover > .tooltip.right {
-  transform: translate(-100%, -50%) scale(1);
-}
-
 :hover > .tooltip.bottom {
   transform: translate(-50%, 100%) scale(1);
-}
-
-[dir=rtl] :hover > .tooltip.bottom {
-  transform: translate(50%, 100%) scale(1);
 }
 
 .tooltip.no-space {
@@ -120,12 +88,9 @@
   margin-block-start: var(---space) !important;
 }
 
-.tooltip.left {
-  margin-inline-start: var(---space) !important;
-}
-
+.tooltip.left,
 .tooltip.right {
-  margin-inline-end: var(---space) !important;
+  margin-inline: var(---space) !important;
 }
 
 .tooltip.bottom {

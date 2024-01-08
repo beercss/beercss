@@ -22,11 +22,6 @@
   transform: var(---transform-end);
 }
 
-[dir=rtl] .snackbar {
-  ---transform-start: translate(50%, 1rem);
-  ---transform-end: translate(50%, 0);
-}
-
 .snackbar.top {
   inset: 6rem auto auto 50%;
 }
@@ -38,10 +33,6 @@
 
 .snackbar.active.top {
   ---transform-end: translate(-50%, -1rem);
-}
-
-[dir=rtl] .snackbar.active.top {
-  ---transform-end: translate(50%, -1rem);
 }
 
 .snackbar > .max {

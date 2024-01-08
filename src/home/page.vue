@@ -36,7 +36,7 @@ div
       i code
       span Code
 
-  header#top-app-bar1.fixed.yellow4.black-text
+  header#top-app-bar1.fixed.responsive.max.yellow4.black-text
     nav
       .max
         a.s(@click="domain.addHomeScreen()")
