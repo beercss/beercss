@@ -1,7 +1,7 @@
 nav,
 .row,
-nav.drawer > :is(a, label),
-nav.drawer :is(summary, details) > :is(a, label) {
+nav.drawer > :is(a, label, ),
+nav.drawer > :is(ol, ul) > li > :is(a, label) {
   display: flex;
   align-items: center;
   align-self: normal;
@@ -11,19 +11,12 @@ nav.drawer :is(summary, details) > :is(a, label) {
   gap: 1rem;
 }
 
-:not(.divider, .small-divider, .medium-divider, .large-divider) + nav:not(.left, .right, .top, .bottom),
-:not(.divider, .small-divider, .medium-divider, .large-divider) + .row:not(a) {
+:not([class*=divider]) + :is(nav, .row):not(a, .left, .right, .top, .bottom) {
   margin-block-start: 1rem;
 }
 
-:is(nav, .row) > *,
-:is(nav, .row) > :not(.tooltip, menu) > * {
-  margin-block: 0;
-}
-
-nav > *,
-.row > * {
-  margin: 0 !important;
+:is(nav, li, .row) > :not(.tooltip, menu) {
+  margin: 0;
   white-space: normal;
   flex: none;
 }
@@ -44,29 +37,19 @@ nav > *,
   gap: 2rem;
 }
 
-nav > .max,
-.row > .max,
+:is(nav, li, .row) > .max,
 nav.drawer > :is(a, label) > .max,
-nav.drawer :is(summary, details) > :is(a, label) > .max {
-  flex: auto;
+nav.drawer > :is(ol, ul) > li > :is(a, label) > .max {
+  flex: 1;
 }
 
-nav.wrap,
-.row.wrap {
+:is(nav, .row).wrap {
   display: flex;
   flex-wrap: wrap;
 }
 
-header > :is(nav, .row) {
+:is(header, footer) > :is(nav, .row) {
   min-block-size: 4rem;
-}
-
-footer > :is(nav, .row) {
-  min-block-size: 5rem;
-}
-
-nav > header > :is(nav, .row) {
-  margin-block-start: -0.5rem !important;
 }
 
 :is(nav, .row) > .border.no-margin + .border.no-margin {
@@ -131,13 +114,14 @@ nav.drawer.max {
   inline-size: 100%;
 }
 
-nav > header {
-  padding: 0;
+:is(nav, .row) > header {
+  transform: translateY(-0.5rem);
   background-color: inherit;
   block-size: 4rem;
 }
 
 nav.drawer > header {
+  transform: translateY(-0.75rem);
   block-size: 4.5rem;
   align-self: start;
 }
@@ -147,63 +131,68 @@ nav.drawer:not(.left, .right) > header {
 }
 
 nav.drawer > :is(a, label),
-nav.drawer :is(summary, details) > a,
+nav.drawer > :is(ol, ul) > li > :is(a, label),
 a.row.wave {
   padding: 0.75rem;
   font-size: inherit;
 }
 
 nav.drawer > a,
-nav.drawer :is(summary, details) > a {
+nav.drawer > :is(ol, ul) > li > a {
   border-radius: 2rem;
 }
 
 nav.drawer > a:is(:hover, .active),
-nav.drawer :is(summary, details) > a:is(:hover, .active) {
+nav.drawer > :is(ol, ul) > li > a:is(:hover, .active) {
   background-color: var(--secondary-container);
 }
 
 nav.drawer > a:is(:hover, :focus, .active) > i,
-nav.drawer :is(summary, details) > a:is(:hover, :focus, .active) > i {
+nav.drawer > :is(ol, ul) > li > a:is(:hover, :focus, .active) > i {
   font-variation-settings: "FILL" 1;
 }
 
-nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(button, .button, .chip, img, video, svg) {
+nav > :is(ol, ul),
+nav > :is(ol, ul) > li {
+  all: inherit;
+  position: relative;
+  padding: 0;
+  inline-size: auto;
+}
+
+nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip) {
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
-nav:is(.top, .bottom):not(.drawer) > a:not(button, .button, .chip, img, video, svg) {
+nav:is(.top, .bottom):not(.drawer) > a:not(.button, .chip) {
   inline-size: 3.5rem;
 }
 
-nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(button, .button, .chip) > i {
+nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip) > i {
   padding: 0.25rem;
   border-radius: 2rem;
   transition: var(--speed1) padding linear;
   margin: 0 auto;
 }
 
-nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(button, .button, .chip):is(:hover, :focus, .active) > i {
+nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip):is(:hover, :focus, .active) > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
   padding: 0.25rem 1rem;
   font-variation-settings: "FILL" 1;
 }
 
-nav.left-align,
-nav.top-align {
+:is(nav, .row):is(.left-align, .top-align) {
   justify-content: flex-start;
 }
 
-nav.right-align,
-nav.bottom-align {
+:is(nav, .row):is(.right-align, .bottom-align) {
   justify-content: flex-end;
 }
 
-nav.center-align,
-nav.middle-align {
+:is(nav, .row):is(.center-align, .middle-align) {
   justify-content: center;
 }
 

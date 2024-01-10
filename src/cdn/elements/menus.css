@@ -43,15 +43,18 @@ menu * {
   white-space: inherit !important;
 }
 
-menu > a {
+menu > a,
+menu > li > a {
   padding: 0.75rem 1rem;
 }
 
-menu > a:not(.row) {
+menu > a:not(.row),
+menu > li > a:not(.row)  {
   display: block;
 }
 
-menu > a:is(:hover, :focus, .active) {
+menu > a:is(:hover, :focus, .active),
+menu > li > a:is(:hover, :focus, .active) {
   background-color: var(--active);
 }
 

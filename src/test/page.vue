@@ -28,6 +28,13 @@ main.responsive
     .max
       h5 Test your changes here
       div Click on icon to change theme
+  nav
+    ul
+      li
+        button Button
+      li
+        button.chip Chip 
+      li Teste
   .overlay
   dialog.round.large-padding#default(data-ui="#default")
     h5 Default dialog
@@ -158,6 +165,39 @@ main.responsive
     button(data-ui="#navigation") dialog
   .row
     nav.drawer
+      ul
+        li
+          a(@click="updateTheme()")
+            i palette
+            span Theme
+        li
+          a
+            i home
+            span Home
+        li
+          a
+            i search
+            span Search
+        li
+          a
+            i share
+            span Share
+        li.divider
+        li 
+          label Subtitle
+        li
+          a(data-ui="#menu")
+            i arrow_drop_down
+            span Menu
+          menu#menu
+            li
+              a Item 1
+            li 
+              a Item 2
+            li
+              a Item 3
+  .row
+    nav.drawer
       a(@click="updateTheme()")
         i palette
         span Theme
@@ -172,39 +212,13 @@ main.responsive
         span Share
       .divider
       label Subtitle
-      a(data-ui="#menu")
+      a(data-ui="#menu1")
         i arrow_drop_down
         span Menu
-      div
-        menu#menu
-          a Item 1
-          a Item 2
-          a Item 3
-      details
-        summary.none
-          a
-            i expand_more
-            span Expand
-        a
-          i arrow_downward
-          span More
-        a
-          i arrow_downward
-          span More
-        details
-          summary.none
-            a
-              i expand_more
-              span Expand
-          a
-            i arrow_downward
-            span More
-          a
-            i arrow_downward
-            span More
-          a
-            i arrow_upward
-            span End
+      menu#menu1
+        a Item 1
+        a Item 2
+        a Item 3
 
   .large-space
   h5 Steppers

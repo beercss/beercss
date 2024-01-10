@@ -36,52 +36,52 @@
 
 header,
 footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-block-size: 4rem;
   padding: 0 1rem;
   background-color: var(--surface-container);
+}
+
+:is(header, footer).fixed.responsive {
+  z-index: 12;
 }
 
 :is(header, footer, menu > *).fixed {
   position: sticky;
   inset: 0;
-  z-index: 12;
+  z-index: 11;
   background-color: inherit;
 }
 
-:is(dialog, menu) > :is(header, footer) {
+:is(dialog, menu, nav, article) > :is(header, footer) {
+  background-color: inherit;
   padding: 0;
-  background-color: inherit;
 }
 
-article > :is(header, footer) {
-  padding: inherit;
-  padding-inline: 0;
-  z-index: 11 !important;
+:is(dialog, article, [class*=padding]) > :is(header, footer).fixed {
+  ---translateY: 1rem;
+
+  transform: translateY(var(---translateY));
 }
 
-:is(dialog, article, .padding, .medium-padding) > header.fixed {
-  transform: translateY(-1rem);
-}
-
-:is(dialog, article, .padding, .medium-padding) > footer.fixed {
-  transform: translateY(1rem);
+:is(dialog, article, [class*=padding]) > header.fixed {
+  transform: translateY(calc(-1 * var(---translateY)));
 }
 
 .no-padding > :is(header, footer).fixed {
   transform: none;
 }
 
-.small-padding > header.fixed {
-  transform: translateY(-0.5rem);
+.small-padding > :is(header, footer).fixed {
+  ---translateY: 0.5rem;
 }
 
-.small-padding > footer.fixed {
-  transform: translateY(0.5rem);
+:is(.large-padding, dialog:not(.left, .right, .top, .bottom)) > :is(header, footer).fixed {
+  ---translateY: 1.5rem;
 }
 
-.large-padding > header.fixed {
-  transform: translateY(-1.5rem);
-}
-
-.large-padding > footer.fixed {
-  transform: translateY(1.5rem);
+dialog > footer.fixed.bottom {
+  margin-block-start: auto;
 }
