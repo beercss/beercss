@@ -13,21 +13,21 @@ div
       h6.no-margin.absolute.middle.center Compact
     article#main-layout-medium.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
-        .row
+        .row(dir="ltr")
           article.fill.no-elevate.height-15
           .max
             article.fill.no-elevate.center-align.middle-align.height-15
       h6.no-margin.absolute.middle.center Medium
     article#main-layout-expanded.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
-        .row
+        .row(dir="ltr")
           article.fill.no-elevate.height-15.width-6
           .max
             article.fill.no-elevate.center-align.middle-align.height-15
       h6.no-margin.absolute.middle.center Expanded
     article#main-layout-muti-panes.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
-        .row
+        .row(dir="ltr")
           article.fill.no-elevate.height-15
           .max
             .row
@@ -38,7 +38,7 @@ div
       h6.no-margin.absolute.middle.center Multi panes
     article#main-layout-custom.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
-        .row
+        .row(dir="ltr")
           article.fill.no-elevate.height-15
           .max
             .grid
