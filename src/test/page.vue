@@ -190,8 +190,8 @@ main.responsive
         span Share
   .space
   h6 Using nav + ul + li + *
-  nav.vertical.nos-space
-    ul.vertical.no-space
+  nav.vertical.no-space
+    ul
       li
         a.row.wave
           i home
