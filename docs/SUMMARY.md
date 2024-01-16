@@ -34,6 +34,8 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;label&gt;** active, radio, checkbox, switch
 
+**&lt;li&gt;** max, divider, small-divider, medium-divider, large-divider
+
 **&lt;main&gt;** responsive, max
 
 **&lt;menu&gt;** left, right, wrap, no-wrap, min, max, active
@@ -44,17 +46,17 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **page** left, right, top, bottom, active
 
-***&lt;progress&gt;** small, medium, large, circle
+**&lt;progress&gt;** small, medium, large, circle
 
-**row** left-align, right-align, center-align, top-align, bottom-align, middle-align
+**row, &lt;ul&gt; or &lt;ol&gt;** left-align, right-align, center-align, top-align, bottom-align, middle-align, no-space, small-space, medium-space, large-space, horizontal, vertical
+
+**snackbar** top, bottom, active
 
 **&lt;summary&gt;**
 
 **&lt;table&gt;** left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border, stripes, min, fixed
 
 **tabs** left-align, right-align, center-align, horizontal, vertical, min, max
-
-**snackbar** top, bottom, active
 
 **tooltip** left, right, top, bottom, max
 

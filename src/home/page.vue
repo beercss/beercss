@@ -325,6 +325,9 @@ div
                   b &lt;label&gt;
                   span &nbsp;active, radio, checkbox, switch
                 p
+                  b &lt;li&gt;
+                  span &nbsp;max, divider, small-divider, medium-divider, large-divider
+                p
                   b &lt;main&gt;
                   span &nbsp;responsive, max
                 p
@@ -343,8 +346,8 @@ div
                   b &lt;progress&gt;
                   span &nbsp;small, medium, large, circle
                 p
-                  b row
-                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align
+                  b row, &lt;ul&gt; or &lt;ol&gt;
+                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, no-space, small-space, medium-space, large-space, horizontal, vertical
                 p
                   b snackbar
                   span &nbsp;top, bottom, active
