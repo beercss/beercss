@@ -67,8 +67,3 @@ code {
   direction: ltr;
 }
 
-nav > :is(ol, ul) > li,
-menu > li {
-  all: unset;
-  display: block;
-}

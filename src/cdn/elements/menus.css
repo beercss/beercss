@@ -46,6 +46,7 @@ menu * {
 menu > a,
 menu > li > a {
   padding: 0.75rem 1rem;
+  flex: 1;
 }
 
 menu > a:not(.row),

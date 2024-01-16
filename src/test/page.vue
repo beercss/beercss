@@ -13,6 +13,8 @@ nav#navigation-drawer.left
     i share
     span Share
   .divider
+  .divider.vertical
+  .max
   label Subtitle
   a
     i widgets
@@ -20,6 +22,37 @@ nav#navigation-drawer.left
   a
     i more_vert
     span More
+nav#navigation-ul-drawer.right
+  ul
+    li
+      a(@click="updateTheme()")
+        i palette
+        span Theme
+    li
+      a
+        i home
+        span Home
+    li
+      a
+        i search
+        span Search
+    li
+      a
+        i share
+        span Share
+    li.divider
+    li.divider.vertical
+    li.max
+    li
+      label Subtitle
+    li
+      a
+        i widgets
+        span Widgets
+    li
+      a
+        i more_vert
+        span More
 
 main.responsive
   .row
@@ -28,13 +61,6 @@ main.responsive
     .max
       h5 Test your changes here
       div Click on icon to change theme
-  nav
-    ul
-      li
-        button Button
-      li
-        button.chip Chip 
-      li Teste
   .overlay
   dialog.round.large-padding#default(data-ui="#default")
     h5 Default dialog
@@ -93,6 +119,91 @@ main.responsive
       a
         i more_vert
         span More
+
+  .large-space 
+  h5 Navigations
+  .space
+  h6 Using nav + *
+  nav.vertical
+    button Button 
+    button.chip Chip 
+    .divider
+    .divider.vertical
+    .max
+    a Link
+
+  .space
+  h6 Using ul + li + *
+  ul.vertical
+    li
+      button Button
+    li 
+      button.chip Chip 
+    li.divider
+    li.divider.vertical
+    li.max
+    li
+      a Link
+
+  .space
+  h6 Using nav + ul + li + *
+  nav.vertical
+    ul
+      li
+        button Button 
+      li 
+        button.chip Chip 
+      li.divider
+      li.divider.vertical
+      li.max
+      li
+        a Link
+
+  .large-space
+  h5 Lists
+  .space
+  h6 Using nav + *  
+  nav.vertical.no-space
+    a.row.wave
+      i home
+      span Home
+    a.row.wave
+      i search
+      span Search
+    a.row.wave
+      i share
+      span Share
+  .space
+  h6 Using ul + li + *
+  ul.vertical.no-space
+    li
+      a.row.wave
+        i home
+        span Home
+    li
+      a.row.wave
+        i search
+        span Search
+    li
+      a.row.wave
+        i share
+        span Share
+  .space
+  h6 Using nav + ul + li + *
+  nav.vertical.nos-space
+    ul.vertical.no-space
+      li
+        a.row.wave
+          i home
+          span Home
+      li
+        a.row.wave
+          i search
+          span Search
+      li
+        a.row.wave
+          i share
+          span Share
 
   .large-space
   h5 Field with tooltip
@@ -228,11 +339,6 @@ main.responsive
     button.circle 1
     .divider.max
     button.circle 1
-
-  nav
-    button Button
-    .divider.vertical
-    button.chip Chip
 
   .large-space
   h5 Fields
