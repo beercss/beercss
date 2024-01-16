@@ -25,6 +25,10 @@ left-align, right-align, center-align, top-align, bottom-align, middle-align
 
 fill, primary-container, secondary-container, tertiary-container
 
+**Directions**
+
+vertical, horizontal
+
 **Forms**
 
 border, round, no-round, left-round, right-round, top-round, bottom-round, drawer
