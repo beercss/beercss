@@ -4,6 +4,7 @@ import "./dynamicColors";
 import "./gmail";
 import "./materialDesign3";
 import "./netflix";
+import "./reddit";
 import "./test";
 import "./uber";
 import "./youtube";

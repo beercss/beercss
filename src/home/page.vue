@@ -199,6 +199,9 @@ div
       a(href="/netflix")
         i tv
         span Netflix
+      a(href="/reddit")
+        i open_in_new
+        span Reddit
       a(href="/uber")
         i directions_car
         span Uber
