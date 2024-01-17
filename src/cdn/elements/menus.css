@@ -51,7 +51,7 @@ menu > li > a {
 }
 
 menu > a:not(.row),
-menu > li > a:not(.row)  {
+menu > li > a:not(.row) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;

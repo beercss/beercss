@@ -99,7 +99,6 @@ import { onMounted } from "vue";
 import home from "./home.vue";
 import data from "./data";
 import sharedDomain from "../shared/domain";
-import { redirect } from "../shared/router";
 
 onMounted(async () => {
   document.title = "Reddit - Beer CSS";

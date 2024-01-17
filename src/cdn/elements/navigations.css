@@ -179,7 +179,7 @@ nav:is(.top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) {
 }
 
 nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip) > i,
-nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) > i  {
+nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) > i {
   padding: 0.25rem;
   border-radius: 2rem;
   transition: var(--speed1) padding linear;
@@ -208,7 +208,6 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
 
 :is(nav, ol, ul, .row):is(.left-align, .top-align, .vertical).vertical {
   align-items: flex-start;
-
 }
 
 :is(nav, ol, ul, .row):is(.right-align, .bottom-align).vertical {
