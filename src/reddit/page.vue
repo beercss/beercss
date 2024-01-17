@@ -26,7 +26,7 @@ div(v-show="data.showPage")
             a.row
               i.tiny people
               .max r/sveltejs
-              
+
       .max
         .field.fill.round.prefix.no-margin
           i search
@@ -107,8 +107,8 @@ onMounted(async () => {
   data.value.showPage = true;
 });
 
-function updateTheme() {
-  const newMode = ui("mode") == "dark" ? "light" : "dark";
+function updateTheme () {
+  const newMode = ui("mode") === "dark" ? "light" : "dark";
   ui("mode", newMode);
 }
 </script>

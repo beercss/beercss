@@ -67,7 +67,7 @@ main.responsive
     nav.right-align
       button.border Cancel
       button Confirm
-  
+
   .overlay
   dialog.left#left(data-ui="#left")
     h5 Left dialog
@@ -120,13 +120,13 @@ main.responsive
         i more_vert
         span More
 
-  .large-space 
+  .large-space
   h5 Navigations
   .space
   h6 Using nav + *
   nav.vertical
-    button Button 
-    button.chip Chip 
+    button Button
+    button.chip Chip
     .divider
     .divider.vertical
     .max
@@ -137,8 +137,8 @@ main.responsive
   ul.vertical
     li
       button Button
-    li 
-      button.chip Chip 
+    li
+      button.chip Chip
     li.divider
     li.divider.vertical
     li.max
@@ -150,9 +150,9 @@ main.responsive
   nav.vertical
     ul
       li
-        button Button 
-      li 
-        button.chip Chip 
+        button Button
+      li
+        button.chip Chip
       li.divider
       li.divider.vertical
       li.max
@@ -162,7 +162,7 @@ main.responsive
   .large-space
   h5 Lists
   .space
-  h6 Using nav + *  
+  h6 Using nav + *
   nav.vertical.no-space
     a.row.wave
       i home
@@ -294,7 +294,7 @@ main.responsive
             i share
             span Share
         li.divider
-        li 
+        li
           label Subtitle
         li
           a(data-ui="#menu")
@@ -303,7 +303,7 @@ main.responsive
           menu#menu
             li
               a Item 1
-            li 
+            li
               a Item 2
             li
               a Item 3

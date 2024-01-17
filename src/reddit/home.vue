@@ -2,7 +2,7 @@
 main.responsive
   .page.right.active
     .grid
-      
+
       section.s12.m12.l8
         article.no-elevate.large-round
           .row
@@ -94,7 +94,7 @@ main.responsive
                 .medium-space
                 a(href="/")
                   img.responsive(:src="'/background.png'")
-      
+
       section.s12.m12.l4
         article.no-elevate.round
           .row
@@ -150,7 +150,7 @@ main.responsive
     div
       .tabs.scroll.left-align
         a.active(data-ui="#post")
-          i news 
+          i news
           span Post
         a(data-ui="#image-video")
           i image
@@ -165,25 +165,25 @@ main.responsive
       .page.right.active#post
         .field.border.label
           input
-          label Title 
+          label Title
         .field.border.label.extra.textarea
           textarea
           label Text (optional)
-          
+
       .page.right#image-video
         .row
           .max
             .field.border.no-margin.label
               input
-              label Title 
+              label Title
           button
             span Select a file
-            input(type="file") 
-      
+            input(type="file")
+
       .page.right#link
         .field.border.label
           input
-          label Title 
+          label Title
         .field.border.label
           textarea
           label Url
@@ -191,11 +191,11 @@ main.responsive
 
       nav.margin.right-align.absolute.bottom.left.right.transparent
         button.border(data-ui="#dialog-post") Cancel
-        button(data-ui="#dialog-post") Confirm 
+        button(data-ui="#dialog-post") Confirm
 </template>
 
 <script setup lang="ts">
-function openPostDialog() {
+function openPostDialog () {
   ui("#dialog-post");
 }
 </script>

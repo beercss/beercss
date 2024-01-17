@@ -88,7 +88,7 @@
       nav.right-align
         button.border(data-ui="#dialog-max") Cancel
         button(data-ui="#dialog-max") Confirm
-        
+
   .dialog-code
     .overlay
     dialog#dialog-navigation-drawer.left.no-padding
