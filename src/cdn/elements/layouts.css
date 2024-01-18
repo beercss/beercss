@@ -44,7 +44,7 @@ footer {
   background-color: var(--surface-container);
 }
 
-footer {
+main ~ footer {
   min-block-size: 5rem;
 }
 
