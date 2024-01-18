@@ -9,6 +9,7 @@ nav,
 ol,
 ul,
 .row,
+a.row,
 nav.drawer > :is(a, label),
 nav.drawer > :is(ol, ul) > li > :is(a, label) {
   display: flex;
@@ -18,14 +19,19 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) {
   justify-content: flex-start;
   white-space: nowrap;
   gap: 1rem;
+  margin: 0;
 }
 
-:not([class*=divider]) + :is(nav, ul, ol, .row):not(a, .left, .right, .top, .bottom) {
+:is(nav, .row, .max) > :only-child {
+  margin: 0;
+}
+
+* + :is(nav, ul, ol, .row) {
   margin-block-start: 1rem;
 }
 
-:is(nav, ol, ul, li, .row) > :not(.tooltip, menu, ol, ul) {
-  margin: 0 !important;
+:is(nav, ol, ul, li, .row) > * {
+  margin: 0;
   white-space: normal;
   flex: none;
 }
@@ -58,7 +64,7 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) > .max {
 }
 
 :is(header, footer) > :is(nav, ol, ul, .row) {
-  min-block-size: 4rem;
+  min-block-size: inherit;
 }
 
 :is(nav, li, .row) > .border.no-margin + .border.no-margin {
@@ -75,6 +81,7 @@ nav:is(.left, .right, .top, .bottom) {
   inline-size: auto;
   text-align: center;
   padding: 0.5rem;
+  margin: 0;
 }
 
 nav:is(.left, .right) {
@@ -124,14 +131,16 @@ nav.drawer.max {
 }
 
 :is(nav, .row) > header {
-  transform: translateY(-0.5rem);
   background-color: inherit;
-  block-size: 4rem;
+}
+
+nav:is(.left, .right) > header {
+  transform: translateY(-0.5rem);
 }
 
 nav.drawer > header {
   transform: translateY(-0.75rem);
-  block-size: 4.5rem;
+  min-block-size: 5.5rem;
   align-self: start;
 }
 

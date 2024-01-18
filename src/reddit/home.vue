@@ -8,12 +8,12 @@ main.responsive
           .row
             img.medium(:src="'/reddit-profile.png'")
             .max
-              .field.fill.round.no-margin
-                input(placeholder="Create Post", @click="openPostDialog()")
-            button.transparent.circle
+              .field.fill.round
+                input(placeholder="Create Post", @click="openPostDialog('#post')")
+            button.transparent.circle(@click="openPostDialog('#image-video')")
               i image
               .tooltip.bottom Create Media Post
-            button.transparent.circle
+            button.transparent.circle(@click="openPostDialog('#link')")
               i link
               .tooltip.bottom Create Link Post
         nav.scroll
@@ -35,7 +35,7 @@ main.responsive
         article.no-elevate.round
           .row.top-align
             div
-              nav.vertical.no-space.grey-text
+              nav.vertical.no-space.grey-text.center-align
                 button.transparent.circle
                   i thumb_up
                 div Vote
@@ -47,6 +47,7 @@ main.responsive
                   img.circle.small(:src="'/reddit-community.png'")
                   .max
                     b r/sveltejs
+                    | &nbsp;
                     label.grey-text Posted by u/leonardorafalw 3 hours ago
                     h6.no-margin How do I disabled all A11y messages? They are annoying
                 .medium-space
@@ -56,7 +57,7 @@ main.responsive
         article.no-elevate.round
           .row.top-align
             div
-              nav.vertical.no-space.grey-text
+              nav.vertical.no-space.grey-text.center-align
                 button.transparent.circle
                   i thumb_up
                 div Vote
@@ -68,6 +69,7 @@ main.responsive
                   img.circle.small(:src="'/reddit-community.png'")
                   .max
                     b r/sveltejs
+                    | &nbsp;
                     label.grey-text Posted by u/leonardorafalw 3 hours ago
                     h6.no-margin "The golden rule of assertions"
                 .medium-space
@@ -77,7 +79,7 @@ main.responsive
         article.no-elevate.round
           .row.top-align
             div
-              nav.vertical.no-space.grey-text
+              nav.vertical.no-space.grey-text.center-align
                 button.transparent.circle
                   i thumb_up
                 div Vote
@@ -89,11 +91,12 @@ main.responsive
                   img.circle.small(:src="'/reddit-community.png'")
                   .max
                     b r/sveltejs
+                    | &nbsp;
                     label.grey-text Posted by u/leonardorafalw 3 hours ago
                     h6.no-margin Cheers to Craft Design: Beer CSS - A Lightweight Material Design Framework
                 .medium-space
                 a(href="/")
-                  img.responsive(:src="'/background.png'")
+                  img.responsive.round(:src="'/background.png'")
 
       section.s12.m12.l4
         article.no-elevate.round
@@ -149,7 +152,7 @@ main.responsive
     .medium-space
     div
       .tabs.scroll.left-align
-        a.active(data-ui="#post")
+        a(data-ui="#post")
           i news
           span Post
         a(data-ui="#image-video")
@@ -162,7 +165,7 @@ main.responsive
           i insert_chart
           span Pool
       .medium-space
-      .page.right.active#post
+      .page.top#post
         .field.border.label
           input
           label Title
@@ -170,24 +173,24 @@ main.responsive
           textarea
           label Text (optional)
 
-      .page.right#image-video
+      .page.top#image-video
         .row
           .max
-            .field.border.no-margin.label
+            .field.border.label
               input
               label Title
           button
             span Select a file
             input(type="file")
 
-      .page.right#link
+      .page.top#link
         .field.border.label
           input
           label Title
         .field.border.label
           textarea
           label Url
-      .page.right#pool
+      .page.top#pool
 
       nav.margin.right-align.absolute.bottom.left.right.transparent
         button.border(data-ui="#dialog-post") Cancel
@@ -195,7 +198,8 @@ main.responsive
 </template>
 
 <script setup lang="ts">
-function openPostDialog () {
+function openPostDialog(pageSelector: string) {
+  ui(pageSelector);
   ui("#dialog-post");
 }
 </script>

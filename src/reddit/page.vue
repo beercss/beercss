@@ -4,7 +4,7 @@ div(v-show="data.showPage")
     nav
       img(:src="'/reddit.svg'", style="width: 100px")
       .max.l
-        .field.fill.round.prefix.suffix.no-margin
+        .field.fill.round.prefix.suffix
           i home
           input(value="Home", readonly)
           i arrow_drop_down
@@ -28,7 +28,7 @@ div(v-show="data.showPage")
               .max r/sveltejs
 
       .max
-        .field.fill.round.prefix.no-margin
+        .field.fill.round.prefix
           i search
           input
       button.transparent.circle.l
@@ -59,14 +59,13 @@ div(v-show="data.showPage")
         span Advertise
       .row.wave.no-space.small-padding.l.small-round(data-ui="#menu-profile")
         img.tiny(:src="'/reddit-profile.png'")
-        .max
-          .row.no-space
-            .small-text
-              b leonardorafaelw
-              div
-                i.tiny.link settings
-                span 999 karma
-            i arrow_drop_down
+        .row.no-space
+          .small-text
+            b leonardorafaelw
+            div
+              i.tiny.link settings
+              span 999 karma
+          i arrow_drop_down
         menu.no-wrap.left#menu-profile
           a.transparent
             label My stuff

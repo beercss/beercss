@@ -46,7 +46,7 @@ menu * {
 menu > a,
 menu > li > a {
   padding: 0.5rem 1rem;
-  min-height: 3rem;
+  min-block-size: 3rem;
   flex: 1;
 }
 

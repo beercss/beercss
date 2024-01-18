@@ -39,7 +39,7 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-block-size: 4rem;
+  min-block-size: 5rem;
   padding: 0 1rem;
   background-color: var(--surface-container);
 }
