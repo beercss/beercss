@@ -1,16 +1,25 @@
+[class*=width] {
+  max-inline-size: 100%;
+}
+
+.auto-width {
+  inline-size: auto;
+}
+
 .small-width {
   inline-size: 12rem !important;
-  max-inline-size: 100%;
 }
 
 .medium-width {
   inline-size: 24rem !important;
-  max-inline-size: 100%;
 }
 
 .large-width {
   inline-size: 36rem !important;
-  max-inline-size: 100%;
+}
+
+.auto-height {
+  block-size: auto;
 }
 
 .small-height {
