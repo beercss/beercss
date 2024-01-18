@@ -140,7 +140,7 @@ nav:is(.left, .right) > header {
 
 nav.drawer > header {
   transform: translateY(-0.75rem);
-  min-block-size: 5.5rem;
+  min-block-size: 4.5rem;
   align-self: start;
 }
 

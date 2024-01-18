@@ -39,9 +39,13 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-block-size: 5rem;
+  min-block-size: 4rem;
   padding: 0 1rem;
   background-color: var(--surface-container);
+}
+
+footer {
+  min-block-size: 5rem;
 }
 
 :is(header, footer).fixed.responsive {
