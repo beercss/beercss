@@ -85,7 +85,3 @@ footer {
 :is(.large-padding, dialog:not(.left, .right, .top, .bottom)) > :is(header, footer).fixed {
   ---translateY: 1.5rem;
 }
-
-dialog > footer.fixed.bottom {
-  margin-block-start: auto;
-}

@@ -132,7 +132,7 @@ main.responsive
               .max.wrap
                 div Cheers to Craft Design: Beer CSS - A Lightweight Material Design Framework
                 label.grey-text 3 points - 4 comments - 3h
-  dialog.large#dialog-post
+  dialog#dialog-post
     nav.wrap
       h6 Create a post on
       .field.border.label
@@ -150,7 +150,7 @@ main.responsive
             i.tiny people
             span r/svelte
     .medium-space
-    div
+    .medium-height.large-width
       .tabs.scroll.left-align
         a(data-ui="#post")
           i news
@@ -192,13 +192,14 @@ main.responsive
           label Url
       .page.top#pool
 
-      nav.margin.right-align.absolute.bottom.left.right.transparent
+    footer.fixed
+      nav.right-align
         button.border(data-ui="#dialog-post") Cancel
         button(data-ui="#dialog-post") Confirm
 </template>
 
 <script setup lang="ts">
-function openPostDialog(pageSelector: string) {
+function openPostDialog (pageSelector: string) {
   ui(pageSelector);
   ui("#dialog-post");
 }

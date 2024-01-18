@@ -1,6 +1,5 @@
 dialog {
-  display: flex;
-  flex-direction: column;
+  display: block;
   border: none;
   opacity: 0;
   visibility: hidden;
