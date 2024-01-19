@@ -135,7 +135,7 @@ main.responsive
   dialog#dialog-post
     nav.wrap
       h6 Create a post on
-      .field.border.label
+      .field.border.label.l.m
         input
         label Community
         i arrow_drop_down
@@ -149,9 +149,9 @@ main.responsive
           a.row
             i.tiny people
             span r/svelte
-    .medium-space
+    .medium-space.l.m
     .medium-height.large-width
-      .tabs.scroll.left-align
+      .tabs.scroll.left-align.l.m
         a(data-ui="#post")
           i news
           span Post
@@ -166,6 +166,20 @@ main.responsive
           span Pool
       .medium-space
       .page.top#post
+        .field.border.label.s
+          input
+          label Community
+          i arrow_drop_down
+          menu
+            a.row
+              i.tiny people
+              span r/svelte
+            a.row
+              i.tiny people
+              span r/svelte
+            a.row
+              i.tiny people
+              span r/svelte
         .field.border.label
           input
           label Title
@@ -174,6 +188,20 @@ main.responsive
           label Text (optional)
 
       .page.top#image-video
+        .field.border.label.s
+          input
+          label Community
+          i arrow_drop_down
+          menu
+            a.row
+              i.tiny people
+              span r/svelte
+            a.row
+              i.tiny people
+              span r/svelte
+            a.row
+              i.tiny people
+              span r/svelte
         .row
           .max
             .field.border.label
@@ -184,6 +212,20 @@ main.responsive
             input(type="file")
 
       .page.top#link
+        .field.border.label.s
+          input
+          label Community
+          i arrow_drop_down
+          menu
+            a.row
+              i.tiny people
+              span r/svelte
+            a.row
+              i.tiny people
+              span r/svelte
+            a.row
+              i.tiny people
+              span r/svelte
         .field.border.label
           input
           label Title
