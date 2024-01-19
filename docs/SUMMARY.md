@@ -92,7 +92,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Shadows** shadow, left-shadow, right-shadow, top-shadow, bottom-shadow
 
-**Sizes** tiny, small, medium, large, extra, wrap, no-wrap, max, small-width, medium-width, large-width, small-height, medium-height, large-height
+**Sizes** tiny, small, medium, large, extra, wrap, no-wrap, max, auto-width, small-width, medium-width, large-width, auto-height, small-height, medium-height, large-height
 
 **Spaces** space, no-space, small-space, medium-space, large-space
 
