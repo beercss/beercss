@@ -13,6 +13,8 @@ nav#navigation-drawer.left
     i share
     span Share
   .divider
+  .divider.vertical
+  .max
   label Subtitle
   a
     i widgets
@@ -20,6 +22,37 @@ nav#navigation-drawer.left
   a
     i more_vert
     span More
+nav#navigation-ul-drawer.right
+  ul
+    li
+      a(@click="updateTheme()")
+        i palette
+        span Theme
+    li
+      a
+        i home
+        span Home
+    li
+      a
+        i search
+        span Search
+    li
+      a
+        i share
+        span Share
+    li.divider
+    li.divider.vertical
+    li.max
+    li
+      label Subtitle
+    li
+      a
+        i widgets
+        span Widgets
+    li
+      a
+        i more_vert
+        span More
 
 main.responsive
   .row
@@ -34,7 +67,7 @@ main.responsive
     nav.right-align
       button.border Cancel
       button Confirm
-  
+
   .overlay
   dialog.left#left(data-ui="#left")
     h5 Left dialog
@@ -86,6 +119,91 @@ main.responsive
       a
         i more_vert
         span More
+
+  .large-space
+  h5 Navigations
+  .space
+  h6 Using nav + *
+  nav.vertical
+    button Button
+    button.chip Chip
+    .divider
+    .divider.vertical
+    .max
+    a Link
+
+  .space
+  h6 Using ul + li + *
+  ul.vertical
+    li
+      button Button
+    li
+      button.chip Chip
+    li.divider
+    li.divider.vertical
+    li.max
+    li
+      a Link
+
+  .space
+  h6 Using nav + ul + li + *
+  nav.vertical
+    ul
+      li
+        button Button
+      li
+        button.chip Chip
+      li.divider
+      li.divider.vertical
+      li.max
+      li
+        a Link
+
+  .large-space
+  h5 Lists
+  .space
+  h6 Using nav + *
+  nav.vertical.no-space
+    a.row.wave
+      i home
+      span Home
+    a.row.wave
+      i search
+      span Search
+    a.row.wave
+      i share
+      span Share
+  .space
+  h6 Using ul + li + *
+  ul.vertical.no-space
+    li
+      a.row.wave
+        i home
+        span Home
+    li
+      a.row.wave
+        i search
+        span Search
+    li
+      a.row.wave
+        i share
+        span Share
+  .space
+  h6 Using nav + ul + li + *
+  nav.vertical.no-space
+    ul
+      li
+        a.row.wave
+          i home
+          span Home
+      li
+        a.row.wave
+          i search
+          span Search
+      li
+        a.row.wave
+          i share
+          span Share
 
   .large-space
   h5 Field with tooltip
@@ -158,6 +276,39 @@ main.responsive
     button(data-ui="#navigation") dialog
   .row
     nav.drawer
+      ul
+        li
+          a(@click="updateTheme()")
+            i palette
+            span Theme
+        li
+          a
+            i home
+            span Home
+        li
+          a
+            i search
+            span Search
+        li
+          a
+            i share
+            span Share
+        li.divider
+        li
+          label Subtitle
+        li
+          a(data-ui="#menu")
+            i arrow_drop_down
+            span Menu
+          menu#menu
+            li
+              a Item 1
+            li
+              a Item 2
+            li
+              a Item 3
+  .row
+    nav.drawer
       a(@click="updateTheme()")
         i palette
         span Theme
@@ -172,39 +323,13 @@ main.responsive
         span Share
       .divider
       label Subtitle
-      a(data-ui="#menu")
+      a(data-ui="#menu1")
         i arrow_drop_down
         span Menu
-      div
-        menu#menu
-          a Item 1
-          a Item 2
-          a Item 3
-      details
-        summary.none
-          a
-            i expand_more
-            span Expand
-        a
-          i arrow_downward
-          span More
-        a
-          i arrow_downward
-          span More
-        details
-          summary.none
-            a
-              i expand_more
-              span Expand
-          a
-            i arrow_downward
-            span More
-          a
-            i arrow_downward
-            span More
-          a
-            i arrow_upward
-            span End
+      menu#menu1
+        a Item 1
+        a Item 2
+        a Item 3
 
   .large-space
   h5 Steppers
@@ -214,11 +339,6 @@ main.responsive
     button.circle 1
     .divider.max
     button.circle 1
-
-  nav
-    button Button
-    .divider.vertical
-    button.chip Chip
 
   .large-space
   h5 Fields

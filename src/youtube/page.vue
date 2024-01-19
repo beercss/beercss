@@ -1,8 +1,7 @@
 <template lang="pug">
 #layout
   nav.left.m.l
-    .medium-space
-    .space
+    header
     a(href="/youtube", :class="{ active: data.url === '/youtube' }")
       i home
       div Home
@@ -159,6 +158,7 @@
       input(type="text")
       i.front mic
 
+  .medium-space
   explore(v-if="data.url === '/youtube/explore'")
   home(v-if="data.url === '/youtube'")
   library(v-if="data.url === '/youtube/library'")

@@ -164,12 +164,6 @@
   cursor: not-allowed;
 }
 
-.checkbox + .checkbox,
-.radio + .radio,
-.switch + .switch {
-  margin-inline-start: 0.5rem;
-}
-
 .switch > span::after {
   content: "";
   position: absolute;

@@ -43,15 +43,22 @@ menu * {
   white-space: inherit !important;
 }
 
-menu > a {
-  padding: 0.75rem 1rem;
+menu > a,
+menu > li > a {
+  padding: 0.5rem 1rem;
+  min-block-size: 3rem;
+  flex: 1;
 }
 
-menu > a:not(.row) {
-  display: block;
+menu > a:not(.row),
+menu > li > a:not(.row) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-menu > a:is(:hover, :focus, .active) {
+menu > a:is(:hover, :focus, .active),
+menu > li > a:is(:hover, :focus, .active) {
   background-color: var(--active);
 }
 

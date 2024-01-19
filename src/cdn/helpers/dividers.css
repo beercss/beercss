@@ -1,12 +1,12 @@
-.divider,
-.small-divider,
-.medium-divider,
-.large-divider {
+[class*=divider] {
   min-inline-size: 1.5rem;
   min-block-size: auto;
   block-size: 0.0625rem;
   background-color: var(--outline-variant);
   display: block;
+}
+
+[class*=divider] + * {
   margin: 0 !important;
 }
 

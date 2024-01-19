@@ -269,7 +269,7 @@ const formatHtml = (element: any, raw: boolean = false, useInnerHtml: boolean = 
 
   return process(text
     .replace(/<!--v-if-->/gi, "")
-    .replace(/<div class=\"overlay\"><\/div>/gi, "")
+    .replace(/<div class="overlay"><\/div>/gi, "")
     .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|data-v-\w+)="[^"]*"/gi, "")
     .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
     .replace(/\s+(checked|disabled)=""/gi, " $1")

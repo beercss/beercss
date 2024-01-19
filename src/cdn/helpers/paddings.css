@@ -1,20 +1,8 @@
-:is(.no-padding, .auto-padding, .tiny-padding, .small-padding, .medium-padding, .padding, .large-padding):not(.left-padding, .right-padding, .top-padding, .bottom-padding, .horizontal-padding, .vertical-padding) {
+[class*=padding]:not(.left-padding, .right-padding, .top-padding, .bottom-padding, .horizontal-padding, .vertical-padding) {
   padding: var(---padding) !important;
 }
 
-.no-padding,
-.auto-padding,
-.tiny-padding,
-.small-padding,
-.medium-padding,
-.padding,
-.large-padding,
-.left-padding,
-.right-padding,
-.top-padding,
-.bottom-padding,
-.horizontal-padding,
-.vertical-padding {
+[class*=padding] {
   ---padding: 1rem;
 }
 

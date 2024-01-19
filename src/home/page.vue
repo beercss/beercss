@@ -196,15 +196,6 @@ div
       a(href="/gmail")
         i mail
         span Gmail
-      a(href="/netflix")
-        i tv
-        span Netflix
-      a(href="/uber")
-        i directions_car
-        span Uber
-      a(href="/youtube")
-        i smart_display
-        span Youtube
       a(href="/material-design-3")
         i
           svg(viewBox="0 0 24 24")
@@ -213,6 +204,18 @@ div
       a(href="/dynamic-colors")
         i format_paint
         span Material Dynamic Colors
+      a(href="/netflix")
+        i tv
+        span Netflix
+      a(href="/reddit")
+        i open_in_new
+        span Reddit
+      a(href="/uber")
+        i directions_car
+        span Uber
+      a(href="/youtube")
+        i smart_display
+        span Youtube
       .small-divider
       a(href="https://codepen.io/search/pens?q=beercss" target="_blank")
         i code
@@ -259,9 +262,9 @@ div
             .medium-space
             h5 From CDN
             pre.scroll.large-padding.fill(style="font-family: courier new")
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.4.12/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.4.13/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.12/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.13/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
@@ -325,6 +328,9 @@ div
                   b &lt;label&gt;
                   span &nbsp;active, radio, checkbox, switch
                 p
+                  b &lt;li&gt;
+                  span &nbsp;max, divider, small-divider, medium-divider, large-divider
+                p
                   b &lt;main&gt;
                   span &nbsp;responsive, max
                 p
@@ -343,8 +349,8 @@ div
                   b &lt;progress&gt;
                   span &nbsp;small, medium, large, circle
                 p
-                  b row
-                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align
+                  b row, &lt;ul&gt; or &lt;ol&gt;
+                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, no-space, small-space, medium-space, large-space, horizontal, vertical
                 p
                   b snackbar
                   span &nbsp;top, bottom, active

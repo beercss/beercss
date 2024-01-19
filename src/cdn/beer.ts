@@ -262,6 +262,8 @@ async function open (from: Element, to: Element | null, options?: any, e?: Event
 }
 
 function tab (from: Element): void {
+  if (from.id && hasClass(from, "page")) from = query(`[data-ui="#${from.id}"]`) as Element;
+
   const container = parent(from);
   if (!hasClass(container, "tabs")) return;
   const tabs = queryAll("a", container);

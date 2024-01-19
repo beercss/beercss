@@ -18,12 +18,13 @@
 
   .dialog-code
     .overlay
-    dialog#dialog
+    dialog.medium#dialog
       h5 Default
       div Some text here
-      nav.right-align.no-space
-        button.transparent.link(data-ui="#dialog") Cancel
-        button.transparent.link(data-ui="#dialog") Confirm
+      footer.fixed.bottom
+        nav.right-align.no-space
+          button.transparent.link(data-ui="#dialog") Cancel
+          button.transparent.link(data-ui="#dialog") Confirm
 
   .dialog-code
     .overlay
@@ -87,7 +88,7 @@
       nav.right-align
         button.border(data-ui="#dialog-max") Cancel
         button(data-ui="#dialog-max") Confirm
-        
+
   .dialog-code
     .overlay
     dialog#dialog-navigation-drawer.left.no-padding
