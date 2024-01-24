@@ -18,13 +18,12 @@
 
   .dialog-code
     .overlay
-    dialog.medium#dialog
+    dialog#dialog
       h5 Default
       div Some text here
-      footer.fixed.bottom
-        nav.right-align.no-space
-          button.transparent.link(data-ui="#dialog") Cancel
-          button.transparent.link(data-ui="#dialog") Confirm
+      nav.right-align.no-space
+        button.transparent.link(data-ui="#dialog") Cancel
+        button.transparent.link(data-ui="#dialog") Confirm
 
   .dialog-code
     .overlay
