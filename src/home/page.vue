@@ -460,9 +460,9 @@ div
       dialog#dialog-samples.right.large
         header.fixed.front
           nav
-            h5.truncate {{data.name}}
+            .max.truncate
+              h5 {{data.name}}
             a.m.l.button.small-round.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
-            .max
             a.button.circle.transparent.s(v-show="data.urlSample", :href="data.urlSample", target="_blank")
               i description
             button.circle.transparent(data-ui="#dialog-samples")
