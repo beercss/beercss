@@ -49,15 +49,15 @@ label {
   user-select: none;
 }
 
-body *::-webkit-scrollbar,
-body *::-webkit-scrollbar-thumb,
-body *::-webkit-scrollbar-button {
+body ::-webkit-scrollbar,
+body ::-webkit-scrollbar-thumb,
+body ::-webkit-scrollbar-button {
   background: none;
   inline-size: 0.4rem;
   block-size: 0.4rem;
 }
 
-body *:is(:hover,:focus)::-webkit-scrollbar-thumb {
+body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   background: var(--outline);
   border-radius: 1rem;
 }

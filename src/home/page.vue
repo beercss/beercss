@@ -264,7 +264,8 @@ div
             h3 Get started
             .medium-space
             h5 From CDN
-            pre.scroll.large-padding.fill(style="font-family: courier new")
+            .space
+            pre.scroll.large-padding.fill
               | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.4.13/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.13/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
@@ -272,7 +273,8 @@ div
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
             h5 From NPM
-            pre.scroll.large-padding.fill(style="font-family: courier new")
+            .space
+            pre.scroll.large-padding.fill
               | // installing
               | npm i beercss
               | npm i material-dynamic-colors
@@ -285,91 +287,92 @@ div
             .medium-space
             .l
               h5 Summary
+              .space
               pre.wrap.large-padding.fill
                 p
-                  b absolute
+                  b.error-text absolute
                   span &nbsp;left, right, top, bottom, front, back, small, medium, large
                 p
-                  b &lt;article&gt;
+                  b.error-text &lt;article&gt;
                   span &nbsp;small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, tiny-padding small-padding, medium-padding, large-padding
                 p
-                  b badge
+                  b.error-text badge
                   span &nbsp;left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
                 p
-                  b button or &lt;button&gt;
+                  b.error-text button or &lt;button&gt;
                   span &nbsp;small, medium, large, extra, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
                 p
-                  b chip
+                  b.error-text chip
                   span &nbsp;small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
                 p
-                  b &lt;details&gt;
+                  b.error-text &lt;details&gt;
                 p
-                  b &lt;dialog&gt;
+                  b.error-text &lt;dialog&gt;
                   span &nbsp;left, right, top, bottom, small, medium, large, modal, border, round, no-round, left-round, right-round, top-round, bottom-round, active
                 p
-                  b field
+                  b.error-text field
                   span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
                 p
-                  b fixed
+                  b.error-text fixed
                   span &nbsp;left, right, top, bottom, front, back, small, medium, large
                 p
-                  b &lt;footer&gt;
+                  b.error-text &lt;footer&gt;
                   span &nbsp;fixed, responsive
                 p
-                  b &lt;h1&gt;...&lt;h6&gt;
+                  b.error-text &lt;h1&gt;...&lt;h6&gt;
                   span &nbsp;small, medium, large
                 p
-                  b &lt;header&gt;
+                  b.error-text &lt;header&gt;
                   span &nbsp;fixed, responsive
                 p
-                  b &lt;i&gt;
+                  b.error-text &lt;i&gt;
                   span &nbsp;tiny, small, medium, large, extra, fill
                 p
-                  b &lt;img&gt;
+                  b.error-text &lt;img&gt;
                   span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
                 p
-                  b &lt;label&gt;
+                  b.error-text &lt;label&gt;
                   span &nbsp;active, radio, checkbox, switch
                 p
-                  b &lt;li&gt;
+                  b.error-text &lt;li&gt;
                   span &nbsp;max, divider, small-divider, medium-divider, large-divider
                 p
-                  b &lt;main&gt;
+                  b.error-text &lt;main&gt;
                   span &nbsp;responsive, max
                 p
-                  b &lt;menu&gt;
+                  b.error-text &lt;menu&gt;
                   span &nbsp;left, right, wrap, no-wrap, active, min, max
                 p
-                  b &lt;nav&gt;
+                  b.error-text &lt;nav&gt;
                   span &nbsp;left, right, top, bottom, drawer, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
                 p
-                  b overlay
+                  b.error-text overlay
                   span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active, blur, small-blur, medium-blur, large-blur
                 p
-                  b page
+                  b.error-text page
                   span &nbsp;left, right, top, bottom, active
                 p
-                  b &lt;progress&gt;
-                  span &nbsp;small, medium, large, circle
+                  b.error-text &lt;progress&gt;
+                  span &nbsp;small, medium, large, circle, max, vertical
                 p
-                  b row, &lt;ul&gt; or &lt;ol&gt;
+                  b.error-text row, &lt;ul&gt; or &lt;ol&gt;
                   span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, no-space, small-space, medium-space, large-space, horizontal, vertical
                 p
-                  b snackbar
+                  b.error-text snackbar
                   span &nbsp;top, bottom, active
                 p
-                  b &lt;summary&gt;
+                  b.error-text &lt;summary&gt;
                 p
-                  b &lt;table&gt;
+                  b.error-text &lt;table&gt;
                   span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border, stripes, min, fixed
                 p
-                  b tabs
+                  b.error-text tabs
                   span &nbsp;left-align, right-align, center-align, horizontal, vertical, min, max
                 p
-                  b tooltip
+                  b.error-text tooltip
                   span &nbsp;left, right, top, bottom, max
                 p
-                  b &lt;video&gt;
+                  b.error-text &lt;video&gt;
                   span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
             .large-space
             mainLayouts
