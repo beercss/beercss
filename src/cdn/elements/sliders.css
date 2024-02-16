@@ -39,7 +39,7 @@
   outline: none;
   pointer-events: none;
   inline-size: 100%;
-  block-size: 0.25rem;
+  block-size: 1rem;
   background: none;
   z-index: 1;
   padding: 0;
@@ -65,12 +65,12 @@
   border: none;
   outline: none;
   pointer-events: all;
-  block-size: 1.25rem;
-  inline-size: 1.25rem;
-  border-radius: 50%;
+  block-size: 2.75rem;
+  inline-size: 0.25rem;
+  border-radius: 0.25rem;
   background: var(--primary);
-  transition: var(--speed1) all ease-out;
   cursor: pointer;
+  margin: 0;
 }
 
 .slider > input::-moz-range-thumb {
@@ -79,20 +79,20 @@
   border: none;
   outline: none;
   pointer-events: all;
-  block-size: 1.25rem;
-  inline-size: 1.25rem;
-  border-radius: 50%;
+  block-size: 2.75rem;
+  inline-size: 0.25rem;
+  border-radius: 0.25rem;
   background: var(--primary);
-  transition: var(--speed1) all ease-out;
   cursor: pointer;
+  margin: 0;
 }
 
-.slider > input:not(:disabled):is(:focus, :hover)::-webkit-slider-thumb {
-  box-shadow: 0 0 0 0.625rem var(--active);
+.slider > input:not(:disabled):is(:focus)::-webkit-slider-thumb {
+  transform: scaleX(0.6);
 }
 
-.slider > input:not(:disabled):is(:focus, :hover)::-moz-range-thumb {
-  box-shadow: 0 0 0 0.625rem var(--active);
+.slider > input:not(:disabled):is(:focus)::-moz-range-thumb {
+  transform: scaleX(0.6);
 }
 
 .slider > input:disabled {
@@ -110,21 +110,28 @@
   cursor: not-allowed;
 }
 
-.slider > input:disabled ~ :is(span, .tooltip) {
+.slider > input:disabled ~ span {
   background: #9E9E9E;
 }
 
 .slider > span {
   position: absolute;
-  block-size: 0.375rem;
-  border-radius: 1rem;
+  block-size: 1rem;
+  border-radius: 1rem 0 0 1rem;
   background: var(--primary);
   z-index: 0;
-  inset: calc(50% - 0.1875rem) var(---end) auto var(---start);
+  inset: calc(50% - 0.5rem) var(---end) auto var(---start);
+  clip-path: polygon(0 0, calc(100% - 0.5rem) 0, calc(100% - 0.5rem) 100%, 0 100%);
+
+}
+
+.slider > input + input ~ span {
+  border-radius: 0;
+  clip-path: polygon(0.5rem 0, max(0.5rem, calc(100% - 0.5rem)) 0, max(0.5rem, calc(100% - 0.5rem)) 100%, 0.5rem 100%);
 }
 
 [dir=rtl] .slider > span {
-  inset: calc(50% - 0.1875rem) var(---start) auto var(---end);
+  inset: calc(50% - 0.5rem) var(---start) auto var(---end);
 }
 
 .field > .slider {
@@ -135,20 +142,25 @@
   content: "";
   position: absolute;
   inline-size: 100%;
-  block-size: 0.25rem;
+  block-size: 1rem;
   border-radius: 1rem;
+  background: var(--primary-container);
+  clip-path: polygon(calc(var(---start) - 0.5rem) 0, 0 0, 0 100%, calc(var(---start) - 0.5rem) 100%, calc(var(---start) - 0.5rem) 0, calc(100% - var(---end) + 0.5rem) 0, 100% 0, 100% 100%, calc(100% - var(---end) + 0.5rem) 100%, calc(100% - var(---end) + 0.5rem) 0);
+}
+
+.slider:has(> [disabled])::before {
   background: var(--active);
 }
 
-.slider > .tooltip {
+.slider > .tooltip,
+.slider:hover > .tooltip {
   opacity: 0;
-  inset: 0.25rem auto auto calc(100% - var(---end));
-  inline-size: 1.75rem;
-  block-size: 1.75rem;
-  background-color: var(--primary);
-  border-radius: 50% 50% 0;
+  inset: 0 auto auto calc(100% - var(---end));
+  border-radius: 2rem;
   transition: var(--speed2) ease top, var(--speed2) ease opacity;
-  transform: translate(-50%, -50%) rotate(45deg) !important;
+  transform: translate(-50%, -50%) !important;
+  padding: 0.75rem 1rem;
+  z-index: 0;
 }
 
 [dir=rtl] .slider > .tooltip {
@@ -157,7 +169,7 @@
 
 .slider > .tooltip + .tooltip {
   inset: 0.25rem calc(100% - var(---start)) auto auto;
-  transform: translate(50%, -50%) rotate(45deg) !important;
+  transform: translate(50%, -50%) !important;
 }
 
 [dir=rtl] .slider > .tooltip + .tooltip {
@@ -166,16 +178,15 @@
 
 .slider > .tooltip::before {
   content: var(---value1);
-  transform: rotate(-45deg);
 }
 
 .slider > .tooltip + .tooltip::before {
   content: var(---value2);
 }
 
-.slider:hover > .tooltip {
-  inset-block-start: -0.25rem !important;
-  opacity: 1;
+.slider > input:focus ~ .tooltip {
+  inset-block-start: -1rem !important;
+  opacity : 1;
 }
 
 .slider.vertical > .tooltip {
