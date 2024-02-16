@@ -23,16 +23,6 @@
   background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
 }
 
-.wave.none::after {
-  inset: 0 auto auto -0.25rem;
-  padding: 0 0.25rem;
-}
-
-.wave.none:not(.small, .medium, .large, .extra)::after {
-  inset: -0.25rem auto auto -0.25rem;
-  padding: 0.25rem;
-}
-
 :is(.wave, .chip, .button, button):is(:focus, :hover)::after {
   background-size: 15000%;
   opacity: 1;

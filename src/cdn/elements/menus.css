@@ -1,3 +1,7 @@
+menu > li {
+  all: unset;
+}
+
 menu {
   opacity: 0;
   visibility: hidden;
@@ -35,10 +39,6 @@ menu:not([data-ui]):active,
   transform: scale(1) translateY(100%);
 }
 
-menu.left {
-  inset: auto 0 0 auto;
-}
-
 menu * {
   white-space: inherit !important;
 }
@@ -63,7 +63,7 @@ menu > li > a:is(:hover, :focus, .active) {
 }
 
 menu.min {
-  inset: 0 auto auto auto;
+  inset: 0 0 auto 0;
   transform: none !important;
   border-radius: inherit;
 }
@@ -80,4 +80,12 @@ menu.max {
 
 menu.no-wrap:is(.min, .max) {
   min-inline-size: 16rem;
+}
+
+menu.left {
+  inset: 0 0 auto auto;
+}
+
+menu.right {
+  inset: 0 auto auto 0;
 }

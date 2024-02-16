@@ -1,13 +1,9 @@
-ol,
-ul,
-li {
+nav > :is(ol, ul),
+nav > :is(ol, ul) > li {
   all: unset;
-  position: relative;
 }
 
 nav,
-ol,
-ul,
 .row,
 a.row,
 nav.drawer > :is(a, label),
@@ -22,52 +18,54 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) {
   margin: 0;
 }
 
-:is(nav, .row, .max) > :only-child {
+:is(nav, .row, .max) > :only-child,
+nav > :is(ol, ul) > li > :only-child {
   margin: 0;
 }
 
-* + :is(nav, ul, ol, .row) {
+* + :is(nav, .row) {
   margin-block-start: 1rem;
 }
 
-:is(nav, ol, ul, li, .row) > * {
+:is(nav, .row) > * {
   margin: 0;
   white-space: normal;
   flex: none;
 }
 
-:is(nav, ol, ul, .row).no-space {
+:is(nav, .row).no-space {
   gap: 0;
 }
 
-:is(nav, ol, ul, li, .row).no-space > .border + .border {
+:is(nav, .row).no-space > .border + .border {
   border-inline-start: 0;
 }
 
-:is(nav, ol, ul, .row).medium-space {
+:is(nav, .row).medium-space {
   gap: 1.5rem;
 }
 
-:is(nav, ol, ul, .row).large-space {
+:is(nav, .row).large-space {
   gap: 2rem;
 }
 
-:is(nav, ol, ul, li, .row) > .max,
+:is(nav, .row) > .max,
+:is(nav, .row) > :is(ol, ul) > .max,
 nav.drawer > :is(a, label) > .max,
 nav.drawer > :is(ol, ul) > li > :is(a, label) > .max {
   flex: 1;
 }
 
-:is(nav, ol, ul, .row).wrap {
+:is(nav, .row).wrap {
   display: flex;
   flex-wrap: wrap;
 }
 
-:is(header, footer) > :is(nav, ol, ul, .row) {
+:is(header, footer) > :is(nav, .row) {
   min-block-size: inherit;
 }
 
-:is(nav, li, .row) > .border.no-margin + .border.no-margin {
+:is(nav, .row) > .border.no-margin + .border.no-margin {
   border-inline-start: 0;
 }
 
@@ -141,7 +139,7 @@ nav:is(.left, .right) > header {
 nav.drawer > header {
   transform: translateY(-0.75rem);
   min-block-size: 4.5rem;
-  align-self: start;
+  align-self: stretch;
 }
 
 nav.drawer > :is(a, label),
@@ -203,33 +201,28 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
   font-variation-settings: "FILL" 1;
 }
 
-:is(nav, ol, ul, .row):is(.left-align, .top-align, .vertical) {
+:is(nav, .row):is(.left-align, .top-align, .vertical) {
   justify-content: flex-start;
 }
 
-:is(nav, ol, ul, .row):is(.right-align, .bottom-align) {
+:is(nav, .row):is(.right-align, .bottom-align) {
   justify-content: flex-end;
 }
 
-:is(nav, ol, ul, .row):is(.center-align, .middle-align) {
+:is(nav, .row):is(.center-align, .middle-align) {
   justify-content: center;
 }
 
-:is(nav, ol, ul, .row):is(.left-align, .top-align, .vertical).vertical {
+:is(nav, .row):is(.left-align, .top-align, .vertical).vertical {
   align-items: flex-start;
 }
 
-:is(nav, ol, ul, .row):is(.right-align, .bottom-align).vertical {
+:is(nav, .row):is(.right-align, .bottom-align).vertical {
   align-items: flex-end;
 }
 
-:is(nav, ol, ul, .row):is(.center-align, .middle-align).vertical {
+:is(nav, .row):is(.center-align, .middle-align).vertical {
   align-items: center;
-}
-
-:is(ol, ul) > li {
-  align-items: inherit;
-  justify-content: inherit;
 }
 
 nav:is(.left, .right):not(.drawer) > *,
@@ -237,8 +230,8 @@ nav:is(.left, .right):not(.drawer) > :is(ol, ul) > li {
   align-self: center;
 }
 
-:is(.drawer, .vertical) > :is(li, [class*=divider]),
-:is(.drawer, .vertical) > :is(ol, ul) > li {
+:is(.drawer, .vertical) > :is(li, [class*=divider]):not(.vertical),
+:is(.drawer, .vertical) > :is(ol, ul) > li:not(.vertical) {
   align-self: stretch;
 }
 
