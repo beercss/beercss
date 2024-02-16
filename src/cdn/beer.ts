@@ -60,12 +60,12 @@ function removeClass (element: Element | null, name: string): void {
   element?.classList?.remove(name);
 }
 
-function on (element: Element | null, name: string, callback: any): void {
-  element?.addEventListener(name, callback, true);
+function on (element: any, name: string, callback: any, useCapture: boolean = true): void {
+  element?.addEventListener(name, callback, useCapture);
 }
 
-function off (element: Element | null, name: string, callback: any): void {
-  element?.removeEventListener(name, callback, true);
+function off (element: any, name: string, callback: any, useCapture: boolean = true): void {
+  element?.removeEventListener(name, callback, useCapture);
 }
 
 function insertBefore (newElement: Element, element: Element | null): void {
@@ -152,11 +152,6 @@ function onKeydownColor (e: KeyboardEvent): void {
   updateColor(target, e);
 }
 
-function onInputRange (e: Event): void {
-  const target = e.currentTarget as HTMLInputElement;
-  updateRange(target);
-}
-
 function onMutation (): void {
   if (_timeoutMutation) clearTimeout(_timeoutMutation);
   _timeoutMutation = setTimeout(() => { void ui(); }, 180);
@@ -174,7 +169,7 @@ function updateFile (target: Element, e?: KeyboardEvent): void {
   if (!hasType(nextTarget, "text")) return;
   nextTarget.value = currentTarget.files ? Array.from(currentTarget.files).map((x) => x.name).join(", ") : "";
   nextTarget.readOnly = true;
-  nextTarget.addEventListener("keydown", onKeydownFile);
+  on(nextTarget, "keydown", onKeydownFile, false);
   updateInput(nextTarget);
 }
 
@@ -190,7 +185,7 @@ function updateColor (target: Element, e?: KeyboardEvent): void {
   if (!hasType(nextTarget, "text")) return;
   nextTarget.readOnly = true;
   nextTarget.value = currentTarget.value;
-  nextTarget.addEventListener("keydown", onKeydownColor);
+  on(nextTarget, "keydown", onKeydownColor, false);
   updateInput(nextTarget);
 }
 
@@ -201,7 +196,7 @@ function updateRange (target: Element): void {
   if (!inputs.length || !bar) return;
 
   const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
-  const thumb = 1.25 * rootSize * 100 / inputs[0].offsetWidth;
+  const thumb = 0.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents: Array<number> = [];
   const values: Array<number> = [];
   for (let i = 0; i < inputs.length; i++) {
@@ -241,6 +236,15 @@ function updateRange (target: Element): void {
   parentTarget.style.setProperty("---end", `${end}%`);
   parentTarget.style.setProperty("---value1", `'${value1}'`);
   parentTarget.style.setProperty("---value2", `'${value2}'`);
+}
+
+function updateAllRanges() {
+  const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
+
+  if (!ranges.length) off(globalThis, "input", updateAllRanges, false);
+  else on(globalThis, "input", updateAllRanges, false);
+
+  ranges.forEach(updateRange);  
 }
 
 async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
@@ -436,7 +440,7 @@ function mode (value: string | any): string {
 function setup (): void {
   if (_mutation) return;
   _mutation = new MutationObserver(onMutation);
-  _mutation.observe(document.body, { attributes: true, attributeFilter: ["value", "max", "min"], childList: true, subtree: true });
+  _mutation.observe(document.body, { childList: true, subtree: true });
   onMutation();
 }
 
@@ -477,12 +481,9 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
     updateColor(x);
   });
 
-  const ranges = queryAll(".slider > input[type=range]");
-  ranges.forEach((x: Element) => {
-    on(x, "input", onInputRange);
-    updateRange(x);
-  });
+  updateAllRanges();
 }
+
 
 if ((globalThis as any).addEventListener) (globalThis as any).addEventListener("load", async () => await ui("setup"));
 (globalThis as any).beercss = ui;
