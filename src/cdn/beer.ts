@@ -238,13 +238,13 @@ function updateRange (target: Element): void {
   parentTarget.style.setProperty("---value2", `'${value2}'`);
 }
 
-function updateAllRanges() {
+function updateAllRanges () {
   const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
 
   if (!ranges.length) off(globalThis, "input", updateAllRanges, false);
   else on(globalThis, "input", updateAllRanges, false);
 
-  ranges.forEach(updateRange);  
+  ranges.forEach(updateRange);
 }
 
 async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
@@ -483,7 +483,6 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
 
   updateAllRanges();
 }
-
 
 if ((globalThis as any).addEventListener) (globalThis as any).addEventListener("load", async () => await ui("setup"));
 (globalThis as any).beercss = ui;

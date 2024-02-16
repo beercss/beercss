@@ -122,7 +122,6 @@
   z-index: 0;
   inset: calc(50% - 0.5rem) var(---end) auto var(---start);
   clip-path: polygon(0 0, calc(100% - 0.5rem) 0, calc(100% - 0.5rem) 100%, 0 100%);
-
 }
 
 .slider > input + input ~ span {
@@ -186,7 +185,7 @@
 
 .slider > input:focus ~ .tooltip {
   inset-block-start: -1rem !important;
-  opacity : 1;
+  opacity: 1;
 }
 
 .slider.vertical > .tooltip {

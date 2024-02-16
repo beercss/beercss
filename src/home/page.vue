@@ -259,7 +259,7 @@ div
       h1 We are working to translate a modern UI into HTML semantic standard
       .small-height
       .grid
-        #intro.s12 
+        #intro.s12
           .div
             h3 Get started
             .medium-space

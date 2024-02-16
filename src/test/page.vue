@@ -125,110 +125,110 @@ main.responsive
         span More
 
   .large-space
-  h5 Badges 
+  h5 Badges
   a
-    i home 
+    i home
     .badge.min
   a
-    i home 
+    i home
     .badge 1
   a
-    i home 
+    i home
     .badge.min.top.left
   a
-    i home 
+    i home
     .badge.top.left 1
   a
-    i home 
+    i home
     .badge.min.bottom.left
   a
-    i home 
+    i home
     .badge.bottom.left 1
   a
-    i home 
+    i home
     .badge.min.bottom.right
   a
-    i home 
+    i home
     .badge.bottom.right 1
   nav
     a
-      i home 
+      i home
       .badge.min
     a
-      i home 
+      i home
       .badge 1
     a
-      i home 
+      i home
       .badge.min.top.left
     a
-      i home 
+      i home
       .badge.top.left 1
     a
-      i home 
+      i home
       .badge.min.bottom.left
     a
-      i home 
+      i home
       .badge.bottom.left 1
     a
-      i home 
+      i home
       .badge.min.bottom.right
     a
-      i home 
+      i home
       .badge.bottom.right 1
   nav
     button.transparent.circle
-      i home 
+      i home
       .badge.min
     button.transparent.circle
-      i home 
+      i home
       .badge 1
     button.transparent.circle
-      i home 
+      i home
       .badge.min.top.left
     button.transparent.circle
-      i home 
+      i home
       .badge.top.left 1
     button.transparent.circle
-      i home 
+      i home
       .badge.min.bottom.left
     button.transparent.circle
-      i home 
-      .badge.bottom.left 1    
+      i home
+      .badge.bottom.left 1
     button.transparent.circle
-      i home 
+      i home
       .badge.min.bottom.right
     button.transparent.circle
-      i home 
+      i home
       .badge.bottom.right 1
   nav
     button
-      i home 
+      i home
       span Button
       .badge.min.none
     button
-      i home 
+      i home
       span Button
       .badge.none 1
     a.chip
-      i home 
+      i home
       span Button
       .badge.min.none
     a.chip
-      i home 
+      i home
       span Button
       .badge.none 1
   .tabs.left-align
     a.active
-      i home 
-      span Tab 
+      i home
+      span Tab
       .badge.min.none
     a
-      i home 
-      span Tab 
+      i home
+      span Tab
       .badge.none 1
     a
-      i home 
-      span Tab 
+      i home
+      span Tab
       .badge.none 1
 
   .large-space
@@ -339,7 +339,7 @@ main.responsive
       input#range(type="range", value="10")
       span
     progress
-  
+
   label.progress-bar.css
     progress#css(:value="number", max="100")
   .row
