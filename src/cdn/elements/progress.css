@@ -3,10 +3,12 @@ progress {
   inline-size: 100%;
   block-size: 0.5rem;
   color: var(--primary);
-  background: var(--surface-container-highest);
-  border-radius: 0;
+  background: var(--primary-container);
+  border-radius: 1rem;
   flex: none;
   border: none;
+  overflow: hidden;
+  writing-mode: horizontal-tb;
 }
 
 progress.small {
@@ -85,6 +87,32 @@ progress.circle.large {
   flex: auto;
 }
 
+progress.max {
+  display: unset;
+  position: absolute;
+  inline-size: 100% !important;
+  block-size: 100% !important;
+  color: var(--active);
+  background: none;
+  inset: 0;
+  border-radius: inherit;
+  animation: none;
+  writing-mode: horizontal-tb;
+}
+
+progress:is(.horizontal, .vertical, .max) {
+  display: unset;
+  inline-size: 100% !important;
+}
+
+progress.vertical {
+  writing-mode: vertical-lr;
+}
+
+:has(> progress) > :not(progress) {
+  z-index: 1;
+}
+
 @keyframes to-linear {
   0% {
     margin-inline-start: 0%;
@@ -92,8 +120,8 @@ progress.circle.large {
   }
 
   50% {
-    margin-inline-start: 10%;
-    inline-size: 80%;
+    margin-inline-start: 0%;
+    inline-size: 100%;
   }
 
   100% {
