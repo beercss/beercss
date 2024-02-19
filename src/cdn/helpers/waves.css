@@ -4,35 +4,46 @@
 :is(.button, button)::after {
   content: "";
   position: absolute;
-  inset: 0 auto auto 0;
+  inset: 0;
   z-index: 1;
   border-radius: inherit;
-  inline-size: 100%;
-  block-size: 100%;
+  width: 100%;
+  height: 100%;
   background-position: center;
-  background-image: radial-gradient(circle, rgb(255 255 255 / 0.4) 1%, transparent 1%);
   opacity: 0;
-  transition: none;
-}
-
-.wave.dark::after,
-.wave.row::after,
-.chip::after,
-:is(.button, button).border::after,
-:is(.button, button).transparent::after {
-  background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
 }
 
 :is(.wave, .chip, .button, button):is(:focus, :hover)::after {
   background-size: 15000%;
+  background: radial-gradient(circle, transparent 1%, rgba(255, 255, 255, 0.4) 1%) center/15000%;
+  transition: background var(--speed3);
   opacity: 1;
-  transition: var(--speed2) background-size linear;
 }
 
 :is(.wave, .chip, .button, button):active::after {
-  background-size: 5000%;
-  opacity: 0;
-  transition: none;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.wave.dark:hover::after,
+.wave.row:hover::after,
+.chip:hover::after,
+:is(.button, button):hover::after {
+  background-image: radial-gradient(circle, rgb(255 255 255 / 0.4) 1%, transparent 1%);
+}
+
+:is(.button, button).transparent:hover::after {
+  background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
+}
+
+.wave.none::after {
+  inset: 0 auto auto -0.25rem;
+  padding: 0 0.25rem;
+}
+
+.wave.none:not(.small, .medium, .large, .extra)::after {
+  inset: -0.25rem auto auto -0.25rem;
+  padding: 0.25rem;
 }
 
 .no-wave::after,
