@@ -38,7 +38,7 @@
               i
                 img(:src="'/favicon.png'")
               i
-                img(:src="'/beer-and-woman.jpg'")
+                img(:src="'/beer-and-woman.svg'")
           label.radio.icon
             input(type="radio", name="radio3")
             span

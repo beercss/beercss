@@ -176,7 +176,7 @@ div
     .row
       span Older
     .row
-      img.circle.tiny(:src="'/beer-and-woman.jpg'")
+      img.circle.tiny(:src="'/beer-and-woman.svg'")
       .max Some text here
       a
         i edit
@@ -184,7 +184,7 @@ div
         i delete
     .small-divider
     .row
-      img.circle.tiny(:src="'/beer-and-woman.jpg'")
+      img.circle.tiny(:src="'/beer-and-woman.svg'")
       .max Some text here
       a
         i edit
@@ -192,7 +192,7 @@ div
         i delete
     .small-divider
     .row
-      img.circle.tiny(:src="'/beer-and-woman.jpg'")
+      img.circle.tiny(:src="'/beer-and-woman.svg'")
       .max Some text here
       a
         i edit
@@ -292,7 +292,7 @@ div
       input(type="radio", name="blur-elements", @click="domain.updateBlur('#blurs > header, #blurs > article, #blurs > nav > *', 'large-blur')")
       span large-blur
   .medium-space
-  #blurs.large-padding(style="background-image: url(beer-and-woman.jpg)")
+  #blurs.large-padding(style="background-image: url(beer-and-woman.svg)")
     header.blur
       nav
         button.circle.transparent
@@ -332,7 +332,7 @@ div
       input(type="radio", name="shadow-elements", @click="domain.updateShadow('#shadows > header, #shadows > article, #shadows > nav > *', 'bottom-shadow')")
       span bottom-shadow
   .medium-space
-  #shadows.large-padding(style="background-image: url(beer-and-woman.jpg)")
+  #shadows.large-padding(style="background-image: url(beer-and-woman.svg)")
     header.white-text.left-shadow
       nav
         button.circle.transparent

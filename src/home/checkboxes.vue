@@ -38,7 +38,7 @@
               i
                 img(:src="'/favicon.png'")
               i
-                img(:src="'/beer-and-woman.jpg'")
+                img(:src="'/beer-and-woman.svg'")
           label.checkbox.icon
             input(type="checkbox")
             span

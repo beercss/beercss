@@ -60,35 +60,35 @@
       button Button
       a.chip Chip
       i home
-      img.circle(:src="'/beer-and-woman.jpg'")
+      img.circle(:src="'/beer-and-woman.svg'")
     .small-divider
     nav
       button Button
       a.chip Chip
       i home
       .max max
-      img.circle(:src="'/beer-and-woman.jpg'")
+      img.circle(:src="'/beer-and-woman.svg'")
     .small-divider
     nav
       button Button
       a.chip Chip
       .max max
       i home
-      img.circle(:src="'/beer-and-woman.jpg'")
+      img.circle(:src="'/beer-and-woman.svg'")
     .small-divider
     nav
       button Button
       .max max
       a.chip Chip
       i home
-      img.circle(:src="'/beer-and-woman.jpg'")
+      img.circle(:src="'/beer-and-woman.svg'")
     .small-divider
     nav
       .max max
       button Button
       a.chip Chip
       i home
-      img.circle(:src="'/beer-and-woman.jpg'")
+      img.circle(:src="'/beer-and-woman.svg'")
   .medium-space
   #navigation-rail
     .medium-space

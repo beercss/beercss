@@ -65,7 +65,7 @@
     .s12.m6.l3
       article
         .row
-          img.circle.large(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+          img.circle.large(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
           video.circle.large(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(viewBox="450 0 900 900", className="circle large fill", v-if="data.mediaCard === 3")
@@ -77,7 +77,7 @@
     .s12.m6.l3
       article.round
         .row
-          img.circle.large(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+          img.circle.large(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
           video.circle.large(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(viewBox="450 0 900 900", className="circle large fill", v-if="data.mediaCard === 3")
@@ -89,7 +89,7 @@
     .s12.m6.l3
       article.border
         .row
-          img.circle.large(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+          img.circle.large(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
           video.circle.large(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(viewBox="450 0 900 900", className="circle large fill", v-if="data.mediaCard === 3")
@@ -101,7 +101,7 @@
     .s12.m6.l3
       article.border.round
         .row
-          img.circle.large(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+          img.circle.large(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
           video.circle.large(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(viewBox="450 0 900 900", className="circle large fill", v-if="data.mediaCard === 3")
@@ -112,7 +112,7 @@
           button Button
     .s12.m6.l3
       article.no-padding
-        img.responsive.small(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+        img.responsive.small(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
         video.responsive.small(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(viewBox="600 400 300 300", className="responsive small fill", v-if="data.mediaCard === 3")
@@ -123,7 +123,7 @@
             button Button
     .s12.m6.l3
       article.no-padding.round
-        img.responsive.small.top-round(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+        img.responsive.small.top-round(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
         video.responsive.small.top-round(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(viewBox="600 400 300 300", className="responsive small fill", v-if="data.mediaCard === 3")
@@ -134,7 +134,7 @@
             button Button
     .s12.m6.l3
       article.no-padding.border
-        img.responsive.small(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+        img.responsive.small(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
         video.responsive.small(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(viewBox="600 400 300 300", className="responsive small fill", v-if="data.mediaCard === 3")
@@ -145,7 +145,7 @@
             button Button
     .s12.m6.l3
       article.no-padding.border.round
-        img.responsive.small.top-round(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+        img.responsive.small.top-round(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
         video.responsive.small.top-round(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(viewBox="600 400 300 300", className="responsive small fill", v-if="data.mediaCard === 3")
@@ -156,7 +156,7 @@
             button Button
     .s12.m6.l3
       article.no-padding
-        img.responsive.medium(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+        img.responsive.medium(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
         video.responsive.medium(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(viewBox="600 500 300 300", className="responsive medium fill", v-if="data.mediaCard === 3")
@@ -168,7 +168,7 @@
               i more_vert
     .s12.m6.l3
       article.no-padding.round
-        img.responsive.medium(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+        img.responsive.medium(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
         video.responsive.medium(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(viewBox="600 500 300 300", className="responsive medium fill", v-if="data.mediaCard === 3")
@@ -180,7 +180,7 @@
               i more_vert
     .s12.m6.l3
       article.no-padding.border
-        img.responsive.medium(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+        img.responsive.medium(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
         video.responsive.medium(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(viewBox="600 500 300 300", className="responsive medium fill", v-if="data.mediaCard === 3")
@@ -192,7 +192,7 @@
               i more_vert
     .s12.m6.l3
       article.no-padding.border.round
-        img.responsive.medium(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+        img.responsive.medium(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
         video.responsive.medium(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(viewBox="600 500 300 300", className="responsive medium fill", v-if="data.mediaCard === 3")
@@ -206,7 +206,7 @@
       article.no-padding
         .grid.no-space
           .s6
-            img.responsive(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+            img.responsive(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
             video.responsive(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
               source(:src="'/dance.mp4'", type="video/mp4")
             svgMountains(viewBox="600 500 300 300", className="responsive fill", v-if="data.mediaCard === 3")
@@ -220,7 +220,7 @@
       article.no-padding
         .grid.no-space
           .s6
-            img.responsive(:src="'/beer-and-woman.jpg'", v-if="data.mediaCard === 1")
+            img.responsive(:src="'/beer-and-woman.svg'", v-if="data.mediaCard === 1")
             video.responsive(autoplay, loop, muted, playsinline, v-if="data.mediaCard === 2")
               source(:src="'/dance.mp4'", type="video/mp4")
             svgMountains(viewBox="600 500 300 300", className="responsive fill", v-if="data.mediaCard === 3")
