@@ -83,9 +83,9 @@ menu.no-wrap:is(.min, .max) {
 }
 
 menu.left {
-  inset: 0 0 auto auto;
+  inset: auto 0 0 auto;
 }
 
 menu.right {
-  inset: 0 auto auto 0;
+  inset: auto auto 0 0;
 }
