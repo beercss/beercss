@@ -377,7 +377,7 @@ div
             .large-space
             mainLayouts
             .medium-space
-            nav.scroll
+            nav.wrap
               a.button.small-round(href="https://codepen.io/leo-bnu/pen/yLKLPxj" target="_blank") Main layout on Codepen
               a.button.small-round(href="https://codepen.io/collection/XydYMB" target="_blank") All Codepen
           .medium-space

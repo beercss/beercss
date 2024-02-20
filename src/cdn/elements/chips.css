@@ -1,5 +1,5 @@
 .chip {
-  box-sizing: content-box;
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -20,6 +20,10 @@
   line-height: normal;
 }
 
+.chip.fill:hover {
+  box-shadow: var(--elevate1);
+}
+
 .chip.medium {
   block-size: 2.5rem;
   min-inline-size: 2.5rem;
@@ -32,11 +36,7 @@
 
 .chip.fill {
   background-color: var(--secondary-container) !important;
-  border-color: transparent;
-}
-
-.chip.border {
-  border-color: var(--outline);
+  border: none;
 }
 
 .chip.round.small {
