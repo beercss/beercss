@@ -333,7 +333,7 @@ main.responsive
       input(v-model="number")
       label Test
     label.slider.large.min
-      input#range(type="range", :value="number")
+      input#range(type="range", v-model="number")
       span
     label.slider.large.min
       input#range(type="range", value="10")

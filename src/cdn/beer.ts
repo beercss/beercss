@@ -238,12 +238,15 @@ function updateRange (target: Element): void {
   parentTarget.style.setProperty("---value2", `'${value2}'`);
 }
 
-function updateAllRanges () {
+function updateAllRanges (e?: Event) {
+  if (e) {
+    const input = e.target as HTMLInputElement;
+    if (input.type === "range") return updateRange(input);
+  }
+  
   const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
-
   if (!ranges.length) off(globalThis, "input", updateAllRanges, false);
   else on(globalThis, "input", updateAllRanges, false);
-
   ranges.forEach(updateRange);
 }
 
