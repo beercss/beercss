@@ -4,7 +4,7 @@
 :is(.button, button)::after {
   content: "";
   position: absolute;
-  inset: 0 auto auto 0;
+  inset: 0;
   z-index: 1;
   border-radius: inherit;
   inline-size: 100%;
@@ -23,17 +23,7 @@
   background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
 }
 
-.wave.none::after {
-  inset: 0 auto auto -0.25rem;
-  padding: 0 0.25rem;
-}
-
-.wave.none:not(.small, .medium, .large, .extra)::after {
-  inset: -0.25rem auto auto -0.25rem;
-  padding: 0.25rem;
-}
-
-:is(.wave, .chip, .button, button):is(:focus, :hover)::after {
+:is(.wave, .chip, .button, button):is(:focus-visible, :hover)::after {
   background-size: 15000%;
   opacity: 1;
   transition: var(--speed2) background-size linear;

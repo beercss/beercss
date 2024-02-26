@@ -3,9 +3,11 @@ nav#navigation-drawer.left
   a(@click="updateTheme()")
     i palette
     span Theme
+    .badge 1
   a
     i home
     span Home
+    .badge.min
   a
     i search
     span Search
@@ -28,10 +30,12 @@ nav#navigation-ul-drawer.right
       a(@click="updateTheme()")
         i palette
         span Theme
+        .badge 1
     li
       a
         i home
         span Home
+        .badge.min
     li
       a
         i search
@@ -121,89 +125,169 @@ main.responsive
         span More
 
   .large-space
+  h5 Badges
+  a
+    i home
+    .badge.min
+  a
+    i home
+    .badge 1
+  a
+    i home
+    .badge.min.top.left
+  a
+    i home
+    .badge.top.left 1
+  a
+    i home
+    .badge.min.bottom.left
+  a
+    i home
+    .badge.bottom.left 1
+  a
+    i home
+    .badge.min.bottom.right
+  a
+    i home
+    .badge.bottom.right 1
+  nav
+    a
+      i home
+      .badge.min
+    a
+      i home
+      .badge 1
+    a
+      i home
+      .badge.min.top.left
+    a
+      i home
+      .badge.top.left 1
+    a
+      i home
+      .badge.min.bottom.left
+    a
+      i home
+      .badge.bottom.left 1
+    a
+      i home
+      .badge.min.bottom.right
+    a
+      i home
+      .badge.bottom.right 1
+  nav
+    button.transparent.circle
+      i home
+      .badge.min
+    button.transparent.circle
+      i home
+      .badge 1
+    button.transparent.circle
+      i home
+      .badge.min.top.left
+    button.transparent.circle
+      i home
+      .badge.top.left 1
+    button.transparent.circle
+      i home
+      .badge.min.bottom.left
+    button.transparent.circle
+      i home
+      .badge.bottom.left 1
+    button.transparent.circle
+      i home
+      .badge.min.bottom.right
+    button.transparent.circle
+      i home
+      .badge.bottom.right 1
+  nav
+    button
+      i home
+      span Button
+      .badge.min.none
+    button
+      i home
+      span Button
+      .badge.none 1
+    a.chip
+      i home
+      span Button
+      .badge.min.none
+    a.chip
+      i home
+      span Button
+      .badge.none 1
+  .tabs.left-align
+    a.active
+      i home
+      span Tab
+      .badge.min.none
+    a
+      i home
+      span Tab
+      .badge.none 1
+    a
+      i home
+      span Tab
+      .badge.none 1
+
+  .large-space
   h5 Navigations
-  .space
-  h6 Using nav + *
-  nav.vertical
-    button Button
-    button.chip Chip
-    .divider
-    .divider.vertical
-    .max
-    a Link
-
-  .space
-  h6 Using ul + li + *
-  ul.vertical
-    li
-      button Button
-    li
-      button.chip Chip
-    li.divider
-    li.divider.vertical
-    li.max
-    li
-      a Link
-
-  .space
-  h6 Using nav + ul + li + *
-  nav.vertical
-    ul
-      li
+  .grid
+    .s12.m6.l6
+      h6 Using nav + *
+      nav.vertical
         button Button
-      li
         button.chip Chip
-      li.divider
-      li.divider.vertical
-      li.max
-      li
+        .divider
+        .divider.vertical
+        .max
         a Link
+    .s12.m6.l6
+      h6 Using nav + ul + li + *
+      nav.vertical
+        ul
+          li
+            button Button
+          li
+            button.chip Chip
+          li.divider
+          li.divider.vertical
+          li.max
+          li
+            a Link
 
   .large-space
   h5 Lists
-  .space
-  h6 Using nav + *
-  nav.vertical.no-space
-    a.row.wave
-      i home
-      span Home
-    a.row.wave
-      i search
-      span Search
-    a.row.wave
-      i share
-      span Share
-  .space
-  h6 Using ul + li + *
-  ul.vertical.no-space
-    li
-      a.row.wave
-        i home
-        span Home
-    li
-      a.row.wave
-        i search
-        span Search
-    li
-      a.row.wave
-        i share
-        span Share
-  .space
-  h6 Using nav + ul + li + *
-  nav.vertical.no-space
-    ul
-      li
+  .grid
+    .s12.m6.l6
+      h6 Using nav + *
+      nav.vertical.no-space
         a.row.wave
           i home
           span Home
-      li
         a.row.wave
           i search
           span Search
-      li
         a.row.wave
           i share
           span Share
+    .s12.m6.l6
+      h6 Using nav + ul + li + *
+      nav.vertical.no-space
+        ul
+          li
+            a.row.wave
+              i home
+              span Home
+          li
+            a.row.wave
+              i search
+              span Search
+          li
+            a.row.wave
+              i share
+              span Share
 
   .large-space
   h5 Field with tooltip
@@ -243,16 +327,21 @@ main.responsive
   h5 Slider, progress and field bindings
   .row
     .field.label.border
-      input(v-model="number")
+      input#text(v-model="number")
       label Input
     .field.label.border
       input(v-model="number")
       label Test
     label.slider.large.min
-      input(type="range", v-model="number")
+      input#range(type="range", v-model="number")
       span
-    progress(:value="number", max="100")
+    label.slider.large.min
+      input#range(type="range", value="10")
+      span
     progress
+
+  label.progress-bar.css
+    progress#css(:value="number", max="100")
   .row
     .field.label.border.max
       select(v-model="select")
@@ -712,7 +801,7 @@ main.responsive
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import domain from "../home/domain";
 import datePicker from "./datePicker/datePicker.vue";
 const updateTheme = () => {

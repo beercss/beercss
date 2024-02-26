@@ -44,6 +44,10 @@ button {
   color: var(--primary);
 }
 
+:is(button, .button):not(.border, .chip):hover {
+  box-shadow: var(--elevate1);
+}
+
 .extend > span {
   display: none;
 }

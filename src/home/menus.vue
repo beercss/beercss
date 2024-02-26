@@ -50,10 +50,10 @@
             div Title
             label Some text here
         a.row
-          img.circle.tiny(:src="'/beer-and-woman.jpg'")
+          img.circle.tiny(:src="'/beer-and-woman.svg'")
           span Title
         a.row
-          img.circle.tiny(:src="'/beer-and-woman.jpg'")
+          img.circle.tiny(:src="'/beer-and-woman.svg'")
           .max
             div Title
             label Some text here

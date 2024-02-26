@@ -1,5 +1,6 @@
 :is(main, header, footer).responsive {
   ---padding: 6rem;
+
   max-inline-size: calc(75rem + var(---padding));
   margin: 0 auto;
 }

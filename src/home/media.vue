@@ -34,38 +34,38 @@
       span svgs
   nav.wrap(v-if="data.mediaImage === 1")
     a
-      img.circle.tiny(:src="'/beer-and-woman.jpg'")
+      img.circle.tiny(:src="'/beer-and-woman.svg'")
     a
-      img.circle.small(:src="'/beer-and-woman.jpg'")
+      img.circle.small(:src="'/beer-and-woman.svg'")
     a
-      img.circle(:src="'/beer-and-woman.jpg'")
+      img.circle(:src="'/beer-and-woman.svg'")
     a
-      img.circle.large(:src="'/beer-and-woman.jpg'")
+      img.circle.large(:src="'/beer-and-woman.svg'")
     a
-      img.circle.extra(:src="'/beer-and-woman.jpg'")
+      img.circle.extra(:src="'/beer-and-woman.svg'")
     a
-      img.round.tiny(:src="'/beer-and-woman.jpg'")
+      img.round.tiny(:src="'/beer-and-woman.svg'")
     a
-      img.round.small(:src="'/beer-and-woman.jpg'")
+      img.round.small(:src="'/beer-and-woman.svg'")
     a
-      img.round(:src="'/beer-and-woman.jpg'")
+      img.round(:src="'/beer-and-woman.svg'")
     a
-      img.round.large(:src="'/beer-and-woman.jpg'")
+      img.round.large(:src="'/beer-and-woman.svg'")
     a
-      img.round.extra(:src="'/beer-and-woman.jpg'")
+      img.round.extra(:src="'/beer-and-woman.svg'")
   nav.wrap(v-if="data.mediaImage === 1")
     a
-      img.left-round.medium(:src="'/beer-and-woman.jpg'")
+      img.left-round.medium(:src="'/beer-and-woman.svg'")
     a
-      img.top-round.medium(:src="'/beer-and-woman.jpg'")
+      img.top-round.medium(:src="'/beer-and-woman.svg'")
     a
-      img.right-round.medium(:src="'/beer-and-woman.jpg'")
+      img.right-round.medium(:src="'/beer-and-woman.svg'")
     a
-      img.bottom-round.medium(:src="'/beer-and-woman.jpg'")
+      img.bottom-round.medium(:src="'/beer-and-woman.svg'")
     a
-      img.top-round.left-round.medium(:src="'/beer-and-woman.jpg'")
+      img.top-round.left-round.medium(:src="'/beer-and-woman.svg'")
     a
-      img.bottom-round.right-round.medium(:src="'/beer-and-woman.jpg'")
+      img.bottom-round.right-round.medium(:src="'/beer-and-woman.svg'")
   nav.wrap(v-if="data.mediaImage === 2")
     a
       video.circle.tiny(autoplay, loop, muted, playsinline)

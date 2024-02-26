@@ -9,7 +9,7 @@
       i {{ data.isDark ? "light_mode" : "dark_mode" }}
     a.chip.circle
       i palette
-      input(type="color", @change="sharedDomain.updateTheme(data, $event)")
+      input(type="color", @input="sharedDomain.updateTheme(data, $event)")
     a.chip.circle
       i upload
       input(type="file", @change="sharedDomain.updateTheme(data, $event)")
@@ -38,24 +38,28 @@
   .grid
     .s12.m6.l3
       h6 Primary
+      .space
       .padding.primary primary
       .padding.primary-container primary-container
       .padding.border.primary-border primary-border
       .padding.primary-text primary-text
     .s12.m6.l3
       h6 Secondary
+      .space
       .padding.secondary secondary
       .padding.secondary-container secondary-container
       .padding.border.secondary-border secondary-border
       .padding.secondary-text secondary-text
     .s12.m6.l3
       h6 Tertiary
+      .space
       .padding.tertiary tertiary
       .padding.tertiary-container tertiary-container
       .padding.border.tertiary-border tertiary-border
       .padding.tertiary-text tertiary-text
     .s12.m6.l3
       h6 Error
+      .space
       .padding.error error
       .padding.error-container error-container
       .padding.border.error-border error-border

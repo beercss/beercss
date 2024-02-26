@@ -46,7 +46,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **page** left, right, top, bottom, active
 
-**&lt;progress&gt;** small, medium, large, circle
+**&lt;progress&gt;** small, medium, large, circle, max, vertical
 
 **row, &lt;ul&gt; or &lt;ol&gt;** left-align, right-align, center-align, top-align, bottom-align, middle-align, no-space, small-space, medium-space, large-space, horizontal, vertical
 

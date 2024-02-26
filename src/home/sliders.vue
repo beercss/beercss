@@ -118,15 +118,15 @@
       input(type="radio", name="size-sliders4", @click="domain.updateSize('#sliders4 .slider', 'large')")
       span large
     label.radio
-      input(type="radio", name="direction-sliders4", @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', ''); updateHorizontalSlider(true);", checked)
+      input(type="radio", name="direction-sliders4", @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', ''); domain.updateAlign('#sliders4 nav', ''); updateHorizontalSlider(true);", checked)
       span horizontal
     label.radio
-      input(type="radio", name="direction-sliders4", @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', 'vertical'); updateHorizontalSlider(false);")
+      input(type="radio", name="direction-sliders4", @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', 'vertical'); domain.updateAlign('#sliders4 nav', 'center-align'); updateHorizontalSlider(false);")
       span vertical
   .medium-space
   .grid.large-space#sliders4
     .s12.m6.l4.center-align
-      nav
+      nav.no-space
         i(v-if="data.isHorizontalSlider") remove
         i(v-else) add
         label.slider
@@ -135,7 +135,7 @@
         i(v-if="data.isHorizontalSlider") add
         i(v-else) remove
     .s12.m6.l4.center-align
-      nav
+      nav.no-space
         i(v-if="data.isHorizontalSlider") volume_down
         i(v-else) volume_up
         label.slider
@@ -144,7 +144,7 @@
         i(v-if="data.isHorizontalSlider") volume_up
         i(v-else) volume_down
     .s12.m6.l4.center-align
-      nav
+      nav.no-space
         i(v-if="data.isHorizontalSlider") sunny
         i(v-else) rainy
         label.slider
@@ -184,6 +184,7 @@
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";
+import { onMounted } from "vue";
 
 const updateHorizontalSlider = (isHorizontal: boolean) => {
   data.value.isHorizontalSlider = isHorizontal;

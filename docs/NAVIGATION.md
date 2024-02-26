@@ -7,8 +7,6 @@ Navigations are containers that display actions placed horizontally (or vertical
 ```html
 <div class="row">...</div>
 <nav>...</nav>
-<ul>...</ul>
-<ol>...</ol>
 <nav class="left">...</nav>
 <nav class="right">...</nav>
 <nav class="top">...</nav>
@@ -59,14 +57,6 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap
 </div>
 ```
 
-```html
-<ul>
-  <li>min</li>
-  <li>min</li>
-  <li class="max">max</li>
-</ul>
-```
-
 ## Navigation example
 
 ```html
@@ -80,27 +70,6 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap
     <input type="checkbox">
   </label>
 </nav>
-```
-
-```html
-<ul>
-  <li>
-    <button>Button</button>
-  </li>
-  <li>
-    <a class="chip">Chip</button>
-  </li>
-  <li>
-    <a>
-      <img class="circle" src="/image.png" />
-    </a>
-  </li>
-  <li>
-    <label class="checkbox">
-      <input type="checkbox">
-    </label>
-  </li>
-</ul>
 ```
 
 ```html
@@ -179,10 +148,6 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap
   </a>
 </nav>
 ```
-
-## Caveats
-
-The `<ul>` and `<ol>` elements will not work with `drawer`, `left`, `right`, `top`, `bottom` helpers. This helpers are exclusive for `<nav>` element.
 
 ## Go to
 

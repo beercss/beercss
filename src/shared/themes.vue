@@ -23,7 +23,7 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
         i {{ data.isDark ? "light_mode" : "dark_mode" }}
       a.chip.circle
         i palette
-        input(type="color", @change="sharedDomain.updateTheme(data, $event)")
+        input(type="color", @input="sharedDomain.updateTheme(data, $event)")
       a.chip.circle
         i upload
         input(type="file", @change="sharedDomain.updateTheme(data, $event)")
