@@ -35,7 +35,7 @@
     label.radio
       input(type="radio", name="position-badges", @click="domain.updatePosition('#default-badges .badge', 'bottom right')")
       span bottom right
-  nav.wrap.large-space#defaul-badges
+  nav.wrap.large-space#default-badges
     a
       i home
       .badge.min
