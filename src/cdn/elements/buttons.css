@@ -41,7 +41,6 @@ button {
 
 :is(button, .button).border {
   border-color: var(--outline);
-  color: var(--primary);
 }
 
 :is(button, .button):not(.border, .chip):hover {
