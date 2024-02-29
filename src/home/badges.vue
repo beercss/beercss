@@ -1,14 +1,11 @@
 <template lang="pug">
 #badges
   .large-space
-  h4
-    span Badges
-    a.chip.circle(@click="domain.showSamples(data, '#defaul-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
-      i code
+  h4 Badges
   .medium-space
   h6
     span Common badges
-    a.chip.circle(@click="domain.showSamples(data, '#defaul-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#default-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
       i code
   nav.wrap
     label.radio
