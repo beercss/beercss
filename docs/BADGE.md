@@ -18,11 +18,15 @@ fill, primary, secondary, tertiary
 
 **Forms**
 
-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
+none, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
 
 **Positions**
 
 left, right, top, bottom
+
+**Sizes**
+
+min
 
 ## Example
 

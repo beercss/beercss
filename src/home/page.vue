@@ -266,9 +266,9 @@ div
             h5 From CDN
             .space
             pre.scroll.large-padding.fill
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.5.0/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.5.1/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.5.0/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.5.1/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
@@ -297,7 +297,7 @@ div
                   span &nbsp;small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, tiny-padding small-padding, medium-padding, large-padding
                 p
                   b.error-text badge
-                  span &nbsp;left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
+                  span &nbsp;min, left, right, top, bottom, none, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
                 p
                   b.error-text button or &lt;button&gt;
                   span &nbsp;small, medium, large, extra, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
