@@ -160,7 +160,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 </html>
 ```
 
-**We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.**
+**We recommend to use the material-dynamic-colors only when your app needs to change theme at runtime.**
 
 ## [Settings](SETTINGS.md)
 

@@ -1,6 +1,6 @@
 # Expansion
 
-Expansion contain creation flows and allow lightweight editing of an element.
+Expansion contains creation flows and allows lightweight editing of an element.
 
 ## Element
 
