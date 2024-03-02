@@ -30,7 +30,7 @@ Dialogs inform users about a task and can contain critical information, required
 
 ## [Expansion](EXPANSION.md)
 
-Expansion contain creation flows and allow lightweight editing of an element.
+Expansion contains creation flows and allows lightweight editing of an element.
 
 ## [Grid](GRID.md)
 
@@ -50,7 +50,7 @@ Layouts are containers that you can place in any position. There are absolute an
 
 ## [Media](MEDIA.md)
 
-Media can be a image or video element.
+Media can be an image or video element.
 
 ## [Menu](MENU.md)
 
@@ -70,7 +70,7 @@ Pages are containers that can be a main page, multiple pages or just to animate 
 
 ## [Progress](PROGRESS.md)
 
-Progress display the length of a process or an unspecified wait time.
+Progress displays the length of a process or an unspecified wait time.
 
 ## [Radio](RADIO.md)
 
@@ -98,7 +98,7 @@ Textarea fields let users enter and edit long text.
 
 ## [Snackbar](SNACKBAR.md)
 
-Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recomended to show two or more snackbars at same time.
+Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recommended to show two or more snackbars at same time.
 
 ## [Tooltip](TOOLTIP.md)
 
