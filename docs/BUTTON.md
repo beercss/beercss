@@ -40,7 +40,7 @@ small, medium, large, extra
 
 ## Responsive button example
 
-The responsive button is a button that automatically adjust with the width of your container.
+The responsive button is a button that automatically adjusts with the width of your container.
 
 ```html
 <button class="responsive">Button</button>
