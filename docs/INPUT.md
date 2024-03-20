@@ -43,7 +43,7 @@ Add/remove `active` class on label/input (the JS file of beer do this automatica
 
 ```html
 <div class="field label">
-  <input type="text">
+  <input type="text" class="active">
   <label class="active">Label</label>
 </div>
 
