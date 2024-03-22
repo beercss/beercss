@@ -152,6 +152,11 @@ function onKeydownColor (e: KeyboardEvent): void {
   updateColor(target, e);
 }
 
+function onInputTextarea (e: Event): void {
+  const target = e.currentTarget as Element;
+  updateTextarea(target);
+}
+
 function onMutation (): void {
   if (_timeoutMutation) clearTimeout(_timeoutMutation);
   _timeoutMutation = setTimeout(() => { void ui(); }, 180);
@@ -187,6 +192,13 @@ function updateColor (target: Element, e?: KeyboardEvent): void {
   nextTarget.value = currentTarget.value;
   on(nextTarget, "keydown", onKeydownColor, false);
   updateInput(nextTarget);
+}
+
+function updateTextarea (target: Element): void {
+  const parentTarget = parent(target) as HTMLElement;
+  const currentTarget = parent(target) as HTMLElement;
+  parentTarget.removeAttribute("style");
+  if (hasClass(parentTarget, "min")) parentTarget.style.setProperty("---size", `${Math.max(target.scrollHeight, currentTarget.offsetHeight)}px`);
 }
 
 function updateRange (target: Element): void {
@@ -243,7 +255,7 @@ function updateAllRanges (e?: Event) {
     const input = e.target as HTMLInputElement;
     if (input.type === "range") return updateRange(input);
   }
-  
+
   const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
   if (!ranges.length) off(globalThis, "input", updateAllRanges, false);
   else on(globalThis, "input", updateAllRanges, false);
@@ -482,6 +494,12 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
   colors.forEach((x: Element) => {
     on(x, "change", onChangeColor);
     updateColor(x);
+  });
+
+  const textareas = queryAll(".field.textarea > textarea");
+  textareas.forEach((x: Element) => {
+    on(x, "input", onInputTextarea);
+    updateTextarea(x);
   });
 
   updateAllRanges();

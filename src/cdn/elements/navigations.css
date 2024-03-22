@@ -225,11 +225,6 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
   align-items: center;
 }
 
-nav:is(.left, .right):not(.drawer) > *,
-nav:is(.left, .right):not(.drawer) > :is(ol, ul) > li {
-  align-self: center;
-}
-
 :is(.drawer, .vertical) > :is(li, [class*=divider]):not(.vertical),
 :is(.drawer, .vertical) > :is(ol, ul) > li:not(.vertical) {
   align-self: stretch;
