@@ -202,3 +202,55 @@
 :is(nav, .row, .field) > .slider:not(.circle, .small, .medium, .large) {
   flex: auto;
 }
+
+.slider.max,
+.slider.max.vertical,
+.slider.max > input,
+.slider.max.vertical > input {
+  all: unset;
+  margin: 0 !important;
+  position: absolute;
+  color: var(--primary);
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 2;
+  cursor: grab;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.slider.max::before {
+  display: none;
+}
+
+.slider.max.vertical > input {
+  writing-mode: vertical-lr;
+  -moz-transform: rotate(-180deg) !important;
+}
+
+.slider.max > input::-webkit-slider-thumb {
+  opacity: 0;
+  inline-size: 1rem;
+  block-size: 100vh;
+  transform: none !important;
+}
+
+.slider.max > input::-moz-range-thumb {
+  opacity: 0;
+  inline-size: 1rem;
+  block-size: 100vh;
+  transform: none !important;
+}
+
+.slider.max > span {
+  block-size: auto !important;
+  inset: 0 var(---end) 0 var(---start);
+  clip-path: none;
+  background: currentColor;
+  border-radius: 0;
+}
+
+.slider.max.vertical > span {
+  inset: var(---end) 0 var(---start) 0;
+}

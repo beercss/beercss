@@ -179,6 +179,54 @@
           span
         span.helper Helper
         i rainy
+  .large-space
+  #sliders5
+    h6 Custom slider
+      a.chip.circle(@click="domain.showSamples(data, '#sliders5 nav > :not(label)', 'Custom', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+        i code
+    nav.wrap
+      label.radio
+        input(type="radio", name="color-sliders5", @click="domain.updateTextColor('#sliders5 .slider', '')", checked)
+        span primary
+      label.radio
+        input(type="radio", name="color-sliders5", @click="domain.updateTextColor('#sliders5 .slider', 'orange-text')")
+        span orange-text
+      label.radio
+        input(type="radio", name="color-sliders5", @click="domain.updateTextColor('#sliders5 .slider', 'green-text')")
+        span green-text
+    .medium-space
+    nav
+      article
+        h5 Card
+        label.slider.max
+          input(type="range", value="30", max="100")
+          span
+      a.chip
+        span Chip
+        label.slider.max
+          input(type="range", value="30", max="100")
+          span
+      button
+        span Button
+        label.slider.max
+          input(type="range", value="30", max="100")
+          span
+    nav
+      article
+        h5 Card
+        label.slider.max.vertical
+          input(type="range", value="30", max="100")
+          span
+      a.chip
+        span Chip
+        label.slider.max.vertical
+          input(type="range", value="30", max="100")
+          span
+      button
+        span Button
+        label.slider.max.vertical
+          input(type="range", value="30", max="100")
+          span
 </template>
 
 <script setup lang="ts">

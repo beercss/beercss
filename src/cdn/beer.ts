@@ -208,7 +208,7 @@ function updateRange (target: Element): void {
   if (!inputs.length || !bar) return;
 
   const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
-  const thumb = 0.25 * rootSize * 100 / inputs[0].offsetWidth;
+  const thumb = hasClass(parentTarget, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents: Array<number> = [];
   const values: Array<number> = [];
   for (let i = 0; i < inputs.length; i++) {
