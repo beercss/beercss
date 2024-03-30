@@ -46,15 +46,14 @@
     "index.js"
   ],
   "keywords": [
+    "css",
     "material",
-    "material 3",
-    "material you",
-    "material design",
-    "design system",
     "semantic html",
-    "class-light",
-    "lightweight",
-    "css framework"
+    "design system",
+    "material you",
+    "material 3",
+    "material design 3",
+    "class-light"
   ],
   "repository": {
     "type": "git",
