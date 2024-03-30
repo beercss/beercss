@@ -212,20 +212,13 @@ function updateRange (target: Element): void {
   const percents: Array<number> = [];
   const values: Array<number> = [];
   for (let i = 0; i < inputs.length; i++) {
-    const oldMin = parseFloat(inputs[i].min);
-    const oldMax = parseFloat(inputs[i].max);
-    const oldValue = parseFloat(inputs[i].value);
-    const min = oldMin || 0;
-    const max = oldMax || 100;
-    const value = oldValue || 0;
+    const min = parseFloat(inputs[i].min) || 0;
+    const max = parseFloat(inputs[i].max) || 100;
+    const value = parseFloat(inputs[i].value) || 0;
     const percent = (value - min) * 100 / (max - min);
     const fix = thumb / 2 - thumb * percent / 100;
     percents.push(percent + fix);
     values.push(value);
-
-    if (oldMin !== min) inputs[i].min = `${min}`;
-    if (oldMax !== max) inputs[i].max = `${max}`;
-    if (oldValue !== value) inputs[i].value = `${value}`;
   }
 
   let percent = percents[0];
