@@ -68,6 +68,14 @@ menu.min {
   border-radius: inherit;
 }
 
+menu.min.left {
+  inset: 0 0 auto auto;
+}
+
+menu.min.right {
+  inset: 0 auto auto 0;
+}
+
 menu.max {
   position: fixed;
   inset: 0;
