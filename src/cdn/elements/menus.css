@@ -23,7 +23,7 @@ menu {
   text-align: start;
   border-radius: 0.25rem;
   transform: scale(0.8) translateY(120%);
-  transition: var(--speed2) all, 0s background-color;
+  transition: all var(--speed2), 0s background-color;
 }
 
 menu.no-wrap {

@@ -5,7 +5,7 @@ svg {
 :is(img, svg, video):is(.small, .medium, .large, .tiny, .extra, .round, .circle, .responsive) {
   object-fit: cover;
   object-position: center;
-  transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
+  transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
   block-size: 3rem;
   inline-size: 3rem;
 }

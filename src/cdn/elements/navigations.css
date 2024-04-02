@@ -189,7 +189,7 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip) > i,
 nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) > i {
   padding: 0.25rem;
   border-radius: 2rem;
-  transition: var(--speed1) padding linear;
+  transition: padding var(--speed1) linear;
   margin: 0 auto;
 }
 

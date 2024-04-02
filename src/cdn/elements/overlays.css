@@ -8,7 +8,7 @@
   color: var(--on-surface);
   background-color: var(--overlay);
   z-index: 100;
-  transition: var(--speed3) all, 0s background-color;
+  transition: all var(--speed3), 0s background-color;
 }
 
 nav > .overlay {

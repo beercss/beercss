@@ -163,7 +163,7 @@
   opacity: 0;
   inset: 0 auto auto calc(100% - var(---end));
   border-radius: 2rem;
-  transition: var(--speed2) ease top, var(--speed2) ease opacity;
+  transition: top var(--speed2) ease, opacity var(--speed2) ease;
   transform: translate(-50%, -50%) !important;
   padding: 0.75rem 1rem;
   z-index: 0;

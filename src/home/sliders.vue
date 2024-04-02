@@ -196,8 +196,7 @@
         span green-text
     .medium-space
     nav
-      article
-        h5 Card
+      article.small-width
         label.slider.max
           input(type="range", value="30", max="100")
           span

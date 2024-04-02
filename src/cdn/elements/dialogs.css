@@ -15,7 +15,7 @@ dialog {
   max-block-size: 80%;
   overflow-x: hidden;
   overflow-y: auto;
-  transition: var(--speed3) all, 0s background-color;
+  transition: all var(--speed3), 0s background-color;
   border-radius: 1.75rem;
   transform: translate(-50%, -4rem);
 }
