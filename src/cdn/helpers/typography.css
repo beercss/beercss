@@ -5,7 +5,8 @@ html {
 body {
   font-family: var(--font);
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.5rem;
+  letter-spacing: 0.03125rem;
 }
 
 h1,
