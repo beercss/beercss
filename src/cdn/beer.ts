@@ -122,7 +122,9 @@ function onClickDocument (e: Event): void {
   off(document.body, "click", onClickDocument);
   const target = e.target as Element;
   const menus = queryAll("menu.active");
-  menus.forEach((x: Element) => menu(target, x, e));
+  for (let i = 0; i < menus.length; i++) {
+    menu(target, menus[i], e);
+  }
 }
 
 function onClickSnackbar (e: Event): void {
@@ -252,7 +254,9 @@ function updateAllRanges (e?: Event) {
   const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
   if (!ranges.length) off(globalThis, "input", updateAllRanges, false);
   else on(globalThis, "input", updateAllRanges, false);
-  ranges.forEach(updateRange);
+  for (let i = 0; i < ranges.length; i++) {
+    updateRange(ranges[i]);
+  }
 }
 
 async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
@@ -279,7 +283,9 @@ function tab (from: Element): void {
   const container = parent(from);
   if (!hasClass(container, "tabs")) return;
   const tabs = queryAll("a", container);
-  tabs.forEach((x: Element) => removeClass(x, "active"));
+  for (let i = 0; i < tabs.length; i++) {
+    removeClass(tabs[i], "active");
+  }
   addClass(from, "active");
 }
 
@@ -311,7 +317,9 @@ function menu (from: Element, to: Element, e?: Event): any {
     }
 
     const menus = queryAll("menu.active");
-    menus.forEach((x: Element) => removeClass(x, "active"));
+    for (let i = 0; i < menus.length; i++) {
+      removeClass(menus[i], "active");
+    }
     addClass(to, "active");
   }, 90);
 }
@@ -344,10 +352,11 @@ async function dialog (from: Element, to: Element): Promise<void> {
 
   if (isNav) {
     const elements = queryAll("dialog, a, .overlay", container);
-    elements.forEach((x: any) => {
-      removeClass(x, "active");
-      if (x.open) x.close();
-    });
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i] as any;
+      removeClass(element, "active");
+      if (element.open) element.close();
+    }
   }
 
   if (isActive) {
@@ -370,7 +379,9 @@ function snackbar (from: Element, to: Element, milliseconds?: number): void {
   tab(from);
 
   const elements = queryAll(".snackbar.active");
-  elements.forEach((x: Element) => removeClass(x, "active"));
+  for (let i = 0; i < elements.length; i++) {
+    removeClass(elements[i], "active");
+  }
   addClass(to, "active");
   on(to, "click", onClickSnackbar);
 
@@ -421,10 +432,11 @@ function theme (source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssT
   return (globalThis as any).materialDynamicColors(source).then((theme: IBeerCssTheme) => {
     const toCss = (data: any) => {
       let style = "";
-      for (const i in data) {
-        const kebabCase = i.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
-        const value: string = data[i];
-        style += "--" + kebabCase + ":" + value + ";";
+      const dataKeys = Object.keys(data);
+      for (let i = 0; i < dataKeys.length; i++) {
+        const key = dataKeys[i];
+        const kebabCase = key.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
+        style += "--" + kebabCase + ":" + (data[key] as string) + ";";
       }
       return style;
     };
@@ -465,29 +477,36 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
   }
 
   const elements = queryAll("[data-ui]");
-  elements.forEach((x: Element) => on(x, "click", onClickElement));
+  for (let i = 0; i < elements.length; i++) {
+    on(elements[i], "click", onClickElement);
+  }
 
   const labels = queryAll(".field > label");
-  labels.forEach((x: Element) => on(x, "click", onClickLabel));
+  for (let i = 0; i < labels.length; i++) {
+    on(labels[i], "click", onClickLabel);
+  }
 
   const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range]), .field > select, .field > textarea");
-  inputs.forEach((x: Element) => {
-    on(x, "focus", onFocusInput);
-    on(x, "blur", onBlurInput);
-    updateInput(x);
-  });
+  for (let i = 0; i < inputs.length; i++) {
+    const input = inputs[i];
+    on(input, "focus", onFocusInput);
+    on(input, "blur", onBlurInput);
+    updateInput(input);
+  }
 
   const files = queryAll(".field > input[type=file]");
-  files.forEach((x: Element) => {
-    on(x, "change", onChangeFile);
-    updateFile(x);
-  });
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    on(file, "change", onChangeFile);
+    updateFile(file);
+  }
 
   const colors = queryAll(".field > input[type=color]");
-  colors.forEach((x: Element) => {
-    on(x, "change", onChangeColor);
-    updateColor(x);
-  });
+  for (let i = 0; i < colors.length; i++) {
+    const color = colors[i];
+    on(color, "change", onChangeColor);
+    updateColor(color);
+  }
 
   const textareas = queryAll(".field.textarea > textarea");
   textareas.forEach((x: Element) => {
