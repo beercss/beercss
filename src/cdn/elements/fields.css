@@ -1,6 +1,7 @@
 .field {
   ---size: 3rem;
   ---start: 1.2rem;
+
   block-size: var(---size);
   margin-block-end: 2rem;
 }
@@ -134,7 +135,7 @@
 
 .field.min > textarea {
   overflow: hidden;
-  position:absolute;
+  position: absolute;
   inset: 0;
 }
 
