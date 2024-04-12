@@ -12,13 +12,13 @@ div
       .space
       a.row.padding.surface-container
         button.circle A
-        .max 
+        .max
           h6.small Headline
         label +15 min
       .space
       a.row.padding.surface-container
         button.circle A
-        .max 
+        .max
           h6.small Headline
           div Supporting text
         label +15 min
@@ -27,13 +27,13 @@ div
       .space
       a.row.padding.surface-container.wave
         button.circle A
-        .max 
+        .max
           h6.small Headline
         label +15 min
       .space
       a.row.padding.surface-container.wave
         button.circle A
-        .max 
+        .max
           h6.small Headline
           div Supporting text
         label +15 min
@@ -42,13 +42,13 @@ div
       .space
       a.row.padding.surface-container
         i home
-        .max 
+        .max
           h6.small Headline
         label +15 min
       .space
       a.row.padding.surface-container
         i home
-        .max 
+        .max
           h6.small Headline
           div Supporting text
         label +15 min
@@ -57,13 +57,13 @@ div
       .space
       a.row.padding.surface-container
         img.round(:src="'/beer-and-woman.svg'")
-        .max 
+        .max
           h6.small Headline
         label +15 min
       .space
       a.row.padding.surface-container
         img.round(:src="'/beer-and-woman.svg'")
-        .max 
+        .max
           h6.small Headline
           div Supporting text
         label +15 min
@@ -72,8 +72,8 @@ div
         span List containers
         a.chip.circle(@click="domain.showSamples(data, '#list-container article', 'List containers')")
           i code
-    #list-container.grid 
-      .s12.m6.l6 
+    #list-container.grid
+      .s12.m6.l6
         article
           a.row.padding
             .max
@@ -89,8 +89,8 @@ div
             .max
               h6.small Headline 3
               div Supporting text
-            label +15 min 
-      .s12.m6.l6 
+            label +15 min
+      .s12.m6.l6
         article
           a.row.padding
             .max

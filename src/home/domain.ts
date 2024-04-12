@@ -313,7 +313,9 @@ const showSamples = (data: IHome, selector: string, name: string, dialog?: strin
   void nextTick(() => {
     const element = utils.query(data.dialogSample);
     element?.scrollTo(0, 0);
-    setTimeout(() => ui(data.dialogSample), 180);
+    setTimeout(() => {
+      void ui(data.dialogSample);
+    }, 180);
   });
 };
 

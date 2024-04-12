@@ -126,14 +126,14 @@ main.responsive
 
   .large-space
   h5 Sliders
-  .grid 
-    .col.s4 
+  .grid
+    .col.s4
       article.small
         label.slider.max
           input(type="range")
           span
-          .col.s4 
-    .col.s4 
+          .col.s4
+    .col.s4
       button.chip
         span Chip
         label.slider.max
