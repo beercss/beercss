@@ -226,7 +226,7 @@
 
 .slider.max.vertical > input {
   writing-mode: vertical-lr;
-  -moz-transform: rotate(-180deg) !important;
+  transform: rotate(-180deg);
 }
 
 .slider.max > input::-webkit-slider-thumb {

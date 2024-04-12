@@ -195,34 +195,12 @@
         input(type="radio", name="color-sliders5", @click="domain.updateTextColor('#sliders5 .slider', 'green-text')")
         span green-text
     .medium-space
-    nav
-      article.small-width
+    nav.top-align
+      article.small-width.small-height.round
         label.slider.max
           input(type="range", value="30", max="100")
           span
-      a.chip
-        span Chip
-        label.slider.max
-          input(type="range", value="30", max="100")
-          span
-      button
-        span Button
-        label.slider.max
-          input(type="range", value="30", max="100")
-          span
-    nav
-      article
-        h5 Card
-        label.slider.max.vertical
-          input(type="range", value="30", max="100")
-          span
-      a.chip
-        span Chip
-        label.slider.max.vertical
-          input(type="range", value="30", max="100")
-          span
-      button
-        span Button
+      article.small-width.small-height.round
         label.slider.max.vertical
           input(type="range", value="30", max="100")
           span
