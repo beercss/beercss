@@ -109,8 +109,18 @@ progress.vertical {
   writing-mode: vertical-lr;
 }
 
+progress.max.vertical {
+  transform: rotate(-180deg);
+}
+
 :has(> progress) > :not(progress) {
   z-index: 1;
+}
+
+@supports (-moz-appearance:none) {
+  progress.max.vertical {
+    transform: none;
+  }
 }
 
 @keyframes to-linear {
