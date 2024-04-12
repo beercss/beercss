@@ -121,6 +121,9 @@ div
       a(data-ui="#dialog-menu", @click="domain.goTo('#layouts')")
         i widgets
         span Layouts
+      a(data-ui="#dialog-menu", @click="domain.goTo('#lists')")
+        i widgets
+        span Lists
       a(data-ui="#dialog-menu", @click="domain.goTo('#media')")
         i widgets
         span Media
@@ -415,6 +418,8 @@ div
         .s12
           layouts
         .s12
+          lists
+        .s12
           media
         .s12
           menus
@@ -498,6 +503,7 @@ import grids from "./grids.vue";
 import icons from "./icons.vue";
 import inputs from "./inputs.vue";
 import layouts from "./layouts.vue";
+import lists from "./lists.vue";
 import mainLayouts from "./mainLayouts.vue";
 import media from "./media.vue";
 import dialogs from "./dialogs.vue";
