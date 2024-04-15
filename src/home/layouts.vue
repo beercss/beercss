@@ -100,12 +100,12 @@ div
   #empty-state
     h6
       span Empty states
-      a.chip.circle(@click="domain.showSamples(data, '#empty-state .fill', 'Empty states')")
+      a.chip.circle(@click="domain.showSamples(data, '#empty-state article', 'Empty states')")
         i code
     .grid
       .s12.m12.l6
-        .fill.medium-height.middle-align.center-align
-          .center-align
+        article.medium.middle-align.center-align
+          div
             i.extra mail
             h5 You have no new messages
             p Click the button to start a conversation
@@ -113,8 +113,8 @@ div
             nav.center-align
               button Send a message
       .s12.m12.l6
-        .fill.medium-height.middle-align.center-align
-          .center-align
+        article.medium.middle-align.center-align
+          div
             i.extra mail
             h5 You've successfully signed up
             p Click the button to invite your friends
@@ -123,8 +123,8 @@ div
               button.border.round Skip
               button Invite your friends
       .s12.m12.l6
-        .fill.medium-height.middle-align.center-align
-          .center-align
+        article.medium.middle-align.center-align
+          div
             i.extra person
             h5 You are not following anyone
             p Start to meet new friends
