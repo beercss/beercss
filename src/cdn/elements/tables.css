@@ -26,7 +26,6 @@ table :is(thead, tbody, tfoot, tr, th) {
 
 :is(th, td) > * {
   vertical-align: middle;
-  z-index: 0;
 }
 
 table.border > tbody > tr:not(:last-child) > td,
