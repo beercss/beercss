@@ -125,9 +125,7 @@ function onClickDocument (e: Event): void {
   off(document.body, "click", onClickDocument);
   const target = e.target as Element;
   const menus = queryAll("menu.active");
-  for (let i = 0, n = menus.length; i < n; i++) {
-    menu(target, menus[i], e);
-  }
+  for (let i = 0, n = menus.length; i < n; i++) menu(target, menus[i], e);
 }
 
 function onClickSnackbar (e: Event): void {
@@ -257,9 +255,7 @@ function updateAllRanges (e?: Event) {
   const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
   if (!ranges.length) off(globalThis, "input", updateAllRanges, false);
   else on(globalThis, "input", updateAllRanges, false);
-  for (let i = 0, n = ranges.length; i < n; i++) {
-    updateRange(ranges[i]);
-  }
+  for (let i = 0, n = ranges.length; i < n; i++) updateRange(ranges[i]);
 }
 
 async function open (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
@@ -286,9 +282,7 @@ function tab (from: Element): void {
   const container = parent(from);
   if (!hasClass(container, "tabs")) return;
   const tabs = queryAll("a", container);
-  for (let i = 0, n = tabs.length; i < n; i++) {
-    removeClass(tabs[i], "active");
-  }
+  for (let i = 0, n = tabs.length; i < n; i++) removeClass(tabs[i], "active");
   addClass(from, "active");
 }
 
@@ -297,8 +291,7 @@ function page (from: Element, to: Element): void {
   const container = parent(to);
   if (container) {
     for (let i = 0, n = container.children.length; i < n; i++) {
-      if (!hasClass(container.children[i], "page")) continue;
-      removeClass(container.children[i], "active");
+      if (hasClass(container.children[i], "page")) removeClass(container.children[i], "active");
     }
   }
   addClass(to, "active");
@@ -325,9 +318,7 @@ function menu (from: Element, to: Element, e?: Event): any {
     }
 
     const menus = queryAll("menu.active");
-    for (let i = 0, n = menus.length; i < n; i++) {
-      removeClass(menus[i], "active");
-    }
+    for (let i = 0, n = menus.length; i < n; i++) removeClass(menus[i], "active");
     addClass(to, "active");
   }, 90);
 }
@@ -387,9 +378,7 @@ function snackbar (from: Element, to: Element, milliseconds?: number): void {
   tab(from);
 
   const elements = queryAll(".snackbar.active");
-  for (let i = 0, n = elements.length; i < n; i++) {
-    removeClass(elements[i], "active");
-  }
+  for (let i = 0, n = elements.length; i < n; i++) removeClass(elements[i], "active");
   addClass(to, "active");
   on(to, "click", onClickSnackbar);
 
@@ -485,14 +474,10 @@ function ui (selector?: string | Element, options?: string | number | IBeerCssTh
   }
 
   const elements = queryAll("[data-ui]");
-  for (let i = 0, n = elements.length; i < n; i++) {
-    on(elements[i], "click", onClickElement);
-  }
+  for (let i = 0, n = elements.length; i < n; i++) on(elements[i], "click", onClickElement);
 
   const labels = queryAll(".field > label");
-  for (let i = 0, n = labels.length; i < n; i++) {
-    on(labels[i], "click", onClickLabel);
-  }
+  for (let i = 0, n = labels.length; i < n; i++) on(labels[i], "click", onClickLabel);
 
   const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range]), .field > select, .field > textarea");
   for (let i = 0, n = inputs.length; i < n; i++) {
