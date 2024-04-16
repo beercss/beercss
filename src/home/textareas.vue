@@ -118,11 +118,11 @@ import data from "./data";
 
 function updateMinMax (selector: string, css: string) {
   domain.updateMinMax(selector, css);
-  (globalThis as any).ui();
+  ui();
 }
 
 function updateSize (selector: string, css: string) {
   domain.updateSize(selector, css);
-  (globalThis as any).ui();
+  ui();
 }
 </script>
