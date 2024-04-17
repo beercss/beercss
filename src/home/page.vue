@@ -247,7 +247,7 @@ div
       .center-align
         img(src="https://img.shields.io/github/license/beercss/beercss" alt="License")
         span &nbsp;
-        img(src="https://img.badgesize.io/beercss/beercss/main/dist/cdn/beer.min.css?compression=brotli" alt="Size")
+        img(src="https://badgen.net/bundlephobia/minzip/beercss", alt="minzipped size")
         span &nbsp;
         img(src="https://img.shields.io/npm/v/beercss" alt="Version")
       .large-space
