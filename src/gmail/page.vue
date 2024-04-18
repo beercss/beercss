@@ -1,9 +1,8 @@
 <template lang="pug">
 div
   nav.left.m.l.medium-space
-    .space
-    .space
-    a.button.fill.square.round.extra(data-ui="#dialog-add")
+    header
+    button.fill.square.round.extra(data-ui="#dialog-add")
       i add
     a(href="/gmail", :class="{ active: data.url === '/gmail' }")
       i inbox
@@ -34,8 +33,7 @@ div
       .medium-space
 
   nav.right.m.l
-    .medium-space
-    .space
+    header
     button.circle.transparent.large
       span.tooltip.left Calendar
       img.no-round(:src="'/calendar.png'")

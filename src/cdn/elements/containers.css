@@ -1,108 +1,108 @@
-:is(main, header, footer).responsive {
-  ---padding: 6rem;
-
-  max-inline-size: calc(75rem + var(---padding));
-  margin: 0 auto;
-}
-
-*:has(> main.responsive) {
-  display: flex;
-  flex-direction: column;
-  min-block-size: 100vh;
-}
-
 main.responsive {
   flex: 1;
   padding: 0.5rem;
   overflow-x: hidden;
 }
 
-:is(main, header, footer).responsive.max {
+:is(main, header, footer, section).responsive {
+  max-inline-size: calc(75rem + var(---padding));
+  margin: 0 auto;
+}
+
+:is(main, header, footer, section).responsive.max {
   max-inline-size: 100%;
 }
 
-nav.bottom:not(.s, .m, .l) ~ .responsive:not(header) {
+*:has(> main.responsive) {
+  ---padding: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+}
+
+*:has(> nav.bottom:not(.s, .m, .l)) {
   padding-bottom: 5rem;
 }
 
-nav.top:not(.s, .m, .l) ~ .responsive:not(footer) {
+*:has(> nav.top:not(.s, .m, .l)) {
   padding-top: 5rem;
 }
 
-nav.left:not(.s, .m, .l) ~ .responsive {
+*:has(> nav.left:not(.s, .m, .l)) {
   padding-left: var(---padding);
 }
 
-nav.right:not(.s, .m, .l) ~ .responsive {
+*:has(> nav.right:not(.s, .m, .l)) {
   padding-right: var(---padding);
 }
 
-nav.drawer:not(.s, .m, .l) ~ .responsive {
+*:has(> nav.drawer:not(.s, .m, .l)) {
   ---padding: 20rem;
 }
 
 @media only screen and (max-width: 600px) {
-  nav.s.bottom ~ .responsive:not(header) {
+  *:has(> nav.s.bottom) {
     padding-bottom: 5rem;
   }
 
-  nav.s.top ~ .responsive:not(footer) {
+  *:has(> nav.s.top) {
     padding-top: 5rem;
   }
 
-  nav.drawer.s ~ .responsive {
+  *:has(> nav.drawer.s) {
     ---padding: 20rem;
   }
 
-  nav.s.left ~ .responsive {
+  *:has(> nav.s.left) {
     padding-left: var(---padding);
   }
 
-  nav.s.right ~ .responsive {
+  *:has(> nav.s.right) {
     padding-right: var(---padding);
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-  nav.m.bottom ~ .responsive:not(header) {
+  *:has(> nav.m.bottom) {
     padding-bottom: 5rem;
   }
 
-  nav.m.top ~ .responsive:not(footer) {
+  *:has(> nav.m.top) {
     padding-top: 5rem;
   }
 
-  nav.drawer.m ~ .responsive {
+  *:has(> nav.drawer.m) {
     ---padding: 20rem;
   }
 
-  nav.m.left ~ .responsive {
+  *:has(> nav.m.left) {
     padding-left: var(---padding);
   }
 
-  nav.m.right ~ .responsive {
+  *:has(> nav.m.right) {
     padding-right: var(---padding);
   }
 }
 
 @media only screen and (min-width: 993px) {
-  nav.l.bottom ~ .responsive:not(header) {
+  *:has(> nav.l.bottom) {
     padding-bottom: 5rem;
   }
 
-  nav.l.top ~ .responsive:not(footer) {
+  *:has(> nav.l.top) {
     padding-top: 5rem;
   }
 
-  nav.drawer.l ~ .responsive {
+  *:has(> nav.drawer.l) {
     ---padding: 20rem;
   }
 
-  nav.l.left ~ .responsive {
+  *:has(> nav.l.left) {
     padding-left: var(---padding);
   }
 
-  nav.l.right ~ .responsive {
+  *:has(> nav.l.right) {
     padding-right: var(---padding);
   }
 }
