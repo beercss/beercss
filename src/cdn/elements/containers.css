@@ -41,6 +41,14 @@ main.responsive {
   ---padding: 20rem;
 }
 
+nav.top:not(.s, .m, .l) ~ header {
+  top: 5rem;
+}
+
+nav.bottom:not(.s, .m, .l) ~ footer {
+  bottom: 5rem;
+}
+
 @media only screen and (max-width: 600px) {
   *:has(> nav.s.bottom) {
     padding-bottom: 5rem;
@@ -60,6 +68,14 @@ main.responsive {
 
   *:has(> nav.s.right) {
     padding-right: var(---padding);
+  }
+
+  nav.top.s ~ header {
+    top: 5rem;
+  }
+  
+  nav.bottom.s ~ footer {
+    bottom: 5rem;
   }
 }
 
@@ -83,6 +99,14 @@ main.responsive {
   *:has(> nav.m.right) {
     padding-right: var(---padding);
   }
+
+  nav.top.m ~ header {
+    top: 5rem;
+  }
+  
+  nav.bottom.m ~ footer {
+    bottom: 5rem;
+  }
 }
 
 @media only screen and (min-width: 993px) {
@@ -104,6 +128,14 @@ main.responsive {
 
   *:has(> nav.l.right) {
     padding-right: var(---padding);
+  }
+
+  nav.top.l ~ header {
+    top: 5rem;
+  }
+  
+  nav.bottom.l ~ footer {
+    bottom: 5rem;
   }
 }
 
