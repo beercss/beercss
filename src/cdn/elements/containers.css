@@ -155,7 +155,6 @@ nav.bottom:not(.s, .m, .l) ~ footer {
 
 @media only screen and (max-width: 600px) {
   main.responsive {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-inline: 0.5rem;
   }
 }
