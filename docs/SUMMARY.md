@@ -6,7 +6,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **absolute** left, right, top, bottom, front, back, small, medium, large
 
-**&lt;article&gt;** small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, auto-padding, tiny-padding, small-padding, medium-padding, large-padding
+**&lt;article&gt;** small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, tiny-padding, small-padding, medium-padding, large-padding
 
 **badge** left, right, top, bottom, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
 
@@ -82,7 +82,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Opacities** opacity, no-opacity, small-opacity, medium-opacity, large-opacity
 
-**Paddings** padding, no-padding, auto-padding, tiny-padding small-padding, medium-padding, large-padding, left-padding, right-padding, top-padding, bottom-padding, horizontal-padding, vertical-padding
+**Paddings** padding, no-padding, tiny-padding small-padding, medium-padding, large-padding, left-padding, right-padding, top-padding, bottom-padding, horizontal-padding, vertical-padding
 
 **Positions** left, right, center, top, bottom, middle, front, back
 

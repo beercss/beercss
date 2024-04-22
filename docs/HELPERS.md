@@ -74,7 +74,7 @@ opacity, no-opacity, small-opacity, medium-opacity, large-opacity
 
 ## Paddings
 
-padding, no-padding, auto-padding, tiny-padding, small-padding, medium-padding, large-padding, left-padding, right-padding, top-padding, bottom-padding, horizontal-padding, vertical-padding
+padding, no-padding, tiny-padding, small-padding, medium-padding, large-padding, left-padding, right-padding, top-padding, bottom-padding, horizontal-padding, vertical-padding
 
 ## Positions
 
