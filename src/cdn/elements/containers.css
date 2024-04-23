@@ -71,7 +71,7 @@ nav.bottom:not(.s, .m, .l) ~ footer {
   *:has(> nav.s.drawer.left) {
     padding-inline-start: 20rem;
   }
-  
+
   *:has(> nav.s.drawer.right) {
     padding-inline-end: 20rem;
   }
@@ -79,7 +79,7 @@ nav.bottom:not(.s, .m, .l) ~ footer {
   nav.s.top ~ header {
     inset-block-start: 5rem;
   }
-  
+
   nav.s.bottom ~ footer {
     inset-block-end: 5rem;
   }
@@ -105,7 +105,7 @@ nav.bottom:not(.s, .m, .l) ~ footer {
   *:has(> nav.m.drawer.left) {
     padding-inline-start: 20rem;
   }
-  
+
   *:has(> nav.m.drawer.right) {
     padding-inline-end: 20rem;
   }
@@ -113,7 +113,7 @@ nav.bottom:not(.s, .m, .l) ~ footer {
   nav.m.top ~ header {
     inset-block-start: 5rem;
   }
-  
+
   nav.m.bottom ~ footer {
     inset-block-end: 5rem;
   }
@@ -139,7 +139,7 @@ nav.bottom:not(.s, .m, .l) ~ footer {
   *:has(> nav.l.drawer.left) {
     padding-inline-start: 20rem;
   }
-  
+
   *:has(> nav.l.drawer.right) {
     padding-inline-end: 20rem;
   }
@@ -147,7 +147,7 @@ nav.bottom:not(.s, .m, .l) ~ footer {
   nav.l.top ~ header {
     inset-block-start: 5rem;
   }
-  
+
   nav.l.bottom ~ footer {
     inset-block-end: 5rem;
   }

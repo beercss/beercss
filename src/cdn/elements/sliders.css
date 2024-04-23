@@ -247,7 +247,7 @@
   block-size: auto !important;
   inset: 0 var(---end) 0 var(---start);
   clip-path: none;
-  background: currentColor;
+  background: currentcolor;
   border-radius: 0;
 }
 

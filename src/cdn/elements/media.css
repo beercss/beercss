@@ -1,5 +1,5 @@
 svg {
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 :is(img, svg, video):is(.small, .medium, .large, .tiny, .extra, .round, .circle, .responsive) {
