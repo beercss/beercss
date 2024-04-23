@@ -69,6 +69,14 @@ Checkboxes allow users to select one or more items from a set. Checkboxes can tu
 </div>
 ```
 
+## Indeterminate state example
+
+This is set using the indeterminate property via JavaScript (it cannot be set using an HTML attribute) https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate_state_checkboxes:
+
+```js
+document.getElementById(elementId).indeterminate = true;
+```
+
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)

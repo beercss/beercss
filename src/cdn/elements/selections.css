@@ -99,13 +99,17 @@
   content: "check_box_outline_blank";
 }
 
-.radio > span::before {
-  content: "radio_button_unchecked";
-}
-
 .checkbox > input:checked + span::before {
   content: "check_box";
   font-variation-settings: "FILL" 1;
+}
+
+.checkbox > input:indeterminate + span::before {
+  content: "indeterminate_check_box";
+}
+
+.radio > span::before {
+  content: "radio_button_unchecked";
 }
 
 .radio > input:checked + span::before {
