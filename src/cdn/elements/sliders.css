@@ -10,6 +10,11 @@
   block-size: 1.25rem;
   margin: 1.125rem;
   flex: none;
+  direction: ltr;
+}
+
+[dir=rtl] .slider {
+  transform: scaleX(-1);
 }
 
 .slider.vertical {
@@ -136,10 +141,6 @@
   clip-path: polygon(0.5rem 0, max(0.5rem, calc(100% - 0.5rem)) 0, max(0.5rem, calc(100% - 0.5rem)) 100%, 0.5rem 100%);
 }
 
-[dir=rtl] .slider > span {
-  inset: calc(50% - 0.5rem) var(---start) auto var(---end);
-}
-
 .field > .slider {
   inline-size: 100%;
 }
@@ -158,8 +159,7 @@
   background: var(--active);
 }
 
-.slider > .tooltip,
-.slider:hover > .tooltip {
+.slider > .tooltip {
   opacity: 0;
   inset: 0 auto auto calc(100% - var(---end));
   border-radius: 2rem;
@@ -170,7 +170,7 @@
 }
 
 [dir=rtl] .slider > .tooltip {
-  inset: 0.25rem auto auto var(---end);
+  transform: translate(-50%, -50%) scaleX(-1) !important;
 }
 
 .slider > .tooltip + .tooltip {
@@ -179,7 +179,7 @@
 }
 
 [dir=rtl] .slider > .tooltip + .tooltip {
-  inset: 0.25rem var(---start) auto auto;
+  transform: translate(50%, -50%) scaleX(-1) !important;
 }
 
 .slider > .tooltip::before {

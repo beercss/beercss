@@ -412,6 +412,10 @@ input::-webkit-search-results-decoration {
   padding-block-start: 0.125rem;
 }
 
+[dir=rtl] .field > :is(.helper, .error) {
+  inset: auto 1rem 0 auto;
+}
+
 a.helper {
   color: var(--primary);
 }

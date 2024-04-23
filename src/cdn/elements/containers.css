@@ -20,136 +20,136 @@ main.responsive {
 }
 
 *:has(> nav.bottom:not(.s, .m, .l)) {
-  padding-bottom: 5rem;
+  padding-block-end: 5rem;
 }
 
 *:has(> nav.top:not(.s, .m, .l)) {
-  padding-top: 5rem;
+  padding-block-start: 5rem;
 }
 
 *:has(> nav.left:not(.s, .m, .l)) {
-  padding-left: 5rem;
+  padding-inline-start: 5rem;
 }
 
 *:has(> nav.right:not(.s, .m, .l)) {
-  padding-right: 5rem;
+  padding-inline-end: 5rem;
 }
 
 *:has(> nav.drawer.left:not(.s, .m, .l)) {
-  padding-left: 20rem;
+  padding-inline-start: 20rem;
 }
 
 *:has(> nav.drawer.right:not(.s, .m, .l)) {
-  padding-right: 20rem;
+  padding-inline-end: 20rem;
 }
 
 nav.top:not(.s, .m, .l) ~ header {
-  top: 5rem;
+  inset-block-start: 5rem;
 }
 
 nav.bottom:not(.s, .m, .l) ~ footer {
-  bottom: 5rem;
+  inset-block-end: 5rem;
 }
 
 @media only screen and (max-width: 600px) {
   *:has(> nav.s.bottom) {
-    padding-bottom: 5rem;
+    padding-block-end: 5rem;
   }
 
   *:has(> nav.s.top) {
-    padding-top: 5rem;
+    padding-block-start: 5rem;
   }
 
   *:has(> nav.s.left) {
-    padding-left: 5rem;
+    padding-inline-start: 5rem;
   }
 
   *:has(> nav.s.right) {
-    padding-right: 5rem;
+    padding-inline-end: 5rem;
   }
 
   *:has(> nav.s.drawer.left) {
-    padding-left: 20rem;
+    padding-inline-start: 20rem;
   }
   
   *:has(> nav.s.drawer.right) {
-    padding-right: 20rem;
+    padding-inline-end: 20rem;
   }
 
   nav.s.top ~ header {
-    top: 5rem;
+    inset-block-start: 5rem;
   }
   
   nav.s.bottom ~ footer {
-    bottom: 5rem;
+    inset-block-end: 5rem;
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
   *:has(> nav.m.bottom) {
-    padding-bottom: 5rem;
+    padding-block-end: 5rem;
   }
 
   *:has(> nav.m.top) {
-    padding-top: 5rem;
+    padding-block-start: 5rem;
   }
 
   *:has(> nav.m.left) {
-    padding-left: 5rem;
+    padding-inline-start: 5rem;
   }
 
   *:has(> nav.m.right) {
-    padding-right: 5rem;
+    padding-inline-end: 5rem;
   }
 
   *:has(> nav.m.drawer.left) {
-    padding-left: 20rem;
+    padding-inline-start: 20rem;
   }
   
   *:has(> nav.m.drawer.right) {
-    padding-right: 20rem;
+    padding-inline-end: 20rem;
   }
 
   nav.m.top ~ header {
-    top: 5rem;
+    inset-block-start: 5rem;
   }
   
   nav.m.bottom ~ footer {
-    bottom: 5rem;
+    inset-block-end: 5rem;
   }
 }
 
 @media only screen and (min-width: 993px) {
   *:has(> nav.l.bottom) {
-    padding-bottom: 5rem;
+    padding-block-end: 5rem;
   }
 
   *:has(> nav.l.top) {
-    padding-top: 5rem;
+    padding-block-start: 5rem;
   }
 
   *:has(> nav.l.left) {
-    padding-left: 5rem;
+    padding-inline-start: 5rem;
   }
 
   *:has(> nav.l.right) {
-    padding-right: 5rem;
+    padding-inline-end: 5rem;
   }
 
   *:has(> nav.l.drawer.left) {
-    padding-left: 20rem;
+    padding-inline-start: 20rem;
   }
   
   *:has(> nav.l.drawer.right) {
-    padding-right: 20rem;
+    padding-inline-end: 20rem;
   }
 
   nav.l.top ~ header {
-    top: 5rem;
+    inset-block-start: 5rem;
   }
   
   nav.l.bottom ~ footer {
-    bottom: 5rem;
+    inset-block-end: 5rem;
   }
 }
 

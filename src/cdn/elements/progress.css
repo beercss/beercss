@@ -9,6 +9,7 @@ progress {
   border: none;
   overflow: hidden;
   writing-mode: horizontal-tb;
+  direction: ltr;
 }
 
 progress.small {

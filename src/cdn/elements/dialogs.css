@@ -45,10 +45,6 @@ dialog:is(.active, [open]) {
   transform: translate(-50%, 0);
 }
 
-dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
-  transform: translate(0, 0);
-}
-
 dialog.top {
   opacity: 1;
   padding: 1rem;
@@ -61,6 +57,7 @@ dialog.top {
   border-radius: 0 0 1rem 1rem;
 }
 
+[dir=rtl] dialog.right,
 dialog.left {
   opacity: 1;
   padding: 1rem;
@@ -73,6 +70,7 @@ dialog.left {
   transform: translateX(-100%);
 }
 
+[dir=rtl] dialog.left,
 dialog.right {
   opacity: 1;
   padding: 1rem;
@@ -105,6 +103,10 @@ dialog.max {
   max-block-size: 100%;
   transform: translateY(4rem);
   background-color: var(--surface);
+}
+
+dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
+  transform: translate(0, 0);
 }
 
 dialog.small:is(.left, .right) {

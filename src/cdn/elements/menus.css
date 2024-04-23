@@ -26,6 +26,10 @@ menu {
   transition: all var(--speed2), 0s background-color;
 }
 
+[dir=rtl] menu {
+  inset: auto 0 0 auto;
+}
+
 menu.no-wrap {
   inline-size: max-content;
   white-space: nowrap !important;
@@ -68,10 +72,12 @@ menu.min {
   border-radius: inherit;
 }
 
+[dir=rtl] menu.min.right,
 menu.min.left {
   inset: 0 0 auto auto;
 }
 
+[dir=rtl] menu.min.left,
 menu.min.right {
   inset: 0 auto auto 0;
 }
@@ -90,10 +96,12 @@ menu.no-wrap:is(.min, .max) {
   min-inline-size: 16rem;
 }
 
+[dir=rtl] menu.right,
 menu.left {
   inset: auto 0 0 auto;
 }
 
+[dir=rtl] menu.left,
 menu.right {
   inset: auto auto 0 0;
 }

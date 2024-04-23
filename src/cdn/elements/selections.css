@@ -189,3 +189,22 @@
   flex-grow: 1;
   padding: 0 1.5rem;
 }
+
+[dir=rtl] .switch {
+  transform: scale(-1);
+}
+
+[dir=rtl] .switch > span::before,
+[dir=rtl] .switch.icon > span > i {
+  transform: translate(-3rem, -50%) scale(-0.6);
+}
+
+[dir=rtl] .switch.icon > span > i {
+  transform: translate(-3rem, -50%) scale(-1);
+}
+
+[dir=rtl] .switch > input:checked + span::before,
+[dir=rtl] .switch.icon > input:checked + span > i {
+  transform: translate(-1.75rem, -50%) scale(-1);
+}
+
