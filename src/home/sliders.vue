@@ -195,7 +195,7 @@
         input(type="radio", name="color-sliders5", @click="domain.updateTextColor('#sliders5 .slider', 'green-text')")
         span green-text
     .medium-space
-    nav.top-align
+    nav.top-align.wrap
       article.small-width.small-height.round
         label.slider.max
           input(type="range", value="30", max="100")
