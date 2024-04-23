@@ -43,11 +43,11 @@ main.responsive {
   padding-inline-end: 20rem;
 }
 
-nav.top:not(.s, .m, .l) ~ header {
+nav.top:not(.s, .m, .l) ~ header.fixed {
   inset-block-start: 5rem;
 }
 
-nav.bottom:not(.s, .m, .l) ~ footer {
+nav.bottom:not(.s, .m, .l) ~ footer.fixed {
   inset-block-end: 5rem;
 }
 
@@ -76,11 +76,11 @@ nav.bottom:not(.s, .m, .l) ~ footer {
     padding-inline-end: 20rem;
   }
 
-  nav.s.top ~ header {
+  nav.s.top ~ header.fixed {
     inset-block-start: 5rem;
   }
 
-  nav.s.bottom ~ footer {
+  nav.s.bottom ~ footer.fixed {
     inset-block-end: 5rem;
   }
 }
@@ -110,11 +110,11 @@ nav.bottom:not(.s, .m, .l) ~ footer {
     padding-inline-end: 20rem;
   }
 
-  nav.m.top ~ header {
+  nav.m.top ~ header.fixed {
     inset-block-start: 5rem;
   }
 
-  nav.m.bottom ~ footer {
+  nav.m.bottom ~ footer.fixed {
     inset-block-end: 5rem;
   }
 }
@@ -144,11 +144,11 @@ nav.bottom:not(.s, .m, .l) ~ footer {
     padding-inline-end: 20rem;
   }
 
-  nav.l.top ~ header {
+  nav.l.top ~ header.fixed {
     inset-block-start: 5rem;
   }
 
-  nav.l.bottom ~ footer {
+  nav.l.bottom ~ footer.fixed {
     inset-block-end: 5rem;
   }
 }
