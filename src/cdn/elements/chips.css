@@ -14,7 +14,7 @@
   margin: 0 0.5rem;
   text-transform: none;
   border-radius: 0.5rem;
-  transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
+  transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
   user-select: none;
   gap: 1rem;
   line-height: normal;

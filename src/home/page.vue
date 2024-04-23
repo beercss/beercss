@@ -121,6 +121,9 @@ div
       a(data-ui="#dialog-menu", @click="domain.goTo('#layouts')")
         i widgets
         span Layouts
+      a(data-ui="#dialog-menu", @click="domain.goTo('#lists')")
+        i widgets
+        span Lists
       a(data-ui="#dialog-menu", @click="domain.goTo('#media')")
         i widgets
         span Media
@@ -244,7 +247,7 @@ div
       .center-align
         img(src="https://img.shields.io/github/license/beercss/beercss" alt="License")
         span &nbsp;
-        img(src="https://img.badgesize.io/beercss/beercss/main/dist/cdn/beer.min.css?compression=brotli" alt="Size")
+        img(src="https://img.shields.io/bundlephobia/minzip/beercss", alt="minzipped size")
         span &nbsp;
         img(src="https://img.shields.io/npm/v/beercss" alt="Version")
       .large-space
@@ -266,9 +269,9 @@ div
             h5 From CDN
             .space
             pre.scroll.large-padding.fill
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.5.1/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.5.2/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.5.1/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.5.2/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
@@ -415,6 +418,8 @@ div
         .s12
           layouts
         .s12
+          lists
+        .s12
           media
         .s12
           menus
@@ -498,6 +503,7 @@ import grids from "./grids.vue";
 import icons from "./icons.vue";
 import inputs from "./inputs.vue";
 import layouts from "./layouts.vue";
+import lists from "./lists.vue";
 import mainLayouts from "./mainLayouts.vue";
 import media from "./media.vue";
 import dialogs from "./dialogs.vue";

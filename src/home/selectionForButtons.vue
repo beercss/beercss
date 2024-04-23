@@ -36,26 +36,26 @@ export interface IProps {
   emptySize?: string,
 }
 
-const {
-  context = "buttons",
-  colors = ["", "fill", "primary", "secondary", "tertiary"],
-  sizes = ["small", "", "large", "extra"],
-  elevates = ["", "small-elevate", "medium-elevate", "large-elevate"],
-  directions = [],
-  defaultColor = "",
-  defaultSize = "",
-  defaultShadow = "",
-  defaultDirection = "",
-  selectedColor = "",
-  selectedSize = "",
-  selectedShadow = "",
-  selectedDirection = "",
-} = defineProps<IProps>();
+const data = withDefaults(defineProps<IProps>(), {
+  context: "buttons",
+  colors: () => ["", "fill", "primary", "secondary", "tertiary"],
+  sizes: () => ["small", "", "large", "extra"],
+  elevates: () => ["", "small-elevate", "medium-elevate", "large-elevate"],
+  directions: () => [],
+  defaultColor: "",
+  defaultSize: "",
+  defaultShadow: "",
+  defaultDirection: "",
+  selectedColor: "",
+  selectedSize: "",
+  selectedShadow: "",
+  selectedDirection: "",
+});
 
 onMounted(() => {
-  if (colors.length) domain.updateElementColor(context, selectedColor);
-  if (sizes.length) domain.updateSize(context, selectedSize);
-  if (elevates.length) domain.updateElevate(context, selectedShadow);
-  if (directions.length) domain.updateDirection(context, selectedDirection);
+  if (data.colors.length) domain.updateElementColor(data.context, data.selectedColor);
+  if (data.sizes.length) domain.updateSize(data.context, data.selectedSize);
+  if (data.elevates.length) domain.updateElevate(data.context, data.selectedShadow);
+  if (data.directions.length) domain.updateDirection(data.context, data.selectedDirection);
 });
 </script>

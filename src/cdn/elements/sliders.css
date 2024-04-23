@@ -10,6 +10,11 @@
   block-size: 1.25rem;
   margin: 1.125rem;
   flex: none;
+  direction: ltr;
+}
+
+[dir=rtl] .slider {
+  transform: scaleX(-1);
 }
 
 .slider.vertical {
@@ -136,10 +141,6 @@
   clip-path: polygon(0.5rem 0, max(0.5rem, calc(100% - 0.5rem)) 0, max(0.5rem, calc(100% - 0.5rem)) 100%, 0.5rem 100%);
 }
 
-[dir=rtl] .slider > span {
-  inset: calc(50% - 0.5rem) var(---start) auto var(---end);
-}
-
 .field > .slider {
   inline-size: 100%;
 }
@@ -158,19 +159,18 @@
   background: var(--active);
 }
 
-.slider > .tooltip,
-.slider:hover > .tooltip {
+.slider > .tooltip {
   opacity: 0;
   inset: 0 auto auto calc(100% - var(---end));
   border-radius: 2rem;
-  transition: var(--speed2) ease top, var(--speed2) ease opacity;
+  transition: top var(--speed2) ease, opacity var(--speed2) ease;
   transform: translate(-50%, -50%) !important;
   padding: 0.75rem 1rem;
   z-index: 0;
 }
 
 [dir=rtl] .slider > .tooltip {
-  inset: 0.25rem auto auto var(---end);
+  transform: translate(-50%, -50%) scaleX(-1) !important;
 }
 
 .slider > .tooltip + .tooltip {
@@ -179,7 +179,7 @@
 }
 
 [dir=rtl] .slider > .tooltip + .tooltip {
-  inset: 0.25rem var(---start) auto auto;
+  transform: translate(50%, -50%) scaleX(-1) !important;
 }
 
 .slider > .tooltip::before {
@@ -201,4 +201,56 @@
 
 :is(nav, .row, .field) > .slider:not(.circle, .small, .medium, .large) {
   flex: auto;
+}
+
+.slider.max,
+.slider.max.vertical,
+.slider.max > input,
+.slider.max.vertical > input {
+  all: unset;
+  margin: 0 !important;
+  position: absolute;
+  color: var(--primary);
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 2;
+  cursor: grab;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.slider.max::before {
+  display: none;
+}
+
+.slider.max.vertical > input {
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+}
+
+.slider.max > input::-webkit-slider-thumb {
+  opacity: 0;
+  inline-size: 1rem;
+  block-size: 100vh;
+  transform: none !important;
+}
+
+.slider.max > input::-moz-range-thumb {
+  opacity: 0;
+  inline-size: 1rem;
+  block-size: 100vh;
+  transform: none !important;
+}
+
+.slider.max > span {
+  block-size: auto !important;
+  inset: 0 var(---end) 0 var(---start);
+  clip-path: none;
+  background: currentcolor;
+  border-radius: 0;
+}
+
+.slider.max.vertical > span {
+  inset: var(---end) 0 var(---start) 0;
 }

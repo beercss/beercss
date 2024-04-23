@@ -26,7 +26,7 @@
 :is(.wave, .chip, .button, button):is(:focus-visible, :hover)::after {
   background-size: 15000%;
   opacity: 1;
-  transition: var(--speed2) background-size linear;
+  transition: background-size var(--speed2) linear;
 }
 
 :is(.wave, .chip, .button, button):active::after {

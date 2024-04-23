@@ -9,7 +9,7 @@ main.responsive.max.medium-line(v-show="data.showPage")
         button.extra(@click="reloadAnimation()") Get started
   .large-space
   .large-space
-  main.responsive.page.left.active
+  section.responsive.page.left.active
     h2 News & launches
     .space
     .grid

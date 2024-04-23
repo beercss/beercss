@@ -5,7 +5,7 @@ article {
   padding: 1rem;
   border-radius: 0.75rem;
   display: block;
-  transition: var(--speed3) transform, var(--speed3) border-radius, var(--speed3) padding;
+  transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
 }
 
 * + article {

@@ -9,6 +9,7 @@ progress {
   border: none;
   overflow: hidden;
   writing-mode: horizontal-tb;
+  direction: ltr;
 }
 
 progress.small {
@@ -30,7 +31,7 @@ progress:not(.circle, [value])::after {
   inline-size: 100%;
   block-size: 100%;
   clip-path: none;
-  background: currentColor;
+  background: currentcolor;
   animation: 1.6s to-linear ease infinite;
 }
 
@@ -47,11 +48,11 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background: currentColor;
+  background: currentcolor;
 }
 
 progress::-moz-progress-bar {
-  background: currentColor;
+  background: currentcolor;
 }
 
 progress.circle {
@@ -61,7 +62,7 @@ progress.circle {
   border-radius: 50%;
   border-width: 0.3rem;
   border-style: solid;
-  border-color: currentColor;
+  border-color: currentcolor;
   animation: 1.6s to-circular linear infinite;
   background: none;
   flex: none;
@@ -109,8 +110,18 @@ progress.vertical {
   writing-mode: vertical-lr;
 }
 
+progress.max.vertical {
+  transform: rotate(-180deg);
+}
+
 :has(> progress) > :not(progress) {
   z-index: 1;
+}
+
+@supports (-moz-appearance:none) {
+  progress.max.vertical {
+    transform: none;
+  }
 }
 
 @keyframes to-linear {

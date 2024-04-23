@@ -42,7 +42,8 @@
       progress.circle.large
   .large-space
   #custom-progress
-    h6 Custom
+    h6 Custom progressbar
+    .medium-space
     nav
       article
         h5 Card

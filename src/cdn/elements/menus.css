@@ -23,7 +23,11 @@ menu {
   text-align: start;
   border-radius: 0.25rem;
   transform: scale(0.8) translateY(120%);
-  transition: var(--speed2) all, 0s background-color;
+  transition: all var(--speed2), 0s background-color;
+}
+
+[dir=rtl] menu {
+  inset: auto 0 0 auto;
 }
 
 menu.no-wrap {
@@ -68,6 +72,16 @@ menu.min {
   border-radius: inherit;
 }
 
+[dir=rtl] menu.min.right,
+menu.min.left {
+  inset: 0 0 auto auto;
+}
+
+[dir=rtl] menu.min.left,
+menu.min.right {
+  inset: 0 auto auto 0;
+}
+
 menu.max {
   position: fixed;
   inset: 0;
@@ -82,10 +96,12 @@ menu.no-wrap:is(.min, .max) {
   min-inline-size: 16rem;
 }
 
+[dir=rtl] menu.right,
 menu.left {
   inset: auto 0 0 auto;
 }
 
+[dir=rtl] menu.left,
 menu.right {
   inset: auto auto 0 0;
 }

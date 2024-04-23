@@ -97,153 +97,15 @@ div
           footer.fixed
             h5.no-margin Fixed footer
   .medium-space
-  #list
-    h6
-      span Lists
-      a.chip.circle(@click="domain.showSamples(data, '#list .row', 'Lists')")
-        i code
-    nav.wrap
-      label.radio
-        input(type="radio", name="align-lists", @click="domain.updateVerticalAlign('#list .row', 'top-align')")
-        span top-align
-      label.radio
-        input(
-          type="radio",
-          name="align-lists",
-          checked,
-          @click="domain.updateVerticalAlign('#list .row')"
-        )
-        span middle-align
-      label.radio
-        input(type="radio", name="align-lists", @click="domain.updateVerticalAlign('#list .row', 'bottom-align')")
-        span bottom-align
-    .row
-      span Today
-    .row
-      i.light-green-text check_circle
-      .max Some text here
-      a
-        i edit
-      a
-        i delete
-    .small-divider
-    .row
-      i.orange-text warning
-      .max Some text here
-      a
-        i edit
-      a
-        i delete
-    .small-divider
-    .row
-      i.grey-text schedule
-      .max Some text here
-      a
-        i edit
-      a
-        i delete
-    .row
-      span Yesterday
-    .row
-      label.checkbox
-        input(type="checkbox")
-        span
-      .max Some text here
-      a
-        i edit
-      a
-        i delete
-    .small-divider
-    .row
-      label.checkbox
-        input(type="checkbox")
-        span
-      .max Some text here
-      a
-        i edit
-      a
-        i delete
-    .small-divider
-    .row
-      label.checkbox
-        input(type="checkbox")
-        span
-      .max Some text here
-      a
-        i edit
-      a
-        i delete
-    .row
-      span Older
-    .row
-      img.circle.tiny(:src="'/beer-and-woman.svg'")
-      .max Some text here
-      a
-        i edit
-      a
-        i delete
-    .small-divider
-    .row
-      img.circle.tiny(:src="'/beer-and-woman.svg'")
-      .max Some text here
-      a
-        i edit
-      a
-        i delete
-    .small-divider
-    .row
-      img.circle.tiny(:src="'/beer-and-woman.svg'")
-      .max Some text here
-      a
-        i edit
-      a
-        i delete
-  .medium-space
-  #clickable-list
-    h6
-      span Clickable lists
-      a.chip.circle(@click="domain.showSamples(data, '#clickable-list .row', 'Clickable lists')")
-        i code
-    .grid
-      .s12.m6.l4
-        a.row.wave
-          i home
-          div Default 1
-        a.row.wave
-          i search
-          div Default 2
-        a.row.wave
-          i star
-          div Default 3
-        a.row.wave
-          i mail
-          .max Default 4
-          span.badge.circle.none 3
-      .s12.m6.l4
-        a.row.wave.round
-          i home
-          div Rounded 1
-        a.row.wave.round
-          i search
-          div Rounded 2
-        a.row.wave.round
-          i star
-          div Rounded 3
-        a.row.wave.round
-          i mail
-          .max Rounded 4
-          span.badge.circle.none 3
-
-  .medium-space
   #empty-state
     h6
       span Empty states
-      a.chip.circle(@click="domain.showSamples(data, '#empty-state .fill', 'Empty states')")
+      a.chip.circle(@click="domain.showSamples(data, '#empty-state article', 'Empty states')")
         i code
     .grid
       .s12.m12.l6
-        .fill.medium-height.middle-align.center-align
-          .center-align
+        article.medium.middle-align.center-align
+          div
             i.extra mail
             h5 You have no new messages
             p Click the button to start a conversation
@@ -251,8 +113,8 @@ div
             nav.center-align
               button Send a message
       .s12.m12.l6
-        .fill.medium-height.middle-align.center-align
-          .center-align
+        article.medium.middle-align.center-align
+          div
             i.extra mail
             h5 You've successfully signed up
             p Click the button to invite your friends
@@ -261,8 +123,8 @@ div
               button.border.round Skip
               button Invite your friends
       .s12.m12.l6
-        .fill.medium-height.middle-align.center-align
-          .center-align
+        article.medium.middle-align.center-align
+          div
             i.extra person
             h5 You are not following anyone
             p Start to meet new friends

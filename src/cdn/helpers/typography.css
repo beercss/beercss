@@ -5,7 +5,8 @@ html {
 body {
   font-family: var(--font);
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.5rem;
+  letter-spacing: 0.0313rem;
 }
 
 h1,
@@ -164,21 +165,21 @@ p {
 }
 
 .tiny-line {
-  line-height: 1.25;
+  line-height: 1.25rem;
 }
 
 .small-line {
-  line-height: 1.5;
+  line-height: 1.5rem;
 }
 
 .medium-line {
-  line-height: 1.75;
+  line-height: 1.75rem;
 }
 
 .large-line {
-  line-height: 2;
+  line-height: 2rem;
 }
 
 .extra-line {
-  line-height: 2.25;
+  line-height: 2.25rem;
 }

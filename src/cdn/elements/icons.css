@@ -63,7 +63,7 @@ i > :is(img, svg) {
   padding: inherit;
 }
 
-i[class*="fa-"] {
+i[class*=fa-] {
   font-size: calc(var(---size) * 0.85);
   line-height: normal;
   block-size: auto;

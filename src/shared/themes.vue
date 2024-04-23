@@ -71,20 +71,18 @@ export interface IProps {
   position?: string,
 }
 
-const {
-  id = "themes",
-  modelValue = null,
-  position = "left",
-} = defineProps<IProps>();
-
-const data = modelValue;
+const data = withDefaults(defineProps<IProps>(), {
+  id: "themes",
+  modelValue: null,
+  position: "left",
+});
 
 onMounted(() => {
-  if (!modelValue.theme || !modelValue.theme.light || !modelValue.theme.dark || !modelValue.theme.selected) { sharedDomain.updateTheme(modelValue, null); }
+  if (!data.modelValue.theme || !data.modelValue.theme.light || !data.modelValue.theme.dark || !data.modelValue.theme.selected) { sharedDomain.updateTheme(data.modelValue, null); }
 });
 
 const sourceCode = () => {
-  return ((modelValue.theme as any)[modelValue.theme.selected] || "").replace(/;/g, ";<br/>");
+  return ((data.modelValue.theme as any)[data.modelValue.theme.selected] || "").replace(/;/g, ";<br/>");
 };
 </script>
 

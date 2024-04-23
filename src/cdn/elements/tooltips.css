@@ -19,7 +19,7 @@
   white-space: nowrap;
   font-weight: 500;
   opacity: 0;
-  transition: var(--speed2) all;
+  transition: all var(--speed2);
   line-height: normal;
   transform: translate(-50%, -100%) scale(0.9);
 }

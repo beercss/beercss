@@ -125,6 +125,22 @@ main.responsive
         span More
 
   .large-space
+  h5 Sliders
+  .grid
+    .col.s4
+      article.small
+        label.slider.max
+          input(type="range")
+          span
+          .col.s4
+    .col.s4
+      button.chip
+        span Chip
+        label.slider.max
+          input(type="range")
+          span
+
+  .large-space
   h5 Badges
   a
     i home
@@ -480,6 +496,180 @@ main.responsive
       .field.label.border.prefix.round
         i home
         input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+  .large-space
+  h5 Textareas
+  .space
+  .grid
+    .s12.m6
+      .field.label.border.prefix.small
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.border.prefix.textarea.min.small
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.border.prefix
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.border.prefix.textarea.min
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.border.prefix.large
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.border.prefix.textarea.min.large
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.border.prefix.extra
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.border.prefix.textarea.min.extra
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+
+    .s12.m6
+      .field.label.fill.prefix.small
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.prefix.textarea.min.small
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.prefix
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.prefix.textarea.min
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.prefix.large
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.prefix.textarea.min.large
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.prefix.extra
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.prefix.textarea.min.extra
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+
+    .s12.m6
+      .field.label.fill.round.prefix.small
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.round.prefix.textarea.min.small
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.round.prefix
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.round.prefix.textarea.min
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.round.prefix.large
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.round.prefix.textarea.min.large
+        i home
+        textarea(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.round.prefix.extra
+        i home
+        input(placeholder=" ")
+        label Label
+        span.helper
+          span Helper
+    .s12.m6
+      .field.label.fill.round.prefix.textarea.min.extra
+        i home
+        textarea(placeholder=" ")
         label Label
         span.helper
           span Helper
