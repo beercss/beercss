@@ -159,7 +159,8 @@
   background: var(--active);
 }
 
-.slider > .tooltip {
+.slider > .tooltip,
+.slider:hover > .tooltip {
   opacity: 0;
   inset: 0 auto auto calc(100% - var(---end));
   border-radius: 2rem;
