@@ -15,6 +15,7 @@ const data: IHome = {
   layout: 0,
   isHorizontal: false,
   isHorizontalSlider: true,
+  isRtl: false,
 };
 
 const dataAsRef: Ref<IHome> = ref(data);

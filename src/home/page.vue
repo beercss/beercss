@@ -15,6 +15,12 @@ div
     a(@click="domain.updateMenu(data, 'right')")
       i arrow_forward
       span Right
+    a(@click="domain.updateRtlLtr(data)", v-show="!data.isRtl")
+      i checklist_rtl
+      span RTL
+    a(@click="domain.updateRtlLtr(data)", v-show="data.isRtl")
+      i checklist
+      span LTR
     a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       span Code
@@ -269,9 +275,9 @@ div
             h5 From CDN
             .space
             pre.scroll.large-padding.fill
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.5.3/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.5.4/dist/cdn/beer.min.css" rel="stylesheet"&gt;
               |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.5.3/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.5.4/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
               |
               | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.0/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space

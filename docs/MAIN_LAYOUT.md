@@ -1,6 +1,6 @@
 # Main layout
 
-The main layout is a common html structure to setup your pages.
+The main layout is a common html structure to setup your pages. For RTL languages set the attribute `dir="rtl"` on `body` element (or any other element).
 
 ## Compact example
 

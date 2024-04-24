@@ -17,4 +17,5 @@ export interface IHome extends ILayout {
   layout: number,
   isHorizontal: boolean,
   isHorizontalSlider: boolean,
+  isRtl: boolean,
 }

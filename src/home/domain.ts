@@ -354,6 +354,12 @@ const updateLine = (selector: string, line?: string) => {
   if (line) utils.addClass(elements, [line]);
 };
 
+const updateRtlLtr = (data: IHome) => {
+  data.isRtl = !data.isRtl;
+  if (data.isRtl) document.body.setAttribute("dir", "rtl");
+  else document.body.removeAttribute("dir");
+};
+
 export default {
   updateElevate,
   updateColor,
@@ -389,4 +395,5 @@ export default {
   updateBlur,
   updateShadow,
   updateLine,
+  updateRtlLtr,
 };
