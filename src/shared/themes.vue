@@ -3,58 +3,58 @@
 dialog.medium(:id="id", :class="{ left: position === 'left', right: position === 'right' }")
   slot
   header.fixed
-    nav(v-if="!data.showCssVariables")
+    nav(v-if="!data.modelValue.showCssVariables")
       .max
         h5
           span Themes
-          a.chip.circle(@click="data.showCssVariables=true")
+          a.chip.circle(@click="data.modelValue.showCssVariables=true")
             i code
       button.circle.transparent(:data-ui="'#' + id")
         i close
-    nav(v-if="data.showCssVariables")
+    nav(v-if="data.modelValue.showCssVariables")
       h5 Themes
       a.button.border.m.l(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
       .max
-      button.transparent.circle(@click="data.showCssVariables=false")
+      button.transparent.circle(@click="data.modelValue.showCssVariables=false")
         i close
-  div(v-if="!data.showCssVariables")
+  div(v-if="!data.modelValue.showCssVariables")
     nav.wrap
-      a.chip.circle.small(@click="sharedDomain.updateMode(data)")
-        i {{ data.isDark ? "light_mode" : "dark_mode" }}
+      a.chip.circle.small(@click="sharedDomain.updateMode(data.modelValue)")
+        i {{ data.modelValue.isDark ? "light_mode" : "dark_mode" }}
       a.chip.circle
         i palette
-        input(type="color", @input="sharedDomain.updateTheme(data, $event)")
+        input(type="color", @input="sharedDomain.updateTheme(data.modelValue, $event)")
       a.chip.circle
         i upload
-        input(type="file", @change="sharedDomain.updateTheme(data, $event)")
-      button.circle.small.red(@click="sharedDomain.updateTheme(data, '#f44336')")
-      button.circle.small.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
-      button.circle.small.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')")
-      button.circle.small.deep-purple(@click="sharedDomain.updateTheme(data, '#673ab7')")
-      button.circle.small.indigo(@click="sharedDomain.updateTheme(data, '#3f51b5')")
-      button.circle.small.blue(@click="sharedDomain.updateTheme(data, '#2196f3')")
-      button.circle.small.light-blue(@click="sharedDomain.updateTheme(data, '#03a9f4')")
-      button.circle.small.cyan(@click="sharedDomain.updateTheme(data, '#00bcd4')")
-      button.circle.small.teal(@click="sharedDomain.updateTheme(data, '#009688')")
-      button.circle.small.green(@click="sharedDomain.updateTheme(data, '#4caf50')")
-      button.circle.small.light-green(@click="sharedDomain.updateTheme(data, '#8bc34a')")
-      button.circle.small.lime(@click="sharedDomain.updateTheme(data, '#cddc39')")
-      button.circle.small.yellow(@click="sharedDomain.updateTheme(data, '#ffeb3b')")
-      button.circle.small.amber(@click="sharedDomain.updateTheme(data, '#ffc107')")
-      button.circle.small.orange(@click="sharedDomain.updateTheme(data, '#ff9800')")
-      button.circle.small.deep-orange(@click="sharedDomain.updateTheme(data, '#ff5722')")
-      button.circle.small.brown(@click="sharedDomain.updateTheme(data, '#795548')")
-      button.circle.small.grey(@click="sharedDomain.updateTheme(data, '#9e9e9e')")
-      button.circle.small.blue-grey(@click="sharedDomain.updateTheme(data, '#607d8b')")
-      button.circle.small.black(@click="sharedDomain.updateTheme(data, '#000000')")
-      button.circle.small.white(@click="sharedDomain.updateTheme(data, '#ffffff')")
-  div(v-if="data.showCssVariables")
+        input(type="file", @change="sharedDomain.updateTheme(data.modelValue, $event)")
+      button.circle.small.red(@click="sharedDomain.updateTheme(data.modelValue, '#f44336')")
+      button.circle.small.pink(@click="sharedDomain.updateTheme(data.modelValue, '#e91e63')")
+      button.circle.small.purple(@click="sharedDomain.updateTheme(data.modelValue, '#9c27b0')")
+      button.circle.small.deep-purple(@click="sharedDomain.updateTheme(data.modelValue, '#673ab7')")
+      button.circle.small.indigo(@click="sharedDomain.updateTheme(data.modelValue, '#3f51b5')")
+      button.circle.small.blue(@click="sharedDomain.updateTheme(data.modelValue, '#2196f3')")
+      button.circle.small.light-blue(@click="sharedDomain.updateTheme(data.modelValue, '#03a9f4')")
+      button.circle.small.cyan(@click="sharedDomain.updateTheme(data.modelValue, '#00bcd4')")
+      button.circle.small.teal(@click="sharedDomain.updateTheme(data.modelValue, '#009688')")
+      button.circle.small.green(@click="sharedDomain.updateTheme(data.modelValue, '#4caf50')")
+      button.circle.small.light-green(@click="sharedDomain.updateTheme(data.modelValue, '#8bc34a')")
+      button.circle.small.lime(@click="sharedDomain.updateTheme(data.modelValue, '#cddc39')")
+      button.circle.small.yellow(@click="sharedDomain.updateTheme(data.modelValue, '#ffeb3b')")
+      button.circle.small.amber(@click="sharedDomain.updateTheme(data.modelValue, '#ffc107')")
+      button.circle.small.orange(@click="sharedDomain.updateTheme(data.modelValue, '#ff9800')")
+      button.circle.small.deep-orange(@click="sharedDomain.updateTheme(data.modelValue, '#ff5722')")
+      button.circle.small.brown(@click="sharedDomain.updateTheme(data.modelValue, '#795548')")
+      button.circle.small.grey(@click="sharedDomain.updateTheme(data.modelValue, '#9e9e9e')")
+      button.circle.small.blue-grey(@click="sharedDomain.updateTheme(data.modelValue, '#607d8b')")
+      button.circle.small.black(@click="sharedDomain.updateTheme(data.modelValue, '#000000')")
+      button.circle.small.white(@click="sharedDomain.updateTheme(data.modelValue, '#ffffff')")
+  div(v-if="data.modelValue.showCssVariables")
     nav
       label.radio
-        input(type="radio", value="light", v-model="data.theme.selected")
+        input(type="radio", value="light", v-model="data.modelValue.theme.selected")
         span Light
       label.radio
-        input(type="radio", value="dark", v-model="data.theme.selected")
+        input(type="radio", value="dark", v-model="data.modelValue.theme.selected")
         span Dark
     .space
     article.border

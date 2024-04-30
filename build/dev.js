@@ -4,9 +4,7 @@ import vue from "@vitejs/plugin-vue";
 (async () => {
   const server = await createServer({
     publicDir: "./src/static",
-    plugins: [vue({
-      reactivityTransform: true,
-    })],
+    plugins: [vue()],
     build: {
       rollupOptions: {
         input: {
