@@ -176,7 +176,7 @@ nav:not(.left, .right, .bottom, .top) > :is(ol, ul) {
 
 nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip),
 nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) {
-  text-align: center;
+  align-self: center;
   display: flex;
   flex-direction: column;
 }

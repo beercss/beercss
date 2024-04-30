@@ -82,7 +82,7 @@ nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > .badge {
 }
 
 .badge.none {
-  inset: auto;
+  inset: auto !important;
   transform: none;
   position: relative;
   margin: 0 0.125rem;
