@@ -41,14 +41,14 @@ active
 ## Example
 
 ```html
-<div class="dialog">
+<dialog class="dialog">
   <h5>Title</h5>
   <p>Content of dialog</p>
   <nav>
     <button>Cancel</button>
     <button>Confirm</button>
   </nav>
-</div>
+</dialog>
 ```
 
 ## Triggers 
@@ -60,14 +60,14 @@ active
 Add/remove `active` class on dialog.
 
 ```html
-<div class="dialog active">
+<dialog class="dialog active">
   <h5>Title</h5>
   <p>Content of dialog</p>
   <nav>
     <button>Cancel</button>
     <button>Confirm</button>
   </nav>
-</div>
+</dialog>
 ```
 
 #### Method 2
@@ -75,14 +75,14 @@ Add/remove `active` class on dialog.
 Call HTML dialog element methods
 
 ```html
-<div class="dialog" id="dialog">
+<dialog class="dialog" id="dialog">
   <h5>Title</h5>
   <p>Content of dialog</p>
   <nav>
     <button>Cancel</button>
     <button>Confirm</button>
   </nav>
-</div>
+</dialog>
 ```
 
 ```js
@@ -98,14 +98,14 @@ Add `data-ui="dialog-selector"` attribute on elements.
 ```html
 <button data-ui="#dialog">Open dialog</button>
 
-<div class="dialog" id="dialog">
+<dialog class="dialog" id="dialog">
   <h5>Title</h5>
   <p>Content of dialog</p>
   <nav>
     <button data-ui="#dialog">Cancel</button>
     <button data-ui="#dialog">Confirm</button>
   </nav>
-</div>
+</dialog>
 ```
 
 #### Method 4
@@ -113,14 +113,14 @@ Add `data-ui="dialog-selector"` attribute on elements.
 Call `ui("dialog-selector")`
 
 ```html
-<div class="dialog" id="dialog">
+<dialog class="dialog" id="dialog">
   <h5>Title</h5>
   <p>Content of dialog</p>
   <nav>
     <button>Cancel</button>
     <button>Confirm</button>
   </nav>
-</div>
+</dialog>
 ```
 
 ```js
