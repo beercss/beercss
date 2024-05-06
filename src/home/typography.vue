@@ -33,7 +33,7 @@
   .medium-space
   h6.middle-align
     span Formatting
-    a.chip.circle(@click="domain.showSamples(data, '#formatting nav *', 'Formatting', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#formatting nav *', 'Formatting', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#formatting-example')")
       i code
   .space
   #formatting
@@ -53,7 +53,7 @@
   .medium-space
   h6.middle-align
     span Line spacing
-    a.chip.circle(@click="domain.showSamples(data, '#spacing > :not(.bold, .small-divider, .space)', 'Line spacing', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#spacing > :not(.bold, .small-divider, .space)', 'Line spacing', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#line-spacing-example')")
       i code
   nav.wrap
     label.radio
