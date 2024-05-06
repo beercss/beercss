@@ -41,7 +41,7 @@ active
 ## Example
 
 ```html
-<dialog class="dialog">
+<dialog>
   <h5>Title</h5>
   <p>Content of dialog</p>
   <nav>
@@ -60,7 +60,7 @@ active
 Add/remove `active` class on dialog.
 
 ```html
-<dialog class="dialog active">
+<dialog class="active">
   <h5>Title</h5>
   <p>Content of dialog</p>
   <nav>
@@ -75,7 +75,7 @@ Add/remove `active` class on dialog.
 Call HTML dialog element methods
 
 ```html
-<dialog class="dialog" id="dialog">
+<dialog id="dialog">
   <h5>Title</h5>
   <p>Content of dialog</p>
   <nav>
@@ -98,7 +98,7 @@ Add `data-ui="dialog-selector"` attribute on elements.
 ```html
 <button data-ui="#dialog">Open dialog</button>
 
-<dialog class="dialog" id="dialog">
+<dialog id="dialog">
   <h5>Title</h5>
   <p>Content of dialog</p>
   <nav>
@@ -113,7 +113,7 @@ Add `data-ui="dialog-selector"` attribute on elements.
 Call `ui("dialog-selector")`
 
 ```html
-<dialog class="dialog" id="dialog">
+<dialog id="dialog">
   <h5>Title</h5>
   <p>Content of dialog</p>
   <nav>
