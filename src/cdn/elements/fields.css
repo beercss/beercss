@@ -143,8 +143,6 @@ input[type=file],
 input[type=color],
 :not(.field) > input[type^=date],
 :not(.field) > input[type^=time],
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button,
 input::-webkit-calendar-picker-indicator {
   opacity: 0;
   position: absolute;
@@ -161,8 +159,14 @@ input::-webkit-calendar-picker-indicator {
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
-input::-webkit-search-results-decoration {
+input::-webkit-search-results-decoration,
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
   display: none;
+}
+
+input[type=number] {
+  appearance: textfield;
 }
 
 .field.border > :is(input, textarea, select) {
