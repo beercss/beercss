@@ -6,7 +6,7 @@
   font-display: block;
   src:
     url("../material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.5.5/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.5.6/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 
 /* rounded icons */
@@ -17,7 +17,7 @@
   font-display: block;
   src:
     url("../material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.5.5/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.5.6/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 
 /* sharp icons */
@@ -28,5 +28,5 @@
   font-display: block;
   src:
     url("../material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.5.5/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.5.6/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
