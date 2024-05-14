@@ -51,10 +51,6 @@
   margin: 0;
 }
 
-.slider > input:focus ~ .tooltip {
-  visibility: visible;
-}
-
 .slider > input:only-of-type {
   pointer-events: all;
 }
@@ -159,15 +155,14 @@
   background: var(--active);
 }
 
-.slider > .tooltip,
-.slider:hover > .tooltip {
-  opacity: 0;
+.slider > .tooltip {
+  visibility: hidden !important;
+  opacity: 0 !important;
   inset: 0 auto auto calc(100% - var(---end));
   border-radius: 2rem;
   transition: top var(--speed2) ease, opacity var(--speed2) ease;
   transform: translate(-50%, -50%) !important;
   padding: 0.75rem 1rem;
-  z-index: 0;
 }
 
 [dir=rtl] .slider > .tooltip {
@@ -191,9 +186,10 @@
   content: var(---value2);
 }
 
-.slider > input:focus ~ .tooltip {
+.slider > :focus ~ .tooltip {
   inset-block-start: -1rem !important;
-  opacity: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .slider.vertical > .tooltip {
@@ -254,4 +250,12 @@
 
 .slider.max.vertical > span {
   inset: var(---end) 0 var(---start) 0;
+}
+
+@media (hover: none){
+  .slider > :hover ~ .tooltip {
+    inset-block-start: -1rem !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 }
