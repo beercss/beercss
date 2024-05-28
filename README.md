@@ -37,7 +37,7 @@ Beer CSS is an MIT-licensed open source project with its ongoing development mad
 - Ready to use with any JS framework.
 - Highly focused on DX.
 - No build steps, configurations or dependencies.
-- Ready to use, without need custom CSS.
+- Build modern interfaces without any custom CSS.
 
 ## Applying "the beer way" in css?
 
