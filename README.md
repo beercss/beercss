@@ -18,7 +18,7 @@ Build material design interfaces in record time...
 
 Cheers, www.beercss.com
 
-## Sponsors ##
+## Sponsors
 
 Beer CSS is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome sponsors and backers. If you'd like to join them, please consider sponsoring Beer CSS's development.
 
@@ -29,17 +29,17 @@ Beer CSS is an MIT-licensed open source project with its ongoing development mad
 ### Github sponsors
 <p><a href="https://github.com/sponsors/beercss"><img src="https://avatars.githubusercontent.com/u/74856856?s=40&v=4" alt="Sponsors"></a></p>
 
-## Why? ##
+# Why?
 
-- The first CSS framework based on Material Design 3.
-- 10x smaller than others CSS frameworks based on Material Design.
-- Translates Material Design to HTML semantic standard.
-- Ready to use with any JS framework.
-- Highly focused on DX.
-- No build steps, configurations or dependencies.
-- Build modern interfaces without any custom CSS.
+- 🥇 The first CSS framework based on Material Design 3.
+- ⬇️ 10x smaller than others CSS frameworks based on Material Design.
+- 🧙‍♂️ Translates Material Design to HTML semantic standard.
+- 🤓 Ready to use with any JS framework.
+- 🪄 Highly focused on DX.
+- 🚫 No build steps, configurations or dependencies.
+- ✨ Build modern interfaces without any custom CSS.
 
-## Applying "the beer way" in css?
+# Applying "the beer way" in css?
 
 This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1516. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: **settings**, **elements** and **helpers**. This sounds weird at first time, because It's not BEM, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
 
@@ -115,7 +115,7 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 .element .helper {...}
 ```
 
-## Get started
+# Get started
 
 ### CDN
 
@@ -279,7 +279,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 
 **We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.**
 
-## Documentation
+# Documentation
 
 Complete documentation and examples available at:
 
@@ -287,15 +287,15 @@ Complete documentation and examples available at:
 - **[Codepen](https://codepen.io/collection/XydYMB)**
 - **[Homepage](https://www.beercss.com)**
 
-## Contributing guide
+# Contributing guide
 
 Hi! We are really excited that you are interested in contributing to Beer CSS! Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
 
 [Beer CSS Contributing Guidelines](CONTRIBUTING.md)
 
-## License
+# License
 
 [MIT](https://opensource.org/licenses/MIT)
 
-## Cheers to all people here 🍻
+# Cheers to all people here 🍻
 [![Stargazers repo roster for @beercss/beercss](https://reporoster.com/stars/notext/beercss/beercss)](https://github.com/beercss/beercss/stargazers)
