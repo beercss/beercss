@@ -58,7 +58,7 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 |---------------|
 ```
 
-### DO:
+### ✅ DO:
 
 ```
 // 1 setting to 1 document
@@ -85,7 +85,7 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 .element > .helper {...}
 ```
 
-### DON'T:
+### 🚫 DON'T:
 
 ```
 // N elements to 1 tag
