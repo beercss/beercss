@@ -265,7 +265,14 @@ div
     .large-space
     #begin
       .small-height
+      .small-height
       h1 We are working to translate a modern UI into HTML semantic standard
+      h3 
+        a.link(href="https://github.com/beercss/beercss") Don't forget to star us on Github
+      .small-height
+      .small-height
+      projectsByCommunity
+      .small-height
       .small-height
       .grid
         #intro.s12
@@ -493,6 +500,7 @@ import themes from "../shared/themes.vue";
 import data from "./data";
 import domain from "./domain";
 import sharedDomain from "../shared/domain";
+import projectsByCommunity from "./projectsByCommunity.vue";
 import appBars from "./appBars.vue";
 import badges from "./badges.vue";
 import buttons from "./buttons.vue";
