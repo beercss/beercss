@@ -5,4 +5,4 @@ interface IBeerCssTheme {
 
 declare module "beercss";
 declare function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme>;
-declare function beercss(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme>;
+export default ui;

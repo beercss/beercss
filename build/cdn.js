@@ -24,7 +24,7 @@ import fs from "fs";
     fs.writeFileSync("./dist/cdn/beer.min.css", cssContent.replace(/url\(\//g, "url("));
 
     const jsContent = fs.readFileSync("./dist/cdn/beer.min.js", "utf-8");
-    fs.writeFileSync("./dist/cdn/beer.min.js", "export default (() => {\n" + jsContent + "return globalThis.ui;\n})();");
+    fs.writeFileSync("./dist/cdn/beer.min.js", jsContent + "\nexport default globalThis.ui;");
   } catch (error) {
     console.error(error);
   }
