@@ -1,4 +1,4 @@
-interface IBeerCssTheme {
+declare interface IBeerCssTheme {
   dark: string,
   light: string,
 }

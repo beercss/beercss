@@ -1,3 +1,8 @@
+interface IBeerCssTheme {
+  dark: string,
+  light: string,
+}
+
 let _timeoutSnackbar: ReturnType<typeof setTimeout>;
 let _timeoutMutation: ReturnType<typeof setTimeout>;
 let _timeoutMenu: ReturnType<typeof setTimeout>;
