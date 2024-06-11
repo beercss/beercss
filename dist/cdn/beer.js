@@ -1,4 +1,3 @@
-var beer = "";
 let _timeoutSnackbar;
 let _timeoutMutation;
 let _timeoutMenu;
@@ -20,21 +19,21 @@ function guid() {
 }
 function query(selector, element) {
   try {
-    return typeof selector === "string" ? (element != null ? element : document).querySelector(selector) : selector;
+    return typeof selector === "string" ? (element ?? document).querySelector(selector) : selector;
   } catch {
     return null;
   }
 }
 function queryAll(selector, element) {
   try {
-    return typeof selector === "string" ? (element != null ? element : document).querySelectorAll(selector) : selector != null ? selector : _emptyNodeList;
+    return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
   } catch {
     return _emptyNodeList;
   }
 }
 function hasClass(element, name) {
-  var _a, _b;
-  return (_b = (_a = element == null ? void 0 : element.classList) == null ? void 0 : _a.contains(name)) != null ? _b : false;
+  var _a;
+  return ((_a = element == null ? void 0 : element.classList) == null ? void 0 : _a.contains(name)) ?? false;
 }
 function hasTag(element, name) {
   var _a;
@@ -282,16 +281,15 @@ function menu(from, to, e) {
   if (_timeoutMenu)
     clearTimeout(_timeoutMenu);
   _timeoutMenu = setTimeout(() => {
-    var _a, _b;
     on(document.body, "click", onClickDocument);
     tab(from);
     if (hasClass(to, "active")) {
       if (!e)
         return removeClass(to, "active");
       const trustedFrom = e.target;
-      const trustedTo = query((_a = trustedFrom.getAttribute("data-ui")) != null ? _a : "");
+      const trustedTo = query(trustedFrom.getAttribute("data-ui") ?? "");
       const trustedMenu = trustedFrom.closest("menu");
-      const trustedActive = !query("menu", (_b = trustedFrom.closest("[data-ui]")) != null ? _b : void 0);
+      const trustedActive = !query("menu", trustedFrom.closest("[data-ui]") ?? void 0);
       if (trustedTo && trustedTo !== trustedMenu)
         return menu(trustedFrom, trustedTo);
       if (!trustedTo && !trustedActive && trustedMenu)
@@ -367,7 +365,7 @@ function snackbar(from, to, milliseconds) {
     return;
   _timeoutSnackbar = setTimeout(() => {
     removeClass(to, "active");
-  }, milliseconds != null ? milliseconds : 6e3);
+  }, milliseconds ?? 6e3);
 }
 function lastTheme() {
   if (_lastTheme.light && _lastTheme.dark)

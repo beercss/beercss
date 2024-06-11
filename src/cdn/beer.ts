@@ -1,7 +1,4 @@
-interface IBeerCssTheme {
-  dark: string,
-  light: string,
-}
+import { IBeerCssTheme } from "./interfaces";
 
 let _timeoutSnackbar: ReturnType<typeof setTimeout>;
 let _timeoutMutation: ReturnType<typeof setTimeout>;

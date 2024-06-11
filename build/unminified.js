@@ -5,7 +5,6 @@ export default async function() {
   await build({
     build: {
       minify: false,
-      emptyOutDir: true,
       outDir: "./dist/cdn",
       rollupOptions: {
         input: {
@@ -14,7 +13,7 @@ export default async function() {
         output: {
           entryFileNames: "[name].js",
           chunkFileNames: "[name].js",
-          assetFileNames: "[name].[ext]",
+          assetFileNames: (info) => (info.name.indexOf(".css") != -1) ? "[name].css" : "[name].[ext]",
           manualChunks: undefined,
         },
       },
@@ -29,5 +28,7 @@ export default async function() {
     fs.writeFileSync("./dist/cdn/beer.js", jsContent + "\nexport default globalThis.ui;");
   } catch (error) {
     console.error(error);
+  } finally {
+    return true;
   }
 }

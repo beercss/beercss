@@ -4,17 +4,16 @@ import fs from "fs";
 export default async function() {
   await build({
     build: {
-      minify: true,
       emptyOutDir: false,
       outDir: "./dist/cdn",
       rollupOptions: {
         input: {
-          "beer.min": "./src/cdn.ts",
+          "beer": "./src/cdn.ts",
         },
         output: {
-          entryFileNames: "[name].js",
-          chunkFileNames: "[name].js",
-          assetFileNames: "[name].[ext]",
+          entryFileNames: "[name].min.js",
+          chunkFileNames: "[name].min.js",
+          assetFileNames: (info) => (info.name.indexOf(".css") != -1) ? "[name].min.css" : "[name].[ext]",
           manualChunks: undefined,
         },
       },
@@ -29,5 +28,7 @@ export default async function() {
     fs.writeFileSync("./dist/cdn/beer.min.js", jsContent + "\nexport default globalThis.ui;");
   } catch (error) {
     console.error(error);
+  } finally {
+    return true;
   }
 }
