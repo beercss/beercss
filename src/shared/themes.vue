@@ -64,25 +64,27 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
 <script setup lang="ts">
 import { onMounted } from "vue";
 import sharedDomain from "./domain";
+import { type ILayout } from "./interfaces";
 
 export interface IProps {
   id?: string,
-  modelValue?: any,
+  modelValue?: ILayout,
   position?: string,
 }
 
 const data = withDefaults(defineProps<IProps>(), {
   id: "themes",
-  modelValue: null,
   position: "left",
 });
 
 onMounted(() => {
-  if (!data.modelValue.theme?.light || !data.modelValue.theme.dark || !data.modelValue.theme.selected) { void sharedDomain.updateTheme(data.modelValue, null); }
+  if (!data.modelValue) return;
+  if (!data.modelValue.theme.light || !data.modelValue?.theme.dark || !data.modelValue?.theme.selected) { void sharedDomain.updateTheme(data.modelValue, null); }
 });
 
 const sourceCode = () => {
-  return ((data.modelValue.theme)[data.modelValue.theme.selected] || "").replace(/;/g, ";<br/>");
+  if (!data.modelValue) return;
+  return ((data.modelValue.theme as any)[data.modelValue.theme.selected] || "").replace(/;/g, ";<br/>");
 };
 </script>
 

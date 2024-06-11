@@ -90,7 +90,8 @@ function create (htmlAttributesAsJson: any): HTMLElement {
   const element = document.createElement("div");
   for (let i = 0, keys = Object.keys(htmlAttributesAsJson), n = keys.length; i < n; i++) {
     const key = keys[i];
-    element.setAttribute(key, htmlAttributesAsJson[key]);
+    const value = htmlAttributesAsJson[key] as string;
+    element.setAttribute(key, value);
   }
   return element;
 }
@@ -268,7 +269,7 @@ async function open (from: Element, to: Element | null, options?: any, e?: Event
 
   if (hasTag(to, "dialog")) { await dialog(from, to); return; }
   if (hasTag(to, "menu")) return menu(from, to, e);
-  if (hasClass(to, "snackbar")) { snackbar(from, to, options); return; }
+  if (hasClass(to, "snackbar")) { snackbar(from, to, options as number); return; }
   if (hasClass(to, "page")) { page(from, to); return; }
 
   tab(from);

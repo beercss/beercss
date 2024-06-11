@@ -8,7 +8,7 @@ const _lastTheme = {
 };
 const _emptyNodeList = [];
 async function wait(milliseconds) {
-  return await new Promise((resolve) => setTimeout(resolve, milliseconds));
+  await new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
 function guid() {
   return "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
@@ -74,7 +74,8 @@ function create(htmlAttributesAsJson) {
   const element = document.createElement("div");
   for (let i = 0, keys = Object.keys(htmlAttributesAsJson), n = keys.length; i < n; i++) {
     const key = keys[i];
-    element.setAttribute(key, htmlAttributesAsJson[key]);
+    const value = htmlAttributesAsJson[key];
+    element.setAttribute(key, value);
   }
   return element;
 }
@@ -150,7 +151,8 @@ function updateFile(target, e) {
     const previousTarget = prev(target);
     if (!hasType(previousTarget, "file"))
       return;
-    return previousTarget.click();
+    previousTarget.click();
+    return;
   }
   const currentTarget = target;
   const nextTarget = next(target);
@@ -166,7 +168,8 @@ function updateColor(target, e) {
     const previousTarget = prev(target);
     if (!hasType(previousTarget, "color"))
       return;
-    return previousTarget.click();
+    previousTarget.click();
+    return;
   }
   const currentTarget = target;
   const nextTarget = next(target);
@@ -225,8 +228,10 @@ function updateRange(target) {
 function updateAllRanges(e) {
   if (e) {
     const input = e.target;
-    if (input.type === "range")
-      return updateRange(input);
+    if (input.type === "range") {
+      updateRange(input);
+      return;
+    }
   }
   const ranges = queryAll(".slider > input[type=range]");
   if (!ranges.length)
@@ -242,22 +247,30 @@ async function open(from, to, options, e) {
     if (!to)
       return;
   }
-  if (hasTag(to, "dialog"))
-    return await dialog(from, to);
+  if (hasTag(to, "dialog")) {
+    await dialog(from, to);
+    return;
+  }
   if (hasTag(to, "menu"))
     return menu(from, to, e);
-  if (hasClass(to, "snackbar"))
-    return snackbar(from, to, options);
-  if (hasClass(to, "page"))
-    return page(from, to);
+  if (hasClass(to, "snackbar")) {
+    snackbar(from, to, options);
+    return;
+  }
+  if (hasClass(to, "page")) {
+    page(from, to);
+    return;
+  }
   tab(from);
-  if (hasClass(to, "active"))
-    return removeClass(to, "active");
+  if (hasClass(to, "active")) {
+    removeClass(to, "active");
+    return;
+  }
   addClass(to, "active");
 }
 function tab(from) {
   if (from.id && hasClass(from, "page"))
-    from = query(`[data-ui="#${from.id}"]`);
+    from = query(`[data-ui="#${from.id}"]`) ?? from;
   const container = parent(from);
   if (!hasClass(container, "tabs"))
     return;
@@ -284,8 +297,10 @@ function menu(from, to, e) {
     on(document.body, "click", onClickDocument);
     tab(from);
     if (hasClass(to, "active")) {
-      if (!e)
-        return removeClass(to, "active");
+      if (!e) {
+        removeClass(to, "active");
+        return;
+      }
       const trustedFrom = e.target;
       const trustedTo = query(trustedFrom.getAttribute("data-ui") ?? "");
       const trustedMenu = trustedFrom.closest("menu");
@@ -294,7 +309,8 @@ function menu(from, to, e) {
         return menu(trustedFrom, trustedTo);
       if (!trustedTo && !trustedActive && trustedMenu)
         return false;
-      return removeClass(to, "active");
+      removeClass(to, "active");
+      return;
     }
     const menus = queryAll("menu.active");
     for (let i = 0, n = menus.length; i < n; i++)
@@ -433,8 +449,10 @@ function setup() {
 }
 function ui(selector, options) {
   if (selector) {
-    if (selector === "setup")
-      return setup();
+    if (selector === "setup") {
+      setup();
+      return;
+    }
     if (selector === "guid")
       return guid();
     if (selector === "mode")

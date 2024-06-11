@@ -63,6 +63,8 @@ module.exports = {
     "vue/require-v-for-key": 0,
     // allow mutation props
     "vue/no-mutating-props": "warn",
+    // allow any arguments
+    "@typescript-eslint/no-unsafe-argument": "warn",
     // 2-space indentation
     indent: ["error", 2],
 
