@@ -11,7 +11,6 @@ node_modules
 dist-ssr
 *.local
 package-lock.json
-pnpm-lock.yaml
 .firebase
 
 # Editor directories and files
