@@ -1,5 +1,5 @@
-import { ref, Ref } from "vue";
-import { IMaterialDesign3 } from "./interfaces";
+import { ref, type Ref } from "vue";
+import { type IMaterialDesign3 } from "./interfaces";
 import theme from "../shared/theme";
 
 const data: IMaterialDesign3 = {

@@ -51,10 +51,10 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
   div(v-if="data.modelValue.showCssVariables")
     nav
       label.radio
-        input(type="radio", value="light", v-model="data.modelValue.theme.selected")
+        input(v-model="data.modelValue.theme.selected", type="radio", value="light")
         span Light
       label.radio
-        input(type="radio", value="dark", v-model="data.modelValue.theme.selected")
+        input(v-model="data.modelValue.theme.selected", type="radio", value="dark")
         span Dark
     .space
     article.border
@@ -78,11 +78,11 @@ const data = withDefaults(defineProps<IProps>(), {
 });
 
 onMounted(() => {
-  if (!data.modelValue.theme || !data.modelValue.theme.light || !data.modelValue.theme.dark || !data.modelValue.theme.selected) { sharedDomain.updateTheme(data.modelValue, null); }
+  if (!data.modelValue.theme?.light || !data.modelValue.theme.dark || !data.modelValue.theme.selected) { void sharedDomain.updateTheme(data.modelValue, null); }
 });
 
 const sourceCode = () => {
-  return ((data.modelValue.theme as any)[data.modelValue.theme.selected] || "").replace(/;/g, ";<br/>");
+  return ((data.modelValue.theme)[data.modelValue.theme.selected] || "").replace(/;/g, ";<br/>");
 };
 </script>
 

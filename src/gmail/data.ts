@@ -1,5 +1,5 @@
-import { Ref, ref } from "vue";
-import { IGmail } from "./interfaces";
+import { type Ref, ref } from "vue";
+import { type IGmail } from "./interfaces";
 import theme from "../shared/theme";
 
 const drafts = [];

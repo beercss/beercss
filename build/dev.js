@@ -1,7 +1,7 @@
 import { createServer } from "vite";
 import vue from "@vitejs/plugin-vue";
 
-(async () => {
+try {
   const server = await createServer({
     publicDir: "./src/static",
     plugins: [vue()],
@@ -24,6 +24,7 @@ import vue from "@vitejs/plugin-vue";
   });
 
   await server.listen();
-
   server.printUrls();
-})();
+} catch(error) {
+  console.log(error);
+}

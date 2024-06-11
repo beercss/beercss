@@ -98,7 +98,7 @@
         i code
     nav.wrap
       label.radio(v-show="!data.isHorizontal")
-        input#left-navigations(type="radio", name="position-navigations", @click="domain.updateMenu(data, 'left')", checked)
+        input#left-navigations(type="radio", name="position-navigations", checked, @click="domain.updateMenu(data, 'left')")
         span left
       label.radio(v-show="!data.isHorizontal")
         input#right-navigations(type="radio", name="position-navigations", @click="domain.updateMenu(data, 'right')")
@@ -118,7 +118,7 @@
         i code
     nav.wrap
       label.radio
-        input#default-navigations(type="radio", name="size-navigations", @click="domain.updateMinMax('#navigation-drawer .drawer', '')", checked)
+        input#default-navigations(type="radio", name="size-navigations", checked, @click="domain.updateMinMax('#navigation-drawer .drawer', '')")
         span default
       label.radio
         input#min-navigations(type="radio", name="size-navigations", @click="domain.updateMinMax('#navigation-drawer .drawer', 'min')")

@@ -1,4 +1,4 @@
-import { IBeerCssTheme } from "./interfaces";
+import { type IBeerCssTheme } from "./interfaces";
 
 let _timeoutSnackbar: ReturnType<typeof setTimeout>;
 let _timeoutMutation: ReturnType<typeof setTimeout>;
@@ -10,8 +10,8 @@ const _lastTheme: IBeerCssTheme = {
 };
 const _emptyNodeList = [] as unknown as NodeListOf<Element>;
 
-async function wait (milliseconds: number): Promise<Function> {
-  return await new Promise((resolve: Function) => setTimeout(resolve, milliseconds));
+async function wait (milliseconds: number) {
+  await new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
 
 function guid (): string {
@@ -171,7 +171,7 @@ function updateFile (target: Element, e?: KeyboardEvent): void {
   if (e && e.key === "Enter") {
     const previousTarget = prev(target) as HTMLInputElement;
     if (!hasType(previousTarget, "file")) return;
-    return previousTarget.click();
+    previousTarget.click(); return;
   }
 
   const currentTarget = target as HTMLInputElement;
@@ -187,7 +187,7 @@ function updateColor (target: Element, e?: KeyboardEvent): void {
   if (e && e.key === "Enter") {
     const previousTarget = prev(target) as HTMLInputElement;
     if (!hasType(previousTarget, "color")) return;
-    return previousTarget.click();
+    previousTarget.click(); return;
   }
 
   const currentTarget = target as HTMLInputElement;
@@ -251,7 +251,7 @@ function updateRange (target: Element): void {
 function updateAllRanges (e?: Event) {
   if (e) {
     const input = e.target as HTMLInputElement;
-    if (input.type === "range") return updateRange(input);
+    if (input.type === "range") { updateRange(input); return; }
   }
 
   const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
@@ -266,20 +266,20 @@ async function open (from: Element, to: Element | null, options?: any, e?: Event
     if (!to) return;
   }
 
-  if (hasTag(to, "dialog")) return await dialog(from, to);
+  if (hasTag(to, "dialog")) { await dialog(from, to); return; }
   if (hasTag(to, "menu")) return menu(from, to, e);
-  if (hasClass(to, "snackbar")) return snackbar(from, to, options);
-  if (hasClass(to, "page")) return page(from, to);
+  if (hasClass(to, "snackbar")) { snackbar(from, to, options); return; }
+  if (hasClass(to, "page")) { page(from, to); return; }
 
   tab(from);
 
-  if (hasClass(to, "active")) return removeClass(to, "active");
+  if (hasClass(to, "active")) { removeClass(to, "active"); return; }
 
   addClass(to, "active");
 }
 
 function tab (from: Element): void {
-  if (from.id && hasClass(from, "page")) from = query(`[data-ui="#${from.id}"]`) as Element;
+  if (from.id && hasClass(from, "page")) from = query(`[data-ui="#${from.id}"]`) ?? from;
 
   const container = parent(from);
   if (!hasClass(container, "tabs")) return;
@@ -307,7 +307,7 @@ function menu (from: Element, to: Element, e?: Event): any {
     tab(from);
 
     if (hasClass(to, "active")) {
-      if (!e) return removeClass(to, "active");
+      if (!e) { removeClass(to, "active"); return; }
 
       const trustedFrom = e.target as Element;
       const trustedTo = query(trustedFrom.getAttribute("data-ui") ?? "");
@@ -316,7 +316,7 @@ function menu (from: Element, to: Element, e?: Event): any {
 
       if (trustedTo && trustedTo !== trustedMenu) return menu(trustedFrom, trustedTo);
       if (!trustedTo && !trustedActive && trustedMenu) return false;
-      return removeClass(to, "active");
+      removeClass(to, "active"); return;
     }
 
     const menus = queryAll("menu.active");
@@ -447,7 +447,7 @@ function theme (source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssT
   });
 }
 
-function mode (value: string | any): string {
+function mode (value: string): string {
   if (!value) return /dark/i.test(document.body.className) ? "dark" : "light";
   document.body.classList.remove("light", "dark");
   document.body.classList.add(value);
@@ -456,7 +456,7 @@ function mode (value: string | any): string {
   return value;
 }
 
-function setup (): void {
+function setup (): undefined {
   if (_mutation) return;
   _mutation = new MutationObserver(onMutation);
   _mutation.observe(document.body, { childList: true, subtree: true });
@@ -465,9 +465,9 @@ function setup (): void {
 
 function ui (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
   if (selector) {
-    if (selector === "setup") return setup() as undefined;
+    if (selector === "setup") { setup(); return; }
     if (selector === "guid") return guid();
-    if (selector === "mode") return mode(options);
+    if (selector === "mode") return mode(options as string);
     if (selector === "theme") return theme(options);
 
     const to = query(selector);

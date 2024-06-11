@@ -61,6 +61,8 @@ module.exports = {
     "vue/multi-word-component-names": 0,
     // allow position as key in v-for
     "vue/require-v-for-key": 0,
+    // allow mutation props
+    "vue/no-mutating-props": "warn",
     // 2-space indentation
     indent: ["error", 2],
 

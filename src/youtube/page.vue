@@ -170,7 +170,6 @@
 import { onMounted } from "vue";
 import themes from "../shared/themes.vue";
 import domain from "./domain";
-import sharedDomain from "../shared/domain";
 import data from "./data";
 import explore from "./explore.vue";
 import home from "./home.vue";

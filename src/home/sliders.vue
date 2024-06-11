@@ -26,7 +26,7 @@
       input(type="radio", name="size-sliders1", @click="domain.updateSize('#sliders1 .slider', 'large')")
       span large
     label.radio
-      input(type="radio", name="direction-sliders1", @click="domain.updateDirection('#sliders1 .slider', '')", checked)
+      input(type="radio", name="direction-sliders1", checked, @click="domain.updateDirection('#sliders1 .slider', '')")
       span horizontal
     label.radio
       input(type="radio", name="direction-sliders1", @click="domain.updateDirection('#sliders1 .slider', 'vertical')")
@@ -118,7 +118,7 @@
       input(type="radio", name="size-sliders4", @click="domain.updateSize('#sliders4 .slider', 'large')")
       span large
     label.radio
-      input(type="radio", name="direction-sliders4", @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', ''); domain.updateAlign('#sliders4 nav', ''); updateHorizontalSlider(true);", checked)
+      input(type="radio", name="direction-sliders4", checked, @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', ''); domain.updateAlign('#sliders4 nav', ''); updateHorizontalSlider(true);")
       span horizontal
     label.radio
       input(type="radio", name="direction-sliders4", @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', 'vertical'); domain.updateAlign('#sliders4 nav', 'center-align'); updateHorizontalSlider(false);")
@@ -186,7 +186,7 @@
         i code
     nav.wrap
       label.radio
-        input(type="radio", name="color-sliders5", @click="domain.updateTextColor('#sliders5 .slider', '')", checked)
+        input(type="radio", name="color-sliders5", checked, @click="domain.updateTextColor('#sliders5 .slider', '')")
         span primary
       label.radio
         input(type="radio", name="color-sliders5", @click="domain.updateTextColor('#sliders5 .slider', 'orange-text')")
@@ -209,7 +209,6 @@
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";
-import { onMounted } from "vue";
 
 const updateHorizontalSlider = (isHorizontal: boolean) => {
   data.value.isHorizontalSlider = isHorizontal;

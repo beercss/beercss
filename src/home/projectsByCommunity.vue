@@ -34,7 +34,5 @@ section
 </template>
 
 <script setup lang="ts">
-import domain from "./domain";
-import data from "./data";
 </script>
   

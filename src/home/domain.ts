@@ -1,8 +1,8 @@
 import { nextTick } from "vue";
-import { IHome } from "./interfaces";
+import { type IHome } from "./interfaces";
 import utils from "../shared/utils";
 import sharedDomain from "../shared/domain";
-import { ILayout } from "../shared/interfaces";
+import { type ILayout } from "../shared/interfaces";
 
 const updateElevate = (selector: any, elevate?: string) => {
   const elements = utils.queryAll(selector);

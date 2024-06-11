@@ -1,7 +1,9 @@
 import unminified from "./unminified.js";
 import minified from "./minified.js";
 
-(async() => {
+try {
   await unminified();
-  await minified();
-})();
+  await minified();  
+} catch(error) {
+  console.error(error);
+}

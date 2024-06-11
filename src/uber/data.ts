@@ -1,5 +1,5 @@
-import { ref, Ref } from "vue";
-import { IUber } from "./interfaces";
+import { ref, type Ref } from "vue";
+import { type IUber } from "./interfaces";
 import theme from "../shared/theme";
 
 const data: IUber = {

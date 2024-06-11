@@ -216,7 +216,6 @@ div
 import { onMounted } from "vue";
 import themes from "../shared/themes.vue";
 import data from "./data";
-import sharedDomain from "../shared/domain";
 import home from "./home.vue";
 import drafts from "./drafts.vue";
 import important from "./important.vue";

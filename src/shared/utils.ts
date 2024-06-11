@@ -1,4 +1,4 @@
-import { IInstallEvent } from "./interfaces";
+import { type IInstallEvent } from "./interfaces";
 
 let _installEvent: IInstallEvent;
 
@@ -6,7 +6,7 @@ const id = (): string => {
   return `id${(new Date().getTime().toString() + Math.floor(Math.random() * (999999 - 100000) + 100000).toString()).padStart(22, "0")}`;
 };
 
-const wait = async (milliseconds: number) => await new Promise((resolve: Function) => setTimeout(resolve, milliseconds));
+const wait = async (milliseconds: number) => await new Promise((resolve) => setTimeout(resolve, milliseconds));
 
 const html = (elements?: NodeListOf<Element>, html: string = "") => {
   elements?.forEach((x: Element) => { x.innerHTML = html; });
@@ -23,10 +23,10 @@ const clone = (element: Element | null) => {
 };
 
 const removeClass = (elements: NodeListOf<Element>, classes: Array<string>) => {
-  elements.forEach((x: Element) => x.classList.remove(...classes));
+  elements.forEach((x: Element) => { x.classList.remove(...classes); });
 };
 
-const addClass = (elements: NodeListOf<Element>, classes: Array<string>, filter: Function = (x: Element) => true) => {
+const addClass = (elements: NodeListOf<Element>, classes: Array<string>, filter: (x: Element) => true) => {
   elements.forEach((x: Element) => filter(x) ? x.classList.add(...classes) : null);
 };
 
@@ -40,12 +40,12 @@ const is = (element: Element | null, selectors: Array<string>) => {
 };
 
 const removeAttribute = (elements: NodeListOf<Element>, attribute: string) => {
-  elements.forEach((x: Element) => x.removeAttribute(attribute));
+  elements.forEach((x: Element) => { x.removeAttribute(attribute); });
 };
 
 const setAttribute = (elements: NodeListOf<Element>, key: string, value: any) => {
   if (/checked|selected|readonly/i.test(key)) elements.forEach((x: any) => { x[key] = value; });
-  else elements.forEach((x: Element) => x.setAttribute(key, value));
+  else elements.forEach((x: Element) => { x.setAttribute(key, value); });
 };
 
 const removeValue = (elements: NodeListOf<Element>) => {

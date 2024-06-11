@@ -15,10 +15,10 @@ div
     a(@click="domain.updateMenu(data, 'right')")
       i arrow_forward
       span Right
-    a(@click="domain.updateRtlLtr(data)", v-show="!data.isRtl")
+    a(v-show="!data.isRtl", @click="domain.updateRtlLtr(data)")
       i checklist_rtl
       span RTL
-    a(@click="domain.updateRtlLtr(data)", v-show="data.isRtl")
+    a(v-show="data.isRtl", @click="domain.updateRtlLtr(data)")
       i checklist
       span LTR
     a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
@@ -482,13 +482,13 @@ div
         header.fixed.front
           nav
             .max.truncate
-              h5 {{data.name}}
+              h5 {{ data.name }}
             a.m.l.button.small-round.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
             a.button.circle.transparent.s(v-show="data.urlSample", :href="data.urlSample", target="_blank")
               i description
             button.circle.transparent(data-ui="#dialog-samples")
               i close
-        article.large-padding.border(v-for="(exemplo in data.samples")
+        article.large-padding.border(v-for="exemplo in data.samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
           pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")

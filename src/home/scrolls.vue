@@ -26,7 +26,7 @@
   h6.middle-align
     span Images
   .row.scroll
-    img.small-width.small-height(:src="'/favicon.png'", v-for="i in [1,2,3,4,5,6,7,8,9,10]")
+    img.small-width.small-height(v-for="i in [1,2,3,4,5,6,7,8,9,10]", :src="'/favicon.png'")
   .medium-space
   h6.middle-align
     span Cards

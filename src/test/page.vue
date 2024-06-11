@@ -349,7 +349,7 @@ main.responsive
       input(v-model="number")
       label Test
     label.slider.large.min
-      input#range(type="range", v-model="number")
+      input#range(v-model="number", type="range")
       span
     label.slider.large.min
       input#range(type="range", value="10")
@@ -991,17 +991,15 @@ main.responsive
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
 import domain from "../home/domain";
 import datePicker from "./datePicker/datePicker.vue";
 const updateTheme = () => {
-  document.body.className = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
+  document.body.className = document.body.className.includes("dark") ? "light" : "dark";
 };
 const updateNavigationDrawer = (direction: string) => {
   const elemento = document.getElementById("navigation-drawer");
   if (elemento) elemento.className = "drawer " + direction;
 };
 const number = ref(0);
-const text = ref();
 const select = ref();
 </script>

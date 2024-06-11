@@ -1,10 +1,10 @@
-import { App, createApp } from "vue";
+import { type App, createApp } from "vue";
 
 let previousRoute = "";
 let callbackRoute = (url: string) => {};
 const apps: Array<App<Element>> = [];
 const eventName = "onRoute";
-const listener = () => callbackRoute(page.current);
+const listener = () => { callbackRoute(page.current); };
 
 export const onRoute = (callback: any) => {
   callbackRoute = callback;
@@ -20,7 +20,7 @@ export const router = (url: string, component: any) => {
     const baseRoute = page.current.toLocaleLowerCase().split("/")[1] || "";
     if (baseRoute && previousRoute.includes(baseRoute)) return dispatchEvent(new Event(eventName));
 
-    apps.forEach(x => x.unmount());
+    apps.forEach(x => { x.unmount(); });
     apps.splice(0);
 
     previousRoute = baseRoute;

@@ -1,5 +1,5 @@
-import { ref, Ref } from "vue";
-import { IReddit } from "./interfaces";
+import { ref, type Ref } from "vue";
+import { type IReddit } from "./interfaces";
 import theme from "../shared/theme";
 
 const data: IReddit = {

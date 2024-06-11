@@ -1,4 +1,4 @@
-import { ILayout } from "./interfaces";
+import { type ILayout } from "./interfaces";
 
 const data: ILayout = {
   theme: {
