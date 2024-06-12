@@ -991,6 +991,7 @@ main.responsive
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import domain from "../home/domain";
 import datePicker from "./datePicker/datePicker.vue";
 const updateTheme = () => {
