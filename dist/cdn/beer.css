@@ -2954,6 +2954,8 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) {
   white-space: nowrap;
   gap: 1rem;
   margin: 0;
+}
+a.row {
   min-block-size: 3rem;
 }
 :is(nav, .row, .max) > :only-child,
