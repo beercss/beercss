@@ -27,7 +27,7 @@ const removeClass = (elements: NodeListOf<Element>, classes: Array<string>) => {
 };
 
 const addClass = (elements: NodeListOf<Element>, classes: Array<string>, filter?: (x: Element) => boolean) => {
-  elements.forEach((x: Element) => { if (filter?.(x)) x.classList.add(...classes); });
+  elements.forEach((x: Element) => { if (!filter || filter(x)) x.classList.add(...classes); });
 };
 
 const is = (element: Element | null, selectors: Array<string>) => {
