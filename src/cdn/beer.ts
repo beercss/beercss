@@ -457,7 +457,7 @@ function mode (value: string): string {
   return value;
 }
 
-function setup (): undefined {
+function setup () {
   if (_mutation) return;
   _mutation = new MutationObserver(onMutation);
   _mutation.observe(document.body, { childList: true, subtree: true });
