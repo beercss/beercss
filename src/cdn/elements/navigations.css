@@ -247,6 +247,36 @@ nav:not(.left, .right) > .large-space {
   inline-size: 1.5rem;
 }
 
+nav.tabbed {
+  background-color: var(--surface-container);
+  border-radius: 4rem !important;
+  gap: 0rem;
+  overflow-x: auto;
+}
+
+nav.tabbed > a {
+  border-radius: inherit;
+  block-size: 4rem;
+  display: inline-flex;
+  align-items: center;
+  padding-inline: 1rem;
+  gap: 0.5rem;
+  font-size: 1rem;
+  flex: 1;
+}
+
+nav.tabbed > a.active {
+  background-color: var(--primary-container);
+}
+
+nav.tabbed.small > a {
+  block-size: 3rem;
+}
+
+nav.tabbed.large > a {
+  block-size: 5rem;
+}
+
 @media only screen and (max-width: 600px) {
   nav.top,
   nav.bottom {

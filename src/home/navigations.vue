@@ -156,6 +156,36 @@
         a
           i stop
           span Label
+  .medium-space
+  #navigation-tabbed
+    .medium-space
+    h6.middle-align
+      span Navigation tabbed
+      a.chip.circle(@click="domain.showSamples(data, '#navigation-tabbed > .tabbed', 'Navigation tabbed', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+        i code
+    nav.wrap
+      label.radio
+        input#small-navigations-tabbed(type="radio", name="size-navigations-tabbed", checked, @click="domain.updateSize('#navigation-tabbed .tabbed', 'small')")
+        span small
+      label.radio
+        input#default-navigations-tabbed(type="radio", name="size-navigations-tabbed", @click="domain.updateSize('#navigation-tabbed .tabbed', '')")
+        span medium
+      label.radio
+        input#large-navigations-tabbed(type="radio", name="size-navigations-tabbed", @click="domain.updateSize('#navigation-tabbed .tabbed', 'large')")
+        span large
+    nav.tabbed
+      a.active
+        i info
+        span Overview
+      a
+        i style
+        span Specs
+      a
+        i design_services
+        span Guidelines
+      a
+        i accessibility_new
+        span Acessibility
 </template>
 
 <script setup lang="ts">
