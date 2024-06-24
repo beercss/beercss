@@ -1552,7 +1552,8 @@ p {
 .wave::after,
 .chip::after,
 .wave.light::after,
-:is(.button, button)::after {
+:is(.button, button)::after,
+:is(nav.tabbed, .tabs) > a::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -1569,15 +1570,16 @@ p {
 .wave.row::after,
 .chip::after,
 :is(.button, button).border::after,
-:is(.button, button).transparent::after {
+:is(.button, button).transparent::after ,
+:is(nav.tabbed, .tabs) > a::after {
   background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
 }
-:is(.wave, .chip, .button, button):is(:focus-visible, :hover)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):is(:focus-visible, :hover)::after {
   background-size: 15000%;
   opacity: 1;
   transition: background-size var(--speed2) linear;
 }
-:is(.wave, .chip, .button, button):active::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):active::after {
   background-size: 5000%;
   opacity: 0;
   transition: none;
@@ -2879,8 +2881,8 @@ menu.no-wrap {
   white-space: nowrap !important;
 }
 menu.active,
-menu:not([data-ui]):active,
-:not([data-ui]):focus-within > menu,
+menu:active,
+:focus-within > menu,
 menu > a:hover + menu,
 menu > menu:hover {
   opacity: 1;
@@ -3154,6 +3156,31 @@ nav:not(.left, .right) > .medium-space {
 }
 nav:not(.left, .right) > .large-space {
   inline-size: 1.5rem;
+}
+nav.tabbed {
+  background-color: var(--surface-container);
+  border-radius: 4rem !important;
+  gap: 0rem;
+  overflow-x: auto;
+}
+nav.tabbed > a {
+  border-radius: inherit;
+  block-size: 4rem;
+  display: inline-flex;
+  align-items: center;
+  padding-inline: 1rem;
+  gap: 0.5rem;
+  font-size: 1rem;
+  flex: 1;
+}
+nav.tabbed > a.active {
+  background-color: var(--primary-container);
+}
+nav.tabbed.small > a {
+  block-size: 3rem;
+}
+nav.tabbed.large > a {
+  block-size: 5rem;
 }
 @media only screen and (max-width: 600px) {
   nav.top,
@@ -3900,10 +3927,6 @@ tfoot th.fixed {
   white-space: nowrap;
   border-block-end: 0.0625rem solid var(--surface-variant);
 }
-.tabs.min {
-  padding: 0 1rem;
-  gap: 2rem;
-}
 .tabs:not(.left-align, .right-align, .center-align) {
   justify-content: space-around;
 }
@@ -3916,15 +3939,10 @@ tfoot th.fixed {
   font-weight: 500;
   color: var(--on-surface-variant);
   padding: 0.5rem 1rem;
-  border-block-end: 0.125rem solid transparent;
   text-align: center;
   min-block-size: 3rem;
   inline-size: 100%;
   gap: 0.25rem;
-}
-.tabs.min > a {
-  inline-size: auto;
-  padding: 0.5rem 0;
 }
 .tabs.small > a {
   min-block-size: 2rem;
@@ -3932,12 +3950,20 @@ tfoot th.fixed {
 .tabs.large > a {
   min-block-size: 4rem;
 }
-.tabs > a.active {
-  color: var(--primary);
-  border-block-end: 0.125rem solid var(--primary);
-}
+.tabs > a.active,
 .tabs > a.active > i {
   color: var(--primary);
+}
+.tabs > a.active::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  block-size: 0.125rem;
+  background-color: var(--primary);
+}
+.tabs.min > a.active::before {
+  margin: 0 auto;
+  max-inline-size: min(100%, 4rem);
 }
 .tabs:is(.left-align, .center-align, .right-align) > a {
   inline-size: auto;

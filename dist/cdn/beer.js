@@ -251,8 +251,10 @@ async function open(from, to, options, e) {
     await dialog(from, to);
     return;
   }
-  if (hasTag(to, "menu"))
-    return menu(from, to, e);
+  if (hasTag(to, "menu")) {
+    menu(from, to, e);
+    return;
+  }
   if (hasClass(to, "snackbar")) {
     snackbar(from, to, options);
     return;
@@ -294,21 +296,14 @@ function menu(from, to, e) {
   if (_timeoutMenu)
     clearTimeout(_timeoutMenu);
   _timeoutMenu = setTimeout(() => {
+    var _a;
     on(document.body, "click", onClickDocument);
+    (_a = document.activeElement) == null ? void 0 : _a.blur();
     tab(from);
-    if (hasClass(to, "active")) {
-      if (!e) {
-        removeClass(to, "active");
-        return;
-      }
-      const trustedFrom = e.target;
-      const trustedTo = query(trustedFrom.getAttribute("data-ui") ?? "");
-      const trustedMenu = trustedFrom.closest("menu");
-      const trustedActive = !query("menu", trustedFrom.closest("[data-ui]") ?? void 0);
-      if (trustedTo && trustedTo !== trustedMenu)
-        return menu(trustedFrom, trustedTo);
-      if (!trustedTo && !trustedActive && trustedMenu)
-        return false;
+    const isActive = hasClass(to, "active");
+    const isEvent = !!((e == null ? void 0 : e.target) === from);
+    const isChild = !!from.closest("menu");
+    if (!isActive && isChild || isActive && isEvent) {
       removeClass(to, "active");
       return;
     }
