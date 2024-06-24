@@ -62,7 +62,7 @@ elevate, no-elevate, small-elevate, medium-elevate, large-elevate,
 
 ## Forms
 
-border, no-border, circle, square, none, fill, extend, drawer, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
+border, no-border, circle, square, none, fill, extend, drawer, tabbed, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
 
 ## Margins
 

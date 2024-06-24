@@ -40,7 +40,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;menu&gt;** left, right, wrap, no-wrap, min, max, active
 
-**&lt;nav&gt;** left, right, top, bottom, drawer, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+**&lt;nav&gt;** left, right, top, bottom, drawer, tabbed, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
 **overlay** left-align, right-align, center-align, top-align, bottom-align, middle-align, active, blur, small-blur, medium-blur, large-blur
 
@@ -76,7 +76,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Elevates** elevate, no-elevate, small-elevate, medium-elevate, large-elevate
 
-**Forms** border, no-border, circle, square, none, fill, extend, drawer, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
+**Forms** border, no-border, circle, square, none, fill, extend, drawer, tabbed, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
 
 **Margins** margin, no-margin, auto-margin, tiny-margin, small-margin, medium-margin, large-margin, left-margin, right-margin, top-margin, bottom-margin, horizontal-margin, vertical-margin
 

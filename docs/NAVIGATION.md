@@ -29,7 +29,7 @@ vertical, horizontal
 
 **Forms**
 
-border, round, no-round, left-round, right-round, top-round, bottom-round, drawer
+border, round, no-round, left-round, right-round, top-round, bottom-round, drawer, tabbed
 
 **Margins**
 
@@ -134,6 +134,24 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap
 ## Navigation drawer example
 ```html
 <nav class="drawer">
+  <a>
+    <i>home</i>
+    <div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    <div>Search</div>
+  </a>
+  <a>
+    <i>more_vert</i>
+    <div>More</div>
+  </a>
+</nav>
+```
+
+## Navigation tabbed example
+```html
+<nav class="tabbed">
   <a>
     <i>home</i>
     <div>Home</div>
