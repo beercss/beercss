@@ -268,7 +268,7 @@ async function open (from: Element, to: Element | null, options?: any, e?: Event
   }
 
   if (hasTag(to, "dialog")) { await dialog(from, to); return; }
-  if (hasTag(to, "menu")) return menu(from, to, e);
+  if (hasTag(to, "menu")) { menu(from, to, e); return; }
   if (hasClass(to, "snackbar")) { snackbar(from, to, options as number); return; }
   if (hasClass(to, "page")) { page(from, to); return; }
 
@@ -300,24 +300,21 @@ function page (from: Element, to: Element): void {
   addClass(to, "active");
 }
 
-function menu (from: Element, to: Element, e?: Event): any {
+function menu (from: Element, to: Element, e?: Event) {
   if (_timeoutMenu) clearTimeout(_timeoutMenu);
 
   _timeoutMenu = setTimeout(() => {
     on(document.body, "click", onClickDocument);
+    (document.activeElement as HTMLElement)?.blur();
     tab(from);
 
-    if (hasClass(to, "active")) {
-      if (!e) { removeClass(to, "active"); return; }
+    const isActive = hasClass(to, "active");
+    const isEvent = !!(e?.target === from);
+    const isChild = !!from.closest("menu");
 
-      const trustedFrom = e.target as Element;
-      const trustedTo = query(trustedFrom.getAttribute("data-ui") ?? "");
-      const trustedMenu = trustedFrom.closest("menu");
-      const trustedActive = !query("menu", trustedFrom.closest("[data-ui]") ?? undefined);
-
-      if (trustedTo && trustedTo !== trustedMenu) return menu(trustedFrom, trustedTo);
-      if (!trustedTo && !trustedActive && trustedMenu) return false;
-      removeClass(to, "active"); return;
+    if ((!isActive && isChild) || (isActive && isEvent)) {
+      removeClass(to, "active");
+      return;
     }
 
     const menus = queryAll("menu.active");

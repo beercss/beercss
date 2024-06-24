@@ -124,6 +124,52 @@ main.responsive
         i more_vert
         span More
 
+  .large-space 
+  h5 Menus 
+  nav
+    button
+      span Normal 
+      menu(id="menu")
+        a(data-ui="#menu") Item
+        a Item
+        a More items
+        menu
+          a Item
+          a(data-ui="#menu") Item
+          a More items
+          menu
+            a Item
+            a Item
+            a(data-ui="#menu") More items
+    button(onclick="#menu2")
+      span OnClick 
+      menu(id="menu2")
+        a(data-ui="#menu2") Item
+        a Item
+        a More items
+        menu
+          a Item
+          a(data-ui="#menu2") Item
+          a More items
+          menu
+            a Item
+            a Item
+            a(data-ui="#menu2") More items
+    button(data-ui="#menu3")
+      span DataUi 
+      menu(id="menu3")
+        a(data-ui="#menu3") Item
+        a Item
+        a More items
+        menu
+          a Item
+          a(data-ui="#menu3") Item
+          a More items
+          menu
+            a Item
+            a Item
+            a(data-ui="#menu3") More items
+
   .large-space
   h5 Sliders
   .grid
