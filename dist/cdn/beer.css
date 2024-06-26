@@ -2070,12 +2070,6 @@ dialog.medium:is(.top, .bottom) {
 dialog.large:is(.top, .bottom) {
   block-size: 32rem;
 }
-dialog > a.row:is(:hover, .active) {
-  background-color: var(--secondary-container);
-}
-dialog > .row {
-  padding: 0.75rem;
-}
 summary.none {
   list-style-type: none;
 }
@@ -3162,10 +3156,17 @@ nav.tabbed {
   border-radius: 4rem !important;
   gap: 0rem;
   overflow-x: auto;
+  block-size: 4rem;
+}
+nav.tabbed.small {
+  block-size: 3rem;
+}
+nav.tabbed.large {
+  block-size: 5rem;
 }
 nav.tabbed > a {
   border-radius: inherit;
-  block-size: 4rem;
+  block-size: inherit;
   display: inline-flex;
   align-items: center;
   padding-inline: 1rem;
@@ -3175,12 +3176,6 @@ nav.tabbed > a {
 }
 nav.tabbed > a.active {
   background-color: var(--primary-container);
-}
-nav.tabbed.small > a {
-  block-size: 3rem;
-}
-nav.tabbed.large > a {
-  block-size: 5rem;
 }
 @media only screen and (max-width: 600px) {
   nav.top,

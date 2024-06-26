@@ -132,11 +132,3 @@ dialog.medium:is(.top, .bottom) {
 dialog.large:is(.top, .bottom) {
   block-size: 32rem;
 }
-
-dialog > a.row:is(:hover, .active) {
-  background-color: var(--secondary-container);
-}
-
-dialog > .row {
-  padding: 0.75rem;
-}
