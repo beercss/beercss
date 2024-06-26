@@ -1,7 +1,7 @@
 import { build } from "vite";
 import vue from "@vitejs/plugin-vue";
 
-(async () => {
+try {
   await build({
     publicDir: "./src/static",
     plugins: [vue()],
@@ -18,5 +18,7 @@ import vue from "@vitejs/plugin-vue";
         },
       },
     },
-  });
-})();
+  });  
+} catch(error) {
+  console.error(error);
+}

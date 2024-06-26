@@ -1,4 +1,4 @@
-import { ILayout } from "../shared/interfaces";
+import { type ILayout } from "../shared/interfaces";
 
 export interface IUber extends ILayout {
   from: string,

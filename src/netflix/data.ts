@@ -1,5 +1,5 @@
-import { Ref, ref } from "vue";
-import { INetflix } from "./interfaces";
+import { type Ref, ref } from "vue";
+import { type INetflix } from "./interfaces";
 import dataTheme from "../shared/theme";
 
 const data: INetflix = {

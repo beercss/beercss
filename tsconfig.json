@@ -14,6 +14,6 @@
     "noImplicitAny": true,
     "lib": ["esnext", "dom"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.{js,tsx,ts,vue}", "src/**/*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -2,7 +2,7 @@
 .page.right.active
   .row.m.l
     label.checkbox
-      input(type="checkbox", v-model="data.check", @change="domain.checkAll(data.drafts, data.check)")
+      input(v-model="data.check", type="checkbox", @change="domain.checkAll(data.drafts, data.check)")
       span
     a
       i refresh
@@ -18,7 +18,7 @@
   template(v-for="email in data.drafts")
     a.row
       label.checkbox.m.l
-        input(type="checkbox", v-model="email.check")
+        input(v-model="email.check", type="checkbox")
         span
       a.m.l(@click="domain.star(email)")
         i(v-show="!email.star") star_outline

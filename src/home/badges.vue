@@ -21,7 +21,7 @@
       input(type="radio", name="color-badges", @click="domain.updateElementColor('#default-badges .badge', 'tertiary')")
       span tertiary
     label.radio
-      input(type="radio", name="position-badges", @click="domain.updatePosition('#default-badges .badge')", checked)
+      input(type="radio", name="position-badges", checked, @click="domain.updatePosition('#default-badges .badge')")
       span default
     label.radio
       input(type="radio", name="position-badges", @click="domain.updatePosition('#default-badges .badge', 'top left')")

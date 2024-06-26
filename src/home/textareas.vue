@@ -33,7 +33,7 @@
       input(type="radio", name="size-textareas", @click="updateSize('#textareas .field', 'extra')")
       span extra
     label.radio
-      input(type="radio", name="minmax-textareas", @click="updateMinMax('#textareas .field', '')", checked)
+      input(type="radio", name="minmax-textareas", checked, @click="updateMinMax('#textareas .field', '')")
       span max
     label.radio
       input(type="radio", name="minmax-textareas", @click="updateMinMax('#textareas .field', 'min')")

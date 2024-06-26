@@ -3,16 +3,16 @@
   nav.no-space.padding
     button.small.circle.transparent(:class="{ hidden: isMonthsOrYears() }", @click="reload(data.year, --data.month)")
       i chevron_left
-    button.small.transparent.max(@click="select('#months')", :disabled="data.selectedPage === '#years'")
+    button.small.transparent.max(:disabled="data.selectedPage === '#years'", @click="select('#months')")
       span.capitalize {{ data.months[data.month].value }}
-      i(:class="{ hidden: data.selectedPage === '#years' }") {{ data.selectedPage === '#months' ? 'arrow_drop_up' :  'arrow_drop_down' }}
+      i(:class="{ hidden: data.selectedPage === '#years' }") {{ data.selectedPage === '#months' ? 'arrow_drop_up' : 'arrow_drop_down' }}
     button.small.circle.transparent(:class="{ hidden: isMonthsOrYears() }", @click="reload(data.year, ++data.month)")
       i chevron_right
     button.small.circle.transparent(:class="{ hidden: isMonthsOrYears() }", @click="reload(--data.year, data.month)")
       i chevron_left
-    button.small.transparent.max(@click="select('#years')", :disabled="data.selectedPage === '#months'")
+    button.small.transparent.max(:disabled="data.selectedPage === '#months'", @click="select('#years')")
       span {{ data.year }}
-      i(:class="{ hidden: data.selectedPage === '#months' }") {{ data.selectedPage === '#years' ? 'arrow_drop_up' :  'arrow_drop_down' }}
+      i(:class="{ hidden: data.selectedPage === '#months' }") {{ data.selectedPage === '#years' ? 'arrow_drop_up' : 'arrow_drop_down' }}
     button.small.circle.transparent(:class="{ hidden: isMonthsOrYears() }", @click="reload(++data.year, data.month)")
       i chevron_right
   .divider(v-show="!isMonthsOrYears()")
@@ -64,7 +64,7 @@ const select = (page: string, date?: IKeyValue) => {
 const reload = (year: number, month: number) => {
   data.value = domain.getData(year, month, data.value.selectedDate);
   select("#empty");
-  setTimeout(() => select("#days"), 100);
+  setTimeout(() => { select("#days"); }, 100);
 };
 
 const isToday = (day: IKeyValue) => {

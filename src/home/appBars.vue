@@ -11,7 +11,7 @@ div
         i code
     nav.wrap
       label.radio
-        input(type="radio", name="radio-top-app-bars", @click="domain.updateColorTheme('#top-app-bars header')", checked)
+        input(type="radio", name="radio-top-app-bars", checked, @click="domain.updateColorTheme('#top-app-bars header')")
         span default
       label.radio
         input(type="radio", name="radio-top-app-bars", @click="domain.updateColorTheme('#top-app-bars header', 'fill')")
@@ -82,7 +82,7 @@ div
         i code
     nav.wrap
       label.radio
-        input(type="radio", name="radio-bottom-app-bars", @click="domain.updateColorTheme('#bottom-app-bars footer')", checked)
+        input(type="radio", name="radio-bottom-app-bars", checked, @click="domain.updateColorTheme('#bottom-app-bars footer')")
         span default
       label.radio
         input(type="radio", name="radio-bottom-app-bars", @click="domain.updateColorTheme('#bottom-app-bars footer', 'fill')")

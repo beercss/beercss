@@ -1,7 +1,8 @@
 .wave::after,
 .chip::after,
 .wave.light::after,
-:is(.button, button)::after {
+:is(.button, button)::after,
+:is(nav.tabbed, .tabs) > a::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -19,17 +20,18 @@
 .wave.row::after,
 .chip::after,
 :is(.button, button).border::after,
-:is(.button, button).transparent::after {
+:is(.button, button).transparent::after ,
+:is(nav.tabbed, .tabs) > a::after {
   background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
 }
 
-:is(.wave, .chip, .button, button):is(:focus-visible, :hover)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):is(:focus-visible, :hover)::after {
   background-size: 15000%;
   opacity: 1;
   transition: background-size var(--speed2) linear;
 }
 
-:is(.wave, .chip, .button, button):active::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):active::after {
   background-size: 5000%;
   opacity: 0;
   transition: none;

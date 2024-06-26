@@ -10,7 +10,7 @@
       input(type="radio", name="space-snackbars", @click="domain.updateSpace('#tooltips .tooltip', 'no-space')")
       span no-space
     label.radio
-      input(type="radio", name="space-snackbars", @click="domain.updateSpace('#tooltips .tooltip')", checked)
+      input(type="radio", name="space-snackbars", checked, @click="domain.updateSpace('#tooltips .tooltip')")
       span small-space
     label.radio
       input(type="radio", name="space-snackbars", @click="domain.updateSpace('#tooltips .tooltip', 'medium-space')")

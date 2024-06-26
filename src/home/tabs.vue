@@ -40,7 +40,7 @@
       input(type="radio", name="page-tabs", @click="domain.updatePosition('#tabs .page', 'right')")
       span page right
     label.radio
-      input(type="radio", name="direction-tabs", @click="domain.updateDirection('#tabs .tabs > a', '')", checked)
+      input(type="radio", name="direction-tabs", checked, @click="domain.updateDirection('#tabs .tabs > a', '')")
       span horizontal
     label.radio
       input(type="radio", name="direction-tabs", @click="domain.updateDirection('#tabs .tabs > a', 'vertical')")
@@ -49,7 +49,7 @@
       input(type="radio", name="size-tabs", @click="domain.updateMinMax('#tabs .tabs', 'min')")
       span min
     label.radio
-      input(type="radio", name="size-tabs", @click="domain.updateMinMax('#tabs .tabs', '')", checked)
+      input(type="radio", name="size-tabs", checked, @click="domain.updateMinMax('#tabs .tabs', '')")
       span max
   p.space
   div

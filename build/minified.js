@@ -2,26 +2,25 @@ import { build } from "vite";
 import fs from "fs";
 
 export default async function() {
-  await build({
-    build: {
-      minify: true,
-      emptyOutDir: false,
-      outDir: "./dist/cdn",
-      rollupOptions: {
-        input: {
-          "beer.min": "./src/cdn.ts",
-        },
-        output: {
-          entryFileNames: "[name].js",
-          chunkFileNames: "[name].js",
-          assetFileNames: "[name].[ext]",
-          manualChunks: undefined,
+  try {
+    await build({
+      build: {
+        emptyOutDir: false,
+        outDir: "./dist/cdn",
+        rollupOptions: {
+          input: {
+            "beer": "./src/cdn.ts",
+          },
+          output: {
+            entryFileNames: "[name].min.js",
+            chunkFileNames: "[name].min.js",
+            assetFileNames: (info) => (info.name.includes(".css")) ? "[name].min.css" : "[name].[ext]",
+            manualChunks: undefined,
+          },
         },
       },
-    },
-  });
-
-  try {
+    });
+    
     const cssContent = fs.readFileSync("./dist/cdn/beer.min.css", "utf-8");
     fs.writeFileSync("./dist/cdn/beer.min.css", cssContent.replace(/url\(\//g, "url("));
 

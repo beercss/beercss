@@ -9,7 +9,7 @@
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="direction-directions", @click="domain.updateDirection('#direction a, #direction button, #directions .row', 'horizontal')", checked)
+      input(type="radio", name="direction-directions", checked, @click="domain.updateDirection('#direction a, #direction button, #directions .row', 'horizontal')")
       span horizontal
     label.radio
       input(type="radio", name="direction-directions", @click="domain.updateDirection('#direction a, #direction button, #directions .row', 'vertical')")

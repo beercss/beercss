@@ -5,7 +5,7 @@
     span Chips
     a.chip.circle(@click="domain.showSamples(data, '#chips nav .chip', 'Chips', null, 'https://github.com/beercss/beercss/blob/main/docs/CHIP.md')")
       i code
-  selectionForButtons(context="#chips nav .chip", :colors="[]" :sizes="['', 'medium', 'large']", :directions="['horizontal', 'vertical']", selectedDirection="horizontal", emptySize="small")
+  selectionForButtons(context="#chips nav .chip", :colors="[]" :sizes="['', 'medium', 'large']", :directions="['horizontal', 'vertical']", selected-direction="horizontal", empty-size="small")
   nav.wrap
     a.chip Suggestion
     a.chip

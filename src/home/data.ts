@@ -1,6 +1,6 @@
-import { IHome } from "./interfaces";
+import { type IHome } from "./interfaces";
 import theme from "../shared/theme";
-import { Ref, ref } from "vue";
+import { type Ref, ref } from "vue";
 
 const data: IHome = {
   ...theme,

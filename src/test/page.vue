@@ -124,6 +124,52 @@ main.responsive
         i more_vert
         span More
 
+  .large-space 
+  h5 Menus 
+  nav
+    button
+      span Normal 
+      menu(id="menu")
+        a(data-ui="#menu") Item
+        a Item
+        a More items
+        menu
+          a Item
+          a(data-ui="#menu") Item
+          a More items
+          menu
+            a Item
+            a Item
+            a(data-ui="#menu") More items
+    button(onclick="#menu2")
+      span OnClick 
+      menu(id="menu2")
+        a(data-ui="#menu2") Item
+        a Item
+        a More items
+        menu
+          a Item
+          a(data-ui="#menu2") Item
+          a More items
+          menu
+            a Item
+            a Item
+            a(data-ui="#menu2") More items
+    button(data-ui="#menu3")
+      span DataUi 
+      menu(id="menu3")
+        a(data-ui="#menu3") Item
+        a Item
+        a More items
+        menu
+          a Item
+          a(data-ui="#menu3") Item
+          a More items
+          menu
+            a Item
+            a Item
+            a(data-ui="#menu3") More items
+
   .large-space
   h5 Sliders
   .grid
@@ -349,7 +395,7 @@ main.responsive
       input(v-model="number")
       label Test
     label.slider.large.min
-      input#range(type="range", v-model="number")
+      input#range(v-model="number", type="range")
       span
     label.slider.large.min
       input#range(type="range", value="10")
@@ -991,17 +1037,16 @@ main.responsive
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
 import domain from "../home/domain";
 import datePicker from "./datePicker/datePicker.vue";
 const updateTheme = () => {
-  document.body.className = document.body.className.indexOf("dark") !== -1 ? "light" : "dark";
+  document.body.className = document.body.className.includes("dark") ? "light" : "dark";
 };
 const updateNavigationDrawer = (direction: string) => {
   const elemento = document.getElementById("navigation-drawer");
   if (elemento) elemento.className = "drawer " + direction;
 };
 const number = ref(0);
-const text = ref();
 const select = ref();
 </script>

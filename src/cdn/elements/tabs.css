@@ -4,11 +4,6 @@
   border-block-end: 0.0625rem solid var(--surface-variant);
 }
 
-.tabs.min {
-  padding: 0 1rem;
-  gap: 2rem;
-}
-
 .tabs:not(.left-align, .right-align, .center-align) {
   justify-content: space-around;
 }
@@ -23,16 +18,10 @@
   font-weight: 500;
   color: var(--on-surface-variant);
   padding: 0.5rem 1rem;
-  border-block-end: 0.125rem solid transparent;
   text-align: center;
   min-block-size: 3rem;
   inline-size: 100%;
   gap: 0.25rem;
-}
-
-.tabs.min > a {
-  inline-size: auto;
-  padding: 0.5rem 0;
 }
 
 .tabs.small > a {
@@ -43,13 +32,22 @@
   min-block-size: 4rem;
 }
 
-.tabs > a.active {
-  color: var(--primary);
-  border-block-end: 0.125rem solid var(--primary);
-}
-
+.tabs > a.active,
 .tabs > a.active > i {
   color: var(--primary);
+}
+
+.tabs > a.active::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  block-size: 0.125rem;
+  background-color: var(--primary);
+}
+
+.tabs.min > a.active::before {
+  margin: 0 auto;
+  max-inline-size: min(100%, 4rem);
 }
 
 .tabs:is(.left-align, .center-align, .right-align) > a {

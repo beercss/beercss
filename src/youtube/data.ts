@@ -1,6 +1,6 @@
-import { ref, Ref } from "vue";
+import { ref, type Ref } from "vue";
 import theme from "../shared/theme";
-import { IYoutube } from "./interfaces";
+import { type IYoutube } from "./interfaces";
 
 const data: IYoutube = {
   ...theme,

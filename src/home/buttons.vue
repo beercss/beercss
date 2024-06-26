@@ -7,7 +7,7 @@
     span Common buttons
     a.chip.circle(@click="domain.showSamples(data, '#default-buttons button', 'Buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#default-buttons button", :directions="['horizontal', 'vertical']", selectedDirection="horizontal")
+  selectionForButtons(context="#default-buttons button", :directions="['horizontal', 'vertical']", selected-direction="horizontal")
   .space
   #default-buttons
     nav.wrap
@@ -59,7 +59,7 @@
     span Responsive buttons
     a.chip.circle(@click="domain.showSamples(data, '#responsive-buttons button', 'Reponsive buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#responsive-buttons button", :directions="['horizontal', 'vertical']", selectedDirection="horizontal")
+  selectionForButtons(context="#responsive-buttons button", :directions="['horizontal', 'vertical']", selected-direction="horizontal")
   #responsive-buttons.grid
     .s12.m6
       nav
@@ -110,7 +110,7 @@
     span FABs
     a.chip.circle(@click="domain.showSamples(data, '#fabs button', 'FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#fabs button", selectedSize="extra")
+  selectionForButtons(context="#fabs button", selected-size="extra")
   .space
   #fabs
     nav.wrap
@@ -335,7 +335,7 @@
     span Segmented buttons
     a.chip.circle(@click="domain.showSamples(data, '#segmented-buttons nav', 'Segmented buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#segmented-buttons button", :colors="[]", :elevates="[]", :directions="['horizontal', 'vertical']", selectedDirection="horizontal")
+  selectionForButtons(context="#segmented-buttons button", :colors="[]", :elevates="[]", :directions="['horizontal', 'vertical']", selected-direction="horizontal")
   #segmented-buttons.grid
     .s12.m12.l6
       nav.no-space

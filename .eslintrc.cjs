@@ -1,18 +1,31 @@
+const love = require('eslint-config-love');
+
 module.exports = {
   root: true,
   parser: "vue-eslint-parser",
   parserOptions: {
+    sourceType: "module",
     extraFileExtensions: [".vue"],
     parser: "@typescript-eslint/parser",
     project: ["./tsconfig.eslint.json"],
   },
   extends: [
-    "standard-with-typescript",
     "eslint:recommended",
-    "plugin:vue/strongly-recommended",
+    "@vue/eslint-config-typescript",
     "plugin:vue/vue3-recommended",
+    "plugin:vue-pug/vue3-recommended",
   ],
+  plugins: [
+    "@typescript-eslint",
+    "eslint-plugin-import",
+    "eslint-plugin-n",
+    "eslint-plugin-promise",
+  ],
+  env: {
+    es2020: true,
+  },
   rules: {
+    ...love.rules,
     // double quotes
     quotes: ["error", "double"],
     "@typescript-eslint/quotes": ["error", "double"],
@@ -48,13 +61,13 @@ module.exports = {
     "vue/multi-word-component-names": 0,
     // allow position as key in v-for
     "vue/require-v-for-key": 0,
+    // allow mutation props
+    "vue/no-mutating-props": "warn",
+    // allow any arguments
+    "@typescript-eslint/no-unsafe-argument": "warn",
     // 2-space indentation
     indent: ["error", 2],
+
+    "vue/max-attributes-per-line": 0,
   },
-  overrides: [
-    {
-      files: [".eslintrc.cjs"],
-      parserOptions: { project: null },
-    },
-  ],
 };

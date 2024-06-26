@@ -13,5 +13,5 @@
     "strictFunctionTypes": true,
     "noImplicitAny": true,
     "lib": ["esnext", "dom"]
-  }
+  },
 }

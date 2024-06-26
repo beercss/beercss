@@ -128,38 +128,38 @@
         source(:src="'/dance.mp4'", type="video/mp4")
   nav.wrap(v-if="data.mediaImage === 3")
     a
-      svgMountains(viewBox="450 0 900 900", className="circle tiny primary")
+      svgMountains(viewBox="450 0 900 900", class-name="circle tiny primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="circle small primary")
+      svgMountains(viewBox="450 0 900 900", class-name="circle small primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="circle primary")
+      svgMountains(viewBox="450 0 900 900", class-name="circle primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="circle large primary")
+      svgMountains(viewBox="450 0 900 900", class-name="circle large primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="circle extra primary")
+      svgMountains(viewBox="450 0 900 900", class-name="circle extra primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="round tiny primary")
+      svgMountains(viewBox="450 0 900 900", class-name="round tiny primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="round small primary")
+      svgMountains(viewBox="450 0 900 900", class-name="round small primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="round primary")
+      svgMountains(viewBox="450 0 900 900", class-name="round primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="round large primary")
+      svgMountains(viewBox="450 0 900 900", class-name="round large primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="round extra primary")
+      svgMountains(viewBox="450 0 900 900", class-name="round extra primary")
   nav.wrap(v-if="data.mediaImage === 3")
     a
-      svgMountains(viewBox="450 0 900 900", className="left-round medium primary")
+      svgMountains(viewBox="450 0 900 900", class-name="left-round medium primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="top-round medium primary")
+      svgMountains(viewBox="450 0 900 900", class-name="top-round medium primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="right-round medium primary")
+      svgMountains(viewBox="450 0 900 900", class-name="right-round medium primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="bottom-round medium primary")
+      svgMountains(viewBox="450 0 900 900", class-name="bottom-round medium primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="top-round left-round medium primary")
+      svgMountains(viewBox="450 0 900 900", class-name="top-round left-round medium primary")
     a
-      svgMountains(viewBox="450 0 900 900", className="bottom-round right-round medium primary")
+      svgMountains(viewBox="450 0 900 900", class-name="bottom-round right-round medium primary")
 </template>
 
 <script setup lang="ts">

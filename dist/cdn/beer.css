@@ -102,7 +102,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.5.8/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.0/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -112,7 +112,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.5.8/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.0/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -122,7 +122,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.5.8/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.0/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1552,7 +1552,8 @@ p {
 .wave::after,
 .chip::after,
 .wave.light::after,
-:is(.button, button)::after {
+:is(.button, button)::after,
+:is(nav.tabbed, .tabs) > a::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -1569,15 +1570,16 @@ p {
 .wave.row::after,
 .chip::after,
 :is(.button, button).border::after,
-:is(.button, button).transparent::after {
+:is(.button, button).transparent::after ,
+:is(nav.tabbed, .tabs) > a::after {
   background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
 }
-:is(.wave, .chip, .button, button):is(:focus-visible, :hover)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):is(:focus-visible, :hover)::after {
   background-size: 15000%;
   opacity: 1;
   transition: background-size var(--speed2) linear;
 }
-:is(.wave, .chip, .button, button):active::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):active::after {
   background-size: 5000%;
   opacity: 0;
   transition: none;
@@ -2067,12 +2069,6 @@ dialog.medium:is(.top, .bottom) {
 }
 dialog.large:is(.top, .bottom) {
   block-size: 32rem;
-}
-dialog > a.row:is(:hover, .active) {
-  background-color: var(--secondary-container);
-}
-dialog > .row {
-  padding: 0.75rem;
 }
 summary.none {
   list-style-type: none;
@@ -2880,7 +2876,9 @@ menu.no-wrap {
 }
 menu.active,
 menu:not([data-ui]):active,
-:not([data-ui]):focus-within > menu {
+:not([data-ui]):focus-within > menu,
+menu > a:hover + menu,
+menu > menu:hover {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(100%);
@@ -2937,6 +2935,20 @@ menu.left {
 menu.right {
   inset: auto auto 0 0;
 }
+menu:has(> menu),
+menu > menu {
+  overflow: unset;
+  white-space: nowrap;
+  inline-size: auto;
+  min-inline-size: 12rem;
+  max-block-size: none;
+}
+menu > menu {
+  inset: -3rem auto auto 100%;
+}
+[dir=rtl] menu > menu {
+  inset: -3rem 100% auto auto;
+}
 nav > :is(ol, ul),
 nav > :is(ol, ul) > li {
   all: unset;
@@ -2954,6 +2966,9 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) {
   white-space: nowrap;
   gap: 1rem;
   margin: 0;
+}
+a.row {
+  min-block-size: 3rem;
 }
 :is(nav, .row, .max) > :only-child,
 nav > :is(ol, ul) > li > :only-child {
@@ -3135,6 +3150,32 @@ nav:not(.left, .right) > .medium-space {
 }
 nav:not(.left, .right) > .large-space {
   inline-size: 1.5rem;
+}
+nav.tabbed {
+  background-color: var(--surface-container);
+  border-radius: 4rem !important;
+  gap: 0rem;
+  overflow-x: auto;
+  block-size: 4rem;
+}
+nav.tabbed.small {
+  block-size: 3rem;
+}
+nav.tabbed.large {
+  block-size: 5rem;
+}
+nav.tabbed > a {
+  border-radius: inherit;
+  block-size: inherit;
+  display: inline-flex;
+  align-items: center;
+  padding-inline: 1rem;
+  gap: 0.5rem;
+  font-size: 1rem;
+  flex: 1;
+}
+nav.tabbed > a.active {
+  background-color: var(--primary-container);
 }
 @media only screen and (max-width: 600px) {
   nav.top,
@@ -3881,10 +3922,6 @@ tfoot th.fixed {
   white-space: nowrap;
   border-block-end: 0.0625rem solid var(--surface-variant);
 }
-.tabs.min {
-  padding: 0 1rem;
-  gap: 2rem;
-}
 .tabs:not(.left-align, .right-align, .center-align) {
   justify-content: space-around;
 }
@@ -3897,15 +3934,10 @@ tfoot th.fixed {
   font-weight: 500;
   color: var(--on-surface-variant);
   padding: 0.5rem 1rem;
-  border-block-end: 0.125rem solid transparent;
   text-align: center;
   min-block-size: 3rem;
   inline-size: 100%;
   gap: 0.25rem;
-}
-.tabs.min > a {
-  inline-size: auto;
-  padding: 0.5rem 0;
 }
 .tabs.small > a {
   min-block-size: 2rem;
@@ -3913,12 +3945,20 @@ tfoot th.fixed {
 .tabs.large > a {
   min-block-size: 4rem;
 }
-.tabs > a.active {
-  color: var(--primary);
-  border-block-end: 0.125rem solid var(--primary);
-}
+.tabs > a.active,
 .tabs > a.active > i {
   color: var(--primary);
+}
+.tabs > a.active::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  block-size: 0.125rem;
+  background-color: var(--primary);
+}
+.tabs.min > a.active::before {
+  margin: 0 auto;
+  max-inline-size: min(100%, 4rem);
 }
 .tabs:is(.left-align, .center-align, .right-align) > a {
   inline-size: auto;

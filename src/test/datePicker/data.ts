@@ -1,6 +1,6 @@
-import { Ref, ref } from "vue";
+import { type Ref, ref } from "vue";
 import domain from "./domain";
-import { IDatePicker } from "./interfaces";
+import { type IDatePicker } from "./interfaces";
 
 const today = new Date();
 const data = domain.getData(today.getFullYear(), today.getMonth());

@@ -37,7 +37,9 @@ menu.no-wrap {
 
 menu.active,
 menu:not([data-ui]):active,
-:not([data-ui]):focus-within > menu {
+:not([data-ui]):focus-within > menu,
+menu > a:hover + menu,
+menu > menu:hover {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(100%);
@@ -104,4 +106,21 @@ menu.left {
 [dir=rtl] menu.left,
 menu.right {
   inset: auto auto 0 0;
+}
+
+menu:has(> menu),
+menu > menu {
+  overflow: unset;
+  white-space: nowrap;
+  inline-size: auto;
+  min-inline-size: 12rem;
+  max-block-size: none;
+}
+
+menu > menu {
+  inset: -3rem auto auto 100%;
+}
+
+[dir=rtl] menu > menu {
+  inset: -3rem 100% auto auto;
 }

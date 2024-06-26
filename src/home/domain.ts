@@ -1,28 +1,28 @@
 import { nextTick } from "vue";
-import { IHome } from "./interfaces";
+import { type IHome } from "./interfaces";
 import utils from "../shared/utils";
 import sharedDomain from "../shared/domain";
-import { ILayout } from "../shared/interfaces";
+import { type ILayout } from "../shared/interfaces";
 
-const updateElevate = (selector: any, elevate?: string) => {
+const updateElevate = (selector: string, elevate?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["no-elevate", "small-elevate", "medium-elevate", "large-elevate"]);
   if (elevate) utils.addClass(elements, [elevate]);
 };
 
-const updateColor = (selector: any, color?: string) => {
+const updateColor = (selector: string | NodeListOf<Element>, color?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["fill", "surface-variant", "surface", "background", "primary", "primary-container", "secondary", "secondary-container", "tertiary", "tertiary-container", "error", "amber", "blue", "blue-grey", "brown", "cyan", "deep-orange", "deep-purple", "green", "grey", "indigo", "light-blue", "light-green", "lime", "orange", "pink", "purple", "red", "teal", "yellow"]);
   if (color) utils.addClass(elements, [color]);
 };
 
-const updateBorderColor = (selector: any, borderColor?: string) => {
+const updateBorderColor = (selector: string | NodeListOf<Element>, borderColor?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["primary-border", "secondary-border", "tertiary-border", "error-border", "amber-border", "blue-border", "blue-grey-border", "brown-border", "cyan-border", "deep-orange-border", "deep-purple-border", "green-border", "grey-border", "indigo-border", "light-blue-border", "light-green-border", "lime-border", "orange-border", "pink-border", "purple-border", "red-border", "teal-border", "yellow-border"]);
   if (borderColor) utils.addClass(elements, [borderColor]);
 };
 
-const updateTextColor = (selector: any, textColor?: string) => {
+const updateTextColor = (selector: string | NodeListOf<Element>, textColor?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["primary-text", "secondary-text", "tertiary-text", "error-text", "amber-text", "blue-text", "blue-grey-text", "brown-text", "cyan-text", "deep-orange-text", "deep-purple-text", "green-text", "grey-text", "indigo-text", "light-blue-text", "light-green-text", "lime-text", "orange-text", "pink-text", "purple-text", "red-text", "teal-text", "yellow-text"]);
   if (textColor) utils.addClass(elements, [textColor]);
@@ -43,13 +43,13 @@ const updateSize = (selector: string, size?: string) => {
   if (size) utils.addClass(elements, [size]);
 };
 
-const updatePosition = (selector: any, position?: string) => {
+const updatePosition = (selector: string | NodeListOf<Element>, position?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["left", "center", "right", "top", "middle", "bottom"]);
   if (position) utils.addClass(elements, (position || "").split(" "));
 };
 
-const updateAlign = (selector: any, alignment?: string) => {
+const updateAlign = (selector: string, alignment?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["left-align", "center-align", "right-align", "top-align", "middle-align", "bottom-align"]);
   if (alignment) utils.addClass(elements, [alignment]);
@@ -232,7 +232,7 @@ const updateProgress = (value: number) => {
   });
 };
 
-const formatHtml = (element: any, raw: boolean = false, useInnerHtml: boolean = false): string => {
+const formatHtml = (element: Element | null, raw: boolean = false, useInnerHtml: boolean = false): string => {
   function process (str: string): string {
     const div = document.createElement("div");
     div.innerHTML = str.trim();
@@ -342,7 +342,7 @@ const updateBlur = (selector: string, blur?: string) => {
   if (blur) utils.addClass(elements, [blur]);
 };
 
-const updateShadow = (selector: any, shadow?: string) => {
+const updateShadow = (selector: string, shadow?: string) => {
   const elements = utils.queryAll(selector);
   utils.removeClass(elements, ["shadow", "no-shadow", "top-shadow", "bottom-shadow", "left-shadow", "right-shadow"]);
   if (shadow) utils.addClass(elements, [shadow]);

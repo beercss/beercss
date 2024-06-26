@@ -1,18 +1,20 @@
 {
+  "plugins": [
+		"@stylistic/stylelint-plugin"
+	],
   "extends": [
     "stylelint-config-standard-scss"
   ],
   "rules": {
     "alpha-value-notation": "number",
-    "color-hex-case": "upper",
     "font-family-no-missing-generic-family-keyword": null,
     "import-notation": "string",
-    "max-line-length": null,
     "no-descending-specificity": null,
     "no-duplicate-selectors": null,
-    "number-leading-zero": "always",
     "selector-attribute-quotes": "never",
-    "custom-property-pattern": null
+    "custom-property-pattern": null,
+    "@stylistic/color-hex-case": "upper",
+    "@stylistic/number-leading-zero": "always"
   },
   "overrides": [
     {

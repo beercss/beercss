@@ -67,48 +67,38 @@ div
           h6.small Headline
           div Supporting text
         label +15 min
-      .medium-space
-      h6
-        span List containers
-        a.chip.circle(@click="domain.showSamples(data, '#list-container article', 'List containers')")
-          i code
-    #list-container.grid
-      .s12.m6.l6
+    .medium-space
+    .grid
+      #list-dividers.s12.m6.l6
+        h6
+          span List dividers
+          a.chip.circle(@click="domain.showSamples(data, '#list-dividers article', 'List containers')")
+            i code
         article
-          a.row.padding
-            .max
-              h6.small Headline
-              div Supporting text
-            label +15 min
-          a.row.padding
-            .max
-              h6.small Headline 2
-              div Supporting text
-            label +15 min
-          a.row.padding
-            .max
-              h6.small Headline 3
-              div Supporting text
-            label +15 min
-      .s12.m6.l6
+          a.row.wave Item 1
+          .divider
+          a.row.wave Item 2
+          .divider
+          a.row.wave Item 3
+          .divider
+          a.row.wave Item 4
+          .divider
+          a.row.wave Item 5
+      #list-expansions.s12.m6.l6
+        h6
+          span List expansions
+          a.chip.circle(@click="domain.showSamples(data, '#list-expansions article', 'List containers')")
+            i code
         article
-          a.row.padding
-            .max
-              h6.small Headline
-              div Supporting text
-            label +15 min
-          .divider
-          a.row.padding
-            .max
-              h6.small Headline 2
-              div Supporting text
-            label +15 min
-          .divider
-          a.row.padding
-            .max
-              h6.small Headline 3
-              div Supporting text
-            label +15 min
+          details
+            summary.none 
+              a.row.wave Header Item
+            a.row.wave Item
+            a.row.wave Item
+            details
+              summary.none 
+                a.row.wave Header Item
+              a.row.wave Item
 </template>
 
 <script setup lang="ts">

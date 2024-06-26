@@ -1,4 +1,4 @@
-import { IDatePicker } from "./interfaces";
+import { type IDatePicker } from "./interfaces";
 
 export function getData (year: number, month: number, selectedDate?: number): IDatePicker {
   const today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());

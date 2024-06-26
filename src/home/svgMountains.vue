@@ -21,7 +21,7 @@ export interface IProps {
   viewBox: string,
 }
 
-const data = withDefaults(defineProps<IProps>(), {
+withDefaults(defineProps<IProps>(), {
   className: "",
   viewBox: "0 0 1600 900",
 });

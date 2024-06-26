@@ -1,4 +1,3 @@
-var beer = "";
 let _timeoutSnackbar;
 let _timeoutMutation;
 let _timeoutMenu;
@@ -9,7 +8,7 @@ const _lastTheme = {
 };
 const _emptyNodeList = [];
 async function wait(milliseconds) {
-  return await new Promise((resolve) => setTimeout(resolve, milliseconds));
+  await new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
 function guid() {
   return "fxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
@@ -20,21 +19,21 @@ function guid() {
 }
 function query(selector, element) {
   try {
-    return typeof selector === "string" ? (element != null ? element : document).querySelector(selector) : selector;
+    return typeof selector === "string" ? (element ?? document).querySelector(selector) : selector;
   } catch {
     return null;
   }
 }
 function queryAll(selector, element) {
   try {
-    return typeof selector === "string" ? (element != null ? element : document).querySelectorAll(selector) : selector != null ? selector : _emptyNodeList;
+    return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
   } catch {
     return _emptyNodeList;
   }
 }
 function hasClass(element, name) {
-  var _a, _b;
-  return (_b = (_a = element == null ? void 0 : element.classList) == null ? void 0 : _a.contains(name)) != null ? _b : false;
+  var _a;
+  return ((_a = element == null ? void 0 : element.classList) == null ? void 0 : _a.contains(name)) ?? false;
 }
 function hasTag(element, name) {
   var _a;
@@ -75,7 +74,8 @@ function create(htmlAttributesAsJson) {
   const element = document.createElement("div");
   for (let i = 0, keys = Object.keys(htmlAttributesAsJson), n = keys.length; i < n; i++) {
     const key = keys[i];
-    element.setAttribute(key, htmlAttributesAsJson[key]);
+    const value = htmlAttributesAsJson[key];
+    element.setAttribute(key, value);
   }
   return element;
 }
@@ -151,7 +151,8 @@ function updateFile(target, e) {
     const previousTarget = prev(target);
     if (!hasType(previousTarget, "file"))
       return;
-    return previousTarget.click();
+    previousTarget.click();
+    return;
   }
   const currentTarget = target;
   const nextTarget = next(target);
@@ -167,7 +168,8 @@ function updateColor(target, e) {
     const previousTarget = prev(target);
     if (!hasType(previousTarget, "color"))
       return;
-    return previousTarget.click();
+    previousTarget.click();
+    return;
   }
   const currentTarget = target;
   const nextTarget = next(target);
@@ -226,8 +228,10 @@ function updateRange(target) {
 function updateAllRanges(e) {
   if (e) {
     const input = e.target;
-    if (input.type === "range")
-      return updateRange(input);
+    if (input.type === "range") {
+      updateRange(input);
+      return;
+    }
   }
   const ranges = queryAll(".slider > input[type=range]");
   if (!ranges.length)
@@ -243,22 +247,32 @@ async function open(from, to, options, e) {
     if (!to)
       return;
   }
-  if (hasTag(to, "dialog"))
-    return await dialog(from, to);
-  if (hasTag(to, "menu"))
-    return menu(from, to, e);
-  if (hasClass(to, "snackbar"))
-    return snackbar(from, to, options);
-  if (hasClass(to, "page"))
-    return page(from, to);
+  if (hasTag(to, "dialog")) {
+    await dialog(from, to);
+    return;
+  }
+  if (hasTag(to, "menu")) {
+    menu(from, to, e);
+    return;
+  }
+  if (hasClass(to, "snackbar")) {
+    snackbar(from, to, options);
+    return;
+  }
+  if (hasClass(to, "page")) {
+    page(from, to);
+    return;
+  }
   tab(from);
-  if (hasClass(to, "active"))
-    return removeClass(to, "active");
+  if (hasClass(to, "active")) {
+    removeClass(to, "active");
+    return;
+  }
   addClass(to, "active");
 }
 function tab(from) {
   if (from.id && hasClass(from, "page"))
-    from = query(`[data-ui="#${from.id}"]`);
+    from = query(`[data-ui="#${from.id}"]`) ?? from;
   const container = parent(from);
   if (!hasClass(container, "tabs"))
     return;
@@ -282,21 +296,16 @@ function menu(from, to, e) {
   if (_timeoutMenu)
     clearTimeout(_timeoutMenu);
   _timeoutMenu = setTimeout(() => {
-    var _a, _b;
+    var _a;
     on(document.body, "click", onClickDocument);
+    (_a = document.activeElement) == null ? void 0 : _a.blur();
     tab(from);
-    if (hasClass(to, "active")) {
-      if (!e)
-        return removeClass(to, "active");
-      const trustedFrom = e.target;
-      const trustedTo = query((_a = trustedFrom.getAttribute("data-ui")) != null ? _a : "");
-      const trustedMenu = trustedFrom.closest("menu");
-      const trustedActive = !query("menu", (_b = trustedFrom.closest("[data-ui]")) != null ? _b : void 0);
-      if (trustedTo && trustedTo !== trustedMenu)
-        return menu(trustedFrom, trustedTo);
-      if (!trustedTo && !trustedActive && trustedMenu)
-        return false;
-      return removeClass(to, "active");
+    const isActive = hasClass(to, "active");
+    const isEvent = !!((e == null ? void 0 : e.target) === from);
+    const isChild = !!from.closest("menu");
+    if (!isActive && isChild || isActive && isEvent) {
+      removeClass(to, "active");
+      return;
     }
     const menus = queryAll("menu.active");
     for (let i = 0, n = menus.length; i < n; i++)
@@ -367,7 +376,7 @@ function snackbar(from, to, milliseconds) {
     return;
   _timeoutSnackbar = setTimeout(() => {
     removeClass(to, "active");
-  }, milliseconds != null ? milliseconds : 6e3);
+  }, milliseconds ?? 6e3);
 }
 function lastTheme() {
   if (_lastTheme.light && _lastTheme.dark)
@@ -435,8 +444,10 @@ function setup() {
 }
 function ui(selector, options) {
   if (selector) {
-    if (selector === "setup")
-      return setup();
+    if (selector === "setup") {
+      setup();
+      return;
+    }
     if (selector === "guid")
       return guid();
     if (selector === "mode")

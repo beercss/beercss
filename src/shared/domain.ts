@@ -1,4 +1,4 @@
-import { ILayout } from "./interfaces";
+import { type ILayout } from "./interfaces";
 
 const updateTheme = async (data: ILayout, source: any, newMode?: string) => {
   if (source?.target?.type === "color" && source?.target?.value) source = source.target.value;

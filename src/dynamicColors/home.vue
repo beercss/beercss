@@ -147,8 +147,6 @@ main.responsive
 </template>
 
 <script setup lang="ts">
-import utils from "../shared/utils";
 import data from "./data";
 import sharedDomain from "../shared/domain";
-
 </script>

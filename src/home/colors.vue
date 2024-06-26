@@ -100,10 +100,10 @@
     div
       nav
         label.radio
-          input(type="radio", value="light", v-model="data.theme.selected")
+          input(v-model="data.theme.selected", type="radio", value="light")
           span Light
         label.radio
-          input(type="radio", value="dark", v-model="data.theme.selected")
+          input(v-model="data.theme.selected", type="radio", value="dark")
           span Dark
     .space
     article.border
@@ -431,10 +431,8 @@
 </template>
 
 <script setup lang="ts">
-import domain from "./domain";
 import sharedDomain from "../shared/domain";
 import data from "./data";
-import { onMounted } from "vue";
 
 const sourceCode = () => {
   return ((data.value.theme as any)[data.value.theme.selected] || "").replace(/;/g, ";<br/>");

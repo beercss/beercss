@@ -1,4 +1,4 @@
-import { ILayout } from "../shared/interfaces";
+import { type ILayout } from "../shared/interfaces";
 
 export interface IImageNetflix {
   image: string,
