@@ -128,6 +128,26 @@ main.responsive
   h5 Menus 
   nav
     button
+      span Position 
+      menu
+        a Item
+        a Item
+        a More items
+        menu
+          a Item
+          a Item
+          a More items
+          menu
+            a Item
+            a Item
+            a More items
+          a Item
+          a Item
+          a Item
+          a Item
+          a Item
+          a Item
+    button
       span Normal 
       menu(id="menu")
         a(data-ui="#menu") Item
