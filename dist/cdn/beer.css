@@ -102,7 +102,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.1/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.2/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -112,7 +112,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.1/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.2/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -122,7 +122,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.1/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.2/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -2937,49 +2937,82 @@ menu.right {
 }
 menu:has(> menu),
 menu > menu {
+  ---child: 1;
+  ---type: 0;
+
   overflow: unset;
   white-space: nowrap;
   inline-size: auto;
   min-inline-size: 12rem;
   max-block-size: none;
 }
-menu > menu {
-  ---y: 1;
-  inset: auto auto calc(3rem * var(---y)) 100%;
+menu > menu,
+[dir=rtl] menu > menu.left {
+  inset: auto auto calc(3rem * (var(---child) - var(---type))) 100%;
 }
-[dir=rtl] menu > menu {
-  ---y: 1;
-  inset: auto 100% calc(3rem * var(---y)) auto;
+[dir=rtl] menu > menu,
+menu > menu.left {
+  inset: auto 100% calc(3rem * (var(---child) - var(---type))) auto;
 }
-menu > menu:nth-last-child(2) {
-  ---y: 2;
+menu > :nth-last-child(2) {
+  ---child: 2;
 }
-menu > menu:nth-last-child(3) {
-  ---y: 3;
+menu > :nth-last-child(3) {
+  ---child: 3;
 }
-menu > menu:nth-last-child(4) {
-  ---y: 4;
+menu > :nth-last-child(4) {
+  ---child: 4;
 }
-menu > menu:nth-last-child(5) {
-  ---y: 5;
+menu > :nth-last-child(5) {
+  ---child: 5;
 }
-menu > menu:nth-last-child(6) {
-  ---y: 6;
+menu > :nth-last-child(6) {
+  ---child: 6;
 }
-menu > menu:nth-last-child(7) {
-  ---y: 7;
+menu > :nth-last-child(7) {
+  ---child: 7;
 }
-menu > menu:nth-last-child(8) {
-  ---y: 8;
+menu > :nth-last-child(8) {
+  ---child: 8;
 }
-menu > menu:nth-last-child(9) {
-  ---y: 9;
+menu > :nth-last-child(9) {
+  ---child: 9;
 }
-menu > menu:nth-last-child(10) {
-  ---y: 10;
+menu > :nth-last-child(10) {
+  ---child: 10;
 }
-menu > menu:nth-last-child(11) {
-  ---y: 11;
+menu > :nth-last-child(11) {
+  ---child: 11;
+}
+menu > :nth-last-of-type(2) {
+  ---type: 1;
+}
+menu > :nth-last-of-type(3) {
+  ---type: 2;
+}
+menu > :nth-last-of-type(4) {
+  ---type: 3;
+}
+menu > :nth-last-of-type(5) {
+  ---type: 4;
+}
+menu > :nth-last-of-type(6) {
+  ---type: 5;
+}
+menu > :nth-last-of-type(7) {
+  ---type: 6;
+}
+menu > :nth-last-of-type(8) {
+  ---type: 7;
+}
+menu > :nth-last-of-type(9) {
+  ---type: 8;
+}
+menu > :nth-last-of-type(10) {
+  ---type: 9;
+}
+menu > :nth-last-of-type(11) {
+  ---type: 10;
 }
 nav > :is(ol, ul),
 nav > :is(ol, ul) > li {

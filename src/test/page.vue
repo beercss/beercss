@@ -129,23 +129,24 @@ main.responsive
   nav
     button
       span Position 
-      menu
+      menu.active
         a Item
         a Item
         a More items
-        menu
-          a Item
+        menu.active
+          a More items
+          menu.active
+            a Item
           a Item
           a More items
-          menu
+          menu.active.left
+            a Item
+          a Item
+          a More items
+          menu.active.left
             a Item
             a Item
-            a More items
-          a Item
-          a Item
-          a Item
-          a Item
-          a Item
+            a Item
           a Item
     button
       span Normal 
