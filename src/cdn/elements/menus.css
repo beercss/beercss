@@ -38,7 +38,7 @@ menu.no-wrap {
 menu.active,
 menu:not([data-ui]):active,
 :not([data-ui]):focus-within > menu,
-menu > a:hover + menu,
+menu > :is(a, li):hover + menu,
 menu > menu:hover {
   opacity: 1;
   visibility: visible;
@@ -121,11 +121,13 @@ menu > menu {
 }
 
 menu > menu,
+menu > menu.right,
 [dir=rtl] menu > menu.left {
   inset: auto auto calc(3rem * (var(---child) - var(---type))) 100%;
 }
 
 [dir=rtl] menu > menu,
+[dir=rtl] menu > menu.right,
 menu > menu.left {
   inset: auto 100% calc(3rem * (var(---child) - var(---type))) auto;
 }

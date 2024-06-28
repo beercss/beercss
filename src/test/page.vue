@@ -128,22 +128,57 @@ main.responsive
   h5 Menus 
   nav
     button
+      span Position LI
+      menu
+        li
+          a Item
+        li
+          a Item
+        li
+          a More items
+        menu.right
+          li
+            a More items
+          menu.right
+            li 
+              a Item
+          li
+            a Item
+          li
+            a More items
+          menu.left
+            li
+              a Item
+          li
+            a Item
+          li
+            a More items
+          menu.left
+            li
+              a Item
+            li
+              a Item
+            li
+              a Item
+          li
+            a Item
+    button
       span Position 
-      menu.active
+      menu
         a Item
         a Item
         a More items
-        menu.active
+        menu.right
           a More items
-          menu.active
+          menu.right
             a Item
           a Item
           a More items
-          menu.active.left
+          menu.left
             a Item
           a Item
           a More items
-          menu.active.left
+          menu.left
             a Item
             a Item
             a Item
