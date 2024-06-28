@@ -102,7 +102,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.0/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.1/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -112,7 +112,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.0/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.1/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -122,7 +122,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.0/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.1/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -2944,10 +2944,42 @@ menu > menu {
   max-block-size: none;
 }
 menu > menu {
-  inset: -3rem auto auto 100%;
+  ---y: 1;
+  inset: auto auto calc(3rem * var(---y)) 100%;
 }
 [dir=rtl] menu > menu {
-  inset: -3rem 100% auto auto;
+  ---y: 1;
+  inset: auto 100% calc(3rem * var(---y)) auto;
+}
+menu > menu:nth-last-child(2) {
+  ---y: 2;
+}
+menu > menu:nth-last-child(3) {
+  ---y: 3;
+}
+menu > menu:nth-last-child(4) {
+  ---y: 4;
+}
+menu > menu:nth-last-child(5) {
+  ---y: 5;
+}
+menu > menu:nth-last-child(6) {
+  ---y: 6;
+}
+menu > menu:nth-last-child(7) {
+  ---y: 7;
+}
+menu > menu:nth-last-child(8) {
+  ---y: 8;
+}
+menu > menu:nth-last-child(9) {
+  ---y: 9;
+}
+menu > menu:nth-last-child(10) {
+  ---y: 10;
+}
+menu > menu:nth-last-child(11) {
+  ---y: 11;
 }
 nav > :is(ol, ul),
 nav > :is(ol, ul) > li {
