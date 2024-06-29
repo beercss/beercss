@@ -9,7 +9,7 @@ main.responsive
           .medium-space
           nav
             label.slider
-              input(type="range" v-model="data.time")
+              input(v-model="data.time" type="range")
               span
               .tooltip
           .medium-space
@@ -39,7 +39,7 @@ main.responsive
       .space
       article.round.large-padding.blur.no-elevate.page.active.left
         label.slider
-          input(type="range", v-model="data.time")
+          input(v-model="data.time", type="range")
           span
           .tooltip
         .space
@@ -71,11 +71,11 @@ import data from "./data";
 import sharedDomain from "../shared/domain";
 import utils from "../shared/utils";
 
-function updateTheme(source: string, title: string) {
-  sharedDomain.updateTheme(data.value, source || "#f9bd49");
+async function updateTheme(source: string, title: string) {
+  await sharedDomain.updateTheme(data.value, source || "#f9bd49");
   data.value.wallpaper = source || "/classic-utility-jacket.jpg";
   data.value.title = title || "Classic utility jacket";
-  reloadWallpaper();
+  await reloadWallpaper();
 }
 
 async function reloadWallpaper() {

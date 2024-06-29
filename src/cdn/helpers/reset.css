@@ -45,7 +45,8 @@ a,
 button,
 .button,
 i,
-label {
+label,
+select {
   user-select: none;
 }
 

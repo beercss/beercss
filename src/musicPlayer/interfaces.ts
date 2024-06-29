@@ -5,5 +5,5 @@ export interface IMusicPlayer extends ILayout {
   wallpaper: string,
   title: string,
   showWallpaper: boolean,
-  time: number
+  time: number,
 }

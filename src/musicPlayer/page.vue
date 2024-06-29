@@ -15,7 +15,7 @@
         img.responsive(:src="'/favicon.png'")
 
   .fixed.top.right.bottom.left.back.no-events
-    img.responsive.page.active.bottom(:src="data.wallpaper", v-show="data.showWallpaper")
+    img.responsive.page.active.bottom(v-show="data.showWallpaper", :src="data.wallpaper")
   home(v-show="data.showPage")
 </template>
 
