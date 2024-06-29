@@ -1,25 +1,25 @@
 <template lang="pug">
 main.responsive
   .grid
-    .s12.m6.l6
-      article.round.large-padding.blur.no-elevate.page.active.left
-        img.responsive.medium-height(:src="data.wallpaper")
+    .s12.m6.l6.m.l
+      article.round.no-padding.blur.no-elevate.page.active.left
+        img.responsive.medium-height.top-round(:src="data.wallpaper")
         .medium-space
-        .divider
-        .medium-space
-        nav
-          label.slider
-            input(type="range")
-            span
-            .tooltip
-        .medium-space
-        nav.center-align
-          button.transparent.circle.large
-            i skip_previous
-          button.fill.extra
-            i play_arrow
-          button.transparent.circle.large
-            i skip_next
+        .large-padding
+          .medium-space
+          nav
+            label.slider
+              input(type="range" v-model="data.time")
+              span
+              .tooltip
+          .medium-space
+          nav.center-align
+            button.transparent.circle.large
+              i skip_previous
+            button.fill.extra
+              i play_arrow
+            button.transparent.circle.large
+              i skip_next
     .s12.m6.l6.m.l
       article.round.large-padding.blur.no-elevate.page.active.top
         .grid
@@ -35,7 +35,25 @@ main.responsive
             .space
             a.row.round.medium-height
               img.responsive(:src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
-    .s12.m6.l6.s
+    .s12.s
+      .space
+      article.round.large-padding.blur.no-elevate.page.active.left
+        label.slider
+          input(type="range", v-model="data.time")
+          span
+          .tooltip
+        .space
+        nav
+          img.large.round(:src="data.wallpaper")
+          .max
+            nav.center-align
+              button.transparent.circle.large
+                i skip_previous
+              button.fill.extra
+                i play_arrow
+              button.transparent.circle.large
+                i skip_next
+    .s12.s
       article.round.large-padding.blur.no-elevate.page.active.top
         nav.scroll
           .small-height.small-width.round

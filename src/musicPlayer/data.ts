@@ -8,6 +8,7 @@ const data: IMusicPlayer = {
   showWallpaper: true,
   title: "Classic Utility Jacket",
   wallpaper: "/classic-utility-jacket.jpg",
+  time: 0,
 };
 
 const dataAsRef: Ref<IMusicPlayer> = ref(data);

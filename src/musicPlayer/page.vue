@@ -14,7 +14,7 @@
       button.circle.transparent(@click="redirect('/')")
         img.responsive(:src="'/favicon.png'")
 
-  .fixed.top.right.bottom.left.back
+  .fixed.top.right.bottom.left.back.no-events
     img.responsive.page.active.bottom(:src="data.wallpaper", v-show="data.showWallpaper")
   home(v-show="data.showPage")
 </template>
@@ -29,10 +29,13 @@ import utils from "../shared/utils";
 
 onMounted(async () => {
   document.title = "Music Player - Beer CSS";
-  sharedDomain.updateTheme(data.value, "#f9bd49", "dark");
+  await sharedDomain.updateTheme(data.value, "#f9bd49", "dark");
   data.value.wallpaper = "/classic-utility-jacket.jpg";
   data.value.title = "Classic utility jacket";
+  data.value.time = 50;
   data.value.showPage = true;
+
+  window.addEventListener("resize", () => ui());
 });
 
 async function reloadAnimation() {
@@ -41,3 +44,9 @@ async function reloadAnimation() {
   data.value.showPage = true;
 }
 </script>
+
+<style scoped>
+.no-events {
+  pointer-events: none;
+}
+</style>
