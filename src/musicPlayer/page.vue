@@ -1,5 +1,9 @@
 <template lang="pug">
 .top-shadow
+  link(rel="preload", as="image", href="/classic-utility-jacket.jpg")
+  link(rel="preload", as="image", href="/kids-jumpsuit.jpg")
+  link(rel="preload", as="image", href="/dogtooth-style-jacket.jpg")
+  link(rel="preload", as="image", href="/retro-shoe.jpg")
   header.fixed.padding.white-text.top-shadow(v-show="data.showPage")
     nav
       .max
