@@ -54,7 +54,7 @@ main.responsive
               button.transparent.circle.large
                 i skip_next
     .s12.s
-      article.round.large-padding.blur.no-elevate.page.active.top
+      article.round.large-padding.blur.no-elevate.page.active.bottom
         nav.scroll
           .small-height.small-width.round
             img.responsive(:src="'/classic-utility-jacket.jpg'", @click="updateTheme('', '')")
