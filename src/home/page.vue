@@ -213,6 +213,9 @@ div
       a(href="/dynamic-colors")
         i format_paint
         span Material Dynamic Colors
+      a(href="/music-player")
+        i play_arrow
+        span Music Player
       a(href="/netflix")
         i tv
         span Netflix

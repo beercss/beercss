@@ -6,6 +6,7 @@ import "./home";
 import "./dynamicColors";
 import "./gmail";
 import "./materialDesign3";
+import "./musicPlayer";
 import "./netflix";
 import "./reddit";
 import "./test";
