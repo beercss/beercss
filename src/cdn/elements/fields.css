@@ -261,6 +261,10 @@ input[type=number] {
   ---size: 7.5rem;
 }
 
+.field > select {
+  user-select: none;
+}
+
 .field > select > option {
   background-color: var(--surface-container);
   color: var(--on-surface);
