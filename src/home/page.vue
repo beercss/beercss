@@ -269,7 +269,7 @@ div
     #begin
       .small-height
       .small-height
-      h1 We are working to translate a modern UI into HTML semantic standard
+      h1 We are translating a modern UI into HTML semantic standard
       h3 
         a.link(href="https://github.com/beercss/beercss") Don't forget to star us on Github
       .small-height
