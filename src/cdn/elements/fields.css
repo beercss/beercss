@@ -109,7 +109,7 @@
 }
 
 /* input, textarea and select */
-.field > :is(input, textarea, select, ::-webkit-date-and-time-value) {
+.field > :is(input, textarea, select) {
   all: unset;
   position: relative;
   display: flex;
@@ -126,6 +126,9 @@
   z-index: 1;
   background: none;
   resize: none;
+}
+
+input::-webkit-date-and-time-value {
   text-align: start;
 }
 
