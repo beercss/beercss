@@ -102,7 +102,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.5/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.6/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -112,7 +112,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.5/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.6/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -122,7 +122,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.5/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.6/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1551,7 +1551,6 @@ p {
 }
 .wave::after,
 .chip::after,
-.wave.light::after,
 :is(.button, button)::after,
 :is(nav.tabbed, .tabs) > a::after {
   content: "";
@@ -1562,17 +1561,9 @@ p {
   inline-size: 100%;
   block-size: 100%;
   background-position: center;
-  background-image: radial-gradient(circle, rgb(255 255 255 / 0.4) 1%, transparent 1%);
+  background-image: radial-gradient(circle, rgb(128 128 128 / 0.192) 1%, transparent 1%);
   opacity: 0;
   transition: none;
-}
-.wave.dark::after,
-.wave.row::after,
-.chip::after,
-:is(.button, button).border::after,
-:is(.button, button).transparent::after ,
-:is(nav.tabbed, .tabs) > a::after {
-  background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
 }
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):is(:focus-visible, :hover)::after {
   background-size: 15000%;
@@ -2170,7 +2161,7 @@ summary:focus {
   block-size: 1.5rem;
 }
 /* input, textarea and select */
-.field > :is(input, textarea, select) {
+.field > :is(input, textarea, select, ::-webkit-date-and-time-value) {
   all: unset;
   position: relative;
   display: flex;
@@ -2187,6 +2178,7 @@ summary:focus {
   z-index: 1;
   background: none;
   resize: none;
+  text-align: start;
 }
 .field > :is(input, textarea, select):focus {
   border: 0.125rem solid transparent;
