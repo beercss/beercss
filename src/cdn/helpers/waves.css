@@ -1,6 +1,5 @@
 .wave::after,
 .chip::after,
-.wave.light::after,
 :is(.button, button)::after,
 :is(nav.tabbed, .tabs) > a::after {
   content: "";
@@ -11,18 +10,9 @@
   inline-size: 100%;
   block-size: 100%;
   background-position: center;
-  background-image: radial-gradient(circle, rgb(255 255 255 / 0.4) 1%, transparent 1%);
+  background-image: radial-gradient(circle, rgb(128 128 128 / 0.192) 1%, transparent 1%);
   opacity: 0;
   transition: none;
-}
-
-.wave.dark::after,
-.wave.row::after,
-.chip::after,
-:is(.button, button).border::after,
-:is(.button, button).transparent::after ,
-:is(nav.tabbed, .tabs) > a::after {
-  background-image: radial-gradient(circle, rgb(150 150 150 / 0.2) 1%, transparent 1%);
 }
 
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):is(:focus-visible, :hover)::after {
