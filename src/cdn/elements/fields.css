@@ -126,6 +126,7 @@
   z-index: 1;
   background: none;
   resize: none;
+  text-align: start;
 }
 
 input::-webkit-date-and-time-value {

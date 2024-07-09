@@ -100,39 +100,40 @@
     p No new notifications here
 
   .overlay
-  dialog#dialog-expanded.left.small
-    header.fixed
-      nav
-        button.transparent.circle.large(data-ui="#dialog-expanded")
-          i menu
-        a
-          img(v-show="!data.isDark", :src="'/youtube-light.png'")
-          img(v-show="data.isDark", :src="'/youtube-dark.png'")
-    a.row.round(data-ui="#dialog-expanded", href="/youtube")
-      i home
-      div Home
-    a.row.round(data-ui="#dialog-expanded", href="/youtube/whats-hot")
-      i whatshot
-      div What's hot
-    a.row.round(data-ui="#dialog-expanded", href="/youtube/subscriptions")
-      i subscriptions
-      div Subscript
-    a.row.round(data-ui="#dialog-expanded", href="/youtube/library")
-      i video_library
-      div Library
-    .small-divider
-    a.row.round(data-ui="#dialog-expanded")
-      i history
-      div History
-    a.row.round(data-ui="#dialog-expanded")
-      i slideshow
-      div Your videos
-    a.row.round(data-ui="#dialog-expanded")
-      i playlist_play
-      div Your albuns
-    a.row.round(data-ui="#dialog-expanded")
-      i watch_later
-      div Watch later
+  dialog#dialog-expanded.left
+    nav.drawer.no-padding
+      header
+        nav
+          button.transparent.circle.large(data-ui="#dialog-expanded")
+            i menu
+          a
+            img(v-show="!data.isDark", :src="'/youtube-light.png'")
+            img(v-show="data.isDark", :src="'/youtube-dark.png'")
+      a(data-ui="#dialog-expanded", href="/youtube")
+        i home
+        span Home
+      a(data-ui="#dialog-expanded", href="/youtube/whats-hot")
+        i whatshot
+        div What's hot
+      a(data-ui="#dialog-expanded", href="/youtube/subscriptions")
+        i subscriptions
+        div Subscript
+      a(data-ui="#dialog-expanded", href="/youtube/library")
+        i video_library
+        div Library
+      .small-divider
+      a(data-ui="#dialog-expanded")
+        i history
+        div History
+      a(data-ui="#dialog-expanded")
+        i slideshow
+        div Your videos
+      a(data-ui="#dialog-expanded")
+        i playlist_play
+        div Your albuns
+      a(data-ui="#dialog-expanded")
+        i watch_later
+        div Watch later
 
   .overlay
   dialog#dialog-add.bottom.top-round
