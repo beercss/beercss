@@ -33,6 +33,13 @@ section
             img.small-height(src="https://raw.githubusercontent.com/WardPearce/Purplix.io/24682be424e95e61f7355d17d5a9e501a2e6a73d/frontend/public/logo.png", loading="lazy")
           nav.large-padding
             h6 Purplix.io
+    .s12.m4.l3
+      a.wrap(href="https://color.lucianofelix.com.br")
+        article.no-padding.round.wave.no-elevate
+          .center-align
+            img.small-height(src="https://color.lucianofelix.com.br/icons/favicon.svg", loading="lazy")
+          nav.large-padding
+            h6 Color
 </template>
 
 <script setup lang="ts">
