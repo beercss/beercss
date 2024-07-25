@@ -3978,7 +3978,6 @@ table :is(thead, tbody, tfoot, tr, th, td) {
 }
 :is(th, td) {
   inline-size: auto;
-  max-inline-size: 1rem;
   text-align: inherit;
   padding: 0.5rem;
 }
@@ -4015,8 +4014,7 @@ tfoot th.fixed {
   inset-block-end: 0;
 }
 :is(td, th).min {
-  inline-size: 0;
-  max-inline-size: 0%;
+  inline-size: 0.1%;
   white-space: nowrap;
 }
 .tabs {
