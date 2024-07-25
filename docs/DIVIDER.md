@@ -1,23 +1,29 @@
-# Container
+# Divider
 
-A container is the main content of page.
+Dividers are thin lines that group content in lists or other containers
 
 ## Element
 
 ```html
-<main class="responsive">...</main>
+<hr />
 ```
 
 ## Most used helpers
 
+**Directions**
+
+horizontal, vertical
+
 **Sizes**
 
-responsive, max
+small, medium, large
 
 ## Example
 
 ```html
-<main class="responsive"></main>
+<hr />
+<hr class="small" />
+<hr class="vertical" />
 ```
 
 ## Go to
