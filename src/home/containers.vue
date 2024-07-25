@@ -13,16 +13,16 @@
   .medium-space
   h6
     span Side content
-    a.chip.circle(@click="domain.showSamples(data, '#containers main.responsive', 'Containers', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
+    a.chip.circle(@click="domain.showSamples(data, '#containers .grid > div > div', 'Side content', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
       i code
   .grid 
-    .col.s12.m6.l6
+    .s12.m6.l6
       div
         aside.right.small-width.small-height.padding
           img.responsive(:src="'/beer-and-woman.jpg'")
         h5 Title
         p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    .col.s12.m6.l6
+    .s12.m6.l6
       div
         aside.left.small-width.small-height.padding
           img.responsive(:src="'/beer-and-woman.jpg'")

@@ -66,6 +66,22 @@ small, medium, large
 <div class="extra-line">...</div>
 ```
 
+## Blockquote, pre and code example
+
+```html
+<blockquote>...</blockquote>
+
+<pre>...</pre>
+
+<pre>
+  <code>...</code>
+</pre>
+
+<p>...
+  <code>...</code>
+...</p>
+```
+
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [beercss.com](https://www.beercss.com)

@@ -274,6 +274,10 @@ nav.tabbed > a.active {
   background-color: var(--primary-container);
 }
 
+:not(nav) > :is(ul, ol) {
+  all: revert;
+}
+
 @media only screen and (max-width: 600px) {
   nav.top,
   nav.bottom {

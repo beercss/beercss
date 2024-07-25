@@ -185,14 +185,14 @@ pre {
   background-color: var(--surface-container);
   white-space: pre-wrap;
   padding: 1rem;
-  border-left: .25rem solid var(--primary);
+  border-inline-start: .25rem solid var(--primary);
   font-family: inherit;
 }
 
 blockquote {
   border-radius: 0;
   padding: 1rem;
-  border-left: .25rem solid var(--primary);
+  border-inline-start: .25rem solid var(--primary);
   font-family: inherit;
 }
 
