@@ -6,6 +6,11 @@
   --speed2: 0.2s;
   --speed3: 0.3s;
   --speed4: 0.4s;
+  --active: rgb(128 128 128 / 0.192);
+  --overlay: rgb(0 0 0 / 0.5);
+  --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);
+  --elevate2: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.4);
+  --elevate3: 0 0.375rem 0.75rem 0 rgb(0 0 0 / 0.48);
 }
 :root,
 body.light {
@@ -45,11 +50,6 @@ body.light {
   --surface-container: #f2ecf1;
   --surface-container-high: #ece7eb;
   --surface-container-highest: #e6e1e6;
-  --overlay: rgb(0 0 0 / 0.5);
-  --active: rgb(0 0 0 / 0.1);
-  --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);
-  --elevate2: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.4);
-  --elevate3: 0 0.375rem 0.75rem 0 rgb(0 0 0 / 0.48);
 }
 body.dark {
   --primary: #cfbcff;
@@ -88,11 +88,6 @@ body.dark {
   --surface-container: #201f22;
   --surface-container-high: #2b292d;
   --surface-container-highest: #363438;
-  --overlay: rgb(0 0 0 / 0.5);
-  --active: rgb(255 255 255 / 0.2);
-  --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);
-  --elevate2: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.4);
-  --elevate3: 0 0.375rem 0.75rem 0 rgb(0 0 0 / 0.48);
 }
 /* outlined icons */
 @font-face {
@@ -142,9 +137,6 @@ body {
 label {
   font-size: 0.75rem;
   vertical-align: baseline;
-}
-ul, ol {
-  padding: 0 0 0 1rem;
 }
 a,
 b,
@@ -1531,13 +1523,13 @@ pre {
   background-color: var(--surface-container);
   white-space: pre-wrap;
   padding: 1rem;
-  border-left: .25rem solid var(--primary);
+  border-inline-start: .25rem solid var(--primary);
   font-family: inherit;
 }
 blockquote {
   border-radius: 0;
   padding: 1rem;
-  border-left: .25rem solid var(--primary);
+  border-inline-start: .25rem solid var(--primary);
   font-family: inherit;
 }
 code {
@@ -1566,7 +1558,7 @@ blockquote > code {
   inline-size: 100%;
   block-size: 100%;
   background-position: center;
-  background-image: radial-gradient(circle, rgb(128 128 128 / 0.192) 1%, transparent 1%);
+  background-image: radial-gradient(circle, var(--active) 1%, transparent 1%);
   opacity: 0;
   transition: none;
 }
@@ -3286,6 +3278,9 @@ nav.tabbed > a {
 nav.tabbed > a.active {
   background-color: var(--primary-container);
 }
+:not(nav) > :is(ul, ol) {
+  all: revert;
+}
 @media only screen and (max-width: 600px) {
   nav.top,
   nav.bottom {
@@ -3998,7 +3993,7 @@ tfoot > tr > th {
   border-block-start: 0.0625rem solid var(--outline);
 }
 table.stripes > tbody > tr:nth-child(odd) {
-  background-color: rgb(128 128 128 / 0.192);
+  background-color: var(--active);
 }
 table.no-space :is(th, td) {
   padding: 0;

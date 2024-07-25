@@ -125,11 +125,6 @@ body.light {
   --surface-container: #f2ecf1;
   --surface-container-high: #ece7eb;
   --surface-container-highest: #e6e1e6;
-  --overlay: rgb(0 0 0 / 0.5);
-  --active: rgb(0 0 0 / 0.1);
-  --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);
-  --elevate2: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.4);
-  --elevate3: 0 0.375rem 0.75rem 0 rgb(0 0 0 / 0.48);
 }
 
 body.dark {
@@ -169,11 +164,6 @@ body.dark {
   --surface-container: #201f22;
   --surface-container-high: #2b292d;
   --surface-container-highest: #363438;
-  --overlay: rgb(0 0 0 / 0.5);
-  --active: rgb(255 255 255 / 0.2);
-  --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);
-  --elevate2: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.4);
-  --elevate3: 0 0.375rem 0.75rem 0 rgb(0 0 0 / 0.48);
 }
 ```
 

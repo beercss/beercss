@@ -10,7 +10,7 @@
   inline-size: 100%;
   block-size: 100%;
   background-position: center;
-  background-image: radial-gradient(circle, rgb(128 128 128 / 0.192) 1%, transparent 1%);
+  background-image: radial-gradient(circle, var(--active) 1%, transparent 1%);
   opacity: 0;
   transition: none;
 }

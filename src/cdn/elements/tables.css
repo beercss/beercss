@@ -32,7 +32,7 @@ tfoot > tr > th {
 }
 
 table.stripes > tbody > tr:nth-child(odd) {
-  background-color: rgb(128 128 128 / 0.192);
+  background-color: var(--active);
 }
 
 table.no-space :is(th, td) {
