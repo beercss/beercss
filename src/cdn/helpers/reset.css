@@ -20,12 +20,18 @@ label {
   vertical-align: baseline;
 }
 
+ul, ol {
+  padding: 0 0 0 1rem;
+}
+
 a,
 b,
 i,
 span,
-strong {
-  vertical-align: bottom;
+strong,
+em,
+code {
+  vertical-align: baseline;
 }
 
 a,
@@ -62,7 +68,6 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   border-radius: 1rem;
 }
 
-pre,
-code {
-  direction: ltr;
+* + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul) {
+  margin-block-start: 1rem;
 }

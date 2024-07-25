@@ -107,7 +107,7 @@ main.responsive.max.medium-line(v-show="data.showPage")
             p Code and developer documentation for Android, Flutter, and the Web
     .large-space
     .large-space
-    .divider
+    hr
     .large-space
     .grid
       .s12.l6

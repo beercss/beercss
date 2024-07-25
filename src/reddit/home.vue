@@ -110,7 +110,7 @@ main.responsive
         article.no-elevate.round
           h6 Home
           p Your personal Reddit frontpage. Come here to check in with your favorite communities.
-          .medium-divider
+          hr.medium
           nav.vertical
             button.responsive Create Post
             button.responsive.border Create Community

@@ -4,7 +4,7 @@ main.responsive
 
   .large-space
   h3.bold.page.right.active Build whatever you want, seriously.
-  .large-divider
+  hr.large
 
   article.no-padding.round
     .grid.no-space
@@ -25,7 +25,7 @@ main.responsive
           a.chip.square L
           a.chip.square XL
           label.l Size guide
-        .large-divider
+        hr.large
         nav
           button.no-round Buy now
           button.border.no-round Add to bag
@@ -49,7 +49,7 @@ main.responsive
           a.chip.circle L
           a.chip.circle XL
           label.l Size guide
-        .large-divider
+        hr.large
         nav
           button Buy now
           button Add to bag
@@ -73,7 +73,7 @@ main.responsive
           a.chip.circle L
           a.chip.circle XL
           label.l Size guide
-        .large-divider
+        hr.large
         nav
           button.large Buy now
           button.large.border Add to bag
@@ -96,7 +96,7 @@ main.responsive
           a.chip.circle.bottom-round.right-round L
           a.chip.circle.bottom-round.right-round XL
           label.l Size guide
-        .large-divider
+        hr.large
         nav
           button.large.bottom-round.right-round Buy now
           button.large.bottom-round.right-round.border Add to bag
@@ -106,7 +106,7 @@ main.responsive
 
   .large-space
   h3.bold Responsive everything.
-  .large-divider
+  hr.large
 
   article.no-padding.fill.no-elevate.round
     .grid
@@ -134,7 +134,7 @@ main.responsive
               a 4.94
               a (128)
               a Collingwood, Ontario
-            .large-divider
+            hr.large
             nav
               button.large Check availability
       .s6.m.l.large-padding

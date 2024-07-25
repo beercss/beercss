@@ -52,10 +52,6 @@ yellow1, yellow2, yellow3, yellow4, yellow5, yellow6, yellow7, yellow8, yellow9,
 
 horizontal, vertical
 
-## Dividers
-
-divider, small-divider, medium-divider, large-divider
-
 ## Elevates
 
 elevate, no-elevate, small-elevate, medium-elevate, large-elevate, 
@@ -128,11 +124,11 @@ active
 
 ## [Typography](TYPOGRAPHY.md)
 
-h1, h2, h3, h4, h5, h6, italic, bold, underline, overline, upper, lower, capitalize, link, small-text, medium-text, large-text 
+&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, italic, bold, underline, overline, upper, lower, capitalize, link, small-text, medium-text, large-text, &lt;em&gt;, &lt;strong&gt;, &lt;b&gt;
 
 ## Waves
 
-wave, no-wave, light, dark
+wave, no-wave
 
 ## Go to
 

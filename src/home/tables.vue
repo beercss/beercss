@@ -138,7 +138,21 @@
         span Scroll
         a.chip.circle(@click="domain.showSamples(data, '#table-scroll > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
-      .small-height.scroll
+      nav.wrap
+        label.radio
+          input(type="radio", name="color-tables", checked, @click="domain.updateColor('#table-scroll > .scroll', 'surface')")
+          span surface
+        label.radio
+          input(type="radio", name="color-tables", @click="domain.updateColor('#table-scroll > .scroll', 'primary')")
+          span primary
+        label.radio
+          input(type="radio", name="color-tables", @click="domain.updateColor('#table-scroll > .scroll', 'secondary')")
+          span secondary
+        label.radio
+          input(type="radio", name="color-tables", @click="domain.updateColor('#table-scroll > .scroll', 'tertiary')")
+          span tertiary
+      .space
+      .small-height.scroll.surface
         table.border
           thead.fixed
             tr

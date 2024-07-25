@@ -4,10 +4,7 @@
 
   block-size: var(---size);
   margin-block-end: 2rem;
-}
-
-* + .field {
-  margin-block-start: 1rem;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .grid > * > .field {
@@ -43,10 +40,6 @@
 .field.extra {
   ---size: 4rem;
   ---start: 1.6rem;
-}
-
-.field {
-  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .field.border {
@@ -131,6 +124,11 @@
 
 input::-webkit-date-and-time-value {
   text-align: start;
+}
+
+:is(input, select, textarea):-webkit-autofill {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: inherit;
 }
 
 .field > :is(input, textarea, select):focus {
@@ -447,4 +445,19 @@ a.helper {
 
 table td > .field {
   margin: 0;
+}
+
+fieldset {
+  border-radius: .25rem;
+  padding: 1rem;
+  border: 0.0625rem solid var(--outline-variant);
+}
+
+fieldset > legend {
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+}
+
+fieldset > legend + * {
+  margin-block-start: 0 !important;
 }

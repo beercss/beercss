@@ -51,6 +51,14 @@ nav.bottom:not(.s, .m, .l) ~ footer.fixed {
   inset-block-end: 5rem;
 }
 
+aside:not(.fixed, .absolute).right {
+  float: right;
+}
+
+aside:not(.fixed, .absolute).left {
+  float: left;
+}
+
 @media only screen and (max-width: 600px) {
   *:has(> nav.s.bottom) {
     padding-block-end: 5rem;

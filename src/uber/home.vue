@@ -36,7 +36,7 @@ div
         .min
           h6.no-margin {{ data.street }}
           .link Your current location
-      .small-divider
+      hr.small
       a.row(@click="go()")
         .min
           button.circle.small.no-wave

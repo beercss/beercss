@@ -14,8 +14,8 @@ nav#navigation-drawer.left
   a
     i share
     span Share
-  .divider
-  .divider.vertical
+  hr
+  hr.vertical
   .max
   label Subtitle
   a
@@ -44,8 +44,10 @@ nav#navigation-ul-drawer.right
       a
         i share
         span Share
-    li.divider
-    li.divider.vertical
+    li
+      hr
+    li
+      hr.vertical
     li.max
     li
       label Subtitle
@@ -115,7 +117,7 @@ main.responsive
       a
         i share
         span Share
-      .divider
+      hr
       label Subtitle
       a
         i widgets
@@ -357,8 +359,8 @@ main.responsive
       nav.vertical
         button Button
         button.chip Chip
-        .divider
-        .divider.vertical
+        hr
+        hr.vertical
         .max
         a Link
     .s12.m6.l6
@@ -369,8 +371,10 @@ main.responsive
             button Button
           li
             button.chip Chip
-          li.divider
-          li.divider.vertical
+          li
+            hr
+          li
+            hr.vertical
           li.max
           li
             a Link
@@ -436,11 +440,6 @@ main.responsive
     button(data-ui="#top") Top
     button(data-ui="#right") Right
     button(data-ui="#bottom") Bottom
-    button
-      span Date picker
-      menu.round.no-wrap
-        datePicker
-
   .large-space
   h5 Slider, progress and field bindings
   .row
@@ -500,7 +499,8 @@ main.responsive
           a
             i share
             span Share
-        li.divider
+        li
+          hr
         li
           label Subtitle
         li
@@ -528,7 +528,7 @@ main.responsive
       a
         i share
         span Share
-      .divider
+      hr
       label Subtitle
       a(data-ui="#menu1")
         i arrow_drop_down
@@ -542,9 +542,9 @@ main.responsive
   h5 Steppers
   nav
     button.circle 1
-    .divider.max
+    hr.max
     button.circle 1
-    .divider.max
+    hr.max
     button.circle 1
 
   .large-space
@@ -1095,7 +1095,6 @@ main.responsive
 <script setup lang="ts">
 import { ref } from "vue";
 import domain from "../home/domain";
-import datePicker from "./datePicker/datePicker.vue";
 const updateTheme = () => {
   document.body.className = document.body.className.includes("dark") ? "light" : "dark";
 };

@@ -16,13 +16,9 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  display: flex;
+  display: block;
   align-items: center;
   line-height: normal;
-}
-
-* + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: 1rem;
 }
 
 h1 {
@@ -182,4 +178,37 @@ p {
 
 .extra-line {
   line-height: 2.25rem;
+}
+
+pre {
+  border-radius: 0;
+  background-color: var(--surface-container);
+  white-space: pre-wrap;
+  padding: 1rem;
+  border-left: .25rem solid var(--primary);
+  font-family: inherit;
+}
+
+blockquote {
+  border-radius: 0;
+  padding: 1rem;
+  border-left: .25rem solid var(--primary);
+  font-family: inherit;
+}
+
+code {
+  border-radius: 0;
+  background-color: var(--surface-container);
+  white-space: pre-wrap;
+  direction: ltr;
+  padding: .25rem;
+}
+
+pre > code,
+blockquote > code {
+  padding: 0;
+}
+
+.scroll > code {
+  white-space: pre;
 }

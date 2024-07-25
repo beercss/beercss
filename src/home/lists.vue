@@ -76,13 +76,13 @@ div
             i code
         article
           a.row.wave Item 1
-          .divider
+          hr
           a.row.wave Item 2
-          .divider
+          hr
           a.row.wave Item 3
-          .divider
+          hr
           a.row.wave Item 4
-          .divider
+          hr
           a.row.wave Item 5
       #list-expansions.s12.m6.l6
         h6

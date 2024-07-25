@@ -153,7 +153,8 @@ div
     .space
     article.border(v-for="(exemplo, i) in data.samples")
       h6 {{ layoutNames[i] }}
-      pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
+      pre.scroll
+        code(v-html="exemplo.sourceCode")
     .space
 
 </template>

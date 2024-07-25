@@ -78,7 +78,7 @@ div
       a(@click="sharedDomain.updateMode(data)")
         i {{ data.isDark ? "light_mode" : "dark_mode" }}
         span Light / Dark
-      .small-divider
+      hr.small
       a(data-ui="#dialog-menu", @click="domain.goTo('#app-bars')")
         i widgets
         span App bars
@@ -115,6 +115,9 @@ div
       a(data-ui="#dialog-menu", @click="domain.goTo('#expansions')")
         i widgets
         span Expansions
+      a(data-ui="#dialog-menu", @click="domain.goTo('#fieldsets')")
+        i widgets
+        span Fieldsets
       a(data-ui="#dialog-menu", @click="domain.goTo('#grids')")
         i widgets
         span Grids
@@ -228,7 +231,7 @@ div
       a(href="/youtube")
         i smart_display
         span Youtube
-      .small-divider
+      hr.small
       a(href="https://codepen.io/search/pens?q=beercss" target="_blank")
         i code
         span Codepen
@@ -284,115 +287,164 @@ div
             .medium-space
             h5 From CDN
             .space
-            pre.scroll.large-padding.fill
-              | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.6.8/dist/cdn/beer.min.css" rel="stylesheet"&gt;
-              |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.6.8/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
-              |
-              | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
+            pre.scroll
+              code
+                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.6.9/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+                |
+                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.6.9/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+                |
+                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
             h5 From NPM
             .space
-            pre.scroll.large-padding.fill
-              | // installing
-              | npm i beercss
-              | npm i material-dynamic-colors
-              |
-              | // importing
-              | import "beercss";
-              | import "material-dynamic-colors";
+            pre.scroll
+              code
+                | // installing
+                | npm i beercss
+                | npm i material-dynamic-colors
+                |
+                | // importing
+                | import "beercss";
+                | import "material-dynamic-colors";
             .medium-space
             b We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.
             .medium-space
             .l
               h5 Summary
               .space
-              pre.wrap.large-padding.fill
-                p
-                  b.error-text absolute
-                  span &nbsp;left, right, top, bottom, front, back, small, medium, large
-                p
-                  b.error-text &lt;article&gt;
-                  span &nbsp;small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, tiny-padding small-padding, medium-padding, large-padding
-                p
-                  b.error-text badge
-                  span &nbsp;min, left, right, top, bottom, none, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
-                p
-                  b.error-text button or &lt;button&gt;
-                  span &nbsp;small, medium, large, extra, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
-                p
-                  b.error-text chip
-                  span &nbsp;small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
-                p
-                  b.error-text &lt;details&gt;
-                p
-                  b.error-text &lt;dialog&gt;
-                  span &nbsp;left, right, top, bottom, small, medium, large, modal, border, round, no-round, left-round, right-round, top-round, bottom-round, active
-                p
-                  b.error-text field
-                  span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
-                p
-                  b.error-text fixed
-                  span &nbsp;left, right, top, bottom, front, back, small, medium, large
-                p
-                  b.error-text &lt;footer&gt;
-                  span &nbsp;fixed, responsive
-                p
-                  b.error-text &lt;h1&gt;...&lt;h6&gt;
-                  span &nbsp;small, medium, large
-                p
-                  b.error-text &lt;header&gt;
-                  span &nbsp;fixed, responsive
-                p
-                  b.error-text &lt;i&gt;
-                  span &nbsp;tiny, small, medium, large, extra, fill
-                p
-                  b.error-text &lt;img&gt;
-                  span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
-                p
-                  b.error-text &lt;label&gt;
-                  span &nbsp;active, radio, checkbox, switch
-                p
-                  b.error-text &lt;li&gt;
-                  span &nbsp;max, divider, small-divider, medium-divider, large-divider
-                p
-                  b.error-text &lt;main&gt;
-                  span &nbsp;responsive, max
-                p
-                  b.error-text &lt;menu&gt;
-                  span &nbsp;left, right, wrap, no-wrap, active, min, max
-                p
-                  b.error-text &lt;nav&gt;
-                  span &nbsp;left, right, top, bottom, drawer, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
-                p
-                  b.error-text overlay
-                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active, blur, small-blur, medium-blur, large-blur
-                p
-                  b.error-text page
-                  span &nbsp;left, right, top, bottom, active
-                p
-                  b.error-text &lt;progress&gt;
-                  span &nbsp;small, medium, large, circle, max, vertical
-                p
-                  b.error-text row, &lt;ul&gt; or &lt;ol&gt;
-                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, no-space, small-space, medium-space, large-space, horizontal, vertical
-                p
-                  b.error-text snackbar
-                  span &nbsp;top, bottom, active
-                p
-                  b.error-text &lt;summary&gt;
-                p
-                  b.error-text &lt;table&gt;
-                  span &nbsp;left-align, right-align, center-align, no-space, space, small-space, medium-space, large-space, border, stripes, min, fixed
-                p
-                  b.error-text tabs
-                  span &nbsp;left-align, right-align, center-align, horizontal, vertical, min, max
-                p
-                  b.error-text tooltip
-                  span &nbsp;left, right, top, bottom, max
-                p
-                  b.error-text &lt;video&gt;
-                  span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
+              pre
+                code
+                  p
+                    b.error-text &lt;a&gt;
+                    span &nbsp;link, inverse-link, underline
+                  p
+                    b.error-text absolute
+                    span &nbsp;left, right, top, bottom, front, back, small, medium, large
+                  p
+                    b.error-text &lt;aside&gt;
+                    span &nbsp;left, right
+                  p
+                    b.error-text &lt;article&gt;
+                    span &nbsp;small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, tiny-padding small-padding, medium-padding, large-padding
+                  p
+                    b.error-text &lt;b&gt;
+                  p
+                    b.error-text badge
+                    span &nbsp;min, left, right, top, bottom, none, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
+                  p
+                    b.error-text &lt;blockquote&gt;
+                    span &nbsp;border, no-border, scroll
+                  p
+                    b.error-text button or &lt;button&gt;
+                    span &nbsp;small, medium, large, extra, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
+                  p
+                    b.error-text chip
+                    span &nbsp;small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
+                  p
+                    b.error-text &lt;code&gt;
+                  p
+                    b.error-text &lt;details&gt;
+                  p
+                    b.error-text &lt;dialog&gt;
+                    span &nbsp;left, right, top, bottom, small, medium, large, modal, border, round, no-round, left-round, right-round, top-round, bottom-round, active
+                  p
+                    b.error-text &lt;em&gt;
+                  p
+                    b.error-text field
+                    span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
+                  p
+                    b.error-text &lt;fieldset&gt;
+                  p
+                    b.error-text fixed
+                    span &nbsp;left, right, top, bottom, front, back, small, medium, large
+                  p
+                    b.error-text &lt;footer&gt;
+                    span &nbsp;fixed, responsive, max
+                  p
+                    b.error-text grid
+                    span &nbsp;space, no-space, small-space, medium-space, large-space
+                  p
+                    b.error-text &lt;h1&gt;...&lt;h6&gt;
+                    span &nbsp;small, medium, large
+                  p
+                    b.error-text &lt;header&gt;
+                    span &nbsp;fixed, responsive, max
+                  p
+                    b.error-text &lt;hr&gt;
+                    span &nbsp;small, medium, large
+                  p
+                    b.error-text &lt;i&gt;
+                    span &nbsp;tiny, small, medium, large, extra, fill
+                  p
+                    b.error-text &lt;img&gt;
+                    span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
+                  p
+                    b.error-text &lt;label&gt;
+                    span &nbsp;active, radio, checkbox, switch
+                  p
+                    b.error-text &lt;legend&gt;
+                  p
+                    b.error-text &lt;li&gt;
+                  p
+                    b.error-text &lt;main&gt;
+                    span &nbsp;responsive, max
+                  p
+                    b.error-text &lt;menu&gt;
+                    span &nbsp;left, right, wrap, no-wrap, active, min, max
+                  p
+                    b.error-text &lt;nav&gt;
+                    span &nbsp;left, right, top, bottom, drawer, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+                  p
+                    b.error-text &lt;ol&gt;
+                  p
+                    b.error-text overlay
+                    span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active, blur, small-blur, medium-blur, large-blur
+                  p
+                    b.error-text page
+                    span &nbsp;left, right, top, bottom, active
+                  p
+                    b.error-text &lt;pre&gt;
+                    span &nbsp;border, no-border, scroll
+                  p
+                    b.error-text &lt;progress&gt;
+                    span &nbsp;small, medium, large, circle, max, vertical
+                  p
+                    b.error-text row
+                    span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, space, no-space, small-space, medium-space, large-space, horizontal, vertical
+                  p
+                    b.error-text snackbar
+                    span &nbsp;top, bottom, active
+                  p
+                    b.error-text &lt;strong&gt;
+                  p
+                    b.error-text &lt;summary&gt;
+                    span &nbsp;none
+                  p
+                    b.error-text &lt;table&gt;
+                    span &nbsp;border, stripes, left-align, right-align, center-align, space, no-space, small-space, medium-space, large-space
+                  p
+                    b.error-text tabs
+                    span &nbsp;left-align, right-align, center-align, horizontal, vertical, min, max
+                  p
+                    b.error-text &lt;td&gt;
+                    span &nbsp;min
+                  p
+                    b.error-text &lt;th&gt;
+                    span &nbsp;min
+                  p
+                    b.error-text &lt;tfoot&gt;
+                    span &nbsp;fixed
+                  p
+                    b.error-text &lt;thead&gt;
+                    span &nbsp;fixed
+                  p
+                    b.error-text tooltip
+                    span &nbsp;left, right, top, bottom, max
+                  p
+                    b.error-text &lt;ul&gt;
+                  p
+                    b.error-text &lt;video&gt;
+                    span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
             .large-space
             mainLayouts
             .medium-space
@@ -400,7 +452,7 @@ div
               a.button.small-round(href="https://codepen.io/leo-bnu/pen/yLKLPxj" target="_blank") Main layout on Codepen
               a.button.small-round(href="https://codepen.io/collection/XydYMB" target="_blank") All Codepen
           .medium-space
-          .large-divider
+          hr.large
         .s12
           appBars
         .s12
@@ -425,6 +477,8 @@ div
           dividers
         .s12
           expansions
+        .s12
+          fieldsets
         .s12
           grids
         .s12
@@ -494,7 +548,8 @@ div
         article.large-padding.border(v-for="exemplo in data.samples")
           div(v-html="exemplo.html")
           .space(v-show="exemplo.html")
-          pre.scroll.large-padding.fill(v-html="exemplo.sourceCode")
+          pre.scroll
+            code(v-html="exemplo.sourceCode")
 </template>
 
 <script setup lang="ts">
@@ -516,6 +571,7 @@ import directions from "./directions.vue";
 import dividers from "./dividers.vue";
 import menus from "./menus.vue";
 import expansions from "./expansions.vue";
+import fieldsets from "./fieldsets.vue";
 import grids from "./grids.vue";
 import icons from "./icons.vue";
 import inputs from "./inputs.vue";

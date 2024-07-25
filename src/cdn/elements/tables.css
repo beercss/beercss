@@ -1,20 +1,14 @@
 table {
-  ---stripes: rgb(0 0 0 / 0.05);
-
   inline-size: 100%;
   border-spacing: 0;
   font-size: 0.875rem;
-  color: var(--on-surface);
   text-align: start;
-  background-color: var(--surface);
 }
 
-.dark table {
-  ---stripes: rgb(255 255 255 / 0.05);
-}
-
-table :is(thead, tbody, tfoot, tr, th) {
+.scroll > table,
+table :is(thead, tbody, tfoot, tr, th, td) {
   background-color: inherit;
+  color: inherit;
 }
 
 :is(th, td) {
@@ -38,7 +32,7 @@ tfoot > tr > th {
 }
 
 table.stripes > tbody > tr:nth-child(odd) {
-  background-color: var(---stripes);
+  background-color: rgb(128 128 128 / 0.192);
 }
 
 table.no-space :is(th, td) {

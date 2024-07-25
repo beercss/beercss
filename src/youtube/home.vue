@@ -30,7 +30,7 @@ main.responsive(v-show="data.isLoaded")
                   a Watch later
                   a Like it
 
-    .large-divider
+    hr.large
     h5 What's hot
     .row.scroll
       .min(v-for="item in data.whatsHot")
@@ -46,7 +46,7 @@ main.responsive(v-show="data.isLoaded")
               button.circle.transparent
                 i thumb_up
 
-    .large-divider
+    hr.large
     h5 Your videos
     .row.scroll
       .min(v-for="item in data.yourVideos")

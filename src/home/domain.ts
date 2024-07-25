@@ -63,7 +63,7 @@ const updateActive = (selector: string, event: any) => {
 
 const updateDivider = (selector: string, divider?: string) => {
   const elements = utils.queryAll(selector);
-  utils.removeClass(elements, ["divider", "small-divider", "medium-divider", "large-divider"]);
+  utils.removeClass(elements, ["small", "medium", "large"]);
   if (divider) utils.addClass(elements, [divider]);
 };
 

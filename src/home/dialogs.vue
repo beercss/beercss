@@ -111,7 +111,7 @@
         a
           i delete
           span Trash
-        .divider
+        hr
         label Labels
         a
           i fiber_manual_record

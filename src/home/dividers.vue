@@ -9,28 +9,23 @@
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="divider-dividers", @click="domain.updateDivider('#divider [class*=divider]', 'divider')")
-      span divider
+      input(type="radio", name="divider-dividers", checked, @click="domain.updateDivider('#divider hr', '')")
+      span default
     label.radio
-      input(
-        type="radio",
-        name="divider-dividers",
-        checked,
-        @click="domain.updateDivider('#divider [class*=divider]', 'small-divider')"
-      )
-      span small-divider
+      input(type="radio", name="divider-dividers", @click="domain.updateDivider('#divider hr', 'small')")
+      span small
     label.radio
-      input(type="radio", name="divider-dividers", @click="domain.updateDivider('#divider [class*=divider]', 'medium-divider')")
-      span medium-divider
+      input(type="radio", name="divider-dividers", @click="domain.updateDivider('#divider hr', 'medium')")
+      span medium
     label.radio
-      input(type="radio", name="divider-dividers", @click="domain.updateDivider('#divider [class*=divider]', 'large-divider')")
-      span large-divider
+      input(type="radio", name="divider-dividers", @click="domain.updateDivider('#divider hr', 'large')")
+      span large
   .space
   #divider
     div Some text here
-    .small-divider
+    hr
     div Some text here
-    .small-divider
+    hr
     div Some text here
 
 </template>

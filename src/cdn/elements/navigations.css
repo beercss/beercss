@@ -15,20 +15,16 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) {
   justify-content: flex-start;
   white-space: nowrap;
   gap: 1rem;
-  margin: 0;
 }
 
 a.row {
   min-block-size: 3rem;
+  margin: 0;
 }
 
 :is(nav, .row, .max) > :only-child,
 nav > :is(ol, ul) > li > :only-child {
   margin: 0;
-}
-
-* + :is(nav, .row) {
-  margin-block-start: 1rem;
 }
 
 :is(nav, .row) > * {
@@ -230,7 +226,7 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
   align-items: center;
 }
 
-:is(.drawer, .vertical) > :is(li, [class*=divider]):not(.vertical),
+:is(.drawer, .vertical) > :is(li, [class*=divider], hr):not(.vertical),
 :is(.drawer, .vertical) > :is(ol, ul) > li:not(.vertical) {
   align-self: stretch;
 }

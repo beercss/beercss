@@ -27,19 +27,19 @@
   nav.scroll
     button.circle.small
       i done
-    .max.divider
+    .maxhr
     button.circle.small 2
-    .max.divider
+    .maxhr
     button.circle.small(disabled) 3
   .medium-space
   nav.scroll
     button.circle.small
       i done
     div Previous
-    .max.divider
+    .maxhr
     button.circle.small 2
     div Current
-    .max.divider
+    .maxhr
     button.circle.small(disabled) 3
     div Next
   .medium-space
@@ -48,11 +48,11 @@
       button.circle.small
         i done
       .small-margin Previous
-    .max.divider
+    .maxhr
     .center-align
       button.circle.small 2
       .small-margin Current
-    .max.divider
+    .maxhr
     .center-align
       button.circle.small(disabled) 3
       .small-margin Next

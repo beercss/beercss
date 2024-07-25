@@ -50,10 +50,14 @@
       p.small-text small-text
       p.medium-text medium-text
       p.large-text large-text
+      code code
+      em emphasized
+      strong strong
+      b bold
   .medium-space
   h6.middle-align
     span Line spacing
-    a.chip.circle(@click="domain.showSamples(data, '#spacing > :not(.bold, .small-divider, .space)', 'Line spacing', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#line-spacing-example')")
+    a.chip.circle(@click="domain.showSamples(data, '#spacing > :not(.bold, hr.small, .space)', 'Line spacing', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#line-spacing-example')")
       i code
   nav.wrap
     label.radio
@@ -79,6 +83,27 @@
     div
       h5 Title
       p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  .medium-space
+  h6.middle-align
+    span Blockquote, pre and code
+    a.chip.circle(@click="domain.showSamples(data, '#code > *', 'Pre, code and blockquote', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#formatting-example')")
+      i code
+  .space
+  #code
+    blockquote
+      | First line.
+      br
+      | Second line.
+      br
+      | Third line.
+    pre
+      | First line.
+      | Second line.
+      | Third line.
+    pre
+      code
+        | // This logs a message to the console
+        | console.log('Hello, world!')
 </template>
 
 <script setup lang="ts">

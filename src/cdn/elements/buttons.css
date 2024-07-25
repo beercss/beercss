@@ -67,17 +67,17 @@ button {
   margin-inline-start: 2.5rem;
 }
 
-:is(.button, button):is([disabled]) {
+:is(.button, button)[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-:is(.button):is([disabled]) {
+.button[disabled] {
   pointer-events: none;
 }
 
-:is(.button, button):is([disabled])::before,
-:is(.button, button):is([disabled])::after {
+:is(.button, button)[disabled]::before,
+:is(.button, button)[disabled]::after {
   display: none;
 }
 

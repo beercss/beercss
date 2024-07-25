@@ -8,10 +8,6 @@ article {
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
 }
 
-* + article {
-  margin-block-start: 1rem;
-}
-
 article.small {
   block-size: 12rem;
 }

@@ -1,4 +1,6 @@
+hr,
 [class*=divider] {
+  all: unset;
   min-inline-size: 1.5rem;
   min-block-size: auto;
   block-size: 0.0625rem;
@@ -6,22 +8,27 @@
   display: block;
 }
 
+hr + *,
 [class*=divider] + * {
   margin: 0 !important;
 }
 
+hr.medium,
 .medium-divider {
   margin: 1rem 0 !important;
 }
 
+hr.large,
 .large-divider {
   margin: 1.5rem 0 !important;
 }
 
+hr.small,
 .small-divider {
   margin: 0.5rem 0 !important;
 }
 
+hr.vertical,
 .divider.vertical {
   min-inline-size: auto;
   min-block-size: 1.5rem;

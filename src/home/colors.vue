@@ -107,7 +107,8 @@
           span Dark
     .space
     article.border
-      pre.scroll.large-padding.fill(v-html="sourceCode()")
+      pre.scroll
+        code(v-html="sourceCode()")
 
     .grid.no-round
       .s12
@@ -438,9 +439,3 @@ const sourceCode = () => {
   return ((data.value.theme as any)[data.value.theme.selected] || "").replace(/;/g, ";<br/>");
 };
 </script>
-
-<style scoped>
-pre {
-  white-space: normal;
-}
-</style>

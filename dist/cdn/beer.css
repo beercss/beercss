@@ -102,7 +102,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.8/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.9/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -112,7 +112,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.8/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.9/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -122,7 +122,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.8/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.9/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -143,12 +143,17 @@ label {
   font-size: 0.75rem;
   vertical-align: baseline;
 }
+ul, ol {
+  padding: 0 0 0 1rem;
+}
 a,
 b,
 i,
 span,
-strong {
-  vertical-align: bottom;
+strong,
+em,
+code {
+  vertical-align: baseline;
 }
 a,
 button,
@@ -180,9 +185,8 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   background: var(--outline);
   border-radius: 1rem;
 }
-pre,
-code {
-  direction: ltr;
+* + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul) {
+  margin-block-start: 1rem;
 }
 .primary {
   background-color: var(--primary) !important;
@@ -1081,30 +1085,6 @@ code {
 .vertical > * {
   margin-inline: 0 !important;
 }
-[class*=divider] {
-  min-inline-size: 1.5rem;
-  min-block-size: auto;
-  block-size: 0.0625rem;
-  background-color: var(--outline-variant);
-  display: block;
-}
-[class*=divider] + * {
-  margin: 0 !important;
-}
-.medium-divider {
-  margin: 1rem 0 !important;
-}
-.large-divider {
-  margin: 1.5rem 0 !important;
-}
-.small-divider {
-  margin: 0.5rem 0 !important;
-}
-.divider.vertical {
-  min-inline-size: auto;
-  min-block-size: 1.5rem;
-  inline-size: 0.0625rem;
-}
 .no-elevate {
   box-shadow: none !important;
 }
@@ -1422,12 +1402,9 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  display: flex;
+  display: block;
   align-items: center;
   line-height: normal;
-}
-* + :is(h1, h2, h3, h4, h5, h6) {
-  margin-block-start: 1rem;
 }
 h1 {
   font-size: 3.5625rem;
@@ -1548,6 +1525,34 @@ p {
 }
 .extra-line {
   line-height: 2.25rem;
+}
+pre {
+  border-radius: 0;
+  background-color: var(--surface-container);
+  white-space: pre-wrap;
+  padding: 1rem;
+  border-left: .25rem solid var(--primary);
+  font-family: inherit;
+}
+blockquote {
+  border-radius: 0;
+  padding: 1rem;
+  border-left: .25rem solid var(--primary);
+  font-family: inherit;
+}
+code {
+  border-radius: 0;
+  background-color: var(--surface-container);
+  white-space: pre-wrap;
+  direction: ltr;
+  padding: .25rem;
+}
+pre > code,
+blockquote > code {
+  padding: 0;
+}
+.scroll > code {
+  white-space: pre;
 }
 .wave::after,
 .chip::after,
@@ -1715,15 +1720,15 @@ button {
   display: inherit;
   margin-inline-start: 2.5rem;
 }
-:is(.button, button):is([disabled]) {
+:is(.button, button)[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
 }
-:is(.button):is([disabled]) {
+.button[disabled] {
   pointer-events: none;
 }
-:is(.button, button):is([disabled])::before,
-:is(.button, button):is([disabled])::after {
+:is(.button, button)[disabled]::before,
+:is(.button, button)[disabled]::after {
   display: none;
 }
 :is(.button, button).fill {
@@ -1741,9 +1746,6 @@ article {
   border-radius: 0.75rem;
   display: block;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
-}
-* + article {
-  margin-block-start: 1rem;
 }
 article.small {
   block-size: 12rem;
@@ -1839,6 +1841,12 @@ nav.top:not(.s, .m, .l) ~ header.fixed {
 }
 nav.bottom:not(.s, .m, .l) ~ footer.fixed {
   inset-block-end: 5rem;
+}
+aside:not(.fixed, .absolute).right {
+  float: right;
+}
+aside:not(.fixed, .absolute).left {
+  float: left;
 }
 @media only screen and (max-width: 600px) {
   *:has(> nav.s.bottom) {
@@ -2061,6 +2069,37 @@ dialog.medium:is(.top, .bottom) {
 dialog.large:is(.top, .bottom) {
   block-size: 32rem;
 }
+hr,
+[class*=divider] {
+  all: unset;
+  min-inline-size: 1.5rem;
+  min-block-size: auto;
+  block-size: 0.0625rem;
+  background-color: var(--outline-variant);
+  display: block;
+}
+hr + *,
+[class*=divider] + * {
+  margin: 0 !important;
+}
+hr.medium,
+.medium-divider {
+  margin: 1rem 0 !important;
+}
+hr.large,
+.large-divider {
+  margin: 1.5rem 0 !important;
+}
+hr.small,
+.small-divider {
+  margin: 0.5rem 0 !important;
+}
+hr.vertical,
+.divider.vertical {
+  min-inline-size: auto;
+  min-block-size: 1.5rem;
+  inline-size: 0.0625rem;
+}
 summary.none {
   list-style-type: none;
 }
@@ -2079,9 +2118,7 @@ summary:focus {
 
   block-size: var(---size);
   margin-block-end: 2rem;
-}
-* + .field {
-  margin-block-start: 1rem;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 .grid > * > .field {
   margin-block-end: 1rem;
@@ -2109,9 +2146,6 @@ summary:focus {
 .field.extra {
   ---size: 4rem;
   ---start: 1.6rem;
-}
-.field {
-  border-radius: 0.25rem 0.25rem 0 0;
 }
 .field.border {
   border-radius: 0.25rem;
@@ -2182,6 +2216,10 @@ summary:focus {
 }
 input::-webkit-date-and-time-value {
   text-align: start;
+}
+:is(input, select, textarea):-webkit-autofill {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: inherit;
 }
 .field > :is(input, textarea, select):focus {
   border: 0.125rem solid transparent;
@@ -2437,15 +2475,24 @@ a.helper {
 table td > .field {
   margin: 0;
 }
+fieldset {
+  border-radius: .25rem;
+  padding: 1rem;
+  border: 0.0625rem solid var(--outline-variant);
+}
+fieldset > legend {
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+}
+fieldset > legend + * {
+  margin-block-start: 0 !important;
+}
 .grid {
   ---gap: 1rem;
 
   display: grid;
   grid-template-columns: repeat(12, calc(8.33% - var(---gap) + (var(---gap) / 12)));
   gap: var(---gap);
-}
-* + .grid {
-  margin-block-start: 1rem;
 }
 .grid.no-space {
   ---gap: 0rem;
@@ -2799,7 +2846,7 @@ svg {
   inline-size: 24rem;
 }
 :is(button, .button, .chip, .field) > :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra),
-:is(.tabs) :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra) {
+.tabs :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra) {
   min-inline-size: 1.5rem;
   max-inline-size: 1.5rem;
   min-block-size: 1.5rem;
@@ -3030,17 +3077,14 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) {
   justify-content: flex-start;
   white-space: nowrap;
   gap: 1rem;
-  margin: 0;
 }
 a.row {
   min-block-size: 3rem;
+  margin: 0;
 }
 :is(nav, .row, .max) > :only-child,
 nav > :is(ol, ul) > li > :only-child {
   margin: 0;
-}
-* + :is(nav, .row) {
-  margin-block-start: 1rem;
 }
 :is(nav, .row) > * {
   margin: 0;
@@ -3203,7 +3247,7 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
 :is(nav, .row):is(.center-align, .middle-align).vertical {
   align-items: center;
 }
-:is(.drawer, .vertical) > :is(li, [class*=divider]):not(.vertical),
+:is(.drawer, .vertical) > :is(li, [class*=divider], hr):not(.vertical),
 :is(.drawer, .vertical) > :is(ol, ul) > li:not(.vertical) {
   align-self: stretch;
 }
@@ -3403,6 +3447,9 @@ progress.max.vertical {
 }
 :has(> progress) > :not(progress) {
   z-index: 1;
+}
+:is(.button, button, .chip) > progress.circle {
+  color: inherit;
 }
 @supports (-moz-appearance:none) {
   progress.max.vertical {
@@ -3924,20 +3971,15 @@ progress.max.vertical {
   }
 }
 table {
-  ---stripes: rgb(0 0 0 / 0.05);
-
   inline-size: 100%;
   border-spacing: 0;
   font-size: 0.875rem;
-  color: var(--on-surface);
   text-align: start;
-  background-color: var(--surface);
 }
-.dark table {
-  ---stripes: rgb(255 255 255 / 0.05);
-}
-table :is(thead, tbody, tfoot, tr, th) {
+.scroll > table,
+table :is(thead, tbody, tfoot, tr, th, td) {
   background-color: inherit;
+  color: inherit;
 }
 :is(th, td) {
   inline-size: auto;
@@ -3956,7 +3998,7 @@ tfoot > tr > th {
   border-block-start: 0.0625rem solid var(--outline);
 }
 table.stripes > tbody > tr:nth-child(odd) {
-  background-color: var(---stripes);
+  background-color: rgb(128 128 128 / 0.192);
 }
 table.no-space :is(th, td) {
   padding: 0;
@@ -3989,9 +4031,6 @@ tfoot th.fixed {
 }
 .tabs:not(.left-align, .right-align, .center-align) {
   justify-content: space-around;
-}
-* + .tabs {
-  margin-block-start: 1rem;
 }
 .tabs > a {
   display: flex;

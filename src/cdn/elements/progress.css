@@ -118,6 +118,10 @@ progress.max.vertical {
   z-index: 1;
 }
 
+:is(.button, button, .chip) > progress.circle {
+  color: inherit;
+}
+
 @supports (-moz-appearance:none) {
   progress.max.vertical {
     transform: none;

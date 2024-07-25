@@ -24,17 +24,17 @@
       div min
       div min
       div min
-    .small-divider
+    hr.small
     .row
       div min
       div min
       .max max
-    .small-divider
+    hr.small
     .row
       div min
       .max max
       div min
-    .small-divider
+    hr.small
     .row
       .max max
       div min
@@ -61,28 +61,28 @@
       a.chip Chip
       i home
       img.circle(:src="'/beer-and-woman.svg'")
-    .small-divider
+    hr.small
     nav
       button Button
       a.chip Chip
       i home
       .max max
       img.circle(:src="'/beer-and-woman.svg'")
-    .small-divider
+    hr.small
     nav
       button Button
       a.chip Chip
       .max max
       i home
       img.circle(:src="'/beer-and-woman.svg'")
-    .small-divider
+    hr.small
     nav
       button Button
       .max max
       a.chip Chip
       i home
       img.circle(:src="'/beer-and-woman.svg'")
-    .small-divider
+    hr.small
     nav
       .max max
       button Button
@@ -145,7 +145,7 @@
       a
         i delete
         span Trash
-      .divider
+      hr
       label Labels
       a
         i fiber_manual_record

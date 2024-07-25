@@ -6,10 +6,6 @@
   gap: var(---gap);
 }
 
-* + .grid {
-  margin-block-start: 1rem;
-}
-
 .grid.no-space {
   ---gap: 0rem;
 }

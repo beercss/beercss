@@ -14,7 +14,7 @@ div(v-show="data.showPage")
             a Mod Queue
             a Modmail
             a r/Mod
-            .divider
+            hr
             a.transparent
               label Your communities
             a.row
@@ -77,7 +77,7 @@ div(v-show="data.showPage")
           a Profile
           a Style Avatar
           a User Settings
-          .divider
+          hr
           a.transparent
             label View Options
           a.row

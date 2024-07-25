@@ -77,7 +77,7 @@
           .min
             img(:src="'/youtube.png'")
           .min Youtube TV
-        .small-divider
+        hr.small
         a.row
           .min
             img(:src="'/youtube.png'")
@@ -121,7 +121,7 @@
       a(data-ui="#dialog-expanded", href="/youtube/library")
         i video_library
         div Library
-      .small-divider
+      hr.small
       a(data-ui="#dialog-expanded")
         i history
         div History

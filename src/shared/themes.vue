@@ -58,7 +58,8 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
         span Dark
     .space
     article.border
-      pre.scroll.large-padding.fill(v-html="sourceCode()")
+      pre.scroll
+        code(v-html="sourceCode()")
 </template>
 
 <script setup lang="ts">
@@ -87,9 +88,3 @@ const sourceCode = () => {
   return ((data.modelValue.theme as any)[data.modelValue.theme.selected] || "").replace(/;/g, ";<br/>");
 };
 </script>
-
-<style scoped>
-pre {
-  white-space: normal;
-}
-</style>
