@@ -104,6 +104,10 @@
       code
         | // This logs a message to the console
         | console.log('Hello, world!')
+    p
+      | The function 
+      code console.log()
+      |  prints a log message on console
 </template>
 
 <script setup lang="ts">
