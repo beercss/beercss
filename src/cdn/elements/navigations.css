@@ -99,18 +99,22 @@ nav:is(.top, .bottom) {
 
 nav.top {
   inset-block-end: auto;
+  --bottom: 0;
 }
 
 nav.left {
   inset-inline-end: auto;
+  --right: 0;
 }
 
 nav.right {
   inset-inline-start: auto;
+  --left: 0;
 }
 
 nav.bottom {
   inset-block-start: auto;
+  --top: 0;
 }
 
 nav.drawer {
