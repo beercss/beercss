@@ -3124,9 +3124,9 @@ nav:is(.left, .right, .top, .bottom) {
   block-size: auto;
   inline-size: auto;
   text-align: center;
-  padding: calc(var(--top) + 0.5rem) calc(var(--right) + 0.5rem) calc(var(--bottom) + 0.5rem) calc(var(--left) + 0.5rem);
+  padding: 0.5rem 1rem;
+  inset: var(--top) var(--right) var(--bottom) var(--left);
   margin: 0;
-  inset: 0;
 }
 nav:is(.left, .right) {
   inline-size: 5rem;
@@ -3142,19 +3142,15 @@ nav:is(.top, .bottom) {
 }
 nav.top {
   inset-block-end: auto;
-  --bottom: 0;
 }
 nav.left {
   inset-inline-end: auto;
-  --right: 0;
 }
 nav.right {
   inset-inline-start: auto;
-  --left: 0;
 }
 nav.bottom {
   inset-block-start: auto;
-  --top: 0;
 }
 nav.drawer {
   flex-direction: column;
@@ -3168,9 +3164,6 @@ nav.drawer:is(.min, .max) {
 }
 nav.drawer.max {
   inline-size: 100%;
-}
-nav.drawer:is(.left, .right) {
-  padding: calc(var(--top) + 0.5rem) calc(var(--right) + 1rem) calc(var(--bottom) + 0.5rem) calc(var(--left) + 1rem);
 }
 :is(nav, .row) > header {
   background-color: inherit;
