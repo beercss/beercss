@@ -88,10 +88,10 @@
                 option Item 2
                 option Item 3
               label Select
-  </template>
-  
-  <script setup lang="ts">
-  import domain from "./domain";
-  import data from "./data";
-  </script>
+</template>
+
+<script setup lang="ts">
+import domain from "./domain";
+import data from "./data";
+</script>
   

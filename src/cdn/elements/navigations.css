@@ -78,7 +78,7 @@ nav:is(.left, .right, .top, .bottom) {
   block-size: auto;
   inline-size: auto;
   text-align: center;
-  padding: 0.5rem;
+  padding: calc(var(--top) + 0.5rem) calc(var(--right) + 0.5rem) calc(var(--bottom) + 0.5rem) calc(var(--left) + 0.5rem);
   margin: 0;
   inset: 0;
 }
@@ -127,6 +127,10 @@ nav.drawer:is(.min, .max) {
 
 nav.drawer.max {
   inline-size: 100%;
+}
+
+nav.drawer:is(.left, .right) {
+  padding: calc(var(--top) + 0.5rem) calc(var(--right) + 1rem) calc(var(--bottom) + 0.5rem) calc(var(--left) + 1rem);
 }
 
 :is(nav, .row) > header {

@@ -20,27 +20,27 @@ main.responsive {
 }
 
 *:has(> nav.bottom:not(.s, .m, .l)) {
-  padding-block-end: 5rem;
+  padding-block-end: calc(var(--bottom) + 5rem);
 }
 
 *:has(> nav.top:not(.s, .m, .l)) {
-  padding-block-start: 5rem;
+  padding-block-start: calc(var(--top) + 5rem);
 }
 
 *:has(> nav.left:not(.s, .m, .l)) {
-  padding-inline-start: 5rem;
+  padding-inline-start: calc(var(--left) + 5rem);
 }
 
 *:has(> nav.right:not(.s, .m, .l)) {
-  padding-inline-end: 5rem;
+  padding-inline-end: calc(var(--right) + 5rem);
 }
 
 *:has(> nav.drawer.left:not(.s, .m, .l)) {
-  padding-inline-start: 20rem;
+  padding-inline-start: calc(var(--left) + 20rem);
 }
 
 *:has(> nav.drawer.right:not(.s, .m, .l)) {
-  padding-inline-end: 20rem;
+  padding-inline-end: calc(var(--right) + 20rem);
 }
 
 nav.top:not(.s, .m, .l) ~ header.fixed {
@@ -61,27 +61,27 @@ aside:not(.fixed, .absolute).left {
 
 @media only screen and (max-width: 600px) {
   *:has(> nav.s.bottom) {
-    padding-block-end: 5rem;
+    padding-block-end: calc(var(--bottom) + 5rem);
   }
 
   *:has(> nav.s.top) {
-    padding-block-start: 5rem;
+    padding-block-start: calc(var(--top) + 5rem);
   }
 
   *:has(> nav.s.left) {
-    padding-inline-start: 5rem;
+    padding-inline-start: calc(var(--left) + 5rem);
   }
 
   *:has(> nav.s.right) {
-    padding-inline-end: 5rem;
+    padding-inline-end: calc(var(--right) + 5rem);
   }
 
   *:has(> nav.s.drawer.left) {
-    padding-inline-start: 20rem;
+    padding-inline-start: calc(var(--left) + 20rem);
   }
 
   *:has(> nav.s.drawer.right) {
-    padding-inline-end: 20rem;
+    padding-inline-end: calc(var(--right) + 20rem);
   }
 
   nav.s.top ~ header.fixed {
@@ -95,27 +95,27 @@ aside:not(.fixed, .absolute).left {
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
   *:has(> nav.m.bottom) {
-    padding-block-end: 5rem;
+    padding-block-end: calc(var(--bottom) + 5rem);
   }
 
   *:has(> nav.m.top) {
-    padding-block-start: 5rem;
+    padding-block-start: calc(var(--top) + 5rem);
   }
 
   *:has(> nav.m.left) {
-    padding-inline-start: 5rem;
+    padding-inline-start: calc(var(--left) + 5rem);
   }
 
   *:has(> nav.m.right) {
-    padding-inline-end: 5rem;
+    padding-inline-end: calc(var(--right) + 5rem);
   }
 
   *:has(> nav.m.drawer.left) {
-    padding-inline-start: 20rem;
+    padding-inline-start: calc(var(--left) + 20rem);
   }
 
   *:has(> nav.m.drawer.right) {
-    padding-inline-end: 20rem;
+    padding-inline-end: calc(var(--right) + 20rem);
   }
 
   nav.m.top ~ header.fixed {
@@ -129,27 +129,27 @@ aside:not(.fixed, .absolute).left {
 
 @media only screen and (min-width: 993px) {
   *:has(> nav.l.bottom) {
-    padding-block-end: 5rem;
+    padding-block-end: calc(var(--bottom) + 5rem);
   }
 
   *:has(> nav.l.top) {
-    padding-block-start: 5rem;
+    padding-block-start: calc(var(--top) + 5rem);
   }
 
   *:has(> nav.l.left) {
-    padding-inline-start: 5rem;
+    padding-inline-start: calc(var(--left) + 5rem);
   }
 
   *:has(> nav.l.right) {
-    padding-inline-end: 5rem;
+    padding-inline-end: calc(var(--right) + 5rem);
   }
 
   *:has(> nav.l.drawer.left) {
-    padding-inline-start: 20rem;
+    padding-inline-start: calc(var(--left) + 20rem);
   }
 
   *:has(> nav.l.drawer.right) {
-    padding-inline-end: 20rem;
+    padding-inline-end: calc(var(--right) + 20rem);
   }
 
   nav.l.top ~ header.fixed {
@@ -163,6 +163,6 @@ aside:not(.fixed, .absolute).left {
 
 @media only screen and (max-width: 600px) {
   main.responsive {
-    padding-inline: 0.5rem;
+    padding-inline: calc(var(--left) + 0.5rem) calc(var(--right) + 0.5rem);
   }
 }
