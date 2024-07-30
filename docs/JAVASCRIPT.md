@@ -1,6 +1,6 @@
 # Javascript
 
-The JS file of Beer CSS is almost optional. Basically is a JS helper for the dynamic theme and the trigger of elements. It is higly recommend to use it, because you save a lot of JS code using it.
+The JS file of Beer CSS is almost optional. Basically is a JS helper for the dynamic theme and the trigger of elements. It is highly recommended to use it, because you save a lot of JS code using it.
 
 ## The dynamic theme
 
@@ -22,7 +22,7 @@ await ui("theme", "color|blob|file|url");
 
 ### The ui function
 
-The `ui` function has the intent to add/remove the `active` helper from elements. You will call the same function to open/close or show/hide elements. For example, when you call `ui("dialog")` if the dialog is open then it will close (and vice-versa).
+The `ui` function has the intent to add/remove the `active` helper from elements. You will call the same function to open/close or show/hide elements. For example, when you call `ui("dialog")` if the dialog is open, then it will close (and vice versa).
 
 ```js
 ui("dialog|menu|overlay|page|snackbar");
@@ -55,4 +55,4 @@ The `data-ui` attribute has the intent to trigger elements with just HTML. It fo
 
 ## Why the JS file is almost optional?
 
-There are 2 use cases that the JS file is required. When you have a `slider` element (we can't update the slider value without JS). And when you have a `textarea` element (we can't autoresize a textarea without JS). In the future, we will try to leave the JS file fully optional.
+There are 2 use cases that the JS file is required. When you have a `slider` element (we can't update the slider value without JS). And when you have a `textarea` element (we can't auto resize a textarea without JS). In the future, we will try to leave the JS file fully optional.
