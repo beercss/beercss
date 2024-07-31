@@ -51,6 +51,10 @@ nav.bottom:not(.s, .m, .l) ~ footer.fixed {
   inset-block-end: 5rem;
 }
 
+:not(main):has(> aside) {
+  overflow: auto;
+}
+
 aside {
   z-index: 1;
 }
