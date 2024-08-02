@@ -1,33 +1,48 @@
-.wave::after,
-.chip::after,
-:is(.button, button)::after,
-:is(nav.tabbed, .tabs) > a::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a)::before,
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a)::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;
   border-radius: inherit;
-  inline-size: 100%;
-  block-size: 100%;
-  background-position: center;
-  background-image: radial-gradient(circle, var(--active) 1%, transparent 1%);
-  opacity: 0;
-  transition: none;
 }
 
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):is(:focus-visible, :hover)::after {
-  background-size: 15000%;
-  opacity: 1;
-  transition: background-size var(--speed2) linear;
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a)::before {
+  background-color: currentColor;
+  opacity: 0;
+  transition: opacity var(--speed2) ease;
+}
+
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):hover::before {
+  opacity: 0.08;
+}
+
+:is(
+  .wave,
+  .chip,
+  .button,
+  button,
+  nav.tabbed > a,
+  .tabs > a
+):focus-visible::before {
+  opacity: 0.12;
+}
+
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a)::after {
+  background-image: radial-gradient(circle, currentColor 10%, transparent 10%);
+  background-position: 50%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: background-size 1s ease, opacity var(--speed4) ease;
 }
 
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):active::after {
-  background-size: 5000%;
-  opacity: 0;
-  transition: none;
+  background-size: 2000% 2000%;
+  opacity: 0.12;
+  transition: background-size var(--speed2) ease;
 }
 
-.no-wave::after,
-.no-wave:is(:hover, :active)::after {
+.no-wave::before,
+.no-wave::after {
   display: none;
 }
