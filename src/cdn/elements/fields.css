@@ -120,6 +120,7 @@
   background: none;
   resize: none;
   text-align: start;
+  cursor: text;
 }
 
 input::-webkit-date-and-time-value {
