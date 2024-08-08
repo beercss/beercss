@@ -1,6 +1,6 @@
 :root {
   --size: 16px;
-  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Noto Sans, Arial, sans-serif;
   --font-icon: "Material Symbols Outlined";
   --speed1: 0.1s;
   --speed2: 0.2s;
@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.12/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.13/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.12/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.13/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.12/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.6.13/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1540,7 +1540,6 @@ code {
   border-radius: 0;
   background-color: var(--surface-container);
   white-space: pre-wrap;
-  direction: ltr;
   padding: 0.25rem;
 }
 pre > code,
@@ -1549,6 +1548,9 @@ blockquote > code {
 }
 .scroll > code {
   white-space: pre;
+}
+pre:has(> code){
+  direction: ltr;
 }
 .wave::after,
 .chip::after,
@@ -2215,6 +2217,7 @@ summary:focus {
   background: none;
   resize: none;
   text-align: start;
+  cursor: text;
 }
 input::-webkit-date-and-time-value {
   text-align: start;
@@ -2344,6 +2347,7 @@ input[type=number] {
 }
 .field > textarea {
   padding-block-start: var(---start);
+  white-space: pre-wrap;
 }
 .field > textarea:focus {
   padding-block-start: calc(var(---start) - 0.06rem);
@@ -2504,6 +2508,9 @@ fieldset > legend + * {
 }
 .grid.large-space {
   ---gap: 2rem;
+}
+.grid > * {
+  margin: 0;
 }
 .s1 {
   grid-area: auto/span 1;
