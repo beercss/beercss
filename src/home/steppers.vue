@@ -27,19 +27,19 @@
   nav.scroll
     button.circle.small
       i done
-    .maxhr
+    hr.max
     button.circle.small 2
-    .maxhr
+    hr.max
     button.circle.small(disabled) 3
   .medium-space
   nav.scroll
     button.circle.small
       i done
     div Previous
-    .maxhr
+    hr.max
     button.circle.small 2
     div Current
-    .maxhr
+    hr.max
     button.circle.small(disabled) 3
     div Next
   .medium-space
@@ -48,11 +48,11 @@
       button.circle.small
         i done
       .small-margin Previous
-    .maxhr
+    hr.max
     .center-align
       button.circle.small 2
       .small-margin Current
-    .maxhr
+    hr.max
     .center-align
       button.circle.small(disabled) 3
       .small-margin Next
