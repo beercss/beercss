@@ -305,7 +305,8 @@ function menu (from: Element, to: Element, e?: Event) {
 
   _timeoutMenu = setTimeout(() => {
     on(document.body, "click", onClickDocument);
-    (document.activeElement as HTMLElement)?.blur();
+    const activeElement = document.activeElement as HTMLElement;
+    if (!hasTag(activeElement, "input")) activeElement?.blur();
     tab(from);
 
     const isActive = hasClass(to, "active");
