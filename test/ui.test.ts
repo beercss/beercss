@@ -1,5 +1,6 @@
 import { expect, test } from "vitest";
 import { JSDOM } from "jsdom";
+import { type IBeerCssTheme } from "../src/cdn/interfaces";
 import beer from "../src/cdn/beer";
 import "material-dynamic-colors";
 

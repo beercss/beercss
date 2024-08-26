@@ -1,6 +1,6 @@
 import "material-dynamic-colors";
 import "./cdn/beer.css";
-import "./cdn/beer.ts";
+import "./cdn/beer";
 import "./app.css";
 import "./home";
 import "./dynamicColors";
