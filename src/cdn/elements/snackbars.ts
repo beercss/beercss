@@ -3,8 +3,8 @@ import { queryAll, addClass, on, removeClass } from "../utils";
 let _timeoutSnackbar: ReturnType<typeof setTimeout>;
 
 function onClickSnackbar(e: Event) {
-  const target = e.currentTarget as Element;
-  removeClass(target, "active");
+  const snackbar = e.currentTarget as Element;
+  removeClass(snackbar, "active");
 
   if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
 }

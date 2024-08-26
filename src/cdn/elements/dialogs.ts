@@ -4,8 +4,8 @@ const _dialogs: Array<HTMLDialogElement> = [];
 
 function onKeydownDialog(e: KeyboardEvent) {
   if (e.key === "Escape") {
-    const target = e.target as HTMLDialogElement;
-    updateDialog(target, target);
+    const dialog = e.currentTarget as HTMLDialogElement;
+    updateDialog(dialog, dialog);
   }
 }
 
@@ -36,7 +36,7 @@ async function openDialog(dialog: HTMLDialogElement, overlay: Element, isModal: 
 }
 
 function onClickOverlay(e: Event) {
-  const overlay = e.target as Element;
+  const overlay = e.currentTarget as Element;
   const dialog = next(overlay) as HTMLDialogElement;
   if (hasTag(dialog, "dialog")) closeDialog(dialog, overlay);
 }

@@ -1,8 +1,8 @@
 const _dialogs = [];
 function onKeydownDialog(e) {
   if (e.key === "Escape") {
-    const target = e.target;
-    updateDialog(target, target);
+    const dialog = e.currentTarget;
+    updateDialog(dialog, dialog);
   }
 }
 function closeDialog(dialog, overlay) {
@@ -30,7 +30,7 @@ async function openDialog(dialog, overlay, isModal, from) {
   dialog.focus();
 }
 function onClickOverlay(e) {
-  const overlay = e.target;
+  const overlay = e.currentTarget;
   const dialog = next(overlay);
   if (hasTag(dialog, "dialog"))
     closeDialog(dialog, overlay);
@@ -58,10 +58,19 @@ async function updateDialog(from, dialog) {
 let _timeoutMenu;
 function onClickDocument(e) {
   off(document.body, "click", onClickDocument);
-  const target = e.target;
+  const body = e.target;
   const menus = queryAll("menu.active");
   for (let i = 0; i < menus.length; i++)
-    updateMenu(target, menus[i], e);
+    updateMenu(body, menus[i], e);
+}
+function focusOnMenuOrInput(menu) {
+  setTimeout(() => {
+    const input = query(".field > input", menu);
+    if (input)
+      input.focus();
+    else
+      menu.focus();
+  }, 90);
 }
 function updateMenu(from, menu, e) {
   if (_timeoutMenu)
@@ -80,6 +89,7 @@ function updateMenu(from, menu, e) {
     }
     removeClass(queryAll("menu.active"), "active");
     addClass(menu, "active");
+    focusOnMenuOrInput(menu);
   }, 90);
 }
 function updatePage(page) {
@@ -90,8 +100,8 @@ function updatePage(page) {
 }
 let _timeoutSnackbar;
 function onClickSnackbar(e) {
-  const target = e.currentTarget;
-  removeClass(target, "active");
+  const snackbar = e.currentTarget;
+  removeClass(snackbar, "active");
   if (_timeoutSnackbar)
     clearTimeout(_timeoutSnackbar);
 }
@@ -378,7 +388,7 @@ function updateAllFields() {
 }
 function updateAllRanges(e) {
   if (e) {
-    const input = e.target;
+    const input = e.currentTarget;
     if (input.type === "range") {
       updateRange(input);
       return;
@@ -392,8 +402,8 @@ function updateAllRanges(e) {
   for (let i = 0; i < ranges.length; i++)
     updateRange(ranges[i]);
 }
-function updateRange(target) {
-  const parentTarget = parent(target);
+function updateRange(input) {
+  const parentTarget = parent(input);
   const bar = query("span", parentTarget);
   const inputs = queryAll("input", parentTarget);
   if (!inputs.length || !bar)

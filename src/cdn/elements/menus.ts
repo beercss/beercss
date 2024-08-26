@@ -4,9 +4,9 @@ let _timeoutMenu: ReturnType<typeof setTimeout>;
 
 function onClickDocument(e: Event) {
   off(document.body, "click", onClickDocument);
-  const target = e.target as Element;
+  const body = e.target as Element;
   const menus = queryAll("menu.active") as NodeListOf<HTMLMenuElement>;
-  for (let i=0; i<menus.length; i++) updateMenu(target, menus[i], e);
+  for (let i=0; i<menus.length; i++) updateMenu(body, menus[i], e);
 }
 
 function focusOnMenuOrInput(menu: HTMLMenuElement) {

@@ -2,7 +2,7 @@ import { query, queryAll, hasClass, on, off, parent } from "../utils";
 
 function updateAllRanges(e?: Event) {
   if (e) {
-    const input = e.target as HTMLInputElement;
+    const input = e.currentTarget as HTMLInputElement;
     if (input.type === "range") { updateRange(input); return; }
   }
 
@@ -12,8 +12,8 @@ function updateAllRanges(e?: Event) {
   for(let i=0; i<ranges.length; i++) updateRange(ranges[i]);
 }
 
-function updateRange(target: Element) {
-  const parentTarget = parent(target) as HTMLElement;
+function updateRange(input: HTMLInputElement) {
+  const parentTarget = parent(input) as HTMLElement;
   const bar = query("span", parentTarget) as HTMLElement;
   const inputs = queryAll("input", parentTarget) as NodeListOf<HTMLInputElement>;
   if (!inputs.length || !bar) return;
