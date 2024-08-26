@@ -1,4 +1,6 @@
-i {
+i,
+:is(.checkbox, .radio, .switch) > span::before,
+.icon > span > i {
   ---size: 1.5rem;
 
   font-family: var(--font-icon);

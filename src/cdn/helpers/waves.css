@@ -10,14 +10,14 @@
   inline-size: 100%;
   block-size: 100%;
   background-position: center;
-  background-image: radial-gradient(circle, var(--active) 1%, transparent 1%);
+  background-image: radial-gradient(circle, currentColor 1%, transparent 1%);
   opacity: 0;
   transition: none;
 }
 
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):is(:focus-visible, :hover)::after {
   background-size: 15000%;
-  opacity: 1;
+  opacity: 0.1;
   transition: background-size var(--speed2) linear;
 }
 
