@@ -61,12 +61,12 @@ export function removeClass(element: Element | null | NodeListOf<Element>, name:
 
 export function on(element: any, name: string, callback: any, useCapture: boolean = true) {
   if (element instanceof NodeList) for(let i=0; i<element.length; i++) element[i].addEventListener(name, callback, useCapture);
-  else element?.addEventListener(name, callback, useCapture);
+  else if (element?.addEventListener) element.addEventListener(name, callback, useCapture);
 }
 
 export function off(element: any, name: string, callback: any, useCapture: boolean = true) {
   if (element instanceof NodeList) for(let i=0; i<element.length; i++) element[i].removeEventListener(name, callback, useCapture);
-  element?.removeEventListener(name, callback, useCapture);
+  else if (element?.removeEventListener) element.removeEventListener(name, callback, useCapture);
 }
 
 export function insertBefore(newElement: Element, element: Element | null) {

@@ -1,6 +1,6 @@
 import { updateAllFields } from "./elements/fields";
 import { updateAllSliders } from "./elements/sliders";
-import { mode, theme } from "./helpers/theme";
+import { updateMode, updateTheme } from "./helpers/theme";
 import { type IBeerCssTheme } from "./interfaces";
 import { guid, on, query, queryAll, run } from "./utils";
 
@@ -32,8 +32,8 @@ function ui(selector?: string | Element, options?: string | number | IBeerCssThe
   if (selector) {
     if (selector === "setup") { setup(); return; }
     if (selector === "guid") return guid();
-    if (selector === "mode") return mode(options as string);
-    if (selector === "theme") return theme(options);
+    if (selector === "mode") return updateMode(options as string);
+    if (selector === "theme") return updateTheme(options);
 
     const to = query(selector);
     if (!to) return;
@@ -47,14 +47,13 @@ function ui(selector?: string | Element, options?: string | number | IBeerCssThe
 
 function start() {
   const context = (globalThis as any);
-  if (context.addEventListener) context.addEventListener("load", async () => await ui("setup"));
+  const body = document?.body;
+  
+  if (body && !body.classList.contains("dark") && !body.classList.contains("light")) updateMode("auto");
+  
+  on(context, "load", setup, false);
   context.beercss = ui;
   context.ui = ui;
-
-  const element = context.document?.body;
-  if (element && !element.classList.contains("dark") && !element.classList.contains("light") && context.matchMedia?.("(prefers-color-scheme: dark)").matches) element.classList.add("dark");
-
-  return ui;
 }
 
 start();

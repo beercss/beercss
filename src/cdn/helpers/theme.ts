@@ -5,16 +5,21 @@ const _lastTheme: IBeerCssTheme = {
   dark: "",
 };
 
+function getMode() {
+  return document?.body?.classList.contains("dark") ? "dark" : "light";
+}
+
 function lastTheme(): IBeerCssTheme {
   if (_lastTheme.light && _lastTheme.dark) return _lastTheme;
+  const body = document.body;
 
   const light = document.createElement("body");
   light.className = "light";
-  document.body.appendChild(light);
+  body.appendChild(light);
 
   const dark = document.createElement("body");
   dark.className = "dark";
-  document.body.appendChild(dark);
+  body.appendChild(dark);
 
   const fromLight = getComputedStyle(light);
   const fromDark = getComputedStyle(dark);
@@ -24,15 +29,15 @@ function lastTheme(): IBeerCssTheme {
     _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
   }
 
-  document.body.removeChild(light);
-  document.body.removeChild(dark);
+  body.removeChild(light);
+  body.removeChild(dark);
   return _lastTheme;
 }
 
-export function theme(source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssTheme> {
+export function updateTheme(source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssTheme> {
   if (!source || !(globalThis as any).materialDynamicColors) return lastTheme();
 
-  const mode = /dark/i.test(document.body.className) ? "dark" : "light";
+  const mode = getMode();
   if (source.light && source.dark) {
     _lastTheme.light = source.light;
     _lastTheme.dark = source.dark;
@@ -59,11 +64,18 @@ export function theme(source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBe
   });
 }
 
-export function mode(value: string): string {
-  if (!value) return /dark/i.test(document.body.className) ? "dark" : "light";
-  document.body.classList.remove("light", "dark");
-  document.body.classList.add(value);
+export function updateMode(value: string): string {
+  const context = (globalThis as any);
+  const body = document?.body;
+
+  if (!body) return value;
+  if (!value) return getMode();
+  if (value === "auto") value = context.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  
+  body.classList.remove("light", "dark");
+  body.classList.add(value);
+  
   const lastThemeStyle = value === "light" ? _lastTheme.light : _lastTheme.dark;
-  if ((globalThis as any).materialDynamicColors) document.body.setAttribute("style", lastThemeStyle);
-  return value;
+  if (context.materialDynamicColors) body.setAttribute("style", lastThemeStyle);
+  return getMode();
 }

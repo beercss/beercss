@@ -165,14 +165,15 @@ function on(element, name, callback, useCapture = true) {
   if (element instanceof NodeList)
     for (let i = 0; i < element.length; i++)
       element[i].addEventListener(name, callback, useCapture);
-  else
-    element == null ? void 0 : element.addEventListener(name, callback, useCapture);
+  else if (element == null ? void 0 : element.addEventListener)
+    element.addEventListener(name, callback, useCapture);
 }
 function off(element, name, callback, useCapture = true) {
   if (element instanceof NodeList)
     for (let i = 0; i < element.length; i++)
       element[i].removeEventListener(name, callback, useCapture);
-  element == null ? void 0 : element.removeEventListener(name, callback, useCapture);
+  else if (element == null ? void 0 : element.removeEventListener)
+    element.removeEventListener(name, callback, useCapture);
 }
 function insertBefore(newElement, element) {
   var _a;
@@ -436,15 +437,20 @@ const _lastTheme = {
   light: "",
   dark: ""
 };
+function getMode() {
+  var _a;
+  return ((_a = document == null ? void 0 : document.body) == null ? void 0 : _a.classList.contains("dark")) ? "dark" : "light";
+}
 function lastTheme() {
   if (_lastTheme.light && _lastTheme.dark)
     return _lastTheme;
+  const body = document.body;
   const light = document.createElement("body");
   light.className = "light";
-  document.body.appendChild(light);
+  body.appendChild(light);
   const dark = document.createElement("body");
   dark.className = "dark";
-  document.body.appendChild(dark);
+  body.appendChild(dark);
   const fromLight = getComputedStyle(light);
   const fromDark = getComputedStyle(dark);
   const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--surface-variant", "--on-surface-variant", "--outline", "--outline-variant", "--shadow", "--scrim", "--inverse-surface", "--inverse-on-surface", "--inverse-primary", "--surface-dim", "--surface-bright", "--surface-container-lowest", "--surface-container-low", "--surface-container", "--surface-container-high", "--surface-container-highest"];
@@ -452,21 +458,21 @@ function lastTheme() {
     _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
     _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
   }
-  document.body.removeChild(light);
-  document.body.removeChild(dark);
+  body.removeChild(light);
+  body.removeChild(dark);
   return _lastTheme;
 }
-function theme(source) {
+function updateTheme(source) {
   if (!source || !globalThis.materialDynamicColors)
     return lastTheme();
-  const mode2 = /dark/i.test(document.body.className) ? "dark" : "light";
+  const mode = getMode();
   if (source.light && source.dark) {
     _lastTheme.light = source.light;
     _lastTheme.dark = source.dark;
-    document.body.setAttribute("style", source[mode2]);
+    document.body.setAttribute("style", source[mode]);
     return source;
   }
-  return globalThis.materialDynamicColors(source).then((theme2) => {
+  return globalThis.materialDynamicColors(source).then((theme) => {
     const toCss = (data) => {
       let style = "";
       for (let i = 0, keys = Object.keys(data), n = keys.length; i < n; i++) {
@@ -477,21 +483,28 @@ function theme(source) {
       }
       return style;
     };
-    _lastTheme.light = toCss(theme2.light);
-    _lastTheme.dark = toCss(theme2.dark);
-    document.body.setAttribute("style", _lastTheme[mode2]);
+    _lastTheme.light = toCss(theme.light);
+    _lastTheme.dark = toCss(theme.dark);
+    document.body.setAttribute("style", _lastTheme[mode]);
     return _lastTheme;
   });
 }
-function mode(value) {
+function updateMode(value) {
+  var _a;
+  const context = globalThis;
+  const body = document == null ? void 0 : document.body;
+  if (!body)
+    return value;
   if (!value)
-    return /dark/i.test(document.body.className) ? "dark" : "light";
-  document.body.classList.remove("light", "dark");
-  document.body.classList.add(value);
+    return getMode();
+  if (value === "auto")
+    value = ((_a = context.matchMedia) == null ? void 0 : _a.call(context, "(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  body.classList.remove("light", "dark");
+  body.classList.add(value);
   const lastThemeStyle = value === "light" ? _lastTheme.light : _lastTheme.dark;
-  if (globalThis.materialDynamicColors)
-    document.body.setAttribute("style", lastThemeStyle);
-  return value;
+  if (context.materialDynamicColors)
+    body.setAttribute("style", lastThemeStyle);
+  return getMode();
 }
 let _timeoutMutation;
 let _mutation;
@@ -524,9 +537,9 @@ function ui(selector, options) {
     if (selector === "guid")
       return guid();
     if (selector === "mode")
-      return mode(options);
+      return updateMode(options);
     if (selector === "theme")
-      return theme(options);
+      return updateTheme(options);
     const to = query(selector);
     if (!to)
       return;
@@ -537,16 +550,13 @@ function ui(selector, options) {
   updateAllSliders();
 }
 function start() {
-  var _a, _b;
   const context = globalThis;
-  if (context.addEventListener)
-    context.addEventListener("load", async () => await ui("setup"));
+  const body = document == null ? void 0 : document.body;
+  if (body && !body.classList.contains("dark") && !body.classList.contains("light"))
+    updateMode("auto");
+  on(context, "load", setup, false);
   context.beercss = ui;
   context.ui = ui;
-  const element = (_a = context.document) == null ? void 0 : _a.body;
-  if (element && !element.classList.contains("dark") && !element.classList.contains("light") && ((_b = context.matchMedia) == null ? void 0 : _b.call(context, "(prefers-color-scheme: dark)").matches))
-    element.classList.add("dark");
-  return ui;
 }
 start();
 
