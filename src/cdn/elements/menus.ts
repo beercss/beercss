@@ -1,4 +1,4 @@
-import { queryAll, addClass, on, off, hasTag, hasClass, removeClass } from "../utils";
+import { query, queryAll, addClass, on, off, hasTag, hasClass, removeClass } from "../utils";
 
 let _timeoutMenu: ReturnType<typeof setTimeout>;
 
@@ -28,5 +28,8 @@ export function updateMenu(from: Element, menu: HTMLMenuElement, e?: Event) {
 
     removeClass(queryAll("menu.active"), "active");
     addClass(menu, "active");
+
+    const input = query(".field > input", menu) as HTMLInputElement;
+    if (input) setTimeout(() => input.focus(), 90);
   }, 90);
 }
