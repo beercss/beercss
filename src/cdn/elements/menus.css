@@ -37,7 +37,7 @@ menu.no-wrap {
 
 menu.active,
 menu:not([data-ui]):active,
-:not([data-ui]):focus-within > menu,
+:not(menu, [data-ui]):focus-within > menu,
 menu > :is(a, li):hover + menu,
 menu > menu:hover {
   opacity: 1;
