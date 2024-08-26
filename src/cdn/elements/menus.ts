@@ -9,6 +9,14 @@ function onClickDocument(e: Event) {
   for (let i=0; i<menus.length; i++) updateMenu(target, menus[i], e);
 }
 
+function focusOnMenuOrInput(menu: HTMLMenuElement) {
+  setTimeout(() => {
+    const input = query(".field > input", menu) as HTMLInputElement;
+    if (input) input.focus();
+    else menu.focus();
+  }, 90);
+}
+
 export function updateMenu(from: Element, menu: HTMLMenuElement, e?: Event) {
   if (_timeoutMenu) clearTimeout(_timeoutMenu);
 
@@ -28,8 +36,6 @@ export function updateMenu(from: Element, menu: HTMLMenuElement, e?: Event) {
 
     removeClass(queryAll("menu.active"), "active");
     addClass(menu, "active");
-
-    const input = query(".field > input", menu) as HTMLInputElement;
-    if (input) setTimeout(() => input.focus(), 90);
+    focusOnMenuOrInput(menu);
   }, 90);
 }
