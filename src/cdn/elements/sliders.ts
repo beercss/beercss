@@ -1,25 +1,52 @@
-import { query, queryAll, hasClass, on, off, parent } from "../utils";
+import { query, queryAll, hasClass, on, off, parent, hasTag, isTouchable } from "../utils";
 
-function updateAllRanges(e?: Event) {
-  if (e) {
-    const input = e.currentTarget as HTMLInputElement;
-    if (input.type === "range") { updateRange(input); return; }
+function onInputDocument(e: Event) {
+  const input = e.target as HTMLInputElement;
+  if (!hasTag(input, "input") && !hasTag(input, "select")) return;
+
+  if (input.type === "range") {
+    input.focus();
+    updateRange(input);
+  } else {
+    updateAllRanges();
   }
+}
 
+function onFocusRange(e: Event) {
+  if (!isTouchable()) return;
+
+  const input = e.target as HTMLInputElement;
+  const label = parent(input) as HTMLLabelElement;
+  if (hasClass(label, "vertical")) document.body.classList.add("no-scroll");
+}
+
+function onBlurRange(e: Event) {
+  if (!isTouchable()) return;
+
+  const input = e.target as HTMLInputElement;
+  const label = parent(input) as HTMLLabelElement;
+  if (hasClass(label, "vertical")) document.body.classList.remove("no-scroll");
+}
+
+function updateAllRanges() {
+  const body = document.body;
   const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
-  if (!ranges.length) off(globalThis, "input", updateAllRanges, false);
-  else on(globalThis, "input", updateAllRanges, false);
+  if (!ranges.length) off(body, "input", onInputDocument, false);
+  else on(body, "input", onInputDocument, false);
   for(let i=0; i<ranges.length; i++) updateRange(ranges[i]);
 }
 
 function updateRange(input: HTMLInputElement) {
-  const parentTarget = parent(input) as HTMLElement;
-  const bar = query("span", parentTarget) as HTMLElement;
-  const inputs = queryAll("input", parentTarget) as NodeListOf<HTMLInputElement>;
+  on(input, "focus", onFocusRange);
+  on(input, "blur", onBlurRange);
+
+  const label = parent(input) as HTMLElement;
+  const bar = query("span", label) as HTMLElement;
+  const inputs = queryAll("input", label) as NodeListOf<HTMLInputElement>;
   if (!inputs.length || !bar) return;
 
   const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
-  const thumb = hasClass(parentTarget, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
+  const thumb = hasClass(label, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents: Array<number> = [];
   const values: Array<number> = [];
   for (let i = 0, n = inputs.length; i < n; i++) {
@@ -48,10 +75,10 @@ function updateRange(input: HTMLInputElement) {
     }
   }
 
-  parentTarget.style.setProperty("---start", `${start}%`);
-  parentTarget.style.setProperty("---end", `${end}%`);
-  parentTarget.style.setProperty("---value1", `'${value1}'`);
-  parentTarget.style.setProperty("---value2", `'${value2}'`);
+  label.style.setProperty("---start", `${start}%`);
+  label.style.setProperty("---end", `${end}%`);
+  label.style.setProperty("---value1", `'${value1}'`);
+  label.style.setProperty("---value2", `'${value2}'`);
 }
 
 export function updateAllSliders() {

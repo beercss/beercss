@@ -47,7 +47,7 @@ function ui(selector?: string | Element, options?: string | number | IBeerCssThe
 
 function start() {
   const context = (globalThis as any);
-  const body = document?.body;
+  const body = context?.document?.body;
   
   if (body && !body.classList.contains("dark") && !body.classList.contains("light")) updateMode("auto");
   

@@ -12,7 +12,10 @@ function closeDialog(dialog, overlay) {
   dialog.close();
   _dialogs.pop();
   const previousDialog = _dialogs[_dialogs.length - 1];
-  previousDialog == null ? void 0 : previousDialog.focus();
+  if (previousDialog)
+    previousDialog.focus();
+  else if (isTouchable())
+    document.body.classList.remove("no-scroll");
 }
 async function openDialog(dialog, overlay, isModal, from) {
   if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip"))
@@ -28,6 +31,8 @@ async function openDialog(dialog, overlay, isModal, from) {
     on(dialog, "keydown", onKeydownDialog, false);
   _dialogs.push(dialog);
   dialog.focus();
+  if (isTouchable())
+    document.body.classList.add("no-scroll");
 }
 function onClickOverlay(e) {
   const overlay = e.currentTarget;
@@ -122,6 +127,12 @@ function updateSnackbar(snackbar, milliseconds) {
   }, milliseconds ?? 6e3);
 }
 const _emptyNodeList = [];
+function isTouchable() {
+  return window.matchMedia("(pointer: coarse)").matches;
+}
+function isDark() {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
 async function wait(milliseconds) {
   await new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
@@ -376,7 +387,7 @@ function updateTextarea(textarea) {
   const field = parent(textarea);
   field.removeAttribute("style");
   if (hasClass(field, "min"))
-    field.style.setProperty("---size", `${Math.max(field.scrollHeight, textarea.offsetHeight)}px`);
+    field.style.setProperty("---size", `${Math.max(textarea.scrollHeight, field.offsetHeight)}px`);
 }
 function updateAllFields() {
   updateAllLabels();
@@ -386,30 +397,53 @@ function updateAllFields() {
   updateAllColors();
   updateAllTextareas();
 }
-function updateAllRanges(e) {
-  if (e) {
-    const input = e.currentTarget;
-    if (input.type === "range") {
-      updateRange(input);
-      return;
-    }
+function onInputDocument(e) {
+  const input = e.target;
+  if (!hasTag(input, "input") && !hasTag(input, "select"))
+    return;
+  if (input.type === "range") {
+    input.focus();
+    updateRange(input);
+  } else {
+    updateAllRanges();
   }
+}
+function onFocusRange(e) {
+  if (!isTouchable())
+    return;
+  const input = e.target;
+  const label = parent(input);
+  if (hasClass(label, "vertical"))
+    document.body.classList.add("no-scroll");
+}
+function onBlurRange(e) {
+  if (!isTouchable())
+    return;
+  const input = e.target;
+  const label = parent(input);
+  if (hasClass(label, "vertical"))
+    document.body.classList.remove("no-scroll");
+}
+function updateAllRanges() {
+  const body = document.body;
   const ranges = queryAll(".slider > input[type=range]");
   if (!ranges.length)
-    off(globalThis, "input", updateAllRanges, false);
+    off(body, "input", onInputDocument, false);
   else
-    on(globalThis, "input", updateAllRanges, false);
+    on(body, "input", onInputDocument, false);
   for (let i = 0; i < ranges.length; i++)
     updateRange(ranges[i]);
 }
 function updateRange(input) {
-  const parentTarget = parent(input);
-  const bar = query("span", parentTarget);
-  const inputs = queryAll("input", parentTarget);
+  on(input, "focus", onFocusRange);
+  on(input, "blur", onBlurRange);
+  const label = parent(input);
+  const bar = query("span", label);
+  const inputs = queryAll("input", label);
   if (!inputs.length || !bar)
     return;
   const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
-  const thumb = hasClass(parentTarget, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
+  const thumb = hasClass(label, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents = [];
   const values = [];
   for (let i = 0, n = inputs.length; i < n; i++) {
@@ -435,10 +469,10 @@ function updateRange(input) {
       value2 = values[0];
     }
   }
-  parentTarget.style.setProperty("---start", `${start2}%`);
-  parentTarget.style.setProperty("---end", `${end}%`);
-  parentTarget.style.setProperty("---value1", `'${value1}'`);
-  parentTarget.style.setProperty("---value2", `'${value2}'`);
+  label.style.setProperty("---start", `${start2}%`);
+  label.style.setProperty("---end", `${end}%`);
+  label.style.setProperty("---value1", `'${value1}'`);
+  label.style.setProperty("---value2", `'${value2}'`);
 }
 function updateAllSliders() {
   updateAllRanges();
@@ -473,16 +507,18 @@ function lastTheme() {
   return _lastTheme;
 }
 function updateTheme(source) {
-  if (!source || !globalThis.materialDynamicColors)
+  const context = globalThis;
+  const body = document.body;
+  if (!source || !context.materialDynamicColors)
     return lastTheme();
   const mode = getMode();
   if (source.light && source.dark) {
     _lastTheme.light = source.light;
     _lastTheme.dark = source.dark;
-    document.body.setAttribute("style", source[mode]);
+    body.setAttribute("style", source[mode]);
     return source;
   }
-  return globalThis.materialDynamicColors(source).then((theme) => {
+  return context.materialDynamicColors(source).then((theme) => {
     const toCss = (data) => {
       let style = "";
       for (let i = 0, keys = Object.keys(data), n = keys.length; i < n; i++) {
@@ -495,20 +531,19 @@ function updateTheme(source) {
     };
     _lastTheme.light = toCss(theme.light);
     _lastTheme.dark = toCss(theme.dark);
-    document.body.setAttribute("style", _lastTheme[mode]);
+    body.setAttribute("style", _lastTheme[mode]);
     return _lastTheme;
   });
 }
 function updateMode(value) {
-  var _a;
   const context = globalThis;
-  const body = document == null ? void 0 : document.body;
+  const body = document.body;
   if (!body)
     return value;
   if (!value)
     return getMode();
   if (value === "auto")
-    value = ((_a = context.matchMedia) == null ? void 0 : _a.call(context, "(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+    value = isDark() ? "dark" : "light";
   body.classList.remove("light", "dark");
   body.classList.add(value);
   const lastThemeStyle = value === "light" ? _lastTheme.light : _lastTheme.dark;
@@ -560,8 +595,9 @@ function ui(selector, options) {
   updateAllSliders();
 }
 function start() {
+  var _a;
   const context = globalThis;
-  const body = document == null ? void 0 : document.body;
+  const body = (_a = context == null ? void 0 : context.document) == null ? void 0 : _a.body;
   if (body && !body.classList.contains("dark") && !body.classList.contains("light"))
     updateMode("auto");
   on(context, "load", setup, false);

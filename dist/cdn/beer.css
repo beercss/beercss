@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.13/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.0/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.13/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.0/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.13/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.0/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -2235,6 +2235,7 @@ input::-webkit-date-and-time-value {
   overflow: hidden;
   position: absolute;
   inset: 0;
+  max-block-size: 12rem;
 }
 input[type=file],
 input[type=color],
@@ -3749,6 +3750,7 @@ progress.max.vertical {
   z-index: 1;
   padding: 0;
   margin: 0;
+  transform: rotate(0deg);
 }
 .slider > input:only-of-type {
   pointer-events: all;
@@ -3918,7 +3920,7 @@ progress.max.vertical {
 .slider.max.vertical > span {
   inset: var(---end) 0 var(---start) 0;
 }
-@media (hover: none){
+@media (pointer: coarse) {
   .slider > :hover ~ .tooltip {
     inset-block-start: -1rem !important;
     opacity: 1 !important;

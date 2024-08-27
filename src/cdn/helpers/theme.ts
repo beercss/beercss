@@ -1,4 +1,5 @@
 import { type IBeerCssTheme } from "../interfaces";
+import { isDark } from "../utils";
 
 const _lastTheme: IBeerCssTheme = {
   light: "",
@@ -35,17 +36,19 @@ function lastTheme(): IBeerCssTheme {
 }
 
 export function updateTheme(source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssTheme> {
-  if (!source || !(globalThis as any).materialDynamicColors) return lastTheme();
+  const context = globalThis as any;
+  const body = document.body;
+  if (!source || !context.materialDynamicColors) return lastTheme();
 
   const mode = getMode();
   if (source.light && source.dark) {
     _lastTheme.light = source.light;
     _lastTheme.dark = source.dark;
-    document.body.setAttribute("style", source[mode]);
+    body.setAttribute("style", source[mode]);
     return source;
   }
 
-  return (globalThis as any).materialDynamicColors(source).then((theme: IBeerCssTheme) => {
+  return context.materialDynamicColors(source).then((theme: IBeerCssTheme) => {
     const toCss = (data: any) => {
       let style = "";
       for (let i = 0, keys = Object.keys(data), n = keys.length; i < n; i++) {
@@ -59,18 +62,18 @@ export function updateTheme(source?: IBeerCssTheme | any): IBeerCssTheme | Promi
 
     _lastTheme.light = toCss(theme.light);
     _lastTheme.dark = toCss(theme.dark);
-    document.body.setAttribute("style", _lastTheme[mode]);
+    body.setAttribute("style", _lastTheme[mode]);
     return _lastTheme;
   });
 }
 
 export function updateMode(value: string): string {
   const context = (globalThis as any);
-  const body = document?.body;
+  const body = document.body;
 
   if (!body) return value;
   if (!value) return getMode();
-  if (value === "auto") value = context.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  if (value === "auto") value = isDark() ? "dark" : "light";
   
   body.classList.remove("light", "dark");
   body.classList.add(value);

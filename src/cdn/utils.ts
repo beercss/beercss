@@ -5,6 +5,14 @@ import { updateSnackbar } from "./elements/snackbars";
 
 const _emptyNodeList = [] as unknown as NodeListOf<Element>;
 
+export function isTouchable(): boolean {
+  return window.matchMedia("(pointer: coarse)").matches;
+}
+
+export function isDark(): boolean {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
+
 export async function wait(milliseconds: number) {
   await new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
