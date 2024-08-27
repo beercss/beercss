@@ -129,7 +129,7 @@ function updateColor(input: HTMLInputElement, e?: KeyboardEvent) {
 function updateTextarea(textarea: HTMLTextAreaElement) {
   const field = parent(textarea) as HTMLElement;
   field.removeAttribute("style");
-  if (hasClass(field, "min")) field.style.setProperty("---size", `${Math.max(field.scrollHeight, textarea.offsetHeight)}px`);
+  if (hasClass(field, "min")) field.style.setProperty("---size", `${Math.max(textarea.scrollHeight, field.offsetHeight)}px`);
 }
 
 export function updateAllFields() {

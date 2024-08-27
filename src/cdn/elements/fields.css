@@ -141,6 +141,7 @@ input::-webkit-date-and-time-value {
   overflow: hidden;
   position: absolute;
   inset: 0;
+  max-block-size: 12rem;
 }
 
 input[type=file],
