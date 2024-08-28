@@ -183,17 +183,11 @@ function removeClass(element, name) {
     element == null ? void 0 : element.classList.remove(name);
 }
 function on(element, name, callback, useCapture = true) {
-  if (element instanceof NodeList)
-    for (let i = 0; i < element.length; i++)
-      element[i].addEventListener(name, callback, useCapture);
-  else if (element == null ? void 0 : element.addEventListener)
+  if (element == null ? void 0 : element.addEventListener)
     element.addEventListener(name, callback, useCapture);
 }
 function off(element, name, callback, useCapture = true) {
-  if (element instanceof NodeList)
-    for (let i = 0; i < element.length; i++)
-      element[i].removeEventListener(name, callback, useCapture);
-  else if (element == null ? void 0 : element.removeEventListener)
+  if (element == null ? void 0 : element.removeEventListener)
     element.removeEventListener(name, callback, useCapture);
 }
 function insertBefore(newElement, element) {

@@ -1,4 +1,5 @@
 import { expect, test } from "vitest";
+import "./globals";
 
 function calculate(value: number): Array<string> {
   return [
