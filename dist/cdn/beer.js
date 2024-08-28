@@ -41,8 +41,7 @@ function onClickOverlay(e) {
     closeDialog(dialog, overlay);
 }
 async function updateDialog(from, dialog) {
-  var _a;
-  (_a = document.activeElement) == null ? void 0 : _a.blur();
+  blurActiveElement();
   let overlay = prev(dialog);
   const isActive = hasClass(dialog, "active") || dialog.open;
   const isModal = hasClass(dialog, "modal");

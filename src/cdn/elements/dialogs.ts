@@ -1,4 +1,4 @@
-import { addClass, next, prev, hasTag, insertBefore, wait, create,  hasClass, removeClass, on, off, queryAllDataUi, isTouchable } from "../utils";
+import { addClass, next, prev, hasTag, insertBefore, wait, create,  hasClass, removeClass, on, off, queryAllDataUi, isTouchable, blurActiveElement } from "../utils";
 
 const _dialogs: Array<HTMLDialogElement> = [];
 
@@ -13,9 +13,10 @@ function closeDialog(dialog: HTMLDialogElement, overlay: Element) {
   removeClass(queryAllDataUi(dialog.id), "active");
   removeClass(dialog, "active");
   removeClass(overlay, "active");
+  
   dialog.close();
-
   _dialogs.pop();
+
   const previousDialog = _dialogs[_dialogs.length - 1];
   if (previousDialog) previousDialog.focus();
   else if (isTouchable()) document.body.classList.remove("no-scroll");
@@ -46,7 +47,7 @@ function onClickOverlay(e: Event) {
 }
 
 export async function updateDialog(from: Element, dialog: HTMLDialogElement): Promise<void> {
-  (document.activeElement as HTMLElement)?.blur();
+  blurActiveElement();
 
   let overlay = prev(dialog) as HTMLElement;
   const isActive = hasClass(dialog, "active") || dialog.open;
