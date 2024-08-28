@@ -22,7 +22,6 @@ function closeDialog(dialog: HTMLDialogElement, overlay: Element) {
 }
 
 async function openDialog(dialog: HTMLDialogElement, overlay: Element, isModal: boolean, from: Element) {
-  const body = document.body;
   if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip")) addClass(from, "active");
   addClass(overlay, "active");
   addClass(dialog, "active");
@@ -33,6 +32,7 @@ async function openDialog(dialog: HTMLDialogElement, overlay: Element, isModal: 
   await wait(90);
 
   if (!isModal) on(dialog, "keydown", onKeydownDialog, false);
+  
   _dialogs.push(dialog);
   dialog.focus();
   
