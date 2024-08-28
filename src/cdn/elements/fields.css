@@ -129,7 +129,7 @@ input::-webkit-date-and-time-value {
 
 :is(input, select, textarea):-webkit-autofill {
   -webkit-background-clip: text;
-  -webkit-text-fill-color: inherit;
+  -webkit-text-fill-color: var(--on-surface);
 }
 
 .field > :is(input, textarea, select):focus {
