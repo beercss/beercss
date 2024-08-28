@@ -81,9 +81,8 @@ function updateMenu(from, menu, e) {
     clearTimeout(_timeoutMenu);
   _timeoutMenu = setTimeout(() => {
     on(document.body, "click", onClickDocument);
-    const activeElement = document.activeElement;
-    if (!hasTag(activeElement, "input"))
-      activeElement == null ? void 0 : activeElement.blur();
+    if (!hasTag(document.activeElement, "input"))
+      blurActiveElement();
     const isActive = hasClass(menu, "active");
     const isEvent = !!((e == null ? void 0 : e.target) === from);
     const isChild = !!from.closest("menu");

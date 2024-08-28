@@ -1,4 +1,4 @@
-import { query, queryAll, addClass, on, off, hasTag, hasClass, removeClass } from "../utils";
+import { query, queryAll, addClass, on, off, hasTag, hasClass, removeClass, blurActiveElement } from "../utils";
 
 let _timeoutMenu: ReturnType<typeof setTimeout>;
 
@@ -22,8 +22,7 @@ export function updateMenu(from: Element, menu: HTMLMenuElement, e?: Event) {
 
   _timeoutMenu = setTimeout(() => {
     on(document.body, "click", onClickDocument);
-    const activeElement = document.activeElement as HTMLElement;
-    if (!hasTag(activeElement, "input")) activeElement?.blur();
+    if (!hasTag(document.activeElement, "input")) blurActiveElement();
 
     const isActive = hasClass(menu, "active");
     const isEvent = !!(e?.target === from);
