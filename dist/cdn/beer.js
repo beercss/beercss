@@ -111,8 +111,7 @@ function onClickSnackbar(e) {
     clearTimeout(_timeoutSnackbar);
 }
 function updateSnackbar(snackbar, milliseconds) {
-  var _a;
-  (_a = document.activeElement) == null ? void 0 : _a.blur();
+  blurActiveElement();
   const activeSnackbars = queryAll(".snackbar.active");
   for (let i = 0; i < activeSnackbars.length; i++)
     removeClass(activeSnackbars[i], "active");
@@ -211,6 +210,10 @@ function create(htmlAttributesAsJson) {
     element.setAttribute(key, value);
   }
   return element;
+}
+function blurActiveElement() {
+  var _a;
+  (_a = document.activeElement) == null ? void 0 : _a.blur();
 }
 function queryAllDataUi(id) {
   return queryAll('[data-ui="#' + id + '"]');

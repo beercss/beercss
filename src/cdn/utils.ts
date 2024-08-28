@@ -101,6 +101,10 @@ export function create(htmlAttributesAsJson: any): HTMLElement {
   return element;
 }
 
+export function blurActiveElement() {
+  (document.activeElement as HTMLElement)?.blur();
+}
+
 export function queryAllDataUi(id: string): NodeListOf<Element> {
   return queryAll("[data-ui=\"#"+id+"\"]");
 }
