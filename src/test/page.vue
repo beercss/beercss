@@ -127,6 +127,16 @@ main.responsive
         span More
 
   .large-space 
+  div
+    nav.tabbed
+      a.active(data-ui="#page1") Item 1
+      a(data-ui="#page2") Item 2
+      a(data-ui="#page3") Item 3
+      a(data-ui="#page4") Item 4
+    #page1.page.active Page 1
+    #page2.page Page 2
+    #page3.page Page 3
+    #page4.page Page 4
   h5 Menus 
   nav
     button

@@ -80,7 +80,7 @@ const data = withDefaults(defineProps<IProps>(), {
 
 onMounted(() => {
   if (!data.modelValue) return;
-  if (!data.modelValue.theme.light || !data.modelValue?.theme.dark || !data.modelValue?.theme.selected) { void sharedDomain.updateTheme(data.modelValue, null); }
+  if (!data.modelValue.theme.light || !data.modelValue?.theme.dark || !data.modelValue?.theme.selected) sharedDomain.updateTheme(data.modelValue, null);
 });
 
 const sourceCode = () => {

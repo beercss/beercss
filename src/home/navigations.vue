@@ -161,32 +161,55 @@
     .medium-space
     h6.middle-align
       span Navigation tabbed
-      a.chip.circle(@click="domain.showSamples(data, '#navigation-tabbed > .tabbed', 'Navigation tabbed', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+      a.chip.circle(@click="domain.showSamples(data, '#navigation-tabbed-example', 'Navigation tabbed', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
     nav.wrap
       label.radio
-        input#small-navigations-tabbed(type="radio", name="size-navigations-tabbed", @click="domain.updateSize('#navigation-tabbed .tabbed', 'small')")
+        input#small-navigations-tabbed(type="radio", name="size-navigations-tabbed", @click="domain.updateSize('#navigation-tabbed-example > .tabbed', 'small')")
         span small
       label.radio
-        input#default-navigations-tabbed(type="radio", name="size-navigations-tabbed", checked, @click="domain.updateSize('#navigation-tabbed .tabbed', '')")
+        input#default-navigations-tabbed(type="radio", name="size-navigations-tabbed", checked, @click="domain.updateSize('#navigation-tabbed-example > .tabbed', '')")
         span medium
       label.radio
-        input#large-navigations-tabbed(type="radio", name="size-navigations-tabbed", @click="domain.updateSize('#navigation-tabbed .tabbed', 'large')")
+        input#large-navigations-tabbed(type="radio", name="size-navigations-tabbed", @click="domain.updateSize('#navigation-tabbed-example > .tabbed', 'large')")
         span large
+      label.radio
+        input(
+          type="radio",
+          name="page-tabbed",
+          checked,
+          @click="domain.updatePosition('#navigation-tabbed-example .page')"
+        )
+        span page default
+      label.radio
+        input(type="radio", name="page-tabbed", @click="domain.updatePosition('#navigation-tabbed-example .page', 'left')")
+        span page left
+      label.radio
+        input(type="radio", name="page-tabbed", @click="domain.updatePosition('#navigation-tabbed-example .page', 'right')")
+        span page right
     .medium-space
-    nav.tabbed
-      a.active
-        i info
-        span Overview
-      a
-        i style
-        span Specs
-      a
-        i design_services
-        span Guidelines
-      a
-        i accessibility_new
-        span Acessibility
+    #navigation-tabbed-example
+      nav.tabbed
+        a.active(data-ui="#page-overview")
+          i info
+          span Overview
+        a(data-ui="#page-specs")
+          i style
+          span Specs
+        a(data-ui="#page-guidelines")
+          i design_services
+          span Guidelines
+        a(data-ui="#page-acessibility")
+          i accessibility_new
+          span Acessibility
+      #page-overview.page.padding.active
+        h5 Overview
+      #page-specs.page.padding
+        h5 Specs
+      #page-guidelines.page.padding
+        h5 Guidelines
+      #page-acessibility.page.padding
+        h5 Acessibility
 </template>
 
 <script setup lang="ts">

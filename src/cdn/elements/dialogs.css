@@ -18,6 +18,7 @@ dialog {
   transition: all var(--speed3), 0s background-color;
   border-radius: 1.75rem;
   transform: translate(-50%, -4rem);
+  outline: none;
 }
 
 dialog::backdrop {

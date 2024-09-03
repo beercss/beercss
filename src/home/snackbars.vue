@@ -38,7 +38,5 @@
 import domain from "./domain";
 import data from "./data";
 
-const showToast = (selector: string) => {
-  ui(selector);
-};
+const showToast = async (selector: string) => await ui(selector);
 </script>

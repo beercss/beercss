@@ -1,6 +1,7 @@
 import { expect, test, beforeAll } from "vitest";
 import domain from "../src/gmail/domain";
 import { type IItemGmail } from "../src/gmail/interfaces";
+import "./globals";
 
 let emails: Array<IItemGmail>;
 

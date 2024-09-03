@@ -14,13 +14,16 @@ light, dark
 
 #### Example
 
-The default theme is light. Use dark to change the default theme to dark.
+The default theme will be set according to device color scheme. Use light or dark to set the default theme.
 
 ```html
+// It will be set according to device color scheme
 <body>...</body>
 
+// To light
 <body class="light">...</body>
 
+// To dark
 <body class="dark">...</body>
 ```
 
@@ -64,7 +67,7 @@ let theme = await ui("theme");
 
 #### To change mode
 
-Call `ui("mode", "light|dark")` to set current theme between light and dark.
+Call `ui("mode", "light|dark|auto")` to set current theme to light, dark or auto.
 
 ```js
 // To light
@@ -72,6 +75,9 @@ let mode = ui("mode", "light");
 
 // To dark
 let mode = ui("mode", "dark");
+
+// To set from device color scheme
+let mode = ui("mode", "auto");
 
 // Get current mode
 let mode = ui("mode");

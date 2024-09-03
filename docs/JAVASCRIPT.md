@@ -9,7 +9,7 @@ The JS file of Beer CSS is almost optional. Basically is a JS helper for the dyn
 ui("mode")
 
 // set mode
-ui("mode", "light|dark");
+ui("mode", "light|dark|auto");
 
 // get theme
 await ui("theme")

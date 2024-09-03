@@ -1,12 +1,135 @@
-let _timeoutSnackbar;
-let _timeoutMutation;
+const _dialogs = [];
+function onKeydownDialog(e) {
+  if (e.key === "Escape") {
+    const dialog = e.currentTarget;
+    updateDialog(dialog, dialog);
+  }
+}
+function closeDialog(dialog, overlay) {
+  removeClass(queryAllDataUi(dialog.id), "active");
+  removeClass(dialog, "active");
+  removeClass(overlay, "active");
+  dialog.close();
+  _dialogs.pop();
+  const previousDialog = _dialogs[_dialogs.length - 1];
+  if (previousDialog)
+    previousDialog.focus();
+  else if (isTouchable())
+    document.body.classList.remove("no-scroll");
+}
+async function openDialog(dialog, overlay, isModal, from) {
+  if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip"))
+    addClass(from, "active");
+  addClass(overlay, "active");
+  addClass(dialog, "active");
+  if (isModal)
+    dialog.showModal();
+  else
+    dialog.show();
+  await wait(90);
+  if (!isModal)
+    on(dialog, "keydown", onKeydownDialog, false);
+  _dialogs.push(dialog);
+  dialog.focus();
+  if (isTouchable())
+    document.body.classList.add("no-scroll");
+}
+function onClickOverlay(e) {
+  const overlay = e.currentTarget;
+  const dialog = next(overlay);
+  if (hasTag(dialog, "dialog"))
+    closeDialog(dialog, overlay);
+}
+async function updateDialog(from, dialog) {
+  blurActiveElement();
+  let overlay = prev(dialog);
+  const isActive = hasClass(dialog, "active") || dialog.open;
+  const isModal = hasClass(dialog, "modal");
+  if (!isModal)
+    off(dialog, "keydown", onKeydownDialog, false);
+  if (!hasClass(overlay, "overlay")) {
+    overlay = create({ class: "overlay" });
+    insertBefore(overlay, dialog);
+    await wait(90);
+  }
+  if (!isModal)
+    on(overlay, "click", onClickOverlay, false);
+  if (isActive)
+    closeDialog(dialog, overlay);
+  else
+    openDialog(dialog, overlay, isModal, from);
+}
 let _timeoutMenu;
-let _mutation;
-const _lastTheme = {
-  light: "",
-  dark: ""
-};
+function onClickDocument(e) {
+  off(document.body, "click", onClickDocument);
+  const body = e.target;
+  const menus = queryAll("menu.active");
+  for (let i = 0; i < menus.length; i++)
+    updateMenu(body, menus[i], e);
+}
+function focusOnMenuOrInput(menu) {
+  setTimeout(() => {
+    const input = query(".field > input", menu);
+    if (input)
+      input.focus();
+    else
+      menu.focus();
+  }, 90);
+}
+function updateMenu(from, menu, e) {
+  if (_timeoutMenu)
+    clearTimeout(_timeoutMenu);
+  _timeoutMenu = setTimeout(() => {
+    on(document.body, "click", onClickDocument);
+    if (!hasTag(document.activeElement, "input"))
+      blurActiveElement();
+    const isActive = hasClass(menu, "active");
+    const isEvent = !!((e == null ? void 0 : e.target) === from);
+    const isChild = !!from.closest("menu");
+    if (!isActive && isChild || isActive && isEvent) {
+      removeClass(menu, "active");
+      return;
+    }
+    removeClass(queryAll("menu.active"), "active");
+    addClass(menu, "active");
+    focusOnMenuOrInput(menu);
+  }, 90);
+}
+function updatePage(page) {
+  const container = parent(page);
+  if (container)
+    removeClass(queryAll(".page", container), "active");
+  addClass(page, "active");
+}
+let _timeoutSnackbar;
+function onClickSnackbar(e) {
+  const snackbar = e.currentTarget;
+  removeClass(snackbar, "active");
+  if (_timeoutSnackbar)
+    clearTimeout(_timeoutSnackbar);
+}
+function updateSnackbar(snackbar, milliseconds) {
+  blurActiveElement();
+  const activeSnackbars = queryAll(".snackbar.active");
+  for (let i = 0; i < activeSnackbars.length; i++)
+    removeClass(activeSnackbars[i], "active");
+  addClass(snackbar, "active");
+  on(snackbar, "click", onClickSnackbar);
+  if (_timeoutSnackbar)
+    clearTimeout(_timeoutSnackbar);
+  if (milliseconds === -1)
+    return;
+  _timeoutSnackbar = setTimeout(() => {
+    removeClass(snackbar, "active");
+  }, milliseconds ?? 6e3);
+}
 const _emptyNodeList = [];
+function isTouchable() {
+  return window.matchMedia("(pointer: coarse)").matches;
+}
+function isDark() {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
 async function wait(milliseconds) {
   await new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
@@ -32,8 +155,7 @@ function queryAll(selector, element) {
   }
 }
 function hasClass(element, name) {
-  var _a;
-  return ((_a = element == null ? void 0 : element.classList) == null ? void 0 : _a.contains(name)) ?? false;
+  return (element == null ? void 0 : element.classList.contains(name)) ?? false;
 }
 function hasTag(element, name) {
   var _a;
@@ -44,18 +166,26 @@ function hasType(element, name) {
   return ((_a = element == null ? void 0 : element.type) == null ? void 0 : _a.toLowerCase()) === name;
 }
 function addClass(element, name) {
-  var _a;
-  (_a = element == null ? void 0 : element.classList) == null ? void 0 : _a.add(name);
+  if (element instanceof NodeList)
+    for (let i = 0; i < element.length; i++)
+      element[i].classList.add(name);
+  else
+    element == null ? void 0 : element.classList.add(name);
 }
 function removeClass(element, name) {
-  var _a;
-  (_a = element == null ? void 0 : element.classList) == null ? void 0 : _a.remove(name);
+  if (element instanceof NodeList)
+    for (let i = 0; i < element.length; i++)
+      element[i].classList.remove(name);
+  else
+    element == null ? void 0 : element.classList.remove(name);
 }
 function on(element, name, callback, useCapture = true) {
-  element == null ? void 0 : element.addEventListener(name, callback, useCapture);
+  if (element == null ? void 0 : element.addEventListener)
+    element.addEventListener(name, callback, useCapture);
 }
 function off(element, name, callback, useCapture = true) {
-  element == null ? void 0 : element.removeEventListener(name, callback, useCapture);
+  if (element == null ? void 0 : element.removeEventListener)
+    element.removeEventListener(name, callback, useCapture);
 }
 function insertBefore(newElement, element) {
   var _a;
@@ -79,122 +209,236 @@ function create(htmlAttributesAsJson) {
   }
   return element;
 }
-function updateInput(target) {
-  const input = target;
-  if (hasType(input, "number") && !input.value)
-    input.value = "";
-  if (!input.placeholder)
-    input.placeholder = " ";
-  if (target.getAttribute("data-ui"))
-    void open(target, null);
+function blurActiveElement() {
+  var _a;
+  (_a = document.activeElement) == null ? void 0 : _a.blur();
 }
-function onClickElement(e) {
-  void open(e.currentTarget, null, null, e);
+function queryAllDataUi(id) {
+  return queryAll('[data-ui="#' + id + '"]');
+}
+function queryDataUi(id) {
+  return query('[data-ui="#' + id + '"]');
+}
+function updateAllClickable(element) {
+  if (element.id && hasClass(element, "page"))
+    element = queryDataUi(element.id) ?? element;
+  const container = parent(element);
+  if (!hasClass(container, "tabs") && !hasClass(container, "tabbed") && !hasTag(container, "nav"))
+    return;
+  const as = queryAll("a", container);
+  for (let i = 0; i < as.length; i++)
+    removeClass(as[i], "active");
+  addClass(element, "active");
+}
+async function run(from, to, options, e) {
+  if (!to) {
+    to = query(from.getAttribute("data-ui"));
+    if (!to)
+      return;
+  }
+  updateAllClickable(from);
+  if (hasTag(to, "dialog")) {
+    await updateDialog(from, to);
+    return;
+  }
+  if (hasTag(to, "menu")) {
+    updateMenu(from, to, e);
+    return;
+  }
+  if (hasClass(to, "snackbar")) {
+    updateSnackbar(to, options);
+    return;
+  }
+  if (hasClass(to, "page")) {
+    updatePage(to);
+    return;
+  }
+  if (hasClass(to, "active")) {
+    removeClass(from, "active");
+    removeClass(to, "active");
+    return;
+  }
+  addClass(to, "active");
 }
 function onClickLabel(e) {
-  const target = e.currentTarget;
-  const parentTarget = parent(target);
-  const input = query("input:not([type=file], [type=checkbox], [type=radio]), select, textarea", parentTarget);
+  const label = e.currentTarget;
+  const field = parent(label);
+  const input = query("input:not([type=file], [type=checkbox], [type=radio]), select, textarea", field);
   if (input)
     input.focus();
 }
 function onFocusInput(e) {
-  const target = e.currentTarget;
-  updateInput(target);
+  const input = e.currentTarget;
+  updateInput(input);
 }
 function onBlurInput(e) {
-  const target = e.currentTarget;
-  updateInput(target);
-}
-function onClickDocument(e) {
-  off(document.body, "click", onClickDocument);
-  const target = e.target;
-  const menus = queryAll("menu.active");
-  for (let i = 0, n = menus.length; i < n; i++)
-    menu(target, menus[i], e);
-}
-function onClickSnackbar(e) {
-  const target = e.currentTarget;
-  removeClass(target, "active");
-  if (_timeoutSnackbar)
-    clearTimeout(_timeoutSnackbar);
+  const input = e.currentTarget;
+  updateInput(input);
 }
 function onChangeFile(e) {
-  const target = e.currentTarget;
-  updateFile(target);
+  const input = e.currentTarget;
+  updateFile(input);
 }
 function onChangeColor(e) {
-  const target = e.currentTarget;
-  updateColor(target);
+  const input = e.currentTarget;
+  updateColor(input);
 }
 function onKeydownFile(e) {
-  const target = e.currentTarget;
-  updateFile(target, e);
+  const input = e.currentTarget;
+  updateFile(input, e);
 }
 function onKeydownColor(e) {
-  const target = e.currentTarget;
-  updateColor(target, e);
+  const input = e.currentTarget;
+  updateColor(input, e);
 }
 function onInputTextarea(e) {
-  const target = e.currentTarget;
-  updateTextarea(target);
+  const textarea = e.currentTarget;
+  updateTextarea(textarea);
 }
-function onMutation() {
-  if (_timeoutMutation)
-    clearTimeout(_timeoutMutation);
-  _timeoutMutation = setTimeout(() => {
-    void ui();
-  }, 180);
+function updateAllLabels() {
+  const labels = queryAll(".field > label");
+  for (let i = 0; i < labels.length; i++)
+    on(labels[i], "click", onClickLabel);
 }
-function updateFile(target, e) {
-  if (e && e.key === "Enter") {
-    const previousTarget = prev(target);
-    if (!hasType(previousTarget, "file"))
+function updateAllInputs() {
+  const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])");
+  for (let i = 0; i < inputs.length; i++) {
+    on(inputs[i], "focus", onFocusInput);
+    on(inputs[i], "blur", onBlurInput);
+    updateInput(inputs[i]);
+  }
+}
+function updateAllSelects() {
+  const selects = queryAll(".field > select");
+  for (let i = 0; i < selects.length; i++) {
+    on(selects[i], "focus", onFocusInput);
+    on(selects[i], "blur", onBlurInput);
+  }
+}
+function updateAllFiles() {
+  const files = queryAll(".field > input[type=file]");
+  for (let i = 0; i < files.length; i++) {
+    on(files[i], "change", onChangeFile);
+    updateFile(files[i]);
+  }
+}
+function updateAllColors() {
+  const colors = queryAll(".field > input[type=color]");
+  for (let i = 0; i < colors.length; i++) {
+    on(colors[i], "change", onChangeColor);
+    updateColor(colors[i]);
+  }
+}
+function updateAllTextareas() {
+  const textareas = queryAll(".field.textarea > textarea");
+  for (let i = 0; i < textareas.length; i++) {
+    on(textareas[i], "focus", onFocusInput);
+    on(textareas[i], "blur", onBlurInput);
+    on(textareas[i], "input", onInputTextarea);
+    updateTextarea(textareas[i]);
+  }
+}
+function updateInput(input) {
+  if (hasType(input, "number") && !input.value)
+    input.value = "";
+  if (!input.placeholder)
+    input.placeholder = " ";
+  if (input.getAttribute("data-ui"))
+    run(input, null);
+}
+function updateFile(input, e) {
+  if ((e == null ? void 0 : e.key) === "Enter") {
+    const previousInput = prev(input);
+    if (!hasType(previousInput, "file"))
       return;
-    previousTarget.click();
+    previousInput.click();
     return;
   }
-  const currentTarget = target;
-  const nextTarget = next(target);
-  if (!hasType(nextTarget, "text"))
+  const nextInput = next(input);
+  if (!hasType(nextInput, "text"))
     return;
-  nextTarget.value = currentTarget.files ? Array.from(currentTarget.files).map((x) => x.name).join(", ") : "";
-  nextTarget.readOnly = true;
-  on(nextTarget, "keydown", onKeydownFile, false);
-  updateInput(nextTarget);
+  nextInput.value = input.files ? Array.from(input.files).map((x) => x.name).join(", ") : "";
+  nextInput.readOnly = true;
+  on(nextInput, "keydown", onKeydownFile, false);
+  updateInput(nextInput);
 }
-function updateColor(target, e) {
-  if (e && e.key === "Enter") {
-    const previousTarget = prev(target);
-    if (!hasType(previousTarget, "color"))
+function updateColor(input, e) {
+  if ((e == null ? void 0 : e.key) === "Enter") {
+    const previousInput = prev(input);
+    if (!hasType(previousInput, "color"))
       return;
-    previousTarget.click();
+    previousInput.click();
     return;
   }
-  const currentTarget = target;
-  const nextTarget = next(target);
-  if (!hasType(nextTarget, "text"))
+  const nextInput = next(input);
+  if (!hasType(nextInput, "text"))
     return;
-  nextTarget.readOnly = true;
-  nextTarget.value = currentTarget.value;
-  on(nextTarget, "keydown", onKeydownColor, false);
-  updateInput(nextTarget);
+  nextInput.readOnly = true;
+  nextInput.value = input.value;
+  on(nextInput, "keydown", onKeydownColor, false);
+  updateInput(nextInput);
 }
-function updateTextarea(target) {
-  const parentTarget = parent(target);
-  const currentTarget = parent(target);
-  parentTarget.removeAttribute("style");
-  if (hasClass(parentTarget, "min"))
-    parentTarget.style.setProperty("---size", `${Math.max(target.scrollHeight, currentTarget.offsetHeight)}px`);
+function updateTextarea(textarea) {
+  const field = parent(textarea);
+  field.removeAttribute("style");
+  if (hasClass(field, "min"))
+    field.style.setProperty("---size", `${Math.max(textarea.scrollHeight, field.offsetHeight)}px`);
 }
-function updateRange(target) {
-  const parentTarget = parent(target);
-  const bar = query("span", parentTarget);
-  const inputs = queryAll("input", parentTarget);
+function updateAllFields() {
+  updateAllLabels();
+  updateAllInputs();
+  updateAllSelects();
+  updateAllFiles();
+  updateAllColors();
+  updateAllTextareas();
+}
+function onInputDocument(e) {
+  const input = e.target;
+  if (!hasTag(input, "input") && !hasTag(input, "select"))
+    return;
+  if (input.type === "range") {
+    input.focus();
+    updateRange(input);
+  } else {
+    updateAllRanges();
+  }
+}
+function onFocusRange(e) {
+  if (!isTouchable())
+    return;
+  const input = e.target;
+  const label = parent(input);
+  if (hasClass(label, "vertical"))
+    document.body.classList.add("no-scroll");
+}
+function onBlurRange(e) {
+  if (!isTouchable())
+    return;
+  const input = e.target;
+  const label = parent(input);
+  if (hasClass(label, "vertical"))
+    document.body.classList.remove("no-scroll");
+}
+function updateAllRanges() {
+  const body = document.body;
+  const ranges = queryAll(".slider > input[type=range]");
+  if (!ranges.length)
+    off(body, "input", onInputDocument, false);
+  else
+    on(body, "input", onInputDocument, false);
+  for (let i = 0; i < ranges.length; i++)
+    updateRange(ranges[i]);
+}
+function updateRange(input) {
+  on(input, "focus", onFocusRange);
+  on(input, "blur", onBlurRange);
+  const label = parent(input);
+  const bar = query("span", label);
+  const inputs = queryAll("input", label);
   if (!inputs.length || !bar)
     return;
   const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
-  const thumb = hasClass(parentTarget, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
+  const thumb = hasClass(label, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents = [];
   const values = [];
   for (let i = 0, n = inputs.length; i < n; i++) {
@@ -207,187 +451,45 @@ function updateRange(target) {
     values.push(value);
   }
   let percent = percents[0];
-  let start = 0;
-  let end = 100 - start - percent;
+  let start2 = 0;
+  let end = 100 - start2 - percent;
   let value1 = values[0];
   let value2 = values[1] || 0;
   if (inputs.length > 1) {
     percent = Math.abs(percents[1] - percents[0]);
-    start = percents[1] > percents[0] ? percents[0] : percents[1];
-    end = 100 - start - percent;
+    start2 = percents[1] > percents[0] ? percents[0] : percents[1];
+    end = 100 - start2 - percent;
     if (value2 > value1) {
       value1 = values[1] || 0;
       value2 = values[0];
     }
   }
-  parentTarget.style.setProperty("---start", `${start}%`);
-  parentTarget.style.setProperty("---end", `${end}%`);
-  parentTarget.style.setProperty("---value1", `'${value1}'`);
-  parentTarget.style.setProperty("---value2", `'${value2}'`);
+  label.style.setProperty("---start", `${start2}%`);
+  label.style.setProperty("---end", `${end}%`);
+  label.style.setProperty("---value1", `'${value1}'`);
+  label.style.setProperty("---value2", `'${value2}'`);
 }
-function updateAllRanges(e) {
-  if (e) {
-    const input = e.target;
-    if (input.type === "range") {
-      updateRange(input);
-      return;
-    }
-  }
-  const ranges = queryAll(".slider > input[type=range]");
-  if (!ranges.length)
-    off(globalThis, "input", updateAllRanges, false);
-  else
-    on(globalThis, "input", updateAllRanges, false);
-  for (let i = 0, n = ranges.length; i < n; i++)
-    updateRange(ranges[i]);
+function updateAllSliders() {
+  updateAllRanges();
 }
-async function open(from, to, options, e) {
-  if (!to) {
-    to = query(from.getAttribute("data-ui"));
-    if (!to)
-      return;
-  }
-  if (hasTag(to, "dialog")) {
-    await dialog(from, to);
-    return;
-  }
-  if (hasTag(to, "menu")) {
-    menu(from, to, e);
-    return;
-  }
-  if (hasClass(to, "snackbar")) {
-    snackbar(from, to, options);
-    return;
-  }
-  if (hasClass(to, "page")) {
-    page(from, to);
-    return;
-  }
-  tab(from);
-  if (hasClass(to, "active")) {
-    removeClass(to, "active");
-    return;
-  }
-  addClass(to, "active");
-}
-function tab(from) {
-  if (from.id && hasClass(from, "page"))
-    from = query(`[data-ui="#${from.id}"]`) ?? from;
-  const container = parent(from);
-  if (!hasClass(container, "tabs"))
-    return;
-  const tabs = queryAll("a", container);
-  for (let i = 0, n = tabs.length; i < n; i++)
-    removeClass(tabs[i], "active");
-  addClass(from, "active");
-}
-function page(from, to) {
-  tab(from);
-  const container = parent(to);
-  if (container) {
-    for (let i = 0, n = container.children.length; i < n; i++) {
-      if (hasClass(container.children[i], "page"))
-        removeClass(container.children[i], "active");
-    }
-  }
-  addClass(to, "active");
-}
-function menu(from, to, e) {
-  if (_timeoutMenu)
-    clearTimeout(_timeoutMenu);
-  _timeoutMenu = setTimeout(() => {
-    on(document.body, "click", onClickDocument);
-    const activeElement = document.activeElement;
-    if (!hasTag(activeElement, "input"))
-      activeElement == null ? void 0 : activeElement.blur();
-    tab(from);
-    const isActive = hasClass(to, "active");
-    const isEvent = !!((e == null ? void 0 : e.target) === from);
-    const isChild = !!from.closest("menu");
-    if (!isActive && isChild || isActive && isEvent) {
-      removeClass(to, "active");
-      return;
-    }
-    const menus = queryAll("menu.active");
-    for (let i = 0, n = menus.length; i < n; i++)
-      removeClass(menus[i], "active");
-    addClass(to, "active");
-  }, 90);
-}
-async function dialog(from, to) {
+const _lastTheme = {
+  light: "",
+  dark: ""
+};
+function getMode() {
   var _a;
-  (_a = document.activeElement) == null ? void 0 : _a.blur();
-  tab(from);
-  let overlay = prev(to);
-  const target = to;
-  const isActive = hasClass(to, "active") || target.open;
-  const isModal = hasClass(to, "modal");
-  const container = parent(to);
-  const isNav = hasTag(container, "nav");
-  if (!hasClass(overlay, "overlay")) {
-    overlay = create({ class: "overlay" });
-    insertBefore(overlay, to);
-    await wait(90);
-  }
-  overlay.onclick = () => {
-    if (isModal)
-      return;
-    removeClass(from, "active");
-    removeClass(to, "active");
-    removeClass(overlay, "active");
-    target.close();
-  };
-  if (isNav) {
-    const elements = queryAll("dialog, a, .overlay", container);
-    for (let i = 0, n = elements.length; i < n; i++) {
-      const element = elements[i];
-      removeClass(element, "active");
-      if (element.open)
-        element.close();
-    }
-  }
-  if (isActive) {
-    removeClass(from, "active");
-    removeClass(overlay, "active");
-    removeClass(to, "active");
-    target.close();
-  } else {
-    if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip"))
-      addClass(from, "active");
-    addClass(overlay, "active");
-    addClass(to, "active");
-    if (isModal)
-      target.showModal();
-    else
-      target.show();
-  }
-}
-function snackbar(from, to, milliseconds) {
-  var _a;
-  (_a = document.activeElement) == null ? void 0 : _a.blur();
-  tab(from);
-  const elements = queryAll(".snackbar.active");
-  for (let i = 0, n = elements.length; i < n; i++)
-    removeClass(elements[i], "active");
-  addClass(to, "active");
-  on(to, "click", onClickSnackbar);
-  if (_timeoutSnackbar)
-    clearTimeout(_timeoutSnackbar);
-  if (milliseconds === -1)
-    return;
-  _timeoutSnackbar = setTimeout(() => {
-    removeClass(to, "active");
-  }, milliseconds ?? 6e3);
+  return ((_a = document == null ? void 0 : document.body) == null ? void 0 : _a.classList.contains("dark")) ? "dark" : "light";
 }
 function lastTheme() {
   if (_lastTheme.light && _lastTheme.dark)
     return _lastTheme;
+  const body = document.body;
   const light = document.createElement("body");
   light.className = "light";
-  document.body.appendChild(light);
+  body.appendChild(light);
   const dark = document.createElement("body");
   dark.className = "dark";
-  document.body.appendChild(dark);
+  body.appendChild(dark);
   const fromLight = getComputedStyle(light);
   const fromDark = getComputedStyle(dark);
   const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--surface-variant", "--on-surface-variant", "--outline", "--outline-variant", "--shadow", "--scrim", "--inverse-surface", "--inverse-on-surface", "--inverse-primary", "--surface-dim", "--surface-bright", "--surface-container-lowest", "--surface-container-low", "--surface-container", "--surface-container-high", "--surface-container-highest"];
@@ -395,21 +497,23 @@ function lastTheme() {
     _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
     _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
   }
-  document.body.removeChild(light);
-  document.body.removeChild(dark);
+  body.removeChild(light);
+  body.removeChild(dark);
   return _lastTheme;
 }
-function theme(source) {
-  if (!source || !globalThis.materialDynamicColors)
+function updateTheme(source) {
+  const context = globalThis;
+  const body = document.body;
+  if (!source || !context.materialDynamicColors)
     return lastTheme();
-  const mode2 = /dark/i.test(document.body.className) ? "dark" : "light";
+  const mode = getMode();
   if (source.light && source.dark) {
     _lastTheme.light = source.light;
     _lastTheme.dark = source.dark;
-    document.body.setAttribute("style", source[mode2]);
+    body.setAttribute("style", source[mode]);
     return source;
   }
-  return globalThis.materialDynamicColors(source).then((theme2) => {
+  return context.materialDynamicColors(source).then((theme) => {
     const toCss = (data) => {
       let style = "";
       for (let i = 0, keys = Object.keys(data), n = keys.length; i < n; i++) {
@@ -420,21 +524,37 @@ function theme(source) {
       }
       return style;
     };
-    _lastTheme.light = toCss(theme2.light);
-    _lastTheme.dark = toCss(theme2.dark);
-    document.body.setAttribute("style", _lastTheme[mode2]);
+    _lastTheme.light = toCss(theme.light);
+    _lastTheme.dark = toCss(theme.dark);
+    body.setAttribute("style", _lastTheme[mode]);
     return _lastTheme;
   });
 }
-function mode(value) {
+function updateMode(value) {
+  const context = globalThis;
+  const body = document.body;
+  if (!body)
+    return value;
   if (!value)
-    return /dark/i.test(document.body.className) ? "dark" : "light";
-  document.body.classList.remove("light", "dark");
-  document.body.classList.add(value);
+    return getMode();
+  if (value === "auto")
+    value = isDark() ? "dark" : "light";
+  body.classList.remove("light", "dark");
+  body.classList.add(value);
   const lastThemeStyle = value === "light" ? _lastTheme.light : _lastTheme.dark;
-  if (globalThis.materialDynamicColors)
-    document.body.setAttribute("style", lastThemeStyle);
-  return value;
+  if (context.materialDynamicColors)
+    body.setAttribute("style", lastThemeStyle);
+  return getMode();
+}
+let _timeoutMutation;
+let _mutation;
+function onMutation() {
+  if (_timeoutMutation)
+    clearTimeout(_timeoutMutation);
+  _timeoutMutation = setTimeout(async () => await ui(), 180);
+}
+function onClickElement(e) {
+  run(e.currentTarget, null, null, e);
 }
 function setup() {
   if (_mutation)
@@ -442,6 +562,11 @@ function setup() {
   _mutation = new MutationObserver(onMutation);
   _mutation.observe(document.body, { childList: true, subtree: true });
   onMutation();
+}
+function updateAllDataUis() {
+  const elements = queryAll("[data-ui]");
+  for (let i = 0, n = elements.length; i < n; i++)
+    on(elements[i], "click", onClickElement);
 }
 function ui(selector, options) {
   if (selector) {
@@ -452,50 +577,28 @@ function ui(selector, options) {
     if (selector === "guid")
       return guid();
     if (selector === "mode")
-      return mode(options);
+      return updateMode(options);
     if (selector === "theme")
-      return theme(options);
+      return updateTheme(options);
     const to = query(selector);
     if (!to)
       return;
-    void open(to, to, options);
+    run(to, to, options);
   }
-  const elements = queryAll("[data-ui]");
-  for (let i = 0, n = elements.length; i < n; i++)
-    on(elements[i], "click", onClickElement);
-  const labels = queryAll(".field > label");
-  for (let i = 0, n = labels.length; i < n; i++)
-    on(labels[i], "click", onClickLabel);
-  const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range]), .field > select, .field > textarea");
-  for (let i = 0, n = inputs.length; i < n; i++) {
-    const input = inputs[i];
-    on(input, "focus", onFocusInput);
-    on(input, "blur", onBlurInput);
-    updateInput(input);
-  }
-  const files = queryAll(".field > input[type=file]");
-  for (let i = 0, n = files.length; i < n; i++) {
-    const file = files[i];
-    on(file, "change", onChangeFile);
-    updateFile(file);
-  }
-  const colors = queryAll(".field > input[type=color]");
-  for (let i = 0, n = colors.length; i < n; i++) {
-    const color = colors[i];
-    on(color, "change", onChangeColor);
-    updateColor(color);
-  }
-  const textareas = queryAll(".field.textarea > textarea");
-  for (let i = 0, n = textareas.length; i < n; i++) {
-    const textarea = textareas[i];
-    on(textarea, "input", onInputTextarea);
-    updateTextarea(textarea);
-  }
-  updateAllRanges();
+  updateAllDataUis();
+  updateAllFields();
+  updateAllSliders();
 }
-if (globalThis.addEventListener)
-  globalThis.addEventListener("load", async () => await ui("setup"));
-globalThis.beercss = ui;
-globalThis.ui = ui;
+function start() {
+  var _a;
+  const context = globalThis;
+  const body = (_a = context == null ? void 0 : context.document) == null ? void 0 : _a.body;
+  if (body && !body.classList.contains("dark") && !body.classList.contains("light"))
+    updateMode("auto");
+  on(context, "load", setup, false);
+  context.beercss = ui;
+  context.ui = ui;
+}
+start();
 
 export default globalThis.ui;

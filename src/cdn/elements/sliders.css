@@ -49,6 +49,7 @@
   z-index: 1;
   padding: 0;
   margin: 0;
+  transform: rotate(0deg);
 }
 
 .slider > input:only-of-type {
@@ -252,7 +253,7 @@
   inset: var(---end) 0 var(---start) 0;
 }
 
-@media (hover: none){
+@media (pointer: coarse) {
   .slider > :hover ~ .tooltip {
     inset-block-start: -1rem !important;
     opacity: 1 !important;

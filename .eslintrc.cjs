@@ -47,6 +47,10 @@ module.exports = {
     }],
     // Array<T>
     "@typescript-eslint/array-type": ["error", { default: "generic" }],
+    // allow misused promises
+    "@typescript-eslint/no-misused-promises": "warn",
+    // allow floating promises
+    "@typescript-eslint/no-floating-promises": "warn",
     // allow undef variables
     "no-undef": "warn",
     // allow unused variables

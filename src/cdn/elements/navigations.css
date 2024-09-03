@@ -179,6 +179,8 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
   align-self: center;
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
+  line-height: normal;
 }
 
 nav:is(.top, .bottom):not(.drawer) > a:not(.button, .chip),
