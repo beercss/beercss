@@ -178,9 +178,11 @@ import library from "./library.vue";
 import subscriptions from "./subscriptions.vue";
 import whatsHot from "./whatsHot.vue";
 import { onRoute, redirect } from "../shared/router";
+import sharedDomain from "../shared/domain";
 
 onMounted(async () => {
   document.title = "Youtube - Beer CSS";
+  sharedDomain.applyTheme(data.value);
 
   data.value.isLoaded = false;
   await domain.waitForImages();

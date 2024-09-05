@@ -15,7 +15,15 @@ const updateMode = (data: ILayout, newMode?: string) => {
   data.isDark = mode === "dark";
 };
 
+const applyTheme = (data?: ILayout) => {
+  if (!data) return;
+  const mode = ui("mode") as string;
+  data.theme.selected = mode;
+  data.isDark = mode === "dark";
+};
+
 export default {
   updateTheme,
   updateMode,
+  applyTheme
 };

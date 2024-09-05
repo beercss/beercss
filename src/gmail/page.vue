@@ -224,9 +224,11 @@ import sent from "./sent.vue";
 import snoozed from "./snoozed.vue";
 import spam from "./spam.vue";
 import { onRoute, redirect } from "../shared/router";
+import sharedDomain from "../shared/domain";
 
 onMounted(() => {
   document.title = "Gmail - Beer CSS";
+  sharedDomain.applyTheme(data.value);
 });
 
 onRoute((url:string) => {

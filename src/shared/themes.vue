@@ -7,7 +7,7 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
       .max
         h5
           span Themes
-          a.chip.circle(@click="data.modelValue.showCssVariables=true")
+          a.chip.circle(@click="showCode(true)")
             i code
       button.circle.transparent(:data-ui="'#' + id")
         i close
@@ -15,7 +15,7 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
       h5 Themes
       a.button.border.m.l(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
       .max
-      button.transparent.circle(@click="data.modelValue.showCssVariables=false")
+      button.transparent.circle(@click="showCode(false)")
         i close
   div(v-if="!data.modelValue.showCssVariables")
     nav.wrap
@@ -79,9 +79,14 @@ const data = withDefaults(defineProps<IProps>(), {
 });
 
 onMounted(() => {
-  if (!data.modelValue) return;
-  if (!data.modelValue.theme.light || !data.modelValue?.theme.dark || !data.modelValue?.theme.selected) sharedDomain.updateTheme(data.modelValue, null);
+  sharedDomain.applyTheme(data.modelValue);
 });
+
+const showCode = (show: boolean) => {
+  if (!data.modelValue) return;
+  if (!data.modelValue.theme.light || !data.modelValue.theme.dark || !data.modelValue.theme.selected) sharedDomain.updateTheme(data.modelValue, null);
+  data.modelValue.showCssVariables = show;
+}
 
 const sourceCode = () => {
   if (!data.modelValue) return;
