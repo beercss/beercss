@@ -3284,7 +3284,6 @@ nav.tabbed {
   background-color: var(--surface-container);
   border-radius: 4rem !important;
   gap: 0rem;
-  overflow-x: auto;
   block-size: 4rem;
 }
 nav.tabbed.small {
