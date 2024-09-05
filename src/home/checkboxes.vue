@@ -3,7 +3,7 @@
   .large-space
   h4
     span Checkboxes
-    a.chip.circle(@click="domain.showSamples(data, '#checkboxes .field:not(#checkboxes1), #checkboxes1 label', 'Checkboxes', null, 'https://github.com/beercss/beercss/blob/main/docs/CHECKBOX.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#checkboxes .field:not(#checkboxes1), #checkboxes1 label', 'Checkboxes', null, 'https://github.com/beercss/beercss/blob/main/docs/CHECKBOX.md')")
       i code
   .grid
     .s12

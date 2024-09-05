@@ -3,7 +3,7 @@
   .large-space
   h4
     span Grids
-    a.chip.circle(@click="domain.showSamples(data, '#grids .grid', 'Grids', null, 'https://github.com/beercss/beercss/blob/main/docs/GRID.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#grids .grid', 'Grids', null, 'https://github.com/beercss/beercss/blob/main/docs/GRID.md')")
       i code
   nav.wrap
     label.radio

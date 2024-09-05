@@ -6,7 +6,7 @@
   .medium-space
   h6.middle-align
     span Rows
-    a.chip.circle(@click="domain.showSamples(data, '#row-default > .row', 'Rows', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#row-default > .row', 'Rows', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
   nav.wrap
     label.radio
@@ -42,7 +42,7 @@
   .medium-space
   h6.middle-align
     span Navigations
-    a.chip.circle(@click="domain.showSamples(data, '#navigation-default > nav', 'Navigations', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#navigation-default > nav', 'Navigations', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
   nav.wrap
     label.radio
@@ -58,20 +58,20 @@
   #navigation-default
     nav
       button Button
-      a.chip Chip
+      button.chip Chip
       i home
       img.circle(:src="'/beer-and-woman.svg'")
     hr.small
     nav
       button Button
-      a.chip Chip
+      button.chip Chip
       i home
       .max max
       img.circle(:src="'/beer-and-woman.svg'")
     hr.small
     nav
       button Button
-      a.chip Chip
+      button.chip Chip
       .max max
       i home
       img.circle(:src="'/beer-and-woman.svg'")
@@ -79,14 +79,14 @@
     nav
       button Button
       .max max
-      a.chip Chip
+      button.chip Chip
       i home
       img.circle(:src="'/beer-and-woman.svg'")
     hr.small
     nav
       .max max
       button Button
-      a.chip Chip
+      button.chip Chip
       i home
       img.circle(:src="'/beer-and-woman.svg'")
   .medium-space
@@ -94,7 +94,7 @@
     .medium-space
     h6.middle-align
       span Navigation rail/bar
-      a.chip.circle(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+      button.chip.circle(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
     nav.wrap
       label.radio(v-show="!data.isHorizontal")
@@ -114,7 +114,7 @@
     .medium-space
     h6.middle-align
       span Navigation drawer
-      a.chip.circle(@click="domain.showSamples(data, '#navigation-drawer > .drawer', 'Navigation drawer', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+      button.chip.circle(@click="domain.showSamples(data, '#navigation-drawer > .drawer', 'Navigation drawer', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
     nav.wrap
       label.radio
@@ -161,7 +161,7 @@
     .medium-space
     h6.middle-align
       span Navigation tabbed
-      a.chip.circle(@click="domain.showSamples(data, '#navigation-tabbed-example', 'Navigation tabbed', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+      button.chip.circle(@click="domain.showSamples(data, '#navigation-tabbed-example', 'Navigation tabbed', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
     nav.wrap
       label.radio

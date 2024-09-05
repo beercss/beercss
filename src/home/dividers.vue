@@ -3,7 +3,7 @@
   .large-space
   h4
     span Dividers
-    a.chip.circle(
+    button.chip.circle(
       @click="domain.showSamples(data, '#dividers #divider', 'Dividers', null, 'https://github.com/beercss/beercss/blob/main/docs/DIVIDER.md')"
     )
       i code

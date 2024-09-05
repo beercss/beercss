@@ -6,7 +6,7 @@
   .space
   h6
     span Docked
-    a.chip.circle(
+    button.chip.circle(
       @click="domain.showSamples(data, '#search-compact > *', 'Search', null, null)"
     )
       i code
@@ -50,7 +50,7 @@
   .space
   h6
     span Fullscreen
-    a.chip.circle(
+    button.chip.circle(
       @click="domain.showSamples(data, '#search-fullscreen > *', 'Search', null, null)"
     )
       i code

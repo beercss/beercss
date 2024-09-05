@@ -3,7 +3,7 @@
   .large-space
   h4
     span Directions
-    a.chip.circle(
+    button.chip.circle(
       @click="domain.showSamples(data, '#direction > button, #direction > .chip, #direction > nav, #direction > .tabs', 'Directions', null, null)"
     )
       i code
@@ -19,7 +19,7 @@
     button
       i home
       span Button
-    a.chip
+    button.chip
       i home
       span Chip
     nav.no-space

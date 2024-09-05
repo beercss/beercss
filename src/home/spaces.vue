@@ -3,7 +3,7 @@
   .large-space
   h4
     span Spaces
-    a.chip.circle(
+    button.chip.circle(
       @click="domain.showSamples(data, '#space', 'Spaces', null, null)"
     )
       i code

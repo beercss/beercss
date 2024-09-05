@@ -3,7 +3,7 @@
   .large-space
   h4
     span Tabs
-    a.chip.circle(
+    button.chip.circle(
       @click="domain.showSamples(data, '#tabs > div:not(.large-space)', 'Tabs', null, 'https://github.com/beercss/beercss/blob/main/docs/TABS.md')"
     )
       i code

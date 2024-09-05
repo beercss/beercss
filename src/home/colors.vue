@@ -3,14 +3,14 @@
   .large-space
   nav.wrap
     h4 Colors
-    a.chip.circle(data-ui="#dialog-colors")
+    button.chip.circle(data-ui="#dialog-colors")
       i code
-    a.chip.circle(@click="sharedDomain.updateMode(data)")
+    button.chip.circle(@click="sharedDomain.updateMode(data)")
       i {{ data.isDark ? "light_mode" : "dark_mode" }}
-    a.chip.circle
+    button.chip.circle
       i palette
       input(type="color", @input="sharedDomain.updateTheme(data, $event)")
-    a.chip.circle
+    button.chip.circle
       i upload
       input(type="file", @change="sharedDomain.updateTheme(data, $event)")
     button.circle.small.red(@click="sharedDomain.updateTheme(data, '#f44336')")

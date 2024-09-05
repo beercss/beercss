@@ -3,24 +3,24 @@
   .large-space
   h4
     span Scrolls
-    a.chip.circle(@click="domain.showSamples(data, '#scrolls .scroll', 'Scrolls', null, 'https://github.com/beercss/beercss/blob/main/docs/HELPERS.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#scrolls .scroll', 'Scrolls', null, 'https://github.com/beercss/beercss/blob/main/docs/HELPERS.md')")
       i code
   .medium-space
   h6.middle-align
     span Chips
   nav.scroll
-    a.chip Suggestion
-    a.chip Suggestion
-    a.chip.fill Selected
-    a.chip.fill Selected
-    a.chip Suggestion
-    a.chip.fill Selected
-    a.chip Suggestion
-    a.chip Suggestion
-    a.chip Suggestion
-    a.chip Suggestion
-    a.chip Suggestion
-    a.chip Suggestion
+    button.chip Suggestion
+    button.chip Suggestion
+    button.chip.fill Selected
+    button.chip.fill Selected
+    button.chip Suggestion
+    button.chip.fill Selected
+    button.chip Suggestion
+    button.chip Suggestion
+    button.chip Suggestion
+    button.chip Suggestion
+    button.chip Suggestion
+    button.chip Suggestion
 
   .medium-space
   h6.middle-align

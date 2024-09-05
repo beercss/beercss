@@ -3,7 +3,7 @@
   .large-space
   h4
     span Dialogs
-    a.chip.circle(@click="domain.showSamples(data, '#dialogs .dialog-code', 'Dialogs', null, 'https://github.com/beercss/beercss/blob/main/docs/DIALOG.md', true)")
+    button.chip.circle(@click="domain.showSamples(data, '#dialogs .dialog-code', 'Dialogs', null, 'https://github.com/beercss/beercss/blob/main/docs/DIALOG.md', true)")
       i code
   nav.wrap
     button(data-ui="#dialog") Default

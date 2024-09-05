@@ -7,7 +7,7 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
       .max
         h5
           span Themes
-          a.chip.circle(@click="showCode(true)")
+          button.chip.circle(@click="showCode(true)")
             i code
       button.circle.transparent(:data-ui="'#' + id")
         i close
@@ -19,12 +19,12 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
         i close
   div(v-if="!data.modelValue.showCssVariables")
     nav.wrap
-      a.chip.circle.small(@click="sharedDomain.updateMode(data.modelValue)")
+      button.chip.circle.small(@click="sharedDomain.updateMode(data.modelValue)")
         i {{ data.modelValue.isDark ? "light_mode" : "dark_mode" }}
-      a.chip.circle
+      button.chip.circle
         i palette
         input(type="color", @input="sharedDomain.updateTheme(data.modelValue, $event)")
-      a.chip.circle
+      button.chip.circle
         i upload
         input(type="file", @change="sharedDomain.updateTheme(data.modelValue, $event)")
       button.circle.small.red(@click="sharedDomain.updateTheme(data.modelValue, '#f44336')")

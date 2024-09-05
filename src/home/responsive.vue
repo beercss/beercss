@@ -3,7 +3,7 @@
   .large-space
   h4
     span Responsive
-    a.chip.circle(@click="domain.showSamples(data, '#responsive nav', 'Responsive', null, 'https://github.com/beercss/beercss/blob/main/docs/HELPERS.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#responsive nav', 'Responsive', null, 'https://github.com/beercss/beercss/blob/main/docs/HELPERS.md')")
       i code
   div
     nav

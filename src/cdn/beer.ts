@@ -2,7 +2,7 @@ import { updateAllFields } from "./elements/fields";
 import { updateAllSliders } from "./elements/sliders";
 import { updateMode, updateTheme } from "./helpers/theme";
 import { type IBeerCssTheme } from "./interfaces";
-import { guid, on, query, queryAll, run } from "./utils";
+import { guid, on, query, queryAll, run, hasTag } from "./utils";
 
 let _timeoutMutation: ReturnType<typeof setTimeout>;
 let _mutation: MutationObserver | null;
@@ -16,6 +16,10 @@ function onClickElement(e: Event) {
   run(e.currentTarget as HTMLElement, null, null, e);
 }
 
+function onKeydownElement(e: KeyboardEvent) {
+  if (e.key === "Enter") run(e.currentTarget as HTMLElement, null, null, e);
+}
+
 function setup() {
   if (_mutation) return;
   _mutation = new MutationObserver(onMutation);
@@ -25,7 +29,10 @@ function setup() {
 
 function updateAllDataUis() {
   const elements = queryAll("[data-ui]");
-  for (let i = 0, n = elements.length; i < n; i++) on(elements[i], "click", onClickElement);
+  for (let i = 0, n = elements.length; i < n; i++) {
+    on(elements[i], "click", onClickElement);
+    if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) on(elements[i], "keydown", onKeydownElement);
+  }
 }
 
 function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {

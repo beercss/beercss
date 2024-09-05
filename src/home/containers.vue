@@ -3,7 +3,7 @@
   .large-space
   h4
     span Containers
-    a.chip.circle(@click="domain.showSamples(data, '#containers main.responsive', 'Containers', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#containers main.responsive', 'Containers', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
       i code
   nav
     button(@click="domain.updateMinMax('main.responsive')") Min
@@ -13,7 +13,7 @@
   .medium-space
   h6
     span Side content
-    a.chip.circle(@click="domain.showSamples(data, '#containers .grid > div > div', 'Side content', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#containers .grid > div > div', 'Side content', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
       i code
   .grid 
     .s12.m6.l6

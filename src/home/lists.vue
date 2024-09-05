@@ -4,7 +4,7 @@ div
     .large-space
     h4
       span Lists
-      a.chip.circle(@click="domain.showSamples(data, '#list .row', 'Lists')")
+      button.chip.circle(@click="domain.showSamples(data, '#list .row', 'Lists')")
         i code
     .medium-space
     #list
@@ -72,7 +72,7 @@ div
       #list-dividers.s12.m6.l6
         h6
           span List dividers
-          a.chip.circle(@click="domain.showSamples(data, '#list-dividers article', 'List containers')")
+          button.chip.circle(@click="domain.showSamples(data, '#list-dividers article', 'List containers')")
             i code
         article
           a.row.wave Item 1
@@ -87,7 +87,7 @@ div
       #list-expansions.s12.m6.l6
         h6
           span List expansions
-          a.chip.circle(@click="domain.showSamples(data, '#list-expansions article', 'List containers')")
+          button.chip.circle(@click="domain.showSamples(data, '#list-expansions article', 'List containers')")
             i code
         article
           details

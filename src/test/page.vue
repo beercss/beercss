@@ -339,11 +339,11 @@ main.responsive
       i home
       span Button
       .badge.none 1
-    a.chip
+    button.chip
       i home
       span Button
       .badge.min.none
-    a.chip
+    button.chip
       i home
       span Button
       .badge.none 1

@@ -5,7 +5,7 @@
   .medium-space
   h6.middle-align
     span Common buttons
-    a.chip.circle(@click="domain.showSamples(data, '#default-buttons button', 'Buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#default-buttons button', 'Buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#default-buttons button", :directions="['horizontal', 'vertical']", selected-direction="horizontal")
   .space
@@ -57,7 +57,7 @@
   .medium-space
   h6.middle-align
     span Responsive buttons
-    a.chip.circle(@click="domain.showSamples(data, '#responsive-buttons button', 'Reponsive buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#responsive-buttons button', 'Reponsive buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#responsive-buttons button", :directions="['horizontal', 'vertical']", selected-direction="horizontal")
   #responsive-buttons.grid
@@ -108,7 +108,7 @@
   .medium-space
   h6.middle-align
     span FABs
-    a.chip.circle(@click="domain.showSamples(data, '#fabs button', 'FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#fabs button', 'FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#fabs button", selected-size="extra")
   .space
@@ -173,7 +173,7 @@
   .medium-space
   h6.middle-align
     span Extended FABs
-    a.chip.circle(@click="domain.showSamples(data, '#extended-fabs button', 'Extended FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#extended-fabs button', 'Extended FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#extended-fabs button", :sizes="[]")
   #extended-fabs.grid
@@ -291,7 +291,7 @@
   .medium-space
   h6.middle-align
     span Icon buttons
-    a.chip.circle(@click="domain.showSamples(data, '#transparent-buttons button', 'Transparent buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#transparent-buttons button', 'Transparent buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#transparent-buttons button", :colors="[]", :elevates="[]")
   .space
@@ -333,7 +333,7 @@
   .medium-space
   h6.middle-align
     span Segmented buttons
-    a.chip.circle(@click="domain.showSamples(data, '#segmented-buttons nav', 'Segmented buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#segmented-buttons nav', 'Segmented buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   selectionForButtons(context="#segmented-buttons button", :colors="[]", :elevates="[]", :directions="['horizontal', 'vertical']", selected-direction="horizontal")
   #segmented-buttons.grid

@@ -5,7 +5,7 @@
   .medium-space
   h6
     span Common badges
-    a.chip.circle(@click="domain.showSamples(data, '#default-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#default-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
       i code
   nav.wrap
     label.radio
@@ -66,16 +66,16 @@
     button
       i home
       .badge 1
-    a.chip.circle
+    button.chip.circle
       i home
       .badge 1
-    a.chip
+    button.chip
       i home
       .badge 1
   .medium-space
   h6
     span Inline badge
-    a.chip.circle(@click="domain.showSamples(data, '#inline-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#inline-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
       i code
   nav#inline-badges
     button
@@ -84,10 +84,10 @@
     button
       span Button
       .badge.none 1
-    a.chip
+    button.chip
       i home
       .badge.none 1
-    a.chip
+    button.chip
       span Button
       .badge.none 1
 </template>

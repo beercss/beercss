@@ -3,7 +3,7 @@
   .large-space
   h4
     span Progress
-    a.chip.circle(@click="domain.showSamples(data, '#default-progress progress, #custom-progress article, #custom-progress nav > button, #custom-progress nav > .chip', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#default-progress progress, #custom-progress article, #custom-progress nav > button, #custom-progress nav > .chip', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
       i code
   nav.wrap
     label.radio
@@ -48,7 +48,7 @@
       article
         h5 Card
         progress.max(value="30", max="100")
-      a.chip
+      button.chip
         span Chip
         progress.max(value="30", max="100")
       button
@@ -58,7 +58,7 @@
       article
         h5 Card
         progress.max.vertical(value="30", max="100")
-      a.chip
+      button.chip
         span Chip
         progress.max.vertical(value="30", max="100")
       button

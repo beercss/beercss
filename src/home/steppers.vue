@@ -3,7 +3,7 @@
   .large-space
   h4
     span Steppers
-    a.chip.circle(
+    button.chip.circle(
       @click="domain.showSamples(data, '#steppers > nav.scroll', 'Steppers', null, null)"
     )
       i code
@@ -24,7 +24,7 @@
       input(type="radio", name="color-steppers", @click="domain.updateColor('#steppers button', 'tertiary')")
       span tertiary
   .medium-space
-  nav.scroll
+  nav
     button.circle.small
       i done
     hr.max
@@ -32,7 +32,7 @@
     hr.max
     button.circle.small(disabled) 3
   .medium-space
-  nav.scroll
+  nav
     button.circle.small
       i done
     div Previous
@@ -43,7 +43,7 @@
     button.circle.small(disabled) 3
     div Next
   .medium-space
-  nav.scroll
+  nav
     .center-align
       button.circle.small
         i done

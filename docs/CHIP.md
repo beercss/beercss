@@ -5,6 +5,7 @@ Chips are compact elements that represent an input, attribute, or action.
 ## Element
 
 ```html
+<button class="chip">...</button>
 <a class="chip">...</a>
 ```
 
@@ -30,12 +31,12 @@ small, medium, large
 ## Example
 
 ```html
-<a class="chip">Chip</a>
+<button class="chip">Chip</button>
 
-<a class="chip">
+<button class="chip">
   <i>home</i>
   <span>Chip</span>
-</a>
+</button>
 ```
 
 ## Go to

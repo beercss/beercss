@@ -3,7 +3,7 @@
   .large-space
   h4
     span Fieldsets
-    a.chip.circle(@click="domain.showSamples(data, '#fieldsets fieldset', 'Fieldsets', null, null)")
+    button.chip.circle(@click="domain.showSamples(data, '#fieldsets fieldset', 'Fieldsets', null, null)")
       i code
   .space
   .grid

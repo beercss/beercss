@@ -3,7 +3,7 @@
   .large-space
   h4
     span Inputs
-    a.chip.circle(@click="domain.showSamples(data, '#inputs .field', 'Inputs', null, 'https://github.com/beercss/beercss/blob/main/docs/INPUT.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#inputs .field', 'Inputs', null, 'https://github.com/beercss/beercss/blob/main/docs/INPUT.md')")
       i code
   nav.wrap
     label.checkbox
@@ -133,7 +133,7 @@
   .medium-space
   h6
     span Custom inputs
-    a.chip.circle(@click="domain.showSamples(data, '#inputs-custom nav > *', 'Custom inputs', null, null)")
+    button.chip.circle(@click="domain.showSamples(data, '#inputs-custom nav > *', 'Custom inputs', null, null)")
       i code
   .medium-space
   #inputs-custom
