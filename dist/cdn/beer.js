@@ -556,6 +556,10 @@ function onMutation() {
 function onClickElement(e) {
   run(e.currentTarget, null, null, e);
 }
+function onKeydownElement(e) {
+  if (e.key === "Enter")
+    run(e.currentTarget, null, null, e);
+}
 function setup() {
   if (_mutation)
     return;
@@ -565,8 +569,11 @@ function setup() {
 }
 function updateAllDataUis() {
   const elements = queryAll("[data-ui]");
-  for (let i = 0, n = elements.length; i < n; i++)
+  for (let i = 0, n = elements.length; i < n; i++) {
     on(elements[i], "click", onClickElement);
+    if (hasTag(elements[i], "a") && !elements[i].getAttribute("href"))
+      on(elements[i], "keydown", onKeydownElement);
+  }
 }
 function ui(selector, options) {
   if (selector) {
