@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.3/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.4/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.3/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.4/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.3/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.4/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1782,6 +1782,7 @@ article.large {
   user-select: none;
   gap: 1rem;
   line-height: normal;
+  letter-spacing: normal;
 }
 .chip.fill:hover {
   box-shadow: var(--elevate1);
@@ -2827,11 +2828,11 @@ svg {
 :is(button, .button, .chip):not(.transparent) > .responsive {
   border: 0.25rem solid transparent;
 }
-:is(button.small, .button.small, .chip) > .responsive {
-  inline-size: 2rem;
-}
 :is(button, .button, .chip.medium) > .responsive {
   inline-size: 2.5rem;
+}
+:is(button.small, .button.small, .chip:not(.medium)) > .responsive {
+  inline-size: 2rem;
 }
 :is(button, .button, .chip).large > .responsive {
   inline-size: 3rem;

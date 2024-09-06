@@ -18,6 +18,7 @@
   user-select: none;
   gap: 1rem;
   line-height: normal;
+  letter-spacing: normal;
 }
 
 .chip.fill:hover {
