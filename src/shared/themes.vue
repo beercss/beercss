@@ -86,7 +86,7 @@ const showCode = (show: boolean) => {
   if (!data.modelValue) return;
   if (!data.modelValue.theme.light || !data.modelValue.theme.dark || !data.modelValue.theme.selected) sharedDomain.updateTheme(data.modelValue, null);
   data.modelValue.showCssVariables = show;
-}
+};
 
 const sourceCode = () => {
   if (!data.modelValue) return;

@@ -25,5 +25,5 @@ const applyTheme = (data?: ILayout) => {
 export default {
   updateTheme,
   updateMode,
-  applyTheme
+  applyTheme,
 };
