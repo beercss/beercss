@@ -33,13 +33,13 @@
         i home
         span Button
     .tabs
-      a.active(data-ui="")
+      a.active(tabindex="0")
         i home
         span Tab 1
-      a(data-ui="")
+      a(tabindex="0")
         i home
         span Tab 2
-      a(data-ui="")
+      a(tabindex="0")
         i home
         span Tab 3
 
