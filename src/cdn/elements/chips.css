@@ -28,11 +28,13 @@
 .chip.medium {
   block-size: 2.5rem;
   min-inline-size: 2.5rem;
+  border-radius: 0.5rem;
 }
 
 .chip.large {
   block-size: 3rem;
   min-inline-size: 3rem;
+  border-radius: 0.5rem;
 }
 
 .chip.fill {

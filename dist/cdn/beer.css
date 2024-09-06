@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.4/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.4/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.4/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1690,7 +1690,6 @@ button {
 :is(button, .button).small {
   block-size: 2rem;
   min-inline-size: 2rem;
-  font-size: 0.875rem;
   border-radius: 1rem;
 }
 :is(button, .button).large {
@@ -1790,10 +1789,12 @@ article.large {
 .chip.medium {
   block-size: 2.5rem;
   min-inline-size: 2.5rem;
+  border-radius: 0.5rem;
 }
 .chip.large {
   block-size: 3rem;
   min-inline-size: 3rem;
+  border-radius: 0.5rem;
 }
 .chip.fill {
   background-color: var(--secondary-container) !important;
