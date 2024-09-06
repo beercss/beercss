@@ -270,7 +270,7 @@ const formatHtml = (element: Element | null, raw: boolean = false, useInnerHtml:
   return process(text
     .replace(/<!--v-if-->/gi, "")
     .replace(/<div class="overlay"><\/div>/gi, "")
-    .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|data-v-\w+)="[^"]*"/gi, "")
+    .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|tabindex|data-v-\w+)="[^"]*"/gi, "")
     .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
     .replace(/\s+(checked|disabled)=""/gi, " $1")
     .replace(/\s+[a-z-]+=(""|"#")/gi, "")

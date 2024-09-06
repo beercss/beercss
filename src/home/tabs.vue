@@ -54,9 +54,9 @@
   p.space
   div
     .tabs
-      a.active(data-ui="#tab1", no-direction="") Tab 1
-      a(data-ui="#tab2", no-direction="") Tab 2
-      a(data-ui="#tab3", no-direction="") Tab 3
+      a.active(data-ui="#tab1", tabindex="0") Tab 1
+      a(data-ui="#tab2", tabindex="0") Tab 2
+      a(data-ui="#tab3", tabindex="0") Tab 3
     #tab1.page.padding.active
       h5 Tab 1
     #tab2.page.padding
@@ -65,13 +65,13 @@
       h5 Tab 3
   div
     .tabs
-      a.active(data-ui="#tab4")
+      a.active(data-ui="#tab4", tabindex="0")
         i home
         span Tab 1
-      a(data-ui="#tab5")
+      a(data-ui="#tab5", tabindex="0")
         i home
         span Tab 2
-      a(data-ui="#tab6")
+      a(data-ui="#tab6", tabindex="0")
         i home
         span Tab 3
     #tab4.page.padding.active
@@ -82,13 +82,13 @@
       h5 Tab 3
   div
     .tabs
-      a.active(data-ui="#tab7")
+      a.active(data-ui="#tab7", tabindex="0")
         img.circle(:src="'/favicon.png'")
         span Tab 1
-      a(data-ui="#tab8")
+      a(data-ui="#tab8", tabindex="0")
         img.circle(:src="'/favicon.png'")
         span Tab 2
-      a(data-ui="#tab9")
+      a(data-ui="#tab9", tabindex="0")
         img.circle(:src="'/favicon.png'")
         span Tab 3
     #tab7.page.padding.active

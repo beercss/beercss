@@ -190,16 +190,16 @@
     .medium-space
     #navigation-tabbed-example
       nav.tabbed
-        a.active(data-ui="#page-overview")
+        a.active(data-ui="#page-overview", tabindex="0")
           i info
           span Overview
-        a(data-ui="#page-specs")
+        a(data-ui="#page-specs", tabindex="0")
           i style
           span Specs
-        a(data-ui="#page-guidelines")
+        a(data-ui="#page-guidelines", tabindex="0")
           i design_services
           span Guidelines
-        a(data-ui="#page-acessibility")
+        a(data-ui="#page-acessibility", tabindex="0")
           i accessibility_new
           span Acessibility
       #page-overview.page.padding.active
