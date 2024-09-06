@@ -348,15 +348,15 @@ main.responsive
       span Button
       .badge.none 1
   .tabs.left-align
-    a.active
+    a.active(tabindex="0")
       i home
       span Tab
       .badge.min.none
-    a
+    a(tabindex="0")
       i home
       span Tab
       .badge.none 1
-    a
+    a(tabindex="0")
       i home
       span Tab
       .badge.none 1
