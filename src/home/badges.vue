@@ -33,31 +33,31 @@
       input(type="radio", name="position-badges", @click="domain.updatePosition('#default-badges .badge', 'bottom right')")
       span bottom right
   nav.wrap.large-space#default-badges
-    a
+    a(tabindex="0")
       i home
       .badge.min
-    a
+    a(tabindex="0")
       i home
       .badge 1
-    a
+    a(tabindex="0")
       i home
       .badge 10
-    a
+    a(tabindex="0")
       i home
       .badge New
-    a
+    a(tabindex="0")
       i home
       .badge.no-round New
-    a
+    a(tabindex="0")
       i home
       .badge.border New
-    a
+    a(tabindex="0")
       i home
       .badge.border 10
-    a
+    a(tabindex="0")
       i home
       .badge.border 1
-    a
+    a(tabindex="0")
       i home
       .badge.border.no-round New
     button.circle

@@ -4,7 +4,7 @@
   h4
     span Steppers
     button.chip.circle(
-      @click="domain.showSamples(data, '#steppers > nav.scroll', 'Steppers', null, null)"
+      @click="domain.showSamples(data, '#steppers > nav', 'Steppers', null, null)"
     )
       i code
   nav.wrap
