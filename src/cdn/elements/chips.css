@@ -8,7 +8,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   background-color: transparent;
-  border: 0.0625rem solid var(--outline);
+  border: 0.0625rem solid var(--outline-variant);
   color: var(--on-surface-variant);
   padding: 0 1rem;
   margin: 0 0.5rem;
