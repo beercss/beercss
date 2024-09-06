@@ -71,9 +71,4 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 :is(a, button, .button, .chip):focus-visible {
   outline: 0.125rem solid var(--primary);
   outline-offset: 0.25rem;
-  z-index: 1;
-}
-
-:is(.scroll, .no-scroll, .no-space, .tabs, .tabbed) > :focus-visible {
-  outline-offset: -0.125rem;
 }

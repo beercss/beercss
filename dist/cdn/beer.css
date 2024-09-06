@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.6/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.6/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.6/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -187,10 +187,6 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 :is(a, button, .button, .chip):focus-visible {
   outline: 0.125rem solid var(--primary);
   outline-offset: 0.25rem;
-  z-index: 1;
-}
-:is(.scroll, .no-scroll, .no-space, .tabs, .tabbed) > :focus-visible {
-  outline-offset: -0.125rem;
 }
 .primary {
   background-color: var(--primary) !important;
@@ -3313,6 +3309,10 @@ nav.tabbed > a.active {
 :not(nav) > :is(ul, ol) {
   all: revert;
 }
+:is(.scroll, .no-scroll, .no-space, .tabs, .tabbed) > :focus-visible {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: -0.125rem;
+}
 @media only screen and (max-width: 600px) {
   nav.top,
   nav.bottom {
@@ -3714,6 +3714,14 @@ progress.max.vertical {
 [dir=rtl] .switch.icon > input:checked + span > i {
   transform: translate(-1.75rem, -50%) scale(-1);
 }
+.switch > :focus-visible + span::after {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.25rem;
+}
+:is(.checkbox, .radio) > :focus-visible + span::before {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.375rem;
+}
 .slider {
   ---start: 0%;
   ---end: 0%;
@@ -3928,6 +3936,10 @@ progress.max.vertical {
 }
 .slider.max.vertical > span {
   inset: var(---end) 0 var(---start) 0;
+}
+.slider > :focus-visible::-webkit-slider-thumb {
+  outline: 0.1875rem solid var(--primary);
+  outline-offset: 0.25rem;
 }
 @media (pointer: coarse) {
   .slider > :hover ~ .tooltip {

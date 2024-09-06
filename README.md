@@ -123,19 +123,19 @@ From jsdelivr.net.
 
 ```html
 // with html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.7.6/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.7.6/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ```css
 // with css
-@import "https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/beer.min.css";
+@import "https://cdn.jsdelivr.net/npm/beercss@3.7.6/dist/cdn/beer.min.css";
 ```
 
 ```js
 // with javascript
-import "https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/beer.min.js";
+import "https://cdn.jsdelivr.net/npm/beercss@3.7.6/dist/cdn/beer.min.js";
 import "https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js";
 ```
 
@@ -187,8 +187,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.7.5/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.7.6/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.7.6/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">

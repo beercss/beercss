@@ -202,3 +202,13 @@
 [dir=rtl] .switch.icon > input:checked + span > i {
   transform: translate(-1.75rem, -50%) scale(-1);
 }
+
+.switch > :focus-visible + span::after {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.25rem;
+}
+
+:is(.checkbox, .radio) > :focus-visible + span::before {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.375rem;
+}

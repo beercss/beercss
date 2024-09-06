@@ -279,6 +279,11 @@ nav.tabbed > a.active {
   all: revert;
 }
 
+:is(.scroll, .no-scroll, .no-space, .tabs, .tabbed) > :focus-visible {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: -0.125rem;
+}
+
 @media only screen and (max-width: 600px) {
   nav.top,
   nav.bottom {

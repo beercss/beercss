@@ -253,6 +253,11 @@
   inset: var(---end) 0 var(---start) 0;
 }
 
+.slider > :focus-visible::-webkit-slider-thumb {
+  outline: 0.1875rem solid var(--primary);
+  outline-offset: 0.25rem;
+}
+
 @media (pointer: coarse) {
   .slider > :hover ~ .tooltip {
     inset-block-start: -1rem !important;
