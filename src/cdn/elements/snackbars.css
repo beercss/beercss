@@ -1,7 +1,4 @@
 .snackbar {
-  ---transform-start: translate(-50%, 1rem);
-  ---transform-end: translate(-50%, 0);
-
   position: fixed;
   inset: auto auto 6rem 50%;
   inline-size: 80%;
@@ -19,7 +16,7 @@
   align-items: center;
   border-radius: 0.25rem;
   gap: 0.5rem;
-  transform: var(---transform-end);
+  transform: translate(-50%, 0);
 }
 
 .snackbar.top {
@@ -31,10 +28,6 @@
   animation: var(--speed2) to-snackbar;
 }
 
-.snackbar.active.top {
-  ---transform-end: translate(-50%, -1rem);
-}
-
 .snackbar > .max {
   flex: auto;
 }
@@ -42,12 +35,12 @@
 @keyframes to-snackbar {
   0% {
     opacity: 0;
-    transform: var(---transform-start);
+    transform: translate(-50%, 1rem);
   }
 
   100% {
     opacity: 1;
-    transform: var(---transform-end);
+    transform: translate(-50%, 0);
   }
 }
 

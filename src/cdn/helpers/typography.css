@@ -214,4 +214,5 @@ blockquote > code {
 
 pre:has(> code){
   direction: ltr;
+  text-align: start;
 }
