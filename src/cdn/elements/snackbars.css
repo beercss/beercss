@@ -16,7 +16,9 @@
   align-items: center;
   border-radius: 0.25rem;
   gap: 0.5rem;
-  transform: translate(-50%, 0);
+  transition: all var(--speed2);
+  transform: translate(-50%, 1rem);
+  opacity: 0;
 }
 
 .snackbar.top {
@@ -25,23 +27,12 @@
 
 .snackbar.active {
   visibility: visible;
-  animation: var(--speed2) to-snackbar;
+  transform: translate(-50%, 0);
+  opacity: 1;
 }
 
 .snackbar > .max {
   flex: auto;
-}
-
-@keyframes to-snackbar {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
 }
 
 @media only screen and (min-width: 993px) {
