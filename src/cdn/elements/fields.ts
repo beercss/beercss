@@ -1,4 +1,8 @@
-import { query, hasClass, on, next, prev, hasType, parent, queryAll, run } from "../utils";
+import { query, hasClass, on, next, prev, hasType, parent, queryAll } from "../utils";
+
+function updatePlaceholder(element: HTMLInputElement | HTMLTextAreaElement) {
+  if (!element.placeholder) element.placeholder = " ";
+}
 
 function onClickLabel(e: Event) {
   const label = e.currentTarget as HTMLLabelElement;
@@ -92,8 +96,7 @@ function updateAllTextareas() {
 
 function updateInput(input: HTMLInputElement) {
   if (hasType(input, "number") && !input.value) input.value = "";
-  if (!input.placeholder) input.placeholder = " ";
-  if (input.getAttribute("data-ui")) run(input, null);
+  updatePlaceholder(input);
 }
 
 function updateFile(input: HTMLInputElement, e?: KeyboardEvent) {
@@ -127,6 +130,7 @@ function updateColor(input: HTMLInputElement, e?: KeyboardEvent) {
 }
 
 function updateTextarea(textarea: HTMLTextAreaElement) {
+  updatePlaceholder(textarea);
   const field = parent(textarea) as HTMLElement;
   field.removeAttribute("style");
   if (hasClass(field, "min")) field.style.setProperty("---size", `${Math.max(textarea.scrollHeight, field.offsetHeight)}px`);
