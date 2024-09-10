@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.7/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.8/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.7/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.8/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.7/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.8/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -187,6 +187,11 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 :is(a, button, .button, .chip):focus-visible {
   outline: 0.125rem solid var(--primary);
   outline-offset: 0.25rem;
+}
+.transparent {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
 }
 .primary {
   background-color: var(--primary) !important;
@@ -318,11 +323,6 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 }
 .white-text {
   color: #FFF !important;
-}
-.transparent {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  color: inherit !important;
 }
 .transparent-border {
   border-color: transparent !important;
@@ -1555,6 +1555,7 @@ blockquote > code {
 }
 pre:has(> code){
   direction: ltr;
+  text-align: start;
 }
 .wave::after,
 .chip::after,
@@ -3323,23 +3324,17 @@ nav.tabbed > a.active {
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  inset: 0 auto auto 0;
-  inline-size: 100%;
-  block-size: 100%;
+  inset: 0;
   color: var(--on-surface);
   background-color: var(--overlay);
   z-index: 100;
   transition: all var(--speed3), 0s background-color;
 }
-nav > .overlay {
-  z-index: 0;
-}
 .overlay.active {
   opacity: 1;
   visibility: visible;
 }
-.page,
-:is(.page, dialog):not(.active) .page.active {
+.page {
   ---transform: translate(0, 0);
 
   opacity: 0;
@@ -3957,9 +3952,6 @@ progress.max.vertical {
   }
 }
 .snackbar {
-  ---transform-start: translate(-50%, 1rem);
-  ---transform-end: translate(-50%, 0);
-
   position: fixed;
   inset: auto auto 6rem 50%;
   inline-size: 80%;
@@ -3977,31 +3969,20 @@ progress.max.vertical {
   align-items: center;
   border-radius: 0.25rem;
   gap: 0.5rem;
-  transform: var(---transform-end);
+  transition: all var(--speed2);
+  transform: translate(-50%, 1rem);
+  opacity: 0;
 }
 .snackbar.top {
   inset: 6rem auto auto 50%;
 }
 .snackbar.active {
   visibility: visible;
-  animation: var(--speed2) to-snackbar;
-}
-.snackbar.active.top {
-  ---transform-end: translate(-50%, -1rem);
+  transform: translate(-50%, 0);
+  opacity: 1;
 }
 .snackbar > .max {
   flex: auto;
-}
-@keyframes to-snackbar {
-  0% {
-    opacity: 0;
-    transform: var(---transform-start);
-  }
-
-  100% {
-    opacity: 1;
-    transform: var(---transform-end);
-  }
 }
 @media only screen and (min-width: 993px) {
   .snackbar {

@@ -260,6 +260,10 @@ async function run(from, to, options, e) {
   }
   addClass(to, "active");
 }
+function updatePlaceholder(element) {
+  if (!element.placeholder)
+    element.placeholder = " ";
+}
 function onClickLabel(e) {
   const label = e.currentTarget;
   const field = parent(label);
@@ -341,10 +345,7 @@ function updateAllTextareas() {
 function updateInput(input) {
   if (hasType(input, "number") && !input.value)
     input.value = "";
-  if (!input.placeholder)
-    input.placeholder = " ";
-  if (input.getAttribute("data-ui"))
-    run(input, null);
+  updatePlaceholder(input);
 }
 function updateFile(input, e) {
   if ((e == null ? void 0 : e.key) === "Enter") {
@@ -379,6 +380,7 @@ function updateColor(input, e) {
   updateInput(nextInput);
 }
 function updateTextarea(textarea) {
+  updatePlaceholder(textarea);
   const field = parent(textarea);
   field.removeAttribute("style");
   if (hasClass(field, "min"))
