@@ -1,3 +1,9 @@
+.transparent {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
+}
+
 .primary {
   background-color: var(--primary) !important;
   color: var(--on-primary) !important;
@@ -164,12 +170,6 @@
 
 .white-text {
   color: #FFF !important;
-}
-
-.transparent {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  color: inherit !important;
 }
 
 .transparent-border {
