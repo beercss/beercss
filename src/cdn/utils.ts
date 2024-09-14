@@ -1,8 +1,3 @@
-import { updateDialog } from "./elements/dialogs";
-import { updateMenu } from "./elements/menus";
-import { updatePage } from "./elements/pages";
-import { updateSnackbar } from "./elements/snackbars";
-
 const _emptyNodeList = [] as unknown as NodeListOf<Element>;
 
 export function isTouchable(): boolean {
@@ -118,45 +113,9 @@ export function updateAllClickable(element: Element) {
 
   const container = parent(element);
   if (!hasClass(container, "tabs") && !hasClass(container, "tabbed") && !hasTag(container, "nav")) return;
-  
+
   const as = queryAll("a", container);
   for(let i=0; i<as.length; i++) removeClass(as[i], "active");
   addClass(element, "active");
 }
 
-export async function run(from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
-  if (!to) {
-    to = query(from.getAttribute("data-ui"));
-    if (!to) return;
-  }
-
-  updateAllClickable(from);
-
-  if (hasTag(to, "dialog")) {
-    await updateDialog(from, to as HTMLDialogElement);
-    return;
-  }
-
-  if (hasTag(to, "menu")) {
-    updateMenu(from, to as HTMLMenuElement, e);
-    return;
-  }
-
-  if (hasClass(to, "snackbar")) {
-    updateSnackbar(to, options as number);
-    return;
-  }
-
-  if (hasClass(to, "page")) {
-    updatePage(to);
-    return;
-  }
-
-  if (hasClass(to, "active")) { 
-    removeClass(from, "active");
-    removeClass(to, "active");
-    return; 
-  }
-
-  addClass(to, "active");
-}

@@ -5,7 +5,7 @@ const _dialogs: Array<HTMLDialogElement> = [];
 function onKeydownDialog(e: KeyboardEvent) {
   if (e.key === "Escape") {
     const dialog = e.currentTarget as HTMLDialogElement;
-    updateDialog(dialog, dialog);
+    void updateDialog(dialog, dialog);
   }
 }
 
@@ -13,7 +13,7 @@ function closeDialog(dialog: HTMLDialogElement, overlay: Element) {
   removeClass(queryAllDataUi(dialog.id), "active");
   removeClass(dialog, "active");
   removeClass(overlay, "active");
-  
+
   dialog.close();
   _dialogs.pop();
 
@@ -29,14 +29,14 @@ async function openDialog(dialog: HTMLDialogElement, overlay: Element, isModal: 
 
   if (isModal) dialog.showModal();
   else dialog.show();
-  
+
   await wait(90);
 
   if (!isModal) on(dialog, "keydown", onKeydownDialog, false);
-  
+
   _dialogs.push(dialog);
   dialog.focus();
-  
+
   if (isTouchable()) document.body.classList.add("no-scroll");
 }
 
@@ -64,5 +64,5 @@ export async function updateDialog(from: Element, dialog: HTMLDialogElement): Pr
   if (!isModal) on(overlay, "click", onClickOverlay, false);
 
   if (isActive) closeDialog(dialog, overlay);
-  else openDialog(dialog, overlay, isModal, from);
+  else void openDialog(dialog, overlay, isModal, from);
 }
