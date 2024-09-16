@@ -1,8 +1,12 @@
-import { updateAllFields } from "./elements/fields";
-import { updateAllSliders } from "./elements/sliders";
-import { updateMode, updateTheme } from "./helpers/theme";
-import { type IBeerCssTheme } from "./interfaces";
-import { guid, on, query, queryAll, run, hasTag } from "./utils";
+import {updateAllFields} from "./elements/fields";
+import {updateAllSliders} from "./elements/sliders";
+import {updateMode, updateTheme} from "./helpers/theme";
+import {type IBeerCssTheme} from "./interfaces";
+import {addClass, guid, hasClass, hasTag, on, query, queryAll, removeClass, updateAllClickable} from "./utils";
+import {updateDialog} from './elements/dialogs';
+import {updateMenu} from './elements/menus';
+import {updateSnackbar} from './elements/snackbars';
+import {updatePage} from './elements/pages';
 
 let _timeoutMutation: ReturnType<typeof setTimeout>;
 let _mutation: MutationObserver | null;
@@ -12,12 +16,49 @@ function onMutation() {
   _timeoutMutation = setTimeout(async () => await ui(), 180);
 }
 
+export async function run(from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
+  if (!to) {
+    to = query(from.getAttribute("data-ui"));
+    if (!to) return;
+  }
+
+  updateAllClickable(from);
+
+  if (hasTag(to, "dialog")) {
+    await updateDialog(from, to as HTMLDialogElement);
+    return;
+  }
+
+  if (hasTag(to, "menu")) {
+    updateMenu(from, to as HTMLMenuElement, e);
+    return;
+  }
+
+  if (hasClass(to, "snackbar")) {
+    updateSnackbar(to, options as number);
+    return;
+  }
+
+  if (hasClass(to, "page")) {
+    updatePage(to);
+    return;
+  }
+
+  if (hasClass(to, "active")) {
+    removeClass(from, "active");
+    removeClass(to, "active");
+    return;
+  }
+
+  addClass(to, "active");
+}
+
 function onClickElement(e: Event) {
-  run(e.currentTarget as HTMLElement, null, null, e);
+  void run(e.currentTarget as HTMLElement, null, null, e);
 }
 
 function onKeydownElement(e: KeyboardEvent) {
-  if (e.key === "Enter") run(e.currentTarget as HTMLElement, null, null, e);
+  if (e.key === "Enter") void run(e.currentTarget as HTMLElement, null, null, e);
 }
 
 function setup() {
@@ -44,7 +85,7 @@ function ui(selector?: string | Element, options?: string | number | IBeerCssThe
 
     const to = query(selector);
     if (!to) return;
-    run(to, to, options);
+    void run(to, to, options);
   }
 
   updateAllDataUis();
@@ -55,9 +96,9 @@ function ui(selector?: string | Element, options?: string | number | IBeerCssThe
 function start() {
   const context = (globalThis as any);
   const body = context?.document?.body;
-  
+
   if (body && !body.classList.contains("dark") && !body.classList.contains("light")) updateMode("auto");
-  
+
   on(context, "load", setup, false);
   context.beercss = ui;
   context.ui = ui;
