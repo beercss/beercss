@@ -3,10 +3,10 @@ import {updateAllSliders} from "./elements/sliders";
 import {updateMode, updateTheme} from "./helpers/theme";
 import {type IBeerCssTheme} from "./interfaces";
 import {addClass, guid, hasClass, hasTag, on, query, queryAll, removeClass, updateAllClickable} from "./utils";
-import {updateDialog} from './elements/dialogs';
-import {updateMenu} from './elements/menus';
-import {updateSnackbar} from './elements/snackbars';
-import {updatePage} from './elements/pages';
+import {updateDialog} from "./elements/dialogs";
+import {updateMenu} from "./elements/menus";
+import {updateSnackbar} from "./elements/snackbars";
+import {updatePage} from "./elements/pages";
 
 let _timeoutMutation: ReturnType<typeof setTimeout>;
 let _mutation: MutationObserver | null;
