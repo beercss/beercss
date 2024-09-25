@@ -1,128 +1,3 @@
-const _dialogs = [];
-function onKeydownDialog(e) {
-  if (e.key === "Escape") {
-    const dialog = e.currentTarget;
-    updateDialog(dialog, dialog);
-  }
-}
-function closeDialog(dialog, overlay) {
-  removeClass(queryAllDataUi(dialog.id), "active");
-  removeClass(dialog, "active");
-  removeClass(overlay, "active");
-  dialog.close();
-  _dialogs.pop();
-  const previousDialog = _dialogs[_dialogs.length - 1];
-  if (previousDialog)
-    previousDialog.focus();
-  else if (isTouchable())
-    document.body.classList.remove("no-scroll");
-}
-async function openDialog(dialog, overlay, isModal, from) {
-  if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip"))
-    addClass(from, "active");
-  addClass(overlay, "active");
-  addClass(dialog, "active");
-  if (isModal)
-    dialog.showModal();
-  else
-    dialog.show();
-  await wait(90);
-  if (!isModal)
-    on(dialog, "keydown", onKeydownDialog, false);
-  _dialogs.push(dialog);
-  dialog.focus();
-  if (isTouchable())
-    document.body.classList.add("no-scroll");
-}
-function onClickOverlay(e) {
-  const overlay = e.currentTarget;
-  const dialog = next(overlay);
-  if (hasTag(dialog, "dialog"))
-    closeDialog(dialog, overlay);
-}
-async function updateDialog(from, dialog) {
-  blurActiveElement();
-  let overlay = prev(dialog);
-  const isActive = hasClass(dialog, "active") || dialog.open;
-  const isModal = hasClass(dialog, "modal");
-  if (!isModal)
-    off(dialog, "keydown", onKeydownDialog, false);
-  if (!hasClass(overlay, "overlay")) {
-    overlay = create({ class: "overlay" });
-    insertBefore(overlay, dialog);
-    await wait(90);
-  }
-  if (!isModal)
-    on(overlay, "click", onClickOverlay, false);
-  if (isActive)
-    closeDialog(dialog, overlay);
-  else
-    openDialog(dialog, overlay, isModal, from);
-}
-let _timeoutMenu;
-function onClickDocument(e) {
-  off(document.body, "click", onClickDocument);
-  const body = e.target;
-  const menus = queryAll("menu.active");
-  for (let i = 0; i < menus.length; i++)
-    updateMenu(body, menus[i], e);
-}
-function focusOnMenuOrInput(menu) {
-  setTimeout(() => {
-    const input = query(".field > input", menu);
-    if (input)
-      input.focus();
-    else
-      menu.focus();
-  }, 90);
-}
-function updateMenu(from, menu, e) {
-  if (_timeoutMenu)
-    clearTimeout(_timeoutMenu);
-  _timeoutMenu = setTimeout(() => {
-    on(document.body, "click", onClickDocument);
-    if (!hasTag(document.activeElement, "input"))
-      blurActiveElement();
-    const isActive = hasClass(menu, "active");
-    const isEvent = !!((e == null ? void 0 : e.target) === from);
-    const isChild = !!from.closest("menu");
-    if (!isActive && isChild || isActive && isEvent) {
-      removeClass(menu, "active");
-      return;
-    }
-    removeClass(queryAll("menu.active"), "active");
-    addClass(menu, "active");
-    focusOnMenuOrInput(menu);
-  }, 90);
-}
-function updatePage(page) {
-  const container = parent(page);
-  if (container)
-    removeClass(queryAll(".page", container), "active");
-  addClass(page, "active");
-}
-let _timeoutSnackbar;
-function onClickSnackbar(e) {
-  const snackbar = e.currentTarget;
-  removeClass(snackbar, "active");
-  if (_timeoutSnackbar)
-    clearTimeout(_timeoutSnackbar);
-}
-function updateSnackbar(snackbar, milliseconds) {
-  blurActiveElement();
-  const activeSnackbars = queryAll(".snackbar.active");
-  for (let i = 0; i < activeSnackbars.length; i++)
-    removeClass(activeSnackbars[i], "active");
-  addClass(snackbar, "active");
-  on(snackbar, "click", onClickSnackbar);
-  if (_timeoutSnackbar)
-    clearTimeout(_timeoutSnackbar);
-  if (milliseconds === -1)
-    return;
-  _timeoutSnackbar = setTimeout(() => {
-    removeClass(snackbar, "active");
-  }, milliseconds ?? 6e3);
-}
 const _emptyNodeList = [];
 function isTouchable() {
   return window.matchMedia("(pointer: coarse)").matches;
@@ -229,36 +104,6 @@ function updateAllClickable(element) {
   for (let i = 0; i < as.length; i++)
     removeClass(as[i], "active");
   addClass(element, "active");
-}
-async function run(from, to, options, e) {
-  if (!to) {
-    to = query(from.getAttribute("data-ui"));
-    if (!to)
-      return;
-  }
-  updateAllClickable(from);
-  if (hasTag(to, "dialog")) {
-    await updateDialog(from, to);
-    return;
-  }
-  if (hasTag(to, "menu")) {
-    updateMenu(from, to, e);
-    return;
-  }
-  if (hasClass(to, "snackbar")) {
-    updateSnackbar(to, options);
-    return;
-  }
-  if (hasClass(to, "page")) {
-    updatePage(to);
-    return;
-  }
-  if (hasClass(to, "active")) {
-    removeClass(from, "active");
-    removeClass(to, "active");
-    return;
-  }
-  addClass(to, "active");
 }
 function updatePlaceholder(element) {
   if (!element.placeholder)
@@ -548,6 +393,131 @@ function updateMode(value) {
     body.setAttribute("style", lastThemeStyle);
   return getMode();
 }
+const _dialogs = [];
+function onKeydownDialog(e) {
+  if (e.key === "Escape") {
+    const dialog = e.currentTarget;
+    void updateDialog(dialog, dialog);
+  }
+}
+function closeDialog(dialog, overlay) {
+  removeClass(queryAllDataUi(dialog.id), "active");
+  removeClass(dialog, "active");
+  removeClass(overlay, "active");
+  dialog.close();
+  _dialogs.pop();
+  const previousDialog = _dialogs[_dialogs.length - 1];
+  if (previousDialog)
+    previousDialog.focus();
+  else if (isTouchable())
+    document.body.classList.remove("no-scroll");
+}
+async function openDialog(dialog, overlay, isModal, from) {
+  if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip"))
+    addClass(from, "active");
+  addClass(overlay, "active");
+  addClass(dialog, "active");
+  if (isModal)
+    dialog.showModal();
+  else
+    dialog.show();
+  await wait(90);
+  if (!isModal)
+    on(dialog, "keydown", onKeydownDialog, false);
+  _dialogs.push(dialog);
+  dialog.focus();
+  if (isTouchable())
+    document.body.classList.add("no-scroll");
+}
+function onClickOverlay(e) {
+  const overlay = e.currentTarget;
+  const dialog = next(overlay);
+  if (hasTag(dialog, "dialog"))
+    closeDialog(dialog, overlay);
+}
+async function updateDialog(from, dialog) {
+  blurActiveElement();
+  let overlay = prev(dialog);
+  const isActive = hasClass(dialog, "active") || dialog.open;
+  const isModal = hasClass(dialog, "modal");
+  if (!isModal)
+    off(dialog, "keydown", onKeydownDialog, false);
+  if (!hasClass(overlay, "overlay")) {
+    overlay = create({ class: "overlay" });
+    insertBefore(overlay, dialog);
+    await wait(90);
+  }
+  if (!isModal)
+    on(overlay, "click", onClickOverlay, false);
+  if (isActive)
+    closeDialog(dialog, overlay);
+  else
+    void openDialog(dialog, overlay, isModal, from);
+}
+let _timeoutMenu;
+function onClickDocument(e) {
+  off(document.body, "click", onClickDocument);
+  const body = e.target;
+  const menus = queryAll("menu.active");
+  for (let i = 0; i < menus.length; i++)
+    updateMenu(body, menus[i], e);
+}
+function focusOnMenuOrInput(menu) {
+  setTimeout(() => {
+    const input = query(".field > input", menu);
+    if (input)
+      input.focus();
+    else
+      menu.focus();
+  }, 90);
+}
+function updateMenu(from, menu, e) {
+  if (_timeoutMenu)
+    clearTimeout(_timeoutMenu);
+  _timeoutMenu = setTimeout(() => {
+    on(document.body, "click", onClickDocument);
+    if (!hasTag(document.activeElement, "input"))
+      blurActiveElement();
+    const isActive = hasClass(menu, "active");
+    const isEvent = (e == null ? void 0 : e.target) === from;
+    const isChild = !!from.closest("menu");
+    if (!isActive && isChild || isActive && isEvent) {
+      removeClass(menu, "active");
+      return;
+    }
+    removeClass(queryAll("menu.active"), "active");
+    addClass(menu, "active");
+    focusOnMenuOrInput(menu);
+  }, 90);
+}
+let _timeoutSnackbar;
+function onClickSnackbar(e) {
+  const snackbar = e.currentTarget;
+  removeClass(snackbar, "active");
+  if (_timeoutSnackbar)
+    clearTimeout(_timeoutSnackbar);
+}
+function updateSnackbar(snackbar, milliseconds) {
+  blurActiveElement();
+  const activeSnackbars = queryAll(".snackbar.active");
+  for (let i = 0; i < activeSnackbars.length; i++)
+    removeClass(activeSnackbars[i], "active");
+  addClass(snackbar, "active");
+  on(snackbar, "click", onClickSnackbar);
+  if (_timeoutSnackbar)
+    clearTimeout(_timeoutSnackbar);
+  if (milliseconds === -1)
+    return;
+  _timeoutSnackbar = setTimeout(() => {
+    removeClass(snackbar, "active");
+  }, milliseconds ?? 6e3);
+}
+function updatePage(page) {
+  const container = parent(page);
+  if (container)
+    removeClass(queryAll(".page", container), "active");
+  addClass(page, "active");
+}
 let _timeoutMutation;
 let _mutation;
 function onMutation() {
@@ -555,12 +525,42 @@ function onMutation() {
     clearTimeout(_timeoutMutation);
   _timeoutMutation = setTimeout(async () => await ui(), 180);
 }
+async function run(from, to, options, e) {
+  if (!to) {
+    to = query(from.getAttribute("data-ui"));
+    if (!to)
+      return;
+  }
+  updateAllClickable(from);
+  if (hasTag(to, "dialog")) {
+    await updateDialog(from, to);
+    return;
+  }
+  if (hasTag(to, "menu")) {
+    updateMenu(from, to, e);
+    return;
+  }
+  if (hasClass(to, "snackbar")) {
+    updateSnackbar(to, options);
+    return;
+  }
+  if (hasClass(to, "page")) {
+    updatePage(to);
+    return;
+  }
+  if (hasClass(to, "active")) {
+    removeClass(from, "active");
+    removeClass(to, "active");
+    return;
+  }
+  addClass(to, "active");
+}
 function onClickElement(e) {
-  run(e.currentTarget, null, null, e);
+  void run(e.currentTarget, null, null, e);
 }
 function onKeydownElement(e) {
   if (e.key === "Enter")
-    run(e.currentTarget, null, null, e);
+    void run(e.currentTarget, null, null, e);
 }
 function setup() {
   if (_mutation)
@@ -592,7 +592,7 @@ function ui(selector, options) {
     const to = query(selector);
     if (!to)
       return;
-    run(to, to, options);
+    void run(to, to, options);
   }
   updateAllDataUis();
   updateAllFields();
