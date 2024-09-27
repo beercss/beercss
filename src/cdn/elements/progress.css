@@ -10,6 +10,7 @@ progress {
   overflow: hidden;
   writing-mode: horizontal-tb;
   direction: ltr;
+  -webkit-appearance: none;
 }
 
 progress.small {
