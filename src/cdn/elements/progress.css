@@ -10,6 +10,7 @@ progress {
   overflow: hidden;
   writing-mode: horizontal-tb;
   direction: ltr;
+  -webkit-appearance: none;
 }
 
 progress.small {
@@ -66,7 +67,6 @@ progress.circle {
   animation: 1.6s to-circular linear infinite;
   background: none;
   flex: none;
-  -webkit-border-radius: 50%;
 }
 
 progress.circle::-moz-progress-bar {
@@ -181,7 +181,7 @@ progress.max.vertical {
   }
 
   90% {
-    transform: rotate(360deg);
+    transform: rotate(360deg); 
     clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
   }
 
