@@ -181,7 +181,7 @@ progress.max.vertical {
   }
 
   90% {
-    transform: rotate(360deg); 
+    transform: rotate(360deg);
     clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
   }
 
