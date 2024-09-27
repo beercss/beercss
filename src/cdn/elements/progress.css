@@ -66,6 +66,7 @@ progress.circle {
   animation: 1.6s to-circular linear infinite;
   background: none;
   flex: none;
+  -webkit-border-radius: 50%;
 }
 
 progress.circle::-moz-progress-bar {
