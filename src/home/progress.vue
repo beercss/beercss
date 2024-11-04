@@ -46,24 +46,24 @@
     .medium-space
     nav
       article
+        progress.max(value="30", max="100")
         h5 Card
-        progress.max(value="30", max="100")
       button.chip
+        progress.max(value="30", max="100")
         span Chip
-        progress.max(value="30", max="100")
       button
-        span Button
         progress.max(value="30", max="100")
+        span Button
     nav
       article
+        progress.max.vertical(value="30", max="100")
         h5 Card
-        progress.max.vertical(value="30", max="100")
       button.chip
+        progress.max.vertical(value="30", max="100")
         span Chip
-        progress.max.vertical(value="30", max="100")
       button
-        span Button
         progress.max.vertical(value="30", max="100")
+        span Button
   .space
 </template>
 
