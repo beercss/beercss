@@ -16,7 +16,7 @@ function onMutation() {
   _timeoutMutation = setTimeout(async () => await ui(), 180);
 }
 
-export async function run(from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
+async function run(from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
   if (!to) {
     to = query(from.getAttribute("data-ui"));
     if (!to) return;
@@ -100,9 +100,11 @@ function start() {
   if (body && !body.classList.contains("dark") && !body.classList.contains("light")) updateMode("auto");
 
   on(context, "load", setup, false);
-  context.beercss = ui;
   context.ui = ui;
 }
 
 start();
-export default ui;
+export {
+  ui as default,
+  ui
+}

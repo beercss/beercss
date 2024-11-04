@@ -7,6 +7,13 @@ declare global {
   function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme>;
 }
 
-declare module "vue";
-declare module "beercss";
+declare module "ui";
+
+export interface IBeerCssTheme {
+  dark: string,
+  light: string,
+}
+
+export function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme>;
+
 export default ui;
