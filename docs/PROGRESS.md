@@ -36,9 +36,14 @@ small, medium, large, min
 <progress class="circle"></progress>
 ```
 
-## Custom example
+## Custom examples
 
 ```html
+<article>
+  <progress class="max" value="25" max="100"></progress>
+  <h5>Title</h5>
+</article>
+
 <article>
   <h5>Title</h5>
   <progress class="max" value="25" max="100"></progress>
