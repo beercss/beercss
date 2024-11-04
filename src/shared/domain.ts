@@ -10,7 +10,14 @@ const updateTheme = async (data: ILayout, source: any, newMode?: string) => {
 
 const updateMode = (data: ILayout, newMode?: string) => {
   const mode = newMode ?? (ui("mode") === "dark" ? "light" : "dark");
-  void ui("mode", mode);
+  ui("mode", mode);
+  data.theme.selected = mode;
+  data.isDark = mode === "dark";
+};
+
+const applyTheme = (data?: ILayout) => {
+  if (!data) return;
+  const mode = ui("mode") as string;
   data.theme.selected = mode;
   data.isDark = mode === "dark";
 };
@@ -18,4 +25,5 @@ const updateMode = (data: ILayout, newMode?: string) => {
 export default {
   updateTheme,
   updateMode,
+  applyTheme,
 };

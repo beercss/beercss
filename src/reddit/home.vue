@@ -152,13 +152,13 @@ main.responsive
     .medium-space.l.m
     .medium-height.large-width
       .tabs.scroll.left-align.l.m
-        a(data-ui="#post")
+        a(data-ui="#post", tabindex="0")
           i news
           span Post
-        a(data-ui="#image-video")
+        a(data-ui="#image-video", tabindex="0")
           i image
           span Image &amp; Video
-        a(data-ui="#link")
+        a(data-ui="#link", tabindex="0")
           i link
           span Link
         a.grey-text

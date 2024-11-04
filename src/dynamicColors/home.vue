@@ -19,11 +19,11 @@ main.responsive
             span In stock
           h6 $110,00
         nav
-          a.chip.square.active XS
-          a.chip.square S
-          a.chip.square M
-          a.chip.square L
-          a.chip.square XL
+          button.chip.square.active XS
+          button.chip.square S
+          button.chip.square M
+          button.chip.square L
+          button.chip.square XL
           label.l Size guide
         hr.large
         nav
@@ -43,11 +43,11 @@ main.responsive
           span $39,00
           label &nbsp;In stock
         nav
-          a.chip.circle XS
-          a.chip.circle S
-          a.chip.circle M
-          a.chip.circle L
-          a.chip.circle XL
+          button.chip.circle XS
+          button.chip.circle S
+          button.chip.circle M
+          button.chip.circle L
+          button.chip.circle XL
           label.l Size guide
         hr.large
         nav
@@ -67,11 +67,11 @@ main.responsive
           span $39,00
           label &nbsp;In stock
         nav
-          a.chip.circle XS
-          a.chip.circle S
-          a.chip.circle M
-          a.chip.circle L
-          a.chip.circle XL
+          button.chip.circle XS
+          button.chip.circle S
+          button.chip.circle M
+          button.chip.circle L
+          button.chip.circle XL
           label.l Size guide
         hr.large
         nav
@@ -90,11 +90,11 @@ main.responsive
         h6.middle-align $39,00
           label.bold &nbsp;In stock
         nav
-          a.chip.circle.bottom-round.right-round XS
-          a.chip.circle.bottom-round.right-round S
-          a.chip.circle.bottom-round.right-round M
-          a.chip.circle.bottom-round.right-round L
-          a.chip.circle.bottom-round.right-round XL
+          button.chip.circle.bottom-round.right-round XS
+          button.chip.circle.bottom-round.right-round S
+          button.chip.circle.bottom-round.right-round M
+          button.chip.circle.bottom-round.right-round L
+          button.chip.circle.bottom-round.right-round XL
           label.l Size guide
         hr.large
         nav

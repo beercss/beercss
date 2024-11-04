@@ -9,7 +9,7 @@ The JS file of Beer CSS is almost optional. Basically is a JS helper for the dyn
 ui("mode")
 
 // set mode
-ui("mode", "light|dark");
+ui("mode", "light|dark|auto");
 
 // get theme
 await ui("theme")
@@ -22,7 +22,7 @@ await ui("theme", "color|blob|file|url");
 
 ### The ui function
 
-The `ui` function has the intent to add/remove the `active` helper from elements. You will call the same function to open/close or show/hide elements. For example, when you call `ui("dialog")` if the dialog is open, then it will close (and vice versa).
+The `ui` function has the intent to add/remove the `active` helper from elements. You will call the same function to open/close, show/hide or activate/not activate elements. For example, when you call `ui("dialog")` if the dialog is open, then it will close (and vice versa).
 
 ```js
 ui("dialog|menu|overlay|page|snackbar");

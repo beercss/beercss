@@ -67,3 +67,8 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 * + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul) {
   margin-block-start: 1rem;
 }
+
+:is(a, button, .button, .chip):focus-visible {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.25rem;
+}

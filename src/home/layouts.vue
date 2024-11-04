@@ -5,7 +5,7 @@ div
     h4 Layouts
     .medium-space
     h6 Positions
-      a.chip.circle(
+      button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#positions article', 'Positions', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
         i code
@@ -36,7 +36,7 @@ div
           div Lorem ipsum dolor...
     .medium-space
     h6 Alignments
-      a.chip.circle(
+      button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#alignments article', 'Alignments', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
         i code
@@ -78,7 +78,7 @@ div
   .medium-space
   #headers-footers
     h6 Headers and footers
-      a.chip.circle(
+      button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#headers-footers article', 'Headers and footers', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
         i code
@@ -100,7 +100,7 @@ div
   #empty-state
     h6
       span Empty states
-      a.chip.circle(@click="domain.showSamples(data, '#empty-state article', 'Empty states')")
+      button.chip.circle(@click="domain.showSamples(data, '#empty-state article', 'Empty states')")
         i code
     .grid
       .s12.m12.l6
@@ -136,7 +136,7 @@ div
   .medium-space
   h6
     span Blurred elements
-    a.chip.circle(@click="domain.showSamples(data, '#blurs > header, #blurs > article, #blurs > nav > *', 'Blurred elements')")
+    button.chip.circle(@click="domain.showSamples(data, '#blurs > header, #blurs > article, #blurs > nav > *', 'Blurred elements')")
       i code
   nav.wrap
     label.radio
@@ -169,11 +169,11 @@ div
         button Button
     nav
       button.blur Button
-      a.chip.blur Chip
+      button.chip.blur Chip
   .medium-space
   h6
     span Shadowed elements
-    a.chip.circle(@click="domain.showSamples(data, '#shadows > header, #shadows > article, #shadows > nav > *', 'Shadowed elements')")
+    button.chip.circle(@click="domain.showSamples(data, '#shadows > header, #shadows > article, #shadows > nav > *', 'Shadowed elements')")
       i code
   nav.wrap
     label.radio
@@ -209,7 +209,7 @@ div
         button Button
     nav
       button.white-text.left-shadow Button
-      a.chip.white-text.left-shadow Chip
+      button.chip.white-text.left-shadow Chip
 </template>
 
 <script setup lang="ts">

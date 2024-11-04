@@ -39,7 +39,7 @@ onMounted(async () => {
   data.value.time = 50;
   data.value.showPage = true;
 
-  window.addEventListener("resize", () => ui());
+  window.addEventListener("resize", async () => await ui());
 });
 
 async function reloadAnimation() {

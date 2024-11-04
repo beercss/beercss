@@ -6,7 +6,7 @@
   .medium-space
   h6
     span Default slider
-    a.chip.circle(@click="domain.showSamples(data, '#sliders1 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#sliders1 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
   nav.wrap
     label.radio
@@ -52,7 +52,7 @@
         span
   h6
     span Slider with tooltip
-    a.chip.circle(@click="domain.showSamples(data, '#sliders2 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#sliders2 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
   nav.wrap
     label.radio
@@ -98,7 +98,7 @@
   .medium-space
   h6
     span Slider with icon
-    a.chip.circle(@click="domain.showSamples(data, '#sliders4 nav', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#sliders4 nav', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
   nav.wrap
     label.radio
@@ -155,7 +155,7 @@
   .medium-space
   h6
     span Slider in field elements
-    a.chip.circle(@click="domain.showSamples(data, '#sliders3 .field', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#sliders3 .field', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
   .medium-space
   .grid#sliders3
@@ -182,7 +182,7 @@
   .large-space
   #sliders5
     h6 Custom slider
-      a.chip.circle(@click="domain.showSamples(data, '#sliders5 nav > :not(label)', 'Custom', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+      button.chip.circle(@click="domain.showSamples(data, '#sliders5 nav > :not(label)', 'Custom', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
         i code
     nav.wrap
       label.radio

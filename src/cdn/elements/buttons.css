@@ -22,7 +22,6 @@ button {
 :is(button, .button).small {
   block-size: 2rem;
   min-inline-size: 2rem;
-  font-size: 0.875rem;
   border-radius: 1rem;
 }
 

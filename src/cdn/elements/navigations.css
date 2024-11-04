@@ -179,6 +179,8 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
   align-self: center;
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
+  line-height: normal;
 }
 
 nav:is(.top, .bottom):not(.drawer) > a:not(.button, .chip),
@@ -247,7 +249,6 @@ nav.tabbed {
   background-color: var(--surface-container);
   border-radius: 4rem !important;
   gap: 0rem;
-  overflow-x: auto;
   block-size: 4rem;
 }
 
@@ -276,6 +277,11 @@ nav.tabbed > a.active {
 
 :not(nav) > :is(ul, ol) {
   all: revert;
+}
+
+:is(.scroll, .no-scroll, .no-space, .tabs, .tabbed) > :focus-visible {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: -0.125rem;
 }
 
 @media only screen and (max-width: 600px) {

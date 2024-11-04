@@ -41,7 +41,7 @@
       .medium-space
 
   nav.top
-    button.circle.large.transparent.m.l.small-margin(data-ui="#dialog-expanded")
+    button.circle.large.transparent.m.l(data-ui="#dialog-expanded")
       i menu
     img(
       v-show="!data.isDark",
@@ -88,7 +88,7 @@
           .min Youtube Kids
     button.circle.large.transparent(data-ui="#dialog-notifications")
       i notifications
-    button.circle.large.small-margin.transparent(@click="redirect('/')")
+    button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
 
   .overlay
@@ -178,9 +178,11 @@ import library from "./library.vue";
 import subscriptions from "./subscriptions.vue";
 import whatsHot from "./whatsHot.vue";
 import { onRoute, redirect } from "../shared/router";
+import sharedDomain from "../shared/domain";
 
 onMounted(async () => {
   document.title = "Youtube - Beer CSS";
+  sharedDomain.applyTheme(data.value);
 
   data.value.isLoaded = false;
   await domain.waitForImages();

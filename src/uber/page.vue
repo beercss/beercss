@@ -60,8 +60,10 @@ import themes from "../shared/themes.vue";
 import home from "./home.vue";
 import data from "./data";
 import { redirect } from "../shared/router";
+import sharedDomain from "../shared/domain";
 
 onMounted(() => {
   document.title = "Uber - Beer CSS";
+  sharedDomain.applyTheme(data.value);
 });
 </script>

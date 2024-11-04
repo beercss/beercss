@@ -18,6 +18,10 @@
   ---gap: 2rem;
 }
 
+.grid > * {
+  margin: 0;
+}
+
 .s1 {
   grid-area: auto/span 1;
 }

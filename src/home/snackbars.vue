@@ -3,7 +3,7 @@
   .large-space
   h4
     span Snackbars
-    a.chip.circle(@click="domain.showSamples(data, '#snackbars .snackbar', 'Snackbars', null, 'https://github.com/beercss/beercss/blob/main/docs/SNACKBAR.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#snackbars .snackbar', 'Snackbars', null, 'https://github.com/beercss/beercss/blob/main/docs/SNACKBAR.md')")
       i code
   nav.wrap
     label.radio
@@ -38,7 +38,5 @@
 import domain from "./domain";
 import data from "./data";
 
-const showToast = (selector: string) => {
-  ui(selector);
-};
+const showToast = async (selector: string) => await ui(selector);
 </script>

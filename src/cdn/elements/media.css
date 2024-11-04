@@ -44,12 +44,12 @@ svg {
   border: 0.25rem solid transparent;
 }
 
-:is(button.small, .button.small, .chip) > .responsive {
-  inline-size: 2rem;
-}
-
 :is(button, .button, .chip.medium) > .responsive {
   inline-size: 2.5rem;
+}
+
+:is(button.small, .button.small, .chip:not(.medium)) > .responsive {
+  inline-size: 2rem;
 }
 
 :is(button, .button, .chip).large > .responsive {

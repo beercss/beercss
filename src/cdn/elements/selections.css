@@ -36,23 +36,9 @@
 }
 
 :is(.checkbox, .radio, .switch) > span::before,
-.icon > span > i {
-  font-family: var(--font-icon);
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.5rem;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-  vertical-align: middle;
-  text-align: center;
-  overflow: hidden;
+.icon > span > i,
+:is(.checkbox, .radio) > span::after {
+  content: '';
   inline-size: 1.5rem;
   block-size: 1.5rem;
   box-sizing: border-box;
@@ -61,12 +47,9 @@
   color: var(--primary);
   position: absolute;
   inset: auto auto auto -1.5rem;
-  background-color: transparent;
   border-radius: 50%;
   user-select: none;
   z-index: 1;
-  box-shadow: 0 0 0 0 var(--active);
-  transition: all var(--speed1);
 }
 
 .switch > span::before,
@@ -121,9 +104,17 @@
   font-variation-settings: unset !important;
 }
 
-:is(.checkbox, .radio) > input:not(:disabled):is(:focus, :hover) + span::before {
-  background-color: var(--active);
-  box-shadow: 0 0 0 0.5rem var(--active);
+:is(.checkbox, .radio) > span::after {
+  transition: all var(--speed1);
+  background-color: currentColor;
+  box-shadow: 0 0 0 0 currentColor;
+  opacity: 0;
+}
+
+:is(.checkbox, .radio):is(:hover) > input:not(:disabled) + span::after,
+:is(.checkbox, .radio) > input:not(:disabled):is(:focus) + span::after {
+  box-shadow: 0 0 0 0.5rem currentColor;
+  opacity: 0.1;
 }
 
 .switch > input:not(:disabled):is(:focus, :hover) + span::before,
@@ -210,4 +201,14 @@
 [dir=rtl] .switch > input:checked + span::before,
 [dir=rtl] .switch.icon > input:checked + span > i {
   transform: translate(-1.75rem, -50%) scale(-1);
+}
+
+.switch > :focus-visible + span::after {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.25rem;
+}
+
+:is(.checkbox, .radio) > :focus-visible + span::before {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.375rem;
 }

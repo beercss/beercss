@@ -5,7 +5,7 @@ div
     .medium-space
   #top-app-bars
     h6 Top app bars
-      a.chip.circle(
+      button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#top-app-bars header', 'Top app bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
         i code
@@ -76,7 +76,7 @@ div
   .medium-space
   #bottom-app-bars
     h6 Bottom app bars
-      a.chip.circle(
+      button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#bottom-app-bars footer', 'Bottom app bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
         i code

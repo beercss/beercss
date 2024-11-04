@@ -7,7 +7,7 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
       .max
         h5
           span Themes
-          a.chip.circle(@click="data.modelValue.showCssVariables=true")
+          button.chip.circle(@click="showCode(true)")
             i code
       button.circle.transparent(:data-ui="'#' + id")
         i close
@@ -15,16 +15,16 @@ dialog.medium(:id="id", :class="{ left: position === 'left', right: position ===
       h5 Themes
       a.button.border.m.l(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
       .max
-      button.transparent.circle(@click="data.modelValue.showCssVariables=false")
+      button.transparent.circle(@click="showCode(false)")
         i close
   div(v-if="!data.modelValue.showCssVariables")
     nav.wrap
-      a.chip.circle.small(@click="sharedDomain.updateMode(data.modelValue)")
+      button.chip.circle.small(@click="sharedDomain.updateMode(data.modelValue)")
         i {{ data.modelValue.isDark ? "light_mode" : "dark_mode" }}
-      a.chip.circle
+      button.chip.circle
         i palette
         input(type="color", @input="sharedDomain.updateTheme(data.modelValue, $event)")
-      a.chip.circle
+      button.chip.circle
         i upload
         input(type="file", @change="sharedDomain.updateTheme(data.modelValue, $event)")
       button.circle.small.red(@click="sharedDomain.updateTheme(data.modelValue, '#f44336')")
@@ -79,9 +79,14 @@ const data = withDefaults(defineProps<IProps>(), {
 });
 
 onMounted(() => {
-  if (!data.modelValue) return;
-  if (!data.modelValue.theme.light || !data.modelValue?.theme.dark || !data.modelValue?.theme.selected) { void sharedDomain.updateTheme(data.modelValue, null); }
+  sharedDomain.applyTheme(data.modelValue);
 });
+
+const showCode = (show: boolean) => {
+  if (!data.modelValue) return;
+  if (!data.modelValue.theme.light || !data.modelValue.theme.dark || !data.modelValue.theme.selected) sharedDomain.updateTheme(data.modelValue, null);
+  data.modelValue.showCssVariables = show;
+};
 
 const sourceCode = () => {
   if (!data.modelValue) return;

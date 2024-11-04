@@ -200,7 +200,6 @@ code {
   border-radius: 0;
   background-color: var(--surface-container);
   white-space: pre-wrap;
-  direction: ltr;
   padding: 0.25rem;
 }
 
@@ -211,4 +210,9 @@ blockquote > code {
 
 .scroll > code {
   white-space: pre;
+}
+
+pre:has(> code){
+  direction: ltr;
+  text-align: start;
 }

@@ -77,21 +77,21 @@ const updateFill = (selector: string, event: any) => {
   const elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["fill"]);
   else utils.removeClass(elements, ["fill"]);
-  void ui();
+  ui();
 };
 
 const updateBorder = (selector: string, event: any) => {
   const elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["border"]);
   else utils.removeClass(elements, ["border"]);
-  void ui();
+  ui();
 };
 
 const updateRound = (selector: string, event: any) => {
   const elements = utils.queryAll(selector);
   if (event.currentTarget.checked) utils.addClass(elements, ["round"]);
   else utils.removeClass(elements, ["round"]);
-  void ui();
+  ui();
 };
 
 const updateFieldType = (selector: string, type: string) => {
@@ -222,7 +222,7 @@ const updateIcon = (css: string = "") => {
 };
 
 const updatePage = (selector: string) => {
-  void ui(selector);
+  ui(selector);
 };
 
 const updateProgress = (value: number) => {
@@ -233,14 +233,14 @@ const updateProgress = (value: number) => {
 };
 
 const formatHtml = (element: Element | null, raw: boolean = false, useInnerHtml: boolean = false): string => {
-  function process (str: string): string {
+  function process(str: string): string {
     const div = document.createElement("div");
     div.innerHTML = str.trim();
 
     return format(div, 0).innerHTML;
   }
 
-  function format (node: any, level: number): any {
+  function format(node: any, level: number): any {
     const indentBefore = new Array(level++ + 1).join("  ");
     const indentAfter = new Array(level - 1).join("  ");
     let textNode;
@@ -270,7 +270,7 @@ const formatHtml = (element: Element | null, raw: boolean = false, useInnerHtml:
   return process(text
     .replace(/<!--v-if-->/gi, "")
     .replace(/<div class="overlay"><\/div>/gi, "")
-    .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|data-v-\w+)="[^"]*"/gi, "")
+    .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|tabindex|data-v-\w+)="[^"]*"/gi, "")
     .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
     .replace(/\s+(checked|disabled)=""/gi, " $1")
     .replace(/\s+[a-z-]+=(""|"#")/gi, "")
@@ -310,11 +310,11 @@ const showSamples = (data: IHome, selector: string, name: string, dialog?: strin
     });
   }
 
-  void nextTick(() => {
+  nextTick(() => {
     const element = utils.query(data.dialogSample);
     element?.scrollTo(0, 0);
     setTimeout(() => {
-      void ui(data.dialogSample);
+      ui(data.dialogSample);
     }, 180);
   });
 };
@@ -333,7 +333,7 @@ const addHomeScreen = () => {
 const updateTheme = (data: ILayout) => {
   const colors = ["#f44336", "#e91e63", "#9c27b0", "#673ab7", "#3f51b5", "#2196f3", "#03a9f4", "#00bcd4", "#009688", "#4caf50", "#8bc34a", "#cddc39", "#ffeb3b", "#ffc107", "#ff9800", "#ff5722", "#795548", "#9e9e9e", "#607d8b", "#000000", "#ffffff"];
   const color = colors[Math.floor(Math.random() * colors.length)];
-  void sharedDomain.updateTheme(data, color);
+  sharedDomain.updateTheme(data, color);
 };
 
 const updateBlur = (selector: string, blur?: string) => {

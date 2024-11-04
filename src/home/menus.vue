@@ -3,7 +3,7 @@
   .large-space
   h4
     span Menus
-    a.chip.circle(
+    button.chip.circle(
       @click="domain.showSamples(data, '#menus button, #menus .field', 'Menus', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')"
     )
       i code

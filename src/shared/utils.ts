@@ -73,7 +73,7 @@ const waitForInstall = () => {
 
   window.addEventListener("load", () => {
     const url = "/sw.js";
-    void navigator.serviceWorker.register(url);
+    navigator.serviceWorker.register(url);
   });
 
   window.addEventListener("beforeinstallprompt", (e: Event) => {
@@ -82,9 +82,7 @@ const waitForInstall = () => {
   });
 };
 
-const install = () => {
-  void _installEvent?.prompt();
-};
+const install = async () => { await _installEvent?.prompt(); };
 
 export default {
   id,

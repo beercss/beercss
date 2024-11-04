@@ -5,7 +5,7 @@
   .medium-space
   h6.middle-align
     span Display and headline
-    a.chip.circle(@click="domain.showSamples(data, '#display-headline h1, #display-headline h2, #display-headline h3, #display-headline h4, #display-headline h5, #display-headline h6', 'Display and headline', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#display-headline h1, #display-headline h2, #display-headline h3, #display-headline h4, #display-headline h5, #display-headline h6', 'Display and headline', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
       i code
   nav.wrap
     label.radio
@@ -33,7 +33,7 @@
   .medium-space
   h6.middle-align
     span Formatting
-    a.chip.circle(@click="domain.showSamples(data, '#formatting nav *', 'Formatting', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#formatting-example')")
+    button.chip.circle(@click="domain.showSamples(data, '#formatting nav *', 'Formatting', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#formatting-example')")
       i code
   .space
   #formatting
@@ -57,7 +57,7 @@
   .medium-space
   h6.middle-align
     span Line spacing
-    a.chip.circle(@click="domain.showSamples(data, '#spacing > :not(.bold, hr.small, .space)', 'Line spacing', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#line-spacing-example')")
+    button.chip.circle(@click="domain.showSamples(data, '#spacing > :not(.bold, hr.small, .space)', 'Line spacing', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#line-spacing-example')")
       i code
   nav.wrap
     label.radio
@@ -86,7 +86,7 @@
   .medium-space
   h6.middle-align
     span Blockquote, pre and code
-    a.chip.circle(@click="domain.showSamples(data, '#code > *', 'Pre, code and blockquote', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#formatting-example')")
+    button.chip.circle(@click="domain.showSamples(data, '#code > *', 'Pre, code and blockquote', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#formatting-example')")
       i code
   .space
   #code

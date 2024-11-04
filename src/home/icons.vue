@@ -13,7 +13,7 @@
     span Icons
   .medium-space
   h6 Default icons
-    a.chip.circle(@click="domain.showSamples(data, '#icons-default i', 'Icons', '#dialog-icons', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#icons-default i', 'Icons', '#dialog-icons', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
     label.radio
@@ -45,7 +45,7 @@
   .medium-space
   h6
     span SVG icons
-    a.chip.circle(@click="domain.showSamples(data, '#icons-svg i, #icons-svg > svg', 'SVG icons', '#dialog-icons-svg', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#icons-svg i, #icons-svg > svg', 'SVG icons', '#dialog-icons-svg', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
     label.radio
@@ -97,7 +97,7 @@
   .medium-space
   h6
     span Image icons
-    a.chip.circle(@click="domain.showSamples(data, '#icons-image i', 'Image', null, 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#icons-image i', 'Image', null, 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   .medium-space
   #icons-image
@@ -115,7 +115,7 @@
   .medium-space
   h6
     span Other libs
-    a.chip.circle(@click="domain.showSamples(data, '#icons-libs > nav > i', 'Pictogrammer', '#dialog-icons-libs', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#icons-libs > nav > i', 'Pictogrammer', '#dialog-icons-libs', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
     label.radio

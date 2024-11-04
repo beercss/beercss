@@ -3,7 +3,7 @@
   .large-space
   h4
     span Tables
-    a.chip.circle(@click="domain.showSamples(data, '#tables > .grid > * > table, #tables > .grid > * > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#tables > .grid > * > table, #tables > .grid > * > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
       i code
   nav.wrap
     label.checkbox
@@ -46,7 +46,7 @@
       .medium-space
       h6
         span Default
-        a.chip.circle(@click="domain.showSamples(data, '#table-default > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+        button.chip.circle(@click="domain.showSamples(data, '#table-default > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
       table
         thead
@@ -76,7 +76,7 @@
       .medium-space
       h6
         span Stripes
-        a.chip.circle(@click="domain.showSamples(data, '#table-stripes > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+        button.chip.circle(@click="domain.showSamples(data, '#table-stripes > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
       table.stripes
         thead
@@ -106,7 +106,7 @@
       .medium-space
       h6
         span Border
-        a.chip.circle(@click="domain.showSamples(data, '#table-border > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+        button.chip.circle(@click="domain.showSamples(data, '#table-border > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
       table.border
         thead
@@ -136,7 +136,7 @@
       .medium-space
       h6
         span Scroll
-        a.chip.circle(@click="domain.showSamples(data, '#table-scroll > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
+        button.chip.circle(@click="domain.showSamples(data, '#table-scroll > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
       nav.wrap
         label.radio

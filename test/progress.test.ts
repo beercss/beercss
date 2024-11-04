@@ -1,6 +1,7 @@
 import { expect, test } from "vitest";
+import "./globals";
 
-function calculate (value: number): Array<string> {
+function calculate(value: number): Array<string> {
   return [
     `${Math.max(50, Math.min(100, (12.5 + value) * 4))}% 0%`,
     `100% ${Math.max(0, Math.min(50, 50 - (25 - value) * 4))}%`,

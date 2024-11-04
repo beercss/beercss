@@ -3,7 +3,7 @@
   .large-space
   h4
     span Media
-    a.chip.circle(
+    button.chip.circle(
       @click="domain.showSamples(data, '#media img, #media video, #media svg', 'Media', null, 'https://github.com/beercss/beercss/blob/main/docs/MEDIA.md')"
     )
       i code

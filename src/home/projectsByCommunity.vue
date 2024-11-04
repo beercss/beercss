@@ -2,7 +2,7 @@
 section
   h1 Projects by the community
   h3
-    a.link(data-ui="#more3") Do you want some templates?
+    a.link(data-ui="#more3", tabindex="0") Do you want some templates?
   .large-space
   .grid
     .s12.m4.l3

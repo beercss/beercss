@@ -67,7 +67,7 @@ div
       .medium-space
 
   nav.top
-    button.circle.large.small-margin.transparent(data-ui="#menu-menu")
+    button.circle.large.transparent(data-ui="#menu-menu")
       i menu
       menu#menu-menu.no-wrap(data-ui="#menu-menu")
         a.row(href="/gmail")
@@ -132,7 +132,7 @@ div
           .s4.center-align
             a.button.transparent.circle.large
               img.no-round(:src="'/favicon.png'")
-    button.circle.large.small-margin.transparent(@click="redirect('/')")
+    button.circle.large.transparent(@click="redirect('/')")
       img.responsive(:src="'/favicon.png'")
     themes(id="themes3", v-model="data")
 
@@ -224,9 +224,11 @@ import sent from "./sent.vue";
 import snoozed from "./snoozed.vue";
 import spam from "./spam.vue";
 import { onRoute, redirect } from "../shared/router";
+import sharedDomain from "../shared/domain";
 
 onMounted(() => {
   document.title = "Gmail - Beer CSS";
+  sharedDomain.applyTheme(data.value);
 });
 
 onRoute((url:string) => {

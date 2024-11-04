@@ -1,6 +1,6 @@
 :root {
   --size: 16px;
-  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Noto Sans, Arial, sans-serif;
   --font-icon: "Material Symbols Outlined";
   --speed1: 0.1s;
   --speed2: 0.2s;
@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.12/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.12/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.12/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.12/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.6.12/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.12/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -183,6 +183,15 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 }
 * + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul) {
   margin-block-start: 1rem;
+}
+:is(a, button, .button, .chip):focus-visible {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.25rem;
+}
+.transparent {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
 }
 .primary {
   background-color: var(--primary) !important;
@@ -314,11 +323,6 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 }
 .white-text {
   color: #FFF !important;
-}
-.transparent {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  color: inherit !important;
 }
 .transparent-border {
   border-color: transparent !important;
@@ -1540,7 +1544,6 @@ code {
   border-radius: 0;
   background-color: var(--surface-container);
   white-space: pre-wrap;
-  direction: ltr;
   padding: 0.25rem;
 }
 pre > code,
@@ -1549,6 +1552,10 @@ blockquote > code {
 }
 .scroll > code {
   white-space: pre;
+}
+pre:has(> code){
+  direction: ltr;
+  text-align: start;
 }
 .wave::after,
 .chip::after,
@@ -1562,13 +1569,13 @@ blockquote > code {
   inline-size: 100%;
   block-size: 100%;
   background-position: center;
-  background-image: radial-gradient(circle, var(--active) 1%, transparent 1%);
+  background-image: radial-gradient(circle, currentColor 1%, transparent 1%);
   opacity: 0;
   transition: none;
 }
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):is(:focus-visible, :hover)::after {
   background-size: 15000%;
-  opacity: 1;
+  opacity: 0.1;
   transition: background-size var(--speed2) linear;
 }
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):active::after {
@@ -1680,7 +1687,6 @@ button {
 :is(button, .button).small {
   block-size: 2rem;
   min-inline-size: 2rem;
-  font-size: 0.875rem;
   border-radius: 1rem;
 }
 :is(button, .button).large {
@@ -1762,7 +1768,7 @@ article.large {
   font-size: 0.875rem;
   font-weight: 500;
   background-color: transparent;
-  border: 0.0625rem solid var(--outline);
+  border: 0.0625rem solid var(--outline-variant);
   color: var(--on-surface-variant);
   padding: 0 1rem;
   margin: 0 0.5rem;
@@ -1772,6 +1778,7 @@ article.large {
   user-select: none;
   gap: 1rem;
   line-height: normal;
+  letter-spacing: normal;
 }
 .chip.fill:hover {
   box-shadow: var(--elevate1);
@@ -1779,10 +1786,12 @@ article.large {
 .chip.medium {
   block-size: 2.5rem;
   min-inline-size: 2.5rem;
+  border-radius: 0.5rem;
 }
 .chip.large {
   block-size: 3rem;
   min-inline-size: 3rem;
+  border-radius: 0.5rem;
 }
 .chip.fill {
   background-color: var(--secondary-container) !important;
@@ -1974,6 +1983,7 @@ dialog {
   transition: all var(--speed3), 0s background-color;
   border-radius: 1.75rem;
   transform: translate(-50%, -4rem);
+  outline: none;
 }
 dialog::backdrop {
   display: none;
@@ -2215,13 +2225,14 @@ summary:focus {
   background: none;
   resize: none;
   text-align: start;
+  cursor: text;
 }
 input::-webkit-date-and-time-value {
   text-align: start;
 }
 :is(input, select, textarea):-webkit-autofill {
   -webkit-background-clip: text;
-  -webkit-text-fill-color: inherit;
+  -webkit-text-fill-color: var(--on-surface);
 }
 .field > :is(input, textarea, select):focus {
   border: 0.125rem solid transparent;
@@ -2231,6 +2242,7 @@ input::-webkit-date-and-time-value {
   overflow: hidden;
   position: absolute;
   inset: 0;
+  max-block-size: 12rem;
 }
 input[type=file],
 input[type=color],
@@ -2344,6 +2356,7 @@ input[type=number] {
 }
 .field > textarea {
   padding-block-start: var(---start);
+  white-space: pre-wrap;
 }
 .field > textarea:focus {
   padding-block-start: calc(var(---start) - 0.06rem);
@@ -2505,6 +2518,9 @@ fieldset > legend + * {
 .grid.large-space {
   ---gap: 2rem;
 }
+.grid > * {
+  margin: 0;
+}
 .s1 {
   grid-area: auto/span 1;
 }
@@ -2639,7 +2655,9 @@ fieldset > legend + * {
     grid-area: auto/span 12;
   }
 }
-i {
+i,
+:is(.checkbox, .radio, .switch) > span::before,
+.icon > span > i {
   ---size: 1.5rem;
 
   font-family: var(--font-icon);
@@ -2808,11 +2826,11 @@ svg {
 :is(button, .button, .chip):not(.transparent) > .responsive {
   border: 0.25rem solid transparent;
 }
-:is(button.small, .button.small, .chip) > .responsive {
-  inline-size: 2rem;
-}
 :is(button, .button, .chip.medium) > .responsive {
   inline-size: 2.5rem;
+}
+:is(button.small, .button.small, .chip:not(.medium)) > .responsive {
+  inline-size: 2rem;
 }
 :is(button, .button, .chip).large > .responsive {
   inline-size: 3rem;
@@ -2923,7 +2941,7 @@ menu.no-wrap {
 }
 menu.active,
 menu:not([data-ui]):active,
-:not([data-ui]):focus-within > menu,
+:not(menu, [data-ui]):focus-within > menu,
 menu > :is(a, li):hover + menu,
 menu > menu:hover {
   opacity: 1;
@@ -3212,6 +3230,8 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
   align-self: center;
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
+  line-height: normal;
 }
 nav:is(.top, .bottom):not(.drawer) > a:not(.button, .chip),
 nav:is(.top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) {
@@ -3266,7 +3286,6 @@ nav.tabbed {
   background-color: var(--surface-container);
   border-radius: 4rem !important;
   gap: 0rem;
-  overflow-x: auto;
   block-size: 4rem;
 }
 nav.tabbed.small {
@@ -3291,6 +3310,10 @@ nav.tabbed > a.active {
 :not(nav) > :is(ul, ol) {
   all: revert;
 }
+:is(.scroll, .no-scroll, .no-space, .tabs, .tabbed) > :focus-visible {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: -0.125rem;
+}
 @media only screen and (max-width: 600px) {
   nav.top,
   nav.bottom {
@@ -3301,23 +3324,17 @@ nav.tabbed > a.active {
   opacity: 0;
   visibility: hidden;
   position: fixed;
-  inset: 0 auto auto 0;
-  inline-size: 100%;
-  block-size: 100%;
+  inset: 0;
   color: var(--on-surface);
   background-color: var(--overlay);
   z-index: 100;
   transition: all var(--speed3), 0s background-color;
 }
-nav > .overlay {
-  z-index: 0;
-}
 .overlay.active {
   opacity: 1;
   visibility: visible;
 }
-.page,
-:is(.page, dialog):not(.active) .page.active {
+.page {
   ---transform: translate(0, 0);
 
   opacity: 0;
@@ -3365,6 +3382,7 @@ progress {
   overflow: hidden;
   writing-mode: horizontal-tb;
   direction: ltr;
+  -webkit-appearance: none;
 }
 progress.small {
   inline-size: 4rem;
@@ -3450,8 +3468,8 @@ progress.vertical {
 progress.max.vertical {
   transform: rotate(-180deg);
 }
-:has(> progress) > :not(progress) {
-  z-index: 1;
+progress.max + * {
+  margin-block-start: 0;
 }
 :is(.button, button, .chip) > progress.circle {
   color: inherit;
@@ -3553,23 +3571,9 @@ progress.max.vertical {
   padding-inline-start: 0.25rem;
 }
 :is(.checkbox, .radio, .switch) > span::before,
-.icon > span > i {
-  font-family: var(--font-icon);
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.5rem;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-  vertical-align: middle;
-  text-align: center;
-  overflow: hidden;
+.icon > span > i,
+:is(.checkbox, .radio) > span::after {
+  content: '';
   inline-size: 1.5rem;
   block-size: 1.5rem;
   box-sizing: border-box;
@@ -3578,12 +3582,9 @@ progress.max.vertical {
   color: var(--primary);
   position: absolute;
   inset: auto auto auto -1.5rem;
-  background-color: transparent;
   border-radius: 50%;
   user-select: none;
   z-index: 1;
-  box-shadow: 0 0 0 0 var(--active);
-  transition: all var(--speed1);
 }
 .switch > span::before,
 .switch.icon > span > i {
@@ -3628,9 +3629,16 @@ progress.max.vertical {
   content: "" !important;
   font-variation-settings: unset !important;
 }
-:is(.checkbox, .radio) > input:not(:disabled):is(:focus, :hover) + span::before {
-  background-color: var(--active);
-  box-shadow: 0 0 0 0.5rem var(--active);
+:is(.checkbox, .radio) > span::after {
+  transition: all var(--speed1);
+  background-color: currentColor;
+  box-shadow: 0 0 0 0 currentColor;
+  opacity: 0;
+}
+:is(.checkbox, .radio):is(:hover) > input:not(:disabled) + span::after,
+:is(.checkbox, .radio) > input:not(:disabled):is(:focus) + span::after {
+  box-shadow: 0 0 0 0.5rem currentColor;
+  opacity: 0.1;
 }
 .switch > input:not(:disabled):is(:focus, :hover) + span::before,
 .switch.icon > input:not(:disabled):is(:focus, :hover) + span > i {
@@ -3702,6 +3710,14 @@ progress.max.vertical {
 [dir=rtl] .switch.icon > input:checked + span > i {
   transform: translate(-1.75rem, -50%) scale(-1);
 }
+.switch > :focus-visible + span::after {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.25rem;
+}
+:is(.checkbox, .radio) > :focus-visible + span::before {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.375rem;
+}
 .slider {
   ---start: 0%;
   ---end: 0%;
@@ -3747,6 +3763,7 @@ progress.max.vertical {
   z-index: 1;
   padding: 0;
   margin: 0;
+  transform: rotate(0deg);
 }
 .slider > input:only-of-type {
   pointer-events: all;
@@ -3916,7 +3933,19 @@ progress.max.vertical {
 .slider.max.vertical > span {
   inset: var(---end) 0 var(---start) 0;
 }
-@media (hover: none){
+.slider > input:focus-visible::-webkit-slider-thumb {
+  outline: 0.1875rem solid var(--primary);
+  outline-offset: 0.25rem;
+}
+.slider > input:focus-visible::-moz-range-thumb {
+  outline: 0.1875rem solid var(--primary);
+  outline-offset: 0.25rem;
+}
+.slider.max > input:focus-visible {
+  outline: 0.1875rem solid var(--primary);
+  outline-offset: -0.125rem;
+}
+@media (pointer: coarse) {
   .slider > :hover ~ .tooltip {
     inset-block-start: -1rem !important;
     opacity: 1 !important;
@@ -3924,9 +3953,6 @@ progress.max.vertical {
   }
 }
 .snackbar {
-  ---transform-start: translate(-50%, 1rem);
-  ---transform-end: translate(-50%, 0);
-
   position: fixed;
   inset: auto auto 6rem 50%;
   inline-size: 80%;
@@ -3944,31 +3970,20 @@ progress.max.vertical {
   align-items: center;
   border-radius: 0.25rem;
   gap: 0.5rem;
-  transform: var(---transform-end);
+  transition: all var(--speed2);
+  transform: translate(-50%, 1rem);
+  opacity: 0;
 }
 .snackbar.top {
   inset: 6rem auto auto 50%;
 }
 .snackbar.active {
   visibility: visible;
-  animation: var(--speed2) to-snackbar;
-}
-.snackbar.active.top {
-  ---transform-end: translate(-50%, -1rem);
+  transform: translate(-50%, 0);
+  opacity: 1;
 }
 .snackbar > .max {
   flex: auto;
-}
-@keyframes to-snackbar {
-  0% {
-    opacity: 0;
-    transform: var(---transform-start);
-  }
-
-  100% {
-    opacity: 1;
-    transform: var(---transform-end);
-  }
 }
 @media only screen and (min-width: 993px) {
   .snackbar {

@@ -6,7 +6,7 @@
   .medium-space
   h6.middle-align
     span Rows
-    a.chip.circle(@click="domain.showSamples(data, '#row-default > .row', 'Rows', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#row-default > .row', 'Rows', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
   nav.wrap
     label.radio
@@ -42,7 +42,7 @@
   .medium-space
   h6.middle-align
     span Navigations
-    a.chip.circle(@click="domain.showSamples(data, '#navigation-default > nav', 'Navigations', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#navigation-default > nav', 'Navigations', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
   nav.wrap
     label.radio
@@ -58,20 +58,20 @@
   #navigation-default
     nav
       button Button
-      a.chip Chip
+      button.chip Chip
       i home
       img.circle(:src="'/beer-and-woman.svg'")
     hr.small
     nav
       button Button
-      a.chip Chip
+      button.chip Chip
       i home
       .max max
       img.circle(:src="'/beer-and-woman.svg'")
     hr.small
     nav
       button Button
-      a.chip Chip
+      button.chip Chip
       .max max
       i home
       img.circle(:src="'/beer-and-woman.svg'")
@@ -79,14 +79,14 @@
     nav
       button Button
       .max max
-      a.chip Chip
+      button.chip Chip
       i home
       img.circle(:src="'/beer-and-woman.svg'")
     hr.small
     nav
       .max max
       button Button
-      a.chip Chip
+      button.chip Chip
       i home
       img.circle(:src="'/beer-and-woman.svg'")
   .medium-space
@@ -94,7 +94,7 @@
     .medium-space
     h6.middle-align
       span Navigation rail/bar
-      a.chip.circle(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+      button.chip.circle(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
     nav.wrap
       label.radio(v-show="!data.isHorizontal")
@@ -114,7 +114,7 @@
     .medium-space
     h6.middle-align
       span Navigation drawer
-      a.chip.circle(@click="domain.showSamples(data, '#navigation-drawer > .drawer', 'Navigation drawer', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+      button.chip.circle(@click="domain.showSamples(data, '#navigation-drawer > .drawer', 'Navigation drawer', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
     nav.wrap
       label.radio
@@ -161,32 +161,55 @@
     .medium-space
     h6.middle-align
       span Navigation tabbed
-      a.chip.circle(@click="domain.showSamples(data, '#navigation-tabbed > .tabbed', 'Navigation tabbed', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+      button.chip.circle(@click="domain.showSamples(data, '#navigation-tabbed-example', 'Navigation tabbed', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
     nav.wrap
       label.radio
-        input#small-navigations-tabbed(type="radio", name="size-navigations-tabbed", @click="domain.updateSize('#navigation-tabbed .tabbed', 'small')")
+        input#small-navigations-tabbed(type="radio", name="size-navigations-tabbed", @click="domain.updateSize('#navigation-tabbed-example > .tabbed', 'small')")
         span small
       label.radio
-        input#default-navigations-tabbed(type="radio", name="size-navigations-tabbed", checked, @click="domain.updateSize('#navigation-tabbed .tabbed', '')")
+        input#default-navigations-tabbed(type="radio", name="size-navigations-tabbed", checked, @click="domain.updateSize('#navigation-tabbed-example > .tabbed', '')")
         span medium
       label.radio
-        input#large-navigations-tabbed(type="radio", name="size-navigations-tabbed", @click="domain.updateSize('#navigation-tabbed .tabbed', 'large')")
+        input#large-navigations-tabbed(type="radio", name="size-navigations-tabbed", @click="domain.updateSize('#navigation-tabbed-example > .tabbed', 'large')")
         span large
+      label.radio
+        input(
+          type="radio",
+          name="page-tabbed",
+          checked,
+          @click="domain.updatePosition('#navigation-tabbed-example .page')"
+        )
+        span page default
+      label.radio
+        input(type="radio", name="page-tabbed", @click="domain.updatePosition('#navigation-tabbed-example .page', 'left')")
+        span page left
+      label.radio
+        input(type="radio", name="page-tabbed", @click="domain.updatePosition('#navigation-tabbed-example .page', 'right')")
+        span page right
     .medium-space
-    nav.tabbed
-      a.active
-        i info
-        span Overview
-      a
-        i style
-        span Specs
-      a
-        i design_services
-        span Guidelines
-      a
-        i accessibility_new
-        span Acessibility
+    #navigation-tabbed-example
+      nav.tabbed
+        a.active(data-ui="#page-overview", tabindex="0")
+          i info
+          span Overview
+        a(data-ui="#page-specs", tabindex="0")
+          i style
+          span Specs
+        a(data-ui="#page-guidelines", tabindex="0")
+          i design_services
+          span Guidelines
+        a(data-ui="#page-acessibility", tabindex="0")
+          i accessibility_new
+          span Acessibility
+      #page-overview.page.padding.active
+        h5 Overview
+      #page-specs.page.padding
+        h5 Specs
+      #page-guidelines.page.padding
+        h5 Guidelines
+      #page-acessibility.page.padding
+        h5 Acessibility
 </template>
 
 <script setup lang="ts">
