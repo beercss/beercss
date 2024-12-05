@@ -18,7 +18,7 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) {
 }
 
 a.row,
-p.row {
+nav.row {
   min-block-size: 3rem;
   margin: 0;
 }
@@ -151,7 +151,7 @@ nav.drawer > header {
 nav.drawer > :is(a, label),
 nav.drawer > :is(ol, ul) > li > :is(a, label),
 a.row.wave,
-p.row.wave {
+nav.row.wave {
   padding: 0.75rem;
   font-size: inherit;
 }

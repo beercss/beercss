@@ -67,6 +67,21 @@ div
           h6.small Headline
           div Supporting text
         label +15 min
+      .medium-space
+      h6 Buttons and links
+      .space
+      nav.row.padding.surface-container
+        .max
+          h6.small Headline
+        a Link
+        button Button
+      .space
+      nav.row.padding.surface-container
+        .max
+          h6.small Headline
+          div Supporting text
+        a Link
+        button Button
     .medium-space
     .grid
       #list-dividers.s12.m6.l6

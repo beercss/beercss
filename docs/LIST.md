@@ -6,7 +6,7 @@ Lists are continuous, vertical indexes of text and images.
 
 ```html
 <a class="row">...</a>
-<div class="row">...</div>
+<nav class="row">...</nav>
 ```
 
 ## Most used helpers
@@ -49,6 +49,21 @@ no-padding, padding, tiny-padding, small-padding, large-padding
   </div>
   <label>+15 min</label>
 </a>
+```
+
+## Buttons and links example
+
+For this use case, the `a` tag is an invalid markup. Use the `nav` tag instead.
+
+```html
+<nav class="row">
+  <div class="max">
+    <h6 class="small">Headline</h6>
+    <div>Supporting text</div>
+  </div>
+  <a>Link</a>
+  <button>Button</button>
+</nav>
 ```
 
 ## List containers example
