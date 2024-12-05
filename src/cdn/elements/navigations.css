@@ -38,8 +38,12 @@ nav > :is(ol, ul) > li > :only-child {
   gap: 0;
 }
 
-:is(nav, .row).no-space > .border + .border {
+:is(nav, .row).no-space:not(.vertical) > .border + .border {
   border-inline-start: 0;
+}
+
+:is(nav, .row).no-space.vertical > .border + .border {
+  border-top: 0;
 }
 
 :is(nav, .row).medium-space {
