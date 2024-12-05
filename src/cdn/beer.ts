@@ -106,5 +106,5 @@ function start() {
 start();
 export {
   ui as default,
-  ui
-}
+  ui,
+};

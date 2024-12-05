@@ -3,5 +3,5 @@ import { ui } from "./cdn/beer";
 
 export {
   ui as default,
-  ui
-}
+  ui,
+};

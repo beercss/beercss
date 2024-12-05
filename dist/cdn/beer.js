@@ -515,7 +515,7 @@ function updateSnackbar(snackbar, milliseconds) {
 function updatePage(page) {
   const container = parent(page);
   if (container)
-    removeClass(queryAll(".page", container), "active");
+    removeClass(queryAll(":scope > .page", container), "active");
   addClass(page, "active");
 }
 let _timeoutMutation;
