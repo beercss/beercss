@@ -1,4 +1,4 @@
-import { addClass, next, prev, hasTag, insertBefore, wait, create,  hasClass, removeClass, on, off, queryAllDataUi, isTouchable, blurActiveElement } from "../utils";
+import { addClass, next, prev, hasTag, insertBefore, wait, create,  hasClass, removeClass, on, off, queryAllDataUi, isTouchable, blurActiveElement, query } from "../utils";
 
 const _dialogs: Array<HTMLDialogElement> = [];
 
@@ -7,6 +7,11 @@ function onKeydownDialog(e: KeyboardEvent) {
     const dialog = e.currentTarget as HTMLDialogElement;
     void updateDialog(dialog, dialog);
   }
+}
+
+function focusOnDialogOrElement(dialog: HTMLDialogElement) {
+  const element = (query("[autofocus]", dialog) || dialog) as HTMLElement;
+  element.focus();
 }
 
 function closeDialog(dialog: HTMLDialogElement, overlay: Element) {
@@ -33,11 +38,9 @@ async function openDialog(dialog: HTMLDialogElement, overlay: Element, isModal: 
   await wait(90);
 
   if (!isModal) on(dialog, "keydown", onKeydownDialog, false);
-
   _dialogs.push(dialog);
-  dialog.focus();
-
   if (isTouchable()) document.body.classList.add("no-scroll");
+  focusOnDialogOrElement(dialog);
 }
 
 function onClickOverlay(e: Event) {

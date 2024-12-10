@@ -2,7 +2,6 @@ dialog {
   display: block;
   border: none;
   opacity: 0;
-  visibility: hidden;
   position: fixed;
   box-shadow: var(--elevate2);
   color: var(--on-surface);
@@ -42,7 +41,6 @@ dialog.large {
 
 dialog:is(.active, [open]) {
   opacity: 1;
-  visibility: visible;
   transform: translate(-50%, 0);
 }
 
