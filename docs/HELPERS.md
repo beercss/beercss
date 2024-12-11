@@ -80,6 +80,10 @@ left, right, center, top, bottom, middle, front, back
 
 responsive, s, m, l
 
+## Ripples
+
+ripple, slow-ripple, fast-ripple
+
 ## Scrolls
 
 scroll, no-scroll

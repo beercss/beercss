@@ -23,21 +23,6 @@ div
           div Supporting text
         label +15 min
       .medium-space
-      h6 Wave effect
-      .space
-      a.row.padding.surface-container.wave
-        button.circle A
-        .max
-          h6.small Headline
-        label +15 min
-      .space
-      a.row.padding.surface-container.wave
-        button.circle A
-        .max
-          h6.small Headline
-          div Supporting text
-        label +15 min
-      .medium-space
       h6 Icons
       .space
       a.row.padding.surface-container

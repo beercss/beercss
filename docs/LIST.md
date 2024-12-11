@@ -39,18 +39,6 @@ no-padding, padding, tiny-padding, small-padding, large-padding
 </a>
 ```
 
-## Wave effect example
-
-```html
-<a class="row padding wave">
-  <div class="max">
-    <h6 class="small">Headline</h6>
-    <div>Supporting text</div>
-  </div>
-  <label>+15 min</label>
-</a>
-```
-
 ## Buttons and links example
 
 For this use case, the `a` tag is an invalid markup. Use the `nav` tag instead.

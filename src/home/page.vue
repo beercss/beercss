@@ -193,6 +193,9 @@ div
       a(data-ui="#dialog-menu", @click="domain.goTo('#typography')")
         i widgets
         span Typography
+      a(data-ui="#dialog-menu", @click="domain.goTo('#waves-and-ripples')")
+        i widgets
+        span Waves and ripples
 
   themes(id="themes3", v-model="data", position="right")
 
@@ -289,9 +292,9 @@ div
             .space
             pre.scroll
               code
-                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.7.14/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.7.15/dist/cdn/beer.min.css" rel="stylesheet"&gt;
                 |
-                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.7.14/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.7.15/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
                 |
                 | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
@@ -529,6 +532,8 @@ div
           tooltips
         .s12
           typography
+        .s12
+          wavesAndRipples
 
       .large-space
       div Made with love and beer, cheers 💛🍻
@@ -598,6 +603,7 @@ import tabs from "./tabs.vue";
 import textareas from "./textareas.vue";
 import tooltips from "./tooltips.vue";
 import typography from "./typography.vue";
+import wavesAndRipples from "./wavesAndRipples.vue";
 
 onMounted(() => {
   document.title = "Beer CSS - Build material design in record time, without stress for devs";

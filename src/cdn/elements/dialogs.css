@@ -1,5 +1,6 @@
 dialog {
   display: block;
+  visibility: hidden;
   border: none;
   opacity: 0;
   position: fixed;
@@ -40,6 +41,7 @@ dialog.large {
 }
 
 dialog:is(.active, [open]) {
+  visibility: visible;
   opacity: 1;
   transform: translate(-50%, 0);
 }

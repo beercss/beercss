@@ -10,7 +10,7 @@ function onKeydownDialog(e: KeyboardEvent) {
 }
 
 function focusOnDialogOrElement(dialog: HTMLDialogElement) {
-  const element = (query("[autofocus]", dialog) || dialog) as HTMLElement;
+  const element = (query("[autofocus]", dialog) ?? dialog) as HTMLElement;
   element.focus();
 }
 

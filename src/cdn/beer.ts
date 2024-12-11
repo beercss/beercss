@@ -7,6 +7,7 @@ import {updateDialog} from "./elements/dialogs";
 import {updateMenu} from "./elements/menus";
 import {updateSnackbar} from "./elements/snackbars";
 import {updatePage} from "./elements/pages";
+import {updateAllRipples} from "./helpers/ripples";
 
 let _timeoutMutation: ReturnType<typeof setTimeout>;
 let _mutation: MutationObserver | null;
@@ -91,6 +92,7 @@ function ui(selector?: string | Element, options?: string | number | IBeerCssThe
   updateAllDataUis();
   updateAllFields();
   updateAllSliders();
+  updateAllRipples();
 }
 
 function start() {

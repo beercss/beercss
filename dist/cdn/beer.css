@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.14/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.15/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.14/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.15/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.7.14/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.7.15/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1308,6 +1308,35 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 [dir=rtl] .middle.center {
   transform: translate(50%, -50%);
 }
+.ripple {
+  ---duration: 600ms;
+}
+.fast-ripple {
+  ---duration: 200ms;
+}
+.slow-ripple {
+  ---duration: 1800ms;
+}
+.ripple-js {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ripple-js > div {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.3;
+  transform: scale(0);
+  animation: to-ripple var(---duration) linear;
+}
+@keyframes to-ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
 .scroll {
   overflow: auto;
 }
@@ -1557,10 +1586,7 @@ pre:has(> code){
   direction: ltr;
   text-align: start;
 }
-.wave::after,
-.chip::after,
-:is(.button, button)::after,
-:is(nav.tabbed, .tabs) > a::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):not(.slow-ripple, .ripple, .fast-ripple)::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -1573,12 +1599,12 @@ pre:has(> code){
   opacity: 0;
   transition: none;
 }
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):is(:focus-visible, :hover)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after {
   background-size: 15000%;
   opacity: 0.1;
   transition: background-size var(--speed2) linear;
 }
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):active::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):not(.slow-ripple, .ripple, .fast-ripple):active::after {
   background-size: 5000%;
   opacity: 0;
   transition: none;
@@ -1965,9 +1991,9 @@ aside:not(.fixed, .absolute).left {
 }
 dialog {
   display: block;
+  visibility: hidden;
   border: none;
   opacity: 0;
-  visibility: hidden;
   position: fixed;
   box-shadow: var(--elevate2);
   color: var(--on-surface);
@@ -2001,8 +2027,8 @@ dialog.large {
   block-size: 75%;
 }
 dialog:is(.active, [open]) {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
   transform: translate(-50%, 0);
 }
 dialog.top {
@@ -2942,7 +2968,7 @@ menu.no-wrap {
 menu.active,
 menu:not([data-ui]):active,
 :not(menu, [data-ui]):focus-within > menu,
-menu > :is(a, li):hover + menu,
+menu > :is(a, li, nav):hover + menu,
 menu > menu:hover {
   opacity: 1;
   visibility: visible;
@@ -2951,20 +2977,18 @@ menu > menu:hover {
 menu * {
   white-space: inherit !important;
 }
-menu > a,
-menu > li > a {
+menu > :is(a, nav, li > a, li > nav) {
   padding: 0.5rem 1rem;
   min-block-size: 3rem;
   flex: 1;
+  margin: 0 !important;
 }
-menu > a:not(.row),
-menu > li > a:not(.row) {
+menu > :is(a, li > a):not(.row) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-menu > a:is(:hover, :focus, .active),
-menu > li > a:is(:hover, :focus, .active) {
+menu > :is(a, nav, li > a, li > nav):is(:hover, :focus, .active) {
   background-color: var(--active);
 }
 menu.min {
@@ -3206,8 +3230,7 @@ nav.drawer > header {
 }
 nav.drawer > :is(a, label),
 nav.drawer > :is(ol, ul) > li > :is(a, label),
-a.row.wave,
-nav.row.wave {
+:is(a.row, nav.row):is(.wave, .slow-ripple, .ripple, .fast-ripple) {
   padding: 0.75rem;
   font-size: inherit;
 }

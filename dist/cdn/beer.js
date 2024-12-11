@@ -400,6 +400,10 @@ function onKeydownDialog(e) {
     void updateDialog(dialog, dialog);
   }
 }
+function focusOnDialogOrElement(dialog) {
+  const element = query("[autofocus]", dialog) || dialog;
+  element.focus();
+}
 function closeDialog(dialog, overlay) {
   removeClass(queryAllDataUi(dialog.id), "active");
   removeClass(dialog, "active");
@@ -425,9 +429,9 @@ async function openDialog(dialog, overlay, isModal, from) {
   if (!isModal)
     on(dialog, "keydown", onKeydownDialog, false);
   _dialogs.push(dialog);
-  dialog.focus();
   if (isTouchable())
     document.body.classList.add("no-scroll");
+  focusOnDialogOrElement(dialog);
 }
 function onClickOverlay(e) {
   const overlay = e.currentTarget;
@@ -518,6 +522,31 @@ function updatePage(page) {
     removeClass(queryAll(":scope > .page", container), "active");
   addClass(page, "active");
 }
+function onPointerDownRipple(e) {
+  updateRipple(e);
+}
+function updateRipple(e) {
+  const element = e.currentTarget;
+  const rect = element.getBoundingClientRect();
+  const diameter = Math.max(rect.width, rect.height);
+  const radius = diameter / 2;
+  const x = e.clientX - rect.left - radius;
+  const y = e.clientY - rect.top - radius;
+  const rippleContainer = document.createElement("div");
+  rippleContainer.className = "ripple-js";
+  const ripple = document.createElement("div");
+  ripple.style.inlineSize = ripple.style.blockSize = `${diameter}px`;
+  ripple.style.left = `${x}px`;
+  ripple.style.top = `${y}px`;
+  ripple.addEventListener("animationend", () => rippleContainer.remove());
+  rippleContainer.appendChild(ripple);
+  element.appendChild(rippleContainer);
+}
+function updateAllRipples() {
+  const ripples = queryAll(".slow-ripple, .ripple, .fast-ripple");
+  for (let i = 0; i < ripples.length; i++)
+    on(ripples[i], "pointerdown", onPointerDownRipple);
+}
 let _timeoutMutation;
 let _mutation;
 function onMutation() {
@@ -597,6 +626,7 @@ function ui(selector, options) {
   updateAllDataUis();
   updateAllFields();
   updateAllSliders();
+  updateAllRipples();
 }
 function start() {
   var _a;

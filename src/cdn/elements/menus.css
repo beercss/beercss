@@ -38,7 +38,7 @@ menu.no-wrap {
 menu.active,
 menu:not([data-ui]):active,
 :not(menu, [data-ui]):focus-within > menu,
-menu > :is(a, li):hover + menu,
+menu > :is(a, li, nav):hover + menu,
 menu > menu:hover {
   opacity: 1;
   visibility: visible;
@@ -49,22 +49,20 @@ menu * {
   white-space: inherit !important;
 }
 
-menu > a,
-menu > li > a {
+menu > :is(a, nav, li > a, li > nav) {
   padding: 0.5rem 1rem;
   min-block-size: 3rem;
   flex: 1;
+  margin: 0 !important;
 }
 
-menu > a:not(.row),
-menu > li > a:not(.row) {
+menu > :is(a, li > a):not(.row) {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-menu > a:is(:hover, :focus, .active),
-menu > li > a:is(:hover, :focus, .active) {
+menu > :is(a, nav, li > a, li > nav):is(:hover, :focus, .active) {
   background-color: var(--active);
 }
 

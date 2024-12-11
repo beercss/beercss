@@ -123,6 +123,8 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Responsive** responsive, small-device, medium-device, large-device, s, m, l
 
+**Ripples** ripple, slow-ripple, fast-ripple
+
 **Scrolls** scroll, no-scroll
 
 **Shadows** shadow, left-shadow, right-shadow, top-shadow, bottom-shadow
