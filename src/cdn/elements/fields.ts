@@ -46,6 +46,12 @@ function onInputTextarea(e: Event) {
   updateTextarea(textarea);
 }
 
+function onPasswordIconClick(e: Event) {
+  const icon = e.currentTarget as HTMLElement
+  const input = query("input", parent(icon)) as HTMLInputElement;
+  if (input && icon.textContent?.includes("visibility")) input.type = input.type === "password" ? "text" : "password";
+}
+
 function updateAllLabels() {
   const labels = queryAll(".field > label");
   for (let i=0; i<labels.length; i++) on(labels[i], "click", onClickLabel);
@@ -92,6 +98,11 @@ function updateAllTextareas() {
     on(textareas[i], "input", onInputTextarea);
     updateTextarea(textareas[i]);
   }
+}
+
+function updateAllPasswordIcons() {
+  const icons = queryAll("input[type=password] ~ :is(i, a)");
+  for (let i=0; i<icons.length; i++) on(icons[i], "click", onPasswordIconClick);
 }
 
 function updateInput(input: HTMLInputElement) {
@@ -143,4 +154,5 @@ export function updateAllFields() {
   updateAllFiles();
   updateAllColors();
   updateAllTextareas();
+  updateAllPasswordIcons();
 }
