@@ -144,6 +144,13 @@ function onInputTextarea(e) {
   const textarea = e.currentTarget;
   updateTextarea(textarea);
 }
+function onPasswordIconClick(e) {
+  var _a;
+  const icon = e.currentTarget;
+  const input = query("input", parent(icon));
+  if (input && ((_a = icon.textContent) == null ? void 0 : _a.includes("visibility")))
+    input.type = input.type === "password" ? "text" : "password";
+}
 function updateAllLabels() {
   const labels = queryAll(".field > label");
   for (let i = 0; i < labels.length; i++)
@@ -186,6 +193,11 @@ function updateAllTextareas() {
     on(textareas[i], "input", onInputTextarea);
     updateTextarea(textareas[i]);
   }
+}
+function updateAllPasswordIcons() {
+  const icons = queryAll("input[type=password] ~ :is(i, a)");
+  for (let i = 0; i < icons.length; i++)
+    on(icons[i], "click", onPasswordIconClick);
 }
 function updateInput(input) {
   if (hasType(input, "number") && !input.value)
@@ -238,6 +250,7 @@ function updateAllFields() {
   updateAllFiles();
   updateAllColors();
   updateAllTextareas();
+  updateAllPasswordIcons();
 }
 function onInputDocument(e) {
   const input = e.target;
@@ -401,7 +414,7 @@ function onKeydownDialog(e) {
   }
 }
 function focusOnDialogOrElement(dialog) {
-  const element = query("[autofocus]", dialog) || dialog;
+  const element = query("[autofocus]", dialog) ?? dialog;
   element.focus();
 }
 function closeDialog(dialog, overlay) {
@@ -538,7 +551,9 @@ function updateRipple(e) {
   ripple.style.inlineSize = ripple.style.blockSize = `${diameter}px`;
   ripple.style.left = `${x}px`;
   ripple.style.top = `${y}px`;
-  ripple.addEventListener("animationend", () => rippleContainer.remove());
+  ripple.addEventListener("animationend", () => {
+    rippleContainer.remove();
+  });
   rippleContainer.appendChild(ripple);
   element.appendChild(rippleContainer);
 }

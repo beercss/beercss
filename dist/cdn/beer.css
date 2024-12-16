@@ -3861,7 +3861,7 @@ progress.max + * {
   inset: calc(50% - 0.5rem) var(---end) auto var(---start);
   clip-path: polygon(0 0, calc(100% - 0.5rem) 0, calc(100% - 0.5rem) 100%, 0 100%);
 }
-.slider > input + input ~ span {
+.slider > input[type=range] + input[type=range] ~ span {
   border-radius: 0;
   clip-path: polygon(0.5rem 0, max(0.5rem, calc(100% - 0.5rem)) 0, max(0.5rem, calc(100% - 0.5rem)) 100%, 0.5rem 100%);
 }

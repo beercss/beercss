@@ -47,7 +47,7 @@ function onInputTextarea(e: Event) {
 }
 
 function onPasswordIconClick(e: Event) {
-  const icon = e.currentTarget as HTMLElement
+  const icon = e.currentTarget as HTMLElement;
   const input = query("input", parent(icon)) as HTMLInputElement;
   if (input && icon.textContent?.includes("visibility")) input.type = input.type === "password" ? "text" : "password";
 }
