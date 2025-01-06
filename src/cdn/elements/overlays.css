@@ -9,7 +9,8 @@
   transition: all var(--speed3), 0s background-color;
 }
 
-.overlay.active {
+.overlay.active,
+input.dialog-trigger.overlay:checked {
   opacity: 1;
   visibility: visible;
 }
