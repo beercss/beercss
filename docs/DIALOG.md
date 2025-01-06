@@ -6,6 +6,9 @@ Dialogs inform users about a task and can contain critical information, required
 
 ```html
 <dialog>...</dialog>
+
+<input class="dialog-trigger" type="checkbox">
+<div class="dialog">...</div>
 ```
 
 ## Most used helpers
@@ -125,6 +128,24 @@ Call `ui("dialog-selector")`
 
 ```js
 ui('#dialog');
+```
+
+#### Method 5
+
+Use `.dialog` class for dialog, add `label for="dialog-selector"` element to trigger and add `input.dialog-trigger` above dialog (a pure CSS solution).
+
+```html
+<label class="button" for="dialog">Open</label>
+
+<input class="dialog-trigger" type="checkbox" id="dialog">
+<div class="dialog">
+  <h5>Title</h5>
+  <p>Content of dialog</p>
+  <nav>
+    <button>Cancel</button>
+    <button>Confirm</button>
+  </nav>
+</div>
 ```
 
 ## Go to
