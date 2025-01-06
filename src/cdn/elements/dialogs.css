@@ -1,4 +1,4 @@
-dialog {
+:is(dialog, .dialog) {
   display: block;
   visibility: hidden;
   border: none;
@@ -25,28 +25,29 @@ dialog::backdrop {
   display: none;
 }
 
-dialog.small {
+:is(dialog, .dialog).small {
   inline-size: 25%;
   block-size: 25%;
 }
 
-dialog.medium {
+:is(dialog, .dialog).medium {
   inline-size: 50%;
   block-size: 50%;
 }
 
-dialog.large {
+:is(dialog, .dialog).large {
   inline-size: 75%;
   block-size: 75%;
 }
 
-dialog:is(.active, [open]) {
+dialog:is(.active, [open]),
+input.dialog-trigger:checked + .dialog {
   visibility: visible;
   opacity: 1;
   transform: translate(-50%, 0);
 }
 
-dialog.top {
+:is(dialog, .dialog).top {
   opacity: 1;
   padding: 1rem;
   inset: 0 auto auto 0;
@@ -58,8 +59,8 @@ dialog.top {
   border-radius: 0 0 1rem 1rem;
 }
 
-[dir=rtl] dialog.right,
-dialog.left {
+[dir=rtl] :is(dialog, .dialog).right,
+:is(dialog, .dialog).left {
   opacity: 1;
   padding: 1rem;
   inset: 0 auto auto 0;
@@ -71,8 +72,8 @@ dialog.left {
   transform: translateX(-100%);
 }
 
-[dir=rtl] dialog.left,
-dialog.right {
+[dir=rtl] :is(dialog, .dialog).left,
+:is(dialog, .dialog).right {
   opacity: 1;
   padding: 1rem;
   inset: 0 0 auto auto;
@@ -84,7 +85,7 @@ dialog.right {
   transform: translateX(100%);
 }
 
-dialog.bottom {
+:is(dialog, .dialog).bottom {
   opacity: 1;
   padding: 1rem;
   inset: auto auto 0 0;
@@ -96,7 +97,7 @@ dialog.bottom {
   border-radius: 1rem 1rem 0 0;
 }
 
-dialog.max {
+:is(dialog, .dialog).max {
   inset: 0 auto auto 0;
   inline-size: 100%;
   block-size: 100%;
@@ -106,30 +107,35 @@ dialog.max {
   background-color: var(--surface);
 }
 
-dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
+input.dialog-trigger {
+  appearance: none;
+}
+
+dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max),
+input.dialog-trigger:checked + .dialog:is(.left, .right, .top, .bottom, .max){
   transform: translate(0, 0);
 }
 
-dialog.small:is(.left, .right) {
+:is(dialog, .dialog).small:is(.left, .right) {
   inline-size: 20rem;
 }
 
-dialog.medium:is(.left, .right) {
+:is(dialog, .dialog).medium:is(.left, .right) {
   inline-size: 32rem;
 }
 
-dialog.large:is(.left, .right) {
+:is(dialog, .dialog).large:is(.left, .right) {
   inline-size: 44rem;
 }
 
-dialog.small:is(.top, .bottom) {
+:is(dialog, .dialog).small:is(.top, .bottom) {
   block-size: 16rem;
 }
 
-dialog.medium:is(.top, .bottom) {
+:is(dialog, .dialog).medium:is(.top, .bottom) {
   block-size: 24rem;
 }
 
-dialog.large:is(.top, .bottom) {
+:is(dialog, .dialog).large:is(.top, .bottom) {
   block-size: 32rem;
 }
