@@ -14,9 +14,6 @@
       menu#menu1(data-ui="#menu1")
         a Item 1
         a Item 2
-        nav
-          i home
-          a Item 2.5
         a Item 3
     button(data-ui="#menu2")
       span No-wrap

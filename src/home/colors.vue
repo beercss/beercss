@@ -3,7 +3,7 @@
   .large-space
   nav.wrap
     h4 Colors
-    button.chip.circle(data-ui="#dialog-colors")
+    button.chip.circle(@click="showCode()", data-ui="#dialog-colors")
       i code
     button.chip.circle(@click="sharedDomain.updateMode(data)")
       i {{ data.isDark ? "light_mode" : "dark_mode" }}
@@ -434,6 +434,11 @@
 <script setup lang="ts">
 import sharedDomain from "../shared/domain";
 import data from "./data";
+
+const showCode = () => {
+  if (!data.value) return;
+  if (!data.value.theme.light || !data.value.theme.dark || !data.value.theme.selected) sharedDomain.updateTheme(data.value, null);
+};
 
 const sourceCode = () => {
   return ((data.value.theme as any)[data.value.theme.selected] || "").replace(/;/g, ";<br/>");
