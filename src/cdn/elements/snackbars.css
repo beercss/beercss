@@ -25,7 +25,7 @@
   inset: 6rem auto auto 50%;
 }
 
-.snackbar.active {
+.snackbar:is(.active, :popover-open) {
   visibility: visible;
   transform: translate(-50%, 0);
   opacity: 1;

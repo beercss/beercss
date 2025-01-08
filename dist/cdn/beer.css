@@ -2011,9 +2011,6 @@ dialog {
   transform: translate(-50%, -4rem);
   outline: none;
 }
-dialog::backdrop {
-  display: none;
-}
 dialog.small {
   inline-size: 25%;
   block-size: 25%;
@@ -2026,7 +2023,7 @@ dialog.large {
   inline-size: 75%;
   block-size: 75%;
 }
-dialog:is(.active, [open]) {
+dialog:is(.active, [open], :popover-open) {
   visibility: visible;
   opacity: 1;
   transform: translate(-50%, 0);
@@ -2086,7 +2083,7 @@ dialog.max {
   transform: translateY(4rem);
   background-color: var(--surface);
 }
-dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
+dialog:is(.active, [open], :popover-open):is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
 }
 dialog.small:is(.left, .right) {
@@ -3348,7 +3345,9 @@ nav.tabbed > a.active {
     justify-content: space-around;
   }
 }
-.overlay {
+.overlay,
+dialog::backdrop {
+  display: block !important;
   opacity: 0;
   visibility: hidden;
   position: fixed;
@@ -3358,9 +3357,17 @@ nav.tabbed > a.active {
   z-index: 100;
   transition: all var(--speed3), 0s background-color;
 }
-.overlay.active {
+.overlay.active,
+dialog:popover-open::backdrop {
   opacity: 1;
   visibility: visible;
+}
+.overlay + dialog::backdrop,
+.snackbar::backdrop {
+  display: none;
+}
+[popover] {
+  border: 0;
 }
 .page {
   ---transform: translate(0, 0);
@@ -4005,7 +4012,7 @@ progress.max + * {
 .snackbar.top {
   inset: 6rem auto auto 50%;
 }
-.snackbar.active {
+.snackbar:is(.active, :popover-open) {
   visibility: visible;
   transform: translate(-50%, 0);
   opacity: 1;

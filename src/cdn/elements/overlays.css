@@ -1,4 +1,6 @@
-.overlay {
+.overlay,
+dialog::backdrop {
+  display: block !important;
   opacity: 0;
   visibility: hidden;
   position: fixed;
@@ -9,7 +11,17 @@
   transition: all var(--speed3), 0s background-color;
 }
 
-.overlay.active {
+.overlay.active,
+dialog:popover-open::backdrop {
   opacity: 1;
   visibility: visible;
+}
+
+.overlay + dialog::backdrop,
+.snackbar::backdrop {
+  display: none;
+}
+
+[popover] {
+  border: 0;
 }
