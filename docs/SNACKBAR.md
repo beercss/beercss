@@ -70,6 +70,25 @@ Call `ui("snackbar-selector", millisecondsToHide)`. The default value for millis
 ui("#snackbar");
 ```
 
+#### Method 4
+
+Using [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API).
+
+```html
+<button popovertarget="snackbar">Button</button>
+
+<div class="snackbar" id="snackbar" popover>
+  <i>warning</i>
+  <span>I'm a snackbar</span>
+</div>
+```
+
+```js
+document.querySelector('#snackbar').hidePopover(); // hide
+document.querySelector('#snackbar').showPopover(); //show
+document.querySelector('#snackbar').togglePopover(); // toggle
+```
+
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
