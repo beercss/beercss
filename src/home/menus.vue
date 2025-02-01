@@ -12,47 +12,47 @@
       span Default
       i arrow_drop_down
       menu#menu1(data-ui="#menu1")
-        a Item 1
-        a Item 2
-        a Item 3
+        li Item 1
+        li Item 2
+        li Item 3
     button(data-ui="#menu2")
       span No-wrap
       i arrow_drop_down
       menu#menu2.no-wrap(data-ui="#menu2")
-        a Lorem ipsum dolor sit amet
-        a Lorem ipsum dolor sit amet
-        a Lorem ipsum dolor sit amet
+        li Lorem ipsum dolor sit amet
+        li Lorem ipsum dolor sit amet
+        li Lorem ipsum dolor sit amet
     button.circle(data-ui="#menu3")
       i arrow_back
       menu#menu3.left.no-wrap(data-ui="#menu3")
-        a Item 1
-        a Item 2
-        a Item 3
+        li Item 1
+        li Item 2
+        li Item 3
     button.circle(data-ui="#menu4")
       i arrow_forward
       menu#menu4.right.no-wrap(data-ui="#menu4")
-        a Item 1
-        a Item 2
-        a Item 3
+        li Item 1
+        li Item 2
+        li Item 3
     button(data-ui="#menu5")
       span Images and icons
       menu#menu5.no-wrap(data-ui="#menu5")
-        a Title
-        a
+        li Title
+        li
           div Title
           label Some text here
-        a.row
+        li
           i home
           span Title
-        a.row
+        li
           i home
           .max
             div Title
             label Some text here
-        a.row
+        li
           img.circle.tiny(:src="'/beer-and-woman.svg'")
           span Title
-        a.row
+        li
           img.circle.tiny(:src="'/beer-and-woman.svg'")
           .max
             div Title
@@ -65,31 +65,31 @@
     button(data-ui="#menu8")
       span Docked
       menu#menu8.min(data-ui="#menu8")
-        a Item 1
-        a Item 2
-        a Item 3
+        li Item 1
+        li Item 2
+        li Item 3
     button(data-ui="#menu7")
       span Fullscreen
       menu#menu7.max(data-ui="#menu7")
-        a Item 1
-        a Item 2
-        a Item 3
+        li Item 1
+        li Item 2
+        li Item 3
   nav.wrap
     button(data-ui="#menu9")
       span Multi level
       i arrow_drop_down
       menu(id="menu9")
-        a Item
-        a Item
-        a More items
+        li Item
+        li Item
+        li More items
         menu
-          a Item
-          a Item
-          a More items
+          li Item
+          li Item
+          li More items
           menu
-            a Item
-            a Item
-            a item
+            li Item
+            li Item
+            li item
 </template>
 
 <script setup lang="ts">

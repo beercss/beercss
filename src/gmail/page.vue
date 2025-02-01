@@ -70,25 +70,31 @@ div
     button.circle.large.transparent(data-ui="#menu-menu")
       i menu
       menu#menu-menu.no-wrap(data-ui="#menu-menu")
-        a.row(href="/gmail")
-          i inbox
-          .max Inbox
-        a.row(href="/gmail/snoozed")
-          i watch_later
-          .max Snoozed
-        a.row(href="/gmail/important")
-          i label_important
-          .max Important
-        a.row(href="/gmail/sent")
-          i send
-          .max Sent
-        a.row(href="/gmail/drafts")
-          i insert_drive_file
-          .max Drafts
-        a.row(href="/gmail/spam")
-          i error_outline
-          .max Spam
-        a.row(data-ui="#themes3")
+        li
+          a(href="/gmail")
+            i inbox
+            .max Inbox
+        li
+          a(href="/gmail/snoozed")
+            i watch_later
+            .max Snoozed
+        li
+          a(href="/gmail/important")
+            i label_important
+            .max Important
+        li
+          a(href="/gmail/sent")
+            i send
+            .max Sent
+        li
+          a(href="/gmail/drafts")
+            i insert_drive_file
+            .max Drafts
+        li
+          a(href="/gmail/spam")
+            i error_outline
+            .max Spam
+        li(data-ui="#themes3")
           i palette
           .max Themes
     img(v-show="!data.isDark", :src="'/gmail-light.png'")
@@ -107,12 +113,14 @@ div
       menu#menu-settings.left.no-wrap(
         data-ui="#menu-settings"
       )
-        a
-          div Account
-          label Change account
-        a
-          div Appearance
-          label Change display settings
+        li
+          .max
+            div Account
+            label Change account
+        li
+          .max
+            div Appearance
+            label Change display settings
     button.circle.large.transparent.m.l(data-ui="#menu-apps")
       i apps
       menu#menu-apps.left.padding.no-wrap(data-ui="#menu-apps")

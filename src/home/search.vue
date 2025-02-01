@@ -21,13 +21,13 @@
           i.front(data-ui="#search1") arrow_back
           input(placeholder="Search text")
           i.front(data-ui="#search1") close
-        a.row(data-ui="#search1")
+        li(data-ui="#search1")
           i history
           div Item 1
-        a.row(data-ui="#search1")
+        li(data-ui="#search1")
           i history
           div Item 2
-        a.row(data-ui="#search1")
+        li(data-ui="#search1")
           i history
           div Item 3
     button.extra.circle.fill(data-ui="#search2")
@@ -37,13 +37,13 @@
           i.front(data-ui="#search2") arrow_back
           input(placeholder="Search text")
           i.front(data-ui="#search2") close
-        a.row(data-ui="#search2")
+        li(data-ui="#search2")
           i history
           div Item 1
-        a.row(data-ui="#search2")
+        li(data-ui="#search2")
           i history
           div Item 2
-        a.row(data-ui="#search2")
+        li(data-ui="#search2")
           i history
           div Item 3
 
@@ -65,13 +65,13 @@
           i.front(data-ui="#search3") arrow_back
           input(placeholder="Search text")
           i.front(data-ui="#search3") close
-        a.row(data-ui="#search3")
+        li(data-ui="#search3")
           i history
           div Item 1
-        a.row(data-ui="#search3")
+        li(data-ui="#search3")
           i history
           div Item 2
-        a.row(data-ui="#search3")
+        li(data-ui="#search3")
           i history
           div Item 3
     button.extra.circle.fill(data-ui="#search4")
@@ -81,13 +81,13 @@
           i.front(data-ui="#search4") arrow_back
           input(placeholder="Search text")
           i.front(data-ui="#search4") close
-        a.row(data-ui="#search4")
+        li(data-ui="#search4")
           i history
           div Item 1
-        a.row(data-ui="#search4")
+        li(data-ui="#search4")
           i history
           div Item 2
-        a.row(data-ui="#search4")
+        li(data-ui="#search4")
           i history
           div Item 3
 </template>

@@ -9,21 +9,21 @@ div(v-show="data.showPage")
           input(value="Home", readonly)
           i arrow_drop_down
           menu
-            a.transparent
+            li.transparent
               label Moderating
-            a Mod Queue
-            a Modmail
-            a r/Mod
+            li Mod Queue
+            li Modmail
+            li r/Mod
             hr
-            a.transparent
+            li.transparent
               label Your communities
-            a.row
+            li
               i.tiny people
               .max r/sveltejs
-            a.row
+            li
               i.tiny people
               .max r/sveltejs
-            a.row
+            li
               i.tiny people
               .max r/sveltejs
 
@@ -49,11 +49,11 @@ div(v-show="data.showPage")
       button.transparent.circle.s.m
         i more_vert
         menu.no-wrap.left
-          a Popular
-          a Moderation
-          a Chat
-          a Notifications
-          a Create Post
+          li Popular
+          li Moderation
+          li Chat
+          li Notifications
+          li Create Post
       button.chip.l
         i campaign
         span Advertise
@@ -67,25 +67,25 @@ div(v-show="data.showPage")
               span 999 karma
           i arrow_drop_down
         menu.no-wrap.left#menu-profile
-          a.transparent
+          li.transparent
             label My stuff
-          a.row
+          li
             .max Online Status
             label.switch
               input(type="checkbox")
               span
-          a Profile
-          a Style Avatar
-          a User Settings
+          li Profile
+          li Style Avatar
+          li User Settings
           hr
-          a.transparent
+          li.transparent
             label View Options
-          a.row
+          li
             .max Mod mode
             label.switch
               input(type="checkbox")
               span
-          a.row
+          li
             .max Dark Mode
             label.switch
               input(type="checkbox", onclick="updateTheme()", checked, @click="updateTheme()")

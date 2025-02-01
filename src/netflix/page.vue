@@ -5,19 +5,19 @@
     button.circle.large.transparent.s.m(data-ui="#menu-menu")
       i menu
       menu#menu-menu.no-wrap(data-ui="#menu-menu")
-        a.row(@click="scroll('#home')")
+        li(@click="scroll('#home')")
           i home
           .max Home
-        a.row(@click="scroll('#series')")
+        li(@click="scroll('#series')")
           i subscriptions
           .max Series
-        a.row(@click="scroll('#movies')")
+        li(@click="scroll('#movies')")
           i subscriptions
           .max Movies
-        a.row(@click="scroll('#hot')")
+        li(@click="scroll('#hot')")
           i whatshot
           .max Hot
-        a.row(@click="scroll('#my-list')")
+        li(@click="scroll('#my-list')")
           i video_library
           .max My list
     button.small-round.large.transparent.l(@click="scroll('#home')") Home
@@ -33,17 +33,17 @@
       menu#menu-notifications.left.no-wrap(
         data-ui="#menu-notifications"
       )
-        a.row
+        li
           img.round(:src="'alok-001.jpg'")
           .max
             div Alok 01/2021
             label 10k views
-        a.row
+        li
           img.round(:src="'vintage-001.jpg'")
           .max
             div The best of 2021
             label 10k views
-        a.row
+        li
           img.round(:src="'ocean-001.jpg'")
           .max
             div Alok, Zebra, Iro - Ocean

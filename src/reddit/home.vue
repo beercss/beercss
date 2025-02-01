@@ -140,13 +140,13 @@ main.responsive
         label Community
         i arrow_drop_down
         menu
-          a.row
+          li
             i.tiny people
             span r/svelte
-          a.row
+          li
             i.tiny people
             span r/svelte
-          a.row
+          li
             i.tiny people
             span r/svelte
     .medium-space.l.m
@@ -171,13 +171,13 @@ main.responsive
           label Community
           i arrow_drop_down
           menu
-            a.row
+            li
               i.tiny people
               span r/svelte
-            a.row
+            li
               i.tiny people
               span r/svelte
-            a.row
+            li
               i.tiny people
               span r/svelte
         .field.border.label
@@ -193,13 +193,13 @@ main.responsive
           label Community
           i arrow_drop_down
           menu
-            a.row
+            li
               i.tiny people
               span r/svelte
-            a.row
+            li
               i.tiny people
               span r/svelte
-            a.row
+            li
               i.tiny people
               span r/svelte
         .row
@@ -217,13 +217,13 @@ main.responsive
           label Community
           i arrow_drop_down
           menu
-            a.row
+            li
               i.tiny people
               span r/svelte
-            a.row
+            li
               i.tiny people
               span r/svelte
-            a.row
+            li
               i.tiny people
               span r/svelte
         .field.border.label

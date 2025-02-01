@@ -1,15 +1,10 @@
-summary.none {
-  list-style-type: none;
-}
-
-summary.none::-webkit-details-marker {
-  display: none;
-}
-
-summary {
-  cursor: pointer;
-}
-
+summary,
 summary:focus {
+  list-style-type: none;
+  cursor: pointer;
   outline: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }

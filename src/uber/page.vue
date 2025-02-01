@@ -12,7 +12,7 @@ div
         a Price calculator
         a Cities
         a Companies
-        hr.small
+        hr
         a How it works
         a Safety
         a Airports
@@ -26,7 +26,7 @@ div
         a Safe
         a How to drive in your city
         a Make deliveries
-        hr.small
+        hr
         a Requirements
         a Vehicle solutions
         a Safety
@@ -38,7 +38,7 @@ div
         a Uber Eats
         a Make deliveries
         a Uber Health
-        hr.small
+        hr
         a Uber for companies
         a Uber Freight
     .max
