@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.8.1/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.8.1/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.8.1/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1175,7 +1175,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 :is(.circle, .square).round {
   border-radius: 1rem !important;
 }
-.border:not(table, .field) {
+.border:not(table, .field, .list) {
   box-sizing: border-box;
   border: 0.0625rem solid var(--outline);
   background-color: transparent;
@@ -2135,17 +2135,14 @@ hr.vertical,
   min-block-size: 1.5rem;
   inline-size: 0.0625rem;
 }
-summary.none {
-  list-style-type: none;
-}
-summary.none::-webkit-details-marker {
-  display: none;
-}
-summary {
-  cursor: pointer;
-}
+summary,
 summary:focus {
+  list-style-type: none;
+  cursor: pointer;
   outline: none;
+}
+summary::-webkit-details-marker {
+  display: none;
 }
 .field {
   ---size: 3rem;
@@ -2812,6 +2809,56 @@ main ~ footer {
 :is(.large-padding, dialog:not(.left, .right, .top, .bottom)) > :is(header, footer).fixed {
   ---translateY: 1.5rem;
 }
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+.list > *,
+.list > * > details > summary {
+  display: flex;
+  align-items: center;
+  align-self: normal;
+  text-align: start;
+  justify-content: flex-start;
+  white-space: nowrap;
+  gap: 1rem;
+  min-block-size: 3rem;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+.list > *:has(ul, ol, details[open]) {
+  padding: 0;
+}
+.list > * > .list {
+  padding: 0 0 0 1rem;
+}
+.list > * > * {
+  margin: 0;
+}
+.list > * > :is(details, .max) {
+  flex: 1;
+}
+.list.border > :not(:last-child)::before,
+.list.border > * > details[open] > summary::before {
+  content: '';
+  position: absolute;
+  background-color: var(--outline-variant);
+  inset: auto 0 0 0;
+  block-size: .0625rem;
+  inline-size: auto;
+}
+.list.no-space > * {
+  min-block-size: auto;
+}
+.list.small-space > * {
+  min-block-size: 2.5rem;
+}
+.list.large-space > * {
+  min-block-size: 3.5rem;
+}
 svg {
   fill: currentcolor;
 }
@@ -2965,7 +3012,7 @@ menu.no-wrap {
 menu.active,
 menu:not([data-ui]):active,
 :not(menu, [data-ui]):focus-within > menu,
-menu > :is(a, li, nav):hover + menu,
+menu > :is(a, li):hover + menu,
 menu > menu:hover {
   opacity: 1;
   visibility: visible;
@@ -2974,19 +3021,28 @@ menu > menu:hover {
 menu * {
   white-space: inherit !important;
 }
-menu > :is(a, nav, li > a, li > nav) {
-  padding: 0.5rem 1rem;
+menu > :is(a, li),
+menu > :is(a, li) > a:only-child {
+  display: flex;
+  align-items: center;
+  align-self: normal;
+  text-align: start;
+  justify-content: flex-start;
+  white-space: nowrap;
+  gap: 1rem;
+  padding: 0 1rem;
   min-block-size: 3rem;
   flex: 1;
   margin: 0 !important;
+  cursor: pointer;
 }
-menu > :is(a, li > a):not(.row) {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-menu > :is(a, nav, li > a, li > nav):is(:hover, :focus, .active) {
+menu > :is(a, li):is(:hover, :focus, .active) {
   background-color: var(--active);
+}
+menu > :is(a, li) > :is(.max, a:only-child),
+menu > :is(a, li) > a:only-child > .max {
+  flex: 1;
+  padding: 0;
 }
 menu.min {
   inset: 0 0 auto 0;
