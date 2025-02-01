@@ -1,0 +1,59 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.list > *,
+.list > * > details > summary {
+  display: flex;
+  align-items: center;
+  align-self: normal;
+  text-align: start;
+  justify-content: flex-start;
+  white-space: nowrap;
+  gap: 1rem;
+  min-block-size: 3rem;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.list > *:has(ul, ol, details[open]) {
+  padding: 0;
+}
+
+.list > * > .list {
+  padding: 0 0 0 1rem;
+}
+
+.list > * > * {
+  margin: 0;
+}
+
+.list > * > :is(details, .max) {
+  flex: 1;
+}
+
+.list.border > :not(:last-child)::before,
+.list.border > * > details[open] > summary::before {
+  content: '';
+  position: absolute;
+  background-color: var(--outline-variant);
+  inset: auto 0 0 0;
+  block-size: .0625rem;
+  inline-size: auto;
+}
+
+.list.no-space > * {
+  min-block-size: auto;
+}
+
+.list.small-space > * {
+  min-block-size: 2.5rem;
+}
+
+.list.large-space > * {
+  min-block-size: 3.5rem;
+}
