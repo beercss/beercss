@@ -12,10 +12,10 @@ div
         input(type="radio", name="space-lists", @click="domain.updateSpace('#lists .list', 'no-space')")
         span no-space
       label.radio
-        input(type="radio", name="space-lists", @click="domain.updateSpace('#lists .list', 'small-space')")
+        input(type="radio", name="space-lists", checked, @click="domain.updateSpace('#lists .list')")
         span small-space
       label.radio
-        input(type="radio", name="space-lists", checked, @click="domain.updateSpace('#lists .list')")
+        input(type="radio", name="space-lists", @click="domain.updateSpace('#lists .list', 'medium-space')")
         span medium-space
       label.radio
         input(type="radio", name="space-lists", @click="domain.updateSpace('#lists .list', 'large-space')")
@@ -67,76 +67,80 @@ div
         span Headline and supporting text
         button.chip.circle(@click="domain.showSamples(data, '#list1 .list', 'Lists')")
           i code
-      .space
-      ul.list.border
-        li
-          button.circle A
-          .max
-            h6.small Headline
-          label +15 min
-        li
-          button.circle A
-          .max
-            h6.small Headline
-            div Supporting text
-          label +15 min
+      article
+        ul.list.border
+          li
+            button.circle A
+            .max
+              h6.small Headline
+              div Supporting text
+            label +15 min
+          li
+            button.circle A
+            .max
+              h6.small Headline
+              div Supporting text
+            label +15 min
     .medium-space
     #list2
       h6 
         span Icons
         button.chip.circle(@click="domain.showSamples(data, '#list2 .list', 'Lists')")
           i code
-      .space
-      ul.list.border
-        li
-          i home
-          .max
-            h6.small Headline
-          label +15 min
-        li
-          i home
-          .max
-            h6.small Headline
-            div Supporting text
-          label +15 min
+      article
+        ul.list.border
+          li
+            i home
+            .max
+              h6.small Headline
+              div Supporting text
+            label +15 min
+          li
+            i home
+            .max
+              h6.small Headline
+              div Supporting text
+            label +15 min
     .medium-space
     #list3
       h6 
         span Leading media or avatar
         button.chip.circle(@click="domain.showSamples(data, '#list3 .list', 'Lists')")
           i code
-      .space
-      ul.list.border
-        li
-          img.round(:src="'/beer-and-woman.svg'")
-          .max
-            h6.small Headline
-          label +15 min
-        li
-          img.round(:src="'/beer-and-woman.svg'")
-          .max
-            h6.small Headline
-            div Supporting text
-          label +15 min
+      article
+        ul.list.border
+          li
+            img.round(:src="'/beer-and-woman.svg'")
+            .max
+              h6.small Headline
+              div Supporting text
+            label +15 min
+          li
+            img.round(:src="'/beer-and-woman.svg'")
+            .max
+              h6.small Headline
+              div Supporting text
+            label +15 min
     .medium-space
     #list4
       h6 
         span Links and buttons
         button.chip.circle(@click="domain.showSamples(data, '#list4 .list', 'Lists')")
           i code
-      .space
-      ul.list.border
-        li
-          .max
-            h6.small Headline
-          a Link
-          button Button
-        li
-          .max
-            h6.small Headline
-            div Supporting text
-          a Link
-          button Button
+      article
+        ul.list.border
+          li
+            .max
+              h6.small Headline
+              div Supporting text
+            a Link
+            button Button
+          li
+            .max
+              h6.small Headline
+              div Supporting text
+            a Link
+            button Button
     
 </template>
 
