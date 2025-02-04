@@ -16,7 +16,7 @@
   white-space: nowrap;
   gap: 1rem;
   min-block-size: 3rem;
-  padding: 0.75rem;
+  padding: 0.5rem;
   cursor: pointer;
 }
 
@@ -46,14 +46,18 @@
   inline-size: auto;
 }
 
-.list.no-space > * {
+.list.no-space > *,
+.list.no-space > * > details > summary {
   min-block-size: auto;
+  padding: 0.25rem 0.5rem;
 }
 
-.list.small-space > * {
+.list.small-space > *,
+.list.small-space > * > details > summary {
   min-block-size: 2.5rem;
 }
 
-.list.large-space > * {
+.list.large-space > *,
+.list.large-space > * > details > summary {
   min-block-size: 3.5rem;
 }

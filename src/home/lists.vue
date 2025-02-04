@@ -4,6 +4,22 @@ div
     .large-space
     h4
       span Lists
+    nav.wrap
+      label.checkbox
+        input(type="checkbox", checked, @click="domain.updateBorder('#lists .list', $event)")
+        span border
+      label.radio
+        input(type="radio", name="space-lists", @click="domain.updateSpace('#lists .list', 'no-space')")
+        span no-space
+      label.radio
+        input(type="radio", name="space-lists", @click="domain.updateSpace('#lists .list', 'small-space')")
+        span small-space
+      label.radio
+        input(type="radio", name="space-lists", checked, @click="domain.updateSpace('#lists .list')")
+        span medium-space
+      label.radio
+        input(type="radio", name="space-lists", @click="domain.updateSpace('#lists .list', 'large-space')")
+        span large-space
     .medium-space
     .grid
       #list-default.s12.m6.l6
