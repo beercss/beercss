@@ -389,6 +389,9 @@ div
                   p
                     b.error-text &lt;li&gt;
                   p
+                    b.error-text list
+                    span &nbsp;border, space, no-space, small-space, medium-space, large-space
+                  p
                     b.error-text &lt;main&gt;
                     span &nbsp;responsive, max
                   p

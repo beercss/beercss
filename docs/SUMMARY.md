@@ -56,6 +56,8 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;li&gt;**
 
+**list** border, space, no-space, small-space, medium-space, large-space
+
 **&lt;main&gt;** responsive, max
 
 **&lt;menu&gt;** left, right, wrap, no-wrap, active, min, max

@@ -45,12 +45,6 @@ div
                 ul.list.border
                   li Item
                   li Item
-                  li
-                    details
-                      summary Header Item
-                      ul.list.border
-                        li Item
-                        li Item
     .medium-space
     #list1
       h6 
