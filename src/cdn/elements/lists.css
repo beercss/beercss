@@ -16,8 +16,8 @@
   justify-content: flex-start;
   white-space: nowrap;
   gap: 1rem;
-  min-block-size: 3rem;
-  padding: 0.75rem 0.75rem;
+  min-block-size: 3.5rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
 }
 
@@ -49,18 +49,15 @@
 
 .list.no-space > *,
 .list.no-space > * > details > summary {
-  min-block-size: auto;
-  padding: 0.25rem 0.75rem;
+  min-block-size: 2.5rem;
 }
 
-.list.small-space > *,
-.list.small-space > * > details > summary {
-  min-block-size: 2.5rem;
-  padding: 0.5rem 0.75rem;
+.list.medium-space > *,
+.list.medium-space > * > details > summary {
+  min-block-size: 4.5rem;
 }
 
 .list.large-space > *,
 .list.large-space > * > details > summary {
-  min-block-size: 3.5rem;
-  padding: 1rem 0.75rem;
+  min-block-size: 5.5rem;
 }
