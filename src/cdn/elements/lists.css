@@ -8,6 +8,7 @@
 
 .list > *,
 .list > * > details > summary {
+  position: relative;
   display: flex;
   align-items: center;
   align-self: normal;
@@ -16,7 +17,7 @@
   white-space: nowrap;
   gap: 1rem;
   min-block-size: 3rem;
-  padding: 0.5rem;
+  padding: 0.75rem 0.75rem;
   cursor: pointer;
 }
 
@@ -49,15 +50,17 @@
 .list.no-space > *,
 .list.no-space > * > details > summary {
   min-block-size: auto;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
 }
 
 .list.small-space > *,
 .list.small-space > * > details > summary {
   min-block-size: 2.5rem;
+  padding: 0.5rem 0.75rem;
 }
 
 .list.large-space > *,
 .list.large-space > * > details > summary {
   min-block-size: 3.5rem;
+  padding: 1rem 0.75rem;
 }
