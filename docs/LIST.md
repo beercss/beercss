@@ -1,6 +1,6 @@
 # List
 
-Lists are continuous, vertical indexes of text and images.
+Lists are continuous, vertical indexes of text and images. Each item can have up to 3 lines.
 
 ## Element
 

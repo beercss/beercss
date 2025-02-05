@@ -28,6 +28,10 @@ A container is the main content of page.
 
 Dialogs inform users about a task and can contain critical information, required decisions, involve multiple tasks, provide access to destinations in your app and contain a small forms to submit.
 
+## [Divider](DIVIDER.md)
+
+Dividers are thin lines that group content in lists or other containers
+
 ## [Expansion](EXPANSION.md)
 
 Expansion contains creation flows and allows lightweight editing of an element.
@@ -47,6 +51,14 @@ Input fields let users enter and edit text.
 ## [Layout](LAYOUT.md)
 
 Layouts are containers that you can place in any position. There are absolute and fixed elements.
+
+## [List](LIST.md)
+
+Lists are continuous, vertical indexes of text and images. Each item can have up to 3 lines.
+
+## [Main layout](MAIN_LAYOUT.md)
+
+The main layout is a common html structure to setup your pages. For RTL languages set the attribute `dir="rtl"` on `body` element (or any other element).
 
 ## [Media](MEDIA.md)
 
@@ -80,6 +92,14 @@ Radio buttons allow users to select one option from a set.
 
 Selects display a list of choices on temporary surfaces.
 
+## [Slider](SLIDER.md)
+
+Sliders allow users to make selections from a range of values. There are two types of sliders: continuous and discrete. Default range is 0-100.
+
+## [Snackbar](SNACKBAR.md)
+
+Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recommended to show two or more snackbars at same time.
+
 ## [Switch](SWITCH.md)
 
 Switches toggle the state of a single item on or off.
@@ -95,10 +115,6 @@ Tabs organize content across different screens, data sets, and other interaction
 ## [Textarea](TEXTAREA.md)
 
 Textarea fields let users enter and edit long text.
-
-## [Snackbar](SNACKBAR.md)
-
-Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recommended to show two or more snackbars at same time.
 
 ## [Tooltip](TOOLTIP.md)
 
