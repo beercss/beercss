@@ -126,12 +126,6 @@ main.responsive
         i more_vert
         span More
   
-  dialog#dialog-popover(popover)
-    h5 Popover dialog
-    nav.right-align
-      button.border(popovertarget="dialog-popover") Cancel
-      button(popovertarget="dialog-popover") Confirm
-
   .large-space 
   div
     nav.tabbed
@@ -509,6 +503,21 @@ main.responsive
       .tooltip.bottom Testando tooltip
 
   .large-space
+  h5 Popover API
+  nav
+    button(popovertarget="dialog-popover") Dialog
+    button(popovertarget="snackbar-popover") Snackbar
+
+  dialog#dialog-popover(popover)
+    h5 Popover dialog
+    nav.right-align
+      button(popovertarget="dialog-popover") Button
+
+  #snackbar-popover.snackbar(popover)
+    .max Popover snackbar
+    button(popovertarget="snackbar-popover") Button
+
+  .large-space
   h5 Dialogs and date picker
   nav
     button(data-ui="#default") Default
@@ -516,7 +525,6 @@ main.responsive
     button(data-ui="#top") Top
     button(data-ui="#right") Right
     button(data-ui="#bottom") Bottom
-    button(popovertarget="dialog-popover") Popover
   .large-space
   h5 Slider, progress and field bindings
   .row
