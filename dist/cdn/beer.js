@@ -241,7 +241,7 @@ function updateTextarea(textarea) {
   const field = parent(textarea);
   field.removeAttribute("style");
   if (hasClass(field, "min"))
-    field.style.setProperty("---size", `${Math.max(textarea.scrollHeight, field.offsetHeight)}px`);
+    field.style.setProperty("---size", `${Math.min(192, Math.max(textarea.scrollHeight, field.offsetHeight))}px`);
 }
 function updateAllFields() {
   updateAllLabels();
