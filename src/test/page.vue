@@ -125,6 +125,12 @@ main.responsive
       a
         i more_vert
         span More
+  
+  dialog#dialog-popover(popover)
+    h5 Popover dialog
+    nav.right-align
+      button.border(popovertarget="dialog-popover") Cancel
+      button(popovertarget="dialog-popover") Confirm
 
   .large-space 
   div
@@ -510,6 +516,7 @@ main.responsive
     button(data-ui="#top") Top
     button(data-ui="#right") Right
     button(data-ui="#bottom") Bottom
+    button(popovertarget="dialog-popover") Popover
   .large-space
   h5 Slider, progress and field bindings
   .row
