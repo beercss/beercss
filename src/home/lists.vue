@@ -81,6 +81,22 @@ div
               h6.small Headline
               div Supporting text
             label +15 min
+      article
+        ul.list.border
+          li
+            a(href="#1")
+              button.circle A
+              .max
+                h6.small Headline
+                div Supporting text
+              label +15 min
+          li
+            a(href="#1")
+              button.circle A
+              .max
+                h6.small Headline
+                div Supporting text
+              label +15 min
     .medium-space
     #list2
       h6 

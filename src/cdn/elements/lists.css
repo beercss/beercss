@@ -6,8 +6,11 @@
   flex: 1;
 }
 
-.list > *,
-.list > * > details > summary {
+.list > li,
+.list > li > details > summary,
+.list > li > a:only-child {
+  all: unset;
+  box-sizing: border-box;
   position: relative;
   display: flex;
   align-items: center;
@@ -19,26 +22,31 @@
   min-block-size: 3.5rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-}
-
-.list > *:has(ul, ol, details[open]) {
-  padding: 0;
-}
-
-.list > * > .list {
-  padding: 0 0 0 1rem;
-}
-
-.list > * > * {
-  margin: 0;
-}
-
-.list > * > :is(details, .max) {
   flex: 1;
 }
 
-.list.border > :not(:last-child)::before,
-.list.border > * > details[open] > summary::before {
+.list > li:has(ul, ol, details[open], a:only-child) {
+  padding: 0;
+}
+
+.list > li > .list {
+  padding: 0 0 0 1rem;
+}
+
+.list > li > *,
+.list > li > a:only-child > *,
+.list > li > details > summary > *  {
+  margin: 0;
+}
+
+.list > li > :is(details, .max),
+.list > li > a:only-child > .max,
+.list > li > details > summary > .max {
+  flex: 1;
+}
+
+.list.border > li:not(:last-child)::before,
+.list.border > li > details[open] > summary::before {
   content: '';
   position: absolute;
   background-color: var(--outline-variant);
@@ -47,17 +55,17 @@
   inline-size: auto;
 }
 
-.list.no-space > *,
-.list.no-space > * > details > summary {
+.list.no-space > li,
+.list.no-space > li > details > summary {
   min-block-size: 2.5rem;
 }
 
-.list.medium-space > *,
-.list.medium-space > * > details > summary {
+.list.medium-space > li,
+.list.medium-space > li > details > summary {
   min-block-size: 4.5rem;
 }
 
-.list.large-space > *,
-.list.large-space > * > details > summary {
+.list.large-space > li,
+.list.large-space > li > details > summary {
   min-block-size: 5.5rem;
 }

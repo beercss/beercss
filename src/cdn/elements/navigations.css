@@ -28,7 +28,7 @@ nav > :is(ol, ul) > li > :only-child {
   margin: 0;
 }
 
-:is(nav, .row) > * {
+:is(nav, .row) > :not(ul, ol) {
   margin: 0;
   white-space: normal;
   flex: none;

@@ -6,7 +6,9 @@ Menus display a list of choices on temporary surfaces.
 
 ```html
 <...>
-  <menu>...</menu>
+  <menu>
+    <li>...</li>
+  </menu>
 </...>
 ```
 
@@ -29,10 +31,27 @@ active
 ```html
 <button>
   <span>Button</span>
-  <menu class="no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+  <menu>
+    <li>Item</li>
+    <li>Item</li>
+    <li>Item</li>
+  </menu>
+</button>
+```
+
+```html
+<button>
+  <span>Button</span>
+  <menu>
+    <li>
+      <a href="#">Item</a>
+    </li>
+    <li>
+      <a href="#">Item</a>
+    </li>
+    <li>
+      <a href="#">Item</a>
+    </li>
   </menu>
 </button>
 ```
@@ -48,10 +67,10 @@ Add/remove `active` class on menu.
 ```html
 <button>
   <span>Button</span>
-  <menu class="no-wrap active">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+  <menu class="active">
+    <li>Item</li>
+    <li>Item</li>
+    <li>Item</li>
   </menu>
 </button>
 ```
@@ -63,10 +82,10 @@ Add `data-ui="menu-selector"` attribute on elements.
 ```html
 <button data-ui="#menu">
   <span>Button</span>
-  <menu id="menu" class="no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+  <menu id="menu">
+    <li>Item</li>
+    <li>Item</li>
+    <li>Item</li>
   </menu>
 </button>
 ```
@@ -78,10 +97,10 @@ Call `ui("menu-selector")`.
 ```html
 <button>
   <span>Button</span>
-  <menu id="menu" class="no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+  <menu id="menu">
+    <li>Item</li>
+    <li>Item</li>
+    <li>Item</li>
   </menu>
 </button>
 ```

@@ -6,11 +6,11 @@ Lists are continuous, vertical indexes of text and images. Each item can have up
 
 ```html
 <ul class="list">
-  ...
+  <li>...</li>
 </ul>
 
 <ol class="list">
-  ...
+  <li>...</li>
 </ol>
 ```
 
@@ -32,6 +32,23 @@ no-space, space, small-space, medium-space, large-space
   <li>Item</li>
   <li>Item</li>
   <li>Item</li>
+</ul>
+```
+
+```html
+<ul class="list">
+  <li>
+    <a href="#">Item</a>
+  </li>
+  <li>
+    <a href="#">Item</a>
+  </li>
+  <li>
+    <a href="#">Item</a>
+  </li>
+  <li>
+    <a href="#">Item</a>
+  </li>
 </ul>
 ```
 

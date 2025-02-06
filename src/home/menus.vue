@@ -4,7 +4,7 @@
   h4
     span Menus
     button.chip.circle(
-      @click="domain.showSamples(data, '#menus button, #menus .field', 'Menus', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')"
+      @click="domain.showSamples(data, '#menus > nav > button', 'Menus', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')"
     )
       i code
   nav.wrap
@@ -34,6 +34,16 @@
         li Item 1
         li Item 2
         li Item 3
+    button(data-ui="#menu10")
+      span Links
+      i arrow_drop_down
+      menu#menu10(data-ui="#menu10")
+        li
+          a Item 1
+        li
+          a Item 2
+        li
+          a Item 3
     button(data-ui="#menu5")
       span Images and icons
       menu#menu5.no-wrap(data-ui="#menu5")
@@ -59,9 +69,10 @@
             label Some text here
     button(data-ui="#menu6")
       span Video
-      menu#menu6.no-padding.small-width(data-ui="#menu6")
-        video.responsive(autoplay, loop, muted, playsinline)
-          source(:src="'/dance.mp4'", type="video/mp4")
+      menu#menu6.no-wrap(data-ui="#menu6")
+        li.no-padding
+          video.small-width(autoplay, loop, muted, playsinline)
+            source(:src="'/dance.mp4'", type="video/mp4")
     button(data-ui="#menu8")
       span Docked
       menu#menu8.min(data-ui="#menu8")
@@ -82,14 +93,14 @@
         li Item
         li Item
         li More items
-        menu
-          li Item
-          li Item
-          li More items
           menu
             li Item
             li Item
-            li item
+            li More items
+              menu
+                li Item
+                li Item
+                li item
 </template>
 
 <script setup lang="ts">
