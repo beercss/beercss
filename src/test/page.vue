@@ -126,6 +126,75 @@ main.responsive
         i more_vert
         span More
   
+  .large-space
+  nav
+    label.radio.icon.small
+      input(type="radio", name="radio")
+      span
+        i close
+        i done
+    label.radio.icon
+      input(type="radio", name="radio")
+      span
+        i close
+        i done
+    label.radio.icon.large
+      input(type="radio", name="radio")
+      span
+        i close
+        i done
+    label.radio.icon.extra
+      input(type="radio", name="radio")
+      span
+        i close
+        i done
+    label.radio.small
+      input(type="radio", name="radio")
+      span
+    label.radio
+      input(type="radio", name="radio")
+      span
+    label.radio.large
+      input(type="radio", name="radio")
+      span
+    label.radio.extra
+      input(type="radio", name="radio")
+      span
+  nav
+    label.checkbox.icon.small
+      input(type="checkbox", name="checkbox")
+      span
+        i close
+        i done
+    label.checkbox.icon.medium
+      input(type="checkbox", name="checkbox")
+      span
+        i close
+        i done
+    label.checkbox.icon.large
+      input(type="checkbox", name="checkbox")
+      span
+        i close
+        i done
+    label.checkbox.icon.extra
+      input(type="checkbox", name="checkbox")
+      span
+        i close
+        i done
+    label.checkbox.small
+      input(type="checkbox", name="checkbox")
+      span
+    label.checkbox
+      input(type="checkbox", name="checkbox")
+      span
+    label.checkbox.large
+      input(type="checkbox", name="checkbox")
+      span
+    label.checkbox.extra
+      input(type="checkbox", name="checkbox")
+      span
+
+
   .large-space 
   div
     nav.tabbed

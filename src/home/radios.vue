@@ -23,6 +23,18 @@
           label.radio
             input(type="radio", name="radio2", checked, disabled)
             span Disabled
+          label.radio.small
+            input(type="radio", name="radio3")
+            span
+          label.radio
+            input(type="radio", name="radio3")
+            span
+          label.radio.large
+            input(type="radio", name="radio3")
+            span
+          label.radio.extra
+            input(type="radio", name="radio3")
+            span
     .s12
       h6 Radio with icons
       .field.middle-align#radios1

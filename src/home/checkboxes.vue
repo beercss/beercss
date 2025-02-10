@@ -23,6 +23,18 @@
           label.checkbox
             input(type="checkbox", checked, disabled)
             span Disabled
+          label.checkbox.small
+            input(type="checkbox")
+            span
+          label.checkbox
+            input(type="checkbox")
+            span
+          label.checkbox.large
+            input(type="checkbox")
+            span
+          label.checkbox.extra
+            input(type="checkbox")
+            span
     .s12
       h6 Checkbox with icons
       .field.middle-align#checkboxes1

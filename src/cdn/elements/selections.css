@@ -10,11 +10,24 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  ---size: 1.5rem;
+}
+
+:is(.checkbox, .radio, .switch).small {
+  ---size: 1rem;
+}
+
+:is(.checkbox, .radio, .switch).large {
+  ---size: 2rem;
+}
+
+:is(.checkbox, .radio, .switch).extra {
+  ---size: 2.5rem;
 }
 
 :is(.checkbox, .radio) > input {
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
+  inline-size: var(---size);
+  block-size: var(---size);
   opacity: 0;
 }
 
@@ -36,17 +49,18 @@
 }
 
 :is(.checkbox, .radio, .switch) > span::before,
-.icon > span > i,
+:is(.checkbox, .radio) > span > i,
 :is(.checkbox, .radio) > span::after {
+  ---size: inherit;
   content: '';
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
+  inline-size: var(---size);
+  block-size: var(---size);
   box-sizing: border-box;
   margin: 0 auto;
   outline: none;
   color: var(--primary);
   position: absolute;
-  inset: auto auto auto -1.5rem;
+  inset: auto auto auto calc(var(---size) * -1);
   border-radius: 50%;
   user-select: none;
   z-index: 1;
