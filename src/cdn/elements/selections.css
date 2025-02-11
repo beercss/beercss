@@ -49,7 +49,7 @@
 }
 
 :is(.checkbox, .radio, .switch) > span::before,
-:is(.checkbox, .radio) > span > i,
+:is(.checkbox, .radio, .switch) > span > i,
 :is(.checkbox, .radio) > span::after {
   ---size: inherit;
   content: '';
@@ -75,9 +75,9 @@
   justify-content: center;
   border-radius: 50%;
   transition: all var(--speed2);
-  font-size: 1rem;
+  font-size: calc(var(---size) - 0.5rem);
   user-select: none;
-  min-inline-size: auto;
+  min-inline-size: var(---size);
   content: "";
   color: var(--surface-variant);
   background-color: var(--outline);
@@ -183,9 +183,6 @@
   inline-size: 3.25rem;
   block-size: 2rem;
   border-radius: 2rem;
-}
-
-.switch > span::after {
   transform: translate(-3.25rem, -50%);
 }
 
