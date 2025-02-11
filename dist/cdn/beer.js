@@ -289,6 +289,14 @@ function updateAllRanges() {
   for (let i = 0; i < ranges.length; i++)
     updateRange(ranges[i]);
 }
+function rootSizeInPixels() {
+  const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
+  if (size.indexOf("%") != -1)
+    return parseInt(size) * 16 / 100;
+  if (size.indexOf("em") != -1)
+    return parseInt(size) * 16;
+  return parseInt(size);
+}
 function updateRange(input) {
   on(input, "focus", onFocusRange);
   on(input, "blur", onBlurRange);
@@ -297,7 +305,7 @@ function updateRange(input) {
   const inputs = queryAll("input", label);
   if (!inputs.length || !bar)
     return;
-  const rootSize = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size")) || 16;
+  const rootSize = rootSizeInPixels();
   const thumb = hasClass(label, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents = [];
   const values = [];
