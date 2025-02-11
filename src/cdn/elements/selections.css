@@ -165,13 +165,13 @@
   transform: translate(-1.75rem, -50%) scale(1);
 }
 
-.switch > input:active + span::before,
-.switch.icon > input:active + span > i {
+.switch > input:active:not(:disabled) + span::before,
+.switch.icon > input:active:not(:disabled) + span > i {
   transform: translate(-3rem, -50%) scale(1.2);
 }
 
-.switch > input:active:checked + span::before,
-.switch.icon > input:active:checked + span > i {
+.switch > input:active:checked:not(:disabled) + span::before,
+.switch.icon > input:active:checked:not(:disabled) + span > i {
   transform: translate(-1.75rem, -50%) scale(1.2);
 }
 
