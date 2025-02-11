@@ -383,7 +383,7 @@ div
                     span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
                   p
                     b.error-text &lt;label&gt;
-                    span &nbsp;active, radio, checkbox, switch
+                    span &nbsp;active, radio, checkbox, switch, small, medium, large, extra
                   p
                     b.error-text &lt;legend&gt;
                   p

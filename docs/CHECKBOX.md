@@ -11,6 +11,12 @@ Checkboxes allow users to select one or more items from a set. Checkboxes can tu
 </label>
 ```
 
+## Most used helpers
+
+**Sizes**
+
+small, medium, large, extra
+
 ## Example
 
 ```html
