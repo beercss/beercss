@@ -3787,7 +3787,7 @@ progress.max + * {
 }
 .switch > input:active + span::before,
 .switch.icon > input:active + span > i {
-  transform: translate(-3rem, -50%) scale(1);
+  transform: translate(-3rem, -50%) scale(1.2);
 }
 .switch > input:active:checked + span::before,
 .switch.icon > input:active:checked + span > i {
