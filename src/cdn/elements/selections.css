@@ -78,6 +78,7 @@
   font-size: calc(var(---size) - 0.5rem);
   user-select: none;
   min-inline-size: var(---size);
+  min-block-size: var(---size);
   content: "";
   color: var(--surface-variant);
   background-color: var(--outline);
@@ -161,11 +162,17 @@
   content: "check";
   color: var(--primary);
   background-color: var(--on-primary);
+  transform: translate(-1.75rem, -50%) scale(1);
 }
 
-.switch > input:checked + span::before,
-.switch.icon > input:checked + span > i {
-  transform: translate(-1.75rem, -50%) scale(1);
+.switch > input:active + span::before,
+.switch.icon > input:active + span > i {
+  transform: translate(-3rem, -50%) scale(1);
+}
+
+.switch > input:active:checked + span::before,
+.switch.icon > input:active:checked + span > i {
+  transform: translate(-1.75rem, -50%) scale(1.2);
 }
 
 :is(.checkbox, .radio, .switch) > input:disabled + span {
