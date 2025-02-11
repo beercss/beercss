@@ -1,85 +1,133 @@
 # List
 
-Lists are continuous, vertical indexes of text and images.
+Lists are continuous, vertical indexes of text and images. Each item can have up to 3 lines.
 
 ## Element
 
 ```html
-<a class="row">...</a>
-<nav class="row">...</nav>
+<ul class="list">
+  <li>...</li>
+</ul>
+
+<ol class="list">
+  <li>...</li>
+</ol>
 ```
 
 ## Most used helpers
 
-**Alignments**
-
-left-align, right-align, center-align, top-align, bottom-align, middle-align
-
 **Forms**
 
-no-round, round, small-round, large-round, no-border, border, wave
+border
 
-**Margins**
+**Spaces**
 
-no-margin, margin, tiny-margin, small-margin, large-margin
+no-space, space, small-space, medium-space, large-space
 
-**Paddings**
+## Default list
 
-no-padding, padding, tiny-padding, small-padding, large-padding
+```html
+<ul class="list">
+  <li>Item</li>
+  <li>Item</li>
+  <li>Item</li>
+  <li>Item</li>
+</ul>
+```
+
+```html
+<ul class="list">
+  <li>
+    <a href="#">Item</a>
+  </li>
+  <li>
+    <a href="#">Item</a>
+  </li>
+  <li>
+    <a href="#">Item</a>
+  </li>
+  <li>
+    <a href="#">Item</a>
+  </li>
+</ul>
+```
+
+## Nested list
+
+```html
+<ul class="list">
+  <li>Item</li>
+  <li>Item</li>
+  <li>
+    <ul class="list">
+      <li>Item</li>
+      <li>Item</li>
+    </ul>
+  </li>
+</ul>
+```
+
+## Expansion list
+
+```html
+<ul class="list">
+  <li>Item</li>
+  <li>Item</li>
+  <li>
+    <details>
+      <summary>Header Item</summary>
+      <ul class="list">
+        <li>Item</li>
+        <li>Item</li>
+      </ul>
+    </details>
+  </li>
+</ul>
+```
 
 ## Headline and supporting text example
 
 ```html
-<a class="row padding">
-  <div class="max">
-    <h6 class="small">Headline</h6>
-    <div>Supporting text</div>
-  </div>
-  <label>+15 min</label>
-</a>
+<ul class="list">
+  <li>
+    <button class="circle">A</button>
+    <div class="max">
+      <h6 class="small">Headline</h6>
+      <div>Supporting text</div>
+    </div>
+    <label>+15 min</label>
+  </li>
+</ul>
 ```
 
-## Buttons and links example
-
-For this use case, the `a` tag is an invalid markup. Use the `nav` tag instead.
+## Icons
 
 ```html
-<nav class="row">
-  <div class="max">
-    <h6 class="small">Headline</h6>
-    <div>Supporting text</div>
-  </div>
-  <a>Link</a>
-  <button>Button</button>
-</nav>
+<ul class="list">
+  <li>
+    <i>home</i>
+    <div class="max">
+      <h6 class="small">Headline</h6>
+      <div>Supporting text</div>
+    </div>
+    <label>+15 min</label>
+  </li>
+</ul>
 ```
 
-## List containers example
+## Leading media or avatar
+
 ```html
-<article>
-  <a class="row padding">
+<ul class="list">
+  <li>
+    <img class="round" src="/beer-and-woman.svg">
     <div class="max">
       <h6 class="small">Headline</h6>
       <div>Supporting text</div>
     </div>
     <label>+15 min</label>
-  </a>
-  <div class="divider"></div>
-  <a class="row padding">
-    <div class="max">
-      <h6 class="small">Headline</h6>
-      <div>Supporting text</div>
-    </div>
-    <label>+15 min</label>
-  </a>
-  <a class="row padding">
-    <div class="max">
-      <h6 class="small">Headline</h6>
-      <div>Supporting text</div>
-    </div>
-    <label>+15 min</label>
-  </a>
-</article>
+  </li>
+</ul>
 ```
 
 ## Go to

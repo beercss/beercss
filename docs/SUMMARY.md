@@ -50,11 +50,13 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;img&gt;** tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
 
-**&lt;label&gt;** active, radio, checkbox, switch
+**&lt;label&gt;** active, radio, checkbox, switch, small, medium, large, extra
 
 **&lt;legend&gt;**
 
 **&lt;li&gt;**
+
+**list** border, space, no-space, small-space, medium-space, large-space
 
 **&lt;main&gt;** responsive, max
 

@@ -85,13 +85,12 @@ Headers and footers are `position: sticky` when `fixed`.
 ## Top app bar example
 
 ```html
-<header class="primary">
+<header>
   <nav>
     <button class="circle transparent">
       <i>arrow_back</i>
     </button>
-    <h5>Title large</h5>
-    <div class="max"></div>
+    <h5 class="max">Title</h5>
     <button class="circle transparent">
       <i>attach_file</i>
     </button>
@@ -123,37 +122,11 @@ Headers and footers are `position: sticky` when `fixed`.
       <i>image</i>
     </button>
     <div class="max"></div>
-    <button class="square round extend">
+    <button class="square round extra primary">
       <i>add</i>
     </button>
   </nav>
-</header>
-```
-
-## List example
-
-```html
-<div class="row">
-  <a>
-    <i>warning</i>
-  </a>
-  <div class="max">Some text here</div>
-  <a>
-    <i>edit</i>
-  </a>
-  <a>
-    <i>delete</i>
-  </a>
-</div>
-```
-
-## Clickable list example
-
-```html
-<a class="row wave">
-  <i>home</i>
-  <div>Item</div>
-</div>
+</footer>
 ```
 
 ## Empty state example

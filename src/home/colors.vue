@@ -3,7 +3,7 @@
   .large-space
   nav.wrap
     h4 Colors
-    button.chip.circle(@click="showCode()", data-ui="#dialog-colors")
+    button.chip.circle(data-ui="#dialog-colors", @click="showCode()")
       i code
     button.chip.circle(@click="sharedDomain.updateMode(data)")
       i {{ data.isDark ? "light_mode" : "dark_mode" }}

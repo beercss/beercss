@@ -2,7 +2,7 @@ svg {
   fill: currentcolor;
 }
 
-:is(img, svg, video):is(.small, .medium, .large, .tiny, .extra, .round, .circle, .responsive) {
+:is(img, svg, video):is(.small, .medium, .large, .tiny, .extra, .round, .circle, .square, .responsive) {
   object-fit: cover;
   object-position: center;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);

@@ -1,0 +1,71 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.list > li,
+.list > li > details > summary,
+.list > li > a:only-child {
+  all: unset;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: normal;
+  text-align: start;
+  justify-content: flex-start;
+  white-space: nowrap;
+  gap: 1rem;
+  min-block-size: 3.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.list > li:has(ul, ol, details[open], a:only-child) {
+  padding: 0;
+}
+
+.list > li > .list {
+  padding: 0 0 0 1rem;
+}
+
+.list > li > *,
+.list > li > a:only-child > *,
+.list > li > details > summary > *  {
+  margin: 0;
+}
+
+.list > li > :is(details, .max),
+.list > li > a:only-child > .max,
+.list > li > details > summary > .max {
+  flex: 1;
+}
+
+.list.border > li:not(:last-child)::before,
+.list.border > li > details[open] > summary::before {
+  content: '';
+  position: absolute;
+  background-color: var(--outline-variant);
+  inset: auto 0 0 0;
+  block-size: 0.0625rem;
+  inline-size: auto;
+}
+
+.list.no-space > li,
+.list.no-space > li > details > summary {
+  min-block-size: 2.5rem;
+}
+
+.list.medium-space > li,
+.list.medium-space > li > details > summary {
+  min-block-size: 4.5rem;
+}
+
+.list.large-space > li,
+.list.large-space > li > details > summary {
+  min-block-size: 5.5rem;
+}

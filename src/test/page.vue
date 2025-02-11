@@ -125,6 +125,75 @@ main.responsive
       a
         i more_vert
         span More
+  
+  .large-space
+  nav
+    label.radio.icon.small
+      input(type="radio", name="radio")
+      span
+        i close
+        i done
+    label.radio.icon
+      input(type="radio", name="radio")
+      span
+        i close
+        i done
+    label.radio.icon.large
+      input(type="radio", name="radio")
+      span
+        i close
+        i done
+    label.radio.icon.extra
+      input(type="radio", name="radio")
+      span
+        i close
+        i done
+    label.radio.small
+      input(type="radio", name="radio")
+      span
+    label.radio
+      input(type="radio", name="radio")
+      span
+    label.radio.large
+      input(type="radio", name="radio")
+      span
+    label.radio.extra
+      input(type="radio", name="radio")
+      span
+  nav
+    label.checkbox.icon.small
+      input(type="checkbox", name="checkbox")
+      span
+        i close
+        i done
+    label.checkbox.icon.medium
+      input(type="checkbox", name="checkbox")
+      span
+        i close
+        i done
+    label.checkbox.icon.large
+      input(type="checkbox", name="checkbox")
+      span
+        i close
+        i done
+    label.checkbox.icon.extra
+      input(type="checkbox", name="checkbox")
+      span
+        i close
+        i done
+    label.checkbox.small
+      input(type="checkbox", name="checkbox")
+      span
+    label.checkbox
+      input(type="checkbox", name="checkbox")
+      span
+    label.checkbox.large
+      input(type="checkbox", name="checkbox")
+      span
+    label.checkbox.extra
+      input(type="checkbox", name="checkbox")
+      span
+
 
   .large-space 
   div
@@ -140,103 +209,68 @@ main.responsive
   h5 Menus 
   nav
     button
-      span Position LI
-      menu
-        li
-          a Item
-        li
-          a Item
-        li
-          a More items
-        menu.right
-          li
-            a More items
-          menu.right
-            li 
-              a Item
-          li
-            a Item
-          li
-            a More items
-          menu.left
-            li
-              a Item
-          li
-            a Item
-          li
-            a More items
-          menu.left
-            li
-              a Item
-            li
-              a Item
-            li
-              a Item
-          li
-            a Item
-    button
       span Position 
       menu
-        a Item
-        a Item
-        a More items
-        menu.right
-          a More items
+        li Item
+        li Item
+        li More items
           menu.right
-            a Item
-          a Item
-          a More items
-          menu.left
-            a Item
-          a Item
-          a More items
-          menu.left
-            a Item
-            a Item
-            a Item
-          a Item
+            li More items
+              menu.right
+                li Item
+            li Item
+            li More items
+              menu.left
+                li Item
+            li Item
+            li More items
+              menu.left
+                li Item
+                li Item
+                li Item
+            li Item
     button
       span Normal 
       menu(id="menu")
-        a(data-ui="#menu") Item
-        a Item
-        a More items
-        menu
-          a Item
-          a(data-ui="#menu") Item
-          a More items
+        li(data-ui="#menu") Item
+        li Item
+        li More items
           menu
-            a Item
-            a Item
-            a(data-ui="#menu") More items
+            li Item
+            li(data-ui="#menu") Item
+            li More items
+              menu
+                li Item
+                li Item
+                li(data-ui="#menu") More items
     button(onclick="#menu2")
       span OnClick 
       menu(id="menu2")
-        a(data-ui="#menu2") Item
-        a Item
-        a More items
-        menu
-          a Item
-          a(data-ui="#menu2") Item
-          a More items
+        li(data-ui="#menu2") Item
+        li Item
+        li More items
           menu
-            a Item
-            a Item
-            a(data-ui="#menu2") More items
+            li Item
+            li(data-ui="#menu2") Item
+            li More items
+              menu
+                li Item
+                li Item
+                li(data-ui="#menu2") More items
     button(data-ui="#menu3")
       span DataUi 
       menu(id="menu3")
-        a(data-ui="#menu3") Item
-        a Item
-        a More items
-        menu
-          a Item
-          a(data-ui="#menu3") Item
-          a More items
+        li(data-ui="#menu3") Item
+        li Item
+        li More items
           menu
-            a Item
-            a Item
-            a(data-ui="#menu3") More items
+            li Item
+            li(data-ui="#menu3") Item
+            li More items
+              menu
+                li Item
+                li Item
+                li(data-ui="#menu3") More items
 
   .large-space
   h5 Sliders
@@ -388,10 +422,6 @@ main.responsive
           li.max
           li
             a Link
-
-  .large-space
-  h5 Lists
-  .grid
     .s12.m6.l6
       h6 Using nav + *
       nav.vertical.no-space
@@ -420,6 +450,105 @@ main.responsive
             a.row.wave
               i share
               span Share
+  .large-space
+  h5 Lists
+  .grid
+    .s12.m6.l6
+      h6 Default
+      ul.list.border
+        li Item
+        li Item
+        li Item
+        li Item
+    .s12.m6.l6
+      h6 Default with li > a
+      ul.list.border
+        li
+          a(href="#1") Item
+        li
+          a(href="#2") Item
+        li
+          a(href="#3") Item
+        li
+          a(href="#4") Item
+    .s12.m6.l6
+      h6 Nested
+      ul.list.border
+        li
+          i home
+          span Home
+        li
+          i search
+          span Search
+        li
+          i share
+          span Share
+        li
+          ul.list.border
+            li
+              i home
+              span Home
+            li
+              i search
+              span Search
+            li
+              i share
+              span Share
+    .s12.m6.l6
+      h6 Nested using li > a
+      ul.list.border
+        li
+          a(href="#1")
+            i home
+            span Home
+        li
+          a(href="#2")
+            i search
+            span Search
+        li
+          a(href="#3")
+            i share
+            span Share
+        li
+          ul.list.border
+            li
+              a(href="#4")
+                i home
+                span Home
+            li
+              a(href="#5")
+                i search
+                span Search
+            li
+              a(href="#6")
+                i share
+                span Share
+    .s12.m6.l6
+      h6 Expansion
+      ul.list.border
+        li Item
+        li Item
+        li
+          details
+            summary Header Item
+            ul.list.border
+              li Item
+              li Item
+    .s12.m6.l6
+      h6 Expansion with li > a
+      ul.list.border
+        li
+          a(href="#1") Item
+        li
+          a(href="#2") Item
+        li
+          details
+            summary Header Item
+            ul.list.border
+              li
+                a(href="#4") Item
+              li
+                a(href="#5") Item
 
   .large-space
   h5 Field with tooltip
@@ -441,6 +570,21 @@ main.responsive
       span Helper
       i.tiny info
       .tooltip.bottom Testando tooltip
+
+  .large-space
+  h5 Popover API
+  nav
+    button(popovertarget="dialog-popover") Dialog
+    button(popovertarget="snackbar-popover") Snackbar
+
+  dialog#dialog-popover(popover)
+    h5 Popover dialog
+    nav.right-align
+      button(popovertarget="dialog-popover") Button
+
+  #snackbar-popover.snackbar(popover)
+    .max Popover snackbar
+    button(popovertarget="snackbar-popover") Button
 
   .large-space
   h5 Dialogs and date picker
@@ -514,10 +658,10 @@ main.responsive
         li
           label Subtitle
         li
-          a(data-ui="#menu")
+          a(data-ui="#menu4")
             i arrow_drop_down
             span Menu
-          menu#menu
+          menu#menu4
             li
               a Item 1
             li
@@ -540,13 +684,13 @@ main.responsive
         span Share
       hr
       label Subtitle
-      a(data-ui="#menu1")
+      a(data-ui="#menu5")
         i arrow_drop_down
         span Menu
-      menu#menu1
-        a Item 1
-        a Item 2
-        a Item 3
+        menu#menu5
+          li Item 1
+          li Item 2
+          li Item 3
 
   .large-space
   h5 Steppers

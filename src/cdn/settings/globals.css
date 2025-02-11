@@ -1,5 +1,5 @@
 :root {
-  --size: 16px;
+  --size: 1rem;
   --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Noto Sans, Arial, sans-serif;
   --font-icon: "Material Symbols Outlined";
   --speed1: 0.1s;

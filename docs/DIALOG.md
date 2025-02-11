@@ -72,7 +72,7 @@ Add/remove `active` class on dialog.
 
 #### Method 2
 
-Call HTML dialog element methods
+Using [HTML dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog).
 
 ```html
 <dialog id="dialog">
@@ -125,6 +125,29 @@ Call `ui("dialog-selector")`
 
 ```js
 ui('#dialog');
+```
+
+#### Method 5
+
+Using [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API).
+
+```html
+<button popovertarget="dialog">Button</button>
+
+<dialog id="dialog" popover>
+  <h5>Title</h5>
+  <p>Content of dialog</p>
+  <nav>
+    <button>Cancel</button>
+    <button>Confirm</button>
+  </nav>
+</dialog>
+```
+
+```js
+document.querySelector('#dialog').hidePopover(); // hide
+document.querySelector('#dialog').showPopover(); //show
+document.querySelector('#dialog').togglePopover(); // toggle
 ```
 
 ## Go to

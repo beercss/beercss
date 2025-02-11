@@ -126,7 +126,7 @@
   .medium-space
   .grid.large-space#sliders4
     .s12.m6.l4.center-align
-      nav.no-space
+      nav
         i(v-if="data.isHorizontalSlider") remove
         i(v-else) add
         label.slider
@@ -135,7 +135,7 @@
         i(v-if="data.isHorizontalSlider") add
         i(v-else) remove
     .s12.m6.l4.center-align
-      nav.no-space
+      nav
         i(v-if="data.isHorizontalSlider") volume_down
         i(v-else) volume_up
         label.slider
@@ -144,7 +144,7 @@
         i(v-if="data.isHorizontalSlider") volume_up
         i(v-else) volume_down
     .s12.m6.l4.center-align
-      nav.no-space
+      nav
         i(v-if="data.isHorizontalSlider") sunny
         i(v-else) rainy
         label.slider

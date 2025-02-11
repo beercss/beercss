@@ -2,6 +2,15 @@
 
 The main layout is a common html structure to setup your pages. For RTL languages set the attribute `dir="rtl"` on `body` element (or any other element).
 
+## Example
+
+```html
+<nav class="top|bottom|left|right">...</nav>
+<header class="responsive|fixed">...</header>
+<main class="responsive">...</main>
+<footer class="responsive|fixed">...</footer>
+```
+
 ## Compact example
 
 ```html

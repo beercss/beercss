@@ -292,9 +292,9 @@ div
             .space
             pre.scroll
               code
-                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.9.0/dist/cdn/beer.min.css" rel="stylesheet"&gt;
                 |
-                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.8.0/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.9.0/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
                 |
                 | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
@@ -383,11 +383,14 @@ div
                     span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
                   p
                     b.error-text &lt;label&gt;
-                    span &nbsp;active, radio, checkbox, switch
+                    span &nbsp;active, radio, checkbox, switch, small, medium, large, extra
                   p
                     b.error-text &lt;legend&gt;
                   p
                     b.error-text &lt;li&gt;
+                  p
+                    b.error-text list
+                    span &nbsp;border, space, no-space, small-space, medium-space, large-space
                   p
                     b.error-text &lt;main&gt;
                     span &nbsp;responsive, max

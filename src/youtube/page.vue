@@ -62,27 +62,27 @@
     button.circle.large.transparent.m.l(data-ui="#menu-add")
       i video_call
       menu#menu-add.left.no-wrap(data-ui="#menu-add")
-        a.row
+        li
           .min
             i upload
           .min Send a video
-        a.row
+        li
           .min
             i sensors
           .min Broadcast live
     button.circle.large.transparent.m.l(data-ui="#menu-apps")
       i apps
       menu#menu-apps.left.no-wrap(data-ui="#menu-apps")
-        a.row
+        li
           .min
             img(:src="'/youtube.png'")
           .min Youtube TV
         hr.small
-        a.row
+        li
           .min
             img(:src="'/youtube.png'")
           .min Youtube Music
-        a.row
+        li
           .min
             img(:src="'/youtube.png'")
           .min Youtube Kids

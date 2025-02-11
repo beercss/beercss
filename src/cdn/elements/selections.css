@@ -10,11 +10,24 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  ---size: 1.5rem;
+}
+
+:is(.checkbox, .radio, .switch).small {
+  ---size: 1rem;
+}
+
+:is(.checkbox, .radio, .switch).large {
+  ---size: 2rem;
+}
+
+:is(.checkbox, .radio, .switch).extra {
+  ---size: 2.5rem;
 }
 
 :is(.checkbox, .radio) > input {
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
+  inline-size: var(---size);
+  block-size: var(---size);
   opacity: 0;
 }
 
@@ -36,17 +49,18 @@
 }
 
 :is(.checkbox, .radio, .switch) > span::before,
-.icon > span > i,
+:is(.checkbox, .radio, .switch) > span > i,
 :is(.checkbox, .radio) > span::after {
+  ---size: inherit;
   content: '';
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
+  inline-size: var(---size);
+  block-size: var(---size);
   box-sizing: border-box;
   margin: 0 auto;
   outline: none;
   color: var(--primary);
   position: absolute;
-  inset: auto auto auto -1.5rem;
+  inset: auto auto auto calc(var(---size) * -1);
   border-radius: 50%;
   user-select: none;
   z-index: 1;
@@ -61,9 +75,10 @@
   justify-content: center;
   border-radius: 50%;
   transition: all var(--speed2);
-  font-size: 1rem;
+  font-size: calc(var(---size) - 0.5rem);
   user-select: none;
-  min-inline-size: auto;
+  min-inline-size: var(---size);
+  min-block-size: var(---size);
   content: "";
   color: var(--surface-variant);
   background-color: var(--outline);
@@ -147,11 +162,17 @@
   content: "check";
   color: var(--primary);
   background-color: var(--on-primary);
+  transform: translate(-1.75rem, -50%) scale(1);
 }
 
-.switch > input:checked + span::before,
-.switch.icon > input:checked + span > i {
-  transform: translate(-1.75rem, -50%) scale(1);
+.switch > input:active:not(:disabled) + span::before,
+.switch.icon > input:active:not(:disabled) + span > i {
+  transform: translate(-3rem, -50%) scale(1.2);
+}
+
+.switch > input:active:checked:not(:disabled) + span::before,
+.switch.icon > input:active:checked:not(:disabled) + span > i {
+  transform: translate(-1.75rem, -50%) scale(1.2);
 }
 
 :is(.checkbox, .radio, .switch) > input:disabled + span {
@@ -169,9 +190,6 @@
   inline-size: 3.25rem;
   block-size: 2rem;
   border-radius: 2rem;
-}
-
-.switch > span::after {
   transform: translate(-3.25rem, -50%);
 }
 
