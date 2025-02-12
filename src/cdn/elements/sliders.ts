@@ -38,8 +38,8 @@ function updateAllRanges() {
 
 function rootSizeInPixels(): number {
   const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
-  if (size.indexOf("%") != -1) return (parseInt(size) * 16) / 100;
-  if (size.indexOf("em") != -1) return parseInt(size) * 16;
+  if (size.includes("%")) return (parseInt(size) * 16) / 100;
+  if (size.includes("em")) return parseInt(size) * 16;
   return parseInt(size);
 } 
 

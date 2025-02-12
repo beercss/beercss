@@ -291,9 +291,9 @@ function updateAllRanges() {
 }
 function rootSizeInPixels() {
   const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
-  if (size.indexOf("%") != -1)
+  if (size.includes("%"))
     return parseInt(size) * 16 / 100;
-  if (size.indexOf("em") != -1)
+  if (size.includes("em"))
     return parseInt(size) * 16;
   return parseInt(size);
 }
@@ -570,12 +570,13 @@ function updateAllRipples() {
   for (let i = 0; i < ripples.length; i++)
     on(ripples[i], "pointerdown", onPointerDownRipple);
 }
+const _context = globalThis;
 let _timeoutMutation;
 let _mutation;
 function onMutation() {
   if (_timeoutMutation)
     clearTimeout(_timeoutMutation);
-  _timeoutMutation = setTimeout(async () => await ui(), 180);
+  _timeoutMutation = setTimeout(async () => await _ui(), 180);
 }
 async function run(from, to, options, e) {
   if (!to) {
@@ -615,7 +616,7 @@ function onKeydownElement(e) {
     void run(e.currentTarget, null, null, e);
 }
 function setup() {
-  if (_mutation)
+  if (_context.ui || _mutation)
     return;
   _mutation = new MutationObserver(onMutation);
   _mutation.observe(document.body, { childList: true, subtree: true });
@@ -629,7 +630,7 @@ function updateAllDataUis() {
       on(elements[i], "keydown", onKeydownElement);
   }
 }
-function ui(selector, options) {
+function _ui(selector, options) {
   if (selector) {
     if (selector === "setup") {
       setup();
@@ -653,14 +654,16 @@ function ui(selector, options) {
 }
 function start() {
   var _a;
-  const context = globalThis;
-  const body = (_a = context == null ? void 0 : context.document) == null ? void 0 : _a.body;
+  if (_context.ui)
+    return;
+  const body = (_a = _context.document) == null ? void 0 : _a.body;
   if (body && !body.classList.contains("dark") && !body.classList.contains("light"))
     updateMode("auto");
-  on(context, "load", setup, false);
-  context.ui = ui;
+  setup();
+  _context.ui = _ui;
 }
 start();
+const ui = _context.ui;
 export {
   ui as default,
   ui
