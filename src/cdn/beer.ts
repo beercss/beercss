@@ -9,12 +9,13 @@ import {updateSnackbar} from "./elements/snackbars";
 import {updatePage} from "./elements/pages";
 import {updateAllRipples} from "./helpers/ripples";
 
+const _context = globalThis as any;
 let _timeoutMutation: ReturnType<typeof setTimeout>;
 let _mutation: MutationObserver | null;
 
 function onMutation() {
   if (_timeoutMutation) clearTimeout(_timeoutMutation);
-  _timeoutMutation = setTimeout(async () => await ui(), 180);
+  _timeoutMutation = setTimeout(async () => await _ui(), 180);
 }
 
 async function run(from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
@@ -63,7 +64,7 @@ function onKeydownElement(e: KeyboardEvent) {
 }
 
 function setup() {
-  if (_mutation) return;
+  if (_context.ui || _mutation) return;
   _mutation = new MutationObserver(onMutation);
   _mutation.observe(document.body, { childList: true, subtree: true });
   onMutation();
@@ -77,7 +78,7 @@ function updateAllDataUis() {
   }
 }
 
-function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
+function _ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
   if (selector) {
     if (selector === "setup") { setup(); return; }
     if (selector === "guid") return guid();
@@ -96,16 +97,18 @@ function ui(selector?: string | Element, options?: string | number | IBeerCssThe
 }
 
 function start() {
-  const context = (globalThis as any);
-  const body = context?.document?.body;
+  if (_context.ui) return;
 
+  const body = _context.document?.body;
   if (body && !body.classList.contains("dark") && !body.classList.contains("light")) updateMode("auto");
 
-  on(context, "load", setup, false);
-  context.ui = ui;
+  setup();
+  _context.ui = _ui;
 }
 
 start();
+
+const ui = _context.ui || _ui;
 export {
   ui as default,
   ui,
