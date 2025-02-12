@@ -108,7 +108,7 @@ function start() {
 
 start();
 
-const ui = _context.ui || _ui;
+const ui = _context.ui;
 export {
   ui as default,
   ui,
