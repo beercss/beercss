@@ -15,6 +15,13 @@
         li Item 1
         li Item 2
         li Item 3
+    button(data-ui="#menu11")
+      span Border
+      i arrow_drop_down
+      menu#menu11.border(data-ui="#menu11")
+        li Item 1
+        li Item 2
+        li Item 3
     button(data-ui="#menu2")
       span No-wrap
       i arrow_drop_down
