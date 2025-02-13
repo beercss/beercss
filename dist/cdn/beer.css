@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.9.1/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.9.2/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.9.1/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.9.2/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.9.1/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.9.2/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1175,7 +1175,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 :is(.circle, .square).round {
   border-radius: 1rem !important;
 }
-.border:not(table, .field, .list) {
+.border:not(table, .field, .list, menu) {
   box-sizing: border-box;
   border: 0.0625rem solid var(--outline);
   background-color: transparent;
@@ -1378,16 +1378,16 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   display: flex;
   white-space: nowrap;
 }
-.tiny-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list) {
+.tiny-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 0.5rem;
 }
-:is(.space, .small-space):not(nav, ol, ul, .row, .grid, table, .tooltip, .list) {
+:is(.space, .small-space):not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 1rem;
 }
-.medium-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list) {
+.medium-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 2rem;
 }
-.large-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list) {
+.large-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 3rem;
 }
 .responsive {
@@ -3042,7 +3042,7 @@ menu > li > a:only-child {
   justify-content: flex-start;
   white-space: nowrap;
   gap: 1rem;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
   min-block-size: 3rem;
   flex: 1;
   margin: 0 !important;
@@ -3051,9 +3051,9 @@ menu > li > a:only-child {
 menu > li:is(:hover, :focus, .active) {
   background-color: var(--active);
 }
-menu > li > :is(.max, a:only-child, .field:only-child),
+menu > li > .max,
 menu > li > a:only-child > .max,
-menu > li:has(.field) {
+menu > li:has(.field, a:only-child) {
   flex: 1;
   padding: 0;
   margin: 0;
@@ -3112,6 +3112,23 @@ menu > li > :is(menu, menu.right),
 [dir=rtl] menu > li > :is(menu, menu.right),
 menu > li > menu.left {
   inset: auto 100% calc(3rem * (var(---child) - var(---type))) auto;
+}
+menu.no-space > li {
+  min-block-size: 2.5rem;
+}
+menu.medium-space > li {
+  min-block-size: 3.5rem;
+}
+menu.large-space > li {
+  min-block-size: 4rem;
+}
+menu.border > li:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  background-color: var(--outline-variant);
+  inset: auto 0 0 0;
+  block-size: 0.0625rem;
+  inline-size: auto;
 }
 menu > li:nth-last-child(2) {
   ---child: 2;
