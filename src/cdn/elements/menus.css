@@ -68,7 +68,7 @@ menu > li:is(:hover, :focus, .active) {
   background-color: var(--active);
 }
 
-menu > li > .max,
+menu > li > :is(.max, .field),
 menu > li > a:only-child > .max,
 menu > li:has(.field, a:only-child) {
   flex: 1;
