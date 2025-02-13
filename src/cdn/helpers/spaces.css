@@ -1,15 +1,15 @@
-.tiny-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list) {
+.tiny-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 0.5rem;
 }
 
-:is(.space, .small-space):not(nav, ol, ul, .row, .grid, table, .tooltip, .list) {
+:is(.space, .small-space):not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 1rem;
 }
 
-.medium-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list) {
+.medium-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 2rem;
 }
 
-.large-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list) {
+.large-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 3rem;
 }
