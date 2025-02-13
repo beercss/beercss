@@ -292,9 +292,9 @@ div
             .space
             pre.scroll
               code
-                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.9.1/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.9.2/dist/cdn/beer.min.css" rel="stylesheet"&gt;
                 |
-                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.9.1/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.9.2/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
                 |
                 | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
@@ -396,7 +396,7 @@ div
                     span &nbsp;responsive, max
                   p
                     b.error-text &lt;menu&gt;
-                    span &nbsp;left, right, wrap, no-wrap, active, min, max
+                    span &nbsp;border, left, right, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
                   p
                     b.error-text &lt;nav&gt;
                     span &nbsp;left, right, top, bottom, drawer, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin

@@ -14,6 +14,10 @@ Menus display a list of choices on temporary surfaces.
 
 ## Most used helpers
 
+**Forms**
+
+border
+
 **Positions**
 
 left, right
@@ -21,6 +25,10 @@ left, right
 **Sizes**
 
 wrap, no-wrap, min, max
+
+**Spaces**
+
+space, no-space, small-space, medium-space, large-space
 
 **Triggers**
 

@@ -57,7 +57,7 @@ menu > li > a:only-child {
   justify-content: flex-start;
   white-space: nowrap;
   gap: 1rem;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
   min-block-size: 3rem;
   flex: 1;
   margin: 0 !important;
@@ -68,9 +68,9 @@ menu > li:is(:hover, :focus, .active) {
   background-color: var(--active);
 }
 
-menu > li > :is(.max, a:only-child, .field:only-child),
+menu > li > .max,
 menu > li > a:only-child > .max,
-menu > li:has(.field) {
+menu > li:has(.field, a:only-child) {
   flex: 1;
   padding: 0;
   margin: 0;
@@ -139,6 +139,27 @@ menu > li > :is(menu, menu.right),
 [dir=rtl] menu > li > :is(menu, menu.right),
 menu > li > menu.left {
   inset: auto 100% calc(3rem * (var(---child) - var(---type))) auto;
+}
+
+menu.no-space > li {
+  min-block-size: 2.5rem;
+}
+
+menu.medium-space > li {
+  min-block-size: 3.5rem;
+}
+
+menu.large-space > li {
+  min-block-size: 4rem;
+}
+
+menu.border > li:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  background-color: var(--outline-variant);
+  inset: auto 0 0 0;
+  block-size: 0.0625rem;
+  inline-size: auto;
 }
 
 menu > li:nth-last-child(2) {
