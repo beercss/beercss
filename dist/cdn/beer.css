@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.9.3/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.9.4/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.9.3/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.9.4/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.9.3/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.9.4/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
