@@ -210,6 +210,9 @@ It sets the font and icon font of project.
 
   /* To use default sharp icons */
   --font-icon: "Material Symbols Sharp";
+
+  /* To only use minimal subset of icons required in checkbox, radio and switch */
+  --font-icon: "Material Symbols Subset";
 }
 ```
 
