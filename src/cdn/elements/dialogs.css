@@ -36,7 +36,13 @@ dialog.large {
   block-size: 75%;
 }
 
-dialog:is(.active, [open], :popover-open) {
+dialog:is(.active, [open]) {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+dialog:popover-open {
   visibility: visible;
   opacity: 1;
   transform: translate(-50%, 0);
@@ -102,7 +108,11 @@ dialog.max {
   background-color: var(--surface);
 }
 
-dialog:is(.active, [open], :popover-open):is(.left, .right, .top, .bottom, .max) {
+dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
+  transform: translate(0, 0);
+}
+
+dialog:popover-open:is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
 }
 
