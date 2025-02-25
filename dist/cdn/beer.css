@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.9.4/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.9.5/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.9.4/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.9.5/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,17 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.9.4/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.9.5/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+}
+/* subset of only required icons */
+@font-face {
+  font-family: "Material Symbols Subset";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src:
+    url("data:font/woff2;base64,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") format("woff2"),
+    url("https://cdn.jsdelivr.net/npm/beercss@3.9.5/dist/cdn/material-symbols-subset.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -2023,7 +2033,12 @@ dialog.large {
   inline-size: 75%;
   block-size: 75%;
 }
-dialog:is(.active, [open], :popover-open) {
+dialog:is(.active, [open]) {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+dialog:popover-open {
   visibility: visible;
   opacity: 1;
   transform: translate(-50%, 0);
@@ -2083,7 +2098,10 @@ dialog.max {
   transform: translateY(4rem);
   background-color: var(--surface);
 }
-dialog:is(.active, [open], :popover-open):is(.left, .right, .top, .bottom, .max) {
+dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
+  transform: translate(0, 0);
+}
+dialog:popover-open:is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
 }
 dialog.small:is(.left, .right) {
@@ -3445,7 +3463,10 @@ dialog::backdrop {
   z-index: 100;
   transition: all var(--speed3), 0s background-color;
 }
-.overlay.active,
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
 dialog:popover-open::backdrop {
   opacity: 1;
   visibility: visible;
@@ -4114,7 +4135,12 @@ progress.max + * {
 .snackbar.top {
   inset: 6rem auto auto 50%;
 }
-.snackbar:is(.active, :popover-open) {
+.snackbar:is(.active) {
+  visibility: visible;
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+.snackbar:popover-open {
   visibility: visible;
   transform: translate(-50%, 0);
   opacity: 1;
