@@ -396,7 +396,7 @@ div
                     span &nbsp;responsive, max
                   p
                     b.error-text &lt;menu&gt;
-                    span &nbsp;border, left, right, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
+                    span &nbsp;border, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
                   p
                     b.error-text &lt;nav&gt;
                     span &nbsp;left, right, top, bottom, drawer, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin

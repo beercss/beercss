@@ -20,7 +20,7 @@ border
 
 **Positions**
 
-left, right
+left, right, top, bottom
 
 **Sizes**
 
