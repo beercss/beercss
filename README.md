@@ -47,7 +47,14 @@ Beer CSS is an MIT-licensed open source project with its ongoing development mad
 - 🚫 No build steps, configurations or dependencies.
 - ✨ Build modern interfaces without any custom CSS.
 
-# Applying "the beer way" in css?
+# A lightweight beer
+
+Let's be honest, in the ever-evolving world of web development, we're all looking for that sweet spot: powerful functionality without the bloat. We want speed, efficiency, and something that doesn't feel like lugging around a digital elephant. And if you're looking at the chart below, you're probably thinking, "Wow, XYZ is huge!". You're not wrong. But look all the way to the top. See that? That's Beer CSS.
+
+![image](https://github.com/user-attachments/assets/4f9c9902-d0f4-405c-b0ea-2dba9f308bba)
+
+
+# The principles
 
 This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1516. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: **settings**, **elements** and **helpers**. This sounds weird at first time, because It's not BEM, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
 
