@@ -51,8 +51,7 @@ Beer CSS is an MIT-licensed open source project with its ongoing development mad
 
 Let's be honest, in the ever-evolving world of web development, we're all looking for that sweet spot: powerful functionality without the bloat. We want speed, efficiency, and something that doesn't feel like lugging around a digital elephant. And if you're looking at the chart below, you're probably thinking, "Wow, XYZ is huge!". You're not wrong. But look all the way to the top. See that? That's Beer CSS.
 
-![image](https://github.com/user-attachments/assets/4f9c9902-d0f4-405c-b0ea-2dba9f308bba)
-
+![image](https://github.com/user-attachments/assets/23df0121-7716-4114-9751-38b1e519cfcd)
 
 # The principles
 
