@@ -27,7 +27,7 @@ section
       a.wrap(href="https://github.com/WardPearce/Purplix.io")
         article.round.wave.no-elevate
           .center-align
-            img.small-width.small-height(src="https://raw.githubusercontent.com/WardPearce/Purplix.io/24682be424e95e61f7355d17d5a9e501a2e6a73d/frontend/public/logo.png", loading="lazy")
+            img.small-height(src="https://raw.githubusercontent.com/WardPearce/Purplix.io/24682be424e95e61f7355d17d5a9e501a2e6a73d/frontend/public/logo.png", loading="lazy")
           h6.truncate Purplix.io
     .s12.m6.l3
       a.wrap(href="https://github.com/m4heshd/ufc-ripper")
