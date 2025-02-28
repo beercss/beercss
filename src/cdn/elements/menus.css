@@ -41,6 +41,13 @@ menu > li > menu:hover {
   transform: scale(1) translateY(100%);
 }
 
+menu.active.top,
+:not(menu, [data-ui]):focus-within > menu.top,
+menu > li:hover > menu.top,
+menu > li > menu.top:hover {
+  transform: scale(1) translateY(-100%);
+}
+
 menu * {
   white-space: inherit !important;
 }
@@ -79,18 +86,19 @@ menu > li:has(.field, a:only-child) {
 menu.min {
   inset: 0 0 auto 0;
   transform: none !important;
-  border-radius: inherit;
   background-color: var(--surface-variant) !important;
   color: var(--on-surface-variant) !important;
 }
 
 [dir=rtl] menu.min.right,
-menu.min.left {
+menu.min.left,
+menu.top.left {
   inset: 0 0 auto auto;
 }
 
 [dir=rtl] menu.min.left,
-menu.min.right {
+menu.min.right,
+menu.top {
   inset: 0 auto auto 0;
 }
 
@@ -111,13 +119,21 @@ menu.no-wrap:is(.min, .max) {
 }
 
 [dir=rtl] menu.right,
-menu.left {
+[dir=rtl] menu.top.min.right,
+menu.left,
+menu.top.min.left {
   inset: auto 0 0 auto;
 }
 
 [dir=rtl] menu.left,
-menu.right {
+[dir=rtl] menu.top.min.left,
+menu.right,
+menu.top.min {
   inset: auto auto 0 0;
+}
+
+menu.top {
+  transform: scale(0.8) translateY(-120%);
 }
 
 menu:has(menu) {
@@ -139,6 +155,16 @@ menu > li > :is(menu, menu.right),
 [dir=rtl] menu > li > :is(menu, menu.right),
 menu > li > menu.left {
   inset: auto 100% calc(3rem * (var(---child) - var(---type))) auto;
+}
+
+menu > li > :is(menu.top, menu.top.right),
+[dir=rtl] menu > li > menu.top.left {
+  inset: calc(3rem * (var(---child) - var(---type))) auto auto 100%;
+}
+
+[dir=rtl] menu > li > :is(menu.top, menu.top.right),
+menu > li > menu.top.left {
+  inset: calc(3rem * (var(---child) - var(---type))) 100% auto auto;
 }
 
 menu.no-space > li {

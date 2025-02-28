@@ -206,8 +206,50 @@ main.responsive
     #page2.page Page 2
     #page3.page Page 3
     #page4.page Page 4
-  h5 Menus 
+  h5 Menus
   nav
+    button
+      span Top 
+      menu.top
+        li Item
+        li Item
+        li More items
+          menu.right.top
+            li More items
+              menu.right.top
+                li Item
+            li Item
+            li More items
+              menu.left.top
+                li Item
+            li Item
+            li More items
+              menu.left.top
+                li Item
+                li Item
+                li Item
+            li Item
+    button
+      span Bottom 
+      menu.bottom
+        li Item
+        li Item
+        li More items
+          menu.right.bottom
+            li More items
+              menu.right.bottom
+                li Item
+            li Item
+            li More items
+              menu.left.bottom
+                li Item
+            li Item
+            li More items
+              menu.left.bottom
+                li Item
+                li Item
+                li Item
+            li Item
     button
       span Position 
       menu
