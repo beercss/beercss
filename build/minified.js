@@ -6,6 +6,7 @@ export default async function() {
     await build({
       build: {
         emptyOutDir: false,
+        assetsInlineLimit: 0,
         outDir: "./dist/cdn",
         rollupOptions: {
           preserveEntrySignatures: "allow-extension",
