@@ -1,4 +1,6 @@
 .badge {
+  ---x: 0;
+  ---y: -100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -14,40 +16,24 @@
   line-height: normal;
   border-radius: 1rem;
   inset: 50% auto auto 50%;
-  transform: translate(0, -100%);
+  transform: translate(var(---x, 50%), var(---y, -50%));
   font-family: var(--font);
 }
 
 .badge.top {
-  transform: translate(-50%, -100%);
+  ---y: -100%;
 }
 
 .badge.bottom {
-  transform: translate(-50%, 0);
+  ---y: 0;
 }
 
 .badge.left {
-  transform: translate(-100%, -50%);
+  ---x: -100%;
 }
 
 .badge.right {
-  transform: translate(0, -50%);
-}
-
-.badge.top.left {
-  transform: translate(-100%, -100%);
-}
-
-.badge.bottom.left {
-  transform: translate(-100%, 0);
-}
-
-.badge.top.right {
-  transform: translate(0, -100%);
-}
-
-.badge.bottom.right {
-  transform: translate(0, 0);
+  ---x: 0;
 }
 
 .badge.border {

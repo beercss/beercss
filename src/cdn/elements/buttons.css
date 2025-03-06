@@ -1,18 +1,19 @@
 .button,
 button {
+  ---size: 2.5rem;
   box-sizing: content-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  block-size: 2.5rem;
-  min-inline-size: 2.5rem;
+  block-size: var(---size);
+  min-inline-size: var(---size);
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-primary);
   padding: 0 1.5rem;
   background-color: var(--primary);
   margin: 0 0.5rem;
-  border-radius: 1.25rem;
+  border-radius: var(---size);
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
   user-select: none;
   gap: 1rem;
@@ -20,22 +21,16 @@ button {
 }
 
 :is(button, .button).small {
-  block-size: 2rem;
-  min-inline-size: 2rem;
-  border-radius: 1rem;
+  ---size: 2rem;
 }
 
 :is(button, .button).large {
-  block-size: 3rem;
-  min-inline-size: 3rem;
-  border-radius: 1.5rem;
+  ---size: 3rem;
 }
 
 :is(.button, button):is(.extra, .extend) {
-  block-size: 3.5rem;
-  min-inline-size: 3.5rem;
+  ---size: 3.5rem;
   font-size: 1rem;
-  border-radius: 1.75rem;
 }
 
 :is(button, .button).border {
@@ -83,8 +78,4 @@ button {
 :is(.button, button).fill {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
-}
-
-:is(.button, button).vertical {
-  border-radius: 2rem;
 }

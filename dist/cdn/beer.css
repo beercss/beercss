@@ -1108,21 +1108,9 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 .large-elevate {
   box-shadow: var(--elevate3) !important;
 }
-.round {
-  border-radius: var(---round);
-}
-.small-round,
-.medium-round,
-.large-round {
-  border-radius: var(---round) !important;
-}
-.top-round,
-.bottom-round,
-.left-round,
-.right-round,
-.medium-round,
-.round {
+[class*=round] {
   ---round: 2rem;
+  border-radius: var(---round) !important;
 }
 .small-round {
   ---round: 0.5rem;
@@ -1154,33 +1142,14 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   border-start-end-radius: var(---round) !important;
   border-end-end-radius: var(---round) !important;
 }
-.circle {
+.circle:not(.extend) {
   border-radius: 50%;
 }
-:is(button, .button, .chip).circle {
-  border-radius: 2.5rem;
-}
-:is(.circle, .square):not(i, img, video, svg),
-:is(.circle, .square).chip.medium {
-  block-size: 2.5rem;
-  inline-size: 2.5rem;
+:is(.circle, .square):is(button, .button, .chip) {
   padding: 0;
 }
 :is(.circle, .square) > span {
   display: none;
-}
-:is(.circle, .square).small:not(i, img, video, svg),
-:is(.circle, .square).chip {
-  block-size: 2rem;
-  inline-size: 2rem;
-}
-:is(.circle, .square).large:not(i, img, video, svg) {
-  block-size: 3rem;
-  inline-size: 3rem;
-}
-:is(.circle, .square).extra:not(i, img, video, svg) {
-  block-size: 3.5rem;
-  inline-size: 3.5rem;
 }
 :is(.circle, .square).round {
   border-radius: 1rem !important;
@@ -1193,9 +1162,6 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 }
 .no-border {
   border-color: transparent !important;
-}
-:is(nav, .row, dialog.max, header.fixed, footer.fixed, menu > a, menu.max, table, .tabs):not(.round) {
-  border-radius: 0;
 }
 [class*=margin]:not(.left-margin, .right-margin, .top-margin, .bottom-margin, .horizontal-margin, .vertical-margin) {
   margin: var(---margin) !important;
@@ -1388,16 +1354,16 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   display: flex;
   white-space: nowrap;
 }
-.tiny-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
+.tiny-space:not(nav, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 0.5rem;
 }
-:is(.space, .small-space):not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
+:is(.space, .small-space):not(nav, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 1rem;
 }
-.medium-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
+.medium-space:not(nav, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 2rem;
 }
-.large-space:not(nav, ol, ul, .row, .grid, table, .tooltip, .list, menu) {
+.large-space:not(nav, .row, .grid, table, .tooltip, .list, menu) {
   block-size: 3rem;
 }
 .responsive {
@@ -1623,7 +1589,45 @@ pre:has(> code){
 .no-wave:is(:hover, :active)::after {
   display: none;
 }
+[class*=blur],
+[class*=blur].light {
+  ---blur: 1rem;
+  -webkit-backdrop-filter: blur(var(---blur));
+  backdrop-filter: blur(var(---blur));
+  color: var(--on-surface);
+  background-color: rgb(255 255 255 / 0.5);
+}
+.dark [class*=blur],
+[class*=blur].dark {
+  background-color: rgb(0 0 0 / 0.5);
+}
+.small-blur {
+  ---blur: 0.5rem;
+}
+.large-blur {
+  ---blur: 1.5rem;
+}
+.shadow {
+  background-color: #00000050;
+}
+:is(.left-shadow, .right-shadow, .top-shadow, .bottom-shadow) {
+  background-color: transparent !important;
+}
+.left-shadow {
+  background-image: linear-gradient(to right, black, transparent);
+}
+.right-shadow {
+  background-image: linear-gradient(to left, black, transparent);
+}
+.bottom-shadow {
+  background-image: linear-gradient(to top, black, transparent);
+}
+.top-shadow {
+  background-image: linear-gradient(to bottom, black, transparent);
+}
 .badge {
+  ---x: 0;
+  ---y: -100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1639,32 +1643,20 @@ pre:has(> code){
   line-height: normal;
   border-radius: 1rem;
   inset: 50% auto auto 50%;
-  transform: translate(0, -100%);
+  transform: translate(var(---x, 50%), var(---y, -50%));
   font-family: var(--font);
 }
 .badge.top {
-  transform: translate(-50%, -100%);
+  ---y: -100%;
 }
 .badge.bottom {
-  transform: translate(-50%, 0);
+  ---y: 0;
 }
 .badge.left {
-  transform: translate(-100%, -50%);
+  ---x: -100%;
 }
 .badge.right {
-  transform: translate(0, -50%);
-}
-.badge.top.left {
-  transform: translate(-100%, -100%);
-}
-.badge.bottom.left {
-  transform: translate(-100%, 0);
-}
-.badge.top.right {
-  transform: translate(0, -100%);
-}
-.badge.bottom.right {
-  transform: translate(0, 0);
+  ---x: 0;
 }
 .badge.border {
   border-color: var(--error);
@@ -1702,39 +1694,34 @@ nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > .badge {
 }
 .button,
 button {
+  ---size: 2.5rem;
   box-sizing: content-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  block-size: 2.5rem;
-  min-inline-size: 2.5rem;
+  block-size: var(---size);
+  min-inline-size: var(---size);
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-primary);
   padding: 0 1.5rem;
   background-color: var(--primary);
   margin: 0 0.5rem;
-  border-radius: 1.25rem;
+  border-radius: var(---size);
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
   user-select: none;
   gap: 1rem;
   line-height: normal;
 }
 :is(button, .button).small {
-  block-size: 2rem;
-  min-inline-size: 2rem;
-  border-radius: 1rem;
+  ---size: 2rem;
 }
 :is(button, .button).large {
-  block-size: 3rem;
-  min-inline-size: 3rem;
-  border-radius: 1.5rem;
+  ---size: 3rem;
 }
 :is(.button, button):is(.extra, .extend) {
-  block-size: 3.5rem;
-  min-inline-size: 3.5rem;
+  ---size: 3.5rem;
   font-size: 1rem;
-  border-radius: 1.75rem;
 }
 :is(button, .button).border {
   border-color: var(--outline);
@@ -1773,9 +1760,6 @@ button {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
 }
-:is(.button, button).vertical {
-  border-radius: 2rem;
-}
 article {
   box-shadow: var(--elevate1);
   background-color: var(--surface-container-low);
@@ -1795,12 +1779,13 @@ article.large {
   block-size: 32rem;
 }
 .chip {
+  ---size: 2rem;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  block-size: 2rem;
-  min-inline-size: 2rem;
+  block-size: var(---size);
+  min-inline-size: var(---size);
   font-size: 0.875rem;
   font-weight: 500;
   background-color: transparent;
@@ -1820,14 +1805,10 @@ article.large {
   box-shadow: var(--elevate1);
 }
 .chip.medium {
-  block-size: 2.5rem;
-  min-inline-size: 2.5rem;
-  border-radius: 0.5rem;
+  ---size: 2.5rem;
 }
 .chip.large {
-  block-size: 3rem;
-  min-inline-size: 3rem;
-  border-radius: 0.5rem;
+  ---size: 3rem;
 }
 .chip.fill {
   background-color: var(--secondary-container) !important;
@@ -2043,51 +2024,43 @@ dialog:popover-open {
   opacity: 1;
   transform: translate(-50%, 0);
 }
-dialog.top {
+dialog:is(.top, .bottom) {
   opacity: 1;
   padding: 1rem;
-  inset: 0 auto auto 0;
   block-size: auto;
   inline-size: 100%;
   min-inline-size: auto;
   max-block-size: 100%;
+}
+dialog.top {
+  inset: 0 auto auto 0;
   transform: translateY(-100%);
   border-radius: 0 0 1rem 1rem;
 }
-[dir=rtl] dialog.right,
-dialog.left {
+dialog.bottom {
+  inset: auto auto 0 0;
+  transform: translateY(100%);
+  border-radius: 1rem 1rem 0 0;
+}
+dialog:is(.left, .right) {
   opacity: 1;
   padding: 1rem;
-  inset: 0 auto auto 0;
   inline-size: auto;
   block-size: 100%;
   max-block-size: 100%;
-  border-radius: 0 1rem 1rem 0;
   background-color: var(--surface);
+}
+[dir=rtl] dialog.right,
+dialog.left {
+  inset: 0 auto auto 0;
+  border-radius: 0 1rem 1rem 0;
   transform: translateX(-100%);
 }
 [dir=rtl] dialog.left,
 dialog.right {
-  opacity: 1;
-  padding: 1rem;
   inset: 0 0 auto auto;
-  inline-size: auto;
-  block-size: 100%;
-  max-block-size: 100%;
   border-radius: 1rem 0 0 1rem;
-  background-color: var(--surface);
   transform: translateX(100%);
-}
-dialog.bottom {
-  opacity: 1;
-  padding: 1rem;
-  inset: auto auto 0 0;
-  block-size: auto;
-  inline-size: 100%;
-  min-inline-size: auto;
-  max-block-size: 100%;
-  transform: translateY(100%);
-  border-radius: 1rem 1rem 0 0;
 }
 dialog.max {
   inset: 0 auto auto 0;
@@ -2097,6 +2070,7 @@ dialog.max {
   max-block-size: 100%;
   transform: translateY(4rem);
   background-color: var(--surface);
+  border-radius: 0;
 }
 dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
@@ -2165,7 +2139,6 @@ summary::-webkit-details-marker {
 .field {
   ---size: 3rem;
   ---start: 1.2rem;
-
   block-size: var(---size);
   margin-block-end: 2rem;
   border-radius: 0.25rem 0.25rem 0 0;
@@ -2413,8 +2386,8 @@ input[type=number] {
   inset: -0.5rem auto auto 1rem;
   display: flex;
   inline-size: calc(100% - 5rem);
-  block-size: 4rem;
-  line-height: 4rem;
+  block-size: calc(var(---size) + 1rem);
+  line-height: calc(var(---size) + 1rem);
   font-size: 1rem;
   transition: all 0.2s;
   gap: 0.25rem;
@@ -2422,18 +2395,6 @@ input[type=number] {
 }
 [dir=rtl] .field.label > label {
   inset: -0.5rem 1rem auto auto;
-}
-.field.label.small > label {
-  block-size: 3.5rem;
-  line-height: 3.5rem;
-}
-.field.label.large > label {
-  block-size: 4.5rem;
-  line-height: 4.5rem;
-}
-.field.label.extra > label {
-  block-size: 5rem;
-  line-height: 5rem;
 }
 .field.label.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
   inset-inline-start: 1rem;
@@ -2542,10 +2503,10 @@ fieldset > legend + * {
 }
 .grid {
   ---gap: 1rem;
-
   display: grid;
   grid-template-columns: repeat(12, calc(8.33% - var(---gap) + (var(---gap) / 12)));
   gap: var(---gap);
+  block-size: auto;
 }
 .grid.no-space {
   ---gap: 0rem;
@@ -2697,7 +2658,6 @@ i,
 :is(.checkbox, .radio, .switch) > span::before,
 :is(.checkbox, .radio, .switch) > span > i {
   ---size: 1.5rem;
-
   font-family: var(--font-icon);
   font-weight: normal;
   font-style: normal;
@@ -2721,6 +2681,7 @@ i,
   min-block-size: var(---size);
   box-sizing: content-box;
   line-height: normal;
+  border-radius: 0;
 }
 i.tiny {
   ---size: 1rem;
@@ -2793,6 +2754,7 @@ footer {
   min-block-size: 4rem;
   padding: 0 1rem;
   background-color: var(--surface-container);
+  border-radius: 0;
 }
 main ~ footer {
   min-block-size: 5rem;
@@ -2812,7 +2774,6 @@ main ~ footer {
 }
 :is(dialog, article, [class*=padding]) > :is(header, footer).fixed {
   ---translateY: 1rem;
-
   transform: translateY(var(---translateY));
 }
 :is(dialog, article, [class*=padding]) > header.fixed {
@@ -2893,50 +2854,31 @@ svg {
   fill: currentcolor;
 }
 :is(img, svg, video):is(.small, .medium, .large, .tiny, .extra, .round, .circle, .square, .responsive) {
+  ---size: 3rem;
   object-fit: cover;
   object-position: center;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
-  block-size: 3rem;
-  inline-size: 3rem;
+  block-size: var(---size);
+  inline-size: var(---size);
 }
 :is(img, svg, video).round {
   border-radius: 0.5rem;
 }
 :is(img, svg, video).tiny {
-  block-size: 2rem;
-  inline-size: 2rem;
+  ---size: 2rem;
 }
 :is(img, svg, video).small {
-  block-size: 2.5rem;
-  inline-size: 2.5rem;
+  ---size: 2.5rem;
 }
 :is(img, svg, video).large {
-  block-size: 3.5rem;
-  inline-size: 3.5rem;
+  ---size: 3.5rem;
 }
 :is(img, svg, video).extra {
-  block-size: 4rem;
-  inline-size: 4rem;
+  ---size: 4rem;
 }
 :is(img, svg, video).responsive {
-  inline-size: 100%;
-  block-size: 100%;
+  ---size: 100%;
   margin: 0 auto;
-}
-:is(button, .button, .chip):not(.transparent) > .responsive {
-  border: 0.25rem solid transparent;
-}
-:is(button, .button, .chip.medium) > .responsive {
-  inline-size: 2.5rem;
-}
-:is(button.small, .button.small, .chip:not(.medium)) > .responsive {
-  inline-size: 2rem;
-}
-:is(button, .button, .chip).large > .responsive {
-  inline-size: 3rem;
-}
-:is(button, .button, .chip).extra > .responsive {
-  inline-size: 3.5rem;
 }
 :is(img, svg, video).responsive.tiny {
   inline-size: 100%;
@@ -2965,33 +2907,34 @@ svg {
   max-inline-size: 100%;
   inline-size: 24rem;
 }
-:is(button, .button, .chip, .field) > :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra),
-.tabs :is(img, svg):not(.responsive, .tiny, .small, .medium, .large, .extra) {
+:is(button, .button, .chip):not(.transparent) > .responsive {
+  border: 0.25rem solid transparent;
+}
+:is(button, .button, .chip, .field) > :is(img, svg):not(.responsive),
+.tabs :is(img, svg):not(.responsive) {
   min-inline-size: 1.5rem;
   max-inline-size: 1.5rem;
   min-block-size: 1.5rem;
   max-block-size: 1.5rem;
 }
-:is(button, .button, .chip) > :is(i, img, svg),
-:is(button, .button, .chip) > .responsive {
+:is(button, .button, .chip) > :is(i, img, svg) {
   margin: 0 -0.5rem;
 }
-:is(button, .button) > .responsive {
+:is(button, .button) > .responsive:first-child {
   margin-inline-start: -1.5rem;
 }
-:is(button, .button) > span + .responsive {
-  margin-inline-start: -0.5rem;
+:is(button, .button) > .responsive:not(:first-child) {
   margin-inline-end: -1.5rem;
 }
-.chip > .responsive {
+.chip > .responsive:first-child {
   margin-inline-start: -1rem;
 }
-.chip > span + .responsive {
-  margin-inline-start: -0.5rem;
+.chip > .responsive:not(:first-child) {
   margin-inline-end: -1rem;
 }
-:is(.circle, .square) > .responsive {
-  margin: 0;
+:is(.circle, .square, .extend) > .responsive {
+  ---size: inherit;
+  margin: 0 !important;
 }
 .extend > :is(.responsive, i) {
   margin: 0;
@@ -3108,6 +3051,7 @@ menu.max {
   transform: none !important;
   background-color: var(--surface-variant) !important;
   color: var(--on-surface-variant) !important;
+  border-radius: 0;
 }
 menu.no-wrap:is(.min, .max) {
   min-inline-size: 16rem;
@@ -3130,7 +3074,6 @@ menu.top {
 menu:has(menu) {
   ---child: 1;
   ---type: 0;
-
   overflow: unset;
   white-space: nowrap;
   inline-size: auto;
@@ -3246,6 +3189,7 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) {
   justify-content: flex-start;
   white-space: nowrap;
   gap: 1rem;
+  border-radius: 0;
 }
 a.row,
 nav.row {
@@ -3502,7 +3446,6 @@ dialog:popover-open::backdrop {
 }
 .page {
   ---transform: translate(0, 0);
-
   opacity: 0;
   position: absolute;
   display: none;
@@ -3708,6 +3651,7 @@ progress.max + * {
 .checkbox,
 .radio,
 .switch {
+  ---size: 1.5rem;
   direction: ltr;
   inline-size: auto;
   block-size: auto;
@@ -3716,7 +3660,6 @@ progress.max + * {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  ---size: 1.5rem;
 }
 :is(.checkbox, .radio, .switch).small {
   ---size: 1rem;
@@ -3904,7 +3847,6 @@ progress.max + * {
   ---end: 0%;
   ---value1: "";
   ---value2: "";
-
   display: flex;
   align-items: center !important;
   inline-size: auto;
@@ -4190,6 +4132,7 @@ table :is(thead, tbody, tfoot, tr, th, td) {
   inline-size: auto;
   text-align: inherit;
   padding: 0.5rem;
+  border-radius: 0;
 }
 :is(th, td) > * {
   vertical-align: middle;
@@ -4231,6 +4174,7 @@ tfoot th.fixed {
   display: flex;
   white-space: nowrap;
   border-block-end: 0.0625rem solid var(--surface-variant);
+  border-radius: 0;
 }
 .tabs:not(.left-align, .right-align, .center-align) {
   justify-content: space-around;
@@ -4272,7 +4216,6 @@ tfoot th.fixed {
 }
 .tooltip {
   ---space: -0.5rem;
-
   visibility: hidden;
   display: flex;
   align-items: center;
@@ -4375,40 +4318,4 @@ menu:active ~ .tooltip,
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: var(--elevate2);
-}
-[class*=blur],
-[class*=blur].light {
-  ---blur: 1rem;
-  -webkit-backdrop-filter: blur(var(---blur));
-  backdrop-filter: blur(var(---blur));
-  color: var(--on-surface);
-  background-color: rgb(255 255 255 / 0.5);
-}
-.dark [class*=blur],
-[class*=blur].dark {
-  background-color: rgb(0 0 0 / 0.5);
-}
-.small-blur {
-  ---blur: 0.5rem;
-}
-.large-blur {
-  ---blur: 1.5rem;
-}
-.shadow {
-  background-color: #00000050;
-}
-:is(.left-shadow, .right-shadow, .top-shadow, .bottom-shadow) {
-  background-color: transparent !important;
-}
-.left-shadow {
-  background-image: linear-gradient(to right, black, transparent);
-}
-.right-shadow {
-  background-image: linear-gradient(to left, black, transparent);
-}
-.bottom-shadow {
-  background-image: linear-gradient(to top, black, transparent);
-}
-.top-shadow {
-  background-image: linear-gradient(to bottom, black, transparent);
 }

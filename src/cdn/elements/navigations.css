@@ -15,6 +15,7 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) {
   justify-content: flex-start;
   white-space: nowrap;
   gap: 1rem;
+  border-radius: 0;
 }
 
 a.row,

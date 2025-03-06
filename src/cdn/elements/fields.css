@@ -1,7 +1,6 @@
 .field {
   ---size: 3rem;
   ---start: 1.2rem;
-
   block-size: var(---size);
   margin-block-end: 2rem;
   border-radius: 0.25rem 0.25rem 0 0;
@@ -308,8 +307,8 @@ input[type=number] {
   inset: -0.5rem auto auto 1rem;
   display: flex;
   inline-size: calc(100% - 5rem);
-  block-size: 4rem;
-  line-height: 4rem;
+  block-size: calc(var(---size) + 1rem);
+  line-height: calc(var(---size) + 1rem);
   font-size: 1rem;
   transition: all 0.2s;
   gap: 0.25rem;
@@ -318,21 +317,6 @@ input[type=number] {
 
 [dir=rtl] .field.label > label {
   inset: -0.5rem 1rem auto auto;
-}
-
-.field.label.small > label {
-  block-size: 3.5rem;
-  line-height: 3.5rem;
-}
-
-.field.label.large > label {
-  block-size: 4.5rem;
-  line-height: 4.5rem;
-}
-
-.field.label.extra > label {
-  block-size: 5rem;
-  line-height: 5rem;
 }
 
 .field.label.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {

@@ -1,10 +1,11 @@
 .chip {
+  ---size: 2rem;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  block-size: 2rem;
-  min-inline-size: 2rem;
+  block-size: var(---size);
+  min-inline-size: var(---size);
   font-size: 0.875rem;
   font-weight: 500;
   background-color: transparent;
@@ -26,15 +27,11 @@
 }
 
 .chip.medium {
-  block-size: 2.5rem;
-  min-inline-size: 2.5rem;
-  border-radius: 0.5rem;
+  ---size: 2.5rem;
 }
 
 .chip.large {
-  block-size: 3rem;
-  min-inline-size: 3rem;
-  border-radius: 0.5rem;
+  ---size: 3rem;
 }
 
 .chip.fill {

@@ -20,6 +20,8 @@
 @import "./helpers/responsive.css";
 @import "./helpers/typography.css";
 @import "./helpers/waves.css";
+@import "./helpers/blurs.css";
+@import "./helpers/shadows.css";
 @import "./elements/badges.css";
 @import "./elements/buttons.css";
 @import "./elements/cards.css";
@@ -45,5 +47,3 @@
 @import "./elements/tables.css";
 @import "./elements/tabs.css";
 @import "./elements/tooltips.css";
-@import "./helpers/blurs.css";
-@import "./helpers/shadows.css";

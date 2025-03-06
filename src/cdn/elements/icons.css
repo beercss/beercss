@@ -2,7 +2,6 @@ i,
 :is(.checkbox, .radio, .switch) > span::before,
 :is(.checkbox, .radio, .switch) > span > i {
   ---size: 1.5rem;
-
   font-family: var(--font-icon);
   font-weight: normal;
   font-style: normal;
@@ -26,6 +25,7 @@ i,
   min-block-size: var(---size);
   box-sizing: content-box;
   line-height: normal;
+  border-radius: 0;
 }
 
 i.tiny {

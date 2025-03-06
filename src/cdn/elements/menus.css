@@ -112,6 +112,7 @@ menu.max {
   transform: none !important;
   background-color: var(--surface-variant) !important;
   color: var(--on-surface-variant) !important;
+  border-radius: 0;
 }
 
 menu.no-wrap:is(.min, .max) {
@@ -139,7 +140,6 @@ menu.top {
 menu:has(menu) {
   ---child: 1;
   ---type: 0;
-
   overflow: unset;
   white-space: nowrap;
   inline-size: auto;

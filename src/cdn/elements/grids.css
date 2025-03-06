@@ -1,9 +1,9 @@
 .grid {
   ---gap: 1rem;
-
   display: grid;
   grid-template-columns: repeat(12, calc(8.33% - var(---gap) + (var(---gap) / 12)));
   gap: var(---gap);
+  block-size: auto;
 }
 
 .grid.no-space {

@@ -48,54 +48,48 @@ dialog:popover-open {
   transform: translate(-50%, 0);
 }
 
-dialog.top {
+dialog:is(.top, .bottom) {
   opacity: 1;
   padding: 1rem;
-  inset: 0 auto auto 0;
   block-size: auto;
   inline-size: 100%;
   min-inline-size: auto;
   max-block-size: 100%;
+}
+
+dialog.top {
+  inset: 0 auto auto 0;
   transform: translateY(-100%);
   border-radius: 0 0 1rem 1rem;
 }
 
-[dir=rtl] dialog.right,
-dialog.left {
+dialog.bottom {
+  inset: auto auto 0 0;
+  transform: translateY(100%);
+  border-radius: 1rem 1rem 0 0;
+}
+
+dialog:is(.left, .right) {
   opacity: 1;
   padding: 1rem;
-  inset: 0 auto auto 0;
   inline-size: auto;
   block-size: 100%;
   max-block-size: 100%;
-  border-radius: 0 1rem 1rem 0;
   background-color: var(--surface);
+}
+
+[dir=rtl] dialog.right,
+dialog.left {
+  inset: 0 auto auto 0;
+  border-radius: 0 1rem 1rem 0;
   transform: translateX(-100%);
 }
 
 [dir=rtl] dialog.left,
 dialog.right {
-  opacity: 1;
-  padding: 1rem;
   inset: 0 0 auto auto;
-  inline-size: auto;
-  block-size: 100%;
-  max-block-size: 100%;
   border-radius: 1rem 0 0 1rem;
-  background-color: var(--surface);
   transform: translateX(100%);
-}
-
-dialog.bottom {
-  opacity: 1;
-  padding: 1rem;
-  inset: auto auto 0 0;
-  block-size: auto;
-  inline-size: 100%;
-  min-inline-size: auto;
-  max-block-size: 100%;
-  transform: translateY(100%);
-  border-radius: 1rem 1rem 0 0;
 }
 
 dialog.max {
@@ -106,6 +100,7 @@ dialog.max {
   max-block-size: 100%;
   transform: translateY(4rem);
   background-color: var(--surface);
+  border-radius: 0;
 }
 
 dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {

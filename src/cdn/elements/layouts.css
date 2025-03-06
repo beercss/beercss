@@ -42,6 +42,7 @@ footer {
   min-block-size: 4rem;
   padding: 0 1rem;
   background-color: var(--surface-container);
+  border-radius: 0;
 }
 
 main ~ footer {
@@ -66,7 +67,6 @@ main ~ footer {
 
 :is(dialog, article, [class*=padding]) > :is(header, footer).fixed {
   ---translateY: 1rem;
-
   transform: translateY(var(---translateY));
 }
 
