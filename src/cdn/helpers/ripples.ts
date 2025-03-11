@@ -19,7 +19,10 @@ function updateRipple(e: PointerEvent) {
   ripple.style.inlineSize = ripple.style.blockSize = `${diameter}px`;
   ripple.style.left = `${x}px`;
   ripple.style.top = `${y}px`;
-  ripple.addEventListener("animationend", () => { rippleContainer.remove(); });
+  element.addEventListener("pointerup", () => { rippleContainer.classList.add("fade-out-ripple"); });
+  ripple.addEventListener("transitionend", function () {
+    rippleContainer.remove();
+  }, { once: true });
 
   rippleContainer.appendChild(ripple);
   element.appendChild(rippleContainer);
