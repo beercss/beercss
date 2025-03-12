@@ -16,11 +16,19 @@ function updateRipple(e: PointerEvent) {
   rippleContainer.className = "ripple-js";
 
   const ripple = document.createElement("div");
+  // Using inlineSize and blockSize preserves modern CSS sizing
   ripple.style.inlineSize = ripple.style.blockSize = `${diameter}px`;
   ripple.style.left = `${x}px`;
   ripple.style.top = `${y}px`;
-  document.body.addEventListener("pointerup", () => { rippleContainer.classList.add("fade-out-ripple"); });
-  ripple.addEventListener("transitionend", function () {
+
+  // Handle both pointerup and pointercancel to ensure cleanup, and remove listener automatically.
+  const endRipple = () => {
+    rippleContainer.classList.add("fade-out-ripple");
+  };
+  document.body.addEventListener("pointerup", endRipple, { once: true });
+  document.body.addEventListener("pointercancel", endRipple, { once: true });
+
+  ripple.addEventListener("transitionend", () => {
     rippleContainer.remove();
   }, { once: true });
 
@@ -29,6 +37,6 @@ function updateRipple(e: PointerEvent) {
 }
 
 export function updateAllRipples() {
-  const ripples = queryAll(".slow-ripple, .ripple, .fast-ripple");
-  for(let i=0; i<ripples.length; i++) on(ripples[i], "pointerdown", onPointerDownRipple);
+  const elements = queryAll(".slow-ripple, .ripple, .fast-ripple");
+  elements.forEach((el) => on(el, "pointerdown", onPointerDownRipple));
 }
