@@ -21,15 +21,15 @@
   position: absolute;
   border-radius: 50%;
   background: currentColor;
-  opacity: 0.3;
+  opacity: 0.2;
   transform: scale(0);
   animation: to-ripple var(---duration) cubic-bezier(0.075, 0.82, 0.165, 1)
     forwards;
 }
 
 .fade-out-ripple {
-  animation: out-ripple var(---duration) cubic-bezier(0.075, 0.82, 0.165, 1)
-    forwards;
+  animation: out-ripple calc(var(---duration) / 2)
+    cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
 @keyframes out-ripple {
