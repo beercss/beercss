@@ -1,11 +1,5 @@
-import { queryAll, on } from "../utils";
-
-function onPointerDownRipple(e: PointerEvent) {
-  updateRipple(e);
-}
-
 function updateRipple(e: PointerEvent) {
-  const element = e.currentTarget as HTMLElement;
+  const element = e.target as HTMLElement;
   const rect = element.getBoundingClientRect();
   const diameter = Math.max(rect.width, rect.height);
   const radius = diameter / 2;
@@ -35,8 +29,13 @@ function updateRipple(e: PointerEvent) {
   rippleContainer.appendChild(ripple);
   element.appendChild(rippleContainer);
 }
-
-export function updateAllRipples() {
-  const elements = queryAll(".slow-ripple, .ripple, .fast-ripple");
-  elements.forEach((el) => on(el, "pointerdown", onPointerDownRipple));
+export function initRipples() {
+  document.addEventListener("pointerdown", (e) => {
+    if (
+      e.target instanceof Element &&
+      e.target.matches(".slow-ripple, .ripple, .fast-ripple")
+    ) {
+      updateRipple(e);
+    }
+  });
 }

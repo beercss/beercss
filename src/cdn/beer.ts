@@ -7,7 +7,7 @@ import {updateDialog} from "./elements/dialogs";
 import {updateMenu} from "./elements/menus";
 import {updateSnackbar} from "./elements/snackbars";
 import {updatePage} from "./elements/pages";
-import {updateAllRipples} from "./helpers/ripples";
+import {initRipples} from "./helpers/ripples";
 
 const _context = globalThis as any;
 let _timeoutMutation: ReturnType<typeof setTimeout>;
@@ -68,6 +68,7 @@ function setup() {
   _mutation = new MutationObserver(onMutation);
   _mutation.observe(document.body, { childList: true, subtree: true });
   onMutation();
+  initRipples();
 }
 
 function updateAllDataUis() {
@@ -93,7 +94,6 @@ function _ui(selector?: string | Element, options?: string | number | IBeerCssTh
   updateAllDataUis();
   updateAllFields();
   updateAllSliders();
-  updateAllRipples();
 }
 
 function start() {
