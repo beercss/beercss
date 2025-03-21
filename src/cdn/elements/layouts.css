@@ -44,14 +44,6 @@ footer {
   background-color: var(--surface-container);
 }
 
-main ~ footer {
-  min-block-size: 5rem;
-}
-
-:is(header, footer).fixed.responsive {
-  z-index: 12;
-}
-
 :is(header, footer, menu > *).fixed {
   position: sticky;
   inset: 0;
@@ -59,18 +51,26 @@ main ~ footer {
   background-color: inherit;
 }
 
-:is(dialog, menu, nav, article) > :is(header, footer) {
+:is(menu, nav, article) > :is(header, footer) {
   background-color: inherit;
   padding: 0;
 }
 
-:is(dialog, article, [class*=padding]) > :is(header, footer).fixed {
+:has(> main) > footer {
+  min-block-size: 5rem;
+}
+
+:has(> main) > :is(header, footer).fixed {
+  z-index: 12;
+}
+
+:is(article, [class*=padding]) > :is(header, footer).fixed {
   ---translateY: 1rem;
 
   transform: translateY(var(---translateY));
 }
 
-:is(dialog, article, [class*=padding]) > header.fixed {
+:is(article, [class*=padding]) > header.fixed {
   transform: translateY(calc(-1 * var(---translateY)));
 }
 
@@ -82,6 +82,6 @@ main ~ footer {
   ---translateY: 0.5rem;
 }
 
-:is(.large-padding, dialog:not(.left, .right, .top, .bottom)) > :is(header, footer).fixed {
+.large-padding > :is(header, footer).fixed {
   ---translateY: 1.5rem;
 }
