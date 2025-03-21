@@ -39,10 +39,18 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-block-size: 4rem;
-  padding: 0 1rem;
   background-color: var(--surface-container);
   border-radius: 0;
+}
+
+header {
+  min-block-size: 4rem;
+  transform: translateY(calc(-1 * var(---padding)));
+}
+
+footer {
+  min-block-size: 5rem;
+  transform: translateY(var(---padding));
 }
 
 :is(header, footer, menu > *).fixed {
@@ -50,38 +58,4 @@ footer {
   inset: 0;
   z-index: 11;
   background-color: inherit;
-}
-
-:is(menu, nav, article) > :is(header, footer) {
-  background-color: inherit;
-  padding: 0;
-}
-
-:has(> main) > footer {
-  min-block-size: 5rem;
-}
-
-:has(> main) > :is(header, footer).fixed {
-  z-index: 12;
-}
-
-:is(article, [class*=padding]) > :is(header, footer).fixed {
-  ---translateY: 1rem;
-  transform: translateY(var(---translateY));
-}
-
-:is(article, [class*=padding]) > header.fixed {
-  transform: translateY(calc(-1 * var(---translateY)));
-}
-
-.no-padding > :is(header, footer).fixed {
-  transform: none;
-}
-
-.small-padding > :is(header, footer).fixed {
-  ---translateY: 0.5rem;
-}
-
-.large-padding > :is(header, footer).fixed {
-  ---translateY: 1.5rem;
 }

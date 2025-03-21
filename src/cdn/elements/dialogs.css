@@ -149,17 +149,7 @@ dialog.large:is(.top, .bottom) {
 }
 
 dialog > :is(header, footer) {
-  padding: 0;
-  margin: 0;
   background: none;
-}
-
-dialog > header {
-  transform: translateY(calc(-1 * (var(---padding))));
-}
-
-dialog > footer {
-  transform: translateY(var(---padding));
 }
 
 dialog > header.fixed {

@@ -46,6 +46,14 @@ main::after {
   margin-inline: calc(var(--left) + var(---left)) calc(var(--right) + var(---right));
 }
 
+:has(> main) > :is(header, footer) {
+  padding: 0 1rem;
+}
+
+:has(> main) > :is(header, footer).fixed {
+  z-index: 12;
+}
+
 :has(> main) > header.fixed {
   inset: calc(var(--top) + var(---top)) 0 0 0;
 }
