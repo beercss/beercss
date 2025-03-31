@@ -1,0 +1,38 @@
+import fs from "fs";
+
+function addScopedRule(css) {
+  return css.replace(/(\s+)(--size:)/, "$1--scoped: 1;$1$2");
+}
+
+function addParentSelector(css) {
+  return css.replace(/(.*)({|,)(\r\n|\n)/g, ".beer $1$2$3");
+}
+
+function fixSelectors(css) {
+  return css
+    .replace(/(\.beer\s)(@|\s+url|\s+to|\s+from|:root|body|html|\s+\d)/g, "$2")
+    .replace(/\.beer\s(:has|\*:has)/g, ".beer:has")
+    .replace(/(\.beer\s)(\s+)/g, "$2$1");
+}
+
+function removeSpaces(css) {
+  return css
+    .replace(/\s{2,}|(\/\*.+\*\/)/g, "")
+    .replace(/([^\w\-\+\%])(\s+)/g, "$1")
+    .replace(/(\s+)([^\w\-\+\%])/g, "$2");
+}
+
+export default async function scoped() {
+  try {
+    let unminified = fs.readFileSync("./dist/cdn/beer.css", "utf-8");
+    unminified = addScopedRule(unminified);
+    unminified = addParentSelector(unminified);
+    unminified = fixSelectors(unminified);
+    let minified = removeSpaces(unminified);
+    
+    fs.writeFileSync("./dist/cdn/beer.scoped.css", unminified);
+    fs.writeFileSync("./dist/cdn/beer.scoped.min.css", minified);
+  } catch (error) {
+    console.error(error);
+  }
+}

@@ -4,7 +4,7 @@
 <p align="center">
     <a href="https://github.com/beercss/beercss/blob/main/LICENSE"><img src="https://img.shields.io/github/license/beercss/beercss" alt="License"></a>
     <a href="https://github.com/beercss/beercss"><img src="https://img.shields.io/jsdelivr/npm/hy/beercss" alt="Downloads"></a>
-    <a href="https://bundlephobia.com/package/beercss@3.9.7" target="_blank"><img src="https://img.shields.io/bundlephobia/minzip/beercss@3.9.7" alt="minzipped size"></a>
+    <a href="https://bundlephobia.com/package/beercss@3.10.0" target="_blank"><img src="https://img.shields.io/bundlephobia/minzip/beercss@3.10.0" alt="minzipped size"></a>
     <a href="https://www.npmjs.com/package/beercss"><img src="https://img.shields.io/npm/v/beercss" alt="Version"></a>
     <a href="https://github.com/beercss/beercss/pulls"><img src="https://img.shields.io/github/issues-pr/beercss/beercss" alt="Pull Request"></a>
     <a href="https://github.com/beercss/beercss/issues"><img src="https://img.shields.io/github/issues/beercss/beercss" alt="Issues"></a>
@@ -22,19 +22,15 @@ Cheers, www.beercss.com
 
 Beer CSS is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome sponsors and backers. If you'd like to join them, please consider sponsoring Beer CSS's development.
 
-### Open Collective sponsors
-<p><a href="https://opencollective.com/beercss#support"><img src="https://opencollective.com/beercss/sponsors.svg?avatarHeight=56&button=false" alt="Sponsors"></a></p>
-<p><a href="https://opencollective.com/beercss#support"><img src="https://opencollective.com/beercss/backers.svg?avatarHeight=40&button=false" alt="Backers"></a></p>
-
-### Github sponsors
-<p>
-  <a href="https://github.com/sponsors/beercss">
-    <img src="https://avatars.githubusercontent.com/u/74856856?s=40&v=4" alt="Sponsors">
-    <img src="https://avatars.githubusercontent.com/u/419690?s=40&v=4" alt="Sponsors">
-    <img src="https://avatars.githubusercontent.com/u/181576?s=40&v=4 alt="Sponsors">
-    <img src="https://avatars.githubusercontent.com/u/797439?s=40&v=4 alt="Sponsors">
-    <img src="https://avatars.githubusercontent.com/u/3647943?s=40&v=4 alt="Sponsors">
-  </a>
+<p align="center">
+  <img src="https://opencollective.com/beercss/sponsors.svg?avatarHeight=56&button=false" alt="Sponsors">
+  <img src="https://opencollective.com/beercss/backers.svg?avatarHeight=56&button=false" alt="Sponsors">
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/40445940?s=56&v=4&mask=circle&maxage=7d" alt="Sponsors">
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/74856856?s=56&v=4&mask=circle&maxage=7d" alt="Sponsors">
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/419690?s=56&v=4&mask=circle&maxage=7d" alt="Sponsors">
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/181576?s=56&v=4&mask=circle&maxage=7d" alt="Sponsors">
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/797439?s=56&v=4&mask=circle&maxage=7d" alt="Sponsors">
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/3647943?s=56&v=4&mask=circle&maxage=7d" alt="Sponsors">
 </p>
 
 # Why?
@@ -133,60 +129,56 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 ### CDN
 
-From jsdelivr.net.
-
+Default version
 ```html
-// with html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
-```css
-// with css
-@import "https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.css";
+Scoped version (applied on child elements of `<* class="beer">...</*>`)
+```html
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
-```js
-// with javascript
-import "https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.js";
-import "https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js";
+Custom element version (applied on child elements of `<beer-css>...</beer-css>`)
+```html
+<script src="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
+
 
 ### NPM
 
-You can get the latest release using NPM. This release contains source files as well as the compiled CSS and JavaScript files.
-
+Install
 ```js
-// installing
 npm i beercss
 npm i material-dynamic-colors
 ```
 
+Default version
 ```js
-// importing as window.beercss and window.materialDynamicColors
 import "beercss";
 import "material-dynamic-colors";
 ```
 
 ```js
-// importing as beercss and materialDynamicColors
 import beercss from "beercss";
 import materialDynamicColors from "material-dynamic-colors";
 ```
 
+Scoped version (applied on child elements of `<* class="beer">...</*>`)
 ```js
-// importing manually from dist
-import "beercss/dist/cdn/beer.min.css";
-import beercss from "beercss/dist/cdn/beer.min.js";
-import materialDynamicColors from "material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js";
+import "beercss/scoped";
+import "material-dynamic-colors";
 ```
 
+Custom element version (applied on child elements of `<beer-css>...</beer-css>`)
 ```js
-// importing manually from src
-import "beercss/src/cdn/beer.css";
-import beercss from "beercss/src/cdn/beer.ts";
-import materialDynamicColors from "material-dynamic-colors/src/cdn/material-dynamic-colors.js";
+import "beercss/custom-element";
+import "material-dynamic-colors";
 ```
 
 ### HTML
@@ -201,8 +193,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">

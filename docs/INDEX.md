@@ -1,61 +1,57 @@
 ## Get started
 
-#### CDN
+### CDN
 
-From jsdelivr.net.
-
+Default version
 ```html
-// with html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
-```css
-// with css
-@import "https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.css";
+Scoped version (applied on child elements of `<* class="beer">...</*>`)
+```html
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
-```js
-// with javascript
-import "https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.js";
-import "https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js";
+Custom element version (applied on child elements of `<beer-css>...</beer-css>`)
+```html
+<script src="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
-#### NPM
 
-You can get the latest release using NPM. This release contains source files as well as the compiled CSS and JavaScript files.
+### NPM
 
+Install
 ```js
-// installing
 npm i beercss
 npm i material-dynamic-colors
 ```
 
+Default version
 ```js
-// importing as window.beercss and window.materialDynamicColors
 import "beercss";
 import "material-dynamic-colors";
 ```
 
 ```js
-// importing as beercss and materialDynamicColors
 import beercss from "beercss";
 import materialDynamicColors from "material-dynamic-colors";
 ```
 
+Scoped version (applied on child elements of `<* class="beer">...</*>`)
 ```js
-// importing manually from dist
-import "beercss/dist/cdn/beer.min.css";
-import beercss from "beercss/dist/cdn/beer.min.js";
-import materialDynamicColors from "material-dynamic-colors/dist/cdn/material-dynamic-colors.min.js";
+import "beercss/scoped";
+import "material-dynamic-colors";
 ```
 
+Custom element version (applied on child elements of `<beer-css>...</beer-css>`)
 ```js
-// importing manually from src
-import "beercss/src/cdn/beer.css";
-import beercss from "beercss/src/cdn/beer.ts";
-import materialDynamicColors from "material-dynamic-colors/src/cdn/material-dynamic-colors.js";
+import "beercss/custom-element";
+import "material-dynamic-colors";
 ```
 
 ### HTML
@@ -70,8 +66,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">

@@ -64,7 +64,8 @@ function onKeydownElement(e: KeyboardEvent) {
 }
 
 function setup() {
-  if (_context.ui || _mutation) return;
+  debugger;
+  if (_context.ui || _mutation || !_context.MutationObserver) return;
   _mutation = new MutationObserver(onMutation);
   _mutation.observe(document.body, { childList: true, subtree: true });
   onMutation();
