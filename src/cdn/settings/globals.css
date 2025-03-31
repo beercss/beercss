@@ -16,3 +16,10 @@
   --left: env(safe-area-inset-left);
   --right: env(safe-area-inset-right);
 }
+
+:root {
+  --top: var(--top, 0);
+  --bottom: var(--bottom, 0);
+  --left: var(--left, 0);
+  --right: var(--right, 0);
+}

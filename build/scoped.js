@@ -18,8 +18,8 @@ function fixSelectors(css) {
 function removeSpaces(css) {
   return css
     .replace(/\s{2,}|(\/\*.+\*\/)/g, "")
-    .replace(/([^\w\-\+\%])(\s+)/g, "$1")
-    .replace(/(\s+)([^\w\-\+\%])/g, "$2");
+    .replace(/([^\w\-\+\%|\(|\)])(\s+)/g, "$1")
+    .replace(/(\s+)([^\w\-\+\%|\(|\)])/g, "$2");
 }
 
 export default async function scoped() {

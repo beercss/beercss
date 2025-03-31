@@ -103,7 +103,7 @@ svg {
 }
 
 :is(.circle, .square, .extend) > .responsive {
-  --_size: inherit;
+  --_size: var(--_size, 0);
   margin: 0 !important;
 }
 
