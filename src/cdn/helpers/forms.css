@@ -1,14 +1,14 @@
 [class*=round] {
-  ---round: 2rem;
-  border-radius: var(---round) !important;
+  --_round: 2rem;
+  border-radius: var(--_round) !important;
 }
 
 .small-round {
-  ---round: 0.5rem;
+  --_round: 0.5rem;
 }
 
 .large-round {
-  ---round: 3.5rem;
+  --_round: 3.5rem;
 }
 
 .no-round,
@@ -21,23 +21,23 @@
 }
 
 .top-round {
-  border-start-start-radius: var(---round) !important;
-  border-start-end-radius: var(---round) !important;
+  border-start-start-radius: var(--_round) !important;
+  border-start-end-radius: var(--_round) !important;
 }
 
 .bottom-round {
-  border-end-end-radius: var(---round) !important;
-  border-end-start-radius: var(---round) !important;
+  border-end-end-radius: var(--_round) !important;
+  border-end-start-radius: var(--_round) !important;
 }
 
 .left-round {
-  border-start-start-radius: var(---round) !important;
-  border-end-start-radius: var(---round) !important;
+  border-start-start-radius: var(--_round) !important;
+  border-end-start-radius: var(--_round) !important;
 }
 
 .right-round {
-  border-start-end-radius: var(---round) !important;
-  border-end-end-radius: var(---round) !important;
+  border-start-end-radius: var(--_round) !important;
+  border-end-end-radius: var(--_round) !important;
 }
 
 .circle:not(.extend) {

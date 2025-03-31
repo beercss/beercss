@@ -3,12 +3,12 @@ svg {
 }
 
 :is(img, svg, video):is(.small, .medium, .large, .tiny, .extra, .round, .circle, .square, .responsive) {
-  ---size: 3rem;
+  --_size: 3rem;
   object-fit: cover;
   object-position: center;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
-  block-size: var(---size);
-  inline-size: var(---size);
+  block-size: var(--_size);
+  inline-size: var(--_size);
 }
 
 :is(img, svg, video).round {
@@ -16,23 +16,23 @@ svg {
 }
 
 :is(img, svg, video).tiny {
-  ---size: 2rem;
+  --_size: 2rem;
 }
 
 :is(img, svg, video).small {
-  ---size: 2.5rem;
+  --_size: 2.5rem;
 }
 
 :is(img, svg, video).large {
-  ---size: 3.5rem;
+  --_size: 3.5rem;
 }
 
 :is(img, svg, video).extra {
-  ---size: 4rem;
+  --_size: 4rem;
 }
 
 :is(img, svg, video).responsive {
-  ---size: 100%;
+  --_size: 100%;
   margin: 0 auto;
 }
 
@@ -103,7 +103,7 @@ svg {
 }
 
 :is(.circle, .square, .extend) > .responsive {
-  ---size: inherit;
+  --_size: inherit;
   margin: 0 !important;
 }
 

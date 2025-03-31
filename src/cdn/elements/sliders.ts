@@ -82,10 +82,10 @@ function updateRange(input: HTMLInputElement) {
     }
   }
 
-  label.style.setProperty("---start", `${start}%`);
-  label.style.setProperty("---end", `${end}%`);
-  label.style.setProperty("---value1", `'${value1}'`);
-  label.style.setProperty("---value2", `'${value2}'`);
+  label.style.setProperty("--_start", `${start}%`);
+  label.style.setProperty("--_end", `${end}%`);
+  label.style.setProperty("--_value1", `'${value1}'`);
+  label.style.setProperty("--_value2", `'${value2}'`);
 }
 
 export function updateAllSliders() {

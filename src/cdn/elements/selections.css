@@ -2,7 +2,7 @@
 .checkbox,
 .radio,
 .switch {
-  ---size: 1.5rem;
+  --_size: 1.5rem;
   direction: ltr;
   inline-size: auto;
   block-size: auto;
@@ -14,20 +14,20 @@
 }
 
 :is(.checkbox, .radio, .switch).small {
-  ---size: 1rem;
+  --_size: 1rem;
 }
 
 :is(.checkbox, .radio, .switch).large {
-  ---size: 2rem;
+  --_size: 2rem;
 }
 
 :is(.checkbox, .radio, .switch).extra {
-  ---size: 2.5rem;
+  --_size: 2.5rem;
 }
 
 :is(.checkbox, .radio) > input {
-  inline-size: var(---size);
-  block-size: var(---size);
+  inline-size: var(--_size);
+  block-size: var(--_size);
   opacity: 0;
 }
 
@@ -51,16 +51,16 @@
 :is(.checkbox, .radio, .switch) > span::before,
 :is(.checkbox, .radio, .switch) > span > i,
 :is(.checkbox, .radio) > span::after {
-  ---size: inherit;
+  --_size: inherit;
   content: '';
-  inline-size: var(---size);
-  block-size: var(---size);
+  inline-size: var(--_size);
+  block-size: var(--_size);
   box-sizing: border-box;
   margin: 0 auto;
   outline: none;
   color: var(--primary);
   position: absolute;
-  inset: auto auto auto calc(var(---size) * -1);
+  inset: auto auto auto calc(var(--_size) * -1);
   border-radius: 50%;
   user-select: none;
   z-index: 1;
@@ -75,10 +75,10 @@
   justify-content: center;
   border-radius: 50%;
   transition: all var(--speed2);
-  font-size: calc(var(---size) - 0.5rem);
+  font-size: calc(var(--_size) - 0.5rem);
   user-select: none;
-  min-inline-size: var(---size);
-  min-block-size: var(---size);
+  min-inline-size: var(--_size);
+  min-block-size: var(--_size);
   content: "";
   color: var(--surface-variant);
   background-color: var(--outline);

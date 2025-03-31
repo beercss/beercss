@@ -1109,14 +1109,14 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   box-shadow: var(--elevate3) !important;
 }
 [class*=round] {
-  ---round: 2rem;
-  border-radius: var(---round) !important;
+  --_round: 2rem;
+  border-radius: var(--_round) !important;
 }
 .small-round {
-  ---round: 0.5rem;
+  --_round: 0.5rem;
 }
 .large-round {
-  ---round: 3.5rem;
+  --_round: 3.5rem;
 }
 .no-round,
 .square,
@@ -1127,20 +1127,20 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   border-radius: 0 !important;
 }
 .top-round {
-  border-start-start-radius: var(---round) !important;
-  border-start-end-radius: var(---round) !important;
+  border-start-start-radius: var(--_round) !important;
+  border-start-end-radius: var(--_round) !important;
 }
 .bottom-round {
-  border-end-end-radius: var(---round) !important;
-  border-end-start-radius: var(---round) !important;
+  border-end-end-radius: var(--_round) !important;
+  border-end-start-radius: var(--_round) !important;
 }
 .left-round {
-  border-start-start-radius: var(---round) !important;
-  border-end-start-radius: var(---round) !important;
+  border-start-start-radius: var(--_round) !important;
+  border-end-start-radius: var(--_round) !important;
 }
 .right-round {
-  border-start-end-radius: var(---round) !important;
-  border-end-end-radius: var(---round) !important;
+  border-start-end-radius: var(--_round) !important;
+  border-end-end-radius: var(--_round) !important;
 }
 .circle:not(.extend) {
   border-radius: 50%;
@@ -1164,41 +1164,41 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   border-color: transparent !important;
 }
 [class*=margin]:not(.left-margin, .right-margin, .top-margin, .bottom-margin, .horizontal-margin, .vertical-margin) {
-  margin: var(---margin) !important;
+  margin: var(--_margin) !important;
 }
 [class*=margin] {
-  ---margin: 1rem;
+  --_margin: 1rem;
 }
 .no-margin {
-  ---margin: 0;
+  --_margin: 0;
 }
 .auto-margin {
-  ---margin: auto;
+  --_margin: auto;
 }
 .tiny-margin {
-  ---margin: 0.25rem;
+  --_margin: 0.25rem;
 }
 .small-margin {
-  ---margin: 0.5rem;
+  --_margin: 0.5rem;
 }
 .large-margin {
-  ---margin: 1.5rem;
+  --_margin: 1.5rem;
 }
 .left-margin,
 .horizontal-margin {
-  margin-inline-start: var(---margin) !important;
+  margin-inline-start: var(--_margin) !important;
 }
 .right-margin,
 .horizontal-margin {
-  margin-inline-end: var(---margin) !important;
+  margin-inline-end: var(--_margin) !important;
 }
 .top-margin,
 .vertical-margin {
-  margin-block-start: var(---margin) !important;
+  margin-block-start: var(--_margin) !important;
 }
 .bottom-margin,
 .vertical-margin {
-  margin-block-end: var(---margin) !important;
+  margin-block-end: var(--_margin) !important;
 }
 .no-opacity {
   opacity: 1 !important;
@@ -1216,38 +1216,38 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   opacity: 0.25 !important;
 }
 [class*=padding]:not(.left-padding, .right-padding, .top-padding, .bottom-padding, .horizontal-padding, .vertical-padding) {
-  padding: var(---padding) !important;
+  padding: var(--_padding) !important;
 }
 [class*=padding] {
-  ---padding: 1rem;
+  --_padding: 1rem;
 }
 .no-padding {
-  ---padding: 0;
+  --_padding: 0;
 }
 .tiny-padding {
-  ---padding: 0.25rem;
+  --_padding: 0.25rem;
 }
 .small-padding {
-  ---padding: 0.5rem;
+  --_padding: 0.5rem;
 }
 .large-padding {
-  ---padding: 1.5rem;
+  --_padding: 1.5rem;
 }
 .left-padding,
 .horizontal-padding {
-  padding-inline-start: var(---padding) !important;
+  padding-inline-start: var(--_padding) !important;
 }
 .right-padding,
 .horizontal-padding {
-  padding-inline-end: var(---padding) !important;
+  padding-inline-end: var(--_padding) !important;
 }
 .top-padding,
 .vertical-padding {
-  padding-block-start: var(---padding) !important;
+  padding-block-start: var(--_padding) !important;
 }
 .bottom-padding,
 .vertical-padding {
-  padding-block-end: var(---padding) !important;
+  padding-block-end: var(--_padding) !important;
 }
 .front {
   z-index: 10 !important;
@@ -1285,13 +1285,13 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   transform: translate(50%, -50%);
 }
 .ripple {
-  ---duration: 600ms;
+  --_duration: 600ms;
 }
 .fast-ripple {
-  ---duration: 200ms;
+  --_duration: 200ms;
 }
 .slow-ripple {
-  ---duration: 1800ms;
+  --_duration: 1800ms;
 }
 .ripple-js {
   position: absolute;
@@ -1305,7 +1305,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   background: currentColor;
   opacity: 0.3;
   transform: scale(0);
-  animation: to-ripple var(---duration) linear;
+  animation: to-ripple var(--_duration) linear;
 }
 @keyframes to-ripple {
   to {
@@ -1591,9 +1591,9 @@ pre:has(> code){
 }
 [class*=blur],
 [class*=blur].light {
-  ---blur: 1rem;
-  -webkit-backdrop-filter: blur(var(---blur));
-  backdrop-filter: blur(var(---blur));
+  --_blur: 1rem;
+  -webkit-backdrop-filter: blur(var(--_blur));
+  backdrop-filter: blur(var(--_blur));
   color: var(--on-surface);
   background-color: rgb(255 255 255 / 0.5);
 }
@@ -1602,10 +1602,10 @@ pre:has(> code){
   background-color: rgb(0 0 0 / 0.5);
 }
 .small-blur {
-  ---blur: 0.5rem;
+  --_blur: 0.5rem;
 }
 .large-blur {
-  ---blur: 1.5rem;
+  --_blur: 1.5rem;
 }
 .shadow {
   background-color: #00000050;
@@ -1626,8 +1626,8 @@ pre:has(> code){
   background-image: linear-gradient(to bottom, black, transparent);
 }
 .badge {
-  ---x: 0;
-  ---y: -100%;
+  --_x: 0;
+  --_y: -100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1643,20 +1643,20 @@ pre:has(> code){
   line-height: normal;
   border-radius: 1rem;
   inset: 50% auto auto 50%;
-  transform: translate(var(---x, 50%), var(---y, -50%));
+  transform: translate(var(--_x, 50%), var(--_y, -50%));
   font-family: var(--font);
 }
 .badge.top {
-  ---y: -100%;
+  --_y: -100%;
 }
 .badge.bottom {
-  ---y: 0;
+  --_y: 0;
 }
 .badge.left {
-  ---x: -100%;
+  --_x: -100%;
 }
 .badge.right {
-  ---x: 0;
+  --_x: 0;
 }
 .badge.border {
   border-color: var(--error);
@@ -1694,33 +1694,33 @@ nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > .badge {
 }
 .button,
 button {
-  ---size: 2.5rem;
+  --_size: 2.5rem;
   box-sizing: content-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  block-size: var(---size);
-  min-inline-size: var(---size);
+  block-size: var(--_size);
+  min-inline-size: var(--_size);
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-primary);
   padding: 0 1.5rem;
   background-color: var(--primary);
   margin: 0 0.5rem;
-  border-radius: var(---size);
+  border-radius: var(--_size);
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
   user-select: none;
   gap: 1rem;
   line-height: normal;
 }
 :is(button, .button).small {
-  ---size: 2rem;
+  --_size: 2rem;
 }
 :is(button, .button).large {
-  ---size: 3rem;
+  --_size: 3rem;
 }
 :is(.button, button):is(.extra, .extend) {
-  ---size: 3.5rem;
+  --_size: 3.5rem;
   font-size: 1rem;
 }
 :is(button, .button).border {
@@ -1761,11 +1761,11 @@ button {
   color: var(--on-secondary-container) !important;
 }
 article {
-  ---padding: 1rem;
+  --_padding: 1rem;
   box-shadow: var(--elevate1);
   background-color: var(--surface-container-low);
   color: var(--on-surface);
-  padding: var(---padding);
+  padding: var(--_padding);
   border-radius: 0.75rem;
   display: block;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
@@ -1780,13 +1780,13 @@ article.large {
   block-size: 32rem;
 }
 .chip {
-  ---size: 2rem;
+  --_size: 2rem;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  block-size: var(---size);
-  min-inline-size: var(---size);
+  block-size: var(--_size);
+  min-inline-size: var(--_size);
   font-size: 0.875rem;
   font-weight: 500;
   background-color: transparent;
@@ -1806,10 +1806,10 @@ article.large {
   box-shadow: var(--elevate1);
 }
 .chip.medium {
-  ---size: 2.5rem;
+  --_size: 2.5rem;
 }
 .chip.large {
-  ---size: 3rem;
+  --_size: 3rem;
 }
 .chip.fill {
   background-color: var(--secondary-container) !important;
@@ -1834,7 +1834,7 @@ main::before {
   content: '';
   position: fixed;
   inset: 0 0 auto 0;
-  block-size: calc(var(--top) + var(---top));
+  block-size: calc(var(--top) + var(--_top));
   background-color: inherit;
   z-index: 13;
 }
@@ -1842,7 +1842,7 @@ main::after {
   content: '';
   position: fixed;
   inset: auto 0 0 0;
-  block-size: calc(var(--bottom) + var(---bottom));
+  block-size: calc(var(--bottom) + var(--_bottom));
   background-color: inherit;
   z-index: 13;
 }
@@ -1854,17 +1854,17 @@ main::after {
   max-inline-size: 100%;
 }
 :has(> main) {
-  ---top: 0rem;
-  ---bottom: 0rem;
-  ---left: 0rem;
-  ---right: 0rem;
+  --_top: 0rem;
+  --_bottom: 0rem;
+  --_left: 0rem;
+  --_right: 0rem;
   display: flex;
   flex-direction: column;
-  min-block-size: calc(100vh - var(--top) - var(---top) - var(--bottom) - var(---bottom));
+  min-block-size: calc(100vh - var(--top) - var(--_top) - var(--bottom) - var(--_bottom));
   box-sizing: border-box;
   background-color: var(--surface);
-  margin-block: calc(var(--top) + var(---top)) calc(var(--bottom) + var(---bottom));
-  margin-inline: calc(var(--left) + var(---left)) calc(var(--right) + var(---right));
+  margin-block: calc(var(--top) + var(--_top)) calc(var(--bottom) + var(--_bottom));
+  margin-inline: calc(var(--left) + var(--_left)) calc(var(--right) + var(--_right));
 }
 :has(> main) > :is(header, footer) {
   padding: 0 1rem;
@@ -1873,28 +1873,28 @@ main::after {
   z-index: 12;
 }
 :has(> main) > header.fixed {
-  inset: calc(var(--top) + var(---top)) 0 0 0;
+  inset: calc(var(--top) + var(--_top)) 0 0 0;
 }
 :has(> main) > footer.fixed {
-  inset: 0 0 calc(var(--bottom) + var(---bottom)) 0;
+  inset: 0 0 calc(var(--bottom) + var(--_bottom)) 0;
 }
 :has(> nav.top:not(.s, .n, .l)) {
-  ---top: 5rem;
+  --_top: 5rem;
 }
 :has(> nav.bottom:not(.s, .n, .l)) {
-  ---bottom: 5rem;
+  --_bottom: 5rem;
 }
 :has(> nav.left:not(.s, .n, .l)) {
-  ---left: 5rem;
+  --_left: 5rem;
 }
 :has(> nav.right:not(.s, .n, .l)) {
-  ---right: 5rem;
+  --_right: 5rem;
 }
 :has(> nav.drawer.left:not(.s, .n, .l)) {
-  ---left: 20rem;
+  --_left: 20rem;
 }
 :has(> nav.drawer.right:not(.s, .n, .l)) {
-  ---right: 20rem;
+  --_right: 20rem;
 }
 :not(main):has(> aside) {
   overflow: auto;
@@ -1910,81 +1910,81 @@ aside:not(.fixed, .absolute).left {
 }
 @media only screen and (max-width: 600px) {
   :has(> nav.bottom.s) {
-    ---bottom: 5rem;
+    --_bottom: 5rem;
   }
 
   :has(> nav.top.s) {
-    ---top: 5rem;
+    --_top: 5rem;
   }
 
   :has(> nav.left.s) {
-    ---left: 5rem;
+    --_left: 5rem;
   }
 
   :has(> nav.right.s) {
-    ---right: 5rem;
+    --_right: 5rem;
   }
 
   :has(> nav.drawer.left.s) {
-    ---left: 20rem;
+    --_left: 20rem;
   }
 
   :has(> nav.drawer.right.s) {
-    ---right: 20rem;
+    --_right: 20rem;
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 992px) {
   :has(> nav.bottom.m) {
-    ---bottom: 5rem;
+    --_bottom: 5rem;
   }
 
   :has(> nav.top.m) {
-    ---top: 5rem;
+    --_top: 5rem;
   }
 
   :has(> nav.left.m) {
-    ---left: 5rem;
+    --_left: 5rem;
   }
 
   :has(> nav.right.m) {
-    ---right: 5rem;
+    --_right: 5rem;
   }
 
   :has(> nav.drawer.left.m) {
-    ---left: 20rem;
+    --_left: 20rem;
   }
 
   :has(> nav.drawer.right.m) {
-    ---right: 20rem;
+    --_right: 20rem;
   }
 }
 @media only screen and (min-width: 993px) {
   :has(> nav.bottom.l) {
-    ---bottom: 5rem;
+    --_bottom: 5rem;
   }
 
   :has(> nav.top.l) {
-    ---top: 5rem;
+    --_top: 5rem;
   }
 
   :has(> nav.left.l) {
-    ---left: 5rem;
+    --_left: 5rem;
   }
 
   :has(> nav.right.l) {
-    ---right: 5rem;
+    --_right: 5rem;
   }
 
   :has(> nav.drawer.left.l) {
-    ---left: 20rem;
+    --_left: 20rem;
   }
 
   :has(> nav.drawer.right.l) {
-    ---right: 20rem;
+    --_right: 20rem;
   }
 }
 dialog {
-  ---padding: 1.5rem;
+  --_padding: 1.5rem;
   display: block;
   visibility: hidden;
   border: none;
@@ -1993,7 +1993,7 @@ dialog {
   box-shadow: var(--elevate2);
   color: var(--on-surface);
   background-color: var(--surface-container-high);
-  padding: var(---padding);
+  padding: var(--_padding);
   z-index: 100;
   inset: 10% auto auto 50%;
   min-inline-size: 20rem;
@@ -2029,8 +2029,8 @@ dialog:popover-open {
   transform: translate(-50%, 0);
 }
 dialog:is(.top, .right, .bottom, .left, .max) {
-  ---padding: 1rem;
-  padding: calc(var(--top) + var(---padding)) calc(var(--right) + var(---padding)) calc(var(--bottom) + var(---padding)) calc(var(--left) + var(---padding));
+  --_padding: 1rem;
+  padding: calc(var(--top) + var(--_padding)) calc(var(--right) + var(--_padding)) calc(var(--bottom) + var(--_padding)) calc(var(--left) + var(--_padding));
 }
 dialog:is(.top, .bottom) {
   opacity: 1;
@@ -2043,7 +2043,7 @@ dialog.top {
   inset: 0 auto auto 0;
   transform: translateY(-100%);
   border-radius: 0 0 1rem 1rem;
-  padding-block-end: var(---padding);
+  padding-block-end: var(--_padding);
 }
 dialog.bottom {
   inset: auto auto 0 0;
@@ -2117,13 +2117,13 @@ dialog > header.fixed {
   background-color: inherit;
   padding: var(--top) 0 0 0;
   margin: calc(-1 * var(--top)) 0 0 0;
-  transform: translateY(calc(-1 * (var(--top) + var(---padding))));
+  transform: translateY(calc(-1 * (var(--top) + var(--_padding))));
 }
 dialog > footer.fixed {
   background-color: inherit;
   padding: 0 0 var(--bottom) 0;
   margin: 0 0 calc(-1 * var(--bottom)) 0;
-  transform: translateY(calc(var(--bottom) + var(---padding)));
+  transform: translateY(calc(var(--bottom) + var(--_padding)));
 }
 hr,
 [class*=divider] {
@@ -2166,9 +2166,9 @@ summary::-webkit-details-marker {
   display: none;
 }
 .field {
-  ---size: 3rem;
-  ---start: 1.2rem;
-  block-size: var(---size);
+  --_size: 3rem;
+  --_start: 1.2rem;
+  block-size: var(--_size);
   margin-block-end: 2rem;
   border-radius: 0.25rem 0.25rem 0 0;
 }
@@ -2188,16 +2188,16 @@ summary::-webkit-details-marker {
   margin-block-start: 3rem;
 }
 .field.small {
-  ---size: 2.5rem;
-  ---start: 1rem;
+  --_size: 2.5rem;
+  --_start: 1rem;
 }
 .field.large {
-  ---size: 3.5rem;
-  ---start: 1.4rem;
+  --_size: 3.5rem;
+  --_start: 1.4rem;
 }
 .field.extra {
-  ---size: 4rem;
-  ---start: 1.6rem;
+  --_size: 4rem;
+  --_start: 1.6rem;
 }
 .field.border {
   border-radius: 0.25rem;
@@ -2370,16 +2370,16 @@ input[type=number] {
   cursor: not-allowed;
 }
 .field.textarea.small:not(.min) {
-  ---size: 4.5rem;
+  --_size: 4.5rem;
 }
 .field.textarea:not(.min) {
-  ---size: 5.5rem;
+  --_size: 5.5rem;
 }
 .field.textarea.large:not(.min) {
-  ---size: 6.5rem;
+  --_size: 6.5rem;
 }
 .field.textarea.extra:not(.min) {
-  ---size: 7.5rem;
+  --_size: 7.5rem;
 }
 .field > select {
   user-select: none;
@@ -2395,19 +2395,19 @@ input[type=number] {
   padding-block-start: 0;
 }
 .field > textarea {
-  padding-block-start: var(---start);
+  padding-block-start: var(--_start);
   white-space: pre-wrap;
 }
 .field > textarea:focus {
-  padding-block-start: calc(var(---start) - 0.06rem);
+  padding-block-start: calc(var(--_start) - 0.06rem);
 }
 .field:not(.label) > textarea,
 .field.border.label:not(.fill) > textarea {
-  padding-block-start: calc(var(---start) - 0.5rem);
+  padding-block-start: calc(var(--_start) - 0.5rem);
 }
 .field:not(.label) > textarea:focus,
 .field.border.label:not(.fill) > textarea:focus {
-  padding-block-start: calc(var(---start) - 0.56rem);
+  padding-block-start: calc(var(--_start) - 0.56rem);
 }
 /* label */
 .field.label > label {
@@ -2415,8 +2415,8 @@ input[type=number] {
   inset: -0.5rem auto auto 1rem;
   display: flex;
   inline-size: calc(100% - 5rem);
-  block-size: calc(var(---size) + 1rem);
-  line-height: calc(var(---size) + 1rem);
+  block-size: calc(var(--_size) + 1rem);
+  line-height: calc(var(--_size) + 1rem);
   font-size: 1rem;
   transition: all 0.2s;
   gap: 0.25rem;
@@ -2531,20 +2531,20 @@ fieldset > legend + * {
   margin-block-start: 0 !important;
 }
 .grid {
-  ---gap: 1rem;
+  --_gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(12, calc(8.33% - var(---gap) + (var(---gap) / 12)));
-  gap: var(---gap);
+  grid-template-columns: repeat(12, calc(8.33% - var(--_gap) + (var(--_gap) / 12)));
+  gap: var(--_gap);
   block-size: auto;
 }
 .grid.no-space {
-  ---gap: 0rem;
+  --_gap: 0rem;
 }
 .grid.medium-space {
-  ---gap: 1.5rem;
+  --_gap: 1.5rem;
 }
 .grid.large-space {
-  ---gap: 2rem;
+  --_gap: 2rem;
 }
 .grid > * {
   margin: 0;
@@ -2686,11 +2686,11 @@ fieldset > legend + * {
 i,
 :is(.checkbox, .radio, .switch) > span::before,
 :is(.checkbox, .radio, .switch) > span > i {
-  ---size: 1.5rem;
+  --_size: 1.5rem;
   font-family: var(--font-icon);
   font-weight: normal;
   font-style: normal;
-  font-size: var(---size);
+  font-size: var(--_size);
   letter-spacing: normal;
   text-transform: none;
   display: inline-flex;
@@ -2704,29 +2704,29 @@ i,
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  inline-size: var(---size);
-  min-inline-size: var(---size);
-  block-size: var(---size);
-  min-block-size: var(---size);
+  inline-size: var(--_size);
+  min-inline-size: var(--_size);
+  block-size: var(--_size);
+  min-block-size: var(--_size);
   box-sizing: content-box;
   line-height: normal;
   border-radius: 0;
 }
 i.tiny {
-  ---size: 1rem;
+  --_size: 1rem;
 }
 .chip > i,
 i.small {
-  ---size: 1.25rem;
+  --_size: 1.25rem;
 }
 i.medium {
-  ---size: 1.5rem;
+  --_size: 1.5rem;
 }
 i.large {
-  ---size: 1.75rem;
+  --_size: 1.75rem;
 }
 i.extra {
-  ---size: 2rem;
+  --_size: 2rem;
 }
 i.fill,
 a.row:is(:hover, :focus) > i,
@@ -2743,7 +2743,7 @@ i > :is(img, svg) {
   padding: inherit;
 }
 i[class*=fa-] {
-  font-size: calc(var(---size) * 0.85);
+  font-size: calc(var(--_size) * 0.85);
   line-height: normal;
   block-size: auto;
   min-block-size: auto;
@@ -2785,11 +2785,11 @@ footer {
 }
 header {
   min-block-size: 4rem;
-  transform: translateY(calc(-1 * var(---padding)));
+  transform: translateY(calc(-1 * var(--_padding)));
 }
 footer {
   min-block-size: 5rem;
-  transform: translateY(var(---padding));
+  transform: translateY(var(--_padding));
 }
 :is(header, footer, menu > *).fixed {
   position: sticky;
@@ -2863,30 +2863,30 @@ svg {
   fill: currentcolor;
 }
 :is(img, svg, video):is(.small, .medium, .large, .tiny, .extra, .round, .circle, .square, .responsive) {
-  ---size: 3rem;
+  --_size: 3rem;
   object-fit: cover;
   object-position: center;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
-  block-size: var(---size);
-  inline-size: var(---size);
+  block-size: var(--_size);
+  inline-size: var(--_size);
 }
 :is(img, svg, video).round {
   border-radius: 0.5rem;
 }
 :is(img, svg, video).tiny {
-  ---size: 2rem;
+  --_size: 2rem;
 }
 :is(img, svg, video).small {
-  ---size: 2.5rem;
+  --_size: 2.5rem;
 }
 :is(img, svg, video).large {
-  ---size: 3.5rem;
+  --_size: 3.5rem;
 }
 :is(img, svg, video).extra {
-  ---size: 4rem;
+  --_size: 4rem;
 }
 :is(img, svg, video).responsive {
-  ---size: 100%;
+  --_size: 100%;
   margin: 0 auto;
 }
 :is(img, svg, video).responsive.tiny {
@@ -2942,7 +2942,7 @@ svg {
   margin-inline-end: -1rem;
 }
 :is(.circle, .square, .extend) > .responsive {
-  ---size: inherit;
+  --_size: inherit;
   margin: 0 !important;
 }
 .extend > :is(.responsive, i) {
@@ -3081,8 +3081,8 @@ menu.top {
   transform: scale(0.8) translateY(-120%);
 }
 menu:has(menu) {
-  ---child: 1;
-  ---type: 0;
+  --_child: 1;
+  --_type: 0;
   overflow: unset;
   white-space: nowrap;
   inline-size: auto;
@@ -3091,19 +3091,19 @@ menu:has(menu) {
 }
 menu > li > :is(menu, menu.right),
 [dir=rtl] menu > li > menu.left {
-  inset: auto auto calc(3rem * (var(---child) - var(---type))) 100%;
+  inset: auto auto calc(3rem * (var(--_child) - var(--_type))) 100%;
 }
 [dir=rtl] menu > li > :is(menu, menu.right),
 menu > li > menu.left {
-  inset: auto 100% calc(3rem * (var(---child) - var(---type))) auto;
+  inset: auto 100% calc(3rem * (var(--_child) - var(--_type))) auto;
 }
 menu > li > :is(menu.top, menu.top.right),
 [dir=rtl] menu > li > menu.top.left {
-  inset: calc(3rem * (var(---child) - var(---type))) auto auto 100%;
+  inset: calc(3rem * (var(--_child) - var(--_type))) auto auto 100%;
 }
 [dir=rtl] menu > li > :is(menu.top, menu.top.right),
 menu > li > menu.top.left {
-  inset: calc(3rem * (var(---child) - var(---type))) 100% auto auto;
+  inset: calc(3rem * (var(--_child) - var(--_type))) 100% auto auto;
 }
 menu.no-space > li {
   min-block-size: 2.5rem;
@@ -3123,64 +3123,64 @@ menu.border > li:not(:last-child)::before {
   inline-size: auto;
 }
 menu > li:nth-last-child(2) {
-  ---child: 2;
+  --_child: 2;
 }
 menu > li:nth-last-child(3) {
-  ---child: 3;
+  --_child: 3;
 }
 menu > li:nth-last-child(4) {
-  ---child: 4;
+  --_child: 4;
 }
 menu > li:nth-last-child(5) {
-  ---child: 5;
+  --_child: 5;
 }
 menu > li:nth-last-child(6) {
-  ---child: 6;
+  --_child: 6;
 }
 menu > li:nth-last-child(7) {
-  ---child: 7;
+  --_child: 7;
 }
 menu > li:nth-last-child(8) {
-  ---child: 8;
+  --_child: 8;
 }
 menu > li:nth-last-child(9) {
-  ---child: 9;
+  --_child: 9;
 }
 menu > li:nth-last-child(10) {
-  ---child: 10;
+  --_child: 10;
 }
 menu > li:nth-last-child(11) {
-  ---child: 11;
+  --_child: 11;
 }
 menu > li:nth-last-of-type(2) {
-  ---type: 1;
+  --_type: 1;
 }
 menu > li:nth-last-of-type(3) {
-  ---type: 2;
+  --_type: 2;
 }
 menu > li:nth-last-of-type(4) {
-  ---type: 3;
+  --_type: 3;
 }
 menu > li:nth-last-of-type(5) {
-  ---type: 4;
+  --_type: 4;
 }
 menu > li:nth-last-of-type(6) {
-  ---type: 5;
+  --_type: 5;
 }
 menu > li:nth-last-of-type(7) {
-  ---type: 6;
+  --_type: 6;
 }
 menu > li:nth-last-of-type(8) {
-  ---type: 7;
+  --_type: 7;
 }
 menu > li:nth-last-of-type(9) {
-  ---type: 8;
+  --_type: 8;
 }
 menu > li:nth-last-of-type(10) {
-  ---type: 9;
+  --_type: 9;
 }
 menu > li:nth-last-of-type(11) {
-  ---type: 10;
+  --_type: 10;
 }
 nav > :is(ol, ul),
 nav > :is(ol, ul) > li {
@@ -3470,7 +3470,7 @@ dialog:popover-open::backdrop {
   border: 0;
 }
 .page {
-  ---transform: translate(0, 0);
+  --_transform: translate(0, 0);
   opacity: 0;
   position: absolute;
   display: none;
@@ -3482,21 +3482,21 @@ dialog:popover-open::backdrop {
   animation: var(--speed4) to-page ease;
 }
 .page.active.top {
-  ---transform: translate(0, -4rem);
+  --_transform: translate(0, -4rem);
 }
 .page.active.bottom {
-  ---transform: translate(0, 4rem);
+  --_transform: translate(0, 4rem);
 }
 .page.active.left {
-  ---transform: translate(-4rem, 0);
+  --_transform: translate(-4rem, 0);
 }
 .page.active.right {
-  ---transform: translate(4rem, 0);
+  --_transform: translate(4rem, 0);
 }
 @keyframes to-page {
   from {
     opacity: 0;
-    transform: var(---transform);
+    transform: var(--_transform);
   }
 
   to {
@@ -3676,7 +3676,7 @@ progress.max + * {
 .checkbox,
 .radio,
 .switch {
-  ---size: 1.5rem;
+  --_size: 1.5rem;
   direction: ltr;
   inline-size: auto;
   block-size: auto;
@@ -3687,17 +3687,17 @@ progress.max + * {
   align-items: center;
 }
 :is(.checkbox, .radio, .switch).small {
-  ---size: 1rem;
+  --_size: 1rem;
 }
 :is(.checkbox, .radio, .switch).large {
-  ---size: 2rem;
+  --_size: 2rem;
 }
 :is(.checkbox, .radio, .switch).extra {
-  ---size: 2.5rem;
+  --_size: 2.5rem;
 }
 :is(.checkbox, .radio) > input {
-  inline-size: var(---size);
-  block-size: var(---size);
+  inline-size: var(--_size);
+  block-size: var(--_size);
   opacity: 0;
 }
 .switch > input {
@@ -3717,16 +3717,16 @@ progress.max + * {
 :is(.checkbox, .radio, .switch) > span::before,
 :is(.checkbox, .radio, .switch) > span > i,
 :is(.checkbox, .radio) > span::after {
-  ---size: inherit;
+  --_size: inherit;
   content: '';
-  inline-size: var(---size);
-  block-size: var(---size);
+  inline-size: var(--_size);
+  block-size: var(--_size);
   box-sizing: border-box;
   margin: 0 auto;
   outline: none;
   color: var(--primary);
   position: absolute;
-  inset: auto auto auto calc(var(---size) * -1);
+  inset: auto auto auto calc(var(--_size) * -1);
   border-radius: 50%;
   user-select: none;
   z-index: 1;
@@ -3740,10 +3740,10 @@ progress.max + * {
   justify-content: center;
   border-radius: 50%;
   transition: all var(--speed2);
-  font-size: calc(var(---size) - 0.5rem);
+  font-size: calc(var(--_size) - 0.5rem);
   user-select: none;
-  min-inline-size: var(---size);
-  min-block-size: var(---size);
+  min-inline-size: var(--_size);
+  min-block-size: var(--_size);
   content: "";
   color: var(--surface-variant);
   background-color: var(--outline);
@@ -3868,10 +3868,10 @@ progress.max + * {
   outline-offset: 0.375rem;
 }
 .slider {
-  ---start: 0%;
-  ---end: 0%;
-  ---value1: "";
-  ---value2: "";
+  --_start: 0%;
+  --_end: 0%;
+  --_value1: "";
+  --_value2: "";
   display: flex;
   align-items: center !important;
   inline-size: auto;
@@ -3978,7 +3978,7 @@ progress.max + * {
   border-radius: 1rem 0 0 1rem;
   background: var(--primary);
   z-index: 0;
-  inset: calc(50% - 0.5rem) var(---end) auto var(---start);
+  inset: calc(50% - 0.5rem) var(--_end) auto var(--_start);
   clip-path: polygon(0 0, calc(100% - 0.5rem) 0, calc(100% - 0.5rem) 100%, 0 100%);
 }
 .slider > input[type=range] + input[type=range] ~ span {
@@ -3995,7 +3995,7 @@ progress.max + * {
   block-size: 1rem;
   border-radius: 1rem;
   background: var(--primary-container);
-  clip-path: polygon(calc(var(---start) - 0.5rem) 0, 0 0, 0 100%, calc(var(---start) - 0.5rem) 100%, calc(var(---start) - 0.5rem) 0, calc(100% - var(---end) + 0.5rem) 0, 100% 0, 100% 100%, calc(100% - var(---end) + 0.5rem) 100%, calc(100% - var(---end) + 0.5rem) 0);
+  clip-path: polygon(calc(var(--_start) - 0.5rem) 0, 0 0, 0 100%, calc(var(--_start) - 0.5rem) 100%, calc(var(--_start) - 0.5rem) 0, calc(100% - var(--_end) + 0.5rem) 0, 100% 0, 100% 100%, calc(100% - var(--_end) + 0.5rem) 100%, calc(100% - var(--_end) + 0.5rem) 0);
 }
 .slider:has(> [disabled])::before {
   background: var(--active);
@@ -4003,7 +4003,7 @@ progress.max + * {
 .slider > .tooltip {
   visibility: hidden !important;
   opacity: 0 !important;
-  inset: 0 auto auto calc(100% - var(---end));
+  inset: 0 auto auto calc(100% - var(--_end));
   border-radius: 2rem;
   transition: top var(--speed2) ease, opacity var(--speed2) ease;
   transform: translate(-50%, -50%) !important;
@@ -4013,17 +4013,17 @@ progress.max + * {
   transform: translate(-50%, -50%) scaleX(-1) !important;
 }
 .slider > .tooltip + .tooltip {
-  inset: 0.25rem calc(100% - var(---start)) auto auto;
+  inset: 0.25rem calc(100% - var(--_start)) auto auto;
   transform: translate(50%, -50%) !important;
 }
 [dir=rtl] .slider > .tooltip + .tooltip {
   transform: translate(50%, -50%) scaleX(-1) !important;
 }
 .slider > .tooltip::before {
-  content: var(---value1);
+  content: var(--_value1);
 }
 .slider > .tooltip + .tooltip::before {
-  content: var(---value2);
+  content: var(--_value2);
 }
 .slider > :focus ~ .tooltip {
   inset-block-start: -1rem !important;
@@ -4073,13 +4073,13 @@ progress.max + * {
 }
 .slider.max > span {
   block-size: auto !important;
-  inset: 0 var(---end) 0 var(---start);
+  inset: 0 var(--_end) 0 var(--_start);
   clip-path: none;
   background: currentcolor;
   border-radius: 0;
 }
 .slider.max.vertical > span {
-  inset: var(---end) 0 var(---start) 0;
+  inset: var(--_end) 0 var(--_start) 0;
 }
 .slider > input:focus-visible::-webkit-slider-thumb {
   outline: 0.1875rem solid var(--primary);
@@ -4240,7 +4240,7 @@ tfoot th.fixed {
   inline-size: auto;
 }
 .tooltip {
-  ---space: -0.5rem;
+  --_space: -0.5rem;
   visibility: hidden;
   display: flex;
   align-items: center;
@@ -4302,23 +4302,23 @@ tfoot th.fixed {
   transform: translate(-50%, 100%) scale(1);
 }
 .tooltip.no-space {
-  ---space: 0;
+  --_space: 0;
 }
 .tooltip.medium-space {
-  ---space: -1rem;
+  --_space: -1rem;
 }
 .tooltip.large-space {
-  ---space: -1.5rem;
+  --_space: -1.5rem;
 }
 .tooltip:not(.left, .right, .bottom) {
-  margin-block-start: var(---space) !important;
+  margin-block-start: var(--_space) !important;
 }
 .tooltip.left,
 .tooltip.right {
-  margin-inline: var(---space) !important;
+  margin-inline: var(--_space) !important;
 }
 .tooltip.bottom {
-  margin-block-end: var(---space) !important;
+  margin-block-end: var(--_space) !important;
 }
 menu:active ~ .tooltip,
 :is(button, .button):focus > menu ~ .tooltip,
@@ -4326,13 +4326,13 @@ menu:active ~ .tooltip,
   visibility: hidden;
 }
 .slider > .tooltip {
-  ---space: -1.25rem;
+  --_space: -1.25rem;
 }
 .slider.vertical > .tooltip {
-  ---space: -0.75rem;
+  --_space: -0.75rem;
 }
 .slider.vertical > .tooltip:is(.left, .right) {
-  ---space: -0.5rem;
+  --_space: -0.5rem;
 }
 .tooltip.max {
   display: block;

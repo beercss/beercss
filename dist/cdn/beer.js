@@ -219,7 +219,7 @@ function updateTextarea(textarea) {
   updatePlaceholder(textarea);
   const field = parent(textarea);
   field.removeAttribute("style");
-  if (hasClass(field, "min")) field.style.setProperty("---size", `${Math.min(192, Math.max(textarea.scrollHeight, field.offsetHeight))}px`);
+  if (hasClass(field, "min")) field.style.setProperty("--_size", `${Math.min(192, Math.max(textarea.scrollHeight, field.offsetHeight))}px`);
 }
 function updateAllFields() {
   updateAllLabels();
@@ -299,10 +299,10 @@ function updateRange(input) {
       value2 = values[0];
     }
   }
-  label.style.setProperty("---start", `${start2}%`);
-  label.style.setProperty("---end", `${end}%`);
-  label.style.setProperty("---value1", `'${value1}'`);
-  label.style.setProperty("---value2", `'${value2}'`);
+  label.style.setProperty("--_start", `${start2}%`);
+  label.style.setProperty("--_end", `${end}%`);
+  label.style.setProperty("--_value1", `'${value1}'`);
+  label.style.setProperty("--_value2", `'${value2}'`);
 }
 function updateAllSliders() {
   updateAllRanges();

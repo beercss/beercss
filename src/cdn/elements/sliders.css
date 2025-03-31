@@ -1,8 +1,8 @@
 .slider {
-  ---start: 0%;
-  ---end: 0%;
-  ---value1: "";
-  ---value2: "";
+  --_start: 0%;
+  --_end: 0%;
+  --_value1: "";
+  --_value2: "";
   display: flex;
   align-items: center !important;
   inline-size: auto;
@@ -128,7 +128,7 @@
   border-radius: 1rem 0 0 1rem;
   background: var(--primary);
   z-index: 0;
-  inset: calc(50% - 0.5rem) var(---end) auto var(---start);
+  inset: calc(50% - 0.5rem) var(--_end) auto var(--_start);
   clip-path: polygon(0 0, calc(100% - 0.5rem) 0, calc(100% - 0.5rem) 100%, 0 100%);
 }
 
@@ -148,7 +148,7 @@
   block-size: 1rem;
   border-radius: 1rem;
   background: var(--primary-container);
-  clip-path: polygon(calc(var(---start) - 0.5rem) 0, 0 0, 0 100%, calc(var(---start) - 0.5rem) 100%, calc(var(---start) - 0.5rem) 0, calc(100% - var(---end) + 0.5rem) 0, 100% 0, 100% 100%, calc(100% - var(---end) + 0.5rem) 100%, calc(100% - var(---end) + 0.5rem) 0);
+  clip-path: polygon(calc(var(--_start) - 0.5rem) 0, 0 0, 0 100%, calc(var(--_start) - 0.5rem) 100%, calc(var(--_start) - 0.5rem) 0, calc(100% - var(--_end) + 0.5rem) 0, 100% 0, 100% 100%, calc(100% - var(--_end) + 0.5rem) 100%, calc(100% - var(--_end) + 0.5rem) 0);
 }
 
 .slider:has(> [disabled])::before {
@@ -158,7 +158,7 @@
 .slider > .tooltip {
   visibility: hidden !important;
   opacity: 0 !important;
-  inset: 0 auto auto calc(100% - var(---end));
+  inset: 0 auto auto calc(100% - var(--_end));
   border-radius: 2rem;
   transition: top var(--speed2) ease, opacity var(--speed2) ease;
   transform: translate(-50%, -50%) !important;
@@ -170,7 +170,7 @@
 }
 
 .slider > .tooltip + .tooltip {
-  inset: 0.25rem calc(100% - var(---start)) auto auto;
+  inset: 0.25rem calc(100% - var(--_start)) auto auto;
   transform: translate(50%, -50%) !important;
 }
 
@@ -179,11 +179,11 @@
 }
 
 .slider > .tooltip::before {
-  content: var(---value1);
+  content: var(--_value1);
 }
 
 .slider > .tooltip + .tooltip::before {
-  content: var(---value2);
+  content: var(--_value2);
 }
 
 .slider > :focus ~ .tooltip {
@@ -242,14 +242,14 @@
 
 .slider.max > span {
   block-size: auto !important;
-  inset: 0 var(---end) 0 var(---start);
+  inset: 0 var(--_end) 0 var(--_start);
   clip-path: none;
   background: currentcolor;
   border-radius: 0;
 }
 
 .slider.max.vertical > span {
-  inset: var(---end) 0 var(---start) 0;
+  inset: var(--_end) 0 var(--_start) 0;
 }
 
 .slider > input:focus-visible::-webkit-slider-thumb {

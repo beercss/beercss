@@ -144,7 +144,7 @@ function updateTextarea(textarea: HTMLTextAreaElement) {
   updatePlaceholder(textarea);
   const field = parent(textarea) as HTMLElement;
   field.removeAttribute("style");
-  if (hasClass(field, "min")) field.style.setProperty("---size", `${Math.min(192, Math.max(textarea.scrollHeight, field.offsetHeight))}px`);
+  if (hasClass(field, "min")) field.style.setProperty("--_size", `${Math.min(192, Math.max(textarea.scrollHeight, field.offsetHeight))}px`);
 }
 
 export function updateAllFields() {

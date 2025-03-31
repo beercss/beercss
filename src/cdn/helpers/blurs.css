@@ -1,8 +1,8 @@
 [class*=blur],
 [class*=blur].light {
-  ---blur: 1rem;
-  -webkit-backdrop-filter: blur(var(---blur));
-  backdrop-filter: blur(var(---blur));
+  --_blur: 1rem;
+  -webkit-backdrop-filter: blur(var(--_blur));
+  backdrop-filter: blur(var(--_blur));
   color: var(--on-surface);
   background-color: rgb(255 255 255 / 0.5);
 }
@@ -13,9 +13,9 @@
 }
 
 .small-blur {
-  ---blur: 0.5rem;
+  --_blur: 0.5rem;
 }
 
 .large-blur {
-  ---blur: 1.5rem;
+  --_blur: 1.5rem;
 }

@@ -1,11 +1,11 @@
 i,
 :is(.checkbox, .radio, .switch) > span::before,
 :is(.checkbox, .radio, .switch) > span > i {
-  ---size: 1.5rem;
+  --_size: 1.5rem;
   font-family: var(--font-icon);
   font-weight: normal;
   font-style: normal;
-  font-size: var(---size);
+  font-size: var(--_size);
   letter-spacing: normal;
   text-transform: none;
   display: inline-flex;
@@ -19,34 +19,34 @@ i,
   vertical-align: middle;
   text-align: center;
   overflow: hidden;
-  inline-size: var(---size);
-  min-inline-size: var(---size);
-  block-size: var(---size);
-  min-block-size: var(---size);
+  inline-size: var(--_size);
+  min-inline-size: var(--_size);
+  block-size: var(--_size);
+  min-block-size: var(--_size);
   box-sizing: content-box;
   line-height: normal;
   border-radius: 0;
 }
 
 i.tiny {
-  ---size: 1rem;
+  --_size: 1rem;
 }
 
 .chip > i,
 i.small {
-  ---size: 1.25rem;
+  --_size: 1.25rem;
 }
 
 i.medium {
-  ---size: 1.5rem;
+  --_size: 1.5rem;
 }
 
 i.large {
-  ---size: 1.75rem;
+  --_size: 1.75rem;
 }
 
 i.extra {
-  ---size: 2rem;
+  --_size: 2rem;
 }
 
 i.fill,
@@ -66,7 +66,7 @@ i > :is(img, svg) {
 }
 
 i[class*=fa-] {
-  font-size: calc(var(---size) * 0.85);
+  font-size: calc(var(--_size) * 0.85);
   line-height: normal;
   block-size: auto;
   min-block-size: auto;

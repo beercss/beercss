@@ -1,13 +1,13 @@
 .ripple {
-  ---duration: 600ms;
+  --_duration: 600ms;
 }
 
 .fast-ripple {
-  ---duration: 200ms;
+  --_duration: 200ms;
 }
 
 .slow-ripple {
-  ---duration: 1800ms;
+  --_duration: 1800ms;
 }
 
 .ripple-js {
@@ -23,7 +23,7 @@
   background: currentColor;
   opacity: 0.3;
   transform: scale(0);
-  animation: to-ripple var(---duration) linear;
+  animation: to-ripple var(--_duration) linear;
 }
 
 @keyframes to-ripple {

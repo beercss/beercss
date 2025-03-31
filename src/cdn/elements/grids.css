@@ -1,21 +1,21 @@
 .grid {
-  ---gap: 1rem;
+  --_gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(12, calc(8.33% - var(---gap) + (var(---gap) / 12)));
-  gap: var(---gap);
+  grid-template-columns: repeat(12, calc(8.33% - var(--_gap) + (var(--_gap) / 12)));
+  gap: var(--_gap);
   block-size: auto;
 }
 
 .grid.no-space {
-  ---gap: 0rem;
+  --_gap: 0rem;
 }
 
 .grid.medium-space {
-  ---gap: 1.5rem;
+  --_gap: 1.5rem;
 }
 
 .grid.large-space {
-  ---gap: 2rem;
+  --_gap: 2rem;
 }
 
 .grid > * {

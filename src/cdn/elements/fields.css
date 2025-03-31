@@ -1,7 +1,7 @@
 .field {
-  ---size: 3rem;
-  ---start: 1.2rem;
-  block-size: var(---size);
+  --_size: 3rem;
+  --_start: 1.2rem;
+  block-size: var(--_size);
   margin-block-end: 2rem;
   border-radius: 0.25rem 0.25rem 0 0;
 }
@@ -27,18 +27,18 @@
 }
 
 .field.small {
-  ---size: 2.5rem;
-  ---start: 1rem;
+  --_size: 2.5rem;
+  --_start: 1rem;
 }
 
 .field.large {
-  ---size: 3.5rem;
-  ---start: 1.4rem;
+  --_size: 3.5rem;
+  --_start: 1.4rem;
 }
 
 .field.extra {
-  ---size: 4rem;
-  ---start: 1.6rem;
+  --_size: 4rem;
+  --_start: 1.6rem;
 }
 
 .field.border {
@@ -250,19 +250,19 @@ input[type=number] {
 }
 
 .field.textarea.small:not(.min) {
-  ---size: 4.5rem;
+  --_size: 4.5rem;
 }
 
 .field.textarea:not(.min) {
-  ---size: 5.5rem;
+  --_size: 5.5rem;
 }
 
 .field.textarea.large:not(.min) {
-  ---size: 6.5rem;
+  --_size: 6.5rem;
 }
 
 .field.textarea.extra:not(.min) {
-  ---size: 7.5rem;
+  --_size: 7.5rem;
 }
 
 .field > select {
@@ -283,22 +283,22 @@ input[type=number] {
 }
 
 .field > textarea {
-  padding-block-start: var(---start);
+  padding-block-start: var(--_start);
   white-space: pre-wrap;
 }
 
 .field > textarea:focus {
-  padding-block-start: calc(var(---start) - 0.06rem);
+  padding-block-start: calc(var(--_start) - 0.06rem);
 }
 
 .field:not(.label) > textarea,
 .field.border.label:not(.fill) > textarea {
-  padding-block-start: calc(var(---start) - 0.5rem);
+  padding-block-start: calc(var(--_start) - 0.5rem);
 }
 
 .field:not(.label) > textarea:focus,
 .field.border.label:not(.fill) > textarea:focus {
-  padding-block-start: calc(var(---start) - 0.56rem);
+  padding-block-start: calc(var(--_start) - 0.56rem);
 }
 
 /* label */
@@ -307,8 +307,8 @@ input[type=number] {
   inset: -0.5rem auto auto 1rem;
   display: flex;
   inline-size: calc(100% - 5rem);
-  block-size: calc(var(---size) + 1rem);
-  line-height: calc(var(---size) + 1rem);
+  block-size: calc(var(--_size) + 1rem);
+  line-height: calc(var(--_size) + 1rem);
   font-size: 1rem;
   transition: all 0.2s;
   gap: 0.25rem;

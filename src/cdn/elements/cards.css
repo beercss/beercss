@@ -1,9 +1,9 @@
 article {
-  ---padding: 1rem;
+  --_padding: 1rem;
   box-shadow: var(--elevate1);
   background-color: var(--surface-container-low);
   color: var(--on-surface);
-  padding: var(---padding);
+  padding: var(--_padding);
   border-radius: 0.75rem;
   display: block;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);

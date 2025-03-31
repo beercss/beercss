@@ -138,8 +138,8 @@ menu.top {
 }
 
 menu:has(menu) {
-  ---child: 1;
-  ---type: 0;
+  --_child: 1;
+  --_type: 0;
   overflow: unset;
   white-space: nowrap;
   inline-size: auto;
@@ -149,22 +149,22 @@ menu:has(menu) {
 
 menu > li > :is(menu, menu.right),
 [dir=rtl] menu > li > menu.left {
-  inset: auto auto calc(3rem * (var(---child) - var(---type))) 100%;
+  inset: auto auto calc(3rem * (var(--_child) - var(--_type))) 100%;
 }
 
 [dir=rtl] menu > li > :is(menu, menu.right),
 menu > li > menu.left {
-  inset: auto 100% calc(3rem * (var(---child) - var(---type))) auto;
+  inset: auto 100% calc(3rem * (var(--_child) - var(--_type))) auto;
 }
 
 menu > li > :is(menu.top, menu.top.right),
 [dir=rtl] menu > li > menu.top.left {
-  inset: calc(3rem * (var(---child) - var(---type))) auto auto 100%;
+  inset: calc(3rem * (var(--_child) - var(--_type))) auto auto 100%;
 }
 
 [dir=rtl] menu > li > :is(menu.top, menu.top.right),
 menu > li > menu.top.left {
-  inset: calc(3rem * (var(---child) - var(---type))) 100% auto auto;
+  inset: calc(3rem * (var(--_child) - var(--_type))) 100% auto auto;
 }
 
 menu.no-space > li {
@@ -189,81 +189,81 @@ menu.border > li:not(:last-child)::before {
 }
 
 menu > li:nth-last-child(2) {
-  ---child: 2;
+  --_child: 2;
 }
 
 menu > li:nth-last-child(3) {
-  ---child: 3;
+  --_child: 3;
 }
 
 menu > li:nth-last-child(4) {
-  ---child: 4;
+  --_child: 4;
 }
 
 menu > li:nth-last-child(5) {
-  ---child: 5;
+  --_child: 5;
 }
 
 menu > li:nth-last-child(6) {
-  ---child: 6;
+  --_child: 6;
 }
 
 menu > li:nth-last-child(7) {
-  ---child: 7;
+  --_child: 7;
 }
 
 menu > li:nth-last-child(8) {
-  ---child: 8;
+  --_child: 8;
 }
 
 menu > li:nth-last-child(9) {
-  ---child: 9;
+  --_child: 9;
 }
 
 menu > li:nth-last-child(10) {
-  ---child: 10;
+  --_child: 10;
 }
 
 menu > li:nth-last-child(11) {
-  ---child: 11;
+  --_child: 11;
 }
 
 menu > li:nth-last-of-type(2) {
-  ---type: 1;
+  --_type: 1;
 }
 
 menu > li:nth-last-of-type(3) {
-  ---type: 2;
+  --_type: 2;
 }
 
 menu > li:nth-last-of-type(4) {
-  ---type: 3;
+  --_type: 3;
 }
 
 menu > li:nth-last-of-type(5) {
-  ---type: 4;
+  --_type: 4;
 }
 
 menu > li:nth-last-of-type(6) {
-  ---type: 5;
+  --_type: 5;
 }
 
 menu > li:nth-last-of-type(7) {
-  ---type: 6;
+  --_type: 6;
 }
 
 menu > li:nth-last-of-type(8) {
-  ---type: 7;
+  --_type: 7;
 }
 
 menu > li:nth-last-of-type(9) {
-  ---type: 8;
+  --_type: 8;
 }
 
 menu > li:nth-last-of-type(10) {
-  ---type: 9;
+  --_type: 9;
 }
 
 menu > li:nth-last-of-type(11) {
-  ---type: 10;
+  --_type: 10;
 }

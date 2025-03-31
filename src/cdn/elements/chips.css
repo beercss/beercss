@@ -1,11 +1,11 @@
 .chip {
-  ---size: 2rem;
+  --_size: 2rem;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  block-size: var(---size);
-  min-inline-size: var(---size);
+  block-size: var(--_size);
+  min-inline-size: var(--_size);
   font-size: 0.875rem;
   font-weight: 500;
   background-color: transparent;
@@ -27,11 +27,11 @@
 }
 
 .chip.medium {
-  ---size: 2.5rem;
+  --_size: 2.5rem;
 }
 
 .chip.large {
-  ---size: 3rem;
+  --_size: 3rem;
 }
 
 .chip.fill {

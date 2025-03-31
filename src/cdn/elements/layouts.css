@@ -45,12 +45,12 @@ footer {
 
 header {
   min-block-size: 4rem;
-  transform: translateY(calc(-1 * var(---padding)));
+  transform: translateY(calc(-1 * var(--_padding)));
 }
 
 footer {
   min-block-size: 5rem;
-  transform: translateY(var(---padding));
+  transform: translateY(var(--_padding));
 }
 
 :is(header, footer, menu > *).fixed {

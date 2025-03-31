@@ -1,5 +1,5 @@
 dialog {
-  ---padding: 1.5rem;
+  --_padding: 1.5rem;
   display: block;
   visibility: hidden;
   border: none;
@@ -8,7 +8,7 @@ dialog {
   box-shadow: var(--elevate2);
   color: var(--on-surface);
   background-color: var(--surface-container-high);
-  padding: var(---padding);
+  padding: var(--_padding);
   z-index: 100;
   inset: 10% auto auto 50%;
   min-inline-size: 20rem;
@@ -50,8 +50,8 @@ dialog:popover-open {
 }
 
 dialog:is(.top, .right, .bottom, .left, .max) {
-  ---padding: 1rem;
-  padding: calc(var(--top) + var(---padding)) calc(var(--right) + var(---padding)) calc(var(--bottom) + var(---padding)) calc(var(--left) + var(---padding));
+  --_padding: 1rem;
+  padding: calc(var(--top) + var(--_padding)) calc(var(--right) + var(--_padding)) calc(var(--bottom) + var(--_padding)) calc(var(--left) + var(--_padding));
 }
 
 dialog:is(.top, .bottom) {
@@ -66,7 +66,7 @@ dialog.top {
   inset: 0 auto auto 0;
   transform: translateY(-100%);
   border-radius: 0 0 1rem 1rem;
-  padding-block-end: var(---padding);
+  padding-block-end: var(--_padding);
 }
 
 dialog.bottom {
@@ -156,12 +156,12 @@ dialog > header.fixed {
   background-color: inherit;
   padding: var(--top) 0 0 0;
   margin: calc(-1 * var(--top)) 0 0 0;
-  transform: translateY(calc(-1 * (var(--top) + var(---padding))));
+  transform: translateY(calc(-1 * (var(--top) + var(--_padding))));
 }
 
 dialog > footer.fixed {
   background-color: inherit;
   padding: 0 0 var(--bottom) 0;
   margin: 0 0 calc(-1 * var(--bottom)) 0;
-  transform: translateY(calc(var(--bottom) + var(---padding)));
+  transform: translateY(calc(var(--bottom) + var(--_padding)));
 }

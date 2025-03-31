@@ -1,19 +1,19 @@
 .button,
 button {
-  ---size: 2.5rem;
+  --_size: 2.5rem;
   box-sizing: content-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  block-size: var(---size);
-  min-inline-size: var(---size);
+  block-size: var(--_size);
+  min-inline-size: var(--_size);
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-primary);
   padding: 0 1.5rem;
   background-color: var(--primary);
   margin: 0 0.5rem;
-  border-radius: var(---size);
+  border-radius: var(--_size);
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
   user-select: none;
   gap: 1rem;
@@ -21,15 +21,15 @@ button {
 }
 
 :is(button, .button).small {
-  ---size: 2rem;
+  --_size: 2rem;
 }
 
 :is(button, .button).large {
-  ---size: 3rem;
+  --_size: 3rem;
 }
 
 :is(.button, button):is(.extra, .extend) {
-  ---size: 3.5rem;
+  --_size: 3.5rem;
   font-size: 1rem;
 }
 

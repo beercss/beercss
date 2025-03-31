@@ -1,5 +1,5 @@
 .tooltip {
-  ---space: -0.5rem;
+  --_space: -0.5rem;
   visibility: hidden;
   display: flex;
   align-items: center;
@@ -72,28 +72,28 @@
 }
 
 .tooltip.no-space {
-  ---space: 0;
+  --_space: 0;
 }
 
 .tooltip.medium-space {
-  ---space: -1rem;
+  --_space: -1rem;
 }
 
 .tooltip.large-space {
-  ---space: -1.5rem;
+  --_space: -1.5rem;
 }
 
 .tooltip:not(.left, .right, .bottom) {
-  margin-block-start: var(---space) !important;
+  margin-block-start: var(--_space) !important;
 }
 
 .tooltip.left,
 .tooltip.right {
-  margin-inline: var(---space) !important;
+  margin-inline: var(--_space) !important;
 }
 
 .tooltip.bottom {
-  margin-block-end: var(---space) !important;
+  margin-block-end: var(--_space) !important;
 }
 
 menu:active ~ .tooltip,
@@ -103,15 +103,15 @@ menu:active ~ .tooltip,
 }
 
 .slider > .tooltip {
-  ---space: -1.25rem;
+  --_space: -1.25rem;
 }
 
 .slider.vertical > .tooltip {
-  ---space: -0.75rem;
+  --_space: -0.75rem;
 }
 
 .slider.vertical > .tooltip:is(.left, .right) {
-  ---space: -0.5rem;
+  --_space: -0.5rem;
 }
 
 .tooltip.max {
