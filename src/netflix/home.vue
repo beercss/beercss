@@ -14,15 +14,14 @@
           button.small-round.large.border.white-border.white-text
             i info
             span More info
-  main.responsive.max
+  div
     .page.right.active
       .large-space
       h5.bold Today's ranking
       .grid
         .s12.m6.l3(v-for="(item, i) in data.todaysRanking")
-          article.no-padding(@mouseover="showDetails", @mouseout="hideDetails")
-            a.wave
-              img.responsive(:src="item.image")
+          article.transparent.no-padding.wave(@mouseover="showDetails", @mouseout="hideDetails")
+            img.responsive(:src="item.image")
             button.circle.small.absolute.right.top.margin.black.white-text
               h5.no-margin.center-align {{ i + 1 }}
             .page
@@ -37,34 +36,26 @@
       #series.large-space.page.active
       h5.bold Series
       .row.scroll
-        div(v-for="item in data.series")
-          article.no-padding.small-width
-            a.wave
-              img.responsive(:src="item.image")
+        article.transparent.no-padding.wave.small-width(v-for="item in data.series")
+          img.responsive(:src="item.image")
 
       #movies.large-space.page.active
       h5.bold Movies
       .row.scroll
-        div(v-for="item in data.movies")
-          article.no-padding.small-width
-            a.wave
-              img.responsive(:src="item.image")
+        article.transparent.no-padding.wave.small-width(v-for="item in data.movies")
+          img.responsive(:src="item.image")
 
       #hot.large-space.page.active
       h5.bold Hot
       .row.scroll
-        div(v-for="item in data.hot")
-          article.no-padding.small-width
-            a.wave
-              img.responsive(:src="item.image")
+        article.transparent.no-padding.wave.small-width(v-for="item in data.hot")
+          img.responsive(:src="item.image")
 
       #my-list.large-space.page.active
       h5.bold My list
       .row.scroll
-        div(v-for="item in data.myList")
-          article.no-padding.small-width
-            a.wave
-              img.responsive(:src="item.image")
+        article.transparent.no-padding.wave.small-width(v-for="item in data.myList")
+          img.responsive(:src="item.image")
 </template>
 
 <script setup lang="ts">

@@ -1,5 +1,5 @@
 <template lang="pug">
-.grey10.white-text
+.white-text
   nav.top.top-shadow.white-text
     img(:src="'/netflix.png'")
     button.circle.large.transparent.s.m(data-ui="#menu-menu")
@@ -70,12 +70,13 @@ import { onMounted } from "vue";
 import home from "./home.vue";
 import { redirect } from "../shared/router";
 
-const scroll = (selector:string) => {
+function scroll(selector:string) {
   const element = document.querySelector(selector);
   if (element) element.scrollIntoView({ block: "start", behavior: "smooth" });
 };
 
 onMounted(() => {
   document.title = "Netflix - Beer CSS";
+  ui("mode", "dark");
 });
 </script>

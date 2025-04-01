@@ -12,7 +12,7 @@ svg {
 }
 
 :is(img, svg, video).round {
-  border-radius: 0.5rem;
+  --_round: 0.5rem;
 }
 
 :is(img, svg, video).tiny {
@@ -62,7 +62,7 @@ svg {
 }
 
 :is(img, svg, video).responsive.round {
-  border-radius: 2rem;
+  --_round: 2rem;
 }
 
 :is(img, svg, video).empty-state {
@@ -103,7 +103,7 @@ svg {
 }
 
 :is(.circle, .square, .extend) > .responsive {
-  --_size: var(--_size, 0);
+  --_size: inherit;
   margin: 0 !important;
 }
 

@@ -46,6 +46,8 @@
 
 :is(.circle, .square):is(button, .button, .chip) {
   padding: 0;
+  block-size: var(--_size);
+  inline-size: var(--_size);
 }
 
 :is(.circle, .square) > span {

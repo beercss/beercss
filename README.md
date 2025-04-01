@@ -39,7 +39,7 @@ Beer CSS is an MIT-licensed open source project with its ongoing development mad
 - ⬇️ 10x smaller than others CSS frameworks based on Material Design.
 - 🧙‍♂️ Translates Material Design to HTML semantic standard.
 - 🤓 Ready to use with any JS framework.
-- 🪄 Highly focused on DX.
+- 🎯 Highly focused on DX.
 - 🚫 No build steps, configurations or dependencies.
 - ✨ Build modern interfaces without any custom CSS.
 

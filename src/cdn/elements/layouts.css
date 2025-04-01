@@ -41,6 +41,11 @@ footer {
   flex-direction: column;
   background-color: var(--surface-container);
   border-radius: 0;
+  padding: 0 1rem;
+}
+
+:is(nav.drawer, dialog, article) > :is(header, footer) {
+  padding: 0;
 }
 
 header {

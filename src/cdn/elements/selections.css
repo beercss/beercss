@@ -51,7 +51,7 @@
 :is(.checkbox, .radio, .switch) > span::before,
 :is(.checkbox, .radio, .switch) > span > i,
 :is(.checkbox, .radio) > span::after {
-  --_size: var(--_size, 0);
+  --_size: inherit;
   content: '';
   inline-size: var(--_size);
   block-size: var(--_size);

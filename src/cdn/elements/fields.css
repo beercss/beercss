@@ -250,7 +250,7 @@ input[type=number] {
 }
 
 .field.textarea.small:not(.min) {
-  --_size: 4.5rem;
+  --_size: 5rem;
 }
 
 .field.textarea:not(.min) {
@@ -258,11 +258,11 @@ input[type=number] {
 }
 
 .field.textarea.large:not(.min) {
-  --_size: 6.5rem;
+  --_size: 6rem;
 }
 
 .field.textarea.extra:not(.min) {
-  --_size: 7.5rem;
+  --_size: 6.5rem;
 }
 
 .field > select {
@@ -313,6 +313,11 @@ input[type=number] {
   transition: all 0.2s;
   gap: 0.25rem;
   white-space: nowrap;
+}
+
+.field.label.textarea:not(.min) > label {
+  block-size: calc(var(--_size) - 1.5rem);
+  line-height: calc(var(--_size) - 1.5rem);
 }
 
 [dir=rtl] .field.label > label {

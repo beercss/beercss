@@ -551,7 +551,6 @@ function onKeydownElement(e) {
   if (e.key === "Enter") void run(e.currentTarget, null, null, e);
 }
 function setup() {
-  debugger;
   if (_context.ui || _mutation || !_context.MutationObserver) return;
   _mutation = new MutationObserver(onMutation);
   _mutation.observe(document.body, { childList: true, subtree: true });

@@ -7,19 +7,19 @@
 }
 
 .no-padding {
-  --_padding: 0;
+  --_padding: 0 !important;
 }
 
 .tiny-padding {
-  --_padding: 0.25rem;
+  --_padding: 0.25rem !important;
 }
 
 .small-padding {
-  --_padding: 0.5rem;
+  --_padding: 0.5rem !important;
 }
 
 .large-padding {
-  --_padding: 1.5rem;
+  --_padding: 1.5rem !important;
 }
 
 .left-padding,

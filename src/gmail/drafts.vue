@@ -16,7 +16,7 @@
       i arrow_forward
   .space.m.l
   template(v-for="email in data.drafts")
-    a.row
+    .row
       label.checkbox.m.l
         input(v-model="email.check", type="checkbox")
         span
