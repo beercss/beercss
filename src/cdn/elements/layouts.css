@@ -50,12 +50,10 @@ footer {
 
 header {
   min-block-size: 4rem;
-  transform: translateY(calc(-1 * var(--_padding)));
 }
 
 footer {
   min-block-size: 5rem;
-  transform: translateY(var(--_padding));
 }
 
 :is(header, footer, menu > *).fixed {
@@ -63,4 +61,18 @@ footer {
   inset: 0;
   z-index: 11;
   background-color: inherit;
+}
+
+:is(header, footer).fixed::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  transform: translateY(-100%);
+  block-size: var(--_padding);
+  background-color: inherit;
+}
+
+footer.fixed::before {
+  inset: auto 0 0 0;
+  transform: translateY(100%);
 }
