@@ -10,8 +10,7 @@
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
-**Scoped version**
-Applied on child elements of `<* class="beer">...</*>`.
+**Scoped version** applied on child elements of `<* class="beer">...</*>`.
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
@@ -19,8 +18,7 @@ Applied on child elements of `<* class="beer">...</*>`.
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
-**Custom element version**
-Applied on child elements of `<beer-css>...</beer-css>`.
+**Custom element version** applied on child elements of `<beer-css>...</beer-css>`.
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.0/dist/cdn/beer.custom-element.min.js"></script>
@@ -49,16 +47,14 @@ import beercss from "beercss";
 import materialDynamicColors from "material-dynamic-colors";
 ```
 
-**Scoped version**
-Applied on child elements of `<* class="beer">...</*>`.
+**Scoped version** applied on child elements of `<* class="beer">...</*>`.
 
 ```js
 import "beercss/scoped";
 import "material-dynamic-colors";
 ```
 
-**Custom element version**
-Applied on child elements of `<beer-css>...</beer-css>`.
+**Custom element version** applied on child elements of `<beer-css>...</beer-css>`.
 
 ```js
 import "beercss/custom-element";
