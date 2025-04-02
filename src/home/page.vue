@@ -310,7 +310,7 @@ div
                 | import "beercss";
                 | import "material-dynamic-colors";
             .medium-space
-            b We recommend use the material-dynamic-colors only when your app needs to change theme at runtime.
+            b We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.
             .medium-space
             .l
               h5 Summary

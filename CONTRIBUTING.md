@@ -45,7 +45,7 @@ $ npm install
 ### Commonly used NPM scripts
 
 ``` bash
-# watch and opens a brownser
+# watch and opens a browser
 $ npm run dev
 
 # build all dist files, including npm packages
