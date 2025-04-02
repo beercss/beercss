@@ -138,6 +138,7 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 ```
 
 **Scoped version**
+
 Applied on child elements of `<* class="beer">...</*>`.
 
 ```html
@@ -147,6 +148,7 @@ Applied on child elements of `<* class="beer">...</*>`.
 ```
 
 **Custom element version**
+
 Applied on child elements of `<beer-css>...</beer-css>`.
 
 ```html
@@ -177,6 +179,7 @@ import materialDynamicColors from "material-dynamic-colors";
 ```
 
 **Scoped version**
+
 Applied on child elements of `<* class="beer">...</*>`.
 
 ```js
@@ -185,6 +188,7 @@ import "material-dynamic-colors";
 ```
 
 **Custom element version**
+
 Applied on child elements of `<beer-css>...</beer-css>`.
 
 ```js
