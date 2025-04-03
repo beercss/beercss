@@ -69,7 +69,7 @@ footer {
   inset: 0 0 auto 0;
   transform: translateY(-100%);
   block-size: var(--_padding);
-  background-color: inherit;
+  background: inherit;
 }
 
 footer.fixed::before {

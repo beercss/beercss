@@ -155,7 +155,6 @@ div
       span large-blur
   .medium-space
   #blurs.large-padding(style="background-image: url(beer-and-woman.svg); background-position: center; background-size: cover;")
-    .medium-space
     header.blur
       nav
         button.circle.transparent
@@ -168,7 +167,6 @@ div
       p Some text here
       nav.right-align
         button Button
-    .medium-space
     nav
       button.blur Button
       button.chip.blur Chip
@@ -197,7 +195,6 @@ div
       span bottom-shadow
   .medium-space
   #shadows.large-padding(style="background-image: url(beer-and-woman.svg); background-position: center; background-size: cover;")
-    .medium-space
     header.white-text.left-shadow
       nav
         button.circle.transparent
@@ -210,7 +207,6 @@ div
       p Some text here
       nav.right-align
         button Button
-    .medium-space
     nav
       button.white-text.left-shadow Button
       button.chip.white-text.left-shadow Chip
