@@ -30,22 +30,18 @@ main {
 :has(> main) > :is(header, footer).fixed {
   z-index: 12;
   transform: none;
+  box-sizing: content-box;
+  inset: 0;
 }
 
 :has(> main) > header.fixed {
-  inset: calc(var(--top) + var(--_top)) 0 0 0;
-}
-
-:has(> main) > header.fixed::before {
-  block-size: calc(var(--top) + var(--_top));
+  padding-block-start: calc(var(--top) + var(--_top));
+  margin-block-start: calc(-1 * var(--top) - var(--_top));
 }
 
 :has(> main) > footer.fixed {
-  inset: 0 0 calc(var(--bottom) + var(--_bottom)) 0;
-}
-
-:has(> main) > footer.fixed::before {
-  block-size: calc(var(--bottom) + var(--_bottom));
+  padding-block-end: calc(var(--bottom) + var(--_bottom));
+  margin-block-end: calc(-1 * var(--bottom) - var(--_bottom));
 }
 
 :has(> nav.top:not(.s, .n, .l)) {

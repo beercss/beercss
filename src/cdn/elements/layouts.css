@@ -45,7 +45,7 @@ footer {
 }
 
 :is(nav.drawer, dialog, article) > :is(header, footer) {
-  padding: 0;
+  padding-inline: 0;
 }
 
 header {
@@ -63,16 +63,12 @@ footer {
   background-color: inherit;
 }
 
-:is(header, footer).fixed::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  transform: translateY(-100%);
-  block-size: var(--_padding);
-  background: inherit;
+header.fixed {
+  inset: calc(-1 * var(--_padding)) 0 0 0;
+  margin-block-start: calc(-1 * var(--_padding));
 }
 
-footer.fixed::before {
-  inset: auto 0 0 0;
-  transform: translateY(100%);
+footer.fixed {
+  inset: 0 0 calc(-1 * var(--_padding)) 0;
+  margin-block-end: calc(-1 * var(--_padding));
 }
