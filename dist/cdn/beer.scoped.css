@@ -2258,7 +2258,7 @@ body {
 .beer input::-webkit-date-and-time-value {
   text-align: start;
 }
-.beer :is(input, select, textarea):-webkit-autofill {
+.beer :is(input, select, textarea):is(:-webkit-autofill, :autofill) {
   -webkit-background-clip: text;
   -webkit-text-fill-color: var(--on-surface);
 }

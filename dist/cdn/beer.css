@@ -2257,7 +2257,7 @@ summary::-webkit-details-marker {
 input::-webkit-date-and-time-value {
   text-align: start;
 }
-:is(input, select, textarea):-webkit-autofill {
+:is(input, select, textarea):is(:-webkit-autofill, :autofill) {
   -webkit-background-clip: text;
   -webkit-text-fill-color: var(--on-surface);
 }
