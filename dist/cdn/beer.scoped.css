@@ -1656,18 +1656,16 @@ body {
 .beer:has(> main) > :is(header, footer).fixed {
   z-index: 12;
   transform: none;
+  box-sizing: content-box;
+  inset: 0;
 }
 .beer:has(> main) > header.fixed {
-  inset: calc(var(--top) + var(--_top)) 0 0 0;
-}
-.beer:has(> main) > header.fixed::before {
-  block-size: calc(var(--top) + var(--_top));
+  padding-block-start: calc(var(--top) + var(--_top));
+  margin-block-start: calc(-1 * var(--top) - var(--_top));
 }
 .beer:has(> main) > footer.fixed {
-  inset: 0 0 calc(var(--bottom) + var(--_bottom)) 0;
-}
-.beer:has(> main) > footer.fixed::before {
-  block-size: calc(var(--bottom) + var(--_bottom));
+  padding-block-end: calc(var(--bottom) + var(--_bottom));
+  margin-block-end: calc(-1 * var(--bottom) - var(--_bottom));
 }
 .beer:has(> nav.top:not(.s, .n, .l)) {
   --_top: 5rem;
@@ -2779,7 +2777,7 @@ body {
   padding: 0 1rem;
 }
 .beer :is(nav.drawer, dialog, article) > :is(header, footer) {
-  padding: 0;
+  padding-inline: 0;
 }
 .beer header {
   min-block-size: 4rem;
@@ -2793,17 +2791,13 @@ body {
   z-index: 11;
   background-color: inherit;
 }
-.beer :is(header, footer).fixed::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  transform: translateY(-100%);
-  block-size: var(--_padding);
-  background: inherit;
+.beer header.fixed {
+  inset: calc(-1 * var(--_padding)) 0 0 0;
+  margin-block-start: calc(-1 * var(--_padding));
 }
-.beer footer.fixed::before {
-  inset: auto 0 0 0;
-  transform: translateY(100%);
+.beer footer.fixed {
+  inset: 0 0 calc(-1 * var(--_padding)) 0;
+  margin-block-end: calc(-1 * var(--_padding));
 }
 .beer .list {
   display: flex;

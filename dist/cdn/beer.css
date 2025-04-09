@@ -1655,18 +1655,16 @@ main {
 :has(> main) > :is(header, footer).fixed {
   z-index: 12;
   transform: none;
+  box-sizing: content-box;
+  inset: 0;
 }
 :has(> main) > header.fixed {
-  inset: calc(var(--top) + var(--_top)) 0 0 0;
-}
-:has(> main) > header.fixed::before {
-  block-size: calc(var(--top) + var(--_top));
+  padding-block-start: calc(var(--top) + var(--_top));
+  margin-block-start: calc(-1 * var(--top) - var(--_top));
 }
 :has(> main) > footer.fixed {
-  inset: 0 0 calc(var(--bottom) + var(--_bottom)) 0;
-}
-:has(> main) > footer.fixed::before {
-  block-size: calc(var(--bottom) + var(--_bottom));
+  padding-block-end: calc(var(--bottom) + var(--_bottom));
+  margin-block-end: calc(-1 * var(--bottom) - var(--_bottom));
 }
 :has(> nav.top:not(.s, .n, .l)) {
   --_top: 5rem;
@@ -2778,7 +2776,7 @@ footer {
   padding: 0 1rem;
 }
 :is(nav.drawer, dialog, article) > :is(header, footer) {
-  padding: 0;
+  padding-inline: 0;
 }
 header {
   min-block-size: 4rem;
@@ -2792,17 +2790,13 @@ footer {
   z-index: 11;
   background-color: inherit;
 }
-:is(header, footer).fixed::before {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto 0;
-  transform: translateY(-100%);
-  block-size: var(--_padding);
-  background: inherit;
+header.fixed {
+  inset: calc(-1 * var(--_padding)) 0 0 0;
+  margin-block-start: calc(-1 * var(--_padding));
 }
-footer.fixed::before {
-  inset: auto 0 0 0;
-  transform: translateY(100%);
+footer.fixed {
+  inset: 0 0 calc(-1 * var(--_padding)) 0;
+  margin-block-end: calc(-1 * var(--_padding));
 }
 .list {
   display: flex;
