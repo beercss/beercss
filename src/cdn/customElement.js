@@ -12,7 +12,7 @@ class BeerCssCustomElement extends HTMLElement {
     BeerCssCustomElement.isJsLoaded = true;
 
     if (window.ui) return;
-    return await import("https://cdn.jsdelivr.net/npm/beercss@3.10.1/dist/cdn/beer.min.js");
+    return await import("https://cdn.jsdelivr.net/npm/beercss@3.10.2/dist/cdn/beer.min.js");
   }
   
   async addCss() {
@@ -23,13 +23,14 @@ class BeerCssCustomElement extends HTMLElement {
 
     const head = document.querySelector("head");
     const element = document.createElement("link");
-    element.setAttribute("href", "https://cdn.jsdelivr.net/npm/beercss@3.10.1/dist/cdn/beer.scoped.min.css");
+    element.setAttribute("href", "https://cdn.jsdelivr.net/npm/beercss@3.10.2/dist/cdn/beer.scoped.min.css");
+    element.setAttribute("rel", "stylesheet");
     head.appendChild(element);
   }
   
   async run() {
     this.classList.add("beer");
-    await Promise.all([this.addJs(), this.addCss(), this.addDynamicColor()]);
+    await Promise.all([this.addJs(), this.addCss()]);
     ui();
   }
 }
