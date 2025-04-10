@@ -5,23 +5,23 @@
 **Default version**
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.2/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.2/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.3/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.3/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 **Scoped version** applied on child elements of `<* class="beer">...</*>`.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.2/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.2/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.3/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.3/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 **Custom element version** applied on child elements of `<beer-css>...</beer-css>`.
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.2/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.3/dist/cdn/beer.custom-element.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -73,8 +73,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.10.2/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.2/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.10.3/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.3/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">
