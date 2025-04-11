@@ -102,7 +102,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -112,7 +112,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -122,7 +122,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -132,7 +132,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/material-symbols-subset.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/material-symbols-subset.woff2") format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -1628,150 +1628,6 @@ body {
 .beer .top-shadow {
   background-image: linear-gradient(to bottom, black, transparent) !important;
 }
-.beer main {
-  flex: 1;
-  padding: 0.5rem;
-  overflow-x: hidden;
-}
-.beer :is(main, header, footer, section).responsive {
-  max-inline-size: 75rem;
-  margin: 0 auto;
-}
-.beer :is(main, header, footer, section).responsive.max {
-  max-inline-size: 100%;
-}
-.beer:has(> main) {
-  --_top: 0rem;
-  --_bottom: 0rem;
-  --_left: 0rem;
-  --_right: 0rem;
-  display: flex;
-  flex-direction: column;
-  min-block-size: calc(100vh - var(--top) - var(--_top) - var(--bottom) - var(--_bottom));
-  box-sizing: border-box;
-  background-color: var(--surface);
-  margin-block: calc(var(--top) + var(--_top)) calc(var(--bottom) + var(--_bottom));
-  margin-inline: calc(var(--left) + var(--_left)) calc(var(--right) + var(--_right));
-}
-.beer:has(> main) > :is(header, footer).fixed {
-  z-index: 12;
-  transform: none;
-  box-sizing: content-box;
-  inset: 0;
-}
-.beer:has(> main) > header.fixed {
-  padding-block-start: calc(var(--top) + var(--_top));
-  margin-block-start: calc(-1 * var(--top) - var(--_top));
-}
-.beer:has(> main) > footer.fixed {
-  padding-block-end: calc(var(--bottom) + var(--_bottom));
-  margin-block-end: calc(-1 * var(--bottom) - var(--_bottom));
-}
-.beer:has(> nav.top:not(.s, .n, .l)) {
-  --_top: 5rem;
-}
-.beer:has(> nav.bottom:not(.s, .n, .l)) {
-  --_bottom: 5rem;
-}
-.beer:has(> nav.left:not(.s, .n, .l)) {
-  --_left: 5rem;
-}
-.beer:has(> nav.right:not(.s, .n, .l)) {
-  --_right: 5rem;
-}
-.beer:has(> nav.drawer.left:not(.s, .n, .l)) {
-  --_left: 20rem;
-}
-.beer:has(> nav.drawer.right:not(.s, .n, .l)) {
-  --_right: 20rem;
-}
-.beer :not(main):has(> aside) {
-  overflow: auto;
-}
-.beer aside {
-  z-index: 1;
-}
-.beer aside:not(.fixed, .absolute).right {
-  float: right;
-}
-.beer aside:not(.fixed, .absolute).left {
-  float: left;
-}
-@media only screen and (max-width: 600px) {
-  .beer :has(> nav.bottom.s) {
-    --_bottom: 5rem;
-  }
-
-  .beer :has(> nav.top.s) {
-    --_top: 5rem;
-  }
-
-  .beer :has(> nav.left.s) {
-    --_left: 5rem;
-  }
-
-  .beer :has(> nav.right.s) {
-    --_right: 5rem;
-  }
-
-  .beer :has(> nav.drawer.left.s) {
-    --_left: 20rem;
-  }
-
-  .beer :has(> nav.drawer.right.s) {
-    --_right: 20rem;
-  }
-}
-@media only screen and (min-width: 601px) and (max-width: 992px) {
-  .beer :has(> nav.bottom.m) {
-    --_bottom: 5rem;
-  }
-
-  .beer :has(> nav.top.m) {
-    --_top: 5rem;
-  }
-
-  .beer :has(> nav.left.m) {
-    --_left: 5rem;
-  }
-
-  .beer :has(> nav.right.m) {
-    --_right: 5rem;
-  }
-
-  .beer :has(> nav.drawer.left.m) {
-    --_left: 20rem;
-  }
-
-  .beer :has(> nav.drawer.right.m) {
-    --_right: 20rem;
-  }
-}
-@media only screen and (min-width: 993px) {
-  .beer :has(> nav.bottom.l) {
-    --_bottom: 5rem;
-  }
-
-  .beer :has(> nav.top.l) {
-    --_top: 5rem;
-  }
-
-  .beer :has(> nav.left.l) {
-    --_left: 5rem;
-  }
-
-  .beer :has(> nav.right.l) {
-    --_right: 5rem;
-  }
-
-  .beer :has(> nav.drawer.left.l) {
-    --_left: 20rem;
-  }
-
-  .beer :has(> nav.drawer.right.l) {
-    --_right: 20rem;
-  }
-}
 .beer .badge {
   --_x: 0;
   --_y: -100%;
@@ -1838,6 +1694,87 @@ body {
 }
 .beer :is(button, .button, .chip) > .badge.none {
   margin: 0 -0.5rem;
+}
+.beer header,
+.beer footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--surface-container);
+  border-radius: 0;
+  padding: 0 1rem;
+}
+.beer :is(nav.drawer, dialog, article) > :is(header, footer) {
+  padding-inline: 0;
+  inset: 0;
+}
+.beer header {
+  min-block-size: 4rem;
+}
+.beer footer {
+  min-block-size: 5rem;
+}
+.beer :is(header, footer, menu > *).fixed {
+  position: sticky;
+  inset: 0;
+  z-index: 11;
+  background-color: inherit;
+}
+.beer header.fixed {
+  inset: calc(-1 * var(--_padding)) 0 0 0;
+  margin-block-start: calc(-1 * var(--_padding));
+}
+.beer footer.fixed {
+  inset: 0 0 calc(-1 * var(--_padding)) 0;
+  margin-block-end: calc(-1 * var(--_padding));
+}
+.beer dialog > :is(header, footer) {
+  background: none;
+}
+.beer dialog > header.fixed {
+  background-color: inherit;
+  padding: var(--top) 0 0 0;
+  margin: calc(-1 * var(--top)) 0 0 0;
+  transform: translateY(calc(-1 * (var(--top) + var(--_padding))));
+}
+.beer dialog > footer.fixed {
+  background-color: inherit;
+  padding: 0 0 var(--bottom) 0;
+  margin: 0 0 calc(-1 * var(--bottom)) 0;
+  transform: translateY(calc(var(--bottom) + var(--_padding)));
+}
+.beer :is(main, header, footer, section).responsive {
+  max-inline-size: 75rem;
+  margin: 0 auto;
+}
+.beer :is(main, header, footer, section).responsive.max {
+  max-inline-size: 100%;
+}
+.beer:has(> main) > :is(header, footer).fixed {
+  z-index: 12;
+  transform: none;
+  box-sizing: content-box;
+  inset: 0;
+}
+.beer:has(> main) > header.fixed {
+  padding-block-start: calc(var(--top) + var(--_top));
+  margin-block-start: calc(-1 * var(--top) - var(--_top));
+}
+.beer:has(> main) > footer.fixed {
+  padding-block-end: calc(var(--bottom) + var(--_bottom));
+  margin-block-end: calc(-1 * var(--bottom) - var(--_bottom));
+}
+.beer :is(nav, .row) > header {
+  background-color: inherit;
+}
+.beer nav:is(.left, .right) > header {
+  transform: translateY(-0.5rem);
+}
+.beer nav.drawer:is(.left, .right) > header + * {
+  margin-block-start: 0.5rem;
+}
+.beer dialog > nav.drawer > header + * {
+  margin-block-start: 1rem;
 }
 .beer .button,
 .beer button {
@@ -2097,21 +2034,6 @@ body {
 }
 .beer dialog.large:is(.top, .bottom) {
   block-size: 32rem;
-}
-.beer dialog > :is(header, footer) {
-  background: none;
-}
-.beer dialog > header.fixed {
-  background-color: inherit;
-  padding: var(--top) 0 0 0;
-  margin: calc(-1 * var(--top)) 0 0 0;
-  transform: translateY(calc(-1 * (var(--top) + var(--_padding))));
-}
-.beer dialog > footer.fixed {
-  background-color: inherit;
-  padding: 0 0 var(--bottom) 0;
-  margin: 0 0 calc(-1 * var(--bottom)) 0;
-  transform: translateY(calc(var(--bottom) + var(--_padding)));
 }
 .beer hr,
 .beer [class*=divider] {
@@ -2767,38 +2689,6 @@ body {
 .beer :is(.absolute, .fixed).top.bottom.large {
   inline-size: 44rem;
 }
-.beer header,
-.beer footer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: var(--surface-container);
-  border-radius: 0;
-  padding: 0 1rem;
-}
-.beer :is(nav.drawer, dialog, article) > :is(header, footer) {
-  padding-inline: 0;
-}
-.beer header {
-  min-block-size: 4rem;
-}
-.beer footer {
-  min-block-size: 5rem;
-}
-.beer :is(header, footer, menu > *).fixed {
-  position: sticky;
-  inset: 0;
-  z-index: 11;
-  background-color: inherit;
-}
-.beer header.fixed {
-  inset: calc(-1 * var(--_padding)) 0 0 0;
-  margin-block-start: calc(-1 * var(--_padding));
-}
-.beer footer.fixed {
-  inset: 0 0 calc(-1 * var(--_padding)) 0;
-  margin-block-end: calc(-1 * var(--_padding));
-}
 .beer .list {
   display: flex;
   flex-direction: column;
@@ -2860,6 +2750,129 @@ body {
 .beer .list.large-space > li,
 .beer .list.large-space > li > details > summary {
   min-block-size: 5.5rem;
+}
+.beer main {
+  flex: 1;
+  padding: 0.5rem;
+  overflow-x: hidden;
+}
+.beer:has(> main) {
+  --_top: 0rem;
+  --_bottom: 0rem;
+  --_left: 0rem;
+  --_right: 0rem;
+  display: flex;
+  flex-direction: column;
+  min-block-size: calc(100vh - var(--top) - var(--_top) - var(--bottom) - var(--_bottom));
+  box-sizing: border-box;
+  background-color: var(--surface);
+  margin-block: calc(var(--top) + var(--_top)) calc(var(--bottom) + var(--_bottom));
+  margin-inline: calc(var(--left) + var(--_left)) calc(var(--right) + var(--_right));
+}
+.beer:has(> nav.top:not(.s, .n, .l)) {
+  --_top: 5rem;
+}
+.beer:has(> nav.bottom:not(.s, .n, .l)) {
+  --_bottom: 5rem;
+}
+.beer:has(> nav.left:not(.s, .n, .l)) {
+  --_left: 5rem;
+}
+.beer:has(> nav.right:not(.s, .n, .l)) {
+  --_right: 5rem;
+}
+.beer:has(> nav.drawer.left:not(.s, .n, .l)) {
+  --_left: 20rem;
+}
+.beer:has(> nav.drawer.right:not(.s, .n, .l)) {
+  --_right: 20rem;
+}
+.beer :not(main):has(> aside) {
+  overflow: auto;
+}
+.beer aside {
+  z-index: 1;
+}
+.beer aside:not(.fixed, .absolute).right {
+  float: right;
+}
+.beer aside:not(.fixed, .absolute).left {
+  float: left;
+}
+@media only screen and (max-width: 600px) {
+  .beer :has(> nav.bottom.s) {
+    --_bottom: 5rem;
+  }
+
+  .beer :has(> nav.top.s) {
+    --_top: 5rem;
+  }
+
+  .beer :has(> nav.left.s) {
+    --_left: 5rem;
+  }
+
+  .beer :has(> nav.right.s) {
+    --_right: 5rem;
+  }
+
+  .beer :has(> nav.drawer.left.s) {
+    --_left: 20rem;
+  }
+
+  .beer :has(> nav.drawer.right.s) {
+    --_right: 20rem;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .beer :has(> nav.bottom.m) {
+    --_bottom: 5rem;
+  }
+
+  .beer :has(> nav.top.m) {
+    --_top: 5rem;
+  }
+
+  .beer :has(> nav.left.m) {
+    --_left: 5rem;
+  }
+
+  .beer :has(> nav.right.m) {
+    --_right: 5rem;
+  }
+
+  .beer :has(> nav.drawer.left.m) {
+    --_left: 20rem;
+  }
+
+  .beer :has(> nav.drawer.right.m) {
+    --_right: 20rem;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .beer :has(> nav.bottom.l) {
+    --_bottom: 5rem;
+  }
+
+  .beer :has(> nav.top.l) {
+    --_top: 5rem;
+  }
+
+  .beer :has(> nav.left.l) {
+    --_left: 5rem;
+  }
+
+  .beer :has(> nav.right.l) {
+    --_right: 5rem;
+  }
+
+  .beer :has(> nav.drawer.left.l) {
+    --_left: 20rem;
+  }
+
+  .beer :has(> nav.drawer.right.l) {
+    --_right: 20rem;
+  }
 }
 .beer svg {
   fill: currentcolor;
@@ -3307,22 +3320,15 @@ body {
 .beer nav.drawer:not(.left, .right, .top, .bottom) {
   padding: 0.5rem 1rem;
 }
+.beer dialog > nav.drawer:not(.left, .right, .top, .bottom) {
+  padding: 0 1rem;
+  background-color: inherit;
+}
 .beer nav.drawer:is(.min, .max) {
   inline-size: auto;
 }
 .beer nav.drawer.max {
   inline-size: 100%;
-}
-.beer :is(nav, .row) > header {
-  background-color: inherit;
-}
-.beer nav:is(.left, .right) > header {
-  transform: translateY(-0.5rem);
-}
-.beer nav.drawer > header {
-  transform: translateY(-0.75rem);
-  min-block-size: 4.5rem;
-  align-self: stretch;
 }
 .beer nav.drawer > :is(a, label),
 .beer nav.drawer > :is(ol, ul) > li > :is(a, label),

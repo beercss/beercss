@@ -147,21 +147,3 @@ dialog.medium:is(.top, .bottom) {
 dialog.large:is(.top, .bottom) {
   block-size: 32rem;
 }
-
-dialog > :is(header, footer) {
-  background: none;
-}
-
-dialog > header.fixed {
-  background-color: inherit;
-  padding: var(--top) 0 0 0;
-  margin: calc(-1 * var(--top)) 0 0 0;
-  transform: translateY(calc(-1 * (var(--top) + var(--_padding))));
-}
-
-dialog > footer.fixed {
-  background-color: inherit;
-  padding: 0 0 var(--bottom) 0;
-  margin: 0 0 calc(-1 * var(--bottom)) 0;
-  transform: translateY(calc(var(--bottom) + var(--_padding)));
-}

@@ -4,15 +4,6 @@ main {
   overflow-x: hidden;
 }
 
-:is(main, header, footer, section).responsive {
-  max-inline-size: 75rem;
-  margin: 0 auto;
-}
-
-:is(main, header, footer, section).responsive.max {
-  max-inline-size: 100%;
-}
-
 :has(> main) {
   --_top: 0rem;
   --_bottom: 0rem;
@@ -25,23 +16,6 @@ main {
   background-color: var(--surface);
   margin-block: calc(var(--top) + var(--_top)) calc(var(--bottom) + var(--_bottom));
   margin-inline: calc(var(--left) + var(--_left)) calc(var(--right) + var(--_right));
-}
-
-:has(> main) > :is(header, footer).fixed {
-  z-index: 12;
-  transform: none;
-  box-sizing: content-box;
-  inset: 0;
-}
-
-:has(> main) > header.fixed {
-  padding-block-start: calc(var(--top) + var(--_top));
-  margin-block-start: calc(-1 * var(--top) - var(--_top));
-}
-
-:has(> main) > footer.fixed {
-  padding-block-end: calc(var(--bottom) + var(--_bottom));
-  margin-block-end: calc(-1 * var(--bottom) - var(--_bottom));
 }
 
 :has(> nav.top:not(.s, .n, .l)) {

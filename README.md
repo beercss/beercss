@@ -4,7 +4,7 @@
 <p align="center">
     <a href="https://github.com/beercss/beercss/blob/main/LICENSE"><img src="https://img.shields.io/github/license/beercss/beercss" alt="License"></a>
     <a href="https://github.com/beercss/beercss"><img src="https://img.shields.io/jsdelivr/npm/hy/beercss" alt="Downloads"></a>
-    <a href="https://bundlephobia.com/package/beercss@3.10.4" target="_blank"><img src="https://img.shields.io/bundlephobia/minzip/beercss@3.10.4" alt="minzipped size"></a>
+    <a href="https://bundlephobia.com/package/beercss@3.10.5" target="_blank"><img src="https://img.shields.io/bundlephobia/minzip/beercss@3.10.5" alt="minzipped size"></a>
     <a href="https://www.npmjs.com/package/beercss"><img src="https://img.shields.io/npm/v/beercss" alt="Version"></a>
     <a href="https://github.com/beercss/beercss/pulls"><img src="https://img.shields.io/github/issues-pr/beercss/beercss" alt="Pull Request"></a>
     <a href="https://github.com/beercss/beercss/issues"><img src="https://img.shields.io/github/issues/beercss/beercss" alt="Issues"></a>
@@ -127,61 +127,55 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 
 # Get started
 
-### CDN
-
-**Default version**
+### DEFAULT VERSION
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
-
-**Scoped version** applied on child elements of `<* class="beer">...</*>`.
-
-```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
-```
-
-**Custom element version** applied on child elements of `<beer-css>...</beer-css>`.
-
-```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.custom-element.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
-```
-
-
-### NPM
-
-**Install**
 
 ```js
 npm i beercss
 npm i material-dynamic-colors
 ```
 
-**Default version**
-
 ```js
 import "beercss";
 import "material-dynamic-colors";
 ```
 
-```js
-import beercss from "beercss";
-import materialDynamicColors from "material-dynamic-colors";
+### SCOPED VERSION
+Applied on child elements of `<* class="beer">...</*>`.
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
-**Scoped version** applied on child elements of `<* class="beer">...</*>`.
+```js
+npm i beercss
+npm i material-dynamic-colors
+```
 
 ```js
 import "beercss/scoped";
 import "material-dynamic-colors";
 ```
 
-**Custom element version** applied on child elements of `<beer-css>...</beer-css>`.
+### CUSTOM ELEMENT VERSION
+Applied on child elements of `<beer-css>...</beer-css>`.
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+```
+
+```js
+npm i beercss
+npm i material-dynamic-colors
+```
 
 ```js
 import "beercss/custom-element";
@@ -200,8 +194,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">

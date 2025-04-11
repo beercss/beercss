@@ -1,60 +1,54 @@
-## Get started
+# Get started
 
-### CDN
-
-**Default version**
+### DEFAULT VERSION
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
-
-**Scoped version** applied on child elements of `<* class="beer">...</*>`.
-
-```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
-```
-
-**Custom element version** applied on child elements of `<beer-css>...</beer-css>`.
-
-```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.custom-element.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
-```
-
-
-### NPM
-
-**Install**
 
 ```js
 npm i beercss
 npm i material-dynamic-colors
 ```
 
-**Default version**
-
 ```js
 import "beercss";
 import "material-dynamic-colors";
 ```
 
-```js
-import beercss from "beercss";
-import materialDynamicColors from "material-dynamic-colors";
+### SCOPED VERSION
+Applied on child elements of `<* class="beer">...</*>`.
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
-**Scoped version** applied on child elements of `<* class="beer">...</*>`.
+```js
+npm i beercss
+npm i material-dynamic-colors
+```
 
 ```js
 import "beercss/scoped";
 import "material-dynamic-colors";
 ```
 
-**Custom element version** applied on child elements of `<beer-css>...</beer-css>`.
+### CUSTOM ELEMENT VERSION
+Applied on child elements of `<beer-css>...</beer-css>`.
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+```
+
+```js
+npm i beercss
+npm i material-dynamic-colors
+```
 
 ```js
 import "beercss/custom-element";
@@ -63,7 +57,7 @@ import "material-dynamic-colors";
 
 ### HTML
 
-You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj). More about in [Main layout](MAIN_LAYOUT.md).
+You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj). More about in [Main layout](docs/MAIN_LAYOUT.md).
 
 ```html
 <html>
@@ -73,8 +67,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.4/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">
@@ -163,7 +157,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 </html>
 ```
 
-**We recommend to use the material-dynamic-colors only when your app needs to change theme at runtime.**
+**We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.**
 
 ## [Settings](SETTINGS.md)
 

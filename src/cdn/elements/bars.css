@@ -1,0 +1,100 @@
+header,
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--surface-container);
+  border-radius: 0;
+  padding: 0 1rem;
+}
+
+:is(nav.drawer, dialog, article) > :is(header, footer) {
+  padding-inline: 0;
+  inset: 0;
+}
+
+header {
+  min-block-size: 4rem;
+}
+
+footer {
+  min-block-size: 5rem;
+}
+
+:is(header, footer, menu > *).fixed {
+  position: sticky;
+  inset: 0;
+  z-index: 11;
+  background-color: inherit;
+}
+
+header.fixed {
+  inset: calc(-1 * var(--_padding)) 0 0 0;
+  margin-block-start: calc(-1 * var(--_padding));
+}
+
+footer.fixed {
+  inset: 0 0 calc(-1 * var(--_padding)) 0;
+  margin-block-end: calc(-1 * var(--_padding));
+}
+
+dialog > :is(header, footer) {
+  background: none;
+}
+
+dialog > header.fixed {
+  background-color: inherit;
+  padding: var(--top) 0 0 0;
+  margin: calc(-1 * var(--top)) 0 0 0;
+  transform: translateY(calc(-1 * (var(--top) + var(--_padding))));
+}
+
+dialog > footer.fixed {
+  background-color: inherit;
+  padding: 0 0 var(--bottom) 0;
+  margin: 0 0 calc(-1 * var(--bottom)) 0;
+  transform: translateY(calc(var(--bottom) + var(--_padding)));
+}
+
+:is(main, header, footer, section).responsive {
+  max-inline-size: 75rem;
+  margin: 0 auto;
+}
+
+:is(main, header, footer, section).responsive.max {
+  max-inline-size: 100%;
+}
+
+:has(> main) > :is(header, footer).fixed {
+  z-index: 12;
+  transform: none;
+  box-sizing: content-box;
+  inset: 0;
+}
+
+:has(> main) > header.fixed {
+  padding-block-start: calc(var(--top) + var(--_top));
+  margin-block-start: calc(-1 * var(--top) - var(--_top));
+}
+
+:has(> main) > footer.fixed {
+  padding-block-end: calc(var(--bottom) + var(--_bottom));
+  margin-block-end: calc(-1 * var(--bottom) - var(--_bottom));
+}
+
+:is(nav, .row) > header {
+  background-color: inherit;
+}
+
+nav:is(.left, .right) > header {
+  transform: translateY(-0.5rem);
+}
+
+nav.drawer:is(.left, .right) > header + * {
+  margin-block-start: 0.5rem;
+}
+
+dialog > nav.drawer > header + * {
+  margin-block-start: 1rem;
+}
+    

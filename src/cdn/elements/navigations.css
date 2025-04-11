@@ -146,26 +146,17 @@ nav.drawer:not(.left, .right, .top, .bottom) {
   padding: 0.5rem 1rem;
 }
 
+dialog > nav.drawer:not(.left, .right, .top, .bottom) {
+  padding: 0 1rem;
+  background-color: inherit;
+}
+
 nav.drawer:is(.min, .max) {
   inline-size: auto;
 }
 
 nav.drawer.max {
   inline-size: 100%;
-}
-
-:is(nav, .row) > header {
-  background-color: inherit;
-}
-
-nav:is(.left, .right) > header {
-  transform: translateY(-0.5rem);
-}
-
-nav.drawer > header {
-  transform: translateY(-0.75rem);
-  min-block-size: 4.5rem;
-  align-self: stretch;
 }
 
 nav.drawer > :is(a, label),

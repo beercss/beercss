@@ -22,8 +22,8 @@
 @import "./helpers/waves.css";
 @import "./helpers/blurs.css";
 @import "./helpers/shadows.css";
-@import "./elements/mainLayouts.css";
 @import "./elements/badges.css";
+@import "./elements/bars.css";
 @import "./elements/buttons.css";
 @import "./elements/cards.css";
 @import "./elements/chips.css";
@@ -35,6 +35,7 @@
 @import "./elements/icons.css";
 @import "./elements/layouts.css";
 @import "./elements/lists.css";
+@import "./elements/mainLayouts.css";
 @import "./elements/media.css";
 @import "./elements/menus.css";
 @import "./elements/navigations.css";
