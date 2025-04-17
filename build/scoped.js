@@ -10,7 +10,7 @@ function addParentSelector(css) {
 
 function fixSelectors(css) {
   return css
-    .replace(/(\.beer\s)(@|\s+url|\s+to|\s+from|:root|body|html|\s+\d)/g, "$2")
+    .replace(/(\.beer\s)(@|\s+url|\s+to|\s+from|:root|body|html|\s+\d|\s+transition|\s+circle|\s+rgb|\s+calc|\s+-\d|\s+currentColor)/g, "$2")
     .replace(/\.beer\s(:has|\*:has)/g, ".beer:has")
     .replace(/(\.beer\s)(\s+)/g, "$2$1");
 }
