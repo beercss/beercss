@@ -12,7 +12,7 @@
   border-radius: 0.25rem;
   padding: 0.5rem;
   position: absolute;
-  z-index: 3;
+  z-index: 200;
   inset: 0 auto auto 50%;
   inline-size: auto;
   white-space: nowrap;
