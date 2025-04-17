@@ -102,7 +102,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.6/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -112,7 +112,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.6/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -122,7 +122,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.6/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -132,7 +132,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.5/dist/cdn/material-symbols-subset.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.6/dist/cdn/material-symbols-subset.woff2") format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -1751,7 +1751,7 @@ body {
   max-inline-size: 100%;
 }
 .beer:has(> main) > :is(header, footer).fixed {
-  z-index: 12;
+  z-index: 100;
   transform: none;
   box-sizing: content-box;
   inset: 0;
