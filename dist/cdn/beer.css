@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.7/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.8/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.7/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.8/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.7/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.8/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -131,7 +131,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.10.7/dist/cdn/material-symbols-subset.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.10.8/dist/cdn/material-symbols-subset.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -2768,22 +2768,22 @@ main {
   margin-block: calc(var(--top) + var(--_top)) calc(var(--bottom) + var(--_bottom));
   margin-inline: calc(var(--left) + var(--_left)) calc(var(--right) + var(--_right));
 }
-:has(> nav.top:not(.s, .n, .l)) {
+:has(> nav.top:not(.s, .m, .l)) {
   --_top: 5rem;
 }
-:has(> nav.bottom:not(.s, .n, .l)) {
+:has(> nav.bottom:not(.s, .m, .l)) {
   --_bottom: 5rem;
 }
-:has(> nav.left:not(.s, .n, .l)) {
+:has(> nav.left:not(.s, .m, .l)) {
   --_left: 5rem;
 }
-:has(> nav.right:not(.s, .n, .l)) {
+:has(> nav.right:not(.s, .m, .l)) {
   --_right: 5rem;
 }
-:has(> nav.drawer.left:not(.s, .n, .l)) {
+:has(> nav.drawer.left:not(.s, .m, .l)) {
   --_left: 20rem;
 }
-:has(> nav.drawer.right:not(.s, .n, .l)) {
+:has(> nav.drawer.right:not(.s, .m, .l)) {
   --_right: 20rem;
 }
 :not(main):has(> aside) {

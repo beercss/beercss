@@ -18,27 +18,27 @@ main {
   margin-inline: calc(var(--left) + var(--_left)) calc(var(--right) + var(--_right));
 }
 
-:has(> nav.top:not(.s, .n, .l)) {
+:has(> nav.top:not(.s, .m, .l)) {
   --_top: 5rem;
 }
 
-:has(> nav.bottom:not(.s, .n, .l)) {
+:has(> nav.bottom:not(.s, .m, .l)) {
   --_bottom: 5rem;
 }
 
-:has(> nav.left:not(.s, .n, .l)) {
+:has(> nav.left:not(.s, .m, .l)) {
   --_left: 5rem;
 }
 
-:has(> nav.right:not(.s, .n, .l)) {
+:has(> nav.right:not(.s, .m, .l)) {
   --_right: 5rem;
 }
 
-:has(> nav.drawer.left:not(.s, .n, .l)) {
+:has(> nav.drawer.left:not(.s, .m, .l)) {
   --_left: 20rem;
 }
 
-:has(> nav.drawer.right:not(.s, .n, .l)) {
+:has(> nav.drawer.right:not(.s, .m, .l)) {
   --_right: 20rem;
 }
 
