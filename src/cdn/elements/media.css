@@ -86,20 +86,12 @@ svg {
   margin: 0 -0.5rem;
 }
 
-:is(button, .button) > .responsive:first-child {
-  margin-inline-start: -1.5rem;
-}
-
-:is(button, .button) > .responsive:not(:first-child) {
-  margin-inline-end: -1.5rem;
-}
-
-.chip > .responsive:first-child {
+:is(button, .button, .chip) > .responsive:first-child {
   margin-inline-start: -1rem;
 }
 
-.chip > .responsive:not(:first-child) {
-  margin-inline-end: -1rem;
+:is(button, .button, .chip) > .responsive:not(:first-child) {
+  margin-inline-end: -1em;
 }
 
 :is(.circle, .square, .extend) > .responsive {

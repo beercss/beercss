@@ -29,7 +29,7 @@ vertical, horizontal
 
 **Forms**
 
-border, round, no-round, left-round, right-round, top-round, bottom-round, drawer, tabbed
+border, round, no-round, left-round, right-round, top-round, bottom-round, drawer, tabbed, group, toolbar
 
 **Margins**
 
@@ -45,7 +45,7 @@ elevate, no-elevate, small-elevate, medium-elevate, large-elevate
 
 **Sizes**
 
-no-space, small-space, medium-space, large-space, wrap, no-wrap
+no-space, small-space, medium-space, large-space, wrap, no-wrap, min, max
 
 ## Row example
 
@@ -165,6 +165,25 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap
     <div>More</div>
   </a>
 </nav>
+```
+
+## Navigation toolbar example
+
+```html
+<nav class="toolbar">
+  <a>
+    <i>home</i>
+    <div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    <div>Search</div>
+  </a>
+  <a>
+    <i>more_vert</i>
+    <div>More</div>
+  </a>
+</button>
 ```
 
 ## Go to

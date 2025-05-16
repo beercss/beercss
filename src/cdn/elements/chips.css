@@ -22,10 +22,6 @@
   letter-spacing: normal;
 }
 
-.chip.fill:hover {
-  box-shadow: var(--elevate1);
-}
-
 .chip.medium {
   --_size: 2.5rem;
 }
@@ -35,7 +31,6 @@
 }
 
 .chip.fill {
-  background-color: var(--secondary-container) !important;
   border: none;
 }
 

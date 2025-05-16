@@ -184,3 +184,39 @@
   background-color: var(--surface-variant) !important;
   color: var(--on-surface-variant) !important;
 }
+
+.primary-container > .active,
+.primary-container.active {
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
+}
+
+.secondary-container > .active,
+.secondary-container.active {
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
+}
+
+.tertiary-container > .active,
+.tertiary-container.active {
+  background-color: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
+}
+
+.primary > .active,
+.primary.active {
+  background-color: var(--primary-container) !important;
+  color: var(--on-primary-container) !important;
+}
+
+.secondary > .active,
+.secondary.active {
+  background-color: var(--secondary-container) !important;
+  color: var(--on-secondary-container) !important;
+}
+
+.tertiary > .active,
+.tertiary.active {
+  background-color: var(--tertiary-container) !important;
+  color: var(--on-tertiary-container) !important;
+}

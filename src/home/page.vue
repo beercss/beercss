@@ -187,6 +187,9 @@ div
       a(data-ui="#dialog-menu", @click="domain.goTo('#textareas')")
         i widgets
         span Textareas
+      a(data-ui="#dialog-menu", @click="domain.goTo('#toolbars')")
+        i widgets
+        span Toolbars
       a(data-ui="#dialog-menu", @click="domain.goTo('#tooltips')")
         i widgets
         span Tooltips
@@ -397,7 +400,7 @@ div
                     span &nbsp;border, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
                   p
                     b.error-text &lt;nav&gt;
-                    span &nbsp;left, right, top, bottom, drawer, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+                    span &nbsp;left, right, top, bottom, drawer, tabbed, group, toolbar, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
                   p
                     b.error-text &lt;ol&gt;
                   p
@@ -530,6 +533,8 @@ div
         .s12
           textareas
         .s12
+          toolbars
+        .s12
           tooltips
         .s12
           typography
@@ -602,6 +607,7 @@ import switches from "./switches.vue";
 import tables from "./tables.vue";
 import tabs from "./tabs.vue";
 import textareas from "./textareas.vue";
+import toolbars from "./toolbars.vue";
 import tooltips from "./tooltips.vue";
 import typography from "./typography.vue";
 import wavesAndRipples from "./wavesAndRipples.vue";

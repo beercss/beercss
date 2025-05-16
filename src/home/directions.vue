@@ -22,8 +22,8 @@
     button.chip
       i home
       span Chip
-    nav.no-space
-      button.border.left-round.fill
+    nav.group
+      button.border.left-round
         i home
         span Button
       button.border.no-round

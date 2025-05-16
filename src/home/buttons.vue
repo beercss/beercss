@@ -290,6 +290,78 @@
           span Button
   .medium-space
   h6.middle-align
+    span FABs menu
+    button.chip.circle(@click="domain.showSamples(data, '#fabs-menu nav.min', 'FABs menu', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+      i code
+  #fabs-menu
+    .space
+    nav
+      nav.min
+        button.extra.circle
+          i north_east
+        menu.top.transparent.no-wrap
+          li
+            button.fill
+              i search
+              span Search
+          li
+            button.fill
+              i home
+              span Home
+          li
+            button.fill
+              i more_vert
+              span About us
+      nav.min
+        button.extra.circle
+          i north_west
+        menu.top.transparent.no-wrap.left.right-align
+          li
+            button.fill
+              i search
+              span Search
+          li
+            button.fill
+              i home
+              span Home
+          li
+            button.fill
+              i more_vert
+              span About us
+      nav.min
+        button.extra.circle
+          i south_east
+        menu.bottom.transparent.no-wrap
+          li
+            button.fill
+              i search
+              span Search
+          li
+            button.fill
+              i home
+              span Home
+          li
+            button.fill
+              i more_vert
+              span About us
+      nav.min
+        button.extra.circle
+          i south_west
+        menu.bottom.transparent.no-wrap.left.right-align
+          li
+            button.fill
+              i search
+              span Search
+          li
+            button.fill
+              i home
+              span Home
+          li
+            button.fill
+              i more_vert
+              span About us
+  .medium-space
+  h6.middle-align
     span Icon buttons
     button.chip.circle(@click="domain.showSamples(data, '#transparent-buttons button', 'Transparent buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -332,61 +404,78 @@
         img.responsive(:src="'/favicon.png'")
   .medium-space
   h6.middle-align
-    span Segmented buttons
-    button.chip.circle(@click="domain.showSamples(data, '#segmented-buttons nav', 'Segmented buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    span Button groups
+    button.chip.circle(@click="domain.showSamples(data, '#group-buttons nav.group', 'Button groups', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#segmented-buttons button", :colors="[]", :elevates="[]", :directions="['horizontal', 'vertical']", selected-direction="horizontal")
-  #segmented-buttons.grid
-    .s12.m12.l6
-      nav.no-space
-        button.border.left-round
+  selectionForButtons(context="#group-buttons button", :colors="[]", :themeColors="['', 'fill', 'primary', 'secondary', 'tertiary']", :elevates="[]", :directions="[]")
+  .space
+  #group-buttons
+    nav.group
+      button.left-round Button
+      button.no-round Button
+      button.no-round.active Button
+      button.right-round Button
+    nav.group
+      button.left-round
+        i mic
+      button.no-round
+        i videocam
+      button.no-round.active
+        i mood
+      button.right-round
+        i front_hand
+    nav.group
+      button.left-round
+        i mic
+        span Button
+      button.no-round
+        i videocam
+        span Button
+      button.no-round.active
+        i mood
+        span Button
+      button.right-round
+        i front_hand
+        span Button
+  .medium-space
+  h6.middle-align
+    span Split buttons
+    button.chip.circle(@click="domain.showSamples(data, '#split-buttons .group', 'Split button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+      i code
+  selectionForButtons(context="#split-buttons button", :colors="[]", :elevates="[]", :directions="[]")
+  .space
+  #split-buttons
+    nav
+      nav.group
+        button.left-round
+          i add_circle
           span Button
-        button.border.no-round
+        button.right-round.square
+          i keyboard_arrow_down
+      nav.group
+        button.fill.left-round
+          i add_circle
           span Button
-        button.border.right-round.fill
+        button.fill.right-round.square
+          i keyboard_arrow_down
+      nav.group
+        button.primary.left-round
+          i add_circle
           span Button
-      nav.no-space
-        button.border.left-round
-          i search
-        button.border.no-round
-          i edit
-        button.border.right-round.fill
-          i home
-      nav.no-space
-        button.border.left-round
-          i.small check
+        button.primary.right-round.square
+          i keyboard_arrow_down
+      nav.group
+        button.secondary.left-round
+          i add_circle
           span Button
-        button.border.no-round
-          i.small check
+        button.secondary.right-round.square
+          i keyboard_arrow_down
+      nav.group
+        button.tertiary.left-round
+          i add_circle
           span Button
-        button.border.right-round.fill
-          i.small check
-          span Button
-    .s12.m12.l6
-      nav.no-space
-        button.border.left-round.max
-          span Button
-        button.border.no-round.max
-          span Button
-        button.border.right-round.max.fill
-          span Button
-      nav.no-space
-        button.border.left-round.max
-          i search
-        button.border.no-round.max
-          i edit
-        button.border.right-round.max.fill
-          i home
-      nav.no-space
-        button.border.left-round.max
-          i.small check
-          span Button
-        button.border.no-round.max
-          i.small check
-          span Button
-        button.border.right-round.max.fill
-          i.small check
-          span Button
+        button.tertiary.right-round.square
+          i keyboard_arrow_down
 </template>
 
 <script setup lang="ts">

@@ -10,11 +10,11 @@ button {
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-primary);
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   background-color: var(--primary);
   margin: 0 0.5rem;
   border-radius: var(--_size);
-  transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
+  transition: transform var(--speed3), border-radius var(--speed2), padding var(--speed3);
   user-select: none;
   gap: 1rem;
   line-height: normal;
@@ -75,7 +75,28 @@ button {
   display: none;
 }
 
-:is(.button, button).fill {
+:is(.button, button):not(.chip).fill {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
+}
+
+:is(.button, button):not(.chip).active {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+:is(.button, button):not(.chip).fill.active {
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
+}
+
+:is(.button, button):not(.chip).border.active {
+  background-color: var(--inverse-surface) !important;
+  color: var(--inverse-on-surface) !important;
+  border-color: var(--inverse-surface) !important;
+}
+
+:is(.button, button):not(.chip):active,
+:is(.button, button):not(.chip).active {
+  border-radius: 0.5rem !important;
 }
