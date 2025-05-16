@@ -18,7 +18,7 @@ class BeerCssCustomElement extends HTMLElement {
   async addCss() {
     if (BeerCssCustomElement.isCssLoaded) return;
     BeerCssCustomElement.isCssLoaded = true;
-    const isScoped = !!getComputedStyle(document.documentElement).getPropertyValue('--scoped');
+    const isScoped = !!getComputedStyle(document.documentElement).getPropertyValue("--scoped");
     if (isScoped) return;
 
     const head = document.querySelector("head");
@@ -35,5 +35,5 @@ class BeerCssCustomElement extends HTMLElement {
   }
 }
 
-customElements.define('beer-css', BeerCssCustomElement);
+customElements.define("beer-css", BeerCssCustomElement);
 export default BeerCssCustomElement;

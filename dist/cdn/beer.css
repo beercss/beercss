@@ -198,6 +198,9 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   outline: 0.125rem solid var(--primary);
   outline-offset: 0.25rem;
 }
+:is(nav, .row, li).group > :focus-visible {
+  outline-offset: 0;
+}
 .transparent {
   background-color: transparent !important;
   box-shadow: none !important;
@@ -344,6 +347,36 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   background-color: var(--surface-variant) !important;
   color: var(--on-surface-variant) !important;
 }
+.primary-container > .active,
+.primary-container.active {
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
+}
+.secondary-container > .active,
+.secondary-container.active {
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
+}
+.tertiary-container > .active,
+.tertiary-container.active {
+  background-color: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
+}
+.primary > .active,
+.primary.active {
+  background-color: var(--primary-container) !important;
+  color: var(--on-primary-container) !important;
+}
+.secondary > .active,
+.secondary.active {
+  background-color: var(--secondary-container) !important;
+  color: var(--on-secondary-container) !important;
+}
+.tertiary > .active,
+.tertiary.active {
+  background-color: var(--tertiary-container) !important;
+  color: var(--on-tertiary-container) !important;
+}
 .middle-align {
   display: flex;
   align-items: center !important;
@@ -367,6 +400,24 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 .center-align {
   text-align: center;
   justify-content: center !important;
+}
+[class*=blur],
+[class*=blur].light {
+  --_blur: 1rem;
+  -webkit-backdrop-filter: blur(var(--_blur));
+  backdrop-filter: blur(var(--_blur));
+  color: var(--on-surface);
+  background-color: rgb(255 255 255 / 0.5) !important;
+}
+.dark [class*=blur],
+[class*=blur].dark {
+  background-color: rgb(0 0 0 / 0.5) !important;
+}
+.small-blur {
+  --_blur: 0.5rem;
+}
+.large-blur {
+  --_blur: 1.5rem;
 }
 .red,
 .red6 {
@@ -1124,7 +1175,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 .bottom-round,
 .left-round,
 .right-round {
-  border-radius: 0 !important;
+  border-radius: 0.5rem !important;
 }
 .top-round {
   border-start-start-radius: var(--_round) !important;
@@ -1164,6 +1215,9 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 }
 .no-border {
   border-color: transparent !important;
+}
+.border:not(.extend, .circle, .square, .badge) {
+  box-sizing: content-box;
 }
 [class*=margin]:not(.left-margin, .right-margin, .top-margin, .bottom-margin, .horizontal-margin, .vertical-margin) {
   margin: var(--_margin) !important;
@@ -1320,6 +1374,24 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 }
 .no-scroll {
   overflow: hidden;
+}
+.shadow {
+  background-color: #00000050;
+}
+:is(.left-shadow, .right-shadow, .top-shadow, .bottom-shadow) {
+  background-color: transparent !important;
+}
+.left-shadow {
+  background-image: linear-gradient(to right, black, transparent) !important;
+}
+.right-shadow {
+  background-image: linear-gradient(to left, black, transparent) !important;
+}
+.bottom-shadow {
+  background-image: linear-gradient(to top, black, transparent) !important;
+}
+.top-shadow {
+  background-image: linear-gradient(to bottom, black, transparent) !important;
 }
 [class*=width] {
   max-inline-size: 100%;
@@ -1564,7 +1636,7 @@ pre:has(> code){
   direction: ltr;
   text-align: start;
 }
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):not(.slow-ripple, .ripple, .fast-ripple)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple)::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -1577,12 +1649,12 @@ pre:has(> code){
   opacity: 0;
   transition: none;
 }
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after {
   background-size: 15000%;
   opacity: 0.1;
   transition: background-size var(--speed2) linear;
 }
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):not(.slow-ripple, .ripple, .fast-ripple):active::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):active::after {
   background-size: 5000%;
   opacity: 0;
   transition: none;
@@ -1590,42 +1662,6 @@ pre:has(> code){
 .no-wave::after,
 .no-wave:is(:hover, :active)::after {
   display: none;
-}
-[class*=blur],
-[class*=blur].light {
-  --_blur: 1rem;
-  -webkit-backdrop-filter: blur(var(--_blur));
-  backdrop-filter: blur(var(--_blur));
-  color: var(--on-surface);
-  background-color: rgb(255 255 255 / 0.5) !important;
-}
-.dark [class*=blur],
-[class*=blur].dark {
-  background-color: rgb(0 0 0 / 0.5) !important;
-}
-.small-blur {
-  --_blur: 0.5rem;
-}
-.large-blur {
-  --_blur: 1.5rem;
-}
-.shadow {
-  background-color: #00000050;
-}
-:is(.left-shadow, .right-shadow, .top-shadow, .bottom-shadow) {
-  background-color: transparent !important;
-}
-.left-shadow {
-  background-image: linear-gradient(to right, black, transparent) !important;
-}
-.right-shadow {
-  background-image: linear-gradient(to left, black, transparent) !important;
-}
-.bottom-shadow {
-  background-image: linear-gradient(to top, black, transparent) !important;
-}
-.top-shadow {
-  background-image: linear-gradient(to bottom, black, transparent) !important;
 }
 .badge {
   --_x: 0;
@@ -1787,11 +1823,11 @@ button {
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-primary);
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   background-color: var(--primary);
   margin: 0 0.5rem;
   border-radius: var(--_size);
-  transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
+  transition: transform var(--speed3), border-radius var(--speed2), padding var(--speed3);
   user-select: none;
   gap: 1rem;
   line-height: normal;
@@ -1839,9 +1875,26 @@ button {
 :is(.button, button)[disabled]::after {
   display: none;
 }
-:is(.button, button).fill {
+:is(.button, button):not(.chip).fill {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
+}
+:is(.button, button):not(.chip).active {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+}
+:is(.button, button):not(.chip).fill.active {
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
+}
+:is(.button, button):not(.chip).border.active {
+  background-color: var(--inverse-surface) !important;
+  color: var(--inverse-on-surface) !important;
+  border-color: var(--inverse-surface) !important;
+}
+:is(.button, button):not(.chip):active,
+:is(.button, button):not(.chip).active {
+  border-radius: 0.5rem !important;
 }
 article {
   --_padding: 1rem;
@@ -1885,9 +1938,6 @@ article.large {
   line-height: normal;
   letter-spacing: normal;
 }
-.chip.fill:hover {
-  box-shadow: var(--elevate1);
-}
 .chip.medium {
   --_size: 2.5rem;
 }
@@ -1895,7 +1945,6 @@ article.large {
   --_size: 3rem;
 }
 .chip.fill {
-  background-color: var(--secondary-container) !important;
   border: none;
 }
 .chip.round.small {
@@ -2943,17 +2992,11 @@ svg {
 :is(button, .button, .chip) > :is(i, img, svg) {
   margin: 0 -0.5rem;
 }
-:is(button, .button) > .responsive:first-child {
-  margin-inline-start: -1.5rem;
-}
-:is(button, .button) > .responsive:not(:first-child) {
-  margin-inline-end: -1.5rem;
-}
-.chip > .responsive:first-child {
+:is(button, .button, .chip) > .responsive:first-child {
   margin-inline-start: -1rem;
 }
-.chip > .responsive:not(:first-child) {
-  margin-inline-end: -1rem;
+:is(button, .button, .chip) > .responsive:not(:first-child) {
+  margin-inline-end: -1em;
 }
 :is(.circle, .square, .extend) > .responsive {
   --_size: inherit;
@@ -2994,6 +3037,7 @@ menu {
   border-radius: 0.25rem;
   transform: scale(0.8) translateY(120%);
   transition: all var(--speed2), 0s background-color;
+  justify-content: flex-start;
 }
 [dir=rtl] menu {
   inset: auto 0 0 auto;
@@ -3003,7 +3047,6 @@ menu.no-wrap {
   white-space: nowrap !important;
 }
 menu.active,
-menu:not([data-ui]):active,
 :not(menu, [data-ui]):focus-within > menu,
 menu > li:hover > menu,
 menu > li > menu:hover {
@@ -3029,7 +3072,7 @@ menu > li > a:only-child {
   align-items: center;
   align-self: normal;
   text-align: start;
-  justify-content: flex-start;
+  justify-content: inherit;
   white-space: nowrap;
   gap: 1rem;
   padding: 0.5rem 1rem;
@@ -3061,7 +3104,8 @@ menu.top.left {
 }
 [dir=rtl] menu.min.left,
 menu.min.right,
-menu.top {
+menu.top,
+menu.top.right {
   inset: 0 auto auto 0;
 }
 menu.max {
@@ -3135,6 +3179,15 @@ menu.border > li:not(:last-child)::before {
   inset: auto 0 0 0;
   block-size: 0.0625rem;
   inline-size: auto;
+}
+menu.transparent {
+  margin: 0 -1rem !important;
+  padding: 0.5rem;
+}
+menu.transparent > li {
+  background-color: inherit;
+  box-shadow: none;
+  padding: 0;
 }
 menu > li:nth-last-child(2) {
   --_child: 2;
@@ -3228,19 +3281,19 @@ nav > :is(ol, ul) > li > :only-child {
   white-space: normal;
   flex: none;
 }
-:is(nav, .row).no-space {
+:is(nav, .row).min {
+  display: inline-flex;
+}
+:is(nav, .row, li).no-space {
   gap: 0;
 }
-:is(nav, .row).no-space:not(.vertical) > .border + .border {
-  border-inline-start: 0;
+:is(nav, .row, li).tiny-space {
+  gap: 0.5rem;
 }
-:is(nav, .row).no-space.vertical > .border + .border {
-  border-top: 0;
-}
-:is(nav, .row).medium-space {
+:is(nav, .row, li).medium-space {
   gap: 1.5rem;
 }
-:is(nav, .row).large-space {
+:is(nav, .row, li).large-space {
   gap: 2rem;
 }
 :is(nav, .row) > .max,
@@ -3255,9 +3308,6 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) > .max {
 }
 :is(header, footer) > :is(nav, .row) {
   min-block-size: inherit;
-}
-:is(nav, .row) > .border.no-margin + .border.no-margin {
-  border-inline-start: 0;
 }
 nav:is(.left, .right, .top, .bottom) {
   border: 0;
@@ -3305,7 +3355,7 @@ nav.right,
   padding-inline-start: calc(var(--right) + 1rem);
 }
 nav.bottom {
-  block-size: calc(var(--bottom) + 5rem);
+  min-block-size: calc(var(--bottom) + 5rem);
   inset: auto 0 0 0;
   padding-block-start: 0.5rem;
 }
@@ -3435,6 +3485,71 @@ nav.tabbed > a {
 }
 nav.tabbed > a.active {
   background-color: var(--primary-container);
+}
+nav.toolbar {
+  display: inline-flex;
+  justify-content: space-around;
+  border-radius: 2rem;
+  background-color: var(--surface-container);
+  color: var(--on-surface);
+  padding: 0 1rem;
+  gap: 0.5rem;
+  min-block-size: 4rem;
+  min-inline-size: 4rem;
+}
+nav.toolbar > a {
+  display: inline-flex;
+  gap: 0.5rem;
+  min-inline-size: 2.5rem;
+  min-block-size: 2.5rem;
+  border-radius: 1.75rem;
+}
+nav.toolbar > a:has(> :not(i)) {
+  padding: 0 1rem;
+}
+nav.toolbar > a.active {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+nav.toolbar.fill {
+  background-color: var(--primary-container) !important;
+  color: var(--on-primary-container) !important;
+}
+nav.toolbar.fill > a.active {
+  background-color: var(--surface-container) !important;
+  color: var(--on-surface) !important;
+}
+nav.toolbar.vertical {
+  flex-direction: column !important;
+  min-inline-size: 4rem;
+  padding: 1rem 0;
+  align-self: center;
+  align-items: center !important;
+}
+nav.toolbar.vertical > a {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+}
+nav.toolbar.vertical > a > :is(div, span):not(.badge, .tooltip) {
+  display: none;
+}
+nav.toolbar.max {
+  border-radius: 0;
+  display: flex;
+}
+nav.group {
+  gap: 0.125rem;
+}
+nav.group > :is(.button, button):not(.chip, .fill, .border).active {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+nav.group > :is(.button, button):not(.chip, .fill, .border) {
+  background-color: var(--surface-container);
+  color: var(--on-surface-container);
+}
+nav.group > :is(.button, button):not(.chip).active {
+  border-radius: 2rem !important;
 }
 :not(nav) > :is(ul, ol) {
   all: revert;
