@@ -44,7 +44,7 @@
       label.radio
         input(type="radio", name="radio-elevate-toolbars", @click="domain.updateElevate('#default-toolbars .toolbar', 'large-elevate')")
         span large-elevate
-    nav.wrap
+    nav.center-align
       nav.toolbar
         a
           i videocam_off
@@ -54,6 +54,7 @@
           i front_hand
         a
           i more_vert
+    nav.center-align.m.l
       nav.toolbar
         a
           i videocam_off
@@ -87,7 +88,7 @@
           i more_vert
       button.extra.round.circle.error
         i call_end
-    nav.center-align.tiny-space
+    nav.center-align.tiny-space.m.l
       nav.toolbar
         a
           i videocam_off
@@ -122,7 +123,7 @@
       a
         i more_vert
     div
-    nav.toolbar.max
+    nav.toolbar.max.m.l
       a
         i videocam_off
         div Video
