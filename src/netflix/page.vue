@@ -73,7 +73,7 @@ import { redirect } from "../shared/router";
 function scroll(selector:string) {
   const element = document.querySelector(selector);
   if (element) element.scrollIntoView({ block: "start", behavior: "smooth" });
-};
+}
 
 onMounted(() => {
   document.title = "Netflix - Beer CSS";

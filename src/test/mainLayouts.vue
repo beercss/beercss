@@ -17,34 +17,34 @@ div(:dir="rtlValue ? 'rtl' : ''", :style="safeAreaValue ? '--top:24px;--bottom:2
       div &lt;main&gt;
       nav
         label.checkbox
-          input(type="checkbox", v-model="safeAreaValue")
+          input(v-model="safeAreaValue", type="checkbox")
           span 24px
         label.checkbox
-          input(type="checkbox", v-model="rtlValue")
+          input(v-model="rtlValue", type="checkbox")
           span rtl
         label.checkbox
-          input(type="checkbox", v-model="responsiveValue")
+          input(v-model="responsiveValue", type="checkbox")
           span responsive
         label.checkbox
-          input(type="checkbox", v-model="fixedValue")
+          input(v-model="fixedValue", type="checkbox")
           span fixed
         label.checkbox
-          input(type="checkbox", v-model="headerValue")
+          input(v-model="headerValue", type="checkbox")
           span header
         label.checkbox
-          input(type="checkbox", v-model="footerValue")
+          input(v-model="footerValue", type="checkbox")
           span footer
         label.checkbox
-          input(type="checkbox", v-model="topValue")
+          input(v-model="topValue", type="checkbox")
           span nav.top
         label.checkbox
-          input(type="checkbox", v-model="bottomValue")
+          input(v-model="bottomValue", type="checkbox")
           span nav.bottom
         label.checkbox
-          input(type="checkbox", v-model="leftValue")
+          input(v-model="leftValue", type="checkbox")
           span nav.left
         label.checkbox
-          input(type="checkbox", v-model="rightValue")
+          input(v-model="rightValue", type="checkbox")
           span nav.right
       p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -61,7 +61,7 @@ div(:dir="rtlValue ? 'rtl' : ''", :style="safeAreaValue ? '--top:24px;--bottom:2
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const safeAreaValue = ref(false);
 const rtlValue = ref(false);

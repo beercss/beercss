@@ -26,7 +26,7 @@ export default async function scoped() {
     unminified = addScopedRule(unminified);
     unminified = addParentSelector(unminified);
     unminified = fixSelectors(unminified);
-    let minified = removeSpaces(unminified);
+    const minified = removeSpaces(unminified);
     
     fs.writeFileSync("./dist/cdn/beer.scoped.css", unminified);
     fs.writeFileSync("./dist/cdn/beer.scoped.min.css", minified);

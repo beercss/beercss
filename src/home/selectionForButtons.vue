@@ -3,7 +3,7 @@ nav.wrap
   label.radio(v-for="color in colors")
     input(:id="color + '-' + context", type="radio", :name="'color-' + context", :checked="color === selectedColor", @click="domain.updateElementColor(context, color)")
     span {{ color || "default" }}
-  label.radio(v-for="(theme, i) in themeColors")
+  label.radio(v-for="theme in themeColors")
     input(:id="theme + '-' + context", type="radio", :name="'theme-' + context", :checked="theme === selectedThemeColor", @click="domain.updateColorTheme(context, theme)")
     span {{ theme || "default" }}
   label.radio(v-for="size in sizes")

@@ -407,7 +407,7 @@
     span Button groups
     button.chip.circle(@click="domain.showSamples(data, '#group-buttons nav.group', 'Button groups', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#group-buttons button", :colors="[]", :themeColors="['', 'fill', 'primary', 'secondary', 'tertiary']", :elevates="[]", :directions="[]")
+  selectionForButtons(context="#group-buttons button", :colors="[]", :theme-colors="['', 'fill', 'primary', 'secondary', 'tertiary']", :elevates="[]", :directions="[]")
   .space
   #group-buttons
     nav.group
