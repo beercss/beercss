@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.1/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.1/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.1/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -131,7 +131,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.1/dist/cdn/material-symbols-subset.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-subset.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1207,7 +1207,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 :is(.circle, .square).round {
   border-radius: 1rem !important;
 }
-.border:not(table, .field, .list, menu) {
+.border:not(table, .field, .list, menu, article) {
   box-sizing: border-box;
   border: 0.0625rem solid var(--outline);
   background-color: transparent;
@@ -1813,37 +1813,43 @@ dialog > nav.drawer > header + * {
 }
 .button,
 button {
+  --_padding: 1rem;
   --_size: 2.5rem;
   box-sizing: content-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   block-size: var(--_size);
-  min-inline-size: var(--_size);
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--on-primary);
-  padding: 0 1rem;
+  padding: 0 var(--_padding);
   background-color: var(--primary);
   margin: 0 0.5rem;
   border-radius: var(--_size);
   transition: transform var(--speed3), border-radius var(--speed2), padding var(--speed3);
   user-select: none;
-  gap: 1rem;
+  gap: 0.5rem;
   line-height: normal;
 }
 :is(button, .button).small {
   --_size: 2rem;
+  --_padding: 0.75rem;
 }
 :is(button, .button).large {
   --_size: 3rem;
+  --_padding: 1.25rem;
 }
 :is(.button, button):is(.extra, .extend) {
   --_size: 3.5rem;
   font-size: 1rem;
+  --_padding: 1.5rem;
+}
+:is(button, .button):is(.square, .circle) {
+  --_padding: 0;
 }
 :is(button, .button).border {
-  border-color: var(--outline);
+  border-color: var(--outline-variant);
   color: var(--primary);
 }
 :is(button, .button):not(.border, .chip):hover {
@@ -1854,15 +1860,16 @@ button {
 }
 .extend:is(:hover, .active) {
   inline-size: auto;
-  padding: 0 1.5rem;
+  --_padding: 1.5rem;
+  padding: 0 var(--_padding);
 }
 .extend:is(:hover, .active) > i + span {
   display: inherit;
-  margin-inline-start: 1.5rem;
+  margin-inline-start: var(--_padding);
 }
 .extend:is(:hover, .active) > :is(img, svg) + span {
   display: inherit;
-  margin-inline-start: 2.5rem;
+  margin-inline-start: calc(1rem + var(--_padding));
 }
 :is(.button, button)[disabled] {
   opacity: 0.5;
@@ -1875,19 +1882,19 @@ button {
 :is(.button, button)[disabled]::after {
   display: none;
 }
-:is(.button, button):not(.chip).fill {
+:is(.button, button):not(.chip, .extend).fill {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
 }
-:is(.button, button):not(.chip).active {
+:is(.button, button):not(.chip, .extend).active {
   background-color: var(--primary-container);
   color: var(--on-primary-container);
 }
-:is(.button, button):not(.chip).fill.active {
+:is(.button, button):not(.chip, .extend).fill.active {
   background-color: var(--secondary) !important;
   color: var(--on-secondary) !important;
 }
-:is(.button, button):not(.chip).border.active {
+:is(.button, button):not(.chip, .extend).border.active {
   background-color: var(--inverse-surface) !important;
   color: var(--inverse-on-surface) !important;
   border-color: var(--inverse-surface) !important;
@@ -1915,7 +1922,12 @@ article.medium {
 article.large {
   block-size: 32rem;
 }
+article.border {
+  box-shadow: none;
+  border: 0.0625rem solid var(--outline-variant);
+}
 .chip {
+  --_padding: 0.75rem;
   --_size: 2rem;
   box-sizing: border-box;
   display: inline-flex;
@@ -1928,33 +1940,26 @@ article.large {
   background-color: transparent;
   border: 0.0625rem solid var(--outline-variant);
   color: var(--on-surface-variant);
-  padding: 0 1rem;
+  padding: 0 var(--_padding);
   margin: 0 0.5rem;
   text-transform: none;
   border-radius: 0.5rem;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
   user-select: none;
-  gap: 1rem;
+  gap: 0.5rem;
   line-height: normal;
   letter-spacing: normal;
 }
 .chip.medium {
   --_size: 2.5rem;
+  --_padding: 1rem;
 }
 .chip.large {
+  --_padding: 1.25rem;
   --_size: 3rem;
 }
 .chip.fill {
   border: none;
-}
-.chip.round.small {
-  border-radius: 1rem;
-}
-.chip.round {
-  border-radius: 1.25rem;
-}
-.chip.round.large {
-  border-radius: 1.5rem;
 }
 dialog {
   --_padding: 1.5rem;
@@ -2989,14 +2994,11 @@ svg {
   min-block-size: 1.5rem;
   max-block-size: 1.5rem;
 }
-:is(button, .button, .chip) > :is(i, img, svg) {
-  margin: 0 -0.5rem;
-}
 :is(button, .button, .chip) > .responsive:first-child {
-  margin-inline-start: -1rem;
+  margin-inline-start: calc(-1 * var(--_padding));
 }
 :is(button, .button, .chip) > .responsive:not(:first-child) {
-  margin-inline-end: -1em;
+  margin-inline-end: calc(-1 * var(--_padding));
 }
 :is(.circle, .square, .extend) > .responsive {
   --_size: inherit;
