@@ -58,7 +58,7 @@
   border-radius: 1rem !important;
 }
 
-.border:not(table, .field, .list, menu) {
+.border:not(table, .field, .list, menu, article) {
   box-sizing: border-box;
   border: 0.0625rem solid var(--outline);
   background-color: transparent;

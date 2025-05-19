@@ -20,3 +20,8 @@ article.medium {
 article.large {
   block-size: 32rem;
 }
+
+article.border {
+  box-shadow: none;
+  border: 0.0625rem solid var(--outline-variant);
+}
