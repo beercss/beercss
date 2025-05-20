@@ -30,7 +30,7 @@ div
       nav
         button.circle.transparent
           i menu
-        h5.max.center-align Title
+        h6.max.center-align Headline
         button.circle.transparent
           img.responsive(:src="'/favicon.png'")
     .space
@@ -38,7 +38,7 @@ div
       nav
         button.circle.transparent
           i arrow_back
-        h5.max Title
+        h6.max Headline
         button.circle.transparent
           i attach_file
         button.circle.transparent
@@ -57,8 +57,8 @@ div
           i today
         button.circle.transparent
           i more_vert
-      .small-space
-      h5.small-padding Headline small
+      .small-padding
+        h5 Headline
     .space
     header
       nav
@@ -71,8 +71,8 @@ div
           i today
         button.circle.transparent
           i more_vert
-      .medium-space
-      h5.small-padding Headline medium
+      .small-padding
+        h4 Headline
   .medium-space
   #bottom-app-bars
     h6 Bottom app bars
