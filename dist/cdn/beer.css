@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.3/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.3/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.3/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -131,7 +131,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-subset.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.3/dist/cdn/material-symbols-subset.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1445,24 +1445,18 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   inline-size: -moz-available;
 }
 @media only screen and (max-width: 600px) {
-  .m:not(.s),
-  .l:not(.s),
-  .m.l:not(.s) {
-    display: none;
+  :is(.m, .l):not(.s) {
+    display: none !important;
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-  .s:not(.m),
-  .l:not(.m),
-  .s.l:not(.m) {
-    display: none;
+  :is(.s, .l):not(.m) {
+    display: none !important;
   }
 }
 @media only screen and (min-width: 993px) {
-  .m:not(.l),
-  .s:not(.l),
-  .m.s:not(.l) {
-    display: none;
+  :is(.m, .s):not(.l) {
+    display: none !important;
   }
 }
 html {

@@ -102,7 +102,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.3/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -112,7 +112,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.3/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -122,7 +122,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.3/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -132,7 +132,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.2/dist/cdn/material-symbols-subset.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.3/dist/cdn/material-symbols-subset.woff2") format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -1446,24 +1446,18 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   inline-size: -moz-available;
 }
 @media only screen and (max-width: 600px) {
-  .beer .m:not(.s),
-  .beer .l:not(.s),
-  .beer .m.l:not(.s) {
-    display: none;
+  .beer :is(.m, .l):not(.s) {
+    display: none !important;
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-  .beer .s:not(.m),
-  .beer .l:not(.m),
-  .beer .s.l:not(.m) {
-    display: none;
+  .beer :is(.s, .l):not(.m) {
+    display: none !important;
   }
 }
 @media only screen and (min-width: 993px) {
-  .beer .m:not(.l),
-  .beer .s:not(.l),
-  .beer .m.s:not(.l) {
-    display: none;
+  .beer :is(.m, .s):not(.l) {
+    display: none !important;
   }
 }
 html {
