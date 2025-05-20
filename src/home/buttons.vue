@@ -445,7 +445,7 @@
   selectionForButtons(context="#split-buttons button", :colors="[]", :elevates="[]", :directions="[]")
   .space
   #split-buttons
-    nav
+    nav.wrap
       nav.group
         button.left-round
           i add_circle

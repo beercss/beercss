@@ -36,7 +36,7 @@ Beer CSS is an MIT-licensed open source project with its ongoing development mad
 # Why?
 
 - 🥇 The first CSS framework based on Material Design 3
-- 👉 Latest "M3 Expressive" already
+- 👉 Latest "M3 Expressive" already.
 - ⬇️ 10x smaller than others CSS frameworks based on Material Design.
 - 🧙‍♂️ Translates Material Design to HTML semantic standard.
 - 🤓 Ready to use with any JS framework.
