@@ -35,6 +35,10 @@ nav > :is(ol, ul) > li > :only-child {
   flex: none;
 }
 
+:is(nav, .row).min {
+  display: inline-flex;
+}
+
 :is(nav, .row, li).no-space {
   gap: 0;
 }
@@ -375,11 +379,5 @@ nav.group > :is(.button, button):not(.chip).active {
   nav.top,
   nav.bottom {
     justify-content: space-around;
-  }
-}
-
-@media only screen and (min-width: 993px) {
-    :is(nav, .row).min {
-    display: inline-flex;
   }
 }
