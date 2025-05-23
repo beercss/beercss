@@ -10,8 +10,8 @@
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="size-sliders1", checked="checked", @click="domain.updateSize('#sliders1 .slider')")
-      span default
+      input(type="radio", name="size-sliders1", checked="checked", @click="domain.updateSize('#sliders1 .slider', '')")
+      span tiny
     label.radio
       input(type="radio", name="size-sliders1", @click="domain.updateSize('#sliders1 .slider', 'small')")
       span small
@@ -25,6 +25,9 @@
     label.radio
       input(type="radio", name="size-sliders1", @click="domain.updateSize('#sliders1 .slider', 'large')")
       span large
+    label.radio
+      input(type="radio", name="size-sliders1", @click="domain.updateSize('#sliders1 .slider', 'extra')")
+      span extra
     label.radio
       input(type="radio", name="direction-sliders1", checked, @click="domain.updateDirection('#sliders1 .slider', '')")
       span horizontal
@@ -51,13 +54,13 @@
         input(type="range", value="25", disabled)
         span
   h6
-    span Slider with tooltip
+    span Value indicator
     button.chip.circle(@click="domain.showSamples(data, '#sliders2 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
   nav.wrap
     label.radio
       input(type="radio", name="size-sliders2", checked="checked", @click="domain.updateSize('#sliders2 .slider')")
-      span default
+      span tiny
     label.radio
       input(type="radio", name="size-sliders2", @click="domain.updateSize('#sliders2 .slider', 'small')")
       span small
@@ -71,6 +74,15 @@
     label.radio
       input(type="radio", name="size-sliders2", @click="domain.updateSize('#sliders2 .slider', 'large')")
       span large
+    label.radio
+      input(type="radio", name="size-sliders2", @click="domain.updateSize('#sliders2 .slider', 'extra')")
+      span extra
+    label.radio
+      input(type="radio", name="direction-sliders2", checked, @click="domain.updateDirection('#sliders2 .slider', '')")
+      span horizontal
+    label.radio
+      input(type="radio", name="direction-sliders2", @click="domain.updateDirection('#sliders2 .slider', 'vertical')")
+      span vertical
   .medium-space
   .grid#sliders2
     .s12.m6.l3.center-align
@@ -97,13 +109,13 @@
         .tooltip
   .medium-space
   h6
-    span Slider with icon
-    button.chip.circle(@click="domain.showSamples(data, '#sliders4 nav', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+    span Inset icon
+    button.chip.circle(@click="domain.showSamples(data, '#sliders4 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="size-sliders4", checked="checked", @click="domain.updateSize('#sliders4 .slider')")
-      span default
+      input(type="radio", name="size-sliders4", @click="domain.updateSize('#sliders4 .slider')")
+      span tiny
     label.radio
       input(type="radio", name="size-sliders4", @click="domain.updateSize('#sliders4 .slider', 'small')")
       span small
@@ -111,6 +123,7 @@
       input(
         type="radio",
         name="size-sliders4",
+        checked,
         @click="domain.updateSize('#sliders4 .slider', 'medium')"
       )
       span medium
@@ -118,40 +131,31 @@
       input(type="radio", name="size-sliders4", @click="domain.updateSize('#sliders4 .slider', 'large')")
       span large
     label.radio
-      input(type="radio", name="direction-sliders4", checked, @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', ''); domain.updateAlign('#sliders4 nav', ''); updateHorizontalSlider(true);")
+      input(type="radio", name="size-sliders4", @click="domain.updateSize('#sliders4 .slider', 'extra')")
+      span extra
+    label.radio
+      input(type="radio", name="direction-sliders4", checked, @click="domain.updateDirection('#sliders4 .slider', ''); domain.updateAlign('#sliders4 nav', ''); updateHorizontalSlider(true);")
       span horizontal
     label.radio
-      input(type="radio", name="direction-sliders4", @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', 'vertical'); domain.updateAlign('#sliders4 nav', 'center-align'); updateHorizontalSlider(false);")
+      input(type="radio", name="direction-sliders4", @click="domain.updateDirection('#sliders4 .slider', 'vertical'); domain.updateAlign('#sliders4 nav', 'center-align'); updateHorizontalSlider(false);")
       span vertical
   .medium-space
   .grid.large-space#sliders4
     .s12.m6.l4.center-align
-      nav
-        i(v-if="data.isHorizontalSlider") remove
-        i(v-else) add
-        label.slider
-          input(type="range")
-          span
-        i(v-if="data.isHorizontalSlider") add
-        i(v-else) remove
+      label.slider.medium
+        input(type="range")
+        span
+          i volume_up
     .s12.m6.l4.center-align
-      nav
-        i(v-if="data.isHorizontalSlider") volume_down
-        i(v-else) volume_up
-        label.slider
-          input(type="range")
-          span
-        i(v-if="data.isHorizontalSlider") volume_up
-        i(v-else) volume_down
+      label.slider.medium
+        input(type="range")
+        span
+          i add
     .s12.m6.l4.center-align
-      nav
-        i(v-if="data.isHorizontalSlider") sunny
-        i(v-else) rainy
-        label.slider
-          input(type="range", value="25")
-          span
-        i(v-if="data.isHorizontalSlider") rainy
-        i(v-else) sunny
+      label.slider.medium
+        input(type="range", value="25")
+        span
+          i sunny
   .medium-space
   h6
     span Slider in field elements
