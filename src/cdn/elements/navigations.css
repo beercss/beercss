@@ -216,6 +216,11 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
   font-variation-settings: "FILL" 1;
 }
 
+nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip).active {
+  background: none !important;
+  color: currentColor !important;
+}
+
 :is(nav, .row):is(.left-align, .top-align, .vertical) {
   justify-content: flex-start;
 }
@@ -350,6 +355,7 @@ nav.toolbar.max {
 
 nav.group {
   gap: 0.125rem;
+  background: none !important;
 }
 
 nav.group > :is(.button, button):not(.chip, .fill, .border).active {
@@ -373,6 +379,54 @@ nav.group > :is(.button, button):not(.chip).active {
 :is(.scroll, .no-scroll, .no-space, .tabs, .tabbed) > :focus-visible {
   outline: 0.125rem solid var(--primary);
   outline-offset: -0.125rem;
+}
+
+nav.primary > :is(a, button, .button),
+nav.primary-container > a:is(:hover, :focus, .active) > i,
+nav.primary-container > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).primary-container.active {
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
+}
+
+nav.primary-container > :is(a, button, .button),
+nav.primary > a:is(:hover, :focus, .active) > i,
+nav.primary > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).primary.active {
+  background-color: var(--primary-container) !important;
+  color: var(--on-primary-container) !important;
+}
+
+nav.secondary > :is(a, button, .button),
+nav.secondary-container > a:is(:hover, :focus, .active) > i,
+nav.secondary-container > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).secondary-container.active {
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
+}
+
+nav.secondary-container > :is(a, button, .button),
+nav.secondary > a:is(:hover, :focus, .active) > i,
+nav.secondary > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).secondary.active {
+  background-color: var(--secondary-container) !important;
+  color: var(--on-secondary-container) !important;
+}
+
+nav.tertiary > :is(a, button, .button),
+nav.tertiary-container > a:is(:hover, :focus, .active) > i,
+nav.tertiary-container > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).tertiary-container.active {
+  background-color: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
+}
+
+nav.tertiary-container > :is(a, button, .button),
+nav.tertiary > a:is(:hover, :focus, .active) > i,
+nav.tertiary > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).tertiary.active {
+  background-color: var(--tertiary-container) !important;
+  color: var(--on-tertiary-container) !important;
 }
 
 @media only screen and (max-width: 600px) {

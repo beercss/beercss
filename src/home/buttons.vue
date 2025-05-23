@@ -407,7 +407,31 @@
     span Button groups
     button.chip.circle(@click="domain.showSamples(data, '#group-buttons nav.group', 'Button groups', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#group-buttons button", :colors="[]", :theme-colors="['', 'fill', 'primary', 'secondary', 'tertiary']", :elevates="[]", :directions="[]")
+  nav.wrap
+    label.radio
+      input(type="radio", name="color-group-button", checked, @click="domain.updateColor('#group-buttons .group')")
+      span default
+    label.radio
+      input(type="radio", name="color-group-button", @click="domain.updateColor('#group-buttons .group', 'primary-container')")
+      span primary
+    label.radio
+      input(type="radio", name="color-group-button", @click="domain.updateColor('#group-buttons .group', 'secondary-container')")
+      span secondary
+    label.radio
+      input(type="radio", name="color-group-button", @click="domain.updateColor('#group-buttons .group', 'tertiary-container')")
+      span tertiary
+    label.radio
+      input(type="radio", name="size-group-button", @click="domain.updateSize('#group-buttons .group > button', 'small')")
+      span small
+    label.radio
+      input(type="radio", name="size-group-button", checked, @click="domain.updateSize('#group-buttons .group > button', 'medium')")
+      span medium
+    label.radio
+      input(type="radio", name="size-group-button", @click="domain.updateSize('#group-buttons .group > button', 'large')")
+      span large
+    label.radio
+      input(type="radio", name="size-group-button", @click="domain.updateSize('#group-buttons .group > button', 'extra')")
+      span extra
   .space
   #group-buttons
     nav.group
@@ -442,7 +466,19 @@
     span Split buttons
     button.chip.circle(@click="domain.showSamples(data, '#split-buttons .group', 'Split button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
-  selectionForButtons(context="#split-buttons button", :colors="[]", :elevates="[]", :directions="[]")
+  nav.wrap
+    label.radio
+      input(type="radio", name="size-split-button", @click="domain.updateSize('#split-buttons .group > button', 'small')")
+      span small
+    label.radio
+      input(type="radio", name="size-split-button", checked, @click="domain.updateSize('#split-buttons .group > button', '')")
+      span medium
+    label.radio
+      input(type="radio", name="size-split-button", @click="domain.updateSize('#split-buttons .group > button', 'large')")
+      span large
+    label.radio
+      input(type="radio", name="size-split-button", @click="domain.updateSize('#split-buttons .group > button', 'extra')")
+      span extra
   .space
   #split-buttons
     nav.wrap
