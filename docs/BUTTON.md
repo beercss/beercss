@@ -116,14 +116,23 @@ Button groups organize buttons and add interactions between them.
 </nav>
 ```
 
+
+```html
+<nav class="group connected">
+  <button class="left-round">Left</button>
+  <button class="no-round">Center</button>
+  <button class="right-round">Right</button>
+</nav>
+```
+
 ## Split buttons
 
 Split buttons open a menu to give people more options related to an action.
 
 ```html
-<nav class="group">
+<nav class="group split">
   <button class="left-round">Button</button>
-  <button class="right-round square">
+  <button class="right-round">
     <i>keyboard_arrow_down</i>
   </button>
 </nav>

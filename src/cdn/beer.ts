@@ -21,7 +21,10 @@ function onMutation() {
 async function run(from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
   if (!to) {
     to = query(from.getAttribute("data-ui"));
-    if (!to) return;
+    if (!to) {
+      from.classList.toggle("active");
+      return;
+    }
   }
 
   updateAllClickable(from);

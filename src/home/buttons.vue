@@ -432,33 +432,63 @@
     label.radio
       input(type="radio", name="size-group-button", @click="domain.updateSize('#group-buttons .group > button', 'extra')")
       span extra
-  .space
   #group-buttons
+    .medium-space
+    h6 Standard
     nav.group
-      button.left-round Button
-      button.no-round Button
-      button.no-round.active Button
-      button.right-round Button
+      button.left-round(data-ui="") Button
+      button.no-round(data-ui="") Button
+      button.no-round.active(data-ui="") Button
+      button.right-round(data-ui="") Button
     nav.group
-      button.left-round
+      button.left-round(data-ui="")
         i mic
-      button.no-round
+      button.no-round(data-ui="")
         i videocam
-      button.no-round.active
+      button.no-round.active(data-ui="")
         i mood
-      button.right-round
+      button.right-round(data-ui="")
         i front_hand
     nav.group
-      button.left-round
+      button.left-round(data-ui="")
         i mic
         span Button
-      button.no-round
+      button.no-round(data-ui="")
         i videocam
         span Button
-      button.no-round.active
+      button.no-round.active(data-ui="")
         i mood
         span Button
-      button.right-round
+      button.right-round(data-ui="")
+        i front_hand
+        span Button
+    .medium-space
+    h6 Connected
+    nav.group.connected
+      button.left-round(data-ui="") Button
+      button.no-round(data-ui="") Button
+      button.no-round.active(data-ui="") Button
+      button.right-round(data-ui="") Button
+    nav.group.connected
+      button.left-round(data-ui="")
+        i mic
+      button.no-round(data-ui="")
+        i videocam
+      button.no-round.active(data-ui="")
+        i mood
+      button.right-round(data-ui="")
+        i front_hand
+    nav.group.connected
+      button.left-round(data-ui="")
+        i mic
+        span Button
+      button.no-round(data-ui="")
+        i videocam
+        span Button
+      button.no-round.active(data-ui="")
+        i mood
+        span Button
+      button.right-round(data-ui="")
         i front_hand
         span Button
   .medium-space
@@ -482,35 +512,29 @@
   .space
   #split-buttons
     nav.wrap
-      nav.group
+      nav.group.split
         button.left-round
           i add_circle
           span Button
-        button.right-round.square
+        button.right-round
           i keyboard_arrow_down
-      nav.group
-        button.fill.left-round
+      nav.group.split.primary
+        button.left-round
           i add_circle
           span Button
-        button.fill.right-round.square
+        button.right-round
           i keyboard_arrow_down
-      nav.group
-        button.primary.left-round
+      nav.group.split.secondary
+        button.left-round
           i add_circle
           span Button
-        button.primary.right-round.square
+        button.right-round
           i keyboard_arrow_down
-      nav.group
-        button.secondary.left-round
+      nav.group.split.tertiary
+        button.left-round
           i add_circle
           span Button
-        button.secondary.right-round.square
-          i keyboard_arrow_down
-      nav.group
-        button.tertiary.left-round
-          i add_circle
-          span Button
-        button.tertiary.right-round.square
+        button.right-round
           i keyboard_arrow_down
 </template>
 
