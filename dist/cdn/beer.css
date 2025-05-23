@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.4/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.5/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.4/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.5/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.4/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.5/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -131,7 +131,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.4/dist/cdn/material-symbols-subset.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.5/dist/cdn/material-symbols-subset.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -346,36 +346,6 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 .fill:not(i) {
   background-color: var(--surface-variant) !important;
   color: var(--on-surface-variant) !important;
-}
-.primary-container > .active,
-.primary-container.active {
-  background-color: var(--primary) !important;
-  color: var(--on-primary) !important;
-}
-.secondary-container > .active,
-.secondary-container.active {
-  background-color: var(--secondary) !important;
-  color: var(--on-secondary) !important;
-}
-.tertiary-container > .active,
-.tertiary-container.active {
-  background-color: var(--tertiary) !important;
-  color: var(--on-tertiary) !important;
-}
-.primary > .active,
-.primary.active {
-  background-color: var(--primary-container) !important;
-  color: var(--on-primary-container) !important;
-}
-.secondary > .active,
-.secondary.active {
-  background-color: var(--secondary-container) !important;
-  color: var(--on-secondary-container) !important;
-}
-.tertiary > .active,
-.tertiary.active {
-  background-color: var(--tertiary-container) !important;
-  color: var(--on-tertiary-container) !important;
 }
 .middle-align {
   display: flex;
@@ -3423,6 +3393,10 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
   padding: 0.25rem 1rem;
   font-variation-settings: "FILL" 1;
 }
+nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip).active {
+  background: none !important;
+  color: currentColor !important;
+}
 :is(nav, .row):is(.left-align, .top-align, .vertical) {
   justify-content: flex-start;
 }
@@ -3532,6 +3506,7 @@ nav.toolbar.max {
 }
 nav.group {
   gap: 0.125rem;
+  background: none !important;
 }
 nav.group > :is(.button, button):not(.chip, .fill, .border).active {
   background-color: var(--primary);
@@ -3550,6 +3525,48 @@ nav.group > :is(.button, button):not(.chip).active {
 :is(.scroll, .no-scroll, .no-space, .tabs, .tabbed) > :focus-visible {
   outline: 0.125rem solid var(--primary);
   outline-offset: -0.125rem;
+}
+nav.primary > :is(a, button, .button),
+nav.primary-container > a:is(:hover, :focus, .active) > i,
+nav.primary-container > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).primary-container.active {
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
+}
+nav.primary-container > :is(a, button, .button),
+nav.primary > a:is(:hover, :focus, .active) > i,
+nav.primary > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).primary.active {
+  background-color: var(--primary-container) !important;
+  color: var(--on-primary-container) !important;
+}
+nav.secondary > :is(a, button, .button),
+nav.secondary-container > a:is(:hover, :focus, .active) > i,
+nav.secondary-container > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).secondary-container.active {
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
+}
+nav.secondary-container > :is(a, button, .button),
+nav.secondary > a:is(:hover, :focus, .active) > i,
+nav.secondary > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).secondary.active {
+  background-color: var(--secondary-container) !important;
+  color: var(--on-secondary-container) !important;
+}
+nav.tertiary > :is(a, button, .button),
+nav.tertiary-container > a:is(:hover, :focus, .active) > i,
+nav.tertiary-container > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).tertiary-container.active {
+  background-color: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
+}
+nav.tertiary-container > :is(a, button, .button),
+nav.tertiary > a:is(:hover, :focus, .active) > i,
+nav.tertiary > :is(a, button, .button).active,
+:is(a, button, .button):not(.extend).tertiary.active {
+  background-color: var(--tertiary-container) !important;
+  color: var(--on-tertiary-container) !important;
 }
 @media only screen and (max-width: 600px) {
   nav.top,
@@ -3987,13 +4004,15 @@ progress.max + * {
   --_end: 0%;
   --_value1: "";
   --_value2: "";
+  --_track: 1rem;
+  --_thumb: max(2.5rem, calc(var(--_track) + 0.5rem));
   display: flex;
   align-items: center !important;
   inline-size: auto;
-  block-size: 1.25rem;
-  margin: 1.125rem;
+  block-size: var(--thumb);
   flex: none;
   direction: ltr;
+  margin: 0 1.25rem;
 }
 [dir=rtl] .slider {
   transform: scaleX(-1);
@@ -4005,14 +4024,20 @@ progress.max + * {
   transform: rotate(-90deg);
   inline-size: 100%;
 }
+.slider.tiny {
+  --_track: 1rem;
+}
 .slider.small {
-  inline-size: 4rem;
+  --_track: 1.5rem;
 }
 .slider.medium {
-  inline-size: 8rem;
+  --_track: 2.5rem;
 }
 .slider.large {
-  inline-size: 12rem;
+  --_track: 3.5rem;
+}
+.slider.extra {
+  --_track: 6rem;
 }
 .slider > input {
   appearance: none;
@@ -4021,7 +4046,7 @@ progress.max + * {
   outline: none;
   pointer-events: none;
   inline-size: 100%;
-  block-size: 1rem;
+  block-size: var(--_track);
   background: none;
   z-index: 1;
   padding: 0;
@@ -4040,12 +4065,13 @@ progress.max + * {
   border: none;
   outline: none;
   pointer-events: all;
-  block-size: 2.75rem;
+  block-size: var(--_thumb);
   inline-size: 0.25rem;
   border-radius: 0.25rem;
   background: var(--primary);
   cursor: grab;
   margin: 0;
+  z-index: 1;
 }
 .slider > input::-webkit-slider-thumb:active {
   cursor: grabbing;
@@ -4077,23 +4103,24 @@ progress.max + * {
   opacity: 1;
 }
 .slider > input:disabled::-webkit-slider-thumb {
-  background: #9E9E9E;
+  background: var(--outline);
   cursor: not-allowed;
 }
 .slider > input:disabled::-moz-range-thumb {
-  background: #9E9E9E;
+  background: var(--outline);
   cursor: not-allowed;
 }
 .slider > input:disabled ~ span {
-  background: #9E9E9E;
+  background: var(--outline);
 }
 .slider > span {
   position: absolute;
-  block-size: 1rem;
+  block-size: var(--_track);
   border-radius: 1rem 0 0 1rem;
   background: var(--primary);
+  color: var(--on-primary);
   z-index: 0;
-  inset: calc(50% - 0.5rem) var(--_end) auto var(--_start);
+  inset: calc(50% - (var(--_track) / 2)) var(--_end) auto var(--_start);
   clip-path: polygon(0 0, calc(100% - 0.5rem) 0, calc(100% - 0.5rem) 100%, 0 100%);
 }
 .slider > input[type=range] + input[type=range] ~ span {
@@ -4107,13 +4134,29 @@ progress.max + * {
   content: "";
   position: absolute;
   inline-size: 100%;
-  block-size: 1rem;
+  block-size: var(--_track);
   border-radius: 1rem;
-  background: var(--primary-container);
+  background: var(--secondary-container);
   clip-path: polygon(calc(var(--_start) - 0.5rem) 0, 0 0, 0 100%, calc(var(--_start) - 0.5rem) 100%, calc(var(--_start) - 0.5rem) 0, calc(100% - var(--_end) + 0.5rem) 0, 100% 0, 100% 100%, calc(100% - var(--_end) + 0.5rem) 100%, calc(100% - var(--_end) + 0.5rem) 0);
 }
 .slider:has(> [disabled])::before {
-  background: var(--active);
+  background: var(--outline-variant);
+}
+.slider:has([disabled]) {
+  opacity: 0.62;
+}
+.slider > span > i {
+  position: absolute;
+  block-size: auto;
+  inset: 0 auto 0 0.5rem;
+  color: currentColor;
+  z-index: 1;
+}
+.slider:not(.medium, .large, .extra) > span > i {
+  display: none;
+}
+.slider.vertical > i {
+  transform: rotate(90deg);
 }
 .slider > .tooltip {
   visibility: hidden !important;
@@ -4146,7 +4189,14 @@ progress.max + * {
   visibility: visible !important;
 }
 .slider.vertical > .tooltip {
-  display: none;
+  inset-block-start: auto !important;
+  margin-block-start: calc(-1 * var(--_thumb)) !important;
+  block-size: 2.5rem;
+  inline-size: 2.5rem;
+  transform: rotate(90deg) translate(-75%, 50%) !important;
+}
+.slider.vertical > .tooltip + .tooltip {
+  transform: rotate(90deg) translate(-75%, -50%) !important;
 }
 :is(nav, .row, .field) > .slider:not(.circle, .small, .medium, .large) {
   flex: auto;
@@ -4191,6 +4241,7 @@ progress.max + * {
   inset: 0 var(--_end) 0 var(--_start);
   clip-path: none;
   background: currentcolor;
+  color: inherit;
   border-radius: 0;
 }
 .slider.max.vertical > span {
