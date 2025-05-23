@@ -1,6 +1,6 @@
 # Slider
 
-Sliders allow users to make selections from a range of values. There are two types of sliders: continuous and discrete. Default range is 0-100.
+Sliders let users make selections from a range of values. Default range is 0-100.
 
 ## Element
 
@@ -25,7 +25,7 @@ Sliders allow users to make selections from a range of values. There are two typ
 </label>
 ```
 
-## With tooltip example
+## Value indicator example
 
 ```html
 <label class="slider">
@@ -35,17 +35,17 @@ Sliders allow users to make selections from a range of values. There are two typ
 </label>
 ```
 
-## With icon example
+## Inset icon example
+
+The icon will show only with `medium`, `large` or `extra` helpers.
 
 ```html
-<nav>
-  <i>sunny</i>
-  <label class="slider">
-    <input type="range">
-    <span></span>
-  </label>
-  <i>rainy</i>
-</nav>
+<label class="slider medium">
+  <input type="range">
+  <span>
+    <i>sunny</i>
+  </span>
+</label>
 ```
 
 ## In field elements example
