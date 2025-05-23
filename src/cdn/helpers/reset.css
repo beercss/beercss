@@ -74,5 +74,5 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 }
 
 :is(nav, .row, li).group > :focus-visible {
-  outline-offset: 0;
+  z-index: 1;
 }

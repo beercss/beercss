@@ -22,7 +22,7 @@
     button.chip
       i home
       span Chip
-    nav.group
+    nav.group.connected
       button.border.left-round
         i home
         span Button

@@ -361,12 +361,12 @@ nav.group:is(.connected, .split) {
   gap: 0.125rem;
 }
 
-nav.group > :is(.button, button):not(.chip, .fill, .border).active {
+nav.group:not(.split) > :is(.button, button):not(.chip, .fill, .border).active {
   background-color: var(--primary);
   color: var(--on-primary);
 }
 
-nav.group > :is(.button, button):not(.chip, .fill, .border) {
+nav.group:not(.split) > :is(.button, button):not(.chip, .fill, .border) {
   background-color: var(--surface-container);
   color: var(--on-surface-container);
 }
@@ -385,9 +385,9 @@ nav.split > :is(.button, button):active {
   outline-offset: -0.125rem;
 }
 
-nav.split > :is(.button, button) {
-  background-color: var(--primary) !important;
-  color: var(--on-primary) !important;
+nav.split > :is(.button, button):not(.chip, .fill, .border) {
+  background-color: var(--primary);
+  color: var(--on-primary);
 }
 
 nav.primary > :is(a, button, .button),

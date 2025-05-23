@@ -102,7 +102,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.7/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.8/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -112,7 +112,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.7/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.8/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -122,7 +122,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.7/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.8/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -132,7 +132,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.7/dist/cdn/material-symbols-subset.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.8/dist/cdn/material-symbols-subset.woff2") format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -200,7 +200,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   outline-offset: 0.25rem;
 }
 .beer :is(nav, .row, li).group > :focus-visible {
-  outline-offset: 0;
+  z-index: 1;
 }
 .beer .transparent {
   background-color: transparent !important;
@@ -3511,11 +3511,11 @@ body {
 .beer nav.group:is(.connected, .split) {
   gap: 0.125rem;
 }
-.beer nav.group > :is(.button, button):not(.chip, .fill, .border).active {
+.beer nav.group:not(.split) > :is(.button, button):not(.chip, .fill, .border).active {
   background-color: var(--primary);
   color: var(--on-primary);
 }
-.beer nav.group > :is(.button, button):not(.chip, .fill, .border) {
+.beer nav.group:not(.split) > :is(.button, button):not(.chip, .fill, .border) {
   background-color: var(--surface-container);
   color: var(--on-surface-container);
 }
@@ -3530,9 +3530,9 @@ body {
   outline: 0.125rem solid var(--primary);
   outline-offset: -0.125rem;
 }
-.beer nav.split > :is(.button, button) {
-  background-color: var(--primary) !important;
-  color: var(--on-primary) !important;
+.beer nav.split > :is(.button, button):not(.chip, .fill, .border) {
+  background-color: var(--primary);
+  color: var(--on-primary);
 }
 .beer nav.primary > :is(a, button, .button),
 .beer nav:not(.split).primary-container > a:is(:hover, :focus, .active) > i,

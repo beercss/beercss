@@ -518,12 +518,6 @@
           span Button
         button.right-round
           i keyboard_arrow_down
-      nav.group.split.primary
-        button.left-round
-          i add_circle
-          span Button
-        button.right-round
-          i keyboard_arrow_down
       nav.group.split.secondary
         button.left-round
           i add_circle
