@@ -8,7 +8,7 @@
   display: flex;
   align-items: center !important;
   inline-size: auto;
-  block-size: var(--thumb);
+  block-size: var(--_thumb);
   flex: none;
   direction: ltr;
   margin: 0 1.25rem;
