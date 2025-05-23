@@ -66,7 +66,7 @@ dialog > footer.fixed {
 }
 
 :has(> main) > :is(header, footer).fixed {
-  z-index: 100;
+  z-index: 12;
   transform: none;
   box-sizing: content-box;
   inset: 0;
