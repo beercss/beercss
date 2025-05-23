@@ -101,7 +101,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.6/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.7/dist/cdn/material-symbols-outlined.woff2") format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -111,7 +111,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.6/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.7/dist/cdn/material-symbols-rounded.woff2") format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -121,7 +121,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.6/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.7/dist/cdn/material-symbols-sharp.woff2") format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -131,7 +131,7 @@ body.dark {
   font-display: block;
   src:
     url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.6/dist/cdn/material-symbols-subset.woff2") format("woff2");
+    url("https://cdn.jsdelivr.net/npm/beercss@3.11.7/dist/cdn/material-symbols-subset.woff2") format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -3505,8 +3505,10 @@ nav.toolbar.max {
   display: flex;
 }
 nav.group {
-  gap: 0.125rem;
   background: none !important;
+}
+nav.group:is(.connected, .split) {
+  gap: 0.125rem;
 }
 nav.group > :is(.button, button):not(.chip, .fill, .border).active {
   background-color: var(--primary);
@@ -3516,7 +3518,8 @@ nav.group > :is(.button, button):not(.chip, .fill, .border) {
   background-color: var(--surface-container);
   color: var(--on-surface-container);
 }
-nav.group > :is(.button, button):not(.chip).active {
+nav.group:is(.connected, .split) > :is(.button, button):not(.chip).active,
+nav.split > :is(.button, button):active {
   border-radius: 2rem !important;
 }
 :not(nav) > :is(ul, ol) {
@@ -3526,44 +3529,48 @@ nav.group > :is(.button, button):not(.chip).active {
   outline: 0.125rem solid var(--primary);
   outline-offset: -0.125rem;
 }
+nav.split > :is(.button, button) {
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
+}
 nav.primary > :is(a, button, .button),
-nav.primary-container > a:is(:hover, :focus, .active) > i,
-nav.primary-container > :is(a, button, .button).active,
+nav:not(.split).primary-container > a:is(:hover, :focus, .active) > i,
+nav:not(.split).primary-container > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).primary-container.active {
   background-color: var(--primary) !important;
   color: var(--on-primary) !important;
 }
 nav.primary-container > :is(a, button, .button),
-nav.primary > a:is(:hover, :focus, .active) > i,
-nav.primary > :is(a, button, .button).active,
+nav:not(.split).primary > a:is(:hover, :focus, .active) > i,
+nav:not(.split).primary > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).primary.active {
   background-color: var(--primary-container) !important;
   color: var(--on-primary-container) !important;
 }
 nav.secondary > :is(a, button, .button),
-nav.secondary-container > a:is(:hover, :focus, .active) > i,
-nav.secondary-container > :is(a, button, .button).active,
+nav:not(.split).secondary-container > a:is(:hover, :focus, .active) > i,
+nav:not(.split).secondary-container > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).secondary-container.active {
   background-color: var(--secondary) !important;
   color: var(--on-secondary) !important;
 }
 nav.secondary-container > :is(a, button, .button),
-nav.secondary > a:is(:hover, :focus, .active) > i,
-nav.secondary > :is(a, button, .button).active,
+nav:not(.split).secondary > a:is(:hover, :focus, .active) > i,
+nav:not(.split).secondary > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).secondary.active {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
 }
 nav.tertiary > :is(a, button, .button),
-nav.tertiary-container > a:is(:hover, :focus, .active) > i,
-nav.tertiary-container > :is(a, button, .button).active,
+nav:not(.split).tertiary-container > a:is(:hover, :focus, .active) > i,
+nav:not(.split).tertiary-container > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).tertiary-container.active {
   background-color: var(--tertiary) !important;
   color: var(--on-tertiary) !important;
 }
-nav.tertiary-container > :is(a, button, .button),
-nav.tertiary > a:is(:hover, :focus, .active) > i,
-nav.tertiary > :is(a, button, .button).active,
+nav:not(.split).tertiary-container > :is(a, button, .button),
+nav:not(.split).tertiary > a:is(:hover, :focus, .active) > i,
+nav:not(.split).tertiary > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).tertiary.active {
   background-color: var(--tertiary-container) !important;
   color: var(--on-tertiary-container) !important;

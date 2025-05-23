@@ -518,7 +518,10 @@ function onMutation() {
 async function run(from, to, options, e) {
   if (!to) {
     to = query(from.getAttribute("data-ui"));
-    if (!to) return;
+    if (!to) {
+      from.classList.toggle("active");
+      return;
+    }
   }
   updateAllClickable(from);
   if (hasTag(to, "dialog")) {
