@@ -390,48 +390,54 @@ nav.split > :is(.button, button):not(.chip, .fill, .border) {
   color: var(--on-primary);
 }
 
-nav.primary > :is(a, button, .button),
-nav:not(.split).primary-container > a:is(:hover, :focus, .active) > i,
+nav.primary > :is(button, .button),
+nav:not(.toolbar, .tabbed, .drawer, .group).primary-container > a:is(:hover, :focus, .active) > i,
+nav.drawer.primary-container > a:is(:hover, :focus, .active),
 nav:not(.split).primary-container > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).primary-container.active {
   background-color: var(--primary) !important;
   color: var(--on-primary) !important;
 }
 
-nav.primary-container > :is(a, button, .button),
-nav:not(.split).primary > a:is(:hover, :focus, .active) > i,
+nav.primary-container > :is(button, .button),
+nav:not(.toolbar, .tabbed, .drawer, .group).primary > a:is(:hover, :focus, .active) > i,
+nav.drawer.primary > a:is(:hover, :focus, .active),
 nav:not(.split).primary > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).primary.active {
   background-color: var(--primary-container) !important;
   color: var(--on-primary-container) !important;
 }
 
-nav.secondary > :is(a, button, .button),
-nav:not(.split).secondary-container > a:is(:hover, :focus, .active) > i,
+nav.secondary > :is(button, .button),
+nav:not(.toolbar, .tabbed, .drawer, .group).secondary-container > a:is(:hover, :focus, .active) > i,
+nav.drawer.secondary-container > a:is(:hover, :focus, .active),
 nav:not(.split).secondary-container > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).secondary-container.active {
   background-color: var(--secondary) !important;
   color: var(--on-secondary) !important;
 }
 
-nav.secondary-container > :is(a, button, .button),
-nav:not(.split).secondary > a:is(:hover, :focus, .active) > i,
+nav.secondary-container > :is(button, .button),
+nav:not(.toolbar, .tabbed, .drawer, .group).secondary > a:is(:hover, :focus, .active) > i,
+nav.drawer.secondary > a:is(:hover, :focus, .active),
 nav:not(.split).secondary > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).secondary.active {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
 }
 
-nav.tertiary > :is(a, button, .button),
-nav:not(.split).tertiary-container > a:is(:hover, :focus, .active) > i,
+nav.tertiary > :is(button, .button),
+nav:not(.toolbar, .tabbed, .drawer, .group).tertiary-container > a:is(:hover, :focus, .active) > i,
+nav.drawer.tertiary-container > a:is(:hover, :focus, .active),
 nav:not(.split).tertiary-container > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).tertiary-container.active {
   background-color: var(--tertiary) !important;
   color: var(--on-tertiary) !important;
 }
 
-nav:not(.split).tertiary-container > :is(a, button, .button),
-nav:not(.split).tertiary > a:is(:hover, :focus, .active) > i,
+nav.tertiary-container > :is(button, .button),
+nav:not(.toolbar, .tabbed, .drawer, .group).tertiary > a:is(:hover, :focus, .active) > i,
+nav.drawer.tertiary > a:is(:hover, :focus, .active),
 nav:not(.split).tertiary > :is(a, button, .button).active,
 :is(a, button, .button):not(.extend).tertiary.active {
   background-color: var(--tertiary-container) !important;
