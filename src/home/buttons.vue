@@ -296,7 +296,7 @@
   #fabs-menu
     .space
     nav
-      nav.min
+      nav.min(data-ui="#fab=menu1")
         button.extra.circle
           i north_east
         menu.top.transparent.no-wrap
@@ -312,7 +312,7 @@
             button.fill
               i more_vert
               span About us
-      nav.min
+      nav.min(data-ui="#fab=menu2")
         button.extra.circle
           i north_west
         menu.top.transparent.no-wrap.left.right-align
@@ -328,7 +328,7 @@
             button.fill
               i more_vert
               span About us
-      nav.min
+      nav.min(data-ui="#fab=menu3")
         button.extra.circle
           i south_east
         menu.bottom.transparent.no-wrap
@@ -344,7 +344,7 @@
             button.fill
               i more_vert
               span About us
-      nav.min
+      nav.min(data-ui="#fab=menu4")
         button.extra.circle
           i south_west
         menu.bottom.transparent.no-wrap.left.right-align

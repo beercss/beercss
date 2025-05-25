@@ -90,9 +90,9 @@ svg {
   margin-inline-end: calc(-1 * var(--_padding));
 }
 
-:is(.circle, .square, .extend) > .responsive {
+:is(button, .button, .chip, .circle, .square, .extend) > .responsive {
   --_size: inherit;
-  margin: 0 !important;
+  margin: 0 auto;
 }
 
 .extend > :is(.responsive, i) {
