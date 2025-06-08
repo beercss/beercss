@@ -12,7 +12,8 @@
     "lint:style": "stylelint --fix \"src/**/*.css\"",
     "dev": "node ./build/dev.js",
     "build": "node ./build/build.js && node ./build/cdn.js",
-    "test": "vitest"
+    "test": "vitest",
+    "generate-llms": "node ./build/generate-llms-md.js"
   },
   "devDependencies": {
     "@stylistic/stylelint-plugin": "^2.1.2",
