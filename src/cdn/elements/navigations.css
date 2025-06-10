@@ -105,6 +105,12 @@ nav > header {
   background: none !important;
 }
 
+nav:is(.top, .bottom) > header {
+  flex-direction: row;
+  align-items: center;
+  margin: 0 1rem 0 0;
+}
+
 nav > header > * {
   margin: 0;
 }
@@ -116,12 +122,6 @@ nav > header > .extend:hover {
 
 nav > header > .extend:hover > span {
   display: none;
-}
-
-nav:is(.top, .bottom) > header {
-  flex-direction: row;
-  align-items: center;
-  margin: 0 1rem 0 0;
 }
 
 nav > :is(ol, ul) {
@@ -146,6 +146,10 @@ nav.max > :is(ol, ul) {
 
 nav.max > header {
   margin: 0 0 1.25rem 0;
+}
+
+nav.max:is(.top, .bottom) > header {
+  margin: 0 1.25rem 0 0;
 }
 
 nav.max > header > .extend {

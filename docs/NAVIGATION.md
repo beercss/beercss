@@ -144,6 +144,21 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap, min, max
     <div>More</div>
   </a>
 </nav>
+
+<nav class="bottom max">
+  <a>
+    <i>home</i>
+    <div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    <div>Search</div>
+  </a>
+  <a>
+    <i>more_vert</i>
+    <div>More</div>
+  </a>
+</nav>
 ```
 
 ## Navigation tabbed example
