@@ -285,7 +285,7 @@ input[type=number] {
 .field > textarea {
   padding-block-start: var(--_start);
   white-space: pre-wrap;
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .field > textarea:focus {
