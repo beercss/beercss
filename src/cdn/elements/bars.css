@@ -58,8 +58,7 @@ dialog > :is(header, footer).fixed {
   max-inline-size: none;
 }
 
-:has(> main) > :is(header, footer).fixed,
-body:has(> main) > :is(header, footer).fixed {
+:has(> main) > :is(header, footer).fixed {
   transform: none;
   box-sizing: content-box;
   position: sticky;

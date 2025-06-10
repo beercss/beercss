@@ -99,7 +99,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.14/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.15/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -107,7 +107,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.14/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.15/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -115,7 +115,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.14/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.15/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -123,7 +123,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.14/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.15/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1769,8 +1769,7 @@ dialog > :is(header, footer).fixed {
 :is(main, header, footer, section).responsive.max {
   max-inline-size: none;
 }
-:has(> main) > :is(header, footer).fixed,
-body:has(> main) > :is(header, footer).fixed {
+:has(> main) > :is(header, footer).fixed {
   transform: none;
   box-sizing: content-box;
   position: sticky;
@@ -2331,6 +2330,7 @@ input[type=number] {
 .field > textarea {
   padding-block-start: var(--_start);
   white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 .field > textarea:focus {
   padding-block-start: calc(var(--_start) - 0.06rem);
@@ -2778,8 +2778,7 @@ i[class*=fa-] {
 .list.large-space > li > details > summary {
   min-block-size: 5.5rem;
 }
-:has(> main),
-body:has(> main) {
+:has(> main) {
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto auto 1fr auto auto;

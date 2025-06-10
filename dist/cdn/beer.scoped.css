@@ -18,7 +18,7 @@
   --right: env(safe-area-inset-right);
 }
 :root,
-body.light {
+.beer.light {
   --primary: #6750a4;
   --on-primary: #ffffff;
   --primary-container: #e9ddff;
@@ -56,7 +56,7 @@ body.light {
   --surface-container-high: #ece7eb;
   --surface-container-highest: #e6e1e6;
 }
-body.dark {
+.beer.dark {
   --primary: #cfbcff;
   --on-primary: #381e72;
   --primary-container: #4f378a;
@@ -100,7 +100,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.14/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.15/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -108,7 +108,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.14/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.15/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -116,7 +116,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.14/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.15/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -124,7 +124,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.14/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.15/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -140,7 +140,7 @@ body.dark {
 .beer *::before {
   pointer-events: none;
 }
-body {
+.beer {
   color: var(--on-surface);
   background-color: var(--surface);
   overflow-x: hidden;
@@ -177,14 +177,14 @@ body {
 .beer label {
   user-select: none;
 }
-body ::-webkit-scrollbar,
-body ::-webkit-scrollbar-thumb,
-body ::-webkit-scrollbar-button {
+.beer ::-webkit-scrollbar,
+.beer ::-webkit-scrollbar-thumb,
+.beer ::-webkit-scrollbar-button {
   background: none;
   inline-size: 0.4rem;
   block-size: 0.4rem;
 }
-body :is(:hover,:focus)::-webkit-scrollbar-thumb {
+.beer :is(:hover,:focus)::-webkit-scrollbar-thumb {
   background: var(--outline);
   border-radius: 1rem;
 }
@@ -1432,7 +1432,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 html {
   font-size: var(--size);
 }
-body {
+.beer {
   font-family: var(--font);
   font-size: 0.875rem;
   line-height: 1.5rem;
@@ -1770,8 +1770,7 @@ body {
 .beer :is(main, header, footer, section).responsive.max {
   max-inline-size: none;
 }
-.beer :has(> main) > :is(header, footer).fixed,
-body:has(> main) > :is(header, footer).fixed {
+.beer:has(> main) > :is(header, footer).fixed {
   transform: none;
   box-sizing: content-box;
   position: sticky;
@@ -2332,6 +2331,7 @@ body:has(> main) > :is(header, footer).fixed {
 .beer .field > textarea {
   padding-block-start: var(--_start);
   white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 .beer .field > textarea:focus {
   padding-block-start: calc(var(--_start) - 0.06rem);
@@ -2779,8 +2779,7 @@ body:has(> main) > :is(header, footer).fixed {
 .beer .list.large-space > li > details > summary {
   min-block-size: 5.5rem;
 }
-.beer :has(> main),
-body:has(> main) {
+.beer:has(> main) {
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto auto 1fr auto auto;

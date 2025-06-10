@@ -11,8 +11,10 @@ function addParentSelector(css) {
 function fixSelectors(css) {
   return css
     .replace(/(\.beer\s)(@|\s+url|\s+to|\s+from|:root|body|html|\s+\d|\s+transition|\s+circle|\s+rgb|\s+calc|\s+-\d|\s+currentColor)/g, "$2")
+    .replace(/\bbody\b/g, ".beer")
     .replace(/\.beer\s(:has|\*:has)/g, ".beer :has")
-    .replace(/(\.beer\s)(\s+)/g, "$2$1");
+    .replace(/(\.beer\s)(\s+)/g, "$2$1")
+    .replace(/\.beer\s:has\(>\smain\)/g, ".beer:has(> main)");
 }
 
 function removeSpaces(css) {
