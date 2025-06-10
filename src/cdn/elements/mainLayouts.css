@@ -1,49 +1,53 @@
-main {
-  flex: 1;
-  padding: 0.5rem;
-  overflow-x: hidden;
-}
-
-:has(> main) {
-  --_top: 0rem;
-  --_bottom: 0rem;
-  --_left: 0rem;
-  --_right: 0rem;
-  display: flex;
-  flex-direction: column;
-  min-block-size: calc(100vh - var(--top) - var(--_top) - var(--bottom) - var(--_bottom));
+:has(> main),
+body:has(> main) {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-areas: 
+    "left top right"
+    "left header right"
+    "left main right"
+    "left footer right"
+    "left bottom right";
+  min-block-size: 100dvh;
   box-sizing: border-box;
   background-color: var(--surface);
-  margin-block: calc(var(--top) + var(--_top)) calc(var(--bottom) + var(--_bottom));
-  margin-inline: calc(var(--left) + var(--_left)) calc(var(--right) + var(--_right));
 }
 
-:has(> nav.top:not(.s, .m, .l)) {
-  --_top: 5rem;
+nav.left {
+  grid-area: left;
 }
 
-:has(> nav.bottom:not(.s, .m, .l)) {
-  --_bottom: 5rem;
+nav.right {
+  grid-area: right;
 }
 
-:has(> nav.left:not(.s, .m, .l)) {
-  --_left: 5rem;
+nav.top {
+  grid-area: top;
+  position: sticky;
+  inset: 0;
+  block-size: 4rem;
 }
 
-:has(> nav.right:not(.s, .m, .l)) {
-  --_right: 5rem;
+nav.bottom {
+  grid-area: bottom;
+  position: sticky;
+  inset: 0;
+  block-size: 4rem;
 }
 
-:has(> nav.drawer.left:not(.s, .m, .l)) {
-  --_left: 20rem;
+header {
+  grid-area: header;
 }
 
-:has(> nav.drawer.right:not(.s, .m, .l)) {
-  --_right: 20rem;
+main {
+  grid-area: main;
+  padding: 0.5rem;
+  overflow: hidden;
 }
 
-:not(main):has(> aside) {
-  overflow: auto;
+footer {
+  grid-area: footer;
 }
 
 aside {
@@ -56,82 +60,4 @@ aside:not(.fixed, .absolute).right {
 
 aside:not(.fixed, .absolute).left {
   float: left;
-}
-
-@media only screen and (max-width: 600px) {
-  :has(> nav.bottom.s) {
-    --_bottom: 5rem;
-  }
-
-  :has(> nav.top.s) {
-    --_top: 5rem;
-  }
-
-  :has(> nav.left.s) {
-    --_left: 5rem;
-  }
-
-  :has(> nav.right.s) {
-    --_right: 5rem;
-  }
-
-  :has(> nav.drawer.left.s) {
-    --_left: 20rem;
-  }
-
-  :has(> nav.drawer.right.s) {
-    --_right: 20rem;
-  }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 992px) {
-  :has(> nav.bottom.m) {
-    --_bottom: 5rem;
-  }
-
-  :has(> nav.top.m) {
-    --_top: 5rem;
-  }
-
-  :has(> nav.left.m) {
-    --_left: 5rem;
-  }
-
-  :has(> nav.right.m) {
-    --_right: 5rem;
-  }
-
-  :has(> nav.drawer.left.m) {
-    --_left: 20rem;
-  }
-
-  :has(> nav.drawer.right.m) {
-    --_right: 20rem;
-  }
-}
-
-@media only screen and (min-width: 993px) {
-  :has(> nav.bottom.l) {
-    --_bottom: 5rem;
-  }
-
-  :has(> nav.top.l) {
-    --_top: 5rem;
-  }
-
-  :has(> nav.left.l) {
-    --_left: 5rem;
-  }
-
-  :has(> nav.right.l) {
-    --_right: 5rem;
-  }
-
-  :has(> nav.drawer.left.l) {
-    --_left: 20rem;
-  }
-
-  :has(> nav.drawer.right.l) {
-    --_right: 20rem;
-  }
 }

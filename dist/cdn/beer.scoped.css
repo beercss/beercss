@@ -100,9 +100,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src:
-    url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -110,9 +108,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src:
-    url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -120,9 +116,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src:
-    url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -130,9 +124,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src:
-    url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/material-symbols-subset.woff2") format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -143,6 +135,10 @@ body.dark {
   padding: 0;
   border-radius: inherit;
   box-sizing: border-box;
+}
+.beer *::after,
+.beer *::before {
+  pointer-events: none;
 }
 body {
   color: var(--on-surface);
@@ -1399,17 +1395,20 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   display: flex;
   white-space: nowrap;
 }
-.beer .tiny-space:not(nav, .row, .grid, table, .tooltip, .list, menu) {
+.beer .tiny-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
   block-size: 0.5rem;
 }
-.beer :is(.space, .small-space):not(nav, .row, .grid, table, .tooltip, .list, menu) {
+.beer :is(.space, .small-space):not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
   block-size: 1rem;
 }
-.beer .medium-space:not(nav, .row, .grid, table, .tooltip, .list, menu) {
+.beer .medium-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
   block-size: 2rem;
 }
-.beer .large-space:not(nav, .row, .grid, table, .tooltip, .list, menu) {
+.beer .large-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
   block-size: 3rem;
+}
+.beer .extra-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
+  block-size: 4rem;
 }
 .beer .responsive {
   inline-size: -webkit-fill-available;
@@ -1601,7 +1600,11 @@ body {
   direction: ltr;
   text-align: start;
 }
-.beer :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple)::after {
+.beer :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not(.slow-ripple, .ripple, .fast-ripple)::after,
+.beer nav:is(.left, .right, .bottom, .top).max > a::after,
+.beer nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a::after,
+.beer nav:is(.left, .right, .bottom, .top):not(.max) > a > i::after,
+.beer nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a > i::after  {
   content: "";
   position: absolute;
   inset: 0;
@@ -1614,12 +1617,20 @@ body {
   opacity: 0;
   transition: none;
 }
-.beer :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after {
+.beer :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after,
+.beer nav:is(.left, .right, .bottom, .top).max > a:is(:focus-visible, :hover)::after,
+.beer nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:is(:focus-visible, :hover)::after,
+.beer nav:is(.left, .right, .bottom, .top):not(.max) > a:is(:focus-visible, :hover) > i::after,
+.beer nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:is(:focus-visible, :hover) > i::after {
   background-size: 15000%;
   opacity: 0.1;
   transition: background-size var(--speed2) linear;
 }
-.beer :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):active::after {
+.beer :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a, nav.max > a):not(.slow-ripple, .ripple, .fast-ripple):active::after,
+.beer nav:is(.left, .right, .bottom, .top).max > a:active::after,
+.beer nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:active::after,
+.beer nav:is(.left, .right, .bottom, .top):not(.max) > a:active > i::after,
+.beer nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:active > i::after {
   background-size: 5000%;
   opacity: 0;
   transition: none;
@@ -1627,6 +1638,22 @@ body {
 .beer .no-wave::after,
 .beer .no-wave:is(:hover, :active)::after {
   display: none;
+}
+.beer .zoom,
+.beer .tiny-zoom {
+  zoom: 2;
+}
+.beer .small-zoom {
+  zoom: 3;
+}
+.beer .medium-zoom {
+  zoom: 4;
+}
+.beer .large-zoom {
+  zoom: 5;
+}
+.beer .extra-zoom {
+  zoom: 6;
 }
 .beer .badge {
   --_x: 0;
@@ -1700,11 +1727,10 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--surface-container);
   border-radius: 0;
   padding: 0 1rem;
 }
-.beer :is(nav.drawer, dialog, article) > :is(header, footer) {
+.beer :is(dialog, article) > :is(header, footer) {
   padding-inline: 0;
   inset: 0;
 }
@@ -1728,53 +1754,32 @@ body {
   inset: 0 0 calc(-1 * var(--_padding)) 0;
   margin-block-end: calc(-1 * var(--_padding));
 }
+.beer :is(header, footer).fixed.min {
+  margin-inline: auto;
+}
 .beer dialog > :is(header, footer) {
   background: none;
 }
-.beer dialog > header.fixed {
+.beer dialog > :is(header, footer).fixed {
   background-color: inherit;
-  padding: var(--top) 0 0 0;
-  margin: calc(-1 * var(--top)) 0 0 0;
-  transform: translateY(calc(-1 * (var(--top) + var(--_padding))));
-}
-.beer dialog > footer.fixed {
-  background-color: inherit;
-  padding: 0 0 var(--bottom) 0;
-  margin: 0 0 calc(-1 * var(--bottom)) 0;
-  transform: translateY(calc(var(--bottom) + var(--_padding)));
 }
 .beer :is(main, header, footer, section).responsive {
   max-inline-size: 75rem;
   margin: 0 auto;
 }
 .beer :is(main, header, footer, section).responsive.max {
-  max-inline-size: 100%;
+  max-inline-size: none;
 }
-.beer:has(> main) > :is(header, footer).fixed {
-  z-index: 12;
+.beer :has(> main) > :is(header, footer).fixed,
+body:has(> main) > :is(header, footer).fixed {
   transform: none;
   box-sizing: content-box;
+  position: sticky;
   inset: 0;
-}
-.beer:has(> main) > header.fixed {
-  padding-block-start: calc(var(--top) + var(--_top));
-  margin-block-start: calc(-1 * var(--top) - var(--_top));
-}
-.beer:has(> main) > footer.fixed {
-  padding-block-end: calc(var(--bottom) + var(--_bottom));
-  margin-block-end: calc(-1 * var(--bottom) - var(--_bottom));
+  z-index: 12;
 }
 .beer :is(nav, .row) > header {
   background-color: inherit;
-}
-.beer nav:is(.left, .right) > header {
-  transform: translateY(-0.5rem);
-}
-.beer nav.drawer:is(.left, .right) > header + * {
-  margin-block-start: 0.5rem;
-}
-.beer dialog > nav.drawer > header + * {
-  margin-block-start: 1rem;
 }
 .beer .button,
 .beer button {
@@ -1970,7 +1975,6 @@ body {
 }
 .beer dialog:is(.top, .right, .bottom, .left, .max) {
   --_padding: 1rem;
-  padding: calc(var(--top) + var(--_padding)) calc(var(--right) + var(--_padding)) calc(var(--bottom) + var(--_padding)) calc(var(--left) + var(--_padding));
 }
 .beer dialog:is(.top, .bottom) {
   opacity: 1;
@@ -2020,12 +2024,6 @@ body {
   background-color: var(--surface);
   border-radius: 0;
 }
-.beer dialog:not(.left, .right, .top, .bottom, .max) {
-  --top: 0rem;
-  --bottom: 0rem;
-  --left: 0rem;
-  --right: 0rem;
-}
 .beer dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
 }
@@ -2053,7 +2051,7 @@ body {
 .beer hr,
 .beer [class*=divider] {
   all: unset;
-  min-inline-size: 1.5rem;
+  inline-size: -webkit-fill-available;
   min-block-size: auto;
   block-size: 0.0625rem;
   background-color: var(--outline-variant);
@@ -2075,8 +2073,20 @@ body {
 .beer .small-divider {
   margin: 0.5rem 0 !important;
 }
+.beer li:has(> hr),
+.beer li:has(> .divider) {
+  padding: 0 !important;
+  align-self: normal !important;
+  min-inline-size: auto !important;
+  min-block-size: auto !important;
+  inline-size: -webkit-fill-available;
+}
 .beer hr.vertical,
-.beer .divider.vertical {
+.beer .divider.vertical,
+.beer li:has(> hr.vertical),
+.beer li:has(> .divider.vertical) {
+  padding: 0 !important;
+  align-self: center !important;
   min-inline-size: auto;
   min-block-size: 1.5rem;
   inline-size: 0.0625rem;
@@ -2462,7 +2472,7 @@ body {
 .beer .grid {
   --_gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(12, calc(8.33% - var(--_gap) + (var(--_gap) / 12)));
+  grid-template-columns: repeat(12, 1fr);
   gap: var(--_gap);
   block-size: auto;
 }
@@ -2641,6 +2651,9 @@ body {
   line-height: normal;
   border-radius: 0;
 }
+.beer i:has(.badge) {
+  overflow: unset;
+}
 .beer i.tiny {
   --_size: 1rem;
 }
@@ -2658,8 +2671,8 @@ body {
   --_size: 2rem;
 }
 .beer i.fill,
-.beer a.row:is(:hover, :focus) > i,
-.beer .transparent:is(:hover, :focus) > i {
+.beer a.active > i,
+.beer button.active > i {
   font-variation-settings: "FILL" 1;
 }
 .beer i > :is(img, svg) {
@@ -2766,44 +2779,49 @@ body {
 .beer .list.large-space > li > details > summary {
   min-block-size: 5.5rem;
 }
-.beer main {
-  flex: 1;
-  padding: 0.5rem;
-  overflow-x: hidden;
-}
-.beer:has(> main) {
-  --_top: 0rem;
-  --_bottom: 0rem;
-  --_left: 0rem;
-  --_right: 0rem;
-  display: flex;
-  flex-direction: column;
-  min-block-size: calc(100vh - var(--top) - var(--_top) - var(--bottom) - var(--_bottom));
+.beer :has(> main),
+body:has(> main) {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-areas: 
+    "left top right"
+    "left header right"
+    "left main right"
+    "left footer right"
+    "left bottom right";
+  min-block-size: 100dvh;
   box-sizing: border-box;
   background-color: var(--surface);
-  margin-block: calc(var(--top) + var(--_top)) calc(var(--bottom) + var(--_bottom));
-  margin-inline: calc(var(--left) + var(--_left)) calc(var(--right) + var(--_right));
 }
-.beer:has(> nav.top:not(.s, .m, .l)) {
-  --_top: 5rem;
+.beer nav.left {
+  grid-area: left;
 }
-.beer:has(> nav.bottom:not(.s, .m, .l)) {
-  --_bottom: 5rem;
+.beer nav.right {
+  grid-area: right;
 }
-.beer:has(> nav.left:not(.s, .m, .l)) {
-  --_left: 5rem;
+.beer nav.top {
+  grid-area: top;
+  position: sticky;
+  inset: 0;
+  block-size: 4rem;
 }
-.beer:has(> nav.right:not(.s, .m, .l)) {
-  --_right: 5rem;
+.beer nav.bottom {
+  grid-area: bottom;
+  position: sticky;
+  inset: 0;
+  block-size: 4rem;
 }
-.beer:has(> nav.drawer.left:not(.s, .m, .l)) {
-  --_left: 20rem;
+.beer header {
+  grid-area: header;
 }
-.beer:has(> nav.drawer.right:not(.s, .m, .l)) {
-  --_right: 20rem;
+.beer main {
+  grid-area: main;
+  padding: 0.5rem;
+  overflow: hidden;
 }
-.beer :not(main):has(> aside) {
-  overflow: auto;
+.beer footer {
+  grid-area: footer;
 }
 .beer aside {
   z-index: 1;
@@ -2813,81 +2831,6 @@ body {
 }
 .beer aside:not(.fixed, .absolute).left {
   float: left;
-}
-@media only screen and (max-width: 600px) {
-  .beer :has(> nav.bottom.s) {
-    --_bottom: 5rem;
-  }
-
-  .beer :has(> nav.top.s) {
-    --_top: 5rem;
-  }
-
-  .beer :has(> nav.left.s) {
-    --_left: 5rem;
-  }
-
-  .beer :has(> nav.right.s) {
-    --_right: 5rem;
-  }
-
-  .beer :has(> nav.drawer.left.s) {
-    --_left: 20rem;
-  }
-
-  .beer :has(> nav.drawer.right.s) {
-    --_right: 20rem;
-  }
-}
-@media only screen and (min-width: 601px) and (max-width: 992px) {
-  .beer :has(> nav.bottom.m) {
-    --_bottom: 5rem;
-  }
-
-  .beer :has(> nav.top.m) {
-    --_top: 5rem;
-  }
-
-  .beer :has(> nav.left.m) {
-    --_left: 5rem;
-  }
-
-  .beer :has(> nav.right.m) {
-    --_right: 5rem;
-  }
-
-  .beer :has(> nav.drawer.left.m) {
-    --_left: 20rem;
-  }
-
-  .beer :has(> nav.drawer.right.m) {
-    --_right: 20rem;
-  }
-}
-@media only screen and (min-width: 993px) {
-  .beer :has(> nav.bottom.l) {
-    --_bottom: 5rem;
-  }
-
-  .beer :has(> nav.top.l) {
-    --_top: 5rem;
-  }
-
-  .beer :has(> nav.left.l) {
-    --_left: 5rem;
-  }
-
-  .beer :has(> nav.right.l) {
-    --_right: 5rem;
-  }
-
-  .beer :has(> nav.drawer.left.l) {
-    --_left: 20rem;
-  }
-
-  .beer :has(> nav.drawer.right.l) {
-    --_right: 20rem;
-  }
 }
 .beer svg {
   fill: currentcolor;
@@ -2956,10 +2899,10 @@ body {
   min-block-size: 1.5rem;
   max-block-size: 1.5rem;
 }
-.beer :is(button, .button, .chip) > .responsive:first-child {
+.beer :is(button, .button, .chip):not(.extend) > .responsive:first-child {
   margin-inline-start: calc(-1 * var(--_padding));
 }
-.beer :is(button, .button, .chip) > .responsive:not(:first-child) {
+.beer :is(button, .button, .chip):not(.extend) > .responsive:not(:first-child) {
   margin-inline-end: calc(-1 * var(--_padding));
 }
 .beer :is(button, .button, .chip, .circle, .square, .extend) > .responsive {
@@ -3219,9 +3162,7 @@ body {
 }
 .beer nav,
 .beer .row,
-.beer a.row,
-.beer nav.drawer > :is(a, label),
-.beer nav.drawer > :is(ol, ul) > li > :is(a, label) {
+.beer a.row {
   display: flex;
   align-items: center;
   align-self: normal;
@@ -3240,7 +3181,7 @@ body {
 .beer nav > :is(ol, ul) > li > :only-child {
   margin: 0;
 }
-.beer :is(nav, .row) > :not(ul, ol) {
+.beer :is(nav, .row) > :not(ul, ol, header, footer) {
   margin: 0;
   white-space: normal;
   flex: none;
@@ -3261,9 +3202,7 @@ body {
   gap: 2rem;
 }
 .beer :is(nav, .row) > .max,
-.beer :is(nav, .row) > :is(ol, ul) > .max,
-.beer nav.drawer > :is(a, label) > .max,
-.beer nav.drawer > :is(ol, ul) > li > :is(a, label) > .max {
+.beer :is(nav, .row) > :is(ol, ul) > .max {
   flex: 1;
 }
 .beer :is(nav, .row).wrap {
@@ -3274,129 +3213,130 @@ body {
   min-block-size: inherit;
 }
 .beer nav:is(.left, .right, .top, .bottom) {
+  position: sticky;
+  inset: 0;
   border: 0;
-  position: fixed;
   color: var(--on-surface);
   transform: none;
   z-index: 100;
-  block-size: auto;
-  inline-size: auto;
   text-align: center;
-  padding: calc(var(--top) + 0.5rem) calc(var(--right) + 1rem) calc(var(--bottom) + 0.5rem) calc(var(--left) + 1rem);
+  padding: 0.5rem;
   margin: 0;
 }
 .beer nav:is(.left, .right) {
   justify-content: flex-start;
   flex-direction: column;
   background-color: var(--surface);
+  block-size: 100dvh;
+  min-inline-size: 6rem;
 }
 .beer nav:is(.top, .bottom) {
+  padding: 0.5rem;
   justify-content: center;
   flex-direction: row;
   background-color: var(--surface-container);
+  block-size: auto;
+  min-block-size: 4.5rem;
 }
-.beer nav.top {
-  block-size: calc(var(--top) + 5rem);
-  inset: 0 0 auto 0;
-  padding-block-end: 0.5rem;
+.beer nav > header {
+  min-block-size: auto;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  align-items: flex-start;
+  gap: 1rem;
+  background: none !important;
 }
-.beer nav.left,
-.beer [dir=rtl] nav.right {
-  inline-size: calc(var(--left) + 5rem);
-  inset: 0 auto 0 0;
-  padding-inline-end: 1rem;
+.beer nav > header > * {
+  margin: 0;
 }
-.beer [dir=rtl] nav.right {
-  padding-inline-end: calc(var(--left) + 1rem);
+.beer nav > header > .extend:hover {
+  --_padding: 0;
+  inline-size: var(--_size);
 }
-.beer nav.right,
-.beer [dir=rtl] nav.left {
-  inline-size: calc(var(--right) + 5rem);
-  inset: 0 0 0 auto;
-  padding-inline-start: 1rem;
+.beer nav > header > .extend:hover > span {
+  display: none;
 }
-.beer [dir=rtl] nav.left {
-  padding-inline-start: calc(var(--right) + 1rem);
-}
-.beer nav.bottom {
-  min-block-size: calc(var(--bottom) + 5rem);
-  inset: auto 0 0 0;
-  padding-block-start: 0.5rem;
-}
-.beer nav.drawer,
-.beer [dir=rtl] nav.drawer {
-  flex-direction: column;
-  align-items: normal;
-  inline-size: 20rem;
-  gap: 0;
-}
-.beer nav.drawer:not(.left, .right, .top, .bottom) {
-  padding: 0.5rem 1rem;
-}
-.beer dialog > nav.drawer:not(.left, .right, .top, .bottom) {
-  padding: 0 1rem;
-  background-color: inherit;
-}
-.beer nav.drawer:is(.min, .max) {
-  inline-size: auto;
-}
-.beer nav.drawer.max {
-  inline-size: 100%;
-}
-.beer nav.drawer > :is(a, label),
-.beer nav.drawer > :is(ol, ul) > li > :is(a, label),
-.beer :is(a.row, nav.row):is(.wave, .slow-ripple, .ripple, .fast-ripple) {
-  padding: 0.75rem;
-  font-size: inherit;
-}
-.beer nav.drawer > a,
-.beer nav.drawer > :is(ol, ul) > li > a {
-  border-radius: 2rem;
-}
-.beer nav.drawer > a:is(:hover, .active),
-.beer nav.drawer > :is(ol, ul) > li > a:is(:hover, .active) {
-  background-color: var(--secondary-container);
-}
-.beer nav.drawer > a:is(:hover, :focus, .active) > i,
-.beer nav.drawer > :is(ol, ul) > li > a:is(:hover, :focus, .active) > i {
-  font-variation-settings: "FILL" 1;
+.beer nav:is(.top, .bottom) > header {
+  flex-direction: row;
+  align-items: center;
+  margin: 0 1rem 0 0;
 }
 .beer nav > :is(ol, ul) {
   all: inherit;
+  min-inline-size: auto;
+  margin: 0;
+  padding: 0;
   flex: auto;
 }
-.beer nav:not(.left, .right, .bottom, .top) > :is(ol, ul) {
+.beer nav.max:is(.left, .right, .top, .bottom) {
+  gap: 0;
+  inline-size: auto;
+  align-items: flex-start;
+  min-inline-size: 12.75rem;
+  padding: 0.5rem 1.25rem;
+}
+.beer nav.max > :is(ol, ul) {
   padding: 0;
 }
-.beer nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip),
-.beer nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) {
-  align-self: center;
+.beer nav.max > header {
+  margin: 0 0 1.25rem 0;
+}
+.beer nav.max > header > .extend {
+  --_padding: 1.5rem;
+  inline-size: auto;
+  padding: 0 var(--_padding);
+}
+.beer nav.max > header > .extend > span {
+  display: block;
+  margin-inline-start: var(--_padding);
+}
+.beer nav.max > header > .extend > :is(img, svg) + span {
+  margin-inline-start: calc(1rem + var(--_padding));
+}
+.beer nav.max:is(.top, .bottom) {
+  padding: 0 0.5rem;
+  align-items: center;
+  min-inline-size: auto;
+  max-inline-size: none;
+}
+.beer nav:is(.left, .right, .top, .bottom) > a,
+.beer nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   line-height: normal;
-}
-.beer nav:is(.top, .bottom):not(.drawer) > a:not(.button, .chip),
-.beer nav:is(.top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) {
   inline-size: 3.5rem;
+  font-size: 0.8rem;
 }
-.beer nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip) > i,
-.beer nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) > i {
-  padding: 0.25rem;
+.beer nav:not(.max):is(.left, .right, .top, .bottom) > a > i,
+.beer nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > i {
+  padding: 0.25rem 1rem;
   border-radius: 2rem;
   transition: padding var(--speed1) linear;
   margin: 0 auto;
 }
-.beer nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip):is(:hover, :focus, .active) > i,
-.beer nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip):is(:hover, :focus, .active) > i {
+.beer nav.max:is(.left, .right, .top, .bottom) > a,
+.beer nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a {
+  flex-direction: row;
+  gap: 0.5rem;
+  inline-size: auto;
+  block-size: 3.5rem;
+  padding: 0 1rem;
+  border-radius: 2rem;
+  font-size: inherit;
+}
+.beer nav.max:is(.top, .bottom) > a,
+.beer nav.max:is(.top, .bottom) > :is(ol, ul) > li > a {
+  gap: 0.25rem;
+  block-size: 2.5rem;
+  font-size: 0.8rem;
+}
+.beer nav.max:is(.left, .right, .top, .bottom) > a.active,
+.beer nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a.active,
+.beer nav:is(.left, .right, .top, .bottom):not(.max) > a.active > i,
+.beer nav:is(.left, .right, .top, .bottom):not(.max) > :is(ol, ul) > li > a.active > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
-  padding: 0.25rem 1rem;
-  font-variation-settings: "FILL" 1;
-}
-.beer nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip).active {
-  background: none !important;
-  color: currentColor !important;
 }
 .beer :is(nav, .row):is(.left-align, .top-align, .vertical) {
   justify-content: flex-start;
@@ -3415,10 +3355,6 @@ body {
 }
 .beer :is(nav, .row):is(.center-align, .middle-align).vertical {
   align-items: center;
-}
-.beer :is(.drawer, .vertical) > :is(li, [class*=divider], hr):not(.vertical),
-.beer :is(.drawer, .vertical) > :is(ol, ul) > li:not(.vertical) {
-  align-self: stretch;
 }
 .beer nav:not(.left, .right) > .space {
   inline-size: 0.5rem;
@@ -3511,15 +3447,23 @@ body {
 .beer nav.group:is(.connected, .split) {
   gap: 0.125rem;
 }
-.beer nav.group:not(.split) > :is(.button, button):not(.chip, .fill, .border).active {
-  background-color: var(--primary);
-  color: var(--on-primary);
-}
-.beer nav.group:not(.split) > :is(.button, button):not(.chip, .fill, .border) {
+.beer nav.group:not(.split) > :is(.button, button):not(.border) {
   background-color: var(--surface-container);
   color: var(--on-surface-container);
 }
-.beer nav.group:is(.connected, .split) > :is(.button, button):not(.chip).active,
+.beer nav.group:not(.split) > :is(.button, button).active {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+.beer nav.group.connected > :is(.button, button):not(.border) {
+  background-color: var(--surface-container);
+  color: var(--on-surface-container);
+}
+.beer nav.group.connected > :is(.button, button).active {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+.beer nav.group:is(.connected, .split) > :is(.button, button).active,
 .beer nav.split > :is(.button, button):active {
   border-radius: 2rem !important;
 }
@@ -3534,53 +3478,41 @@ body {
   background-color: var(--primary);
   color: var(--on-primary);
 }
-.beer nav.primary > :is(button, .button),
-.beer nav:not(.toolbar, .tabbed, .drawer, .group).primary-container > a:is(:hover, :focus, .active) > i,
-.beer nav.drawer.primary-container > a:is(:hover, :focus, .active),
-.beer nav:not(.split).primary-container > :is(a, button, .button).active,
-.beer :is(a, button, .button):not(.extend).primary-container.active {
-  background-color: var(--primary) !important;
-  color: var(--on-primary) !important;
-}
-.beer nav.primary-container > :is(button, .button),
-.beer nav:not(.toolbar, .tabbed, .drawer, .group).primary > a:is(:hover, :focus, .active) > i,
-.beer nav.drawer.primary > a:is(:hover, :focus, .active),
-.beer nav:not(.split).primary > :is(a, button, .button).active,
-.beer :is(a, button, .button):not(.extend).primary.active {
+.beer nav.group.primary-container > button,
+.beer nav:is(.max, .toolbar, .tabbed, .group).primary > :is(button, a).active,
+.beer nav:not(.max, .toolbar, .tabbed, .group).primary > a.active > i {
   background-color: var(--primary-container) !important;
   color: var(--on-primary-container) !important;
 }
-.beer nav.secondary > :is(button, .button),
-.beer nav:not(.toolbar, .tabbed, .drawer, .group).secondary-container > a:is(:hover, :focus, .active) > i,
-.beer nav.drawer.secondary-container > a:is(:hover, :focus, .active),
-.beer nav:not(.split).secondary-container > :is(a, button, .button).active,
-.beer :is(a, button, .button):not(.extend).secondary-container.active {
-  background-color: var(--secondary) !important;
-  color: var(--on-secondary) !important;
+.beer nav.group.primary > button,
+.beer nav:is(.max, .toolbar, .tabbed, .group).primary-container > :is(button, a).active,
+.beer nav:not(.max, .toolbar, .tabbed, .group).primary-container > a.active > i {
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
 }
-.beer nav.secondary-container > :is(button, .button),
-.beer nav:not(.toolbar, .tabbed, .drawer, .group).secondary > a:is(:hover, :focus, .active) > i,
-.beer nav.drawer.secondary > a:is(:hover, :focus, .active),
-.beer nav:not(.split).secondary > :is(a, button, .button).active,
-.beer :is(a, button, .button):not(.extend).secondary.active {
+.beer nav.group.secondary-container > button,
+.beer nav:is(.max, .toolbar, .tabbed, .group).secondary > :is(button, a).active,
+.beer nav:not(.max, .toolbar, .tabbed, .group).secondary > a.active > i {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
 }
-.beer nav.tertiary > :is(button, .button),
-.beer nav:not(.toolbar, .tabbed, .drawer, .group).tertiary-container > a:is(:hover, :focus, .active) > i,
-.beer nav.drawer.tertiary-container > a:is(:hover, :focus, .active),
-.beer nav:not(.split).tertiary-container > :is(a, button, .button).active,
-.beer :is(a, button, .button):not(.extend).tertiary-container.active {
-  background-color: var(--tertiary) !important;
-  color: var(--on-tertiary) !important;
+.beer nav.group.secondary > button,
+.beer nav:is(.max, .toolbar, .tabbed, .group).secondary-container > :is(button, a).active,
+.beer nav:not(.max, .toolbar, .tabbed, .group).secondary-container > a.active > i {
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
 }
-.beer nav.tertiary-container > :is(button, .button),
-.beer nav:not(.toolbar, .tabbed, .drawer, .group).tertiary > a:is(:hover, :focus, .active) > i,
-.beer nav.drawer.tertiary > a:is(:hover, :focus, .active),
-.beer nav:not(.split).tertiary > :is(a, button, .button).active,
-.beer :is(a, button, .button):not(.extend).tertiary.active {
+.beer nav.group.tertiary-container > button,
+.beer nav:is(.max, .toolbar, .tabbed, .group).tertiary > :is(button, a).active,
+.beer nav:not(.max, .toolbar, .tabbed, .group).tertiary > a.active > i {
   background-color: var(--tertiary-container) !important;
   color: var(--on-tertiary-container) !important;
+}
+.beer nav.group.tertiary > button,
+.beer nav:is(.max, .toolbar, .tabbed, .group).tertiary-container > :is(button, a).active,
+.beer nav:not(.max, .toolbar, .tabbed, .group).tertiary-container > a.active > i {
+  background-color: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
 }
 @media only screen and (max-width: 600px) {
   .beer nav.top,
@@ -3599,6 +3531,7 @@ body {
   background-color: var(--overlay);
   z-index: 100;
   transition: all var(--speed3), 0s background-color;
+  border-radius: 0;
 }
 .beer .overlay.active {
   opacity: 1;
@@ -3816,6 +3749,209 @@ body {
 
   100% {
     clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+  }
+}
+.beer :has(> .shape) {
+  overflow: hidden;
+}
+.beer .shape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-primary);
+  background-color: var(--primary);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  border-radius: 0;
+  block-size: 3rem;
+  inline-size: 3rem;
+}
+.beer .transparent > .shape > i {
+  filter: invert(1);
+}
+.beer .shape.tiny-space {
+  mask-size: 90%;
+}
+.beer .shape.space,
+.beer .shape.small-space {
+  mask-size: 80%;
+}
+.beer .shape.medium-space {
+  mask-size: 70%;
+}
+.beer .shape.large-space {
+  mask-size: 60%;
+}
+.beer .shape.extra-space {
+  mask-size: 50%;
+}
+.beer .shape.tiny {
+  block-size: 2rem;
+  inline-size: 2rem;
+}
+.beer .shape.medium {
+  block-size: 4rem;
+  inline-size: 4rem;
+}
+.beer .shape.large {
+  block-size: 5rem;
+  inline-size: 5rem;
+}
+.beer .shape.extra {
+  block-size: 6rem;
+  inline-size: 6rem;
+}
+.beer .shape.max,
+.beer .shape > .responsive,
+.beer .shape > .responsive > .responsive {
+  position: absolute;
+  inset: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+.beer .shape > .responsive {
+  background: inherit;
+  color: inherit;
+}
+.beer .shape.rotate {
+  animation: linear to-shape-rotate infinite 12s;
+}
+.beer .shape.rotate > * {
+  animation: linear to-shape-rotate infinite 12s reverse;
+}
+.beer .shape.fast-rotate {
+  animation: linear to-shape-rotate infinite 6s;
+}
+.beer .shape.fast-rotate > * {
+  animation: linear to-shape-rotate infinite 6s reverse;
+}
+.beer .shape.slow-rotate {
+  animation: linear to-shape-rotate infinite 24s;
+}
+.beer .shape.slow-rotate {
+  animation: linear to-shape-rotate infinite 24s reverse;
+}
+.beer :is(button, .button, .chip):has(> .shape) > .responsive {
+  border: none;
+}
+.beer .shape.arch {
+  mask-image: url(arch.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/arch.svg);
+}
+.beer .shape.arrow {
+  mask-image: url(arrow.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/arrow.svg);
+}
+.beer .shape.boom {
+  mask-image: url(boom.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/boom.svg);
+}
+.beer .shape.bun {
+  mask-image: url(bun.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/bun.svg);
+}
+.beer .shape.burst {
+  mask-image: url(burst.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/burst.svg);
+}
+.beer .shape.circle {
+  mask-image: url(circle.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/circle.svg);
+}
+.beer .shape.clamshell {
+  mask-image: url(clamshell.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/clamshell.svg);
+}
+.beer .shape.diamond {
+  mask-image: url(diamond.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/diamond.svg);
+}
+.beer .shape.fan {
+  mask-image: url(fan.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/fan.svg);
+}
+.beer .shape.flower {
+  mask-image: url(flower.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/flower.svg);
+}
+.beer .shape.gem {
+  mask-image: url(gem.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/gem.svg);
+}
+.beer .shape.ghost-ish {
+  mask-image: url(ghost-ish.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/ghost-ish.svg);
+}
+.beer .shape.heart {
+  mask-image: url(heart.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/heart.svg);
+}
+.beer .shape.leaf-clover4 {
+  mask-image: url(leaf-clover4.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/leaf-clover4.svg);
+}
+.beer .shape.leaft-clover8 {
+  mask-image: url(leaf-clover8.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/leaf-clover8.svg);
+}
+.beer .shape.loading-indicator {
+  mask-image: url(loading-indicator.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/loading-indicator.svg);
+}
+.beer .shape.oval {
+  mask-image: url(oval.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/oval.svg);
+}
+.beer .shape.pentagon {
+  mask-image: url(pentagon.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/pentagon.svg);
+}
+.beer .shape.pill {
+  mask-image: url(pill.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/pill.svg);
+}
+.beer .shape.pixel-circle {
+  mask-image: url(pixel-circle.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/pixel-circle.svg);
+}
+.beer .shape.pixel-triangle {
+  mask-image: url(pixel-triangle.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/pixel-triangle.svg);
+}
+.beer .shape.puffy {
+  mask-image: url(puffy.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/puffy.svg);
+}
+.beer .shape.puffy-diamond {
+  mask-image: url(puffy-diamond.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/puffy-diamond.svg);
+}
+.beer .shape.semicircle {
+  mask-image: url(semicircle.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/semicircle.svg);
+}
+.beer .shape.sided-cookie4 {
+  mask-image: url(sided-cookie4.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sided-cookie4.svg);
+}
+.beer .shape.sided-cookie6 {
+  mask-image: url(sided-cookie6.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sided-cookie6.svg);
+}
+.beer .shape.sided-cookie7 {
+  mask-image: url(sided-cookie7.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sided-cookie7.svg);
+}
+.beer .shape.sided-cookie9 {
+  mask-image: url(sided-cookie9.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sided-cookie9.svg);
+}
+.beer .shape.sided-cookie12 {
+  mask-image: url(sided-cookie12.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sided-cookie12.svg);
+}
+.beer .shape.slanted {
+  mask-image: url(slanted.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/slanted.svg);
+}
+.beer .shape.soft-boom {
+  mask-image: url(soft-boom.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/soft-boom.svg);
+}
+.beer .shape.soft-burst {
+  mask-image: url(soft-burst.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/soft-burst.svg);
+}
+.beer .shape.square {
+  mask-image: url(square.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/square.svg);
+}
+.beer .shape.sunny {
+  mask-image: url(sunny.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sunny.svg);
+}
+.beer .shape.triangle {
+  mask-image: url(triangle.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/triangle.svg);
+}
+.beer .shape.very-sunny {
+  mask-image: url(very-sunny.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/very-sunny.svg);
+}
+@keyframes to-shape-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 /* checkbox, radio, switch */

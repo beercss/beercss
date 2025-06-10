@@ -28,6 +28,10 @@ i,
   border-radius: 0;
 }
 
+i:has(.badge) {
+  overflow: unset;
+}
+
 i.tiny {
   --_size: 1rem;
 }
@@ -50,8 +54,8 @@ i.extra {
 }
 
 i.fill,
-a.row:is(:hover, :focus) > i,
-.transparent:is(:hover, :focus) > i {
+a.active > i,
+button.active > i {
   font-variation-settings: "FILL" 1;
 }
 

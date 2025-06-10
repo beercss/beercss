@@ -24,7 +24,7 @@ export default async function() {
     });
   
     const cssContent = fs.readFileSync("./dist/cdn/beer.css", "utf-8");
-    fs.writeFileSync("./dist/cdn/beer.css", cssContent.replace(/url\("\//g, "url(\""));
+    fs.writeFileSync("./dist/cdn/beer.css", cssContent.replace(/url\(\//g, "url("));
   } catch(error) {
     console.log(error);
   }

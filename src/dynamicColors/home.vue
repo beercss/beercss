@@ -18,12 +18,13 @@ main.responsive
             h5.no-margin Classic Utility Jacket
             span In stock
           h6 $110,00
-        nav
-          button.chip.square.active XS
-          button.chip.square S
-          button.chip.square M
-          button.chip.square L
-          button.chip.square XL
+        nav.group.connected
+          button.left-round.active(data-ui="") XS
+          button.no-round(data-ui="") S
+          button.no-round(data-ui="") M
+          button.no-round(data-ui="") L
+          button.right-round(data-ui="") XL
+          .space
           label.l Size guide
         hr.large
         nav
@@ -42,12 +43,13 @@ main.responsive
         h5.bold.middle-align
           span $39,00
           label &nbsp;In stock
-        nav
-          button.chip.circle XS
-          button.chip.circle S
-          button.chip.circle M
-          button.chip.circle L
-          button.chip.circle XL
+        nav.group.connected
+          button.left-round.active(data-ui="") XS
+          button.no-round(data-ui="") S
+          button.no-round(data-ui="") M
+          button.no-round(data-ui="") L
+          button.right-round(data-ui="") XL
+          .space
           label.l Size guide
         hr.large
         nav
@@ -66,12 +68,13 @@ main.responsive
         h6.middle-align
           span $39,00
           label &nbsp;In stock
-        nav
-          button.chip.circle XS
-          button.chip.circle S
-          button.chip.circle M
-          button.chip.circle L
-          button.chip.circle XL
+        nav.group.connected
+          button.border.left-round.active(data-ui="") XS
+          button.border.no-round(data-ui="") S
+          button.border.no-round(data-ui="") M
+          button.border.no-round(data-ui="") L
+          button.border.right-round(data-ui="") XL
+          .space
           label.l Size guide
         hr.large
         nav
@@ -89,12 +92,13 @@ main.responsive
         h5.no-margin Retro Shoe
         h6.middle-align $39,00
           label.bold &nbsp;In stock
-        nav
-          button.chip.circle.bottom-round.right-round XS
-          button.chip.circle.bottom-round.right-round S
-          button.chip.circle.bottom-round.right-round M
-          button.chip.circle.bottom-round.right-round L
-          button.chip.circle.bottom-round.right-round XL
+        nav.group.connected
+          button.border.left-round.active(data-ui="") XS
+          button.border.no-round(data-ui="") S
+          button.border.no-round(data-ui="") M
+          button.border.no-round(data-ui="") L
+          button.border.right-round(data-ui="") XL
+          .space
           label.l Size guide
         hr.large
         nav

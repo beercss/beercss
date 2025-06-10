@@ -1,7 +1,9 @@
 <template lang="pug">
 #layout
-  nav.left.m.l
+  nav.left.m.l.scroll(:class="{ max: data.isMax }")
     header
+      button.circle.extra.transparent(@click="data.isMax = !data.isMax;")
+        i {{ data.isMax ? 'menu_open' : 'menu' }}
     a(href="/youtube", :class="{ active: data.url === '/youtube' }")
       i home
       div Home
@@ -17,9 +19,19 @@
     a(data-ui="#themes1")
       i palette
       div Themes
-    themes(id="themes1", v-model="data")
-      .large-space
-      .medium-space
+    hr
+    a
+      i history
+      div History
+    a
+      i slideshow
+      div Your videos
+    a
+      i playlist_play
+      div Your albuns
+    a
+      i watch_later
+      div Watch later
 
   nav.bottom.s
     a(href="/youtube", :class="{ active: data.url === '/youtube' }")
@@ -33,16 +45,11 @@
     a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
       div Library
-    a(data-ui="#themes2")
+    a(data-ui="#themes1")
       i palette
       div Themes
-    themes(id="themes2", v-model="data")
-      .large-space
-      .medium-space
 
-  nav.top
-    button.circle.large.transparent.m.l(data-ui="#dialog-expanded")
-      i menu
+  nav.top.surface
     img(
       v-show="!data.isDark",
       :src="'/youtube-light.png'"
@@ -100,42 +107,6 @@
     p No new notifications here
 
   .overlay
-  dialog#dialog-expanded.left
-    nav.drawer.no-padding
-      header
-        nav
-          button.transparent.circle.large(data-ui="#dialog-expanded")
-            i menu
-          a
-            img(v-show="!data.isDark", :src="'/youtube-light.png'")
-            img(v-show="data.isDark", :src="'/youtube-dark.png'")
-      a(data-ui="#dialog-expanded", href="/youtube")
-        i home
-        span Home
-      a(data-ui="#dialog-expanded", href="/youtube/whats-hot")
-        i whatshot
-        div What's hot
-      a(data-ui="#dialog-expanded", href="/youtube/subscriptions")
-        i subscriptions
-        div Subscript
-      a(data-ui="#dialog-expanded", href="/youtube/library")
-        i video_library
-        div Library
-      hr.small
-      a(data-ui="#dialog-expanded")
-        i history
-        div History
-      a(data-ui="#dialog-expanded")
-        i slideshow
-        div Your videos
-      a(data-ui="#dialog-expanded")
-        i playlist_play
-        div Your albuns
-      a(data-ui="#dialog-expanded")
-        i watch_later
-        div Watch later
-
-  .overlay
   dialog#dialog-add.bottom.top-round
     nav
       h5.max New
@@ -158,6 +129,8 @@
       i.front search
       input(type="text")
       i.front mic
+
+  themes(id="themes1", v-model="data")
 
   .medium-space
   explore(v-if="data.url === '/youtube/explore'")

@@ -84,31 +84,12 @@
         i arrow_drop_down
         span.error Error text
     .s12.l4
-      .field.label.suffix.border
+      .field.suffix.border
         select
           option Item 1
           option Item 2
           option Item 3
-        label Label
         img.circle(:src="'/favicon.png'")
-    .s12.l4
-      .field.label.suffix.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        label Label
-        img.circle(:src="'/favicon.png'")
-        span.helper Helper text
-    .s12.l4
-      .field.label.suffix.invalid.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        label Label
-        img.circle(:src="'/favicon.png'")
-        span.error Error text
     .s12.l4
       .field.suffix.border
         select
@@ -122,14 +103,8 @@
           option Item 1
           option Item 2
           option Item 3
-        progress.circle
-    .s12.l4
-      .field.suffix.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        progress.circle
+        i
+          .shape.loading-indicator.max
 </template>
 
 <script setup lang="ts">

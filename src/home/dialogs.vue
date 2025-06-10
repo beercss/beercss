@@ -14,7 +14,7 @@
     button(data-ui="#dialog-top") Top
     button(data-ui="#dialog-bottom") Bottom
     button(data-ui="#dialog-max") Fullscreen
-    button(data-ui="#dialog-navigation-drawer") Navigation drawer
+    button(data-ui="#dialog-navigation-drawer") Navigation list
 
   .dialog-code
     .overlay
@@ -90,36 +90,35 @@
 
   .dialog-code
     .overlay
-    dialog#dialog-navigation-drawer.left.no-padding
-      nav.drawer
-        header
-          nav
-            img.circle(:src="'/favicon.png'")
-            h6.max Title
-            button.transparent.circle.large(data-ui="#dialog-navigation-drawer")
-              i close
-        a
+    dialog#dialog-navigation-drawer.left
+      header
+        nav
+          img.circle.large(:src="'/favicon.png'")
+          h6.max Title
+          button.transparent.circle.large(data-ui="#dialog-navigation-drawer")
+            i close
+      .space
+      ul.list
+        li.wave.round
           i inbox
           span.max Inbox
           b 24
-        a
+        li.wave.round
           i send
           span Outbox
-        a
+        li.wave.round
           i favorite
           span favorities
-        a
+        li.wave.round
           i delete
           span Trash
-        hr
-        label Labels
-        a
+        li.wave.round
           i fiber_manual_record
           span Label
-        a
+        li.wave.round
           i change_history
           span Label
-        a
+        li.wave.round
           i stop
           span Label
 </template>

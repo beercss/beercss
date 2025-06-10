@@ -46,26 +46,26 @@
         span large-elevate
     nav.center-align
       nav.toolbar
-        a
+        a(data-ui="")
           i videocam_off
-        a
+        a(data-ui="")
           i mic
-        a.active
+        a.active(data-ui="")
           i front_hand
-        a
+        a(data-ui="")
           i more_vert
     nav.center-align.m.l
       nav.toolbar
-        a
+        a(data-ui="")
           i videocam_off
           div Video
-        a
+        a(data-ui="")
           i mic
           div Speech
-        a.active
+        a.active(data-ui="")
           i front_hand
           div Attention
-        a
+        a(data-ui="")
           i more_vert
           div More
   .large-space
@@ -78,28 +78,28 @@
         i code
     nav.center-align.tiny-space
       nav.toolbar
-        a
+        a(data-ui="")
           i videocam_off
-        a
+        a(data-ui="")
           i mic
-        a.active
+        a.active(data-ui="")
           i front_hand
-        a
+        a(data-ui="")
           i more_vert
       button.extra.round.circle.error
         i call_end
     nav.center-align.tiny-space.m.l
       nav.toolbar
-        a
+        a(data-ui="")
           i videocam_off
           div Video
-        a
+        a(data-ui="")
           i mic
           div Mic
-        a.active
+        a.active(data-ui="")
           i front_hand
           div Attention
-        a
+        a(data-ui="")
           i more_vert
           div More
       button.extra.round.circle.error
@@ -114,26 +114,26 @@
         i code
     div
     nav.toolbar.max
-      a
+      a(data-ui="")
         i videocam_off
-      a
+      a(data-ui="")
         i mic
-      a.active
+      a.active(data-ui="")
         i front_hand
-      a
+      a(data-ui="")
         i more_vert
     div
     nav.toolbar.max.m.l
-      a
+      a(data-ui="")
         i videocam_off
         div Video
-      a
+      a(data-ui="")
         i mic
         div Mic
-      a.active
+      a.active(data-ui="")
         i front_hand
         div Attention
-      a
+      a(data-ui="")
         i more_vert
         div More
 </template>

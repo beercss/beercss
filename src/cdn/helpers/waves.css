@@ -1,4 +1,8 @@
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not(.slow-ripple, .ripple, .fast-ripple)::after,
+nav:is(.left, .right, .bottom, .top).max > a::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > a > i::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a > i::after  {
   content: "";
   position: absolute;
   inset: 0;
@@ -12,13 +16,21 @@
   transition: none;
 }
 
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after,
+nav:is(.left, .right, .bottom, .top).max > a:is(:focus-visible, :hover)::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:is(:focus-visible, :hover)::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > a:is(:focus-visible, :hover) > i::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:is(:focus-visible, :hover) > i::after {
   background-size: 15000%;
   opacity: 0.1;
   transition: background-size var(--speed2) linear;
 }
 
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):active::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a, nav.max > a):not(.slow-ripple, .ripple, .fast-ripple):active::after,
+nav:is(.left, .right, .bottom, .top).max > a:active::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:active::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > a:active > i::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:active > i::after {
   background-size: 5000%;
   opacity: 0;
   transition: none;

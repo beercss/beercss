@@ -79,7 +79,7 @@ div
       main.responsive
         h3 Medium
     #expanded
-      nav.left.drawer
+      nav.left.max
         a
           i home
           div Home

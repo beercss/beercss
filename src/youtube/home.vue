@@ -1,13 +1,12 @@
 <template lang="pug">
-main.responsive(v-show="data.isLoaded")
+main(v-show="data.isLoaded")
   .page.right.active
-    nav.scroll
-      button.chip.fill
-        i.small done
+    nav.group.connected.scroll.fill
+      button.left-round.active(data-ui="")
         span The best of 2020
-      button.chip Documentaries
-      button.chip Rock and roll
-      button.chip Others
+      button.no-round(data-ui="") Documentaries
+      button.no-round(data-ui="") Rock and roll
+      button.right-round(data-ui="") Others
     .space
     .grid
       .s12.m6.l3(v-for="(item, i) in data.itens")
@@ -26,9 +25,9 @@ main.responsive(v-show="data.isLoaded")
                   :id="'menu-' + i",
                   :data-ui="'#menu-' + i"
                 )
-                  a Save to library
-                  a Watch later
-                  a Like it
+                  li Save to library
+                  li Watch later
+                  li Like it
 
     hr.large
     h5 What's hot

@@ -51,7 +51,6 @@ dialog:popover-open {
 
 dialog:is(.top, .right, .bottom, .left, .max) {
   --_padding: 1rem;
-  padding: calc(var(--top) + var(--_padding)) calc(var(--right) + var(--_padding)) calc(var(--bottom) + var(--_padding)) calc(var(--left) + var(--_padding));
 }
 
 dialog:is(.top, .bottom) {
@@ -107,13 +106,6 @@ dialog.max {
   transform: translateY(4rem);
   background-color: var(--surface);
   border-radius: 0;
-}
-
-dialog:not(.left, .right, .top, .bottom, .max) {
-  --top: 0rem;
-  --bottom: 0rem;
-  --left: 0rem;
-  --right: 0rem;
 }
 
 dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {

@@ -16,6 +16,8 @@ const data: IHome = {
   isHorizontal: false,
   isHorizontalSlider: true,
   isRtl: false,
+  isMax: true,
+  isExplore: false,
 };
 
 const dataAsRef: Ref<IHome> = ref(data);

@@ -99,9 +99,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src:
-    url("material-symbols-outlined.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/material-symbols-outlined.woff2") format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -109,9 +107,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src:
-    url("material-symbols-rounded.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/material-symbols-rounded.woff2") format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -119,9 +115,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src:
-    url("material-symbols-sharp.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/material-symbols-sharp.woff2") format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -129,9 +123,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src:
-    url("material-symbols-subset.woff2") format("woff2"),
-    url("https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/material-symbols-subset.woff2") format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -142,6 +134,10 @@ body.dark {
   padding: 0;
   border-radius: inherit;
   box-sizing: border-box;
+}
+*::after,
+*::before {
+  pointer-events: none;
 }
 body {
   color: var(--on-surface);
@@ -1398,17 +1394,20 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   display: flex;
   white-space: nowrap;
 }
-.tiny-space:not(nav, .row, .grid, table, .tooltip, .list, menu) {
+.tiny-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
   block-size: 0.5rem;
 }
-:is(.space, .small-space):not(nav, .row, .grid, table, .tooltip, .list, menu) {
+:is(.space, .small-space):not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
   block-size: 1rem;
 }
-.medium-space:not(nav, .row, .grid, table, .tooltip, .list, menu) {
+.medium-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
   block-size: 2rem;
 }
-.large-space:not(nav, .row, .grid, table, .tooltip, .list, menu) {
+.large-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
   block-size: 3rem;
+}
+.extra-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
+  block-size: 4rem;
 }
 .responsive {
   inline-size: -webkit-fill-available;
@@ -1600,7 +1599,11 @@ pre:has(> code){
   direction: ltr;
   text-align: start;
 }
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not(.slow-ripple, .ripple, .fast-ripple)::after,
+nav:is(.left, .right, .bottom, .top).max > a::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > a > i::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a > i::after  {
   content: "";
   position: absolute;
   inset: 0;
@@ -1613,12 +1616,20 @@ pre:has(> code){
   opacity: 0;
   transition: none;
 }
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after,
+nav:is(.left, .right, .bottom, .top).max > a:is(:focus-visible, :hover)::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:is(:focus-visible, :hover)::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > a:is(:focus-visible, :hover) > i::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:is(:focus-visible, :hover) > i::after {
   background-size: 15000%;
   opacity: 0.1;
   transition: background-size var(--speed2) linear;
 }
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, .toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):active::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a, nav.max > a):not(.slow-ripple, .ripple, .fast-ripple):active::after,
+nav:is(.left, .right, .bottom, .top).max > a:active::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:active::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > a:active > i::after,
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:active > i::after {
   background-size: 5000%;
   opacity: 0;
   transition: none;
@@ -1626,6 +1637,22 @@ pre:has(> code){
 .no-wave::after,
 .no-wave:is(:hover, :active)::after {
   display: none;
+}
+.zoom,
+.tiny-zoom {
+  zoom: 2;
+}
+.small-zoom {
+  zoom: 3;
+}
+.medium-zoom {
+  zoom: 4;
+}
+.large-zoom {
+  zoom: 5;
+}
+.extra-zoom {
+  zoom: 6;
 }
 .badge {
   --_x: 0;
@@ -1699,11 +1726,10 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--surface-container);
   border-radius: 0;
   padding: 0 1rem;
 }
-:is(nav.drawer, dialog, article) > :is(header, footer) {
+:is(dialog, article) > :is(header, footer) {
   padding-inline: 0;
   inset: 0;
 }
@@ -1727,53 +1753,32 @@ footer.fixed {
   inset: 0 0 calc(-1 * var(--_padding)) 0;
   margin-block-end: calc(-1 * var(--_padding));
 }
+:is(header, footer).fixed.min {
+  margin-inline: auto;
+}
 dialog > :is(header, footer) {
   background: none;
 }
-dialog > header.fixed {
+dialog > :is(header, footer).fixed {
   background-color: inherit;
-  padding: var(--top) 0 0 0;
-  margin: calc(-1 * var(--top)) 0 0 0;
-  transform: translateY(calc(-1 * (var(--top) + var(--_padding))));
-}
-dialog > footer.fixed {
-  background-color: inherit;
-  padding: 0 0 var(--bottom) 0;
-  margin: 0 0 calc(-1 * var(--bottom)) 0;
-  transform: translateY(calc(var(--bottom) + var(--_padding)));
 }
 :is(main, header, footer, section).responsive {
   max-inline-size: 75rem;
   margin: 0 auto;
 }
 :is(main, header, footer, section).responsive.max {
-  max-inline-size: 100%;
+  max-inline-size: none;
 }
-:has(> main) > :is(header, footer).fixed {
-  z-index: 12;
+:has(> main) > :is(header, footer).fixed,
+body:has(> main) > :is(header, footer).fixed {
   transform: none;
   box-sizing: content-box;
+  position: sticky;
   inset: 0;
-}
-:has(> main) > header.fixed {
-  padding-block-start: calc(var(--top) + var(--_top));
-  margin-block-start: calc(-1 * var(--top) - var(--_top));
-}
-:has(> main) > footer.fixed {
-  padding-block-end: calc(var(--bottom) + var(--_bottom));
-  margin-block-end: calc(-1 * var(--bottom) - var(--_bottom));
+  z-index: 12;
 }
 :is(nav, .row) > header {
   background-color: inherit;
-}
-nav:is(.left, .right) > header {
-  transform: translateY(-0.5rem);
-}
-nav.drawer:is(.left, .right) > header + * {
-  margin-block-start: 0.5rem;
-}
-dialog > nav.drawer > header + * {
-  margin-block-start: 1rem;
 }
 .button,
 button {
@@ -1969,7 +1974,6 @@ dialog:popover-open {
 }
 dialog:is(.top, .right, .bottom, .left, .max) {
   --_padding: 1rem;
-  padding: calc(var(--top) + var(--_padding)) calc(var(--right) + var(--_padding)) calc(var(--bottom) + var(--_padding)) calc(var(--left) + var(--_padding));
 }
 dialog:is(.top, .bottom) {
   opacity: 1;
@@ -2019,12 +2023,6 @@ dialog.max {
   background-color: var(--surface);
   border-radius: 0;
 }
-dialog:not(.left, .right, .top, .bottom, .max) {
-  --top: 0rem;
-  --bottom: 0rem;
-  --left: 0rem;
-  --right: 0rem;
-}
 dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
 }
@@ -2052,7 +2050,7 @@ dialog.large:is(.top, .bottom) {
 hr,
 [class*=divider] {
   all: unset;
-  min-inline-size: 1.5rem;
+  inline-size: -webkit-fill-available;
   min-block-size: auto;
   block-size: 0.0625rem;
   background-color: var(--outline-variant);
@@ -2074,8 +2072,20 @@ hr.small,
 .small-divider {
   margin: 0.5rem 0 !important;
 }
+li:has(> hr),
+li:has(> .divider) {
+  padding: 0 !important;
+  align-self: normal !important;
+  min-inline-size: auto !important;
+  min-block-size: auto !important;
+  inline-size: -webkit-fill-available;
+}
 hr.vertical,
-.divider.vertical {
+.divider.vertical,
+li:has(> hr.vertical),
+li:has(> .divider.vertical) {
+  padding: 0 !important;
+  align-self: center !important;
   min-inline-size: auto;
   min-block-size: 1.5rem;
   inline-size: 0.0625rem;
@@ -2461,7 +2471,7 @@ fieldset > legend + * {
 .grid {
   --_gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(12, calc(8.33% - var(--_gap) + (var(--_gap) / 12)));
+  grid-template-columns: repeat(12, 1fr);
   gap: var(--_gap);
   block-size: auto;
 }
@@ -2640,6 +2650,9 @@ i,
   line-height: normal;
   border-radius: 0;
 }
+i:has(.badge) {
+  overflow: unset;
+}
 i.tiny {
   --_size: 1rem;
 }
@@ -2657,8 +2670,8 @@ i.extra {
   --_size: 2rem;
 }
 i.fill,
-a.row:is(:hover, :focus) > i,
-.transparent:is(:hover, :focus) > i {
+a.active > i,
+button.active > i {
   font-variation-settings: "FILL" 1;
 }
 i > :is(img, svg) {
@@ -2765,44 +2778,49 @@ i[class*=fa-] {
 .list.large-space > li > details > summary {
   min-block-size: 5.5rem;
 }
-main {
-  flex: 1;
-  padding: 0.5rem;
-  overflow-x: hidden;
-}
-:has(> main) {
-  --_top: 0rem;
-  --_bottom: 0rem;
-  --_left: 0rem;
-  --_right: 0rem;
-  display: flex;
-  flex-direction: column;
-  min-block-size: calc(100vh - var(--top) - var(--_top) - var(--bottom) - var(--_bottom));
+:has(> main),
+body:has(> main) {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto auto;
+  grid-template-areas: 
+    "left top right"
+    "left header right"
+    "left main right"
+    "left footer right"
+    "left bottom right";
+  min-block-size: 100dvh;
   box-sizing: border-box;
   background-color: var(--surface);
-  margin-block: calc(var(--top) + var(--_top)) calc(var(--bottom) + var(--_bottom));
-  margin-inline: calc(var(--left) + var(--_left)) calc(var(--right) + var(--_right));
 }
-:has(> nav.top:not(.s, .m, .l)) {
-  --_top: 5rem;
+nav.left {
+  grid-area: left;
 }
-:has(> nav.bottom:not(.s, .m, .l)) {
-  --_bottom: 5rem;
+nav.right {
+  grid-area: right;
 }
-:has(> nav.left:not(.s, .m, .l)) {
-  --_left: 5rem;
+nav.top {
+  grid-area: top;
+  position: sticky;
+  inset: 0;
+  block-size: 4rem;
 }
-:has(> nav.right:not(.s, .m, .l)) {
-  --_right: 5rem;
+nav.bottom {
+  grid-area: bottom;
+  position: sticky;
+  inset: 0;
+  block-size: 4rem;
 }
-:has(> nav.drawer.left:not(.s, .m, .l)) {
-  --_left: 20rem;
+header {
+  grid-area: header;
 }
-:has(> nav.drawer.right:not(.s, .m, .l)) {
-  --_right: 20rem;
+main {
+  grid-area: main;
+  padding: 0.5rem;
+  overflow: hidden;
 }
-:not(main):has(> aside) {
-  overflow: auto;
+footer {
+  grid-area: footer;
 }
 aside {
   z-index: 1;
@@ -2812,81 +2830,6 @@ aside:not(.fixed, .absolute).right {
 }
 aside:not(.fixed, .absolute).left {
   float: left;
-}
-@media only screen and (max-width: 600px) {
-  :has(> nav.bottom.s) {
-    --_bottom: 5rem;
-  }
-
-  :has(> nav.top.s) {
-    --_top: 5rem;
-  }
-
-  :has(> nav.left.s) {
-    --_left: 5rem;
-  }
-
-  :has(> nav.right.s) {
-    --_right: 5rem;
-  }
-
-  :has(> nav.drawer.left.s) {
-    --_left: 20rem;
-  }
-
-  :has(> nav.drawer.right.s) {
-    --_right: 20rem;
-  }
-}
-@media only screen and (min-width: 601px) and (max-width: 992px) {
-  :has(> nav.bottom.m) {
-    --_bottom: 5rem;
-  }
-
-  :has(> nav.top.m) {
-    --_top: 5rem;
-  }
-
-  :has(> nav.left.m) {
-    --_left: 5rem;
-  }
-
-  :has(> nav.right.m) {
-    --_right: 5rem;
-  }
-
-  :has(> nav.drawer.left.m) {
-    --_left: 20rem;
-  }
-
-  :has(> nav.drawer.right.m) {
-    --_right: 20rem;
-  }
-}
-@media only screen and (min-width: 993px) {
-  :has(> nav.bottom.l) {
-    --_bottom: 5rem;
-  }
-
-  :has(> nav.top.l) {
-    --_top: 5rem;
-  }
-
-  :has(> nav.left.l) {
-    --_left: 5rem;
-  }
-
-  :has(> nav.right.l) {
-    --_right: 5rem;
-  }
-
-  :has(> nav.drawer.left.l) {
-    --_left: 20rem;
-  }
-
-  :has(> nav.drawer.right.l) {
-    --_right: 20rem;
-  }
 }
 svg {
   fill: currentcolor;
@@ -2955,10 +2898,10 @@ svg {
   min-block-size: 1.5rem;
   max-block-size: 1.5rem;
 }
-:is(button, .button, .chip) > .responsive:first-child {
+:is(button, .button, .chip):not(.extend) > .responsive:first-child {
   margin-inline-start: calc(-1 * var(--_padding));
 }
-:is(button, .button, .chip) > .responsive:not(:first-child) {
+:is(button, .button, .chip):not(.extend) > .responsive:not(:first-child) {
   margin-inline-end: calc(-1 * var(--_padding));
 }
 :is(button, .button, .chip, .circle, .square, .extend) > .responsive {
@@ -3218,9 +3161,7 @@ nav > :is(ol, ul) > li {
 }
 nav,
 .row,
-a.row,
-nav.drawer > :is(a, label),
-nav.drawer > :is(ol, ul) > li > :is(a, label) {
+a.row {
   display: flex;
   align-items: center;
   align-self: normal;
@@ -3239,7 +3180,7 @@ nav.row {
 nav > :is(ol, ul) > li > :only-child {
   margin: 0;
 }
-:is(nav, .row) > :not(ul, ol) {
+:is(nav, .row) > :not(ul, ol, header, footer) {
   margin: 0;
   white-space: normal;
   flex: none;
@@ -3260,9 +3201,7 @@ nav > :is(ol, ul) > li > :only-child {
   gap: 2rem;
 }
 :is(nav, .row) > .max,
-:is(nav, .row) > :is(ol, ul) > .max,
-nav.drawer > :is(a, label) > .max,
-nav.drawer > :is(ol, ul) > li > :is(a, label) > .max {
+:is(nav, .row) > :is(ol, ul) > .max {
   flex: 1;
 }
 :is(nav, .row).wrap {
@@ -3273,129 +3212,130 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) > .max {
   min-block-size: inherit;
 }
 nav:is(.left, .right, .top, .bottom) {
+  position: sticky;
+  inset: 0;
   border: 0;
-  position: fixed;
   color: var(--on-surface);
   transform: none;
   z-index: 100;
-  block-size: auto;
-  inline-size: auto;
   text-align: center;
-  padding: calc(var(--top) + 0.5rem) calc(var(--right) + 1rem) calc(var(--bottom) + 0.5rem) calc(var(--left) + 1rem);
+  padding: 0.5rem;
   margin: 0;
 }
 nav:is(.left, .right) {
   justify-content: flex-start;
   flex-direction: column;
   background-color: var(--surface);
+  block-size: 100dvh;
+  min-inline-size: 6rem;
 }
 nav:is(.top, .bottom) {
+  padding: 0.5rem;
   justify-content: center;
   flex-direction: row;
   background-color: var(--surface-container);
+  block-size: auto;
+  min-block-size: 4.5rem;
 }
-nav.top {
-  block-size: calc(var(--top) + 5rem);
-  inset: 0 0 auto 0;
-  padding-block-end: 0.5rem;
+nav > header {
+  min-block-size: auto;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  align-items: flex-start;
+  gap: 1rem;
+  background: none !important;
 }
-nav.left,
-[dir=rtl] nav.right {
-  inline-size: calc(var(--left) + 5rem);
-  inset: 0 auto 0 0;
-  padding-inline-end: 1rem;
+nav > header > * {
+  margin: 0;
 }
-[dir=rtl] nav.right {
-  padding-inline-end: calc(var(--left) + 1rem);
+nav > header > .extend:hover {
+  --_padding: 0;
+  inline-size: var(--_size);
 }
-nav.right,
-[dir=rtl] nav.left {
-  inline-size: calc(var(--right) + 5rem);
-  inset: 0 0 0 auto;
-  padding-inline-start: 1rem;
+nav > header > .extend:hover > span {
+  display: none;
 }
-[dir=rtl] nav.left {
-  padding-inline-start: calc(var(--right) + 1rem);
-}
-nav.bottom {
-  min-block-size: calc(var(--bottom) + 5rem);
-  inset: auto 0 0 0;
-  padding-block-start: 0.5rem;
-}
-nav.drawer,
-[dir=rtl] nav.drawer {
-  flex-direction: column;
-  align-items: normal;
-  inline-size: 20rem;
-  gap: 0;
-}
-nav.drawer:not(.left, .right, .top, .bottom) {
-  padding: 0.5rem 1rem;
-}
-dialog > nav.drawer:not(.left, .right, .top, .bottom) {
-  padding: 0 1rem;
-  background-color: inherit;
-}
-nav.drawer:is(.min, .max) {
-  inline-size: auto;
-}
-nav.drawer.max {
-  inline-size: 100%;
-}
-nav.drawer > :is(a, label),
-nav.drawer > :is(ol, ul) > li > :is(a, label),
-:is(a.row, nav.row):is(.wave, .slow-ripple, .ripple, .fast-ripple) {
-  padding: 0.75rem;
-  font-size: inherit;
-}
-nav.drawer > a,
-nav.drawer > :is(ol, ul) > li > a {
-  border-radius: 2rem;
-}
-nav.drawer > a:is(:hover, .active),
-nav.drawer > :is(ol, ul) > li > a:is(:hover, .active) {
-  background-color: var(--secondary-container);
-}
-nav.drawer > a:is(:hover, :focus, .active) > i,
-nav.drawer > :is(ol, ul) > li > a:is(:hover, :focus, .active) > i {
-  font-variation-settings: "FILL" 1;
+nav:is(.top, .bottom) > header {
+  flex-direction: row;
+  align-items: center;
+  margin: 0 1rem 0 0;
 }
 nav > :is(ol, ul) {
   all: inherit;
+  min-inline-size: auto;
+  margin: 0;
+  padding: 0;
   flex: auto;
 }
-nav:not(.left, .right, .bottom, .top) > :is(ol, ul) {
+nav.max:is(.left, .right, .top, .bottom) {
+  gap: 0;
+  inline-size: auto;
+  align-items: flex-start;
+  min-inline-size: 12.75rem;
+  padding: 0.5rem 1.25rem;
+}
+nav.max > :is(ol, ul) {
   padding: 0;
 }
-nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip),
-nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) {
-  align-self: center;
+nav.max > header {
+  margin: 0 0 1.25rem 0;
+}
+nav.max > header > .extend {
+  --_padding: 1.5rem;
+  inline-size: auto;
+  padding: 0 var(--_padding);
+}
+nav.max > header > .extend > span {
+  display: block;
+  margin-inline-start: var(--_padding);
+}
+nav.max > header > .extend > :is(img, svg) + span {
+  margin-inline-start: calc(1rem + var(--_padding));
+}
+nav.max:is(.top, .bottom) {
+  padding: 0 0.5rem;
+  align-items: center;
+  min-inline-size: auto;
+  max-inline-size: none;
+}
+nav:is(.left, .right, .top, .bottom) > a,
+nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   line-height: normal;
-}
-nav:is(.top, .bottom):not(.drawer) > a:not(.button, .chip),
-nav:is(.top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) {
   inline-size: 3.5rem;
+  font-size: 0.8rem;
 }
-nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip) > i,
-nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) > i {
-  padding: 0.25rem;
+nav:not(.max):is(.left, .right, .top, .bottom) > a > i,
+nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > i {
+  padding: 0.25rem 1rem;
   border-radius: 2rem;
   transition: padding var(--speed1) linear;
   margin: 0 auto;
 }
-nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip):is(:hover, :focus, .active) > i,
-nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip):is(:hover, :focus, .active) > i {
+nav.max:is(.left, .right, .top, .bottom) > a,
+nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a {
+  flex-direction: row;
+  gap: 0.5rem;
+  inline-size: auto;
+  block-size: 3.5rem;
+  padding: 0 1rem;
+  border-radius: 2rem;
+  font-size: inherit;
+}
+nav.max:is(.top, .bottom) > a,
+nav.max:is(.top, .bottom) > :is(ol, ul) > li > a {
+  gap: 0.25rem;
+  block-size: 2.5rem;
+  font-size: 0.8rem;
+}
+nav.max:is(.left, .right, .top, .bottom) > a.active,
+nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a.active,
+nav:is(.left, .right, .top, .bottom):not(.max) > a.active > i,
+nav:is(.left, .right, .top, .bottom):not(.max) > :is(ol, ul) > li > a.active > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
-  padding: 0.25rem 1rem;
-  font-variation-settings: "FILL" 1;
-}
-nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip).active {
-  background: none !important;
-  color: currentColor !important;
 }
 :is(nav, .row):is(.left-align, .top-align, .vertical) {
   justify-content: flex-start;
@@ -3414,10 +3354,6 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip).active
 }
 :is(nav, .row):is(.center-align, .middle-align).vertical {
   align-items: center;
-}
-:is(.drawer, .vertical) > :is(li, [class*=divider], hr):not(.vertical),
-:is(.drawer, .vertical) > :is(ol, ul) > li:not(.vertical) {
-  align-self: stretch;
 }
 nav:not(.left, .right) > .space {
   inline-size: 0.5rem;
@@ -3510,15 +3446,23 @@ nav.group {
 nav.group:is(.connected, .split) {
   gap: 0.125rem;
 }
-nav.group:not(.split) > :is(.button, button):not(.chip, .fill, .border).active {
-  background-color: var(--primary);
-  color: var(--on-primary);
-}
-nav.group:not(.split) > :is(.button, button):not(.chip, .fill, .border) {
+nav.group:not(.split) > :is(.button, button):not(.border) {
   background-color: var(--surface-container);
   color: var(--on-surface-container);
 }
-nav.group:is(.connected, .split) > :is(.button, button):not(.chip).active,
+nav.group:not(.split) > :is(.button, button).active {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+nav.group.connected > :is(.button, button):not(.border) {
+  background-color: var(--surface-container);
+  color: var(--on-surface-container);
+}
+nav.group.connected > :is(.button, button).active {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+nav.group:is(.connected, .split) > :is(.button, button).active,
 nav.split > :is(.button, button):active {
   border-radius: 2rem !important;
 }
@@ -3533,53 +3477,41 @@ nav.split > :is(.button, button):not(.chip, .fill, .border) {
   background-color: var(--primary);
   color: var(--on-primary);
 }
-nav.primary > :is(button, .button),
-nav:not(.toolbar, .tabbed, .drawer, .group).primary-container > a:is(:hover, :focus, .active) > i,
-nav.drawer.primary-container > a:is(:hover, :focus, .active),
-nav:not(.split).primary-container > :is(a, button, .button).active,
-:is(a, button, .button):not(.extend).primary-container.active {
-  background-color: var(--primary) !important;
-  color: var(--on-primary) !important;
-}
-nav.primary-container > :is(button, .button),
-nav:not(.toolbar, .tabbed, .drawer, .group).primary > a:is(:hover, :focus, .active) > i,
-nav.drawer.primary > a:is(:hover, :focus, .active),
-nav:not(.split).primary > :is(a, button, .button).active,
-:is(a, button, .button):not(.extend).primary.active {
+nav.group.primary-container > button,
+nav:is(.max, .toolbar, .tabbed, .group).primary > :is(button, a).active,
+nav:not(.max, .toolbar, .tabbed, .group).primary > a.active > i {
   background-color: var(--primary-container) !important;
   color: var(--on-primary-container) !important;
 }
-nav.secondary > :is(button, .button),
-nav:not(.toolbar, .tabbed, .drawer, .group).secondary-container > a:is(:hover, :focus, .active) > i,
-nav.drawer.secondary-container > a:is(:hover, :focus, .active),
-nav:not(.split).secondary-container > :is(a, button, .button).active,
-:is(a, button, .button):not(.extend).secondary-container.active {
-  background-color: var(--secondary) !important;
-  color: var(--on-secondary) !important;
+nav.group.primary > button,
+nav:is(.max, .toolbar, .tabbed, .group).primary-container > :is(button, a).active,
+nav:not(.max, .toolbar, .tabbed, .group).primary-container > a.active > i {
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
 }
-nav.secondary-container > :is(button, .button),
-nav:not(.toolbar, .tabbed, .drawer, .group).secondary > a:is(:hover, :focus, .active) > i,
-nav.drawer.secondary > a:is(:hover, :focus, .active),
-nav:not(.split).secondary > :is(a, button, .button).active,
-:is(a, button, .button):not(.extend).secondary.active {
+nav.group.secondary-container > button,
+nav:is(.max, .toolbar, .tabbed, .group).secondary > :is(button, a).active,
+nav:not(.max, .toolbar, .tabbed, .group).secondary > a.active > i {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
 }
-nav.tertiary > :is(button, .button),
-nav:not(.toolbar, .tabbed, .drawer, .group).tertiary-container > a:is(:hover, :focus, .active) > i,
-nav.drawer.tertiary-container > a:is(:hover, :focus, .active),
-nav:not(.split).tertiary-container > :is(a, button, .button).active,
-:is(a, button, .button):not(.extend).tertiary-container.active {
-  background-color: var(--tertiary) !important;
-  color: var(--on-tertiary) !important;
+nav.group.secondary > button,
+nav:is(.max, .toolbar, .tabbed, .group).secondary-container > :is(button, a).active,
+nav:not(.max, .toolbar, .tabbed, .group).secondary-container > a.active > i {
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
 }
-nav.tertiary-container > :is(button, .button),
-nav:not(.toolbar, .tabbed, .drawer, .group).tertiary > a:is(:hover, :focus, .active) > i,
-nav.drawer.tertiary > a:is(:hover, :focus, .active),
-nav:not(.split).tertiary > :is(a, button, .button).active,
-:is(a, button, .button):not(.extend).tertiary.active {
+nav.group.tertiary-container > button,
+nav:is(.max, .toolbar, .tabbed, .group).tertiary > :is(button, a).active,
+nav:not(.max, .toolbar, .tabbed, .group).tertiary > a.active > i {
   background-color: var(--tertiary-container) !important;
   color: var(--on-tertiary-container) !important;
+}
+nav.group.tertiary > button,
+nav:is(.max, .toolbar, .tabbed, .group).tertiary-container > :is(button, a).active,
+nav:not(.max, .toolbar, .tabbed, .group).tertiary-container > a.active > i {
+  background-color: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
 }
 @media only screen and (max-width: 600px) {
   nav.top,
@@ -3598,6 +3530,7 @@ dialog::backdrop {
   background-color: var(--overlay);
   z-index: 100;
   transition: all var(--speed3), 0s background-color;
+  border-radius: 0;
 }
 .overlay.active {
   opacity: 1;
@@ -3815,6 +3748,209 @@ progress.max + * {
 
   100% {
     clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+  }
+}
+*:has(> .shape) {
+  overflow: hidden;
+}
+.shape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-primary);
+  background-color: var(--primary);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  border-radius: 0;
+  block-size: 3rem;
+  inline-size: 3rem;
+}
+.transparent > .shape > i {
+  filter: invert(1);
+}
+.shape.tiny-space {
+  mask-size: 90%;
+}
+.shape.space,
+.shape.small-space {
+  mask-size: 80%;
+}
+.shape.medium-space {
+  mask-size: 70%;
+}
+.shape.large-space {
+  mask-size: 60%;
+}
+.shape.extra-space {
+  mask-size: 50%;
+}
+.shape.tiny {
+  block-size: 2rem;
+  inline-size: 2rem;
+}
+.shape.medium {
+  block-size: 4rem;
+  inline-size: 4rem;
+}
+.shape.large {
+  block-size: 5rem;
+  inline-size: 5rem;
+}
+.shape.extra {
+  block-size: 6rem;
+  inline-size: 6rem;
+}
+.shape.max,
+.shape > .responsive,
+.shape > .responsive > .responsive {
+  position: absolute;
+  inset: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+.shape > .responsive {
+  background: inherit;
+  color: inherit;
+}
+.shape.rotate {
+  animation: linear to-shape-rotate infinite 12s;
+}
+.shape.rotate > * {
+  animation: linear to-shape-rotate infinite 12s reverse;
+}
+.shape.fast-rotate {
+  animation: linear to-shape-rotate infinite 6s;
+}
+.shape.fast-rotate > * {
+  animation: linear to-shape-rotate infinite 6s reverse;
+}
+.shape.slow-rotate {
+  animation: linear to-shape-rotate infinite 24s;
+}
+.shape.slow-rotate {
+  animation: linear to-shape-rotate infinite 24s reverse;
+}
+:is(button, .button, .chip):has(> .shape) > .responsive {
+  border: none;
+}
+.shape.arch {
+  mask-image: url(arch.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/arch.svg);
+}
+.shape.arrow {
+  mask-image: url(arrow.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/arrow.svg);
+}
+.shape.boom {
+  mask-image: url(boom.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/boom.svg);
+}
+.shape.bun {
+  mask-image: url(bun.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/bun.svg);
+}
+.shape.burst {
+  mask-image: url(burst.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/burst.svg);
+}
+.shape.circle {
+  mask-image: url(circle.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/circle.svg);
+}
+.shape.clamshell {
+  mask-image: url(clamshell.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/clamshell.svg);
+}
+.shape.diamond {
+  mask-image: url(diamond.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/diamond.svg);
+}
+.shape.fan {
+  mask-image: url(fan.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/fan.svg);
+}
+.shape.flower {
+  mask-image: url(flower.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/flower.svg);
+}
+.shape.gem {
+  mask-image: url(gem.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/gem.svg);
+}
+.shape.ghost-ish {
+  mask-image: url(ghost-ish.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/ghost-ish.svg);
+}
+.shape.heart {
+  mask-image: url(heart.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/heart.svg);
+}
+.shape.leaf-clover4 {
+  mask-image: url(leaf-clover4.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/leaf-clover4.svg);
+}
+.shape.leaft-clover8 {
+  mask-image: url(leaf-clover8.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/leaf-clover8.svg);
+}
+.shape.loading-indicator {
+  mask-image: url(loading-indicator.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/loading-indicator.svg);
+}
+.shape.oval {
+  mask-image: url(oval.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/oval.svg);
+}
+.shape.pentagon {
+  mask-image: url(pentagon.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/pentagon.svg);
+}
+.shape.pill {
+  mask-image: url(pill.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/pill.svg);
+}
+.shape.pixel-circle {
+  mask-image: url(pixel-circle.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/pixel-circle.svg);
+}
+.shape.pixel-triangle {
+  mask-image: url(pixel-triangle.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/pixel-triangle.svg);
+}
+.shape.puffy {
+  mask-image: url(puffy.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/puffy.svg);
+}
+.shape.puffy-diamond {
+  mask-image: url(puffy-diamond.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/puffy-diamond.svg);
+}
+.shape.semicircle {
+  mask-image: url(semicircle.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/semicircle.svg);
+}
+.shape.sided-cookie4 {
+  mask-image: url(sided-cookie4.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sided-cookie4.svg);
+}
+.shape.sided-cookie6 {
+  mask-image: url(sided-cookie6.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sided-cookie6.svg);
+}
+.shape.sided-cookie7 {
+  mask-image: url(sided-cookie7.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sided-cookie7.svg);
+}
+.shape.sided-cookie9 {
+  mask-image: url(sided-cookie9.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sided-cookie9.svg);
+}
+.shape.sided-cookie12 {
+  mask-image: url(sided-cookie12.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sided-cookie12.svg);
+}
+.shape.slanted {
+  mask-image: url(slanted.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/slanted.svg);
+}
+.shape.soft-boom {
+  mask-image: url(soft-boom.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/soft-boom.svg);
+}
+.shape.soft-burst {
+  mask-image: url(soft-burst.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/soft-burst.svg);
+}
+.shape.square {
+  mask-image: url(square.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/square.svg);
+}
+.shape.sunny {
+  mask-image: url(sunny.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/sunny.svg);
+}
+.shape.triangle {
+  mask-image: url(triangle.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/triangle.svg);
+}
+.shape.very-sunny {
+  mask-image: url(very-sunny.svg), url(https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/very-sunny.svg);
+}
+@keyframes to-shape-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 /* checkbox, radio, switch */

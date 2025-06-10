@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+*::after,
+*::before {
+  pointer-events: none;
+}
+
 body {
   color: var(--on-surface);
   background-color: var(--surface);

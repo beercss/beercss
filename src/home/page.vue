@@ -1,14 +1,13 @@
 <template lang="pug">
 div
-  nav#navigation-rail1.m.l.left
+  nav#navigation-rail1.m.l.left(:class="{ max: data.isMax }")
     header
-      img.circle(:src="'/favicon.png'", @click="domain.addHomeScreen()")
-    a(@click="domain.goTo('#intro')")
-      i home
-      span Install
-    a(data-ui="#dialog-menu")
-      i widgets
-      span Explore
+      button.extra.circle.transparent(@click="updateNavigationRail()")
+        i {{ data.isMax ? "menu_open" : "menu" }}
+      button.extend.square.round(@click="updateExplore()")
+        i widgets
+        span Explore
+          
     a(@click="domain.updateMenu(data, 'left')")
       i arrow_back
       span Left
@@ -21,7 +20,7 @@ div
     a(v-show="data.isRtl", @click="domain.updateRtlLtr(data)")
       i checklist
       span LTR
-    a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')", v-if="!data.isExplore")
       i code
       span Code
 
@@ -42,239 +41,217 @@ div
       i code
       span Code
 
-  header#top-app-bar1.fixed.responsive.max.yellow4.black-text
-    nav
-      .max
-        a.s(@click="domain.addHomeScreen()")
-          img.circle.border.white-border(:src="'/favicon.png'")
-      a.button.transparent.circle(href="https://github.com/beercss/beercss", target="_self")
-        i
-          svg(viewBox="0 0 24 24")
-            path(d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z")
-      button.transparent.circle(data-ui="#themes3")
-        i palette
-      button.transparent.circle(data-ui="#more3")
-        i collections
-      button.transparent.circle(@click="sharedDomain.updateMode(data)")
-        i.page.top.active(v-if="data.isDark") light_mode
-        i.page.top.active(v-else) dark_mode
-
   .overlay
   dialog#dialog-menu.left.scroll
     header.fixed
       nav
-        img.circle(:src="'/favicon.png'")
-        .max
-          h6 Beer CSS
+        .max.padding
+          h6 Explore
         button.transparent.circle(data-ui="#dialog-menu")
           i close
-    nav.drawer.no-padding.no-margin
-      a(data-ui="#themes3")
-        i palette
-        span Themes
-      a(data-ui="#more3")
-        i collections
-        span Templates
-      a(@click="sharedDomain.updateMode(data)")
-        i {{ data.isDark ? "light_mode" : "dark_mode" }}
-        span Light / Dark
-      hr.small
-      a(data-ui="#dialog-menu", @click="domain.goTo('#app-bars')")
+    ol.list
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#app-bars')")
         i widgets
         span App bars
-      a(data-ui="#dialog-menu", @click="domain.goTo('#badges')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#badges')")
         i widgets
         span Badges
-      a(data-ui="#dialog-menu", @click="domain.goTo('#buttons')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#buttons')")
         i widgets
         span Buttons
-      a(data-ui="#dialog-menu", @click="domain.goTo('#cards')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#cards')")
         i widgets
         span Cards
-      a(data-ui="#dialog-menu", @click="domain.goTo('#checkboxes')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#checkboxes')")
         i widgets
         span Checkboxes
-      a(data-ui="#dialog-menu", @click="domain.goTo('#chips')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#chips')")
         i widgets
         span Chips
-      a(data-ui="#dialog-menu", @click="domain.goTo('#colors')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#colors')")
         i widgets
         span Colors
-      a(data-ui="#dialog-menu", @click="domain.goTo('#containers')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#containers')")
         i widgets
         span Containers
-      a(data-ui="#dialog-menu", @click="domain.goTo('#dialogs')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#dialogs')")
         i widgets
         span Dialogs
-      a(data-ui="#dialog-menu", @click="domain.goTo('#directions')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#directions')")
         i widgets
         span Directions
-      a(data-ui="#dialog-menu", @click="domain.goTo('#dividers')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#dividers')")
         i widgets
         span Dividers
-      a(data-ui="#dialog-menu", @click="domain.goTo('#expansions')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#expansions')")
         i widgets
         span Expansions
-      a(data-ui="#dialog-menu", @click="domain.goTo('#fieldsets')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#fieldsets')")
         i widgets
         span Fieldsets
-      a(data-ui="#dialog-menu", @click="domain.goTo('#grids')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#grids')")
         i widgets
         span Grids
-      a(data-ui="#dialog-menu", @click="domain.goTo('#icons')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#icons')")
         i widgets
         span Icons
-      a(data-ui="#dialog-menu", @click="domain.goTo('#inputs')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#inputs')")
         i widgets
         span Inputs
-      a(data-ui="#dialog-menu", @click="domain.goTo('#layouts')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#layouts')")
         i widgets
         span Layouts
-      a(data-ui="#dialog-menu", @click="domain.goTo('#lists')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#lists')")
         i widgets
         span Lists
-      a(data-ui="#dialog-menu", @click="domain.goTo('#media')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#media')")
         i widgets
         span Media
-      a(data-ui="#dialog-menu", @click="domain.goTo('#menus')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#menus')")
         i widgets
         span Menus
-      a(data-ui="#dialog-menu", @click="domain.goTo('#navigations')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#navigations')")
         i widgets
         span Navigations
-      a(data-ui="#dialog-menu", @click="domain.goTo('#pages')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#pages')")
         i widgets
         span Pages
-      a(data-ui="#dialog-menu", @click="domain.goTo('#progress')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#progress')")
         i widgets
         span Progress
-      a(data-ui="#dialog-menu", @click="domain.goTo('#radios')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#radios')")
         i widgets
         span Radios
-      a(data-ui="#dialog-menu", @click="domain.goTo('#responsive')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#responsive')")
         i widgets
         span Responsive
-      a(data-ui="#dialog-menu", @click="domain.goTo('#scrolls')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#scrolls')")
         i widgets
         span Scrolls
-      a(data-ui="#dialog-menu", @click="domain.goTo('#search')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#search')")
         i widgets
         span Search
-      a(data-ui="#dialog-menu", @click="domain.goTo('#selects')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#selects')")
         i widgets
         span Selects
-      a(data-ui="#dialog-menu", @click="domain.goTo('#sliders')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#shapes')")
+        i widgets
+        span Shapes
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#sliders')")
         i widgets
         span Sliders
-      a(data-ui="#dialog-menu", @click="domain.goTo('#snackbars')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#snackbars')")
         i widgets
         span Snackbars
-      a(data-ui="#dialog-menu", @click="domain.goTo('#spaces')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#spaces')")
         i widgets
         span Spaces
-      a(data-ui="#dialog-menu", @click="domain.goTo('#steppers')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#steppers')")
         i widgets
         span Steppers
-      a(data-ui="#dialog-menu", @click="domain.goTo('#switches')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#switches')")
         i widgets
         span Switches
-      a(data-ui="#dialog-menu", @click="domain.goTo('#tables')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#tables')")
         i widgets
         span Tables
-      a(data-ui="#dialog-menu", @click="domain.goTo('#tabs')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#tabs')")
         i widgets
         span Tabs
-      a(data-ui="#dialog-menu", @click="domain.goTo('#textareas')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#textareas')")
         i widgets
         span Textareas
-      a(data-ui="#dialog-menu", @click="domain.goTo('#toolbars')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#toolbars')")
         i widgets
         span Toolbars
-      a(data-ui="#dialog-menu", @click="domain.goTo('#tooltips')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#tooltips')")
         i widgets
         span Tooltips
-      a(data-ui="#dialog-menu", @click="domain.goTo('#typography')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#typography')")
         i widgets
         span Typography
-      a(data-ui="#dialog-menu", @click="domain.goTo('#waves-and-ripples')")
+      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#waves-and-ripples')")
         i widgets
         span Waves and ripples
 
-  themes(id="themes3", v-model="data", position="right")
+  themes(id="themes3", v-model="data", position="top")
 
   .overlay
-  dialog#more3.right.small(data-ui="#more3")
+  dialog#more3.large-width(data-ui="#more3")
     header.fixed
       nav
         h5.max Templates
         button.transparent.circle
           i close
     p All templates listed below are only for tests purpose. Feel free to study them.
-    nav.drawer.max.no-padding
-      a(href="/gmail")
-        i mail
-        span Gmail
-      a(href="/material-design-3")
-        i
-          svg(viewBox="0 0 24 24")
-            path(d="M21,12C21,9.97 20.33,8.09 19,6.38V17.63C20.33,15.97 21,14.09 21,12M17.63,19H6.38C7.06,19.55 7.95,20 9.05,20.41C10.14,20.8 11.13,21 12,21C12.88,21 13.86,20.8 14.95,20.41C16.05,20 16.94,19.55 17.63,19M11,17L7,9V17H11M17,9L13,17H17V9M12,14.53L15.75,7H8.25L12,14.53M17.63,5C15.97,3.67 14.09,3 12,3C9.91,3 8.03,3.67 6.38,5H17.63M5,17.63V6.38C3.67,8.09 3,9.97 3,12C3,14.09 3.67,15.97 5,17.63M23,12C23,15.03 21.94,17.63 19.78,19.78C17.63,21.94 15.03,23 12,23C8.97,23 6.38,21.94 4.22,19.78C2.06,17.63 1,15.03 1,12C1,8.97 2.06,6.38 4.22,4.22C6.38,2.06 8.97,1 12,1C15.03,1 17.63,2.06 19.78,4.22C21.94,6.38 23,8.97 23,12Z")
-        span Material.io
-      a(href="/dynamic-colors")
-        i format_paint
-        span Material Dynamic Colors
-      a(href="/music-player")
-        i play_arrow
-        span Music Player
-      a(href="/netflix")
-        i tv
-        span Netflix
-      a(href="/reddit")
-        i open_in_new
-        span Reddit
-      a(href="/uber")
-        i directions_car
-        span Uber
-      a(href="/youtube")
-        i smart_display
-        span Youtube
-      hr.small
-      a(href="https://codepen.io/search/pens?q=beercss" target="_blank")
-        i code
-        span Codepen
+    ul.list
+      li.wave.round
+        a(href="/gmail")
+          i mail
+          span Gmail
+      li.wave.round
+        a(href="/material-design-3")
+          i
+            svg(viewBox="0 0 24 24")
+              path(d="M21,12C21,9.97 20.33,8.09 19,6.38V17.63C20.33,15.97 21,14.09 21,12M17.63,19H6.38C7.06,19.55 7.95,20 9.05,20.41C10.14,20.8 11.13,21 12,21C12.88,21 13.86,20.8 14.95,20.41C16.05,20 16.94,19.55 17.63,19M11,17L7,9V17H11M17,9L13,17H17V9M12,14.53L15.75,7H8.25L12,14.53M17.63,5C15.97,3.67 14.09,3 12,3C9.91,3 8.03,3.67 6.38,5H17.63M5,17.63V6.38C3.67,8.09 3,9.97 3,12C3,14.09 3.67,15.97 5,17.63M23,12C23,15.03 21.94,17.63 19.78,19.78C17.63,21.94 15.03,23 12,23C8.97,23 6.38,21.94 4.22,19.78C2.06,17.63 1,15.03 1,12C1,8.97 2.06,6.38 4.22,4.22C6.38,2.06 8.97,1 12,1C15.03,1 17.63,2.06 19.78,4.22C21.94,6.38 23,8.97 23,12Z")
+          span Material.io
+      li.wave.round
+        a(href="/dynamic-colors")
+          i format_paint
+          span Material Dynamic Colors
+      li.wave.round
+        a(href="/music-player")
+          i play_arrow
+          span Music Player
+      li.wave.round
+        a(href="/netflix")
+          i tv
+          span Netflix
+      li.wave.round
+        a(href="/reddit")
+          i open_in_new
+          span Reddit
+      li.wave.round
+        a(href="/uber")
+          i directions_car
+          span Uber
+      li.wave.round
+        a(href="/youtube")
+          i smart_display
+          span Youtube
+    hr.small
+    ul.list
+      li
+        a.wave.round(href="https://codepen.io/search/pens?q=beercss" target="_blank")
+          i code
+          span Codepen
 
-  .responsive.center-align.yellow4
-    div.black-text
-      .large-height.no-scroll.middle-align.center-align
-        img#logo(:src="'/logo.png'", @click="domain.addHomeScreen()")
-      h5.center-align Build material design
-      h3.center-align in record time
-      h5.center-align without stress for devs
-      .large-space
-      .large-space
-      nav.center-align
-        a.button.small-round.black-text.border.black-border.large(href="https://github.com/beercss/beercss/blob/main/docs/INDEX.md") Documentation
-        a.button.small-round.black.white-text.large(
-          href="https://github.com/beercss/beercss",
-          target="_self"
-        )
+  header.fixed.transparent.center-align.min
+    .margin
+      nav.toolbar.primary.elevate.min
+        img.circle(:src="'/favicon.png'")
+        a.button.transparent.circle(href="https://github.com/beercss/beercss", target="_self")
           i
             svg(viewBox="0 0 24 24")
               path(d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z")
-          span Get started
-      .space
-      .center-align
-        img(src="https://img.shields.io/github/license/beercss/beercss" alt="License")
-        span &nbsp;
-        img(src="https://img.shields.io/bundlephobia/minzip/beercss", alt="minzipped size")
-        span &nbsp;
-        img(src="https://img.shields.io/npm/v/beercss" alt="Version")
-      .large-space
-      .large-space
-      .large-space
-      .large-space
-      .large-space
+        button.transparent.circle(data-ui="#themes3")
+          i palette
+        button.transparent.circle(data-ui="#more3")
+          i collections
+        button.transparent.circle(@click="sharedDomain.updateMode(data)")
+          i.page.top.active(v-if="data.isDark") light_mode
+          i.page.top.active(v-else) dark_mode
+
+  .absolute.top.left.right.yellow4.middle-align.center-align(style="block-size: 100vh;")
+
   main.responsive
-    .large-space
+    .black-text.middle-align.center-align(style="block-size: 100vh; margin: -6rem 0 0 0;")
+      div
+        .medium-height.middle-align.center-align
+          img#logo(:src="'/logo.png'", @click="domain.addHomeScreen()")
+        h5.center-align Build material design
+        h3.center-align in record time
+        h5.center-align without stress for devs
     #begin
       .small-height
       .small-height
@@ -295,8 +272,8 @@ div
             .space
             pre.scroll
               code
-                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/beer.min.css" rel="stylesheet"&gt;
-                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.12/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
                 | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
             h5 From NPM
@@ -400,7 +377,7 @@ div
                     span &nbsp;border, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
                   p
                     b.error-text &lt;nav&gt;
-                    span &nbsp;left, right, top, bottom, drawer, tabbed, group, toolbar, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+                    span &nbsp;left, right, top, bottom, tabbed, group, toolbar, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
                   p
                     b.error-text &lt;ol&gt;
                   p
@@ -418,6 +395,9 @@ div
                   p
                     b.error-text row
                     span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, space, no-space, small-space, medium-space, large-space, horizontal, vertical
+                  p
+                    b.error-text shape
+                    span &nbsp;tiny, small, medium, large, extra, space, no-space, tiny-space, small-space, medium-space, large-space, extra-space, rotate, slow-rotate, fast-rotate
                   p
                     b.error-text snackbar
                     span &nbsp;top, bottom, active
@@ -517,6 +497,8 @@ div
         .s12
           selects
         .s12
+          shapes
+        .s12
           sliders
         .s12
           snackbars
@@ -599,6 +581,7 @@ import responsive from "./responsive.vue";
 import scrolls from "./scrolls.vue";
 import search from "./search.vue";
 import selects from "./selects.vue";
+import shapes from "./shapes.vue";
 import sliders from "./sliders.vue";
 import snackbars from "./snackbars.vue";
 import spaces from "./spaces.vue";
@@ -611,6 +594,16 @@ import toolbars from "./toolbars.vue";
 import tooltips from "./tooltips.vue";
 import typography from "./typography.vue";
 import wavesAndRipples from "./wavesAndRipples.vue";
+
+function updateNavigationRail() {
+  data.value.isMax = !data.value.isMax;
+  domain.updateMinMax("#navigation-rail1", data.value.isMax ? "max" : "min");
+}
+
+function updateExplore() {
+  ui("#dialog-menu");
+  data.value.isExplore = !data.value.isExplore;
+}
 
 onMounted(() => {
   document.title = "Beer CSS - Build material design in record time, without stress for devs";

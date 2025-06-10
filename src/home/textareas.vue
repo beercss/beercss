@@ -82,34 +82,18 @@
         label Label
         i search
     .s12.l4
-      .field.textarea.label.prefix.border
-        img.circle(:src="'/favicon.png'")
+      .field.textarea.border.prefix
+        img(:src="'/favicon.png'")
         textarea
-        label Label
-    .s12.l4
-      .field.textarea.label.suffix.border
-        textarea
-        label Label
-        img.circle(:src="'/favicon.png'")
-    .s12.l4
-      .field.textarea.label.prefix.suffix.border
-        img.circle(:src="'/favicon.png'")
-        textarea
-        label Label
-        img.circle(:src="'/favicon.png'")
     .s12.l4
       .field.textarea.border.prefix
         progress.circle
         textarea
     .s12.l4
-      .field.textarea.border.suffix
+      .field.textarea.border.prefix
+        i
+          .shape.loading-indicator.max
         textarea
-        progress.circle
-    .s12.l4
-      .field.textarea.border.prefix.suffix
-        progress.circle
-        textarea
-        progress.circle
 </template>
 
 <script setup lang="ts">

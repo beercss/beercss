@@ -102,34 +102,18 @@
         label Label
         i search
     .s12.l4
-      .field.label.prefix.border
+      .field.border.prefix
         img.circle(:src="'/favicon.png'")
         input(type="text")
-        label Label
-    .s12.l4
-      .field.label.suffix.border
-        input(type="text")
-        label Label
-        img.circle(:src="'/favicon.png'")
-    .s12.l4
-      .field.label.prefix.suffix.border
-        img.circle(:src="'/favicon.png'")
-        input(type="text")
-        label Label
-        img.circle(:src="'/favicon.png'")
     .s12.l4
       .field.border.prefix
         progress.circle
         input(type="text")
     .s12.l4
-      .field.border.suffix
+      .field.border.prefix
+        i
+          .shape.loading-indicator.max
         input(type="text")
-        progress.circle
-    .s12.l4
-      .field.border.prefix.suffix
-        progress.circle
-        input(type="text")
-        progress.circle
   .medium-space
   h6
     span Custom inputs

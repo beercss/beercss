@@ -516,19 +516,19 @@
         button.left-round
           i add_circle
           span Button
-        button.right-round
+        button.right-round.square
           i keyboard_arrow_down
       nav.group.split.secondary
         button.left-round
           i add_circle
           span Button
-        button.right-round
+        button.right-round.square
           i keyboard_arrow_down
       nav.group.split.tertiary
         button.left-round
           i add_circle
           span Button
-        button.right-round
+        button.right-round.square
           i keyboard_arrow_down
 </template>
 

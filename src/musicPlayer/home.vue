@@ -14,11 +14,11 @@ main.responsive
               .tooltip
           .medium-space
           nav.center-align
-            button.transparent.circle.large
+            button.fill.circle.large
               i skip_previous
-            button.fill.extra
+            button.extra
               i play_arrow
-            button.transparent.circle.large
+            button.fill.circle.large
               i skip_next
     .s12.m6.l6.m.l
       article.round.large-padding.blur.no-elevate.page.active.top

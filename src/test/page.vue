@@ -103,29 +103,57 @@ main.responsive
       button Confirm
 
   .overlay
-  dialog.left#navigation.no-padding(data-ui="#navigation")
-    nav.drawer
-      a(@click="updateTheme()")
+  dialog.left#navigation(data-ui="#navigation")
+    ul.list
+      li(@click="updateTheme()")
         i palette
         span Theme
-      a
+      li.wave.round
         i home
         span Home
-      a
+      li.wave.round
         i search
         span Search
-      a
+      li.wave.round
         i share
         span Share
-      hr
-      label Subtitle
-      a
+      li
+        hr
+      li
+        label Subtitle
+      li
         i widgets
         span Widgets
-      a
+      li
         i more_vert
         span More
-  
+  .large-space
+  h5 Shapes
+  nav
+    .shape.loading-indicator.circle.tiny
+    .shape.loading-indicator.circle.small
+    .shape.loading-indicator.circle.medium
+    .shape.loading-indicator.circle.large
+    .shape.loading-indicator.circle.extra
+  nav
+    .small-width.small-height
+      .shape.loading-indicator.max
+        img.responsive(:src="'/favicon.png'")
+    .small-width.small-height
+      .shape.loading-indicator.max
+        video.responsive(autoplay, loop, muted, playsinline)
+          source(:src="'/dance.mp4'", type="video/mp4")
+  nav
+    .shape.loading-indicator.transparent.medium
+      button.responsive
+        i search
+    .shape.loading-indicator.transparent.medium
+      button.responsive
+        img.responsive(:src="'/favicon.png'")
+    .shape.loading-indicator.transparent.medium
+      button.responsive
+        video.responsive(autoplay, loop, muted, playsinline)
+          source(:src="'/dance.mp4'", type="video/mp4")
   .large-space
   nav
     label.radio.icon.small
@@ -671,62 +699,60 @@ main.responsive
         option(value="3") Item 3
 
   .large-space
-  h5 Navigation drawer inside elements
+  h5 Navigation list inside elements
   .row
     button(@click="updateNavigationDrawer('left')") left
     button(@click="updateNavigationDrawer('right')") right
     button(data-ui="#navigation") dialog
   .row
-    nav.drawer
-      ul
-        li
-          a(@click="updateTheme()")
-            i palette
-            span Theme
-        li
-          a
-            i home
-            span Home
-        li
-          a
-            i search
-            span Search
-        li
-          a
-            i share
-            span Share
-        li
-          hr
-        li
-          label Subtitle
-        li
-          a(data-ui="#menu4")
-            i arrow_drop_down
-            span Menu
+    ul.list
+      li.wave.round
+        a(@click="updateTheme()")
+          i palette
+          span Theme
+      li.wave.round
+        a
+          i home
+          span Home
+      li.wave.round
+        a
+          i search
+          span Search
+      li.wave.round
+        a
+          i share
+          span Share
+      li
+        hr
+      li
+        label Subtitle
+      li.wave.round
+        a(data-ui="#menu4")
+          i arrow_drop_down
+          span Menu
           menu#menu4
-            li
-              a Item 1
-            li
-              a Item 2
-            li
-              a Item 3
+            li Item 1
+            li Item 2
+            li Item 3
   .row
-    nav.drawer
-      a(@click="updateTheme()")
+    ul.list
+      li.wave.round(@click="updateTheme()")
         i palette
         span Theme
-      a
+      li.wave.round
         i home
         span Home
-      a
+      li.wave.round
         i search
         span Search
-      a
+      li.wave.round
         i share
         span Share
-      hr
-      label Subtitle
-      a(data-ui="#menu5")
+      li
+        hr
+      li
+        label Subtitle
+      li.wave.round(data-ui="#menu5")
         i arrow_drop_down
         span Menu
         menu#menu5
@@ -1296,7 +1322,7 @@ const updateTheme = () => {
 };
 const updateNavigationDrawer = (direction: string) => {
   const elemento = document.getElementById("navigation-drawer");
-  if (elemento) elemento.className = "drawer " + direction;
+  if (elemento) elemento.className = "max " + direction;
 };
 const number = ref(0);
 const select = ref();

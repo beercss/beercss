@@ -37,6 +37,7 @@ const data: IYoutube = {
   isLoaded: false,
   url: "/youtube",
   check: false,
+  isMax: true
 };
 
 const dataAsRef: Ref<IYoutube> = ref(data);

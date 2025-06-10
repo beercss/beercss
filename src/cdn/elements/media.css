@@ -82,11 +82,11 @@ svg {
   max-block-size: 1.5rem;
 }
 
-:is(button, .button, .chip) > .responsive:first-child {
+:is(button, .button, .chip):not(.extend) > .responsive:first-child {
   margin-inline-start: calc(-1 * var(--_padding));
 }
 
-:is(button, .button, .chip) > .responsive:not(:first-child) {
+:is(button, .button, .chip):not(.extend) > .responsive:not(:first-child) {
   margin-inline-end: calc(-1 * var(--_padding));
 }
 

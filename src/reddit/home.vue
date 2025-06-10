@@ -116,18 +116,19 @@ main.responsive
             button.responsive.border Create Community
         article.no-elevate.round
           h6 Recent Posts
-          nav.drawer.max.no-padding
-            a.small-round
+          .space
+          ul.list
+            li.wave.small-round
               img.small(:src="'/reddit-community.png'")
               .max.wrap
                 div How do I disabled all A11y messages? They are annoying
                 label.grey-text 5 points - 15 comments - 3h
-            a.small-round
+            li.wave.small-round
               img.small(:src="'/reddit-community.png'")
               .max.wrap
                 div "The golden rule of assertions"
                 label.grey-text 4 points - 10 comments - 3h
-            a.small-round
+            li.wave.small-round
               img.small(:src="'/reddit-community.png'")
               .max.wrap
                 div Cheers to Craft Design: Beer CSS - A Lightweight Material Design Framework
@@ -244,5 +245,9 @@ main.responsive
 function openPostDialog (pageSelector: string) {
   ui(pageSelector);
   ui("#dialog-post");
+}
+
+function test() {
+  alert("oi");
 }
 </script>

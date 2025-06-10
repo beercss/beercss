@@ -1,7 +1,7 @@
 .grid {
   --_gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(12, calc(8.33% - var(--_gap) + (var(--_gap) / 12)));
+  grid-template-columns: repeat(12, 1fr);
   gap: var(--_gap);
   block-size: auto;
 }

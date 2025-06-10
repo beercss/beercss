@@ -8,39 +8,42 @@ div
     )
       span Ride
       menu#menu-ride.no-wrap(data-ui="#menu-ride")
-        a Overview
-        a Price calculator
-        a Cities
-        a Companies
-        hr
-        a How it works
-        a Safety
-        a Airports
+        li Overview
+        li Price calculator
+        li Cities
+        li Companies
+        li
+          hr
+        li How it works
+        li Safety
+        li Airports
     button.large.transparent.m.l(
       data-ui="#menu-drive"
     )
       span Drive
       menu#menu-drive.no-wrap(data-ui="#menu-drive")
-        a Overview
-        a Partner app
-        a Safe
-        a How to drive in your city
-        a Make deliveries
-        hr
-        a Requirements
-        a Vehicle solutions
-        a Safety
+        li Overview
+        li Partner app
+        li Safe
+        li How to drive in your city
+        li Make deliveries
+        li
+          hr
+        li Requirements
+        li Vehicle solutions
+        li Safety
     button.large.transparent.m.l(
       data-ui="#menu-more"
     )
       span More
       menu#menu-more.no-wrap(data-ui="#menu-more")
-        a Uber Eats
-        a Make deliveries
-        a Uber Health
-        hr
-        a Uber for companies
-        a Uber Freight
+        li Uber Eats
+        li Make deliveries
+        li Uber Health
+        li
+          hr
+        li Uber for companies
+        li Uber Freight
     .max
     button.circle.large.transparent.m.l(data-ui="#themes1")
       i palette
