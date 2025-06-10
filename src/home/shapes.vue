@@ -4,7 +4,7 @@
   h4
     span Shapes
     button.chip.circle(
-      @click="domain.showSamples(data, '#shape > nav > *', 'Shapes', null, null)"
+      @click="domain.showSamples(data, '#shape > nav > *', 'Shapes', null, 'https://github.com/beercss/beercss/blob/main/docs/SHAPE.md')"
     )
       i code
   nav.wrap      
