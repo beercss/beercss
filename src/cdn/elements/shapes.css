@@ -12,8 +12,8 @@
   mask-position: center;
   mask-size: contain;
   border-radius: 0;
-  block-size: 3rem;
-  inline-size: 3rem;
+  block-size: 3.5rem;
+  inline-size: 3.5rem;
 }
 
 .transparent > .shape > i {
@@ -42,23 +42,23 @@
 }
 
 .shape.tiny {
-  block-size: 2rem;
-  inline-size: 2rem;
+  block-size: 2.5rem;
+  inline-size: 2.5rem;
 }
 
 .shape.medium {
-  block-size: 4rem;
-  inline-size: 4rem;
+  block-size: 4.5rem;
+  inline-size: 4.5rem;
 }
 
 .shape.large {
-  block-size: 5rem;
-  inline-size: 5rem;
+  block-size: 5.5rem;
+  inline-size: 5.5rem;
 }
 
 .shape.extra {
-  block-size: 6rem;
-  inline-size: 6rem;
+  block-size: 6.5rem;
+  inline-size: 6.5rem;
 }
 
 .shape.max,

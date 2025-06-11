@@ -99,7 +99,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.16/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -107,7 +107,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.16/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -115,7 +115,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.16/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -123,7 +123,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.16/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -3765,8 +3765,8 @@ progress.max + * {
   mask-position: center;
   mask-size: contain;
   border-radius: 0;
-  block-size: 3rem;
-  inline-size: 3rem;
+  block-size: 3.5rem;
+  inline-size: 3.5rem;
 }
 .transparent > .shape > i {
   filter: invert(1);
@@ -3788,20 +3788,20 @@ progress.max + * {
   mask-size: 50%;
 }
 .shape.tiny {
-  block-size: 2rem;
-  inline-size: 2rem;
+  block-size: 2.5rem;
+  inline-size: 2.5rem;
 }
 .shape.medium {
-  block-size: 4rem;
-  inline-size: 4rem;
+  block-size: 4.5rem;
+  inline-size: 4.5rem;
 }
 .shape.large {
-  block-size: 5rem;
-  inline-size: 5rem;
+  block-size: 5.5rem;
+  inline-size: 5.5rem;
 }
 .shape.extra {
-  block-size: 6rem;
-  inline-size: 6rem;
+  block-size: 6.5rem;
+  inline-size: 6.5rem;
 }
 .shape.max,
 .shape > .responsive,

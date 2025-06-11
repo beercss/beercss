@@ -192,7 +192,6 @@ nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.butto
   margin: 0 auto;
 }
 
-
 nav.max:is(.left, .right, .top, .bottom) > a:not(.button, .chip),
 nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) {
   flex-direction: row;

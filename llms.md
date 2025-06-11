@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2025-06-08
+Generated on: 2025-06-11
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -42,6 +42,7 @@ The following documentation sections are included in order:
 - Progress
 - Radio
 - Select
+- Shape
 - Slider
 - Snackbar
 - Summary
@@ -60,8 +61,8 @@ The following documentation sections are included in order:
 ### DEFAULT VERSION
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -79,8 +80,8 @@ import "material-dynamic-colors";
 Applied on child elements of `<* class="beer">...</*>`.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -98,7 +99,7 @@ import "material-dynamic-colors";
 Applied on child elements of `<beer-css>...</beer-css>`.
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/beer.custom-element.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -124,15 +125,15 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.11/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">
-    <nav class="left drawer l">
+    <nav class="left max l">
       <header>
         <nav>
-          <img src="https://www.beercss.com/favicon.png" class="circle">
+          <img src="https://www.beercss.com/favicon.png" class="circle extra">
           <h6>Cheers</h6>
         </nav>
       </header>
@@ -153,7 +154,6 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
         <div>More</div>
       </a>
       <div class="divider"></div>
-      <label>Label</label>
       <a>
         <i>widgets</i>
         <div>Widgets</div>
@@ -170,7 +170,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 
     <nav class="left m">
       <header>
-        <img src="https://www.beercss.com/favicon.png" class="circle">
+        <img src="https://www.beercss.com/favicon.png" class="circle extra">
       </header>
       <a>
         <i>home</i>
@@ -206,7 +206,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     </nav>
 
     <main class="responsive">
-      <img src="https://www.beercss.com/beer-and-woman.svg" class="responsive round">
+      <img src="https://www.beercss.com/beer-and-woman.svg" class="responsive round medium-height">
       <h3>Welcome</h3>
       <h5>The beer is ready!</h5>
     </main>
@@ -661,7 +661,7 @@ elevate, no-elevate, small-elevate, medium-elevate, large-elevate,
 
 ## Forms
 
-border, no-border, circle, square, none, fill, extend, drawer, tabbed, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
+border, no-border, circle, square, none, fill, extend, tabbed, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
 
 ## Margins
 
@@ -1913,7 +1913,7 @@ The main layout is a common html structure to setup your pages. For RTL language
 ## Expanded example
 
 ```html
-<nav class="left drawer">
+<nav class="left max">
   <a>
     <i>home</i>
     <div>Home</div>
@@ -2204,7 +2204,7 @@ vertical, horizontal
 
 **Forms**
 
-border, round, no-round, left-round, right-round, top-round, bottom-round, drawer, tabbed, group, toolbar
+border, round, no-round, left-round, right-round, top-round, bottom-round, tabbed, group, toolbar
 
 **Margins**
 
@@ -2286,6 +2286,21 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap, min, max
     <div>More</div>
   </a>
 </nav>
+
+<nav class="left max">
+  <a>
+    <i>home</i>
+    <div>Home</div>
+  </a>
+  <a>
+    <i>search</i>
+    <div>Search</div>
+  </a>
+  <a>
+    <i>more_vert</i>
+    <div>More</div>
+  </a>
+</nav>
 ```
 
 ## Navigation bar example
@@ -2304,11 +2319,8 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap, min, max
     <div>More</div>
   </a>
 </nav>
-```
 
-## Navigation drawer example
-```html
-<nav class="drawer">
+<nav class="bottom max">
   <a>
     <i>home</i>
     <div>Home</div>
@@ -2340,25 +2352,6 @@ no-space, small-space, medium-space, large-space, wrap, no-wrap, min, max
     <div>More</div>
   </a>
 </nav>
-```
-
-## Navigation toolbar example
-
-```html
-<nav class="toolbar">
-  <a>
-    <i>home</i>
-    <div>Home</div>
-  </a>
-  <a>
-    <i>search</i>
-    <div>Search</div>
-  </a>
-  <a>
-    <i>more_vert</i>
-    <div>More</div>
-  </a>
-</button>
 ```
 
 ---
@@ -2718,6 +2711,56 @@ Add/remove `active` class on label/select (the JS file of beer do this automatic
 
 ---
 
+# Shape
+
+The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing.
+
+## Element
+
+```html
+<div class="shape">...</div>
+
+<...>
+  <div class="shape max">...</div>
+</...>
+```
+
+## Most used helpers
+
+**Animations**
+
+rotate, slow-rotate, fast-rotate 
+
+**Sizes**
+
+tiny, small, medium, large, extra, max
+
+**Spaces**
+
+space, tiny-space, small-space, medium-space, large-space, extra-space
+
+**SVGs**
+
+arch, arrow, boom, bun, burst, circle, clamshell, diamond, fan, flower, gem, ghost-ish, heart, leaf-clover4, leaft-clover8, loading-indicator, oval, pentagon, pill, pixel-circle, pixel-triangle, puffy, puffy-diamond, semicircle, sided-cookie4, sided-cookie6, sided-cookie7, sided-cookie9, sided-cookie12, slanted, soft-boom, soft-burst, square, sunny, triangle, very-sunny
+
+## Example
+
+You can use shapes inside circle and square containers. Use `space` helpers to adjust the shape inside container.
+
+```html
+<div class="shape sunny"></div>
+
+<div class="shape sunny">
+  <img class="responsive" src="/favicon.png">
+</div>
+
+<div class="small-width small-height">
+  <div class="shape sunny max"></div>
+</div>
+```
+
+---
+
 # Slider
 
 Sliders let users make selections from a range of values. Default range is 0-100.
@@ -2949,7 +2992,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;menu&gt;** border, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
 
-**&lt;nav&gt;** left, right, top, bottom, drawer, group, toolbar, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+**&lt;nav&gt;** left, right, top, bottom, group, toolbar, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
 **&lt;ol&gt;**
 
@@ -2962,6 +3005,8 @@ Use this page to learn. This page has the most used combinations of elements and
 **&lt;progress&gt;** small, medium, large, circle, max, vertical
 
 **row** left-align, right-align, center-align, top-align, bottom-align, middle-align, space, no-space, small-space, medium-space, large-space, horizontal, vertical
+
+**shape** tiny, small, medium, large, extra, max, space, no-space, tiny-space, small-space, medium-space, large-space, extra-space, rotate, slow-rotate, fast-rotate, arch, arrow, boom, bun, burst, circle, clamshell, diamond, fan, flower, gem, ghost-ish, heart, leaf-clover4, leaft-clover8, loading-indicator, oval, pentagon, pill, pixel-circle, pixel-triangle, puffy, puffy-diamond, semicircle, sided-cookie4, sided-cookie6, sided-cookie7, sided-cookie9, sided-cookie12, slanted, soft-boom, soft-burst, square, sunny, triangle, very-sunny
 
 **snackbar** top, bottom, active
 
@@ -2999,7 +3044,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Elevates** elevate, no-elevate, small-elevate, medium-elevate, large-elevate
 
-**Forms** border, no-border, circle, square, none, fill, extend, drawer, tabbed, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
+**Forms** border, no-border, circle, square, none, fill, extend, tabbed, round, no-round, small-round, medium-round, large-round, left-round, right-round, top-round, bottom-round
 
 **Margins** margin, no-margin, auto-margin, tiny-margin, small-margin, medium-margin, large-margin, left-margin, right-margin, top-margin, bottom-margin, horizontal-margin, vertical-margin
 
@@ -3019,7 +3064,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **Sizes** tiny, small, medium, large, extra, wrap, no-wrap, max, auto-width, small-width, medium-width, large-width, auto-height, small-height, medium-height, large-height
 
-**Spaces** space, no-space, small-space, medium-space, large-space
+**Spaces** space, no-space, tiny-space, small-space, medium-space, large-space, extra-space
 
 **Theme** light, dark, primary, primary-text, primary-border, primary-container, secondary, secondary-text, secondary-border, secondary-container, tertiary, tertiary-text, tertiary-border, tertiary-container, error, error-text, error-border, error-container, background, surface, surface-variant, inverse-surface, inverse-primary, inverse-primary-text, inverse-primary-border, black, black-text, black-border, white, white-text, white-border, transparent, transparent-text, transparent-border
 
