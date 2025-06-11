@@ -174,8 +174,8 @@ nav.max:is(.top, .bottom) {
   max-inline-size: none;
 }
 
-nav:is(.left, .right, .top, .bottom) > a,
-nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a {
+nav:is(.left, .right, .top, .bottom) > a:not(.button, .chip),
+nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -184,8 +184,8 @@ nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a {
   font-size: 0.8rem;
 }
 
-nav:not(.max):is(.left, .right, .top, .bottom) > a > i,
-nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > i {
+nav:not(.max):is(.left, .right, .top, .bottom) > a:not(.button, .chip) > i,
+nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) > i {
   padding: 0.25rem 1rem;
   border-radius: 2rem;
   transition: padding var(--speed1) linear;
@@ -193,8 +193,8 @@ nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > i {
 }
 
 
-nav.max:is(.left, .right, .top, .bottom) > a,
-nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a {
+nav.max:is(.left, .right, .top, .bottom) > a:not(.button, .chip),
+nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) {
   flex-direction: row;
   gap: 0.5rem;
   inline-size: auto;
@@ -204,17 +204,17 @@ nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a {
   font-size: inherit;
 }
 
-nav.max:is(.top, .bottom) > a,
-nav.max:is(.top, .bottom) > :is(ol, ul) > li > a {
+nav.max:is(.top, .bottom) > a:not(.button, .chip),
+nav.max:is(.top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) {
   gap: 0.25rem;
   block-size: 2.5rem;
   font-size: 0.8rem;
 }
 
-nav.max:is(.left, .right, .top, .bottom) > a.active,
-nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a.active,
-nav:is(.left, .right, .top, .bottom):not(.max) > a.active > i,
-nav:is(.left, .right, .top, .bottom):not(.max) > :is(ol, ul) > li > a.active > i {
+nav.max:is(.left, .right, .top, .bottom) > a.active:not(.button, .chip),
+nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a.active:not(.button, .chip),
+nav:is(.left, .right, .top, .bottom):not(.max) > a.active:not(.button, .chip) > i,
+nav:is(.left, .right, .top, .bottom):not(.max) > :is(ol, ul) > li > a.active:not(.button, .chip) > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
 }
@@ -396,42 +396,42 @@ nav.split > :is(.button, button):not(.chip, .fill, .border) {
 
 nav.group.primary-container > button,
 nav:is(.max, .toolbar, .tabbed, .group).primary > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).primary > a.active > i {
+nav:not(.max, .toolbar, .tabbed, .group).primary > a.active:not(.button, .chip) > i {
   background-color: var(--primary-container) !important;
   color: var(--on-primary-container) !important;
 }
 
 nav.group.primary > button,
 nav:is(.max, .toolbar, .tabbed, .group).primary-container > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).primary-container > a.active > i {
+nav:not(.max, .toolbar, .tabbed, .group).primary-container > a.active:not(.button, .chip) > i {
   background-color: var(--primary) !important;
   color: var(--on-primary) !important;
 }
 
 nav.group.secondary-container > button,
 nav:is(.max, .toolbar, .tabbed, .group).secondary > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).secondary > a.active > i {
+nav:not(.max, .toolbar, .tabbed, .group).secondary > a.active:not(.button, .chip) > i {
   background-color: var(--secondary-container) !important;
   color: var(--on-secondary-container) !important;
 }
 
 nav.group.secondary > button,
 nav:is(.max, .toolbar, .tabbed, .group).secondary-container > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).secondary-container > a.active > i {
+nav:not(.max, .toolbar, .tabbed, .group).secondary-container > a.active:not(.button, .chip) > i {
   background-color: var(--secondary) !important;
   color: var(--on-secondary) !important;
 }
 
 nav.group.tertiary-container > button,
 nav:is(.max, .toolbar, .tabbed, .group).tertiary > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).tertiary > a.active > i {
+nav:not(.max, .toolbar, .tabbed, .group).tertiary > a.active:not(.button, .chip) > i {
   background-color: var(--tertiary-container) !important;
   color: var(--on-tertiary-container) !important;
 }
 
 nav.group.tertiary > button,
 nav:is(.max, .toolbar, .tabbed, .group).tertiary-container > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).tertiary-container > a.active > i {
+nav:not(.max, .toolbar, .tabbed, .group).tertiary-container > a.active:not(.button, .chip) > i {
   background-color: var(--tertiary) !important;
   color: var(--on-tertiary) !important;
 }
