@@ -183,6 +183,16 @@ import "beercss/custom-element";
 import "material-dynamic-colors";
 ```
 
+### LOCAL CDN VERSION
+
+Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
+
+```html
+<link href="/beercss/beer.min.css" rel="stylesheet" />
+<script type="module" src="/beercss/beer.min.js"></script>
+<script type="module" src="/beercss/material-dynamic-colors.min.js"></script>
+```
+
 ### HTML
 
 You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj). More about in [Main layout](docs/MAIN_LAYOUT.md).
