@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2025-06-11
+Generated on: 2025-06-12
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -111,6 +111,16 @@ npm i material-dynamic-colors
 ```js
 import "beercss/custom-element";
 import "material-dynamic-colors";
+```
+
+### LOCAL CDN VERSION
+
+Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@3.11.17/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
+
+```html
+<link href="/beercss/beer.min.css" rel="stylesheet" />
+<script type="module" src="/beercss/beer.min.js"></script>
+<script type="module" src="/beercss/material-dynamic-colors.min.js"></script>
 ```
 
 ### HTML
