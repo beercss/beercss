@@ -279,3 +279,15 @@ menu > li:nth-last-of-type(10) {
 menu > li:nth-last-of-type(11) {
   --_type: 10;
 }
+
+@media (pointer: coarse) {
+  :not(menu, [data-ui]):hover > menu {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(100%);
+  }
+
+  :not(menu, [data-ui]):hover > menu.top {
+    transform: scale(1) translateY(-100%);
+  }
+}
