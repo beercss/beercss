@@ -22,7 +22,7 @@
     "@typescript-eslint/parser": "^7.11.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-typescript": "^13.0.0",
-    "@vue/language-plugin-pug": "^2.0.19",
+    "@vue/language-plugin-pug": "^2.2.10",
     "eslint": "^8.57.0",
     "eslint-config-love": "^52.0.0",
     "eslint-plugin-import": "^2.29.1",
