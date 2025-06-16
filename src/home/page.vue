@@ -20,7 +20,7 @@ div
     a(v-show="data.isRtl", @click="domain.updateRtlLtr(data)")
       i checklist
       span LTR
-    a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')", v-if="!data.isExplore")
+    a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
       span Code
 
