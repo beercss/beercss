@@ -280,7 +280,7 @@ const formatHtml = (element: Element | null, raw: boolean = false, useInnerHtml:
     .replace(/\s+(checked|disabled)=""/gi, " $1");
 };
 
-const showSamples = (data: IHome, selector: string, name: string, dialog?: string, url?: string, useInnerHtml: boolean = false) => {
+const showSamples = (data: IHome, selector: string, name: string, dialog?: string | null, url?: string | null, useInnerHtml: boolean = false) => {
   const elements = utils.queryAll(selector);
   let text = "";
   let textFormatted = "";
