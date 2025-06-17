@@ -73,7 +73,3 @@ nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > .badge {
   position: relative;
   margin: 0 0.125rem;
 }
-
-:is(button, .button, .chip) > .badge.none {
-  margin: 0 -0.5rem;
-}

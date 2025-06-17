@@ -66,6 +66,18 @@ dialog > :is(header, footer).fixed {
   z-index: 12;
 }
 
+:is(header, footer).fixed:has(> .scroll) {
+  overflow: hidden;
+}
+
+nav.top ~ header.fixed {
+  inset-block-start: 4.5rem;
+}
+
+nav.bottom ~ footer.fixed {
+  inset-block-end: 4.5rem;
+}
+
 :is(nav, .row) > header {
   background-color: inherit;
 }
