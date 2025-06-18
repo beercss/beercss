@@ -1,8 +1,7 @@
 header,
 footer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display: grid;
+  align-content: center;
   border-radius: 0;
   padding: 0 1rem;
 }
@@ -64,10 +63,6 @@ dialog > :is(header, footer).fixed {
   position: sticky;
   inset: 0;
   z-index: 12;
-}
-
-:is(header, footer).fixed:has(> .scroll) {
-  overflow: hidden;
 }
 
 nav.top ~ header.fixed {
