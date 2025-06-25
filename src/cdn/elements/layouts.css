@@ -6,6 +6,11 @@
   position: fixed;
 }
 
+.absolute,
+.fixed {
+  max-inline-size: none;
+}
+
 :is(.absolute, .fixed).left.right {
   inline-size: auto;
 }
