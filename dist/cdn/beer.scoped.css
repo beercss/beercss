@@ -100,7 +100,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.21/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.22/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -108,7 +108,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.21/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.22/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -116,7 +116,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.21/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.22/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -124,7 +124,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.21/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.22/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -138,7 +138,7 @@
 }
 .beer *::after,
 .beer *::before {
-  pointer-events: none;
+  all: unset;
 }
 .beer {
   color: var(--on-surface);
@@ -2817,9 +2817,13 @@ html {
   grid-area: header;
 }
 .beer main {
+  --_padding: 0.5rem;
   grid-area: main;
-  padding: 0.5rem;
+  padding: var(--_padding);
   overflow: hidden;
+}
+.beer main > * {
+  max-inline-size: calc(100vw - calc(var(--_padding) * 2));
 }
 .beer footer {
   grid-area: footer;

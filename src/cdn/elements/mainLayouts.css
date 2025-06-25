@@ -40,13 +40,10 @@ header {
 }
 
 main {
-  grid-area: main;
-  padding: 0.5rem;
-  overflow: hidden;
-}
-
-main {
   --_padding: 0.5rem;
+  grid-area: main;
+  padding: var(--_padding);
+  overflow: hidden;
 }
 
 main > * {
