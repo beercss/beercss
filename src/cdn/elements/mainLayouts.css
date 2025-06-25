@@ -45,6 +45,14 @@ main {
   overflow: hidden;
 }
 
+main {
+  --_padding: 0.5rem;
+}
+
+main > * {
+  max-inline-size: calc(100vw - calc(var(--_padding) * 2));
+}
+
 footer {
   grid-area: footer;
 }
