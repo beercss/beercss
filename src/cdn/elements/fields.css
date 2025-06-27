@@ -304,10 +304,10 @@ input[type=number] {
 
 /* label */
 .field.label > label {
+  --_start: 1rem;
   position: absolute;
-  inset: -0.5rem auto auto 1rem;
+  inset: -0.5rem 1rem 0 var(--_start);
   display: flex;
-  inline-size: calc(100% - 5rem);
   block-size: calc(var(--_size) + 1rem);
   line-height: calc(var(--_size) + 1rem);
   font-size: 1rem;
@@ -316,26 +316,26 @@ input[type=number] {
   white-space: nowrap;
 }
 
+.field.label.round > label {
+  inset: -0.5rem 1.75rem 0 var(--_start);
+}
+
 .field.label.textarea:not(.min) > label {
   block-size: calc(var(--_size) - 1.5rem);
   line-height: calc(var(--_size) - 1.5rem);
 }
 
-[dir=rtl] .field.label > label {
-  inset: -0.5rem 1rem auto auto;
-}
-
 .field.label.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
-  inset-inline-start: 1rem;
+  --_start: 1rem;
 }
 
 .field.label.round > label,
 .field.label.border.prefix.round:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
-  inset-inline-start: 1.5rem;
+  --_start: 1.5rem;
 }
 
 .field.label.prefix > label {
-  inset-inline-start: 3rem;
+  --_start: 3rem;
 }
 
 .field.label > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
@@ -352,7 +352,7 @@ input[type=number] {
 .field.label.border:not(.fill) > label::after {
   content: "";
   display: block;
-  margin-block-start: 0.5rem;
+  margin: 0.5rem 0 0 0;
   border-block-start: 0.0625rem solid var(--outline);
   block-size: 1rem;
   transition: none;
@@ -365,22 +365,22 @@ input[type=number] {
 
 .field.label.border:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
 .field.label.border:not(.fill) > select {
-  clip-path: polygon(-2% -2%, 0.75rem -2%, 0.75rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -2%, 102% -2%, 102% 102%, -2% 102%);
+  clip-path: polygon(-2% -2%, 0.75rem -2%, 0.75rem 0.5rem, calc(100% - 1rem) 0.5rem, calc(100% - 1rem) -2%, 102% -2%, 102% 102%, -2% 102%);
 }
 
 [dir=rtl] .field.label.border:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
 [dir=rtl] .field.label.border:not(.fill) > select {
-  clip-path: polygon(-2% -2%, 5rem -2%, 5rem 0.5rem, calc(100% - 0.75rem) 0.5rem, calc(100% - 0.75rem) -2%, 102% -2%, 102% 102%, -2% 102%);
+  clip-path: polygon(-2% -2%, 1rem -2%, 1rem 0.5rem, calc(100% - 0.75rem) 0.5rem, calc(100% - 0.75rem) -2%, 102% -2%, 102% 102%, -2% 102%);
 }
 
 .field.label.border.round:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
 .field.label.border.round:not(.fill) > select {
-  clip-path: polygon(-2% -2%, 1.25rem -2%, 1.25rem 0.5rem, calc(100% - 5rem) 0.5rem, calc(100% - 5rem) -2%, 102% -2%, 102% 102%, -2% 102%);
+  clip-path: polygon(-2% -2%, 1.25rem -2%, 1.25rem 0.5rem, calc(100% - 1.75rem) 0.5rem, calc(100% - 1.75rem) -2%, 102% -2%, 102% 102%, -2% 102%);
 }
 
 [dir=rtl] .field.label.border.round:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
 [dir=rtl] .field.label.border.round:not(.fill) > select {
-  clip-path: polygon(-2% -2%, 5rem -2%, 5rem 0.5rem, calc(100% - 1.25rem) 0.5rem, calc(100% - 1.25rem) -2%, 102% -2%, 102% 102%, -2% 102%);
+  clip-path: polygon(-2% -2%, 1.75rem -2%, 1.75rem 0.5rem, calc(100% - 1.25rem) 0.5rem, calc(100% - 1.25rem) -2%, 102% -2%, 102% 102%, -2% 102%);
 }
 
 .field.label > :focus + label {

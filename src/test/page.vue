@@ -778,8 +778,34 @@ main.responsive
     button(@click="domain.updateSize('#with-pure-css .field', 'extra')") extra
   .space
   #with-pure-css.grid
-    .s12.m6
-      .field.label.fill
+    .s1
+      .field.label.border.suffix
+        input(placeholder=" ", value="Input")
+        label Direction
+        i arrow_drop_down
+        span.helper Helper
+    .s1
+      .field.label.border
+        input(placeholder=" ")
+        label Label
+        span.helper Helper
+    .s2
+      .field.label.round.border
+        input(placeholder=" ", value="Input")
+        label Label
+        span.helper Helper
+    .s2
+      .field.label.round.border
+        input(placeholder=" ")
+        label Label
+        span.helper Helper
+    .s3
+      .field.label.round.border
+        input(placeholder=" ", value="Input")
+        label Label
+        span.helper Helper
+    .s3
+      .field.label.round.border
         input(placeholder=" ")
         label Label
         span.helper Helper
