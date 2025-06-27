@@ -269,9 +269,14 @@ input[type=number] {
   user-select: none;
 }
 
+@-moz-document url-prefix() { 
+  .field > select:focus {
+    background-color: var(--surface);
+  }
+}
+
 .field > select > option {
-  background-color: var(--surface-container);
-  color: var(--on-surface);
+  background-color: var(--surface);
 }
 
 .field.label > :is(input, select) {
