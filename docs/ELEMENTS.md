@@ -92,6 +92,10 @@ Radio buttons allow users to select one option from a set.
 
 Selects display a list of choices on temporary surfaces.
 
+## [Shape](SHAPE.md)
+
+The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing.
+
 ## [Slider](SLIDER.md)
 
 Sliders allow users to make selections from a range of values. There are two types of sliders: continuous and discrete. Default range is 0-100.
