@@ -134,6 +134,10 @@ active
 
 wave, no-wave
 
+## Zoom
+
+zoom, tiny-zoom, small-zoom, medium-zoom, large-zoom, extra-zoom
+
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
