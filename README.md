@@ -101,6 +101,7 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 ```
 // N elements to 1 tag
 <div class="element element helper">...</div>
+<element class="element helper">...</element>
 
 // element with dependencies
 <div class="element">
