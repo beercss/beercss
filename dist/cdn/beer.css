@@ -99,7 +99,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.27/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.28/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -107,7 +107,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.27/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.28/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -115,7 +115,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.27/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.28/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -123,7 +123,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.27/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.28/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -3773,9 +3773,6 @@ progress.max + * {
     clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
   }
 }
-*:has(> .shape) {
-  overflow: hidden;
-}
 .shape {
   display: flex;
   align-items: center;
@@ -3788,6 +3785,9 @@ progress.max + * {
   border-radius: 0;
   block-size: 3.5rem;
   inline-size: 3.5rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
 }
 .transparent > .shape > i {
   filter: invert(1);

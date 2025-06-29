@@ -1,7 +1,3 @@
-*:has(> .shape) {
-  overflow: hidden;
-}
-
 .shape {
   display: flex;
   align-items: center;
@@ -14,6 +10,9 @@
   border-radius: 0;
   block-size: 3.5rem;
   inline-size: 3.5rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
 }
 
 .transparent > .shape > i {
