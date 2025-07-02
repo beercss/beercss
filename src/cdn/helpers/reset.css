@@ -81,3 +81,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 :is(nav, .row, li).group > :focus-visible {
   z-index: 1;
 }
+
+:is(button, .button, .chip) > :is(span, i, img, svg) {
+  pointer-events: none;
+}
