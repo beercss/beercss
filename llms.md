@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2025-06-13
+Generated on: 2025-07-03
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -577,6 +577,10 @@ Radio buttons allow users to select one option from a set.
 
 Selects display a list of choices on temporary surfaces.
 
+## [Shape](SHAPE.md)
+
+The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing.
+
 ## [Slider](SLIDER.md)
 
 Sliders allow users to make selections from a range of values. There are two types of sliders: continuous and discrete. Default range is 0-100.
@@ -746,6 +750,10 @@ active
 ## Waves
 
 wave, no-wave
+
+## Zoom
+
+zoom, tiny-zoom, small-zoom, medium-zoom, large-zoom, extra-zoom
 
 ---
 
@@ -3083,6 +3091,8 @@ Use this page to learn. This page has the most used combinations of elements and
 **Typography** italic, bold, underline, overline, upper, lower, capitalize, link, small-text, medium-text, large-text 
 
 **Waves** wave, no-wave
+
+**Zoom** zoom, tiny-zoom, small-zoom, medium-zoom, large-zoom, extra-zoom
 
 ## Settings
 
