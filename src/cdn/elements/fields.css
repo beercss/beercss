@@ -269,9 +269,13 @@ input[type=number] {
   user-select: none;
 }
 
-@-moz-document url-prefix() { 
+@-moz-document url-prefix() {
   .field > select:focus {
     background-color: var(--surface);
+  }
+
+  .field.fill > select:focus {
+    background-color: var(--surface-variant);
   }
   
   .field > select:focus + label {
