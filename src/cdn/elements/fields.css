@@ -273,6 +273,10 @@ input[type=number] {
   .field > select:focus {
     background-color: var(--surface);
   }
+  
+  .field > select:focus + label {
+    z-index: 1;
+  }
 }
 
 .field > select > option {
