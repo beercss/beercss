@@ -94,12 +94,17 @@ progress.max {
   position: absolute;
   inline-size: 100% !important;
   block-size: 100% !important;
-  color: var(--active);
+  color: currentColor;
   background: none;
   inset: 0;
   border-radius: inherit;
   animation: none;
   writing-mode: horizontal-tb;
+  opacity: 0.33;
+}
+
+progress.max[class*='-text'] {
+  opacity: 1;
 }
 
 progress:is(.horizontal, .vertical, .max) {
