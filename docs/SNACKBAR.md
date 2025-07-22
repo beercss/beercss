@@ -57,7 +57,7 @@ Add `data-ui="snackbar-selector"` attribute on elements.
 
 #### Method 3
 
-Call `ui("snackbar-selector", millisecondsToHide)`. The default value for millisecondsToHide is 6000.
+Call `ui("#snackbar-selector", millisecondsToHide)`. The default value for millisecondsToHide is 6000.
 
 ```html
 <div class="snackbar" id="snackbar">
@@ -67,7 +67,8 @@ Call `ui("snackbar-selector", millisecondsToHide)`. The default value for millis
 ```
 
 ```js
-ui("#snackbar");
+ui("#snackbar"); // deafult timeout of 6000 milliseconds
+ui("#snackbar", 3000); // custom timeout of 3000 milliseconds
 ```
 
 #### Method 4
