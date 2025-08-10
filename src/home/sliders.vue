@@ -109,6 +109,34 @@
         .tooltip
   .medium-space
   h6
+    span Value indicator bottom
+    button.chip.circle(@click="domain.showSamples(data, '#sliders-tooltip-bottom .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+      i code
+  .grid#sliders-tooltip-bottom
+    .s12.m6.l3.center-align
+      label.slider
+        input(type="range", value="25")
+        span
+        .tooltip.bottom
+    .s12.m6.l3.center-align
+      label.slider
+        input(type="range", value="5", min="4", max="8")
+        span
+        .tooltip.bottom
+    .s12.m6.l3.center-align
+      label.slider
+        input(type="range", value="25")
+        input(type="range", value="50")
+        span
+        .tooltip.bottom
+        .tooltip.bottom
+    .s12.m6.l3.center-align
+      label.slider
+        input(type="range", value="25", disabled)
+        span
+        .tooltip.bottom
+  .medium-space
+  h6
     span Inset icon
     button.chip.circle(@click="domain.showSamples(data, '#sliders4 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -208,6 +236,7 @@
         label.slider.max.vertical
           input(type="range", value="30", max="100")
           span
+
 </template>
 
 <script setup lang="ts">
