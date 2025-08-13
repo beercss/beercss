@@ -14,6 +14,7 @@ a.row {
   white-space: nowrap;
   gap: 1rem;
   border-radius: 0;
+  min-inline-size: 0;
 }
 
 a.row,
@@ -68,6 +69,9 @@ nav > :is(ol, ul) > li > :only-child {
 }
 
 nav:is(.left, .right, .top, .bottom) {
+  --_padding: 0.5rem;
+  --_top: calc(var(--_padding) + var(--top));
+  --_bottom: calc(var(--_padding) + var(--bottom));
   position: sticky;
   inset: 0;
   border: 0;
@@ -75,7 +79,7 @@ nav:is(.left, .right, .top, .bottom) {
   transform: none;
   z-index: 100;
   text-align: center;
-  padding: 0.5rem;
+  padding: var(--_padding);
   margin: 0;
 }
 
@@ -85,15 +89,28 @@ nav:is(.left, .right) {
   background-color: var(--surface);
   block-size: 100dvh;
   min-inline-size: 6rem;
+  padding-block: var(--_top) var(--_bottom);
 }
 
 nav:is(.top, .bottom) {
+  position: sticky;
+  inset: 0;
   padding: 0.5rem;
   justify-content: center;
   flex-direction: row;
   background-color: var(--surface-container);
   block-size: auto;
   min-block-size: 4.5rem;
+}
+
+nav.top {
+  block-size: calc(var(--top) + 4.5rem);
+  padding-block-start: var(--_top);
+}
+
+nav.bottom {
+  block-size: calc(var(--bottom) + 4.5rem);
+  padding-block-end: var(--_bottom);
 }
 
 nav > header {
@@ -137,7 +154,7 @@ nav.max:is(.left, .right, .top, .bottom) {
   inline-size: auto;
   align-items: flex-start;
   min-inline-size: 12.75rem;
-  padding: 0.5rem 1.25rem;
+  padding: var(--_top) 1.25rem var(--_bottom) 1.25rem;
 }
 
 nav.max > :is(ol, ul) {

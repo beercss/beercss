@@ -23,20 +23,18 @@ nav.right {
 
 nav.top {
   grid-area: top;
-  position: sticky;
-  inset: 0;
-  block-size: 4rem;
 }
 
 nav.bottom {
   grid-area: bottom;
-  position: sticky;
-  inset: 0;
-  block-size: 4rem;
 }
 
 header {
   grid-area: header;
+}
+
+footer {
+  grid-area: footer;
 }
 
 main {
@@ -44,10 +42,6 @@ main {
   grid-area: main;
   padding: var(--_padding);
   overflow: hidden;
-}
-
-footer {
-  grid-area: footer;
 }
 
 aside {

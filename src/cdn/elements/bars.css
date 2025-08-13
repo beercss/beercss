@@ -65,12 +65,25 @@ dialog > :is(header, footer).fixed {
   z-index: 12;
 }
 
+:has(> main) > header {
+  padding-block-start: var(--top);
+}
+
+:has(> main) > footer {
+  padding-block-end: var(--bottom);
+}
+
+nav.top ~ header,
+nav.bottom ~ footer {
+  padding-block: 0;
+}
+
 nav.top ~ header.fixed {
-  inset-block-start: 4.5rem;
+  inset-block: calc(var(--top)  + 4.5rem) 0;
 }
 
 nav.bottom ~ footer.fixed {
-  inset-block-end: 4.5rem;
+  inset-block: 0 calc(var(--bottom) + 4.5rem);
 }
 
 :is(nav, .row) > header {
