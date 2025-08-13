@@ -315,3 +315,19 @@
     visibility: visible !important;
   }
 }
+.slider > .tooltip.bottom {
+  inset: auto auto 0.25rem calc(100% - var(--_end)) !important;
+  transform: translate(-50%, 100%) !important;
+}
+.slider > .tooltip.bottom + .tooltip.bottom {
+  inset: auto auto 0.25rem var(--_start) !important;
+  transform: translate(-50%, 100%) !important;
+}
+
+[dir=rtl] .slider > .tooltip.bottom {
+  transform: translate(-50%, 100%) scaleX(-1) !important;
+}
+
+[dir=rtl] .slider > .tooltip.bottom + .tooltip.bottom {
+  transform: translate(-50%, 100%) scaleX(-1) !important;
+}
