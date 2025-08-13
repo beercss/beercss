@@ -216,3 +216,11 @@ pre:has(> code){
   direction: ltr;
   text-align: start;
 }
+
+sub {
+  vertical-align: sub;
+}
+
+sup {
+  vertical-align: super;
+}
