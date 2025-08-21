@@ -144,3 +144,9 @@ dialog.medium:is(.top, .bottom) {
 dialog.large:is(.top, .bottom) {
   block-size: 32rem;
 }
+
+@media (pointer: coarse) {
+  body:has(dialog[open], dialog.active) {
+    overflow: hidden;
+  }
+}

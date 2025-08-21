@@ -1,4 +1,4 @@
-import { addClass, next, prev, hasTag, insertBefore, wait, create,  hasClass, removeClass, on, off, queryAllDataUi, isTouchable, blurActiveElement, query } from "../utils";
+import { addClass, next, prev, hasTag, insertBefore, wait, create,  hasClass, removeClass, on, off, queryAllDataUi, blurActiveElement, query } from "../utils";
 
 const _dialogs: Array<HTMLDialogElement> = [];
 
@@ -24,7 +24,6 @@ function closeDialog(dialog: HTMLDialogElement, overlay: Element) {
 
   const previousDialog = _dialogs[_dialogs.length - 1];
   if (previousDialog) previousDialog.focus();
-  else if (isTouchable()) document.body.classList.remove("no-scroll");
 }
 
 async function openDialog(dialog: HTMLDialogElement, overlay: Element, isModal: boolean, from: Element) {
@@ -39,7 +38,6 @@ async function openDialog(dialog: HTMLDialogElement, overlay: Element, isModal: 
 
   if (!isModal) on(dialog, "keydown", onKeydownDialog, false);
   _dialogs.push(dialog);
-  if (isTouchable()) document.body.classList.add("no-scroll");
   focusOnDialogOrElement(dialog);
 }
 
