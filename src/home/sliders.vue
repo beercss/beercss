@@ -110,9 +110,36 @@
   .medium-space
   h6
     span Value indicator bottom
-    button.chip.circle(@click="domain.showSamples(data, '#sliders-tooltip-bottom .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#silders6 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
-  .grid#sliders-tooltip-bottom
+  nav.wrap
+    label.radio
+      input(type="radio", name="size-sliders6", checked="checked", @click="domain.updateSize('#sliders6 .slider')")
+      span tiny
+    label.radio
+      input(type="radio", name="size-sliders6", @click="domain.updateSize('#sliders6 .slider', 'small')")
+      span small
+    label.radio
+      input(
+        type="radio",
+        name="size-sliders6",
+        @click="domain.updateSize('#sliders6 .slider', 'medium')"
+      )
+      span medium
+    label.radio
+      input(type="radio", name="size-sliders6", @click="domain.updateSize('#sliders6 .slider', 'large')")
+      span large
+    label.radio
+      input(type="radio", name="size-sliders6", @click="domain.updateSize('#sliders6 .slider', 'extra')")
+      span extra
+    label.radio
+      input(type="radio", name="direction-sliders6", checked, @click="domain.updateDirection('#sliders6 .slider', '')")
+      span horizontal
+    label.radio
+      input(type="radio", name="direction-sliders6", @click="domain.updateDirection('#sliders6 .slider', 'vertical')")
+      span vertical
+  .medium-space
+  .grid#sliders6
     .s12.m6.l3.center-align
       label.slider
         input(type="range", value="25")

@@ -42,7 +42,7 @@ div
       span Code
 
   .overlay
-  dialog#dialog-menu.left.scroll
+  dialog#dialog-menu.left.scroll.small
     header.fixed
       nav
         .max.padding

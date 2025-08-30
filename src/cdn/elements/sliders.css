@@ -193,21 +193,40 @@
   inset: 0 auto auto calc(100% - var(--_end));
   border-radius: 2rem;
   transition: top var(--speed2) ease, opacity var(--speed2) ease;
-  transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -25%) !important;
   padding: 0.75rem 1rem;
 }
 
+.slider > .tooltip.bottom {
+  inset: auto auto 0 calc(100% - var(--_end));
+  transition: bottom var(--speed2) ease, opacity var(--speed2) ease;
+  transform: translate(-50%, 25%) !important;
+}
+
 [dir=rtl] .slider > .tooltip {
-  transform: translate(-50%, -50%) scaleX(-1) !important;
+  transform: translate(-50%, -25%) scaleX(-1) !important;
+}
+
+[dir=rtl] .slider > .tooltip.bottom {
+  transform: translate(-50%, 25%) scaleX(-1) !important;
 }
 
 .slider > .tooltip + .tooltip {
   inset: 0.25rem calc(100% - var(--_start)) auto auto;
-  transform: translate(50%, -50%) !important;
+  transform: translate(50%, -25%) !important;
+}
+
+.slider > .tooltip + .tooltip.bottom {
+  inset: auto calc(100% - var(--_start)) -0.25rem auto;
+  transform: translate(50%, 25%) !important;
 }
 
 [dir=rtl] .slider > .tooltip + .tooltip {
-  transform: translate(50%, -50%) scaleX(-1) !important;
+  transform: translate(50%, -25%) scaleX(-1) !important;
+}
+
+[dir=rtl] .slider > .tooltip + .tooltip.bottom {
+  transform: translate(50%, 25%) scaleX(-1) !important;
 }
 
 .slider > .tooltip::before {
@@ -219,21 +238,35 @@
 }
 
 .slider > :focus ~ .tooltip {
-  inset-block-start: -1rem !important;
+  inset-block: -1rem auto;
   opacity: 1 !important;
   visibility: visible !important;
 }
 
+.slider > :focus ~ .tooltip.bottom {
+  inset-block: auto -1rem;
+}
+
 .slider.vertical > .tooltip {
-  inset-block-start: auto !important;
-  margin-block-start: calc(-1 * var(--_thumb)) !important;
+  inset-block: auto;
   block-size: 2.5rem;
   inline-size: 2.5rem;
+  margin-block: calc(-1 * var(--_thumb)) 0 !important;
   transform: rotate(90deg) translate(-75%, 50%) !important;
+}
+
+.slider.vertical > .tooltip.bottom {
+  inset-block: auto;
+  margin-block: 0 calc(-1 * var(--_thumb)) !important;
+  transform: rotate(90deg) translate(75%, 50%) !important;
 }
 
 .slider.vertical > .tooltip + .tooltip {
   transform: rotate(90deg) translate(-75%, -50%) !important;
+}
+
+.slider.vertical > .tooltip + .tooltip.bottom {
+  transform: rotate(90deg) translate(75%, -50%) !important;
 }
 
 :is(nav, .row, .field) > .slider:not(.circle, .small, .medium, .large) {
@@ -310,24 +343,12 @@
 
 @media (pointer: coarse) {
   .slider > :hover ~ .tooltip {
-    inset-block-start: -1rem !important;
+    inset-block: -1rem 0 !important;
     opacity: 1 !important;
     visibility: visible !important;
   }
-}
-.slider > .tooltip.bottom {
-  inset: auto auto 0.25rem calc(100% - var(--_end)) !important;
-  transform: translate(-50%, 100%) !important;
-}
-.slider > .tooltip.bottom + .tooltip.bottom {
-  inset: auto auto 0.25rem var(--_start) !important;
-  transform: translate(-50%, 100%) !important;
-}
 
-[dir=rtl] .slider > .tooltip.bottom {
-  transform: translate(-50%, 100%) scaleX(-1) !important;
-}
-
-[dir=rtl] .slider > .tooltip.bottom + .tooltip.bottom {
-  transform: translate(-50%, 100%) scaleX(-1) !important;
+  .slider > :hover ~ .tooltip.botom {
+    inset-block: 0 -1rem !important;
+  }
 }
