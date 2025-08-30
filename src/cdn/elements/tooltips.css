@@ -23,6 +23,11 @@
   transform: translate(-50%, -100%) scale(0.9);
 }
 
+.tooltip:not(.max):hover {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .tooltip.left {
   inset: 50% auto auto 0;
   transform: translate(-100%, -50%) scale(0.9);
