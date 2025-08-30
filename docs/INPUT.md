@@ -27,7 +27,37 @@ active
 ## Example
 
 ```html
-<div class="field label border">
+<div class="field label">
+  <input type="text">
+  <label>Label</label>
+</div>
+```
+
+## Icons example
+
+```html
+<div class="field label prefix">
+  <i>search</i>
+  <input type="text">
+  <label>Label</label>
+</div>
+```
+
+## Clickable icons example
+
+```html
+<div class="field label prefix">
+  <a>
+    <i>search</i>
+  </a>
+  <input type="text">
+  <label>Label</label>
+</div>
+```
+
+```html
+<div class="field label prefix">
+  <i class="front">search</i>
   <input type="text">
   <label>Label</label>
 </div>
@@ -46,15 +76,11 @@ Add/remove `active` class on label/input (the JS file of beer do this automatica
   <input type="text" class="active">
   <label class="active">Label</label>
 </div>
-
-<div class="field label border">
-  <input type="text" class="active">
-  <label class="active">Label</label>
-</div>
 ```
+
 #### Method 2
 
-- Add `placehholder=" "` on input (a pure CSS solution).
+Add `placeholder=" "` on input (a pure CSS solution).
 
 ```html
 <div class="field label">
@@ -63,12 +89,6 @@ Add/remove `active` class on label/input (the JS file of beer do this automatica
 </div>
 ```
 
-```html
-<div class="field label border">
-  <input type="text" placeholder=" ">
-  <label>Label</label>
-</div>
-```
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
