@@ -21,6 +21,7 @@ menu {
   transform: scale(0.8) translateY(120%);
   transition: all var(--speed2), 0s background-color;
   justify-content: flex-start;
+  padding: 0.5rem 0;
 }
 
 [dir=rtl] menu {
@@ -88,6 +89,7 @@ menu.min {
   transform: none !important;
   background-color: var(--surface-variant) !important;
   color: var(--on-surface-variant) !important;
+  padding: 0;
 }
 
 [dir=rtl] menu.min.right,

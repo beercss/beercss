@@ -83,7 +83,7 @@
             label Some text here
     button(data-ui="#menu6")
       span Video
-      menu#menu6.no-wrap(data-ui="#menu6")
+      menu#menu6.no-wrap.no-padding(data-ui="#menu6")
         li.no-padding
           video.small-width(autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
