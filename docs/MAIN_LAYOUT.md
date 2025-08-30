@@ -1,15 +1,42 @@
 # Main layout
 
-The main layout is a common html structure to setup your pages. For RTL languages set the attribute `dir="rtl"` on `body` element (or any other element).
+The main layout is a common html structure to setup your pages. For RTL languages set the attribute `dir="rtl"` on `body` element (or any other element). [Check the main layout example on Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj).
 
 ## Example
 
+Place the `<nav>` elements before all others.
+
 ```html
-<nav class="top|bottom|left|right">...</nav>
+<nav class="top">...</nav>
+<nav class="bottom">...</nav>
+<nav class="left">...</nav>
+<nav class="right">...</nav>
 <header class="responsive|fixed">...</header>
 <main class="responsive">...</main>
 <footer class="responsive|fixed">...</footer>
 ```
+
+This is how the code above will be rendered (you don't need to use all elements):
+
+```
+nav.left | nav.top    | nav.right
+nav.left | header     | nav.right
+nav.left | main       | nav.right
+nav.left | footer     | nav.right
+nav.left | nav.bottom | nav.right
+```
+
+## Most used helpers
+
+The `responsive` helper is used to define a max-width for the element. If the max-width is reached the element will be on center of screen. The `fixed` helper is used to keep the `<header>` (on top) or `<footer>` (on bottom) even after scrolling the page.
+
+**Positions**
+
+top, left, right, bottom, fixed
+
+**Sizes**
+
+responsive
 
 ## Compact example
 
