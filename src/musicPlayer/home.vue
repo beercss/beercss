@@ -5,7 +5,7 @@ main.middle-align.center-align
       .s12.m6.l6.l
         article.round.no-padding.no-elevate.page.active.top.transparent
           .shape.sided-cookie6.medium-width.medium-height.space.rotate.auto-margin
-            img.responsive.red(:src="data.wallpaper")
+            img.responsive(:src="data.wallpaper")
           .white-text
             h6 {{ data.title }}
             div The name of artist
