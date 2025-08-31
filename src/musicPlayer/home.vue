@@ -4,11 +4,12 @@ main.middle-align.center-align
     .grid.middle-align.large-space
       .s12.m6.l6.l
         article.round.no-padding.no-elevate.page.active.top.transparent
-          img.responsive.large-height(:src="data.wallpaper")
-          .absolute.bottom.left.right.large-padding.bottom-shadow.bottom-round.left-align
-            p.white-text
-              h6 {{ data.title }}
-              div The name of artist
+          .shape.sided-cookie6.medium-width.medium-height.space.rotate.auto-margin
+            img.responsive.red(:src="data.wallpaper")
+          .white-text
+            h6 {{ data.title }}
+            div The name of artist
+          .large-padding
             nav
               label.slider
                 input(v-model="data.time" type="range")
@@ -38,9 +39,10 @@ main.middle-align.center-align
                 img.responsive(:src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
       .s12.s.m
         article.round.no-elevate.page.active.left.transparent.no-padding
-          p.left-align.left-padding
+          div
             h6 {{ data.title }}
             div The name of artist
+          .space
           label.slider
             input(v-model="data.time", type="range")
             span
