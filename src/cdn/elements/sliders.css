@@ -343,12 +343,12 @@
 
 @media (pointer: coarse) {
   .slider > :hover ~ .tooltip {
-    inset-block: -1rem 0 !important;
+    inset-block: -1rem auto !important;
     opacity: 1 !important;
     visibility: visible !important;
   }
 
-  .slider > :hover ~ .tooltip.botom {
-    inset-block: 0 -1rem !important;
+  .slider > :hover ~ .tooltip.bottom {
+    inset-block: auto -1rem !important;
   }
 }

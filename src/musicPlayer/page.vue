@@ -4,13 +4,9 @@
   link(rel="preload", as="image", href="/kids-jumpsuit.jpg")
   link(rel="preload", as="image", href="/dogtooth-style-jacket.jpg")
   link(rel="preload", as="image", href="/retro-shoe.jpg")
-  header.fixed.padding.white-text.top-shadow(v-show="data.showPage")
+  header.absolute.top.left.right.padding.white-text.top-shadow.front(v-show="data.showPage")
     nav
       .max
-        .s
-          h6.bold.page.active.right.s {{ data.title }}
-        .m.l
-          h2.bold.page.active.right {{ data.title }}
       button.circle.transparent(@click="sharedDomain.updateMode(data)")
         i {{ data.isDark ? "light_mode" : "dark_mode" }}
       button.circle.transparent(@click="reloadAnimation()")

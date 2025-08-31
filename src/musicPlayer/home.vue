@@ -1,69 +1,71 @@
 <template lang="pug">
-main.responsive
-  .grid
-    .s12.m6.l6.m.l
-      article.round.no-padding.blur.no-elevate.page.active.left
-        img.responsive.medium-height.top-round(:src="data.wallpaper")
-        .medium-space
-        .large-padding
-          .medium-space
-          nav
-            label.slider
-              input(v-model="data.time" type="range")
-              span
-              .tooltip
-          .medium-space
-          nav.center-align
-            button.fill.circle.large
-              i skip_previous
-            button.extra
-              i play_arrow
-            button.fill.circle.large
-              i skip_next
-    .s12.m6.l6.m.l
-      article.round.large-padding.blur.no-elevate.page.active.top
-        .grid
-          .s12.m6
-            a.row.round.medium-height
-              img.responsive(:src="'/classic-utility-jacket.jpg'", @click="updateTheme('', '')")
-            .space
-            a.row.round.small-height
-              img.responsive(:src="'/kids-jumpsuit.jpg'", @click="updateTheme('/kids-jumpsuit.jpg', 'Kids Jumpsuit')")
-          .s12.m6
-            a.row.round.small-height
-              img.responsive(:src="'/dogtooth-style-jacket.jpg'", @click="updateTheme('/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket')")
-            .space
-            a.row.round.medium-height
-              img.responsive(:src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
-    .s12.s
-      .space
-      article.round.large-padding.blur.no-elevate.page.active.left
-        label.slider
-          input(v-model="data.time", type="range")
-          span
-          .tooltip
-        .space
-        nav
-          img.large.round(:src="data.wallpaper")
-          .max
+main.middle-align.center-align
+  .large-padding.small-blur.round
+    .grid.middle-align.large-space
+      .s12.m6.l6.l
+        article.round.no-padding.no-elevate.page.active.top.transparent
+          img.responsive.large-height(:src="data.wallpaper")
+          .absolute.bottom.left.right.large-padding.bottom-shadow.bottom-round.left-align
+            p.white-text
+              h6 {{ data.title }}
+              div The name of artist
+            nav
+              label.slider
+                input(v-model="data.time" type="range")
+                span
+                .tooltip
             nav.center-align
-              button.transparent.circle.large
-                i skip_previous
-              button.fill.extra
+              button.extra.circle.large-padding
                 i play_arrow
-              button.transparent.circle.large
+              button.fill.large.vertical-padding
+                i skip_previous
+              button.fill.large.vertical-padding
                 i skip_next
-    .s12.s
-      article.round.large-padding.blur.no-elevate.page.active.bottom
-        nav.scroll
-          .small-height.small-width.round
-            img.responsive(:src="'/classic-utility-jacket.jpg'", @click="updateTheme('', '')")
-          .small-height.small-width.round
-            img.responsive(:src="'/kids-jumpsuit.jpg'", @click="updateTheme('/kids-jumpsuit.jpg', 'Kids Jumpsuit')")
-          .small-height.small-width.round
-            img.responsive(:src="'/dogtooth-style-jacket.jpg'", @click="updateTheme('/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket')")
-          .small-height.small-width.round
-            img.responsive(:src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
+      .s12.m6.l6.l
+        article.round.no-padding.no-elevate.page.active.right.transparent
+          .grid.large-space
+            .s12.m6
+              a.row.round.medium-height
+                img.responsive(:src="'/classic-utility-jacket.jpg'", @click="updateTheme('', '')")
+              .space
+              a.row.round.small-height
+                img.responsive(:src="'/kids-jumpsuit.jpg'", @click="updateTheme('/kids-jumpsuit.jpg', 'Kids Jumpsuit')")
+            .s12.m6
+              a.row.round.small-height
+                img.responsive(:src="'/dogtooth-style-jacket.jpg'", @click="updateTheme('/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket')")
+              .space
+              a.row.round.medium-height
+                img.responsive(:src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
+      .s12.s.m
+        article.round.no-elevate.page.active.left.transparent.no-padding
+          p.left-align.left-padding
+            h6 {{ data.title }}
+            div The name of artist
+          label.slider
+            input(v-model="data.time", type="range")
+            span
+            .tooltip
+          nav
+            .max
+              nav.center-align
+                button.extra.circle.large-padding
+                  i play_arrow
+                button.fill.large.vertical-padding
+                  i skip_previous
+                button.fill.large.vertical-padding
+                  i skip_next
+      .s12.s.m
+        article.round.no-elevate.page.active.bottom.transparent.no-padding
+          .space
+          nav.scroll
+            .small-height.small-width.round
+              img.responsive(:src="'/classic-utility-jacket.jpg'", @click="updateTheme('', '')")
+            .small-height.small-width.round
+              img.responsive(:src="'/kids-jumpsuit.jpg'", @click="updateTheme('/kids-jumpsuit.jpg', 'Kids Jumpsuit')")
+            .small-height.small-width.round
+              img.responsive(:src="'/dogtooth-style-jacket.jpg'", @click="updateTheme('/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket')")
+            .small-height.small-width.round
+              img.responsive(:src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
 </template>
 
 <script setup lang="ts">
