@@ -137,7 +137,7 @@ input::-webkit-date-and-time-value {
 }
 
 .field.min > textarea {
-  overflow: hidden;
+  overflow: hidden auto;
   position: absolute;
   inset: 0;
   max-block-size: 12rem;
