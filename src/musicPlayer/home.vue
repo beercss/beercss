@@ -6,7 +6,7 @@ main.middle-align.center-align
         article.round.no-padding.no-elevate.page.active.top.transparent
           .shape.sided-cookie6.medium-width.medium-height.space.rotate.auto-margin
             img.responsive(:src="data.wallpaper")
-          .white-text
+          div
             h6 {{ data.title }}
             div The name of artist
           .large-padding
@@ -38,6 +38,18 @@ main.middle-align.center-align
               a.row.round.medium-height
                 img.responsive(:src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
       .s12.s.m
+        article.round.no-elevate.page.active.bottom.transparent.no-padding
+          .space
+          nav.scroll
+            .small-height.small-width.round
+              img.responsive(:src="'/classic-utility-jacket.jpg'", @click="updateTheme('', '')")
+            .small-height.small-width.round
+              img.responsive(:src="'/kids-jumpsuit.jpg'", @click="updateTheme('/kids-jumpsuit.jpg', 'Kids Jumpsuit')")
+            .small-height.small-width.round
+              img.responsive(:src="'/dogtooth-style-jacket.jpg'", @click="updateTheme('/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket')")
+            .small-height.small-width.round
+              img.responsive(:src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
+      .s12.s.m
         article.round.no-elevate.page.active.left.transparent.no-padding
           div
             h6 {{ data.title }}
@@ -56,18 +68,6 @@ main.middle-align.center-align
                   i skip_previous
                 button.fill.large.vertical-padding
                   i skip_next
-      .s12.s.m
-        article.round.no-elevate.page.active.bottom.transparent.no-padding
-          .space
-          nav.scroll
-            .small-height.small-width.round
-              img.responsive(:src="'/classic-utility-jacket.jpg'", @click="updateTheme('', '')")
-            .small-height.small-width.round
-              img.responsive(:src="'/kids-jumpsuit.jpg'", @click="updateTheme('/kids-jumpsuit.jpg', 'Kids Jumpsuit')")
-            .small-height.small-width.round
-              img.responsive(:src="'/dogtooth-style-jacket.jpg'", @click="updateTheme('/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket')")
-            .small-height.small-width.round
-              img.responsive(:src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
 </template>
 
 <script setup lang="ts">
