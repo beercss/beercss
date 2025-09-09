@@ -99,7 +99,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -107,7 +107,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -115,7 +115,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -123,7 +123,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1340,8 +1340,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 }
 .scroll {
   overflow: auto;
-  max-inline-size: calc(100vw - calc(var(--_padding, 0) * 2));
-  margin: auto;
+  min-inline-size: 0;
 }
 .no-scroll {
   overflow: hidden;
@@ -1604,6 +1603,12 @@ pre:has(> code){
   direction: ltr;
   text-align: start;
 }
+sub {
+  vertical-align: sub;
+}
+sup {
+  vertical-align: super;
+}
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not(.slow-ripple, .ripple, .fast-ripple)::after,
 nav:is(.left, .right, .bottom, .top).max > a::after,
 nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a::after,
@@ -1778,11 +1783,21 @@ dialog > :is(header, footer).fixed {
   inset: 0;
   z-index: 12;
 }
+:has(> main) > header {
+  padding-block-start: var(--top);
+}
+:has(> main) > footer {
+  padding-block-end: var(--bottom);
+}
+nav.top ~ header,
+nav.bottom ~ footer {
+  padding-block: 0;
+}
 nav.top ~ header.fixed {
-  inset-block-start: 4.5rem;
+  inset-block: calc(var(--top)  + 4.5rem) 0;
 }
 nav.bottom ~ footer.fixed {
-  inset-block-end: 4.5rem;
+  inset-block: 0 calc(var(--bottom) + 4.5rem);
 }
 :is(nav, .row) > header {
   background-color: inherit;
@@ -1936,6 +1951,8 @@ article.border {
 }
 dialog {
   --_padding: 1.5rem;
+  --_top: calc(var(--_padding) + var(--top));
+  --_bottom: calc(var(--_padding) + var(--bottom));
   display: block;
   visibility: hidden;
   border: none;
@@ -1993,12 +2010,13 @@ dialog.top {
   inset: 0 auto auto 0;
   transform: translateY(-100%);
   border-radius: 0 0 1rem 1rem;
-  padding-block-end: var(--_padding);
+  padding-block-start: var(--_top);
 }
 dialog.bottom {
   inset: auto auto 0 0;
   transform: translateY(100%);
   border-radius: 1rem 1rem 0 0;
+  padding-block-end: var(--_bottom);
 }
 dialog:is(.left, .right) {
   opacity: 1;
@@ -2007,6 +2025,7 @@ dialog:is(.left, .right) {
   block-size: 100%;
   max-block-size: 100%;
   background-color: var(--surface);
+  padding-block: var(--_top) var(--_bottom);
 }
 [dir=rtl] dialog.right,
 dialog.left {
@@ -2029,6 +2048,7 @@ dialog.max {
   transform: translateY(4rem);
   background-color: var(--surface);
   border-radius: 0;
+  padding-block: var(--_top) var(--_bottom);
 }
 dialog:is(.active, [open]):is(.left, .right, .top, .bottom, .max) {
   transform: translate(0, 0);
@@ -2053,6 +2073,11 @@ dialog.medium:is(.top, .bottom) {
 }
 dialog.large:is(.top, .bottom) {
   block-size: 32rem;
+}
+@media (pointer: coarse) {
+  body:has(dialog[open], dialog.active) {
+    overflow: hidden;
+  }
 }
 hr,
 [class*=divider] {
@@ -2220,7 +2245,7 @@ input::-webkit-date-and-time-value {
   padding: 0 0.875rem;
 }
 .field.min > textarea {
-  overflow: hidden;
+  overflow: hidden auto;
   position: absolute;
   inset: 0;
   max-block-size: 12rem;
@@ -2820,27 +2845,21 @@ nav.right {
 }
 nav.top {
   grid-area: top;
-  position: sticky;
-  inset: 0;
-  block-size: 4rem;
 }
 nav.bottom {
   grid-area: bottom;
-  position: sticky;
-  inset: 0;
-  block-size: 4rem;
 }
 header {
   grid-area: header;
+}
+footer {
+  grid-area: footer;
 }
 main {
   --_padding: 0.5rem;
   grid-area: main;
   padding: var(--_padding);
   overflow: hidden;
-}
-footer {
-  grid-area: footer;
 }
 aside {
   z-index: 1;
@@ -2964,6 +2983,7 @@ menu {
   transform: scale(0.8) translateY(120%);
   transition: all var(--speed2), 0s background-color;
   justify-content: flex-start;
+  padding: 0.5rem 0;
 }
 [dir=rtl] menu {
   inset: auto 0 0 auto;
@@ -3022,6 +3042,7 @@ menu.min {
   transform: none !important;
   background-color: var(--surface-variant) !important;
   color: var(--on-surface-variant) !important;
+  padding: 0;
 }
 [dir=rtl] menu.min.right,
 menu.min.left,
@@ -3201,6 +3222,7 @@ a.row {
   white-space: nowrap;
   gap: 1rem;
   border-radius: 0;
+  min-inline-size: 0;
 }
 a.row,
 nav.row {
@@ -3243,6 +3265,9 @@ nav > :is(ol, ul) > li > :only-child {
   min-block-size: inherit;
 }
 nav:is(.left, .right, .top, .bottom) {
+  --_padding: 0.5rem;
+  --_top: calc(var(--_padding) + var(--top));
+  --_bottom: calc(var(--_padding) + var(--bottom));
   position: sticky;
   inset: 0;
   border: 0;
@@ -3250,7 +3275,7 @@ nav:is(.left, .right, .top, .bottom) {
   transform: none;
   z-index: 100;
   text-align: center;
-  padding: 0.5rem;
+  padding: var(--_padding);
   margin: 0;
 }
 nav:is(.left, .right) {
@@ -3259,14 +3284,25 @@ nav:is(.left, .right) {
   background-color: var(--surface);
   block-size: 100dvh;
   min-inline-size: 6rem;
+  padding-block: var(--_top) var(--_bottom);
 }
 nav:is(.top, .bottom) {
+  position: sticky;
+  inset: 0;
   padding: 0.5rem;
   justify-content: center;
   flex-direction: row;
   background-color: var(--surface-container);
   block-size: auto;
   min-block-size: 4.5rem;
+}
+nav.top {
+  block-size: calc(var(--top) + 4.5rem);
+  padding-block-start: var(--_top);
+}
+nav.bottom {
+  block-size: calc(var(--bottom) + 4.5rem);
+  padding-block-end: var(--_bottom);
 }
 nav > header {
   min-block-size: auto;
@@ -3303,7 +3339,7 @@ nav.max:is(.left, .right, .top, .bottom) {
   inline-size: auto;
   align-items: flex-start;
   min-inline-size: 12.75rem;
-  padding: 0.5rem 1.25rem;
+  padding: var(--_top) 1.25rem var(--_bottom) 1.25rem;
 }
 nav.max > :is(ol, ul) {
   padding: 0;
@@ -4351,18 +4387,33 @@ progress.max + * {
   inset: 0 auto auto calc(100% - var(--_end));
   border-radius: 2rem;
   transition: top var(--speed2) ease, opacity var(--speed2) ease;
-  transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -25%) !important;
   padding: 0.75rem 1rem;
 }
+.slider > .tooltip.bottom {
+  inset: auto auto 0 calc(100% - var(--_end));
+  transition: bottom var(--speed2) ease, opacity var(--speed2) ease;
+  transform: translate(-50%, 25%) !important;
+}
 [dir=rtl] .slider > .tooltip {
-  transform: translate(-50%, -50%) scaleX(-1) !important;
+  transform: translate(-50%, -25%) scaleX(-1) !important;
+}
+[dir=rtl] .slider > .tooltip.bottom {
+  transform: translate(-50%, 25%) scaleX(-1) !important;
 }
 .slider > .tooltip + .tooltip {
   inset: 0.25rem calc(100% - var(--_start)) auto auto;
-  transform: translate(50%, -50%) !important;
+  transform: translate(50%, -25%) !important;
+}
+.slider > .tooltip + .tooltip.bottom {
+  inset: auto calc(100% - var(--_start)) -0.25rem auto;
+  transform: translate(50%, 25%) !important;
 }
 [dir=rtl] .slider > .tooltip + .tooltip {
-  transform: translate(50%, -50%) scaleX(-1) !important;
+  transform: translate(50%, -25%) scaleX(-1) !important;
+}
+[dir=rtl] .slider > .tooltip + .tooltip.bottom {
+  transform: translate(50%, 25%) scaleX(-1) !important;
 }
 .slider > .tooltip::before {
   content: var(--_value1);
@@ -4371,19 +4422,30 @@ progress.max + * {
   content: var(--_value2);
 }
 .slider > :focus ~ .tooltip {
-  inset-block-start: -1rem !important;
+  inset-block: -1rem auto;
   opacity: 1 !important;
   visibility: visible !important;
 }
+.slider > :focus ~ .tooltip.bottom {
+  inset-block: auto -1rem;
+}
 .slider.vertical > .tooltip {
-  inset-block-start: auto !important;
-  margin-block-start: calc(-1 * var(--_thumb)) !important;
+  inset-block: auto;
   block-size: 2.5rem;
   inline-size: 2.5rem;
+  margin-block: calc(-1 * var(--_thumb)) 0 !important;
   transform: rotate(90deg) translate(-75%, 50%) !important;
+}
+.slider.vertical > .tooltip.bottom {
+  inset-block: auto;
+  margin-block: 0 calc(-1 * var(--_thumb)) !important;
+  transform: rotate(90deg) translate(75%, 50%) !important;
 }
 .slider.vertical > .tooltip + .tooltip {
   transform: rotate(90deg) translate(-75%, -50%) !important;
+}
+.slider.vertical > .tooltip + .tooltip.bottom {
+  transform: rotate(90deg) translate(75%, -50%) !important;
 }
 :is(nav, .row, .field) > .slider:not(.circle, .small, .medium, .large) {
   flex: auto;
@@ -4448,9 +4510,13 @@ progress.max + * {
 }
 @media (pointer: coarse) {
   .slider > :hover ~ .tooltip {
-    inset-block-start: -1rem !important;
+    inset-block: -1rem auto !important;
     opacity: 1 !important;
     visibility: visible !important;
+  }
+
+  .slider > :hover ~ .tooltip.bottom {
+    inset-block: auto -1rem !important;
   }
 }
 .snackbar {
@@ -4615,6 +4681,10 @@ tfoot th.fixed {
   transition: all var(--speed2);
   line-height: normal;
   transform: translate(-50%, -100%) scale(0.9);
+}
+.tooltip:not(.max):hover {
+  visibility: hidden;
+  opacity: 0;
 }
 .tooltip.left {
   inset: 50% auto auto 0;

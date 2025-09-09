@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2025-07-03
+Generated on: 2025-09-09
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -61,8 +61,8 @@ The following documentation sections are included in order:
 ### DEFAULT VERSION
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -80,8 +80,8 @@ import "material-dynamic-colors";
 Applied on child elements of `<* class="beer">...</*>`.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -99,7 +99,7 @@ import "material-dynamic-colors";
 Applied on child elements of `<beer-css>...</beer-css>`.
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/beer.custom-element.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -115,7 +115,7 @@ import "material-dynamic-colors";
 
 ### LOCAL CDN VERSION
 
-Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
+Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
 
 ```html
 <link href="/beercss/beer.min.css" rel="stylesheet" />
@@ -135,8 +135,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.33/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">
@@ -1544,7 +1544,37 @@ active
 ## Example
 
 ```html
-<div class="field label border">
+<div class="field label">
+  <input type="text">
+  <label>Label</label>
+</div>
+```
+
+## Icons example
+
+```html
+<div class="field label prefix">
+  <i>search</i>
+  <input type="text">
+  <label>Label</label>
+</div>
+```
+
+## Clickable icons example
+
+```html
+<div class="field label prefix">
+  <a>
+    <i>search</i>
+  </a>
+  <input type="text">
+  <label>Label</label>
+</div>
+```
+
+```html
+<div class="field label prefix">
+  <i class="front">search</i>
   <input type="text">
   <label>Label</label>
 </div>
@@ -1563,25 +1593,14 @@ Add/remove `active` class on label/input (the JS file of beer do this automatica
   <input type="text" class="active">
   <label class="active">Label</label>
 </div>
-
-<div class="field label border">
-  <input type="text" class="active">
-  <label class="active">Label</label>
-</div>
 ```
+
 #### Method 2
 
-- Add `placehholder=" "` on input (a pure CSS solution).
+Add `placeholder=" "` on input (a pure CSS solution).
 
 ```html
 <div class="field label">
-  <input type="text" placeholder=" ">
-  <label>Label</label>
-</div>
-```
-
-```html
-<div class="field label border">
   <input type="text" placeholder=" ">
   <label>Label</label>
 </div>
@@ -1873,16 +1892,43 @@ no-space, space, small-space, medium-space, large-space
 
 # Main layout
 
-The main layout is a common html structure to setup your pages. For RTL languages set the attribute `dir="rtl"` on `body` element (or any other element).
+The main layout is a common html structure to setup your pages. For RTL languages set the attribute `dir="rtl"` on `body` element (or any other element). [Check the main layout example on Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj).
 
 ## Example
 
+Place the `<nav>` elements before all others.
+
 ```html
-<nav class="top|bottom|left|right">...</nav>
+<nav class="top">...</nav>
+<nav class="bottom">...</nav>
+<nav class="left">...</nav>
+<nav class="right">...</nav>
 <header class="responsive|fixed">...</header>
 <main class="responsive">...</main>
 <footer class="responsive|fixed">...</footer>
 ```
+
+This is how the code above will be rendered (you don't need to use all elements):
+
+```
+nav.left | nav.top    | nav.right
+nav.left | header     | nav.right
+nav.left | main       | nav.right
+nav.left | footer     | nav.right
+nav.left | nav.bottom | nav.right
+```
+
+## Most used helpers
+
+The `responsive` helper is used to define a max-width for the element. If the max-width is reached the element will be on center of screen. The `fixed` helper is used to keep the `<header>` (on top) or `<footer>` (on bottom) even after scrolling the page.
+
+**Positions**
+
+top, left, right, bottom, fixed
+
+**Sizes**
+
+responsive
 
 ## Compact example
 
@@ -2912,7 +2958,7 @@ Add `data-ui="snackbar-selector"` attribute on elements.
 
 #### Method 3
 
-Call `ui("snackbar-selector", millisecondsToHide)`. The default value for millisecondsToHide is 6000.
+Call `ui("#snackbar-selector", millisecondsToHide)`. The default value for millisecondsToHide is 6000.
 
 ```html
 <div class="snackbar" id="snackbar">
@@ -2922,7 +2968,8 @@ Call `ui("snackbar-selector", millisecondsToHide)`. The default value for millis
 ```
 
 ```js
-ui("#snackbar");
+ui("#snackbar"); // deafult timeout of 6000 milliseconds
+ui("#snackbar", 3000); // custom timeout of 3000 milliseconds
 ```
 
 #### Method 4

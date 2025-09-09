@@ -394,7 +394,6 @@ function closeDialog(dialog, overlay) {
   _dialogs.pop();
   const previousDialog = _dialogs[_dialogs.length - 1];
   if (previousDialog) previousDialog.focus();
-  else if (isTouchable()) document.body.classList.remove("no-scroll");
 }
 async function openDialog(dialog, overlay, isModal, from) {
   if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip")) addClass(from, "active");
@@ -405,7 +404,6 @@ async function openDialog(dialog, overlay, isModal, from) {
   await wait(90);
   if (!isModal) on(dialog, "keydown", onKeydownDialog, false);
   _dialogs.push(dialog);
-  if (isTouchable()) document.body.classList.add("no-scroll");
   focusOnDialogOrElement(dialog);
 }
 function onClickOverlay(e) {
