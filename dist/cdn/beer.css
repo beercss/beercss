@@ -99,7 +99,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.1/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -107,7 +107,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.1/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -115,7 +115,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.1/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -123,7 +123,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.0/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.1/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -3653,11 +3653,12 @@ dialog:popover-open::backdrop {
   }
 }
 progress {
+  --_size: 0.25rem;
   position: relative;
   inline-size: 100%;
-  block-size: 0.5rem;
+  block-size: var(--_size);
   color: var(--primary);
-  background: var(--primary-container);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
   border-radius: 1rem;
   flex: none;
   border: none;
@@ -3666,14 +3667,17 @@ progress {
   direction: ltr;
   -webkit-appearance: none;
 }
+.dark progress {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
+}
 progress.small {
-  inline-size: 4rem;
+  --_size: 0.25rem;
 }
 progress.medium {
-  inline-size: 8rem;
+  --_size: 0.35rem;
 }
 progress.large {
-  inline-size: 12rem;
+  --_size: 0.45rem;
 }
 progress:not(.circle, [value])::after {
   content: "";
@@ -3683,22 +3687,42 @@ progress:not(.circle, [value])::after {
   block-size: 100%;
   clip-path: none;
   background: currentcolor;
-  animation: 1.6s to-linear ease infinite;
+  animation: 3.2s to-linear ease infinite;
 }
 progress:not(.circle, [value])::-moz-progress-bar {
-  animation: 1.6s to-linear ease infinite;
+  animation: 3.2s to-linear ease infinite;
 }
 progress:not(.circle, [value])::-webkit-progress-value {
-  animation: 1.6s to-linear ease infinite;
+  animation: 3.2s to-linear ease infinite;
 }
 progress::-webkit-progress-bar {
   background: none;
 }
 progress::-webkit-progress-value {
-  background: currentcolor;
+  background: currentColor;
 }
 progress::-moz-progress-bar {
-  background: currentcolor;
+  background: currentColor;
+}
+progress.wavy {
+  block-size: calc(var(--_size) * 2);
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  background-size: auto calc(var(--_size) / 2);
+}
+progress.wavy::-webkit-progress-value,
+progress.wavy:not(.circle, [value])::after {
+  mask-image: url(wavy.svg);
+  mask-position: 0 50%;
+  mask-repeat: repeat-x;
+  mask-size: auto 100%;
+
+}
+progress.wavy::-moz-progress-bar {
+  mask-image: url(wavy.svg);
+  mask-position: 0 50%;
+  mask-repeat: repeat-x;
+  mask-size: auto 100%;
 }
 progress.circle {
   display: inline-block;
@@ -3767,18 +3791,15 @@ progress.max + * {
 }
 @keyframes to-linear {
   0% {
-    margin-inline-start: 0%;
-    inline-size: 0%;
+    margin-inline-start: -100%;
   }
 
   50% {
     margin-inline-start: 0%;
-    inline-size: 100%;
   }
 
   100% {
     margin-inline-start: 100%;
-    inline-size: 0%;
   }
 }
 @keyframes to-circular {

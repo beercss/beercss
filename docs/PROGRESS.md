@@ -16,18 +16,24 @@ vertical
 
 **Forms**
 
-circle
+circle, wavy
 
 **Sizes**
 
 small, medium, large, min
 
-## Linear example (default)
+## Linear example
 
 ```html
 <progress></progress>
 <progress value="0.25"></progress>
 <progress value="25" max="100"></progress>
+```
+
+```html
+<progress class="wavy"></progress>
+<progress class="wavy" value="0.25"></progress>
+<progress class="wavy" value="25" max="100"></progress>
 ```
 
 ## Circular example
