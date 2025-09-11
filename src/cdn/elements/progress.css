@@ -1,10 +1,12 @@
 progress {
+  --_light: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
+  --_dark: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
   --_size: 0.25rem;
   position: relative;
   inline-size: 100%;
   block-size: var(--_size);
   color: var(--primary);
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
+  background: var(--_light);
   border-radius: 1rem;
   flex: none;
   border: none;
@@ -15,7 +17,7 @@ progress {
 }
 
 .dark progress {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
+  background: var(--_dark);
 }
 
 progress.small {
@@ -63,9 +65,15 @@ progress::-moz-progress-bar {
 
 progress.wavy {
   block-size: calc(var(--_size) * 2);
+  background: none;
+  background-image: var(--_light);
   background-repeat: repeat-x;
   background-position: 0 50%;
   background-size: auto calc(var(--_size) / 2);
+}
+
+.dark progress.wavy {
+  background-image: var(--_dark);
 }
 
 progress.wavy::-webkit-progress-value,
