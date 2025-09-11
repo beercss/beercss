@@ -4,6 +4,7 @@
   block-size: var(--_size);
   margin-block-end: 2rem;
   border-radius: 0.25rem 0.25rem 0 0;
+  max-block-size: 12rem;
 }
 
 .grid > * > .field {
@@ -140,7 +141,6 @@ input::-webkit-date-and-time-value {
   overflow: hidden auto;
   position: absolute;
   inset: 0;
-  max-block-size: 12rem;
 }
 
 input[type=file],
