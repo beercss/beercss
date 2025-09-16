@@ -187,7 +187,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   background: var(--outline);
   border-radius: 1rem;
 }
-* + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul):not([class*='margin']) {
+:not(nav, .row) > * + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul, ol):not([class*='margin']) {
   margin-block-start: 1rem;
 }
 :has(> [class*='margin']) {
