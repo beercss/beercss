@@ -69,7 +69,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
   border-radius: 1rem;
 }
 
-:not(nav, .row) > * + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul):not([class*='margin'], .right, .left, .top, .bottom) {
+:not(.grid, nav, .row) > * + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul):not([class*='margin'], .right, .left, .top, .bottom) {
   margin-block-start: 1rem;
 }
 
