@@ -38,7 +38,7 @@ This will render one or more lines, depends the user screen. All elements immedi
 </div>
 ```
 
-### DO
+### ✅ DO:
 
 ```html
 <div class="grid">
@@ -54,7 +54,7 @@ This will render one or more lines, depends the user screen. All elements immedi
 </div>
 ```
 
-### DON'T
+### 🚫 DON'T:
 
 ```html
 <div class="grid">
