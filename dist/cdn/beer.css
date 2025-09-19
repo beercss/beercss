@@ -99,7 +99,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.7/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.8/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -107,7 +107,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.7/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.8/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -115,7 +115,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.7/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.8/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -123,7 +123,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.7/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.8/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1635,7 +1635,7 @@ nav:is(.left, .right, .bottom, .top).max > a:not(.button, .chip):is(:focus-visib
 nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:not(.button, .chip):is(:focus-visible, :hover)::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a:not(.button, .chip):is(:focus-visible, :hover) > i::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:not(.button, .chip):is(:focus-visible, :hover) > i::after {
-  background-size: 15000%;
+  background-size: 22500%;
   opacity: 0.1;
   transition: background-size var(--speed2) linear;
 }
@@ -1644,7 +1644,7 @@ nav:is(.left, .right, .bottom, .top).max > a:active::after,
 nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:active::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a:active > i::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:active > i::after {
-  background-size: 5000%;
+  background-size: 0%;
   opacity: 0;
   transition: none;
 }

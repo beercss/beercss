@@ -22,7 +22,7 @@ nav:is(.left, .right, .bottom, .top).max > a:not(.button, .chip):is(:focus-visib
 nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:not(.button, .chip):is(:focus-visible, :hover)::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a:not(.button, .chip):is(:focus-visible, :hover) > i::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:not(.button, .chip):is(:focus-visible, :hover) > i::after {
-  background-size: 15000%;
+  background-size: 22500%;
   opacity: 0.1;
   transition: background-size var(--speed2) linear;
 }
@@ -32,7 +32,7 @@ nav:is(.left, .right, .bottom, .top).max > a:active::after,
 nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:active::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a:active > i::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:active > i::after {
-  background-size: 5000%;
+  background-size: 0%;
   opacity: 0;
   transition: none;
 }

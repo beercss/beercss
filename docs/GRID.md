@@ -22,7 +22,7 @@ no-space, space, small-space, medium-space, large-space
 
 ## Example
 
-This will render one or more lines, depends the user screen.
+This will render one or more lines, depends the user screen. All elements immediately inside grid are "cells" and can't be mixed with other elements.
 
 ```html
 <div class="grid">
@@ -35,6 +35,32 @@ This will render one or more lines, depends the user screen.
   <div class="s12 m6 l3">
     <h5>Third</h5>
   </div>
+</div>
+```
+
+### DO
+
+```html
+<div class="grid">
+  <div class="s12 m6 l3">
+    <article>...</article>
+  </div>
+  <div class="s12 m6 l3">
+    <label>...</label>
+  </div>
+  <div class="s12 m6 l3">
+    <div class="field">...</h5>
+  </div>
+</div>
+```
+
+### DON'T
+
+```html
+<div class="grid">
+  <article class="s12 m6 l3">...</article>
+  <label class="s12 m6 l3">...</label>
+  <div class="s12 m6 l3 field">...</div>
 </div>
 ```
 
