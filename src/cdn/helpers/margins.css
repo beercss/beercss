@@ -1,8 +1,10 @@
-[class*=margin]:not(.left-margin, .right-margin, .top-margin, .bottom-margin, .horizontal-margin, .vertical-margin) {
+.margin,
+[class*=-margin]:not(.left-margin, .right-margin, .top-margin, .bottom-margin, .horizontal-margin, .vertical-margin) {
   margin: var(--_margin) !important;
 }
 
-[class*=margin] {
+.margin,
+[class*=-margin] {
   --_margin: 1rem;
 }
 

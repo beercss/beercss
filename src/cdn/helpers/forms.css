@@ -1,4 +1,5 @@
-[class*=round] {
+.round,
+[class*=-round] {
   --_round: 2rem;
   border-radius: var(--_round) !important;
 }
