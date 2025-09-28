@@ -97,7 +97,7 @@
   animation: linear to-shape-rotate infinite 24s;
 }
 
-.shape.slow-rotate {
+.shape.slow-rotate > * {
   animation: linear to-shape-rotate infinite 24s reverse;
 }
 
