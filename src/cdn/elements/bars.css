@@ -49,7 +49,7 @@ dialog > :is(header, footer).fixed {
 }
 
 :is(main, header, footer, section).responsive {
-  max-inline-size: 75rem;
+  max-inline-size: min(100vw, 75rem);
   margin: 0 auto;
 }
 
