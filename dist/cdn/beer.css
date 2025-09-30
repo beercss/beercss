@@ -99,7 +99,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.9/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.10/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -107,7 +107,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.9/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.10/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -115,7 +115,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.9/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.10/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -123,7 +123,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.9/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.10/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1131,7 +1131,8 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 .large-elevate {
   box-shadow: var(--elevate3) !important;
 }
-[class*=round] {
+.round,
+[class*=-round] {
   --_round: 2rem;
   border-radius: var(--_round) !important;
 }
@@ -1191,10 +1192,12 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 .border:not(.extend, .circle, .square, .badge) {
   box-sizing: content-box;
 }
-[class*=margin]:not(.left-margin, .right-margin, .top-margin, .bottom-margin, .horizontal-margin, .vertical-margin) {
+.margin,
+[class*=-margin]:not(.left-margin, .right-margin, .top-margin, .bottom-margin, .horizontal-margin, .vertical-margin) {
   margin: var(--_margin) !important;
 }
-[class*=margin] {
+.margin,
+[class*=-margin] {
   --_margin: 1rem;
 }
 .no-margin {
@@ -1243,10 +1246,11 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 .large-opacity {
   opacity: 0.25 !important;
 }
-[class*=padding]:not(.left-padding, .right-padding, .top-padding, .bottom-padding, .horizontal-padding, .vertical-padding) {
+.padding,
+[class*=-padding]:not(.left-padding, .right-padding, .top-padding, .bottom-padding, .horizontal-padding, .vertical-padding) {
   padding: var(--_padding) !important;
 }
-[class*=padding] {
+[class*=-padding] {
   --_padding: 1rem;
 }
 .no-padding {
@@ -1366,7 +1370,7 @@ body :is(:hover,:focus)::-webkit-scrollbar-thumb {
 .top-shadow {
   background-image: linear-gradient(to bottom, black, transparent) !important;
 }
-[class*=width] {
+[class*=-width] {
   max-inline-size: 100%;
 }
 .auto-width {
@@ -1773,7 +1777,7 @@ dialog > :is(header, footer).fixed {
   background-color: inherit;
 }
 :is(main, header, footer, section).responsive {
-  max-inline-size: 75rem;
+  max-inline-size: min(100vw, 75rem);
   margin: 0 auto;
 }
 :is(main, header, footer, section).responsive.max {
@@ -3936,7 +3940,7 @@ progress.max + * {
 .shape.slow-rotate {
   animation: linear to-shape-rotate infinite 24s;
 }
-.shape.slow-rotate {
+.shape.slow-rotate > * {
   animation: linear to-shape-rotate infinite 24s reverse;
 }
 :is(button, .button, .chip):has(> .shape) > .responsive {

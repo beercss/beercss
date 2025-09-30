@@ -100,7 +100,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.9/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.10/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -108,7 +108,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.9/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.10/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -116,7 +116,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.9/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.10/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -124,7 +124,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.9/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.10/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -1132,7 +1132,8 @@
 .beer .large-elevate {
   box-shadow: var(--elevate3) !important;
 }
-.beer [class*=round] {
+.beer .round,
+.beer [class*=-round] {
   --_round: 2rem;
   border-radius: var(--_round) !important;
 }
@@ -1192,10 +1193,12 @@
 .beer .border:not(.extend, .circle, .square, .badge) {
   box-sizing: content-box;
 }
-.beer [class*=margin]:not(.left-margin, .right-margin, .top-margin, .bottom-margin, .horizontal-margin, .vertical-margin) {
+.beer .margin,
+.beer [class*=-margin]:not(.left-margin, .right-margin, .top-margin, .bottom-margin, .horizontal-margin, .vertical-margin) {
   margin: var(--_margin) !important;
 }
-.beer [class*=margin] {
+.beer .margin,
+.beer [class*=-margin] {
   --_margin: 1rem;
 }
 .beer .no-margin {
@@ -1244,10 +1247,11 @@
 .beer .large-opacity {
   opacity: 0.25 !important;
 }
-.beer [class*=padding]:not(.left-padding, .right-padding, .top-padding, .bottom-padding, .horizontal-padding, .vertical-padding) {
+.beer .padding,
+.beer [class*=-padding]:not(.left-padding, .right-padding, .top-padding, .bottom-padding, .horizontal-padding, .vertical-padding) {
   padding: var(--_padding) !important;
 }
-.beer [class*=padding] {
+.beer [class*=-padding] {
   --_padding: 1rem;
 }
 .beer .no-padding {
@@ -1367,7 +1371,7 @@
 .beer .top-shadow {
   background-image: linear-gradient(to bottom, black, transparent) !important;
 }
-.beer [class*=width] {
+.beer [class*=-width] {
   max-inline-size: 100%;
 }
 .beer .auto-width {
@@ -1774,7 +1778,7 @@ html {
   background-color: inherit;
 }
 .beer :is(main, header, footer, section).responsive {
-  max-inline-size: 75rem;
+  max-inline-size: min(100vw, 75rem);
   margin: 0 auto;
 }
 .beer :is(main, header, footer, section).responsive.max {
@@ -3937,7 +3941,7 @@ html {
 .beer .shape.slow-rotate {
   animation: linear to-shape-rotate infinite 24s;
 }
-.beer .shape.slow-rotate {
+.beer .shape.slow-rotate > * {
   animation: linear to-shape-rotate infinite 24s reverse;
 }
 .beer :is(button, .button, .chip):has(> .shape) > .responsive {
