@@ -3,6 +3,7 @@
   padding: var(--_padding) !important;
 }
 
+.padding,
 [class*=-padding] {
   --_padding: 1rem;
 }
