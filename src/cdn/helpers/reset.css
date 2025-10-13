@@ -64,7 +64,7 @@ body ::-webkit-scrollbar-button {
   block-size: 0.4rem;
 }
 
-body :is(:hover,:focus)::-webkit-scrollbar-thumb {
+body ::-webkit-scrollbar-thumb {
   background: var(--outline);
   border-radius: 1rem;
 }
