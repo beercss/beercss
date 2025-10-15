@@ -110,7 +110,7 @@
   .medium-space
   h6
     span Value indicator bottom
-    button.chip.circle(@click="domain.showSamples(data, '#silders6 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#sliders6 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
   nav.wrap
     label.radio

@@ -63,7 +63,7 @@
   #custom-progress
     h6 
       span Custom progressbar
-      button.chip.circle(@click="domain.showSamples(data, '#custom-progress progress', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
+      button.chip.circle(@click="domain.showSamples(data, '#custom-progress > nav > *', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
         i code
     .medium-space
     nav
