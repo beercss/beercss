@@ -100,7 +100,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.12/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -108,7 +108,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.12/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -116,7 +116,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.12/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -124,7 +124,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.12/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -177,16 +177,20 @@
 .beer label {
   user-select: none;
 }
-.beer ::-webkit-scrollbar,
-.beer ::-webkit-scrollbar-thumb,
-.beer ::-webkit-scrollbar-button {
-  background: none;
-  inline-size: 0.4rem;
-  block-size: 0.4rem;
-}
-.beer ::-webkit-scrollbar-thumb {
-  background: var(--outline);
-  border-radius: 1rem;
+@media (pointer: fine) {
+  .beer ::-webkit-scrollbar,
+  .beer ::-webkit-scrollbar-thumb,
+  .beer ::-webkit-scrollbar-button {
+    background: none;
+    inline-size: 0.4rem;
+    block-size: 0.4rem;
+  }
+
+  .beer :is(:focus, :hover)::-webkit-scrollbar-thumb,
+  .beer :has(:focus, :hover)::-webkit-scrollbar-thumb {
+    background: var(--outline);
+    border-radius: 1rem;
+  }
 }
 .beer :not(.grid, nav, .row) > :not(progress.max) + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul):not([class*='margin'], .right, .left, .top, .bottom) {
   margin-block-start: 1rem;
@@ -2084,7 +2088,7 @@ html {
   block-size: 32rem;
 }
 @media (pointer: coarse) {
-  .beer .beer:has(dialog[open], dialog.active) {
+  .beer:has(dialog[open], dialog.active) {
     overflow: hidden;
   }
 }

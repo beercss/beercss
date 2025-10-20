@@ -14,7 +14,8 @@ function fixSelectors(css) {
     .replace(/\bbody\b/g, ".beer")
     .replace(/\.beer\s(:has|\*:has)/g, ".beer :has")
     .replace(/(\.beer\s)(\s+)/g, "$2$1")
-    .replace(/\.beer\s:has\(>\smain\)/g, ".beer:has(> main)");
+    .replace(/\.beer\s:has\(>\smain\)/g, ".beer:has(> main)")
+    .replace(/\.beer\s\.beer/g, ".beer");
 }
 
 function removeSpaces(css) {
