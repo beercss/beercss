@@ -94,13 +94,13 @@
       .field.label.suffix.border
         input(type="text")
         label Label
-        i search
+        i.front search
     .s12.l4
       .field.label.prefix.suffix.border
         i search
         input(type="text")
         label Label
-        i search
+        i.front search
     .s12.l4
       .field.border.prefix
         img.circle(:src="'/favicon.png'")
