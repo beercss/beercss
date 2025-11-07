@@ -3,7 +3,6 @@
 .radio,
 .switch {
   --_size: 1.5rem;
-  direction: ltr;
   inline-size: auto;
   block-size: auto;
   line-height: normal;
@@ -46,6 +45,13 @@
 
 :is(.checkbox, .radio) > span:not(:empty) {
   padding-inline-start: 0.25rem;
+}
+
+[dir=rtl] :is(.checkbox, .radio, .switch) > span::before,
+[dir=rtl] :is(.checkbox, .radio, .switch) > span > i,
+[dir=rtl] :is(.checkbox, .radio) > span::after {
+  --_size: inherit;
+  inset: auto calc(var(--_size) * -1) auto auto;
 }
 
 :is(.checkbox, .radio, .switch) > span::before,
