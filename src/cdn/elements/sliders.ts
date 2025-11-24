@@ -1,4 +1,13 @@
-import { query, queryAll, hasClass, on, off, parent, hasTag, isTouchable } from "../utils";
+import {
+  query,
+  queryAll,
+  hasClass,
+  on,
+  off,
+  parent,
+  hasTag,
+  isTouchable,
+} from "../utils";
 
 function onInputDocument(e: Event) {
   const input = e.target as HTMLInputElement;
@@ -30,22 +39,36 @@ function onBlurRange(e: Event) {
 
 function updateAllRanges() {
   const body = document.body;
-  const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
+  const ranges = queryAll(
+    ".slider > input[type=range]"
+  ) as NodeListOf<HTMLInputElement>;
   if (!ranges.length) off(body, "input", onInputDocument, false);
   else on(body, "input", onInputDocument, false);
-  for(let i=0; i<ranges.length; i++) updateRange(ranges[i]);
+  for (let i = 0; i < ranges.length; i++) updateRange(ranges[i]);
 }
 
 function rootSizeInPixels(): number {
-  const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
+  const size =
+    getComputedStyle(document.documentElement).getPropertyValue("--size") ||
+    "16px";
   if (size.includes("%")) return (parseInt(size) * 16) / 100;
   if (size.includes("em")) return parseInt(size) * 16;
   return parseInt(size);
-} 
+}
+
+const wiredInputs = new WeakSet<HTMLInputElement>();
 
 function updateRange(input: HTMLInputElement) {
-  on(input, "focus", onFocusRange);
-  on(input, "blur", onBlurRange);
+  if (!wiredInputs.has(input)) {
+    on(input, "focus", onFocusRange);
+    on(input, "blur", onBlurRange);
+    on(input, "change", () => {
+      requestAnimationFrame(() => {
+        input.blur();
+      });
+    });
+    wiredInputs.add(input);
+  }
 
   const label = parent(input) as HTMLElement;
   const bar = query("span", label) as HTMLElement;
@@ -53,15 +76,17 @@ function updateRange(input: HTMLInputElement) {
   if (!inputs.length || !bar) return;
 
   const rootSize = rootSizeInPixels();
-  const thumb = hasClass(label, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
+  const thumb = hasClass(label, "max")
+    ? 0
+    : (0.25 * rootSize * 100) / inputs[0].offsetWidth;
   const percents: Array<number> = [];
   const values: Array<number> = [];
   for (let i = 0, n = inputs.length; i < n; i++) {
     const min = parseFloat(inputs[i].min) || 0;
     const max = parseFloat(inputs[i].max) || 100;
     const value = parseFloat(inputs[i].value) || 0;
-    const percent = (value - min) * 100 / (max - min);
-    const fix = thumb / 2 - thumb * percent / 100;
+    const percent = ((value - min) * 100) / (max - min);
+    const fix = thumb / 2 - (thumb * percent) / 100;
     percents.push(percent + fix);
     values.push(value);
   }
