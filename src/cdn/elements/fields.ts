@@ -41,11 +41,6 @@ function onKeydownColor(e: KeyboardEvent) {
   updateColor(input, e);
 }
 
-function onInputTextarea(e: Event) {
-  const textarea = e.currentTarget as HTMLTextAreaElement;
-  updateTextarea(textarea);
-}
-
 function onPasswordIconClick(e: Event) {
   const icon = e.currentTarget as HTMLElement;
   const input = query("input", parent(icon)) as HTMLInputElement;
@@ -91,11 +86,10 @@ function updateAllColors() {
 }
 
 function updateAllTextareas() {
-  const textareas = queryAll(".field.textarea > textarea") as NodeListOf<HTMLTextAreaElement>;
+  const textareas = queryAll(".field > textarea") as NodeListOf<HTMLTextAreaElement>;
   for (let i=0; i<textareas.length; i++) {
     on(textareas[i], "focus", onFocusInput);
     on(textareas[i], "blur", onBlurInput);
-    on(textareas[i], "input", onInputTextarea);
     updateTextarea(textareas[i]);
   }
 }
@@ -142,9 +136,6 @@ function updateColor(input: HTMLInputElement, e?: KeyboardEvent) {
 
 function updateTextarea(textarea: HTMLTextAreaElement) {
   updatePlaceholder(textarea);
-  const field = parent(textarea) as HTMLElement;
-  field.removeAttribute("style");
-  if (hasClass(field, "min")) field.style.setProperty("--_size", `${Math.max(textarea.scrollHeight, field.offsetHeight)}px`);
 }
 
 export function updateAllFields() {

@@ -48,7 +48,7 @@
           option Item 2
           option Item 3
         i arrow_drop_down
-        span.helper Helper text
+        output Helper text
     .s12.l4
       .field.suffix.invalid.border
         select
@@ -56,7 +56,7 @@
           option Item 2
           option Item 3
         i arrow_drop_down
-        span.error Error text
+        output.invalid Error text
     .s12.l4
       .field.label.suffix.border
         select
@@ -73,7 +73,7 @@
           option Item 3
         label Label
         i arrow_drop_down
-        span.helper Helper text
+        output Helper text
     .s12.l4
       .field.label.suffix.invalid.border
         select
@@ -82,7 +82,7 @@
           option Item 3
         label Label
         i arrow_drop_down
-        span.error Error text
+        output.invalid Error text
     .s12.l4
       .field.suffix.border
         select

@@ -135,7 +135,7 @@ div
             input(type="text")
             label Subject
         .s12
-          .field.label.border.textarea
+          .field.label.border
             textarea
             label Message
 
@@ -164,7 +164,7 @@ div
             input(type="text")
             label Subject
         .s12
-          .field.label.border.textarea
+          .field.label.border
             textarea
             label Message
 

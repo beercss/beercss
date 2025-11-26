@@ -1,44 +1,36 @@
 .field {
-  --_size: 3rem;
+  --_input: 3rem;
   --_start: 1.2rem;
-  block-size: var(--_size);
-  margin-block-end: 2rem;
+  --_middle: calc(var(--_input) / 2);
   border-radius: 0.25rem 0.25rem 0 0;
-  max-block-size: 12rem;
+  min-block-size: var(--_input);
+  display: flex;
+  flex-direction: column;
 }
 
-.grid > * > .field {
-  margin-block-end: 1rem;
+.field.fill {
+  --_background: var(--surface-variant);
+  background-color: unset !important;
+  color: unset !important;
 }
 
-.grid > * > .field + .field {
-  margin-block-start: 2rem;
-}
-
-.grid.no-space > * > .field + .field {
-  margin-block-start: 1rem;
-}
-
-.grid.medium-space > * > .field + .field {
-  margin-block-start: 2.5rem;
-}
-
-.grid.large-space > * > .field + .field {
-  margin-block-start: 3rem;
+.field.fill > :is(input, select, textarea) {
+  background-color: var(--_background);
+  z-index: 0;
 }
 
 .field.small {
-  --_size: 2.5rem;
+  --_input: 2.5rem;
   --_start: 1rem;
 }
 
 .field.large {
-  --_size: 3.5rem;
+  --_input: 3.5rem;
   --_start: 1.4rem;
 }
 
 .field.extra {
-  --_size: 4rem;
+  --_input: 4rem;
   --_start: 1.6rem;
 }
 
@@ -63,24 +55,34 @@
 }
 
 /* icon */
-.field > :is(i, img, svg, progress, a:not(.helper, .error)) {
+.field > :is(i, img, svg, progress.circle, a) {
   position: absolute;
-  inset: 50% auto auto auto;
-  transform: translateY(-50%);
+  inset: calc((var(--_input) / 2) - 0.75rem) auto auto auto;
   cursor: pointer;
-  z-index: 0;
+  z-index: 10;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  margin: auto 0;
+  pointer-events: none;
+}
+
+.field > :is(a, .front) {
+  pointer-events: all !important;
+}
+
+.field > a > :is(i, img, svg, progress.circle, a) {
   inline-size: 1.5rem;
   block-size: 1.5rem;
 }
 
-.field > :is(i, img, svg, progress, a:not(.helper, .error)),
-[dir=rtl] .field > :is(i, img, svg, progress, a:not(.helper, .error)):first-child {
-  inset: 50% 1rem auto auto;
+.field > :is(i, img, svg, progress.circle, a),
+[dir=rtl] .field > :is(i, img, svg, progress.circle, a):first-child {
+  inset: calc(var(--_middle) - 0.75rem) 1rem auto auto;
 }
 
-.field > :is(i, img, svg, progress, a:not(.helper, .error)):first-child,
-[dir=rtl] .field > :is(i, img, svg, progress, a:not(.helper, .error)) {
-  inset: 50% auto auto 1rem;
+.field > :is(i, img, svg, progress.circle, a):first-child,
+[dir=rtl] .field > :is(i, img, svg, progress.circle, a) {
+  inset: calc(var(--_middle) - 0.75rem) auto auto 1rem;
 }
 
 .field.invalid > i {
@@ -88,17 +90,7 @@
 }
 
 .field > progress.circle {
-  inset-block-start: calc(50% - 0.75rem) !important;
   border-width: 0.1875rem;
-}
-
-.field > a:not(.helper, .error) {
-  z-index: 10;
-}
-
-.field > a > :is(i, img, svg, progress, a:not(.helper, .error)) {
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
 }
 
 /* input, textarea and select */
@@ -114,7 +106,7 @@
   font-family: inherit;
   font-size: 1rem;
   inline-size: 100%;
-  block-size: 100%;
+  min-block-size: var(--_input);
   outline: none;
   z-index: 1;
   background: none;
@@ -137,10 +129,9 @@ input::-webkit-date-and-time-value {
   padding: 0 0.875rem;
 }
 
-.field.min > textarea {
-  overflow: hidden auto;
-  position: absolute;
-  inset: 0;
+.field > textarea:not([rows]) {
+  field-sizing: content;
+  max-block-size: 12rem;
 }
 
 input[type=file],
@@ -249,22 +240,6 @@ input[type=number] {
   cursor: not-allowed;
 }
 
-.field.textarea.small:not(.min) {
-  --_size: 5rem;
-}
-
-.field.textarea:not(.min) {
-  --_size: 5.5rem;
-}
-
-.field.textarea.large:not(.min) {
-  --_size: 6rem;
-}
-
-.field.textarea.extra:not(.min) {
-  --_size: 6.5rem;
-}
-
 .field > select {
   user-select: none;
 }
@@ -287,32 +262,31 @@ input[type=number] {
   background-color: var(--surface);
 }
 
-.field.label > :is(input, select) {
+.field > :is(input, select) {
   padding-block-start: 1rem;
 }
 
-.field.label.border:not(.fill) > :is(input, select) {
+.field:not(.label) > :is(input, select),
+.field.border:not(.fill) > :is(input, select) {
   padding-block-start: 0;
 }
 
 .field > textarea {
-  padding-block-start: var(--_start);
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
+  padding-block-start: calc(var(--_start)) !important;
 }
 
 .field > textarea:focus {
-  padding-block-start: calc(var(--_start) - 0.06rem);
+  padding-block-start: calc(var(--_start) - 0.01rem) !important;
 }
 
 .field:not(.label) > textarea,
-.field.border.label:not(.fill) > textarea {
-  padding-block-start: calc(var(--_start) - 0.5rem);
+.field.border:not(.fill) > textarea {
+  padding-block-start: calc(var(--_start) - 0.5rem) !important;
 }
 
 .field:not(.label) > textarea:focus,
-.field.border.label:not(.fill) > textarea:focus {
-  padding-block-start: calc(var(--_start) - 0.56rem);
+.field.border:not(.fill) > textarea:focus {
+  padding-block-start: calc(var(--_start) - 0.51rem) !important;
 }
 
 /* label */
@@ -321,21 +295,25 @@ input[type=number] {
   position: absolute;
   inset: -0.5rem 1rem 0 var(--_start);
   display: flex;
-  block-size: calc(var(--_size) + 1rem);
-  line-height: calc(var(--_size) + 1rem);
+  block-size: calc(var(--_input) + 1rem);
+  line-height: calc(var(--_input) + 1rem);
   font-size: 1rem;
   transition: all 0.2s;
   gap: 0.25rem;
   white-space: nowrap;
+  pointer-events: none;
+}
+
+[dir=rtl] .field.label > label {
+  inset: -0.5rem var(--_start) 0 1rem;
 }
 
 .field.label.round > label {
   inset: -0.5rem 1.75rem 0 var(--_start);
 }
 
-.field.label.textarea:not(.min) > label {
-  block-size: calc(var(--_size) - 1.5rem);
-  line-height: calc(var(--_size) - 1.5rem);
+[dir=rtl] .field.label.round > label {
+  inset: -0.5rem 1.75rem 0 var(--_start);
 }
 
 .field.label.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
@@ -420,32 +398,24 @@ input[type=number] {
 }
 
 /* helper */
-.field > :is(.helper, .error) {
-  position: absolute;
-  inset: auto auto 0 1rem;
-  transform: translateY(100%);
+.field > output {
+  display: inline-block;
   font-size: 0.75rem;
   background: none !important;
-  padding-block-start: 0.125rem;
+  padding: 0.25rem 1rem;
+  line-height: 1.25rem;
+  align-self: start;
 }
 
-[dir=rtl] .field > :is(.helper, .error) {
-  inset: auto 1rem 0 auto;
-}
-
-a.helper {
-  color: var(--primary);
-}
-
-.field > .error {
+.field > output.invalid {
   color: var(--error) !important;
 }
 
-.field.round > :is(.helper, .error) {
-  inset-inline-start: 1.5rem;
+.field.round > output {
+  padding: 0.25rem 1.5rem;
 }
 
-.field.invalid > .helper {
+.field.invalid > output:not(.invalid) {
   display: none;
 }
 

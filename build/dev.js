@@ -20,6 +20,7 @@ try {
     },
     server: {
       open: "/",
+      host: true,
     },
   });
 

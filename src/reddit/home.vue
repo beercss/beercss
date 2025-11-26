@@ -184,7 +184,7 @@ main.responsive
         .field.border.label
           input
           label Title
-        .field.border.label.extra.textarea
+        .field.border.label.extra
           textarea
           label Text (optional)
 
