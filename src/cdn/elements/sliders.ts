@@ -12,22 +12,6 @@ function onInputDocument(e: Event) {
   }
 }
 
-function onFocusRange(e: Event) {
-  if (!isTouchable()) return;
-
-  const input = e.target as HTMLInputElement;
-  const label = parent(input) as HTMLLabelElement;
-  if (hasClass(label, "vertical")) document.body.classList.add("no-scroll");
-}
-
-function onBlurRange(e: Event) {
-  if (!isTouchable()) return;
-
-  const input = e.target as HTMLInputElement;
-  const label = parent(input) as HTMLLabelElement;
-  if (hasClass(label, "vertical")) document.body.classList.remove("no-scroll");
-}
-
 function updateAllRanges() {
   const body = document.body;
   const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
@@ -44,9 +28,6 @@ function rootSizeInPixels(): number {
 } 
 
 function updateRange(input: HTMLInputElement) {
-  on(input, "focus", onFocusRange);
-  on(input, "blur", onBlurRange);
-
   const label = parent(input) as HTMLElement;
   const bar = query("span", label) as HTMLElement;
   const inputs = queryAll("input", label) as NodeListOf<HTMLInputElement>;
