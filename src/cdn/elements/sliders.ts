@@ -44,8 +44,6 @@ const wiredInputs = new WeakSet<HTMLInputElement>();
 
 function updateRange(input: HTMLInputElement) {
   if (!wiredInputs.has(input)) {
-    on(input, "focus", onFocusRange);
-    on(input, "blur", onBlurRange);
     on(input, "change", () => {
       requestAnimationFrame(() => {
         input.blur();
