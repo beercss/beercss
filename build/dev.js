@@ -26,6 +26,6 @@ try {
 
   await server.listen();
   server.printUrls();
-} catch(error) {
+} catch (error) {
   console.log(error);
 }
