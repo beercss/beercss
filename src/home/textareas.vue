@@ -23,7 +23,7 @@
         type="radio",
         name="size-textareas",
         checked,
-        @click="updateSize('#textareas .field')"
+        @click="updateSize('#textareas .field', '')"
       )
       span medium
     label.radio
@@ -32,65 +32,59 @@
     label.radio
       input(type="radio", name="size-textareas", @click="updateSize('#textareas .field', 'extra')")
       span extra
-    label.radio
-      input(type="radio", name="minmax-textareas", checked, @click="updateMinMax('#textareas .field', '')")
-      span max
-    label.radio
-      input(type="radio", name="minmax-textareas", @click="updateMinMax('#textareas .field', 'min')")
-      span min
   .space
   .grid
     .s12.l4
-      .field.textarea.border
+      .field.border
         textarea
     .s12.l4
-      .field.textarea.border
+      .field.border
         textarea
-        span.helper Helper text
+        output Helper text
     .s12.l4
-      .field.textarea.invalid.border
+      .field.invalid.border
         textarea
-        span.error Error text
+        output.invalid Error text
     .s12.l4
-      .field.textarea.label.border
-        textarea
-        label Label
-    .s12.l4
-      .field.textarea.label.border
+      .field.label.border
         textarea
         label Label
-        span.helper Helper text
     .s12.l4
-      .field.textarea.label.invalid.border
+      .field.label.border
         textarea
         label Label
-        span.error Error text
+        output Helper text
     .s12.l4
-      .field.textarea.label.prefix.border
+      .field.label.invalid.border
+        textarea
+        label Label
+        output.invalid Error text
+    .s12.l4
+      .field.label.prefix.border
         i search
         textarea
         label Label
     .s12.l4
-      .field.textarea.label.suffix.border
+      .field.label.suffix.border
         textarea
         label Label
         i search
     .s12.l4
-      .field.textarea.label.prefix.suffix.border
+      .field.label.prefix.suffix.border
         i search
         textarea
         label Label
         i search
     .s12.l4
-      .field.textarea.border.prefix
+      .field.border.prefix
         img(:src="'/favicon.png'")
         textarea
     .s12.l4
-      .field.textarea.border.prefix
+      .field.border.prefix
         progress.circle
         textarea
     .s12.l4
-      .field.textarea.border.prefix
+      .field.border.prefix
         i
           .shape.loading-indicator.max
         textarea

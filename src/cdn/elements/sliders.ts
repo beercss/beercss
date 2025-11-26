@@ -21,22 +21,6 @@ function onInputDocument(e: Event) {
   }
 }
 
-function onFocusRange(e: Event) {
-  if (!isTouchable()) return;
-
-  const input = e.target as HTMLInputElement;
-  const label = parent(input) as HTMLLabelElement;
-  if (hasClass(label, "vertical")) document.body.classList.add("no-scroll");
-}
-
-function onBlurRange(e: Event) {
-  if (!isTouchable()) return;
-
-  const input = e.target as HTMLInputElement;
-  const label = parent(input) as HTMLLabelElement;
-  if (hasClass(label, "vertical")) document.body.classList.remove("no-scroll");
-}
-
 function updateAllRanges() {
   const body = document.body;
   const ranges = queryAll(

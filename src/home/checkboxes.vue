@@ -86,7 +86,7 @@
           label.checkbox
             input(type="checkbox")
             span Item 3
-        span.helper Helper text
+        output Helper text
     .s12.l4
       .field.middle-align.invalid
         nav
@@ -99,7 +99,7 @@
           label.checkbox
             input(type="checkbox")
             span Item 3
-        span.error Error text
+        output.invalid Error text
 </template>
 
 <script setup lang="ts">
