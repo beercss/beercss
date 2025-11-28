@@ -2,7 +2,7 @@ import {updateAllFields} from "./elements/fields";
 import {updateAllSliders} from "./elements/sliders";
 import {updateMode, updateTheme} from "./helpers/theme";
 import {type IBeerCssTheme} from "./interfaces";
-import {addClass, guid, hasClass, hasTag, on, query, queryAll, removeClass, updateAllClickable} from "./utils";
+import {addClass, guid, hasClass, hasTag, onWeak, query, queryAll, removeClass, updateAllClickable} from "./utils";
 import {updateDialog} from "./elements/dialogs";
 import {updateMenu} from "./elements/menus";
 import {updateSnackbar} from "./elements/snackbars";
@@ -76,8 +76,8 @@ function setup() {
 function updateAllDataUis() {
   const elements = queryAll("[data-ui]");
   for (let i = 0, n = elements.length; i < n; i++) {
-    on(elements[i], "click", onClickElement);
-    if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) on(elements[i], "keydown", onKeydownElement);
+    onWeak(elements[i], "click", onClickElement);
+    if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) onWeak(elements[i], "keydown", onKeydownElement);
   }
 }
 

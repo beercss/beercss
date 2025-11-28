@@ -1,4 +1,4 @@
-import { query, hasClass, on, next, prev, hasType, parent, queryAll } from "../utils";
+import { query, next, prev, hasType, parent, queryAll, onWeak } from "../utils";
 
 function updatePlaceholder(element: HTMLInputElement | HTMLTextAreaElement) {
   if (!element.placeholder) element.placeholder = " ";
@@ -49,14 +49,16 @@ function onPasswordIconClick(e: Event) {
 
 function updateAllLabels() {
   const labels = queryAll(".field > label");
-  for (let i=0; i<labels.length; i++) on(labels[i], "click", onClickLabel);
+  for (let i=0; i<labels.length; i++) {
+    onWeak(labels[i], "click", onClickLabel);
+  }
 }
 
 function updateAllInputs() {
   const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])") as NodeListOf<HTMLInputElement>;
   for (let i=0; i<inputs.length; i++) {
-    on(inputs[i], "focus", onFocusInput);
-    on(inputs[i], "blur", onBlurInput);
+    onWeak(inputs[i], "focus", onFocusInput);
+    onWeak(inputs[i], "blur", onBlurInput);
     updateInput(inputs[i]);
   }
 }
@@ -64,15 +66,15 @@ function updateAllInputs() {
 function updateAllSelects() {
   const selects = queryAll(".field > select") as NodeListOf<HTMLSelectElement>;
   for (let i=0; i<selects.length; i++) {
-    on(selects[i], "focus", onFocusInput);
-    on(selects[i], "blur", onBlurInput);
+    onWeak(selects[i], "focus", onFocusInput);
+    onWeak(selects[i], "blur", onBlurInput);
   }
 }
 
 function updateAllFiles() {
   const files = queryAll(".field > input[type=file]") as NodeListOf<HTMLInputElement>;
   for (let i=0; i<files.length; i++) {
-    on(files[i], "change", onChangeFile);
+    onWeak(files[i], "change", onChangeFile);
     updateFile(files[i]);
   }
 }
@@ -80,7 +82,7 @@ function updateAllFiles() {
 function updateAllColors() {
   const colors = queryAll(".field > input[type=color]") as NodeListOf<HTMLInputElement>;
   for (let i=0; i<colors.length; i++) {
-    on(colors[i], "change", onChangeColor);
+    onWeak(colors[i], "change", onChangeColor);
     updateColor(colors[i]);
   }
 }
@@ -88,15 +90,15 @@ function updateAllColors() {
 function updateAllTextareas() {
   const textareas = queryAll(".field > textarea") as NodeListOf<HTMLTextAreaElement>;
   for (let i=0; i<textareas.length; i++) {
-    on(textareas[i], "focus", onFocusInput);
-    on(textareas[i], "blur", onBlurInput);
+    onWeak(textareas[i], "focus", onFocusInput);
+    onWeak(textareas[i], "blur", onBlurInput);
     updateTextarea(textareas[i]);
   }
 }
 
 function updateAllPasswordIcons() {
   const icons = queryAll("input[type=password] ~ :is(i, a)");
-  for (let i=0; i<icons.length; i++) on(icons[i], "click", onPasswordIconClick);
+  for (let i=0; i<icons.length; i++) onWeak(icons[i], "click", onPasswordIconClick);
 }
 
 function updateInput(input: HTMLInputElement) {
@@ -115,7 +117,7 @@ function updateFile(input: HTMLInputElement, e?: KeyboardEvent) {
   if (!hasType(nextInput, "text")) return;
   nextInput.value = input.files ? Array.from(input.files).map((x) => x.name).join(", ") : "";
   nextInput.readOnly = true;
-  on(nextInput, "keydown", onKeydownFile, false);
+  onWeak(nextInput, "keydown", onKeydownFile, false);
   updateInput(nextInput);
 }
 
@@ -130,7 +132,7 @@ function updateColor(input: HTMLInputElement, e?: KeyboardEvent) {
   if (!hasType(nextInput, "text")) return;
   nextInput.readOnly = true;
   nextInput.value = input.value;
-  on(nextInput, "keydown", onKeydownColor, false);
+  onWeak(nextInput, "keydown", onKeydownColor, false);
   updateInput(nextInput);
 }
 

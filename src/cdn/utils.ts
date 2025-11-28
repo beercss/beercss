@@ -1,4 +1,5 @@
 const _emptyNodeList = [] as unknown as NodeListOf<Element>;
+const _weakElements = new WeakSet<HTMLElement>();
 
 export function isTouchable(): boolean {
   return window?.matchMedia("(pointer: coarse)").matches;
@@ -66,6 +67,11 @@ export function on(element: Element | null, name: string, callback: any, useCapt
   if (element?.addEventListener) element.addEventListener(name, callback, useCapture);
 }
 
+export function onWeak(element: Element | null, name: string, callback: any, useCapture: boolean = true) {
+  if (!addWeakElement(element as HTMLElement)) return;
+  on(element, name, callback, useCapture);
+}
+
 export function off(element: Element | null, name: string, callback: any, useCapture: boolean = true) {
   if (element?.removeEventListener) element.removeEventListener(name, callback, useCapture);
 }
@@ -117,5 +123,11 @@ export function updateAllClickable(element: Element) {
   const as = queryAll("a", container);
   for(let i=0; i<as.length; i++) removeClass(as[i], "active");
   if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
+}
+
+export function addWeakElement(element: HTMLElement): boolean {
+  if (_weakElements.has(element)) return false;
+  _weakElements.add(element);
+  return true;
 }
 

@@ -1,4 +1,4 @@
-import { query, queryAll, hasClass, on, off, parent, hasTag } from "../utils";
+import { query, queryAll, hasClass, on, off, parent, hasTag, onWeak } from "../utils";
 
 function onInputDocument(e: Event) {
   const input = e.target as HTMLInputElement;
@@ -10,6 +10,11 @@ function onInputDocument(e: Event) {
   } else {
     updateAllRanges();
   }
+}
+
+function onChangeInput(e: Event) {
+  const input = e.target as HTMLInputElement;
+  requestAnimationFrame(() => input.blur());
 }
 
 function updateAllRanges() {
@@ -27,17 +32,8 @@ function rootSizeInPixels(): number {
   return parseInt(size);
 }
 
-const wiredInputs = new WeakSet<HTMLInputElement>();
-
 function updateRange(input: HTMLInputElement) {
-  if (!wiredInputs.has(input)) {
-    on(input, "change", () => {
-      requestAnimationFrame(() => {
-        input.blur();
-      });
-    });
-    wiredInputs.add(input);
-  }
+  onWeak(input, "change", onChangeInput);
 
   const label = parent(input) as HTMLElement;
   const bar = query("span", label) as HTMLElement;

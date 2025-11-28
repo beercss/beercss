@@ -1,4 +1,4 @@
-import { queryAll, on } from "../utils";
+import { queryAll, onWeak } from "../utils";
 
 function onPointerDownRipple(e: PointerEvent) {
   updateRipple(e);
@@ -27,5 +27,5 @@ function updateRipple(e: PointerEvent) {
 
 export function updateAllRipples() {
   const ripples = queryAll(".slow-ripple, .ripple, .fast-ripple");
-  for(let i=0; i<ripples.length; i++) on(ripples[i], "pointerdown", onPointerDownRipple);
+  for(let i=0; i<ripples.length; i++) onWeak(ripples[i], "pointerdown", onPointerDownRipple);
 }

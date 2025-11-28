@@ -1,4 +1,4 @@
-import { addClass, next, prev, hasTag, insertBefore, wait, create,  hasClass, removeClass, on, off, queryAllDataUi, blurActiveElement, query } from "../utils";
+import { addClass, next, prev, hasTag, insertBefore, wait, create,  hasClass, removeClass, on, off, queryAllDataUi, blurActiveElement, query, onWeak } from "../utils";
 
 const _dialogs: Array<HTMLDialogElement> = [];
 
@@ -62,7 +62,7 @@ export async function updateDialog(from: Element, dialog: HTMLDialogElement): Pr
     await wait(90);
   }
 
-  if (!isModal) on(overlay, "click", onClickOverlay, false);
+  if (!isModal) onWeak(overlay, "click", onClickOverlay, false);
 
   if (isActive) closeDialog(dialog, overlay);
   else void openDialog(dialog, overlay, isModal, from);
