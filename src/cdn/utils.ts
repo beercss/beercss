@@ -21,26 +21,6 @@ export function guid(): string {
   });
 }
 
-export function query(selector: string | Element | null, element?: Element | null): Element | null {
-  try {
-    return (typeof selector === "string")
-      ? (element ?? document).querySelector(selector)
-      : selector;
-  } catch {
-    return null;
-  }
-}
-
-export function queryAll(selector: string | NodeListOf<Element> | null, element?: Element | null): NodeListOf<Element> {
-  try {
-    return (typeof selector === "string")
-      ? (element ?? document).querySelectorAll(selector)
-      : selector ?? _emptyNodeList;
-  } catch {
-    return _emptyNodeList;
-  }
-}
-
 export function hasClass(element: Element | null, name: string): boolean {
   return element?.classList.contains(name) ?? false;
 }
@@ -87,40 +67,62 @@ export function prev(element: Element): Element | null {
 export function next(element: Element): Element | null {
   return element?.nextElementSibling;
 }
-
 export function parent(element: Element): Element | null {
   return element?.parentElement;
 }
 
-export function create(htmlAttributesAsJson: any): HTMLElement {
-  const element = document.createElement("div");
+export const query = (selector: string | Element | null, root: Document | ShadowRoot, element?: Element | null): Element | null => {
+  try {
+    const searchContext = element ?? root;
+    return (typeof selector === "string")
+      ? searchContext.querySelector(selector)
+      : selector;
+  } catch {
+    return null;
+  }
+};
+
+export const queryAll = (selector: string | NodeListOf<Element> | null, root: Document | ShadowRoot, element?: Element | null): NodeListOf<Element> => {
+  try {
+    const searchContext = element ?? root;
+    return (typeof selector === "string")
+      ? searchContext.querySelectorAll(selector)
+      : selector ?? _emptyNodeList;
+  } catch {
+    return _emptyNodeList;
+  }
+};
+
+export const create = (htmlAttributesAsJson: any, root: Document | ShadowRoot): HTMLElement => {
+  const doc = root instanceof Document ? root : root.ownerDocument;
+  const element = doc.createElement("div");
   for (let i = 0, keys = Object.keys(htmlAttributesAsJson), n = keys.length; i < n; i++) {
     const key = keys[i];
     const value = htmlAttributesAsJson[key] as string;
     element.setAttribute(key, value);
   }
   return element;
-}
+};
 
-export function blurActiveElement() {
-  (document.activeElement as HTMLElement)?.blur();
-}
+export const blurActiveElement = (root: Document | ShadowRoot) => {
+  (root.activeElement as HTMLElement)?.blur();
+};
 
-export function queryAllDataUi(id: string): NodeListOf<Element> {
-  return queryAll("[data-ui=\"#"+id+"\"]");
-}
+export const queryAllDataUi = (id: string, root: Document | ShadowRoot, element?: Element | null): NodeListOf<Element> => {
+  return queryAll("[data-ui=\"#"+id+"\"]", root, element);
+};
 
-export function queryDataUi(id: string): Element | null {
-  return query("[data-ui=\"#"+id+"\"]");
-}
+export const queryDataUi = (id: string, root: Document | ShadowRoot, element?: Element | null): Element | null => {
+  return query("[data-ui=\"#"+id+"\"]", root, element);
+};
 
-export function updateAllClickable(element: Element) {
-  if (element.id && hasClass(element, "page")) element = queryDataUi(element.id) ?? element;
+export function updateAllClickable(element: Element, root: Document | ShadowRoot) {
+  if (element.id && hasClass(element, "page")) element = queryDataUi(element.id, root) ?? element;
 
   const container = parent(element);
   if (!hasClass(container, "tabs") && !hasClass(container, "tabbed") && !hasTag(container, "nav")) return;
 
-  const as = queryAll("a", container);
+  const as = queryAll("a", root, container);
   for(let i=0; i<as.length; i++) removeClass(as[i], "active");
   if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
 }

@@ -4,10 +4,10 @@ function updatePlaceholder(element: HTMLInputElement | HTMLTextAreaElement) {
   if (!element.placeholder) element.placeholder = " ";
 }
 
-function onClickLabel(e: Event) {
+function onClickLabel(e: Event, root: Document | ShadowRoot) {
   const label = e.currentTarget as HTMLLabelElement;
   const field = parent(label);
-  const input = query("input:not([type=file], [type=checkbox], [type=radio]), select, textarea", field) as HTMLElement;
+  const input = query("input:not([type=file], [type=checkbox], [type=radio]), select, textarea", root, field) as HTMLElement;
   if (input) input.focus();
 }
 
@@ -33,29 +33,32 @@ function onChangeColor(e: Event) {
 
 function onKeydownFile(e: KeyboardEvent) {
   const input = e.currentTarget as HTMLInputElement;
-  updateFile(input, e);
+  updateFile(input);
 }
 
 function onKeydownColor(e: KeyboardEvent) {
   const input = e.currentTarget as HTMLInputElement;
-  updateColor(input, e);
+  updateColor(input);
 }
 
-function onPasswordIconClick(e: Event) {
+function onInputTextarea(e: Event) {
+  const textarea = e.currentTarget as HTMLTextAreaElement;
+  updateTextarea(textarea);
+}
+
+function onPasswordIconClick(e: Event, root: Document | ShadowRoot) {
   const icon = e.currentTarget as HTMLElement;
-  const input = query("input", parent(icon)) as HTMLInputElement;
+  const input = query("input", root, parent(icon)) as HTMLInputElement;
   if (input && icon.textContent?.includes("visibility")) input.type = input.type === "password" ? "text" : "password";
 }
 
-function updateAllLabels() {
-  const labels = queryAll(".field > label");
-  for (let i=0; i<labels.length; i++) {
-    onWeak(labels[i], "click", onClickLabel);
-  }
+function updateAllLabels(root: Document | ShadowRoot) {
+  const labels = queryAll(".field > label", root);
+  for (let i=0; i<labels.length; i++) onWeak(labels[i], "click", (e: Event) => onClickLabel(e, root));
 }
 
-function updateAllInputs() {
-  const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])") as NodeListOf<HTMLInputElement>;
+function updateAllInputs(root: Document | ShadowRoot) {
+  const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])", root) as NodeListOf<HTMLInputElement>;
   for (let i=0; i<inputs.length; i++) {
     onWeak(inputs[i], "focus", onFocusInput);
     onWeak(inputs[i], "blur", onBlurInput);
@@ -63,32 +66,32 @@ function updateAllInputs() {
   }
 }
 
-function updateAllSelects() {
-  const selects = queryAll(".field > select") as NodeListOf<HTMLSelectElement>;
+function updateAllSelects(root: Document | ShadowRoot) {
+  const selects = queryAll(".field > select", root) as NodeListOf<HTMLSelectElement>;
   for (let i=0; i<selects.length; i++) {
     onWeak(selects[i], "focus", onFocusInput);
     onWeak(selects[i], "blur", onBlurInput);
   }
 }
 
-function updateAllFiles() {
-  const files = queryAll(".field > input[type=file]") as NodeListOf<HTMLInputElement>;
+function updateAllFiles(root: Document | ShadowRoot) {
+  const files = queryAll(".field > input[type=file]", root) as NodeListOf<HTMLInputElement>;
   for (let i=0; i<files.length; i++) {
     onWeak(files[i], "change", onChangeFile);
     updateFile(files[i]);
   }
 }
 
-function updateAllColors() {
-  const colors = queryAll(".field > input[type=color]") as NodeListOf<HTMLInputElement>;
+function updateAllColors(root: Document | ShadowRoot) {
+  const colors = queryAll(".field > input[type=color]", root) as NodeListOf<HTMLInputElement>;
   for (let i=0; i<colors.length; i++) {
     onWeak(colors[i], "change", onChangeColor);
     updateColor(colors[i]);
   }
 }
 
-function updateAllTextareas() {
-  const textareas = queryAll(".field > textarea") as NodeListOf<HTMLTextAreaElement>;
+function updateAllTextareas(root: Document | ShadowRoot) {
+  const textareas = queryAll(".field.textarea > textarea", root) as NodeListOf<HTMLTextAreaElement>;
   for (let i=0; i<textareas.length; i++) {
     onWeak(textareas[i], "focus", onFocusInput);
     onWeak(textareas[i], "blur", onBlurInput);
@@ -96,9 +99,9 @@ function updateAllTextareas() {
   }
 }
 
-function updateAllPasswordIcons() {
-  const icons = queryAll("input[type=password] ~ :is(i, a)");
-  for (let i=0; i<icons.length; i++) onWeak(icons[i], "click", onPasswordIconClick);
+function updateAllPasswordIcons(root: Document | ShadowRoot) {
+  const icons = queryAll("input[type=password] ~ :is(i, a)", root);
+  for (let i=0; i<icons.length; i++) onWeak(icons[i], "click", (e: Event) => onPasswordIconClick(e, root));
 }
 
 function updateInput(input: HTMLInputElement) {
@@ -140,12 +143,12 @@ function updateTextarea(textarea: HTMLTextAreaElement) {
   updatePlaceholder(textarea);
 }
 
-export function updateAllFields() {
-  updateAllLabels();
-  updateAllInputs();
-  updateAllSelects();
-  updateAllFiles();
-  updateAllColors();
-  updateAllTextareas();
-  updateAllPasswordIcons();
+export function updateAllFields(root: Document | ShadowRoot) {
+  updateAllLabels(root);
+  updateAllInputs(root);
+  updateAllSelects(root);
+  updateAllFiles(root);
+  updateAllColors(root);
+  updateAllTextareas(root);
+  updateAllPasswordIcons(root);
 }
