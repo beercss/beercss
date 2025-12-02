@@ -95,21 +95,29 @@ progress.wavy::-moz-progress-bar {
 
 progress.circle {
   --_value: attr(value type(<number>));
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
   background: conic-gradient(currentColor calc(var(--_value) * 1%), var(--active) 0);
   border-radius: 50%;
-  mask-image: radial-gradient(circle at center, transparent 55%, currentColor 50%);
+  mask-image: radial-gradient(circle at center, transparent 57%, currentColor 60%);
   transform: none;
+}
+
+progress.circle.wavy {
+  background: conic-gradient(currentColor calc(var(--_value) * 1%), var(--active) 0);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  mask-image: url(../shapes/wavy-circle.svg);
 }
 
 progress.circle::-webkit-progress-value {
   background: none;
 }
 
-progress.circle.medium {
-  inline-size: 2.5rem;
-  block-size: 2.5rem;
+progress.circle.small {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
 }
 
 progress.circle.large {
@@ -186,12 +194,12 @@ progress.max + * {
 
 @keyframes to-rotate {
   from {
-    --_value: 50;
+    --_value: 33;
     transform: rotate(0deg);
   }
 
   to {
-    --_value: 50;
+    --_value: 33;
     transform: rotate(360deg);
   }
 }
