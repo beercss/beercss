@@ -66,11 +66,11 @@
     .s12.l4
       .field.border
         input(type="text")
-        span.helper Helper text
+        output Helper text
     .s12.l4
       .field.invalid.border
         input(type="text")
-        span.error Error text
+        output.invalid Error text
     .s12.l4
       .field.label.border
         input(type="text")
@@ -79,12 +79,12 @@
       .field.label.border
         input(type="text")
         label Label
-        span.helper Helper text
+        output Helper text
     .s12.l4
       .field.label.invalid.border
         input(type="text")
         label Label
-        span.error Error text
+        output.invalid Error text
     .s12.l4
       .field.label.prefix.border
         i search
@@ -94,13 +94,13 @@
       .field.label.suffix.border
         input(type="text")
         label Label
-        i search
+        i.front search
     .s12.l4
       .field.label.prefix.suffix.border
         i search
         input(type="text")
         label Label
-        i search
+        i.front search
     .s12.l4
       .field.border.prefix
         img.circle(:src="'/favicon.png'")

@@ -3,7 +3,6 @@
 .radio,
 .switch {
   --_size: 1.5rem;
-  direction: ltr;
   inline-size: auto;
   block-size: auto;
   line-height: normal;
@@ -11,6 +10,10 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+}
+
+.switch {
+  direction: ltr;
 }
 
 :is(.checkbox, .radio, .switch).small {
@@ -64,6 +67,13 @@
   border-radius: 50%;
   user-select: none;
   z-index: 1;
+}
+
+[dir=rtl] :is(.checkbox, .radio) > span::before,
+[dir=rtl] :is(.checkbox, .radio) > span > i,
+[dir=rtl] :is(.checkbox, .radio) > span::after {
+  --_size: inherit;
+  inset: auto calc(var(--_size) * -1) auto auto;
 }
 
 .switch > span::before,
@@ -165,14 +175,29 @@
   transform: translate(-1.75rem, -50%) scale(1);
 }
 
+[dir=rtl] .switch > input:checked + span::before,
+[dir=rtl] .switch.icon > input:checked + span > i {
+  transform: translate(-1.75rem, -50%) scale(-1);
+}
+
 .switch > input:active:not(:disabled) + span::before,
 .switch.icon > input:active:not(:disabled) + span > i {
   transform: translate(-3rem, -50%) scale(1.2);
 }
 
+[dir=rtl] .switch > input:active:not(:disabled) + span::before,
+[dir=rtl] .switch.icon > input:active:not(:disabled) + span > i {
+  transform: translate(-3rem, -50%) scale(-1.2);
+}
+
 .switch > input:active:checked:not(:disabled) + span::before,
 .switch.icon > input:active:checked:not(:disabled) + span > i {
   transform: translate(-1.75rem, -50%) scale(1.2);
+}
+
+[dir=rtl] .switch > input:active:checked:not(:disabled) + span::before,
+[dir=rtl] .switch.icon > input:active:checked:not(:disabled) + span > i {
+  transform: translate(-1.75rem, -50%) scale(-1.2);
 }
 
 :is(.checkbox, .radio, .switch) > input:disabled + span {

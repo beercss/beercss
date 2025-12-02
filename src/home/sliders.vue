@@ -223,21 +223,22 @@
         label.slider
           input(type="range", value="25")
           span
-        span.helper Helper
+        output Helper
     .s12.m6.l4
       .field.middle-align
         label.slider
           input(type="range", value="25")
           span
-        span.error Error text
+        output.invalid Error text
     .s12.m6.l4
       .field.middle-align.prefix.suffix
-        i sunny
-        label.slider
-          input(type="range", value="25")
-          span
-        span.helper Helper
-        i rainy
+        nav
+          i sunny
+          label.slider
+            input(type="range", value="25")
+            span
+          i rainy
+        output Helper
   .large-space
   #sliders5
     h6 Custom slider

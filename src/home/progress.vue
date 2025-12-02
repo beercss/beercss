@@ -55,10 +55,26 @@
       span Circular
       button.chip.circle(@click="domain.showSamples(data, '#circular-progress progress', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
         i code
+    nav.wrap
+      label.radio
+        input(type="radio", name="percent-circular-progress", @click="domain.updateProgress(0)")
+        span 0%
+      label.radio
+        input(type="radio", name="percent-circular-progress", checked, @click="domain.updateProgress(30)")
+        span 30%
+      label.radio
+        input(type="radio", name="percent-circular-progress", @click="domain.updateProgress(60)")
+        span 60%
+      label.radio
+        input(type="radio", name="percent-circular-progress", @click="domain.updateProgress(100)")
+        span 100%
     nav
-      progress.circle.small
       progress.circle
+      progress.circle.medium
       progress.circle.large
+      progress.circle(value="30", max="100")
+      progress.circle.medium(value="30", max="100")
+      progress.circle.large(value="30", max="100")
   .large-space
   #custom-progress
     h6 

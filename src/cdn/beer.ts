@@ -2,27 +2,12 @@ import {updateAllFields} from "./elements/fields";
 import {updateAllSliders} from "./elements/sliders";
 import {updateMode, updateTheme} from "./helpers/theme";
 import {IBeerCssTheme, IBeerCSSRootInstance} from "./interfaces";
-import {addClass, guid, hasClass, hasTag, on, query, queryAll, removeClass, updateAllClickable} from "./utils";
+import {addClass, guid, hasClass, hasTag, onWeak, query, queryAll, removeClass, updateAllClickable} from "./utils";
 import {updateDialog} from "./elements/dialogs";
 import {updateMenu} from "./elements/menus";
 import {updateSnackbar} from "./elements/snackbars";
 import {updatePage} from "./elements/pages";
 import {updateAllRipples} from "./helpers/ripples";
-
-// No more global state here
-
-import {updateAllFields} from "./elements/fields";
-import {updateAllSliders} from "./elements/sliders";
-import {updateMode, updateTheme} from "./helpers/theme";
-import {IBeerCssTheme, IBeerCSSRootInstance} from "./interfaces";
-import {addClass, guid, hasClass, hasTag, on, query, queryAll, removeClass, updateAllClickable} from "./utils";
-import {updateDialog} from "./elements/dialogs";
-import {updateMenu} from "./elements/menus";
-import {updateSnackbar} from "./elements/snackbars";
-import {updatePage} from "./elements/pages";
-import {updateAllRipples} from "./helpers/ripples";
-
-// No more global state here
 
 function createBeerCssInstance(root: Document | ShadowRoot): (selector?: string | Element, options?: string | number | IBeerCssTheme) => string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
   let timeoutMutation: ReturnType<typeof setTimeout> | undefined;
@@ -48,32 +33,32 @@ function createBeerCssInstance(root: Document | ShadowRoot): (selector?: string 
   // Helper run function, now closed over 'instanceRoot'
   const run = async (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> => {
     if (!to) {
-      to = query(from.getAttribute("data-ui"), instanceRoot); // Pass instanceRoot
+      to = query(from.getAttribute("data-ui"), instanceRoot);
       if (!to) {
         from.classList.toggle("active");
         return;
       }
     }
 
-    updateAllClickable(from, instanceRoot); // Pass instanceRoot
+    updateAllClickable(from, instanceRoot);
 
     if (hasTag(to, "dialog")) {
-      await updateDialog(from, to as HTMLDialogElement, instanceRoot); // Pass instanceRoot
+      await updateDialog(from, to as HTMLDialogElement, instanceRoot);
       return;
     }
 
     if (hasTag(to, "menu")) {
-      updateMenu(from, to as HTMLMenuElement, e, instanceRoot); // Pass instanceRoot
+      updateMenu(from, to as HTMLMenuElement, e, instanceRoot);
       return;
     }
 
     if (hasClass(to, "snackbar")) {
-      updateSnackbar(to, options as number, instanceRoot); // Pass instanceRoot
+      updateSnackbar(to, options as number, instanceRoot);
       return;
     }
 
     if (hasClass(to, "page")) {
-      updatePage(to, instanceRoot); // Pass instanceRoot
+      updatePage(to, instanceRoot);
       return;
     }
 
@@ -97,10 +82,10 @@ function createBeerCssInstance(root: Document | ShadowRoot): (selector?: string 
 
   // Helper to update all data-ui elements for this root
   const updateAllDataUis = () => {
-    const elements = queryAll("[data-ui]", instanceRoot); // Pass instanceRoot
+    const elements = queryAll("[data-ui]", instanceRoot);
     for (let i = 0, n = elements.length; i < n; i++) {
-      on(elements[i], "click", onClickElement);
-      if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) on(elements[i], "keydown", onKeydownElement);
+      onWeak(elements[i], "click", onClickElement);
+      if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) onWeak(elements[i], "keydown", onKeydownElement);
     }
   };
 
@@ -111,15 +96,15 @@ function createBeerCssInstance(root: Document | ShadowRoot): (selector?: string 
       if (selector === "mode") return updateMode(options as string, instanceRoot);
       if (selector === "theme") return updateTheme(options, instanceRoot);
 
-      const to = query(selector, instanceRoot); // Pass instanceRoot
+      const to = query(selector, instanceRoot);
       if (!to) return;
       void run(to, to, options);
     }
 
     updateAllDataUis();
-    updateAllFields(instanceRoot); // Pass instanceRoot
-    updateAllSliders(instanceRoot); // Pass instanceRoot
-    updateAllRipples(instanceRoot); // Pass instanceRoot
+    updateAllFields(instanceRoot);
+    updateAllSliders(instanceRoot);
+    updateAllRipples(instanceRoot);
   };
 
   const container = instanceRoot instanceof Document ? instanceRoot.body : (instanceRoot.host as HTMLElement);

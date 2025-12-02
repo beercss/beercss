@@ -69,10 +69,10 @@
             option Item 2
             option Item 3
           label Select
-        .field.border.label.textarea 
+        .field.border.label 
           textarea
           label Textarea
-          span.helper Helper text
+          output Helper text
     .s12.m6.l6
       fieldset
         legend Fill all fields

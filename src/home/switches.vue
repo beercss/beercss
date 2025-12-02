@@ -63,7 +63,7 @@
           label.switch
             input(type="checkbox")
             span
-        span.helper Helper text
+        output Helper text
       .field.middle-align.invalid
         nav
           .max
@@ -72,7 +72,7 @@
           label.switch
             input(type="checkbox")
             span
-        span.error Error text
+        output.invalid Error text
 </template>
 
 <script setup lang="ts">

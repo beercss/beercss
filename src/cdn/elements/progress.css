@@ -14,6 +14,7 @@ progress {
   writing-mode: horizontal-tb;
   direction: ltr;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .dark progress {
@@ -93,32 +94,31 @@ progress.wavy::-moz-progress-bar {
 }
 
 progress.circle {
-  display: inline-block;
-  inline-size: 2.5rem;
-  block-size: 2.5rem;
-  border-radius: 50%;
-  border-width: 0.3rem;
-  border-style: solid;
-  border-color: currentcolor;
-  animation: 1.6s to-circular linear infinite;
-  background: none;
-  flex: none;
-}
-
-progress.circle::-moz-progress-bar {
-  background: none;
-}
-
-progress.circle.small {
+  --_value: attr(value type(<number>));
   inline-size: 1.5rem;
   block-size: 1.5rem;
-  border-width: 0.2rem;
+  background: conic-gradient(currentColor calc(var(--_value) * 1%), var(--active) 0);
+  border-radius: 50%;
+  mask-image: radial-gradient(circle at center, transparent 55%, currentColor 50%);
+  transform: none;
+}
+
+progress.circle::-webkit-progress-value {
+  background: none;
+}
+
+progress.circle.medium {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
 }
 
 progress.circle.large {
   inline-size: 3.5rem;
   block-size: 3.5rem;
-  border-width: 0.4rem;
+}
+
+progress.circle:not([value]) {
+  animation: to-rotate 1s infinite linear;
 }
 
 :is(nav, .row, .field) > progress:not(.circle, .small, .medium, .large) {
@@ -184,46 +184,14 @@ progress.max + * {
   }
 }
 
-@keyframes to-circular {
-  0% {
+@keyframes to-rotate {
+  from {
+    --_value: 50;
     transform: rotate(0deg);
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
   }
 
-  20% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
-  }
-
-  30% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
-  }
-
-  40% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
-  }
-
-  50% {
-    clip-path: polygon(50% 50%, 50% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%);
-  }
-
-  60% {
-    clip-path: polygon(50% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 100%);
-  }
-
-  70% {
-    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%, 0% 50%);
-  }
-
-  80% {
-    clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 50%);
-  }
-
-  90% {
+  to {
+    --_value: 50;
     transform: rotate(360deg);
-    clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
-  }
-
-  100% {
-    clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
   }
 }

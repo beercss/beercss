@@ -351,4 +351,8 @@
   .slider > :hover ~ .tooltip.bottom {
     inset-block: auto -1rem !important;
   }
+  
+  body:has(input[type=range]:focus) {
+    overflow: hidden;
+  }
 }
