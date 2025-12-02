@@ -4,7 +4,7 @@ function updatePlaceholder(element: HTMLInputElement | HTMLTextAreaElement) {
   if (!element.placeholder) element.placeholder = " ";
 }
 
-function onClickLabel(e: Event, root: Document | ShadowRoot) { // Added root
+function onClickLabel(e: Event, root: Document | ShadowRoot) {
   const label = e.currentTarget as HTMLLabelElement;
   const field = parent(label);
   const input = query("input:not([type=file], [type=checkbox], [type=radio]), select, textarea", root, field) as HTMLElement;
@@ -46,18 +46,18 @@ function onInputTextarea(e: Event) {
   updateTextarea(textarea);
 }
 
-function onPasswordIconClick(e: Event, root: Document | ShadowRoot) { // Added root
+function onPasswordIconClick(e: Event, root: Document | ShadowRoot) {
   const icon = e.currentTarget as HTMLElement;
   const input = query("input", root, parent(icon)) as HTMLInputElement;
   if (input && icon.textContent?.includes("visibility")) input.type = input.type === "password" ? "text" : "password";
 }
 
-function updateAllLabels(root: Document | ShadowRoot) { // Added root
+function updateAllLabels(root: Document | ShadowRoot) {
   const labels = queryAll(".field > label", root);
   for (let i=0; i<labels.length; i++) onWeak(labels[i], "click", (e: Event) => onClickLabel(e, root));
 }
 
-function updateAllInputs(root: Document | ShadowRoot) { // Added root
+function updateAllInputs(root: Document | ShadowRoot) {
   const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])", root) as NodeListOf<HTMLInputElement>;
   for (let i=0; i<inputs.length; i++) {
     onWeak(inputs[i], "focus", onFocusInput);
@@ -66,7 +66,7 @@ function updateAllInputs(root: Document | ShadowRoot) { // Added root
   }
 }
 
-function updateAllSelects(root: Document | ShadowRoot) { // Added root
+function updateAllSelects(root: Document | ShadowRoot) {
   const selects = queryAll(".field > select", root) as NodeListOf<HTMLSelectElement>;
   for (let i=0; i<selects.length; i++) {
     onWeak(selects[i], "focus", onFocusInput);
@@ -74,7 +74,7 @@ function updateAllSelects(root: Document | ShadowRoot) { // Added root
   }
 }
 
-function updateAllFiles(root: Document | ShadowRoot) { // Added root
+function updateAllFiles(root: Document | ShadowRoot) {
   const files = queryAll(".field > input[type=file]", root) as NodeListOf<HTMLInputElement>;
   for (let i=0; i<files.length; i++) {
     onWeak(files[i], "change", onChangeFile);
@@ -82,7 +82,7 @@ function updateAllFiles(root: Document | ShadowRoot) { // Added root
   }
 }
 
-function updateAllColors(root: Document | ShadowRoot) { // Added root
+function updateAllColors(root: Document | ShadowRoot) {
   const colors = queryAll(".field > input[type=color]", root) as NodeListOf<HTMLInputElement>;
   for (let i=0; i<colors.length; i++) {
     onWeak(colors[i], "change", onChangeColor);
@@ -90,7 +90,7 @@ function updateAllColors(root: Document | ShadowRoot) { // Added root
   }
 }
 
-function updateAllTextareas(root: Document | ShadowRoot) { // Added root
+function updateAllTextareas(root: Document | ShadowRoot) {
   const textareas = queryAll(".field.textarea > textarea", root) as NodeListOf<HTMLTextAreaElement>;
   for (let i=0; i<textareas.length; i++) {
     onWeak(textareas[i], "focus", onFocusInput);
@@ -99,9 +99,9 @@ function updateAllTextareas(root: Document | ShadowRoot) { // Added root
   }
 }
 
-function updateAllPasswordIcons(root: Document | ShadowRoot) { // Added root
+function updateAllPasswordIcons(root: Document | ShadowRoot) {
   const icons = queryAll("input[type=password] ~ :is(i, a)", root);
-  for (let i=0; i<icons.length; i++) on(icons[i], "click", (e: Event) => onPasswordIconClick(e, root));
+  for (let i=0; i<icons.length; i++) onWeak(icons[i], "click", (e: Event) => onPasswordIconClick(e, root));
 }
 
 function updateInput(input: HTMLInputElement) {
