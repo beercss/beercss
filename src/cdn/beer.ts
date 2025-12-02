@@ -1,7 +1,7 @@
 import {updateAllFields} from "./elements/fields";
 import {updateAllSliders} from "./elements/sliders";
 import {updateMode, updateTheme} from "./helpers/theme";
-import {type IBeerCssTheme} from "./interfaces";
+import {IBeerCssTheme, IBeerCSSRootInstance} from "./interfaces";
 import {addClass, guid, hasClass, hasTag, on, query, queryAll, removeClass, updateAllClickable} from "./utils";
 import {updateDialog} from "./elements/dialogs";
 import {updateMenu} from "./elements/menus";
@@ -9,110 +9,129 @@ import {updateSnackbar} from "./elements/snackbars";
 import {updatePage} from "./elements/pages";
 import {updateAllRipples} from "./helpers/ripples";
 
-const _context = globalThis as any;
-let _timeoutMutation: ReturnType<typeof setTimeout>;
-let _mutation: MutationObserver | null;
+// No more global state here
 
-function onMutation() {
-  if (_timeoutMutation) clearTimeout(_timeoutMutation);
-  _timeoutMutation = setTimeout(async () => await _ui(), 180);
-}
+import {updateAllFields} from "./elements/fields";
+import {updateAllSliders} from "./elements/sliders";
+import {updateMode, updateTheme} from "./helpers/theme";
+import {IBeerCssTheme, IBeerCSSRootInstance} from "./interfaces";
+import {addClass, guid, hasClass, hasTag, on, query, queryAll, removeClass, updateAllClickable} from "./utils";
+import {updateDialog} from "./elements/dialogs";
+import {updateMenu} from "./elements/menus";
+import {updateSnackbar} from "./elements/snackbars";
+import {updatePage} from "./elements/pages";
+import {updateAllRipples} from "./helpers/ripples";
 
-async function run(from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
-  if (!to) {
-    to = query(from.getAttribute("data-ui"));
+// No more global state here
+
+function createBeerCssInstance(root: Document | ShadowRoot): (selector?: string | Element, options?: string | number | IBeerCssTheme) => string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
+  let timeoutMutation: ReturnType<typeof setTimeout> | undefined;
+  let mutation: MutationObserver | null = null;
+  let mutationTarget: Document | ShadowRoot | null = null;
+
+  const instanceRoot = root; // Capture the root for this instance
+
+  const onMutation = () => {
+    if (timeoutMutation) clearTimeout(timeoutMutation);
+    timeoutMutation = setTimeout(async () => await ui(), 180); // Calls the specific ui for this instance
+  };
+
+  const setup = (currentRoot: Document | ShadowRoot) => {
+    if (mutation || !globalThis.MutationObserver) return;
+    mutation = new MutationObserver(onMutation);
+    mutationTarget = currentRoot;
+    const observeTarget = currentRoot instanceof Document ? currentRoot.body : currentRoot;
+    mutation.observe(observeTarget, { childList: true, subtree: true });
+    onMutation();
+  };
+
+  // Helper run function, now closed over 'instanceRoot'
+  const run = async (from: Element, to: Element | null, options?: any, e?: Event): Promise<void> => {
     if (!to) {
-      from.classList.toggle("active");
+      to = query(from.getAttribute("data-ui"), instanceRoot); // Pass instanceRoot
+      if (!to) {
+        from.classList.toggle("active");
+        return;
+      }
+    }
+
+    updateAllClickable(from, instanceRoot); // Pass instanceRoot
+
+    if (hasTag(to, "dialog")) {
+      await updateDialog(from, to as HTMLDialogElement, instanceRoot); // Pass instanceRoot
       return;
     }
+
+    if (hasTag(to, "menu")) {
+      updateMenu(from, to as HTMLMenuElement, e, instanceRoot); // Pass instanceRoot
+      return;
+    }
+
+    if (hasClass(to, "snackbar")) {
+      updateSnackbar(to, options as number, instanceRoot); // Pass instanceRoot
+      return;
+    }
+
+    if (hasClass(to, "page")) {
+      updatePage(to, instanceRoot); // Pass instanceRoot
+      return;
+    }
+
+    if (hasClass(to, "active")) {
+      removeClass(from, "active");
+      removeClass(to, "active");
+      return;
+    }
+
+    addClass(to, "active");
+  };
+
+  // Helper click and keydown functions, closed over 'run'
+  const onClickElement = (e: Event) => {
+    void run(e.currentTarget as HTMLElement, null, null, e);
+  };
+
+  const onKeydownElement = (e: KeyboardEvent) => {
+    if (e.key === "Enter") void run(e.currentTarget as HTMLElement, null, null, e);
+  };
+
+  // Helper to update all data-ui elements for this root
+  const updateAllDataUis = () => {
+    const elements = queryAll("[data-ui]", instanceRoot); // Pass instanceRoot
+    for (let i = 0, n = elements.length; i < n; i++) {
+      on(elements[i], "click", onClickElement);
+      if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) on(elements[i], "keydown", onKeydownElement);
+    }
+  };
+
+  const ui = (selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined => {
+    if (selector) {
+      if (selector === "setup") { setup(instanceRoot); return; }
+      if (selector === "guid") return guid();
+      if (selector === "mode") return updateMode(options as string, instanceRoot);
+      if (selector === "theme") return updateTheme(options, instanceRoot);
+
+      const to = query(selector, instanceRoot); // Pass instanceRoot
+      if (!to) return;
+      void run(to, to, options);
+    }
+
+    updateAllDataUis();
+    updateAllFields(instanceRoot); // Pass instanceRoot
+    updateAllSliders(instanceRoot); // Pass instanceRoot
+    updateAllRipples(instanceRoot); // Pass instanceRoot
+  };
+
+  const container = instanceRoot instanceof Document ? instanceRoot.body : (instanceRoot.host as HTMLElement);
+  if (container && !container.classList.contains("dark") && !container.classList.contains("light")) {
+    updateMode("auto", instanceRoot);
   }
 
-  updateAllClickable(from);
+  setup(instanceRoot);
 
-  if (hasTag(to, "dialog")) {
-    await updateDialog(from, to as HTMLDialogElement);
-    return;
-  }
-
-  if (hasTag(to, "menu")) {
-    updateMenu(from, to as HTMLMenuElement, e);
-    return;
-  }
-
-  if (hasClass(to, "snackbar")) {
-    updateSnackbar(to, options as number);
-    return;
-  }
-
-  if (hasClass(to, "page")) {
-    updatePage(to);
-    return;
-  }
-
-  if (hasClass(to, "active")) {
-    removeClass(from, "active");
-    removeClass(to, "active");
-    return;
-  }
-
-  addClass(to, "active");
+  return ui;
 }
 
-function onClickElement(e: Event) {
-  void run(e.currentTarget as HTMLElement, null, null, e);
+export function init(root: Document | ShadowRoot = document): (selector?: string | Element, options?: string | number | IBeerCssTheme) => string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
+  return createBeerCssInstance(root);
 }
-
-function onKeydownElement(e: KeyboardEvent) {
-  if (e.key === "Enter") void run(e.currentTarget as HTMLElement, null, null, e);
-}
-
-function setup() {
-  if (_context.ui || _mutation || !_context.MutationObserver) return;
-  _mutation = new MutationObserver(onMutation);
-  _mutation.observe(document.body, { childList: true, subtree: true });
-  onMutation();
-}
-
-function updateAllDataUis() {
-  const elements = queryAll("[data-ui]");
-  for (let i = 0, n = elements.length; i < n; i++) {
-    on(elements[i], "click", onClickElement);
-    if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) on(elements[i], "keydown", onKeydownElement);
-  }
-}
-
-function _ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
-  if (selector) {
-    if (selector === "setup") { setup(); return; }
-    if (selector === "guid") return guid();
-    if (selector === "mode") return updateMode(options as string);
-    if (selector === "theme") return updateTheme(options);
-
-    const to = query(selector);
-    if (!to) return;
-    void run(to, to, options);
-  }
-
-  updateAllDataUis();
-  updateAllFields();
-  updateAllSliders();
-  updateAllRipples();
-}
-
-function start() {
-  if (_context.ui) return;
-
-  const body = _context.document?.body;
-  if (body && !body.classList.contains("dark") && !body.classList.contains("light")) updateMode("auto");
-
-  setup();
-  _context.ui = _ui;
-}
-
-start();
-
-const ui = _context.ui;
-export {
-  ui as default,
-  ui,
-};

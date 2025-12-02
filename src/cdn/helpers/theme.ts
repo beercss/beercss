@@ -6,21 +6,25 @@ const _lastTheme: IBeerCssTheme = {
   dark: "",
 };
 
-function getMode() {
-  return document?.body?.classList.contains("dark") ? "dark" : "light";
+function getContainer(root: Document | ShadowRoot): Element {
+  return root instanceof Document ? root.body : root.host;
 }
 
-function lastTheme(): IBeerCssTheme {
+function getMode(root: Document | ShadowRoot): "light" | "dark" {
+  return getContainer(root).classList.contains("dark") ? "dark" : "light";
+}
+
+function lastTheme(root: Document | ShadowRoot): IBeerCssTheme {
   if (_lastTheme.light && _lastTheme.dark) return _lastTheme;
-  const body = document.body;
+  const container = getContainer(root);
 
-  const light = document.createElement("body");
+  const light = document.createElement("div");
   light.className = "light";
-  body.appendChild(light);
+  container.appendChild(light);
 
-  const dark = document.createElement("body");
+  const dark = document.createElement("div");
   dark.className = "dark";
-  body.appendChild(dark);
+  container.appendChild(dark);
 
   const fromLight = getComputedStyle(light);
   const fromDark = getComputedStyle(dark);
@@ -30,21 +34,21 @@ function lastTheme(): IBeerCssTheme {
     _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
   }
 
-  body.removeChild(light);
-  body.removeChild(dark);
+  container.removeChild(light);
+  container.removeChild(dark);
   return _lastTheme;
 }
 
-export function updateTheme(source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssTheme> {
+export function updateTheme(source?: IBeerCssTheme | any, root: Document | ShadowRoot = document): IBeerCssTheme | Promise<IBeerCssTheme> {
   const context = globalThis as any;
-  const body = document.body;
-  if (!source || !context.materialDynamicColors) return lastTheme();
+  const container = getContainer(root);
+  if (!source || !context.materialDynamicColors) return lastTheme(root);
 
-  const mode = getMode();
+  const mode = getMode(root);
   if (source.light && source.dark) {
     _lastTheme.light = source.light;
     _lastTheme.dark = source.dark;
-    body.setAttribute("style", source[mode]);
+    (container as HTMLElement).setAttribute("style", source[mode]);
     return source;
   }
 
@@ -62,23 +66,23 @@ export function updateTheme(source?: IBeerCssTheme | any): IBeerCssTheme | Promi
 
     _lastTheme.light = toCss(theme.light);
     _lastTheme.dark = toCss(theme.dark);
-    body.setAttribute("style", _lastTheme[mode]);
+    (container as HTMLElement).setAttribute("style", _lastTheme[mode]);
     return _lastTheme;
   });
 }
 
-export function updateMode(value: string): string {
+export function updateMode(value: string, root: Document | ShadowRoot = document): string {
   const context = (globalThis as any);
-  const body = document.body;
+  const container = getContainer(root);
 
-  if (!body) return value;
-  if (!value) return getMode();
+  if (!container) return value;
+  if (!value) return getMode(root);
   if (value === "auto") value = isDark() ? "dark" : "light";
   
-  body.classList.remove("light", "dark");
-  body.classList.add(value);
+  container.classList.remove("light", "dark");
+  container.classList.add(value);
   
   const lastThemeStyle = value === "light" ? _lastTheme.light : _lastTheme.dark;
-  if (context.materialDynamicColors) body.setAttribute("style", lastThemeStyle);
-  return getMode();
+  if (context.materialDynamicColors) (container as HTMLElement).setAttribute("style", lastThemeStyle);
+  return getMode(root);
 }

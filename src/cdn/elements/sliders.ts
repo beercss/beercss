@@ -1,58 +1,63 @@
-import { query, queryAll, hasClass, on, off, parent, hasTag, isTouchable } from "../utils";
+import { query, queryAll, hasClass, on, off, parent, hasTag, isTouchable } from "../utils"; // Removed getRoot
 
-function onInputDocument(e: Event) {
+function getContainer(root: Document | ShadowRoot): Element { // Added root
+  return root instanceof Document ? root.body : root.host;
+}
+
+function onInputDocument(e: Event, root: Document | ShadowRoot) { // Added root
   const input = e.target as HTMLInputElement;
   if (!hasTag(input, "input") && !hasTag(input, "select")) return;
 
   if (input.type === "range") {
     input.focus();
-    updateRange(input);
+    updateRange(input, root); // Pass root
   } else {
-    updateAllRanges();
+    updateAllRanges(root); // Pass root
   }
 }
 
-function onFocusRange(e: Event) {
+function onFocusRange(e: Event, root: Document | ShadowRoot) { // Added root
   if (!isTouchable()) return;
 
   const input = e.target as HTMLInputElement;
   const label = parent(input) as HTMLLabelElement;
-  if (hasClass(label, "vertical")) document.body.classList.add("no-scroll");
+  if (hasClass(label, "vertical")) getContainer(root).classList.add("no-scroll"); // Pass root
 }
 
-function onBlurRange(e: Event) {
+function onBlurRange(e: Event, root: Document | ShadowRoot) { // Added root
   if (!isTouchable()) return;
 
   const input = e.target as HTMLInputElement;
   const label = parent(input) as HTMLLabelElement;
-  if (hasClass(label, "vertical")) document.body.classList.remove("no-scroll");
+  if (hasClass(label, "vertical")) getContainer(root).classList.remove("no-scroll"); // Pass root
 }
 
-function updateAllRanges() {
-  const body = document.body;
-  const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
-  if (!ranges.length) off(body, "input", onInputDocument, false);
-  else on(body, "input", onInputDocument, false);
-  for(let i=0; i<ranges.length; i++) updateRange(ranges[i]);
+function updateAllRanges(root: Document | ShadowRoot) { // Added root
+  const container = getContainer(root); // Pass root
+  const ranges = queryAll(".slider > input[type=range]", root) as NodeListOf<HTMLInputElement>; // Pass root
+  if (!ranges.length) off(container, "input", (e: Event) => onInputDocument(e, root), false); // Pass root to handler
+  else on(container, "input", (e: Event) => onInputDocument(e, root), false); // Pass root to handler
+  for(let i=0; i<ranges.length; i++) updateRange(ranges[i], root); // Pass root
 }
 
-function rootSizeInPixels(): number {
-  const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
+function rootSizeInPixels(root: Document | ShadowRoot): number { // Added root
+  const container = root instanceof Document ? root.documentElement : root.host;
+  const size = getComputedStyle(container).getPropertyValue("--size") || "16px";
   if (size.includes("%")) return (parseInt(size) * 16) / 100;
   if (size.includes("em")) return parseInt(size) * 16;
   return parseInt(size);
 } 
 
-function updateRange(input: HTMLInputElement) {
-  on(input, "focus", onFocusRange);
-  on(input, "blur", onBlurRange);
+function updateRange(input: HTMLInputElement, root: Document | ShadowRoot) { // Added root
+  on(input, "focus", (e: Event) => onFocusRange(e, root)); // Pass root to handler
+  on(input, "blur", (e: Event) => onBlurRange(e, root)); // Pass root to handler
 
   const label = parent(input) as HTMLElement;
-  const bar = query("span", label) as HTMLElement;
-  const inputs = queryAll("input", label) as NodeListOf<HTMLInputElement>;
+  const bar = query("span", root, label) as HTMLElement; // Pass root
+  const inputs = queryAll("input", root, label) as NodeListOf<HTMLInputElement>; // Pass root
   if (!inputs.length || !bar) return;
 
-  const rootSize = rootSizeInPixels();
+  const rootSize = rootSizeInPixels(root); // Pass root
   const thumb = hasClass(label, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents: Array<number> = [];
   const values: Array<number> = [];
@@ -88,6 +93,6 @@ function updateRange(input: HTMLInputElement) {
   label.style.setProperty("--_value2", `'${value2}'`);
 }
 
-export function updateAllSliders() {
-  updateAllRanges();
+export function updateAllSliders(root: Document | ShadowRoot) { // Added root
+  updateAllRanges(root); // Pass root
 }

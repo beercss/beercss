@@ -21,6 +21,6 @@
     ],
     "plugins": ["@vue/language-plugin-pug"]
   },
-  "include": ["src/**/*.{js,tsx,ts,vue}", "src/**/*.d.ts"],
+  "include": ["src/**/*.{js,tsx,ts,vue}", "src/**/*.d.ts", "vitest.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
