@@ -26,7 +26,7 @@ export function updateMenu(from: Element, menu: HTMLMenuElement, e: Event | unde
   if (timeoutMenu) clearTimeout(timeoutMenu);
 
   timeoutMenu = setTimeout(() => {
-    on(getContainer(root), "click", (event: Event) => onClickDocument(event, root)); to handler
+    on(getContainer(root), "click", (event: Event) => onClickDocument(event, root));
     if (!hasTag((root as Document).activeElement, "input")) blurActiveElement(root);
 
     const isActive = hasClass(menu, "active");
