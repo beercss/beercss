@@ -154,31 +154,12 @@ progress.max[class*='-text'] {
   opacity: 1;
 }
 
-progress:is(.horizontal, .vertical, .max) {
-  display: unset;
-  inline-size: 100% !important;
-}
-
-progress.vertical {
-  writing-mode: vertical-lr;
-}
-
-progress.max.vertical {
-  transform: rotate(-180deg);
-}
-
 progress.max + * {
   margin-block-start: 0;
 }
 
 :is(.button, button, .chip) > progress.circle {
   color: inherit;
-}
-
-@supports (-moz-appearance:none) {
-  progress.max.vertical {
-    transform: none;
-  }
 }
 
 @keyframes to-linear {
