@@ -1,6 +1,24 @@
 const _emptyNodeList = [] as unknown as NodeListOf<Element>;
 const _weakElements = new WeakSet<HTMLElement>();
 
+export const isChrome = navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Edge");
+
+export const isFirefox = navigator.userAgent.includes("Firefox");
+
+export const isSafari = navigator.userAgent.includes("Safari") && !navigator.userAgent.includes("Chrome");
+
+export const isEdge = navigator.userAgent.includes("Edge");
+
+export const isWindows = navigator.userAgent.includes("Windows");
+
+export const isMac = navigator.userAgent.includes("Macintosh");
+
+export const isLinux = navigator.userAgent.includes("Linux");
+
+export const isAndroid = navigator.userAgent.includes("Android");
+
+export const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
 export function isTouchable(): boolean {
   return window?.matchMedia("(pointer: coarse)").matches;
 }
@@ -68,7 +86,7 @@ export function on(element: Element | null, name: string, callback: any, useCapt
 }
 
 export function onWeak(element: Element | null, name: string, callback: any, useCapture: boolean = true) {
-  if (!addWeakElement(element as HTMLElement)) return;
+  addWeakElement(element as HTMLElement);
   on(element, name, callback, useCapture);
 }
 
@@ -125,9 +143,14 @@ export function updateAllClickable(element: Element) {
   if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
 }
 
-export function addWeakElement(element: HTMLElement): boolean {
-  if (_weakElements.has(element)) return false;
+export function addWeakElement(element: HTMLElement) {
+  if (_weakElements.has(element)) return;
   _weakElements.add(element);
-  return true;
 }
 
+export function rootSizeInPixels(): number {
+  const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
+  if (size.includes("%")) return (parseInt(size) * 16) / 100;
+  if (size.includes("em")) return parseInt(size) * 16;
+  return parseInt(size);
+}

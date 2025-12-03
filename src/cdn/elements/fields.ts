@@ -1,4 +1,4 @@
-import { query, next, prev, hasType, parent, queryAll, onWeak } from "../utils";
+import { query, next, prev, hasType, parent, queryAll, onWeak, isChrome, isMac, isIOS, on, hasClass, rootSizeInPixels } from "../utils";
 
 function updatePlaceholder(element: HTMLInputElement | HTMLTextAreaElement) {
   if (!element.placeholder) element.placeholder = " ";
@@ -47,6 +47,11 @@ function onPasswordIconClick(e: Event) {
   if (input && icon.textContent?.includes("visibility")) input.type = input.type === "password" ? "text" : "password";
 }
 
+function onInputTextarea(e: Event) {
+  const textarea = e.currentTarget as HTMLTextAreaElement;
+  updateTextarea(textarea);
+}
+
 function updateAllLabels() {
   const labels = queryAll(".field > label");
   for (let i=0; i<labels.length; i++) {
@@ -88,10 +93,13 @@ function updateAllColors() {
 }
 
 function updateAllTextareas() {
+  if (isChrome && !isMac && !isIOS) return;
+
   const textareas = queryAll(".field > textarea") as NodeListOf<HTMLTextAreaElement>;
   for (let i=0; i<textareas.length; i++) {
     onWeak(textareas[i], "focus", onFocusInput);
     onWeak(textareas[i], "blur", onBlurInput);
+    onWeak(textareas[i], "input", onInputTextarea);
     updateTextarea(textareas[i]);
   }
 }
@@ -138,6 +146,12 @@ function updateColor(input: HTMLInputElement, e?: KeyboardEvent) {
 
 function updateTextarea(textarea: HTMLTextAreaElement) {
   updatePlaceholder(textarea);
+
+  if (textarea.hasAttribute("rows")) return;
+
+  const rootSize = rootSizeInPixels();
+  textarea.style.blockSize = "auto";
+  textarea.style.blockSize = `${textarea.scrollHeight - rootSize}px`;
 }
 
 export function updateAllFields() {

@@ -1,4 +1,4 @@
-import { query, queryAll, hasClass, on, off, parent, hasTag, onWeak } from "../utils";
+import { query, queryAll, hasClass, on, off, parent, hasTag, onWeak, rootSizeInPixels } from "../utils";
 
 function onInputDocument(e: Event) {
   const input = e.target as HTMLInputElement;
@@ -23,13 +23,6 @@ function updateAllRanges() {
   if (!ranges.length) off(body, "input", onInputDocument, false);
   else on(body, "input", onInputDocument, false);
   for (let i = 0; i < ranges.length; i++) updateRange(ranges[i]);
-}
-
-function rootSizeInPixels(): number {
-  const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
-  if (size.includes("%")) return (parseInt(size) * 16) / 100;
-  if (size.includes("em")) return parseInt(size) * 16;
-  return parseInt(size);
 }
 
 function updateRange(input: HTMLInputElement) {
