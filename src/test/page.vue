@@ -670,33 +670,13 @@ main.responsive
     .field.label.border
       input#text(v-model="number")
       label Input
-    .field.label.border
-      input(v-model="number")
-      label Test
     label.slider.large.min
       input#range(v-model="number", type="range")
       span
-    label.slider.large.min
-      input#range(type="range", value="10")
-      span
-    progress
-
-  label.progress-bar.css
-    progress#css(:value="number", max="100")
-  .row
-    .field.label.border.max
-      select(v-model="select")
-        option
-        option(value="1") Item 1
-        option(value="2") Item 2
-        option(value="3") Item 3
-      label Test
-    .field.border
-      select(v-model="select")
-        option
-        option(value="1") Item 1
-        option(value="2") Item 2
-        option(value="3") Item 3
+    progress(:value="number", max="100")
+    progress.wavy(:value="number", max="100")
+    progress.circle(:value="number", max="100")
+    progress.circle.wavy(:value="number", max="100")
 
   .large-space
   h5 Navigation list inside elements
