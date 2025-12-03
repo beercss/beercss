@@ -4,9 +4,17 @@ Textarea fields let users enter and edit long text.
 
 ## Element
 
+If [textarea rows attribute](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/textarea#rows) is not defined, the textarea will auto resize automatically. It uses a pure CSS solution on all Chromium based browsers, except on Apple devices. Other browsers will use JS.
+
 ```html
-<div class="field textarea">
+<div class="field">
   <textarea></textarea>
+</div>
+```
+
+```html
+<div class="field">
+  <textarea rows="10"></textarea>
 </div>
 ```
 
@@ -14,7 +22,7 @@ Textarea fields let users enter and edit long text.
 
 **Forms**
 
-label, textarea, border, round, fill, prefix, suffix
+label, border, round, fill, prefix, suffix
 
 **Sizes**
 
@@ -27,7 +35,7 @@ active
 ## Example
 
 ```html
-<div class="field textarea label border">
+<div class="field label border">
   <textarea></textarea>
   <label>Label</label>
 </div>

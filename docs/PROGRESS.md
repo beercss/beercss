@@ -10,17 +10,13 @@ Progress display the length of a process or an unspecified wait time.
 
 ## Most used helpers
 
-**Directions**
-
-vertical
-
 **Forms**
 
 circle, wavy
 
 **Sizes**
 
-small, medium, large, min
+small, medium, large, max
 
 ## Linear example
 
@@ -40,6 +36,14 @@ small, medium, large, min
 
 ```html
 <progress class="circle"></progress>
+<progress class="circle" value="0.25"></progress>
+<progress class="circle" value="25" max="100"></progress>
+```
+
+```html
+<progress class="circle wavy"></progress>
+<progress class="circle wavy" value="0.25"></progress>
+<progress class="circle wavy" value="25" max="100"></progress>
 ```
 
 ## Custom examples

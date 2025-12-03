@@ -30,7 +30,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;em&gt;**
 
-**field** small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
+**field** small, medium, large, extra, label, border, round, fill, prefix, suffix
 
 **&lt;fieldset&gt;**
 
@@ -72,7 +72,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;pre&gt;** border, no-border, scroll
 
-**&lt;progress&gt;** small, medium, large, circle, wavy, max, vertical
+**&lt;progress&gt;** small, medium, large, circle, wavy, max
 
 **row** left-align, right-align, center-align, top-align, bottom-align, middle-align, space, no-space, small-space, medium-space, large-space, horizontal, vertical
 

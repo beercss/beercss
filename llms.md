@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2025-10-01
+Generated on: 2025-12-03
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -61,8 +61,8 @@ The following documentation sections are included in order:
 ### DEFAULT VERSION
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -80,8 +80,8 @@ import "material-dynamic-colors";
 Applied on child elements of `<* class="beer">...</*>`.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -99,7 +99,7 @@ import "material-dynamic-colors";
 Applied on child elements of `<beer-css>...</beer-css>`.
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/beer.custom-element.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -115,7 +115,7 @@ import "material-dynamic-colors";
 
 ### LOCAL CDN VERSION
 
-Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
+Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
 
 ```html
 <link href="/beercss/beer.min.css" rel="stylesheet" />
@@ -135,8 +135,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">
@@ -2611,17 +2611,13 @@ Progress display the length of a process or an unspecified wait time.
 
 ## Most used helpers
 
-**Directions**
-
-vertical
-
 **Forms**
 
 circle, wavy
 
 **Sizes**
 
-small, medium, large, min
+small, medium, large, max
 
 ## Linear example
 
@@ -2641,6 +2637,14 @@ small, medium, large, min
 
 ```html
 <progress class="circle"></progress>
+<progress class="circle" value="0.25"></progress>
+<progress class="circle" value="25" max="100"></progress>
+```
+
+```html
+<progress class="circle wavy"></progress>
+<progress class="circle wavy" value="0.25"></progress>
+<progress class="circle wavy" value="25" max="100"></progress>
 ```
 
 ## Custom examples
@@ -3057,7 +3061,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;em&gt;**
 
-**field** small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
+**field** small, medium, large, extra, label, border, round, fill, prefix, suffix
 
 **&lt;fieldset&gt;**
 
@@ -3099,7 +3103,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;pre&gt;** border, no-border, scroll
 
-**&lt;progress&gt;** small, medium, large, circle, wavy, max, vertical
+**&lt;progress&gt;** small, medium, large, circle, wavy, max
 
 **row** left-align, right-align, center-align, top-align, bottom-align, middle-align, space, no-space, small-space, medium-space, large-space, horizontal, vertical
 
@@ -3553,9 +3557,17 @@ Textarea fields let users enter and edit long text.
 
 ## Element
 
+If [textarea rows attribute](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/textarea#rows) is not defined, the textarea will auto resize automatically. It uses a pure CSS solution on all Chromium based browsers, except on Apple devices. Other browsers will use JS.
+
 ```html
-<div class="field textarea">
+<div class="field">
   <textarea></textarea>
+</div>
+```
+
+```html
+<div class="field">
+  <textarea rows="10"></textarea>
 </div>
 ```
 
@@ -3563,7 +3575,7 @@ Textarea fields let users enter and edit long text.
 
 **Forms**
 
-label, textarea, border, round, fill, prefix, suffix
+label, border, round, fill, prefix, suffix
 
 **Sizes**
 
@@ -3576,7 +3588,7 @@ active
 ## Example
 
 ```html
-<div class="field textarea label border">
+<div class="field label border">
   <textarea></textarea>
   <label>Label</label>
 </div>
