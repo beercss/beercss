@@ -1,7 +1,14 @@
 const _emptyNodeList = [];
-function isTouchable() {
-  return window == null ? void 0 : window.matchMedia("(pointer: coarse)").matches;
-}
+const _weakElements = /* @__PURE__ */ new WeakSet();
+const isChrome = navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Edge");
+navigator.userAgent.includes("Firefox");
+navigator.userAgent.includes("Safari") && !navigator.userAgent.includes("Chrome");
+navigator.userAgent.includes("Edge");
+navigator.userAgent.includes("Windows");
+const isMac = navigator.userAgent.includes("Macintosh");
+navigator.userAgent.includes("Linux");
+navigator.userAgent.includes("Android");
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 function isDark() {
   return window == null ? void 0 : window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
@@ -51,6 +58,10 @@ function removeClass(element, name) {
 function on(element, name, callback, useCapture = true) {
   if (element == null ? void 0 : element.addEventListener) element.addEventListener(name, callback, useCapture);
 }
+function onWeak(element, name, callback, useCapture = true) {
+  addWeakElement(element);
+  on(element, name, callback, useCapture);
+}
 function off(element, name, callback, useCapture = true) {
   if (element == null ? void 0 : element.removeEventListener) element.removeEventListener(name, callback, useCapture);
 }
@@ -94,6 +105,16 @@ function updateAllClickable(element) {
   for (let i = 0; i < as.length; i++) removeClass(as[i], "active");
   if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
 }
+function addWeakElement(element) {
+  if (_weakElements.has(element)) return;
+  _weakElements.add(element);
+}
+function rootSizeInPixels() {
+  const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
+  if (size.includes("%")) return parseInt(size) * 16 / 100;
+  if (size.includes("em")) return parseInt(size) * 16;
+  return parseInt(size);
+}
 function updatePlaceholder(element) {
   if (!element.placeholder) element.placeholder = " ";
 }
@@ -127,61 +148,64 @@ function onKeydownColor(e) {
   const input = e.currentTarget;
   updateColor(input, e);
 }
-function onInputTextarea(e) {
-  const textarea = e.currentTarget;
-  updateTextarea(textarea);
-}
 function onPasswordIconClick(e) {
   var _a;
   const icon = e.currentTarget;
   const input = query("input", parent(icon));
   if (input && ((_a = icon.textContent) == null ? void 0 : _a.includes("visibility"))) input.type = input.type === "password" ? "text" : "password";
 }
+function onInputTextarea(e) {
+  const textarea = e.currentTarget;
+  updateTextarea(textarea);
+}
 function updateAllLabels() {
   const labels = queryAll(".field > label");
-  for (let i = 0; i < labels.length; i++) on(labels[i], "click", onClickLabel);
+  for (let i = 0; i < labels.length; i++) {
+    onWeak(labels[i], "click", onClickLabel);
+  }
 }
 function updateAllInputs() {
   const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])");
   for (let i = 0; i < inputs.length; i++) {
-    on(inputs[i], "focus", onFocusInput);
-    on(inputs[i], "blur", onBlurInput);
+    onWeak(inputs[i], "focus", onFocusInput);
+    onWeak(inputs[i], "blur", onBlurInput);
     updateInput(inputs[i]);
   }
 }
 function updateAllSelects() {
   const selects = queryAll(".field > select");
   for (let i = 0; i < selects.length; i++) {
-    on(selects[i], "focus", onFocusInput);
-    on(selects[i], "blur", onBlurInput);
+    onWeak(selects[i], "focus", onFocusInput);
+    onWeak(selects[i], "blur", onBlurInput);
   }
 }
 function updateAllFiles() {
   const files = queryAll(".field > input[type=file]");
   for (let i = 0; i < files.length; i++) {
-    on(files[i], "change", onChangeFile);
+    onWeak(files[i], "change", onChangeFile);
     updateFile(files[i]);
   }
 }
 function updateAllColors() {
   const colors = queryAll(".field > input[type=color]");
   for (let i = 0; i < colors.length; i++) {
-    on(colors[i], "change", onChangeColor);
+    onWeak(colors[i], "change", onChangeColor);
     updateColor(colors[i]);
   }
 }
 function updateAllTextareas() {
-  const textareas = queryAll(".field.textarea > textarea");
+  if (isChrome && !isMac && !isIOS) return;
+  const textareas = queryAll(".field > textarea");
   for (let i = 0; i < textareas.length; i++) {
-    on(textareas[i], "focus", onFocusInput);
-    on(textareas[i], "blur", onBlurInput);
-    on(textareas[i], "input", onInputTextarea);
+    onWeak(textareas[i], "focus", onFocusInput);
+    onWeak(textareas[i], "blur", onBlurInput);
+    onWeak(textareas[i], "input", onInputTextarea);
     updateTextarea(textareas[i]);
   }
 }
 function updateAllPasswordIcons() {
   const icons = queryAll("input[type=password] ~ :is(i, a)");
-  for (let i = 0; i < icons.length; i++) on(icons[i], "click", onPasswordIconClick);
+  for (let i = 0; i < icons.length; i++) onWeak(icons[i], "click", onPasswordIconClick);
 }
 function updateInput(input) {
   if (hasType(input, "number") && !input.value) input.value = "";
@@ -198,7 +222,7 @@ function updateFile(input, e) {
   if (!hasType(nextInput, "text")) return;
   nextInput.value = input.files ? Array.from(input.files).map((x) => x.name).join(", ") : "";
   nextInput.readOnly = true;
-  on(nextInput, "keydown", onKeydownFile, false);
+  onWeak(nextInput, "keydown", onKeydownFile, false);
   updateInput(nextInput);
 }
 function updateColor(input, e) {
@@ -212,14 +236,15 @@ function updateColor(input, e) {
   if (!hasType(nextInput, "text")) return;
   nextInput.readOnly = true;
   nextInput.value = input.value;
-  on(nextInput, "keydown", onKeydownColor, false);
+  onWeak(nextInput, "keydown", onKeydownColor, false);
   updateInput(nextInput);
 }
 function updateTextarea(textarea) {
   updatePlaceholder(textarea);
-  const field = parent(textarea);
-  field.removeAttribute("style");
-  if (hasClass(field, "min")) field.style.setProperty("--_size", `${Math.max(textarea.scrollHeight, field.offsetHeight)}px`);
+  if (textarea.hasAttribute("rows")) return;
+  const rootSize = rootSizeInPixels();
+  textarea.style.blockSize = "auto";
+  textarea.style.blockSize = `${textarea.scrollHeight - rootSize}px`;
 }
 function updateAllFields() {
   updateAllLabels();
@@ -230,7 +255,7 @@ function updateAllFields() {
   updateAllTextareas();
   updateAllPasswordIcons();
 }
-function onInputDocument(e) {
+function onInputDocument$1(e) {
   const input = e.target;
   if (!hasTag(input, "input") && !hasTag(input, "select")) return;
   if (input.type === "range") {
@@ -240,34 +265,19 @@ function onInputDocument(e) {
     updateAllRanges();
   }
 }
-function onFocusRange(e) {
-  if (!isTouchable()) return;
+function onChangeInput(e) {
   const input = e.target;
-  const label = parent(input);
-  if (hasClass(label, "vertical")) document.body.classList.add("no-scroll");
-}
-function onBlurRange(e) {
-  if (!isTouchable()) return;
-  const input = e.target;
-  const label = parent(input);
-  if (hasClass(label, "vertical")) document.body.classList.remove("no-scroll");
+  requestAnimationFrame(() => input.blur());
 }
 function updateAllRanges() {
   const body = document.body;
   const ranges = queryAll(".slider > input[type=range]");
-  if (!ranges.length) off(body, "input", onInputDocument, false);
-  else on(body, "input", onInputDocument, false);
+  if (!ranges.length) off(body, "input", onInputDocument$1, false);
+  else on(body, "input", onInputDocument$1, false);
   for (let i = 0; i < ranges.length; i++) updateRange(ranges[i]);
 }
-function rootSizeInPixels() {
-  const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
-  if (size.includes("%")) return parseInt(size) * 16 / 100;
-  if (size.includes("em")) return parseInt(size) * 16;
-  return parseInt(size);
-}
 function updateRange(input) {
-  on(input, "focus", onFocusRange);
-  on(input, "blur", onBlurRange);
+  onWeak(input, "change", onChangeInput);
   const label = parent(input);
   const bar = query("span", label);
   const inputs = queryAll("input", label);
@@ -422,7 +432,7 @@ async function updateDialog(from, dialog) {
     insertBefore(overlay, dialog);
     await wait(90);
   }
-  if (!isModal) on(overlay, "click", onClickOverlay, false);
+  if (!isModal) onWeak(overlay, "click", onClickOverlay, false);
   if (isActive) closeDialog(dialog, overlay);
   else void openDialog(dialog, overlay, isModal, from);
 }
@@ -468,7 +478,7 @@ function updateSnackbar(snackbar, milliseconds) {
   const activeSnackbars = queryAll(".snackbar.active");
   for (let i = 0; i < activeSnackbars.length; i++) removeClass(activeSnackbars[i], "active");
   addClass(snackbar, "active");
-  on(snackbar, "click", onClickSnackbar);
+  onWeak(snackbar, "click", onClickSnackbar);
   if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
   if (milliseconds === -1) return;
   _timeoutSnackbar = setTimeout(() => {
@@ -504,7 +514,26 @@ function updateRipple(e) {
 }
 function updateAllRipples() {
   const ripples = queryAll(".slow-ripple, .ripple, .fast-ripple");
-  for (let i = 0; i < ripples.length; i++) on(ripples[i], "pointerdown", onPointerDownRipple);
+  for (let i = 0; i < ripples.length; i++) onWeak(ripples[i], "pointerdown", onPointerDownRipple);
+}
+function onInputDocument(e) {
+  const progress = e.target;
+  if (hasTag(progress, "progress")) {
+    updateProgress(progress);
+  } else {
+    updateAllProgress();
+  }
+}
+function updateProgress(progress) {
+  progress.style.setProperty("--_value", String(progress.value));
+}
+function updateAllProgress() {
+  if (isChrome && !isMac && !isIOS) return;
+  const body = document.body;
+  const progresses = queryAll("progress");
+  if (!progresses.length) off(body, "input", onInputDocument, false);
+  else on(body, "input", onInputDocument, false);
+  for (let i = 0; i < progresses.length; i++) updateProgress(progresses[i]);
 }
 const _context = globalThis;
 let _timeoutMutation;
@@ -560,8 +589,8 @@ function setup() {
 function updateAllDataUis() {
   const elements = queryAll("[data-ui]");
   for (let i = 0, n = elements.length; i < n; i++) {
-    on(elements[i], "click", onClickElement);
-    if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) on(elements[i], "keydown", onKeydownElement);
+    onWeak(elements[i], "click", onClickElement);
+    if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) onWeak(elements[i], "keydown", onKeydownElement);
   }
 }
 function _ui(selector, options) {
@@ -581,6 +610,7 @@ function _ui(selector, options) {
   updateAllFields();
   updateAllSliders();
   updateAllRipples();
+  updateAllProgress();
 }
 function start() {
   var _a;

@@ -100,7 +100,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -108,7 +108,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -116,7 +116,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -124,7 +124,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -2145,38 +2145,33 @@ html {
   display: none;
 }
 .beer .field {
-  --_size: 3rem;
+  --_input: 3rem;
   --_start: 1.2rem;
-  block-size: var(--_size);
-  margin-block-end: 2rem;
+  --_middle: calc(var(--_input) / 2);
   border-radius: 0.25rem 0.25rem 0 0;
-  max-block-size: 12rem;
+  min-block-size: var(--_input);
+  display: flex;
+  flex-direction: column;
 }
-.beer .grid > * > .field {
-  margin-block-end: 1rem;
+.beer .field.fill {
+  --_background: var(--surface-variant);
+  background-color: unset !important;
+  color: unset !important;
 }
-.beer .grid > * > .field + .field {
-  margin-block-start: 2rem;
-}
-.beer .grid.no-space > * > .field + .field {
-  margin-block-start: 1rem;
-}
-.beer .grid.medium-space > * > .field + .field {
-  margin-block-start: 2.5rem;
-}
-.beer .grid.large-space > * > .field + .field {
-  margin-block-start: 3rem;
+.beer .field.fill > :is(input, select, textarea) {
+  background-color: var(--_background);
+  z-index: 0;
 }
 .beer .field.small {
-  --_size: 2.5rem;
+  --_input: 2.5rem;
   --_start: 1rem;
 }
 .beer .field.large {
-  --_size: 3.5rem;
+  --_input: 3.5rem;
   --_start: 1.4rem;
 }
 .beer .field.extra {
-  --_size: 4rem;
+  --_input: 4rem;
   --_start: 1.6rem;
 }
 .beer .field.border {
@@ -2195,36 +2190,36 @@ html {
   border-radius: 2rem;
 }
 /* icon */
-.beer .field > :is(i, img, svg, progress, a:not(.helper, .error)) {
+.beer .field > :is(i, img, svg, progress.circle, a) {
   position: absolute;
-  inset: 50% auto auto auto;
-  transform: translateY(-50%);
+  inset: calc((var(--_input) / 2) - 0.75rem) auto auto auto;
   cursor: pointer;
-  z-index: 0;
+  z-index: 10;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  margin: auto 0;
+  pointer-events: none;
+}
+.beer .field > :is(a, .front) {
+  pointer-events: all !important;
+}
+.beer .field > a > :is(i, img, svg, progress.circle, a) {
   inline-size: 1.5rem;
   block-size: 1.5rem;
 }
-.beer .field > :is(i, img, svg, progress, a:not(.helper, .error)),
-.beer [dir=rtl] .field > :is(i, img, svg, progress, a:not(.helper, .error)):first-child {
-  inset: 50% 1rem auto auto;
+.beer .field > :is(i, img, svg, progress.circle, a),
+.beer [dir=rtl] .field > :is(i, img, svg, progress.circle, a):first-child {
+  inset: calc(var(--_middle) - 0.75rem) 1rem auto auto;
 }
-.beer .field > :is(i, img, svg, progress, a:not(.helper, .error)):first-child,
-.beer [dir=rtl] .field > :is(i, img, svg, progress, a:not(.helper, .error)) {
-  inset: 50% auto auto 1rem;
+.beer .field > :is(i, img, svg, progress.circle, a):first-child,
+.beer [dir=rtl] .field > :is(i, img, svg, progress.circle, a) {
+  inset: calc(var(--_middle) - 0.75rem) auto auto 1rem;
 }
 .beer .field.invalid > i {
   color: var(--error);
 }
 .beer .field > progress.circle {
-  inset-block-start: calc(50% - 0.75rem) !important;
   border-width: 0.1875rem;
-}
-.beer .field > a:not(.helper, .error) {
-  z-index: 10;
-}
-.beer .field > a > :is(i, img, svg, progress, a:not(.helper, .error)) {
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
 }
 /* input, textarea and select */
 .beer .field > :is(input, textarea, select) {
@@ -2239,7 +2234,7 @@ html {
   font-family: inherit;
   font-size: 1rem;
   inline-size: 100%;
-  block-size: 100%;
+  min-block-size: var(--_input);
   outline: none;
   z-index: 1;
   background: none;
@@ -2258,10 +2253,9 @@ html {
   border: 0.125rem solid transparent;
   padding: 0 0.875rem;
 }
-.beer .field.min > textarea {
-  overflow: hidden auto;
-  position: absolute;
-  inset: 0;
+.beer .field > textarea:not([rows]) {
+  field-sizing: content;
+  max-block-size: 12rem;
 }
 .beer input[type=file],
 .beer input[type=color],
@@ -2348,18 +2342,6 @@ html {
 .beer .field > :disabled {
   cursor: not-allowed;
 }
-.beer .field.textarea.small:not(.min) {
-  --_size: 5rem;
-}
-.beer .field.textarea:not(.min) {
-  --_size: 5.5rem;
-}
-.beer .field.textarea.large:not(.min) {
-  --_size: 6rem;
-}
-.beer .field.textarea.extra:not(.min) {
-  --_size: 6.5rem;
-}
 .beer .field > select {
   user-select: none;
 }
@@ -2379,27 +2361,26 @@ html {
 .beer .field > select > option {
   background-color: var(--surface);
 }
-.beer .field.label > :is(input, select) {
+.beer .field > :is(input, select) {
   padding-block-start: 1rem;
 }
-.beer .field.label.border:not(.fill) > :is(input, select) {
+.beer .field:not(.label) > :is(input, select),
+.beer .field.border:not(.fill) > :is(input, select) {
   padding-block-start: 0;
 }
 .beer .field > textarea {
-  padding-block-start: var(--_start);
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
+  padding-block-start: calc(var(--_start)) !important;
 }
 .beer .field > textarea:focus {
-  padding-block-start: calc(var(--_start) - 0.06rem);
+  padding-block-start: calc(var(--_start) - 0.01rem) !important;
 }
 .beer .field:not(.label) > textarea,
-.beer .field.border.label:not(.fill) > textarea {
-  padding-block-start: calc(var(--_start) - 0.5rem);
+.beer .field.border:not(.fill) > textarea {
+  padding-block-start: calc(var(--_start) - 0.5rem) !important;
 }
 .beer .field:not(.label) > textarea:focus,
-.beer .field.border.label:not(.fill) > textarea:focus {
-  padding-block-start: calc(var(--_start) - 0.56rem);
+.beer .field.border:not(.fill) > textarea:focus {
+  padding-block-start: calc(var(--_start) - 0.51rem) !important;
 }
 /* label */
 .beer .field.label > label {
@@ -2407,19 +2388,22 @@ html {
   position: absolute;
   inset: -0.5rem 1rem 0 var(--_start);
   display: flex;
-  block-size: calc(var(--_size) + 1rem);
-  line-height: calc(var(--_size) + 1rem);
+  block-size: calc(var(--_input) + 1rem);
+  line-height: calc(var(--_input) + 1rem);
   font-size: 1rem;
   transition: all 0.2s;
   gap: 0.25rem;
   white-space: nowrap;
+  pointer-events: none;
+}
+.beer [dir=rtl] .field.label > label {
+  inset: -0.5rem var(--_start) 0 1rem;
 }
 .beer .field.label.round > label {
   inset: -0.5rem 1.75rem 0 var(--_start);
 }
-.beer .field.label.textarea:not(.min) > label {
-  block-size: calc(var(--_size) - 1.5rem);
-  line-height: calc(var(--_size) - 1.5rem);
+.beer [dir=rtl] .field.label.round > label {
+  inset: -0.5rem 1.75rem 0 var(--_start);
 }
 .beer .field.label.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
   --_start: 1rem;
@@ -2488,27 +2472,21 @@ html {
   font-size: 1rem;
 }
 /* helper */
-.beer .field > :is(.helper, .error) {
-  position: absolute;
-  inset: auto auto 0 1rem;
-  transform: translateY(100%);
+.beer .field > output {
+  display: inline-block;
   font-size: 0.75rem;
   background: none !important;
-  padding-block-start: 0.125rem;
+  padding: 0.25rem 1rem;
+  line-height: 1.25rem;
+  align-self: start;
 }
-.beer [dir=rtl] .field > :is(.helper, .error) {
-  inset: auto 1rem 0 auto;
-}
-.beer a.helper {
-  color: var(--primary);
-}
-.beer .field > .error {
+.beer .field > output.invalid {
   color: var(--error) !important;
 }
-.beer .field.round > :is(.helper, .error) {
-  inset-inline-start: 1.5rem;
+.beer .field.round > output {
+  padding: 0.25rem 1.5rem;
 }
-.beer .field.invalid > .helper {
+.beer .field.invalid > output:not(.invalid) {
   display: none;
 }
 .beer table td > .field {
@@ -3681,6 +3659,7 @@ html {
   writing-mode: horizontal-tb;
   direction: ltr;
   -webkit-appearance: none;
+  appearance: none;
 }
 .beer .dark progress {
   background: var(--_dark);
@@ -3745,29 +3724,36 @@ html {
   mask-size: auto 100%;
 }
 .beer progress.circle {
-  display: inline-block;
+  --_value: attr(value type(<number>), 50);
   inline-size: 2.5rem;
   block-size: 2.5rem;
+  background: conic-gradient(currentColor calc(var(--_value) * 1%), var(--active) 0%);
   border-radius: 50%;
-  border-width: 0.3rem;
-  border-style: solid;
-  border-color: currentcolor;
-  animation: 1.6s to-circular linear infinite;
+  mask-image: radial-gradient(circle at center, transparent 57%, currentColor 60%);
+}
+.beer progress.circle::-webkit-progress-value {
   background: none;
-  flex: none;
 }
 .beer progress.circle::-moz-progress-bar {
   background: none;
 }
+.beer progress.circle.wavy {
+  background: conic-gradient(currentColor calc(var(--_value) * 1%), var(--active) 0);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  mask-image: url(wavy-circle.svg);
+}
 .beer progress.circle.small {
   inline-size: 1.5rem;
   block-size: 1.5rem;
-  border-width: 0.2rem;
 }
 .beer progress.circle.large {
   inline-size: 3.5rem;
   block-size: 3.5rem;
-  border-width: 0.4rem;
+}
+.beer progress.circle:not([value]) {
+  animation: to-rotate 1s infinite linear;
 }
 .beer :is(nav, .row, .field) > progress:not(.circle, .small, .medium, .large) {
   flex: auto;
@@ -3788,26 +3774,11 @@ html {
 .beer progress.max[class*='-text'] {
   opacity: 1;
 }
-.beer progress:is(.horizontal, .vertical, .max) {
-  display: unset;
-  inline-size: 100% !important;
-}
-.beer progress.vertical {
-  writing-mode: vertical-lr;
-}
-.beer progress.max.vertical {
-  transform: rotate(-180deg);
-}
 .beer progress.max + * {
   margin-block-start: 0;
 }
 .beer :is(.button, button, .chip) > progress.circle {
   color: inherit;
-}
-@supports (-moz-appearance:none) {
-  .beer progress.max.vertical {
-    transform: none;
-  }
 }
 @keyframes to-linear {
   0% {
@@ -3822,47 +3793,15 @@ html {
     margin-inline-start: 100%;
   }
 }
-@keyframes to-circular {
-  0% {
+@keyframes to-rotate {
+  from {
+    --_value: 50;
     transform: rotate(0deg);
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
   }
 
-  20% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
-  }
-
-  30% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
-  }
-
-  40% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
-  }
-
-  50% {
-    clip-path: polygon(50% 50%, 50% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%);
-  }
-
-  60% {
-    clip-path: polygon(50% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 100%);
-  }
-
-  70% {
-    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%, 0% 50%);
-  }
-
-  80% {
-    clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 50%);
-  }
-
-  90% {
+  to {
+    --_value: 50;
     transform: rotate(360deg);
-    clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
-  }
-
-  100% {
-    clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
   }
 }
 .beer .shape {
@@ -4073,7 +4012,6 @@ html {
 .beer .radio,
 .beer .switch {
   --_size: 1.5rem;
-  direction: ltr;
   inline-size: auto;
   block-size: auto;
   line-height: normal;
@@ -4081,6 +4019,9 @@ html {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+}
+.beer .switch {
+  direction: ltr;
 }
 .beer :is(.checkbox, .radio, .switch).small {
   --_size: 1rem;
@@ -4126,6 +4067,12 @@ html {
   border-radius: 50%;
   user-select: none;
   z-index: 1;
+}
+.beer [dir=rtl] :is(.checkbox, .radio) > span::before,
+.beer [dir=rtl] :is(.checkbox, .radio) > span > i,
+.beer [dir=rtl] :is(.checkbox, .radio) > span::after {
+  --_size: inherit;
+  inset: auto calc(var(--_size) * -1) auto auto;
 }
 .beer .switch > span::before,
 .beer .switch.icon > span > i {
@@ -4209,13 +4156,25 @@ html {
   background-color: var(--on-primary);
   transform: translate(-1.75rem, -50%) scale(1);
 }
+.beer [dir=rtl] .switch > input:checked + span::before,
+.beer [dir=rtl] .switch.icon > input:checked + span > i {
+  transform: translate(-1.75rem, -50%) scale(-1);
+}
 .beer .switch > input:active:not(:disabled) + span::before,
 .beer .switch.icon > input:active:not(:disabled) + span > i {
   transform: translate(-3rem, -50%) scale(1.2);
 }
+.beer [dir=rtl] .switch > input:active:not(:disabled) + span::before,
+.beer [dir=rtl] .switch.icon > input:active:not(:disabled) + span > i {
+  transform: translate(-3rem, -50%) scale(-1.2);
+}
 .beer .switch > input:active:checked:not(:disabled) + span::before,
 .beer .switch.icon > input:active:checked:not(:disabled) + span > i {
   transform: translate(-1.75rem, -50%) scale(1.2);
+}
+.beer [dir=rtl] .switch > input:active:checked:not(:disabled) + span::before,
+.beer [dir=rtl] .switch.icon > input:active:checked:not(:disabled) + span > i {
+  transform: translate(-1.75rem, -50%) scale(-1.2);
 }
 .beer :is(.checkbox, .radio, .switch) > input:disabled + span {
   opacity: 0.5;
@@ -4558,6 +4517,10 @@ html {
 
   .beer .slider > :hover ~ .tooltip.bottom {
     inset-block: auto -1rem !important;
+  }
+  
+  .beer:has(input[type=range]:focus) {
+    overflow: hidden;
   }
 }
 .beer .snackbar {
