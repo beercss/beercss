@@ -22,13 +22,11 @@ small, medium, large, max
 
 ```html
 <progress></progress>
-<progress value="0.25"></progress>
 <progress value="25" max="100"></progress>
 ```
 
 ```html
 <progress class="wavy"></progress>
-<progress class="wavy" value="0.25"></progress>
 <progress class="wavy" value="25" max="100"></progress>
 ```
 
@@ -36,13 +34,11 @@ small, medium, large, max
 
 ```html
 <progress class="circle"></progress>
-<progress class="circle" value="0.25"></progress>
 <progress class="circle" value="25" max="100"></progress>
 ```
 
 ```html
 <progress class="circle wavy"></progress>
-<progress class="circle wavy" value="0.25"></progress>
 <progress class="circle wavy" value="25" max="100"></progress>
 ```
 
