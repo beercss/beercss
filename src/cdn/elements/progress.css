@@ -35,6 +35,7 @@ progress.large {
 }
 
 progress.indeterminate {
+  --_value: 100;
   animation: 3.2s to-indeterminate ease infinite;
 }
 
@@ -135,6 +136,7 @@ progress.circle.large {
 
 progress.circle:not([value]),
 progress.circle.indeterminate {
+  --_value: 50;
   animation: to-rotate 1s infinite linear;
 }
 
@@ -198,12 +200,10 @@ progress.max + * {
 
 @keyframes to-rotate {
   from {
-    --_value: 50;
     transform: rotate(0deg);
   }
 
   to {
-    --_value: 50;
     transform: rotate(360deg);
   }
 }
