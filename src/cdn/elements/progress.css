@@ -2,6 +2,7 @@ progress {
   --_light: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
   --_dark: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
   --_size: 0.25rem;
+  display: block;
   position: relative;
   inline-size: 100%;
   block-size: var(--_size);
@@ -31,6 +32,10 @@ progress.medium {
 
 progress.large {
   --_size: 0.45rem;
+}
+
+progress.indeterminate {
+  animation: 3.2s to-indeterminate ease infinite;
 }
 
 progress:not(.circle, [value])::after {
@@ -128,7 +133,8 @@ progress.circle.large {
   block-size: 3.5rem;
 }
 
-progress.circle:not([value]) {
+progress.circle:not([value]),
+progress.circle.indeterminate {
   animation: to-rotate 1s infinite linear;
 }
 
@@ -164,15 +170,29 @@ progress.max + * {
 
 @keyframes to-linear {
   0% {
-    margin-inline-start: -100%;
+    margin: 0 0 0 -100%;
   }
 
   50% {
-    margin-inline-start: 0%;
+    margin: 0 0 0 0;
   }
 
   100% {
-    margin-inline-start: 100%;
+    margin: 0 0 0 100%;
+  }
+}
+
+@keyframes to-indeterminate {
+  0% {
+    padding: 0 100% 0 0;
+  }
+
+  50% {
+    padding: 0 0 0 0;
+  }
+
+  100% {
+    padding: 0 0 0 100%;
   }
 }
 
