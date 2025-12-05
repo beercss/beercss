@@ -1,13 +1,11 @@
 const _emptyNodeList = [] as unknown as NodeListOf<Element>;
 const _weakElements = new WeakSet<HTMLElement>();
 
-export const isChrome = navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Edge");
+export const isChrome = navigator.userAgent.includes("Chrome");
 
-export const isFirefox = navigator.userAgent.includes("Firefox");
+export const isFirefox = navigator.userAgent.includes("Firefox") && !isChrome;
 
-export const isSafari = navigator.userAgent.includes("Safari") && !navigator.userAgent.includes("Chrome");
-
-export const isEdge = navigator.userAgent.includes("Edge");
+export const isSafari = navigator.userAgent.includes("Safari") && !isChrome;
 
 export const isWindows = navigator.userAgent.includes("Windows");
 

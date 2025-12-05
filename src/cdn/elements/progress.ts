@@ -12,12 +12,14 @@ function onInputDocument(e: Event) {
 }
 
 function updateProgress(progress: HTMLProgressElement) {
-  progress.style.setProperty("--_value", String(progress.value));
-  
-  if ((isMac || isIOS) && !progress.hasAttribute("value") && !progress.hasAttribute("max")) {
-    progress.setAttribute("value", hasClass(progress, "circle") ? "50" : "100");
+  if (!progress.hasAttribute("value") && !progress.hasAttribute("max")) {
+    const value = hasClass(progress, "circle") ? "50" : "100";
+    progress.style.setProperty("--_value", value);
+    progress.setAttribute("value", value);
     progress.setAttribute("max", "100");
     progress.classList.add("indeterminate");
+  } else {
+    progress.style.setProperty("--_value", String(progress.value));
   }
 }
 

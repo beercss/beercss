@@ -226,7 +226,7 @@ const updatePage = (selector: string) => {
 };
 
 const updateProgress = (value: number) => {
-  utils.queryAll("#progress progress[value]").forEach((x) => {
+  utils.queryAll("#progress progress[value]:not(.indeterminate)").forEach((x) => {
     const progress = x as HTMLProgressElement;
     progress.value = value;
   });
