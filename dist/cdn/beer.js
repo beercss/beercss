@@ -1,9 +1,8 @@
 const _emptyNodeList = [];
 const _weakElements = /* @__PURE__ */ new WeakSet();
-const isChrome = navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Edge");
-navigator.userAgent.includes("Firefox");
-navigator.userAgent.includes("Safari") && !navigator.userAgent.includes("Chrome");
-navigator.userAgent.includes("Edge");
+const isChrome = navigator.userAgent.includes("Chrome");
+navigator.userAgent.includes("Firefox") && !isChrome;
+navigator.userAgent.includes("Safari") && !isChrome;
 navigator.userAgent.includes("Windows");
 const isMac = navigator.userAgent.includes("Macintosh");
 navigator.userAgent.includes("Linux");
@@ -525,7 +524,15 @@ function onInputDocument(e) {
   }
 }
 function updateProgress(progress) {
-  progress.style.setProperty("--_value", String(progress.value));
+  if (!progress.hasAttribute("value") && !progress.hasAttribute("max")) {
+    const value = hasClass(progress, "circle") ? "50" : "100";
+    progress.style.setProperty("--_value", value);
+    progress.setAttribute("value", value);
+    progress.setAttribute("max", "100");
+    progress.classList.add("indeterminate");
+  } else {
+    progress.style.setProperty("--_value", String(progress.value));
+  }
 }
 function updateAllProgress() {
   if (isChrome && !isMac && !isIOS) return;

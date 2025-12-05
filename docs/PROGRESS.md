@@ -12,7 +12,7 @@ Progress display the length of a process or an unspecified wait time.
 
 **Forms**
 
-circle, wavy
+circle, wavy, indeterminate
 
 **Sizes**
 

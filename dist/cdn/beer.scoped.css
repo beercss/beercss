@@ -100,7 +100,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.1/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -108,7 +108,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.1/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -116,7 +116,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.1/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -124,7 +124,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.0/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.1/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 .beer * {
   -webkit-tap-highlight-color: transparent;
@@ -3673,6 +3673,10 @@ html {
 .beer progress.large {
   --_size: 0.45rem;
 }
+.beer progress.indeterminate {
+  --_value: 100;
+  animation: 3.2s to-indeterminate ease infinite;
+}
 .beer progress:not(.circle, [value])::after {
   content: "";
   position: absolute;
@@ -3752,7 +3756,9 @@ html {
   inline-size: 3.5rem;
   block-size: 3.5rem;
 }
-.beer progress.circle:not([value]) {
+.beer progress.circle:not([value]),
+.beer progress.circle.indeterminate {
+  --_value: 50;
   animation: to-rotate 1s infinite linear;
 }
 .beer :is(nav, .row, .field) > progress:not(.circle, .small, .medium, .large) {
@@ -3782,25 +3788,36 @@ html {
 }
 @keyframes to-linear {
   0% {
-    margin-inline-start: -100%;
+    margin: 0 0 0 -100%;
   }
 
   50% {
-    margin-inline-start: 0%;
+    margin: 0 0 0 0;
   }
 
   100% {
-    margin-inline-start: 100%;
+    margin: 0 0 0 100%;
+  }
+}
+@keyframes to-indeterminate {
+  0% {
+    padding: 0 100% 0 0;
+  }
+
+  50% {
+    padding: 0 0 0 0;
+  }
+
+  100% {
+    padding: 0 0 0 100%;
   }
 }
 @keyframes to-rotate {
   from {
-    --_value: 50;
     transform: rotate(0deg);
   }
 
   to {
-    --_value: 50;
     transform: rotate(360deg);
   }
 }
