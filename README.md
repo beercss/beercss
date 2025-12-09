@@ -23,8 +23,13 @@ Cheers, www.beercss.com
 Beer CSS is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome sponsors and backers. If you'd like to join them, please consider sponsoring Beer CSS's development.
 
 <p align="center">
+  <a href="https://opencollective.com/beercss">Open Collective</a><br /><br />
   <img src="https://opencollective.com/beercss/sponsors.svg?avatarHeight=56&button=false" alt="Sponsors">
   <img src="https://opencollective.com/beercss/backers.svg?avatarHeight=56&button=false" alt="Sponsors">
+</p>
+
+<p align="center">
+  <a href="https://github.com/sponsors/beercss">Github Sponsors</a><br /><br />
   <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/12303444?s=56&v=4&mask=circle&maxage=7d" alt="Sponsors">
   <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/40445940?s=56&v=4&mask=circle&maxage=7d" alt="Sponsors">
   <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/74856856?s=56&v=4&mask=circle&maxage=7d" alt="Sponsors">
