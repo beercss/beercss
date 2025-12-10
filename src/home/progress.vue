@@ -53,7 +53,7 @@
       progress.circle(value="30", max="100")
       progress.circle.large(value="30", max="100")
     nav
-      progress.circle.small
+      progress.circle.wavy.small
       progress.circle.wavy
       progress.circle.wavy.large
       progress.circle.wavy.small(value="30", max="100")
