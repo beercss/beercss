@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2025-12-03
+Generated on: 2025-12-11
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -2613,7 +2613,7 @@ Progress display the length of a process or an unspecified wait time.
 
 **Forms**
 
-circle, wavy
+circle, wavy, indeterminate
 
 **Sizes**
 
@@ -2623,13 +2623,11 @@ small, medium, large, max
 
 ```html
 <progress></progress>
-<progress value="0.25"></progress>
 <progress value="25" max="100"></progress>
 ```
 
 ```html
 <progress class="wavy"></progress>
-<progress class="wavy" value="0.25"></progress>
 <progress class="wavy" value="25" max="100"></progress>
 ```
 
@@ -2637,13 +2635,11 @@ small, medium, large, max
 
 ```html
 <progress class="circle"></progress>
-<progress class="circle" value="0.25"></progress>
 <progress class="circle" value="25" max="100"></progress>
 ```
 
 ```html
 <progress class="circle wavy"></progress>
-<progress class="circle wavy" value="0.25"></progress>
 <progress class="circle wavy" value="25" max="100"></progress>
 ```
 
@@ -3103,7 +3099,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;pre&gt;** border, no-border, scroll
 
-**&lt;progress&gt;** small, medium, large, circle, wavy, max
+**&lt;progress&gt;** small, medium, large, circle, wavy, indeterminate, max
 
 **row** left-align, right-align, center-align, top-align, bottom-align, middle-align, space, no-space, small-space, medium-space, large-space, horizontal, vertical
 
