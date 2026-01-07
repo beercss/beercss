@@ -79,7 +79,7 @@ nav.bottom ~ footer {
 }
 
 nav.top ~ header.fixed {
-  inset-block: calc(var(--top)  + 4.5rem) 0;
+  inset-block: calc(var(--top) + 4.5rem) 0;
 }
 
 nav.bottom ~ footer.fixed {
