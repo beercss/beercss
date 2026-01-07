@@ -193,11 +193,11 @@ function updateAllColors() {
   }
 }
 function updateAllTextareas() {
-  if (isChrome && !isMac && !isIOS) return;
   const textareas = queryAll(".field > textarea");
   for (let i = 0; i < textareas.length; i++) {
     onWeak(textareas[i], "focus", onFocusInput);
     onWeak(textareas[i], "blur", onBlurInput);
+    if (isChrome && !isMac && !isIOS) continue;
     onWeak(textareas[i], "input", onInputTextarea);
     updateTextarea(textareas[i]);
   }

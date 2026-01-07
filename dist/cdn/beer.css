@@ -1,6 +1,6 @@
 :root {
   --size: 1rem;
-  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Noto Sans, Arial, sans-serif;
+  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", "Noto Sans", Arial, sans-serif;
   --font-icon: "Material Symbols Outlined";
   --speed1: 0.1s;
   --speed2: 0.2s;
@@ -99,7 +99,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.1/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.2/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 /* rounded icons */
 @font-face {
@@ -107,7 +107,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.1/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.2/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 /* sharp icons */
 @font-face {
@@ -115,7 +115,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.1/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.2/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 /* subset of only required icons */
 @font-face {
@@ -123,7 +123,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.1/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.2/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -1806,7 +1806,7 @@ nav.bottom ~ footer {
   padding-block: 0;
 }
 nav.top ~ header.fixed {
-  inset-block: calc(var(--top)  + 4.5rem) 0;
+  inset-block: calc(var(--top) + 4.5rem) 0;
 }
 nav.bottom ~ footer.fixed {
   inset-block: 0 calc(var(--bottom) + 4.5rem);
@@ -3220,7 +3220,9 @@ nav.row {
   margin: 0;
 }
 :is(nav, .row, .max) > :only-child,
-nav > :is(ol, ul) > li > :only-child {
+:is(nav, .row, .max) > span > *,
+nav > :is(ol, ul) > li > :only-child,
+nav > :is(ol, ul) > li > span > * {
   margin: 0;
 }
 :is(nav, .row) > :not(ul, ol, header, footer) {
