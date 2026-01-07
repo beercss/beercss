@@ -24,7 +24,9 @@ nav.row {
 }
 
 :is(nav, .row, .max) > :only-child,
-nav > :is(ol, ul) > li > :only-child {
+:is(nav, .row, .max) > span > *,
+nav > :is(ol, ul) > li > :only-child,
+nav > :is(ol, ul) > li > span > * {
   margin: 0;
 }
 
