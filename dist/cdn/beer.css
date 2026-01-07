@@ -169,9 +169,10 @@ button,
   outline: inherit;
   justify-content: center;
 }
-a,
+:is(nav, .tabs, .field) > a,
 button,
 .button,
+.chip,
 i,
 label {
   user-select: none;

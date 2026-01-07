@@ -170,9 +170,10 @@
   outline: inherit;
   justify-content: center;
 }
-.beer a,
+.beer :is(nav, .tabs, .field) > a,
 .beer button,
 .beer .button,
+.beer .chip,
 .beer i,
 .beer label {
   user-select: none;
