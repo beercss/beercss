@@ -35,7 +35,7 @@ function lastTheme(): IBeerCssTheme {
   return _lastTheme;
 }
 
-export function updateTheme(source?: IBeerCssTheme | any): IBeerCssTheme | Promise<IBeerCssTheme> {
+export async function updateTheme(source?: IBeerCssTheme | any): Promise<IBeerCssTheme> {
   const context = globalThis as any;
   const body = document.body;
   if (!source || !context.materialDynamicColors) return lastTheme();

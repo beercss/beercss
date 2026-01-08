@@ -82,7 +82,7 @@ function updateAllDataUis() {
   }
 }
 
-function _ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme> | undefined {
+function _ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | undefined | Promise<IBeerCssTheme> {
   if (selector) {
     if (selector === "setup") { setup(); return; }
     if (selector === "guid") return guid();
