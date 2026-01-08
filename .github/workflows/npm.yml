@@ -2,10 +2,10 @@ name: Deploy to NPM
 on:
   push:
     tags:
-      - 'v*' # Trigger on version tags like v1.0.0
+      - 'v*'
 permissions:
   contents: read
-  id-token: write # Required for OIDC authentication
+  id-token: write
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -13,6 +13,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '24' # Use a recent Node.js version
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm publish # The npm CLI automatically uses the OIDC token
+      - run: npm publish

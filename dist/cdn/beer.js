@@ -344,7 +344,7 @@ function lastTheme() {
   body.removeChild(dark);
   return _lastTheme;
 }
-function updateTheme(source) {
+async function updateTheme(source) {
   const context = globalThis;
   const body = document.body;
   if (!source || !context.materialDynamicColors) return lastTheme();
