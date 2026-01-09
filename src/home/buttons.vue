@@ -296,10 +296,10 @@
   #fabs-menu
     .space
     nav
-      nav.min(data-ui="#fab-menu1")
+      div
         button.extra.circle
           i north_east
-        menu#fab-menu1.top.transparent.no-wrap
+        menu.top.transparent.no-wrap
           li
             button.fill
               i search
@@ -312,10 +312,10 @@
             button.fill
               i more_vert
               span About us
-      nav.min(data-ui="#fab-menu2")
+      div
         button.extra.circle
           i north_west
-        menu#fab-menu2.top.transparent.no-wrap.left.right-align
+        menu.top.transparent.no-wrap.left.right-align
           li
             button.fill
               i search
@@ -328,10 +328,10 @@
             button.fill
               i more_vert
               span About us
-      nav.min(data-ui="#fab-menu3")
+      div
         button.extra.circle
           i south_east
-        menu#fab-menu3.bottom.transparent.no-wrap
+        menu.bottom.transparent.no-wrap
           li
             button.fill
               i search
@@ -344,10 +344,10 @@
             button.fill
               i more_vert
               span About us
-      nav.min(data-ui="#fab-menu4")
+      div
         button.extra.circle
           i south_west
-        menu#fab-menu4.bottom.transparent.no-wrap.left.right-align
+        menu.bottom.transparent.no-wrap.left.right-align
           li
             button.fill
               i search

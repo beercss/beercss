@@ -4,63 +4,71 @@
   h4
     span Menus
     button.chip.circle(
-      @click="domain.showSamples(data, '#menus > nav > button', 'Menus', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')"
+      @click="domain.showSamples(data, '#menus > nav > div', 'Menus', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')"
     )
       i code
   nav.wrap
-    button(data-ui="#menu1")
-      span Default
-      i arrow_drop_down
-      menu#menu1(data-ui="#menu1")
+    div
+      button
+        span Default
+        i arrow_drop_down
+      menu
         li Item 1
         li Item 2
         li Item 3
-    button(data-ui="#menu11")
-      span Border
-      i arrow_drop_down
-      menu#menu11.border(data-ui="#menu11")
+    div
+      button
+        span Border
+        i arrow_drop_down
+      menu.border
         li Item 1
         li Item 2
         li Item 3
-    button(data-ui="#menu2")
-      span No-wrap
-      i arrow_drop_down
-      menu#menu2.no-wrap(data-ui="#menu2")
+    div
+      button
+        span No-wrap
+        i arrow_drop_down
+      menu.no-wrap
         li Lorem ipsum dolor sit amet
         li Lorem ipsum dolor sit amet
         li Lorem ipsum dolor sit amet
-    button.circle(data-ui="#menu3")
-      i arrow_back
-      menu#menu3.left.no-wrap(data-ui="#menu3")
+    div
+      button.circle
+        i arrow_back
+      menu.left.no-wrap
         li Item 1
         li Item 2
         li Item 3
-    button.circle(data-ui="#menu4")
-      i arrow_forward
-      menu#menu4.right.no-wrap(data-ui="#menu4")
+    div
+      button.circle
+        i arrow_forward
+      menu.right.no-wrap
         li Item 1
         li Item 2
         li Item 3
-    button(data-ui="#menu12")
-      span Top
-      i arrow_drop_up
-      menu#menu12.top(data-ui="#menu12")
+    div
+      button
+        span Top
+        i arrow_drop_up
+      menu.top
         li Item 1
         li Item 2
         li Item 3
-    button(data-ui="#menu10")
-      span Links
-      i arrow_drop_down
-      menu#menu10(data-ui="#menu10")
+    div
+      button
+        span Links
+        i arrow_drop_down
+      menu
         li
           a Item 1
         li
           a Item 2
         li
           a Item 3
-    button(data-ui="#menu5")
-      span Images and icons
-      menu#menu5.no-wrap(data-ui="#menu5")
+    div
+      button
+        span Images and icons
+      menu.no-wrap
         li Title
         li
           div Title
@@ -81,29 +89,33 @@
           .max
             div Title
             label Some text here
-    button(data-ui="#menu6")
-      span Video
-      menu#menu6.no-wrap.no-padding(data-ui="#menu6")
+    div
+      button
+        span Video
+      menu.no-wrap.no-padding
         li.no-padding
           video.small-width(autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
-    button(data-ui="#menu8")
-      span Docked
-      menu#menu8.min(data-ui="#menu8")
+    div
+      button
+        span Docked
+      menu.min
         li Item 1
         li Item 2
         li Item 3
-    button(data-ui="#menu7")
-      span Fullscreen
-      menu#menu7.max(data-ui="#menu7")
+    div
+      button
+        span Fullscreen
+      menu.max
         li Item 1
         li Item 2
         li Item 3
   nav.wrap
-    button(data-ui="#menu9")
-      span Multi level
-      i arrow_drop_down
-      menu(id="menu9")
+    div
+      button
+        span Multi level
+        i arrow_drop_down
+      menu
         li Item
         li Item
         li More items

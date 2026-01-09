@@ -66,9 +66,10 @@
     .max
     button.circle.large.transparent.s(data-ui="#dialog-search")
       i search
-    button.circle.large.transparent.m.l(data-ui="#menu-add")
-      i video_call
-      menu#menu-add.left.no-wrap(data-ui="#menu-add")
+    div
+      button.circle.large.transparent.m.l
+        i video_call
+      menu.left.no-wrap
         li
           .min
             i upload
@@ -77,9 +78,10 @@
           .min
             i sensors
           .min Broadcast live
-    button.circle.large.transparent.m.l(data-ui="#menu-apps")
-      i apps
-      menu#menu-apps.left.no-wrap(data-ui="#menu-apps")
+    div
+      button.circle.large.transparent.m.l
+        i apps
+      menu.left.no-wrap
         li
           .min
             img(:src="'/youtube.png'")

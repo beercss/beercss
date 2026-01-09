@@ -46,8 +46,9 @@ div(v-show="data.showPage")
       button.transparent.circle.l.m
         i add
         .tooltip.bottom Create Post
-      button.transparent.circle.s.m
-        i more_vert
+      div
+        button.transparent.circle.s.m
+          i more_vert
         menu.no-wrap.left
           li Popular
           li Moderation
@@ -57,16 +58,16 @@ div(v-show="data.showPage")
       button.chip.l
         i campaign
         span Advertise
-      .row.wave.no-space.small-padding.l.small-round(data-ui="#menu-profile")
-        img.tiny(:src="'/reddit-profile.png'")
-        .row.no-space
-          .small-text
-            b leonardorafaelw
+      div(data-ui="#menu-settings")
+        button.transparent.small-round.small-padding
+          img.responsive(:src="'/reddit-profile.png'")
+          .small-text.left-align
+            p leonardorafaelw
             div
               i.tiny.link settings
               span 999 karma
           i arrow_drop_down
-        menu.no-wrap.left#menu-profile
+        menu#menu-settings.no-wrap.left
           li.transparent
             label My stuff
           li

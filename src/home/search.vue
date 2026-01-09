@@ -30,8 +30,9 @@
         li(data-ui="#search1")
           i history
           div Item 3
-    button.extra.circle.fill(data-ui="#search2")
-      i search
+    div(data-ui="#search2")
+      button.extra.circle.fill
+        i search
       menu#search2.no-wrap.left.min
         li
           .field.large.prefix
@@ -74,8 +75,9 @@
         li(data-ui="#search3")
           i history
           div Item 3
-    button.extra.circle.fill(data-ui="#search4")
-      i search
+    div(data-ui="#search4")
+      button.extra.circle.fill
+        i search
       menu#search4.max
         li
           .field.large.prefix

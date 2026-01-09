@@ -341,6 +341,118 @@ main.responsive
                 li Item
                 li Item
                 li(data-ui="#menu3") More items
+  nav
+    div
+      button
+        span Top 
+      menu.top
+        li Item
+        li Item
+        li More items
+          menu.right.top
+            li More items
+              menu.right.top
+                li Item
+            li Item
+            li More items
+              menu.left.top
+                li Item
+            li Item
+            li More items
+              menu.left.top
+                li Item
+                li Item
+                li Item
+            li Item
+    div
+      button
+        span Bottom 
+      menu.bottom
+        li Item
+        li Item
+        li More items
+          menu.right.bottom
+            li More items
+              menu.right.bottom
+                li Item
+            li Item
+            li More items
+              menu.left.bottom
+                li Item
+            li Item
+            li More items
+              menu.left.bottom
+                li Item
+                li Item
+                li Item
+            li Item
+    div
+      button
+        span Position 
+      menu
+        li Item
+        li Item
+        li More items
+          menu.right
+            li More items
+              menu.right
+                li Item
+            li Item
+            li More items
+              menu.left
+                li Item
+            li Item
+            li More items
+              menu.left
+                li Item
+                li Item
+                li Item
+            li Item
+    div
+      button
+        span Normal 
+      menu(id="menu")
+        li(data-ui="#menu") Item
+        li Item
+        li More items
+          menu
+            li Item
+            li(data-ui="#menu") Item
+            li More items
+              menu
+                li Item
+                li Item
+                li(data-ui="#menu") More items
+    div(onclick="#menu21")
+      button
+        span OnClick 
+      menu(id="menu21")
+        li(data-ui="#menu21") Item
+        li Item
+        li More items
+          menu
+            li Item
+            li(data-ui="#menu21") Item
+            li More items
+              menu
+                li Item
+                li Item
+                li(data-ui="#menu21") More items
+    div(data-ui="#menu31")
+      button
+        span DataUi 
+      menu(id="menu31")
+        li(data-ui="#menu31") Item
+        li Item
+        li More items
+          menu
+            li Item
+            li(data-ui="#menu31") Item
+            li More items
+              menu
+                li Item
+                li Item
+                li(data-ui="#menu31") More items
 
   .large-space
   h5 Sliders

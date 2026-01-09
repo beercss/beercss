@@ -282,6 +282,14 @@ menu > li:nth-last-of-type(11) {
   --_type: 10;
 }
 
+div:has(> :not(.responsive) ~ menu) {
+  display: inline-flex;
+}
+
+div:has(> menu) > * {
+  margin: 0;
+}
+
 @media (pointer: coarse) {
   :not(menu, [data-ui]):hover > menu {
     opacity: 1;

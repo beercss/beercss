@@ -28,11 +28,10 @@ div
     .max
     button.circle.large.transparent.s(data-ui="#dialog-search")
       i search
-    button.circle.large.transparent.m.l(data-ui="#menu-settings")
-      i settings
-      menu#menu-settings.left.no-wrap(
-        data-ui="#menu-settings"
-      )
+    div
+      button.circle.large.transparent.m.l
+        i settings
+      menu.left.no-wrap
         li
           .max
             div Account
@@ -41,9 +40,10 @@ div
           .max
             div Appearance
             label Change display settings
-    button.circle.large.transparent.m.l(data-ui="#menu-apps")
-      i apps
-      menu#menu-apps.left.padding.no-wrap(data-ui="#menu-apps")
+    div
+      button.circle.large.transparent.m.l
+        i apps
+      menu.left.padding.no-wrap
         .grid.no-space
           .s4.center-align
             a.button.transparent.circle.large

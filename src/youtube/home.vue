@@ -19,12 +19,10 @@ main(v-show="data.isLoaded")
               .max.truncate
                 .bold {{ item.title }}
                 div 10k views
-              button.circle.transparent(:data-ui="'#menu-' + i")
-                i more_vert
-                menu.left.no-wrap(
-                  :id="'menu-' + i",
-                  :data-ui="'#menu-' + i"
-                )
+              div
+                button.circle.transparent
+                  i more_vert
+                menu.left.no-wrap
                   li Save to library
                   li Watch later
                   li Like it
