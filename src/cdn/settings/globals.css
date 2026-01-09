@@ -16,3 +16,40 @@
   --left: env(safe-area-inset-left);
   --right: env(safe-area-inset-right);
 }
+
+html {
+  font-size: var(--size);
+}
+
+body {
+  color: var(--on-surface);
+  background-color: var(--surface);
+  overflow-x: hidden;
+  font-family: var(--font);
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.0313rem;
+}
+
+@media (pointer: fine) {
+  body ::-webkit-scrollbar,
+  body ::-webkit-scrollbar-thumb,
+  body ::-webkit-scrollbar-button {
+    background: none;
+    inline-size: 0.4rem;
+    block-size: 0.4rem;
+  }
+
+  body :is(:focus, :hover)::-webkit-scrollbar-thumb,
+  body :has(:focus, :hover)::-webkit-scrollbar-thumb {
+    background: var(--outline);
+    border-radius: 1rem;
+  }
+}
+
+@media (pointer: coarse) {
+  body:has(dialog[open], dialog.active),
+  body:has(input[type=range]:focus) {
+    overflow: hidden;
+  }
+}

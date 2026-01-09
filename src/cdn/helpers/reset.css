@@ -14,12 +14,6 @@
   all: unset;
 }
 
-body {
-  color: var(--on-surface);
-  background-color: var(--surface);
-  overflow-x: hidden;
-}
-
 label {
   font-size: 0.75rem;
   vertical-align: baseline;
@@ -55,22 +49,6 @@ button,
 i,
 label {
   user-select: none;
-}
-
-@media (pointer: fine) {
-  body ::-webkit-scrollbar,
-  body ::-webkit-scrollbar-thumb,
-  body ::-webkit-scrollbar-button {
-    background: none;
-    inline-size: 0.4rem;
-    block-size: 0.4rem;
-  }
-
-  body :is(:focus, :hover)::-webkit-scrollbar-thumb,
-  body :has(:focus, :hover)::-webkit-scrollbar-thumb {
-    background: var(--outline);
-    border-radius: 1rem;
-  }
 }
 
 :not(.grid, nav, .row) > :not(progress.max) + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul):not([class*='margin'], .right, .left, .top, .bottom) {
