@@ -11,4 +11,4 @@
 - Add carousel component from MD3 Expressive?
 - Convert to CSS nesting?
 - Use Popover API to reduce the unnecessary JS?
-- HTML 100% semantic valid?
+- 100% valid semantic HTML?
