@@ -5,7 +5,9 @@
 - Reduce final bundler to < 15kb gzip?
 - Reduce final bundler to < 10kb gzip?
 - Remove requirement of JS for slider?
-- Maintain Github issues lower then 10?
+- Maintain Github < 10 issues?
 - Add to homepage, a component explorer like Figma?
 - Add a Beer CSS plugin for Figma?
 - Add carousel component from MD3 Expressive?
+- Convert to css nesting?
+- Use Popover API to reduce the unnecessary JS?
