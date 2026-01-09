@@ -29,7 +29,6 @@ class BeerCssCustomElement extends HTMLElement {
   }
   
   async run() {
-    this.classList.add("beer");
     await Promise.all([this.addJs(), this.addCss()]);
     ui();
   }
