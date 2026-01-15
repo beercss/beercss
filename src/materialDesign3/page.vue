@@ -5,7 +5,7 @@ div
       button.circle.extra.transparent(@click="data.isMax = !data.isMax")
         i {{ data.isMax ? "menu_open" : "menu" }}
       button.circle.extra.transparent(@click="redirect('/')")
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
     a
       i
         svg(viewBox="0 0 24 24")
@@ -47,7 +47,7 @@ div
       i.page.top.active(v-if="data.isDark") light_mode
       i.page.top.active(v-else) dark_mode
     button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+      img.responsive(alt="", :src="'/favicon.png'")
   home
 </template>
 
