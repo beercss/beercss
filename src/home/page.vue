@@ -721,10 +721,6 @@ dialog#dialog-colors .s12 > .border {
   border: 0.0625rem solid var(--outline);
 }
 
-(style="display: none") {
-  display: none;
-}
-
 @keyframes logo-intro {
   0% {
     opacity: 0;
