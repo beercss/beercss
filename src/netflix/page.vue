@@ -1,7 +1,7 @@
 <template lang="pug">
 .white-text
   nav.top.top-shadow.white-text
-    img(:src="'/netflix.png'")
+    img(alt="", :src="'/netflix.png'")
     div
       button.circle.large.transparent.s.m
         i menu
@@ -34,22 +34,22 @@
         i notifications
       menu.left.no-wrap
         li
-          img.round(:src="'alok-001.jpg'")
+          img.round(alt="", :src="'alok-001.jpg'")
           .max
             div Alok 01/2021
             label 10k views
         li
-          img.round(:src="'vintage-001.jpg'")
+          img.round(alt="", :src="'vintage-001.jpg'")
           .max
             div The best of 2021
             label 10k views
         li
-          img.round(:src="'ocean-001.jpg'")
+          img.round(alt="", :src="'ocean-001.jpg'")
           .max
             div Alok, Zebra, Iro - Ocean
             label 10k views
     button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+      img.responsive(alt="", :src="'/favicon.png'")
   main
     .overlay
     dialog#dialog-search.top.transparent
