@@ -25,8 +25,15 @@ max
 ```html
 <button>
   <span>Button</span>
-  <div class="tooltip">I'm a tooltip</div>
+  <span class="tooltip">I'm a tooltip</span>
 </button>
+
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <div class="tooltip">I'm a tooltip</div>
+</div>
 ```
 
 ## Go to

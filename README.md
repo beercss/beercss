@@ -59,7 +59,7 @@ Let's be honest, in the ever-evolving world of web development, we're all lookin
 
 # The principles
 
-This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1516. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: **settings**, **elements** and **helpers**. This sounds weird at first time, because It's not BEM, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
+This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1516. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: [Settings](docs/SETTINGS.md), [Elements](docs/ELEMENTS.md) and [Helpers](docs/HELPERS.md). This sounds weird at first time, because It's not BEM, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
 
 ```
 |  SETTINGS     |       // The settings affects all document
@@ -74,64 +74,6 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 |               |
 |               |
 |---------------|
-```
-
-### ✅ DO:
-
-```
-// 1 setting to 1 document
-<body class="dark|light">...</body>
-
-// 1 element to N helpers
-<element class="helper helper">...</element>
-<div class="element helper helper">...</div>
-
-// nav elements before all others
-<body>
-  <nav class="left|right|top|bottom">...</nav>
-  ...
-</body>
-
-<div id="app">
-  <nav class="left|right|top|bottom">...</nav>
-  ...
-</div>
-
-// write css like this
-.element.helper {...}
-.element > .element {...}
-.element > .helper {...}
-```
-
-### 🚫 DON'T:
-
-```
-// N elements to 1 tag
-<div class="element element helper">...</div>
-<element class="element helper">...</element>
-
-// element with dependencies
-<div class="element">
-  <div class="element-header">...</div>
-  <div class="element-content">...</div>
-  <div class="element-footer">...</div>
-</div>
-
-// nav elements after all others
-<body>
-  ...
-  <nav class="left|right|top|bottom">...</nav>
-</body>
-
-<div id="app">
-  ...
-  <nav class="left|right|top|bottom">...</nav>
-</div>
-
-// write css like this
-.element.element {...}
-.element .element {...}
-.element .helper {...}
 ```
 
 # Get started
@@ -227,32 +169,32 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
       </header>
       <a>
         <i>home</i>
-        <div>Home</div>
+        <span>Home</span>
       </a>
       <a>
         <i>search</i>
-        <div>Search</div>
+        <span>Search</span>
       </a>
       <a>
         <i>share</i>
-        <div>Share</div>
+        <span>Share</span>
       </a>
       <a>
         <i>more_vert</i>
-        <div>More</div>
+        <span>More</span>
       </a>
       <div class="divider"></div>
       <a>
         <i>widgets</i>
-        <div>Widgets</div>
+        <span>Widgets</span>
       </a>
       <a>
         <i>chat</i>
-        <div>Chat</div>
+        <span>Chat</span>
       </a>
       <a>
         <i>help</i>
-        <div>Help</div>
+        <span>Help</span>
       </a>  
     </nav>
 
@@ -262,19 +204,19 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
       </header>
       <a>
         <i>home</i>
-        <div>Home</div>
+        <span>Home</span>
       </a>
       <a>
         <i>search</i>
-        <div>Search</div>
+        <span>Search</span>
       </a>
       <a>
         <i>share</i>
-        <div>Share</div>
+        <span>Share</span>
       </a>
       <a>
         <i>more_vert</i>
-        <div>More</div>
+        <span>More</span>
       </a>
     </nav>
 
@@ -303,6 +245,64 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 ```
 
 **We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.**
+
+### ✅ DO:
+
+```
+// 1 setting to 1 document
+<body class="dark|light">...</body>
+
+// 1 element to N helpers
+<element class="helper helper">...</element>
+<div class="element helper helper">...</div>
+
+// 1 main element per document
+<...>
+  <main></main>
+</...>
+
+// inline/block elements in block elements
+<div>
+  <div></div>
+  <span></span>
+</div>
+
+// write css like this
+.element.helper {...}
+.element > .element {...}
+.element > .helper {...}
+```
+
+### 🚫 DON'T:
+
+```
+// N elements to 1 tag
+<div class="element element helper">...</div>
+<element class="element helper">...</element>
+
+// element with dependencies
+<div class="element">
+  <div class="element-header">...</div>
+  <div class="element-content">...</div>
+  <div class="element-footer">...</div>
+</div>
+
+// N main elements per document
+<...>
+  <main></main>
+  <main></main>
+</...>
+
+// block elements in inline elements
+<span>
+  <div></div>
+</span>
+
+// write css like this
+.element.element {...}
+.element .element {...}
+.element .helper {...}
+```
 
 # Documentation
 

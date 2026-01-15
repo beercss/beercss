@@ -4,8 +4,6 @@ The main layout is a common html structure to setup your pages. For RTL language
 
 ## Example
 
-Place the `<nav>` elements before all others.
-
 ```html
 <nav class="top">...</nav>
 <nav class="bottom">...</nav>
@@ -44,15 +42,15 @@ responsive
 <nav class="bottom">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -66,15 +64,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -88,15 +86,15 @@ responsive
 <nav class="left max">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -110,15 +108,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -139,15 +137,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
