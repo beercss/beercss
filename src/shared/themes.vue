@@ -15,11 +15,13 @@ div
       nav.wrap
         button.chip.circle.small(@click="sharedDomain.updateMode(data.modelValue)")
           i {{ data.modelValue.isDark ? "light_mode" : "dark_mode" }}
-        button.chip.circle
-          i palette
+        div
+          button.chip.circle
+            i palette
           input(type="color", @input="sharedDomain.updateTheme(data.modelValue, $event)")
-        button.chip.circle
-          i upload
+        div
+          button.chip.circle
+            i upload
           input(type="file", @change="sharedDomain.updateTheme(data.modelValue, $event)")
         button.circle.small.red(@click="sharedDomain.updateTheme(data.modelValue, '#f44336')")
         button.circle.small.pink(@click="sharedDomain.updateTheme(data.modelValue, '#e91e63')")
@@ -58,7 +60,7 @@ div
         input(v-model="data.modelValue.theme.selected", type="radio", value="dark")
         span Dark
     .space
-    article.border
+    .small-round.padding.border
       pre.scroll
         code(v-html="sourceCode()")
 </template>
