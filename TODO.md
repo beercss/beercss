@@ -9,5 +9,6 @@
 - Add to homepage, a component explorer like Figma?
 - Add a Beer CSS plugin for Figma?
 - Add carousel component from MD3 Expressive?
-- Convert to css nesting?
+- Convert to CSS nesting?
 - Use Popover API to reduce the unnecessary JS?
+- 100% valid semantic HTML?
