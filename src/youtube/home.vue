@@ -10,11 +10,11 @@ main(v-show="data.isLoaded")
     .space
     .grid
       .s12.m6.l3(v-for="(item, i) in data.itens")
-        article.no-padding.transparent
-          a.wave
-            img.responsive(:src="item.image")
-            .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
-          .small-padding
+        .round
+          .wave
+            img.responsive(alt="", :src="item.image")
+            .absolute.right.top.large-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
+          .padding
             nav
               .max.truncate
                 .bold {{ item.title }}
@@ -30,34 +30,32 @@ main(v-show="data.isLoaded")
     hr.large
     h5 What's hot
     .row.scroll
-      .min(v-for="item in data.whatsHot")
-        article.no-padding.border.transparent.small-width
-          a.wave
-            img.responsive(:src="item.image")
-            .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
-          .padding
-            nav
-              .max.truncate
-                .bold {{ item.title }}
-                div 10k views
-              button.circle.transparent
-                i thumb_up
+      .border.small-width.small-round(v-for="item in data.whatsHot")
+        .wave
+          img.responsive(alt="", :src="item.image")
+          .absolute.right.top.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
+        .padding
+          nav
+            .max.truncate
+              .bold {{ item.title }}
+              div 10k views
+            button.circle.transparent
+              i thumb_up
 
     hr.large
     h5 Your videos
     .row.scroll
-      .min(v-for="item in data.yourVideos")
-        article.no-padding.border.transparent.small-width
-          a.wave
-            img.responsive(:src="item.image")
-            .absolute.right.bottom.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
-          .padding
-            nav
-              .max.truncate
-                .bold {{ item.title }}
-                div 10k views
-              button.circle.transparent
-                i thumb_up
+      .border.small-width.small-round(v-for="item in data.yourVideos")
+        .wave
+          img.responsive(alt="", :src="item.image")
+          .absolute.right.top.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
+        .padding
+          nav
+            .max.truncate
+              .bold {{ item.title }}
+              div 10k views
+            button.circle.transparent
+              i thumb_up
 </template>
 
 <script setup lang="ts">

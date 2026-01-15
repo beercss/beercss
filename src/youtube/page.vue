@@ -6,57 +6,57 @@
         i {{ data.isMax ? 'menu_open' : 'menu' }}
     a(href="/youtube", :class="{ active: data.url === '/youtube' }")
       i home
-      div Home
+      span Home
     a(href="/youtube/whats-hot", :class="{ active: data.url === '/youtube/whats-hot' }")
       i whatshot
       div What's hot
     a(href="/youtube/subscriptions", :class="{ active: data.url === '/youtube/subscriptions' }")
       i subscriptions
-      div Subscript
+      span Subscript
     a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
-      div Library
+      span Library
     a(data-ui="#themes1")
       i palette
-      div Themes
+      span Themes
     hr
     a
       i history
-      div History
+      span History
     a
       i slideshow
-      div Your videos
+      span Your videos
     a
       i playlist_play
-      div Your albuns
+      span Your albuns
     a
       i watch_later
-      div Watch later
+      span Watch later
 
   nav.bottom.s
     a(href="/youtube", :class="{ active: data.url === '/youtube' }")
       i home
-      div Home
+      span Home
     a(href="/youtube/explore", :class="{ active: data.url === '/youtube/explore' }")
       i explore
-      div Explore
+      span Explore
     a.button.square.round.extra.fill(data-ui="#dialog-add")
       i add
     a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
-      div Library
+      span Library
     a(data-ui="#themes1")
       i palette
-      div Themes
+      span Themes
 
   nav.top.surface
     img(
       v-show="!data.isDark",
-      :src="'/youtube-light.png'"
+      alt="", :src="'/youtube-light.png'"
     )
     img(
       v-show="data.isDark",
-      :src="'/youtube-dark.png'"
+      alt="", :src="'/youtube-dark.png'"
     )
     .max
     .max.field.round.suffix.prefix.small.no-margin.m.l.white.black-text
@@ -71,34 +71,30 @@
         i video_call
       menu.left.no-wrap
         li
-          .min
-            i upload
-          .min Send a video
+          i upload
+          div Send a video
         li
-          .min
-            i sensors
-          .min Broadcast live
+          i sensors
+          div Broadcast live
     div
       button.circle.large.transparent.m.l
         i apps
       menu.left.no-wrap
         li
-          .min
-            img(:src="'/youtube.png'")
-          .min Youtube TV
-        hr.small
+          img(alt="", :src="'/youtube.png'")
+          div Youtube TV
+        li 
+          hr
         li
-          .min
-            img(:src="'/youtube.png'")
-          .min Youtube Music
+          img(alt="", :src="'/youtube.png'")
+          div Youtube Music
         li
-          .min
-            img(:src="'/youtube.png'")
-          .min Youtube Kids
+          img(alt="", :src="'/youtube.png'")
+          div Youtube Kids
     button.circle.large.transparent(data-ui="#dialog-notifications")
       i notifications
     button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+      img.responsive(alt="", :src="'/favicon.png'")
 
   .overlay
   dialog#dialog-notifications.right
@@ -114,16 +110,13 @@
       h5.max New
       button.circle.transparent(data-ui="#dialog-add")
         i close
-    a.row
-      .min
+    ul.list
+      li
         i upload
-      .min
-        span Send a video
-    a.row
-      .min
+        div Send a video
+      li
         i sensors
-      .min
-        span Broadcast live
+        div Broadcast live
 
   .overlay
   dialog#dialog-search.top.transparent
