@@ -27,13 +27,13 @@ footer {
 }
 
 header.fixed {
-  inset: calc(-1 * var(--_padding)) 0 0 0;
-  margin-block-start: calc(-1 * var(--_padding));
+  inset: calc(-1 * var(--_padding, 0)) 0 0 0;
+  margin-block-start: calc(-1 * var(--_padding, 0));
 }
 
 footer.fixed {
-  inset: 0 0 calc(-1 * var(--_padding)) 0;
-  margin-block-end: calc(-1 * var(--_padding));
+  inset: 0 0 calc(-1 * var(--_padding, 0)) 0;
+  margin-block-end: calc(-1 * var(--_padding, 0));
 }
 
 :is(header, footer).fixed.min {
@@ -66,11 +66,11 @@ dialog > :is(header, footer).fixed {
 }
 
 :has(> main) > header {
-  padding-block-start: var(--top);
+  padding-block-start: var(--top, 0);
 }
 
 :has(> main) > footer {
-  padding-block-end: var(--bottom);
+  padding-block-end: var(--bottom, 0);
 }
 
 nav.top ~ header,
@@ -79,11 +79,11 @@ nav.bottom ~ footer {
 }
 
 nav.top ~ header.fixed {
-  inset-block: calc(var(--top) + 4.5rem) 0;
+  inset-block: calc(var(--top, 0) + 4.5rem) 0;
 }
 
 nav.bottom ~ footer.fixed {
-  inset-block: 0 calc(var(--bottom) + 4.5rem);
+  inset-block: 0 calc(var(--bottom, 0) + 4.5rem);
 }
 
 :is(nav, .row) > header {

@@ -4,7 +4,7 @@
   --_value1: "";
   --_value2: "";
   --_track: 1rem;
-  --_thumb: max(2.5rem, calc(var(--_track) + 0.5rem));
+  --_thumb: max(2.5rem, calc(var(--_track, 0) + 0.5rem));
   display: flex;
   align-items: center !important;
   inline-size: auto;
@@ -129,22 +129,22 @@
   cursor: not-allowed;
 }
 
-.slider > input:disabled ~ span {
+.slider > input:disabled ~ span:not([class]) {
   background: var(--outline);
 }
 
-.slider > span {
+.slider > span:not([class]) {
   position: absolute;
   block-size: var(--_track);
   border-radius: 1rem 0 0 1rem;
   background: var(--primary);
   color: var(--on-primary);
   z-index: 0;
-  inset: calc(50% - (var(--_track) / 2)) var(--_end) auto var(--_start);
+  inset: calc(50% - (var(--_track, 0) / 2)) var(--_end) auto var(--_start);
   clip-path: polygon(0 0, calc(100% - 0.5rem) 0, calc(100% - 0.5rem) 100%, 0 100%);
 }
 
-.slider > input[type=range] + input[type=range] ~ span {
+.slider > input[type=range] + input[type=range] ~ span:not([class]) {
   border-radius: 0;
   clip-path: polygon(0.5rem 0, max(0.5rem, calc(100% - 0.5rem)) 0, max(0.5rem, calc(100% - 0.5rem)) 100%, 0.5rem 100%);
 }
@@ -160,7 +160,7 @@
   block-size: var(--_track);
   border-radius: 1rem;
   background: var(--secondary-container);
-  clip-path: polygon(calc(var(--_start) - 0.5rem) 0, 0 0, 0 100%, calc(var(--_start) - 0.5rem) 100%, calc(var(--_start) - 0.5rem) 0, calc(100% - var(--_end) + 0.5rem) 0, 100% 0, 100% 100%, calc(100% - var(--_end) + 0.5rem) 100%, calc(100% - var(--_end) + 0.5rem) 0);
+  clip-path: polygon(calc(var(--_start, 0) - 0.5rem) 0, 0 0, 0 100%, calc(var(--_start, 0) - 0.5rem) 100%, calc(var(--_start, 0) - 0.5rem) 0, calc(100% - var(--_end, 0) + 0.5rem) 0, 100% 0, 100% 100%, calc(100% - var(--_end, 0) + 0.5rem) 100%, calc(100% - var(--_end, 0) + 0.5rem) 0);
 }
 
 .slider:has(> [disabled])::before {
@@ -190,7 +190,7 @@
 .slider > .tooltip {
   visibility: hidden !important;
   opacity: 0 !important;
-  inset: 0 auto auto calc(100% - var(--_end));
+  inset: 0 auto auto calc(100% - var(--_end, 0));
   border-radius: 2rem;
   transition: top var(--speed2) ease, opacity var(--speed2) ease;
   transform: translate(-50%, -25%) !important;
@@ -198,7 +198,7 @@
 }
 
 .slider > .tooltip.bottom {
-  inset: auto auto 0 calc(100% - var(--_end));
+  inset: auto auto 0 calc(100% - var(--_end, 0));
   transition: bottom var(--speed2) ease, opacity var(--speed2) ease;
   transform: translate(-50%, 25%) !important;
 }
@@ -212,12 +212,12 @@
 }
 
 .slider > .tooltip + .tooltip {
-  inset: 0.25rem calc(100% - var(--_start)) auto auto;
+  inset: 0.25rem calc(100% - var(--_start, 0)) auto auto;
   transform: translate(50%, -25%) !important;
 }
 
 .slider > .tooltip + .tooltip.bottom {
-  inset: auto calc(100% - var(--_start)) -0.25rem auto;
+  inset: auto calc(100% - var(--_start, 0)) -0.25rem auto;
   transform: translate(50%, 25%) !important;
 }
 
@@ -251,13 +251,13 @@
   inset-block: auto;
   block-size: 2.5rem;
   inline-size: 2.5rem;
-  margin-block: calc(-1 * var(--_thumb)) 0 !important;
+  margin-block: calc(-1 * var(--_thumb, 0)) 0 !important;
   transform: rotate(90deg) translate(-75%, 50%) !important;
 }
 
 .slider.vertical > .tooltip.bottom {
   inset-block: auto;
-  margin-block: 0 calc(-1 * var(--_thumb)) !important;
+  margin-block: 0 calc(-1 * var(--_thumb, 0)) !important;
   transform: rotate(90deg) translate(75%, 50%) !important;
 }
 
@@ -313,7 +313,7 @@
   transform: none !important;
 }
 
-.slider.max > span {
+.slider.max > span:not([class]) {
   block-size: auto !important;
   inset: 0 var(--_end) 0 var(--_start);
   clip-path: none;
@@ -322,7 +322,7 @@
   border-radius: 0;
 }
 
-.slider.max.vertical > span {
+.slider.max.vertical > span:not([class]) {
   inset: var(--_end) 0 var(--_start) 0;
 }
 

@@ -59,7 +59,7 @@ label {
   padding: 0.1px;
 }
 
-:is(a, button, .button, .chip):focus-visible {
+:is(a, button, .button, .chip, summary):focus-visible {
   outline: 0.125rem solid var(--primary);
   outline-offset: 0.25rem;
 }
@@ -70,4 +70,12 @@ label {
 
 :is(button, .button, .chip) > :is(span, i, img, svg) {
   pointer-events: none;
+}
+
+div:is(:not([class]), [class=active]):has(> :is(button, .chip, a):not(.responsive) ~ :is(menu, .tooltip, input)) {
+  display: inline-flex;
+}
+
+div:is(:not([class]), [class=active]):has(> :is(button, .chip, a) ~ :is(menu, .tooltip, input)) > * {
+  margin: 0;
 }

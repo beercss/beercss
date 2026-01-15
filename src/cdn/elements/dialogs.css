@@ -1,7 +1,7 @@
 dialog {
   --_padding: 1.5rem;
-  --_top: calc(var(--_padding) + var(--top));
-  --_bottom: calc(var(--_padding) + var(--bottom));
+  --_top: calc(var(--_padding, 0) + var(--top, 0));
+  --_bottom: calc(var(--_padding, 0) + var(--bottom, 0));
   display: block;
   visibility: hidden;
   border: none;

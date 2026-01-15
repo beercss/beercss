@@ -45,7 +45,7 @@ button {
   color: var(--primary);
 }
 
-.extend > span {
+.extend > span:not([class]) {
   display: none;
 }
 
@@ -62,7 +62,7 @@ button {
 
 .extend:is(:hover, .active) > :is(img, svg) + span {
   display: inherit;
-  margin-inline-start: calc(1rem + var(--_padding));
+  margin-inline-start: calc(1rem + var(--_padding, 0));
 }
 
 :is(.button, button)[disabled] {

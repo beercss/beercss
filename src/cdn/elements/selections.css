@@ -63,7 +63,7 @@
   outline: none;
   color: var(--primary);
   position: absolute;
-  inset: auto auto auto calc(var(--_size) * -1);
+  inset: auto auto auto calc(var(--_size, 0) * -1);
   border-radius: 50%;
   user-select: none;
   z-index: 1;
@@ -73,7 +73,7 @@
 [dir=rtl] :is(.checkbox, .radio) > span > i,
 [dir=rtl] :is(.checkbox, .radio) > span::after {
   --_size: inherit;
-  inset: auto calc(var(--_size) * -1) auto auto;
+  inset: auto calc(var(--_size, 0) * -1) auto auto;
 }
 
 .switch > span::before,
@@ -85,7 +85,7 @@
   justify-content: center;
   border-radius: 50%;
   transition: all var(--speed2);
-  font-size: calc(var(--_size) - 0.5rem);
+  font-size: calc(var(--_size, 0) - 0.5rem);
   user-select: none;
   min-inline-size: var(--_size);
   min-block-size: var(--_size);

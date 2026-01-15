@@ -1,7 +1,7 @@
 .field {
   --_input: 3rem;
   --_start: 1.2rem;
-  --_middle: calc(var(--_input) / 2);
+  --_middle: calc(var(--_input, 0) / 2);
   border-radius: 0.25rem 0.25rem 0 0;
   min-block-size: var(--_input);
   display: flex;
@@ -57,7 +57,7 @@
 /* icon */
 .field > :is(i, img, svg, progress.circle, a) {
   position: absolute;
-  inset: calc((var(--_input) / 2) - 0.75rem) auto auto auto;
+  inset: calc((var(--_input, 0) / 2) - 0.75rem) auto auto auto;
   cursor: pointer;
   z-index: 10;
   inline-size: 1.5rem;
@@ -77,12 +77,12 @@
 
 .field > :is(i, img, svg, progress.circle, a),
 [dir=rtl] .field > :is(i, img, svg, progress.circle, a):first-child {
-  inset: calc(var(--_middle) - 0.75rem) 1rem auto auto;
+  inset: calc(var(--_middle, 0) - 0.75rem) 1rem auto auto;
 }
 
 .field > :is(i, img, svg, progress.circle, a):first-child,
 [dir=rtl] .field > :is(i, img, svg, progress.circle, a) {
-  inset: calc(var(--_middle) - 0.75rem) auto auto 1rem;
+  inset: calc(var(--_middle, 0) - 0.75rem) auto auto 1rem;
 }
 
 .field.invalid > i {
@@ -272,21 +272,21 @@ input[type=number] {
 }
 
 .field > textarea {
-  padding-block-start: calc(var(--_start)) !important;
+  padding-block-start: var(--_start) !important;
 }
 
 .field > textarea:focus {
-  padding-block-start: calc(var(--_start) - 0.01rem) !important;
+  padding-block-start: calc(var(--_start, 0) - 0.01rem) !important;
 }
 
 .field:not(.label) > textarea,
 .field.border:not(.fill) > textarea {
-  padding-block-start: calc(var(--_start) - 0.5rem) !important;
+  padding-block-start: calc(var(--_start, 0) - 0.5rem) !important;
 }
 
 .field:not(.label) > textarea:focus,
 .field.border:not(.fill) > textarea:focus {
-  padding-block-start: calc(var(--_start) - 0.51rem) !important;
+  padding-block-start: calc(var(--_start, 0) - 0.51rem) !important;
 }
 
 /* label */
@@ -295,8 +295,8 @@ input[type=number] {
   position: absolute;
   inset: -0.5rem 1rem 0 var(--_start);
   display: flex;
-  block-size: calc(var(--_input) + 1rem);
-  line-height: calc(var(--_input) + 1rem);
+  block-size: calc(var(--_input, 0) + 1rem);
+  line-height: calc(var(--_input, 0) + 1rem);
   font-size: 1rem;
   transition: all 0.2s;
   gap: 0.25rem;

@@ -152,22 +152,22 @@ menu:has(menu) {
 
 menu > li > :is(menu, menu.right),
 [dir=rtl] menu > li > menu.left {
-  inset: auto auto calc(3rem * (var(--_child) - var(--_type))) 100%;
+  inset: auto auto calc(3rem * (var(--_child, 0) - var(--_type, 0))) 100%;
 }
 
 [dir=rtl] menu > li > :is(menu, menu.right),
 menu > li > menu.left {
-  inset: auto 100% calc(3rem * (var(--_child) - var(--_type))) auto;
+  inset: auto 100% calc(3rem * (var(--_child, 0) - var(--_type, 0))) auto;
 }
 
 menu > li > :is(menu.top, menu.top.right),
 [dir=rtl] menu > li > menu.top.left {
-  inset: calc(3rem * (var(--_child) - var(--_type))) auto auto 100%;
+  inset: calc(3rem * (var(--_child, 0) - var(--_type, 0))) auto auto 100%;
 }
 
 [dir=rtl] menu > li > :is(menu.top, menu.top.right),
 menu > li > menu.top.left {
-  inset: calc(3rem * (var(--_child) - var(--_type))) 100% auto auto;
+  inset: calc(3rem * (var(--_child, 0) - var(--_type, 0))) 100% auto auto;
 }
 
 menu.no-space > li {
@@ -280,14 +280,6 @@ menu > li:nth-last-of-type(10) {
 
 menu > li:nth-last-of-type(11) {
   --_type: 10;
-}
-
-div:has(> :not(.responsive) ~ menu) {
-  display: inline-flex;
-}
-
-div:has(> menu) > * {
-  margin: 0;
 }
 
 @media (pointer: coarse) {

@@ -70,7 +70,7 @@ i > :is(img, svg) {
 }
 
 i[class*=fa-] {
-  font-size: calc(var(--_size) * 0.85);
+  font-size: calc(var(--_size, 0) * 0.85);
   line-height: normal;
   block-size: auto;
   min-block-size: auto;

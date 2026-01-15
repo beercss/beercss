@@ -70,12 +70,12 @@ progress::-moz-progress-bar {
 }
 
 progress.wavy {
-  block-size: calc(var(--_size) * 2);
+  block-size: calc(var(--_size, 0) * 2);
   background: none;
   background-image: var(--_light);
   background-repeat: repeat-x;
   background-position: 0 50%;
-  background-size: auto calc(var(--_size) / 2);
+  background-size: auto calc(var(--_size, 0) / 2);
 }
 
 .dark progress.wavy {
@@ -102,7 +102,7 @@ progress.circle {
   --_value: attr(value type(<number>), 50);
   inline-size: 2.5rem;
   block-size: 2.5rem;
-  background: conic-gradient(currentColor calc(var(--_value) * 1%), var(--active) 0%);
+  background: conic-gradient(currentColor calc(var(--_value, 0) * 1%), var(--active) 0%);
   border-radius: 50%;
   mask-image: radial-gradient(circle at center, transparent 57%, currentColor 60%);
 }
@@ -116,7 +116,7 @@ progress.circle::-moz-progress-bar {
 }
 
 progress.circle.wavy {
-  background: conic-gradient(currentColor calc(var(--_value) * 1%), var(--active) 0);
+  background: conic-gradient(currentColor calc(var(--_value, 0) * 1%), var(--active) 0);
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;

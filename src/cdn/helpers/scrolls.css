@@ -1,6 +1,5 @@
 .scroll {
   overflow: auto;
-  min-inline-size: 0;
 }
 
 .no-scroll {

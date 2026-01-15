@@ -34,8 +34,7 @@
 }
 
 .list > li > *,
-.list > li > a:only-child > *,
-.list > li > details > summary > *  {
+.list > li > a:only-child > * {
   margin: 0;
 }
 

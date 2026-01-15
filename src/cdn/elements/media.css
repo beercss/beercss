@@ -83,11 +83,11 @@ svg {
 }
 
 :is(button, .button, .chip):not(.extend) > .responsive:first-child {
-  margin-inline-start: calc(-1 * var(--_padding));
+  margin-inline-start: calc(-1 * var(--_padding, 0));
 }
 
 :is(button, .button, .chip):not(.extend) > .responsive:not(:first-child) {
-  margin-inline-end: calc(-1 * var(--_padding));
+  margin-inline-end: calc(-1 * var(--_padding, 0));
 }
 
 :is(button, .button, .chip, .circle, .square, .extend) > .responsive {

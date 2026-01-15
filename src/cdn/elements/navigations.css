@@ -14,7 +14,6 @@ a.row {
   white-space: nowrap;
   gap: 1rem;
   border-radius: 0;
-  min-inline-size: 0;
 }
 
 a.row,
@@ -72,8 +71,8 @@ nav > :is(ol, ul) > li > span > * {
 
 nav:is(.left, .right, .top, .bottom) {
   --_padding: 0.5rem;
-  --_top: calc(var(--_padding) + var(--top));
-  --_bottom: calc(var(--_padding) + var(--bottom));
+  --_top: calc(var(--_padding, 0) + var(--top, 0));
+  --_bottom: calc(var(--_padding, 0) + var(--bottom, 0));
   position: sticky;
   inset: 0;
   border: 0;
@@ -106,12 +105,12 @@ nav:is(.top, .bottom) {
 }
 
 nav.top {
-  block-size: calc(var(--top) + 4.5rem);
+  block-size: calc(var(--top, 0) + 4.5rem);
   padding-block-start: var(--_top);
 }
 
 nav.bottom {
-  block-size: calc(var(--bottom) + 4.5rem);
+  block-size: calc(var(--bottom, 0) + 4.5rem);
   padding-block-end: var(--_bottom);
 }
 
@@ -139,7 +138,7 @@ nav > header > .extend:hover {
   inline-size: var(--_size);
 }
 
-nav > header > .extend:hover > span {
+nav > header > .extend:hover > span:not([class]) {
   display: none;
 }
 
@@ -177,13 +176,13 @@ nav.max > header > .extend {
   padding: 0 var(--_padding);
 }
 
-nav.max > header > .extend > span {
+nav.max > header > .extend > span:not([class]) {
   display: block;
   margin-inline-start: var(--_padding);
 }
 
 nav.max > header > .extend > :is(img, svg) + span {
-  margin-inline-start: calc(1rem + var(--_padding));
+  margin-inline-start: calc(1rem + var(--_padding, 0));
 }
 
 nav.max:is(.top, .bottom) {

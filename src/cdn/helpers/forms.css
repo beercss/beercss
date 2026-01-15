@@ -51,7 +51,7 @@
   inline-size: var(--_size);
 }
 
-:is(.circle, .square) > span {
+:is(.circle, .square) > span:not([class]) {
   display: none;
 }
 

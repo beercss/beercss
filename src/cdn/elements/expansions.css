@@ -1,10 +1,13 @@
-summary,
-summary:focus {
+summary {
   list-style-type: none;
   cursor: pointer;
-  outline: none;
 }
 
 summary::-webkit-details-marker {
   display: none;
+}
+
+summary > * {
+  pointer-events: none;
+  margin: 0;
 }
