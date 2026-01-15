@@ -3,6 +3,7 @@ div
   #layouts
     .large-space
     h4 Layouts
+    h5(style="display: none") Empty
     .medium-space
     h6 Positions
       button.chip.circle(
@@ -30,7 +31,7 @@ div
         span bottom
     .space
     #positions
-      article.border.medium.no-padding
+      .small-round.padding.border.medium.no-padding
         .padding.primary.absolute.center.middle
           h5 Position
           div Lorem ipsum dolor...

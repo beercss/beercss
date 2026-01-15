@@ -3,6 +3,7 @@
   .large-space
   h4
     span Sliders
+  h5(style="display: none") Empty
   .medium-space
   h6
     span Default slider
@@ -37,20 +38,20 @@
   .medium-space
   .grid#sliders1
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="25")
         span
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="5", min="4", max="8")
         span
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="25")
         input(type="range", value="50")
         span
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="25", disabled)
         span
   h6
@@ -86,27 +87,27 @@
   .medium-space
   .grid#sliders2
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="25")
         span
-        .tooltip
+        span.tooltip
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="5", min="4", max="8")
         span
-        .tooltip
+        span.tooltip
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="25")
         input(type="range", value="50")
         span
-        .tooltip
-        .tooltip
+        span.tooltip
+        span.tooltip
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="25", disabled)
         span
-        .tooltip
+        span.tooltip
   .medium-space
   h6
     span Value indicator bottom
@@ -141,27 +142,27 @@
   .medium-space
   .grid#sliders6
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="25")
         span
-        .tooltip.bottom
+        span.tooltip.bottom
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="5", min="4", max="8")
         span
-        .tooltip.bottom
+        span.tooltip.bottom
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="25")
         input(type="range", value="50")
         span
-        .tooltip.bottom
-        .tooltip.bottom
+        span.tooltip.bottom
+        span.tooltip.bottom
     .s12.m6.l3.center-align
-      label.slider
+      .slider
         input(type="range", value="25", disabled)
         span
-        .tooltip.bottom
+        span.tooltip.bottom
   .medium-space
   h6
     span Inset icon
@@ -197,17 +198,17 @@
   .medium-space
   .grid.large-space#sliders4
     .s12.m6.l4.center-align
-      label.slider.medium
+      .slider.medium
         input(type="range")
         span
           i volume_up
     .s12.m6.l4.center-align
-      label.slider.medium
+      .slider.medium
         input(type="range")
         span
           i add
     .s12.m6.l4.center-align
-      label.slider.medium
+      .slider.medium
         input(type="range", value="25")
         span
           i sunny
@@ -220,13 +221,13 @@
   .grid#sliders3
     .s12.m6.l4
       .field.middle-align
-        label.slider
+        .slider
           input(type="range", value="25")
           span
         output Helper
     .s12.m6.l4
       .field.middle-align
-        label.slider
+        .slider
           input(type="range", value="25")
           span
         output.invalid Error text
@@ -234,7 +235,7 @@
       .field.middle-align.prefix.suffix
         nav
           i sunny
-          label.slider
+          .slider
             input(type="range", value="25")
             span
           i rainy
@@ -256,12 +257,12 @@
         span green-text
     .medium-space
     nav.top-align.wrap
-      article.small-width.small-height.round
-        label.slider.max
+      .small-width.small-height.round.fill
+        .slider.max
           input(type="range", value="30", max="100")
           span
-      article.small-width.small-height.round
-        label.slider.max.vertical
+      .small-width.small-height.round.fill
+        .slider.max.vertical
           input(type="range", value="30", max="100")
           span
 

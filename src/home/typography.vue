@@ -2,6 +2,7 @@
 #typography
   .large-space
   h4 Typography
+  h5(style="display: none") Empty
   .medium-space
   h6.middle-align
     span Display and headline

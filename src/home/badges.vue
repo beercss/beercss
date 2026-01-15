@@ -2,6 +2,7 @@
 #badges
   .large-space
   h4 Badges
+  h5(style="display: none") Empty
   .medium-space
   h6
     span Common badges
@@ -35,43 +36,43 @@
   nav.wrap.large-space#default-badges
     a(tabindex="0")
       i home
-      .badge.min
+      span.badge.min
     a(tabindex="0")
       i home
-      .badge 1
+      span.badge 1
     a(tabindex="0")
       i home
-      .badge 10
+      span.badge 10
     a(tabindex="0")
       i home
-      .badge New
+      span.badge New
     a(tabindex="0")
       i home
-      .badge.no-round New
+      span.badge.no-round New
     a(tabindex="0")
       i home
-      .badge.border New
+      span.badge.border New
     a(tabindex="0")
       i home
-      .badge.border 10
+      span.badge.border 10
     a(tabindex="0")
       i home
-      .badge.border 1
+      span.badge.border 1
     a(tabindex="0")
       i home
-      .badge.border.no-round New
+      span.badge.border.no-round New
     button.circle
       i home
-      .badge 1
+      span.badge 1
     button
       i home
-      .badge 1
+      span.badge 1
     button.chip.circle
       i home
-      .badge 1
+      span.badge 1
     button.chip
       i home
-      .badge 1
+      span.badge 1
   .medium-space
   h6
     span Inline badge
@@ -80,16 +81,16 @@
   nav#inline-badges
     button
       i home
-      .badge.none 1
+      span.badge.none 1
     button
       span Button
-      .badge.none 1
+      span.badge.none 1
     button.chip
       i home
-      .badge.none 1
+      span.badge.none 1
     button.chip
       span Button
-      .badge.none 1
+      span.badge.none 1
 </template>
 
 <script setup lang="ts">

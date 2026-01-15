@@ -2,6 +2,7 @@
 #buttons
   .large-space
   h4 Buttons
+  h5(style="display: none") Empty
   .medium-space
   h6.middle-align
     span Common buttons
@@ -16,10 +17,10 @@
         i home
         span Button
       button
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
         span Button
       button
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
         span Button
     nav.wrap
       button.small-round Button
@@ -27,10 +28,10 @@
         i home
         span Button
       button.small-round
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
         span Button
       button.small-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
         span Button
     nav.wrap
       button.border Button
@@ -38,10 +39,10 @@
         i home
         span Button
       button.border
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
         span Button
       button.border
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
         span Button
     nav.wrap
       button.border.small-round Button
@@ -49,10 +50,10 @@
         i home
         span Button
       button.border.small-round
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
         span Button
       button.border.small-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
         span Button
   .medium-space
   h6.middle-align
@@ -70,7 +71,7 @@
           span Button
       nav
         button.responsive
-          img(:src="'/favicon.png'")
+          img(alt="", :src="'/favicon.png'")
           span Button
     .s12.m6
       nav
@@ -81,7 +82,7 @@
           span Button
       nav
         button.responsive.round
-          img(:src="'/favicon.png'")
+          img(alt="", :src="'/favicon.png'")
           span Button
     .s12.m6
       nav
@@ -92,7 +93,7 @@
           span Button
       nav
         button.responsive.border
-          img(:src="'/favicon.png'")
+          img(alt="", :src="'/favicon.png'")
           span Button
     .s12.m6
       nav
@@ -103,7 +104,7 @@
           span Button
       nav
         button.responsive.border.round
-          img(:src="'/favicon.png'")
+          img(alt="", :src="'/favicon.png'")
           span Button
   .medium-space
   h6.middle-align
@@ -153,23 +154,23 @@
         i add
     nav.wrap
       button.border.square
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.border.square.round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.border.circle
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.border.circle.left-round.top-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.border.circle.left-round.bottom-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.border.circle.right-round.top-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.border.circle.right-round.bottom-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.border.circle.left-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.border.circle.right-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
   .medium-space
   h6.middle-align
     span Extended FABs
@@ -254,39 +255,39 @@
     .s6.m6.l4
       nav
         button.extend.border.square
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
         button.extend.border.square.round
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
         button.extend.border.circle
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
         button.extend.border.circle.left-round.top-round
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
         button.extend.border.circle.left-round.bottom-round
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
         button.extend.border.circle.right-round.top-round
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
         button.extend.border.circle.right-round.bottom-round
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
         button.extend.border.circle.left-round
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
         button.extend.border.circle.right-round
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
   .medium-space
   h6.middle-align
@@ -387,21 +388,21 @@
         i search
     nav.wrap
       button.transparent.square
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.transparent.circle
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.transparent.circle.left-round.top-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.transparent.circle.left-round.bottom-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.transparent.circle.right-round.top-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.transparent.circle.right-round.bottom-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.transparent.circle.left-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       button.transparent.circle.right-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
   .medium-space
   h6.middle-align
     span Button groups

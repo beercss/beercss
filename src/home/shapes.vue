@@ -7,6 +7,7 @@
       @click="domain.showSamples(data, '#shape > nav > *', 'Shapes', null, 'https://github.com/beercss/beercss/blob/main/docs/SHAPE.md')"
     )
       i code
+  h5(style="display: none") Empty
   nav.wrap      
     button.chip(@click="domain.updateShape('#shape .shape', 'loading-indicator')") loading-indicator
     //button.chip(@click="domain.updateShape('#shape .shape', 'arch')") arch
@@ -55,7 +56,7 @@
       .shape.loading-indicator.large
       .shape.loading-indicator.extra
       .shape.loading-indicator.extra
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
       .shape.loading-indicator.extra
         video.responsive(autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
@@ -72,19 +73,19 @@
         .shape.loading-indicator.max.rotate
       .small-width.small-height
         .shape.loading-indicator.max.rotate
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
       .small-width.small-height
         .shape.loading-indicator.max.rotate
           video.responsive(autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
     nav.wrap
       button.circle.extra.transparent
-        .shape.loading-indicator.max.medium-space
+        span.shape.loading-indicator.max.medium-space
       button.circle.extra.fill
-        .shape.loading-indicator.max.medium-space
+        span.shape.loading-indicator.max.medium-space
       button.extra.fill
         i
-          .shape.loading-indicator.max
+          span.shape.loading-indicator.max
         span Button
 </template>
 

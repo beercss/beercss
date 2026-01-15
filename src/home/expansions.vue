@@ -5,6 +5,7 @@
     span Expansions
     button.chip.circle(@click="domain.showSamples(data, '#expansions > details, #expansions > article', 'Expansions', null, 'https://github.com/beercss/beercss/blob/main/docs/EXPANSION.md')")
       i code
+  h5(style="display: none") Empty
   .medium-space
   details
     summary Default
@@ -23,13 +24,15 @@
   hr.large
   details
     summary
-      article.round.primary.no-elevate
-        nav
-          .max Custom summary
-          i expand_more
-    article.round.border First
-    article.round.border Second
-    article.round.border Third
+      button(tabindex="-1")
+        span Button
+        i expand_more
+    article
+      h6 Title 
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    article
+      h6 Title
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </template>
 
 <script setup lang="ts">

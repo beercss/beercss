@@ -5,6 +5,7 @@
     span Inputs
     button.chip.circle(@click="domain.showSamples(data, '#inputs .field', 'Inputs', null, 'https://github.com/beercss/beercss/blob/main/docs/INPUT.md')")
       i code
+  h5(style="display: none") Empty
   nav.wrap
     label.checkbox
       input(type="checkbox", checked, @click="domain.updateBorder('#inputs .field', $event)")
@@ -103,7 +104,7 @@
         i.front search
     .s12.l4
       .field.border.prefix
-        img.circle(:src="'/favicon.png'")
+        img.circle(alt="", :src="'/favicon.png'")
         input(type="text")
     .s12.l4
       .field.border.prefix
@@ -112,7 +113,7 @@
     .s12.l4
       .field.border.prefix
         i
-          .shape.loading-indicator.max
+          span.shape.loading-indicator.max
         input(type="text")
   .medium-space
   h6
@@ -122,33 +123,41 @@
   .medium-space
   #inputs-custom
     nav.wrap
-      button.circle
-        i attach_file
+      div
+        button.circle
+          i attach_file
         input(type="file")
-      button.circle
-        i palette
+      div
+        button.circle
+          i palette
         input(type="color")
-      button.circle
-        i today
+      div
+        button.circle
+          i today
         input(type="date")
-      button.circle
-        i schedule
+      div
+        button.circle
+          i schedule
         input(type="time")
-      button
-        i attach_file
-        span File
+      div
+        button
+          i attach_file
+          span File
         input(type="file")
-      button
-        i palette
-        span Color
+      div
+        button
+          i palette
+          span Color
         input(type="color")
-      button
-        i today
-        span Date
+      div 
+        button
+          i today
+          span Date
         input(type="date")
-      button
-        i schedule
-        span Time
+      div
+        button
+          i schedule
+          span Time
         input(type="time")
 </template>
 

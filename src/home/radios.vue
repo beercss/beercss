@@ -3,8 +3,9 @@
   .large-space
   h4
     span Radios
-    button.chip.circle(@click="domain.showSamples(data, '#radios .field:not(#radios1), #radios1 label', 'Radios', null, 'https://github.com/beercss/beercss/blob/main/docs/RADIO.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#radios .field:not(#radios1, #radios2), #radios1 label, #radios2 label', 'Radios', null, 'https://github.com/beercss/beercss/blob/main/docs/RADIO.md')")
       i code
+  h5(style="display: none") Empty
   .grid
     .s12
       .space
@@ -37,7 +38,7 @@
             span
     .s12
       h6 Radio with icons
-      .field.middle-align#radios1
+      .field.middle-align#radios2
         nav
           label.radio.icon
             input(type="radio", name="radio3")
@@ -48,9 +49,9 @@
             input(type="radio", name="radio3")
             span
               i
-                img(:src="'/favicon.png'")
+                img(alt="", :src="'/favicon.png'")
               i
-                img(:src="'/beer-and-woman.svg'")
+                img(alt="", :src="'/beer-and-woman.svg'")
           label.radio.icon
             input(type="radio", name="radio3")
             span

@@ -2,6 +2,7 @@
 #progress
   .large-space
   h4 Progress
+  h5(style="display: none") Empty
   nav.wrap
     label.radio
       input(type="radio", name="percent-progress", @click="domain.updateProgress(0)")

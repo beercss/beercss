@@ -83,13 +83,13 @@
   div
     .tabs
       a.active(data-ui="#tab7", tabindex="0")
-        img.circle(:src="'/favicon.png'")
+        img.circle(alt="", :src="'/favicon.png'")
         span Tab 1
       a(data-ui="#tab8", tabindex="0")
-        img.circle(:src="'/favicon.png'")
+        img.circle(alt="", :src="'/favicon.png'")
         span Tab 2
       a(data-ui="#tab9", tabindex="0")
-        img.circle(:src="'/favicon.png'")
+        img.circle(alt="", :src="'/favicon.png'")
         span Tab 3
     #tab7.page.padding.active
       h5 Tab 1

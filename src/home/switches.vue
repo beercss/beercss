@@ -3,8 +3,9 @@
   .large-space
   h4
     span Switches
-    button.chip.circle(@click="domain.showSamples(data, '#switches .field:not(#switches1), #switches1 label', 'Switches', null, 'https://github.com/beercss/beercss/blob/main/docs/SWITCH.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#switches .field:not(#switches1, #switches2), #switches1 label, #switches2 label', 'Switches', null, 'https://github.com/beercss/beercss/blob/main/docs/SWITCH.md')")
       i code
+  h5(style="display: none") Empty
   .grid
     .s12
       .space
@@ -25,7 +26,7 @@
             span
     .s12
       h6 Switch with icons
-      .field.middle-align#switches1
+      .field.middle-align#switches2
         nav.wrap
           label.switch.icon
             input(type="checkbox")

@@ -2,7 +2,7 @@
 #search
   .large-space
   h4 Search
-
+  h5(style="display: none") Empty
   .space
   h6
     span Docked

@@ -3,15 +3,18 @@
   .large-space
   nav.wrap
     h4 Colors
+    h5(style="display: none") Empty
     button.chip.circle(data-ui="#dialog-colors", @click="showCode()")
       i code
     button.chip.circle(@click="sharedDomain.updateMode(data)")
       i {{ data.isDark ? "light_mode" : "dark_mode" }}
-    button.chip.circle
-      i palette
+    div
+      button.chip.circle
+        i palette
       input(type="color", @input="sharedDomain.updateTheme(data, $event)")
-    button.chip.circle
-      i upload
+    div
+      button.chip.circle
+        i upload
       input(type="file", @change="sharedDomain.updateTheme(data, $event)")
     button.circle.small.red(@click="sharedDomain.updateTheme(data, '#f44336')")
     button.circle.small.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
@@ -106,7 +109,7 @@
           input(v-model="data.theme.selected", type="radio", value="dark")
           span Dark
     .space
-    article.border
+    .small-round.padding.border
       pre.scroll
         code(v-html="sourceCode()")
 

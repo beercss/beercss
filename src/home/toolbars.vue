@@ -2,6 +2,7 @@
 #toolbars
   .large-space
   h4 Toolbars
+  h5(style="display: none") Empty
   .medium-space
   #default-toolbars
     h6 

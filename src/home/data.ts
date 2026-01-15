@@ -18,6 +18,7 @@ const data: IHome = {
   isRtl: false,
   isMax: true,
   isExplore: false,
+  isShowingSample: false,
 };
 
 const dataAsRef: Ref<IHome> = ref(data);

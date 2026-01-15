@@ -280,7 +280,10 @@ const formatHtml = (element: Element | null, raw: boolean = false, useInnerHtml:
     .replace(/\s+(checked|disabled)=""/gi, " $1");
 };
 
-const showSamples = (data: IHome, selector: string, name: string, dialog?: string | null, url?: string | null, useInnerHtml: boolean = false) => {
+const showSamples = async (data: IHome, selector: string, name: string, dialog?: string | null, url?: string | null, useInnerHtml: boolean = false) => {
+  data.isShowingSample = true;
+  await nextTick();
+
   const elements = utils.queryAll(selector);
   let text = "";
   let textFormatted = "";
@@ -308,6 +311,9 @@ const showSamples = (data: IHome, selector: string, name: string, dialog?: strin
       html: (name === "Tooltips") ? `<div class="center-align">${text}</div>` : text,
       sourceCode: textFormatted,
     });
+    
+    data.isShowingSample = false;
+    await nextTick();
   }
 
   nextTick(() => {

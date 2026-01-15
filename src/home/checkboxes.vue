@@ -3,8 +3,9 @@
   .large-space
   h4
     span Checkboxes
-    button.chip.circle(@click="domain.showSamples(data, '#checkboxes .field:not(#checkboxes1), #checkboxes1 label', 'Checkboxes', null, 'https://github.com/beercss/beercss/blob/main/docs/CHECKBOX.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#checkboxes .field:not(#checkboxes1, #checkboxes2), #checkboxes1 label, #checkboxes2 label', 'Checkboxes', null, 'https://github.com/beercss/beercss/blob/main/docs/CHECKBOX.md')")
       i code
+  h5(style="display: none") Empty
   .grid
     .s12
       .space
@@ -37,7 +38,7 @@
             span
     .s12
       h6 Checkbox with icons
-      .field.middle-align#checkboxes1
+      .field.middle-align#checkboxes2
         nav.wrap
           label.checkbox.icon
             input(type="checkbox")
@@ -48,9 +49,9 @@
             input(type="checkbox")
             span
               i
-                img(:src="'/favicon.png'")
+                img(alt="", :src="'/favicon.png'")
               i
-                img(:src="'/beer-and-woman.svg'")
+                img(alt="", :src="'/beer-and-woman.svg'")
           label.checkbox.icon
             input(type="checkbox")
             span

@@ -89,7 +89,7 @@
           option Item 1
           option Item 2
           option Item 3
-        img.circle(:src="'/favicon.png'")
+        img.circle(alt="", :src="'/favicon.png'")
     .s12.l4
       .field.suffix.border
         select
@@ -104,7 +104,7 @@
           option Item 2
           option Item 3
         i
-          .shape.loading-indicator.max
+          span.shape.loading-indicator.max
 </template>
 
 <script setup lang="ts">

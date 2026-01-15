@@ -5,6 +5,7 @@
     span Dialogs
     button.chip.circle(@click="domain.showSamples(data, '#dialogs .dialog-code', 'Dialogs', null, 'https://github.com/beercss/beercss/blob/main/docs/DIALOG.md', true)")
       i code
+  h5(style="display: none") Empty
   nav.wrap
     button(data-ui="#dialog") Default
     button(data-ui="#dialog-modal") Modal
@@ -93,7 +94,7 @@
     dialog#dialog-navigation-drawer.left
       header
         nav
-          img.circle.large(:src="'/favicon.png'")
+          img.circle.large(alt="", :src="'/favicon.png'")
           h6.max Title
           button.transparent.circle.large(data-ui="#dialog-navigation-drawer")
             i close

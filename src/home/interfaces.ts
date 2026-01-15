@@ -20,4 +20,5 @@ export interface IHome extends ILayout {
   isRtl: boolean,
   isMax: boolean,
   isExplore: boolean,
+  isShowingSample: boolean,
 }

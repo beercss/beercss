@@ -4,6 +4,7 @@ div
     .large-space
     h4
       span Lists
+    h5(style="display: none") Empty
     nav.wrap
       label.checkbox
         input(type="checkbox", checked, @click="domain.updateBorder('#lists .list', $event)")
@@ -25,20 +26,35 @@ div
       #list-default.s12.m6.l6
         h6
           span Default
-          button.chip.circle(@click="domain.showSamples(data, '#list-default > article > .list', 'List border')")
+          button.chip.circle(@click="domain.showSamples(data, '#list-default > div > .list', 'List border')")
             i code
-        article
+        .padding
           ul.list.border
             li Item
             li Item
             li Item
             li Item
+      #list-links.s12.m6.l6
+        h6
+          span Links
+          button.chip.circle(@click="domain.showSamples(data, '#list-links > div > .list', 'List border')")
+            i code
+        .padding
+          ul.list.border
+            li 
+              a Item
+            li
+              a Item
+            li
+              a Item
+            li
+              a Item
       #list-nested.s12.m6.l6
         h6
           span Nested
-          button.chip.circle(@click="domain.showSamples(data, '#list-nested > article > .list', 'List nested')")
+          button.chip.circle(@click="domain.showSamples(data, '#list-nested > div > .list', 'List nested')")
             i code
-        article
+        .padding
           ul.list.border
             li Item
             li Item
@@ -49,9 +65,9 @@ div
       #list-expansion.s12.m6.l6
         h6
           span Expansion
-          button.chip.circle(@click="domain.showSamples(data, '#list-expansion > article > .list', 'List expansion')")
+          button.chip.circle(@click="domain.showSamples(data, '#list-expansion > div > .list', 'List expansion')")
             i code
-        article
+        .padding
           ul.list.border
             li Item
             li Item
@@ -67,7 +83,7 @@ div
         span Headline and supporting text
         button.chip.circle(@click="domain.showSamples(data, '#list1 .list', 'Lists')")
           i code
-      article
+      .padding
         ul.list.border
           li
             button.circle A
@@ -81,29 +97,13 @@ div
               h6.small Headline
               div Supporting text
             label +15 min
-      article
-        ul.list.border
-          li
-            a(href="#1")
-              button.circle A
-              .max
-                h6.small Headline
-                div Supporting text
-              label +15 min
-          li
-            a(href="#1")
-              button.circle A
-              .max
-                h6.small Headline
-                div Supporting text
-              label +15 min
     .medium-space
     #list2
       h6 
         span Icons
         button.chip.circle(@click="domain.showSamples(data, '#list2 .list', 'Lists')")
           i code
-      article
+      .padding
         ul.list.border
           li
             i home
@@ -123,16 +123,16 @@ div
         span Leading media or avatar
         button.chip.circle(@click="domain.showSamples(data, '#list3 .list', 'Lists')")
           i code
-      article
+      .padding
         ul.list.border
           li
-            img.round(:src="'/beer-and-woman.svg'")
+            img.round(alt="", :src="'/beer-and-woman.svg'")
             .max
               h6.small Headline
               div Supporting text
             label +15 min
           li
-            img.round(:src="'/beer-and-woman.svg'")
+            img.round(alt="", :src="'/beer-and-woman.svg'")
             .max
               h6.small Headline
               div Supporting text
@@ -143,7 +143,7 @@ div
         span Links and buttons
         button.chip.circle(@click="domain.showSamples(data, '#list4 .list', 'Lists')")
           i code
-      article
+      .padding
         ul.list.border
           li
             .max

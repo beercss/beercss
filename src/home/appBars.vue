@@ -2,6 +2,7 @@
 div
   #app-bars
     h4 App bars
+    h5(style="display: none") Empty
     .medium-space
   #top-app-bars
     h6 Top app bars
@@ -32,7 +33,7 @@ div
           i menu
         h6.max.center-align Headline
         button.circle.transparent
-          img.responsive(:src="'/favicon.png'")
+          img.responsive(alt="", :src="'/favicon.png'")
     .space
     header
       nav
@@ -75,6 +76,7 @@ div
         h4 Headline
   .medium-space
   #bottom-app-bars
+    h5(style="display: none") Empty
     h6 Bottom app bars
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#bottom-app-bars footer', 'Bottom app bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"

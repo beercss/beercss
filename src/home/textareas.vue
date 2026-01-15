@@ -77,7 +77,7 @@
         i search
     .s12.l4
       .field.border.prefix
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
         textarea
     .s12.l4
       .field.border.prefix
@@ -86,7 +86,7 @@
     .s12.l4
       .field.border.prefix
         i
-          .shape.loading-indicator.max
+          span.shape.loading-indicator.max
         textarea
 </template>
 

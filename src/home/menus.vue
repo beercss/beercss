@@ -82,10 +82,10 @@
             div Title
             label Some text here
         li
-          img.circle.tiny(:src="'/beer-and-woman.svg'")
+          img.circle.tiny(alt="", :src="'/beer-and-woman.svg'")
           span Title
         li
-          img.circle.tiny(:src="'/beer-and-woman.svg'")
+          img.circle.tiny(alt="", :src="'/beer-and-woman.svg'")
           .max
             div Title
             label Some text here

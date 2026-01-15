@@ -3,6 +3,7 @@
   .large-space
   h4
     span Navigations
+  h5(style="display: none") Empty
   .medium-space
   h6.middle-align
     span Rows
@@ -60,35 +61,35 @@
       button Button
       button.chip Chip
       i home
-      img.circle(:src="'/beer-and-woman.svg'")
+      img.circle(alt="", :src="'/beer-and-woman.svg'")
     hr.small
     nav
       button Button
       button.chip Chip
       i home
       .max max
-      img.circle(:src="'/beer-and-woman.svg'")
+      img.circle(alt="", :src="'/beer-and-woman.svg'")
     hr.small
     nav
       button Button
       button.chip Chip
       .max max
       i home
-      img.circle(:src="'/beer-and-woman.svg'")
+      img.circle(alt="", :src="'/beer-and-woman.svg'")
     hr.small
     nav
       button Button
       .max max
       button.chip Chip
       i home
-      img.circle(:src="'/beer-and-woman.svg'")
+      img.circle(alt="", :src="'/beer-and-woman.svg'")
     hr.small
     nav
       .max max
       button Button
       button.chip Chip
       i home
-      img.circle(:src="'/beer-and-woman.svg'")
+      img.circle(alt="", :src="'/beer-and-woman.svg'")
   .medium-space
   #navigation-rail
     .medium-space

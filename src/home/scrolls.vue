@@ -5,6 +5,7 @@
     span Scrolls
     button.chip.circle(@click="domain.showSamples(data, '#scrolls .scroll', 'Scrolls', null, 'https://github.com/beercss/beercss/blob/main/docs/HELPERS.md')")
       i code
+  h5(style="display: none") Empty
   .medium-space
   h6.middle-align
     span Chips
@@ -26,7 +27,7 @@
   h6.middle-align
     span Images
   .row.scroll
-    img.small-width.small-height(v-for="i in ['', '', '', '', '', '', '', '', '', '']", :src="'/favicon.png'", :title="i")
+    img.small-width.small-height(v-for="i in ['', '', '', '', '', '', '', '', '', '']", alt="", :src="'/favicon.png'", :title="i")
   .medium-space
   h6.middle-align
     span Cards

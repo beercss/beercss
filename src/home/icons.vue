@@ -11,6 +11,7 @@
   .large-space
   h4
     span Icons
+  h5(style="display: none") Empty
   .medium-space
   h6 Default icons
     button.chip.circle(@click="domain.showSamples(data, '#icons-default i', 'Icons', '#dialog-icons', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
@@ -103,15 +104,15 @@
   #icons-image
     nav.wrap
       i.tiny
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
       i.small
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
       i
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
       i.large
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
       i.extra
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
   .medium-space
   h6
     span Other libs
@@ -177,7 +178,7 @@
         button.circle.transparent(data-ui="#dialog-icons")
           i close
     .space
-    article.border(v-for="exemplo in data.samples")
+    .small-round.padding.border(v-for="exemplo in data.samples")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll
@@ -206,7 +207,7 @@
         button.circle.transparent(data-ui="#dialog-icons-svg")
           i close
     .space
-    article.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
+    .small-round.padding.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll
@@ -214,11 +215,11 @@
     .medium-space
     h6 Multiple icons in a single SVG
     .medium-space
-    article.border
+    .small-round.padding.border
       pre.scroll
         code(v-html="data.svgSample")
     .space
-    article.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
+    .small-round.padding.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll
@@ -249,7 +250,7 @@
         i open_in_new
     p To work as expected, you need to load the lib manually.
     .space
-    article.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
+    .small-round.padding.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll
@@ -261,7 +262,7 @@
         i open_in_new
     p To work as expected, you need to load the lib manually.
     .medium-space
-    article.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
+    .small-round.padding.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll
