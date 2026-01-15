@@ -2,21 +2,21 @@
 div
   nav.top.center-align.m.l
     button.circle(@click="sharedDomain.updateTheme(data, '#f9bd49')")
-      img.responsive(:src="'/classic-utility-jacket.jpg'")
+      img.responsive(alt="", :src="'/classic-utility-jacket.jpg'")
     button.circle(@click="sharedDomain.updateTheme(data, '/kids-jumpsuit.jpg')")
-      img.responsive(:src="'/kids-jumpsuit.jpg'")
+      img.responsive(alt="", :src="'/kids-jumpsuit.jpg'")
     button.circle(@click="sharedDomain.updateTheme(data, '/dogtooth-style-jacket.jpg')")
-      img.responsive(:src="'/dogtooth-style-jacket.jpg'")
+      img.responsive(alt="", :src="'/dogtooth-style-jacket.jpg'")
     button.circle(@click="sharedDomain.updateTheme(data, '/retro-shoe.jpg')")
-      img.responsive(:src="'/retro-shoe.jpg'")
+      img.responsive(alt="", :src="'/retro-shoe.jpg'")
     button.circle(@click="sharedDomain.updateTheme(data, '/beach-house-in-collingwood-001.jpg')")
-      img.responsive(:src="'/beach-house-in-collingwood-001.jpg'")
+      img.responsive(alt="", :src="'/beach-house-in-collingwood-001.jpg'")
     button.circle(@click="sharedDomain.updateMode(data)")
       i {{ data.isDark ? "light_mode" : "dark_mode" }}
     button.circle(@click="reloadAnimation()")
       i refresh
     button.circle.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+      img.responsive(alt="", :src="'/favicon.png'")
 
   nav.top.right-align.s
     button.circle(@click="sharedDomain.updateMode(data)")
@@ -24,7 +24,7 @@ div
     button.circle(@click="reloadAnimation()")
       i refresh
     button.circle.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+      img.responsive(alt="", :src="'/favicon.png'")
 
   home(v-show="data.showPage")
 </template>
