@@ -16,7 +16,7 @@
       i arrow_forward
   .space.m.l
   template(v-for="email in data.sent")
-    a.row
+    .row
       label.checkbox.m.l
         input(v-model="email.check", type="checkbox")
         span
@@ -24,7 +24,7 @@
         i(v-show="!email.star") star_outline
         i.yellow-text(v-show="email.star") star
       button.small.circle.s A
-      .max.truncate
+      a.max.truncate.left-align
         b From -&nbsp;
         b Subject -&nbsp;
         span Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
