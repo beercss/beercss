@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   .fixed.top.left.right.bottom
-    img.responsive(:src="'/map.jpg'")
+    img.responsive(alt="", :src="'/map.jpg'")
   .fixed.bottom.right.margin.m.l
     button.circle.white.black-text.wave.dark
       i add
@@ -29,21 +29,21 @@ div
       .field.prefix.round.white.black-text
         i search
         input(:placeholder="data.from ? 'Destination' : 'Departure'", @click="go()")
-      a.row(@click="go()")
-        .min
+      ul.list
+        li(@click="go()")
           button.circle.small.no-wave
             i gps_fixed
-        .min
-          h6.no-margin {{ data.street }}
-          .link Your current location
-      hr.small
-      a.row(@click="go()")
-        .min
+          .max
+            h6.no-margin {{ data.street }}
+            .link Your current location
+        li 
+          hr
+        li(@click="go()")
           button.circle.small.no-wave
             i home
-        .min
-          h6.no-margin Home
-          div {{ data.street }}
+          .max
+            h6.no-margin Home
+            div {{ data.street }}
   .overlay
   dialog.bottom.active.s.no-padding
     .padding.black.white-text
@@ -62,11 +62,10 @@ div
       .field.prefix.round.white.black-text
         i search
         input(:placeholder="data.from ? 'Destination' : 'Departure'", @click="go()")
-      a.row(@click="go()")
-        .min
-          button.circle.small.no-wave
-            i gps_fixed
-        .min
+      .row(@click="go()")
+        button.circle.small.no-wave
+          i gps_fixed
+        .max
           h6.no-margin {{ data.street }}
           .link Your current location
 </template>

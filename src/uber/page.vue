@@ -2,7 +2,7 @@
 div
   nav.top.black.white-text
     .space
-    img(height="24", :src="'/uber-dark.png'")
+    img(height="24", alt="", :src="'/uber-dark.png'")
     div
       button.large.transparent.m.l
         span Ride
@@ -45,7 +45,7 @@ div
     button.circle.large.transparent.m.l(data-ui="#themes1")
       i palette
     button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+      img.responsive(alt="", :src="'/favicon.png'")
     .space
 
   main.responsive.max
