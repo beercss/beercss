@@ -12,10 +12,10 @@
       button.circle.transparent(@click="reloadAnimation()")
         i refresh
       button.circle.transparent(@click="redirect('/')")
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
 
   .fixed.top.right.bottom.left.back.no-events
-    img.responsive.page.active.bottom(v-show="data.showWallpaper", :src="data.wallpaper")
+    img.responsive.page.active.bottom(v-show="data.showWallpaper", alt="", :src="data.wallpaper")
   home(v-show="data.showPage")
 </template>
 
