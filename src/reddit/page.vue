@@ -2,7 +2,7 @@
 div(v-show="data.showPage")
   header.fixed.surface
     nav
-      img(:src="'/reddit.svg'", style="width: 100px")
+      img(alt="", :src="'/reddit.svg'", style="width: 100px")
       .max.l
         .field.fill.round.prefix.suffix
           i home
@@ -14,7 +14,8 @@ div(v-show="data.showPage")
             li Mod Queue
             li Modmail
             li r/Mod
-            hr
+            li
+              hr
             li.transparent
               label Your communities
             li
@@ -33,19 +34,19 @@ div(v-show="data.showPage")
           input
       button.transparent.circle.l
         i trending_up
-        .tooltip.bottom Popular
+        span.tooltip.bottom Popular
       button.transparent.circle.l
         i shield
-        .tooltip.bottom Moderation
+        span.tooltip.bottom Moderation
       button.transparent.circle.l.m
         i chat
-        .tooltip.bottom Chat
+        span.tooltip.bottom Chat
       button.transparent.circle.l.m
         i notifications
-        .tooltip.bottom Notifications
+        span.tooltip.bottom Notifications
       button.transparent.circle.l.m
         i add
-        .tooltip.bottom Create Post
+        span.tooltip.bottom Create Post
       div
         button.transparent.circle.s.m
           i more_vert
@@ -60,10 +61,10 @@ div(v-show="data.showPage")
         span Advertise
       div(data-ui="#menu-settings")
         button.transparent.small-round.small-padding
-          img.responsive(:src="'/reddit-profile.png'")
-          .small-text.left-align
-            p leonardorafaelw
-            div
+          img.responsive(alt="", :src="'/reddit-profile.png'")
+          span.vertical.small-text.left-align
+            span leonardorafaelw
+            span.small-margin.top-margin
               i.tiny.link settings
               span 999 karma
           i arrow_drop_down
@@ -78,7 +79,8 @@ div(v-show="data.showPage")
           li Profile
           li Style Avatar
           li User Settings
-          hr
+          li
+            hr
           li.transparent
             label View Options
           li
