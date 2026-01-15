@@ -3,11 +3,11 @@ nav#navigation-drawer.left
   a(@click="updateTheme()")
     i palette
     span Theme
-    .badge 1
+    span.badge 1
   a
     i home
     span Home
-    .badge.min
+    span.badge.min
   a
     i search
     span Search
@@ -30,12 +30,12 @@ nav#navigation-ul-drawer.right
       a(@click="updateTheme()")
         i palette
         span Theme
-        .badge 1
+        span.badge 1
     li
       a
         i home
         span Home
-        .badge.min
+        span.badge.min
     li
       a
         i search
@@ -138,7 +138,7 @@ main.responsive
   nav
     .small-width.small-height
       .shape.loading-indicator.max
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
     .small-width.small-height
       .shape.loading-indicator.max
         video.responsive(autoplay, loop, muted, playsinline)
@@ -149,7 +149,7 @@ main.responsive
         i search
     .shape.loading-indicator.transparent.medium
       button.responsive
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
     .shape.loading-indicator.transparent.medium
       button.responsive
         video.responsive(autoplay, loop, muted, playsinline)
@@ -235,6 +235,7 @@ main.responsive
     #page3.page Page 3
     #page4.page Page 4
   h5 Menus
+  h6 Bad html
   nav
     button
       span Top 
@@ -341,6 +342,7 @@ main.responsive
                 li Item
                 li Item
                 li(data-ui="#menu3") More items
+  h6 Good html
   nav
     div
       button
@@ -411,18 +413,18 @@ main.responsive
     div
       button
         span Normal 
-      menu(id="menu")
-        li(data-ui="#menu") Item
+      menu(id="menu11")
+        li(data-ui="#menu11") Item
         li Item
         li More items
           menu
             li Item
-            li(data-ui="#menu") Item
+            li(data-ui="#menu11") Item
             li More items
               menu
                 li Item
                 li Item
-                li(data-ui="#menu") More items
+                li(data-ui="#menu11") More items
     div(onclick="#menu21")
       button
         span OnClick 
@@ -456,126 +458,145 @@ main.responsive
 
   .large-space
   h5 Sliders
-  .grid
-    .col.s4
-      article.small
-        label.slider.max
-          input(type="range")
-          span
-          .col.s4
-    .col.s4
-      button.chip
-        span Chip
-        label.slider.max
-          input(type="range")
-          span
+  h6 Bad html
+  nav
+    article.small-height.small-width.round.fill
+      .slider.max
+        input(type="range")
+        span
+    button.fill
+      span.front Button
+      .slider.max
+        input(type="range")
+        span
+    button.chip
+      span Chip
+      .slider.max
+        input(type="range")
+        span
+  h6 Good html
+  nav
+    .small-height.small-width.round.fill
+      .slider.max
+        input(type="range")
+        span
+    .button.fill
+      span.front Button
+      span.slider.max
+        input(type="range")
+        span
+    .chip
+      span Chip
+      span.slider.max
+        input(type="range")
+        span
 
   .large-space
   h5 Badges
   a
     i home
-    .badge.min
+    span.badge.min
   a
     i home
-    .badge 1
+    span.badge 1
   a
     i home
-    .badge.min.top.left
+    span.badge.min.top.left
   a
     i home
-    .badge.top.left 1
+    span.badge.top.left 1
   a
     i home
-    .badge.min.bottom.left
+    span.badge.min.bottom.left
   a
     i home
-    .badge.bottom.left 1
+    span.badge.bottom.left 1
   a
     i home
-    .badge.min.bottom.right
+    span.badge.min.bottom.right
   a
     i home
-    .badge.bottom.right 1
+    span.badge.bottom.right 1
   nav
     a
       i home
-      .badge.min
+      span.badge.min
     a
       i home
-      .badge 1
+      span.badge 1
     a
       i home
-      .badge.min.top.left
+      span.badge.min.top.left
     a
       i home
-      .badge.top.left 1
+      span.badge.top.left 1
     a
       i home
-      .badge.min.bottom.left
+      span.badge.min.bottom.left
     a
       i home
-      .badge.bottom.left 1
+      span.badge.bottom.left 1
     a
       i home
-      .badge.min.bottom.right
+      span.badge.min.bottom.right
     a
       i home
-      .badge.bottom.right 1
+      span.badge.bottom.right 1
   nav
     button.transparent.circle
       i home
-      .badge.min
+      span.badge.min
     button.transparent.circle
       i home
-      .badge 1
+      span.badge 1
     button.transparent.circle
       i home
-      .badge.min.top.left
+      span.badge.min.top.left
     button.transparent.circle
       i home
-      .badge.top.left 1
+      span.badge.top.left 1
     button.transparent.circle
       i home
-      .badge.min.bottom.left
+      span.badge.min.bottom.left
     button.transparent.circle
       i home
-      .badge.bottom.left 1
+      span.badge.bottom.left 1
     button.transparent.circle
       i home
-      .badge.min.bottom.right
+      span.badge.min.bottom.right
     button.transparent.circle
       i home
-      .badge.bottom.right 1
+      span.badge.bottom.right 1
   nav
     button
       i home
       span Button
-      .badge.min.none
+      span.badge.min.none
     button
       i home
       span Button
-      .badge.none 1
+      span.badge.none 1
     button.chip
       i home
       span Button
-      .badge.min.none
+      span.badge.min.none
     button.chip
       i home
       span Button
-      .badge.none 1
+      span.badge.none 1
   .tabs.left-align
     a.active(tabindex="0")
       i home
       span Tab
-      .badge.min.none
+      span.badge.min.none
     a(tabindex="0")
       i home
       span Tab
-      .badge.none 1
+      span.badge.none 1
     a(tabindex="0")
       i home
       span Tab
-      .badge.none 1
+      span.badge.none 1
 
   .large-space
   h5 Navigations
@@ -740,18 +761,18 @@ main.responsive
       span Label
       a
         i info
-        .tooltip Tooltip
+        span.tooltip Tooltip
       a
-        img.circle(:src="'/favicon.png'")
-        .tooltip Tooltip
+        img.circle(alt="", :src="'/favicon.png'")
+        span.tooltip Tooltip
       a
         svg(viewBox="0 0 24 24")
           path(d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M7.07,18.28C7.5,17.38 10.12,16.5 12,16.5C13.88,16.5 16.5,17.38 16.93,18.28C15.57,19.36 13.86,20 12,20C10.14,20 8.43,19.36 7.07,18.28M18.36,16.83C16.93,15.09 13.46,14.5 12,14.5C10.54,14.5 7.07,15.09 5.64,16.83C4.62,15.5 4,13.82 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,13.82 19.38,15.5 18.36,16.83M12,6C10.06,6 8.5,7.56 8.5,9.5C8.5,11.44 10.06,13 12,13C13.94,13 15.5,11.44 15.5,9.5C15.5,7.56 13.94,6 12,6M12,11A1.5,1.5 0 0,1 10.5,9.5A1.5,1.5 0 0,1 12,8A1.5,1.5 0 0,1 13.5,9.5A1.5,1.5 0 0,1 12,11Z")
-        .tooltip Tooltip
+        span.tooltip Tooltip
     output
       span Helper
       i.tiny info
-      .tooltip.bottom Testando tooltip
+      span.tooltip.bottom Testando tooltip
 
   .large-space
   h5 Popover API
@@ -782,7 +803,7 @@ main.responsive
     .field.label.border
       input#text(v-model="number")
       label Input
-    label.slider.large.min
+    .slider.large.min
       input#range(v-model="number", type="range")
       span
     progress(:value="number", max="100")
@@ -1170,7 +1191,7 @@ main.responsive
         output Helper
     .s12.m6
       .field.middle-align
-        label.slider
+        .slider
           input(type="range")
           span
         output Helper
@@ -1181,7 +1202,7 @@ main.responsive
         output.invalid Error
     .s12.m6
       .field.middle-align.invalid
-        label.slider
+        .slider
           input(type="range")
           span
         output.invalid Error
