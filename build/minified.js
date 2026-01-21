@@ -5,6 +5,9 @@ export default async function() {
   try {
     await build({
       build: {
+        esbuild: {
+          legalComments: 'none'
+        },
         emptyOutDir: false,
         assetsInlineLimit: 0,
         outDir: "./dist/cdn",
