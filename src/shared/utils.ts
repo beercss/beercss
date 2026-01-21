@@ -1,4 +1,5 @@
 import { type IInstallEvent } from "./interfaces";
+import { redirect } from "./router";
 
 let _installEvent: IInstallEvent;
 
@@ -62,11 +63,23 @@ const queryAll = (selector: string | NodeListOf<Element>): NodeListOf<Element> =
   return selector;
 };
 
-const firstRedirect = () => {
-  window.addEventListener("load", () => {
-    if (window.location.pathname !== "/") page.redirect(window.location.pathname);
-  });
-};
+const loadCss = (href: string, timeout: number = 3000) => {
+  setTimeout(() => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  }, timeout);
+}
+
+const loadJs = (src: string, timeout: number = 3000) => {
+  setTimeout(() => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    document.head.appendChild(script);
+  }, timeout);
+}
 
 const waitForInstall = () => {
   if (_installEvent) return;
@@ -98,7 +111,8 @@ export default {
   removeValue,
   query,
   queryAll,
-  firstRedirect,
   waitForInstall,
   install,
+  loadCss,
+  loadJs,
 };

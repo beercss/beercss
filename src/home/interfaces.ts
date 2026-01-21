@@ -21,4 +21,5 @@ export interface IHome extends ILayout {
   isMax: boolean,
   isExplore: boolean,
   isShowingSample: boolean,
+  mediaShape: number,
 }

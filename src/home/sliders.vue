@@ -1,11 +1,11 @@
 <template lang="pug">
 #sliders
   .large-space
-  h4
+  h4(aria-label="sliders")
     span Sliders
   h5(style="display: none") Empty
   .medium-space
-  h6
+  h6(aria-hidden="true")
     span Default slider
     button.chip.circle(@click="domain.showSamples(data, '#sliders1 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -39,22 +39,22 @@
   .grid#sliders1
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="25")
+        input(type="range", value="25", aria-hidden="true")
         span
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="5", min="4", max="8")
+        input(type="range", value="5", min="4", max="8", aria-hidden="true")
         span
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="25")
-        input(type="range", value="50")
+        input(type="range", value="25", aria-hidden="true")
+        input(type="range", value="50", aria-hidden="true")
         span
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="25", disabled)
+        input(type="range", value="25", disabled, aria-hidden="true")
         span
-  h6
+  h6(aria-hidden="true")
     span Value indicator
     button.chip.circle(@click="domain.showSamples(data, '#sliders2 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -88,28 +88,28 @@
   .grid#sliders2
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="25")
+        input(type="range", value="25", aria-hidden="true")
         span
         span.tooltip
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="5", min="4", max="8")
+        input(type="range", value="5", min="4", max="8", aria-hidden="true")
         span
         span.tooltip
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="25")
-        input(type="range", value="50")
+        input(type="range", value="25", aria-hidden="true")
+        input(type="range", value="50", aria-hidden="true")
         span
         span.tooltip
         span.tooltip
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="25", disabled)
+        input(type="range", value="25", disabled, aria-hidden="true")
         span
         span.tooltip
   .medium-space
-  h6
+  h6(aria-hidden="true")
     span Value indicator bottom
     button.chip.circle(@click="domain.showSamples(data, '#sliders6 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -143,28 +143,28 @@
   .grid#sliders6
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="25")
+        input(type="range", value="25", aria-hidden="true")
         span
         span.tooltip.bottom
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="5", min="4", max="8")
+        input(type="range", value="5", min="4", max="8", aria-hidden="true")
         span
         span.tooltip.bottom
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="25")
-        input(type="range", value="50")
+        input(type="range", value="25", aria-hidden="true")
+        input(type="range", value="50", aria-hidden="true")
         span
         span.tooltip.bottom
         span.tooltip.bottom
     .s12.m6.l3.center-align
       .slider
-        input(type="range", value="25", disabled)
+        input(type="range", value="25", disabled, aria-hidden="true")
         span
         span.tooltip.bottom
   .medium-space
-  h6
+  h6(aria-hidden="true")
     span Inset icon
     button.chip.circle(@click="domain.showSamples(data, '#sliders4 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -199,21 +199,21 @@
   .grid.large-space#sliders4
     .s12.m6.l4.center-align
       .slider.medium
-        input(type="range")
+        input(type="range", aria-hidden="true")
         span
           i volume_up
     .s12.m6.l4.center-align
       .slider.medium
-        input(type="range")
+        input(type="range", aria-hidden="true")
         span
           i add
     .s12.m6.l4.center-align
       .slider.medium
-        input(type="range", value="25")
+        input(type="range", value="25", aria-hidden="true")
         span
           i sunny
   .medium-space
-  h6
+  h6(aria-hidden="true")
     span Slider in field elements
     button.chip.circle(@click="domain.showSamples(data, '#sliders3 .field', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -222,13 +222,13 @@
     .s12.m6.l4
       .field.middle-align
         .slider
-          input(type="range", value="25")
+          input(type="range", value="25", aria-hidden="true")
           span
         output Helper
     .s12.m6.l4
       .field.middle-align
         .slider
-          input(type="range", value="25")
+          input(type="range", value="25", aria-hidden="true")
           span
         output.invalid Error text
     .s12.m6.l4
@@ -236,13 +236,13 @@
         nav
           i sunny
           .slider
-            input(type="range", value="25")
+            input(type="range", value="25", aria-hidden="true")
             span
           i rainy
         output Helper
   .large-space
   #sliders5
-    h6 Custom slider
+    h6(aria-hidden="true") Custom slider
       button.chip.circle(@click="domain.showSamples(data, '#sliders5 nav > :not(label)', 'Custom', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
         i code
     nav.wrap
@@ -259,11 +259,11 @@
     nav.top-align.wrap
       .small-width.small-height.round.fill
         .slider.max
-          input(type="range", value="30", max="100")
+          input(type="range", value="30", max="100", aria-hidden="true")
           span
       .small-width.small-height.round.fill
         .slider.max.vertical
-          input(type="range", value="30", max="100")
+          input(type="range", value="30", max="100", aria-hidden="true")
           span
 
 </template>

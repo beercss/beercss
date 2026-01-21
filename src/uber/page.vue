@@ -44,7 +44,7 @@ div
     .max
     button.circle.large.transparent.m.l(data-ui="#themes1")
       i palette
-    button.circle.large.transparent(@click="redirect('/')")
+    button.circle.large.transparent(@click="redirect('/')", aria-hidden="true")
       img.responsive(alt="", :src="'/favicon.png'")
     .space
 

@@ -44,10 +44,9 @@ main.responsive
                 b r/sveltejs
                 | &nbsp;
                 label.grey-text Posted by u/leonardorafalw 3 hours ago
-                h6.no-margin How do I disabled all A11y messages? They are annoying
+                h6.no-margin(aria-hidden="true") How do I disabled all A11y messages? They are annoying
             .medium-space
             div Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget ipsum purus. Donec commodo, eros quis molestie consectetur, turpis ex eleifend sem, id viverra sapien justo ut erat. Nam mattis est eu vulputate iaculis. Vestibulum mi leo, eleifend vitae dolor et, malesuada pulvinar velit. Duis pharetra erat sapien, eu auctor nisl lacinia vel. Cras id tristique nulla. Morbi facilisis, nibh sit amet tincidunt molestie, purus sem lacinia turpis, ac varius sem leo in orci. Suspendisse vitae est enim. Donec malesuada nunc sed ligula mollis, ut efficitur turpis varius. Vestibulum libero est, faucibus in nibh eget, eleifend ornare enim. Mauris et dictum quam. Praesent nisi ex, ultricies at mi nec, sodales congue lacus.
-
             p Etiam pulvinar vitae eros sed congue. Sed posuere sollicitudin lorem ut accumsan. Praesent at nisi ex. Vivamus nibh quam, finibus eget facilisis at, posuere et leo. Nam nisl velit, maximus id porttitor a, elementum sit amet odio. Nunc faucibus finibus lectus a facilisis. In finibus posuere purus quis tincidunt.
         hr.large
         .row.top-align
@@ -65,7 +64,7 @@ main.responsive
                 b r/sveltejs
                 | &nbsp;
                 label.grey-text Posted by u/leonardorafalw 3 hours ago
-                h6.no-margin "The golden rule of assertions"
+                h6.no-margin(aria-hidden="true") "The golden rule of assertions"
             .medium-space
             a.row.link(href="/")
               span https://www.beercs.com
@@ -85,11 +84,10 @@ main.responsive
                 b r/sveltejs
                 | &nbsp;
                 label.grey-text Posted by u/leonardorafalw 3 hours ago
-                h6.no-margin Cheers to Craft Design: Beer CSS - A Lightweight Material Design Framework
+                h6.no-margin(aria-hidden="true") Cheers to Craft Design: Beer CSS - A Lightweight Material Design Framework
             .medium-space
-            a(href="/")
+            a(href="/", aria-label="beer css")
               img.responsive.round(alt="", :src="'/background.png'")
-
       .s12.m12.l4
         .row
           i trophy
@@ -99,14 +97,14 @@ main.responsive
         nav
           button.responsive Try Now
         article.no-elevate.round
-          h6 Home
+          h6(aria-hidden="true") Home
           p Your personal Reddit frontpage. Come here to check in with your favorite communities.
           hr.medium
           nav.vertical
             button.responsive Create Post
             button.responsive.border Create Community
         article.no-elevate.round
-          h6 Recent Posts
+          h6(aria-hidden="true") Recent Posts
           .space
           ul.list
             li.wave.small-round
@@ -126,7 +124,7 @@ main.responsive
                 label.grey-text 3 points - 4 comments - 3h
   dialog#dialog-post
     nav.wrap
-      h6 Create a post on
+      h6(aria-hidden="true") Create a post on
       .field.border.label.l.m
         input
         label Community
@@ -144,16 +142,16 @@ main.responsive
     .medium-space.l.m
     .medium-height.large-width
       .tabs.scroll.left-align.l.m
-        a(data-ui="#post", tabindex="0")
+        a(data-ui="#post", tabindex="0", href="javascript:;")
           i news
           span Post
-        a(data-ui="#image-video", tabindex="0")
+        a(data-ui="#image-video", tabindex="0", href="javascript:;")
           i image
           span Image &amp; Video
-        a(data-ui="#link", tabindex="0")
+        a(data-ui="#link", tabindex="0", href="javascript:;")
           i link
           span Link
-        a.grey-text
+        a.grey-text(href="javascript:;")
           i insert_chart
           span Pool
       .medium-space
@@ -178,7 +176,6 @@ main.responsive
         .field.border.label.extra
           textarea
           label Text (optional)
-
       .page.top#image-video
         .field.border.label.s
           input
@@ -203,7 +200,6 @@ main.responsive
             button
               span Select a file
             input(type="file")
-
       .page.top#link
         .field.border.label.s
           input
@@ -232,7 +228,6 @@ main.responsive
         button.border(data-ui="#dialog-post") Cancel
         button(data-ui="#dialog-post") Confirm
 </template>
-
 <script setup lang="ts">
 function openPostDialog (pageSelector: string) {
   ui(pageSelector);

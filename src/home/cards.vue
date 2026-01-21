@@ -48,19 +48,19 @@
   .grid
     .s12.m6.l3
       article
-        h5 Title
+        h5(aria-hidden="true") Title
         p Some text here
     .s12.m6.l3
       article.round
-        h5 Title
+        h5(aria-hidden="true") Title
         p Some text here
     .s12.m6.l3
       article.border
-        h5 Title
+        h5(aria-hidden="true") Title
         p Some text here
     .s12.m6.l3
       article.border.round
-        h5 Title
+        h5(aria-hidden="true") Title
         p Some text here
     .s12.m6.l3
       article
@@ -71,7 +71,7 @@
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
           .max
-            h5 Title
+            h5(aria-hidden="true") Title
             p Some text here
         nav
           button Button
@@ -84,7 +84,7 @@
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
           .max
-            h5 Title
+            h5(aria-hidden="true") Title
             p Some text here
         nav
           button Button
@@ -97,7 +97,7 @@
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
           .max
-            h5 Title
+            h5(aria-hidden="true") Title
             p Some text here
         nav
           button Button
@@ -110,7 +110,7 @@
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
           .max
-            h5 Title
+            h5(aria-hidden="true") Title
             p Some text here
         nav
           button Button
@@ -122,7 +122,7 @@
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 400 300 300", class-name="responsive small fill")
         .padding
-          h5 Title
+          h5(aria-hidden="true") Title
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button Button
@@ -134,7 +134,7 @@
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 400 300 300", class-name="responsive small fill")
         .padding
-          h5 Title
+          h5(aria-hidden="true") Title
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button Button
@@ -146,7 +146,7 @@
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 400 300 300", class-name="responsive small fill")
         .padding
-          h5 Title
+          h5(aria-hidden="true") Title
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button Button
@@ -158,7 +158,7 @@
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 400 300 300", class-name="responsive small fill")
         .padding
-          h5 Title
+          h5(aria-hidden="true") Title
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button Button
@@ -171,7 +171,7 @@
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 500 300 300", class-name="responsive medium fill")
         .absolute.bottom.left.right.padding.bottom-shadow.white-text
           nav
-            h5 Title
+            h5(aria-hidden="true") Title
             .max
             button.circle.transparent
               i more_vert
@@ -184,7 +184,7 @@
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 500 300 300", class-name="responsive medium fill")
         .absolute.bottom.left.right.padding.bottom-shadow.bottom-round.white-text
           nav
-            h5 Title
+            h5(aria-hidden="true") Title
             .max
             button.circle.transparent
               i more_vert
@@ -197,7 +197,7 @@
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 500 300 300", class-name="responsive medium fill")
         .absolute.bottom.left.right.padding.bottom-shadow.white-text
           nav
-            h5 Title
+            h5(aria-hidden="true") Title
             .max
             button.circle.transparent
               i more_vert
@@ -210,7 +210,7 @@
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 500 300 300", class-name="responsive medium fill")
         .absolute.bottom.left.right.padding.bottom-shadow.bottom-round.white-text
           nav
-            h5 Title
+            h5(aria-hidden="true") Title
             .max
             button.circle.transparent
               i more_vert
@@ -225,7 +225,7 @@
             svgMountains(v-if="data.mediaCard === 3", viewBox="600 500 300 300", class-name="responsive fill")
           .s6
             .padding
-              h5 Title
+              h5(aria-hidden="true") Title
               p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               nav
                 button.border.round Button
@@ -239,11 +239,11 @@
               source(:src="'/dance.mp4'", type="video/mp4")
             svgMountains(v-if="data.mediaCard === 3", viewBox="600 500 300 300", class-name="responsive fill")
             .absolute.top.left.right.padding.top-shadow.white-text
-              h5 Title
+              h5(aria-hidden="true") Title
               p Some text here
           .s6
             .padding
-              h5 Title
+              h5(aria-hidden="true") Title
               p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               nav
                 button.border.round Button

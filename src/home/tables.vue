@@ -45,7 +45,7 @@
   .grid.large-space
     #table-default.s12.m12.l6
       .medium-space
-      h6
+      h6(aria-hidden="true")
         span Default
         button.chip.circle(@click="domain.showSamples(data, '#table-default > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
@@ -75,7 +75,7 @@
             th Footer
     #table-stripes.s12.m12.l6
       .medium-space
-      h6
+      h6(aria-hidden="true")
         span Stripes
         button.chip.circle(@click="domain.showSamples(data, '#table-stripes > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
@@ -105,7 +105,7 @@
             th Footer
     #table-border.s12.m12.l6
       .medium-space
-      h6
+      h6(aria-hidden="true")
         span Border
         button.chip.circle(@click="domain.showSamples(data, '#table-border > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
@@ -135,7 +135,7 @@
             th Footer
     #table-scroll.s12.m12.l6
       .medium-space
-      h6
+      h6(aria-hidden="true")
         span Scroll
         button.chip.circle(@click="domain.showSamples(data, '#table-scroll > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
@@ -192,7 +192,6 @@
               th Footer
 
 </template>
-
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";

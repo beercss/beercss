@@ -20,7 +20,7 @@
   .dialog-code
     .overlay
     dialog#dialog
-      h5 Default
+      h5(aria-label="default dialog") Default
       div Some text here
       nav.right-align.no-space
         button.transparent.link(data-ui="#dialog") Cancel
@@ -29,7 +29,7 @@
   .dialog-code
     .overlay
     dialog#dialog-modal.modal
-      h5 Modal
+      h5(aria-label="modal dialog") Modal
       div Some text here
       nav.right-align.no-space
         button.transparent.link(data-ui="#dialog-modal") Cancel
@@ -38,7 +38,7 @@
   .dialog-code
     .overlay.blur
     dialog#dialog-custom-overlay
-      h5 Custom overlay
+      h5(aria-label="custom overlay dialog") Custom overlay
       div Some text here
       nav.right-align.no-space
         button.transparent.link(data-ui="#dialog-custom-overlay") Cancel
@@ -47,7 +47,7 @@
   .dialog-code
     .overlay
     dialog#dialog-left.left
-      h5 Left
+      h5(aria-label="left dialog") Left
       div Some text here
       nav.right-align
         button.border(data-ui="#dialog-left") Cancel
@@ -56,7 +56,7 @@
   .dialog-code
     .overlay
     dialog#dialog-right.right
-      h5 Right
+      h5(aria-label="right dialog") Right
       div Some text here
       nav.right-align
         button.border(data-ui="#dialog-right") Cancel
@@ -65,7 +65,7 @@
   .dialog-code
     .overlay
     dialog#dialog-top.top
-      h5 Top
+      h5(aria-label="top dialog") Top
       div Some text here
       nav.right-align
         button.border(data-ui="#dialog-top") Cancel
@@ -74,7 +74,7 @@
   .dialog-code
     .overlay
     dialog#dialog-bottom.bottom
-      h5 Bottom
+      h5(aria-label="bottom dialog") Bottom
       div Some text here
       nav.right-align
         button.border(data-ui="#dialog-bottom") Cancel
@@ -83,7 +83,7 @@
   .dialog-code
     .overlay
     dialog#dialog-max.max
-      h5 Fullscreen
+      h5(aria-label="fullscreen dialog") Fullscreen
       div Some text here
       nav.right-align
         button.border(data-ui="#dialog-max") Cancel
@@ -95,7 +95,7 @@
       header
         nav
           img.circle.large(alt="", :src="'/favicon.png'")
-          h6.max Title
+          h6.max(aria-hidden="true") Title
           button.transparent.circle.large(data-ui="#dialog-navigation-drawer")
             i close
       .space

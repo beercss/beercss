@@ -28,10 +28,10 @@
         span Button
         i expand_more
     article
-      h6 Title 
+      h6(aria-hidden="true") Title 
       p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     article
-      h6 Title
+      h6(aria-hidden="true") Title
       p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </template>
 

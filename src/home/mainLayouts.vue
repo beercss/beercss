@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  h5 Main layouts
+  h5(aria-hidden="true") Main layouts
     button.chip.circle(
       @click="domain.showSamples(data, '#main-layouts > div', 'Main layouts', '#dialog-main-layouts', null, true)"
     )
@@ -10,21 +10,21 @@ div
       .width-8.auto-margin
         .padding.fill.no-elevate.center-align.middle-align.height-12
         .padding.fill.no-elevate.top-margin
-      h6.no-margin.absolute.middle.center Compact
+      h6.no-margin.absolute.middle.center(aria-hidden="true") Compact
     article#main-layout-medium.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row(dir="ltr")
           .padding.fill.no-elevate.height-15
           .max
             .padding.fill.no-elevate.center-align.middle-align.height-15
-      h6.no-margin.absolute.middle.center Medium
+      h6.no-margin.absolute.middle.center(aria-hidden="true") Medium
     article#main-layout-expanded.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row(dir="ltr")
           .padding.fill.no-elevate.height-15.width-6
           .max
             .padding.fill.no-elevate.center-align.middle-align.height-15
-      h6.no-margin.absolute.middle.center Expanded
+      h6.no-margin.absolute.middle.center(aria-hidden="true") Expanded
     article#main-layout-muti-panes.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row(dir="ltr")
@@ -35,7 +35,7 @@ div
                 .padding.fill.no-elevate.center-align.middle-align.height-15
               .max
                 .padding.fill.no-elevate.center-align.middle-align.height-15
-      h6.no-margin.absolute.middle.center Multi panes
+      h6.no-margin.absolute.middle.center(aria-hidden="true") Multi panes
     article#main-layout-custom.s12.m6.l4.center-align.no-elevate.no-margin
       .medium-width
         .row(dir="ltr")
@@ -50,7 +50,7 @@ div
                 .padding.fill.no-elevate.center-align.middle-align.height-7
               .s6
                 .padding.fill.no-elevate.center-align.middle-align.height-7
-      h6.no-margin.absolute.middle.center Custom
+      h6.no-margin.absolute.middle.center(aria-hidden="true") Custom
   #main-layouts(v-if="data.isShowingSample")
     #compact
       nav.bottom
@@ -64,7 +64,7 @@ div
           i share
           div share
       main.responsive
-        h3 Compact
+        h3(aria-hidden="true") Compact
     #medium
       nav.left
         a
@@ -77,7 +77,7 @@ div
           i share
           div share
       main.responsive
-        h3 Medium
+        h3(aria-hidden="true") Medium
     #expanded
       nav.left.max
         a
@@ -90,7 +90,7 @@ div
           i share
           div share
       main.responsive
-        h3 Expanded
+        h3(aria-hidden="true") Expanded
     #multi-panes
       nav.left
         a
@@ -105,9 +105,9 @@ div
       main.responsive
         .grid
           .s6
-            h3 Pane 1
+            h3(aria-hidden="true") Pane 1
           .s6
-            h3 Pane 2
+            h3(aria-hidden="true") Pane 2
     #custom
       nav.left
         a
@@ -122,18 +122,18 @@ div
       main.responsive
         .grid
           .s12.m12.l6
-            h3 Pane 1
+            h3(aria-hidden="true") Pane 1
           .s12.m12.l6
-            h3 Pane 2
+            h3(aria-hidden="true") Pane 2
           .s12.m12.l6
-            h3 Pane 3
+            h3(aria-hidden="true") Pane 3
           .s12.m12.l6
-            h3 Pane 4
+            h3(aria-hidden="true") Pane 4
   .overlay
   dialog#dialog-main-layouts.right.large
     header.fixed
       nav
-        h5 Main layouts
+        h5(aria-hidden="true") Main layouts
         a.button.border.small-round.m.l(
           href="https://codepen.io/leo-bnu/pen/yLKLPxj",
           target="_blank"
@@ -152,7 +152,7 @@ div
           i close
     .space
     article.border(v-for="(exemplo, i) in data.samples")
-      h6 {{ layoutNames[i] }}
+      h6(aria-hidden="true") {{ layoutNames[i] }}
       pre.scroll
         code(v-html="exemplo.sourceCode")
     .space

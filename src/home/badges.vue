@@ -1,10 +1,10 @@
 <template lang="pug">
 #badges
   .large-space
-  h4 Badges
+  h4(aria-label="badges") Badges
   h5(style="display: none") Empty
   .medium-space
-  h6
+  h6(aria-hidden="true")
     span Common badges
     button.chip.circle(@click="domain.showSamples(data, '#default-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
       i code
@@ -34,31 +34,31 @@
       input(type="radio", name="position-badges", @click="domain.updatePosition('#default-badges .badge', 'bottom right')")
       span bottom right
   nav.wrap.large-space#default-badges
-    a(tabindex="0")
+    a(tabindex="0", href="javascript:;")
       i home
       span.badge.min
-    a(tabindex="0")
+    a(tabindex="0", href="javascript:;")
       i home
       span.badge 1
-    a(tabindex="0")
+    a(tabindex="0", href="javascript:;")
       i home
       span.badge 10
-    a(tabindex="0")
+    a(tabindex="0", href="javascript:;")
       i home
       span.badge New
-    a(tabindex="0")
+    a(tabindex="0", href="javascript:;")
       i home
       span.badge.no-round New
-    a(tabindex="0")
+    a(tabindex="0", href="javascript:;")
       i home
       span.badge.border New
-    a(tabindex="0")
+    a(tabindex="0", href="javascript:;")
       i home
       span.badge.border 10
-    a(tabindex="0")
+    a(tabindex="0", href="javascript:;")
       i home
       span.badge.border 1
-    a(tabindex="0")
+    a(tabindex="0", href="javascript:;")
       i home
       span.badge.border.no-round New
     button.circle
@@ -74,7 +74,7 @@
       i home
       span.badge 1
   .medium-space
-  h6
+  h6(aria-hidden="true")
     span Inline badge
     button.chip.circle(@click="domain.showSamples(data, '#inline-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
       i code
@@ -92,7 +92,6 @@
       span Button
       span.badge.none 1
 </template>
-
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";

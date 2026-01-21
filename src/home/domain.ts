@@ -39,8 +39,8 @@ const updateElementColor = (selector: string, color?: string) => {
 
 const updateSize = (selector: string, size?: string) => {
   const elements = utils.queryAll(selector);
-  utils.removeClass(elements, ["tiny", "small", "medium", "large", "extra"]);
-  if (size) utils.addClass(elements, [size]);
+  utils.removeClass(elements, ["tiny", "small", "medium", "large", "extra", "small-width", "small-height"]);
+  if (size) utils.addClass(elements, size.split(" "));
 };
 
 const updatePosition = (selector: string | NodeListOf<Element>, position?: string) => {
@@ -225,11 +225,18 @@ const updatePage = (selector: string) => {
   ui(selector);
 };
 
-const updateProgress = (value: number) => {
-  utils.queryAll("#progress progress[value]:not(.indeterminate)").forEach((x) => {
-    const progress = x as HTMLProgressElement;
-    progress.value = value;
-  });
+const updateProgress = (value: number | null, css: string = "") => {
+  if (value !== null && value >= 0) {
+    utils.queryAll("#progress progress[value]:not(.indeterminate)").forEach((x) => {
+      const progress = x as HTMLProgressElement;
+      progress.value = value || 0;
+    });
+    return;
+  }
+  
+  const elements = utils.queryAll("#progress progress");
+  utils.removeClass(elements, ["wavy"]);
+  if (css) utils.addClass(elements, [css]);
 };
 
 const formatHtml = (element: Element | null, raw: boolean = false, useInnerHtml: boolean = false): string => {
@@ -270,10 +277,10 @@ const formatHtml = (element: Element | null, raw: boolean = false, useInnerHtml:
   return process(text
     .replace(/<!--v-if-->/gi, "")
     .replace(/<div class="overlay"><\/div>/gi, "")
-    .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|tabindex|data-v-\w+)="[^"]*"/gi, "")
+    .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|tabindex|data-v-\w+|aria-\w+)="[^"]*"/gi, "")
     .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
     .replace(/\s+(checked|disabled)=""/gi, " $1")
-    .replace(/\s+[a-z-]+=(""|"#")/gi, "")
+    .replace(/\s+[a-z-]+=(""|"#"|"javascript\:\;")/gi, "")
     .replace(/\s+(tiny-padding)/gi, "")
     .replace(/\n<\/(circle|th)>/gi, "</$1>"))
     .replace(/^\s+/g, "")

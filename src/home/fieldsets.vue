@@ -1,7 +1,7 @@
 <template lang="pug">
 #fieldsets
   .large-space
-  h4
+  h4(aria-label="fieldsets")
     span Fieldsets
     button.chip.circle(@click="domain.showSamples(data, '#fieldsets fieldset', 'Fieldsets', null, null)")
       i code
@@ -61,16 +61,16 @@
       fieldset
         legend Fill all fields
         .field.border.label 
-          input
+          input(aria-hidden="true")
           label Input
         .field.border.label 
-          select
+          select(aria-hidden="true")
             option Item 1
             option Item 2
             option Item 3
           label Select
         .field.border.label 
-          textarea
+          textarea(aria-hidden="true")
           label Textarea
           output Helper text
     .s12.m6.l6
@@ -79,11 +79,11 @@
         .row
           .max
             .field.border.label.max
-              input
+              input(aria-hidden="true")
               label Input
           .max
             .field.border.label 
-              select
+              select(aria-hidden="true")
                 option Item 1
                 option Item 2
                 option Item 3

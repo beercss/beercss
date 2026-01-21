@@ -48,7 +48,7 @@
           .max
             div Alok, Zebra, Iro - Ocean
             label 10k views
-    button.circle.large.transparent(@click="redirect('/')")
+    button.circle.large.transparent(@click="redirect('/')", aria-label="beer css")
       img.responsive(alt="", :src="'/favicon.png'")
   main
     .overlay
@@ -58,7 +58,7 @@
         .max
           .field.round.suffix.prefix.small.no-margin.white.black-text
             i.fron search
-            input(type="text")
+            input(type="text", placeholder="Search", aria-label="search")
             i.front mic
         .max.l
 

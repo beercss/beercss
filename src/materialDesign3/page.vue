@@ -4,7 +4,7 @@ div
     header
       button.circle.extra.transparent(@click="data.isMax = !data.isMax")
         i {{ data.isMax ? "menu_open" : "menu" }}
-      button.circle.extra.transparent(@click="redirect('/')")
+      button.circle.extra.transparent(@click="redirect('/')", aria-label="beer css")
         img.responsive(alt="", :src="'/favicon.png'")
     a
       i
@@ -46,7 +46,7 @@ div
     button.circle.border.primary-text(@click="sharedDomain.updateMode(data)")
       i.page.top.active(v-if="data.isDark") light_mode
       i.page.top.active(v-else) dark_mode
-    button.circle.large.transparent(@click="redirect('/')")
+    button.circle.large.transparent(@click="redirect('/')", aria-label="beer css")
       img.responsive(alt="", :src="'/favicon.png'")
   home
 </template>
@@ -62,11 +62,5 @@ onMounted(() => {
   document.title = "Material Design 3 - Beer CSS";
   sharedDomain.applyTheme(data.value);
   data.value.showPage = true;
-  
-  setTimeout(() => {
-    return;
-    const element = document.getElementById("video") as HTMLVideoElement;
-    if (element) element.play();
-  }, 3000);
 });
 </script>

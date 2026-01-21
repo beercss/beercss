@@ -2,7 +2,7 @@
 main(v-show="data.isLoaded")
   .page.right.active
     div
-      h5 What's hot
+      h5(aria-hidden="true") What's hot
       .row.top-align(v-for="item in data.itens")
         .wave.round.m.l
           img.empty-state(alt="", :src="item.image")
@@ -11,7 +11,7 @@ main(v-show="data.isLoaded")
           .wave.round.s
             img.empty-state(alt="", :src="item.image")
             .absolute.right.top.small-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
-          h5.no-margin {{ item.title }}
+          h5.no-margin(aria-hidden="true") {{ item.title }}
           div 10k views
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
           nav.group.connected

@@ -7,37 +7,37 @@ div
       button.extend.square.round(@click="updateExplore()")
         i widgets
         span Explore
-          
-    a(@click="domain.updateMenu(data, 'left')")
+         
+    a(@click="domain.updateMenu(data, 'left')", href="javascript:;")
       i arrow_back
       span Left
-    a(@click="domain.updateMenu(data, 'right')")
+    a(@click="domain.updateMenu(data, 'right')", href="javascript:;")
       i arrow_forward
       span Right
-    a(v-show="!data.isRtl", @click="domain.updateRtlLtr(data)")
+    a(v-show="!data.isRtl", @click="domain.updateRtlLtr(data)", href="javascript:;")
       i checklist_rtl
       span RTL
-    a(v-show="data.isRtl", @click="domain.updateRtlLtr(data)")
+    a(v-show="data.isRtl", @click="domain.updateRtlLtr(data)", href="javascript:;")
       i checklist
       span LTR
-    a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')", href="javascript:;")
       i code
       span Code
 
   nav#navigation-bar1.s.bottom
-    a(@click="domain.goTo('#intro')")
+    a(@click="domain.goTo('#intro')", href="javascript:;")
       i home
       span Install
-    a(data-ui="#dialog-menu")
+    a(data-ui="#dialog-menu", href="javascript:;")
       i widgets
       span Explore
-    a(@click="domain.updateMenu(data, 'top')")
+    a(@click="domain.updateMenu(data, 'top')", href="javascript:;")
       i arrow_upward
       span Top
-    a(@click="domain.updateMenu(data, 'bottom')")
+    a(@click="domain.updateMenu(data, 'bottom')", href="javascript:;")
       i arrow_downward
       span Bottom
-    a(@click="domain.showSamples(data, '#navigation-bar1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a(@click="domain.showSamples(data, '#navigation-bar1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')", href="javascript:;")
       i code
       span Code
 
@@ -46,7 +46,7 @@ div
     header.fixed
       nav
         .max.padding
-          h6 Explore
+          h6(aria-hidden="true") Explore
         button.transparent.circle(data-ui="#dialog-menu")
           i close
     ol.list
@@ -175,12 +175,11 @@ div
         span Waves and ripples
 
   themes(id="themes3", v-model="data", position="top")
-
   .overlay
   dialog#more3.large-width(data-ui="#more3")
     header.fixed
       nav
-        h5.max Templates
+        h5.max(aria-hidden="true") Templates
         button.transparent.circle
           i close
     p All templates listed below are only for tests purpose. Feel free to study them.
@@ -230,7 +229,7 @@ div
     .margin
       nav.toolbar.primary.elevate.min
         img.circle(alt="", :src="'/favicon.png'")
-        a.button.transparent.circle(href="https://github.com/beercss/beercss", target="_self")
+        a.button.transparent.circle(href="https://github.com/beercss/beercss", target="_self", aria-hidden="true")
           i
             svg(viewBox="0 0 24 24")
               path(d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z")
@@ -243,21 +242,20 @@ div
           i.page.top.active(v-else) dark_mode
 
   .absolute.top.left.right.yellow4.middle-align.center-align(style="block-size: 100vh;")
-
   main.responsive
     .black-text.middle-align.center-align(style="block-size: 100vh; margin: -6rem 0 0 0;")
       div
         .medium-height.middle-align.center-align
-          img#logo(alt="", :src="'/logo.png'", @click="domain.addHomeScreen()")
-        h5.center-align Build material design
-        h5.large.center-align in record time
-        h5.center-align without stress for devs
+          img#logo(alt="", :src="'/logo.png'", @click="domain.addHomeScreen()", fetchpriority="high")
+        h5.center-align(aria-hidden="true") Build material design
+        h5.large.center-align(aria-hidden="true") in record time
+        h5.center-align(aria-hidden="true") without stress for devs
     #begin
       .small-height
       .small-height
-      h1 We are translating a modern UI into HTML semantic standard
+      h1(aria-hidden="true") We are translating a modern UI into HTML semantic standard
       h2(style="display: none") Empty
-      h3 
+      h3(aria-hidden="true")
         a.link(href="https://github.com/beercss/beercss") Don't forget to star us on Github
       .small-height
       .small-height
@@ -267,10 +265,10 @@ div
       .grid
         #intro.s12
           .div
-            h3 Get started
+            h3(aria-hidden="true") Get started
             h4(style="display: none") Empty
             .medium-space
-            h5 From CDN
+            h5(aria-hidden="true") From CDN
             .space
             pre.scroll
               code
@@ -278,7 +276,7 @@ div
                 | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.13.3/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
                 | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
-            h5 From NPM
+            h5(aria-hidden="true") From NPM
             .space
             pre.scroll
               code
@@ -293,12 +291,12 @@ div
             b We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.
             .medium-space
             .l
-              h5 Summary
+              h5(aria-hidden="true") Summary
               .space
               pre
                 code
                   b.error-text &lt;a&gt;
-                  span &nbsp;link, inverse-link, underline
+                  span &nbsp;link, underline
                   |
                   |
                   b.error-text absolute
@@ -591,7 +589,7 @@ div
         header.fixed.front
           nav
             .max.truncate
-              h5 {{ data.name || "Code" }}
+              h5(aria-hidden="true") {{ data.name || "Code" }}
             a.m.l.button.small-round.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
             a.button.circle.transparent.s(v-show="data.urlSample", :href="data.urlSample", target="_blank")
               i description
@@ -603,7 +601,6 @@ div
           pre.scroll
             code(v-html="exemplo.sourceCode")
 </template>
-
 <script setup lang="ts">
 import { onMounted } from "vue";
 import themes from "../shared/themes.vue";
@@ -653,6 +650,7 @@ import toolbars from "./toolbars.vue";
 import tooltips from "./tooltips.vue";
 import typography from "./typography.vue";
 import wavesAndRipples from "./wavesAndRipples.vue";
+import utils from "../shared/utils";
 
 function updateNavigationRail() {
   data.value.isMax = !data.value.isMax;
@@ -666,26 +664,27 @@ function updateExplore() {
 
 onMounted(() => {
   document.title = "Beer CSS - Build material design in record time, without stress for devs";
-
   setTimeout(() => {
     data.value.isHorizontal = window.outerWidth <= 600;
     document.getElementById("logo")?.classList?.add("active");
   }, 1000);
+
+  utils.loadCss("https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css");
+  utils.loadCss("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css");
+  utils.loadCss("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.1/build/styles/default.min.css");
+  utils.loadJs("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.1/build/highlight.min.js");
 });
 </script>
-
 <style>
 #logo {
   display: none;
   max-inline-size: 100%;
   inline-size: 32rem;
 }
-
 #logo.active {
   display: inline-block;
   animation: 1s logo-intro;
 }
-
 #container-logo {
   block-size: 16rem;
 }
@@ -697,30 +696,27 @@ dialog#dialog-colors .s12 > div {
 dialog#dialog-colors .s12 > .border {
   border: 0.0625rem solid var(--outline);
 }
-
 .hljs-string, .error-text {
   color: var(--error) !important;
 }
-
 .logo-template {
   inline-size: auto;
   block-size: 1.5rem;
 }
-
 .logo-codepen {
   inline-size: auto;
   block-size: 1.25rem;
 }
-
 .logo-support {
   inline-size: auto;
   block-size: 100rem;
 }
-
 #grids .grid > * {
   border: 0.0625rem solid var(--outline);
 }
-
+.lazy > * {
+  display: none;
+}
 @keyframes logo-intro {
   0% {
     opacity: 0;

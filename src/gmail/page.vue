@@ -7,12 +7,12 @@ div
     a(href="/gmail/sent", :class="{ active: data.url === '/gmail/sent' }")
       i send
       span Sent
-    a.button.fill.square.round.extra(data-ui="#dialog-add-small")
+    a.button.fill.square.round.extra(data-ui="#dialog-add-small", href="javascript:;")
       i edit
     a(href="/gmail/drafts", :class="{ active: data.url === '/gmail/drafts' }")
       i insert_drive_file
       span Drafts
-    a(data-ui="#themes1")
+    a(data-ui="#themes1", href="javascript:;")
       i palette
       span Theme
 
@@ -23,7 +23,7 @@ div
     .max
       .field.round.suffix.prefix.small.no-margin.m.l.white.black-text
         i.front search
-        input(type="text", data-ui="#menu-search")
+        input(type="text", data-ui="#menu-search", aria-label="search mail")
         i.front mic
     .max
     button.circle.large.transparent.s(data-ui="#dialog-search")
@@ -47,21 +47,21 @@ div
         li.no-margin.no-padding.transparent
           .grid.no-space
             .s4.center-align
-              button.transparent.circle.large
+              button.transparent.circle.large(aria-label="calendar")
                 img.no-round(alt="", :src="'/calendar.png'")
             .s4.center-align
-              button.transparent.circle.large
+              button.transparent.circle.large(aria-label="keep")
                 img.no-round(alt="", :src="'/keep.png'")
             .s4.center-align
-              button.transparent.circle.large
+              button.transparent.circle.large(aria-label="tasks")
                 img.no-round(alt="", :src="'/tasks.png'")
             .s4.center-align
-              button.transparent.circle.large
+              button.transparent.circle.large(aria-label="contacts")
                 img.no-round(alt="", :src="'/contacts.png'")
             .s4.center-align
-              button.transparent.circle.large
+              button.transparent.circle.large(aria-label="beer css")
                 img.no-round(alt="", :src="'/favicon.png'")
-    button.circle.large.transparent(@click="redirect('/')")
+    button.circle.large.transparent(@click="redirect('/')", aria-label="beer css")
       img.responsive(alt="", :src="'/favicon.png'")
 
   nav.left.m.l(:class="{ max: data.isMax }")
@@ -92,21 +92,21 @@ div
     a(href="/gmail/spam", :class="{ active: data.url === '/gmail/spam' }")
       i error_outline
       span Spam
-    a(data-ui="#themes1")
+    a(data-ui="#themes1", href="javascript:;")
       i palette
       span Themes
 
   nav.right.m.l.center-align
-    button.circle.transparent.large
+    button.circle.transparent.large(aria-label="calendar")
       img.no-round(alt="", :src="'/calendar.png'")
       span.tooltip.left Calendar
-    button.circle.transparent.large
+    button.circle.transparent.large(aria-label="keep")
       img.no-round(alt="", :src="'/keep.png'")
       span.tooltip.left Keep
-    button.circle.transparent.large
+    button.circle.transparent.large(aria-label="tasks")
       img.no-round(alt="", :src="'/tasks.png'")
       span.tooltip.left Tasks
-    button.circle.transparent.large
+    button.circle.transparent.large(aria-label="contacts")
       img.no-round(alt="", :src="'/contacts.png'")
       span.tooltip.left Contacts
 
@@ -116,7 +116,7 @@ div
       nav
         button.circle.transparent(data-ui="#dialog-add")
           i arrow_back
-        h5 New message
+        h5(aria-label="new message") New message
         .max
         button.circle.transparent(data-ui="#dialog-add")
           i attach_file
@@ -145,7 +145,7 @@ div
       nav
         button.circle.transparent(data-ui="#dialog-add-small")
           i arrow_back
-        h5 Compose
+        h5(aria-label="compose") Compose
         .max
         button.circle.transparent(data-ui="#dialog-add-small")
           i attach_file

@@ -16,20 +16,20 @@
     a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
       span Library
-    a(data-ui="#themes1")
+    a(data-ui="#themes1", href="javascript:;")
       i palette
       span Themes
     hr
-    a
+    a(href="javascript:;")
       i history
       span History
-    a
+    a(href="javascript:;")
       i slideshow
       span Your videos
-    a
+    a(href="javascript:;")
       i playlist_play
       span Your albuns
-    a
+    a(href="javascript:;")
       i watch_later
       span Watch later
 
@@ -40,12 +40,12 @@
     a(href="/youtube/explore", :class="{ active: data.url === '/youtube/explore' }")
       i explore
       span Explore
-    a.button.square.round.extra.fill(data-ui="#dialog-add")
+    a.button.square.round.extra.fill(data-ui="#dialog-add", href="javascript:;")
       i add
     a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
       span Library
-    a(data-ui="#themes1")
+    a(data-ui="#themes1", href="javascript:;")
       i palette
       span Themes
 
@@ -61,7 +61,7 @@
     .max
     .max.field.round.suffix.prefix.small.no-margin.m.l.white.black-text
       i.front search
-      input(type="text")
+      input(type="text", placeholder="Search", aria-label="search")
       i.front mic
     .max
     button.circle.large.transparent.s(data-ui="#dialog-search")
@@ -93,13 +93,13 @@
           div Youtube Kids
     button.circle.large.transparent(data-ui="#dialog-notifications")
       i notifications
-    button.circle.large.transparent(@click="redirect('/')")
+    button.circle.large.transparent(@click="redirect('/')", aria-label="beer css")
       img.responsive(alt="", :src="'/favicon.png'")
 
   .overlay
   dialog#dialog-notifications.right
     nav
-      h5.max Notifications
+      h5.max(aria-hidden="true") Notifications
       button.circle.transparent(data-ui="#dialog-notifications")
         i close
     p No new notifications here
@@ -107,7 +107,7 @@
   .overlay
   dialog#dialog-add.bottom.top-round
     nav
-      h5.max New
+      h5.max(aria-hidden="true") New
       button.circle.transparent(data-ui="#dialog-add")
         i close
     ul.list

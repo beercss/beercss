@@ -1,7 +1,7 @@
 <template lang="pug">
 #snackbars
   .large-space
-  h4
+  h4(aria-label="snackbars")
     span Snackbars
     button.chip.circle(@click="domain.showSamples(data, '#snackbars .snackbar', 'Snackbars', null, 'https://github.com/beercss/beercss/blob/main/docs/SNACKBAR.md')")
       i code
@@ -31,7 +31,7 @@
   .snackbar.tertiary Some text here
   .snackbar#snackbar-action
     .max Some text here
-    a.inverse-link Action
+    a.inverse-primary-text Action
 </template>
 
 <script setup lang="ts">

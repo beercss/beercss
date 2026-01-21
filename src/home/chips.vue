@@ -1,7 +1,7 @@
 <template lang="pug">
 #chips
   .large-space
-  h4
+  h4(aria-label="chips")
     span Chips
     button.chip.circle(@click="domain.showSamples(data, '#chips nav .chip', 'Chips', null, 'https://github.com/beercss/beercss/blob/main/docs/CHIP.md')")
       i code

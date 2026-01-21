@@ -1,10 +1,10 @@
 <template lang="pug">
 #search
   .large-space
-  h4 Search
+  h4(aria-label="search") Search
   h5(style="display: none") Empty
   .space
-  h6
+  h6(aria-hidden="true")
     span Docked
     button.chip.circle(
       @click="domain.showSamples(data, '#search-compact > *', 'Search', null, null)"
@@ -15,7 +15,6 @@
     .field.large.prefix.round.fill(data-ui="#search1")
       i.front search
       input(placeholder="Search text")
-
       menu#search1.min
         li
           .field.large.prefix
@@ -49,7 +48,7 @@
           div Item 3
 
   .space
-  h6
+  h6(aria-hidden="true")
     span Fullscreen
     button.chip.circle(
       @click="domain.showSamples(data, '#search-fullscreen > *', 'Search', null, null)"
@@ -60,7 +59,6 @@
     .field.large.prefix.round.fill(data-ui="#search3")
       i.front search
       input(placeholder="Search text")
-
       menu#search3.max
         li
           .field.large.prefix
@@ -93,7 +91,6 @@
           i history
           div Item 3
 </template>
-
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";

@@ -34,15 +34,15 @@ div
           button.circle.small.no-wave
             i gps_fixed
           .max
-            h6.no-margin {{ data.street }}
+            h6.no-margin(aria-hidden="true") {{ data.street }}
             .link Your current location
-        li 
+        li
           hr
         li(@click="go()")
           button.circle.small.no-wave
             i home
           .max
-            h6.no-margin Home
+            h6.no-margin(aria-hidden="true") Home
             div {{ data.street }}
   .overlay
   dialog.bottom.active.s.no-padding
@@ -66,10 +66,9 @@ div
         button.circle.small.no-wave
           i gps_fixed
         .max
-          h6.no-margin {{ data.street }}
+          h6.no-margin(aria-hidden="true") {{ data.street }}
           .link Your current location
 </template>
-
 <script setup lang="ts">
 import data from "./data";
 
@@ -79,7 +78,6 @@ const go = () => {
     data.value.to = "";
     return;
   }
-
   data.value.from = data.value.street;
   data.value.to = data.value.street;
 };

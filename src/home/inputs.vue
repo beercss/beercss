@@ -1,7 +1,7 @@
 <template lang="pug">
 #inputs
   .large-space
-  h4
+  h4(aria-label="inputs")
     span Inputs
     button.chip.circle(@click="domain.showSamples(data, '#inputs .field', 'Inputs', null, 'https://github.com/beercss/beercss/blob/main/docs/INPUT.md')")
       i code
@@ -63,60 +63,47 @@
   .grid
     .s12.l4
       .field.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
     .s12.l4
       .field.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         output Helper text
     .s12.l4
       .field.invalid.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         output.invalid Error text
     .s12.l4
       .field.label.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
     .s12.l4
       .field.label.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
         output Helper text
     .s12.l4
       .field.label.invalid.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
         output.invalid Error text
     .s12.l4
       .field.label.prefix.border
         i search
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
     .s12.l4
       .field.label.suffix.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
         i.front search
     .s12.l4
       .field.label.prefix.suffix.border
         i search
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
         i.front search
-    .s12.l4
-      .field.border.prefix
-        img.circle(alt="", :src="'/favicon.png'")
-        input(type="text")
-    .s12.l4
-      .field.border.prefix
-        progress.circle
-        input(type="text")
-    .s12.l4
-      .field.border.prefix
-        i
-          span.shape.loading-indicator.max
-        input(type="text")
   .medium-space
-  h6
+  h6(aria-hidden="true")
     span Custom inputs
     button.chip.circle(@click="domain.showSamples(data, '#inputs-custom nav > *', 'Custom inputs', null, null)")
       i code
@@ -126,39 +113,39 @@
       div
         button.circle
           i attach_file
-        input(type="file")
+        input(type="file", aria-hidden="true")
       div
         button.circle
           i palette
-        input(type="color")
+        input(type="color", aria-hidden="true")
       div
         button.circle
           i today
-        input(type="date")
+        input(type="date", aria-hidden="true")
       div
         button.circle
           i schedule
-        input(type="time")
+        input(type="time", aria-hidden="true")
       div
         button
           i attach_file
           span File
-        input(type="file")
+        input(type="file", aria-hidden="true")
       div
         button
           i palette
           span Color
-        input(type="color")
+        input(type="color", aria-hidden="true")
       div 
         button
           i today
           span Date
-        input(type="date")
+        input(type="date", aria-hidden="true")
       div
         button
           i schedule
           span Time
-        input(type="time")
+        input(type="time", aria-hidden="true")
 </template>
 
 <script setup lang="ts">

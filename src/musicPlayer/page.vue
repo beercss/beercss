@@ -11,7 +11,7 @@
         i {{ data.isDark ? "light_mode" : "dark_mode" }}
       button.circle.transparent(@click="reloadAnimation()")
         i refresh
-      button.circle.transparent(@click="redirect('/')")
+      button.circle.transparent(@click="redirect('/')", aria-label="beer css")
         img.responsive(alt="", :src="'/favicon.png'")
 
   .fixed.top.right.bottom.left.back.no-events

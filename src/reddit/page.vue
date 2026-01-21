@@ -6,7 +6,7 @@ div(v-show="data.showPage")
       .max.l
         .field.fill.round.prefix.suffix
           i home
-          input(value="Home", readonly)
+          input(value="Home", readonly, aria-label="home")
           i arrow_drop_down
           menu
             li.transparent
@@ -31,7 +31,7 @@ div(v-show="data.showPage")
       .max
         .field.fill.round.prefix
           i search
-          input
+          input(placeholder="Search" aria-label="search")
       button.transparent.circle.l
         i trending_up
         span.tooltip.bottom Popular

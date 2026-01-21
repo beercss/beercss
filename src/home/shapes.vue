@@ -1,12 +1,7 @@
 <template lang="pug">
 #shapes
   .large-space
-  h4
-    span Shapes
-    button.chip.circle(
-      @click="domain.showSamples(data, '#shape > nav > *', 'Shapes', null, 'https://github.com/beercss/beercss/blob/main/docs/SHAPE.md')"
-    )
-      i code
+  h4(aria-label="shapes") Shapes
   h5(style="display: none") Empty
   nav.wrap      
     button.chip(@click="domain.updateShape('#shape .shape', 'loading-indicator')") loading-indicator
@@ -18,7 +13,7 @@
     //button.chip(@click="domain.updateShape('#shape .shape', 'circle')") circle
     button.chip(@click="domain.updateShape('#shape .shape', 'clamshell')") clamshell
     button.chip(@click="domain.updateShape('#shape .shape', 'diamond')") diamond
-    ///button.chip(@click="domain.updateShape('#shape .shape', 'fan')") fan
+    //button.chip(@click="domain.updateShape('#shape .shape', 'fan')") fan
     button.chip(@click="domain.updateShape('#shape .shape', 'flower')") flower
     //button.chip(@click="domain.updateShape('#shape .shape', 'gem')") gem
     //button.chip(@click="domain.updateShape('#shape .shape', 'ghost-ish')") ghost-ish
@@ -44,49 +39,107 @@
     button.chip(@click="domain.updateShape('#shape .shape', 'sunny')") sunny
     //button.chip(@click="domain.updateShape('#shape .shape', 'triangle')") triangle
     button.chip(@click="domain.updateShape('#shape .shape', 'very-sunny')") very-sunny
-
-
-  .large-space
   #shape
-    h6 Default
-    nav.wrap
-      .shape.loading-indicator.tiny
-      .shape.loading-indicator
-      .shape.loading-indicator.medium
-      .shape.loading-indicator.large
-      .shape.loading-indicator.extra
-      .shape.loading-indicator.extra
-        img.responsive(alt="", :src="'/favicon.png'")
-      .shape.loading-indicator.extra
-        video.responsive(autoplay, loop, muted, playsinline)
-          source(:src="'/dance.mp4'", type="video/mp4")
-      .shape.loading-indicator.extra
-        button.responsive
-          i search
-      .shape.loading-indicator.extra.transparent
-        button.responsive
-          i search
     .large-space
-    h6 Custom
+    h6(aria-hidden="true")
+      span Default
+      button.chip.circle(
+        @click="domain.showSamples(data, '#default-shapes > nav > .shape', 'Shapes', null, 'https://github.com/beercss/beercss/blob/main/docs/SHAPE.md')"
+      )
+        i code
     nav.wrap
-      .small-width.small-height
-        .shape.loading-indicator.max.rotate
-      .small-width.small-height
-        .shape.loading-indicator.max.rotate
+      label.radio
+        input(
+          type="radio",
+          name="size-shapes",
+          @click="data.mediaShape = 0")
+        span none
+      label.radio
+        input(
+          type="radio",
+          name="size-shapes",
+          checked,
+          @click="data.mediaShape = 1")
+        span image
+      label.radio
+        input(type="radio", name="size-shapes", @click="data.mediaShape = 2")
+        span video
+      label.radio
+        input(type="radio", name="size-shapes", @click="data.mediaShape = 3")
+        span button
+    .medium-space
+    #default-shapes
+      nav.wrap.no-margin(v-if="data.mediaShape === 1")
+        .shape.sided-cookie12.small
           img.responsive(alt="", :src="'/favicon.png'")
-      .small-width.small-height
-        .shape.loading-indicator.max.rotate
+        .shape.sided-cookie12.medium
+          img.responsive(alt="", :src="'/favicon.png'")
+        .shape.sided-cookie12.large
+          img.responsive(alt="", :src="'/favicon.png'")
+        .shape.sided-cookie12.extra
+          img.responsive(alt="", :src="'/favicon.png'")
+        .shape.sided-cookie12.small-width.small-height.rotate
+          img.responsive(alt="", :src="'/favicon.png'")
+      nav.wrap.no-margin(v-if="data.mediaShape === 2")
+        .shape.sided-cookie12.small
           video.responsive(autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
-    nav.wrap
-      button.circle.extra.transparent
-        span.shape.loading-indicator.max.medium-space
-      button.circle.extra.fill
-        span.shape.loading-indicator.max.medium-space
-      button.extra.fill
-        i
-          span.shape.loading-indicator.max
-        span Button
+        .shape.sided-cookie12.medium
+          video.responsive(autoplay, loop, muted, playsinline)
+            source(:src="'/dance.mp4'", type="video/mp4")
+        .shape.sided-cookie12.large
+          video.responsive(autoplay, loop, muted, playsinline)
+            source(:src="'/dance.mp4'", type="video/mp4")
+        .shape.sided-cookie12.extra
+          video.responsive(autoplay, loop, muted, playsinline)
+            source(:src="'/dance.mp4'", type="video/mp4")
+        .shape.sided-cookie12.small-width.small-height.rotate
+          video.responsive(autoplay, loop, muted, playsinline)
+            source(:src="'/dance.mp4'", type="video/mp4")
+      nav.wrap.no-margin(v-if="data.mediaShape === 3")
+        .shape.sided-cookie12.small
+          button.responsive
+            i search
+        .shape.sided-cookie12.medium
+          button.responsive
+            i search
+        .shape.sided-cookie12.large
+          button.responsive
+            i search
+        .shape.sided-cookie12.extra
+          button.responsive
+            i search
+        .shape.sided-cookie12.small-width.small-height.rotate
+          button.responsive
+            i search
+      nav.wrap.no-margin(v-if="data.mediaShape === 0")
+        .shape.sided-cookie12.small
+        .shape.sided-cookie12.medium
+        .shape.sided-cookie12.large
+        .shape.sided-cookie12.extra
+        .shape.sided-cookie12.small-width.small-height.rotate
+    .large-space
+    h6(aria-hidden="true")
+      span Inside other elements
+      button.chip.circle(
+        @click="domain.showSamples(data, '#shape > #custom-shapes > nav > *', 'Shapes', null, 'https://github.com/beercss/beercss/blob/main/docs/SHAPE.md')"
+      )
+        i code
+    .medium-space
+    #custom-shapes
+      nav.wrap
+        button.circle.extra.transparent(aria-hidden="true")
+          span.shape.sided-cookie12.max.medium-space
+        button.circle.extra.fill(aria-hidden="true")
+          span.shape.sided-cookie12.max.medium-space
+        button.extra.fill
+          i
+            span.shape.sided-cookie12.max
+          span Button
+        .field.border.prefix
+          i
+            span.shape.sided-cookie12.max
+          input(aria-hidden="true")
 </template>
 
 <script setup lang="ts">

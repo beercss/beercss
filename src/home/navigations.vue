@@ -5,7 +5,7 @@
     span Navigations
   h5(style="display: none") Empty
   .medium-space
-  h6.middle-align
+  h6.middle-align(aria-hidden="true")
     span Rows
     button.chip.circle(@click="domain.showSamples(data, '#row-default > .row', 'Rows', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
@@ -41,7 +41,7 @@
       div min
       div min
   .medium-space
-  h6.middle-align
+  h6.middle-align(aria-hidden="true")
     span Navigations
     button.chip.circle(@click="domain.showSamples(data, '#navigation-default > nav', 'Navigations', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
@@ -93,7 +93,7 @@
   .medium-space
   #navigation-rail
     .medium-space
-    h6.middle-align
+    h6.middle-align(aria-hidden="true")
       span Navigation rail/bar
       button.chip.circle(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
@@ -113,7 +113,7 @@
   .medium-space
   #navigation-tabbed
     .medium-space
-    h6.middle-align
+    h6.middle-align(aria-hidden="true")
       span Navigation tabbed
       button.chip.circle(@click="domain.showSamples(data, '#navigation-tabbed-example', 'Navigation tabbed', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
@@ -144,28 +144,27 @@
     .medium-space
     #navigation-tabbed-example
       nav.tabbed
-        a.active(data-ui="#page-overview", tabindex="0")
+        a.active(data-ui="#page-overview", tabindex="0", href="javascript:;")
           i info
           span Overview
-        a(data-ui="#page-specs", tabindex="0")
+        a(data-ui="#page-specs", tabindex="0", href="javascript:;")
           i style
           span Specs
-        a(data-ui="#page-guidelines", tabindex="0")
+        a(data-ui="#page-guidelines", tabindex="0", href="javascript:;")
           i design_services
           span Guidelines
-        a(data-ui="#page-acessibility", tabindex="0")
+        a(data-ui="#page-acessibility", tabindex="0", href="javascript:;")
           i accessibility_new
           span Acessibility
       #page-overview.page.padding.active
-        h5 Overview
+        h5(aria-hidden="true") Overview
       #page-specs.page.padding
-        h5 Specs
+        h5(aria-hidden="true") Specs
       #page-guidelines.page.padding
-        h5 Guidelines
+        h5(aria-hidden="true") Guidelines
       #page-acessibility.page.padding
-        h5 Acessibility
+        h5(aria-hidden="true") Acessibility
 </template>
-
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";

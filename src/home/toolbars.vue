@@ -1,11 +1,11 @@
 <template lang="pug">
 #toolbars
   .large-space
-  h4 Toolbars
+  h4(aria-label="toolbars") Toolbars
   h5(style="display: none") Empty
   .medium-space
   #default-toolbars
-    h6 
+    h6(aria-hidden="true") 
       span Default
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#default-toolbars .toolbar', 'Toolbars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
@@ -47,31 +47,31 @@
         span large-elevate
     nav.center-align
       nav.toolbar
-        a(data-ui="")
+        a(data-ui="", href="javascript:;")
           i videocam_off
-        a(data-ui="")
+        a(data-ui="", href="javascript:;")
           i mic
-        a.active(data-ui="")
+        a.active(data-ui="", href="javascript:;")
           i front_hand
-        a(data-ui="")
+        a(data-ui="", href="javascript:;")
           i more_vert
     nav.center-align.m.l
       nav.toolbar
-        a(data-ui="")
+        a(data-ui="", href="javascript:;")
           i videocam_off
           div Video
-        a(data-ui="")
+        a(data-ui="", href="javascript:;")
           i mic
-          div Speech
-        a.active(data-ui="")
+          span Speech
+        a.active(data-ui="", href="javascript:;")
           i front_hand
-          div Attention
-        a(data-ui="")
+          span Attention
+        a(data-ui="", href="javascript:;")
           i more_vert
-          div More
+          span More
   .large-space
   #floating-toolbars  
-    h6 
+    h6(aria-hidden="true") 
       span Floating
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#floating-toolbars > nav', 'Toolbars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
@@ -79,35 +79,35 @@
         i code
     nav.center-align.tiny-space
       nav.toolbar
-        a(data-ui="")
+        a(data-ui="", href="javascript:;")
           i videocam_off
-        a(data-ui="")
+        a(data-ui="", href="javascript:;")
           i mic
-        a.active(data-ui="")
+        a.active(data-ui="", href="javascript:;")
           i front_hand
-        a(data-ui="")
+        a(data-ui="", href="javascript:;")
           i more_vert
       button.extra.round.circle.error
         i call_end
     nav.center-align.tiny-space.m.l
       nav.toolbar
-        a(data-ui="")
+        a(data-ui="", href="javascript:;")
           i videocam_off
           div Video
-        a(data-ui="")
+        a(data-ui="", href="javascript:;")
           i mic
-          div Mic
-        a.active(data-ui="")
+          span Mic
+        a.active(data-ui="", href="javascript:;")
           i front_hand
-          div Attention
-        a(data-ui="")
+          span Attention
+        a(data-ui="", href="javascript:;")
           i more_vert
-          div More
+          span More
       button.extra.round.circle.error
         i call_end
   .large-space
   #docked-toolbars
-    h6 
+    h6(aria-hidden="true") 
       span Docked
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#docked-toolbars .toolbar', 'Toolbars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
@@ -115,28 +115,28 @@
         i code
     div
     nav.toolbar.max
-      a(data-ui="")
+      a(data-ui="", href="javascript:;")
         i videocam_off
-      a(data-ui="")
+      a(data-ui="", href="javascript:;")
         i mic
-      a.active(data-ui="")
+      a.active(data-ui="", href="javascript:;")
         i front_hand
-      a(data-ui="")
+      a(data-ui="", href="javascript:;")
         i more_vert
     div
     nav.toolbar.max.m.l
-      a(data-ui="")
+      a(data-ui="", href="javascript:;")
         i videocam_off
-        div Video
-      a(data-ui="")
+        span Video
+      a(data-ui="", href="javascript:;")
         i mic
-        div Mic
-      a.active(data-ui="")
+        span Mic
+      a.active(data-ui="", href="javascript:;")
         i front_hand
-        div Attention
-      a(data-ui="")
+        span Attention
+      a(data-ui="", href="javascript:;")
         i more_vert
-        div More
+        span More
 </template>
 
 <script setup lang="ts">

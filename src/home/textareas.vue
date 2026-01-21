@@ -1,7 +1,7 @@
 <template lang="pug">
 #textareas
   .large-space
-  h4
+  h4(aria-label="textareas")
     span Textareas
     button.chip.circle(@click="domain.showSamples(data, '#textareas .field', 'Textareas', null, 'https://github.com/beercss/beercss/blob/main/docs/TEXTAREA.md')")
       i code
@@ -36,58 +36,45 @@
   .grid
     .s12.l4
       .field.border
-        textarea
+        textarea(aria-hidden="true")
     .s12.l4
       .field.border
-        textarea
+        textarea(aria-hidden="true")
         output Helper text
     .s12.l4
       .field.invalid.border
-        textarea
+        textarea(aria-hidden="true")
         output.invalid Error text
     .s12.l4
       .field.label.border
-        textarea
+        textarea(aria-hidden="true")
         label Label
     .s12.l4
       .field.label.border
-        textarea
+        textarea(aria-hidden="true")
         label Label
         output Helper text
     .s12.l4
       .field.label.invalid.border
-        textarea
+        textarea(aria-hidden="true")
         label Label
         output.invalid Error text
     .s12.l4
       .field.label.prefix.border
         i search
-        textarea
+        textarea(aria-hidden="true")
         label Label
     .s12.l4
       .field.label.suffix.border
-        textarea
+        textarea(aria-hidden="true")
         label Label
         i search
     .s12.l4
       .field.label.prefix.suffix.border
         i search
-        textarea
+        textarea(aria-hidden="true")
         label Label
         i search
-    .s12.l4
-      .field.border.prefix
-        img(alt="", :src="'/favicon.png'")
-        textarea
-    .s12.l4
-      .field.border.prefix
-        progress.circle
-        textarea
-    .s12.l4
-      .field.border.prefix
-        i
-          span.shape.loading-indicator.max
-        textarea
 </template>
 
 <script setup lang="ts">

@@ -65,39 +65,39 @@ main.responsive
     a(@click="updateTheme()")
       i.large palette
     .max
-      h5 Test your changes here
+      h5(aria-hidden="true") Test your changes here
       div Click on icon to change theme
   .overlay
   dialog.round.large-padding#default(data-ui="#default")
-    h5 Default dialog
+    h5(aria-hidden="true") Default dialog
     nav.right-align
       button.border Cancel
       button Confirm
 
   .overlay
   dialog.left#left(data-ui="#left")
-    h5 Left dialog
+    h5(aria-hidden="true") Left dialog
     nav.right-align
       button.border Cancel
       button Confirm
 
   .overlay
   dialog.top#top(data-ui="#top")
-    h5 Top dialog
+    h5(aria-hidden="true") Top dialog
     nav.right-align
       button.border Cancel
       button Confirm
 
   .overlay
   dialog.right#right(data-ui="#right")
-    h5 Right dialog
+    h5(aria-hidden="true") Right dialog
     nav.right-align
       button.border Cancel
       button Confirm
 
   .overlay
   dialog.bottom#bottom(data-ui="#bottom")
-    h5 Bottom dialog
+    h5(aria-hidden="true") Bottom dialog
     nav.right-align
       button.border Cancel
       button Confirm
@@ -128,7 +128,7 @@ main.responsive
         i more_vert
         span More
   .large-space
-  h5 Shapes
+  h5(aria-hidden="true") Shapes
   nav
     .shape.loading-indicator.circle.tiny
     .shape.loading-indicator.circle.small
@@ -148,7 +148,7 @@ main.responsive
       button.responsive
         i search
     .shape.loading-indicator.transparent.medium
-      button.responsive
+      button.responsive(aria-hidden="true")
         img.responsive(alt="", :src="'/favicon.png'")
     .shape.loading-indicator.transparent.medium
       button.responsive
@@ -234,8 +234,8 @@ main.responsive
     #page2.page Page 2
     #page3.page Page 3
     #page4.page Page 4
-  h5 Menus
-  h6 Bad html
+  h5(aria-hidden="true") Menus
+  h6(aria-hidden="true") Bad html
   nav
     button
       span Top 
@@ -342,7 +342,7 @@ main.responsive
                 li Item
                 li Item
                 li(data-ui="#menu3") More items
-  h6 Good html
+  h6(aria-hidden="true") Good html
   nav
     div
       button
@@ -457,8 +457,8 @@ main.responsive
                 li(data-ui="#menu31") More items
 
   .large-space
-  h5 Sliders
-  h6 Bad html
+  h5(aria-hidden="true") Sliders
+  h6(aria-hidden="true") Bad html
   nav
     article.small-height.small-width.round.fill
       .slider.max
@@ -474,7 +474,7 @@ main.responsive
       .slider.max
         input(type="range")
         span
-  h6 Good html
+  h6(aria-hidden="true") Good html
   nav
     .small-height.small-width.round.fill
       .slider.max
@@ -492,7 +492,7 @@ main.responsive
         span
 
   .large-space
-  h5 Badges
+  h5(aria-hidden="true") Badges
   a
     i home
     span.badge.min
@@ -599,10 +599,10 @@ main.responsive
       span.badge.none 1
 
   .large-space
-  h5 Navigations
+  h5(aria-hidden="true") Navigations
   .grid
     .s12.m6.l6
-      h6 Using nav + *
+      h6(aria-hidden="true") Using nav + *
       nav.vertical
         button Button
         button.chip Chip
@@ -611,7 +611,7 @@ main.responsive
         .max
         a Link
     .s12.m6.l6
-      h6 Using nav + ul + li + *
+      h6(aria-hidden="true") Using nav + ul + li + *
       nav.vertical
         ul
           li
@@ -626,7 +626,7 @@ main.responsive
           li
             a Link
     .s12.m6.l6
-      h6 Using nav + *
+      h6(aria-hidden="true") Using nav + *
       nav.vertical.no-space
         a.row.wave
           i home
@@ -638,7 +638,7 @@ main.responsive
           i share
           span Share
     .s12.m6.l6
-      h6 Using nav + ul + li + *
+      h6(aria-hidden="true") Using nav + ul + li + *
       nav.vertical.no-space
         ul
           li
@@ -654,17 +654,17 @@ main.responsive
               i share
               span Share
   .large-space
-  h5 Lists
+  h5(aria-hidden="true") Lists
   .grid
     .s12.m6.l6
-      h6 Default
+      h6(aria-hidden="true") Default
       ul.list.border
         li Item
         li Item
         li Item
         li Item
     .s12.m6.l6
-      h6 Default with li > a
+      h6(aria-hidden="true") Default with li > a
       ul.list.border
         li
           a(href="#1") Item
@@ -675,7 +675,7 @@ main.responsive
         li
           a(href="#4") Item
     .s12.m6.l6
-      h6 Nested
+      h6(aria-hidden="true") Nested
       ul.list.border
         li
           i home
@@ -698,7 +698,7 @@ main.responsive
               i share
               span Share
     .s12.m6.l6
-      h6 Nested using li > a
+      h6(aria-hidden="true") Nested using li > a
       ul.list.border
         li
           a(href="#1")
@@ -727,7 +727,7 @@ main.responsive
                 i share
                 span Share
     .s12.m6.l6
-      h6 Expansion
+      h6(aria-hidden="true") Expansion
       ul.list.border
         li Item
         li Item
@@ -738,7 +738,7 @@ main.responsive
               li Item
               li Item
     .s12.m6.l6
-      h6 Expansion with li > a
+      h6(aria-hidden="true") Expansion with li > a
       ul.list.border
         li
           a(href="#1") Item
@@ -754,7 +754,7 @@ main.responsive
                 a(href="#5") Item
 
   .large-space
-  h5 Field with tooltip
+  h5(aria-hidden="true") Field with tooltip
   .field.label.border
     input
     label.front
@@ -775,13 +775,13 @@ main.responsive
       span.tooltip.bottom Testando tooltip
 
   .large-space
-  h5 Popover API
+  h5(aria-hidden="true") Popover API
   nav
     button(popovertarget="dialog-popover") Dialog
     button(popovertarget="snackbar-popover") Snackbar
 
   dialog#dialog-popover(popover)
-    h5 Popover dialog
+    h5(aria-hidden="true") Popover dialog
     nav.right-align
       button(popovertarget="dialog-popover") Button
 
@@ -790,7 +790,7 @@ main.responsive
     button(popovertarget="snackbar-popover") Button
 
   .large-space
-  h5 Dialogs and date picker
+  h5(aria-hidden="true") Dialogs and date picker
   nav
     button(data-ui="#default") Default
     button(data-ui="#left") Left
@@ -798,7 +798,7 @@ main.responsive
     button(data-ui="#right") Right
     button(data-ui="#bottom") Bottom
   .large-space
-  h5 Slider, progress and field bindings
+  h5(aria-hidden="true") Slider, progress and field bindings
   .row
     .field.label.border
       input#text(v-model="number")
@@ -812,7 +812,7 @@ main.responsive
     progress.circle.wavy(:value="number", max="100")
 
   .large-space
-  h5 Navigation list inside elements
+  h5(aria-hidden="true") Navigation list inside elements
   .row
     button(@click="updateNavigationDrawer('left')") left
     button(@click="updateNavigationDrawer('right')") right
@@ -874,7 +874,7 @@ main.responsive
           li Item 3
 
   .large-space
-  h5 Steppers
+  h5(aria-hidden="true") Steppers
   nav
     button.circle 1
     hr.max
@@ -883,7 +883,7 @@ main.responsive
     button.circle 1
 
   .large-space
-  h5 Fields
+  h5(aria-hidden="true") Fields
   nav
     button(@click="domain.updateSize('#with-pure-css .field', 'small')") small
     button(@click="domain.updateSize('#with-pure-css .field', '')") medium
@@ -962,7 +962,7 @@ main.responsive
         label Label
         output Helper
   .large-space
-  h5 Textareas
+  h5(aria-hidden="true") Textareas
   .space
   .grid
     .s12.m6
@@ -1113,7 +1113,7 @@ main.responsive
         output Helper
 
   .large-space
-  h5 Fields inside grid
+  h5(aria-hidden="true") Fields inside grid
   .grid
     .s4
       .field.label.border
@@ -1287,7 +1287,7 @@ main.responsive
       .field.middle-align
         nav
           .max
-            h6 Title
+            h6(aria-hidden="true") Title
             div Some text here
           label.switch
             input(type="checkbox")
@@ -1302,7 +1302,7 @@ main.responsive
       .field.middle-align.invalid
         nav
           .max
-            h6 Title
+            h6(aria-hidden="true") Title
             div Some text here
           label.switch
             input(type="checkbox")
@@ -1310,7 +1310,7 @@ main.responsive
         output.invalid Error
 
   .large-space
-  h5 Tables
+  h5(aria-hidden="true") Tables
 
   .grid.large-space
     .s12.m12.l6

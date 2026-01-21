@@ -1,7 +1,7 @@
 <template lang="pug">
 #progress
   .large-space
-  h4 Progress
+  h4(aria-label="progress") Progress
   h5(style="display: none") Empty
   nav.wrap
     label.radio
@@ -27,66 +27,50 @@
       span orange
   .large-space
   #linear-progress
-    h6 
+    h6(aria-hidden="true") 
       span Linear
       button.chip.circle(@click="domain.showSamples(data, '#linear-progress progress', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
         i code
     .grid
-      .s12.m6.l6
+      .s6.m3.l3
         progress
-        .space
+      .s6.m3.l3
         progress(value="30", max="100")
-      .s12.m6.l6
+      .s6.m3.l3
         progress.wavy
-        .space
+      .s6.m3.l3
         progress.wavy(value="30", max="100")
   .large-space
   #circular-progress 
-    h6 
+    h6(aria-hidden="true") 
       span Circular
       button.chip.circle(@click="domain.showSamples(data, '#circular-progress progress', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
         i code
-    nav
-      progress.circle.small
+    nav.wrap
       progress.circle
-      progress.circle.large
-      progress.circle.small(value="30", max="100")
       progress.circle(value="30", max="100")
-      progress.circle.large(value="30", max="100")
-    nav
-      progress.circle.wavy.small
       progress.circle.wavy
-      progress.circle.wavy.large
-      progress.circle.wavy.small(value="30", max="100")
       progress.circle.wavy(value="30", max="100")
-      progress.circle.wavy.large(value="30", max="100")
   .large-space
   #custom-progress
-    h6 
-      span Custom progressbar
+    h6(aria-hidden="true") 
+      span Inside other elements
       button.chip.circle(@click="domain.showSamples(data, '#custom-progress > nav > *', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
         i code
     .medium-space
     nav
       article
         progress.max(value="30", max="100")
-        h5 Card
+        h5(aria-hidden="true") Card
       button.chip
         progress.max(value="30", max="100")
         span Chip
       button
         progress.max(value="30", max="100")
         span Button
-    nav
-      article
-        progress.max.vertical(value="30", max="100")
-        h5 Card
-      button.chip
-        progress.max.vertical(value="30", max="100")
-        span Chip
-      button
-        progress.max.vertical(value="30", max="100")
-        span Button
+      .field.border.prefix
+        progress.circle
+        input(aria-hidden="true")
   .space
 </template>
 

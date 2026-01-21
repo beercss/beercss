@@ -5,12 +5,12 @@ main(v-show="data.showPage")
       .page.bottom.active
         article.no-elevate.round.large-height.large-padding.middle-align
           .large-padding
-            h1.large Material Design
+            h1.large(aria-hidden="true") Material Design
             h2(style="display: none") Empty
             h3(style="display: none") Empty
             h4(style="display: none") Empty
             h5(style="display: none") Empty
-            h6 Material Design 3 is Google's open-source design system for building beautiful, usable products.
+            h6(aria-hidden="true") Material Design 3 is Google's open-source design system for building beautiful, usable products.
             nav
               button.extra(@click="reloadAnimation()") Get started
     .s12.m6.l6
@@ -21,47 +21,47 @@ main(v-show="data.showPage")
   .large-space
   .large-space
   section.responsive
-    h2 M3 Expressive: Design with emotion
+    h2(aria-hidden="true") M3 Expressive: Design with emotion
     h3(style="display: none") Empty
     h4(style="display: none") Empty
     h5(style="display: none") Empty
-    h6 Build more usable and engaging products with emotion-driven UX. M3 Expressive adds vibrant colors, intuitive motion, adaptive components, flexible typography, and contrasting shapes.
+    h6(aria-hidden="true") Build more usable and engaging products with emotion-driven UX. M3 Expressive adds vibrant colors, intuitive motion, adaptive components, flexible typography, and contrasting shapes.
     .large-space
     .grid
       .s12.m6.l6
         article.round.no-elevate.no-padding.wave
           img.responsive.large(alt="", src="https://lh3.googleusercontent.com/3rF796oZVGbGTqIOBAk4TMP5Ymq6EMXWBowNZT7hT4WWqMjjvB5fHvyEFOVqUAyG44xer2-TGx5-1VohPmKxW3qLmXy6cH7vveTe3mPsBQyKRVqRwXU=w960")
           .large-padding
-            h6 Updated: Figma M3 Design Kit
+            h6(aria-hidden="true") Updated: Figma M3 Design Kit
             p Quickly create design mockups and prototypes with the latest Material 3 Expressive components and styles
       .s12.m6.l6
         article.round.no-elevate.no-padding.wave
           img.responsive.large(alt="", src="https://lh3.googleusercontent.com/Ml2dmf1pT0jpg1P-1E35doGcAftKWfo7rKMC9cQbXg0qz_C8jIAM37DFRt9osJHMe2eDlGJoswFhrTc13sZUx1mHEcirrI7zoQDk0Ph4IVVcQnfbaBbC=w960")
           .large-padding
-            h6 New: Motion physics
+            h6(aria-hidden="true") New: Motion physics
             p Easier-to-implement motion system for more customizable transitions—powered by tokens
       .s12.m6.l4
         article.round.no-elevate.no-padding.wave
           img.responsive.medium(alt="", src="https://lh3.googleusercontent.com/R0qmyzn6w3LFJMZZ0aPl79rV6EamtB6OENbTrBI2vI6_26olXbA5dbBoXUDe4tgcS2CtK4Ept9RSFRy6RWbn1AFhukWAdki0_o8jkzNb594AUrTh2s-F=w960")
           .large-padding
-            h6 Expanded: Shape library
+            h6(aria-hidden="true") Expanded: Shape library
             p New set of 35 shapes to add decorative visual elements, with built-in shape morph motion
       .s12.m6.l4
         article.round.no-elevate.no-padding.wave
           img.responsive.medium(alt="", src="https://lh3.googleusercontent.com/gNDGDt355kn5TXsOM1xXsWE1a6g0ej6JMBlLKytnev53DMXprTlQ8OfCmIAKPE_ohfFvRBjy2rIEgJsYmZAmZKNJ5VeNnz0WRozAd2rWKF8UmtmVNfas=w960")
           .large-padding
-            h6 Blog: Guide to our latest update
+            h6(aria-hidden="true") Blog: Guide to our latest update
             p Get a full introduction to the latest evolution of Material, including new components and style updates
       .s12.m6.l4
         article.round.no-elevate.no-padding.wave
           img.responsive.medium(alt="", src="https://lh3.googleusercontent.com/GJEyYW6O3w4pHOFevnymWMHvz3rIrtzgRsIYLRXlRH8ciSvirJNGYH92OJF0Xiklss8SJCUWpJAmW6LCMx6hDf6MPk7Ns_XMzNobMEr0kNsiZl4sUv4=w960")
           .large-padding
-            h6 Blog: Research Insights
+            h6(aria-hidden="true") Blog: Research Insights
             p Dive into the three years of research that influenced the evolution of Material Design's Expressive update
   .large-space
   .large-space
   section.responsive
-    h2 Expressive components
+    h2(aria-hidden="true") Expressive components
     h3(style="display: none") Empty
     h4(style="display: none") Empty
     h5(style="display: none") Empty
@@ -71,36 +71,36 @@ main(v-show="data.showPage")
         article.round.no-elevate.no-padding.wave
           img.responsive.large(alt="", src="https://lh3.googleusercontent.com/ONzzw9ia_LNsnLjmXZ4rhyKcxCjksJfZh6YTGYmT7EhYCLiFQ9MkO6nlXXKUktJTLWGTHSxuq4yu1aAy3Tu7QGFNRvPUMM_DXe4RU-N397giQtbGk0Q=w960")
           .large-padding
-            h6 New: Toolbars
+            h6(aria-hidden="true") New: Toolbars
             p Flexible component to display frequently used actions. Toolbars hold a variety of controls like buttons, and can also be paired with a FAB.
       .s12.m6.l6
         article.round.no-elevate.no-padding.wave
           img.responsive.large(alt="", src="https://lh3.googleusercontent.com/cUO76YM0r3iOnVdYYUKarulyrxLE0pniBqsQ95APCMul1TrLPe94t21xXfLG2aU569-kSXqjGMmllICILX9QQGQcWjHiTwhChuEKcrJCXUGdbWtlbw=w960")
           .large-padding
-            h6 New: Split button
+            h6(aria-hidden="true") New: Split button
             p Pair a button with related actions in a connected menu. Split buttons leverage expressive shape and motion strategies.
       .s12.m6.l4
         article.round.no-elevate.no-padding.wave
           img.responsive.medium(alt="", src="https://lh3.googleusercontent.com/VbsqMuZxn417lYhfjCirBJwIk1YBcPugBY1fCUNbn46AyA70Pzv7hjxUCTKQMB9TNqLRDL5DBTEKli9OUDkNy_MLQ6YMZwa2Z0Me1PJTgeAVLmR31QU=w960")
           .large-padding
-            h6 Updated: Progress indicators
+            h6(aria-hidden="true") Updated: Progress indicators
             p An eye-catching way to show the status of a process in real time. Customize waveform and thickness to show progress with style.
       .s12.m6.l4
         article.round.no-elevate.no-padding.wave
           img.responsive.medium(alt="", src="https://lh3.googleusercontent.com/fGrV3Cej5E_94-OGejxh9UXOfafXoTAm4mB02H0iGh3df4liPuM1qF2rJd-Jd5CqvRwJECf6mr8tg3EPOHO-Szd7DEb-riZkU3q1yR4_G-6csXTCKtM=w960")
           .large-padding
-            h6 New: Button groups
+            h6(aria-hidden="true") New: Button groups
             p A new way to organize related buttons—with shape-shifting buttons that bump and react to each other
       .s12.m6.l4
         article.round.no-elevate.no-padding.wave
           img.responsive.medium(alt="", src="https://lh3.googleusercontent.com/b7LKxRTbA0p_q3KNtFXgER5JWdT7hZzM3Ho_46OdJ6-mpUDqaMvTkAXstORtVQcJuBY0K-u4Axg5hD3H_AzhARHS82M2Yl6tk9ytQ9PXlXBlxLpipg=w960")
           .large-padding
-            h6 See all expressive components
+            h6(aria-hidden="true") See all expressive components
             p Check out all 15 new and updated M3 Expressive components
   .large-space
   .large-space
   section.responsive
-    h2 How to apply M3 Expressive
+    h2(aria-hidden="true") How to apply M3 Expressive
     h3(style="display: none") Empty
     h4(style="display: none") Empty
     h5(style="display: none") Empty
@@ -110,37 +110,37 @@ main(v-show="data.showPage")
         article.round.no-elevate.no-padding.wave
           img.responsive.large(alt="", src="https://lh3.googleusercontent.com/vg5Pabz11raqEn0BlXt_6_OsMWjJGFqqwTScfj8hhwkodePiRoH4PysuvFdsGu3-ELhqlSlFsxaNtRFZDLyZNx0GAo3idAFYxjYcCipR1ljo7ddbUg=w960")
           .large-padding
-            h6 Blog: Using motion physics
+            h6(aria-hidden="true") Blog: Using motion physics
             p Learn how the motion scheme works, the changes to existing APIs, and what you need to know to leverage it
       .s12.m6.l6
         article.round.no-elevate.no-padding.wave
           img.responsive.large(alt="", src="https://lh3.googleusercontent.com/atUvHNFGQPSDze4HjTr7_Y1EZCIIyFEBYiRRzjZAryrySCCW6JgnL5Y3-RC5ZLsjf2SP_sZmWpqNtx2c2B5IOvFLDpGcvNTzO7oZIgwcx70wZ5hEOQ=w960")
           .large-padding
-            h6 Watch: Build with M3 Expressive
+            h6(aria-hidden="true") Watch: Build with M3 Expressive
             p Discover how to use Material's emotional design patterns to boost usability and desire for your product
   .large-space
   .large-space
   section.responsive
-    h2 Popular resources
+    h2(aria-hidden="true") Popular resources
     h3(style="display: none") Empty
     h4(style="display: none") Empty
     h5(style="display: none") Empty
     .grid
       .s12.l6
         article.round.no-elevate.large-padding.wave
-          h6 Material blog
+          h6(aria-hidden="true") Material blog
           p News, tutorials, and inspiration from the Material team
       .s12.l6
         article.round.no-elevate.large-padding.wave
-          h6 Figma M3 Design Kit
+          h6(aria-hidden="true") Figma M3 Design Kit
           p Customizable styles and components to help you design with Material 3
       .s12.l6
         article.round.no-elevate.large-padding.wave
-          h6 Get started
+          h6(aria-hidden="true") Get started
           p Guides, videos, and tools to start building with Material
       .s12.l6
         article.round.no-elevate.large-padding.wave
-          h6 Develop
+          h6(aria-hidden="true") Develop
           p Code and developer documentation for building with Material
     .large-space
     .large-space
