@@ -65,7 +65,7 @@
   pointer-events: all;
 }
 
-.slider > input + input {
+.slider > input ~ input {
   position: absolute;
 }
 

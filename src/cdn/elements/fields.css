@@ -126,7 +126,7 @@ input::-webkit-date-and-time-value {
 
 .field > :is(input, textarea, select):focus {
   border: 0.125rem solid transparent;
-  padding: 0 0.875rem;
+  padding-inline: 0.875rem;
 }
 
 .field > textarea:not([rows]) {

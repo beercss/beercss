@@ -11,3 +11,7 @@ summary > * {
   pointer-events: none;
   margin: 0;
 }
+
+li > details > summary + .list {
+  margin: 0 !important;
+}

@@ -3,7 +3,7 @@
   font-family: "Material Symbols Outlined";
   font-style: normal;
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
   src: url(../fonts/material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.3/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
@@ -12,7 +12,7 @@
   font-family: "Material Symbols Rounded";
   font-style: normal;
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
   src: url(../fonts/material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.3/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
@@ -21,7 +21,7 @@
   font-family: "Material Symbols Sharp";
   font-style: normal;
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
   src: url(../fonts/material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.3/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
@@ -30,6 +30,6 @@
   font-family: "Material Symbols Subset";
   font-style: normal;
   font-weight: 400;
-  font-display: block;
+  font-display: swap;
   src: url(../fonts/material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@3.13.3/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
