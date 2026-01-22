@@ -312,7 +312,7 @@ const showSamples = async (data: IHome, selector: string, name: string, dialog?:
       textFormatted = hljs.highlight("html", text).value;
     }
 
-    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", "dialog", ".snackbar", "main.responsive", ".fixed:not(header, footer, thead, tfoot)"])) { text = ""; }
+    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", "dialog", ".snackbar", "main", ".fixed:not(header, footer, thead, tfoot)"])) { text = ""; }
 
     data.samples.push({
       html: (name === "Tooltips") ? `<div class="center-align">${text}</div>` : text,
@@ -386,6 +386,12 @@ const updateRotate = (selector: string, rotate: string) => {
   if (rotate) utils.addClass(elements, [rotate]);
 };
 
+const updateResponsive = (selector: string, responsive: string) => {
+  const elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["responsive"]);
+  if (responsive) utils.addClass(elements, [responsive]);
+};
+
 export default {
   updateElevate,
   updateColor,
@@ -424,4 +430,5 @@ export default {
   updateRtlLtr,
   updateShape,
   updateRotate,
+  updateResponsive
 };

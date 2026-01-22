@@ -72,7 +72,7 @@ import { type ILayout } from "./interfaces";
 
 export interface IProps {
   id?: string,
-  modelValue?: ILayout,
+  modelValue: ILayout,
   position?: string,
 }
 

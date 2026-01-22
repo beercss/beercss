@@ -1,14 +1,19 @@
 <template lang="pug">
 #containers
   .large-space
-  h4
-    span Containers
-    button.chip.circle(@click="domain.showSamples(data, '#containers main.responsive', 'Containers', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
-      i code
+  h4 Containers
   h5(style="display: none") Empty
+  .medium-space
+  h6(aria-hidden="true")
+    span Main content
+    button.chip.circle(@click="domain.showSamples(data, '#main-content main', 'Main content', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
+      i code
   nav
-    button(@click="domain.updateMinMax('main.responsive')") Min
-    button(@click="domain.updateMinMax('main.responsive', 'max')") Max
+    button.chip(@click="domain.updateResponsive('main', '')") Default
+    button.chip(@click="domain.updateResponsive('main', 'responsive')") Responsive
+  #main-content(v-show="false", v-if="data.isShowingSample")
+      main
+      main.responsive
   .medium-space
   h6(aria-hidden="true")
     span Side content

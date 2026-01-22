@@ -19,7 +19,7 @@ function updateRipple(e: PointerEvent) {
   ripple.style.inlineSize = ripple.style.blockSize = `${diameter}px`;
   ripple.style.left = `${x}px`;
   ripple.style.top = `${y}px`;
-  ripple.addEventListener("animationend", () => { rippleContainer.remove(); });
+  onWeak(ripple, "animationend", () => { rippleContainer.remove(); });
 
   rippleContainer.appendChild(ripple);
   element.appendChild(rippleContainer);

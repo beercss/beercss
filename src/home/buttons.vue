@@ -292,7 +292,7 @@
   .medium-space
   h6.middle-align(aria-hidden="true")
     span FABs menu
-    button.chip.circle(@click="domain.showSamples(data, '#fabs-menu nav.min', 'FABs menu', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#fabs-menu nav > div', 'FABs menu', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   #fabs-menu
     .space
