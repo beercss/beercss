@@ -119,27 +119,27 @@
 
     .grid.no-round
       .s12
-        h3.h5(aria-label="primary color") Primary
+        h3.h5 Primary
         .padding.primary primary
         .padding.primary-container primary-container
         .padding.border.primary-border primary-border
         .padding.primary-text primary-text
-        h3.h5(aria-label="secondary color") Secondary
+        h3.h5 Secondary
         .padding.secondary secondary
         .padding.secondary-container secondary-container
         .padding.border.secondary-border secondary-border
         .padding.secondary-text secondary-text
-        h3.h5(aria-label="tertiary color") Tertiary
+        h3.h5 Tertiary
         .padding.tertiary tertiary
         .padding.tertiary-container tertiary-container
         .padding.border.tertiary-border tertiary-border
         .padding.tertiary-text tertiary-text
-        h3.vh5(aria-label="error color") Error
+        h3.h5 Error
         .padding.error error
         .padding.error-container error-container
         .padding.border.error-border error-border
         .padding.error-text error-text
-        h3.h5(aria-label="neutral color") Neutral
+        h3.h5 Neutral
         .padding.surface-dim surface-dim
         .padding.surface-bright surface-bright
         .padding.surface-variant surface-variant
@@ -151,12 +151,12 @@
         .padding.surface-container-highest surface-container-highest
         .padding.surface surface
         .padding.background background
-        h3.h5(aria-label="other colors") Other
+        h3.h5 Other
         .padding.inverse-primary inverse-primary
         .padding.inverse-primary-border.border inverse-primary-border
         .padding.inverse-primary-text inverse-primary-text
       .s12
-        h3.h5(aria-label="red color") Red
+        h3.h5 Red
         .black-text.red1 red1
         .black-text.red2 red2
         .black-text.red3 red3
@@ -170,7 +170,7 @@
         .red-border.border red-border
         .red-text red-text
       .s12
-        h3.h5(aria-label="pink color") Pink
+        h3.h5 Pink
         .black-text.pink1 pink1
         .black-text.pink2 pink2
         .black-text.pink3 pink3
@@ -184,7 +184,7 @@
         .pink-border.border pink-border
         .pink-text pink-text
       .s12
-        h3.h5(aria-label="purple color") Purple
+        h3.h5 Purple
         .black-text.purple1 purple1
         .black-text.purple2 purple2
         .black-text.purple3 purple3
@@ -198,7 +198,7 @@
         .purple-border.border purple-border
         .purple-text purple-text
       .s12
-        h3.h5(aria-label="deep purple color") Deep-purple
+        h3.h5 Deep purple
         .black-text.deep-purple1 deep-purple1
         .black-text.deep-purple2 deep-purple2
         .black-text.deep-purple3 deep-purple3
@@ -212,7 +212,7 @@
         .deep-purple-border.border deep-purple-border
         .deep-purple-text deep-purple-text
       .s12
-        h3.h5(aria-label="indigo color") Indigo
+        h3.h5 Indigo
         .black-text.indigo1 indigo1
         .black-text.indigo2 indigo2
         .black-text.indigo3 indigo3
@@ -226,7 +226,7 @@
         .indigo-border.border indigo-border
         .indigo-text indigo-text
       .s12
-        h3.h5(aria-label="blue color") Blue
+        h3.h5 Blue
         .black-text.blue1 blue1
         .black-text.blue2 blue2
         .black-text.blue3 blue3
@@ -240,7 +240,7 @@
         .blue-border.border blue-border
         .blue-text blue-text
       .s12
-        h3.h5(aria-label="light-blue color") Light-blue
+        h3.h5 Light blue
         .black-text.light-blue1 light-blue1
         .black-text.light-blue2 light-blue2
         .black-text.light-blue3 light-blue3
@@ -254,7 +254,7 @@
         .light-blue-border.border light-blue-border
         .light-blue-text light-blue-text
       .s12
-        h3.h5(aria-label="cyan color") Cyan
+        h3.h5 Cyan
         .black-text.cyan1 cyan1
         .black-text.cyan2 cyan2
         .black-text.cyan3 cyan3
@@ -268,7 +268,7 @@
         .cyan-border.border cyan-border
         .cyan-text cyan-text
       .s12
-        h3.h5(aria-label="teal color") Teal
+        h3.h5 Teal
         .black-text.teal1 teal1
         .black-text.teal2 teal2
         .black-text.teal3 teal3
@@ -282,7 +282,7 @@
         .teal-border.border teal-border
         .teal-text teal-text
       .s12
-        h3.h5(aria-label="green color") Green
+        h3.h5 Green
         .black-text.green1 green1
         .black-text.green2 green2
         .black-text.green3 green3
@@ -296,7 +296,7 @@
         .green-border.border green-border
         .green-text green-text
       .s12
-        h3.h5(aria-label="light green color") Light-green
+        h3.h5 Light green
         .black-text.light-green1 light-green1
         .black-text.light-green2 light-green2
         .black-text.light-green3 light-green3
@@ -310,7 +310,7 @@
         .light-green-border.border light-green-border
         .light-green-text light-green-text
       .s12
-        h3.h5(aria-label="lime color") Lime
+        h3.h5 Lime
         .black-text.lime1 lime1
         .black-text.lime2 lime2
         .black-text.lime3 lime3
@@ -324,7 +324,7 @@
         .lime-border.border lime-border
         .lime-text lime-text
       .s12
-        h3.h5(aria-label="yellow color") Yellow
+        h3.h5 Yellow
         .black-text.yellow1 yellow1
         .black-text.yellow2 yellow2
         .black-text.yellow3 yellow3
@@ -338,7 +338,7 @@
         .yellow-border.border yellow-border
         .yellow-text yellow-text
       .s12
-        h3.h5(aria-label="amber color") Amber
+        h3.h5 Amber
         .black-text.amber1 amber1
         .black-text.amber2 amber2
         .black-text.amber3 amber3
@@ -352,7 +352,7 @@
         .amber-border.border amber-border
         .amber-text amber-text
       .s12
-        h3.h5(aria-label="orange color") Orange
+        h3.h5 Orange
         .black-text.orange1 orange1
         .black-text.orange2 orange2
         .black-text.orange3 orange3
@@ -366,7 +366,7 @@
         .orange-border.border orange-border
         .orange-text orange-text
       .s12
-        h3.h5(aria-label="deep orange color") Deep-orange
+        h3.h5 Deep orange
         .black-text.deep-orange1 deep-orange1
         .black-text.deep-orange2 deep-orange2
         .black-text.deep-orange3 deep-orange3
@@ -380,7 +380,7 @@
         .deep-orange-border.border deep-orange-border
         .deep-orange-text deep-orange-text
       .s12
-        h3.h5(aria-label="brown color") Brown
+        h3.h5 Brown
         .black-text.brown1 brown1
         .black-text.brown2 brown2
         .black-text.brown3 brown3
@@ -394,7 +394,7 @@
         .brown-border.border brown-border
         .brown-text brown-text
       .s12
-        h3.h5(aria-label="grey color") Grey
+        h3.h5 Grey
         .black-text.grey1 grey1
         .black-text.grey2 grey2
         .black-text.grey3 grey3
@@ -408,7 +408,7 @@
         .grey-border.border grey-border
         .grey-text grey-text
       .s12
-        h3.h5(aria-label="blue grey color") Blue-grey
+        h3.h5 Blue grey
         .black-text.blue-grey1 blue-grey1
         .black-text.blue-grey2 blue-grey2
         .black-text.blue-grey3 blue-grey3
@@ -422,17 +422,17 @@
         .blue-grey-border.border blue-grey-border
         .blue-grey-text blue-grey-text
       .s12
-        h3.h5(aria-label="black color") Black
+        h3.h5 Black
         .black.white-text black
         .black-border.border black-border
         div black-text
       .s12
-        h3.h5(aria-label="white color") White
+        h3.h5 White
         .white.black-text white
         .white-border.border white-border
         div white-text
       .s12
-        h3.h5(aria-label="transparent color") Transparent
+        h3.h5 Transparent
         .transparent transparent
         .transparent-border.border transparent-border
         div transparent-text

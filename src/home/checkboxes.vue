@@ -1,7 +1,7 @@
 <template lang="pug">
 #checkboxes
   .large-space
-  h4(aria-label="checkboxes")
+  h4
     span Checkboxes
     button.chip.circle(@click="domain.showSamples(data, '#checkboxes .field:not(#checkboxes1, #checkboxes2), #checkboxes1 label, #checkboxes2 label', 'Checkboxes', null, 'https://github.com/beercss/beercss/blob/main/docs/CHECKBOX.md')")
       i code

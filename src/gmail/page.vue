@@ -116,7 +116,7 @@ div
       nav
         button.circle.transparent(data-ui="#dialog-add")
           i arrow_back
-        h5(aria-label="new message") New message
+        h5 New message
         .max
         button.circle.transparent(data-ui="#dialog-add")
           i attach_file
@@ -145,7 +145,7 @@ div
       nav
         button.circle.transparent(data-ui="#dialog-add-small")
           i arrow_back
-        h5(aria-label="compose") Compose
+        h5 Compose
         .max
         button.circle.transparent(data-ui="#dialog-add-small")
           i attach_file
