@@ -68,3 +68,8 @@
 .list.large-space > li > details > summary {
   min-block-size: 5.5rem;
 }
+
+:is(li, li > a:only-child):focus-visible {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: -0.25rem;
+}
