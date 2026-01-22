@@ -53,7 +53,7 @@
   .large-space
   #custom-progress
     h5.h6
-      span Inside other elements
+      span Custom progress
       button.chip.circle(@click="domain.showSamples(data, '#custom-progress > nav > *', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
         i code
     .medium-space

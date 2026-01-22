@@ -119,7 +119,7 @@
         .shape.sided-cookie12.small-width.small-height.rotate
     .large-space
     h5.h6
-      span Inside other elements
+      span Custom shape
       button.chip.circle(
         @click="domain.showSamples(data, '#shape > #custom-shapes > nav > *', 'Shapes', null, 'https://github.com/beercss/beercss/blob/main/docs/SHAPE.md')"
       )
@@ -131,6 +131,9 @@
           span.shape.sided-cookie12.max.medium-space
         button.circle.extra.fill(aria-hidden="true")
           span.shape.sided-cookie12.max.medium-space
+        .shape.sided-cookie12.transparent.rotate
+          button.responsive(aria-hidden="true")
+            i search
         button.extra.fill
           i
             span.shape.sided-cookie12.max

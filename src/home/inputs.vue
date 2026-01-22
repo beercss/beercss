@@ -103,7 +103,7 @@
         i.front search
   .medium-space
   h5.h6
-    span Custom inputs
+    span Custom input
     button.chip.circle(@click="domain.showSamples(data, '#inputs-custom nav > *', 'Custom inputs', null, null)")
       i code
   .medium-space
