@@ -1,11 +1,10 @@
 <template lang="pug">
 #inputs
   .large-space
-  h4(aria-label="inputs")
+  h4
     span Inputs
     button.chip.circle(@click="domain.showSamples(data, '#inputs .field', 'Inputs', null, 'https://github.com/beercss/beercss/blob/main/docs/INPUT.md')")
       i code
-  h5(style="display: none") Empty
   nav.wrap
     label.checkbox
       input(type="checkbox", checked, @click="domain.updateBorder('#inputs .field', $event)")
@@ -103,7 +102,7 @@
         label Label
         i.front search
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6
     span Custom inputs
     button.chip.circle(@click="domain.showSamples(data, '#inputs-custom nav > *', 'Custom inputs', null, null)")
       i code

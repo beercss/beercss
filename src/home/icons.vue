@@ -11,9 +11,8 @@
   .large-space
   h4
     span Icons
-  h5(style="display: none") Empty
   .medium-space
-  h6(aria-hidden="true") Default icons
+  h5.h6 Default icons
     button.chip.circle(@click="domain.showSamples(data, '#icons-default i', 'Icons', '#dialog-icons', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
@@ -44,7 +43,7 @@
       i.large account_circle
       i.extra account_circle
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6
     span SVG icons
     button.chip.circle(@click="domain.showSamples(data, '#icons-svg i, #icons-svg > svg', 'SVG icons', '#dialog-icons-svg', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
@@ -96,7 +95,7 @@
         svg(viewBox="0 0 24 24")
           use(href="#account_circle")
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6
     span Image icons
     button.chip.circle(@click="domain.showSamples(data, '#icons-image i', 'Image', null, 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
@@ -114,7 +113,7 @@
       i.extra
         img(alt="", :src="'/favicon.png'")
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6
     span Other libs
     button.chip.circle(@click="domain.showSamples(data, '#icons-libs > nav > i', 'Pictogrammer', '#dialog-icons-libs', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
@@ -134,7 +133,7 @@
   .medium-space
   #icons-libs
     .space
-    h6(aria-hidden="true")
+    h5.h6
       span Font Awesome
       a.link(href="https://fontawesome.com/search?m=free&o=r", target="_blank")
         i open_in_new
@@ -160,7 +159,7 @@
   dialog#dialog-icons.right.large
     header.fixed
       nav
-        h5(aria-hidden="true") Default icons
+        h5 Default icons
         a.button.border.small-round.m.l(
           href="https://fonts.google.com/icons",
           target="_blank"
@@ -189,7 +188,7 @@
   dialog#dialog-icons-svg.right.large
     header.fixed
       nav
-        h5(aria-hidden="true") SVG
+        h5 SVG
         a.button.border.small-round.m.l(
           href="https://pictogrammers.com/library/mdi/",
           target="_blank"
@@ -213,7 +212,7 @@
       pre.scroll
         code(v-html="exemplo.sourceCode")
     .medium-space
-    h6(aria-hidden="true") Multiple icons in a single SVG
+    h6 Multiple icons in a single SVG
     .medium-space
     .small-round.padding.border
       pre.scroll
@@ -230,7 +229,7 @@
   dialog#dialog-icons-libs.right.large
     header.fixed
       nav
-        h5(aria-hidden="true") Other libs
+        h5 Other libs
         a.button.border.small-round.m.l(
           href="https://github.com/beercss/beercss/blob/main/docs/ICON.md",
           target="_blank"
@@ -244,7 +243,7 @@
         button.circle.transparent(data-ui="#dialog-icons-libs")
           i close
     .space
-    h6(aria-hidden="true")
+    h6
       span Font Awesome
       a.link(href="https://fontawesome.com/search?m=free&o=r", target="_blank")
         i open_in_new
@@ -256,7 +255,7 @@
       pre.scroll
         code(v-html="exemplo.sourceCode")
     .medium-space
-    h6(aria-hidden="true")
+    h6
       span Pictogrammers
       a.link(href="https://pictogrammers.com/library/mdi/", target="_blank")
         i open_in_new

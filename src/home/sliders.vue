@@ -1,11 +1,9 @@
 <template lang="pug">
 #sliders
   .large-space
-  h4(aria-label="sliders")
-    span Sliders
-  h5(style="display: none") Empty
+  h4 Sliders
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6
     span Default slider
     button.chip.circle(@click="domain.showSamples(data, '#sliders1 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -54,7 +52,7 @@
       .slider
         input(type="range", value="25", disabled, aria-hidden="true")
         span
-  h6(aria-hidden="true")
+  h5.h6
     span Value indicator
     button.chip.circle(@click="domain.showSamples(data, '#sliders2 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -109,7 +107,7 @@
         span
         span.tooltip
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6
     span Value indicator bottom
     button.chip.circle(@click="domain.showSamples(data, '#sliders6 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -164,7 +162,7 @@
         span
         span.tooltip.bottom
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6
     span Inset icon
     button.chip.circle(@click="domain.showSamples(data, '#sliders4 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -213,7 +211,7 @@
         span
           i sunny
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6
     span Slider in field elements
     button.chip.circle(@click="domain.showSamples(data, '#sliders3 .field', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -242,7 +240,7 @@
         output Helper
   .large-space
   #sliders5
-    h6(aria-hidden="true") Custom slider
+    h5.h6 Custom slider
       button.chip.circle(@click="domain.showSamples(data, '#sliders5 nav > :not(label)', 'Custom', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
         i code
     nav.wrap

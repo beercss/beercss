@@ -7,7 +7,7 @@ main.middle-align.center-align
           .shape.sided-cookie6.medium-width.medium-height.space.rotate.auto-margin
             img.responsive(alt="", :src="data.wallpaper")
           div
-            h6(aria-hidden="true") {{ data.title }}
+            h6 {{ data.title }}
             div The name of artist
           .large-padding
             nav
@@ -52,7 +52,7 @@ main.middle-align.center-align
       .s12.s.m
         .round.page.active.left.no-padding
           div
-            h6(aria-hidden="true") {{ data.title }}
+            h6 {{ data.title }}
             div The name of artist
           .space
           .slider

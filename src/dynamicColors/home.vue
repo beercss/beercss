@@ -1,10 +1,9 @@
 <template lang="pug">
 main.responsive
-  h2.bold.page.top.active(aria-hidden="true") Material Dynamic colors
+  h2.bold.page.top.active Material Dynamic colors
 
   .large-space
-  h3.bold.page.right.active(aria-hidden="true") Build whatever you want, seriously.
-  h4(style="display: none") Empty
+  h3.bold.page.right.active Build whatever you want, seriously.
   hr.large
 
   article.no-padding.round
@@ -16,9 +15,9 @@ main.responsive
       .s12.m8.padding
         .row
           .max
-            h5.no-margin(aria-hidden="true") Classic Utility Jacket
+            h4.h5.no-margin Classic Utility Jacket
             span In stock
-          h6(aria-hidden="true") $110,00
+          h5.h6 $110,00
         nav.group.connected
           button.left-round.active(data-ui="") XS
           button.no-round(data-ui="") S
@@ -39,8 +38,8 @@ main.responsive
       .s12.m4
         img.responsive.extra.round(alt="", :src="'/kids-jumpsuit.jpg'", @click="sharedDomain.updateTheme(data, '/kids-jumpsuit.jpg')")
       .s12.m8.padding
-        h6.no-margin.bold(aria-hidden="true") Kids Jumpsuit
-        h5.bold.middle-align(aria-hidden="true")
+        h4.h6.no-margin.bold Kids Jumpsuit
+        h5.bold.middle-align
           span $39,00
           label &nbsp;In stock
         nav.group.connected
@@ -63,8 +62,8 @@ main.responsive
       .s12.m4
         img.responsive.extra(alt="", :src="'/dogtooth-style-jacket.jpg'", @click="sharedDomain.updateTheme(data, '/dogtooth-style-jacket.jpg')")
       .s12.m8.large-padding
-        h5.no-margin(aria-hidden="true") Dogtooth Style Jacket
-        h6.middle-align(aria-hidden="true")
+        h4.h5.no-margin Dogtooth Style Jacket
+        h5.h6.middle-align
           span $39,00
           label &nbsp;In stock
         nav.group.connected
@@ -87,8 +86,8 @@ main.responsive
       .s12.m4.padding
         img.responsive.large(alt="", :src="'/retro-shoe.jpg'", @click="sharedDomain.updateTheme(data, '/retro-shoe.jpg')")
       .s12.m8.padding
-        h5.no-margin(aria-hidden="true") Retro Shoe
-        h6.middle-align(aria-hidden="true") $39,00
+        h4.h5.no-margin Retro Shoe
+        h5.h6.middle-align $39,00
           label.bold &nbsp;In stock
         nav.group.connected
           button.border.left-round.active(data-ui="") XS
@@ -106,8 +105,7 @@ main.responsive
             i.primary-text favorite
         p Free shipping on all continental US orders.
   .large-space
-  h3.bold(aria-hidden="true") Responsive everything.
-  h4(style="display: none") Empty
+  h3.bold Responsive everything.
   hr.large
 
   article.no-padding.fill.no-elevate.round
@@ -116,7 +114,7 @@ main.responsive
         img.responsive.large(alt="", :src="'/beach-house-in-collingwood-001.jpg'", @click="sharedDomain.updateTheme(data, '/beach-house-in-collingwood-001.jpg')")
         .absolute.left.bottom.right.bottom-shadow.s.padding.white-text
           div Entire house
-          h5(aria-hidden="true") Beach House in Collingwood
+          h4.h5 Beach House in Collingwood
       .s12.s
         .large-padding
           nav
@@ -129,7 +127,7 @@ main.responsive
       .s6.m.l.large-padding.middle-align
         div
           div Entire house
-          h5(aria-hidden="true") Beach House in Collingwood
+          h4.h5 Beach House in Collingwood
           div
             nav
               i star

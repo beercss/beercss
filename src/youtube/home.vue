@@ -28,7 +28,7 @@ main(v-show="data.isLoaded")
                   li Like it
 
     hr.large
-    h5(aria-hidden="true") What's hot
+    h2.h5 What's hot
     .row.scroll
       .border.small-width.small-round(v-for="item in data.whatsHot")
         .wave
@@ -43,7 +43,7 @@ main(v-show="data.isLoaded")
               i thumb_up
 
     hr.large
-    h5(aria-hidden="true") Your videos
+    h2.h5 Your videos
     .row.scroll
       .border.small-width.small-round(v-for="item in data.yourVideos")
         .wave

@@ -1,10 +1,9 @@
 <template lang="pug">
 #typography
   .large-space
-  h4(aria-label="typography") Typography
-  h5(style="display: none") Empty
+  h4 Typography
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h5.h6.middle-align
     span Display and headline
     button.chip.circle(@click="domain.showSamples(data, '#display-headline h1, #display-headline h2, #display-headline h3, #display-headline h4, #display-headline h5, #display-headline h6', 'Display and headline', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md')")
       i code
@@ -32,7 +31,7 @@
     h5(aria-hidden="true") Headline
     h6(aria-hidden="true") Headline
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h5.h6.middle-align
     span Formatting
     button.chip.circle(@click="domain.showSamples(data, '#formatting nav *', 'Formatting', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#formatting-example')")
       i code
@@ -55,7 +54,7 @@
       strong strong
       b bold
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h5.h6.middle-align
     span Line spacing
     button.chip.circle(@click="domain.showSamples(data, '#spacing > :not(.bold, hr.small, .space)', 'Line spacing', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#line-spacing-example')")
       i code
@@ -84,7 +83,7 @@
       h5(aria-hidden="true") Title
       p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h5.h6.middle-align
     span Blockquote, pre and code
     button.chip.circle(@click="domain.showSamples(data, '#code > *', 'Pre, code and blockquote', null, 'https://github.com/beercss/beercss/blob/main/docs/TYPOGRAPHY.md#formatting-example')")
       i code

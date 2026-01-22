@@ -1,7 +1,7 @@
 <template lang="pug">
 #fieldsets
   .large-space
-  h4(aria-label="fieldsets")
+  h4
     span Fieldsets
     button.chip.circle(@click="domain.showSamples(data, '#fieldsets fieldset', 'Fieldsets', null, null)")
       i code

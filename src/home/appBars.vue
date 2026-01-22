@@ -1,11 +1,10 @@
 <template lang="pug">
 div
   #app-bars
-    h4(aria-label="app bars") App bars
-    h5(style="display: none") Empty
+    h4 App bars
     .medium-space
   #top-app-bars
-    h6(aria-hidden="true") Top app bars
+    h5.h6 Top app bars
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#top-app-bars header', 'Top app bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
@@ -76,8 +75,7 @@ div
         h4(aria-hidden="true") Headline
   .medium-space
   #bottom-app-bars
-    h5(style="display: none") Empty
-    h6(aria-hidden="true") Bottom app bars
+    h5.h6 Bottom app bars
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#bottom-app-bars footer', 'Bottom app bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )

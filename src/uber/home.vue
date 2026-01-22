@@ -34,7 +34,7 @@ div
           button.circle.small.no-wave
             i gps_fixed
           .max
-            h6.no-margin(aria-hidden="true") {{ data.street }}
+            h6.no-margin {{ data.street }}
             .link Your current location
         li
           hr
@@ -42,7 +42,7 @@ div
           button.circle.small.no-wave
             i home
           .max
-            h6.no-margin(aria-hidden="true") Home
+            h6.no-margin Home
             div {{ data.street }}
   .overlay
   dialog.bottom.active.s.no-padding
@@ -66,7 +66,7 @@ div
         button.circle.small.no-wave
           i gps_fixed
         .max
-          h6.no-margin(aria-hidden="true") {{ data.street }}
+          h6.no-margin {{ data.street }}
           .link Your current location
 </template>
 <script setup lang="ts">

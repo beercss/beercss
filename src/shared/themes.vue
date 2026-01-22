@@ -6,7 +6,7 @@ div
     header.fixed
       nav
         .max
-          h5(aria-hidden="true")
+          h2.h5
             span Colors
             button.chip.circle(@click="showCode(true)")
               i code
@@ -47,7 +47,7 @@ div
   .overlay
   dialog.right(:id="dialogCodeId()")
     nav
-      h5(aria-hidden="true") Themes
+      h2.h5 Themes
       a.button.border.m.l(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
       .max
       button.transparent.circle(@click="showCode(false)")

@@ -1,10 +1,9 @@
 <template lang="pug">
 #badges
   .large-space
-  h4(aria-label="badges") Badges
-  h5(style="display: none") Empty
+  h4 Badges
   .medium-space
-  h6(aria-hidden="true")
+  h3.h6
     span Common badges
     button.chip.circle(@click="domain.showSamples(data, '#default-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
       i code
@@ -74,7 +73,7 @@
       i home
       span.badge 1
   .medium-space
-  h6(aria-hidden="true")
+  h3.h6
     span Inline badge
     button.chip.circle(@click="domain.showSamples(data, '#inline-badges > *', 'Badges', null, 'https://github.com/beercss/beercss/blob/main/docs/BADGE.md')")
       i code

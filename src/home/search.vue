@@ -1,10 +1,9 @@
 <template lang="pug">
 #search
   .large-space
-  h4(aria-label="search") Search
-  h5(style="display: none") Empty
+  h4 Search
   .space
-  h6(aria-hidden="true")
+  h5.h6
     span Docked
     button.chip.circle(
       @click="domain.showSamples(data, '#search-compact > *', 'Search', null, null)"
@@ -48,7 +47,7 @@
           div Item 3
 
   .space
-  h6(aria-hidden="true")
+  h5.h6
     span Fullscreen
     button.chip.circle(
       @click="domain.showSamples(data, '#search-fullscreen > *', 'Search', null, null)"

@@ -1,10 +1,9 @@
 <template lang="pug">
 #buttons
   .large-space
-  h4(aria-label="buttons") Buttons
-  h5(style="display: none") Empty
+  h4 Buttons
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h3.h6.middle-align
     span Common buttons
     button.chip.circle(@click="domain.showSamples(data, '#default-buttons button', 'Buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -56,7 +55,7 @@
         img.responsive(alt="", :src="'/favicon.png'")
         span Button
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h3.h6.middle-align
     span Responsive buttons
     button.chip.circle(@click="domain.showSamples(data, '#responsive-buttons button', 'Reponsive buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -107,7 +106,7 @@
           img(alt="", :src="'/favicon.png'")
           span Button
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h3.h6.middle-align
     span FABs
     button.chip.circle(@click="domain.showSamples(data, '#fabs button', 'FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -172,7 +171,7 @@
       button.border.circle.right-round(aria-hidden="true")
         img.responsive(alt="", :src="'/favicon.png'")
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h3.h6.middle-align
     span Extended FABs
     button.chip.circle(@click="domain.showSamples(data, '#extended-fabs button', 'Extended FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -290,7 +289,7 @@
           img.responsive(alt="", :src="'/favicon.png'")
           span Button
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h3.h6.middle-align
     span FABs menu
     button.chip.circle(@click="domain.showSamples(data, '#fabs-menu nav > div', 'FABs menu', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -362,7 +361,7 @@
               i more_vert
               span About us
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h3.h6.middle-align
     span Icon buttons
     button.chip.circle(@click="domain.showSamples(data, '#transparent-buttons button', 'Transparent buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -404,7 +403,7 @@
       button.transparent.circle.right-round(aria-hidden="true")
         img.responsive(alt="", :src="'/favicon.png'")
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h3.h6.middle-align
     span Button groups
     button.chip.circle(@click="domain.showSamples(data, '#group-buttons nav.group', 'Button groups', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -435,7 +434,7 @@
       span extra
   #group-buttons
     .medium-space
-    h6(aria-hidden="true") Standard
+    h3.h6 Standard
     nav.group
       button.left-round(data-ui="") Button
       button.no-round(data-ui="") Button
@@ -464,7 +463,7 @@
         i front_hand
         span Button
     .medium-space
-    h6(aria-hidden="true") Connected
+    h3.h6 Connected
     nav.group.connected
       button.left-round(data-ui="") Button
       button.no-round(data-ui="") Button
@@ -493,7 +492,7 @@
         i front_hand
         span Button
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h3.h6.middle-align
     span Split buttons
     button.chip.circle(@click="domain.showSamples(data, '#split-buttons .group', 'Split button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code

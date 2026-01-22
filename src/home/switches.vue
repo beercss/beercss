@@ -1,15 +1,14 @@
 <template lang="pug">
 #switches
   .large-space
-  h4(aria-label="switches")
+  h4
     span Switches
     button.chip.circle(@click="domain.showSamples(data, '#switches .field:not(#switches1, #switches2), #switches1 label, #switches2 label', 'Switches', null, 'https://github.com/beercss/beercss/blob/main/docs/SWITCH.md')")
       i code
-  h5(style="display: none") Empty
   .grid
     .s12
       .space
-      h6(aria-hidden="true") Default switch
+      h5.h6 Default switch
       .field.middle-align#switches1
         nav.wrap
           label.switch
@@ -25,7 +24,7 @@
             input(type="checkbox", checked, disabled, aria-hidden="true")
             span
     .s12
-      h6(aria-hidden="true") Switch with icons
+      h5.h6 Switch with icons
       .field.middle-align#switches2
         nav.wrap
           label.switch.icon
@@ -46,12 +45,12 @@
               i close
               i done
     .s12
-      h6(aria-hidden="true") Switch in field elements
+      h5.h6 Switch in field elements
     .s12.l6
       .field.middle-align
         nav
           .max
-            h6(aria-hidden="true") Title
+            h6 Title
             div Some text here
           label.switch
             input(type="checkbox", aria-hidden="true")
@@ -59,7 +58,7 @@
       .field.middle-align
         nav
           .max
-            h6(aria-hidden="true") Title
+            h6 Title
             div Some text here
           label.switch
             input(type="checkbox", aria-hidden="true")
@@ -68,7 +67,7 @@
       .field.middle-align.invalid
         nav
           .max
-            h6(aria-hidden="true") Title
+            h6 Title
             div Some text here
           label.switch
             input(type="checkbox", aria-hidden="true")

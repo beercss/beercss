@@ -5,7 +5,6 @@
     span Tables
     button.chip.circle(@click="domain.showSamples(data, '#tables > .grid > * > table, #tables > .grid > * > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
       i code
-  h5(style="display: none") Empty
   nav.wrap
     label.checkbox
       input(type="checkbox", @click="domain.updateMinMax('#tables table :is(td, th):first-child', $event.target.checked ? 'min' : '')")
@@ -45,7 +44,7 @@
   .grid.large-space
     #table-default.s12.m12.l6
       .medium-space
-      h6(aria-hidden="true")
+      h5.h6
         span Default
         button.chip.circle(@click="domain.showSamples(data, '#table-default > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
@@ -75,7 +74,7 @@
             th Footer
     #table-stripes.s12.m12.l6
       .medium-space
-      h6(aria-hidden="true")
+      h5.h6
         span Stripes
         button.chip.circle(@click="domain.showSamples(data, '#table-stripes > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
@@ -105,7 +104,7 @@
             th Footer
     #table-border.s12.m12.l6
       .medium-space
-      h6(aria-hidden="true")
+      h5.h6
         span Border
         button.chip.circle(@click="domain.showSamples(data, '#table-border > table', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code
@@ -135,7 +134,7 @@
             th Footer
     #table-scroll.s12.m12.l6
       .medium-space
-      h6(aria-hidden="true")
+      h5.h6
         span Scroll
         button.chip.circle(@click="domain.showSamples(data, '#table-scroll > .scroll', 'Tables', null, 'https://github.com/beercss/beercss/blob/main/docs/TABLE.md')")
           i code

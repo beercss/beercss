@@ -5,7 +5,7 @@
       source(:src="'/dance.mp4'", type="video/mp4")
     .absolute.top.bottom.left.middle-align.small.left-shadow
       .large-padding
-        h5.bold(aria-hidden="true") Started in 1983
+        h5.bold Started in 1983
         div Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         nav
           button.small-round.large.white.black-text
@@ -17,7 +17,7 @@
   div
     .page.right.active
       .large-space
-      h5.bold(aria-hidden="true") Today's ranking
+      h5.bold Today's ranking
       .grid
         .s12.m6.l3(v-for="(item, i) in data.todaysRanking")
           .no-padding.round.wave(@mouseover="showDetails", @mouseout="hideDetails")
@@ -33,25 +33,25 @@
                   button.circle.border.small.white-border.white-text
                     i thumb_up
       #series.large-space.page.active
-      h5.bold(aria-hidden="true") Series
+      h5.bold Series
       .row.scroll
         .no-padding.small-round.small-width.wave(v-for="item in data.series")
           img.responsive(alt="", :src="item.image")
 
       #movies.large-space.page.active
-      h5.bold(aria-hidden="true") Movies
+      h5.bold Movies
       .row.scroll
         .no-padding.small-round.small-width.wave(v-for="item in data.movies")
           img.responsive(alt="", :src="item.image")
 
       #hot.large-space.page.active
-      h5.bold(aria-hidden="true") Hot
+      h5.bold Hot
       .row.scroll
         .no-padding.small-round.small-width.wave(v-for="item in data.hot")
           img.responsive(alt="", :src="item.image")
 
       #my-list.large-space.page.active
-      h5.bold(aria-hidden="true") My list
+      h5.bold My list
       .row.scroll
         .no-padding.small-round.small-width.wave(v-for="item in data.myList")
           img.responsive(alt="", :src="item.image")

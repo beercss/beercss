@@ -46,7 +46,7 @@ div
     header.fixed
       nav
         .max.padding
-          h6(aria-hidden="true") Explore
+          h2.h6 Explore
         button.transparent.circle(data-ui="#dialog-menu")
           i close
     ol.list
@@ -179,7 +179,7 @@ div
   dialog#more3.large-width(data-ui="#more3")
     header.fixed
       nav
-        h5.max(aria-hidden="true") Templates
+        h2.h5.max Templates
         button.transparent.circle
           i close
     p All templates listed below are only for tests purpose. Feel free to study them.
@@ -247,15 +247,14 @@ div
       div
         .medium-height.middle-align.center-align
           img#logo(alt="", :src="'/logo.png'", @click="domain.addHomeScreen()", fetchpriority="high")
-        h5.center-align(aria-hidden="true") Build material design
-        h5.large.center-align(aria-hidden="true") in record time
-        h5.center-align(aria-hidden="true") without stress for devs
+        h2.h5.center-align Build material design
+        h2.h6.center-align in record time
+        h2.h5.center-align without stress for devs
     #begin
       .small-height
       .small-height
-      h1(aria-hidden="true") We are translating a modern UI into HTML semantic standard
-      h2(style="display: none") Empty
-      h3(aria-hidden="true")
+      h2 We are translating a modern UI into HTML semantic standard
+      h3
         a.link(href="https://github.com/beercss/beercss") Don't forget to star us on Github
       .small-height
       .small-height
@@ -265,10 +264,9 @@ div
       .grid
         #intro.s12
           .div
-            h3(aria-hidden="true") Get started
-            h4(style="display: none") Empty
+            h3 Get started
             .medium-space
-            h5(aria-hidden="true") From CDN
+            h4.h5 From CDN
             .space
             pre.scroll
               code
@@ -276,7 +274,7 @@ div
                 | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.13.3/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
                 | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
-            h5(aria-hidden="true") From NPM
+            h4.h5 From NPM
             .space
             pre.scroll
               code
@@ -291,7 +289,7 @@ div
             b We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.
             .medium-space
             .l
-              h5(aria-hidden="true") Summary
+              h4.h5 Summary
               .space
               pre
                 code
@@ -589,7 +587,7 @@ div
         header.fixed.front
           nav
             .max.truncate
-              h5(aria-hidden="true") {{ data.name || "Code" }}
+              h2.h5 {{ data.name || "Code" }}
             a.m.l.button.small-round.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
             a.button.circle.transparent.s(v-show="data.urlSample", :href="data.urlSample", target="_blank")
               i description

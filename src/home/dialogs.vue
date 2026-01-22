@@ -5,7 +5,6 @@
     span Dialogs
     button.chip.circle(@click="domain.showSamples(data, '#dialogs .dialog-code', 'Dialogs', null, 'https://github.com/beercss/beercss/blob/main/docs/DIALOG.md', true)")
       i code
-  h5(style="display: none") Empty
   nav.wrap
     button(data-ui="#dialog") Default
     button(data-ui="#dialog-modal") Modal
@@ -20,7 +19,7 @@
   .dialog-code
     .overlay
     dialog#dialog
-      h5(aria-label="default dialog") Default
+      h5 Default
       div Some text here
       nav.right-align.no-space
         button.transparent.link(data-ui="#dialog") Cancel
@@ -29,7 +28,7 @@
   .dialog-code
     .overlay
     dialog#dialog-modal.modal
-      h5(aria-label="modal dialog") Modal
+      h5 Modal
       div Some text here
       nav.right-align.no-space
         button.transparent.link(data-ui="#dialog-modal") Cancel
@@ -38,7 +37,7 @@
   .dialog-code
     .overlay.blur
     dialog#dialog-custom-overlay
-      h5(aria-label="custom overlay dialog") Custom overlay
+      h5 Custom overlay
       div Some text here
       nav.right-align.no-space
         button.transparent.link(data-ui="#dialog-custom-overlay") Cancel
@@ -47,7 +46,7 @@
   .dialog-code
     .overlay
     dialog#dialog-left.left
-      h5(aria-label="left dialog") Left
+      h5 Left
       div Some text here
       nav.right-align
         button.border(data-ui="#dialog-left") Cancel
@@ -56,7 +55,7 @@
   .dialog-code
     .overlay
     dialog#dialog-right.right
-      h5(aria-label="right dialog") Right
+      h5 Right
       div Some text here
       nav.right-align
         button.border(data-ui="#dialog-right") Cancel
@@ -65,7 +64,7 @@
   .dialog-code
     .overlay
     dialog#dialog-top.top
-      h5(aria-label="top dialog") Top
+      h5 Top
       div Some text here
       nav.right-align
         button.border(data-ui="#dialog-top") Cancel
@@ -74,7 +73,7 @@
   .dialog-code
     .overlay
     dialog#dialog-bottom.bottom
-      h5(aria-label="bottom dialog") Bottom
+      h5 Bottom
       div Some text here
       nav.right-align
         button.border(data-ui="#dialog-bottom") Cancel
@@ -83,7 +82,7 @@
   .dialog-code
     .overlay
     dialog#dialog-max.max
-      h5(aria-label="fullscreen dialog") Fullscreen
+      h5 Fullscreen
       div Some text here
       nav.right-align
         button.border(data-ui="#dialog-max") Cancel

@@ -1,7 +1,7 @@
 <template lang="pug">
 #textareas
   .large-space
-  h4(aria-label="textareas")
+  h4
     span Textareas
     button.chip.circle(@click="domain.showSamples(data, '#textareas .field', 'Textareas', null, 'https://github.com/beercss/beercss/blob/main/docs/TEXTAREA.md')")
       i code

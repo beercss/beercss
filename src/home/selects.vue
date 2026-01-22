@@ -1,7 +1,7 @@
 <template lang="pug">
 #selects
   .large-space
-  h4(aria-label="selects")
+  h4
     span Selects
     button.chip.circle(@click="domain.showSamples(data, '#selects .field', 'Selects', null, 'https://github.com/beercss/beercss/blob/main/docs/SELECT.md')")
       i code

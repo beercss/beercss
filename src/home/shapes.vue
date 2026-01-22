@@ -1,8 +1,7 @@
 <template lang="pug">
 #shapes
   .large-space
-  h4(aria-label="shapes") Shapes
-  h5(style="display: none") Empty
+  h4 Shapes
   nav.wrap      
     button.chip(@click="domain.updateShape('#shape .shape', 'loading-indicator')") loading-indicator
     //button.chip(@click="domain.updateShape('#shape .shape', 'arch')") arch
@@ -41,7 +40,7 @@
     button.chip(@click="domain.updateShape('#shape .shape', 'very-sunny')") very-sunny
   #shape
     .large-space
-    h6(aria-hidden="true")
+    h5.h6
       span Default
       button.chip.circle(
         @click="domain.showSamples(data, '#default-shapes > nav > .shape', 'Shapes', null, 'https://github.com/beercss/beercss/blob/main/docs/SHAPE.md')"
@@ -119,7 +118,7 @@
         .shape.sided-cookie12.extra
         .shape.sided-cookie12.small-width.small-height.rotate
     .large-space
-    h6(aria-hidden="true")
+    h5.h6
       span Inside other elements
       button.chip.circle(
         @click="domain.showSamples(data, '#shape > #custom-shapes > nav > *', 'Shapes', null, 'https://github.com/beercss/beercss/blob/main/docs/SHAPE.md')"

@@ -1,11 +1,10 @@
 <template lang="pug">
 #toolbars
   .large-space
-  h4(aria-label="toolbars") Toolbars
-  h5(style="display: none") Empty
+  h4 Toolbars
   .medium-space
   #default-toolbars
-    h6(aria-hidden="true") 
+    h5.h6
       span Default
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#default-toolbars .toolbar', 'Toolbars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
@@ -71,7 +70,7 @@
           span More
   .large-space
   #floating-toolbars  
-    h6(aria-hidden="true") 
+    h5.h6
       span Floating
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#floating-toolbars > nav', 'Toolbars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
@@ -107,7 +106,7 @@
         i call_end
   .large-space
   #docked-toolbars
-    h6(aria-hidden="true") 
+    h5.h6
       span Docked
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#docked-toolbars .toolbar', 'Toolbars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"

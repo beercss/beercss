@@ -1,15 +1,14 @@
 <template lang="pug">
 #radios
   .large-space
-  h4(aria-label="radios")
+  h4
     span Radios
     button.chip.circle(@click="domain.showSamples(data, '#radios .field:not(#radios1, #radios2), #radios1 label, #radios2 label', 'Radios', null, 'https://github.com/beercss/beercss/blob/main/docs/RADIO.md')")
       i code
-  h5(style="display: none") Empty
   .grid
     .s12
       .space
-      h6(aria-hidden="true") Default radio
+      h5.h6 Default radio
       .field.middle-align#radios1
         nav.wrap
           label.radio
@@ -37,7 +36,7 @@
             input(type="radio", name="radio3", aria-hidden="true")
             span
     .s12
-      h6(aria-hidden="true") Radio with icons
+      h5.h6 Radio with icons
       .field.middle-align#radios2
         nav
           label.radio.icon
@@ -63,7 +62,7 @@
                   path(d="M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z")
 
     .s12
-      h6(aria-hidden="true") Radio in field elements
+      h5.h6 Radio in field elements
     .s12.l4
       .field.middle-align
         nav

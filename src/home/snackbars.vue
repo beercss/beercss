@@ -1,7 +1,7 @@
 <template lang="pug">
 #snackbars
   .large-space
-  h4(aria-label="snackbars")
+  h4
     span Snackbars
     button.chip.circle(@click="domain.showSamples(data, '#snackbars .snackbar', 'Snackbars', null, 'https://github.com/beercss/beercss/blob/main/docs/SNACKBAR.md')")
       i code

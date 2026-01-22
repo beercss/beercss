@@ -3,82 +3,94 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-weight: 400;
   display: block;
   align-items: center;
   line-height: normal;
 }
 
-h1 {
+h1,
+.h1 {
   font-size: 3.5625rem;
 }
 
-h2 {
+h2,
+.h2 {
   font-size: 2.8125rem;
 }
 
-h3 {
+h3,
+.h3 {
   font-size: 2.25rem;
 }
 
-h4 {
+h4,
+.h4 {
   font-size: 2rem;
 }
 
-h5 {
+h5,
+.h5 {
   font-size: 1.75rem;
 }
 
-h6 {
+h6,
+.h6 {
   font-size: 1.5rem;
 }
 
-h1.small {
+:is(h1, .h1).small {
   font-size: 3.0625rem;
 }
 
-h2.small {
+:is(h2, .h2).small {
   font-size: 2.3125rem;
 }
 
-h3.small {
+:is(h3, .h3).small {
   font-size: 1.75rem;
 }
 
-h4.small {
+:is(h4, .h4).small {
   font-size: 1.5rem;
 }
 
-h5.small {
+:is(h5, .h5).small {
   font-size: 1.25rem;
 }
 
-h6.small {
+:is(h6, .h6).small {
   font-size: 1rem;
 }
 
-h1.large {
+:is(h1, .h1).large {
   font-size: 4.0625rem;
 }
 
-h2.large {
+:is(h2, .h2).large {
   font-size: 3.3125rem;
 }
 
-h3.large {
+:is(h3, .h3).large {
   font-size: 2.75rem;
 }
 
-h4.large {
+:is(h4, .h4).large {
   font-size: 2.5rem;
 }
 
-h5.large {
+:is(h5, .h5).large {
   font-size: 2.25rem;
 }
 
-h6.large {
+:is(h6, .h6).large {
   font-size: 2rem;
 }
 

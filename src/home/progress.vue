@@ -1,8 +1,7 @@
 <template lang="pug">
 #progress
   .large-space
-  h4(aria-label="progress") Progress
-  h5(style="display: none") Empty
+  h4 Progress
   nav.wrap
     label.radio
       input(type="radio", name="percent-progress", @click="domain.updateProgress(0)")
@@ -27,7 +26,7 @@
       span orange
   .large-space
   #linear-progress
-    h6(aria-hidden="true") 
+    h5.h6
       span Linear
       button.chip.circle(@click="domain.showSamples(data, '#linear-progress progress', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
         i code
@@ -42,7 +41,7 @@
         progress.wavy(value="30", max="100")
   .large-space
   #circular-progress 
-    h6(aria-hidden="true") 
+    h5.h6
       span Circular
       button.chip.circle(@click="domain.showSamples(data, '#circular-progress progress', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
         i code
@@ -53,7 +52,7 @@
       progress.circle.wavy(value="30", max="100")
   .large-space
   #custom-progress
-    h6(aria-hidden="true") 
+    h5.h6
       span Inside other elements
       button.chip.circle(@click="domain.showSamples(data, '#custom-progress > nav > *', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
         i code

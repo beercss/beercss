@@ -2,10 +2,9 @@
 div
   #layouts
     .large-space
-    h4(aria-label="layouts") Layouts
-    h5(style="display: none") Empty
+    h4 Layouts
     .medium-space
-    h6(aria-hidden="true") Positions
+    h5.h6 Positions
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#positions article', 'Positions', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
@@ -36,7 +35,7 @@ div
           h5(aria-hidden="true") Position
           div Lorem ipsum dolor...
     .medium-space
-    h6(aria-hidden="true") Alignments
+    h5.h6 Alignments
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#alignments article', 'Alignments', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
@@ -135,7 +134,7 @@ div
                 input(aria-hidden="true")
               button.large.right-round Search
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6(aria-hidden="true")
     span Blurred elements
     button.chip.circle(@click="domain.showSamples(data, '#blurs > header, #blurs > article, #blurs > nav > *', 'Blurred elements')")
       i code
@@ -172,7 +171,7 @@ div
       button.blur Button
       button.chip.blur Chip
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6(aria-hidden="true")
     span Shadowed elements
     button.chip.circle(@click="domain.showSamples(data, '#shadows > header, #shadows > article, #shadows > nav > *', 'Shadowed elements')")
       i code

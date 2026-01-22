@@ -99,7 +99,7 @@
   .overlay
   dialog#dialog-notifications.right
     nav
-      h5.max(aria-hidden="true") Notifications
+      h2.h5.max Notifications
       button.circle.transparent(data-ui="#dialog-notifications")
         i close
     p No new notifications here
@@ -107,7 +107,7 @@
   .overlay
   dialog#dialog-add.bottom.top-round
     nav
-      h5.max(aria-hidden="true") New
+      h2.h5.max New
       button.circle.transparent(data-ui="#dialog-add")
         i close
     ul.list

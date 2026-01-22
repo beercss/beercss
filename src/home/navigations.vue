@@ -3,9 +3,8 @@
   .large-space
   h4
     span Navigations
-  h5(style="display: none") Empty
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h5.h6.middle-align
     span Rows
     button.chip.circle(@click="domain.showSamples(data, '#row-default > .row', 'Rows', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
@@ -41,7 +40,7 @@
       div min
       div min
   .medium-space
-  h6.middle-align(aria-hidden="true")
+  h5.h6.middle-align
     span Navigations
     button.chip.circle(@click="domain.showSamples(data, '#navigation-default > nav', 'Navigations', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
@@ -93,7 +92,7 @@
   .medium-space
   #navigation-rail
     .medium-space
-    h6.middle-align(aria-hidden="true")
+    h5.h6.middle-align
       span Navigation rail/bar
       button.chip.circle(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
@@ -113,7 +112,7 @@
   .medium-space
   #navigation-tabbed
     .medium-space
-    h6.middle-align(aria-hidden="true")
+    h5.h6.middle-align
       span Navigation tabbed
       button.chip.circle(@click="domain.showSamples(data, '#navigation-tabbed-example', 'Navigation tabbed', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code

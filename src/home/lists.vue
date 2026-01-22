@@ -4,7 +4,6 @@ div
     .large-space
     h4
       span Lists
-    h5(style="display: none") Empty
     nav.wrap
       label.checkbox
         input(type="checkbox", checked, @click="domain.updateBorder('#lists .list', $event)")
@@ -24,7 +23,7 @@ div
     .medium-space
     .grid
       #list-default.s12.m6.l6
-        h6(aria-hidden="true")
+        h5.h6
           span Default
           button.chip.circle(@click="domain.showSamples(data, '#list-default > div > .list', 'List border')")
             i code
@@ -35,7 +34,7 @@ div
             li Item
             li Item
       #list-links.s12.m6.l6
-        h6(aria-hidden="true")
+        h5.h6
           span Links
           button.chip.circle(@click="domain.showSamples(data, '#list-links > div > .list', 'List border')")
             i code
@@ -50,7 +49,7 @@ div
             li
               a Item
       #list-nested.s12.m6.l6
-        h6(aria-hidden="true")
+        h5.h6
           span Nested
           button.chip.circle(@click="domain.showSamples(data, '#list-nested > div > .list', 'List nested')")
             i code
@@ -63,7 +62,7 @@ div
                 li Item
                 li Item
       #list-expansion.s12.m6.l6
-        h6(aria-hidden="true")
+        h5.h6
           span Expansion
           button.chip.circle(@click="domain.showSamples(data, '#list-expansion > div > .list', 'List expansion')")
             i code
@@ -79,7 +78,7 @@ div
                   li Item
     .medium-space
     #list1
-      h6(aria-hidden="true")
+      h5.h6
         span Headline and supporting text
         button.chip.circle(@click="domain.showSamples(data, '#list1 .list', 'Lists')")
           i code
@@ -99,7 +98,7 @@ div
             label +15 min
     .medium-space
     #list2
-      h6(aria-hidden="true")
+      h5.h6
         span Icons
         button.chip.circle(@click="domain.showSamples(data, '#list2 .list', 'Lists')")
           i code
@@ -119,7 +118,7 @@ div
             label +15 min
     .medium-space
     #list3
-      h6(aria-hidden="true")
+      h5.h6
         span Leading media or avatar
         button.chip.circle(@click="domain.showSamples(data, '#list3 .list', 'Lists')")
           i code
@@ -139,7 +138,7 @@ div
             label +15 min
     .medium-space
     #list4
-      h6(aria-hidden="true")
+      h5.h6
         span Links and buttons
         button.chip.circle(@click="domain.showSamples(data, '#list4 .list', 'Lists')")
           i code

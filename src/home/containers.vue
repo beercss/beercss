@@ -2,9 +2,8 @@
 #containers
   .large-space
   h4 Containers
-  h5(style="display: none") Empty
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6
     span Main content
     button.chip.circle(@click="domain.showSamples(data, '#main-content main', 'Main content', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
       i code
@@ -15,7 +14,7 @@
       main
       main.responsive
   .medium-space
-  h6(aria-hidden="true")
+  h5.h6
     span Side content
     button.chip.circle(@click="domain.showSamples(data, '#containers .grid > div > div', 'Side content', null, 'https://github.com/beercss/beercss/blob/main/docs/CONTAINER.md')")
       i code
