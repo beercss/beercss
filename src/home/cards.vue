@@ -65,49 +65,49 @@
     .s12.m6.l3
       article
         .row
-          .max
-            h5(aria-hidden="true") Title
-            div Some text here
           img.circle.large(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
           video.circle.large(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
+          .max
+            h5(aria-hidden="true") Title
+            div Some text here
         nav
           button Button
     .s12.m6.l3
       article.round
         .row
-          .max
-            h5(aria-hidden="true") Title
-            div Some text here
           img.circle.large(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
           video.circle.large(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
+          .max
+            h5(aria-hidden="true") Title
+            div Some text here
         nav
           button Button
     .s12.m6.l3
       article.border
         .row
-          .max
-            h5(aria-hidden="true") Title
-            div Some text here
           img.circle.large(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
           video.circle.large(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
+          .max
+            h5(aria-hidden="true") Title
+            div Some text here
         nav
           button Button
     .s12.m6.l3
       article.border.round
         .row
-          .max
-            h5(aria-hidden="true") Title
-            div Some text here
           img.circle.large(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
           video.circle.large(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
+          .max
+            h5(aria-hidden="true") Title
+            div Some text here
         nav
           button Button
     .s12.m6.l3
