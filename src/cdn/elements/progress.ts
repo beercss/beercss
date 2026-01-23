@@ -12,15 +12,17 @@ function onInputDocument(e: Event) {
 }
 
 function updateProgress(progress: HTMLProgressElement) {
-  if (!progress.hasAttribute("value") && !progress.hasAttribute("max")) {
-    const value = hasClass(progress, "circle") ? "50" : "100";
-    progress.style.setProperty("--_value", value);
-    progress.setAttribute("value", value);
-    progress.setAttribute("max", "100");
-    progress.classList.add("indeterminate");
-  } else {
-    progress.style.setProperty("--_value", String(progress.value));
-  }
+  requestAnimationFrame(() => {
+    if (!progress.hasAttribute("value") && !progress.hasAttribute("max")) {
+      const value = hasClass(progress, "circle") ? "50" : "100";
+      progress.style.setProperty("--_value", value);
+      progress.setAttribute("value", value);
+      progress.setAttribute("max", "100");
+      progress.classList.add("indeterminate");
+    } else {
+      progress.style.setProperty("--_value", String(progress.value));
+    }
+  });
 }
 
 export function updateAllProgress() {
