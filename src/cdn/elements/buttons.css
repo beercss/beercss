@@ -12,7 +12,6 @@ button {
   color: var(--on-primary);
   padding: 0 var(--_padding);
   background-color: var(--primary);
-  margin: 0 0.5rem;
   border-radius: var(--_size);
   transition: transform var(--speed3), border-radius var(--speed2), padding var(--speed3);
   user-select: none;
