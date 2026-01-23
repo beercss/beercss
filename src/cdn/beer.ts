@@ -31,22 +31,22 @@ async function run(from: Element, to: Element | null, options?: any, e?: Event):
   updateAllClickable(from);
 
   if (hasTag(to, "dialog")) {
-    await updateDialog(from, to as HTMLDialogElement);
+    requestAnimationFrame(() => updateDialog(from, to as HTMLDialogElement));
     return;
   }
 
   if (hasTag(to, "menu")) {
-    updateMenu(from, to as HTMLMenuElement, e);
+    requestAnimationFrame(() => updateMenu(from, to as HTMLMenuElement, e));
     return;
   }
 
   if (hasClass(to, "snackbar")) {
-    updateSnackbar(to, options as number);
+    requestAnimationFrame(() => updateSnackbar(to, options as number));
     return;
   }
 
   if (hasClass(to, "page")) {
-    updatePage(to);
+    requestAnimationFrame(() => updatePage(to));
     return;
   }
 

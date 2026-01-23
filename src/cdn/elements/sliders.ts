@@ -13,8 +13,11 @@ function onInputDocument(e: Event) {
 }
 
 function onChangeInput(e: Event) {
+  const isCoarse = window.matchMedia('(pointer: coarse)').matches;
+  if (!isCoarse) return;
+
   const input = e.target as HTMLInputElement;
-  requestAnimationFrame(() => input.blur());
+  input.blur();
 }
 
 function updateAllRanges() {
@@ -63,10 +66,7 @@ function updateRange(input: HTMLInputElement) {
     }
   }
 
-  label.style.setProperty("--_start", `${start}%`);
-  label.style.setProperty("--_end", `${end}%`);
-  label.style.setProperty("--_value1", `'${value1}'`);
-  label.style.setProperty("--_value2", `'${value2}'`);
+  requestAnimationFrame(() => label.style.cssText = `--_start: ${start}%; --_end: ${end}%; --_value1: '${value1}'; --_value2: '${value2}';`);
 }
 
 export function updateAllSliders() {
