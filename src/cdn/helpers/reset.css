@@ -75,7 +75,3 @@ label {
 div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .tooltip, input)) {
   display: inline-flex;
 }
-
-:is(button, .button, .chip) + :is(button, .button, .chip) {
-  margin-inline-start: 1rem;
-}

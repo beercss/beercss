@@ -22,10 +22,6 @@ nav.row {
   margin: 0;
 }
 
-:is(nav, .row) > * {
-  margin: 0 !important;
-}
-
 :is(nav, .row, .max) > :only-child,
 :is(nav, .row, .max) > span > *,
 nav > :is(ol, ul) > li > :only-child,
