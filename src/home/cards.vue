@@ -64,71 +64,65 @@
         p Some text here
     .s12.m6.l3
       article
-        h5(style="display: none") Empty
         .row
+          .max
+            h5(aria-hidden="true") Title
+            div Some text here
           img.circle.large(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
           video.circle.large(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
-          .max
-            h5(aria-hidden="true") Title
-            p Some text here
         nav
           button Button
     .s12.m6.l3
       article.round
-        h5(style="display: none") Empty
         .row
+          .max
+            h5(aria-hidden="true") Title
+            div Some text here
           img.circle.large(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
           video.circle.large(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
-          .max
-            h5(aria-hidden="true") Title
-            p Some text here
         nav
           button Button
     .s12.m6.l3
       article.border
-        h5(style="display: none") Empty
         .row
+          .max
+            h5(aria-hidden="true") Title
+            div Some text here
           img.circle.large(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
           video.circle.large(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
-          .max
-            h5(aria-hidden="true") Title
-            p Some text here
         nav
           button Button
     .s12.m6.l3
       article.border.round
-        h5(style="display: none") Empty
         .row
+          .max
+            h5(aria-hidden="true") Title
+            div Some text here
           img.circle.large(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
           video.circle.large(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
             source(:src="'/dance.mp4'", type="video/mp4")
           svgMountains(v-if="data.mediaCard === 3", viewBox="450 0 900 900", class-name="circle large fill")
-          .max
-            h5(aria-hidden="true") Title
-            p Some text here
         nav
           button Button
     .s12.m6.l3
       article.no-padding
-        h5(style="display: none") Empty
         img.responsive.small(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
         video.responsive.small(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 400 300 300", class-name="responsive small fill")
         .padding
-          h5(aria-hidden="true") Title
+          h5 Title
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           nav
             button Button
     .s12.m6.l3
       article.no-padding.round
-        h5(style="display: none") Empty
         img.responsive.small.top-round(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
         video.responsive.small.top-round(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
@@ -140,7 +134,6 @@
             button Button
     .s12.m6.l3
       article.no-padding.border
-        h5(style="display: none") Empty
         img.responsive.small(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
         video.responsive.small(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
@@ -152,7 +145,6 @@
             button Button
     .s12.m6.l3
       article.no-padding.border.round
-        h5(style="display: none") Empty
         img.responsive.small.top-round(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
         video.responsive.small.top-round(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
@@ -164,59 +156,50 @@
             button Button
     .s12.m6.l3
       article.no-padding
-        h5(style="display: none") Empty
         img.responsive.medium(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
         video.responsive.medium(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 500 300 300", class-name="responsive medium fill")
-        .absolute.bottom.left.right.padding.bottom-shadow.white-text
-          nav
-            h5(aria-hidden="true") Title
-            .max
-            button.circle.transparent
-              i more_vert
+        .row.absolute.bottom.left.right.padding.bottom-shadow.white-text
+          h5(aria-hidden="true") Title
+          .max
+          button.circle.transparent
+            i more_vert
     .s12.m6.l3
       article.no-padding.round
-        h5(style="display: none") Empty
         img.responsive.medium(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
         video.responsive.medium(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 500 300 300", class-name="responsive medium fill")
-        .absolute.bottom.left.right.padding.bottom-shadow.bottom-round.white-text
-          nav
-            h5(aria-hidden="true") Title
-            .max
-            button.circle.transparent
-              i more_vert
+        .row.absolute.bottom.left.right.padding.bottom-shadow.bottom-round.white-text
+          h5(aria-hidden="true") Title
+          .max
+          button.circle.transparent
+            i more_vert
     .s12.m6.l3
       article.no-padding.border
-        h5(style="display: none") Empty
         img.responsive.medium(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
         video.responsive.medium(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 500 300 300", class-name="responsive medium fill")
-        .absolute.bottom.left.right.padding.bottom-shadow.white-text
-          nav
-            h5(aria-hidden="true") Title
-            .max
-            button.circle.transparent
-              i more_vert
+        .row.absolute.bottom.left.right.padding.bottom-shadow.white-text
+          h5(aria-hidden="true") Title
+          .max
+          button.circle.transparent
+            i more_vert
     .s12.m6.l3
       article.no-padding.border.round
-        h5(style="display: none") Empty
         img.responsive.medium(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
         video.responsive.medium(v-if="data.mediaCard === 2", autoplay, loop, muted, playsinline)
           source(:src="'/dance.mp4'", type="video/mp4")
         svgMountains(v-if="data.mediaCard === 3", viewBox="600 500 300 300", class-name="responsive medium fill")
-        .absolute.bottom.left.right.padding.bottom-shadow.bottom-round.white-text
-          nav
-            h5(aria-hidden="true") Title
-            .max
-            button.circle.transparent
-              i more_vert
+        .row.absolute.bottom.left.right.padding.bottom-shadow.bottom-round.white-text
+          h5(aria-hidden="true") Title
+          .max
+          button.circle.transparent
+            i more_vert
     .s12.l6
       article.no-padding
-        h5(style="display: none") Empty
         .grid.no-space
           .s6
             img.responsive(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
@@ -231,7 +214,6 @@
                 button.border.round Button
     .s12.l6
       article.no-padding
-        h5(style="display: none") Empty
         .grid.no-space
           .s6
             img.responsive(v-if="data.mediaCard === 1", alt="", :src="'/beer-and-woman.svg'")
