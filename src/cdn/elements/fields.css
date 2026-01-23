@@ -105,7 +105,6 @@
   padding: 0 0.9375rem;
   font-family: inherit;
   font-size: 1rem;
-  inline-size: 100%;
   min-block-size: var(--_input);
   outline: none;
   z-index: 1;
