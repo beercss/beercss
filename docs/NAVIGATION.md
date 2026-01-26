@@ -29,7 +29,7 @@ vertical, horizontal
 
 **Forms**
 
-border, round, no-round, left-round, right-round, top-round, bottom-round, tabbed, group, toolbar
+border, round, no-round, left-round, right-round, top-round, bottom-round, tabbed, group, toolbar, connected, split
 
 **Margins**
 

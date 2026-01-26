@@ -403,7 +403,7 @@ div
                   |
                   |
                   b.error-text &lt;nav&gt;
-                  span &nbsp;left, right, top, bottom, tabbed, group, toolbar, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+                  span &nbsp;left, right, top, bottom, tabbed, group, toolbar, connected, split, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
                   |
                   |
                   b.error-text &lt;ol&gt;
