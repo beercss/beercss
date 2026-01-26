@@ -3,8 +3,8 @@
 @import "./settings/dark.css";
 @import "./settings/fonts.css";
 /* begin scoped */
-@import "./helpers/reset.css";
-@import "./helpers/theme.css";
+@import "./settings/reset.css";
+@import "./settings/theme.css";
 @import "./helpers/alignments.css";
 @import "./helpers/blurs.css";
 @import "./helpers/colors.css";

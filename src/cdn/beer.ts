@@ -1,6 +1,6 @@
 import {updateAllFields} from "./elements/fields";
 import {updateAllSliders} from "./elements/sliders";
-import {updateMode, updateTheme} from "./helpers/theme";
+import {updateMode, updateTheme} from "./settings/theme";
 import {type IBeerCssTheme} from "./interfaces";
 import {addClass, guid, hasClass, hasTag, onWeak, query, queryAll, removeClass, updateAllClickable} from "./utils";
 import {updateDialog} from "./elements/dialogs";

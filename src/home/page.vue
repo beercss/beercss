@@ -667,8 +667,6 @@ onMounted(() => {
     document.getElementById("logo")?.classList?.add("active");
   }, 1000);
 
-  utils.loadCss("https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css");
-  utils.loadCss("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css");
   utils.loadCss("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.1/build/styles/default.min.css");
   utils.loadJs("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.1/build/highlight.min.js");
 });

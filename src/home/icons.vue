@@ -271,4 +271,11 @@
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";
+import { onMounted } from "vue";
+import utils from "../shared/utils";
+
+onMounted(() => {
+  utils.loadCss("https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css");
+  utils.loadCss("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css");
+});
 </script>
