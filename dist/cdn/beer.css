@@ -140,7 +140,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -150,7 +150,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -160,7 +160,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -170,7 +170,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
@@ -1539,10 +1539,6 @@ div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .toolt
 
 .no-border {
   border-color: transparent !important;
-}
-
-.border:not(.extend, .circle, .square, .badge) {
-  box-sizing: content-box;
 }
 
 .margin,
