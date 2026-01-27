@@ -63,7 +63,7 @@ The following documentation sections are included in order:
 ```html
 <link href="https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/beer.min.css" rel="stylesheet" />
 <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/beer.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ```js
@@ -82,7 +82,7 @@ Applied on child elements of `<* class="beer">...</*>`.
 ```html
 <link href="https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
 <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/beer.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ```js
@@ -100,7 +100,7 @@ Applied on child elements of `<beer-css>...</beer-css>`.
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/beer.custom-element.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ```js
@@ -115,7 +115,7 @@ import "material-dynamic-colors";
 
 ### LOCAL CDN VERSION
 
-Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
+Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
 
 ```html
 <link href="/beercss/beer.min.css" rel="stylesheet" />
@@ -137,7 +137,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <title>Hello world</title>
     <link href="https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/beer.min.css" rel="stylesheet">
     <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/beer.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">
     <nav class="left max l">
