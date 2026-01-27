@@ -5,34 +5,34 @@ Sliders let users make selections from a range of values. Default range is 0-100
 ## Element
 
 ```html
-<label class="slider">
+<div class="slider">
   <input type="range">
   <span></span>
-</label>
+</div>
 ```
 
 ## Example
 
 ```html
-<label class="slider">
+<div class="slider">
   <input type="range">
   <span></span>
-</label>
+</div>
 
-<label class="slider">
+<div class="slider">
   <input type="range" min="4" max="8">
   <span></span>
-</label>
+</div>
 ```
 
 ## Value indicator example
 
 ```html
-<label class="slider">
+<div class="slider">
   <input type="range">
   <span></span>
   <div class="tooltip"></div>
-</label>
+</div>
 ```
 
 ## Inset icon example
@@ -40,22 +40,22 @@ Sliders let users make selections from a range of values. Default range is 0-100
 The icon will show only with `medium`, `large` or `extra` helpers.
 
 ```html
-<label class="slider medium">
+<div class="slider medium">
   <input type="range">
   <span>
     <i>sunny</i>
   </span>
-</label>
+</div>
 ```
 
 ## In field elements example
 
 ```html
 <div class="field middle-align">
-  <label class="slider">
+  <div class="slider">
     <input type="range">
     <span></span>
-  </label>
+  </div>
 </div>
 ```
 
@@ -63,10 +63,10 @@ The icon will show only with `medium`, `large` or `extra` helpers.
 
 ```html
 <article>
-  <label class="slider max">
+  <div class="slider max">
     <input type="range">
     <span></span>
-  </label>
+  </div>
 <article>
 ```
 

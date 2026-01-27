@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2026-01-07
+Generated on: 2026-01-27
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -15,7 +15,7 @@ BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML el
 
 The following documentation sections are included in order:
 
-- Get started
+- The principles
 - SETTINGS
 - ELEMENTS
 - HELPERS
@@ -55,6 +55,25 @@ The following documentation sections are included in order:
 - Javascript
 
 ---
+
+# The principles
+
+This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1516. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: [Settings](SETTINGS.md), [Elements](ELEMENTS.md) and [Helpers](HELPERS.md). This sounds weird at first time, because It's not BEM, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
+
+```
+|  SETTINGS     |       // The settings affects all document
+|---------------|----|
+|               |    |
+|  ELEMENTS     |    |  // The elements are the components, widgets or tags
+|               |    |
+|---------------|    |
+|               |    |
+|               |    |
+|  HELPERS      |----|  // The common helpers makes the elements more scalable and customizable
+|               |
+|               |
+|---------------|
+```
 
 # Get started
 
@@ -128,7 +147,8 @@ Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/
 You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj). More about in [Main layout](docs/MAIN_LAYOUT.md).
 
 ```html
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -143,60 +163,60 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <nav class="left max l">
       <header>
         <nav>
-          <img src="https://www.beercss.com/favicon.png" class="circle extra">
+          <img alt="logo" src="https://www.beercss.com/favicon.png" class="circle extra">
           <h6>Cheers</h6>
         </nav>
       </header>
       <a>
         <i>home</i>
-        <div>Home</div>
+        <span>Home</span>
       </a>
       <a>
         <i>search</i>
-        <div>Search</div>
+        <span>Search</span>
       </a>
       <a>
         <i>share</i>
-        <div>Share</div>
+        <span>Share</span>
       </a>
       <a>
         <i>more_vert</i>
-        <div>More</div>
+        <span>More</span>
       </a>
       <div class="divider"></div>
       <a>
         <i>widgets</i>
-        <div>Widgets</div>
+        <span>Widgets</span>
       </a>
       <a>
         <i>chat</i>
-        <div>Chat</div>
+        <span>Chat</span>
       </a>
       <a>
         <i>help</i>
-        <div>Help</div>
+        <span>Help</span>
       </a>  
     </nav>
 
     <nav class="left m">
       <header>
-        <img src="https://www.beercss.com/favicon.png" class="circle extra">
+        <img alt="logo" src="https://www.beercss.com/favicon.png" class="circle extra">
       </header>
       <a>
         <i>home</i>
-        <div>Home</div>
+        <span>Home</span>
       </a>
       <a>
         <i>search</i>
-        <div>Search</div>
+        <span>Search</span>
       </a>
       <a>
         <i>share</i>
-        <div>Share</div>
+        <span>Share</span>
       </a>
       <a>
         <i>more_vert</i>
-        <div>More</div>
+        <span>More</span>
       </a>
     </nav>
 
@@ -216,34 +236,81 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     </nav>
 
     <main class="responsive">
-      <img src="https://www.beercss.com/beer-and-woman.svg" class="responsive round medium-height">
+      <img alt="beer and woman" src="https://www.beercss.com/beer-and-woman.svg" class="responsive round medium-height">
       <h3>Welcome</h3>
-      <h5>The beer is ready!</h5>
+      <h4>The beer is ready!</h4>
     </main>
   </body>
 </html>
 ```
 
-**We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.**
+### ✅ DO:
 
-## [Settings](SETTINGS.md)
+```
+// 1 setting to 1 document
+<body class="dark|light">...</body>
 
-The settings affects all document.
+// 1 element to N helpers
+<element class="helper helper">...</element>
+<div class="element helper helper">...</div>
 
-## [Elements](ELEMENTS.md)
+// 1 main element per document
+<...>
+  <main></main>
+</...>
 
-The elements are the components, widgets or tags.
+// inline/block elements in block elements
+<div>
+  <div></div>
+  <span></span>
+</div>
 
-## [Helpers](HELPERS.md)
+// write css like this
+.element.helper {...}
+.element > .element {...}
+.element > .helper {...}
+```
 
-The common helpers makes the elements more scalable and customizable.
+### 🚫 DON'T:
+
+```
+// N elements to 1 tag
+<div class="element element helper">...</div>
+<element class="element helper">...</element>
+
+// element with dependencies
+<div class="element">
+  <div class="element-header">...</div>
+  <div class="element-content">...</div>
+  <div class="element-footer">...</div>
+</div>
+
+// N main elements per document
+<...>
+  <main></main>
+  <main></main>
+</...>
+
+// block elements in inline elements
+<span>
+  <div></div>
+</span>
+
+// write css like this
+.element.element {...}
+.element .element {...}
+.element .helper {...}
+```
 
 ## Tips to master beercss
 
-1. Try use helpers first, before any custom css.
+1. Try use [Helpers](HELPERS.md) first, before any custom css.
 2. To customize themes go to [Settings](SETTINGS.md).
 3. To quick learn the project go to [Summary](SUMMARY.md).
 4. To understand the JS file [Javascript](JAVASCRIPT.md).
+5. Read the DO and DON'T section to write a compliance HTML/CSS.
+6. Use [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib only for theme changes at runtime with `ui("theme")`.
+7. For [Vite](https://vite.dev/config/build-options#build-assetsinlinelimit) users, build your app with `assetsInlineLimit: 0` to prevent upsize the CSS file.
 
 ---
 
@@ -1922,8 +1989,6 @@ The main layout is a common html structure to setup your pages. For RTL language
 
 ## Example
 
-Place the `<nav>` elements before all others.
-
 ```html
 <nav class="top">...</nav>
 <nav class="bottom">...</nav>
@@ -1962,15 +2027,15 @@ responsive
 <nav class="bottom">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -1984,15 +2049,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -2006,15 +2071,15 @@ responsive
 <nav class="left max">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -2028,15 +2093,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -2057,15 +2122,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -2181,19 +2246,23 @@ active
 ## Example
 
 ```html
-<button>
-  <span>Button</span>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
   <menu>
     <li>Item</li>
     <li>Item</li>
     <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 ```html
-<button>
-  <span>Button</span>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
   <menu>
     <li>
       <a href="#">Item</a>
@@ -2205,7 +2274,7 @@ active
       <a href="#">Item</a>
     </li>
   </menu>
-</button>
+</div>
 ```
 
 ## Triggers 
@@ -2217,14 +2286,16 @@ active
 Add/remove `active` class on menu.
 
 ```html
-<button>
-  <span>Button</span>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
   <menu class="active">
     <li>Item</li>
     <li>Item</li>
     <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 #### Method 2
@@ -2232,14 +2303,16 @@ Add/remove `active` class on menu.
 Add `data-ui="menu-selector"` attribute on elements.
 
 ```html
-<button data-ui="#menu">
-  <span>Button</span>
+<div data-ui="#menu">
+  <button>
+    <span>Button</span>
+  </button>
   <menu id="menu">
     <li>Item</li>
     <li>Item</li>
     <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 #### Method 3
@@ -2247,14 +2320,16 @@ Add `data-ui="menu-selector"` attribute on elements.
 Call `ui("menu-selector")`.
 
 ```html
-<button>
-  <span>Button</span>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
   <menu id="menu">
     <li>Item</li>
     <li>Item</li>
     <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 ```js
@@ -2294,7 +2369,7 @@ vertical, horizontal
 
 **Forms**
 
-border, round, no-round, left-round, right-round, top-round, bottom-round, tabbed, group, toolbar
+border, round, no-round, left-round, right-round, top-round, bottom-round, tabbed, group, toolbar, connected, split
 
 **Margins**
 
@@ -2864,34 +2939,34 @@ Sliders let users make selections from a range of values. Default range is 0-100
 ## Element
 
 ```html
-<label class="slider">
+<div class="slider">
   <input type="range">
   <span></span>
-</label>
+</div>
 ```
 
 ## Example
 
 ```html
-<label class="slider">
+<div class="slider">
   <input type="range">
   <span></span>
-</label>
+</div>
 
-<label class="slider">
+<div class="slider">
   <input type="range" min="4" max="8">
   <span></span>
-</label>
+</div>
 ```
 
 ## Value indicator example
 
 ```html
-<label class="slider">
+<div class="slider">
   <input type="range">
   <span></span>
   <div class="tooltip"></div>
-</label>
+</div>
 ```
 
 ## Inset icon example
@@ -2899,22 +2974,22 @@ Sliders let users make selections from a range of values. Default range is 0-100
 The icon will show only with `medium`, `large` or `extra` helpers.
 
 ```html
-<label class="slider medium">
+<div class="slider medium">
   <input type="range">
   <span>
     <i>sunny</i>
   </span>
-</label>
+</div>
 ```
 
 ## In field elements example
 
 ```html
 <div class="field middle-align">
-  <label class="slider">
+  <div class="slider">
     <input type="range">
     <span></span>
-  </label>
+  </div>
 </div>
 ```
 
@@ -2922,10 +2997,10 @@ The icon will show only with `medium`, `large` or `extra` helpers.
 
 ```html
 <article>
-  <label class="slider max">
+  <div class="slider max">
     <input type="range">
     <span></span>
-  </label>
+  </div>
 <article>
 ```
 
@@ -3089,7 +3164,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;menu&gt;** border, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
 
-**&lt;nav&gt;** left, right, top, bottom, group, toolbar, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+**&lt;nav&gt;** left, right, top, bottom, group, toolbar, connected, split, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
 **&lt;ol&gt;**
 
@@ -3656,8 +3731,15 @@ max
 ```html
 <button>
   <span>Button</span>
-  <div class="tooltip">I'm a tooltip</div>
+  <span class="tooltip">I'm a tooltip</span>
 </button>
+
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <div class="tooltip">I'm a tooltip</div>
+</div>
 ```
 
 ---
