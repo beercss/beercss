@@ -50,7 +50,7 @@ Beer CSS is an MIT-licensed open source project with its ongoing development mad
 - 🎯 Highly focused on DX.
 - 🚫 No build steps, configurations or dependencies.
 - ✨ Build modern interfaces without any custom CSS.
-- ✅ [HTML compliance](https://validator.w3.org/nu/?doc=https://www.beercss.com)
+- ✅ 100% valid HTML
 - 💯 Google Lighthouse friendly
 
 # A lightweight beer
