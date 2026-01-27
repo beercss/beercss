@@ -69,7 +69,3 @@
 .no-border {
   border-color: transparent !important;
 }
-
-.border:not(.extend, .circle, .square, .badge) {
-  box-sizing: content-box;
-}
