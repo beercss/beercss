@@ -150,7 +150,8 @@ Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@4.0.0/dist/cdn/
 You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj). More about in [Main layout](docs/MAIN_LAYOUT.md).
 
 ```html
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -165,7 +166,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <nav class="left max l">
       <header>
         <nav>
-          <img src="https://www.beercss.com/favicon.png" class="circle extra">
+          <img alt="logo" src="https://www.beercss.com/favicon.png" class="circle extra">
           <h6>Cheers</h6>
         </nav>
       </header>
@@ -202,7 +203,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 
     <nav class="left m">
       <header>
-        <img src="https://www.beercss.com/favicon.png" class="circle extra">
+        <img alt="logo" src="https://www.beercss.com/favicon.png" class="circle extra">
       </header>
       <a>
         <i>home</i>
@@ -238,9 +239,9 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     </nav>
 
     <main class="responsive">
-      <img src="https://www.beercss.com/beer-and-woman.svg" class="responsive round medium-height">
+      <img alt="beer and woman" src="https://www.beercss.com/beer-and-woman.svg" class="responsive round medium-height">
       <h3>Welcome</h3>
-      <h5>The beer is ready!</h5>
+      <h4>The beer is ready!</h4>
     </main>
   </body>
 </html>
