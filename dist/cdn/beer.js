@@ -265,8 +265,10 @@ function onInputDocument$1(e) {
   }
 }
 function onChangeInput(e) {
+  const isCoarse = window.matchMedia("(pointer: coarse)").matches;
+  if (!isCoarse) return;
   const input = e.target;
-  requestAnimationFrame(() => input.blur());
+  input.blur();
 }
 function updateAllRanges() {
   const body = document.body;
@@ -308,10 +310,7 @@ function updateRange(input) {
       value2 = values[0];
     }
   }
-  label.style.setProperty("--_start", `${start2}%`);
-  label.style.setProperty("--_end", `${end}%`);
-  label.style.setProperty("--_value1", `'${value1}'`);
-  label.style.setProperty("--_value2", `'${value2}'`);
+  requestAnimationFrame(() => label.style.cssText = `--_start: ${start2}%; --_end: ${end}%; --_value1: '${value1}'; --_value2: '${value2}';`);
 }
 function updateAllSliders() {
   updateAllRanges();
@@ -505,7 +504,7 @@ function updateRipple(e) {
   ripple.style.inlineSize = ripple.style.blockSize = `${diameter}px`;
   ripple.style.left = `${x}px`;
   ripple.style.top = `${y}px`;
-  ripple.addEventListener("animationend", () => {
+  onWeak(ripple, "animationend", () => {
     rippleContainer.remove();
   });
   rippleContainer.appendChild(ripple);
@@ -524,15 +523,17 @@ function onInputDocument(e) {
   }
 }
 function updateProgress(progress) {
-  if (!progress.hasAttribute("value") && !progress.hasAttribute("max")) {
-    const value = hasClass(progress, "circle") ? "50" : "100";
-    progress.style.setProperty("--_value", value);
-    progress.setAttribute("value", value);
-    progress.setAttribute("max", "100");
-    progress.classList.add("indeterminate");
-  } else {
-    progress.style.setProperty("--_value", String(progress.value));
-  }
+  requestAnimationFrame(() => {
+    if (!progress.hasAttribute("value") && !progress.hasAttribute("max")) {
+      const value = hasClass(progress, "circle") ? "50" : "100";
+      progress.style.setProperty("--_value", value);
+      progress.setAttribute("value", value);
+      progress.setAttribute("max", "100");
+      progress.classList.add("indeterminate");
+    } else {
+      progress.style.setProperty("--_value", String(progress.value));
+    }
+  });
 }
 function updateAllProgress() {
   if (isChrome && !isMac && !isIOS) return;
@@ -559,19 +560,19 @@ async function run(from, to, options, e) {
   }
   updateAllClickable(from);
   if (hasTag(to, "dialog")) {
-    await updateDialog(from, to);
+    requestAnimationFrame(() => updateDialog(from, to));
     return;
   }
   if (hasTag(to, "menu")) {
-    updateMenu(from, to, e);
+    requestAnimationFrame(() => updateMenu(from, to, e));
     return;
   }
   if (hasClass(to, "snackbar")) {
-    updateSnackbar(to, options);
+    requestAnimationFrame(() => updateSnackbar(to, options));
     return;
   }
   if (hasClass(to, "page")) {
-    updatePage(to);
+    requestAnimationFrame(() => updatePage(to));
     return;
   }
   if (hasClass(to, "active")) {
