@@ -286,7 +286,14 @@ div
                 | import "beercss";
                 | import "material-dynamic-colors";
             .medium-space
-            b We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.
+            b 
+              | *Use
+              | &nbsp;
+              a.link(href="https://www.npmjs.com/package/material-dynamic-colors") material-dynamic-colors 
+              | &nbsp;
+              | lib only for theme changes at runtime with 
+              code ui("theme")
+              | .
             .medium-space
             .l
               h4.h5 Summary

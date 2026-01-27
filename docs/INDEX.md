@@ -185,8 +185,6 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 </html>
 ```
 
-**We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.**
-
 ### ✅ DO:
 
 ```
@@ -252,6 +250,9 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 3. To quick learn the project go to [Summary](SUMMARY.md).
 4. To understand the JS file [Javascript](JAVASCRIPT.md).
 5. Read the DO and DON'T section to write a compliance HTML/CSS.
+6. Use [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib only for theme changes at runtime with `ui("theme")`.
+7. For [Vite](https://vite.dev/config/build-options#build-assetsinlinelimit) users, build your app with `assetsInlineLimit: 0` to prevent upsize the CSS file.
+
 
 ## Go to
 
