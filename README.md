@@ -4,7 +4,7 @@
 <p align="center">
     <a href="https://github.com/beercss/beercss/blob/main/LICENSE"><img src="https://img.shields.io/github/license/beercss/beercss" alt="license"></a>
     <a href="https://github.com/beercss/beercss"><img src="https://img.shields.io/jsdelivr/npm/hy/beercss" alt="downloads"></a>
-    <a><img src="https://img.shields.io/badge/gzip_size-16.7kb-green" alt="gzip size"></a>
+    <a><img src="https://img.shields.io/badge/gzip_size-16.6kb-green" alt="gzip size"></a>
     <a href="https://www.npmjs.com/package/beercss"><img src="https://img.shields.io/npm/v/beercss" alt="version"></a>
     <a href="https://github.com/beercss/beercss/pulls"><img src="https://img.shields.io/github/issues-pr/beercss/beercss" alt="pull Request"></a>
     <a href="https://github.com/beercss/beercss/issues"><img src="https://img.shields.io/github/issues/beercss/beercss" alt="issues"></a>
