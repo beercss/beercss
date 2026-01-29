@@ -29,11 +29,11 @@ The default theme will be set according to device color scheme. Use light or dar
 
 ## Dynamic theme
 
-It sets the theme and mode at runtime. You need to use [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors). You can get a real example of dynamic theme [in this codepen](https://codepen.io/leo-bnu/pen/LYWxjVG).
+It sets the theme and mode at runtime. You can get a real example of dynamic theme [in this codepen](https://codepen.io/leo-bnu/pen/LYWxjVG).
 
 #### To change theme
 
-Call `ui("theme", "color|path|url|file|blob|theme")`. It returns the new theme and applies on body element.
+Call `ui("theme", "color|path|url|file|blob|theme")`. It returns the new theme and applies on body element. Requires [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib.
 ```js
 // From color
 let theme = await ui("theme", "#ffd700");
@@ -67,7 +67,7 @@ let theme = await ui("theme");
 
 #### To change mode
 
-Call `ui("mode", "light|dark|auto")` to set current theme to light, dark or auto.
+Call `ui("mode", "light|dark|auto")` to set current theme to light, dark or auto. Doesn't require [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib.
 
 ```js
 // To light

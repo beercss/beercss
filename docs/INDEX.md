@@ -186,6 +186,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 </html>
 ```
 
+**The `beer.min.js` and `material-dynamic-colors.min.js` are optional, but could be required for some use cases.**
+
 ### ✅ DO:
 
 ```
@@ -249,10 +251,9 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 1. Try use [Helpers](HELPERS.md) first, before any custom css.
 2. To customize themes go to [Settings](SETTINGS.md).
 3. To quick learn the project go to [Summary](SUMMARY.md).
-4. To understand the JS file [Javascript](JAVASCRIPT.md).
+4. To understand the [Javascript](JAVASCRIPT.md) file.
 5. Read the DO and DON'T section to write a compliance HTML/CSS.
-6. Use [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib only for theme changes at runtime with `ui("theme")`.
-7. For [Vite](https://vite.dev/config/build-options#build-assetsinlinelimit) users, build your app with `assetsInlineLimit: 0` to prevent upsize the CSS file.
+6. For [Vite](https://vite.dev/config/build-options#build-assetsinlinelimit) users, build your app with `assetsInlineLimit: 0` to keep the original size of CSS files.
 
 
 ## Go to

@@ -247,7 +247,7 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 </html>
 ```
 
-**We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.**
+**The `beer.min.js` and `material-dynamic-colors.min.js` are optional, but could be required for some use cases.**
 
 ### ✅ DO:
 
