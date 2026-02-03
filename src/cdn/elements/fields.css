@@ -414,8 +414,14 @@ input[type=number] {
   padding: 0.25rem 1.5rem;
 }
 
-.field.invalid > output:not(.invalid) {
+.field.invalid > output:not(.invalid),
+.field:not(.invalid) > output.invalid {
   display: none;
+}
+
+.field.invalid > output.invalid ~ menu,
+.field:not(.invalid) > output:not(.invalid) ~ menu {
+  inset: auto auto 1.75rem 0;
 }
 
 table td > .field {
