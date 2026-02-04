@@ -1,6 +1,6 @@
 # Shape
 
-The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing.
+The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing. Thanks to [@dariadororoshchuk](https://www.figma.com/@dariadoroshchuk) for all 35 svg files and [@KTibow](https://github.com/KTibow) for the loading indicator svg file.
 
 ## Element
 
