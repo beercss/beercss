@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2026-01-27
+Generated on: 2026-02-04
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -80,8 +80,8 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 ### DEFAULT VERSION
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -99,8 +99,8 @@ import "material-dynamic-colors";
 Applied on child elements of `<* class="beer">...</*>`.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -118,7 +118,7 @@ import "material-dynamic-colors";
 Applied on child elements of `<beer-css>...</beer-css>`.
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/beer.custom-element.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -134,7 +134,7 @@ import "material-dynamic-colors";
 
 ### LOCAL CDN VERSION
 
-Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
+Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
 
 ```html
 <link href="/beercss/beer.min.css" rel="stylesheet" />
@@ -155,8 +155,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">
@@ -244,6 +244,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 </html>
 ```
 
+**The `beer.min.js` and `material-dynamic-colors.min.js` are optional, but could be required for some use cases.**
+
 ### ✅ DO:
 
 ```
@@ -307,10 +309,9 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 1. Try use [Helpers](HELPERS.md) first, before any custom css.
 2. To customize themes go to [Settings](SETTINGS.md).
 3. To quick learn the project go to [Summary](SUMMARY.md).
-4. To understand the JS file [Javascript](JAVASCRIPT.md).
+4. To understand the [Javascript](JAVASCRIPT.md) file.
 5. Read the DO and DON'T section to write a compliance HTML/CSS.
-6. Use [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib only for theme changes at runtime with `ui("theme")`.
-7. For [Vite](https://vite.dev/config/build-options#build-assetsinlinelimit) users, build your app with `assetsInlineLimit: 0` to prevent upsize the CSS file.
+6. For [Vite](https://vite.dev/config/build-options#build-assetsinlinelimit) users, build your app with `assetsInlineLimit: 0` to keep the original size of CSS files.
 
 ---
 
@@ -345,11 +346,11 @@ The default theme will be set according to device color scheme. Use light or dar
 
 ## Dynamic theme
 
-It sets the theme and mode at runtime. You need to use [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors). You can get a real example of dynamic theme [in this codepen](https://codepen.io/leo-bnu/pen/LYWxjVG).
+It sets the theme and mode at runtime. You can get a real example of dynamic theme [in this codepen](https://codepen.io/leo-bnu/pen/LYWxjVG).
 
 #### To change theme
 
-Call `ui("theme", "color|path|url|file|blob|theme")`. It returns the new theme and applies on body element.
+Call `ui("theme", "color|path|url|file|blob|theme")`. It returns the new theme and applies on body element. Requires [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib.
 ```js
 // From color
 let theme = await ui("theme", "#ffd700");
@@ -383,7 +384,7 @@ let theme = await ui("theme");
 
 #### To change mode
 
-Call `ui("mode", "light|dark|auto")` to set current theme to light, dark or auto.
+Call `ui("mode", "light|dark|auto")` to set current theme to light, dark or auto. Doesn't require [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib.
 
 ```js
 // To light
@@ -2884,7 +2885,7 @@ Add/remove `active` class on label/select (the JS file of beer do this automatic
 
 # Shape
 
-The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing.
+The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing. Thanks to [@dariadororoshchuk](https://www.figma.com/@dariadoroshchuk) for all 35 svg files and [@KTibow](https://github.com/KTibow) for the loading indicator svg file.
 
 ## Element
 

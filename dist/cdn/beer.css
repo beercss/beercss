@@ -140,7 +140,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -150,7 +150,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -160,7 +160,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -170,7 +170,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.1/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
@@ -3127,8 +3127,14 @@ input[type=number] {
   padding: 0.25rem 1.5rem;
 }
 
-.field.invalid > output:not(.invalid) {
+.field.invalid > output:not(.invalid),
+.field:not(.invalid) > output.invalid {
   display: none;
+}
+
+.field.invalid > output.invalid ~ menu,
+.field:not(.invalid) > output:not(.invalid) ~ menu {
+  inset: auto auto 1.75rem 0;
 }
 
 table td > .field {
