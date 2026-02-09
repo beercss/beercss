@@ -4,24 +4,24 @@
   h4
     span Menus
     button.chip.circle(
-      @click="domain.showSamples(data, '#menus > nav > div', 'Menus', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')"
+      @click="domain.showSamples(data, '#default-menus > nav > div', 'Menus', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')"
     )
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="radio-color-toolbars", checked, @click="domain.updateColorTheme('#default-menus menu')")
+      input(type="radio", name="radio-color-menus", checked, @click="domain.updateColorTheme('#default-menus menu')")
       span default
     label.radio
-      input(type="radio", name="radio-color-toolbars", @click="domain.updateColorTheme('#default-menus menu', 'fill')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu', 'fill')")
       span fill
     label.radio
-      input(type="radio", name="radio-color-toolbars", @click="domain.updateColorTheme('#default-menus menu', 'primary')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu', 'primary')")
       span primary
     label.radio
-      input(type="radio", name="radio-color-toolbars", @click="domain.updateColorTheme('#default-menus menu', 'secondary')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu', 'secondary')")
       span secondary
     label.radio
-      input(type="radio", name="radio-color-toolbars", @click="domain.updateColorTheme('#default-menus menu', 'tertiary')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu', 'tertiary')")
       span tertiary
   .medium-space
   #default-menus
