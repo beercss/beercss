@@ -18,7 +18,7 @@ Lists are continuous, vertical indexes of text and images. Each item can have up
 
 **Forms**
 
-border
+none, border
 
 **Spaces**
 

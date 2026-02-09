@@ -184,3 +184,39 @@
   background-color: var(--surface-variant) !important;
   color: var(--on-surface-variant) !important;
 }
+
+nav.primary > button,
+:is(nav, menu).primary > :is(button, a, li).active {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+nav.primary-container > button,
+:is(nav, menu).primary-container > :is(button, a, li).active {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+nav.secondary > button,
+:is(nav, menu).secondary > :is(button, a, li).active {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+nav.secondary-container > button,
+:is(nav, menu).secondary-container > :is(button, a, li).active {
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+}
+
+nav.tertiary > button,
+:is(nav, menu).tertiary > :is(button, a, li).active {
+  background-color: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+}
+
+nav.tertiary-container > button,
+:is(nav, menu).tertiary-container > :is(button, a, li).active {
+  background-color: var(--tertiary);
+  color: var(--on-tertiary);
+}

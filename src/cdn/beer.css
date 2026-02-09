@@ -4,7 +4,6 @@
 @import "./settings/fonts.css";
 /* begin scoped */
 @import "./settings/reset.css";
-@import "./settings/theme.css";
 @import "./helpers/alignments.css";
 @import "./helpers/blurs.css";
 @import "./helpers/colors.css";
@@ -51,4 +50,5 @@
 @import "./elements/tables.css";
 @import "./elements/tabs.css";
 @import "./elements/tooltips.css";
+@import "./settings/theme.css";
 /* end scoped */

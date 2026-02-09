@@ -54,7 +54,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;legend&gt;**
 
-**&lt;li&gt;**
+**&lt;li&gt;** none
 
 **list** border, space, no-space, small-space, medium-space, large-space
 

@@ -140,7 +140,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.3/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -150,7 +150,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.3/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -160,7 +160,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.3/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -170,7 +170,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.2/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.3/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
@@ -254,193 +254,6 @@ label {
 
 div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .tooltip, input)) {
   display: inline-flex;
-}
-
-.transparent {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  color: inherit !important;
-}
-
-.primary {
-  background-color: var(--primary) !important;
-  color: var(--on-primary) !important;
-}
-
-.primary-text {
-  color: var(--primary) !important;
-}
-
-.primary-border {
-  border-color: var(--primary) !important;
-}
-
-.primary-container {
-  background-color: var(--primary-container) !important;
-  color: var(--on-primary-container) !important;
-}
-
-.secondary {
-  background-color: var(--secondary) !important;
-  color: var(--on-secondary) !important;
-}
-
-.secondary-text {
-  color: var(--secondary) !important;
-}
-
-.secondary-border {
-  border-color: var(--secondary) !important;
-}
-
-.secondary-container {
-  background-color: var(--secondary-container) !important;
-  color: var(--on-secondary-container) !important;
-}
-
-.tertiary {
-  background-color: var(--tertiary) !important;
-  color: var(--on-tertiary) !important;
-}
-
-.tertiary-text {
-  color: var(--tertiary) !important;
-}
-
-.tertiary-border {
-  border-color: var(--tertiary) !important;
-}
-
-.tertiary-container {
-  background-color: var(--tertiary-container) !important;
-  color: var(--on-tertiary-container) !important;
-}
-
-.error {
-  background-color: var(--error) !important;
-  color: var(--on-error) !important;
-}
-
-.error-text {
-  color: var(--error) !important;
-}
-
-.error-border {
-  border-color: var(--error) !important;
-}
-
-.error-container {
-  background-color: var(--error-container) !important;
-  color: var(--on-error-container) !important;
-}
-
-.background {
-  background-color: var(--background) !important;
-  color: var(--on-background) !important;
-}
-
-.surface,
-.surface-dim,
-.surface-bright,
-.surface-container-lowest,
-.surface-container-low,
-.surface-container,
-.surface-container-high,
-.surface-container-highest {
-  background-color: var(--surface) !important;
-  color: var(--on-surface) !important;
-}
-
-.surface-variant {
-  background-color: var(--surface-variant) !important;
-  color: var(--on-surface-variant) !important;
-}
-
-.inverse-surface {
-  background-color: var(--inverse-surface);
-  color: var(--inverse-on-surface);
-}
-
-.inverse-primary {
-  background-color: var(--inverse-primary);
-  color: var(--primary);
-}
-
-.inverse-primary-text {
-  color: var(--inverse-primary) !important;
-}
-
-.inverse-primary-border {
-  border-color: var(--inverse-primary) !important;
-}
-
-.surface-dim {
-  background-color: var(--surface-dim) !important;
-}
-
-.surface-bright {
-  background-color: var(--surface-bright) !important;
-}
-
-.surface-container-lowest {
-  background-color: var(--surface-container-lowest) !important;
-}
-
-.surface-container-low {
-  background-color: var(--surface-container-low) !important;
-}
-
-.surface-container {
-  background-color: var(--surface-container) !important;
-}
-
-.surface-container-high {
-  background-color: var(--surface-container-high) !important;
-}
-
-.surface-container-highest {
-  background-color: var(--surface-container-highest) !important;
-}
-
-.surface-container-low {
-  background-color: var(--surface-container-low) !important;
-}
-
-.black {
-  background-color: #000 !important;
-}
-
-.black-border {
-  border-color: #000 !important;
-}
-
-.black-text {
-  color: #000 !important;
-}
-
-.white {
-  background-color: #FFF !important;
-}
-
-.white-border {
-  border-color: #FFF !important;
-}
-
-.white-text {
-  color: #FFF !important;
-}
-
-.transparent-border {
-  border-color: transparent !important;
-}
-
-.transparent-text {
-  color: transparent !important;
-}
-
-.fill:not(i) {
-  background-color: var(--surface-variant) !important;
-  color: var(--on-surface-variant) !important;
 }
 
 .middle-align {
@@ -3516,7 +3329,8 @@ i[class*=fa-] {
   min-block-size: 5.5rem;
 }
 
-:is(li, li > a:only-child):focus-visible {
+.list > li:focus-visible,
+.list > li > a:only-child:focus-visible {
   outline: 0.125rem solid var(--primary);
   outline-offset: -0.25rem;
 }
@@ -3711,11 +3525,14 @@ menu {
   color: var(--on-surface);
   line-height: normal;
   text-align: start;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   transform: scale(0.8) translateY(120%);
-  transition: all var(--speed2), 0s background-color;
+  transition: all var(--speed2) var(--speed2), background-color 0s;
   justify-content: flex-start;
-  padding: 0.5rem 0;
+  padding: 0.125rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
 }
 
 [dir=rtl] menu {
@@ -3728,19 +3545,25 @@ menu.no-wrap {
 }
 
 menu.active,
-:not(menu, [data-ui]):focus-within > menu,
+:not([data-ui]):focus-within > menu,
 menu > li:hover > menu,
 menu > li > menu:hover {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(100%);
+  transition: all var(--speed2), background-color 0s;
 }
 
-menu.active.top,
-:not(menu, [data-ui]):focus-within > menu.top,
+menu.top.active,
+:not([data-ui]):focus-within > menu.top,
 menu > li:hover > menu.top,
 menu > li > menu.top:hover {
   transform: scale(1) translateY(-100%);
+}
+
+menu:is(.min, .max).active,
+:not([data-ui]):focus-within > menu:is(.min, .max) {
+  transform: scale(1);
 }
 
 menu * {
@@ -3760,14 +3583,40 @@ menu > li > a:only-child {
   white-space: nowrap;
   gap: 1rem;
   padding: 0.5rem 1rem;
-  min-block-size: 3rem;
+  min-block-size: 2.75rem;
   flex: 1;
   margin: 0 !important;
   cursor: pointer;
+  border-radius: 0.25rem;
+  transition: border-radius var(--speed2);
 }
 
-menu > li:is(:hover, :focus, .active) {
-  background-color: var(--active);
+menu > li:first-child {
+  border-top-left-radius: inherit; 
+  border-top-right-radius: inherit;
+}
+
+menu > li:last-child {
+  border-bottom-left-radius: inherit; 
+  border-bottom-right-radius: inherit;
+}
+
+menu > li:not(.none):hover {
+  background-color: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+menu > li.active {
+  background-color: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+}
+
+menu > li:is(.active, :active) {
+  border-radius: inherit;
+}
+
+menu > li.none {
+  background: none;
+  border-radius: 0;
 }
 
 menu > li > :is(.max, .field),
@@ -3780,10 +3629,7 @@ menu > li:has(.field, a:only-child) {
 
 menu.min {
   inset: 0 0 auto 0;
-  transform: none !important;
-  background-color: var(--surface-variant) !important;
-  color: var(--on-surface-variant) !important;
-  padding: 0;
+  transform: scale(0.8);
 }
 
 [dir=rtl] menu.min.right,
@@ -3806,10 +3652,12 @@ menu.max {
   max-block-size: none;
   min-block-size: auto;
   z-index: 100;
-  transform: none !important;
-  background-color: var(--surface-variant) !important;
-  color: var(--on-surface-variant) !important;
+  transform: scale(0.8);
   border-radius: 0;
+}
+
+menu.max > :is(li, li.none) {
+  flex: none;
 }
 
 menu.no-wrap:is(.min, .max) {
@@ -3874,15 +3722,6 @@ menu.medium-space > li {
 
 menu.large-space > li {
   min-block-size: 4rem;
-}
-
-menu.border > li:not(:last-child)::before {
-  content: '';
-  position: absolute;
-  background-color: var(--outline-variant);
-  inset: auto 0 0 0;
-  block-size: 0.0625rem;
-  inline-size: auto;
 }
 
 menu.transparent {
@@ -4121,6 +3960,11 @@ nav:is(.top, .bottom) > header {
 
 nav > header > * {
   margin: 0;
+  transition: none;
+}
+
+nav.max > header > * {
+  transition: all var(--speed1);
 }
 
 nav > header > .extend:hover {
@@ -4196,7 +4040,6 @@ nav:not(.max):is(.left, .right, .top, .bottom) > a:not(.button, .chip) > i,
 nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) > i {
   padding: 0.25rem 1rem;
   border-radius: 2rem;
-  transition: padding var(--speed1) linear;
   margin: 0 auto;
 }
 
@@ -4209,6 +4052,11 @@ nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .ch
   padding: 0 1rem;
   border-radius: 2rem;
   font-size: inherit;
+}
+
+nav:is(.left, .right, .top, .bottom) > a.active:not(.button, .chip),
+nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a.active:not(.button, .chip) {
+  transition: padding var(--speed1) linear;
 }
 
 nav.max:is(.top, .bottom) > a:not(.button, .chip),
@@ -4224,6 +4072,10 @@ nav:is(.left, .right, .top, .bottom):not(.max) > a.active:not(.button, .chip) > 
 nav:is(.left, .right, .top, .bottom):not(.max) > :is(ol, ul) > li > a.active:not(.button, .chip) > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
+}
+
+nav.vertical > :is(ol, ul) {
+  align-items: normal;
 }
 
 :is(nav, .row):is(.left-align, .top-align, .vertical) {
@@ -4398,48 +4250,6 @@ nav.split > :is(.button, button):active {
 nav.split > :is(.button, button):not(.chip, .fill, .border) {
   background-color: var(--primary);
   color: var(--on-primary);
-}
-
-nav.group.primary-container > button,
-nav:is(.max, .toolbar, .tabbed, .group).primary > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).primary > a.active:not(.button, .chip) > i {
-  background-color: var(--primary-container) !important;
-  color: var(--on-primary-container) !important;
-}
-
-nav.group.primary > button,
-nav:is(.max, .toolbar, .tabbed, .group).primary-container > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).primary-container > a.active:not(.button, .chip) > i {
-  background-color: var(--primary) !important;
-  color: var(--on-primary) !important;
-}
-
-nav.group.secondary-container > button,
-nav:is(.max, .toolbar, .tabbed, .group).secondary > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).secondary > a.active:not(.button, .chip) > i {
-  background-color: var(--secondary-container) !important;
-  color: var(--on-secondary-container) !important;
-}
-
-nav.group.secondary > button,
-nav:is(.max, .toolbar, .tabbed, .group).secondary-container > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).secondary-container > a.active:not(.button, .chip) > i {
-  background-color: var(--secondary) !important;
-  color: var(--on-secondary) !important;
-}
-
-nav.group.tertiary-container > button,
-nav:is(.max, .toolbar, .tabbed, .group).tertiary > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).tertiary > a.active:not(.button, .chip) > i {
-  background-color: var(--tertiary-container) !important;
-  color: var(--on-tertiary-container) !important;
-}
-
-nav.group.tertiary > button,
-nav:is(.max, .toolbar, .tabbed, .group).tertiary-container > :is(button, a).active,
-nav:not(.max, .toolbar, .tabbed, .group).tertiary-container > a.active:not(.button, .chip) > i {
-  background-color: var(--tertiary) !important;
-  color: var(--on-tertiary) !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -5904,6 +5714,229 @@ menu:active ~ .tooltip,
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: var(--elevate2);
+}
+
+.transparent {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: inherit !important;
+}
+
+.primary {
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
+}
+
+.primary-text {
+  color: var(--primary) !important;
+}
+
+.primary-border {
+  border-color: var(--primary) !important;
+}
+
+.primary-container {
+  background-color: var(--primary-container) !important;
+  color: var(--on-primary-container) !important;
+}
+
+.secondary {
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
+}
+
+.secondary-text {
+  color: var(--secondary) !important;
+}
+
+.secondary-border {
+  border-color: var(--secondary) !important;
+}
+
+.secondary-container {
+  background-color: var(--secondary-container) !important;
+  color: var(--on-secondary-container) !important;
+}
+
+.tertiary {
+  background-color: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
+}
+
+.tertiary-text {
+  color: var(--tertiary) !important;
+}
+
+.tertiary-border {
+  border-color: var(--tertiary) !important;
+}
+
+.tertiary-container {
+  background-color: var(--tertiary-container) !important;
+  color: var(--on-tertiary-container) !important;
+}
+
+.error {
+  background-color: var(--error) !important;
+  color: var(--on-error) !important;
+}
+
+.error-text {
+  color: var(--error) !important;
+}
+
+.error-border {
+  border-color: var(--error) !important;
+}
+
+.error-container {
+  background-color: var(--error-container) !important;
+  color: var(--on-error-container) !important;
+}
+
+.background {
+  background-color: var(--background) !important;
+  color: var(--on-background) !important;
+}
+
+.surface,
+.surface-dim,
+.surface-bright,
+.surface-container-lowest,
+.surface-container-low,
+.surface-container,
+.surface-container-high,
+.surface-container-highest {
+  background-color: var(--surface) !important;
+  color: var(--on-surface) !important;
+}
+
+.surface-variant {
+  background-color: var(--surface-variant) !important;
+  color: var(--on-surface-variant) !important;
+}
+
+.inverse-surface {
+  background-color: var(--inverse-surface);
+  color: var(--inverse-on-surface);
+}
+
+.inverse-primary {
+  background-color: var(--inverse-primary);
+  color: var(--primary);
+}
+
+.inverse-primary-text {
+  color: var(--inverse-primary) !important;
+}
+
+.inverse-primary-border {
+  border-color: var(--inverse-primary) !important;
+}
+
+.surface-dim {
+  background-color: var(--surface-dim) !important;
+}
+
+.surface-bright {
+  background-color: var(--surface-bright) !important;
+}
+
+.surface-container-lowest {
+  background-color: var(--surface-container-lowest) !important;
+}
+
+.surface-container-low {
+  background-color: var(--surface-container-low) !important;
+}
+
+.surface-container {
+  background-color: var(--surface-container) !important;
+}
+
+.surface-container-high {
+  background-color: var(--surface-container-high) !important;
+}
+
+.surface-container-highest {
+  background-color: var(--surface-container-highest) !important;
+}
+
+.surface-container-low {
+  background-color: var(--surface-container-low) !important;
+}
+
+.black {
+  background-color: #000 !important;
+}
+
+.black-border {
+  border-color: #000 !important;
+}
+
+.black-text {
+  color: #000 !important;
+}
+
+.white {
+  background-color: #FFF !important;
+}
+
+.white-border {
+  border-color: #FFF !important;
+}
+
+.white-text {
+  color: #FFF !important;
+}
+
+.transparent-border {
+  border-color: transparent !important;
+}
+
+.transparent-text {
+  color: transparent !important;
+}
+
+.fill:not(i) {
+  background-color: var(--surface-variant) !important;
+  color: var(--on-surface-variant) !important;
+}
+
+nav.primary > button,
+:is(nav, menu).primary > :is(button, a, li).active {
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+}
+
+nav.primary-container > button,
+:is(nav, menu).primary-container > :is(button, a, li).active {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+nav.secondary > button,
+:is(nav, menu).secondary > :is(button, a, li).active {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+nav.secondary-container > button,
+:is(nav, menu).secondary-container > :is(button, a, li).active {
+  background-color: var(--secondary);
+  color: var(--on-secondary);
+}
+
+nav.tertiary > button,
+:is(nav, menu).tertiary > :is(button, a, li).active {
+  background-color: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+}
+
+nav.tertiary-container > button,
+:is(nav, menu).tertiary-container > :is(button, a, li).active {
+  background-color: var(--tertiary);
+  color: var(--on-tertiary);
 }
 
 /* end scoped */

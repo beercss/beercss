@@ -17,11 +17,14 @@ menu {
   color: var(--on-surface);
   line-height: normal;
   text-align: start;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   transform: scale(0.8) translateY(120%);
-  transition: all var(--speed2), 0s background-color;
+  transition: all var(--speed2) var(--speed2), background-color 0s;
   justify-content: flex-start;
-  padding: 0.5rem 0;
+  padding: 0.125rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
 }
 
 [dir=rtl] menu {
@@ -34,19 +37,25 @@ menu.no-wrap {
 }
 
 menu.active,
-:not(menu, [data-ui]):focus-within > menu,
+:not([data-ui]):focus-within > menu,
 menu > li:hover > menu,
 menu > li > menu:hover {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(100%);
+  transition: all var(--speed2), background-color 0s;
 }
 
-menu.active.top,
-:not(menu, [data-ui]):focus-within > menu.top,
+menu.top.active,
+:not([data-ui]):focus-within > menu.top,
 menu > li:hover > menu.top,
 menu > li > menu.top:hover {
   transform: scale(1) translateY(-100%);
+}
+
+menu:is(.min, .max).active,
+:not([data-ui]):focus-within > menu:is(.min, .max) {
+  transform: scale(1);
 }
 
 menu * {
@@ -66,14 +75,40 @@ menu > li > a:only-child {
   white-space: nowrap;
   gap: 1rem;
   padding: 0.5rem 1rem;
-  min-block-size: 3rem;
+  min-block-size: 2.75rem;
   flex: 1;
   margin: 0 !important;
   cursor: pointer;
+  border-radius: 0.25rem;
+  transition: border-radius var(--speed2);
 }
 
-menu > li:is(:hover, :focus, .active) {
-  background-color: var(--active);
+menu > li:first-child {
+  border-top-left-radius: inherit; 
+  border-top-right-radius: inherit;
+}
+
+menu > li:last-child {
+  border-bottom-left-radius: inherit; 
+  border-bottom-right-radius: inherit;
+}
+
+menu > li:not(.none):hover {
+  background-color: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+menu > li.active {
+  background-color: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+}
+
+menu > li:is(.active, :active) {
+  border-radius: inherit;
+}
+
+menu > li.none {
+  background: none;
+  border-radius: 0;
 }
 
 menu > li > :is(.max, .field),
@@ -86,10 +121,7 @@ menu > li:has(.field, a:only-child) {
 
 menu.min {
   inset: 0 0 auto 0;
-  transform: none !important;
-  background-color: var(--surface-variant) !important;
-  color: var(--on-surface-variant) !important;
-  padding: 0;
+  transform: scale(0.8);
 }
 
 [dir=rtl] menu.min.right,
@@ -112,10 +144,12 @@ menu.max {
   max-block-size: none;
   min-block-size: auto;
   z-index: 100;
-  transform: none !important;
-  background-color: var(--surface-variant) !important;
-  color: var(--on-surface-variant) !important;
+  transform: scale(0.8);
   border-radius: 0;
+}
+
+menu.max > :is(li, li.none) {
+  flex: none;
 }
 
 menu.no-wrap:is(.min, .max) {
@@ -180,15 +214,6 @@ menu.medium-space > li {
 
 menu.large-space > li {
   min-block-size: 4rem;
-}
-
-menu.border > li:not(:last-child)::before {
-  content: '';
-  position: absolute;
-  background-color: var(--outline-variant);
-  inset: auto 0 0 0;
-  block-size: 0.0625rem;
-  inline-size: auto;
 }
 
 menu.transparent {
