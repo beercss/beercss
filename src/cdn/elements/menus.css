@@ -93,7 +93,7 @@ menu > li:last-child {
   border-bottom-right-radius: inherit;
 }
 
-menu > li:not(.none):hover {
+menu:not(.none) > li:not(.none):hover {
   background-color: color-mix(in srgb, currentColor 10%, transparent);
 }
 
