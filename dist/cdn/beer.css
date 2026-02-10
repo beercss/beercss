@@ -2786,8 +2786,7 @@ menu.large-space > li {
 }
 
 menu.transparent {
-  margin: 0 -1rem !important;
-  padding: 0.5rem;
+  padding: 0;
 }
 
 menu.transparent > li {
