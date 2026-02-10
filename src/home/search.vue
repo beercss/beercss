@@ -15,7 +15,7 @@
       i.front search
       input(placeholder="Search text")
       menu#search1.min
-        li.none
+        li.transparent
           .field.large.prefix
             i.front(data-ui="#search1") arrow_back
             input(placeholder="Search text")
@@ -32,7 +32,7 @@
       button.extra.circle.fill
         i search
       menu#search2.no-wrap.left.min
-        li.none
+        li.transparent
           .field.large.prefix
             i.front(data-ui="#search2") arrow_back
             input(placeholder="Search text")
@@ -59,7 +59,7 @@
       i.front search
       input(placeholder="Search text")
       menu#search3.max
-        li.none
+        li.transparent
           .field.large.prefix
             i.front(data-ui="#search3") arrow_back
             input(placeholder="Search text")
@@ -76,7 +76,7 @@
       button.extra.circle.fill
         i search
       menu#search4.max
-        li.none
+        li.transparent
           .field.large.prefix
             i.front(data-ui="#search4") arrow_back
             input(placeholder="Search text")

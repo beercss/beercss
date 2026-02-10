@@ -80,8 +80,8 @@ This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebo
 ### DEFAULT VERSION
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@4.0.4/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.4/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -99,8 +99,8 @@ import "material-dynamic-colors";
 Applied on child elements of `<* class="beer">...</*>`.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@4.0.4/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.4/dist/cdn/beer.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/beer.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -118,7 +118,7 @@ import "material-dynamic-colors";
 Applied on child elements of `<beer-css>...</beer-css>`.
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.4/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/beer.custom-element.min.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
@@ -134,7 +134,7 @@ import "material-dynamic-colors";
 
 ### LOCAL CDN VERSION
 
-Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@4.0.4/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
+Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
 
 ```html
 <link href="/beercss/beer.min.css" rel="stylesheet" />
@@ -155,8 +155,8 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@4.0.4/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.4/dist/cdn/beer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">
@@ -2226,7 +2226,7 @@ Menus display a list of choices on temporary surfaces.
 
 **Forms**
 
-none, border
+border
 
 **Positions**
 
@@ -3157,7 +3157,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;legend&gt;**
 
-**&lt;li&gt;** none
+**&lt;li&gt;**
 
 **list** border, space, no-space, small-space, medium-space, large-space
 

@@ -93,7 +93,7 @@ menu > li:last-child {
   border-bottom-right-radius: inherit;
 }
 
-menu:not(.none) > li:not(.none):hover {
+menu:not(.transparent) > li:not(.transparent):hover {
   background-color: color-mix(in srgb, currentColor 10%, transparent);
 }
 
@@ -104,11 +104,6 @@ menu > li.active {
 
 menu > li:is(.active, :active) {
   border-radius: inherit;
-}
-
-menu > li.none {
-  background: none;
-  border-radius: 0;
 }
 
 menu > li > :is(.max, .field),
@@ -148,8 +143,8 @@ menu.max {
   border-radius: 0;
 }
 
-menu.max > :is(li, li.none) {
-  flex: none;
+menu.max > li {
+  flex: none !important;
 }
 
 menu.no-wrap:is(.min, .max) {
