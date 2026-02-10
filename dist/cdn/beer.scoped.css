@@ -140,7 +140,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.6/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -150,7 +150,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.6/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -160,7 +160,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.6/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -170,7 +170,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.5/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.6/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
@@ -1554,19 +1554,17 @@ hr.small,
   margin: 0.5rem 0 !important;
 }
 
-li:has(> hr),
-li:has(> .divider) {
+li:has(> :is(hr, .divider)) {
   padding: 0 !important;
   align-self: normal !important;
   min-inline-size: auto !important;
   min-block-size: auto !important;
   inline-size: -webkit-fill-available;
+  background: none !important;
 }
 
-hr.vertical,
-.divider.vertical,
-li:has(> hr.vertical),
-li:has(> .divider.vertical) {
+:is(hr, .divider).vertical,
+li:has(> :is(hr, .divider).vertical) {
   padding: 0 !important;
   align-self: center !important;
   min-inline-size: auto;
@@ -2596,9 +2594,9 @@ menu {
   text-align: start;
   border-radius: 1rem;
   transform: scale(0.8) translateY(120%);
-  transition: all var(--speed2) var(--speed2), background-color 0s;
+  transition: all var(--speed2) var(--speed2);
   justify-content: flex-start;
-  padding: 0.125rem 0.25rem;
+  padding: 0.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
@@ -2670,7 +2668,7 @@ menu > li:last-child {
   border-bottom-right-radius: inherit;
 }
 
-menu:not(.transparent) > li:not(.transparent):hover {
+menu > li:hover {
   background-color: color-mix(in srgb, currentColor 10%, transparent);
 }
 

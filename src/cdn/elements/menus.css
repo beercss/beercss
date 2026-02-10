@@ -19,9 +19,9 @@ menu {
   text-align: start;
   border-radius: 1rem;
   transform: scale(0.8) translateY(120%);
-  transition: all var(--speed2) var(--speed2), background-color 0s;
+  transition: all var(--speed2) var(--speed2);
   justify-content: flex-start;
-  padding: 0.125rem 0.25rem;
+  padding: 0.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
@@ -93,7 +93,7 @@ menu > li:last-child {
   border-bottom-right-radius: inherit;
 }
 
-menu:not(.transparent) > li:not(.transparent):hover {
+menu > li:hover {
   background-color: color-mix(in srgb, currentColor 10%, transparent);
 }
 
