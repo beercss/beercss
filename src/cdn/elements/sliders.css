@@ -140,13 +140,11 @@
   background: var(--primary);
   color: var(--on-primary);
   z-index: 0;
-  inset: calc(50% - (var(--_track, 0) / 2)) var(--_end) auto var(--_start);
-  clip-path: polygon(0 0, calc(100% - 0.5rem) 0, calc(100% - 0.5rem) 100%, 0 100%);
+  inset: calc(50% - (var(--_track, 0) / 2)) calc(var(--_end) + 0.5rem) auto calc(var(--_start) + 0.5rem);
 }
 
 .slider > input[type=range] + input[type=range] ~ span:not([class]) {
   border-radius: 0;
-  clip-path: polygon(0.5rem 0, max(0.5rem, calc(100% - 0.5rem)) 0, max(0.5rem, calc(100% - 0.5rem)) 100%, 0.5rem 100%);
 }
 
 .field > .slider {
@@ -316,7 +314,6 @@
 .slider.max > span:not([class]) {
   block-size: auto !important;
   inset: 0 var(--_end) 0 var(--_start);
-  clip-path: none;
   background: currentcolor;
   color: inherit;
   border-radius: 0;
