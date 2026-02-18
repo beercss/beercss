@@ -9,19 +9,19 @@
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="radio-color-menus", checked, @click="domain.updateColorTheme('#default-menus menu')")
+      input(type="radio", name="radio-color-menus", checked, @click="domain.updateColorTheme('#default-menus menu:not(.transparent)')")
       span default
     label.radio
-      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu', 'fill')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.transparent)', 'fill')")
       span fill
     label.radio
-      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu', 'primary')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.transparent)', 'primary')")
       span primary
     label.radio
-      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu', 'secondary')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.transparent)', 'secondary')")
       span secondary
     label.radio
-      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu', 'tertiary')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.transparent)', 'tertiary')")
       span tertiary
   .medium-space
   #default-menus
@@ -76,6 +76,18 @@
           li
             hr
           li Item 3
+      div
+        button
+          span Gap
+          i arrow_drop_down
+        menu.transparent
+          li
+            menu
+              li Item 1
+              li Item 2
+          li
+            menu
+              li Item 1
       div
         button
           span Selected
