@@ -226,6 +226,10 @@ menu.group > li {
   padding: 0;
 }
 
+menu.group > li:hover {
+  background: none;
+}
+
 menu.group > li > menu {
   opacity: 1;
   visibility: visible;
