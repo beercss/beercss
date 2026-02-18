@@ -44,7 +44,15 @@ function onKeydownColor(e: KeyboardEvent) {
 function onPasswordIconClick(e: Event) {
   const icon = e.currentTarget as HTMLElement;
   const input = query("input", parent(icon)) as HTMLInputElement;
-  if (input && icon.textContent?.includes("visibility")) input.type = input.type === "password" ? "text" : "password";
+  if (input && icon.textContent?.includes("visibility")) {
+    if (input.type === "password") {
+      input.type = "text";
+      icon.textContent = "visibility_off";
+    } else {
+      input.type = "password";
+      icon.textContent = "visibility";
+    }
+  }
 }
 
 function onInputTextarea(e: Event) {
@@ -106,7 +114,7 @@ function updateAllTextareas() {
 }
 
 function updateAllPasswordIcons() {
-  const icons = queryAll("input[type=password] ~ :is(i, a)");
+  const icons = queryAll(".field:has(> input[type=password]) > i, a");
   for (let i=0; i<icons.length; i++) onWeak(icons[i], "click", onPasswordIconClick);
 }
 

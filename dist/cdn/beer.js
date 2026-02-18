@@ -151,7 +151,15 @@ function onPasswordIconClick(e) {
   var _a;
   const icon = e.currentTarget;
   const input = query("input", parent(icon));
-  if (input && ((_a = icon.textContent) == null ? void 0 : _a.includes("visibility"))) input.type = input.type === "password" ? "text" : "password";
+  if (input && ((_a = icon.textContent) == null ? void 0 : _a.includes("visibility"))) {
+    if (input.type === "password") {
+      input.type = "text";
+      icon.textContent = "visibility_off";
+    } else {
+      input.type = "password";
+      icon.textContent = "visibility";
+    }
+  }
 }
 function onInputTextarea(e) {
   const textarea = e.currentTarget;
@@ -203,7 +211,7 @@ function updateAllTextareas() {
   }
 }
 function updateAllPasswordIcons() {
-  const icons = queryAll("input[type=password] ~ :is(i, a)");
+  const icons = queryAll(".field:has(> input[type=password]) > i, a");
   for (let i = 0; i < icons.length; i++) onWeak(icons[i], "click", onPasswordIconClick);
 }
 function updateInput(input) {

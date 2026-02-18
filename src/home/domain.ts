@@ -104,6 +104,7 @@ const updateFieldType = (selector: string, type: string) => {
   utils.remove(colors);
   utils.removeAttribute(inputs, "readonly");
   utils.removeValue(inputs);
+  utils.removeAttribute(icons, "class");
 
   if (type === "file") {
     utils.setAttribute(inputs, "type", "text");
@@ -143,6 +144,7 @@ const updateFieldType = (selector: string, type: string) => {
 
   if (type === "password") {
     utils.html(labels, "Password");
+    utils.setAttribute(icons, "class", "front");
     utils.setAttribute(inputs, "type", type);
     utils.html(icons, "visibility");
   }

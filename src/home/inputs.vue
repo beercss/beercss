@@ -94,13 +94,13 @@
       .field.label.suffix.border
         input(type="text", aria-hidden="true")
         label Label
-        i.front search
+        i search
     .s12.l4
       .field.label.prefix.suffix.border
         i search
         input(type="text", aria-hidden="true")
         label Label
-        i.front search
+        i search
   .medium-space
   h5.h6
     span Custom input
