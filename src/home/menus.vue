@@ -118,7 +118,7 @@
         button
           span Video
           i arrow_drop_down
-        menu.no-wrap.transparent
+        menu.group.no-wrap
           li
             video.small-width(autoplay, loop, muted, playsinline)
               source(:src="'/dance.mp4'", type="video/mp4")
