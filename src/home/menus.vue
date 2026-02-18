@@ -12,9 +12,6 @@
       input(type="radio", name="radio-color-menus", checked, @click="domain.updateColorTheme('#default-menus menu:not(.transparent)')")
       span default
     label.radio
-      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.transparent)', 'fill')")
-      span fill
-    label.radio
       input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.transparent)', 'primary')")
       span primary
     label.radio

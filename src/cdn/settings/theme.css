@@ -185,38 +185,38 @@
   color: var(--on-surface-variant) !important;
 }
 
-nav.primary > button,
-:is(nav, menu).primary > :is(button, a, li).active {
-  background-color: var(--primary-container);
-  color: var(--on-primary-container);
-}
-
 nav.primary-container > button,
-:is(nav, menu).primary-container > :is(button, a, li).active {
-  background-color: var(--primary);
-  color: var(--on-primary);
+:is(nav, menu).primary > :is(button, a, li).active {
+  background-color: var(--primary-container) !important;
+  color: var(--on-primary-container) !important;
 }
 
-nav.secondary > button,
-:is(nav, menu).secondary > :is(button, a, li).active {
-  background-color: var(--secondary-container);
-  color: var(--on-secondary-container);
+nav.primary > button,
+:is(nav, menu).primary-container > :is(button, a, li).active {
+  background-color: var(--primary) !important;
+  color: var(--on-primary) !important;
 }
 
 nav.secondary-container > button,
-:is(nav, menu).secondary-container > :is(button, a, li).active {
-  background-color: var(--secondary);
-  color: var(--on-secondary);
+:is(nav, menu).secondary > :is(button, a, li).active {
+  background-color: var(--secondary-container) !important;
+  color: var(--on-secondary-container) !important;
 }
 
-nav.tertiary > button,
-:is(nav, menu).tertiary > :is(button, a, li).active {
-  background-color: var(--tertiary-container);
-  color: var(--on-tertiary-container);
+nav.secondary > button,
+:is(nav, menu).secondary-container > :is(button, a, li).active {
+  background-color: var(--secondary) !important;
+  color: var(--on-secondary) !important;
 }
 
 nav.tertiary-container > button,
+:is(nav, menu).tertiary > :is(button, a, li).active {
+  background-color: var(--tertiary-container) !important;
+  color: var(--on-tertiary-container) !important;
+}
+
+nav.tertiary > button,
 :is(nav, menu).tertiary-container > :is(button, a, li).active {
-  background-color: var(--tertiary);
-  color: var(--on-tertiary);
+  background-color: var(--tertiary) !important;
+  color: var(--on-tertiary) !important;
 }
