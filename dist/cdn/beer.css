@@ -140,7 +140,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.7/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.8/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -150,7 +150,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.7/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.8/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -160,7 +160,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.7/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.8/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -170,7 +170,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.7/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.8/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
@@ -1627,19 +1627,19 @@ li > details > summary + .list {
   border-radius: 0.25rem;
 }
 
-.field.round.small {
+.field[class*=round].small {
   border-radius: 1.25rem;
 }
 
-.field.round {
+.field[class*=round] {
   border-radius: 1.5rem;
 }
 
-.field.round.large {
+.field[class*=round].large {
   border-radius: 1.75rem;
 }
 
-.field.round.extra {
+.field[class*=round].extra {
   border-radius: 2rem;
 }
 
@@ -1726,8 +1726,7 @@ input::-webkit-date-and-time-value {
 
 input[type=file],
 input[type=color],
-:not(.field) > input[type^=date],
-:not(.field) > input[type^=time],
+:not(.field) > input:is([type^=date], [type^=time], [type=month], [type=week]),
 input::-webkit-calendar-picker-indicator {
   opacity: 0;
   position: absolute;
@@ -1739,6 +1738,12 @@ input::-webkit-calendar-picker-indicator {
   border: 0;
   outline: 0;
   z-index: 2 !important;
+}
+
+@media (pointer: fine) {
+  .field > input::-webkit-calendar-picker-indicator {
+    z-index: -1 !important;
+  }
 }
 
 input::-webkit-search-decoration,
@@ -1762,11 +1767,11 @@ input[type=number] {
   border-color: var(--primary);
 }
 
-.field.round > :is(input, textarea, select) {
+.field[class*=round] > :is(input, textarea, select) {
   padding-inline: 1.4376rem;
 }
 
-.field.round > :is(input, textarea, select):focus {
+.field[class*=round] > :is(input, textarea, select):focus {
   padding-inline: 1.375rem;
 }
 
@@ -1794,25 +1799,25 @@ input[type=number] {
   padding-inline-end: 2.875rem;
 }
 
-.field:not(.border, .round) > :is(input, textarea, select) {
+.field:not(.border, [class*=round]) > :is(input, textarea, select) {
   border-block-end-color: var(--outline);
 }
 
-.field:not(.border, .round) > :is(input, textarea, select):focus {
+.field:not(.border, [class*=round]) > :is(input, textarea, select):focus {
   border-block-end-color: var(--primary);
 }
 
-.field.round:not(.border, .fill) > :is(input, textarea, select),
-.field.round:not(.border) > :is(input, textarea, select):focus {
+.field[class*=round]:not(.border, .fill) > :is(input, textarea, select),
+.field[class*=round]:not(.border) > :is(input, textarea, select):focus {
   box-shadow: var(--elevate1);
 }
 
-.field.round:not(.border, .fill) > :is(input, textarea, select):focus {
+.field[class*=round]:not(.border, .fill) > :is(input, textarea, select):focus {
   box-shadow: var(--elevate2);
 }
 
-.field.invalid:not(.border, .round) > :is(input, textarea, select),
-.field.invalid:not(.border, .round) > :is(input, textarea, select):focus {
+.field.invalid:not(.border, [class*=round]) > :is(input, textarea, select),
+.field.invalid:not(.border, [class*=round]) > :is(input, textarea, select):focus {
   border-block-end-color: var(--error);
 }
 
@@ -1899,11 +1904,11 @@ input[type=number] {
   inset: -0.5rem var(--_start) 0 1rem;
 }
 
-.field.label.round > label {
+.field.label[class*=round] > label {
   inset: -0.5rem 1.75rem 0 var(--_start);
 }
 
-[dir=rtl] .field.label.round > label {
+[dir=rtl] .field.labell[class*=round] > label {
   inset: -0.5rem 1.75rem 0 var(--_start);
 }
 
@@ -1911,8 +1916,8 @@ input[type=number] {
   --_start: 1rem;
 }
 
-.field.label.round > label,
-.field.label.border.prefix.round:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
+.field.label[class*=round] > label,
+.field.label.border.prefix[class*=round]:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
   --_start: 1.5rem;
 }
 
@@ -1955,13 +1960,13 @@ input[type=number] {
   clip-path: polygon(-2% -2%, 1rem -2%, 1rem 0.5rem, calc(100% - 0.75rem) 0.5rem, calc(100% - 0.75rem) -2%, 102% -2%, 102% 102%, -2% 102%);
 }
 
-.field.label.border.round:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
-.field.label.border.round:not(.fill) > select {
+.field.label.border[class*=round]:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
+.field.label.border[class*=round]:not(.fill) > select {
   clip-path: polygon(-2% -2%, 1.25rem -2%, 1.25rem 0.5rem, calc(100% - 1.75rem) 0.5rem, calc(100% - 1.75rem) -2%, 102% -2%, 102% 102%, -2% 102%);
 }
 
-[dir=rtl] .field.label.border.round:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
-[dir=rtl] .field.label.border.round:not(.fill) > select {
+[dir=rtl] .field.label.border[class*=round]:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
+[dir=rtl] .field.label.border[class*=round]:not(.fill) > select {
   clip-path: polygon(-2% -2%, 1.75rem -2%, 1.75rem 0.5rem, calc(100% - 1.25rem) 0.5rem, calc(100% - 1.25rem) -2%, 102% -2%, 102% 102%, -2% 102%);
 }
 
@@ -2003,7 +2008,7 @@ input[type=number] {
   color: var(--error) !important;
 }
 
-.field.round > output {
+.field[class*=round] > output {
   padding: 0.25rem 1.5rem;
 }
 
@@ -2791,6 +2796,24 @@ menu.transparent > li {
   background-color: inherit;
   box-shadow: none;
   padding: 0;
+}
+
+menu.transparent > li > menu {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  inset: 0;
+  transform: none;
+  max-block-size: none;
+  border-radius: 1rem 1rem 0.5rem 0.5rem;
+}
+
+menu.transparent > li:last-child > menu {
+  border-radius: 0.5rem 0.5rem 1rem 1rem;
+}
+
+menu.transparent > li > menu > li:is(.active, :active) {
+  border-radius: 1rem;
 }
 
 menu > li:nth-last-child(2) {
