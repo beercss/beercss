@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2026-02-11
+Generated on: 2026-02-18
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -509,27 +509,43 @@ It sets the font and icon font of project.
 #### Examples
 
 ```css
- /* To import your custom font */
-@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap";
+/* To use all outlined icons (default) */
+:root {
+  --font-icon: "Material Symbols Outlined";
+}
+
+/* To use all rounded icons */
+:root {
+  --font-icon: "Material Symbols Rounded";
+}
+
+/* To use all sharp icons */
+:root {
+  --font-icon: "Material Symbols Sharp";
+}
+
+/* To use a minimal subset of icons required in checkbox, radio and switch */
+:root {
+  --font-icon: "Material Symbols Subset";
+}
+
+/* To remove icons */
+:root {
+  --font-icon: none;
+}
+
+/* To import your custom font */
+@import "https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;700&display=swap";
 
 :root {
-  /* To use your custom font */
   --font: "Roboto Flex";
+}
 
-  /* To remove default icons */
-  --font-icon: none;
+/* To import only the icons needed */
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&icon_names=check,check_box,check_box_outline_blank,indeterminate_check_box,radio_button_checked&display=swap";
 
-  /* To use default outlined icons */
+:root {
   --font-icon: "Material Symbols Outlined";
-
-  /* To use default rounded icons */
-  --font-icon: "Material Symbols Rounded";
-
-  /* To use default sharp icons */
-  --font-icon: "Material Symbols Sharp";
-
-  /* To only use minimal subset of icons required in checkbox, radio and switch */
-  --font-icon: "Material Symbols Subset";
 }
 ```
 
