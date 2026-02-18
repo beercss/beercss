@@ -87,7 +87,7 @@
               li Item 2
           li
             menu
-              li Item 1
+              li Item 3
       div
         button
           span Selected
