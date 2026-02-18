@@ -230,13 +230,16 @@ menu.group > li:hover {
   background: none;
 }
 
-menu.group > li > menu {
+menu.group > li > menu,
+menu.group > li > menu:hover {
   opacity: 1;
   visibility: visible;
   position: relative;
   inset: 0;
   transform: none;
   max-block-size: none;
+  transform: none;
+  transition: none;
   border-radius: 1rem 1rem 0.5rem 0.5rem;
 }
 
