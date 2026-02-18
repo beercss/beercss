@@ -78,7 +78,7 @@
           li Item 3
       div
         button
-          span Gap
+          span Grouped
           i arrow_drop_down
         menu.transparent
           li

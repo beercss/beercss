@@ -103,7 +103,7 @@ menu > li.active {
 }
 
 menu > li:is(.active, :active) {
-  border-radius: inherit;
+  border-radius: 0.75rem;
 }
 
 menu > li > :is(.max, .field),
@@ -233,10 +233,6 @@ menu.transparent > li > menu {
 
 menu.transparent > li:last-child > menu {
   border-radius: 0.5rem 0.5rem 1rem 1rem;
-}
-
-menu.transparent > li > menu > li:is(.active, :active) {
-  border-radius: 1rem;
 }
 
 menu > li:nth-last-child(2) {
