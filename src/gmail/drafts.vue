@@ -24,7 +24,7 @@
         i(v-show="!email.star") star_outline
         i.yellow-text(v-show="email.star") star
       button.small.circle.s A
-      a.max.truncate.left-align
+      a.max.truncate.left-align(href="javascript:;")
         b From -&nbsp;
         b Subject -&nbsp;
         span Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

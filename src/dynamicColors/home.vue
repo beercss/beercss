@@ -119,9 +119,9 @@ main.responsive
         .large-padding
           nav
             i star
-            a 4.94
-            a (128)
-            a Collingwood, Ontario
+            a(href="javascript:;") 4.94
+            a(href="javascript:;") (128)
+            a(href="javascript:;") Collingwood, Ontario
           nav
             button.large Check availability
       .s6.m.l.large-padding.middle-align
@@ -131,9 +131,9 @@ main.responsive
           div
             nav
               i star
-              a 4.94
-              a (128)
-              a Collingwood, Ontario
+              a(href="javascript:;") 4.94
+              a(href="javascript:;") (128)
+              a(href="javascript:;") Collingwood, Ontario
             hr.large
             nav
               button.large Check availability

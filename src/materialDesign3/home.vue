@@ -141,37 +141,37 @@ main(v-show="data.showPage")
             .s4
               p.bold Social
               p
-                a.link GitHub
+                a.link(href="javascript:;") GitHub
               p
-                a.link Twitter
+                a.link(href="javascript:;") Twitter
               p
-                a.link Youtube
+                a.link(href="javascript:;") Youtube
               p
-                a.link Blog RSS
+                a.link(href="javascript:;") Blog RSS
             .s4
               p.bold Libraries
               p
-                a.link Android
+                a.link(href="javascript:;") Android
               p
-                a.link Compose
+                a.link(href="javascript:;") Compose
               p
-                a.link Flutter
+                a.link(href="javascript:;") Flutter
               p
-                a.link Web
+                a.link(href="javascript:;") Web
             .s4
               p.bold Archived versions
               p
-                a.link Material Design 1
+                a.link(href="javascript:;") Material Design 1
               p
-                a.link Material Design 2
+                a.link(href="javascript:;") Material Design 2
       .large-space
       .row.large-space.wrap
         svg(width="71", height="23")
           path(d="M0 8.773C0 3.937 4.083 0 8.938 0c2.684 0 4.595 1.047 6.034 2.415l-1.695 1.693c-1.032-.962-2.429-1.712-4.339-1.712-3.545 0-6.317 2.847-6.317 6.377s2.772 6.381 6.317 6.381c2.297 0 3.607-.921 4.446-1.756.687-.686 1.137-1.67 1.307-3.02H8.938V7.982h8.097c.085.43.129.946.129 1.5 0 1.797-.494 4.025-2.084 5.608-1.547 1.603-3.524 2.462-6.142 2.462C4.083 17.55 0 13.61 0 8.773zm23.693 6.303c-1.719 0-3.198-1.413-3.198-3.425 0-2.032 1.479-3.423 3.198-3.423 1.718 0 3.201 1.391 3.201 3.423 0 2.012-1.483 3.425-3.201 3.425m0-9.076C20.557 6 18 8.375 18 11.65c0 3.257 2.557 5.652 5.693 5.652 3.137 0 5.692-2.395 5.692-5.651C29.385 8.375 26.83 6 23.693 6m13.003 9.076c-1.719 0-3.2-1.413-3.2-3.425 0-2.032 1.481-3.423 3.2-3.423 1.718 0 3.2 1.391 3.2 3.423 0 2.012-1.482 3.425-3.2 3.425m0-9.076C33.559 6 31 8.375 31 11.65c0 3.257 2.559 5.652 5.696 5.652 3.135 0 5.692-2.395 5.692-5.651C42.388 8.375 39.831 6 36.696 6m11.952 9.076c-1.716 0-3.156-1.432-3.156-3.403 0-1.991 1.44-3.445 3.156-3.445 1.697 0 3.031 1.454 3.031 3.445 0 1.971-1.334 3.403-3.031 3.403zm2.858-8.732v.918h-.085C50.861 6.601 49.789 6 48.434 6 45.6 6 43 8.485 43 11.673c0 3.168 2.6 5.63 5.434 5.63 1.355 0 2.427-.6 2.987-1.287h.085v.816c0 2.162-1.161 3.316-3.028 3.316-1.526 0-2.471-1.092-2.857-2.01l-2.171.9c.624 1.498 2.278 3.336 5.028 3.336 2.922 0 5.391-1.713 5.391-5.885V6.344h-2.363zM56 16.608h2.49V0H56zm9.434-8.425c.987 0 1.825.494 2.104 1.199l-5.069 2.096c-.065-2.182 1.697-3.295 2.965-3.295m.192 6.891c-1.267 0-2.169-.578-2.748-1.71l7.582-3.125-.259-.643C69.729 8.333 68.29 6 65.347 6 62.427 6 60 8.292 60 11.65c0 3.167 2.404 5.65 5.626 5.65 2.599 0 4.103-1.583 4.727-2.504l-1.934-1.284c-.643.942-1.525 1.562-2.793 1.562", fill-rule="evenodd")
-        a.large-text Privacy Policy
-        a.large-text Terms pf Service
-        a.large-text Join research studies
-        a.large-text Feedback
+        a.large-text(href="javascript:;") Privacy Policy
+        a.large-text(href="javascript:;") Terms pf Service
+        a.large-text(href="javascript:;") Join research studies
+        a.large-text(href="javascript:;") Feedback
 </template>
 
 <script setup lang="ts">

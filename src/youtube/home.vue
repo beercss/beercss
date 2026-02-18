@@ -1,7 +1,7 @@
 <template lang="pug">
 main(v-show="data.isLoaded")
   .page.right.active
-    nav.group.connected.scroll.fill
+    nav.group.connected.scroll
       button.left-round.active(data-ui="")
         span The best of 2020
       button.no-round(data-ui="") Documentaries

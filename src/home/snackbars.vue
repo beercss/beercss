@@ -31,7 +31,7 @@
   .snackbar.tertiary Some text here
   .snackbar#snackbar-action
     .max Some text here
-    a.inverse-primary-text Action
+    a.inverse-primary-text(href="javascript:;") Action
 </template>
 
 <script setup lang="ts">

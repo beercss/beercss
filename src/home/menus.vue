@@ -40,11 +40,11 @@
           i arrow_drop_down
         menu
           li
-            a Item 1
+            a(href="javascript:;") Item 1
           li
-            a Item 2
+            a(href="javascript:;") Item 2
           li
-            a Item 3
+            a(href="javascript:;") Item 3
       div
         button.circle
           i arrow_back

@@ -38,7 +38,7 @@
   .space
   #formatting
     nav.wrap
-      a.link link
+      a.link(href="javascript:;") link
       p.italic italic
       p.bold bold
       p.underline underline

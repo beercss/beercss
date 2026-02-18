@@ -41,13 +41,13 @@ div
         .padding
           ul.list.border
             li
-              a Item
+              a(href="javascript:;") Item
             li
-              a Item
+              a(href="javascript:;") Item
             li
-              a Item
+              a(href="javascript:;") Item
             li
-              a Item
+              a(href="javascript:;") Item
       #list-nested.s12.m6.l6
         h5.h6
           span Nested
@@ -148,13 +148,13 @@ div
             .max
               h6.small(aria-hidden="true") Headline
               div Supporting text
-            a Link
+            a(href="javascript:;") Link
             button Button
           li
             .max
               h6.small(aria-hidden="true") Headline
               div Supporting text
-            a Link
+            a(href="javascript:;") Link
             button Button
    
 </template>

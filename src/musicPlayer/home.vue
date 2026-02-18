@@ -26,16 +26,16 @@ main.middle-align.center-align
         .round.no-padding.page.active.right
           .grid.large-space
             .s12.m6
-              a.row.round.medium-height
+              a.row.round.medium-height(href="javascript:;", aria-label="Classic utility jacket")
                 img.responsive(alt="", :src="'/classic-utility-jacket.jpg'", @click="updateTheme('', '')")
               .space
-              a.row.round.small-height
+              a.row.round.small-height(href="javascript:;", aria-label="Kids jumpsuit")
                 img.responsive(alt="", :src="'/kids-jumpsuit.jpg'", @click="updateTheme('/kids-jumpsuit.jpg', 'Kids Jumpsuit')")
             .s12.m6
-              a.row.round.small-height
+              a.row.round.small-height(href="javascript:;", aria-label="Dogtooth style jacket")
                 img.responsive(alt="", :src="'/dogtooth-style-jacket.jpg'", @click="updateTheme('/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket')")
               .space
-              a.row.round.medium-height
+              a.row.round.medium-height(href="javascript:;", aria-label="Retro shoe")
                 img.responsive(alt="", :src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
       .s12.s.m
         .round.page.active.bottom.no-padding
