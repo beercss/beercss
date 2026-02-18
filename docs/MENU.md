@@ -16,7 +16,7 @@ Menus display a list of choices on temporary surfaces.
 
 **Forms**
 
-border
+border, group
 
 **Positions**
 

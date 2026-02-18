@@ -9,16 +9,16 @@
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="radio-color-menus", checked, @click="domain.updateColorTheme('#default-menus menu:not(.transparent)')")
+      input(type="radio", name="radio-color-menus", checked, @click="domain.updateColorTheme('#default-menus menu:not(.group)')")
       span default
     label.radio
-      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.transparent)', 'primary')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.group)', 'primary')")
       span primary
     label.radio
-      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.transparent)', 'secondary')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.group)', 'secondary')")
       span secondary
     label.radio
-      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.transparent)', 'tertiary')")
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.group)', 'tertiary')")
       span tertiary
   .medium-space
   #default-menus
@@ -77,7 +77,7 @@
         button
           span Grouped
           i arrow_drop_down
-        menu.transparent
+        menu.group
           li
             menu
               li Item 1
