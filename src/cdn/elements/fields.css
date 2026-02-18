@@ -150,6 +150,12 @@ input::-webkit-calendar-picker-indicator {
   z-index: 2 !important;
 }
 
+@media (pointer: fine) {
+  .field > input::-webkit-calendar-picker-indicator {
+    z-index: -1 !important;
+  }
+}
+
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button,
 input::-webkit-search-results-button,
