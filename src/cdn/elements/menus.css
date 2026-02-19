@@ -318,7 +318,7 @@ menu > li:nth-last-of-type(11) {
 }
 
 @media (pointer: coarse) {
-  :not(menu, [data-ui],):hover > menu:not(.min, .max, .group) {
+  :not(menu, [data-ui]):hover > menu:not(.min, .max, .group) {
     opacity: 1;
     visibility: visible;
     transform: scale(1) translateY(100%);
