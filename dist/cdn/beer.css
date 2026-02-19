@@ -140,7 +140,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.12/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.13/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -150,7 +150,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.12/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.13/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -160,7 +160,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.12/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.13/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -170,7 +170,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.12/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.13/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
@@ -2670,7 +2670,7 @@ menu > li:last-child {
   border-bottom-right-radius: inherit;
 }
 
-menu > li:hover {
+menu:not(.group) > li:hover {
   background-color: color-mix(in srgb, currentColor 10%, transparent);
 }
 
@@ -2788,7 +2788,8 @@ menu.large-space > li {
   min-block-size: 4rem;
 }
 
-menu.group {
+menu.group,
+menu.group > li {
   padding: 0;
   inline-size: 100%;
   min-inline-size: auto;
@@ -2798,22 +2799,11 @@ menu.group {
   box-shadow: none;
 }
 
-menu.group > li {
-  box-shadow: none;
-  padding: 0;
-}
-
-menu.group > li:hover {
-  background: none;
-}
-
-menu.group > li > menu,
-menu.group > li > menu:hover {
+menu.group > li > menu {
   opacity: 1;
   visibility: visible;
   position: relative;
   inset: 0;
-  transform: none;
   max-block-size: none;
   transform: none;
   transition: none;
@@ -2905,13 +2895,13 @@ menu > li:nth-last-of-type(11) {
 }
 
 @media (pointer: coarse) {
-  :not(menu, [data-ui]):hover > menu {
+  :not(menu, [data-ui],):hover > menu:not(.min, .max, .group) {
     opacity: 1;
     visibility: visible;
     transform: scale(1) translateY(100%);
   }
 
-  :not(menu, [data-ui]):hover > menu.top {
+  :not(menu, [data-ui]):hover > menu.top:not(.min, .max, .group) {
     transform: scale(1) translateY(-100%);
   }
 }
