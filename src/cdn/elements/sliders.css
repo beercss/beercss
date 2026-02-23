@@ -12,6 +12,7 @@
   flex: none;
   direction: ltr;
   margin: 0 1.25rem;
+  color: var(--primary);
 }
 
 [dir=rtl] .slider {
@@ -78,7 +79,7 @@
   block-size: var(--_thumb);
   inline-size: 0.25rem;
   border-radius: 0.25rem;
-  background: var(--primary);
+  background: currentColor;
   cursor: grab;
   margin: 0;
   z-index: 1;
@@ -137,14 +138,15 @@
   position: absolute;
   block-size: var(--_track);
   border-radius: 1rem 0 0 1rem;
-  background: var(--primary);
-  color: var(--on-primary);
+  background: currentColor;
+  color: currentColor;
   z-index: 0;
-  inset: calc(50% - (var(--_track, 0) / 2)) calc(var(--_end) + 0.5rem) auto calc(var(--_start) + 0.5rem);
+  inset: calc(50% - (var(--_track, 0) / 2)) calc(var(--_end) + 0.5rem) auto var(--_start);
 }
 
 .slider > input[type=range] + input[type=range] ~ span:not([class]) {
   border-radius: 0;
+  inset: calc(50% - (var(--_track, 0) / 2)) calc(var(--_end) + 0.5rem) auto calc(var(--_start) + 0.5rem);
 }
 
 .field > .slider {
@@ -157,12 +159,12 @@
   inline-size: 100%;
   block-size: var(--_track);
   border-radius: 1rem;
-  background: var(--secondary-container);
+  background: var(--active);
   clip-path: polygon(calc(var(--_start, 0) - 0.5rem) 0, 0 0, 0 100%, calc(var(--_start, 0) - 0.5rem) 100%, calc(var(--_start, 0) - 0.5rem) 0, calc(100% - var(--_end, 0) + 0.5rem) 0, 100% 0, 100% 100%, calc(100% - var(--_end, 0) + 0.5rem) 100%, calc(100% - var(--_end, 0) + 0.5rem) 0);
 }
 
 .slider:has(> [disabled])::before {
-  background: var(--outline-variant);
+  background: var(--active);
 }
 
 .slider:has([disabled]) {
