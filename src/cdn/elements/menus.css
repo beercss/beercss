@@ -172,6 +172,7 @@ menu.top {
 menu:has(menu) {
   --_child: 1;
   --_type: 0;
+  --_start: 0;
   overflow: unset;
   white-space: nowrap;
   inline-size: auto;
@@ -179,24 +180,28 @@ menu:has(menu) {
   max-block-size: none;
 }
 
+menu.group > li > menu:has(menu) {
+  --_start: 0.375rem;
+}
+
 menu > li > :is(menu, menu.right),
 [dir=rtl] menu > li > menu.left {
-  inset: auto auto calc(3rem * (var(--_child, 0) - var(--_type, 0))) 100%;
+  inset: auto auto calc(3rem * (var(--_child, 0) - var(--_type, 0))) calc(100% + var(--_start, 0));
 }
 
 [dir=rtl] menu > li > :is(menu, menu.right),
 menu > li > menu.left {
-  inset: auto 100% calc(3rem * (var(--_child, 0) - var(--_type, 0))) auto;
+  inset: auto calc(100% + var(--_start, 0)) calc(3rem * (var(--_child, 0) - var(--_type, 0))) auto;
 }
 
 menu > li > :is(menu.top, menu.top.right),
 [dir=rtl] menu > li > menu.top.left {
-  inset: calc(3rem * (var(--_child, 0) - var(--_type, 0))) auto auto 100%;
+  inset: calc(3rem * (var(--_child, 0) - var(--_type, 0))) auto auto calc(100% + var(--_start, 0));
 }
 
 [dir=rtl] menu > li > :is(menu.top, menu.top.right),
 menu > li > menu.top.left {
-  inset: calc(3rem * (var(--_child, 0) - var(--_type, 0))) 100% auto auto;
+  inset: calc(3rem * (var(--_child, 0) - var(--_type, 0))) calc(100% + var(--_start, 0)) auto auto;
 }
 
 menu.no-space > li {
@@ -240,6 +245,7 @@ menu.group > li > menu:hover {
   transform: none;
   transition: none;
   border-radius: 1rem 1rem 0.5rem 0.5rem;
+  flex: 1;
 }
 
 menu.group > li:last-child > menu {
