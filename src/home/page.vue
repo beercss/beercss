@@ -406,7 +406,7 @@ div
                   |
                   |
                   b.error-text &lt;menu&gt;
-                  span &nbsp;border, group, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
+                  span &nbsp;border, group, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, tiny-space, small-space, medium-space, large-space, extra-space
                   |
                   |
                   b.error-text &lt;nav&gt;

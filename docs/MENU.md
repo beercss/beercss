@@ -28,7 +28,7 @@ wrap, no-wrap, min, max
 
 **Spaces**
 
-space, no-space, small-space, medium-space, large-space
+space, no-space, tiny-space, small-space, medium-space, large-space, extra-space
 
 **Triggers**
 

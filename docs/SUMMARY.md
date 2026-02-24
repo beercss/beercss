@@ -60,7 +60,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;main&gt;** responsive, max
 
-**&lt;menu&gt;** border, group, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
+**&lt;menu&gt;** border, group, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, tiny-space, small-space, medium-space, large-space, extra-space
 
 **&lt;nav&gt;** left, right, top, bottom, group, toolbar, connected, split, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
