@@ -240,6 +240,7 @@ menu.group > li > menu:hover {
   transform: none;
   transition: none;
   border-radius: 1rem 1rem 0.5rem 0.5rem;
+  z-index: auto;
 }
 
 menu.group > li:last-child > menu {
