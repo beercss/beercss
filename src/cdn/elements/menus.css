@@ -27,6 +27,26 @@ menu {
   gap: 0.125rem;
 }
 
+menu.no-space {
+  gap: 0;
+}
+
+menu.small-space {
+  gap: 0.25rem;
+}
+
+menu.medium-space {
+  gap: 0.375rem;
+}
+
+menu.large-space {
+  gap: 0.5rem;
+}
+
+menu.extra-space {
+  gap: 0.625rem;
+}
+
 [dir=rtl] menu {
   inset: auto 0 0 auto;
 }
@@ -199,20 +219,8 @@ menu > li > menu.top.left {
   inset: calc(3rem * (var(--_child, 0) - var(--_type, 0))) 100% auto auto;
 }
 
-menu.no-space > li {
-  min-block-size: 2.5rem;
-}
-
-menu.medium-space > li {
-  min-block-size: 3.5rem;
-}
-
-menu.large-space > li {
-  min-block-size: 4rem;
-}
-
 menu.group {
-  padding: 0;
+  padding: 0.5rem 0;
   inline-size: 100%;
   min-inline-size: auto;
   max-block-size: none;
@@ -224,6 +232,7 @@ menu.group {
 menu.group > li {
   box-shadow: none;
   padding: 0;
+  min-block-size: auto;
 }
 
 menu.group > li:hover {

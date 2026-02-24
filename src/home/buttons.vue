@@ -299,7 +299,7 @@
       div
         button.extra.circle
           i north_east
-        menu.group.top.no-wrap
+        menu.group.no-wrap.small-space.top
           li
             button.fill
               i search
@@ -315,7 +315,7 @@
       div
         button.extra.circle
           i north_west
-        menu.group.top.no-wrap.left.right-align
+        menu.group.no-wrap.small-space.top.left.right-align
           li
             button.fill
               i search
@@ -331,7 +331,7 @@
       div
         button.extra.circle
           i south_east
-        menu.group.bottom.no-wrap
+        menu.group.no-wrap.small-space.bottom
           li
             button.fill
               i search
@@ -347,7 +347,7 @@
       div
         button.extra.circle
           i south_west
-        menu.group.bottom.no-wrap.left.right-align
+        menu.group.no-wrap.small-space.bottom.left.right-align
           li
             button.fill
               i search

@@ -140,7 +140,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.15/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.16/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -150,7 +150,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.15/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.16/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -160,7 +160,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.15/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.16/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -170,7 +170,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.15/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.16/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
@@ -2607,6 +2607,26 @@ menu {
   gap: 0.125rem;
 }
 
+menu.no-space {
+  gap: 0;
+}
+
+menu.small-space {
+  gap: 0.25rem;
+}
+
+menu.medium-space {
+  gap: 0.375rem;
+}
+
+menu.large-space {
+  gap: 0.5rem;
+}
+
+menu.extra-space {
+  gap: 0.625rem;
+}
+
 [dir=rtl] menu {
   inset: auto 0 0 auto;
 }
@@ -2779,20 +2799,8 @@ menu > li > menu.top.left {
   inset: calc(3rem * (var(--_child, 0) - var(--_type, 0))) 100% auto auto;
 }
 
-menu.no-space > li {
-  min-block-size: 2.5rem;
-}
-
-menu.medium-space > li {
-  min-block-size: 3.5rem;
-}
-
-menu.large-space > li {
-  min-block-size: 4rem;
-}
-
 menu.group {
-  padding: 0;
+  padding: 0.5rem 0;
   inline-size: 100%;
   min-inline-size: auto;
   max-block-size: none;
@@ -2804,6 +2812,7 @@ menu.group {
 menu.group > li {
   box-shadow: none;
   padding: 0;
+  min-block-size: auto;
 }
 
 menu.group > li:hover {
@@ -2820,6 +2829,8 @@ menu.group > li > menu:hover {
   transform: none;
   transition: none;
   border-radius: 1rem 1rem 0.5rem 0.5rem;
+  z-index: auto;
+  flex: 1;
 }
 
 menu.group > li:last-child > menu {
@@ -4167,6 +4178,7 @@ progress.max + * {
   flex: none;
   direction: ltr;
   margin: 0 1.25rem;
+  color: var(--primary);
 }
 
 [dir=rtl] .slider {
@@ -4233,7 +4245,7 @@ progress.max + * {
   block-size: var(--_thumb);
   inline-size: 0.25rem;
   border-radius: 0.25rem;
-  background: var(--primary);
+  background: currentColor;
   cursor: grab;
   margin: 0;
   z-index: 1;
@@ -4292,14 +4304,15 @@ progress.max + * {
   position: absolute;
   block-size: var(--_track);
   border-radius: 1rem 0 0 1rem;
-  background: var(--primary);
-  color: var(--on-primary);
+  background: currentColor;
+  color: currentColor;
   z-index: 0;
-  inset: calc(50% - (var(--_track, 0) / 2)) calc(var(--_end) + 0.5rem) auto calc(var(--_start) + 0.5rem);
+  inset: calc(50% - (var(--_track, 0) / 2)) calc(var(--_end) + 0.5rem) auto var(--_start);
 }
 
 .slider > input[type=range] + input[type=range] ~ span:not([class]) {
   border-radius: 0;
+  inset: calc(50% - (var(--_track, 0) / 2)) calc(var(--_end) + 0.5rem) auto calc(var(--_start) + 0.5rem);
 }
 
 .field > .slider {
@@ -4312,12 +4325,12 @@ progress.max + * {
   inline-size: 100%;
   block-size: var(--_track);
   border-radius: 1rem;
-  background: var(--secondary-container);
+  background: var(--active);
   clip-path: polygon(calc(var(--_start, 0) - 0.5rem) 0, 0 0, 0 100%, calc(var(--_start, 0) - 0.5rem) 100%, calc(var(--_start, 0) - 0.5rem) 0, calc(100% - var(--_end, 0) + 0.5rem) 0, 100% 0, 100% 100%, calc(100% - var(--_end, 0) + 0.5rem) 100%, calc(100% - var(--_end, 0) + 0.5rem) 0);
 }
 
 .slider:has(> [disabled])::before {
-  background: var(--outline-variant);
+  background: var(--active);
 }
 
 .slider:has([disabled]) {
