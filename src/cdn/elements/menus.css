@@ -241,6 +241,7 @@ menu.group > li > menu:hover {
   transition: none;
   border-radius: 1rem 1rem 0.5rem 0.5rem;
   z-index: auto;
+  flex: 1;
 }
 
 menu.group > li:last-child > menu {
