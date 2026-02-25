@@ -9,9 +9,9 @@ main.responsive
   article.no-padding.round
     .grid.no-space
       .s12.m4.s
-        img.responsive.extra.top-round(alt="", :src="'/classic-utility-jacket.jpg'", @click="sharedDomain.updateTheme(data, '#f9bd49')")
+        img.responsive.extra.top-round(alt="", :src="'/classic-utility-jacket.webp'", @click="sharedDomain.updateTheme(data, '#f9bd49')")
       .s12.m4.m.l
-        img.responsive.extra.left-round(alt="", :src="'/classic-utility-jacket.jpg'", @click="sharedDomain.updateTheme(data, '#f9bd49')", fetchpriority="high")
+        img.responsive.extra.left-round(alt="", :src="'/classic-utility-jacket.webp'", @click="sharedDomain.updateTheme(data, '#f9bd49')", fetchpriority="high")
       .s12.m8.padding
         .row
           .max
@@ -36,7 +36,7 @@ main.responsive
   article.round.border
     .grid.no-space
       .s12.m4
-        img.responsive.extra.round(alt="", :src="'/kids-jumpsuit.jpg'", @click="sharedDomain.updateTheme(data, '/kids-jumpsuit.jpg')")
+        img.responsive.extra.round(alt="", :src="'/kids-jumpsuit.webp'", @click="sharedDomain.updateTheme(data, '/kids-jumpsuit.webp')")
       .s12.m8.padding
         h4.h6.no-margin.bold Kids Jumpsuit
         h5.bold.middle-align
@@ -60,7 +60,7 @@ main.responsive
   article.small-padding
     .grid.no-space
       .s12.m4
-        img.responsive.extra(alt="", :src="'/dogtooth-style-jacket.jpg'", @click="sharedDomain.updateTheme(data, '/dogtooth-style-jacket.jpg')")
+        img.responsive.extra(alt="", :src="'/dogtooth-style-jacket.webp'", @click="sharedDomain.updateTheme(data, '/dogtooth-style-jacket.webp')")
       .s12.m8.large-padding
         h4.h5.no-margin Dogtooth Style Jacket
         h5.h6.middle-align
@@ -84,7 +84,7 @@ main.responsive
   article.no-elevate.top-shadow.white-text
     .grid.no-space
       .s12.m4.padding
-        img.responsive.large(alt="", :src="'/retro-shoe.jpg'", @click="sharedDomain.updateTheme(data, '/retro-shoe.jpg')")
+        img.responsive.large(alt="", :src="'/retro-shoe.webp'", @click="sharedDomain.updateTheme(data, '/retro-shoe.webp')")
       .s12.m8.padding
         h4.h5.no-margin Retro Shoe
         h5.h6.middle-align $39,00
@@ -111,7 +111,7 @@ main.responsive
   article.no-padding.fill.no-elevate.round
     .grid
       .s12.s
-        img.responsive.large(alt="", :src="'/beach-house-in-collingwood-001.jpg'", @click="sharedDomain.updateTheme(data, '/beach-house-in-collingwood-001.jpg')")
+        img.responsive.large(alt="", :src="'/beach-house-in-collingwood-001.webp'", @click="sharedDomain.updateTheme(data, '/beach-house-in-collingwood-001.webp')")
         .absolute.left.bottom.right.bottom-shadow.s.padding.white-text
           div Entire house
           h4.h5 Beach House in Collingwood
@@ -138,11 +138,11 @@ main.responsive
             nav
               button.large Check availability
       .s6.m.l.large-padding
-        img.responsive.large.round(alt="", :src="'/beach-house-in-collingwood-001.jpg'", @click="sharedDomain.updateTheme(data, '/beach-house-in-collingwood-001.jpg')")
+        img.responsive.large.round(alt="", :src="'/beach-house-in-collingwood-001.webp'", @click="sharedDomain.updateTheme(data, '/beach-house-in-collingwood-001.webp')")
         .space.l
         .row.l
-          img.round.extra(alt="", :src="'/beach-house-in-collingwood-002.jpg'")
-          img.round.extra(alt="", :src="'/beach-house-in-collingwood-003.jpg'")
+          img.round.extra(alt="", :src="'/beach-house-in-collingwood-002.webp'")
+          img.round.extra(alt="", :src="'/beach-house-in-collingwood-003.webp'")
           .max
 </template>
 <script setup lang="ts">

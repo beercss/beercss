@@ -27,28 +27,28 @@ main.middle-align.center-align
           .grid.large-space
             .s12.m6
               a.row.round.medium-height(href="javascript:;", aria-label="Classic utility jacket")
-                img.responsive(alt="", :src="'/classic-utility-jacket.jpg'", @click="updateTheme('', '')")
+                img.responsive(alt="", :src="'/classic-utility-jacket.webp'", @click="updateTheme('', '')")
               .space
               a.row.round.small-height(href="javascript:;", aria-label="Kids jumpsuit")
-                img.responsive(alt="", :src="'/kids-jumpsuit.jpg'", @click="updateTheme('/kids-jumpsuit.jpg', 'Kids Jumpsuit')")
+                img.responsive(alt="", :src="'/kids-jumpsuit.webp'", @click="updateTheme('/kids-jumpsuit.webp', 'Kids Jumpsuit')")
             .s12.m6
               a.row.round.small-height(href="javascript:;", aria-label="Dogtooth style jacket")
-                img.responsive(alt="", :src="'/dogtooth-style-jacket.jpg'", @click="updateTheme('/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket')")
+                img.responsive(alt="", :src="'/dogtooth-style-jacket.webp'", @click="updateTheme('/dogtooth-style-jacket.webp', 'Dogtooth Style Jacket')")
               .space
               a.row.round.medium-height(href="javascript:;", aria-label="Retro shoe")
-                img.responsive(alt="", :src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
+                img.responsive(alt="", :src="'/retro-shoe.webp'", @click="updateTheme('/retro-shoe.webp', 'Retro Shoe')")
       .s12.s.m
         .round.page.active.bottom.no-padding
           .space
           nav.scroll
             .small-height.small-width.round
-              img.responsive(alt="", :src="'/classic-utility-jacket.jpg'", @click="updateTheme('', '')")
+              img.responsive(alt="", :src="'/classic-utility-jacket.webp'", @click="updateTheme('', '')")
             .small-height.small-width.round
-              img.responsive(alt="", :src="'/kids-jumpsuit.jpg'", @click="updateTheme('/kids-jumpsuit.jpg', 'Kids Jumpsuit')")
+              img.responsive(alt="", :src="'/kids-jumpsuit.webp'", @click="updateTheme('/kids-jumpsuit.webp', 'Kids Jumpsuit')")
             .small-height.small-width.round
-              img.responsive(alt="", :src="'/dogtooth-style-jacket.jpg'", @click="updateTheme('/dogtooth-style-jacket.jpg', 'Dogtooth Style Jacket')")
+              img.responsive(alt="", :src="'/dogtooth-style-jacket.webp'", @click="updateTheme('/dogtooth-style-jacket.webp', 'Dogtooth Style Jacket')")
             .small-height.small-width.round
-              img.responsive(alt="", :src="'/retro-shoe.jpg'", @click="updateTheme('/retro-shoe.jpg', 'Retro Shoe')")
+              img.responsive(alt="", :src="'/retro-shoe.webp'", @click="updateTheme('/retro-shoe.webp', 'Retro Shoe')")
       .s12.s.m
         .round.page.active.left.no-padding
           div
@@ -77,7 +77,7 @@ import utils from "../shared/utils";
 
 async function updateTheme(source: string, title: string) {
   await sharedDomain.updateTheme(data.value, source || "#f9bd49");
-  data.value.wallpaper = source || "/classic-utility-jacket.jpg";
+  data.value.wallpaper = source || "/classic-utility-jacket.webp";
   data.value.title = title || "Classic utility jacket";
   await reloadWallpaper();
 }

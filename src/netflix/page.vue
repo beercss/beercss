@@ -34,17 +34,17 @@
         i notifications
       menu.left.no-wrap
         li
-          img.round(alt="", :src="'alok-001.jpg'")
+          img.round(alt="", :src="'alok-001.webp'")
           .max
             div Alok 01/2021
             label 10k views
         li
-          img.round(alt="", :src="'vintage-001.jpg'")
+          img.round(alt="", :src="'vintage-001.webp'")
           .max
             div The best of 2021
             label 10k views
         li
-          img.round(alt="", :src="'ocean-001.jpg'")
+          img.round(alt="", :src="'ocean-001.webp'")
           .max
             div Alok, Zebra, Iro - Ocean
             label 10k views

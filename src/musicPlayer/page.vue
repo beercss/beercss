@@ -1,9 +1,9 @@
 <template lang="pug">
 .top-shadow
-  link(rel="preload", as="image", href="/classic-utility-jacket.jpg")
-  link(rel="preload", as="image", href="/kids-jumpsuit.jpg")
-  link(rel="preload", as="image", href="/dogtooth-style-jacket.jpg")
-  link(rel="preload", as="image", href="/retro-shoe.jpg")
+  link(rel="preload", as="image", href="/classic-utility-jacket.webp")
+  link(rel="preload", as="image", href="/kids-jumpsuit.webp")
+  link(rel="preload", as="image", href="/dogtooth-style-jacket.webp")
+  link(rel="preload", as="image", href="/retro-shoe.webp")
   header.absolute.top.left.right.white-text.top-shadow.front(v-show="data.showPage")
     nav
       .max
@@ -30,7 +30,7 @@ import utils from "../shared/utils";
 onMounted(async () => {
   document.title = "Music Player - Beer CSS";
   await sharedDomain.updateTheme(data.value, "#f9bd49", "dark");
-  data.value.wallpaper = "/classic-utility-jacket.jpg";
+  data.value.wallpaper = "/classic-utility-jacket.webp";
   data.value.title = "Classic utility jacket";
   data.value.time = 50;
   data.value.showPage = true;
