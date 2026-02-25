@@ -13,7 +13,6 @@
   border: 0.0625rem solid var(--outline-variant);
   color: var(--on-surface-variant);
   padding: 0 var(--_padding);
-  text-transform: none;
   border-radius: 0.5rem;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
   user-select: none;
