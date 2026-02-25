@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   .fixed.top.left.right.bottom
-    img.responsive(alt="", :src="'/map.jpg'")
+    img.responsive(alt="", :src="'/map.webp'", fetchpriority="high")
   .fixed.bottom.right.margin.m.l
     button.circle.white.black-text.wave.dark
       i add

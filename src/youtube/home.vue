@@ -12,7 +12,7 @@ main(v-show="data.isLoaded")
       .s12.m6.l3(v-for="(item, i) in data.itens")
         .round
           .wave
-            img.responsive(alt="", :src="item.image")
+            img.responsive(alt="", :src="item.image", :fetchpriority="i == 0 ? 'high' : 'auto'")
             .absolute.right.top.large-margin.black.white-text.small-text &nbsp;00:00:00&nbsp;
           .padding
             nav

@@ -11,7 +11,7 @@ main.responsive
       .s12.m4.s
         img.responsive.extra.top-round(alt="", :src="'/classic-utility-jacket.jpg'", @click="sharedDomain.updateTheme(data, '#f9bd49')")
       .s12.m4.m.l
-        img.responsive.extra.left-round(alt="", :src="'/classic-utility-jacket.jpg'", @click="sharedDomain.updateTheme(data, '#f9bd49')")
+        img.responsive.extra.left-round(alt="", :src="'/classic-utility-jacket.jpg'", @click="sharedDomain.updateTheme(data, '#f9bd49')", fetchpriority="high")
       .s12.m8.padding
         .row
           .max
