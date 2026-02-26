@@ -19,3 +19,8 @@
 .large-blur {
   ---blur: 1.5rem;
 }
+
+[class*=blur]:has(> .tooltip) {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
