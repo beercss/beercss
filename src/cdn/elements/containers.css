@@ -1,7 +1,7 @@
 main.responsive {
   flex: 1;
   padding: 0.5rem;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 :is(main, header, footer, section).responsive {
