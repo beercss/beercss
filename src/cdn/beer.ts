@@ -1,4 +1,5 @@
 import { updateAllFields } from "./elements/fields";
+import { updateAllRipples } from "./helpers/ripples";
 import { updateAllSliders } from "./elements/sliders";
 import { updateMode, updateTheme } from "./helpers/theme";
 import { type IBeerCssTheme } from "./interfaces";
@@ -49,6 +50,7 @@ function ui(selector?: string | Element, options?: string | number | IBeerCssThe
 
   updateAllDataUis();
   updateAllFields();
+  updateAllRipples();
   updateAllSliders();
 }
 

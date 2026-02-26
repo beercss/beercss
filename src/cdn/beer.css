@@ -19,6 +19,7 @@
 @import "./helpers/responsive.css";
 @import "./helpers/typography.css";
 @import "./helpers/waves.css";
+@import "./helpers/ripples.css";
 @import "./elements/badges.css";
 @import "./elements/buttons.css";
 @import "./elements/cards.css";

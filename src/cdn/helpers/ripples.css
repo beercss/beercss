@@ -1,0 +1,62 @@
+.ripple {
+  --_duration: 600ms;
+}
+
+.fast-ripple {
+  --_duration: 200ms;
+}
+
+.slow-ripple {
+  --_duration: 1800ms;
+}
+
+.ripple-js {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ripple-js > div {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.3;
+  transform: scale(0);
+  animation: to-ripple var(--_duration) linear;
+}
+
+@keyframes to-ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* hover/focus feedback for ripple elements */
+:is(.ripple, .slow-ripple, .fast-ripple)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  inline-size: 100%;
+  block-size: 100%;
+  background-position: center;
+  background-image: radial-gradient(circle, currentColor 1%, transparent 1%);
+  opacity: 0;
+  transition: none;
+  pointer-events: none;
+}
+
+:is(.ripple, .slow-ripple, .fast-ripple):is(:focus-visible, :hover)::after {
+  background-size: 15000%;
+  opacity: 0.1;
+  transition: background-size var(--speed2) linear;
+}
+
+:is(.ripple, .slow-ripple, .fast-ripple):active::after {
+  background-size: 5000%;
+  opacity: 0;
+  transition: none;
+}

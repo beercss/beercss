@@ -1,6 +1,4 @@
-.wave::after,
-.chip::after,
-:is(.button, button)::after,
+:is(.wave, .chip, .button, button):not(.slow-ripple, .ripple, .fast-ripple)::after,
 :is(nav.tabbed, .tabs) > a::after {
   content: "";
   position: absolute;
@@ -15,13 +13,13 @@
   transition: none;
 }
 
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):is(:focus-visible, :hover)::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after {
   background-size: 15000%;
   opacity: 0.1;
   transition: background-size var(--speed2) linear;
 }
 
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):active::after {
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a):not(.slow-ripple, .ripple, .fast-ripple):active::after {
   background-size: 5000%;
   opacity: 0;
   transition: none;
