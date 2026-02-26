@@ -40,11 +40,10 @@ export function updateTheme(source?: IBeerCssTheme | any): IBeerCssTheme | Promi
   const body = document.body;
   if (!source || !context.materialDynamicColors) return lastTheme();
 
-  const mode = getMode();
   if (source.light && source.dark) {
     _lastTheme.light = source.light;
     _lastTheme.dark = source.dark;
-    body.setAttribute("style", source[mode]);
+    body.setAttribute("style", source[getMode()]);
     return source;
   }
 
@@ -62,6 +61,7 @@ export function updateTheme(source?: IBeerCssTheme | any): IBeerCssTheme | Promi
 
     _lastTheme.light = toCss(theme.light);
     _lastTheme.dark = toCss(theme.dark);
+    const mode = getMode();
     body.setAttribute("style", _lastTheme[mode]);
     return _lastTheme;
   });
