@@ -60,6 +60,7 @@
   padding: 0;
   margin: 0;
   transform: rotate(0deg);
+  touch-action: none;
 }
 
 .slider > input:only-of-type {
