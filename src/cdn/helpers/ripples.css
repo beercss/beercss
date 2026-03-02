@@ -4,6 +4,7 @@
   inset: 0;
   background: currentColor;
   opacity: 0.1;
+  border-radius: inherit;
 }
 
 .ripple {
