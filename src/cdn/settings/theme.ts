@@ -61,8 +61,7 @@ export async function updateTheme(source?: IBeerCssTheme | any): Promise<IBeerCs
 
     _lastTheme.light = toCss(theme.light);
     _lastTheme.dark = toCss(theme.dark);
-    const mode = getMode();
-    body.setAttribute("style", _lastTheme[mode]);
+    body.setAttribute("style", _lastTheme[getMode()]);
     return _lastTheme;
   });
 }
