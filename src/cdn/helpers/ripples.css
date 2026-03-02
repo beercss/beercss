@@ -1,0 +1,34 @@
+.ripple {
+  --_duration: 600ms;
+}
+
+.fast-ripple {
+  --_duration: 200ms;
+}
+
+.slow-ripple {
+  --_duration: 1800ms;
+}
+
+.ripple-js {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ripple-js > div {
+  position: absolute;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.3;
+  transform: scale(0);
+  animation: to-ripple var(--_duration) linear;
+}
+
+@keyframes to-ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

@@ -2,6 +2,7 @@
   display: flex;
   white-space: nowrap;
   border-block-end: 0.0625rem solid var(--surface-variant);
+  border-radius: 0;
 }
 
 .tabs:not(.left-align, .right-align, .center-align) {

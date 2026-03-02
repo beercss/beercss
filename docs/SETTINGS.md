@@ -29,11 +29,11 @@ The default theme will be set according to device color scheme. Use light or dar
 
 ## Dynamic theme
 
-It sets the theme and mode at runtime. You need to use [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors). You can get a real example of dynamic theme [in this codepen](https://codepen.io/leo-bnu/pen/LYWxjVG).
+It sets the theme and mode at runtime. You can get a real example of dynamic theme [in this codepen](https://codepen.io/leo-bnu/pen/LYWxjVG).
 
 #### To change theme
 
-Call `ui("theme", "color|path|url|file|blob|theme")`. It returns the new theme and applies on body element.
+Call `ui("theme", "color|path|url|file|blob|theme")`. It returns the new theme and applies on body element. Requires [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib.
 ```js
 // From color
 let theme = await ui("theme", "#ffd700");
@@ -67,7 +67,7 @@ let theme = await ui("theme");
 
 #### To change mode
 
-Call `ui("mode", "light|dark|auto")` to set current theme to light, dark or auto.
+Call `ui("mode", "light|dark|auto")` to set current theme to light, dark or auto. Doesn't require [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib.
 
 ```js
 // To light
@@ -192,24 +192,43 @@ It sets the font and icon font of project.
 #### Examples
 
 ```css
- /* To import your custom font */
-@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap";
+/* To use all outlined icons (default) */
+:root {
+  --font-icon: "Material Symbols Outlined";
+}
+
+/* To use all rounded icons */
+:root {
+  --font-icon: "Material Symbols Rounded";
+}
+
+/* To use all sharp icons */
+:root {
+  --font-icon: "Material Symbols Sharp";
+}
+
+/* To use a minimal subset of icons required in checkbox, radio and switch */
+:root {
+  --font-icon: "Material Symbols Subset";
+}
+
+/* To remove icons */
+:root {
+  --font-icon: none;
+}
+
+/* To import your custom font */
+@import "https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;700&display=swap";
 
 :root {
-  /* To use your custom font */
   --font: "Roboto Flex";
+}
 
-  /* To remove default icons */
-  --font-icon: none;
+/* To import only the icons needed */
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&icon_names=check,check_box,check_box_outline_blank,indeterminate_check_box,radio_button_checked&display=swap";
 
-  /* To use default outlined icons */
+:root {
   --font-icon: "Material Symbols Outlined";
-
-  /* To use default rounded icons */
-  --font-icon: "Material Symbols Rounded";
-
-  /* To use default sharp icons */
-  --font-icon: "Material Symbols Sharp";
 }
 ```
 
@@ -233,4 +252,4 @@ It sets the animation speed of elements.
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Shape](SHAPE.md), [Slider](SLIDER.md), [Snackbar](SNACKBAR.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

@@ -7,17 +7,17 @@
 }
 
 .left-shadow {
-  background-image: linear-gradient(to right, black, transparent);
+  background-image: linear-gradient(to right, black, transparent) !important;
 }
 
 .right-shadow {
-  background-image: linear-gradient(to left, black, transparent);
+  background-image: linear-gradient(to left, black, transparent) !important;
 }
 
 .bottom-shadow {
-  background-image: linear-gradient(to top, black, transparent);
+  background-image: linear-gradient(to top, black, transparent) !important;
 }
 
 .top-shadow {
-  background-image: linear-gradient(to bottom, black, transparent);
+  background-image: linear-gradient(to bottom, black, transparent) !important;
 }

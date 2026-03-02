@@ -1,7 +1,3 @@
-menu > li {
-  all: unset;
-}
-
 menu {
   opacity: 0;
   visibility: hidden;
@@ -21,9 +17,34 @@ menu {
   color: var(--on-surface);
   line-height: normal;
   text-align: start;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   transform: scale(0.8) translateY(120%);
-  transition: all var(--speed2), 0s background-color;
+  transition: all var(--speed2) var(--speed2);
+  justify-content: flex-start;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+menu.no-space {
+  gap: 0;
+}
+
+menu.small-space {
+  gap: 0.25rem;
+}
+
+menu.medium-space {
+  gap: 0.375rem;
+}
+
+menu.large-space {
+  gap: 0.5rem;
+}
+
+menu.extra-space {
+  gap: 0.625rem;
 }
 
 [dir=rtl] menu {
@@ -31,56 +52,103 @@ menu {
 }
 
 menu.no-wrap {
-  inline-size: max-content;
+  inline-size: max-content !important;
   white-space: nowrap !important;
 }
 
 menu.active,
-menu:not([data-ui]):active,
-:not(menu, [data-ui]):focus-within > menu,
-menu > :is(a, li):hover + menu,
-menu > menu:hover {
+:not([data-ui]):focus-within > menu,
+menu > li:hover > menu,
+menu > li > menu:hover {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(100%);
+  transition: all var(--speed2), background-color 0s;
+}
+
+menu.top.active,
+:not([data-ui]):focus-within > menu.top,
+menu > li:hover > menu.top,
+menu > li > menu.top:hover {
+  transform: scale(1) translateY(-100%);
+}
+
+menu:is(.min, .max).active,
+:not([data-ui]):focus-within > menu:is(.min, .max) {
+  transform: scale(1);
 }
 
 menu * {
   white-space: inherit !important;
 }
 
-menu > a,
-menu > li > a {
-  padding: 0.5rem 1rem;
-  min-block-size: 3rem;
-  flex: 1;
-}
-
-menu > a:not(.row),
-menu > li > a:not(.row) {
+menu > li,
+menu > li > a:only-child {
+  all: unset;
+  box-sizing: border-box;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  align-self: normal;
+  text-align: start;
+  justify-content: inherit;
+  white-space: nowrap;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  min-block-size: 2.75rem;
+  flex: 1;
+  margin: 0 !important;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: border-radius var(--speed2);
 }
 
-menu > a:is(:hover, :focus, .active),
-menu > li > a:is(:hover, :focus, .active) {
-  background-color: var(--active);
+menu > li:first-child {
+  border-top-left-radius: inherit; 
+  border-top-right-radius: inherit;
+}
+
+menu > li:last-child {
+  border-bottom-left-radius: inherit; 
+  border-bottom-right-radius: inherit;
+}
+
+menu > li:hover {
+  background-color: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+menu > li.active {
+  background-color: var(--tertiary-container);
+  color: var(--on-tertiary-container);
+}
+
+menu > li:is(.active, :active) {
+  border-radius: 0.75rem;
+}
+
+menu > li > :is(.max, .field),
+menu > li > a:only-child > .max,
+menu > li:has(.field, a:only-child) {
+  flex: 1;
+  padding: 0;
+  margin: 0;
 }
 
 menu.min {
   inset: 0 0 auto 0;
-  transform: none !important;
-  border-radius: inherit;
+  transform: scale(0.8);
 }
 
 [dir=rtl] menu.min.right,
-menu.min.left {
+menu.min.left,
+menu.top.left {
   inset: 0 0 auto auto;
 }
 
 [dir=rtl] menu.min.left,
-menu.min.right {
+menu.min.right,
+menu.top,
+menu.top.right {
   inset: 0 auto auto 0;
 }
 
@@ -91,7 +159,12 @@ menu.max {
   max-block-size: none;
   min-block-size: auto;
   z-index: 100;
-  transform: none !important;
+  transform: scale(0.8);
+  border-radius: 0;
+}
+
+menu.max > li {
+  flex: none !important;
 }
 
 menu.no-wrap:is(.min, .max) {
@@ -99,20 +172,26 @@ menu.no-wrap:is(.min, .max) {
 }
 
 [dir=rtl] menu.right,
-menu.left {
+[dir=rtl] menu.top.min.right,
+menu.left,
+menu.top.min.left {
   inset: auto 0 0 auto;
 }
 
 [dir=rtl] menu.left,
-menu.right {
+[dir=rtl] menu.top.min.left,
+menu.right,
+menu.top.min {
   inset: auto auto 0 0;
 }
 
-menu:has(> menu),
-menu > menu {
-  ---child: 1;
-  ---type: 0;
+menu.top {
+  transform: scale(0.8) translateY(-120%);
+}
 
+menu:has(menu) {
+  --_child: 1;
+  --_type: 0;
   overflow: unset;
   white-space: nowrap;
   inline-size: auto;
@@ -120,94 +199,152 @@ menu > menu {
   max-block-size: none;
 }
 
-menu > menu,
-menu > menu.right,
-[dir=rtl] menu > menu.left {
-  inset: auto auto calc(3rem * (var(---child) - var(---type))) 100%;
+menu > li > :is(menu, menu.right),
+[dir=rtl] menu > li > menu.left {
+  inset: auto auto calc(3rem * (var(--_child, 0) - var(--_type, 0))) 100%;
 }
 
-[dir=rtl] menu > menu,
-[dir=rtl] menu > menu.right,
-menu > menu.left {
-  inset: auto 100% calc(3rem * (var(---child) - var(---type))) auto;
+[dir=rtl] menu > li > :is(menu, menu.right),
+menu > li > menu.left {
+  inset: auto 100% calc(3rem * (var(--_child, 0) - var(--_type, 0))) auto;
 }
 
-menu > :nth-last-child(2) {
-  ---child: 2;
+menu > li > :is(menu.top, menu.top.right),
+[dir=rtl] menu > li > menu.top.left {
+  inset: calc(3rem * (var(--_child, 0) - var(--_type, 0))) auto auto 100%;
 }
 
-menu > :nth-last-child(3) {
-  ---child: 3;
+[dir=rtl] menu > li > :is(menu.top, menu.top.right),
+menu > li > menu.top.left {
+  inset: calc(3rem * (var(--_child, 0) - var(--_type, 0))) 100% auto auto;
 }
 
-menu > :nth-last-child(4) {
-  ---child: 4;
+menu.group {
+  padding: 0.5rem 0;
+  inline-size: 100%;
+  min-inline-size: auto;
+  max-block-size: none;
+  overflow: unset;
+  background: none;
+  box-shadow: none;
 }
 
-menu > :nth-last-child(5) {
-  ---child: 5;
+menu.group > li {
+  box-shadow: none;
+  padding: 0;
+  min-block-size: auto;
 }
 
-menu > :nth-last-child(6) {
-  ---child: 6;
+menu.group > li:hover {
+  background: none;
 }
 
-menu > :nth-last-child(7) {
-  ---child: 7;
+menu.group > li > menu,
+menu.group > li > menu:hover {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  inset: 0;
+  max-block-size: none;
+  transform: none;
+  transition: none;
+  border-radius: 1rem 1rem 0.5rem 0.5rem;
+  z-index: auto;
+  flex: 1;
 }
 
-menu > :nth-last-child(8) {
-  ---child: 8;
+menu.group > li:last-child > menu {
+  border-radius: 0.5rem 0.5rem 1rem 1rem;
 }
 
-menu > :nth-last-child(9) {
-  ---child: 9;
+menu > li:nth-last-child(2) {
+  --_child: 2;
 }
 
-menu > :nth-last-child(10) {
-  ---child: 10;
+menu > li:nth-last-child(3) {
+  --_child: 3;
 }
 
-menu > :nth-last-child(11) {
-  ---child: 11;
+menu > li:nth-last-child(4) {
+  --_child: 4;
 }
 
-menu > :nth-last-of-type(2) {
-  ---type: 1;
+menu > li:nth-last-child(5) {
+  --_child: 5;
 }
 
-menu > :nth-last-of-type(3) {
-  ---type: 2;
+menu > li:nth-last-child(6) {
+  --_child: 6;
 }
 
-menu > :nth-last-of-type(4) {
-  ---type: 3;
+menu > li:nth-last-child(7) {
+  --_child: 7;
 }
 
-menu > :nth-last-of-type(5) {
-  ---type: 4;
+menu > li:nth-last-child(8) {
+  --_child: 8;
 }
 
-menu > :nth-last-of-type(6) {
-  ---type: 5;
+menu > li:nth-last-child(9) {
+  --_child: 9;
 }
 
-menu > :nth-last-of-type(7) {
-  ---type: 6;
+menu > li:nth-last-child(10) {
+  --_child: 10;
 }
 
-menu > :nth-last-of-type(8) {
-  ---type: 7;
+menu > li:nth-last-child(11) {
+  --_child: 11;
 }
 
-menu > :nth-last-of-type(9) {
-  ---type: 8;
+menu > li:nth-last-of-type(2) {
+  --_type: 1;
 }
 
-menu > :nth-last-of-type(10) {
-  ---type: 9;
+menu > li:nth-last-of-type(3) {
+  --_type: 2;
 }
 
-menu > :nth-last-of-type(11) {
-  ---type: 10;
+menu > li:nth-last-of-type(4) {
+  --_type: 3;
+}
+
+menu > li:nth-last-of-type(5) {
+  --_type: 4;
+}
+
+menu > li:nth-last-of-type(6) {
+  --_type: 5;
+}
+
+menu > li:nth-last-of-type(7) {
+  --_type: 6;
+}
+
+menu > li:nth-last-of-type(8) {
+  --_type: 7;
+}
+
+menu > li:nth-last-of-type(9) {
+  --_type: 8;
+}
+
+menu > li:nth-last-of-type(10) {
+  --_type: 9;
+}
+
+menu > li:nth-last-of-type(11) {
+  --_type: 10;
+}
+
+@media (pointer: coarse) {
+  :not(menu, [data-ui]):hover > menu {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(100%);
+  }
+
+  :not(menu, [data-ui]):hover > menu.top {
+    transform: scale(1) translateY(-100%);
+  }
 }

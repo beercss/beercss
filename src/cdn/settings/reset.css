@@ -1,0 +1,77 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  vertical-align: middle;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  all: unset;
+}
+
+label {
+  font-size: 0.75rem;
+  vertical-align: baseline;
+}
+
+a,
+b,
+i,
+span,
+strong,
+em,
+code {
+  vertical-align: baseline;
+}
+
+a,
+button,
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  font-family: inherit;
+  outline: inherit;
+  justify-content: center;
+}
+
+:is(nav, .tabs, .field) > a,
+button,
+.button,
+.chip,
+i,
+label {
+  user-select: none;
+}
+
+:not(.grid, nav, .row) > :not(progress.max) + :is(address, article, blockquote, code, .field, fieldset, form, .grid, h1, h2, h3, h4, h5, h6, nav, ol, p, pre, .row, section, aside, table, .tabs, ul):not([class*='margin'], .right, .left, .top, .bottom) {
+  margin-block-start: 1rem;
+}
+
+:has(> [class*='margin']) {
+  padding: 0.1px;
+}
+
+:is(a, button, .button, .chip, summary):focus-visible {
+  outline: 0.125rem solid var(--primary);
+  outline-offset: 0.25rem;
+}
+
+:is(nav, .row, li).group > :focus-visible {
+  z-index: 1;
+}
+
+:is(button, .button, .chip) > :is(span, i, img, svg) {
+  pointer-events: none;
+}
+
+div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .tooltip, input)) {
+  display: inline-flex;
+}

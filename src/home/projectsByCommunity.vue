@@ -1,38 +1,64 @@
 <template lang="pug">
 section
-  h1 Projects by the community
-  h3
-    a.link(data-ui="#more3", tabindex="0") Do you want some templates?
+  h3 Projects by the community
   .large-space
   .grid
-    .s12.m4.l3
-      a.wrap(href="https://github.com/Materialious/Materialious")
-        article.no-padding.round.wave.no-elevate
-          .center-align
-            img.small-height.small-width(src="https://github.com/Materialious/Materialious/blob/main/materialious/resources/icon.png?raw=true", loading="lazy")
-          nav.large-padding
-            h6 Materialious
-    .s12.m4.l3
-      a.wrap(href="https://github.com/m4heshd/ufc-ripper")
-        article.no-padding.round.wave.no-elevate.black
-          .center-align.middle-align.small-height
-            img.small-width(src="https://github.com/m4heshd/ufc-ripper/raw/master/project-res/images/ufcr-banner.svg", loading="lazy")
-          nav.large-padding.white-text
-            h6 UFC Ripper
-    .s12.m4.l3
-      a.wrap(href="https://github.com/bethropolis/haze-editor")
-        article.no-padding.round.wave.no-elevate
-          .center-align
-            img.small-height.small-width(src="https://github.com/bethropolis/haze-editor/blob/main/public/img.png?raw=true", loading="lazy")
-          nav.large-padding
-            h6 Haze editor
-    .s12.m4.l3
-      a.wrap(href="https://github.com/WardPearce/Purplix.io")
-        article.no-padding.round.wave.no-elevate
-          .center-align
-            img.small-height(src="https://raw.githubusercontent.com/WardPearce/Purplix.io/24682be424e95e61f7355d17d5a9e501a2e6a73d/frontend/public/logo.png", loading="lazy")
-          nav.large-padding
-            h6 Purplix.io
+    .s12.m6.l3
+      a.wrap(href="https://github.com/Devolutions/IronRDP", aria-label="Iron RDP")
+        article.round.wave.no-elevate
+          .no-round
+            .center-align
+              img.small-width.small-height(alt="", src="https://avatars.githubusercontent.com/u/6097418", loading="lazy")
+            h4.h6.truncate Iron RDP
+    .s12.m6.l3
+      a.wrap(href="https://github.com/Materialious/Materialious", aria-label="Materialious")
+        article.round.wave.no-elevate
+          .no-round
+            .center-align
+              img.small-width.small-height(alt="", src="https://github.com/Materialious/Materialious/blob/main/materialious/resources/icon.png?raw=true", loading="lazy")
+            h4.h6.truncate Materialious
+    .s12.m6.l3
+      a.wrap(href="https://github.com/jonasgeiler/svelte-tiny-virtual-list", aria-label="Svelte tiny virtual list")
+        article.round.wave.no-elevate
+          .no-round
+            .center-align
+              img.small-width.small-height(alt="", src="https://github.com/jonasgeiler/svelte-tiny-virtual-list/raw/main/static/logo.svg", loading="lazy")
+            h4.h6.truncate Svelte tiny virtual list
+    .s12.m6.l3
+      a.wrap(href="https://github.com/m4heshd/ufc-ripper", aria-label="UFC Ripper")
+        article.round.wave.no-elevate.black
+          .no-round
+            .center-align
+              img.small-width.small-height(alt="", src="https://github.com/m4heshd/ufc-ripper/raw/master/project-res/images/ufcr-banner.svg", loading="lazy")
+            h4.h6.truncate.white-text UFC Ripper
+    .s12.m6.l3
+      a.wrap(href="https://github.com/WardPearce/Purplix.io", aria-label="Purplix.io")
+        article.round.wave.no-elevate
+          .no-round
+            .center-align
+              img.small-height(alt="", src="https://raw.githubusercontent.com/WardPearce/Purplix.io/24682be424e95e61f7355d17d5a9e501a2e6a73d/frontend/public/logo.png", loading="lazy")
+            h4.h6.truncate Purplix.io
+    .s12.m6.l3
+      a.wrap(href="https://github.com/bethropolis/haze-editor", aria-label="Haze editor")
+        article.round.wave.no-elevate
+          .no-round
+            .center-align
+              img.small-width.small-height(alt="", src="https://github.com/bethropolis/haze-editor/blob/main/public/img.png?raw=true", loading="lazy")
+            h4.h6.truncate Haze editor
+    .s12.m6.l3
+      a.wrap(href="https://github.com/kdomskia/kdomskia", aria-label="Kdomskia")
+        article.round.wave.no-elevate
+          .no-round
+            .center-align
+              img.small-width.small-height(alt="", src="https://avatars.githubusercontent.com/u/225685469", loading="lazy")
+            h4.h6.truncate Kdomskia
+    .s12.m6.l3
+      a.wrap(href="https://github.com/imhlq/EldenRingCheatSheetCN", aria-label="Elden Ring Cheat Sheet CN")
+        article.round.wave.no-elevate
+          .no-round
+            .center-align
+              img.small-width.small-height(alt="", src="https://avatars.githubusercontent.com/u/10741526", loading="lazy")
+            h4.h6.truncate Elden Ring Cheat Sheet CN
 </template>
 
 <script setup lang="ts">
