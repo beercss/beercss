@@ -1,17 +1,21 @@
 import { queryAll, onWeak } from "../utils";
 
-function onPointerDownRipple(e: PointerEvent) {
+function onMousedownRipple(e: MouseEvent) {
   updateRipple(e);
 }
 
-function updateRipple(e: PointerEvent) {
+function onKeydownRipple(e: KeyboardEvent) {
+  if (e?.key === " ") updateRipple(e);
+}
+
+function updateRipple(e: MouseEvent | KeyboardEvent) {
+  const isMouseEvent = e instanceof MouseEvent;
   const element = e.currentTarget as HTMLElement;
   const rect = element.getBoundingClientRect();
   const diameter = Math.max(rect.width, rect.height);
   const radius = diameter / 2;
-  const x = e.clientX - rect.left - radius;
-  const y = e.clientY - rect.top - radius;
-
+  const x = isMouseEvent ? e.clientX - rect.left - radius : (rect.width / 2) - radius;
+  const y = isMouseEvent ? e.clientY - rect.top - radius : (rect.height / 2) - radius;
   const rippleContainer = document.createElement("div");
   rippleContainer.className = "ripple-js";
 
@@ -27,5 +31,8 @@ function updateRipple(e: PointerEvent) {
 
 export function updateAllRipples() {
   const ripples = queryAll(".slow-ripple, .ripple, .fast-ripple");
-  for(let i=0; i<ripples.length; i++) onWeak(ripples[i], "pointerdown", onPointerDownRipple);
+  for(let i=0; i<ripples.length; i++) {
+    onWeak(ripples[i], "mousedown", onMousedownRipple);
+    onWeak(ripples[i], "keydown", onKeydownRipple);
+  }
 }
