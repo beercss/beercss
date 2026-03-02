@@ -1,0 +1,259 @@
+.shape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-primary);
+  background-color: var(--primary);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  border-radius: 0;
+  block-size: 3.5rem;
+  inline-size: 3.5rem;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.transparent > .shape > i {
+  filter: invert(1);
+}
+
+.shape.tiny-space {
+  mask-size: 90%;
+}
+
+.shape.space,
+.shape.small-space {
+  mask-size: 80%;
+}
+
+.shape.medium-space {
+  mask-size: 70%;
+}
+
+.shape.large-space {
+  mask-size: 60%;
+}
+
+.shape.extra-space {
+  mask-size: 50%;
+}
+
+.shape.tiny {
+  block-size: 2.5rem;
+  inline-size: 2.5rem;
+}
+
+.shape.medium {
+  block-size: 4.5rem;
+  inline-size: 4.5rem;
+}
+
+.shape.large {
+  block-size: 5.5rem;
+  inline-size: 5.5rem;
+}
+
+.shape.extra {
+  block-size: 6.5rem;
+  inline-size: 6.5rem;
+}
+
+.shape.max,
+.shape > .responsive,
+.shape > .responsive > .responsive {
+  position: absolute;
+  inset: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.shape > .responsive {
+  background: inherit;
+  color: inherit;
+}
+
+.shape.rotate {
+  animation: linear to-shape-rotate infinite 12s;
+}
+
+.shape.rotate > * {
+  animation: linear to-shape-rotate infinite 12s reverse;
+}
+
+.shape.fast-rotate {
+  animation: linear to-shape-rotate infinite 6s;
+}
+
+.shape.fast-rotate > * {
+  animation: linear to-shape-rotate infinite 6s reverse;
+}
+
+.shape.slow-rotate {
+  animation: linear to-shape-rotate infinite 24s;
+}
+
+.shape.slow-rotate > * {
+  animation: linear to-shape-rotate infinite 24s reverse;
+}
+
+:is(button, .button, .chip):has(> .shape) > .responsive {
+  border: none;
+}
+
+.shape.arch {
+  mask-image: url(../shapes/arch.svg);
+}
+
+.shape.arrow {
+  mask-image: url(../shapes/arrow.svg);
+}
+
+.shape.boom {
+  mask-image: url(../shapes/boom.svg);
+}
+
+.shape.bun {
+  mask-image: url(../shapes/bun.svg);
+}
+
+.shape.burst {
+  mask-image: url(../shapes/burst.svg);
+}
+
+.shape.circle {
+  mask-image: url(../shapes/circle.svg);
+}
+
+.shape.clamshell {
+  mask-image: url(../shapes/clamshell.svg);
+}
+
+.shape.diamond {
+  mask-image: url(../shapes/diamond.svg);
+}
+
+.shape.fan {
+  mask-image: url(../shapes/fan.svg);
+}
+
+.shape.flower {
+  mask-image: url(../shapes/flower.svg);
+}
+
+.shape.gem {
+  mask-image: url(../shapes/gem.svg);
+}
+
+.shape.ghost-ish {
+  mask-image: url(../shapes/ghost-ish.svg);
+}
+
+.shape.heart {
+  mask-image: url(../shapes/heart.svg);
+}
+
+.shape.leaf-clover4 {
+  mask-image: url(../shapes/leaf-clover4.svg);
+}
+
+.shape.leaft-clover8 {
+  mask-image: url(../shapes/leaf-clover8.svg);
+}
+
+.shape.loading-indicator {
+  mask-image: url(../shapes/loading-indicator.svg);
+}
+
+.shape.oval {
+  mask-image: url(../shapes/oval.svg);
+}
+
+.shape.pentagon {
+  mask-image: url(../shapes/pentagon.svg);
+}
+
+.shape.pill {
+  mask-image: url(../shapes/pill.svg);
+}
+
+.shape.pixel-circle {
+  mask-image: url(../shapes/pixel-circle.svg);
+}
+
+.shape.pixel-triangle {
+  mask-image: url(../shapes/pixel-triangle.svg);
+}
+
+.shape.puffy {
+  mask-image: url(../shapes/puffy.svg);
+}
+
+.shape.puffy-diamond {
+  mask-image: url(../shapes/puffy-diamond.svg);
+}
+
+.shape.semicircle {
+  mask-image: url(../shapes/semicircle.svg);
+}
+
+.shape.sided-cookie4 {
+  mask-image: url(../shapes/sided-cookie4.svg);
+}
+
+.shape.sided-cookie6 {
+  mask-image: url(../shapes/sided-cookie6.svg);
+}
+
+.shape.sided-cookie7 {
+  mask-image: url(../shapes/sided-cookie7.svg);
+}
+
+.shape.sided-cookie9 {
+  mask-image: url(../shapes/sided-cookie9.svg);
+}
+
+.shape.sided-cookie12 {
+  mask-image: url(../shapes/sided-cookie12.svg);
+}
+
+.shape.slanted {
+  mask-image: url(../shapes/slanted.svg);
+}
+
+.shape.soft-boom {
+  mask-image: url(../shapes/soft-boom.svg);
+}
+
+.shape.soft-burst {
+  mask-image: url(../shapes/soft-burst.svg);
+}
+
+.shape.square {
+  mask-image: url(../shapes/square.svg);
+}
+
+.shape.sunny {
+  mask-image: url(../shapes/sunny.svg);
+}
+
+.shape.triangle {
+  mask-image: url(../shapes/triangle.svg);
+}
+
+.shape.very-sunny {
+  mask-image: url(../shapes/very-sunny.svg);
+}
+
+@keyframes to-shape-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

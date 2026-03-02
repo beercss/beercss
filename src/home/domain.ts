@@ -39,8 +39,8 @@ const updateElementColor = (selector: string, color?: string) => {
 
 const updateSize = (selector: string, size?: string) => {
   const elements = utils.queryAll(selector);
-  utils.removeClass(elements, ["tiny", "small", "medium", "large", "extra"]);
-  if (size) utils.addClass(elements, [size]);
+  utils.removeClass(elements, ["tiny", "small", "medium", "large", "extra", "small-width", "small-height"]);
+  if (size) utils.addClass(elements, size.split(" "));
 };
 
 const updatePosition = (selector: string | NodeListOf<Element>, position?: string) => {
@@ -104,6 +104,7 @@ const updateFieldType = (selector: string, type: string) => {
   utils.remove(colors);
   utils.removeAttribute(inputs, "readonly");
   utils.removeValue(inputs);
+  utils.removeAttribute(icons, "class");
 
   if (type === "file") {
     utils.setAttribute(inputs, "type", "text");
@@ -143,6 +144,7 @@ const updateFieldType = (selector: string, type: string) => {
 
   if (type === "password") {
     utils.html(labels, "Password");
+    utils.setAttribute(icons, "class", "front");
     utils.setAttribute(inputs, "type", type);
     utils.html(icons, "visibility");
   }
@@ -225,11 +227,18 @@ const updatePage = (selector: string) => {
   ui(selector);
 };
 
-const updateProgress = (value: number) => {
-  utils.queryAll("#progress progress[value]").forEach((x) => {
-    const progress = x as HTMLProgressElement;
-    progress.value = value;
-  });
+const updateProgress = (value: number | null, css: string = "") => {
+  if (value !== null && value >= 0) {
+    utils.queryAll("#progress progress[value]:not(.indeterminate)").forEach((x) => {
+      const progress = x as HTMLProgressElement;
+      progress.value = value || 0;
+    });
+    return;
+  }
+  
+  const elements = utils.queryAll("#progress progress");
+  utils.removeClass(elements, ["wavy"]);
+  if (css) utils.addClass(elements, [css]);
 };
 
 const formatHtml = (element: Element | null, raw: boolean = false, useInnerHtml: boolean = false): string => {
@@ -270,17 +279,20 @@ const formatHtml = (element: Element | null, raw: boolean = false, useInnerHtml:
   return process(text
     .replace(/<!--v-if-->/gi, "")
     .replace(/<div class="overlay"><\/div>/gi, "")
-    .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|tabindex|data-v-\w+)="[^"]*"/gi, "")
+    .replace(/\s+(wfd-id|id|data-ui|onclick|style|placeholder|tabindex|data-v-\w+|aria-\w+)="[^"]*"/gi, "")
     .replace(/\s+name="(\w+)"/gi, " name=\"$1_\"")
     .replace(/\s+(checked|disabled)=""/gi, " $1")
-    .replace(/\s+[a-z-]+=(""|"#")/gi, "")
+    .replace(/\s+[a-z-]+=(""|"#"|"javascript\:\;")/gi, "")
     .replace(/\s+(tiny-padding)/gi, "")
     .replace(/\n<\/(circle|th)>/gi, "</$1>"))
     .replace(/^\s+/g, "")
     .replace(/\s+(checked|disabled)=""/gi, " $1");
 };
 
-const showSamples = (data: IHome, selector: string, name: string, dialog?: string, url?: string, useInnerHtml: boolean = false) => {
+const showSamples = async (data: IHome, selector: string, name: string, dialog?: string | null, url?: string | null, useInnerHtml: boolean = false) => {
+  data.isShowingSample = true;
+  await nextTick();
+
   const elements = utils.queryAll(selector);
   let text = "";
   let textFormatted = "";
@@ -302,12 +314,15 @@ const showSamples = (data: IHome, selector: string, name: string, dialog?: strin
       textFormatted = hljs.highlight("html", text).value;
     }
 
-    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", "dialog", ".snackbar", "main.responsive", ".fixed:not(header, footer, thead, tfoot)"])) { text = ""; }
+    if (utils.is(element, ["nav.left", "nav.right", "nav.top", "nav.bottom", "dialog", ".snackbar", "main", ".fixed:not(header, footer, thead, tfoot)"])) { text = ""; }
 
     data.samples.push({
       html: (name === "Tooltips") ? `<div class="center-align">${text}</div>` : text,
       sourceCode: textFormatted,
     });
+    
+    data.isShowingSample = false;
+    await nextTick();
   }
 
   nextTick(() => {
@@ -360,6 +375,25 @@ const updateRtlLtr = (data: IHome) => {
   else document.body.removeAttribute("dir");
 };
 
+const updateShape = (selector: string, shape: string) => {
+  const shapes = /arch|arrow|boom|bun|burst|circle|clamshell|clamshell|diamond|fan|flower|gem|ghost-ish|heart|leaf-clover4|leaft-clover8|loading-indicator|oval|pentagon|pill|pixel-circle|pixel-triangle|puffy|semicircle|sided-cookie4|sided-cookie6|sided-cookie7|sided-cookie9|sided-cookie12|slanted|soft-boom|soft-burst|square|sunny|triangle|very-sunny/g;
+  const elements = Array.from(utils.queryAll(selector));
+  for(const element of elements)
+    element.className = element.className.replace(shapes, shape);
+};
+
+const updateRotate = (selector: string, rotate: string) => {
+  const elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["fast-rotate", "slow-line", "rotate"]);
+  if (rotate) utils.addClass(elements, [rotate]);
+};
+
+const updateResponsive = (selector: string, responsive: string) => {
+  const elements = utils.queryAll(selector);
+  utils.removeClass(elements, ["responsive"]);
+  if (responsive) utils.addClass(elements, [responsive]);
+};
+
 export default {
   updateElevate,
   updateColor,
@@ -396,4 +430,7 @@ export default {
   updateShadow,
   updateLine,
   updateRtlLtr,
+  updateShape,
+  updateRotate,
+  updateResponsive
 };

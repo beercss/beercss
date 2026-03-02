@@ -2,7 +2,7 @@
   "author": "Everton and Leonardo",
   "description": "Build material design interfaces in record time... without stress for devs.",
   "homepage": "https://www.beercss.com/",
-  "version": "3.7.8",
+  "version": "4.0.16",
   "name": "beercss",
   "license": "MIT",
   "type": "module",
@@ -12,7 +12,8 @@
     "lint:style": "stylelint --fix \"src/**/*.css\"",
     "dev": "node ./build/dev.js",
     "build": "node ./build/build.js && node ./build/cdn.js",
-    "test": "vitest"
+    "test": "vitest",
+    "llms": "node ./build/llms.js"
   },
   "devDependencies": {
     "@stylistic/stylelint-plugin": "^2.1.2",
@@ -21,7 +22,8 @@
     "@typescript-eslint/parser": "^7.11.0",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-typescript": "^13.0.0",
-    "@vue/language-plugin-pug": "^2.0.19",
+    "@vue/language-plugin-pug": "^2.2.10",
+    "brotli-size": "^4.0.0",
     "eslint": "^8.57.0",
     "eslint-config-love": "^52.0.0",
     "eslint-plugin-import": "^2.29.1",
@@ -35,15 +37,17 @@
     "stylelint": "^16.6.1",
     "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "^5.4.5",
-    "vite": "^5.2.12",
-    "vitest": "^1.6.0",
+    "vite": "^6.2.3",
+    "vitest": "^3.0.9",
     "vue": "^3.4.27",
     "vue-eslint-parser": "^9.4.2",
     "vue-eslint-parser-template-tokenizer-pug": "^0.4.11",
     "vue-tsc": "^2.0.19"
   },
   "files": [
+    "custom-element",
     "dist/cdn",
+    "scoped",
     "src/cdn",
     "index.d.ts",
     "index.js"
@@ -56,6 +60,7 @@
     "material you",
     "material 3",
     "material design 3",
+    "material 3 expressive",
     "class-light"
   ],
   "repository": {
@@ -67,6 +72,6 @@
   },
   "packageManager": "pnpm@9.1.4+sha512.9df9cf27c91715646c7d675d1c9c8e41f6fce88246f1318c1aa6a1ed1aeb3c4f032fcdf4ba63cc69c4fe6d634279176b5358727d8f2cc1e65b65f43ce2f8bfb0",
   "dependencies": {
-    "material-dynamic-colors": "^1.1.2"
+    "material-dynamic-colors": "^1.1.4"
   }
 }

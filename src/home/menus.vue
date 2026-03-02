@@ -4,92 +4,157 @@
   h4
     span Menus
     button.chip.circle(
-      @click="domain.showSamples(data, '#menus button, #menus .field', 'Menus', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')"
+      @click="domain.showSamples(data, '#default-menus > nav > div', 'Menus', null, 'https://github.com/beercss/beercss/blob/main/docs/MENU.md')"
     )
       i code
   nav.wrap
-    button(data-ui="#menu1")
-      span Default
-      i arrow_drop_down
-      menu#menu1(data-ui="#menu1")
-        a Item 1
-        a Item 2
-        a Item 3
-    button(data-ui="#menu2")
-      span No-wrap
-      i arrow_drop_down
-      menu#menu2.no-wrap(data-ui="#menu2")
-        a Lorem ipsum dolor sit amet
-        a Lorem ipsum dolor sit amet
-        a Lorem ipsum dolor sit amet
-    button.circle(data-ui="#menu3")
-      i arrow_back
-      menu#menu3.left.no-wrap(data-ui="#menu3")
-        a Item 1
-        a Item 2
-        a Item 3
-    button.circle(data-ui="#menu4")
-      i arrow_forward
-      menu#menu4.right.no-wrap(data-ui="#menu4")
-        a Item 1
-        a Item 2
-        a Item 3
-    button(data-ui="#menu5")
-      span Images and icons
-      menu#menu5.no-wrap(data-ui="#menu5")
-        a Title
-        a
-          div Title
-          label Some text here
-        a.row
-          i home
-          span Title
-        a.row
-          i home
-          .max
-            div Title
-            label Some text here
-        a.row
-          img.circle.tiny(:src="'/beer-and-woman.svg'")
-          span Title
-        a.row
-          img.circle.tiny(:src="'/beer-and-woman.svg'")
-          .max
-            div Title
-            label Some text here
-    button(data-ui="#menu6")
-      span Video
-      menu#menu6.no-padding.small-width(data-ui="#menu6")
-        video.responsive(autoplay, loop, muted, playsinline)
-          source(:src="'/dance.mp4'", type="video/mp4")
-    button(data-ui="#menu8")
-      span Docked
-      menu#menu8.min(data-ui="#menu8")
-        a Item 1
-        a Item 2
-        a Item 3
-    button(data-ui="#menu7")
-      span Fullscreen
-      menu#menu7.max(data-ui="#menu7")
-        a Item 1
-        a Item 2
-        a Item 3
-  nav.wrap
-    button(data-ui="#menu9")
-      span Multi level
-      i arrow_drop_down
-      menu(id="menu9")
-        a Item
-        a Item
-        a More items
+    label.radio
+      input(type="radio", name="radio-color-menus", checked, @click="domain.updateColorTheme('#default-menus menu:not(.group)')")
+      span default
+    label.radio
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.group)', 'primary')")
+      span primary
+    label.radio
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.group)', 'secondary')")
+      span secondary
+    label.radio
+      input(type="radio", name="radio-color-menus", @click="domain.updateColorTheme('#default-menus menu:not(.group)', 'tertiary')")
+      span tertiary
+  .medium-space
+  #default-menus
+    nav.wrap
+      div
+        button
+          span Default
+          i arrow_drop_down
         menu
-          a Item
-          a Item
-          a More items
-          menu
-            a Item
-            a Item
-            a item
+          li Item 1
+          li Item 2
+          li Item 3
+      div
+        button
+          span Links
+          i arrow_drop_down
+        menu
+          li
+            a(href="javascript:;") Item 1
+          li
+            a(href="javascript:;") Item 2
+          li
+            a(href="javascript:;") Item 3
+      div
+        button.circle
+          i arrow_back
+        menu.left.no-wrap
+          li Item 1
+          li Item 2
+          li Item 3
+      div
+        button.circle
+          i arrow_forward
+        menu.right.no-wrap
+          li Item 1
+          li Item 2
+          li Item 3
+      div
+        button.circle
+          i arrow_upward
+        menu.top.no-wrap
+          li Item 1
+          li Item 2
+          li Item 3
+      div
+        button
+          span Divider
+          i arrow_drop_down
+        menu
+          li Item 1
+          li Item 2
+          li
+            hr
+          li Item 3
+      div
+        button
+          span Grouped
+          i arrow_drop_down
+        menu.group
+          li
+            menu
+              li Item 1
+              li Item 2
+          li
+            menu
+              li Item 3
+      div
+        button
+          span Selected
+          i arrow_drop_down
+        menu
+          li Item 1
+          li.active Item 2
+          li Item 3
+      div
+        button
+          span Images and icons
+          i arrow_drop_down
+        menu.no-wrap
+          li
+            i home
+            span Title
+          li
+            i home
+            .max
+              div Title
+              label Some text here
+          li
+            img.circle.tiny(alt="", :src="'/beer-and-woman.svg'")
+            span Title
+          li
+            img.circle.tiny(alt="", :src="'/beer-and-woman.svg'")
+            .max
+              div Title
+              label Some text here
+      div
+        button
+          span Video
+          i arrow_drop_down
+        menu.group.no-wrap
+          li
+            video.small-width(autoplay, loop, muted, playsinline)
+              source(:src="'/dance.mp4'", type="video/mp4")
+    nav.wrap
+      div
+        button
+          span Multi level
+          i arrow_drop_down
+        menu
+          li Item
+          li Item
+          li More items
+            menu
+              li Item
+              li Item
+              li More items
+                menu
+                  li Item
+                  li Item
+                  li item
+      div
+        button
+          span Docked menu
+          i dock_to_bottom
+        menu.min
+          li Item 1
+          li Item 2
+          li Item 3
+      div
+        button
+          span Fullscreen
+          i fullscreen
+        menu.max
+          li Item 1
+          li Item 2
+          li Item 3
 </template>
 
 <script setup lang="ts">

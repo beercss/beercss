@@ -1,4 +1,4 @@
-import { queryAll, on } from "../utils";
+import { queryAll, onWeak } from "../utils";
 
 function onPointerDownRipple(e: PointerEvent) {
   updateRipple(e);
@@ -19,7 +19,7 @@ function updateRipple(e: PointerEvent) {
   ripple.style.inlineSize = ripple.style.blockSize = `${diameter}px`;
   ripple.style.left = `${x}px`;
   ripple.style.top = `${y}px`;
-  on(ripple, "animationend", () => { rippleContainer.remove(); });
+  onWeak(ripple, "animationend", () => { rippleContainer.remove(); });
 
   rippleContainer.appendChild(ripple);
   element.appendChild(rippleContainer);
@@ -27,5 +27,5 @@ function updateRipple(e: PointerEvent) {
 
 export function updateAllRipples() {
   const ripples = queryAll(".slow-ripple, .ripple, .fast-ripple");
-  for (let i = 0; i < ripples.length; i++) on(ripples[i], "pointerdown", onPointerDownRipple);
+  for(let i=0; i<ripples.length; i++) onWeak(ripples[i], "pointerdown", onPointerDownRipple);
 }

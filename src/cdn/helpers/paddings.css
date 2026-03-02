@@ -1,43 +1,45 @@
-[class*=padding]:not(.left-padding, .right-padding, .top-padding, .bottom-padding, .horizontal-padding, .vertical-padding) {
-  padding: var(---padding) !important;
+.padding,
+[class*=-padding]:not(.left-padding, .right-padding, .top-padding, .bottom-padding, .horizontal-padding, .vertical-padding) {
+  padding: var(--_padding) !important;
 }
 
-[class*=padding] {
-  ---padding: 1rem;
+.padding,
+[class*=-padding] {
+  --_padding: 1rem;
 }
 
 .no-padding {
-  ---padding: 0;
+  --_padding: 0 !important;
 }
 
 .tiny-padding {
-  ---padding: 0.25rem;
+  --_padding: 0.25rem !important;
 }
 
 .small-padding {
-  ---padding: 0.5rem;
+  --_padding: 0.5rem !important;
 }
 
 .large-padding {
-  ---padding: 1.5rem;
+  --_padding: 1.5rem !important;
 }
 
 .left-padding,
 .horizontal-padding {
-  padding-inline-start: var(---padding) !important;
+  padding-inline-start: var(--_padding) !important;
 }
 
 .right-padding,
 .horizontal-padding {
-  padding-inline-end: var(---padding) !important;
+  padding-inline-end: var(--_padding) !important;
 }
 
 .top-padding,
 .vertical-padding {
-  padding-block-start: var(---padding) !important;
+  padding-block-start: var(--_padding) !important;
 }
 
 .bottom-padding,
 .vertical-padding {
-  padding-block-end: var(---padding) !important;
+  padding-block-end: var(--_padding) !important;
 }

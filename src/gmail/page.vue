@@ -1,148 +1,122 @@
 <template lang="pug">
 div
-  nav.left.m.l.medium-space
-    header
-    button.fill.square.round.extra(data-ui="#dialog-add")
-      i add
+  nav.bottom.s
     a(href="/gmail", :class="{ active: data.url === '/gmail' }")
       i inbox
-      .tooltip.right Inbox
+      span Inbox
+    a(href="/gmail/sent", :class="{ active: data.url === '/gmail/sent' }")
+      i send
+      span Sent
+    a.button.fill.square.round.extra(data-ui="#dialog-add-small", href="javascript:;")
+      i edit
+    a(href="/gmail/drafts", :class="{ active: data.url === '/gmail/drafts' }")
+      i insert_drive_file
+      span Drafts
+    a(data-ui="#themes1", href="javascript:;")
+      i palette
+      span Theme
+
+  nav.top.surface
+    img(v-show="!data.isDark", alt="", :src="'/gmail-light.png'")
+    img(v-show="data.isDark", alt="", :src="'/gmail-dark.png'")
+    .max
+    .max
+      .field.round.suffix.prefix.small.no-margin.m.l.white.black-text
+        i.front search
+        input(type="text", data-ui="#menu-search", aria-label="search mail")
+        i.front mic
+    .max
+    button.circle.large.transparent.s(data-ui="#dialog-search")
+      i search
+    div
+      button.circle.large.transparent.m.l
+        i settings
+      menu.left.no-wrap
+        li
+          .max
+            div Account
+            label Change account
+        li
+          .max
+            div Appearance
+            label Change display settings
+    div
+      button.circle.large.transparent.m.l
+        i apps
+      menu.left.padding.no-wrap
+        li.no-margin.no-padding.transparent
+          .grid.no-space
+            .s4.center-align
+              button.transparent.circle.large(aria-label="calendar")
+                img.no-round(alt="", :src="'/calendar.png'")
+            .s4.center-align
+              button.transparent.circle.large(aria-label="keep")
+                img.no-round(alt="", :src="'/keep.png'")
+            .s4.center-align
+              button.transparent.circle.large(aria-label="tasks")
+                img.no-round(alt="", :src="'/tasks.png'")
+            .s4.center-align
+              button.transparent.circle.large(aria-label="contacts")
+                img.no-round(alt="", :src="'/contacts.png'")
+            .s4.center-align
+              button.transparent.circle.large(aria-label="beer css")
+                img.no-round(alt="", :src="'/favicon.png'")
+    button.circle.large.transparent(@click="redirect('/')", aria-label="beer css")
+      img.responsive(alt="", :src="'/favicon.png'")
+
+  nav.left.m.l(:class="{ max: data.isMax }")
+    header
+      button.circle.extra.transparent(@click="data.isMax = !data.isMax")
+        i {{ data.isMax ? "menu_open" : "menu" }}
+      button.primary-container.square.round.extend(data-ui="#dialog-add")
+        i edit
+        span Compose
+    a(href="/gmail", :class="{ active: data.url === '/gmail' }")
+      i inbox
+      span Inbox
     a(href="/gmail/snoozed", :class="{ active: data.url === '/gmail/snoozed' }")
       i watch_later
-      .tooltip.right Snoozed
+      span Snoozed
     a(
       href="/gmail/important",
       :class="{ active: data.url === '/gmail/important' }"
     )
       i label_important
-      .tooltip.right Important
+      span Important
     a(href="/gmail/sent", :class="{ active: data.url === '/gmail/sent' }")
       i send
-      .tooltip.right Sent
+      span Sent
     a(href="/gmail/drafts", :class="{ active: data.url === '/gmail/drafts' }")
       i insert_drive_file
-      .tooltip.right Drafts
+      span Drafts
     a(href="/gmail/spam", :class="{ active: data.url === '/gmail/spam' }")
       i error_outline
-      .tooltip.right Spam
-    a(data-ui="#themes1")
+      span Spam
+    a(data-ui="#themes1", href="javascript:;")
       i palette
-      .tooltip.right Themes
-    themes(id="themes1", v-model="data")
-      .large-space
-      .medium-space
+      span Themes
 
-  nav.right.m.l
-    header
-    button.circle.transparent.large
-      img.no-round(:src="'/calendar.png'")
-      .tooltip.left Calendar
-    button.circle.transparent.large
-      img.no-round(:src="'/keep.png'")
-      .tooltip.left Keep
-    button.circle.transparent.large
-      img.no-round(:src="'/tasks.png'")
-      .tooltip.left Tasks
-    button.circle.transparent.large
-      img.no-round(:src="'/contacts.png'")
-      .tooltip.left Contacts
+  nav.right.m.l.center-align
+    button.circle.transparent.large(aria-label="calendar")
+      img.no-round(alt="", :src="'/calendar.png'")
+      span.tooltip.left Calendar
+    button.circle.transparent.large(aria-label="keep")
+      img.no-round(alt="", :src="'/keep.png'")
+      span.tooltip.left Keep
+    button.circle.transparent.large(aria-label="tasks")
+      img.no-round(alt="", :src="'/tasks.png'")
+      span.tooltip.left Tasks
+    button.circle.transparent.large(aria-label="contacts")
+      img.no-round(alt="", :src="'/contacts.png'")
+      span.tooltip.left Contacts
 
-  nav.bottom.s
-    a(href="/gmail", :class="{ active: data.url === '/gmail' }")
-      i inbox
-      div Inbox
-    a(href="/gmail/sent", :class="{ active: data.url === '/gmail/sent' }")
-      i send
-      div Sent
-    a.button.fill.square.round.extra(data-ui="#dialog-add-small")
-      i add
-    a(href="/gmail/drafts", :class="{ active: data.url === '/gmail/drafts' }")
-      i insert_drive_file
-      div Drafts
-    a(data-ui="#themes2")
-      i palette
-      div Theme
-    themes(id="themes2", v-model="data")
-      .large-space
-      .medium-space
-
-  nav.top
-    button.circle.large.transparent(data-ui="#menu-menu")
-      i menu
-      menu#menu-menu.no-wrap(data-ui="#menu-menu")
-        a.row(href="/gmail")
-          i inbox
-          .max Inbox
-        a.row(href="/gmail/snoozed")
-          i watch_later
-          .max Snoozed
-        a.row(href="/gmail/important")
-          i label_important
-          .max Important
-        a.row(href="/gmail/sent")
-          i send
-          .max Sent
-        a.row(href="/gmail/drafts")
-          i insert_drive_file
-          .max Drafts
-        a.row(href="/gmail/spam")
-          i error_outline
-          .max Spam
-        a.row(data-ui="#themes3")
-          i palette
-          .max Themes
-    img(v-show="!data.isDark", :src="'/gmail-light.png'")
-    img(v-show="data.isDark", :src="'/gmail-dark.png'")
-    .max
-    .max
-      .field.round.suffix.prefix.small.no-margin.m.l.white.black-text
-        i.front search
-        input(type="text", data-ui="#menu-search")
-        i.front mic
-    .max
-    button.circle.large.transparent.s(data-ui="#dialog-search")
-      i search
-    button.circle.large.transparent.m.l(data-ui="#menu-settings")
-      i settings
-      menu#menu-settings.left.no-wrap(
-        data-ui="#menu-settings"
-      )
-        a
-          div Account
-          label Change account
-        a
-          div Appearance
-          label Change display settings
-    button.circle.large.transparent.m.l(data-ui="#menu-apps")
-      i apps
-      menu#menu-apps.left.padding.no-wrap(data-ui="#menu-apps")
-        .grid.no-space
-          .s4.center-align
-            a.button.transparent.circle.large
-              img.no-round(:src="'/calendar.png'")
-          .s4.center-align
-            a.button.transparent.circle.large
-              img.no-round(:src="'/keep.png'")
-          .s4.center-align
-            a.button.transparent.circle.large
-              img.no-round(:src="'/tasks.png'")
-          .s4.center-align
-            a.button.transparent.circle.large
-              img.no-round(:src="'/contacts.png'")
-          .s4.center-align
-            a.button.transparent.circle.large
-              img.no-round(:src="'/favicon.png'")
-    button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
-    themes(id="themes3", v-model="data")
-
-  main.responsive.max
+  main.surface-container.round.padding.bottom-margin
     .overlay
     dialog#dialog-add.round.large-width
       nav
         button.circle.transparent(data-ui="#dialog-add")
           i arrow_back
-        h5 New mail
+        h5 New message
         .max
         button.circle.transparent(data-ui="#dialog-add")
           i attach_file
@@ -162,7 +136,7 @@ div
             input(type="text")
             label Subject
         .s12
-          .field.label.border.textarea
+          .field.label.border
             textarea
             label Message
 
@@ -171,7 +145,7 @@ div
       nav
         button.circle.transparent(data-ui="#dialog-add-small")
           i arrow_back
-        h5 New mail
+        h5 Compose
         .max
         button.circle.transparent(data-ui="#dialog-add-small")
           i attach_file
@@ -191,7 +165,7 @@ div
             input(type="text")
             label Subject
         .s12
-          .field.label.border.textarea
+          .field.label.border
             textarea
             label Message
 
@@ -205,12 +179,15 @@ div
           i.front mic
         .max.m.l
 
+    themes(id="themes1", v-model="data")
+
     home(v-if="data.url === '/gmail'")
     drafts(v-if="data.url === '/gmail/drafts'")
     important(v-if="data.url === '/gmail/important'")
     sent(v-if="data.url === '/gmail/sent'")
     snoozed(v-if="data.url === '/gmail/snoozed'")
     spam(v-if="data.url === '/gmail/spam'")
+
 </template>
 
 <script setup lang="ts">

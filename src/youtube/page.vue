@@ -1,156 +1,122 @@
 <template lang="pug">
 #layout
-  nav.left.m.l
+  nav.left.m.l.scroll(:class="{ max: data.isMax }")
     header
+      button.circle.extra.transparent(@click="data.isMax = !data.isMax;")
+        i {{ data.isMax ? 'menu_open' : 'menu' }}
     a(href="/youtube", :class="{ active: data.url === '/youtube' }")
       i home
-      div Home
+      span Home
     a(href="/youtube/whats-hot", :class="{ active: data.url === '/youtube/whats-hot' }")
       i whatshot
       div What's hot
     a(href="/youtube/subscriptions", :class="{ active: data.url === '/youtube/subscriptions' }")
       i subscriptions
-      div Subscript
+      span Subscript
     a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
-      div Library
-    a(data-ui="#themes1")
+      span Library
+    a(data-ui="#themes1", href="javascript:;")
       i palette
-      div Themes
-    themes(id="themes1", v-model="data")
-      .large-space
-      .medium-space
+      span Themes
+    hr
+    a(href="javascript:;")
+      i history
+      span History
+    a(href="javascript:;")
+      i slideshow
+      span Your videos
+    a(href="javascript:;")
+      i playlist_play
+      span Your albuns
+    a(href="javascript:;")
+      i watch_later
+      span Watch later
 
   nav.bottom.s
     a(href="/youtube", :class="{ active: data.url === '/youtube' }")
       i home
-      div Home
+      span Home
     a(href="/youtube/explore", :class="{ active: data.url === '/youtube/explore' }")
       i explore
-      div Explore
-    a.button.square.round.extra.fill(data-ui="#dialog-add")
+      span Explore
+    a.button.square.round.extra.fill(data-ui="#dialog-add", href="javascript:;")
       i add
     a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
-      div Library
-    a(data-ui="#themes2")
+      span Library
+    a(data-ui="#themes1", href="javascript:;")
       i palette
-      div Themes
-    themes(id="themes2", v-model="data")
-      .large-space
-      .medium-space
+      span Themes
 
-  nav.top
-    button.circle.large.transparent.m.l(data-ui="#dialog-expanded")
-      i menu
+  nav.top.surface
     img(
       v-show="!data.isDark",
-      :src="'/youtube-light.png'"
+      alt="", :src="'/youtube-light.png'"
     )
     img(
       v-show="data.isDark",
-      :src="'/youtube-dark.png'"
+      alt="", :src="'/youtube-dark.png'"
     )
     .max
     .max.field.round.suffix.prefix.small.no-margin.m.l.white.black-text
       i.front search
-      input(type="text")
+      input(type="text", placeholder="Search", aria-label="search")
       i.front mic
     .max
     button.circle.large.transparent.s(data-ui="#dialog-search")
       i search
-    button.circle.large.transparent.m.l(data-ui="#menu-add")
-      i video_call
-      menu#menu-add.left.no-wrap(data-ui="#menu-add")
-        a.row
-          .min
-            i upload
-          .min Send a video
-        a.row
-          .min
-            i sensors
-          .min Broadcast live
-    button.circle.large.transparent.m.l(data-ui="#menu-apps")
-      i apps
-      menu#menu-apps.left.no-wrap(data-ui="#menu-apps")
-        a.row
-          .min
-            img(:src="'/youtube.png'")
-          .min Youtube TV
-        hr.small
-        a.row
-          .min
-            img(:src="'/youtube.png'")
-          .min Youtube Music
-        a.row
-          .min
-            img(:src="'/youtube.png'")
-          .min Youtube Kids
+    div
+      button.circle.large.transparent.m.l
+        i video_call
+      menu.left.no-wrap
+        li
+          i upload
+          div Send a video
+        li
+          i sensors
+          div Broadcast live
+    div
+      button.circle.large.transparent.m.l
+        i apps
+      menu.left.no-wrap
+        li
+          img(alt="", :src="'/youtube.png'")
+          div Youtube TV
+        li 
+          hr
+        li
+          img(alt="", :src="'/youtube.png'")
+          div Youtube Music
+        li
+          img(alt="", :src="'/youtube.png'")
+          div Youtube Kids
     button.circle.large.transparent(data-ui="#dialog-notifications")
       i notifications
-    button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+    button.circle.large.transparent(@click="redirect('/')", aria-label="beer css")
+      img.responsive(alt="", :src="'/favicon.png'")
 
   .overlay
   dialog#dialog-notifications.right
     nav
-      h5.max Notifications
+      h2.h5.max Notifications
       button.circle.transparent(data-ui="#dialog-notifications")
         i close
     p No new notifications here
 
   .overlay
-  dialog#dialog-expanded.left
-    nav.drawer.no-padding
-      header
-        nav
-          button.transparent.circle.large(data-ui="#dialog-expanded")
-            i menu
-          a
-            img(v-show="!data.isDark", :src="'/youtube-light.png'")
-            img(v-show="data.isDark", :src="'/youtube-dark.png'")
-      a(data-ui="#dialog-expanded", href="/youtube")
-        i home
-        span Home
-      a(data-ui="#dialog-expanded", href="/youtube/whats-hot")
-        i whatshot
-        div What's hot
-      a(data-ui="#dialog-expanded", href="/youtube/subscriptions")
-        i subscriptions
-        div Subscript
-      a(data-ui="#dialog-expanded", href="/youtube/library")
-        i video_library
-        div Library
-      hr.small
-      a(data-ui="#dialog-expanded")
-        i history
-        div History
-      a(data-ui="#dialog-expanded")
-        i slideshow
-        div Your videos
-      a(data-ui="#dialog-expanded")
-        i playlist_play
-        div Your albuns
-      a(data-ui="#dialog-expanded")
-        i watch_later
-        div Watch later
-
-  .overlay
   dialog#dialog-add.bottom.top-round
     nav
-      h5.max New
+      h2.h5.max New
       button.circle.transparent(data-ui="#dialog-add")
         i close
-    a.row
-      .min
+    ul.list
+      li
         i upload
-      .min
-        span Send a video
-    a.row
-      .min
+        div Send a video
+      li
         i sensors
-      .min
-        span Broadcast live
+        div Broadcast live
 
   .overlay
   dialog#dialog-search.top.transparent
@@ -158,6 +124,8 @@
       i.front search
       input(type="text")
       i.front mic
+
+  themes(id="themes1", v-model="data")
 
   .medium-space
   explore(v-if="data.url === '/youtube/explore'")
