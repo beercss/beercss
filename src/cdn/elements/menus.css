@@ -4,7 +4,7 @@ menu {
   position: absolute;
   box-shadow: var(--elevate2);
   background-color: var(--surface-container);
-  z-index: 11;
+  z-index: 13;
   inset: auto auto 0 0;
   inline-size: 100%;
   max-block-size: 50vh;
