@@ -6,8 +6,10 @@ export default async function() {
     await build({
       build: {
         minify: false,
+        assetsInlineLimit: 0,
         outDir: "./dist/cdn",
         rollupOptions: {
+          preserveEntrySignatures: "allow-extension",
           input: {
             "beer": "./src/cdn.ts",
           },
@@ -22,10 +24,7 @@ export default async function() {
     });
   
     const cssContent = fs.readFileSync("./dist/cdn/beer.css", "utf-8");
-    fs.writeFileSync("./dist/cdn/beer.css", cssContent.replace(/url\("\//g, "url(\""));
-
-    const jsContent = fs.readFileSync("./dist/cdn/beer.js", "utf-8");
-    fs.writeFileSync("./dist/cdn/beer.js", jsContent + "\nexport default globalThis.ui;");
+    fs.writeFileSync("./dist/cdn/beer.css", cssContent.replace(/url\(\//g, "url("));
   } catch(error) {
     console.log(error);
   }

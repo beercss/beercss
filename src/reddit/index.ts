@@ -1,4 +1,4 @@
-import { router } from "../shared/router.js";
+import { addRoute } from "../shared/router.js";
 import reddit from "./page.vue";
 
-router("/reddit", reddit);
+addRoute("/reddit", reddit);

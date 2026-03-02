@@ -2,50 +2,50 @@
 div
   nav.top.black.white-text
     .space
-    img(height="24", :src="'/uber-dark.png'")
-    button.large.transparent.m.l(
-      data-ui="#menu-ride"
-    )
-      span Ride
-      menu#menu-ride.no-wrap(data-ui="#menu-ride")
-        a Overview
-        a Price calculator
-        a Cities
-        a Companies
-        hr.small
-        a How it works
-        a Safety
-        a Airports
-    button.large.transparent.m.l(
-      data-ui="#menu-drive"
-    )
-      span Drive
-      menu#menu-drive.no-wrap(data-ui="#menu-drive")
-        a Overview
-        a Partner app
-        a Safe
-        a How to drive in your city
-        a Make deliveries
-        hr.small
-        a Requirements
-        a Vehicle solutions
-        a Safety
-    button.large.transparent.m.l(
-      data-ui="#menu-more"
-    )
-      span More
-      menu#menu-more.no-wrap(data-ui="#menu-more")
-        a Uber Eats
-        a Make deliveries
-        a Uber Health
-        hr.small
-        a Uber for companies
-        a Uber Freight
+    img(height="24", alt="", :src="'/uber-dark.png'")
+    div
+      button.large.transparent.m.l
+        span Ride
+      menu.no-wrap
+        li Overview
+        li Price calculator
+        li Cities
+        li Companies
+        li
+          hr
+        li How it works
+        li Safety
+        li Airports
+    div
+      button.large.transparent.m.l
+        span Drive
+      menu.no-wrap
+        li Overview
+        li Partner app
+        li Safe
+        li How to drive in your city
+        li Make deliveries
+        li
+          hr
+        li Requirements
+        li Vehicle solutions
+        li Safety
+    div
+      button.large.transparent.m.l
+        span More
+      menu.no-wrap
+        li Uber Eats
+        li Make deliveries
+        li Uber Health
+        li
+          hr
+        li Uber for companies
+        li Uber Freight
     .max
     button.circle.large.transparent.m.l(data-ui="#themes1")
       i palette
-    button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+    button.circle.large.transparent(@click="redirect('/')", aria-hidden="true")
+      img.responsive(alt="", :src="'/favicon.png'")
     .space
 
   main.responsive.max

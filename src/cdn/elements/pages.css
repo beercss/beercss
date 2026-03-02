@@ -1,6 +1,5 @@
 .page {
-  ---transform: translate(0, 0);
-
+  --_transform: translate(0, 0);
   opacity: 0;
   position: absolute;
   display: none;
@@ -14,25 +13,25 @@
 }
 
 .page.active.top {
-  ---transform: translate(0, -4rem);
+  --_transform: translate(0, -4rem);
 }
 
 .page.active.bottom {
-  ---transform: translate(0, 4rem);
+  --_transform: translate(0, 4rem);
 }
 
 .page.active.left {
-  ---transform: translate(-4rem, 0);
+  --_transform: translate(-4rem, 0);
 }
 
 .page.active.right {
-  ---transform: translate(4rem, 0);
+  --_transform: translate(4rem, 0);
 }
 
 @keyframes to-page {
   from {
     opacity: 0;
-    transform: var(---transform);
+    transform: var(--_transform);
   }
 
   to {

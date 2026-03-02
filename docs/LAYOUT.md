@@ -85,13 +85,12 @@ Headers and footers are `position: sticky` when `fixed`.
 ## Top app bar example
 
 ```html
-<header class="primary">
+<header>
   <nav>
     <button class="circle transparent">
       <i>arrow_back</i>
     </button>
-    <h5>Title large</h5>
-    <div class="max"></div>
+    <h5 class="max">Title</h5>
     <button class="circle transparent">
       <i>attach_file</i>
     </button>
@@ -123,37 +122,11 @@ Headers and footers are `position: sticky` when `fixed`.
       <i>image</i>
     </button>
     <div class="max"></div>
-    <button class="square round extend">
+    <button class="square round extra primary">
       <i>add</i>
     </button>
   </nav>
-</header>
-```
-
-## List example
-
-```html
-<div class="row">
-  <a>
-    <i>warning</i>
-  </a>
-  <div class="max">Some text here</div>
-  <a>
-    <i>edit</i>
-  </a>
-  <a>
-    <i>delete</i>
-  </a>
-</div>
-```
-
-## Clickable list example
-
-```html
-<a class="row wave">
-  <i>home</i>
-  <div>Item</div>
-</div>
+</footer>
 ```
 
 ## Empty state example
@@ -175,4 +148,4 @@ Headers and footers are `position: sticky` when `fixed`.
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Shape](SHAPE.md), [Slider](SLIDER.md), [Snackbar](SNACKBAR.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

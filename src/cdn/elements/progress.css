@@ -1,27 +1,41 @@
 progress {
+  --_light: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
+  --_dark: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
+  --_size: 0.25rem;
   position: relative;
   inline-size: 100%;
-  block-size: 0.5rem;
+  block-size: var(--_size);
   color: var(--primary);
-  background: var(--primary-container);
+  background: var(--_light);
   border-radius: 1rem;
   flex: none;
   border: none;
   overflow: hidden;
   writing-mode: horizontal-tb;
   direction: ltr;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.dark progress {
+  background: var(--_dark);
 }
 
 progress.small {
-  inline-size: 4rem;
+  --_size: 0.25rem;
 }
 
 progress.medium {
-  inline-size: 8rem;
+  --_size: 0.35rem;
 }
 
 progress.large {
-  inline-size: 12rem;
+  --_size: 0.45rem;
+}
+
+progress.indeterminate {
+  --_value: 100;
+  animation: 3.2s to-indeterminate ease infinite;
 }
 
 progress:not(.circle, [value])::after {
@@ -32,15 +46,15 @@ progress:not(.circle, [value])::after {
   block-size: 100%;
   clip-path: none;
   background: currentcolor;
-  animation: 1.6s to-linear ease infinite;
+  animation: 3.2s to-linear ease infinite;
 }
 
 progress:not(.circle, [value])::-moz-progress-bar {
-  animation: 1.6s to-linear ease infinite;
+  animation: 3.2s to-linear ease infinite;
 }
 
 progress:not(.circle, [value])::-webkit-progress-value {
-  animation: 1.6s to-linear ease infinite;
+  animation: 3.2s to-linear ease infinite;
 }
 
 progress::-webkit-progress-bar {
@@ -48,40 +62,81 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background: currentcolor;
+  background: currentColor;
 }
 
 progress::-moz-progress-bar {
-  background: currentcolor;
+  background: currentColor;
+}
+
+progress.wavy {
+  block-size: calc(var(--_size, 0) * 2);
+  background: none;
+  background-image: var(--_light);
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  background-size: auto calc(var(--_size, 0) / 2);
+}
+
+.dark progress.wavy {
+  background-image: var(--_dark);
+}
+
+progress.wavy::-webkit-progress-value,
+progress.wavy:not(.circle, [value])::after {
+  mask-image: url(../shapes/wavy.svg);
+  mask-position: 0 50%;
+  mask-repeat: repeat-x;
+  mask-size: auto 100%;
+
+}
+
+progress.wavy::-moz-progress-bar {
+  mask-image: url(../shapes/wavy.svg);
+  mask-position: 0 50%;
+  mask-repeat: repeat-x;
+  mask-size: auto 100%;
 }
 
 progress.circle {
-  display: inline-block;
+  --_value: attr(value type(<number>), 50);
   inline-size: 2.5rem;
   block-size: 2.5rem;
+  background: conic-gradient(currentColor calc(var(--_value, 0) * 1%), var(--active) 0%);
   border-radius: 50%;
-  border-width: 0.3rem;
-  border-style: solid;
-  border-color: currentcolor;
-  animation: 1.6s to-circular linear infinite;
+  mask-image: radial-gradient(circle at center, transparent 57%, currentColor 60%);
+}
+
+progress.circle::-webkit-progress-value {
   background: none;
-  flex: none;
 }
 
 progress.circle::-moz-progress-bar {
   background: none;
 }
 
+progress.circle.wavy {
+  background: conic-gradient(currentColor calc(var(--_value, 0) * 1%), var(--active) 0);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  mask-image: url(../shapes/wavy-circle.svg);
+}
+
 progress.circle.small {
   inline-size: 1.5rem;
   block-size: 1.5rem;
-  border-width: 0.2rem;
 }
 
 progress.circle.large {
   inline-size: 3.5rem;
   block-size: 3.5rem;
-  border-width: 0.4rem;
+}
+
+progress.circle:not([value]),
+progress.circle.indeterminate {
+  --_value: 50;
+  animation: to-rotate 1s infinite linear;
 }
 
 :is(nav, .row, .field) > progress:not(.circle, .small, .medium, .large) {
@@ -93,98 +148,61 @@ progress.max {
   position: absolute;
   inline-size: 100% !important;
   block-size: 100% !important;
-  color: var(--active);
+  color: currentColor;
   background: none;
   inset: 0;
   border-radius: inherit;
   animation: none;
   writing-mode: horizontal-tb;
+  opacity: 0.33;
 }
 
-progress:is(.horizontal, .vertical, .max) {
-  display: unset;
-  inline-size: 100% !important;
+progress.max[class*='-text'] {
+  opacity: 1;
 }
 
-progress.vertical {
-  writing-mode: vertical-lr;
-}
-
-progress.max.vertical {
-  transform: rotate(-180deg);
-}
-
-:has(> progress) > :not(progress) {
-  z-index: 1;
+progress.max + * {
+  margin-block-start: 0;
 }
 
 :is(.button, button, .chip) > progress.circle {
   color: inherit;
 }
 
-@supports (-moz-appearance:none) {
-  progress.max.vertical {
-    transform: none;
-  }
-}
-
 @keyframes to-linear {
   0% {
-    margin-inline-start: 0%;
-    inline-size: 0%;
+    margin: 0 0 0 -100%;
   }
 
   50% {
-    margin-inline-start: 0%;
-    inline-size: 100%;
+    margin: 0 0 0 0;
   }
 
   100% {
-    margin-inline-start: 100%;
-    inline-size: 0%;
+    margin: 0 0 0 100%;
   }
 }
 
-@keyframes to-circular {
+@keyframes to-indeterminate {
   0% {
-    transform: rotate(0deg);
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
-  }
-
-  20% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
-  }
-
-  30% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
-  }
-
-  40% {
-    clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    padding: 0 100% 0 0;
   }
 
   50% {
-    clip-path: polygon(50% 50%, 50% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%);
-  }
-
-  60% {
-    clip-path: polygon(50% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 100%);
-  }
-
-  70% {
-    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%, 0% 50%);
-  }
-
-  80% {
-    clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 50%);
-  }
-
-  90% {
-    transform: rotate(360deg);
-    clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+    padding: 0 0 0 0;
   }
 
   100% {
-    clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+    padding: 0 0 0 100%;
+  }
+}
+
+@keyframes to-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }

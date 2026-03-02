@@ -1,17 +1,16 @@
 <template lang="pug">
 #sliders
   .large-space
-  h4
-    span Sliders
+  h4 Sliders
   .medium-space
-  h6
+  h5.h6
     span Default slider
     button.chip.circle(@click="domain.showSamples(data, '#sliders1 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="size-sliders1", checked="checked", @click="domain.updateSize('#sliders1 .slider')")
-      span default
+      input(type="radio", name="size-sliders1", checked="checked", @click="domain.updateSize('#sliders1 .slider', '')")
+      span tiny
     label.radio
       input(type="radio", name="size-sliders1", @click="domain.updateSize('#sliders1 .slider', 'small')")
       span small
@@ -26,6 +25,9 @@
       input(type="radio", name="size-sliders1", @click="domain.updateSize('#sliders1 .slider', 'large')")
       span large
     label.radio
+      input(type="radio", name="size-sliders1", @click="domain.updateSize('#sliders1 .slider', 'extra')")
+      span extra
+    label.radio
       input(type="radio", name="direction-sliders1", checked, @click="domain.updateDirection('#sliders1 .slider', '')")
       span horizontal
     label.radio
@@ -34,30 +36,30 @@
   .medium-space
   .grid#sliders1
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
+      .slider
+        input(type="range", value="25", aria-hidden="true")
         span
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="5", min="4", max="8")
+      .slider
+        input(type="range", value="5", min="4", max="8", aria-hidden="true")
         span
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
-        input(type="range", value="50")
+      .slider
+        input(type="range", value="25", aria-hidden="true")
+        input(type="range", value="50", aria-hidden="true")
         span
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25", disabled)
+      .slider
+        input(type="range", value="25", disabled, aria-hidden="true")
         span
-  h6
-    span Slider with tooltip
+  h5.h6
+    span Value indicator
     button.chip.circle(@click="domain.showSamples(data, '#sliders2 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
   nav.wrap
     label.radio
       input(type="radio", name="size-sliders2", checked="checked", @click="domain.updateSize('#sliders2 .slider')")
-      span default
+      span tiny
     label.radio
       input(type="radio", name="size-sliders2", @click="domain.updateSize('#sliders2 .slider', 'small')")
       span small
@@ -71,39 +73,103 @@
     label.radio
       input(type="radio", name="size-sliders2", @click="domain.updateSize('#sliders2 .slider', 'large')")
       span large
+    label.radio
+      input(type="radio", name="size-sliders2", @click="domain.updateSize('#sliders2 .slider', 'extra')")
+      span extra
+    label.radio
+      input(type="radio", name="direction-sliders2", checked, @click="domain.updateDirection('#sliders2 .slider', '')")
+      span horizontal
+    label.radio
+      input(type="radio", name="direction-sliders2", @click="domain.updateDirection('#sliders2 .slider', 'vertical')")
+      span vertical
   .medium-space
   .grid#sliders2
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
+      .slider
+        input(type="range", value="25", aria-hidden="true")
         span
-        .tooltip
+        span.tooltip
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="5", min="4", max="8")
+      .slider
+        input(type="range", value="5", min="4", max="8", aria-hidden="true")
         span
-        .tooltip
+        span.tooltip
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
-        input(type="range", value="50")
+      .slider
+        input(type="range", value="25", aria-hidden="true")
+        input(type="range", value="50", aria-hidden="true")
         span
-        .tooltip
-        .tooltip
+        span.tooltip
+        span.tooltip
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25", disabled)
+      .slider
+        input(type="range", value="25", disabled, aria-hidden="true")
         span
-        .tooltip
+        span.tooltip
   .medium-space
-  h6
-    span Slider with icon
-    button.chip.circle(@click="domain.showSamples(data, '#sliders4 nav', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+  h5.h6
+    span Value indicator bottom
+    button.chip.circle(@click="domain.showSamples(data, '#sliders6 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
   nav.wrap
     label.radio
-      input(type="radio", name="size-sliders4", checked="checked", @click="domain.updateSize('#sliders4 .slider')")
-      span default
+      input(type="radio", name="size-sliders6", checked="checked", @click="domain.updateSize('#sliders6 .slider')")
+      span tiny
+    label.radio
+      input(type="radio", name="size-sliders6", @click="domain.updateSize('#sliders6 .slider', 'small')")
+      span small
+    label.radio
+      input(
+        type="radio",
+        name="size-sliders6",
+        @click="domain.updateSize('#sliders6 .slider', 'medium')"
+      )
+      span medium
+    label.radio
+      input(type="radio", name="size-sliders6", @click="domain.updateSize('#sliders6 .slider', 'large')")
+      span large
+    label.radio
+      input(type="radio", name="size-sliders6", @click="domain.updateSize('#sliders6 .slider', 'extra')")
+      span extra
+    label.radio
+      input(type="radio", name="direction-sliders6", checked, @click="domain.updateDirection('#sliders6 .slider', '')")
+      span horizontal
+    label.radio
+      input(type="radio", name="direction-sliders6", @click="domain.updateDirection('#sliders6 .slider', 'vertical')")
+      span vertical
+  .medium-space
+  .grid#sliders6
+    .s12.m6.l3.center-align
+      .slider
+        input(type="range", value="25", aria-hidden="true")
+        span
+        span.tooltip.bottom
+    .s12.m6.l3.center-align
+      .slider
+        input(type="range", value="5", min="4", max="8", aria-hidden="true")
+        span
+        span.tooltip.bottom
+    .s12.m6.l3.center-align
+      .slider
+        input(type="range", value="25", aria-hidden="true")
+        input(type="range", value="50", aria-hidden="true")
+        span
+        span.tooltip.bottom
+        span.tooltip.bottom
+    .s12.m6.l3.center-align
+      .slider
+        input(type="range", value="25", disabled, aria-hidden="true")
+        span
+        span.tooltip.bottom
+  .medium-space
+  h5.h6
+    span Inset icon
+    button.chip.circle(@click="domain.showSamples(data, '#sliders4 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
+      i code
+  nav.wrap
+    label.radio
+      input(type="radio", name="size-sliders4", @click="domain.updateSize('#sliders4 .slider')")
+      span tiny
     label.radio
       input(type="radio", name="size-sliders4", @click="domain.updateSize('#sliders4 .slider', 'small')")
       span small
@@ -111,6 +177,7 @@
       input(
         type="radio",
         name="size-sliders4",
+        checked,
         @click="domain.updateSize('#sliders4 .slider', 'medium')"
       )
       span medium
@@ -118,42 +185,33 @@
       input(type="radio", name="size-sliders4", @click="domain.updateSize('#sliders4 .slider', 'large')")
       span large
     label.radio
-      input(type="radio", name="direction-sliders4", checked, @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', ''); domain.updateAlign('#sliders4 nav', ''); updateHorizontalSlider(true);")
+      input(type="radio", name="size-sliders4", @click="domain.updateSize('#sliders4 .slider', 'extra')")
+      span extra
+    label.radio
+      input(type="radio", name="direction-sliders4", checked, @click="domain.updateDirection('#sliders4 .slider', ''); domain.updateAlign('#sliders4 nav', ''); updateHorizontalSlider(true);")
       span horizontal
     label.radio
-      input(type="radio", name="direction-sliders4", @click="domain.updateDirection('#sliders4 .slider, #sliders4 nav', 'vertical'); domain.updateAlign('#sliders4 nav', 'center-align'); updateHorizontalSlider(false);")
+      input(type="radio", name="direction-sliders4", @click="domain.updateDirection('#sliders4 .slider', 'vertical'); domain.updateAlign('#sliders4 nav', 'center-align'); updateHorizontalSlider(false);")
       span vertical
   .medium-space
   .grid.large-space#sliders4
     .s12.m6.l4.center-align
-      nav.no-space
-        i(v-if="data.isHorizontalSlider") remove
-        i(v-else) add
-        label.slider
-          input(type="range")
-          span
-        i(v-if="data.isHorizontalSlider") add
-        i(v-else) remove
+      .slider.medium
+        input(type="range", aria-hidden="true")
+        span
+          i volume_up
     .s12.m6.l4.center-align
-      nav.no-space
-        i(v-if="data.isHorizontalSlider") volume_down
-        i(v-else) volume_up
-        label.slider
-          input(type="range")
-          span
-        i(v-if="data.isHorizontalSlider") volume_up
-        i(v-else) volume_down
+      .slider.medium
+        input(type="range", aria-hidden="true")
+        span
+          i add
     .s12.m6.l4.center-align
-      nav.no-space
-        i(v-if="data.isHorizontalSlider") sunny
-        i(v-else) rainy
-        label.slider
-          input(type="range", value="25")
-          span
-        i(v-if="data.isHorizontalSlider") rainy
-        i(v-else) sunny
+      .slider.medium
+        input(type="range", value="25", aria-hidden="true")
+        span
+          i sunny
   .medium-space
-  h6
+  h5.h6
     span Slider in field elements
     button.chip.circle(@click="domain.showSamples(data, '#sliders3 .field', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -161,27 +219,28 @@
   .grid#sliders3
     .s12.m6.l4
       .field.middle-align
-        label.slider
-          input(type="range", value="25")
+        .slider
+          input(type="range", value="25", aria-hidden="true")
           span
-        span.helper Helper
+        output Helper
     .s12.m6.l4
       .field.middle-align
-        label.slider
-          input(type="range", value="25")
+        .slider
+          input(type="range", value="25", aria-hidden="true")
           span
-        span.error Error text
+        output.invalid Error text
     .s12.m6.l4
       .field.middle-align.prefix.suffix
-        i sunny
-        label.slider
-          input(type="range", value="25")
-          span
-        span.helper Helper
-        i rainy
+        nav
+          i sunny
+          .slider
+            input(type="range", value="25", aria-hidden="true")
+            span
+          i rainy
+        output Helper
   .large-space
   #sliders5
-    h6 Custom slider
+    h5.h6 Custom slider
       button.chip.circle(@click="domain.showSamples(data, '#sliders5 nav > :not(label)', 'Custom', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
         i code
     nav.wrap
@@ -196,14 +255,15 @@
         span green-text
     .medium-space
     nav.top-align.wrap
-      article.small-width.small-height.round
-        label.slider.max
-          input(type="range", value="30", max="100")
+      .small-width.small-height.round.fill
+        .slider.max
+          input(type="range", value="30", max="100", aria-hidden="true")
           span
-      article.small-width.small-height.round
-        label.slider.max.vertical
-          input(type="range", value="30", max="100")
+      .small-width.small-height.round.fill
+        .slider.max.vertical
+          input(type="range", value="30", max="100", aria-hidden="true")
           span
+
 </template>
 
 <script setup lang="ts">

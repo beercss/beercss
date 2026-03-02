@@ -12,4 +12,5 @@ export interface IYoutube extends ILayout {
   isLoaded: boolean,
   url: string,
   check: boolean,
+  isMax: boolean
 }

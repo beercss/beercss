@@ -4,7 +4,7 @@ div
     .large-space
     h4 Layouts
     .medium-space
-    h6 Positions
+    h5.h6 Positions
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#positions article', 'Positions', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
@@ -30,12 +30,12 @@ div
         span bottom
     .space
     #positions
-      article.border.medium.no-padding
+      article.small-round.padding.border.medium.no-padding
         .padding.primary.absolute.center.middle
-          h5 Position
+          h5(aria-hidden="true") Position
           div Lorem ipsum dolor...
     .medium-space
-    h6 Alignments
+    h5.h6 Alignments
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#alignments article', 'Alignments', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
@@ -73,11 +73,11 @@ div
     #alignments
       article.border.medium.no-padding.center-align.middle-align
         .padding
-          h5 Alignment
+          h5(aria-hidden="true") Alignment
           div Lorem ipsum dolor...
   .medium-space
   #headers-footers
-    h6 Headers and footers
+    h6(aria-hidden="true") Headers and footers
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#headers-footers article', 'Headers and footers', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
@@ -87,7 +87,7 @@ div
       .s12.m6
         article.small.scroll
           header.fixed
-            h5.no-margin Fixed header
+            h5.no-margin(aria-hidden="true") Fixed header
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupILayoutt non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupILayoutt non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       .s12.m6
@@ -95,10 +95,10 @@ div
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupILayoutt non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupILayoutt non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           footer.fixed
-            h5.no-margin Fixed footer
+            h5.no-margin(aria-hidden="true") Fixed footer
   .medium-space
   #empty-state
-    h6
+    h6(aria-hidden="true")
       span Empty states
       button.chip.circle(@click="domain.showSamples(data, '#empty-state article', 'Empty states')")
         i code
@@ -107,7 +107,7 @@ div
         article.medium.middle-align.center-align
           div
             i.extra mail
-            h5 You have no new messages
+            h5(aria-hidden="true") You have no new messages
             p Click the button to start a conversation
             .space
             nav.center-align
@@ -116,7 +116,7 @@ div
         article.medium.middle-align.center-align
           div
             i.extra mail
-            h5 You've successfully signed up
+            h5(aria-hidden="true") You've successfully signed up
             p Click the button to invite your friends
             .space
             nav.center-align
@@ -126,15 +126,15 @@ div
         article.medium.middle-align.center-align
           div
             i.extra person
-            h5 You are not following anyone
+            h5(aria-hidden="true") You are not following anyone
             p Start to meet new friends
             .space
             nav.no-space
               .max.field.border.left-round
-                input
+                input(aria-hidden="true")
               button.large.right-round Search
   .medium-space
-  h6
+  h5.h6(aria-hidden="true")
     span Blurred elements
     button.chip.circle(@click="domain.showSamples(data, '#blurs > header, #blurs > article, #blurs > nav > *', 'Blurred elements')")
       i code
@@ -154,16 +154,16 @@ div
       input(type="radio", name="blur-elements", @click="domain.updateBlur('#blurs > header, #blurs > article, #blurs > nav > *', 'large-blur')")
       span large-blur
   .medium-space
-  #blurs.large-padding(style="background-image: url(beer-and-woman.svg)")
+  #blurs.large-padding(style="background-image: url(beer-and-woman.svg); background-position: center; background-size: cover;")
     header.blur
       nav
         button.circle.transparent
           i arrow_back
-        h5.max App bar
+        h5.max(aria-hidden="true") App bar
         button.circle.transparent
           i more_vert
     article.blur
-      h5 Card
+      h5(aria-hidden="true") Card
       p Some text here
       nav.right-align
         button Button
@@ -171,7 +171,7 @@ div
       button.blur Button
       button.chip.blur Chip
   .medium-space
-  h6
+  h5.h6(aria-hidden="true")
     span Shadowed elements
     button.chip.circle(@click="domain.showSamples(data, '#shadows > header, #shadows > article, #shadows > nav > *', 'Shadowed elements')")
       i code
@@ -194,16 +194,16 @@ div
       input(type="radio", name="shadow-elements", @click="domain.updateShadow('#shadows > header, #shadows > article, #shadows > nav > *', 'bottom-shadow')")
       span bottom-shadow
   .medium-space
-  #shadows.large-padding(style="background-image: url(beer-and-woman.svg)")
+  #shadows.large-padding(style="background-image: url(beer-and-woman.svg); background-position: center; background-size: cover;")
     header.white-text.left-shadow
       nav
         button.circle.transparent
           i arrow_back
-        h5.max App bar
+        h5.max(aria-hidden="true") App bar
         button.circle.transparent
           i more_vert
     article.white-text.left-shadow
-      h5 Card
+      h5(aria-hidden="true") Card
       p Some text here
       nav.right-align
         button Button

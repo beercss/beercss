@@ -1,2 +1,7 @@
 import "./cdn/beer.css";
-import "./cdn/beer";
+import { ui } from "./cdn/beer";
+
+export {
+  ui as default,
+  ui,
+};

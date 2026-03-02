@@ -1,4 +1,4 @@
-import { router } from "../shared/router.js";
+import { addRoute } from "../shared/router.js";
 import uber from "./page.vue";
 
-router("/uber", uber);
+addRoute("/uber", uber);

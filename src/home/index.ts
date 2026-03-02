@@ -1,4 +1,4 @@
-import { router } from "../shared/router";
+import { addRoute } from "../shared/router";
 import home from "./page.vue";
 
-router("/", home);
+addRoute("/", home);
