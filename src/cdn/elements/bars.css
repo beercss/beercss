@@ -1,0 +1,91 @@
+header,
+footer {
+  display: grid;
+  align-content: center;
+  border-radius: 0;
+  padding: 0 1rem;
+}
+
+:is(dialog, article) > :is(header, footer) {
+  padding-inline: 0;
+  inset: 0;
+}
+
+header {
+  min-block-size: 4rem;
+}
+
+footer {
+  min-block-size: 5rem;
+}
+
+:is(header, footer, menu > *).fixed {
+  position: sticky;
+  inset: 0;
+  z-index: 11;
+  background-color: inherit;
+}
+
+header.fixed {
+  inset: calc(-1 * var(--_padding, 0)) 0 0 0;
+  margin-block-start: calc(-1 * var(--_padding, 0));
+}
+
+footer.fixed {
+  inset: 0 0 calc(-1 * var(--_padding, 0)) 0;
+  margin-block-end: calc(-1 * var(--_padding, 0));
+}
+
+:is(header, footer).fixed.min {
+  margin-inline: auto;
+}
+
+dialog > :is(header, footer) {
+  background: none;
+}
+
+dialog > :is(header, footer).fixed {
+  background-color: inherit;
+}
+
+:is(main, header, footer, section).responsive {
+  max-inline-size: min(100vw, 75rem);
+  margin: 0 auto;
+}
+
+:is(main, header, footer, section).responsive.max {
+  max-inline-size: none;
+}
+
+:has(> main) > :is(header, footer).fixed {
+  transform: none;
+  box-sizing: content-box;
+  position: sticky;
+  inset: 0;
+  z-index: 12;
+}
+
+:has(> main) > header {
+  padding-block-start: var(--top, 0);
+}
+
+:has(> main) > footer {
+  padding-block-end: var(--bottom, 0);
+}
+
+nav.top ~ header,
+nav.bottom ~ footer {
+  padding-block: 0;
+}
+
+nav.top ~ header.fixed {
+  inset-block: calc(var(--top, 0) + 4.5rem) 0;
+}
+
+nav.bottom ~ footer.fixed {
+  inset-block: 0 calc(var(--bottom, 0) + 4.5rem);
+}
+
+:is(nav, .row) > header {
+  background-color: inherit;
+}

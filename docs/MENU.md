@@ -6,19 +6,29 @@ Menus display a list of choices on temporary surfaces.
 
 ```html
 <...>
-  <menu>...</menu>
+  <menu>
+    <li>...</li>
+  </menu>
 </...>
 ```
 
 ## Most used helpers
 
+**Forms**
+
+border, group
+
 **Positions**
 
-left, right
+left, right, top, bottom
 
 **Sizes**
 
 wrap, no-wrap, min, max
+
+**Spaces**
+
+space, no-space, tiny-space, small-space, medium-space, large-space, extra-space
 
 **Triggers**
 
@@ -27,14 +37,102 @@ active
 ## Example
 
 ```html
-<button>
-  <span>Button</span>
-  <menu class="no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <menu>
+    <li>Item</li>
+    <li>Item</li>
+    <li>Item</li>
   </menu>
-</button>
+</div>
+```
+
+```html
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <menu>
+    <li>
+      <a href="#">Item</a>
+    </li>
+    <li>
+      <a href="#">Item</a>
+    </li>
+    <li>
+      <a href="#">Item</a>
+    </li>
+  </menu>
+</div>
+```
+
+## Multilevel menu example
+
+```html
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <menu>
+    <li>
+      <span>Item</span>
+      <menu>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+      </menu>
+    </li>
+  </menu>
+</div>
+```
+
+## Grouped menu example
+
+The grouped menu was designed to place any element inside it. The `<menu>` is transparent and has a little space on top/bottom. The `<li>` is transparent and hasn't all styles from default version.
+
+```html
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <menu class="group">
+    <li>
+      <menu>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+      </menu>
+    </li>
+    <li>
+      <menu>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+      </menu>
+    </li>
+  </menu>
+</div>
+```
+
+```html
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <menu class="group">
+    <li>
+      <button>Button</button>
+    </li>
+    <li>
+      <button>Button</button>
+    </li>
+    <li>
+      <button>Button</button>
+    </li>
+  </menu>
+</div>
 ```
 
 ## Triggers 
@@ -46,14 +144,16 @@ active
 Add/remove `active` class on menu.
 
 ```html
-<button>
-  <span>Button</span>
-  <menu class="no-wrap active">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <menu class="active">
+    <li>Item</li>
+    <li>Item</li>
+    <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 #### Method 2
@@ -61,14 +161,16 @@ Add/remove `active` class on menu.
 Add `data-ui="menu-selector"` attribute on elements.
 
 ```html
-<button data-ui="#menu">
-  <span>Button</span>
-  <menu id="menu" class="no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+<div data-ui="#menu">
+  <button>
+    <span>Button</span>
+  </button>
+  <menu id="menu">
+    <li>Item</li>
+    <li>Item</li>
+    <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 #### Method 3
@@ -76,14 +178,16 @@ Add `data-ui="menu-selector"` attribute on elements.
 Call `ui("menu-selector")`.
 
 ```html
-<button>
-  <span>Button</span>
-  <menu id="menu" class="no-wrap">
-    <a>Item</a>
-    <a>Item</a>
-    <a>Item</a>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <menu id="menu">
+    <li>Item</li>
+    <li>Item</li>
+    <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 ```js
@@ -94,4 +198,4 @@ ui('#menu');
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Shape](SHAPE.md), [Slider](SLIDER.md), [Snackbar](SNACKBAR.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

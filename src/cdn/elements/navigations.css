@@ -5,9 +5,7 @@ nav > :is(ol, ul) > li {
 
 nav,
 .row,
-a.row,
-nav.drawer > :is(a, label),
-nav.drawer > :is(ol, ul) > li > :is(a, label) {
+a.row {
   display: flex;
   align-items: center;
   align-self: normal;
@@ -15,44 +13,50 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) {
   justify-content: flex-start;
   white-space: nowrap;
   gap: 1rem;
+  border-radius: 0;
 }
 
-a.row {
+a.row,
+nav.row {
   min-block-size: 3rem;
   margin: 0;
 }
 
 :is(nav, .row, .max) > :only-child,
-nav > :is(ol, ul) > li > :only-child {
+:is(nav, .row, .max) > span > *,
+nav > :is(ol, ul) > li > :only-child,
+nav > :is(ol, ul) > li > span > * {
   margin: 0;
 }
 
-:is(nav, .row) > * {
+:is(nav, .row) > :not(ul, ol, header, footer) {
   margin: 0;
   white-space: normal;
   flex: none;
 }
 
-:is(nav, .row).no-space {
+:is(nav, .row).min {
+  display: inline-flex;
+}
+
+:is(nav, .row, li).no-space {
   gap: 0;
 }
 
-:is(nav, .row).no-space > .border + .border {
-  border-inline-start: 0;
+:is(nav, .row, li).tiny-space {
+  gap: 0.5rem;
 }
 
-:is(nav, .row).medium-space {
+:is(nav, .row, li).medium-space {
   gap: 1.5rem;
 }
 
-:is(nav, .row).large-space {
+:is(nav, .row, li).large-space {
   gap: 2rem;
 }
 
 :is(nav, .row) > .max,
-:is(nav, .row) > :is(ol, ul) > .max,
-nav.drawer > :is(a, label) > .max,
-nav.drawer > :is(ol, ul) > li > :is(a, label) > .max {
+:is(nav, .row) > :is(ol, ul) > .max {
   flex: 1;
 }
 
@@ -65,143 +69,184 @@ nav.drawer > :is(ol, ul) > li > :is(a, label) > .max {
   min-block-size: inherit;
 }
 
-:is(nav, .row) > .border.no-margin + .border.no-margin {
-  border-inline-start: 0;
-}
-
 nav:is(.left, .right, .top, .bottom) {
+  --_padding: 0.5rem;
+  --_top: calc(var(--_padding, 0) + var(--top, 0));
+  --_bottom: calc(var(--_padding, 0) + var(--bottom, 0));
+  position: sticky;
+  inset: 0;
   border: 0;
-  position: fixed;
   color: var(--on-surface);
   transform: none;
   z-index: 100;
-  block-size: auto;
-  inline-size: auto;
   text-align: center;
-  padding: 0.5rem 1rem;
-  inset: var(--top) var(--right) var(--bottom) var(--left);
+  padding: var(--_padding);
   margin: 0;
 }
 
 nav:is(.left, .right) {
-  inline-size: 5rem;
   justify-content: flex-start;
   flex-direction: column;
   background-color: var(--surface);
+  block-size: 100dvh;
+  min-inline-size: 6rem;
+  padding-block: var(--_top) var(--_bottom);
 }
 
 nav:is(.top, .bottom) {
-  block-size: 5rem;
+  position: sticky;
+  inset: 0;
+  padding: 0.5rem;
   justify-content: center;
   flex-direction: row;
   background-color: var(--surface-container);
+  block-size: auto;
+  min-block-size: 4.5rem;
 }
 
 nav.top {
-  inset-block-end: auto;
-}
-
-nav.left {
-  inset-inline-end: auto;
-}
-
-nav.right {
-  inset-inline-start: auto;
+  block-size: calc(var(--top, 0) + 4.5rem);
+  padding-block-start: var(--_top);
 }
 
 nav.bottom {
-  inset-block-start: auto;
+  block-size: calc(var(--bottom, 0) + 4.5rem);
+  padding-block-end: var(--_bottom);
 }
 
-nav.drawer {
-  flex-direction: column;
-  align-items: normal;
-  inline-size: 20rem;
-  gap: 0;
-  padding: 0.5rem 1rem;
+nav > header {
+  min-block-size: auto;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  align-items: flex-start;
+  gap: 1rem;
+  background: none !important;
 }
 
-nav.drawer:is(.min, .max) {
-  inline-size: auto;
+nav:is(.top, .bottom) > header {
+  flex-direction: row;
+  align-items: center;
+  margin: 0 1rem 0 0;
 }
 
-nav.drawer.max {
-  inline-size: 100%;
+nav > header > * {
+  margin: 0;
+  transition: none;
 }
 
-:is(nav, .row) > header {
-  background-color: inherit;
+nav.max > header > * {
+  transition: all var(--speed1);
 }
 
-nav:is(.left, .right) > header {
-  transform: translateY(-0.5rem);
+nav > header > .extend:hover {
+  --_padding: 0;
+  inline-size: var(--_size);
 }
 
-nav.drawer > header {
-  transform: translateY(-0.75rem);
-  min-block-size: 4.5rem;
-  align-self: stretch;
-}
-
-nav.drawer > :is(a, label),
-nav.drawer > :is(ol, ul) > li > :is(a, label),
-a.row.wave {
-  padding: 0.75rem;
-  font-size: inherit;
-}
-
-nav.drawer > a,
-nav.drawer > :is(ol, ul) > li > a {
-  border-radius: 2rem;
-}
-
-nav.drawer > a:is(:hover, .active),
-nav.drawer > :is(ol, ul) > li > a:is(:hover, .active) {
-  background-color: var(--secondary-container);
-}
-
-nav.drawer > a:is(:hover, :focus, .active) > i,
-nav.drawer > :is(ol, ul) > li > a:is(:hover, :focus, .active) > i {
-  font-variation-settings: "FILL" 1;
+nav > header > .extend:hover > span:not([class]) {
+  display: none;
 }
 
 nav > :is(ol, ul) {
   all: inherit;
+  min-inline-size: auto;
+  margin: 0;
+  padding: 0;
   flex: auto;
 }
 
-nav:not(.left, .right, .bottom, .top) > :is(ol, ul) {
+nav.max:is(.left, .right, .top, .bottom) {
+  gap: 0;
+  inline-size: auto;
+  align-items: flex-start;
+  min-inline-size: 12.75rem;
+  padding: var(--_top) 1.25rem var(--_bottom) 1.25rem;
+}
+
+nav.max > :is(ol, ul) {
   padding: 0;
 }
 
-nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip),
-nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) {
-  align-self: center;
+nav.max > header {
+  margin: 0 0 1.25rem 0;
+}
+
+nav.max:is(.top, .bottom) > header {
+  margin: 0 1.25rem 0 0;
+}
+
+nav.max > header > .extend {
+  --_padding: 1.5rem;
+  inline-size: auto;
+  padding: 0 var(--_padding);
+}
+
+nav.max > header > .extend > span:not([class]) {
+  display: block;
+  margin-inline-start: var(--_padding);
+}
+
+nav.max > header > .extend > :is(img, svg) + span {
+  margin-inline-start: calc(1rem + var(--_padding, 0));
+}
+
+nav.max:is(.top, .bottom) {
+  padding: 0 0.5rem;
+  align-items: center;
+  min-inline-size: auto;
+  max-inline-size: none;
+}
+
+nav:is(.left, .right, .top, .bottom) > a:not(.button, .chip),
+nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   line-height: normal;
-}
-
-nav:is(.top, .bottom):not(.drawer) > a:not(.button, .chip),
-nav:is(.top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) {
   inline-size: 3.5rem;
+  font-size: 0.8rem;
 }
 
-nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip) > i,
-nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip) > i {
-  padding: 0.25rem;
+nav:not(.max):is(.left, .right, .top, .bottom) > a:not(.button, .chip) > i,
+nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) > i {
+  padding: 0.25rem 1rem;
   border-radius: 2rem;
-  transition: padding var(--speed1) linear;
   margin: 0 auto;
 }
 
-nav:is(.left, .right, .top, .bottom):not(.drawer) > a:not(.button, .chip):is(:hover, :focus, .active) > i,
-nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.button, .chip):is(:hover, :focus, .active) > i {
+nav.max:is(.left, .right, .top, .bottom) > a:not(.button, .chip),
+nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) {
+  flex-direction: row;
+  gap: 0.5rem;
+  inline-size: auto;
+  block-size: 3.5rem;
+  padding: 0 1rem;
+  border-radius: 2rem;
+  font-size: inherit;
+}
+
+nav:is(.left, .right, .top, .bottom) > a.active:not(.button, .chip),
+nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a.active:not(.button, .chip) {
+  transition: padding var(--speed1) linear;
+}
+
+nav.max:is(.top, .bottom) > a:not(.button, .chip),
+nav.max:is(.top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) {
+  gap: 0.25rem;
+  block-size: 2.5rem;
+  font-size: 0.8rem;
+}
+
+nav.max:is(.left, .right, .top, .bottom) > a.active:not(.button, .chip),
+nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a.active:not(.button, .chip),
+nav:is(.left, .right, .top, .bottom):not(.max) > a.active:not(.button, .chip) > i,
+nav:is(.left, .right, .top, .bottom):not(.max) > :is(ol, ul) > li > a.active:not(.button, .chip) > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
-  padding: 0.25rem 1rem;
-  font-variation-settings: "FILL" 1;
+}
+
+nav.vertical > :is(ol, ul) {
+  align-items: normal;
 }
 
 :is(nav, .row):is(.left-align, .top-align, .vertical) {
@@ -226,11 +271,6 @@ nav:is(.left, .right, .top, .bottom):not(.drawer) > :is(ol, ul) > li > a:not(.bu
 
 :is(nav, .row):is(.center-align, .middle-align).vertical {
   align-items: center;
-}
-
-:is(.drawer, .vertical) > :is(li, [class*=divider], hr):not(.vertical),
-:is(.drawer, .vertical) > :is(ol, ul) > li:not(.vertical) {
-  align-self: stretch;
 }
 
 nav:not(.left, .right) > .space {
@@ -275,6 +315,101 @@ nav.tabbed > a.active {
   background-color: var(--primary-container);
 }
 
+nav.toolbar {
+  display: inline-flex;
+  justify-content: space-around;
+  border-radius: 2rem;
+  background-color: var(--surface-container);
+  color: var(--on-surface);
+  padding: 0 1rem;
+  gap: 0.5rem;
+  min-block-size: 4rem;
+  min-inline-size: 4rem;
+}
+
+nav.toolbar > a {
+  display: inline-flex;
+  gap: 0.5rem;
+  min-inline-size: 2.5rem;
+  min-block-size: 2.5rem;
+  border-radius: 1.75rem;
+}
+
+nav.toolbar > a:has(> :not(i)) {
+  padding: 0 1rem;
+}
+
+nav.toolbar > a.active {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+nav.toolbar.fill {
+  background-color: var(--primary-container) !important;
+  color: var(--on-primary-container) !important;
+}
+
+nav.toolbar.fill > a.active {
+  background-color: var(--surface-container) !important;
+  color: var(--on-surface) !important;
+}
+
+nav.toolbar.vertical {
+  flex-direction: column !important;
+  min-inline-size: 4rem;
+  padding: 1rem 0;
+  align-self: center;
+  align-items: center !important;
+}
+
+nav.toolbar.vertical > a {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+}
+
+nav.toolbar.vertical > a > :is(div, span):not(.badge, .tooltip) {
+  display: none;
+}
+
+nav.toolbar.max {
+  border-radius: 0;
+  display: flex;
+}
+
+nav.group {
+  background: none !important;
+}
+
+nav.group:is(.connected, .split) {
+  gap: 0.125rem;
+}
+
+
+nav.group:not(.split) > :is(.button, button):not(.border) {
+  background-color: var(--surface-container);
+  color: var(--on-surface-container);
+}
+
+nav.group:not(.split) > :is(.button, button).active {
+  background-color: var(--primary);
+  color: var(--on-primary);
+}
+
+nav.group.connected > :is(.button, button):not(.border) {
+  background-color: var(--surface-container);
+  color: var(--on-surface-container);
+}
+
+nav.group.connected > :is(.button, button).active {
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+nav.group:is(.connected, .split) > :is(.button, button).active,
+nav.split > :is(.button, button):active {
+  border-radius: 2rem !important;
+}
+
 :not(nav) > :is(ul, ol) {
   all: revert;
 }
@@ -282,6 +417,11 @@ nav.tabbed > a.active {
 :is(.scroll, .no-scroll, .no-space, .tabs, .tabbed) > :focus-visible {
   outline: 0.125rem solid var(--primary);
   outline-offset: -0.125rem;
+}
+
+nav.split > :is(.button, button):not(.chip, .fill, .border) {
+  background-color: var(--primary);
+  color: var(--on-primary);
 }
 
 @media only screen and (max-width: 600px) {

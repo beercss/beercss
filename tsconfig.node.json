@@ -7,5 +7,12 @@
     "strictFunctionTypes": true,
     "noImplicitAny": true,
     "jsx": "preserve"
-  }
+  },
+  "vueCompilerOptions": {
+    "target": 3,
+    "extensions": [
+      ".vue"
+    ],
+    "plugins": ["@vue/language-plugin-pug"]
+  },
 }

@@ -1,0 +1,57 @@
+:has(> main) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+  grid-template-areas: 
+    "left top right"
+    "left header right"
+    "left main right"
+    "left footer right"
+    "left bottom right";
+  min-block-size: 100dvh;
+  box-sizing: border-box;
+  background-color: var(--surface);
+}
+
+nav.left {
+  grid-area: left;
+}
+
+nav.right {
+  grid-area: right;
+}
+
+nav.top {
+  grid-area: top;
+}
+
+nav.bottom {
+  grid-area: bottom;
+}
+
+header {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}
+
+main {
+  --_padding: 0.5rem;
+  grid-area: main;
+  padding: var(--_padding);
+  overflow: hidden;
+}
+
+aside {
+  z-index: 1;
+}
+
+aside:not(.fixed, .absolute).right {
+  float: right;
+}
+
+aside:not(.fixed, .absolute).left {
+  float: left;
+}

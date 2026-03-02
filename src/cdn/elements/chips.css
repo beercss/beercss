@@ -1,55 +1,37 @@
 .chip {
+  --_padding: 0.75rem;
+  --_size: 2rem;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  block-size: 2rem;
-  min-inline-size: 2rem;
+  block-size: var(--_size);
+  min-inline-size: var(--_size);
   font-size: 0.875rem;
   font-weight: 500;
   background-color: transparent;
   border: 0.0625rem solid var(--outline-variant);
   color: var(--on-surface-variant);
-  padding: 0 1rem;
-  margin: 0 0.5rem;
+  padding: 0 var(--_padding);
   text-transform: none;
   border-radius: 0.5rem;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
   user-select: none;
-  gap: 1rem;
+  gap: 0.5rem;
   line-height: normal;
   letter-spacing: normal;
 }
 
-.chip.fill:hover {
-  box-shadow: var(--elevate1);
-}
-
 .chip.medium {
-  block-size: 2.5rem;
-  min-inline-size: 2.5rem;
-  border-radius: 0.5rem;
+  --_size: 2.5rem;
+  --_padding: 1rem;
 }
 
 .chip.large {
-  block-size: 3rem;
-  min-inline-size: 3rem;
-  border-radius: 0.5rem;
+  --_padding: 1.25rem;
+  --_size: 3rem;
 }
 
 .chip.fill {
-  background-color: var(--secondary-container) !important;
   border: none;
-}
-
-.chip.round.small {
-  border-radius: 1rem;
-}
-
-.chip.round {
-  border-radius: 1.25rem;
-}
-
-.chip.round.large {
-  border-radius: 1.5rem;
 }

@@ -1,4 +1,4 @@
-import { queryAll, addClass, on, removeClass, blurActiveElement } from "../utils";
+import { queryAll, addClass, removeClass, blurActiveElement, onWeak } from "../utils";
 
 let _timeoutSnackbar: ReturnType<typeof setTimeout>;
 
@@ -15,7 +15,7 @@ export function updateSnackbar(snackbar: Element, milliseconds?: number) {
   const activeSnackbars = queryAll(".snackbar.active");
   for(let i=0; i<activeSnackbars.length; i++) removeClass(activeSnackbars[i], "active");
   addClass(snackbar, "active");
-  on(snackbar, "click", onClickSnackbar);
+  onWeak(snackbar, "click", onClickSnackbar);
 
   if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
 

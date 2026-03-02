@@ -1,16 +1,28 @@
-import { updateDialog } from "./elements/dialogs";
-import { updateMenu } from "./elements/menus";
-import { updatePage } from "./elements/pages";
-import { updateSnackbar } from "./elements/snackbars";
-
 const _emptyNodeList = [] as unknown as NodeListOf<Element>;
+const _weakElements = new WeakSet<HTMLElement>();
+
+export const isChrome = navigator.userAgent.includes("Chrome");
+
+export const isFirefox = navigator.userAgent.includes("Firefox") && !isChrome;
+
+export const isSafari = navigator.userAgent.includes("Safari") && !isChrome;
+
+export const isWindows = navigator.userAgent.includes("Windows");
+
+export const isMac = navigator.userAgent.includes("Macintosh");
+
+export const isLinux = navigator.userAgent.includes("Linux");
+
+export const isAndroid = navigator.userAgent.includes("Android");
+
+export const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 export function isTouchable(): boolean {
-  return window.matchMedia("(pointer: coarse)").matches;
+  return window?.matchMedia("(pointer: coarse)").matches;
 }
 
 export function isDark(): boolean {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return window?.matchMedia("(prefers-color-scheme: dark)").matches;
 }
 
 export async function wait(milliseconds: number) {
@@ -71,6 +83,11 @@ export function on(element: Element | null, name: string, callback: any, useCapt
   if (element?.addEventListener) element.addEventListener(name, callback, useCapture);
 }
 
+export function onWeak(element: Element | null, name: string, callback: any, useCapture: boolean = true) {
+  addWeakElement(element as HTMLElement);
+  on(element, name, callback, useCapture);
+}
+
 export function off(element: Element | null, name: string, callback: any, useCapture: boolean = true) {
   if (element?.removeEventListener) element.removeEventListener(name, callback, useCapture);
 }
@@ -118,45 +135,20 @@ export function updateAllClickable(element: Element) {
 
   const container = parent(element);
   if (!hasClass(container, "tabs") && !hasClass(container, "tabbed") && !hasTag(container, "nav")) return;
-  
+
   const as = queryAll("a", container);
   for(let i=0; i<as.length; i++) removeClass(as[i], "active");
-  addClass(element, "active");
+  if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
 }
 
-export async function run(from: Element, to: Element | null, options?: any, e?: Event): Promise<void> {
-  if (!to) {
-    to = query(from.getAttribute("data-ui"));
-    if (!to) return;
-  }
+export function addWeakElement(element: HTMLElement) {
+  if (_weakElements.has(element)) return;
+  _weakElements.add(element);
+}
 
-  updateAllClickable(from);
-
-  if (hasTag(to, "dialog")) {
-    await updateDialog(from, to as HTMLDialogElement);
-    return;
-  }
-
-  if (hasTag(to, "menu")) {
-    updateMenu(from, to as HTMLMenuElement, e);
-    return;
-  }
-
-  if (hasClass(to, "snackbar")) {
-    updateSnackbar(to, options as number);
-    return;
-  }
-
-  if (hasClass(to, "page")) {
-    updatePage(to);
-    return;
-  }
-
-  if (hasClass(to, "active")) { 
-    removeClass(from, "active");
-    removeClass(to, "active");
-    return; 
-  }
-
-  addClass(to, "active");
+export function rootSizeInPixels(): number {
+  const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
+  if (size.includes("%")) return (parseInt(size) * 16) / 100;
+  if (size.includes("em")) return parseInt(size) * 16;
+  return parseInt(size);
 }

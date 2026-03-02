@@ -28,6 +28,10 @@ A container is the main content of page.
 
 Dialogs inform users about a task and can contain critical information, required decisions, involve multiple tasks, provide access to destinations in your app and contain a small forms to submit.
 
+## [Divider](DIVIDER.md)
+
+Dividers are thin lines that group content in lists or other containers
+
 ## [Expansion](EXPANSION.md)
 
 Expansion contains creation flows and allows lightweight editing of an element.
@@ -47,6 +51,14 @@ Input fields let users enter and edit text.
 ## [Layout](LAYOUT.md)
 
 Layouts are containers that you can place in any position. There are absolute and fixed elements.
+
+## [List](LIST.md)
+
+Lists are continuous, vertical indexes of text and images. Each item can have up to 3 lines.
+
+## [Main layout](MAIN_LAYOUT.md)
+
+The main layout is a common html structure to setup your pages. For RTL languages set the attribute `dir="rtl"` on `body` element (or any other element).
 
 ## [Media](MEDIA.md)
 
@@ -80,6 +92,18 @@ Radio buttons allow users to select one option from a set.
 
 Selects display a list of choices on temporary surfaces.
 
+## [Shape](SHAPE.md)
+
+The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing.
+
+## [Slider](SLIDER.md)
+
+Sliders allow users to make selections from a range of values. There are two types of sliders: continuous and discrete. Default range is 0-100.
+
+## [Snackbar](SNACKBAR.md)
+
+Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recommended to show two or more snackbars at same time.
+
 ## [Switch](SWITCH.md)
 
 Switches toggle the state of a single item on or off.
@@ -96,10 +120,6 @@ Tabs organize content across different screens, data sets, and other interaction
 
 Textarea fields let users enter and edit long text.
 
-## [Snackbar](SNACKBAR.md)
-
-Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recommended to show two or more snackbars at same time.
-
 ## [Tooltip](TOOLTIP.md)
 
 Tooltips displays informative text when users hover over, focus on, or tap an element.
@@ -112,4 +132,4 @@ Use typography to present your design and content as clearly and efficiently as 
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Shape](SHAPE.md), [Slider](SLIDER.md), [Snackbar](SNACKBAR.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
