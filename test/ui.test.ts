@@ -4,6 +4,22 @@ import beer from "../src/cdn/beer";
 import "material-dynamic-colors";
 import "./globals";
 
+test("theme resolves with correct mode when mode changes before promise resolves", async () => {
+  document.body.classList.remove("dark", "light");
+  document.body.classList.add("light");
+
+  // Call theme without awaiting, then immediately switch mode to dark
+  const themePromise = beer("theme", "#ffa500") as Promise<IBeerCssTheme>;
+  beer("mode", "dark");
+
+  const theme = await themePromise;
+  const style = document.body.getAttribute("style") || "";
+
+  // The style applied to body should be the dark theme, not light
+  expect(theme.dark).toBeTruthy();
+  expect(style).toBe(theme.dark);
+});
+
 test("checking all variables from theme", async () => {
   const colors = [
     "--primary",
