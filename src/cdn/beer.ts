@@ -96,8 +96,8 @@ function _ui(selector?: string | Element, options?: string | number | IBeerCssTh
 
   updateAllDataUis();
   updateAllFields();
-  updateAllSliders();
   updateAllRipples();
+  updateAllSliders();
   updateAllProgress();
 }
 
