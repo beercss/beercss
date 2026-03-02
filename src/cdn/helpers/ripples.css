@@ -1,4 +1,4 @@
-[class*=ripple]:hover::after {
+[class*=ripple]:is(:hover, :focus-visible)::after {
   content: '';
   position: absolute;
   inset: 0;
