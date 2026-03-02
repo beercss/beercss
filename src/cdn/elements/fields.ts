@@ -105,6 +105,7 @@ function updateAllTextareas() {
   for (let i=0; i<textareas.length; i++) {
     onWeak(textareas[i], "focus", onFocusInput);
     onWeak(textareas[i], "blur", onBlurInput);
+    updatePlaceholder(textareas[i]);
 
     if (isChrome && !isMac && !isIOS) continue;
 
