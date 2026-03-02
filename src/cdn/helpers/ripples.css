@@ -1,3 +1,11 @@
+[class*=ripple]:hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0.1;
+}
+
 .ripple {
   --_duration: 600ms;
 }
