@@ -205,6 +205,7 @@ function updateAllTextareas() {
   for (let i = 0; i < textareas.length; i++) {
     onWeak(textareas[i], "focus", onFocusInput);
     onWeak(textareas[i], "blur", onBlurInput);
+    updatePlaceholder(textareas[i]);
     if (isChrome && !isMac && !isIOS) continue;
     onWeak(textareas[i], "input", onInputTextarea);
     updateTextarea(textareas[i]);
@@ -355,11 +356,10 @@ async function updateTheme(source) {
   const context = globalThis;
   const body = document.body;
   if (!source || !context.materialDynamicColors) return lastTheme();
-  const mode = getMode();
   if (source.light && source.dark) {
     _lastTheme.light = source.light;
     _lastTheme.dark = source.dark;
-    body.setAttribute("style", source[mode]);
+    body.setAttribute("style", source[getMode()]);
     return source;
   }
   return context.materialDynamicColors(source).then((theme) => {
@@ -375,7 +375,7 @@ async function updateTheme(source) {
     };
     _lastTheme.light = toCss(theme.light);
     _lastTheme.dark = toCss(theme.dark);
-    body.setAttribute("style", _lastTheme[mode]);
+    body.setAttribute("style", _lastTheme[getMode()]);
     return _lastTheme;
   });
 }
@@ -496,16 +496,20 @@ function updatePage(page) {
   if (container) removeClass(queryAll(":scope > .page", container), "active");
   addClass(page, "active");
 }
-function onPointerDownRipple(e) {
+function onMousedownRipple(e) {
   updateRipple(e);
 }
+function onKeydownRipple(e) {
+  if ((e == null ? void 0 : e.key) === " ") updateRipple(e);
+}
 function updateRipple(e) {
+  const isMouseEvent = e instanceof MouseEvent;
   const element = e.currentTarget;
   const rect = element.getBoundingClientRect();
   const diameter = Math.max(rect.width, rect.height);
   const radius = diameter / 2;
-  const x = e.clientX - rect.left - radius;
-  const y = e.clientY - rect.top - radius;
+  const x = isMouseEvent ? e.clientX - rect.left - radius : rect.width / 2 - radius;
+  const y = isMouseEvent ? e.clientY - rect.top - radius : rect.height / 2 - radius;
   const rippleContainer = document.createElement("div");
   rippleContainer.className = "ripple-js";
   const ripple = document.createElement("div");
@@ -520,7 +524,10 @@ function updateRipple(e) {
 }
 function updateAllRipples() {
   const ripples = queryAll(".slow-ripple, .ripple, .fast-ripple");
-  for (let i = 0; i < ripples.length; i++) onWeak(ripples[i], "pointerdown", onPointerDownRipple);
+  for (let i = 0; i < ripples.length; i++) {
+    onWeak(ripples[i], "mousedown", onMousedownRipple);
+    onWeak(ripples[i], "keydown", onKeydownRipple);
+  }
 }
 function onInputDocument(e) {
   const progress = e.target;
@@ -624,8 +631,8 @@ function _ui(selector, options) {
   }
   updateAllDataUis();
   updateAllFields();
-  updateAllSliders();
   updateAllRipples();
+  updateAllSliders();
   updateAllProgress();
 }
 function start() {

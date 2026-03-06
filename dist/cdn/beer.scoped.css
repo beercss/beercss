@@ -15,6 +15,11 @@
   --bottom: env(safe-area-inset-bottom);
   --left: env(safe-area-inset-left);
   --right: env(safe-area-inset-right);
+  --image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
+}
+
+body.dark {
+  --image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
 }
 
 html {
@@ -51,6 +56,63 @@ body {
   body:has(dialog[open], dialog.active),
   body:has(input[type=range]:focus) {
     overflow: hidden;
+  }
+}
+
+@keyframes to-page {
+  from {
+    opacity: 0;
+    transform: var(--_transform);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes to-linear-progress {
+  0% {
+    margin: 0 0 0 -100%;
+  }
+
+  50% {
+    margin: 0 0 0 0;
+  }
+
+  100% {
+    margin: 0 0 0 100%;
+  }
+}
+
+@keyframes to-indeterminate-progress {
+  0% {
+    padding: 0 100% 0 0;
+  }
+
+  50% {
+    padding: 0 0 0 0;
+  }
+
+  100% {
+    padding: 0 0 0 100%;
+  }
+}
+
+@keyframes to-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes to-ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
   }
 }
 
@@ -140,7 +202,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.16/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.17/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -150,7 +212,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.16/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.17/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -160,7 +222,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.16/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.17/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -170,7 +232,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.16/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.17/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
@@ -477,11 +539,11 @@ div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .toolt
 }
 
 .no-opacity {
-  opacity: 1 !important;
+  opacity: 0 !important;
 }
 
 .opacity {
-  opacity: 0 !important;
+  opacity: 1 !important;
 }
 
 .small-opacity {
@@ -588,6 +650,15 @@ div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .toolt
   transform: translate(50%, -50%);
 }
 
+[class*=ripple]:is(:hover, :focus-visible)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0.1;
+  border-radius: inherit;
+}
+
 .ripple {
   --_duration: 600ms;
 }
@@ -614,13 +685,6 @@ div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .toolt
   opacity: 0.3;
   transform: scale(0);
   animation: to-ripple var(--_duration) linear;
-}
-
-@keyframes to-ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 .scroll {
@@ -972,7 +1036,7 @@ sup {
   vertical-align: super;
 }
 
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not(.slow-ripple, .ripple, .fast-ripple)::after,
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not([class*=ripple])::after,
 nav:is(.left, .right, .bottom, .top).max > a::after,
 nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a > i::after,
@@ -991,7 +1055,7 @@ nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a > i::after
   pointer-events: none;
 }
 
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not(.slow-ripple, .ripple, .fast-ripple):is(:focus-visible, :hover)::after,
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not([class*=ripple]):is(:focus-visible, :hover)::after,
 nav:is(.left, .right, .bottom, .top).max > a:not(.button, .chip):is(:focus-visible, :hover)::after,
 nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:not(.button, .chip):is(:focus-visible, :hover)::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a:not(.button, .chip):is(:focus-visible, :hover) > i::after,
@@ -1001,7 +1065,7 @@ nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:not(.butto
   transition: background-size var(--speed2) linear;
 }
 
-:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a, nav.max > a):not(.slow-ripple, .ripple, .fast-ripple):active::after,
+:is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a, nav.max > a):not([class*=ripple]):active::after,
 nav:is(.left, .right, .bottom, .top).max > a:active::after,
 nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:active::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a:active > i::after,
@@ -1045,7 +1109,6 @@ nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:active > i
   justify-content: center;
   position: absolute;
   font-size: 0.6875rem;
-  text-transform: none;
   z-index: 2;
   padding: 0 0.25rem;
   min-block-size: 1rem;
@@ -1209,6 +1272,7 @@ nav.bottom ~ footer.fixed {
 button {
   --_padding: 1rem;
   --_size: 2.5rem;
+  --_round: calc(var(--_size) / 2) !important;
   box-sizing: content-box;
   display: inline-flex;
   align-items: center;
@@ -1219,7 +1283,7 @@ button {
   color: var(--on-primary);
   padding: 0 var(--_padding);
   background-color: var(--primary);
-  border-radius: var(--_size);
+  border-radius: 1.25rem;
   transition: transform var(--speed3), border-radius var(--speed2), padding var(--speed3);
   user-select: none;
   gap: 0.5rem;
@@ -1342,6 +1406,7 @@ article.border {
 .chip {
   --_padding: 0.75rem;
   --_size: 2rem;
+  --_round: calc(var(--_size) / 2) !important;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -1354,7 +1419,6 @@ article.border {
   border: 0.0625rem solid var(--outline-variant);
   color: var(--on-surface-variant);
   padding: 0 var(--_padding);
-  text-transform: none;
   border-radius: 0.5rem;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
   user-select: none;
@@ -2450,7 +2514,7 @@ main {
   --_padding: 0.5rem;
   grid-area: main;
   padding: var(--_padding);
-  overflow: hidden;
+  overflow: clip;
 }
 
 aside {
@@ -2584,7 +2648,7 @@ menu {
   position: absolute;
   box-shadow: var(--elevate2);
   background-color: var(--surface-container);
-  z-index: 11;
+  z-index: 13;
   inset: auto auto 0 0;
   inline-size: 100%;
   max-block-size: 50vh;
@@ -3403,8 +3467,8 @@ dialog:popover-open::backdrop {
 
 .page.active {
   opacity: 1;
-  position: inherit;
-  display: inherit;
+  position: relative;
+  display: block;
   animation: var(--speed4) to-page ease;
 }
 
@@ -3424,27 +3488,13 @@ dialog:popover-open::backdrop {
   --_transform: translate(4rem, 0);
 }
 
-@keyframes to-page {
-  from {
-    opacity: 0;
-    transform: var(--_transform);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-}
-
 progress {
-  --_light: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
-  --_dark: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
   --_size: 0.25rem;
   position: relative;
   inline-size: 100%;
   block-size: var(--_size);
   color: var(--primary);
-  background: var(--_light);
+  background: var(--image);
   border-radius: 1rem;
   flex: none;
   border: none;
@@ -3453,10 +3503,6 @@ progress {
   direction: ltr;
   -webkit-appearance: none;
   appearance: none;
-}
-
-.dark progress {
-  background: var(--_dark);
 }
 
 progress.small {
@@ -3473,7 +3519,7 @@ progress.large {
 
 progress.indeterminate {
   --_value: 100;
-  animation: 3.2s to-indeterminate ease infinite;
+  animation: 3.2s to-indeterminate-progress ease infinite;
 }
 
 progress:not(.circle, [value])::after {
@@ -3484,15 +3530,15 @@ progress:not(.circle, [value])::after {
   block-size: 100%;
   clip-path: none;
   background: currentcolor;
-  animation: 3.2s to-linear ease infinite;
+  animation: 3.2s to-linear-progress ease infinite;
 }
 
 progress:not(.circle, [value])::-moz-progress-bar {
-  animation: 3.2s to-linear ease infinite;
+  animation: 3.2s to-linear-progress ease infinite;
 }
 
 progress:not(.circle, [value])::-webkit-progress-value {
-  animation: 3.2s to-linear ease infinite;
+  animation: 3.2s to-linear-progress ease infinite;
 }
 
 progress::-webkit-progress-bar {
@@ -3510,14 +3556,10 @@ progress::-moz-progress-bar {
 progress.wavy {
   block-size: calc(var(--_size, 0) * 2);
   background: none;
-  background-image: var(--_light);
+  background-image: var(--image);
   background-repeat: repeat-x;
   background-position: 0 50%;
   background-size: auto calc(var(--_size, 0) / 2);
-}
-
-.dark progress.wavy {
-  background-image: var(--_dark);
 }
 
 progress.wavy::-webkit-progress-value,
@@ -3607,44 +3649,6 @@ progress.max + * {
   color: inherit;
 }
 
-@keyframes to-linear {
-  0% {
-    margin: 0 0 0 -100%;
-  }
-
-  50% {
-    margin: 0 0 0 0;
-  }
-
-  100% {
-    margin: 0 0 0 100%;
-  }
-}
-
-@keyframes to-indeterminate {
-  0% {
-    padding: 0 100% 0 0;
-  }
-
-  50% {
-    padding: 0 0 0 0;
-  }
-
-  100% {
-    padding: 0 0 0 100%;
-  }
-}
-
-@keyframes to-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .shape {
   display: flex;
   align-items: center;
@@ -3725,27 +3729,27 @@ progress.max + * {
 }
 
 .shape.rotate {
-  animation: linear to-shape-rotate infinite 12s;
+  animation: linear to-rotate infinite 12s;
 }
 
 .shape.rotate > * {
-  animation: linear to-shape-rotate infinite 12s reverse;
+  animation: linear to-rotate infinite 12s reverse;
 }
 
 .shape.fast-rotate {
-  animation: linear to-shape-rotate infinite 6s;
+  animation: linear to-rotate infinite 6s;
 }
 
 .shape.fast-rotate > * {
-  animation: linear to-shape-rotate infinite 6s reverse;
+  animation: linear to-rotate infinite 6s reverse;
 }
 
 .shape.slow-rotate {
-  animation: linear to-shape-rotate infinite 24s;
+  animation: linear to-rotate infinite 24s;
 }
 
 .shape.slow-rotate > * {
-  animation: linear to-shape-rotate infinite 24s reverse;
+  animation: linear to-rotate infinite 24s reverse;
 }
 
 :is(button, .button, .chip):has(> .shape) > .responsive {
@@ -3894,15 +3898,6 @@ progress.max + * {
 
 .shape.very-sunny {
   mask-image: url(very-sunny.svg);
-}
-
-@keyframes to-shape-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /* checkbox, radio, switch */
@@ -4226,6 +4221,7 @@ progress.max + * {
   padding: 0;
   margin: 0;
   transform: rotate(0deg);
+  touch-action: none;
 }
 
 .slider > input:only-of-type {

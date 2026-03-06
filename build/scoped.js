@@ -1,7 +1,7 @@
 import fs from "fs";
 
 function addScopedRule(css) {
-  return css.replace("/* begin scoped */", `/* begin scoped */\n\n.beer,\nbeer-css {`).replace("/* end scoped */", "/* end scoped */\n\n}");
+  return css.replace(/\/\* begin scoped \*\//g, "/* begin scoped */\n\n.beer,\nbeer-css {").replace(/\/\* end scoped \*\//g, "/* end scoped */\n\n}");
 }
 
 function removeSpaces(css) {
