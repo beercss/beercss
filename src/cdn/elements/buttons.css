@@ -2,6 +2,7 @@
 button {
   --_padding: 1rem;
   --_size: 2.5rem;
+  --_round: calc(var(--_size) / 2) !important;
   box-sizing: content-box;
   display: inline-flex;
   align-items: center;
