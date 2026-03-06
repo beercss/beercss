@@ -1,6 +1,7 @@
 .chip {
   --_padding: 0.75rem;
   --_size: 2rem;
+  --_round: calc(var(--_size) / 2) !important;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
