@@ -542,12 +542,8 @@ div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .toolt
   opacity: 0 !important;
 }
 
-.opacity {
-  opacity: 1 !important;
-}
-
 .small-opacity {
-  opacity: 0.75 !important;
+  opacity: 0.25 !important;
 }
 
 .medium-opacity {
@@ -555,7 +551,11 @@ div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .toolt
 }
 
 .large-opacity {
-  opacity: 0.25 !important;
+  opacity: 0.75 !important;
+}
+
+.opacity {
+  opacity: 1 !important;
 }
 
 .padding,
@@ -4337,7 +4337,7 @@ progress.max + * {
   position: absolute;
   block-size: auto;
   inset: 0 auto 0 0.5rem;
-  color: currentColor;
+  color: var(--inverse-primary);
   z-index: 1;
 }
 

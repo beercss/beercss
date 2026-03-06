@@ -176,7 +176,7 @@
   position: absolute;
   block-size: auto;
   inset: 0 auto 0 0.5rem;
-  color: currentColor;
+  color: var(--inverse-primary);
   z-index: 1;
 }
 
