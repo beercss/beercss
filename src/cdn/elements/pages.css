@@ -7,8 +7,8 @@
 
 .page.active {
   opacity: 1;
-  position: inherit;
-  display: inherit;
+  position: relative;
+  display: block;
   animation: var(--speed4) to-page ease;
 }
 
@@ -26,16 +26,4 @@
 
 .page.active.right {
   --_transform: translate(4rem, 0);
-}
-
-@keyframes to-page {
-  from {
-    opacity: 0;
-    transform: var(--_transform);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
 }

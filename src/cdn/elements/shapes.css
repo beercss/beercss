@@ -78,27 +78,27 @@
 }
 
 .shape.rotate {
-  animation: linear to-shape-rotate infinite 12s;
+  animation: linear to-rotate infinite 12s;
 }
 
 .shape.rotate > * {
-  animation: linear to-shape-rotate infinite 12s reverse;
+  animation: linear to-rotate infinite 12s reverse;
 }
 
 .shape.fast-rotate {
-  animation: linear to-shape-rotate infinite 6s;
+  animation: linear to-rotate infinite 6s;
 }
 
 .shape.fast-rotate > * {
-  animation: linear to-shape-rotate infinite 6s reverse;
+  animation: linear to-rotate infinite 6s reverse;
 }
 
 .shape.slow-rotate {
-  animation: linear to-shape-rotate infinite 24s;
+  animation: linear to-rotate infinite 24s;
 }
 
 .shape.slow-rotate > * {
-  animation: linear to-shape-rotate infinite 24s reverse;
+  animation: linear to-rotate infinite 24s reverse;
 }
 
 :is(button, .button, .chip):has(> .shape) > .responsive {
@@ -247,13 +247,4 @@
 
 .shape.very-sunny {
   mask-image: url(../shapes/very-sunny.svg);
-}
-
-@keyframes to-shape-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

@@ -15,6 +15,11 @@
   --bottom: env(safe-area-inset-bottom);
   --left: env(safe-area-inset-left);
   --right: env(safe-area-inset-right);
+  --image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
+}
+
+body.dark {
+  --image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
 }
 
 html {
@@ -51,5 +56,62 @@ body {
   body:has(dialog[open], dialog.active),
   body:has(input[type=range]:focus) {
     overflow: hidden;
+  }
+}
+
+@keyframes to-page {
+  from {
+    opacity: 0;
+    transform: var(--_transform);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes to-linear-progress {
+  0% {
+    margin: 0 0 0 -100%;
+  }
+
+  50% {
+    margin: 0 0 0 0;
+  }
+
+  100% {
+    margin: 0 0 0 100%;
+  }
+}
+
+@keyframes to-indeterminate-progress {
+  0% {
+    padding: 0 100% 0 0;
+  }
+
+  50% {
+    padding: 0 0 0 0;
+  }
+
+  100% {
+    padding: 0 0 0 100%;
+  }
+}
+
+@keyframes to-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes to-ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
   }
 }

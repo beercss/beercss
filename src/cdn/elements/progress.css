@@ -1,12 +1,10 @@
 progress {
-  --_light: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
-  --_dark: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
   --_size: 0.25rem;
   position: relative;
   inline-size: 100%;
   block-size: var(--_size);
   color: var(--primary);
-  background: var(--_light);
+  background: var(--image);
   border-radius: 1rem;
   flex: none;
   border: none;
@@ -15,10 +13,6 @@ progress {
   direction: ltr;
   -webkit-appearance: none;
   appearance: none;
-}
-
-.dark progress {
-  background: var(--_dark);
 }
 
 progress.small {
@@ -35,7 +29,7 @@ progress.large {
 
 progress.indeterminate {
   --_value: 100;
-  animation: 3.2s to-indeterminate ease infinite;
+  animation: 3.2s to-indeterminate-progress ease infinite;
 }
 
 progress:not(.circle, [value])::after {
@@ -46,15 +40,15 @@ progress:not(.circle, [value])::after {
   block-size: 100%;
   clip-path: none;
   background: currentcolor;
-  animation: 3.2s to-linear ease infinite;
+  animation: 3.2s to-linear-progress ease infinite;
 }
 
 progress:not(.circle, [value])::-moz-progress-bar {
-  animation: 3.2s to-linear ease infinite;
+  animation: 3.2s to-linear-progress ease infinite;
 }
 
 progress:not(.circle, [value])::-webkit-progress-value {
-  animation: 3.2s to-linear ease infinite;
+  animation: 3.2s to-linear-progress ease infinite;
 }
 
 progress::-webkit-progress-bar {
@@ -72,14 +66,10 @@ progress::-moz-progress-bar {
 progress.wavy {
   block-size: calc(var(--_size, 0) * 2);
   background: none;
-  background-image: var(--_light);
+  background-image: var(--image);
   background-repeat: repeat-x;
   background-position: 0 50%;
   background-size: auto calc(var(--_size, 0) / 2);
-}
-
-.dark progress.wavy {
-  background-image: var(--_dark);
 }
 
 progress.wavy::-webkit-progress-value,
@@ -167,42 +157,4 @@ progress.max + * {
 
 :is(.button, button, .chip) > progress.circle {
   color: inherit;
-}
-
-@keyframes to-linear {
-  0% {
-    margin: 0 0 0 -100%;
-  }
-
-  50% {
-    margin: 0 0 0 0;
-  }
-
-  100% {
-    margin: 0 0 0 100%;
-  }
-}
-
-@keyframes to-indeterminate {
-  0% {
-    padding: 0 100% 0 0;
-  }
-
-  50% {
-    padding: 0 0 0 0;
-  }
-
-  100% {
-    padding: 0 0 0 100%;
-  }
-}
-
-@keyframes to-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
