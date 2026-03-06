@@ -13,7 +13,7 @@ button {
   color: var(--on-primary);
   padding: 0 var(--_padding);
   background-color: var(--primary);
-  border-radius: var(--_size);
+  border-radius: 1.25rem;
   transition: transform var(--speed3), border-radius var(--speed2), padding var(--speed3);
   user-select: none;
   gap: 0.5rem;
