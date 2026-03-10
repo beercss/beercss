@@ -255,3 +255,19 @@
   outline: 0.125rem solid var(--primary);
   outline-offset: 0.375rem;
 }
+
+/* icon-only checkbox (empty span = no text label) */
+.checkbox:has(> span:empty) {
+  margin: 0 0.5rem;
+}
+
+.checkbox:has(> span:empty) > input {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+}
+
+.checkbox:has(> span:empty) > span {
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  justify-content: center;
+}
