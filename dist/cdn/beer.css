@@ -202,7 +202,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.17/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.18/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -212,7 +212,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.17/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.18/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -222,7 +222,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.17/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.18/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -232,7 +232,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.17/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.18/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
@@ -1953,7 +1953,7 @@ input[type=number] {
 .field.label > label {
   --_start: 1rem;
   position: absolute;
-  inset: -0.5rem 1rem 0 var(--_start);
+  inset: -0.5rem 0.9375rem 0 var(--_start);
   display: flex;
   block-size: calc(var(--_input, 0) + 1rem);
   line-height: calc(var(--_input, 0) + 1rem);
@@ -1965,15 +1965,15 @@ input[type=number] {
 }
 
 [dir=rtl] .field.label > label {
-  inset: -0.5rem var(--_start) 0 1rem;
+  inset: -0.5rem calc(var(--_start) - 0.0625rem) 0 0.9375rem;
 }
 
 .field.label[class*=round] > label {
-  inset: -0.5rem 1.75rem 0 var(--_start);
+  inset: -0.5rem 1.9375rem 0 var(--_start);
 }
 
-[dir=rtl] .field.labell[class*=round] > label {
-  inset: -0.5rem 1.75rem 0 var(--_start);
+[dir=rtl] .field.label[class*=round] > label {
+  inset: -0.5rem var(--_start) 0 1.9375rem;
 }
 
 .field.label.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
@@ -2026,12 +2026,12 @@ input[type=number] {
 
 .field.label.border[class*=round]:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
 .field.label.border[class*=round]:not(.fill) > select {
-  clip-path: polygon(-2% -2%, 1.25rem -2%, 1.25rem 0.5rem, calc(100% - 1.75rem) 0.5rem, calc(100% - 1.75rem) -2%, 102% -2%, 102% 102%, -2% 102%);
+  clip-path: polygon(-2% -2%, 1.25rem -2%, 1.25rem 0.5rem, calc(100% - 2rem) 0.5rem, calc(100% - 2rem) -2%, 102% -2%, 102% 102%, -2% 102%);
 }
 
 [dir=rtl] .field.label.border[class*=round]:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
 [dir=rtl] .field.label.border[class*=round]:not(.fill) > select {
-  clip-path: polygon(-2% -2%, 1.75rem -2%, 1.75rem 0.5rem, calc(100% - 1.25rem) 0.5rem, calc(100% - 1.25rem) -2%, 102% -2%, 102% 102%, -2% 102%);
+  clip-path: polygon(-2% -2%, 2rem -2%, 2rem 0.5rem, calc(100% - 1.25rem) 0.5rem, calc(100% - 1.25rem) -2%, 102% -2%, 102% 102%, -2% 102%);
 }
 
 .field.label > :focus + label {
