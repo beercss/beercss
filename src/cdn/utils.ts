@@ -18,11 +18,11 @@ export const isAndroid = navigator.userAgent.includes("Android");
 export const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 export function isTouchable(): boolean {
-  return window?.matchMedia("(pointer: coarse)").matches;
+  return window?.matchMedia?.("(pointer: coarse)")?.matches ?? false;
 }
 
 export function isDark(): boolean {
-  return window?.matchMedia("(prefers-color-scheme: dark)").matches;
+  return window?.matchMedia?.("(prefers-color-scheme: dark)")?.matches ?? false;
 }
 
 export async function wait(milliseconds: number) {
