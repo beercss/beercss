@@ -16,22 +16,26 @@ function lastTheme(): IBeerCssTheme {
 
   const light = document.createElement("body");
   light.className = "light";
+  light.style.display = "none";
   body.appendChild(light);
 
   const dark = document.createElement("body");
   dark.className = "dark";
+  dark.style.display = "none";
   body.appendChild(dark);
 
-  const fromLight = getComputedStyle(light);
-  const fromDark = getComputedStyle(dark);
-  const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--surface-variant", "--on-surface-variant", "--outline", "--outline-variant", "--shadow", "--scrim", "--inverse-surface", "--inverse-on-surface", "--inverse-primary", "--surface-dim", "--surface-bright", "--surface-container-lowest", "--surface-container-low", "--surface-container", "--surface-container-high", "--surface-container-highest"];
-  for (let i = 0, n = variables.length; i < n; i++) {
-    _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
-    _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
+  try {
+    const fromLight = getComputedStyle(light);
+    const fromDark = getComputedStyle(dark);
+    const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--surface-variant", "--on-surface-variant", "--outline", "--outline-variant", "--shadow", "--scrim", "--inverse-surface", "--inverse-on-surface", "--inverse-primary", "--surface-dim", "--surface-bright", "--surface-container-lowest", "--surface-container-low", "--surface-container", "--surface-container-high", "--surface-container-highest"];
+    for (let i = 0, n = variables.length; i < n; i++) {
+      _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
+      _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
+    }
+  } finally {
+    body.removeChild(light);
+    body.removeChild(dark);
   }
-
-  body.removeChild(light);
-  body.removeChild(dark);
   return _lastTheme;
 }
 

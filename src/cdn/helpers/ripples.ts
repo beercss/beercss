@@ -1,12 +1,4 @@
-import { queryAll, onWeak } from "../utils";
-
-function onMousedownRipple(e: MouseEvent) {
-  updateRipple(e);
-}
-
-function onKeydownRipple(e: KeyboardEvent) {
-  if (e?.key === " ") updateRipple(e);
-}
+import { onWeak } from "../utils";
 
 function updateRipple(e: MouseEvent | KeyboardEvent) {
   const isMouseEvent = e instanceof MouseEvent;
@@ -29,10 +21,26 @@ function updateRipple(e: MouseEvent | KeyboardEvent) {
   element.appendChild(rippleContainer);
 }
 
+function onMousedownRippleDelegation(e: MouseEvent) {
+  const from = (e.target as HTMLElement).closest(".slow-ripple, .ripple, .fast-ripple") as HTMLElement;
+  if (!from) return;
+
+  Object.defineProperty(e, "currentTarget", { value: from, configurable: true });
+  updateRipple(e);
+}
+
+function onKeydownRippleDelegation(e: KeyboardEvent) {
+  const from = (e.target as HTMLElement).closest(".slow-ripple, .ripple, .fast-ripple") as HTMLElement;
+  if (!from || e.key !== " ") return;
+
+  Object.defineProperty(e, "currentTarget", { value: from, configurable: true });
+  updateRipple(e);
+}
+
 export function updateAllRipples() {
-  const ripples = queryAll(".slow-ripple, .ripple, .fast-ripple");
-  for(let i=0; i<ripples.length; i++) {
-    onWeak(ripples[i], "mousedown", onMousedownRipple);
-    onWeak(ripples[i], "keydown", onKeydownRipple);
-  }
+  const body = document.body;
+  if (!body) return;
+
+  onWeak(body, "mousedown", onMousedownRippleDelegation);
+  onWeak(body, "keydown", onKeydownRippleDelegation);
 }
