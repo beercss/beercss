@@ -7,9 +7,9 @@
  * can use to understand the framework, following the https://llmstxt.org standard.
  * 
  * The script will:
- * - Generate src/static/llms.txt (index file)
- * - Generate src/static/llms-full.txt (concatenated file)
- * - Copy individual documentation files to src/static/docs/ as .txt files
+ * - Generate dist/llms.txt (index file)
+ * - Generate dist/llms-full.txt (concatenated file)
+ * - Copy individual documentation files to dist/docs/ as .txt files
  */
 
 import fs from 'fs';
@@ -22,10 +22,10 @@ const __dirname = path.dirname(__filename);
 // Configuration - paths relative to project root
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const DOCS_DIR = path.join(PROJECT_ROOT, 'docs');
-const STATIC_DIR = path.join(PROJECT_ROOT, 'src', 'static');
-const STATIC_DOCS_DIR = path.join(STATIC_DIR, 'docs');
-const INDEX_OUTPUT_FILE = path.join(STATIC_DIR, 'llms.txt');
-const FULL_OUTPUT_FILE = path.join(STATIC_DIR, 'llms-full.txt');
+const OUTPUT_DIR = path.join(PROJECT_ROOT, 'dist');
+const OUTPUT_DOCS_DIR = path.join(OUTPUT_DIR, 'docs');
+const INDEX_OUTPUT_FILE = path.join(OUTPUT_DIR, 'llms.txt');
+const FULL_OUTPUT_FILE = path.join(OUTPUT_DIR, 'llms-full.txt');
 const BASE_URL = 'https://www.beercss.com/docs/';
 
 // Define the order of files for logical flow
@@ -163,9 +163,9 @@ function generateLLMSDocs() {
     process.exit(1);
   }
 
-  // Create static/docs directory if it doesn't exist
-  if (!fs.existsSync(STATIC_DOCS_DIR)) {
-    fs.mkdirSync(STATIC_DOCS_DIR, { recursive: true });
+  // Create dist/docs directory if it doesn't exist
+  if (!fs.existsSync(OUTPUT_DOCS_DIR)) {
+    fs.mkdirSync(OUTPUT_DOCS_DIR, { recursive: true });
   }
   
   // Read all markdown files from docs directory
@@ -217,7 +217,7 @@ function generateLLMSDocs() {
   // Write individual .txt files
   processedFiles.forEach(file => {
     const txtFilename = file.filename.replace(/\.md$/, '.txt');
-    fs.writeFileSync(path.join(STATIC_DOCS_DIR, txtFilename), file.content);
+    fs.writeFileSync(path.join(OUTPUT_DOCS_DIR, txtFilename), file.content);
   });
   
   // Generate llms-full.txt
