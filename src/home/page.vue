@@ -50,127 +50,127 @@ div
         button.transparent.circle(data-ui="#dialog-menu")
           i close
     ol.list
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#app-bars')")
+      li.wave.round( @click="domain.goTo('#app-bars')")
         i widgets
         span App bars
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#badges')")
+      li.wave.round( @click="domain.goTo('#badges')")
         i widgets
         span Badges
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#buttons')")
+      li.wave.round( @click="domain.goTo('#buttons')")
         i widgets
         span Buttons
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#cards')")
+      li.wave.round( @click="domain.goTo('#cards')")
         i widgets
         span Cards
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#checkboxes')")
+      li.wave.round( @click="domain.goTo('#checkboxes')")
         i widgets
         span Checkboxes
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#chips')")
+      li.wave.round( @click="domain.goTo('#chips')")
         i widgets
         span Chips
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#colors')")
+      li.wave.round( @click="domain.goTo('#colors')")
         i widgets
         span Colors
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#containers')")
+      li.wave.round( @click="domain.goTo('#containers')")
         i widgets
         span Containers
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#dialogs')")
+      li.wave.round( @click="domain.goTo('#dialogs')")
         i widgets
         span Dialogs
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#directions')")
+      li.wave.round( @click="domain.goTo('#directions')")
         i widgets
         span Directions
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#dividers')")
+      li.wave.round( @click="domain.goTo('#dividers')")
         i widgets
         span Dividers
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#expansions')")
+      li.wave.round( @click="domain.goTo('#expansions')")
         i widgets
         span Expansions
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#fieldsets')")
+      li.wave.round( @click="domain.goTo('#fieldsets')")
         i widgets
         span Fieldsets
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#grids')")
+      li.wave.round( @click="domain.goTo('#grids')")
         i widgets
         span Grids
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#icons')")
+      li.wave.round( @click="domain.goTo('#icons')")
         i widgets
         span Icons
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#inputs')")
+      li.wave.round( @click="domain.goTo('#inputs')")
         i widgets
         span Inputs
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#layouts')")
+      li.wave.round( @click="domain.goTo('#layouts')")
         i widgets
         span Layouts
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#lists')")
+      li.wave.round( @click="domain.goTo('#lists')")
         i widgets
         span Lists
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#media')")
+      li.wave.round( @click="domain.goTo('#media')")
         i widgets
         span Media
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#menus')")
+      li.wave.round( @click="domain.goTo('#menus')")
         i widgets
         span Menus
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#navigations')")
+      li.wave.round( @click="domain.goTo('#navigations')")
         i widgets
         span Navigations
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#pages')")
+      li.wave.round( @click="domain.goTo('#pages')")
         i widgets
         span Pages
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#progress')")
+      li.wave.round( @click="domain.goTo('#progress')")
         i widgets
         span Progress
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#radios')")
+      li.wave.round( @click="domain.goTo('#radios')")
         i widgets
         span Radios
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#responsive')")
+      li.wave.round( @click="domain.goTo('#responsive')")
         i widgets
         span Responsive
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#scrolls')")
+      li.wave.round( @click="domain.goTo('#scrolls')")
         i widgets
         span Scrolls
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#search')")
+      li.wave.round( @click="domain.goTo('#search')")
         i widgets
         span Search
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#selects')")
+      li.wave.round( @click="domain.goTo('#selects')")
         i widgets
         span Selects
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#shapes')")
+      li.wave.round( @click="domain.goTo('#shapes')")
         i widgets
         span Shapes
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#sliders')")
+      li.wave.round( @click="domain.goTo('#sliders')")
         i widgets
         span Sliders
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#snackbars')")
+      li.wave.round( @click="domain.goTo('#snackbars')")
         i widgets
         span Snackbars
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#spaces')")
+      li.wave.round( @click="domain.goTo('#spaces')")
         i widgets
         span Spaces
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#steppers')")
+      li.wave.round( @click="domain.goTo('#steppers')")
         i widgets
         span Steppers
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#switches')")
+      li.wave.round( @click="domain.goTo('#switches')")
         i widgets
         span Switches
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#tables')")
+      li.wave.round( @click="domain.goTo('#tables')")
         i widgets
         span Tables
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#tabs')")
+      li.wave.round( @click="domain.goTo('#tabs')")
         i widgets
         span Tabs
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#textareas')")
+      li.wave.round( @click="domain.goTo('#textareas')")
         i widgets
         span Textareas
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#toolbars')")
+      li.wave.round( @click="domain.goTo('#toolbars')")
         i widgets
         span Toolbars
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#tooltips')")
+      li.wave.round( @click="domain.goTo('#tooltips')")
         i widgets
         span Tooltips
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#typography')")
+      li.wave.round( @click="domain.goTo('#typography')")
         i widgets
         span Typography
-      li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#waves-and-ripples')")
+      li.wave.round( @click="domain.goTo('#waves-and-ripples')")
         i widgets
         span Waves and ripples
 
