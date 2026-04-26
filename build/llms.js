@@ -3,18 +3,13 @@
 /**
  * BeerCSS Documentation Generator for LLMs
  * 
- * This script concatenates all BeerCSS documentation files into a single
- * llms.md file that AI/LLM systems can use to understand the framework.
- * 
- * Usage: node generate-llms-md.js
+ * This script generates llms.txt and llms-full.txt files that AI/LLM systems
+ * can use to understand the framework, following the https://llmstxt.org standard.
  * 
  * The script will:
- * - Read all .md files from the docs/ directory
- * - Extract headings and create a table of contents
- * - Remove navigation footers
- * - Output a clean, concatenated llms.md file
- * 
- * Note: Original heading levels are preserved (multiple H1s are fine)
+ * - Generate src/static/llms.txt (index file)
+ * - Generate src/static/llms-full.txt (concatenated file)
+ * - Copy individual documentation files to src/static/docs/
  */
 
 import fs from 'fs';
@@ -27,7 +22,11 @@ const __dirname = path.dirname(__filename);
 // Configuration - paths relative to project root
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const DOCS_DIR = path.join(PROJECT_ROOT, 'docs');
-const OUTPUT_FILE = path.join(PROJECT_ROOT, 'llms.md');
+const STATIC_DIR = path.join(PROJECT_ROOT, 'src', 'static');
+const STATIC_DOCS_DIR = path.join(STATIC_DIR, 'docs');
+const INDEX_OUTPUT_FILE = path.join(STATIC_DIR, 'llms.txt');
+const FULL_OUTPUT_FILE = path.join(STATIC_DIR, 'llms-full.txt');
+const BASE_URL = 'https://www.beercss.com/docs/';
 
 // Define the order of files for logical flow
 const FILE_ORDER = [
@@ -43,7 +42,7 @@ const FILE_ORDER = [
 const ORDERED_FILES = new Set(FILE_ORDER);
 
 // Generate header for the output file
-function generateHeader() {
+function generateFullHeader() {
   const now = new Date().toISOString().split('T')[0];
   return `# BeerCSS - Complete Documentation for AI/LLM Systems
 
@@ -65,6 +64,21 @@ The following documentation sections are included in order:
 `;
 }
 
+function generateIndexHeader() {
+  return `# BeerCSS
+
+> BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
+
+- [BeerCSS website](https://www.beercss.com)
+- [GitHub repository](https://github.com/beercss/beercss)
+- [Material Design 3 guidelines](https://m3.material.io)
+- [Full documentation](/llms-full.txt)
+
+## Documentation
+
+`;
+}
+
 // Extract the first heading from content
 function extractFirstHeading(content) {
   const match = content.match(/^#\s+(.+)$/m);
@@ -80,7 +94,6 @@ function generateTOC(filesWithHeadings) {
   
   return tocItems + '\n\n---\n\n';
 }
-
 
 // Remove navigation footer from content
 function removeNavigationFooter(content) {
@@ -140,13 +153,18 @@ function processFile(filename, docsDir) {
 }
 
 // Main function
-function generateLLMSDoc() {
-  console.log('🍺 Generating llms.md from BeerCSS documentation...\n');
+function generateLLMSDocs() {
+  console.log('🍺 Generating llms.txt and llms-full.txt from BeerCSS documentation...\n');
   
   // Check if docs directory exists
   if (!fs.existsSync(DOCS_DIR)) {
     console.error(`Error: Documentation directory '${DOCS_DIR}' not found!`);
     process.exit(1);
+  }
+
+  // Create static/docs directory if it doesn't exist
+  if (!fs.existsSync(STATIC_DOCS_DIR)) {
+    fs.mkdirSync(STATIC_DOCS_DIR, { recursive: true });
   }
   
   // Read all markdown files from docs directory
@@ -159,6 +177,11 @@ function generateLLMSDoc() {
   }
   
   console.log(`Found ${allMdFiles.length} documentation files\n`);
+
+  // Copy files to static/docs
+  allMdFiles.forEach(file => {
+    fs.copyFileSync(path.join(DOCS_DIR, file), path.join(STATIC_DOCS_DIR, file));
+  });
   
   // Separate files into ordered and alphabetical
   const orderedFiles = FILE_ORDER.filter(file => allMdFiles.includes(file));
@@ -195,25 +218,31 @@ function generateLLMSDoc() {
     }
   });
   
-  // Generate the final content
-  let content = generateHeader();
-  content += generateTOC(processedFiles);
-  
-  // Add all processed content
+  // Generate llms-full.txt
+  let fullContent = generateFullHeader();
+  fullContent += generateTOC(processedFiles);
   processedFiles.forEach(file => {
-    content += file.content;
+    fullContent += file.content;
   });
   
-  // Write the output file
+  // Generate llms.txt
+  let indexContent = generateIndexHeader();
+  processedFiles.forEach(file => {
+    indexContent += `- [${file.heading}](${BASE_URL}${file.filename})\n`;
+  });
+
+  // Write the output files
   try {
-    fs.writeFileSync(OUTPUT_FILE, content);
-    console.log(`\n✅ Successfully generated ${OUTPUT_FILE}`);
-    console.log(`📄 Total size: ${(content.length / 1024).toFixed(2)} KB`);
+    fs.writeFileSync(FULL_OUTPUT_FILE, fullContent);
+    console.log(`✅ Successfully generated ${FULL_OUTPUT_FILE}`);
+
+    fs.writeFileSync(INDEX_OUTPUT_FILE, indexContent);
+    console.log(`✅ Successfully generated ${INDEX_OUTPUT_FILE}`);
   } catch (error) {
-    console.error(`\nError writing output file: ${error.message}`);
+    console.error(`\nError writing output files: ${error.message}`);
     process.exit(1);
   }
 }
 
 // Run the script
-generateLLMSDoc();
+generateLLMSDocs();

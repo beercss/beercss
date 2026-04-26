@@ -1,0 +1,77 @@
+# Slider
+
+Sliders let users make selections from a range of values. Default range is 0-100.
+
+## Element
+
+```html
+<div class="slider">
+  <input type="range">
+  <span></span>
+</div>
+```
+
+## Example
+
+```html
+<div class="slider">
+  <input type="range">
+  <span></span>
+</div>
+
+<div class="slider">
+  <input type="range" min="4" max="8">
+  <span></span>
+</div>
+```
+
+## Value indicator example
+
+```html
+<div class="slider">
+  <input type="range">
+  <span></span>
+  <div class="tooltip"></div>
+</div>
+```
+
+## Inset icon example
+
+The icon will show only with `medium`, `large` or `extra` helpers.
+
+```html
+<div class="slider medium">
+  <input type="range">
+  <span>
+    <i>sunny</i>
+  </span>
+</div>
+```
+
+## In field elements example
+
+```html
+<div class="field middle-align">
+  <div class="slider">
+    <input type="range">
+    <span></span>
+  </div>
+</div>
+```
+
+## Custom slider example
+
+```html
+<article>
+  <div class="slider max">
+    <input type="range">
+    <span></span>
+  </div>
+<article>
+```
+
+## Go to
+
+[Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
+
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Shape](SHAPE.md), [Slider](SLIDER.md), [Snackbar](SNACKBAR.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
