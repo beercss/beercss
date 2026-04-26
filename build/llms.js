@@ -9,7 +9,7 @@
  * The script will:
  * - Generate dist/llms.txt (index file)
  * - Generate dist/llms-full.txt (concatenated file)
- * - Copy individual documentation files to dist/docs/ as .txt files
+ * - Copy individual documentation files to dist/docs/ as .md files
  */
 
 import fs from 'fs';
@@ -135,9 +135,6 @@ function processFile(filename, docsDir) {
     // Remove navigation footer
     content = removeNavigationFooter(content);
 
-    // Update links from .md to .txt
-    content = content.replace(/\]\((.+?)\.md\)/g, ']($1.txt)');
-    
     // Ensure proper spacing between sections
     if (!content.endsWith('\n\n')) {
       content += '\n\n';
@@ -214,10 +211,9 @@ function generateLLMSDocs() {
     }
   });
 
-  // Write individual .txt files
+  // Write individual .md files to dist/docs/
   processedFiles.forEach(file => {
-    const txtFilename = file.filename.replace(/\.md$/, '.txt');
-    fs.writeFileSync(path.join(OUTPUT_DOCS_DIR, txtFilename), file.content);
+    fs.writeFileSync(path.join(OUTPUT_DOCS_DIR, file.filename), file.content);
   });
   
   // Generate llms-full.txt
@@ -230,8 +226,7 @@ function generateLLMSDocs() {
   // Generate llms.txt
   let indexContent = generateIndexHeader();
   processedFiles.forEach(file => {
-    const txtFilename = file.filename.replace(/\.md$/, '.txt');
-    indexContent += `- [${file.heading}](${BASE_URL}${txtFilename})\n`;
+    indexContent += `- [${file.heading}](${BASE_URL}${file.filename})\n`;
   });
 
   // Write the output files

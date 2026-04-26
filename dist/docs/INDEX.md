@@ -1,6 +1,6 @@
 # The principles
 
-This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1516. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: [Settings](SETTINGS.txt), [Elements](ELEMENTS.txt) and [Helpers](HELPERS.txt). This sounds weird at first time, because It's not BEM, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
+This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1516. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: [Settings](SETTINGS.md), [Elements](ELEMENTS.md) and [Helpers](HELPERS.md). This sounds weird at first time, because It's not BEM, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
 
 ```
 |  SETTINGS     |       // The settings affects all document
@@ -86,7 +86,7 @@ Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@4.0.20/dist/cdn
 
 ### HTML
 
-You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj). More about in [Main layout](docs/MAIN_LAYOUT.txt).
+You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj). More about in [Main layout](docs/MAIN_LAYOUT.md).
 
 ```html
 <!DOCTYPE html>
@@ -248,9 +248,9 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 
 ## Tips to master beercss
 
-1. Try use [Helpers](HELPERS.txt) first, before any custom css.
-2. To customize themes go to [Settings](SETTINGS.txt).
-3. To quick learn the project go to [Summary](SUMMARY.txt).
-4. To understand the [Javascript](JAVASCRIPT.txt) file.
+1. Try use [Helpers](HELPERS.md) first, before any custom css.
+2. To customize themes go to [Settings](SETTINGS.md).
+3. To quick learn the project go to [Summary](SUMMARY.md).
+4. To understand the [Javascript](JAVASCRIPT.md) file.
 5. Read the DO and DON'T section to write a compliance HTML/CSS.
 6. For [Vite](https://vite.dev/config/build-options#build-assetsinlinelimit) users, build your app with `assetsInlineLimit: 0` to keep the original size of CSS files.

@@ -126,7 +126,7 @@ transparent, transparent-text, transparent-border
 
 active
 
-## [Typography](TYPOGRAPHY.txt)
+## [Typography](TYPOGRAPHY.md)
 
 &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, italic, bold, underline, overline, upper, lower, capitalize, link, small-text, medium-text, large-text, &lt;em&gt;, &lt;strong&gt;, &lt;b&gt;
 
