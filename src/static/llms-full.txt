@@ -58,7 +58,7 @@ The following documentation sections are included in order:
 
 # The principles
 
-This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1516. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: [Settings](SETTINGS.md), [Elements](ELEMENTS.md) and [Helpers](HELPERS.md). This sounds weird at first time, because It's not BEM, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
+This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1516. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: [Settings](SETTINGS.txt), [Elements](ELEMENTS.txt) and [Helpers](HELPERS.txt). This sounds weird at first time, because It's not BEM, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
 
 ```
 |  SETTINGS     |       // The settings affects all document
@@ -144,7 +144,7 @@ Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@4.0.20/dist/cdn
 
 ### HTML
 
-You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj). More about in [Main layout](docs/MAIN_LAYOUT.md).
+You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj). More about in [Main layout](docs/MAIN_LAYOUT.txt).
 
 ```html
 <!DOCTYPE html>
@@ -306,10 +306,10 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
 
 ## Tips to master beercss
 
-1. Try use [Helpers](HELPERS.md) first, before any custom css.
-2. To customize themes go to [Settings](SETTINGS.md).
-3. To quick learn the project go to [Summary](SUMMARY.md).
-4. To understand the [Javascript](JAVASCRIPT.md) file.
+1. Try use [Helpers](HELPERS.txt) first, before any custom css.
+2. To customize themes go to [Settings](SETTINGS.txt).
+3. To quick learn the project go to [Summary](SUMMARY.txt).
+4. To understand the [Javascript](JAVASCRIPT.txt) file.
 5. Read the DO and DON'T section to write a compliance HTML/CSS.
 6. For [Vite](https://vite.dev/config/build-options#build-assetsinlinelimit) users, build your app with `assetsInlineLimit: 0` to keep the original size of CSS files.
 
@@ -569,131 +569,131 @@ It sets the animation speed of elements.
 
 # ELEMENTS
 
-## [Badge](BADGE.md)
+## [Badge](BADGE.txt)
 
 Badges are generally used to emphasize some elements and they are placed in element corners.
 
-## [Button](BUTTON.md)
+## [Button](BUTTON.txt)
 
 Buttons allow users to take actions, and make choices, with a single tap.
 
-## [Card](CARD.md)
+## [Card](CARD.txt)
 
 Cards are surfaces that display content and actions on a single topic. They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
 
-## [Checkbox](CHECKBOX.md)
+## [Checkbox](CHECKBOX.txt)
 
 Checkboxes allow users to select one or more items from a set. Checkboxes can turn an option on or off.
 
-## [Chip](CHIP.md)
+## [Chip](CHIP.txt)
 
 Chips are compact elements that represent an input, attribute, or action.
 
-## [Container](CONTAINER.md)
+## [Container](CONTAINER.txt)
 
 A container is the main content of page.
 
-## [Dialog](DIALOG.md)
+## [Dialog](DIALOG.txt)
 
 Dialogs inform users about a task and can contain critical information, required decisions, involve multiple tasks, provide access to destinations in your app and contain a small forms to submit.
 
-## [Divider](DIVIDER.md)
+## [Divider](DIVIDER.txt)
 
 Dividers are thin lines that group content in lists or other containers
 
-## [Expansion](EXPANSION.md)
+## [Expansion](EXPANSION.txt)
 
 Expansion contains creation flows and allows lightweight editing of an element.
 
-## [Grid](GRID.md)
+## [Grid](GRID.txt)
 
 Grids are rows and cols system grid. They are most used to organize content.
 
-## [Icon](ICON.md)
+## [Icon](ICON.txt)
 
 Material design system icons are simple, modern, friendly, and sometimes quirky. Each icon is created using our design guidelines to depict in simple and minimal forms the universal concepts used commonly throughout a UI. Ensuring readability and clarity at both large and small sizes, these icons have been optimized for beautiful display on all common platforms and display resolutions.
 
-## [Input](INPUT.md)
+## [Input](INPUT.txt)
 
 Input fields let users enter and edit text.
 
-## [Layout](LAYOUT.md)
+## [Layout](LAYOUT.txt)
 
 Layouts are containers that you can place in any position. There are absolute and fixed elements.
 
-## [List](LIST.md)
+## [List](LIST.txt)
 
 Lists are continuous, vertical indexes of text and images. Each item can have up to 3 lines.
 
-## [Main layout](MAIN_LAYOUT.md)
+## [Main layout](MAIN_LAYOUT.txt)
 
 The main layout is a common html structure to setup your pages. For RTL languages set the attribute `dir="rtl"` on `body` element (or any other element).
 
-## [Media](MEDIA.md)
+## [Media](MEDIA.txt)
 
 Media can be an image or video element.
 
-## [Menu](MENU.md)
+## [Menu](MENU.txt)
 
 Menus display a list of choices on temporary surfaces.
 
-## [Navigation](NAVIGATION.md)
+## [Navigation](NAVIGATION.txt)
 
 Navigations are containers that display actions placed horizontally or vertically. Elements, like buttons, chips, images, checkboxes, radios and switches can be placed inside a nav. Some examples are navigation rail or navigation bar.
 
-## [Overlay](OVERLAY.md)
+## [Overlay](OVERLAY.txt)
 
 Overlays block user screen and can express an unspecified wait time.
 
-## [Page](PAGE.md)
+## [Page](PAGE.txt)
 
 Pages are containers that can be a main page, multiple pages or just to animate an element.
 
-## [Progress](PROGRESS.md)
+## [Progress](PROGRESS.txt)
 
 Progress displays the length of a process or an unspecified wait time.
 
-## [Radio](RADIO.md)
+## [Radio](RADIO.txt)
 
 Radio buttons allow users to select one option from a set.
 
-## [Select](SELECT.md)
+## [Select](SELECT.txt)
 
 Selects display a list of choices on temporary surfaces.
 
-## [Shape](SHAPE.md)
+## [Shape](SHAPE.txt)
 
 The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing.
 
-## [Slider](SLIDER.md)
+## [Slider](SLIDER.txt)
 
 Sliders allow users to make selections from a range of values. There are two types of sliders: continuous and discrete. Default range is 0-100.
 
-## [Snackbar](SNACKBAR.md)
+## [Snackbar](SNACKBAR.txt)
 
 Snackbars provide brief messages about app processes at bottom or top of the screen. It's not recommended to show two or more snackbars at same time.
 
-## [Switch](SWITCH.md)
+## [Switch](SWITCH.txt)
 
 Switches toggle the state of a single item on or off.
 
-## [Table](TABLE.md)
+## [Table](TABLE.txt)
 
 Tables display sets of data across rows and columns.
 
-## [Tabs](TABS.md)
+## [Tabs](TABS.txt)
 
 Tabs organize content across different screens, data sets, and other interactions.
 
-## [Textarea](TEXTAREA.md)
+## [Textarea](TEXTAREA.txt)
 
 Textarea fields let users enter and edit long text.
 
-## [Tooltip](TOOLTIP.md)
+## [Tooltip](TOOLTIP.txt)
 
 Tooltips displays informative text when users hover over, focus on, or tap an element.
 
-## [Typography](TYPOGRAPHY.md)
+## [Typography](TYPOGRAPHY.txt)
 
 Use typography to present your design and content as clearly and efficiently as possible.
 
@@ -827,7 +827,7 @@ transparent, transparent-text, transparent-border
 
 active
 
-## [Typography](TYPOGRAPHY.md)
+## [Typography](TYPOGRAPHY.txt)
 
 &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, italic, bold, underline, overline, upper, lower, capitalize, link, small-text, medium-text, large-text, &lt;em&gt;, &lt;strong&gt;, &lt;b&gt;
 

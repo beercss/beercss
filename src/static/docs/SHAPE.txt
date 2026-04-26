@@ -1,0 +1,47 @@
+# Shape
+
+The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing. Thanks to [@dariadororoshchuk](https://www.figma.com/@dariadoroshchuk) for all 35 svg files and [@KTibow](https://github.com/KTibow) for the loading indicator svg file.
+
+## Element
+
+```html
+<div class="shape">...</div>
+
+<...>
+  <div class="shape max">...</div>
+</...>
+```
+
+## Most used helpers
+
+**Animations**
+
+rotate, slow-rotate, fast-rotate
+
+**Sizes**
+
+tiny, small, medium, large, extra, max
+
+**Spaces**
+
+space, tiny-space, small-space, medium-space, large-space, extra-space
+
+**SVGs**
+
+arch, arrow, boom, bun, burst, circle, clamshell, diamond, fan, flower, gem, ghost-ish, heart, leaf-clover4, leaft-clover8, loading-indicator, oval, pentagon, pill, pixel-circle, pixel-triangle, puffy, puffy-diamond, semicircle, sided-cookie4, sided-cookie6, sided-cookie7, sided-cookie9, sided-cookie12, slanted, soft-boom, soft-burst, square, sunny, triangle, very-sunny
+
+## Example
+
+You can use shapes inside circle and square containers. Use `space` helpers to adjust the shape inside container.
+
+```html
+<div class="shape sunny"></div>
+
+<div class="shape sunny">
+  <img class="responsive" src="/favicon.png">
+</div>
+
+<div class="small-width small-height">
+  <div class="shape sunny max"></div>
+</div>
+```

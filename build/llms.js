@@ -9,7 +9,7 @@
  * The script will:
  * - Generate src/static/llms.txt (index file)
  * - Generate src/static/llms-full.txt (concatenated file)
- * - Copy individual documentation files to src/static/docs/
+ * - Copy individual documentation files to src/static/docs/ as .txt files
  */
 
 import fs from 'fs';
@@ -134,19 +134,20 @@ function processFile(filename, docsDir) {
     
     // Remove navigation footer
     content = removeNavigationFooter(content);
+
+    // Update links from .md to .txt
+    content = content.replace(/\]\((.+?)\.md\)/g, ']($1.txt)');
     
     // Ensure proper spacing between sections
     if (!content.endsWith('\n\n')) {
       content += '\n\n';
     }
     
-    content += '---\n\n';
-    
     return { content, heading: firstHeading };
   } catch (error) {
     console.error(`Error reading ${filename}:`, error.message);
     return { 
-      content: `\n## Error reading ${filename}\n\n${error.message}\n\n---\n\n`,
+      content: `\n## Error reading ${filename}\n\n${error.message}\n\n`,
       heading: null 
     };
   }
@@ -177,11 +178,6 @@ function generateLLMSDocs() {
   }
   
   console.log(`Found ${allMdFiles.length} documentation files\n`);
-
-  // Copy files to static/docs
-  allMdFiles.forEach(file => {
-    fs.copyFileSync(path.join(DOCS_DIR, file), path.join(STATIC_DOCS_DIR, file));
-  });
   
   // Separate files into ordered and alphabetical
   const orderedFiles = FILE_ORDER.filter(file => allMdFiles.includes(file));
@@ -217,18 +213,25 @@ function generateLLMSDocs() {
       });
     }
   });
+
+  // Write individual .txt files
+  processedFiles.forEach(file => {
+    const txtFilename = file.filename.replace(/\.md$/, '.txt');
+    fs.writeFileSync(path.join(STATIC_DOCS_DIR, txtFilename), file.content);
+  });
   
   // Generate llms-full.txt
   let fullContent = generateFullHeader();
   fullContent += generateTOC(processedFiles);
   processedFiles.forEach(file => {
-    fullContent += file.content;
+    fullContent += file.content + '---\n\n';
   });
   
   // Generate llms.txt
   let indexContent = generateIndexHeader();
   processedFiles.forEach(file => {
-    indexContent += `- [${file.heading}](${BASE_URL}${file.filename})\n`;
+    const txtFilename = file.filename.replace(/\.md$/, '.txt');
+    indexContent += `- [${file.heading}](${BASE_URL}${txtFilename})\n`;
   });
 
   // Write the output files
