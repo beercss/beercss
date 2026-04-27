@@ -3,6 +3,7 @@ import { type IHome } from "./interfaces";
 import utils from "../shared/utils";
 import sharedDomain from "../shared/domain";
 import { type ILayout } from "../shared/interfaces";
+import { removeClass } from "../cdn/utils";
 
 const updateElevate = (selector: string, elevate?: string) => {
   const elements = utils.queryAll(selector);
@@ -334,7 +335,14 @@ const showSamples = async (data: IHome, selector: string, name: string, dialog?:
   });
 };
 
-const goTo = (selector: string) => {
+const goTo = (selector: string, updateActiveClass: boolean = true) => {
+  if (updateActiveClass) {
+    const elements = document.querySelectorAll("#navigation-rail1 > a");
+    removeClass(elements, "active");
+
+    document.activeElement?.classList.add("active");
+  }
+  
   setTimeout(() => {
     const element = utils.query(selector);
     element?.scrollIntoView({ behavior: "smooth", block: "start" });

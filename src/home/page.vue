@@ -1,28 +1,135 @@
 <template lang="pug">
 div
-  nav#navigation-rail1.m.l.left(:class="{ max: data.isMax }")
+  nav#navigation-rail1.m.l.left.scroll(:class="{ max: data.isMax }")
     header
       button.extra.circle.transparent(@click="updateNavigationRail()")
         i {{ data.isMax ? "menu_open" : "menu" }}
-      button.extend.square.round(@click="updateExplore()")
-        i widgets
-        span Explore
-         
-    a(@click="domain.updateMenu(data, 'left')", href="javascript:;")
-      i arrow_back
-      span Left
-    a(@click="domain.updateMenu(data, 'right')", href="javascript:;")
-      i arrow_forward
-      span Right
-    a(v-show="!data.isRtl", @click="domain.updateRtlLtr(data)", href="javascript:;")
-      i checklist_rtl
-      span RTL
-    a(v-show="data.isRtl", @click="domain.updateRtlLtr(data)", href="javascript:;")
-      i checklist
-      span LTR
-    a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')", href="javascript:;")
-      i code
-      span Code
+      button.extend.square.round(@click="domain.goTo('#intro', false)")
+        i code
+        span Get started
+    a(href="javascript:;", @click="domain.goTo('#app-bars')")
+      i widgets
+      span App bars
+    a(href="javascript:;", @click="domain.goTo('#badges')")
+      i widgets
+      span Badges
+    a(href="javascript:;", @click="domain.goTo('#buttons')")
+      i widgets
+      span Buttons
+    a(href="javascript:;", @click="domain.goTo('#cards')")
+      i widgets
+      span Cards
+    a(href="javascript:;", @click="domain.goTo('#checkboxes')")
+      i widgets
+      span Checkboxes
+    a(href="javascript:;", @click="domain.goTo('#chips')")
+      i widgets
+      span Chips
+    a(href="javascript:;", @click="domain.goTo('#colors')")
+      i widgets
+      span Colors
+    a(href="javascript:;", @click="domain.goTo('#containers')")
+      i widgets
+      span Containers
+    a(href="javascript:;", @click="domain.goTo('#dialogs')")
+      i widgets
+      span Dialogs
+    a(href="javascript:;", @click="domain.goTo('#directions')")
+      i widgets
+      span Directions
+    a(href="javascript:;", @click="domain.goTo('#dividers')")
+      i widgets
+      span Dividers
+    a(href="javascript:;", @click="domain.goTo('#expansions')")
+      i widgets
+      span Expansions
+    a(href="javascript:;", @click="domain.goTo('#fieldsets')")
+      i widgets
+      span Fieldsets
+    a(href="javascript:;", @click="domain.goTo('#grids')")
+      i widgets
+      span Grids
+    a(href="javascript:;", @click="domain.goTo('#icons')")
+      i widgets
+      span Icons
+    a(href="javascript:;", @click="domain.goTo('#inputs')")
+      i widgets
+      span Inputs
+    a(href="javascript:;", @click="domain.goTo('#layouts')")
+      i widgets
+      span Layouts
+    a(href="javascript:;", @click="domain.goTo('#lists')")
+      i widgets
+      span Lists
+    a(href="javascript:;", @click="domain.goTo('#media')")
+      i widgets
+      span Media
+    a(href="javascript:;", @click="domain.goTo('#menus')")
+      i widgets
+      span Menus
+    a(href="javascript:;", @click="domain.goTo('#navigations')")
+      i widgets
+      span Navigations
+    a(href="javascript:;", @click="domain.goTo('#pages')")
+      i widgets
+      span Pages
+    a(href="javascript:;", @click="domain.goTo('#progress')")
+      i widgets
+      span Progress
+    a(href="javascript:;", @click="domain.goTo('#radios')")
+      i widgets
+      span Radios
+    a(href="javascript:;", @click="domain.goTo('#responsive')")
+      i widgets
+      span Responsive
+    a(href="javascript:;", @click="domain.goTo('#scrolls')")
+      i widgets
+      span Scrolls
+    a(href="javascript:;", @click="domain.goTo('#search')")
+      i widgets
+      span Search
+    a(href="javascript:;", @click="domain.goTo('#selects')")
+      i widgets
+      span Selects
+    a(href="javascript:;", @click="domain.goTo('#shapes')")
+      i widgets
+      span Shapes
+    a(href="javascript:;", @click="domain.goTo('#sliders')")
+      i widgets
+      span Sliders
+    a(href="javascript:;", @click="domain.goTo('#snackbars')")
+      i widgets
+      span Snackbars
+    a(href="javascript:;", @click="domain.goTo('#spaces')")
+      i widgets
+      span Spaces
+    a(href="javascript:;", @click="domain.goTo('#steppers')")
+      i widgets
+      span Steppers
+    a(href="javascript:;", @click="domain.goTo('#switches')")
+      i widgets
+      span Switches
+    a(href="javascript:;", @click="domain.goTo('#tables')")
+      i widgets
+      span Tables
+    a(href="javascript:;", @click="domain.goTo('#tabs')")
+      i widgets
+      span Tabs
+    a(href="javascript:;", @click="domain.goTo('#textareas')")
+      i widgets
+      span Textareas
+    a(href="javascript:;", @click="domain.goTo('#toolbars')")
+      i widgets
+      span Toolbars
+    a(href="javascript:;", @click="domain.goTo('#tooltips')")
+      i widgets
+      span Tooltips
+    a(href="javascript:;", @click="domain.goTo('#typography')")
+      i widgets
+      span Typography
+    a(href="javascript:;", @click="domain.goTo('#waves-and-ripples')")
+      i widgets
+      span Waves
 
   nav#navigation-bar1.s.bottom
     a(@click="domain.goTo('#intro')", href="javascript:;")
@@ -172,7 +279,7 @@ div
         span Typography
       li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#waves-and-ripples')")
         i widgets
-        span Waves and ripples
+        span Waves
 
   themes(id="themes3", v-model="data", position="top")
   .overlay
@@ -663,7 +770,6 @@ function updateNavigationRail() {
 }
 
 function updateExplore() {
-  ui("#dialog-menu");
   data.value.isExplore = !data.value.isExplore;
 }
 
