@@ -60,11 +60,19 @@ function onInputTextarea(e: Event) {
   updateTextarea(textarea);
 }
 
+function onClickLabelDelegation(e: Event) {
+  const from = (e.target as HTMLElement).closest(".field > label") as HTMLLabelElement;
+  if (!from) return;
+
+  Object.defineProperty(e, "currentTarget", { value: from, configurable: true });
+  onClickLabel(e);
+}
+
 function updateAllLabels() {
-  const labels = queryAll(".field > label");
-  for (let i=0; i<labels.length; i++) {
-    onWeak(labels[i], "click", onClickLabel);
-  }
+  const body = document.body;
+  if (!body) return;
+
+  onWeak(body, "click", onClickLabelDelegation);
 }
 
 function updateAllInputs() {

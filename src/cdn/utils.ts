@@ -1,5 +1,5 @@
 const _emptyNodeList = [] as unknown as NodeListOf<Element>;
-const _weakElements = new WeakSet<HTMLElement>();
+const _weakMap = new WeakMap<Element, Map<string, Set<any>>>();
 
 export const isChrome = navigator.userAgent.includes("Chrome");
 
@@ -17,8 +17,11 @@ export const isAndroid = navigator.userAgent.includes("Android");
 
 export const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
+let _isTouchable: boolean;
 export function isTouchable(): boolean {
-  return window?.matchMedia?.("(pointer: coarse)")?.matches ?? false;
+  if (_isTouchable !== undefined) return _isTouchable;
+  _isTouchable = window?.matchMedia("(pointer: coarse)").matches;
+  return _isTouchable;
 }
 
 export function isDark(): boolean {
@@ -84,7 +87,25 @@ export function on(element: Element | null, name: string, callback: any, useCapt
 }
 
 export function onWeak(element: Element | null, name: string, callback: any, useCapture: boolean = true) {
-  addWeakElement(element as HTMLElement);
+  if (!element) return;
+
+  const el = element as HTMLElement;
+  let events = _weakMap.get(el);
+  if (!events) {
+    events = new Map();
+    _weakMap.set(el, events);
+  }
+
+  const key = name + (useCapture ? "1" : "0");
+  let callbacks = events.get(key);
+  if (!callbacks) {
+    callbacks = new Set();
+    events.set(key, callbacks);
+  }
+
+  if (callbacks.has(callback)) return;
+
+  callbacks.add(callback);
   on(element, name, callback, useCapture);
 }
 
@@ -142,8 +163,8 @@ export function updateAllClickable(element: Element) {
 }
 
 export function addWeakElement(element: HTMLElement) {
-  if (_weakElements.has(element)) return;
-  _weakElements.add(element);
+  if (_weakMap.has(element)) return;
+  _weakMap.set(element, new Map());
 }
 
 export function rootSizeInPixels(): number {
