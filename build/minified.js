@@ -29,7 +29,7 @@ export default async function() {
           output: {
             entryFileNames: "[name].min.js",
             chunkFileNames: "[name].min.js",
-            assetFileNames: (info) => (info.name.includes(".css")) ? "[name].min.css" : "[name].[ext]",
+            assetFileNames: (info) => (info.name?.includes(".css")) ? "[name].min.css" : "[name].[ext]",
             manualChunks: undefined,
           },
         },

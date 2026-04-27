@@ -20,7 +20,7 @@ export const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 let _isTouchable: boolean;
 export function isTouchable(): boolean {
   if (_isTouchable !== undefined) return _isTouchable;
-  _isTouchable = window?.matchMedia("(pointer: coarse)").matches;
+  _isTouchable = window?.matchMedia?.("(pointer: coarse)")?.matches ?? false;
   return _isTouchable;
 }
 
