@@ -24,3 +24,8 @@ pnpm-lock.yaml
 *.njsproj
 *.sln
 *.sw?
+
+# LLMS generated files
+src/static/llms.txt
+src/static/llms-full.txt
+src/static/docs/

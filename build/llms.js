@@ -22,11 +22,11 @@ const __dirname = path.dirname(__filename);
 // Configuration - paths relative to project root
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const DOCS_DIR = path.join(PROJECT_ROOT, 'docs');
-const OUTPUT_DIR = path.join(PROJECT_ROOT, 'dist');
+const OUTPUT_DIR = path.join(PROJECT_ROOT, 'src/static');
 const OUTPUT_DOCS_DIR = path.join(OUTPUT_DIR, 'docs');
 const INDEX_OUTPUT_FILE = path.join(OUTPUT_DIR, 'llms.txt');
 const FULL_OUTPUT_FILE = path.join(OUTPUT_DIR, 'llms-full.txt');
-const BASE_URL = 'https://www.beercss.com/docs/';
+const BASE_URL = '/docs/';
 
 // Define the order of files for logical flow
 const FILE_ORDER = [
