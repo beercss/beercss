@@ -25,7 +25,7 @@ export function isTouchable(): boolean {
 }
 
 export function isDark(): boolean {
-  return window?.matchMedia("(prefers-color-scheme: dark)").matches;
+  return window?.matchMedia?.("(prefers-color-scheme: dark)")?.matches ?? false;
 }
 
 export async function wait(milliseconds: number) {

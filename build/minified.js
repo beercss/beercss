@@ -1,9 +1,19 @@
 import { build } from "vite";
 import fs from "fs";
+import cssnano from "cssnano";
 
 export default async function() {
   try {
     await build({
+      css: {
+        postcss: {
+          plugins: [
+            cssnano({
+              preset: 'default',
+            }),
+          ],
+        },
+      },
       build: {
         esbuild: {
           legalComments: 'none'
