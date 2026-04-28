@@ -7,42 +7,27 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "lint": "npm run lint:ts && npm run lint:style",
-    "lint:ts": "eslint . --ext .js,.ts,.vue --fix",
-    "lint:style": "stylelint --fix \"src/**/*.css\"",
     "dev": "node ./build/dev.js",
     "build": "node ./build/build.js && node ./build/cdn.js",
-    "test": "vitest",
+    "test": "vitest run",
     "llms": "node ./build/llms.js"
   },
   "devDependencies": {
-    "@stylistic/stylelint-plugin": "^2.1.2",
-    "@types/jsdom": "^21.1.7",
-    "@typescript-eslint/eslint-plugin": "^7.11.0",
-    "@typescript-eslint/parser": "^7.11.0",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "@vue/eslint-config-typescript": "^13.0.0",
-    "@vue/language-plugin-pug": "^2.2.10",
+    "@types/jsdom": "^28.0.1",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "@vitest/coverage-v8": "^4.1.5",
+    "@vue/language-plugin-pug": "^3.2.7",
     "brotli-size": "^4.0.0",
-    "eslint": "^8.57.0",
-    "eslint-config-love": "^52.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^17.7.0",
-    "eslint-plugin-promise": "^6.2.0",
-    "eslint-plugin-vue": "^9.26.0",
-    "eslint-plugin-vue-pug": "^0.6.2",
-    "fs-extra": "^11.2.0",
-    "jsdom": "^24.1.3",
-    "pug": "^3.0.3",
-    "stylelint": "^16.6.1",
-    "stylelint-config-standard-scss": "^13.1.0",
-    "typescript": "^5.4.5",
-    "vite": "^6.2.3",
-    "vitest": "^3.0.9",
-    "vue": "^3.4.27",
-    "vue-eslint-parser": "^9.4.2",
-    "vue-eslint-parser-template-tokenizer-pug": "^0.4.11",
-    "vue-tsc": "^2.0.19"
+    "cssnano": "^7.1.7",
+    "fs-extra": "^11.3.4",
+    "jsdom": "^29.1.0",
+    "postcss": "^8.5.12",
+    "pug": "^3.0.4",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10",
+    "vitest": "^4.1.5",
+    "vue": "^3.5.33",
+    "vue-tsc": "^3.2.7"
   },
   "files": [
     "custom-element",
@@ -70,7 +55,6 @@
   "bugs": {
     "url": "https://github.com/beercss/beercss/issues"
   },
-  "packageManager": "pnpm@9.1.4+sha512.9df9cf27c91715646c7d675d1c9c8e41f6fce88246f1318c1aa6a1ed1aeb3c4f032fcdf4ba63cc69c4fe6d634279176b5358727d8f2cc1e65b65f43ce2f8bfb0",
   "dependencies": {
     "material-dynamic-colors": "^1.1.4"
   }

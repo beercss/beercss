@@ -1,9 +1,19 @@
 import { build } from "vite";
 import fs from "fs";
+import cssnano from "cssnano";
 
 export default async function() {
   try {
     await build({
+      css: {
+        postcss: {
+          plugins: [
+            cssnano({
+              preset: 'default',
+            }),
+          ],
+        },
+      },
       build: {
         esbuild: {
           legalComments: 'none'
@@ -19,7 +29,7 @@ export default async function() {
           output: {
             entryFileNames: "[name].min.js",
             chunkFileNames: "[name].min.js",
-            assetFileNames: (info) => (info.name.includes(".css")) ? "[name].min.css" : "[name].[ext]",
+            assetFileNames: (info) => (info.name?.includes(".css")) ? "[name].min.css" : "[name].[ext]",
             manualChunks: undefined,
           },
         },

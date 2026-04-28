@@ -9,7 +9,8 @@ navigator.userAgent.includes("Linux");
 navigator.userAgent.includes("Android");
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 function isDark() {
-  return window == null ? void 0 : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var _a, _b;
+  return ((_b = (_a = window == null ? void 0 : window.matchMedia) == null ? void 0 : _a.call(window, "(prefers-color-scheme: dark)")) == null ? void 0 : _b.matches) ?? false;
 }
 async function wait(milliseconds) {
   await new Promise((resolve) => setTimeout(resolve, milliseconds));

@@ -6,7 +6,7 @@ nav {
   box-sizing: border-box;
 
   & > a,
-  & > :is(ol, ul) > li > a {
+  & > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a {
     all: unset;
     box-sizing: border-box;
     display: flex;
@@ -69,7 +69,7 @@ nav {
     justify-content: space-around;
 
     & > a,
-    & > :is(ol, ul) > li > a {
+    & > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a {
       flex: 1;
       max-inline-size: 10rem;
       min-block-size: 5rem;
@@ -96,7 +96,7 @@ nav {
     justify-content: flex-start;
 
     & > a,
-    & > :is(ol, ul) > li > a {
+    & > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a {
       min-block-size: 3.5rem;
     }
   }
@@ -116,7 +116,7 @@ nav {
     align-items: flex-start;
 
     & > a,
-    & > :is(ol, ul) > li > a {
+    & > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a {
       flex-direction: row;
       justify-content: flex-start;
       padding: 0 1rem;
@@ -143,7 +143,7 @@ nav {
 
   &.full-width {
     & > a,
-    & > :is(ol, ul) > li > a {
+    & > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a {
       max-inline-size: none;
     }
   }

@@ -59,14 +59,6 @@ async function run(from: Element, to: Element | null, options?: any, e?: Event):
   addClass(to, "active");
 }
 
-function onClickElement(e: Event) {
-  void run(e.currentTarget as HTMLElement, null, null, e);
-}
-
-function onKeydownElement(e: KeyboardEvent) {
-  if (e.key === "Enter") void run(e.currentTarget as HTMLElement, null, null, e);
-}
-
 function setup() {
   if (_context.ui || _mutation || !_context.MutationObserver) return;
   _mutation = new MutationObserver(onMutation);
@@ -74,12 +66,22 @@ function setup() {
   onMutation();
 }
 
+function onClickDataUi(e: Event) {
+  const from = (e.target as HTMLElement).closest("[data-ui]") as HTMLElement;
+  if (from) void run(from, null, null, e);
+}
+
+function onKeydownDataUi(e: KeyboardEvent) {
+  const from = (e.target as HTMLElement).closest("[data-ui]") as HTMLElement;
+  if (from && (hasTag(from, "a") && !from.getAttribute("href")) && e.key === "Enter") void run(from, null, null, e);
+}
+
 function updateAllDataUis() {
-  const elements = queryAll("[data-ui]");
-  for (let i = 0, n = elements.length; i < n; i++) {
-    onWeak(elements[i], "click", onClickElement);
-    if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) onWeak(elements[i], "keydown", onKeydownElement);
-  }
+  const body = document.body;
+  if (!body) return;
+
+  onWeak(body, "click", onClickDataUi);
+  onWeak(body, "keydown", onKeydownDataUi);
 }
 
 function _ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | undefined | Promise<IBeerCssTheme> {

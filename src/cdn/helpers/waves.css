@@ -1,8 +1,8 @@
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not([class*=ripple]),
 nav:is(.left, .right, .bottom, .top).max > a,
-nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a,
+nav:is(.left, .right, .bottom, .top).max > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a,
 nav:is(.left, .right, .bottom, .top):not(.max) > a > i,
-nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a > i {
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a > i {
   &::after {
     content: "";
     position: absolute;

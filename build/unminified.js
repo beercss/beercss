@@ -16,7 +16,7 @@ export default async function() {
           output: {
             entryFileNames: "[name].js",
             chunkFileNames: "[name].js",
-            assetFileNames: (info) => (info.name.includes(".css")) ? "[name].css" : "[name].[ext]",
+            assetFileNames: (info) => (info.name?.includes(".css")) ? "[name].css" : "[name].[ext]",
             manualChunks: undefined,
           },
         },
