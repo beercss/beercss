@@ -2,116 +2,421 @@
   --_input: 3rem;
   --_start: 1.2rem;
   --_middle: calc(var(--_input, 0) / 2);
+
   border-radius: 0.25rem 0.25rem 0 0;
   min-block-size: var(--_input);
   display: flex;
   flex-direction: column;
+
+  &.fill {
+    --_background: var(--surface-variant);
+
+    background-color: unset !important;
+    color: unset !important;
+
+    & > :is(input, select, textarea) {
+      background-color: var(--_background);
+      z-index: 0;
+    }
+  }
+
+  &.small {
+    --_input: 2.5rem;
+    --_start: 1rem;
+  }
+
+  &.large {
+    --_input: 3.5rem;
+    --_start: 1.4rem;
+  }
+
+  &.extra {
+    --_input: 4rem;
+    --_start: 1.6rem;
+  }
+
+  &.border {
+    border-radius: 0.25rem;
+
+    & > :is(input, textarea, select) {
+      border-color: var(--outline);
+
+      &:focus {
+        border-color: var(--primary);
+      }
+    }
+  }
+
+  &[class*=round] {
+    border-radius: 1.5rem;
+
+    &.small {
+      border-radius: 1.25rem;
+    }
+
+    &.large {
+      border-radius: 1.75rem;
+    }
+
+    &.extra {
+      border-radius: 2rem;
+    }
+
+    & > :is(input, textarea, select) {
+      padding-inline: 1.4376rem;
+
+      &:focus {
+        padding-inline: 1.375rem;
+      }
+    }
+
+    &:not(.border, .fill) > :is(input, textarea, select) {
+      box-shadow: var(--elevate1);
+
+      &:focus {
+        box-shadow: var(--elevate2);
+      }
+    }
+  }
+
+  /* icon */
+  & > :is(i, img, svg, progress.circle, a) {
+    position: absolute;
+    inset: calc((var(--_input, 0) / 2) - 0.75rem) auto auto;
+    cursor: pointer;
+    z-index: 10;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+    margin: auto 0;
+    pointer-events: none;
+
+    &:first-child {
+      inset: calc(var(--_middle, 0) - 0.75rem) auto auto 1rem;
+    }
+
+    &:not(:first-child) {
+      inset: calc(var(--_middle, 0) - 0.75rem) 1rem auto auto;
+    }
+  }
+
+  & > :is(a, .front) {
+    pointer-events: all !important;
+  }
+
+  & > a > :is(i, img, svg, progress.circle, a) {
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+  }
+
+  &.invalid {
+    & > i {
+      color: var(--error);
+    }
+
+    &:not(.border, [class*=round]) > :is(input, textarea, select) {
+      &,
+      &:focus {
+        border-block-end-color: var(--error);
+      }
+    }
+
+    &.border > :is(input, textarea, select) {
+      &,
+      &:focus {
+        border-color: var(--error);
+      }
+    }
+
+    & > output.invalid {
+      display: inline-block;
+
+      & ~ menu {
+        inset: auto auto 1.75rem 0;
+      }
+    }
+
+    & > output:not(.invalid) {
+      display: none;
+    }
+
+    &.label {
+      & > label,
+      & > label::after {
+        color: var(--error) !important;
+        border-color: var(--error) !important;
+      }
+    }
+  }
+
+  & > progress.circle {
+    border-width: 0.1875rem;
+  }
+
+  /* input, textarea and select */
+  & > :is(input, textarea, select) {
+    all: unset;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: inherit;
+    border: 0.0625rem solid transparent;
+    padding: 0 0.9375rem;
+    font-family: inherit;
+    font-size: 1rem;
+    min-block-size: var(--_input);
+    outline: none;
+    z-index: 1;
+    background: none;
+    resize: none;
+    text-align: start;
+    cursor: text;
+
+    &:focus {
+      border: 0.125rem solid transparent;
+      padding-inline: 0.875rem;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  & > textarea {
+    padding-block-start: var(--_start) !important;
+
+    &:focus {
+      padding-block-start: calc(var(--_start, 0) - 0.01rem) !important;
+    }
+
+    &:not([rows]) {
+      field-sizing: content;
+      max-block-size: 12rem;
+    }
+  }
+
+  & > select {
+    user-select: none;
+    padding-block-start: 1rem;
+
+    & > option {
+      background-color: var(--surface);
+    }
+  }
+
+  & > input {
+    padding-block-start: 1rem;
+  }
+
+  &.prefix {
+    & > :is(input, textarea, select) {
+      padding-inline-start: 2.9375rem;
+
+      &:focus {
+        padding-inline-start: 2.875rem;
+      }
+    }
+
+    & > .slider {
+      margin-inline-start: 3.5rem;
+    }
+  }
+
+  &.suffix {
+    & > :is(input, textarea, select) {
+      padding-inline-end: 2.9375rem;
+
+      &:focus {
+        padding-inline-end: 2.875rem;
+      }
+    }
+
+    & > .slider {
+      margin-inline-end: 3.5rem;
+    }
+  }
+
+  &:not(.border, [class*=round]) {
+    & > :is(input, textarea, select) {
+      border-block-end-color: var(--outline);
+
+      &:focus {
+        border-block-end-color: var(--primary);
+      }
+    }
+  }
+
+  &:has(> :disabled) {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:not(.label),
+  &.border:not(.fill) {
+    & > :is(input, select) {
+      padding-block-start: 0;
+    }
+
+    & > textarea {
+      padding-block-start: calc(var(--_start, 0) - 0.5rem) !important;
+
+      &:focus {
+        padding-block-start: calc(var(--_start, 0) - 0.51rem) !important;
+      }
+    }
+  }
+
+  /* label */
+  &.label {
+    & > label {
+      --_start: 1rem;
+
+      position: absolute;
+      inset: -0.5rem 0.9375rem 0 var(--_start);
+      display: flex;
+      block-size: calc(var(--_input, 0) + 1rem);
+      line-height: calc(var(--_input, 0) + 1rem);
+      font-size: 1rem;
+      transition: all 0.2s;
+      gap: 0.25rem;
+      white-space: nowrap;
+      pointer-events: none;
+
+      & > a {
+        block-size: inherit;
+        line-height: inherit;
+        inline-size: 1rem;
+
+        & > :is(i, img, svg) {
+          block-size: 1rem;
+          line-height: 1rem;
+          inline-size: 1rem;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    &[class*=round] > label {
+      inset: -0.5rem 1.9375rem 0 var(--_start);
+    }
+
+    &.prefix > label {
+      --_start: 3rem;
+    }
+
+    & > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
+      block-size: 2.5rem;
+      line-height: 2.5rem;
+      font-size: 0.75rem;
+    }
+
+    &.border:not(.fill) {
+      & > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
+        block-size: 1rem;
+        line-height: 1rem;
+      }
+
+      & > label::after {
+        content: "";
+        display: block;
+        margin: 0.5rem 0 0;
+        border-block-start: 0.0625rem solid var(--outline);
+        block-size: 1rem;
+        transition: none;
+        flex: auto;
+      }
+
+      & > :focus + label::after {
+        border-block-start: 0.125rem solid var(--primary);
+      }
+
+      & > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
+      & > select {
+        clip-path: polygon(-2% -2%, 0.75rem -2%, 0.75rem 0.5rem, calc(100% - 1rem) 0.5rem, calc(100% - 1rem) -2%, 102% -2%, 102% 102%, -2% 102%);
+      }
+
+      &[class*=round] {
+        & > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
+        & > select {
+          clip-path: polygon(-2% -2%, 1.25rem -2%, 1.25rem 0.5rem, calc(100% - 2rem) 0.5rem, calc(100% - 2rem) -2%, 102% -2%, 102% 102%, -2% 102%);
+        }
+      }
+    }
+
+    & > :focus + label {
+      color: var(--primary);
+    }
+  }
+
+  /* helper */
+  & > output {
+    display: inline-block;
+    font-size: 0.75rem;
+    background: none !important;
+    padding: 0.25rem 1rem;
+    line-height: 1.25rem;
+    align-self: start;
+
+    &:not(.invalid) {
+      display: inline-block;
+
+      & ~ menu {
+        inset: auto auto 1.75rem 0;
+      }
+    }
+  }
+
+  &:not(.invalid) {
+    & > output.invalid {
+      display: none;
+    }
+
+    & > output:not(.invalid) {
+      display: inline-block;
+    }
+  }
+
+  &[class*=round] > output {
+    padding: 0.25rem 1.5rem;
+  }
 }
 
-.field.fill {
-  --_background: var(--surface-variant);
-  background-color: unset !important;
-  color: unset !important;
-}
+[dir=rtl] {
+  .field {
+    & > :is(i, img, svg, progress.circle, a) {
+      &:first-child {
+        inset: calc(var(--_middle, 0) - 0.75rem) 1rem auto auto;
+      }
 
-.field.fill > :is(input, select, textarea) {
-  background-color: var(--_background);
-  z-index: 0;
-}
+      &:not(:first-child) {
+        inset: calc(var(--_middle, 0) - 0.75rem) auto auto 1rem;
+      }
+    }
 
-.field.small {
-  --_input: 2.5rem;
-  --_start: 1rem;
-}
+    &.label {
+      & > label {
+        inset: -0.5rem calc(var(--_start) - 0.0625rem) 0 0.9375rem;
+      }
 
-.field.large {
-  --_input: 3.5rem;
-  --_start: 1.4rem;
-}
+      &[class*=round] > label {
+        inset: -0.5rem var(--_start) 0 1.9375rem;
+      }
 
-.field.extra {
-  --_input: 4rem;
-  --_start: 1.6rem;
-}
+      &.border:not(.fill) {
+        & > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
+        & > select {
+          clip-path: polygon(-2% -2%, 1rem -2%, 1rem 0.5rem, calc(100% - 0.75rem) 0.5rem, calc(100% - 0.75rem) -2%, 102% -2%, 102% 102%, -2% 102%);
+        }
 
-.field.border {
-  border-radius: 0.25rem;
-}
-
-.field[class*=round].small {
-  border-radius: 1.25rem;
-}
-
-.field[class*=round] {
-  border-radius: 1.5rem;
-}
-
-.field[class*=round].large {
-  border-radius: 1.75rem;
-}
-
-.field[class*=round].extra {
-  border-radius: 2rem;
-}
-
-/* icon */
-.field > :is(i, img, svg, progress.circle, a) {
-  position: absolute;
-  inset: calc((var(--_input, 0) / 2) - 0.75rem) auto auto auto;
-  cursor: pointer;
-  z-index: 10;
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
-  margin: auto 0;
-  pointer-events: none;
-}
-
-.field > :is(a, .front) {
-  pointer-events: all !important;
-}
-
-.field > a > :is(i, img, svg, progress.circle, a) {
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
-}
-
-.field > :is(i, img, svg, progress.circle, a),
-[dir=rtl] .field > :is(i, img, svg, progress.circle, a):first-child {
-  inset: calc(var(--_middle, 0) - 0.75rem) 1rem auto auto;
-}
-
-.field > :is(i, img, svg, progress.circle, a):first-child,
-[dir=rtl] .field > :is(i, img, svg, progress.circle, a) {
-  inset: calc(var(--_middle, 0) - 0.75rem) auto auto 1rem;
-}
-
-.field.invalid > i {
-  color: var(--error);
-}
-
-.field > progress.circle {
-  border-width: 0.1875rem;
-}
-
-/* input, textarea and select */
-.field > :is(input, textarea, select) {
-  all: unset;
-  position: relative;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  border-radius: inherit;
-  border: 0.0625rem solid transparent;
-  padding: 0 0.9375rem;
-  font-family: inherit;
-  font-size: 1rem;
-  min-block-size: var(--_input);
-  outline: none;
-  z-index: 1;
-  background: none;
-  resize: none;
-  text-align: start;
-  cursor: text;
+        &[class*=round] {
+          & > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
+          & > select {
+            clip-path: polygon(-2% -2%, 2rem -2%, 2rem 0.5rem, calc(100% - 1.25rem) 0.5rem, calc(100% - 1.25rem) -2%, 102% -2%, 102% 102%, -2% 102%);
+          }
+        }
+      }
+    }
+  }
 }
 
 input::-webkit-date-and-time-value {
@@ -119,18 +424,8 @@ input::-webkit-date-and-time-value {
 }
 
 :is(input, select, textarea):is(:-webkit-autofill, :autofill) {
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: var(--on-surface);
-}
-
-.field > :is(input, textarea, select):focus {
-  border: 0.125rem solid transparent;
-  padding-inline: 0.875rem;
-}
-
-.field > textarea:not([rows]) {
-  field-sizing: content;
-  max-block-size: 12rem;
 }
 
 input[type=file],
@@ -168,265 +463,20 @@ input[type=number] {
   appearance: textfield;
 }
 
-.field.border > :is(input, textarea, select) {
-  border-color: var(--outline);
-}
+@document url-prefix() {
+  .field {
+    & > select:focus {
+      background-color: var(--surface);
 
-.field.border > :is(input, textarea, select):focus {
-  border-color: var(--primary);
-}
+      & + label {
+        z-index: 1;
+      }
+    }
 
-.field[class*=round] > :is(input, textarea, select) {
-  padding-inline: 1.4376rem;
-}
-
-.field[class*=round] > :is(input, textarea, select):focus {
-  padding-inline: 1.375rem;
-}
-
-.field.prefix > :is(input, textarea, select) {
-  padding-inline-start: 2.9375rem;
-}
-
-.field.prefix > .slider {
-  margin-inline-start: 3.5rem;
-}
-
-.field.prefix > :is(input, textarea, select):focus {
-  padding-inline-start: 2.875rem;
-}
-
-.field.suffix > :is(input, textarea, select) {
-  padding-inline-end: 2.9375rem;
-}
-
-.field.suffix > .slider {
-  margin-inline-end: 3.5rem;
-}
-
-.field.suffix > :is(input, textarea, select):focus {
-  padding-inline-end: 2.875rem;
-}
-
-.field:not(.border, [class*=round]) > :is(input, textarea, select) {
-  border-block-end-color: var(--outline);
-}
-
-.field:not(.border, [class*=round]) > :is(input, textarea, select):focus {
-  border-block-end-color: var(--primary);
-}
-
-.field[class*=round]:not(.border, .fill) > :is(input, textarea, select),
-.field[class*=round]:not(.border) > :is(input, textarea, select):focus {
-  box-shadow: var(--elevate1);
-}
-
-.field[class*=round]:not(.border, .fill) > :is(input, textarea, select):focus {
-  box-shadow: var(--elevate2);
-}
-
-.field.invalid:not(.border, [class*=round]) > :is(input, textarea, select),
-.field.invalid:not(.border, [class*=round]) > :is(input, textarea, select):focus {
-  border-block-end-color: var(--error);
-}
-
-.field.invalid.border > :is(input, textarea, select),
-.field.invalid.border > :is(input, textarea, select):focus {
-  border-color: var(--error);
-}
-
-.field:has(> :disabled) {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.field > :disabled {
-  cursor: not-allowed;
-}
-
-.field > select {
-  user-select: none;
-}
-
-@-moz-document url-prefix() {
-  .field > select:focus {
-    background-color: var(--surface);
+    &.fill > select:focus {
+      background-color: var(--surface-variant);
+    }
   }
-
-  .field.fill > select:focus {
-    background-color: var(--surface-variant);
-  }
-  
-  .field > select:focus + label {
-    z-index: 1;
-  }
-}
-
-.field > select > option {
-  background-color: var(--surface);
-}
-
-.field > :is(input, select) {
-  padding-block-start: 1rem;
-}
-
-.field:not(.label) > :is(input, select),
-.field.border:not(.fill) > :is(input, select) {
-  padding-block-start: 0;
-}
-
-.field > textarea {
-  padding-block-start: var(--_start) !important;
-}
-
-.field > textarea:focus {
-  padding-block-start: calc(var(--_start, 0) - 0.01rem) !important;
-}
-
-.field:not(.label) > textarea,
-.field.border:not(.fill) > textarea {
-  padding-block-start: calc(var(--_start, 0) - 0.5rem) !important;
-}
-
-.field:not(.label) > textarea:focus,
-.field.border:not(.fill) > textarea:focus {
-  padding-block-start: calc(var(--_start, 0) - 0.51rem) !important;
-}
-
-/* label */
-.field.label > label {
-  --_start: 1rem;
-  position: absolute;
-  inset: -0.5rem 0.9375rem 0 var(--_start);
-  display: flex;
-  block-size: calc(var(--_input, 0) + 1rem);
-  line-height: calc(var(--_input, 0) + 1rem);
-  font-size: 1rem;
-  transition: all 0.2s;
-  gap: 0.25rem;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-[dir=rtl] .field.label > label {
-  inset: -0.5rem calc(var(--_start) - 0.0625rem) 0 0.9375rem;
-}
-
-.field.label[class*=round] > label {
-  inset: -0.5rem 1.9375rem 0 var(--_start);
-}
-
-[dir=rtl] .field.label[class*=round] > label {
-  inset: -0.5rem var(--_start) 0 1.9375rem;
-}
-
-.field.label.border.prefix:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
-  --_start: 1rem;
-}
-
-.field.label[class*=round] > label,
-.field.label.border.prefix[class*=round]:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
-  --_start: 1.5rem;
-}
-
-.field.label.prefix > label {
-  --_start: 3rem;
-}
-
-.field.label > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
-  block-size: 2.5rem;
-  line-height: 2.5rem;
-  font-size: 0.75rem;
-}
-
-.field.label.border:not(.fill) > :is(label.active, :focus + label, [placeholder]:not(:placeholder-shown) + label, select + label) {
-  block-size: 1rem;
-  line-height: 1rem;
-}
-
-.field.label.border:not(.fill) > label::after {
-  content: "";
-  display: block;
-  margin: 0.5rem 0 0 0;
-  border-block-start: 0.0625rem solid var(--outline);
-  block-size: 1rem;
-  transition: none;
-  flex: auto;
-}
-
-.field.label.border:not(.fill) > :focus + label::after {
-  border-block-start: 0.125rem solid var(--primary);
-}
-
-.field.label.border:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
-.field.label.border:not(.fill) > select {
-  clip-path: polygon(-2% -2%, 0.75rem -2%, 0.75rem 0.5rem, calc(100% - 1rem) 0.5rem, calc(100% - 1rem) -2%, 102% -2%, 102% 102%, -2% 102%);
-}
-
-[dir=rtl] .field.label.border:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
-[dir=rtl] .field.label.border:not(.fill) > select {
-  clip-path: polygon(-2% -2%, 1rem -2%, 1rem 0.5rem, calc(100% - 0.75rem) 0.5rem, calc(100% - 0.75rem) -2%, 102% -2%, 102% 102%, -2% 102%);
-}
-
-.field.label.border[class*=round]:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
-.field.label.border[class*=round]:not(.fill) > select {
-  clip-path: polygon(-2% -2%, 1.25rem -2%, 1.25rem 0.5rem, calc(100% - 2rem) 0.5rem, calc(100% - 2rem) -2%, 102% -2%, 102% 102%, -2% 102%);
-}
-
-[dir=rtl] .field.label.border[class*=round]:not(.fill) > :is(input, textarea):is(:focus, [placeholder]:not(:placeholder-shown), .active),
-[dir=rtl] .field.label.border[class*=round]:not(.fill) > select {
-  clip-path: polygon(-2% -2%, 2rem -2%, 2rem 0.5rem, calc(100% - 1.25rem) 0.5rem, calc(100% - 1.25rem) -2%, 102% -2%, 102% 102%, -2% 102%);
-}
-
-.field.label > :focus + label {
-  color: var(--primary);
-}
-
-.field.label.invalid > label,
-.field.label.invalid > label::after {
-  color: var(--error) !important;
-  border-color: var(--error) !important;
-}
-
-.field.label > label > a {
-  block-size: inherit;
-  line-height: inherit;
-  inline-size: 1rem;
-}
-
-.field.label > label > a > :is(i, img, svg) {
-  block-size: 1rem;
-  line-height: 1rem;
-  inline-size: 1rem;
-  font-size: 1rem;
-}
-
-/* helper */
-.field > output {
-  display: inline-block;
-  font-size: 0.75rem;
-  background: none !important;
-  padding: 0.25rem 1rem;
-  line-height: 1.25rem;
-  align-self: start;
-}
-
-.field > output.invalid {
-  color: var(--error) !important;
-}
-
-.field[class*=round] > output {
-  padding: 0.25rem 1.5rem;
-}
-
-.field.invalid > output:not(.invalid),
-.field:not(.invalid) > output.invalid {
-  display: none;
-}
-
-.field.invalid > output.invalid ~ menu,
-.field:not(.invalid) > output:not(.invalid) ~ menu {
-  inset: auto auto 1.75rem 0;
 }
 
 table td > .field {
@@ -437,13 +487,13 @@ fieldset {
   border-radius: 0.25rem;
   padding: 1rem;
   border: 0.0625rem solid var(--outline-variant);
-}
 
-fieldset > legend {
-  margin: 0 -0.25rem;
-  padding: 0 0.25rem;
-}
+  & > legend {
+    margin: 0 -0.25rem;
+    padding: 0 0.25rem;
 
-fieldset > legend + * {
-  margin-block-start: 0 !important;
+    & + * {
+      margin-block-start: 0 !important;
+    }
+  }
 }

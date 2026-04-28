@@ -1,5 +1,6 @@
 .tooltip {
   --_space: -0.5rem;
+
   visibility: hidden;
   display: flex;
   align-items: center;
@@ -21,84 +22,73 @@
   transition: all var(--speed2);
   line-height: normal;
   transform: translate(-50%, -100%) scale(0.9);
-}
 
-.tooltip:not(.max):hover {
-  visibility: hidden;
-  opacity: 0;
-}
+  &:not(.max):hover {
+    visibility: hidden;
+    opacity: 0;
+  }
 
-.tooltip.left {
-  inset: 50% auto auto 0;
-  transform: translate(-100%, -50%) scale(0.9);
-}
+  &.left {
+    inset: 50% auto auto 0;
+    transform: translate(-100%, -50%) scale(0.9);
+    margin-inline: var(--_space) !important;
+  }
 
-.tooltip.right {
-  inset: 50% 0 auto auto;
-  transform: translate(100%, -50%) scale(0.9);
-}
+  &.right {
+    inset: 50% 0 auto auto;
+    transform: translate(100%, -50%) scale(0.9);
+    margin-inline: var(--_space) !important;
+  }
 
-.tooltip.bottom {
-  inset: auto auto 0 50%;
-  transform: translate(-50%, 100%) scale(0.9);
-}
+  &.bottom {
+    inset: auto auto 0 50%;
+    transform: translate(-50%, 100%) scale(0.9);
+    margin-block-end: var(--_space) !important;
+  }
 
-.tooltip.small {
-  inline-size: 8rem;
-  white-space: normal;
-}
+  &.small {
+    inline-size: 8rem;
+    white-space: normal;
+  }
 
-.tooltip.medium {
-  inline-size: 12rem;
-  white-space: normal;
-}
+  &.medium {
+    inline-size: 12rem;
+    white-space: normal;
+  }
 
-.tooltip.large {
-  inline-size: 16rem;
-  white-space: normal;
+  &.large {
+    inline-size: 16rem;
+    white-space: normal;
+  }
+
+  &.no-space { --_space: 0; }
+  &.medium-space { --_space: -1rem; }
+  &.large-space { --_space: -1.5rem; }
+
+  &:not(.left, .right, .bottom) {
+    margin-block-start: var(--_space) !important;
+  }
+
+  &.max {
+    display: block;
+    font-size: inherit;
+    white-space: normal;
+    text-align: start;
+    inline-size: 20rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: var(--elevate2);
+  }
 }
 
 :hover > .tooltip {
   visibility: visible;
   opacity: 1;
   transform: translate(-50%, -100%) scale(1);
-}
 
-:hover > .tooltip.left {
-  transform: translate(-100%, -50%) scale(1);
-}
-
-:hover > .tooltip.right {
-  transform: translate(100%, -50%) scale(1);
-}
-
-:hover > .tooltip.bottom {
-  transform: translate(-50%, 100%) scale(1);
-}
-
-.tooltip.no-space {
-  --_space: 0;
-}
-
-.tooltip.medium-space {
-  --_space: -1rem;
-}
-
-.tooltip.large-space {
-  --_space: -1.5rem;
-}
-
-.tooltip:not(.left, .right, .bottom) {
-  margin-block-start: var(--_space) !important;
-}
-
-.tooltip.left,
-.tooltip.right {
-  margin-inline: var(--_space) !important;
-}
-
-.tooltip.bottom {
-  margin-block-end: var(--_space) !important;
+  &.left { transform: translate(-100%, -50%) scale(1); }
+  &.right { transform: translate(100%, -50%) scale(1); }
+  &.bottom { transform: translate(-50%, 100%) scale(1); }
 }
 
 menu:active ~ .tooltip,
@@ -107,25 +97,16 @@ menu:active ~ .tooltip,
   visibility: hidden;
 }
 
-.slider > .tooltip {
-  --_space: -1.25rem;
-}
+.slider {
+  & > .tooltip {
+    --_space: -1.25rem;
+  }
 
-.slider.vertical > .tooltip {
-  --_space: -0.75rem;
-}
+  &.vertical > .tooltip {
+    --_space: -0.75rem;
 
-.slider.vertical > .tooltip:is(.left, .right) {
-  --_space: -0.5rem;
-}
-
-.tooltip.max {
-  display: block;
-  font-size: inherit;
-  white-space: normal;
-  text-align: start;
-  inline-size: 20rem;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  box-shadow: var(--elevate2);
+    &:is(.left, .right) {
+      --_space: -0.5rem;
+    }
+  }
 }

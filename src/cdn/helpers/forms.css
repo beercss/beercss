@@ -1,6 +1,7 @@
 .round,
 [class*=-round] {
   --_round: 2rem;
+
   border-radius: var(--_round) !important;
 }
 
@@ -45,18 +46,20 @@
   border-radius: 50%;
 }
 
-:is(.circle, .square):is(button, .button, .chip) {
-  padding: 0;
-  block-size: var(--_size);
-  inline-size: var(--_size);
-}
+:is(.circle, .square) {
+  & > span:not([class]) {
+    display: none;
+  }
 
-:is(.circle, .square) > span:not([class]) {
-  display: none;
-}
+  &.round {
+    border-radius: 1rem !important;
+  }
 
-:is(.circle, .square).round {
-  border-radius: 1rem !important;
+  &:is(button, .button, .chip) {
+    padding: 0;
+    block-size: var(--_size);
+    inline-size: var(--_size);
+  }
 }
 
 .border:not(table, .field, .list, menu, article) {

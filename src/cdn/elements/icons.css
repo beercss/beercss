@@ -2,6 +2,7 @@ i,
 :is(.checkbox, .radio, .switch) > span::before,
 :is(.checkbox, .radio, .switch) > span > i {
   --_size: 1.5rem;
+
   font-family: var(--font-icon);
   font-weight: normal;
   font-style: normal;
@@ -28,50 +29,55 @@ i,
   border-radius: 0;
 }
 
-i:has(.badge) {
-  overflow: unset;
+i {
+  &:has(.badge) {
+    overflow: unset;
+  }
+
+  &.tiny {
+    --_size: 1rem;
+  }
+
+  &.small {
+    --_size: 1.25rem;
+  }
+
+  &.medium {
+    --_size: 1.5rem;
+  }
+
+  &.large {
+    --_size: 1.75rem;
+  }
+
+  &.extra {
+    --_size: 2rem;
+  }
+
+  &.fill,
+  a.active > &,
+  button.active > & {
+    font-variation-settings: "FILL" 1;
+  }
+
+  & > :is(img, svg) {
+    inline-size: 100%;
+    block-size: 100%;
+    background-size: 100%;
+    border-radius: inherit;
+    position: absolute;
+    inset: 0 auto auto 0;
+    padding: inherit;
+  }
+
+  &[class*=fa-] {
+    font-size: calc(var(--_size, 0) * 0.85);
+    line-height: normal;
+    block-size: auto;
+    min-block-size: auto;
+  }
 }
 
-i.tiny {
-  --_size: 1rem;
-}
-
-.chip > i,
-i.small {
+.chip > i {
   --_size: 1.25rem;
-}
-
-i.medium {
-  --_size: 1.5rem;
-}
-
-i.large {
-  --_size: 1.75rem;
-}
-
-i.extra {
-  --_size: 2rem;
-}
-
-i.fill,
-a.active > i,
-button.active > i {
-  font-variation-settings: "FILL" 1;
-}
-
-i > :is(img, svg) {
-  inline-size: 100%;
-  block-size: 100%;
-  background-size: 100%;
-  border-radius: inherit;
-  position: absolute;
-  inset: 0 auto auto 0;
-  padding: inherit;
-}
-
-i[class*=fa-] {
-  font-size: calc(var(--_size, 0) * 0.85);
-  line-height: normal;
-  block-size: auto;
-  min-block-size: auto;
 }

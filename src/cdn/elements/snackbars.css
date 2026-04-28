@@ -18,29 +18,24 @@
   transition: all var(--speed2);
   transform: translate(-50%, 1rem);
   opacity: 0;
+
+  &.top {
+    inset: 6rem auto auto 50%;
+  }
+
+  &:is(.active),
+  &:popover-open {
+    visibility: visible;
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+
+  & > .max {
+    flex: auto;
+  }
 }
 
-.snackbar.top {
-  inset: 6rem auto auto 50%;
-}
-
-.snackbar:is(.active) {
-  visibility: visible;
-  transform: translate(-50%, 0);
-  opacity: 1;
-}
-
-.snackbar:popover-open {
-  visibility: visible;
-  transform: translate(-50%, 0);
-  opacity: 1;
-}
-
-.snackbar > .max {
-  flex: auto;
-}
-
-@media only screen and (min-width: 993px) {
+@media only screen and (width >= 993px) {
   .snackbar {
     inline-size: 40%;
   }

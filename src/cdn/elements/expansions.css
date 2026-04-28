@@ -1,15 +1,15 @@
 summary {
   list-style-type: none;
   cursor: pointer;
-}
 
-summary::-webkit-details-marker {
-  display: none;
-}
+  &::-webkit-details-marker {
+    display: none;
+  }
 
-summary > * {
-  pointer-events: none;
-  margin: 0;
+  & > * {
+    pointer-events: none;
+    margin: 0;
+  }
 }
 
 li > details > summary + .list {

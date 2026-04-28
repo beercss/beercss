@@ -1,32 +1,48 @@
 :has(> main) {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
-  grid-template-areas: 
-    "left top right"
-    "left header right"
-    "left main right"
-    "left footer right"
-    "left bottom right";
+  grid-template:
+    "left top right" auto
+    "left header right" auto
+    "left main right" minmax(0, 1fr)
+    "left footer right" auto
+    "left bottom right" auto / auto minmax(0, 1fr) auto;
   min-block-size: 100dvh;
   box-sizing: border-box;
   background-color: var(--surface);
+
+  & > :is(header, footer).fixed {
+    transform: none;
+    box-sizing: content-box;
+    position: sticky;
+    inset: 0;
+    z-index: 12;
+  }
+
+  & > header {
+    padding-block-start: var(--top, 0);
+  }
+
+  & > footer {
+    padding-block-end: var(--bottom, 0);
+  }
 }
 
-nav.left {
-  grid-area: left;
-}
+nav {
+  &.left {
+    grid-area: left;
+  }
 
-nav.right {
-  grid-area: right;
-}
+  &.right {
+    grid-area: right;
+  }
 
-nav.top {
-  grid-area: top;
-}
+  &.top {
+    grid-area: top;
+  }
 
-nav.bottom {
-  grid-area: bottom;
+  &.bottom {
+    grid-area: bottom;
+  }
 }
 
 header {
@@ -39,6 +55,7 @@ footer {
 
 main {
   --_padding: 0.5rem;
+
   grid-area: main;
   padding: var(--_padding);
   overflow: clip;
@@ -46,12 +63,14 @@ main {
 
 aside {
   z-index: 1;
-}
 
-aside:not(.fixed, .absolute).right {
-  float: right;
-}
+  &:not(.fixed, .absolute) {
+    &.right {
+      float: right;
+    }
 
-aside:not(.fixed, .absolute).left {
-  float: left;
+    &.left {
+      float: left;
+    }
+  }
 }
