@@ -202,7 +202,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.20/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.21/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -212,7 +212,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.20/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.21/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -222,7 +222,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.20/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.21/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -232,7 +232,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.20/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.21/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
@@ -456,8 +456,12 @@ div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .toolt
   border-end-end-radius: var(--_round) !important;
 }
 
-.circle:not(.extend) {
+.circle {
   border-radius: 50%;
+}
+
+.circle:is(button, .button, .chip) {
+  border-radius: var(--_size);
 }
 
 :is(.circle, .square):is(button, .button, .chip) {
@@ -1035,9 +1039,9 @@ sup {
 
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not([class*=ripple])::after,
 nav:is(.left, .right, .bottom, .top).max > a::after,
-nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a > i::after,
-nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a > i::after  {
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) a > i::after  {
   content: "";
   position: absolute;
   inset: 0;
@@ -1054,9 +1058,9 @@ nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a > i::after
 
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not([class*=ripple]):is(:focus-visible, :hover)::after,
 nav:is(.left, .right, .bottom, .top).max > a:not(.button, .chip):is(:focus-visible, :hover)::after,
-nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:not(.button, .chip):is(:focus-visible, :hover)::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip):is(:focus-visible, :hover)::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a:not(.button, .chip):is(:focus-visible, :hover) > i::after,
-nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:not(.button, .chip):is(:focus-visible, :hover) > i::after {
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip):is(:focus-visible, :hover) > i::after {
   background-size: 22500%;
   opacity: 0.1;
   transition: background-size var(--speed2) linear;
@@ -1064,9 +1068,9 @@ nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:not(.butto
 
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a, nav.max > a):not([class*=ripple]):active::after,
 nav:is(.left, .right, .bottom, .top).max > a:active::after,
-nav:is(.left, .right, .bottom, .top).max > :is(ol, ul) > li > a:active::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:active::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a:active > i::after,
-nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol, ul) > li > a:active > i::after {
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:active > i::after {
   background-size: 0%;
   opacity: 0;
   transition: none;
@@ -3190,7 +3194,7 @@ nav.max:is(.top, .bottom) {
 }
 
 nav:is(.left, .right, .top, .bottom) > a:not(.button, .chip),
-nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) {
+nav:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip) {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -3200,14 +3204,14 @@ nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) 
 }
 
 nav:not(.max):is(.left, .right, .top, .bottom) > a:not(.button, .chip) > i,
-nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) > i {
+nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip) > i {
   padding: 0.25rem 1rem;
   border-radius: 2rem;
   margin: 0 auto;
 }
 
 nav.max:is(.left, .right, .top, .bottom) > a:not(.button, .chip),
-nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) {
+nav.max:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip) {
   flex-direction: row;
   gap: 0.5rem;
   inline-size: auto;
@@ -3218,21 +3222,21 @@ nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a:not(.button, .ch
 }
 
 nav:is(.left, .right, .top, .bottom) > a.active:not(.button, .chip),
-nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a.active:not(.button, .chip) {
+nav:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a.active:not(.button, .chip) {
   transition: padding var(--speed1) linear;
 }
 
 nav.max:is(.top, .bottom) > a:not(.button, .chip),
-nav.max:is(.top, .bottom) > :is(ol, ul) > li > a:not(.button, .chip) {
+nav.max:is(.top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip) {
   gap: 0.25rem;
   block-size: 2.5rem;
   font-size: 0.8rem;
 }
 
 nav.max:is(.left, .right, .top, .bottom) > a.active:not(.button, .chip),
-nav.max:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a.active:not(.button, .chip),
+nav.max:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a.active:not(.button, .chip),
 nav:is(.left, .right, .top, .bottom):not(.max) > a.active:not(.button, .chip) > i,
-nav:is(.left, .right, .top, .bottom):not(.max) > :is(ol, ul) > li > a.active:not(.button, .chip) > i {
+nav:is(.left, .right, .top, .bottom):not(.max) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a.active:not(.button, .chip) > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
 }

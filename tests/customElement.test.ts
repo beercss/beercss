@@ -3,7 +3,7 @@ import BeerCssCustomElement from "../src/cdn/customElement.js";
 
 let container: HTMLElement;
 
-vi.mock('https://cdn.jsdelivr.net/npm/beercss@4.0.20/dist/cdn/beer.min.js', () => {
+vi.mock('https://cdn.jsdelivr.net/npm/beercss@4.0.21/dist/cdn/beer.min.js', () => {
   return {
     default: {},
     namedExport: '',

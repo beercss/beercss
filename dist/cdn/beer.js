@@ -1,5 +1,5 @@
 const _emptyNodeList = [];
-const _weakElements = /* @__PURE__ */ new WeakSet();
+const _weakMap = /* @__PURE__ */ new WeakMap();
 const isChrome = navigator.userAgent.includes("Chrome");
 navigator.userAgent.includes("Firefox") && !isChrome;
 navigator.userAgent.includes("Safari") && !isChrome;
@@ -59,7 +59,21 @@ function on(element, name, callback, useCapture = true) {
   if (element == null ? void 0 : element.addEventListener) element.addEventListener(name, callback, useCapture);
 }
 function onWeak(element, name, callback, useCapture = true) {
-  addWeakElement(element);
+  if (!element) return;
+  const el = element;
+  let events = _weakMap.get(el);
+  if (!events) {
+    events = /* @__PURE__ */ new Map();
+    _weakMap.set(el, events);
+  }
+  const key = name + (useCapture ? "1" : "0");
+  let callbacks = events.get(key);
+  if (!callbacks) {
+    callbacks = /* @__PURE__ */ new Set();
+    events.set(key, callbacks);
+  }
+  if (callbacks.has(callback)) return;
+  callbacks.add(callback);
   on(element, name, callback, useCapture);
 }
 function off(element, name, callback, useCapture = true) {
@@ -104,10 +118,6 @@ function updateAllClickable(element) {
   const as = queryAll("a", container);
   for (let i = 0; i < as.length; i++) removeClass(as[i], "active");
   if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
-}
-function addWeakElement(element) {
-  if (_weakElements.has(element)) return;
-  _weakElements.add(element);
 }
 function rootSizeInPixels() {
   const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
@@ -166,11 +176,16 @@ function onInputTextarea(e) {
   const textarea = e.currentTarget;
   updateTextarea(textarea);
 }
+function onClickLabelDelegation(e) {
+  const from = e.target.closest(".field > label");
+  if (!from) return;
+  Object.defineProperty(e, "currentTarget", { value: from, configurable: true });
+  onClickLabel(e);
+}
 function updateAllLabels() {
-  const labels = queryAll(".field > label");
-  for (let i = 0; i < labels.length; i++) {
-    onWeak(labels[i], "click", onClickLabel);
-  }
+  const body = document.body;
+  if (!body) return;
+  onWeak(body, "click", onClickLabelDelegation);
 }
 function updateAllInputs() {
   const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])");
@@ -338,19 +353,24 @@ function lastTheme() {
   const body = document.body;
   const light = document.createElement("body");
   light.className = "light";
+  light.style.display = "none";
   body.appendChild(light);
   const dark = document.createElement("body");
   dark.className = "dark";
+  dark.style.display = "none";
   body.appendChild(dark);
-  const fromLight = getComputedStyle(light);
-  const fromDark = getComputedStyle(dark);
-  const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--surface-variant", "--on-surface-variant", "--outline", "--outline-variant", "--shadow", "--scrim", "--inverse-surface", "--inverse-on-surface", "--inverse-primary", "--surface-dim", "--surface-bright", "--surface-container-lowest", "--surface-container-low", "--surface-container", "--surface-container-high", "--surface-container-highest"];
-  for (let i = 0, n = variables.length; i < n; i++) {
-    _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
-    _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
+  try {
+    const fromLight = getComputedStyle(light);
+    const fromDark = getComputedStyle(dark);
+    const variables = ["--primary", "--on-primary", "--primary-container", "--on-primary-container", "--secondary", "--on-secondary", "--secondary-container", "--on-secondary-container", "--tertiary", "--on-tertiary", "--tertiary-container", "--on-tertiary-container", "--error", "--on-error", "--error-container", "--on-error-container", "--background", "--on-background", "--surface", "--on-surface", "--surface-variant", "--on-surface-variant", "--outline", "--outline-variant", "--shadow", "--scrim", "--inverse-surface", "--inverse-on-surface", "--inverse-primary", "--surface-dim", "--surface-bright", "--surface-container-lowest", "--surface-container-low", "--surface-container", "--surface-container-high", "--surface-container-highest"];
+    for (let i = 0, n = variables.length; i < n; i++) {
+      _lastTheme.light += variables[i] + ":" + fromLight.getPropertyValue(variables[i]) + ";";
+      _lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
+    }
+  } finally {
+    body.removeChild(light);
+    body.removeChild(dark);
   }
-  body.removeChild(light);
-  body.removeChild(dark);
   return _lastTheme;
 }
 async function updateTheme(source) {
@@ -497,12 +517,6 @@ function updatePage(page) {
   if (container) removeClass(queryAll(":scope > .page", container), "active");
   addClass(page, "active");
 }
-function onMousedownRipple(e) {
-  updateRipple(e);
-}
-function onKeydownRipple(e) {
-  if ((e == null ? void 0 : e.key) === " ") updateRipple(e);
-}
 function updateRipple(e) {
   const isMouseEvent = e instanceof MouseEvent;
   const element = e.currentTarget;
@@ -523,12 +537,23 @@ function updateRipple(e) {
   rippleContainer.appendChild(ripple);
   element.appendChild(rippleContainer);
 }
+function onMousedownRippleDelegation(e) {
+  const from = e.target.closest(".slow-ripple, .ripple, .fast-ripple");
+  if (!from) return;
+  Object.defineProperty(e, "currentTarget", { value: from, configurable: true });
+  updateRipple(e);
+}
+function onKeydownRippleDelegation(e) {
+  const from = e.target.closest(".slow-ripple, .ripple, .fast-ripple");
+  if (!from || e.key !== " ") return;
+  Object.defineProperty(e, "currentTarget", { value: from, configurable: true });
+  updateRipple(e);
+}
 function updateAllRipples() {
-  const ripples = queryAll(".slow-ripple, .ripple, .fast-ripple");
-  for (let i = 0; i < ripples.length; i++) {
-    onWeak(ripples[i], "mousedown", onMousedownRipple);
-    onWeak(ripples[i], "keydown", onKeydownRipple);
-  }
+  const body = document.body;
+  if (!body) return;
+  onWeak(body, "mousedown", onMousedownRippleDelegation);
+  onWeak(body, "keydown", onKeydownRippleDelegation);
 }
 function onInputDocument(e) {
   const progress = e.target;
@@ -598,24 +623,25 @@ async function run(from, to, options, e) {
   }
   addClass(to, "active");
 }
-function onClickElement(e) {
-  void run(e.currentTarget, null, null, e);
-}
-function onKeydownElement(e) {
-  if (e.key === "Enter") void run(e.currentTarget, null, null, e);
-}
 function setup() {
   if (_context.ui || _mutation || !_context.MutationObserver) return;
   _mutation = new MutationObserver(onMutation);
   _mutation.observe(document.body, { childList: true, subtree: true });
   onMutation();
 }
+function onClickDataUi(e) {
+  const from = e.target.closest("[data-ui]");
+  if (from) void run(from, null, null, e);
+}
+function onKeydownDataUi(e) {
+  const from = e.target.closest("[data-ui]");
+  if (from && (hasTag(from, "a") && !from.getAttribute("href")) && e.key === "Enter") void run(from, null, null, e);
+}
 function updateAllDataUis() {
-  const elements = queryAll("[data-ui]");
-  for (let i = 0, n = elements.length; i < n; i++) {
-    onWeak(elements[i], "click", onClickElement);
-    if (hasTag(elements[i], "a") && !elements[i].getAttribute("href")) onWeak(elements[i], "keydown", onKeydownElement);
-  }
+  const body = document.body;
+  if (!body) return;
+  onWeak(body, "click", onClickDataUi);
+  onWeak(body, "keydown", onKeydownDataUi);
 }
 function _ui(selector, options) {
   if (selector) {
