@@ -72,6 +72,6 @@ label {
   pointer-events: none;
 }
 
-div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .tooltip, input)) {
+:is(div:not([class]), div[class=active]):has(> :not(.responsive) ~ :is(menu, .tooltip, input)) {
   display: inline-flex;
 }

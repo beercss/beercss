@@ -311,7 +311,7 @@ label {
   pointer-events: none;
 }
 
-div:is(:not([class]), [class=active]):has(> :not(.responsive) ~ :is(menu, .tooltip, input)) {
+:is(div:not([class]), div[class=active]):has(> :not(.responsive) ~ :is(menu, .tooltip, input)) {
   display: inline-flex;
 }
 
@@ -1039,9 +1039,9 @@ sup {
 
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not([class*=ripple])::after,
 nav:is(.left, .right, .bottom, .top).max > a::after,
-nav:is(.left, .right, .bottom, .top).max > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a > i::after,
-nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) a > i::after  {
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:not([class]), div[class=active]) a > i::after  {
   content: "";
   position: absolute;
   inset: 0;
@@ -1058,9 +1058,9 @@ nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:is(:n
 
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a):not([class*=ripple]):is(:focus-visible, :hover)::after,
 nav:is(.left, .right, .bottom, .top).max > a:not(.button, .chip):is(:focus-visible, :hover)::after,
-nav:is(.left, .right, .bottom, .top).max > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip):is(:focus-visible, :hover)::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a:not(.button, .chip):is(:focus-visible, :hover)::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a:not(.button, .chip):is(:focus-visible, :hover) > i::after,
-nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip):is(:focus-visible, :hover) > i::after {
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a:not(.button, .chip):is(:focus-visible, :hover) > i::after {
   background-size: 22500%;
   opacity: 0.1;
   transition: background-size var(--speed2) linear;
@@ -1068,9 +1068,9 @@ nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:is(:n
 
 :is(.wave, .chip, .button, button, nav.tabbed > a, .tabs > a, nav.toolbar > a, nav.max > a):not([class*=ripple]):active::after,
 nav:is(.left, .right, .bottom, .top).max > a:active::after,
-nav:is(.left, .right, .bottom, .top).max > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:active::after,
+nav:is(.left, .right, .bottom, .top).max > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a:active::after,
 nav:is(.left, .right, .bottom, .top):not(.max) > a:active > i::after,
-nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:active > i::after {
+nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a:active > i::after {
   background-size: 0%;
   opacity: 0;
   transition: none;
@@ -1166,7 +1166,7 @@ nav:is(.left, .right, .bottom, .top):not(.max) > :is(ol > li, ul > li, div:is(:n
 }
 
 nav:is(.left, .right, .top, .bottom) > a > .badge,
-nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > .badge {
+nav:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a > .badge {
   inset: 1rem auto auto 50%;
 }
 
@@ -3194,7 +3194,7 @@ nav.max:is(.top, .bottom) {
 }
 
 nav:is(.left, .right, .top, .bottom) > a:not(.button, .chip),
-nav:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip) {
+nav:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a:not(.button, .chip) {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -3204,14 +3204,14 @@ nav:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]
 }
 
 nav:not(.max):is(.left, .right, .top, .bottom) > a:not(.button, .chip) > i,
-nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip) > i {
+nav:not(.max):is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a:not(.button, .chip) > i {
   padding: 0.25rem 1rem;
   border-radius: 2rem;
   margin: 0 auto;
 }
 
 nav.max:is(.left, .right, .top, .bottom) > a:not(.button, .chip),
-nav.max:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip) {
+nav.max:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a:not(.button, .chip) {
   flex-direction: row;
   gap: 0.5rem;
   inline-size: auto;
@@ -3222,21 +3222,21 @@ nav.max:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([cl
 }
 
 nav:is(.left, .right, .top, .bottom) > a.active:not(.button, .chip),
-nav:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a.active:not(.button, .chip) {
+nav:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a.active:not(.button, .chip) {
   transition: padding var(--speed1) linear;
 }
 
 nav.max:is(.top, .bottom) > a:not(.button, .chip),
-nav.max:is(.top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a:not(.button, .chip) {
+nav.max:is(.top, .bottom) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a:not(.button, .chip) {
   gap: 0.25rem;
   block-size: 2.5rem;
   font-size: 0.8rem;
 }
 
 nav.max:is(.left, .right, .top, .bottom) > a.active:not(.button, .chip),
-nav.max:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a.active:not(.button, .chip),
+nav.max:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a.active:not(.button, .chip),
 nav:is(.left, .right, .top, .bottom):not(.max) > a.active:not(.button, .chip) > i,
-nav:is(.left, .right, .top, .bottom):not(.max) > :is(ol > li, ul > li, div:is(:not([class]), [class=active])) > a.active:not(.button, .chip) > i {
+nav:is(.left, .right, .top, .bottom):not(.max) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a.active:not(.button, .chip) > i {
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
 }

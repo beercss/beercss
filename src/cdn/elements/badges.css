@@ -62,7 +62,7 @@
 }
 
 nav:is(.left, .right, .top, .bottom) > a > .badge,
-nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > .badge {
+nav:is(.left, .right, .top, .bottom) > :is(ol > li, ul > li, div:not([class]), div[class=active]) > a > .badge {
   inset: 1rem auto auto 50%;
 }
 
