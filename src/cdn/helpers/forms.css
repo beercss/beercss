@@ -41,8 +41,12 @@
   border-end-end-radius: var(--_round) !important;
 }
 
-.circle:not(.extend) {
+.circle {
   border-radius: 50%;
+}
+
+.circle:is(button, .button, .chip) {
+  border-radius: var(--_size);
 }
 
 :is(.circle, .square):is(button, .button, .chip) {
