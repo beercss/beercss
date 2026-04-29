@@ -1,5 +1,6 @@
 article {
   --_padding: 1rem;
+
   box-shadow: var(--elevate1);
   background-color: var(--surface-container-low);
   color: var(--on-surface);
@@ -7,21 +8,21 @@ article {
   border-radius: 0.75rem;
   display: block;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
-}
 
-article.small {
-  block-size: 12rem;
-}
+  &.small {
+    block-size: 12rem;
+  }
 
-article.medium {
-  block-size: 20rem;
-}
+  &.medium {
+    block-size: 20rem;
+  }
 
-article.large {
-  block-size: 32rem;
-}
+  &.large {
+    block-size: 32rem;
+  }
 
-article.border {
-  box-shadow: none;
-  border: 0.0625rem solid var(--outline-variant);
+  &.border {
+    box-shadow: none;
+    border: 0.0625rem solid var(--outline-variant);
+  }
 }

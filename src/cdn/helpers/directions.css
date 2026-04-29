@@ -4,15 +4,19 @@
   gap: 1rem;
   inline-size: auto !important;
   max-inline-size: none !important;
-}
 
-.horizontal > * {
-  margin-block: 0 !important;
+  & > * {
+    margin-block: 0 !important;
+  }
 }
 
 .vertical {
   display: flex;
   flex-direction: column !important;
+
+  & > * {
+    margin-inline: 0 !important;
+  }
 }
 
 :is(a, button, .button, .chip).vertical {
@@ -21,8 +25,4 @@
   block-size: auto !important;
   max-block-size: none !important;
   padding-block: 0.5rem;
-}
-
-.vertical > * {
-  margin-inline: 0 !important;
 }

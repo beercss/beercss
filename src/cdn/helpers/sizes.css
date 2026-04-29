@@ -2,37 +2,15 @@
   max-inline-size: 100%;
 }
 
-.auto-width {
-  inline-size: auto;
-}
+.auto-width { inline-size: auto; }
+.small-width { inline-size: 12rem !important; }
+.medium-width { inline-size: 24rem !important; }
+.large-width { inline-size: 36rem !important; }
 
-.small-width {
-  inline-size: 12rem !important;
-}
-
-.medium-width {
-  inline-size: 24rem !important;
-}
-
-.large-width {
-  inline-size: 36rem !important;
-}
-
-.auto-height {
-  block-size: auto;
-}
-
-.small-height {
-  block-size: 12rem !important;
-}
-
-.medium-height {
-  block-size: 24rem !important;
-}
-
-.large-height {
-  block-size: 36rem !important;
-}
+.auto-height { block-size: auto; }
+.small-height { block-size: 12rem !important; }
+.medium-height { block-size: 24rem !important; }
+.large-height { block-size: 36rem !important; }
 
 .wrap {
   display: block;

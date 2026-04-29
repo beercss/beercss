@@ -2,6 +2,7 @@
 @import "./settings/light.css";
 @import "./settings/dark.css";
 @import "./settings/fonts.css";
+
 /* begin scoped */
 @import "./settings/reset.css";
 @import "./helpers/alignments.css";
@@ -51,4 +52,5 @@
 @import "./elements/tooltips.css";
 @import "./settings/theme.css";
 @import "./helpers/colors.css";
+
 /* end scoped */

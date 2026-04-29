@@ -1,8 +1,9 @@
-.button,
-button {
+button,
+.button {
   --_padding: 1rem;
   --_size: 2.5rem;
   --_round: calc(var(--_size) / 2) !important;
+
   box-sizing: content-box;
   display: inline-flex;
   align-items: center;
@@ -18,89 +19,99 @@ button {
   user-select: none;
   gap: 0.5rem;
   line-height: normal;
-}
 
-:is(button, .button).small {
-  --_size: 2rem;
-  --_padding: 0.75rem;
-}
+  &.small {
+    --_size: 2rem;
+    --_padding: 0.75rem;
+  }
 
-:is(button, .button).large {
-  --_size: 3rem;
-  --_padding: 1.25rem;
-}
+  &.large {
+    --_size: 3rem;
+    --_padding: 1.25rem;
+  }
 
-:is(.button, button):is(.extra, .extend) {
-  --_size: 3.5rem;
-  font-size: 1rem;
-  --_padding: 1.5rem;
-}
+  &:is(.extra, .extend) {
+    --_size: 3.5rem;
 
-:is(button, .button):is(.square, .circle) {
-  --_padding: 0;
-}
+    font-size: 1rem;
 
-:is(button, .button).border {
-  border-color: var(--outline-variant);
-  color: var(--primary);
-}
+    --_padding: 1.5rem;
+  }
 
-.extend > span:not([class]) {
-  display: none;
-}
+  &:is(.square, .circle) {
+    --_padding: 0;
+  }
 
-.extend:is(:hover, .active) {
-  inline-size: auto;
-  --_padding: 1.5rem;
-  padding: 0 var(--_padding);
-}
+  &.border {
+    border-color: var(--outline-variant);
+    color: var(--primary);
+  }
 
-.extend:is(:hover, .active) > i + span {
-  display: inherit;
-  margin-inline-start: var(--_padding);
-}
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
 
-.extend:is(:hover, .active) > :is(img, svg) + span {
-  display: inherit;
-  margin-inline-start: calc(1rem + var(--_padding, 0));
-}
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
 
-:is(.button, button)[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
+  &:not(.chip, .extend) {
+    &.fill {
+      background-color: var(--secondary-container) !important;
+      color: var(--on-secondary-container) !important;
+
+      &.active {
+        background-color: var(--secondary) !important;
+        color: var(--on-secondary) !important;
+      }
+    }
+
+    &.active {
+      background-color: var(--primary-container);
+      color: var(--on-primary-container);
+    }
+
+    &.border.active {
+      background-color: var(--inverse-surface) !important;
+      color: var(--inverse-on-surface) !important;
+      border-color: var(--inverse-surface) !important;
+    }
+  }
+
+  &:not(.chip) {
+    &:active,
+    &.active {
+      border-radius: 0.5rem !important;
+    }
+  }
 }
 
 .button[disabled] {
   pointer-events: none;
 }
 
-:is(.button, button)[disabled]::before,
-:is(.button, button)[disabled]::after {
-  display: none;
-}
+.extend {
+  & > span:not([class]) {
+    display: none;
+  }
 
-:is(.button, button):not(.chip, .extend).fill {
-  background-color: var(--secondary-container) !important;
-  color: var(--on-secondary-container) !important;
-}
+  &:is(:hover, .active) {
+    inline-size: auto;
 
-:is(.button, button):not(.chip, .extend).active {
-  background-color: var(--primary-container);
-  color: var(--on-primary-container);
-}
+    --_padding: 1.5rem;
 
-:is(.button, button):not(.chip, .extend).fill.active {
-  background-color: var(--secondary) !important;
-  color: var(--on-secondary) !important;
-}
+    padding: 0 var(--_padding);
 
-:is(.button, button):not(.chip, .extend).border.active {
-  background-color: var(--inverse-surface) !important;
-  color: var(--inverse-on-surface) !important;
-  border-color: var(--inverse-surface) !important;
-}
+    & > i + span {
+      display: inherit;
+      margin-inline-start: var(--_padding);
+    }
 
-:is(.button, button):not(.chip):active,
-:is(.button, button):not(.chip).active {
-  border-radius: 0.5rem !important;
+    & > :is(img, svg) + span {
+      display: inherit;
+      margin-inline-start: calc(1rem + var(--_padding, 0));
+    }
+  }
 }

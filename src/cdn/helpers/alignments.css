@@ -1,29 +1,35 @@
-.middle-align {
-  display: flex;
-  align-items: center !important;
-}
-
-.bottom-align {
-  display: flex;
-  align-items: flex-end !important;
-}
-
-.top-align {
-  display: flex;
-  align-items: flex-start !important;
-}
-
 .left-align {
-  text-align: start;
-  justify-content: flex-start !important;
-}
-
-.right-align {
-  text-align: end;
-  justify-content: flex-end !important;
+  text-align: left;
+  justify-content: flex-start;
+  align-self: flex-start;
 }
 
 .center-align {
   text-align: center;
-  justify-content: center !important;
+  justify-content: center;
+  align-self: center;
+}
+
+.right-align {
+  text-align: right;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+
+.top-align {
+  align-items: flex-start;
+  align-self: flex-start;
+  vertical-align: top;
+}
+
+.middle-align {
+  align-items: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+.bottom-align {
+  align-items: flex-end;
+  align-self: flex-end;
+  vertical-align: bottom;
 }
