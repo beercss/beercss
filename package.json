@@ -15,7 +15,7 @@
   "devDependencies": {
     "@types/jsdom": "^28.0.1",
     "@vitejs/plugin-vue": "^6.0.6",
-    "@vitest/coverage-v8": "^5.0.0-beta.1",
+    "@vitest/coverage-v8": "^4.1.5",
     "@vue/language-plugin-pug": "^3.2.7",
     "brotli-size": "^4.0.0",
     "cssnano": "^7.1.8",
@@ -25,8 +25,8 @@
     "pug": "^3.0.4",
     "typescript": "^6.0.3",
     "vite": "^8.0.10",
-    "vitest": "^5.0.0-beta.1",
-    "vue": "^3.6.0-beta.10",
+    "vitest": "^4.1.5",
+    "vue": "^3.5.33",
     "vue-tsc": "^3.2.7"
   },
   "files": [
