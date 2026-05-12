@@ -1,5 +1,10 @@
 import { onWeak } from "../utils";
 
+function onAnimationendRipple(e: Event) {
+  const ripple = e.currentTarget as HTMLElement;
+  ripple.parentElement?.remove();
+}
+
 function updateRipple(e: MouseEvent | KeyboardEvent) {
   const isMouseEvent = e instanceof MouseEvent;
   const element = e.currentTarget as HTMLElement;
@@ -15,7 +20,7 @@ function updateRipple(e: MouseEvent | KeyboardEvent) {
   ripple.style.inlineSize = ripple.style.blockSize = `${diameter}px`;
   ripple.style.left = `${x}px`;
   ripple.style.top = `${y}px`;
-  onWeak(ripple, "animationend", () => { rippleContainer.remove(); });
+  onWeak(ripple, "animationend", onAnimationendRipple);
 
   rippleContainer.appendChild(ripple);
   element.appendChild(rippleContainer);
