@@ -162,11 +162,6 @@ export function updateAllClickable(element: Element) {
   if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
 }
 
-export function addWeakElement(element: HTMLElement) {
-  if (_weakMap.has(element)) return;
-  _weakMap.set(element, new Map());
-}
-
 export function rootSizeInPixels(): number {
   const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
   if (size.includes("%")) return (parseInt(size) * 16) / 100;
