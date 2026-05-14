@@ -15,3 +15,14 @@ summary > * {
 li > details > summary + .list {
   margin: 0 !important;
 }
+
+details::details-content {
+  transition: all var(--speed2);
+  opacity: 0;
+  transform: translateY(-1rem);
+}
+
+details[open]::details-content {
+  opacity: 1;
+  transform: translateY(0);
+}
