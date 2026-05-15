@@ -59,4 +59,4 @@ There are 3 use cases that the JS file is required. In the future, we will try t
 
 1) When you have a `slider` element (we can't update the slider value without JS). 
 2) When you have a `textarea` element (we can't auto resize a textarea without JS, except on Chromium browsers).
-3) When you want to dynamic import the icons used in page.
+3) When you want to download only the icons used in page.
