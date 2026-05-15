@@ -231,9 +231,9 @@ It sets the font and icon font of project.
   --font-icon: "Material Symbols Outlined";
 }
 
-/* To download only the icons used in page, add the suffix "Auto" */
+/* To download only the icons used in page, add the prefix "*" */
 :root {
-  --font-icon: "Material Symbols Outlined Auto";
+  --font-icon: "*Material Symbols Outlined";
 }
 ```
 

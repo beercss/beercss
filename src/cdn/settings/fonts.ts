@@ -5,7 +5,7 @@ let _font = "";
 
 function updateIcons() {
   _font = _font || getComputedStyle(document.documentElement).getPropertyValue('--font-icon').replace(/\"/g, "");
-  if (_font.indexOf(" Auto") == -1) return false;
+  if (_font.charAt(0) != "*") return false;
 
   let hasNewIcons = false;
   if (!_icons) {
@@ -30,7 +30,7 @@ async function updateFont() {
   if (!_icons) return;
 
   const icons = Object.keys(_icons).sort().join(",");
-  const font = _font.replace(" Auto", "");
+  const font = _font.replace("*", "");
   const response = await fetch(`https://fonts.googleapis.com/css2?family=${font}:opsz,wght,FILL,GRAD@24,400,0..1,0&icon_names=${icons}`);
   const text = await response.text() || "";
   const urls = text.match(/url.+?\)/);
