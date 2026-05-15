@@ -1,6 +1,6 @@
 import { queryAll } from "../utils";
 
-const _icons = ["check", "check_box", "check_box_outline_blank", "indeterminate_check_box", "radio_button_checked", "radio_button_unchecked"];
+let _icons: string[] = [];
 let _fontIcon = "";
 
 function updateIcons() {
@@ -8,6 +8,11 @@ function updateIcons() {
   if (_fontIcon.indexOf(" Auto") == -1) return false;
 
   let hasNewIcons = false;
+  if (!_icons.length) {
+    _icons = ["check", "check_box", "check_box_outline_blank", "indeterminate_check_box", "radio_button_checked", "radio_button_unchecked"];
+    hasNewIcons = true;
+  }
+
   const icons = queryAll("i");
   for(let i=0; i<icons.length; i++) {
     const iconName = icons[i].textContent?.trim();
