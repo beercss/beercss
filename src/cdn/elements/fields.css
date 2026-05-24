@@ -136,7 +136,8 @@ input::-webkit-date-and-time-value {
 input[type=file],
 input[type=color],
 :not(.field) > input:is([type^=date], [type^=time], [type=month], [type=week]),
-input::-webkit-calendar-picker-indicator {
+input[type=file]::-webkit-calendar-picker-indicator,
+input[type=color]::-webkit-calendar-picker-indicator {
   opacity: 0;
   position: absolute;
   inset: 0;
