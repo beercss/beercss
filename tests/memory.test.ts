@@ -16,11 +16,9 @@ describe("memory", () => {
   it("should not accumulate event listeners on document.body when calling ui() multiple times", () => {
     const addEventListenerSpy = vi.spyOn(document.body, "addEventListener");
 
-    // Initial call
     ui();
     const initialCallCount = addEventListenerSpy.mock.calls.length;
 
-    // Subsequent calls
     ui();
     ui();
     ui();
@@ -39,23 +37,19 @@ describe("memory", () => {
     const dialog1 = document.getElementById("dialog1") as HTMLDialogElement;
     const dialog2 = document.getElementById("dialog2") as HTMLDialogElement;
 
-    // Open dialog 1
     ui("#dialog1");
     await vi.runAllTimersAsync();
     expect(dialog1.classList.contains("active")).toBe(true);
 
-    // Open dialog 2
     ui("#dialog2");
     await vi.runAllTimersAsync();
     expect(dialog2.classList.contains("active")).toBe(true);
 
-    // Close dialog 1 first (out of order if using pop())
     ui("#dialog1");
     await vi.runAllTimersAsync();
     expect(dialog1.classList.contains("active")).toBe(false);
     expect(dialog2.classList.contains("active")).toBe(true);
 
-    // Close dialog 2
     ui("#dialog2");
     await vi.runAllTimersAsync();
     expect(dialog2.classList.contains("active")).toBe(false);
