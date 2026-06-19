@@ -8,7 +8,7 @@ beforeEach(() => {
   container = document.createElement("div");
   document.body.appendChild(container);
   
-  (global as any).FontFace = class FontFace {
+  (globalThis as any).FontFace = class FontFace {
     constructor(family: string, src: string, descriptors?: any) {
       this.family = family;
       this.src = src;
