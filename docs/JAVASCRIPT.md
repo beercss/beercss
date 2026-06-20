@@ -55,4 +55,8 @@ The `data-ui` attribute has the intent to trigger elements with just HTML. It fo
 
 ## Why the JS file is almost optional?
 
-There are 2 use cases that the JS file is required. When you have a `slider` element (we can't update the slider value without JS). And when you have a `textarea` element (we can't auto resize a textarea without JS). In the future, we will try to leave the JS file fully optional.
+There are 3 use cases that the JS file is required. In the future, we will try to leave the JS file fully optional.
+
+1) When you have a `slider` element (we can't update the slider value without JS).
+2) When you have a `textarea` element (we can't auto resize a textarea without JS, except on Chromium browsers).
+3) When you want to download only the icons used in page.

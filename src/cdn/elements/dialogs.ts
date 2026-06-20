@@ -20,7 +20,8 @@ function closeDialog(dialog: HTMLDialogElement, overlay: Element) {
   removeClass(overlay, "active");
 
   dialog.close();
-  _dialogs.pop();
+  const index = _dialogs.indexOf(dialog);
+  if (index > -1) _dialogs.splice(index, 1);
 
   const previousDialog = _dialogs[_dialogs.length - 1];
   if (previousDialog) previousDialog.focus();

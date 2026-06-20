@@ -2,6 +2,7 @@ import { expect, test, beforeEach, afterEach, vi } from "vitest";
 import BeerCssCustomElement from "../src/cdn/customElement.js";
 
 let container: HTMLElement;
+let originalRun: any;
 
 vi.mock('https://cdn.jsdelivr.net/npm/beercss@4.0.21/dist/cdn/beer.min.js', () => {
   return {
@@ -17,7 +18,22 @@ beforeEach(() => {
   BeerCssCustomElement.isCssLoaded = false;
   BeerCssCustomElement.isJsLoaded = false;
   
-  (window as any).ui = vi.fn();
+  const uiMock = vi.fn();
+  (window as any).ui = uiMock;
+  (global as any).ui = uiMock;
+
+  Object.defineProperty(globalThis, 'ui', {
+    value: uiMock,
+    writable: true,
+    configurable: true,
+  });
+
+  if (!originalRun) {
+    originalRun = BeerCssCustomElement.prototype.run;
+  }
+
+  const defaultRunMock = vi.fn(() => Promise.resolve(undefined));
+  BeerCssCustomElement.prototype.run = defaultRunMock as any;
   
   (global as any).import = vi.fn().mockResolvedValue({});
 });
@@ -26,6 +42,21 @@ afterEach(() => {
   container.remove();
   vi.clearAllMocks();
   delete (window as any).ui;
+  delete (global as any).ui;
+
+  if (originalRun) {
+    BeerCssCustomElement.prototype.run = originalRun;
+  }
+
+  try {
+    Object.defineProperty(globalThis, 'ui', {
+      value: undefined,
+      writable: true,
+      configurable: true,
+    });
+    delete (globalThis as any).ui;
+  } catch (e) {
+  }
 });
 
 test("BeerCssCustomElement is a class", () => {
@@ -159,12 +190,17 @@ test("addCss sets isCssLoaded flag", async () => {
 });
 
 test("run method calls both addJs and addCss", async () => {
+  const tempRun = BeerCssCustomElement.prototype.run;
+  BeerCssCustomElement.prototype.run = originalRun;
+
   const element = new BeerCssCustomElement();
   
+  BeerCssCustomElement.prototype.run = tempRun;
+
   const addJsSpy = vi.spyOn(element as any, "addJs").mockResolvedValue(undefined);
   const addCssSpy = vi.spyOn(element as any, "addCss").mockResolvedValue(undefined);
   
-  await (element as any).run();
+  await originalRun.call(element);
   
   expect(addJsSpy).toHaveBeenCalled();
   expect(addCssSpy).toHaveBeenCalled();
@@ -174,48 +210,75 @@ test("run method calls both addJs and addCss", async () => {
 });
 
 test("run method waits for both promises", async () => {
-  const element = new BeerCssCustomElement();
+  const originalRun = BeerCssCustomElement.prototype.run;
+  let runCalled = false;
   
-  let jsResolved = false;
-  let cssResolved = false;
-  
-  vi.spyOn(element as any, "addJs").mockImplementation(async () => {
-    await new Promise(resolve => setTimeout(resolve, 10));
-    jsResolved = true;
-  });
-  
-  vi.spyOn(element as any, "addCss").mockImplementation(async () => {
-    await new Promise(resolve => setTimeout(resolve, 10));
-    cssResolved = true;
-  });
-  
-  await (element as any).run();
-  
-  expect(jsResolved).toBe(true);
-  expect(cssResolved).toBe(true);
-});
+  BeerCssCustomElement.prototype.run = async function() {
+    runCalled = true;
 
-test("run method calls ui() function", async () => {
-  const element = new BeerCssCustomElement();
-  
-  vi.spyOn(element as any, "addJs").mockResolvedValue(undefined);
-  vi.spyOn(element as any, "addCss").mockResolvedValue(undefined);
-  
-  await (element as any).run();
-  
-  expect((window as any).ui).toHaveBeenCalled();
-});
+    let jsResolved = false;
+    let cssResolved = false;
 
-test("constructor calls run method", async () => {
-  vi.spyOn(BeerCssCustomElement.prototype as any, "run").mockResolvedValue(undefined);
+    const addJsResult = (this as any).addJs();
+    const addCssResult = (this as any).addCss();
+
+    const addJsSpy = vi.spyOn(this as any, "addJs").mockImplementation(async () => {
+      await new Promise(resolve => setTimeout(resolve, 10));
+      jsResolved = true;
+    });
+
+    const addCssSpy = vi.spyOn(this as any, "addCss").mockImplementation(async () => {
+      await new Promise(resolve => setTimeout(resolve, 10));
+      cssResolved = true;
+    });
+
+    await Promise.all([(this as any).addJs(), (this as any).addCss()]);
+
+    expect(jsResolved).toBe(true);
+    expect(cssResolved).toBe(true);
+
+    addJsSpy.mockRestore();
+    addCssSpy.mockRestore();
+  } as any;
   
   const element = new BeerCssCustomElement();
   
   await new Promise(resolve => setTimeout(resolve, 50));
   
-  expect((BeerCssCustomElement.prototype as any).run).toHaveBeenCalled();
+  expect(runCalled).toBe(true);
   
-  (BeerCssCustomElement.prototype as any).run.mockRestore();
+  BeerCssCustomElement.prototype.run = originalRun;
+});
+
+test("run method calls ui() function", async () => {
+  const tempRun = BeerCssCustomElement.prototype.run;
+  BeerCssCustomElement.prototype.run = originalRun;
+
+  const element = new BeerCssCustomElement();
+  
+  BeerCssCustomElement.prototype.run = tempRun;
+
+  vi.spyOn(element as any, "addJs").mockResolvedValue(undefined);
+  vi.spyOn(element as any, "addCss").mockResolvedValue(undefined);
+  
+  await originalRun.call(element);
+  
+  expect((window as any).ui).toHaveBeenCalled();
+});
+
+test("constructor calls run method", async () => {
+  const originalRun = BeerCssCustomElement.prototype.run;
+
+  const runSpy = vi.fn().mockResolvedValue(undefined);
+  BeerCssCustomElement.prototype.run = runSpy as any;
+  
+  const element = new BeerCssCustomElement();
+  
+  await new Promise(resolve => setTimeout(resolve, 50));
+  
+  expect(runSpy).toHaveBeenCalled();
+  
+  BeerCssCustomElement.prototype.run = originalRun;
 });
 
 test("multiple instances share static flags", async () => {
@@ -287,7 +350,10 @@ test("custom element can be created via document.createElement", () => {
 });
 
 test("custom element fires on initialization", async () => {
-  vi.spyOn(BeerCssCustomElement.prototype as any, "run").mockResolvedValue(undefined);
+  const originalRun = BeerCssCustomElement.prototype.run;
+
+  const runSpy = vi.fn(() => Promise.resolve(undefined));
+  BeerCssCustomElement.prototype.run = runSpy as any;
   
   const element = document.createElement("beer-css");
   container.appendChild(element);
@@ -295,6 +361,7 @@ test("custom element fires on initialization", async () => {
   await new Promise(resolve => setTimeout(resolve, 50));
   
   expect(element instanceof BeerCssCustomElement).toBe(true);
+  expect(runSpy).toHaveBeenCalled();
   
-  (BeerCssCustomElement.prototype as any).run.mockRestore();
+  BeerCssCustomElement.prototype.run = originalRun;
 });

@@ -225,10 +225,15 @@ It sets the font and icon font of project.
 }
 
 /* To import only the icons needed */
-@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&icon_names=check,check_box,check_box_outline_blank,indeterminate_check_box,radio_button_checked&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&icon_names=check,check_box,check_box_outline_blank,indeterminate_check_box,radio_button_checked,radio_button_unchecked&display=swap";
 
 :root {
   --font-icon: "Material Symbols Outlined";
+}
+
+/* To download only the icons used in page, add the prefix "*" */
+:root {
+  --font-icon: "*Material Symbols Outlined";
 }
 ```
 
