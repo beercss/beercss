@@ -461,7 +461,8 @@ function closeDialog(dialog, overlay) {
 	removeClass(dialog, "active");
 	removeClass(overlay, "active");
 	dialog.close();
-	_dialogs.pop();
+	const index = _dialogs.indexOf(dialog);
+	if (index > -1) _dialogs.splice(index, 1);
 	const previousDialog = _dialogs[_dialogs.length - 1];
 	if (previousDialog) previousDialog.focus();
 }
@@ -558,6 +559,9 @@ function updatePage(page) {
 }
 //#endregion
 //#region src/cdn/helpers/ripples.ts
+function onAnimationendRipple(e) {
+	e.currentTarget.parentElement?.remove();
+}
 function updateRipple(e) {
 	const isMouseEvent = e instanceof MouseEvent;
 	const element = e.currentTarget;
@@ -572,9 +576,7 @@ function updateRipple(e) {
 	ripple.style.inlineSize = ripple.style.blockSize = `${diameter}px`;
 	ripple.style.left = `${x}px`;
 	ripple.style.top = `${y}px`;
-	onWeak(ripple, "animationend", () => {
-		rippleContainer.remove();
-	});
+	onWeak(ripple, "animationend", onAnimationendRipple);
 	rippleContainer.appendChild(ripple);
 	element.appendChild(rippleContainer);
 }

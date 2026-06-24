@@ -9,7 +9,6 @@ import { updateSnackbar } from "./elements/snackbars";
 import { updatePage } from "./elements/pages";
 import { updateAllRipples } from "./helpers/ripples";
 import { updateAllProgress  } from "./elements/progress";
-import { updateAllFonts } from "./settings/fonts";
 
 const _context = globalThis as any;
 let _timeoutMutation: ReturnType<typeof setTimeout>;
@@ -97,7 +96,6 @@ function _ui(selector?: string | Element, options?: string | number | IBeerCssTh
     void run(to, to, options);
   }
 
-  updateAllFonts();
   updateAllDataUis();
   updateAllFields();
   updateAllRipples();

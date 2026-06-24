@@ -24,6 +24,7 @@ body.dark {
 
 html {
   font-size: var(--size);
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -34,6 +35,10 @@ body {
   font-size: 0.875rem;
   line-height: 1.5rem;
   letter-spacing: 0.0313rem;
+}
+
+body:has(dialog[open], dialog.active) {
+  overflow: hidden;
 }
 
 @media (pointer: fine) {
@@ -53,7 +58,6 @@ body {
 }
 
 @media (pointer: coarse) {
-  body:has(dialog[open], dialog.active),
   body:has(input[type=range]:focus) {
     overflow: hidden;
   }
@@ -1653,6 +1657,17 @@ summary > * {
 
 li > details > summary + .list {
   margin: 0 !important;
+}
+
+details::details-content {
+  transition: all var(--speed2);
+  opacity: 0;
+  transform: translateY(-1rem);
+}
+
+details[open]::details-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .field {
@@ -3949,6 +3964,8 @@ progress.max + * {
   align-items: center;
   color: var(--on-surface);
   font-size: 0.875rem;
+  min-inline-size: 0.25rem;
+  min-block-size: 0.25rem;
 }
 
 :is(.checkbox, .radio) > span:not(:empty) {
@@ -4158,6 +4175,10 @@ progress.max + * {
 :is(.checkbox, .radio) > :focus-visible + span::before {
   outline: 0.125rem solid var(--primary);
   outline-offset: 0.375rem;
+}
+
+:is(nav, .row) > :is(.checkbox, .radio, .switch) {
+  margin: 0 0.25rem;
 }
 
 .slider {

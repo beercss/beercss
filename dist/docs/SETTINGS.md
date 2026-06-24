@@ -225,11 +225,25 @@ It sets the font and icon font of project.
 }
 
 /* To import only the icons needed */
-@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&icon_names=check,check_box,check_box_outline_blank,indeterminate_check_box,radio_button_checked&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&icon_names=check,check_box,check_box_outline_blank,indeterminate_check_box,radio_button_checked,radio_button_unchecked&display=swap";
 
 :root {
   --font-icon: "Material Symbols Outlined";
 }
+```
+
+#### To download only the icons used in page
+
+We recommend the `material-dynamic-fonts` lib https://www.npmjs.com/package/material-dynamic-fonts :
+
+```css
+:root {
+  --font-icon: none;
+}
+```
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-fonts@0.0.2/dist/cdn/material-dynamic-fonts.min.js?font=Material Symbols Outlined"></script>
 ```
 
 ## Elevates

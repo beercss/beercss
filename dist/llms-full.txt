@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2026-04-29
+Generated on: 2026-06-24
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -542,11 +542,25 @@ It sets the font and icon font of project.
 }
 
 /* To import only the icons needed */
-@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&icon_names=check,check_box,check_box_outline_blank,indeterminate_check_box,radio_button_checked&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&icon_names=check,check_box,check_box_outline_blank,indeterminate_check_box,radio_button_checked,radio_button_unchecked&display=swap";
 
 :root {
   --font-icon: "Material Symbols Outlined";
 }
+```
+
+#### To download only the icons used in page
+
+We recommend the `material-dynamic-fonts` lib https://www.npmjs.com/package/material-dynamic-fonts :
+
+```css
+:root {
+  --font-icon: none;
+}
+```
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-fonts@0.0.2/dist/cdn/material-dynamic-fonts.min.js?font=Material Symbols Outlined"></script>
 ```
 
 ## Elevates
@@ -3968,7 +3982,11 @@ The `data-ui` attribute has the intent to trigger elements with just HTML. It fo
 
 ## Why the JS file is almost optional?
 
-There are 2 use cases that the JS file is required. When you have a `slider` element (we can't update the slider value without JS). And when you have a `textarea` element (we can't auto resize a textarea without JS). In the future, we will try to leave the JS file fully optional.
+There are 3 use cases that the JS file is required. In the future, we will try to leave the JS file fully optional.
+
+1) When you have a `slider` element (we can't update the slider value without JS). 
+2) When you have a `textarea` element (we can't auto resize a textarea without JS, except on Chromium browsers).
+3) When you want to download only the icons used in page.
 
 ---
 
