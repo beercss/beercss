@@ -230,11 +230,20 @@ It sets the font and icon font of project.
 :root {
   --font-icon: "Material Symbols Outlined";
 }
+```
 
-/* To download only the icons used in page, add the prefix "*" */
+#### To download only the icons used in page
+
+We recommend the `material-dynamic-fonts` lib https://www.npmjs.com/package/material-dynamic-fonts :
+
+```css
 :root {
-  --font-icon: "*Material Symbols Outlined";
+  --font-icon: none;
 }
+```
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-fonts@0.0.2/dist/cdn/material-dynamic-fonts.min.js?font=Material Symbols Outlined"></script>
 ```
 
 ## Elevates
