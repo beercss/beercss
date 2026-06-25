@@ -232,9 +232,9 @@ It sets the font and icon font of project.
 }
 ```
 
-#### To download only the icons used in page
+#### Other examples
 
-We recommend the `material-dynamic-fonts` lib https://www.npmjs.com/package/material-dynamic-fonts :
+Try the [material-dynamic-fonts](https://www.npmjs.com/package/material-dynamic-fonts) lib. This is a microlib to fetch only the icons used in page automatically. No code required. Just drop it in your HTML. The expected result is to reduce the font file to about ~1kb:
 
 ```css
 :root {
@@ -243,7 +243,7 @@ We recommend the `material-dynamic-fonts` lib https://www.npmjs.com/package/mate
 ```
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-fonts@0.0.2/dist/cdn/material-dynamic-fonts.min.js?font=Material Symbols Outlined"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-fonts@0.0.3/dist/cdn/material-dynamic-fonts.min.js?font=Material Symbols Outlined&selector=i"></script>
 ```
 
 ## Elevates
