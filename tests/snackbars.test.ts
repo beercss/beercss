@@ -19,15 +19,14 @@ test("updateSnackbar is a function", () => {
 });
 
 test("updateSnackbar executes without error", () => {
-  expect(() => {
-    container.innerHTML = `
-      <div class="snackbar">
-        <p>Message</p>
-      </div>
-    `;
-    const snackbar = container.querySelector(".snackbar") as HTMLElement;
-    updateSnackbar(snackbar);
-  }).not.toThrow();
+  container.innerHTML = `
+    <div class="snackbar">
+      <p>Message</p>
+    </div>
+  `;
+  const snackbar = container.querySelector(".snackbar") as HTMLElement;
+  updateSnackbar(snackbar);
+  expect(snackbar.classList.contains("active")).toBe(true);
 });
 
 test("updateSnackbar with basic snackbar element", () => {
@@ -37,7 +36,23 @@ test("updateSnackbar with basic snackbar element", () => {
     </div>
   `;
   const snackbar = container.querySelector(".snackbar") as HTMLElement;
-  expect(() => updateSnackbar(snackbar)).not.toThrow();
+  updateSnackbar(snackbar);
+  expect(snackbar.classList.contains("active")).toBe(true);
+  vi.advanceTimersByTime(6000);
+  expect(snackbar.classList.contains("active")).toBe(false);
+});
+
+test("updateSnackbar with -1 timeout (stays active)", () => {
+  container.innerHTML = `
+    <div class="snackbar">
+      <p>Persistent message</p>
+    </div>
+  `;
+  const snackbar = container.querySelector(".snackbar") as HTMLElement;
+  updateSnackbar(snackbar, -1);
+  expect(snackbar.classList.contains("active")).toBe(true);
+  vi.advanceTimersByTime(6000);
+  expect(snackbar.classList.contains("active")).toBe(true);
 });
 
 test("updateSnackbar with action button", () => {
@@ -48,7 +63,8 @@ test("updateSnackbar with action button", () => {
     </div>
   `;
   const snackbar = container.querySelector(".snackbar") as HTMLElement;
-  expect(() => updateSnackbar(snackbar)).not.toThrow();
+  updateSnackbar(snackbar);
+  expect(snackbar.classList.contains("active")).toBe(true);
 });
 
 test("updateSnackbar with custom milliseconds timeout", () => {
@@ -58,7 +74,10 @@ test("updateSnackbar with custom milliseconds timeout", () => {
     </div>
   `;
   const snackbar = container.querySelector(".snackbar") as HTMLElement;
-  expect(() => updateSnackbar(snackbar, 5000)).not.toThrow();
+  updateSnackbar(snackbar, 5000);
+  expect(snackbar.classList.contains("active")).toBe(true);
+  vi.advanceTimersByTime(5000);
+  expect(snackbar.classList.contains("active")).toBe(false);
 });
 
 test("updateSnackbar with zero timeout", () => {
@@ -68,7 +87,10 @@ test("updateSnackbar with zero timeout", () => {
     </div>
   `;
   const snackbar = container.querySelector(".snackbar") as HTMLElement;
-  expect(() => updateSnackbar(snackbar, 0)).not.toThrow();
+  updateSnackbar(snackbar, 0);
+  expect(snackbar.classList.contains("active")).toBe(true);
+  vi.advanceTimersByTime(0);
+  expect(snackbar.classList.contains("active")).toBe(false);
 });
 
 test("updateSnackbar with very large timeout", () => {
@@ -78,10 +100,13 @@ test("updateSnackbar with very large timeout", () => {
     </div>
   `;
   const snackbar = container.querySelector(".snackbar") as HTMLElement;
-  expect(() => updateSnackbar(snackbar, 10000)).not.toThrow();
+  updateSnackbar(snackbar, 10000);
+  expect(snackbar.classList.contains("active")).toBe(true);
+  vi.advanceTimersByTime(10000);
+  expect(snackbar.classList.contains("active")).toBe(false);
 });
 
-test("updateSnackbar multiple snackbars", () => {
+test("updateSnackbar multiple snackbars (only one active)", () => {
   container.innerHTML = `
     <div class="snackbar" id="snackbar1">
       <p>Message 1</p>
@@ -92,10 +117,13 @@ test("updateSnackbar multiple snackbars", () => {
   `;
   const snackbar1 = container.querySelector("#snackbar1") as HTMLElement;
   const snackbar2 = container.querySelector("#snackbar2") as HTMLElement;
-  expect(() => {
-    updateSnackbar(snackbar1);
-    updateSnackbar(snackbar2);
-  }).not.toThrow();
+
+  updateSnackbar(snackbar1);
+  expect(snackbar1.classList.contains("active")).toBe(true);
+
+  updateSnackbar(snackbar2);
+  expect(snackbar1.classList.contains("active")).toBe(false);
+  expect(snackbar2.classList.contains("active")).toBe(true);
 });
 
 test("updateSnackbar with active class", () => {
@@ -105,10 +133,11 @@ test("updateSnackbar with active class", () => {
     </div>
   `;
   const snackbar = container.querySelector(".snackbar") as HTMLElement;
-  expect(() => updateSnackbar(snackbar)).not.toThrow();
+  updateSnackbar(snackbar);
+  expect(snackbar.classList.contains("active")).toBe(true);
 });
 
-test("updateSnackbar with close button", () => {
+test("updateSnackbar close on click", () => {
   container.innerHTML = `
     <div class="snackbar">
       <p>Message</p>
@@ -116,7 +145,11 @@ test("updateSnackbar with close button", () => {
     </div>
   `;
   const snackbar = container.querySelector(".snackbar") as HTMLElement;
-  expect(() => updateSnackbar(snackbar)).not.toThrow();
+  updateSnackbar(snackbar);
+  expect(snackbar.classList.contains("active")).toBe(true);
+
+  snackbar.click();
+  expect(snackbar.classList.contains("active")).toBe(false);
 });
 
 test("updateSnackbar with custom classes", () => {
@@ -126,7 +159,9 @@ test("updateSnackbar with custom classes", () => {
     </div>
   `;
   const snackbar = container.querySelector(".snackbar") as HTMLElement;
-  expect(() => updateSnackbar(snackbar)).not.toThrow();
+  updateSnackbar(snackbar);
+  expect(snackbar.classList.contains("active")).toBe(true);
+  expect(snackbar.classList.contains("custom-snackbar")).toBe(true);
 });
 
 test("updateSnackbar sequential calls", () => {
@@ -136,10 +171,12 @@ test("updateSnackbar sequential calls", () => {
     </div>
   `;
   const snackbar = container.querySelector(".snackbar") as HTMLElement;
-  expect(() => {
-    updateSnackbar(snackbar);
-    updateSnackbar(snackbar);
-  }).not.toThrow();
+  updateSnackbar(snackbar);
+  expect(snackbar.classList.contains("active")).toBe(true);
+  updateSnackbar(snackbar);
+  expect(snackbar.classList.contains("active")).toBe(true);
+  vi.advanceTimersByTime(6000);
+  expect(snackbar.classList.contains("active")).toBe(false);
 });
 
 test("updateSnackbar with different timeouts", () => {
@@ -153,10 +190,19 @@ test("updateSnackbar with different timeouts", () => {
   `;
   const snackbar1 = container.querySelector("#snackbar1") as HTMLElement;
   const snackbar2 = container.querySelector("#snackbar2") as HTMLElement;
-  expect(() => {
-    updateSnackbar(snackbar1, 2000);
-    updateSnackbar(snackbar2, 6000);
-  }).not.toThrow();
+
+  updateSnackbar(snackbar1, 2000);
+  expect(snackbar1.classList.contains("active")).toBe(true);
+
+  updateSnackbar(snackbar2, 6000);
+  expect(snackbar1.classList.contains("active")).toBe(false);
+  expect(snackbar2.classList.contains("active")).toBe(true);
+
+  vi.advanceTimersByTime(2000);
+  expect(snackbar2.classList.contains("active")).toBe(true);
+
+  vi.advanceTimersByTime(4000);
+  expect(snackbar2.classList.contains("active")).toBe(false);
 });
 
 test("updateSnackbar with HTML content", () => {
@@ -167,5 +213,6 @@ test("updateSnackbar with HTML content", () => {
     </div>
   `;
   const snackbar = container.querySelector(".snackbar") as HTMLElement;
-  expect(() => updateSnackbar(snackbar)).not.toThrow();
+  updateSnackbar(snackbar);
+  expect(snackbar.classList.contains("active")).toBe(true);
 });
