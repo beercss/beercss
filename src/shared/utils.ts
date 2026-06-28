@@ -32,12 +32,9 @@ const addClass = (elements: NodeListOf<Element>, classes: Array<string>, filter?
 };
 
 const is = (element: Element | null, selectors: Array<string>) => {
-  const newElement = document.createElement("div");
-  newElement.innerHTML = element?.outerHTML ?? "";
-
-  for (let i = 0; i < selectors.length; i++) { if (newElement.querySelector(selectors[i])) return true; }
-
-  return false;
+  if (!element || selectors.length === 0) return false;
+  const selector = selectors.join(",");
+  return element.matches(selector) || element.querySelector(selector) !== null;
 };
 
 const removeAttribute = (elements: NodeListOf<Element>, attribute: string) => {
