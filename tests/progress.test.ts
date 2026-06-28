@@ -78,6 +78,32 @@ test("updateAllProgress executes without error on empty document", () => {
   }).not.toThrow();
 });
 
+test("updateAllProgress handles indeterminate linear progress", async () => {
+  container.innerHTML = `
+    <progress></progress>
+  `;
+  const progress = container.querySelector("progress") as HTMLProgressElement;
+  updateAllProgress();
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  expect(progress.getAttribute("value")).toBe("100");
+  expect(progress.getAttribute("max")).toBe("100");
+  expect(progress.classList.contains("indeterminate")).toBe(true);
+  expect(progress.style.getPropertyValue("--_value")).toBe("100");
+});
+
+test("updateAllProgress handles indeterminate circular progress", async () => {
+  container.innerHTML = `
+    <progress class="circle"></progress>
+  `;
+  const progress = container.querySelector("progress") as HTMLProgressElement;
+  updateAllProgress();
+  await new Promise((resolve) => requestAnimationFrame(resolve));
+  expect(progress.getAttribute("value")).toBe("50");
+  expect(progress.getAttribute("max")).toBe("100");
+  expect(progress.classList.contains("indeterminate")).toBe(true);
+  expect(progress.style.getPropertyValue("--_value")).toBe("50");
+});
+
 test("updateAllProgress processes linear progress bar", () => {
   container.innerHTML = `
     <progress class="progress" value="50" max="100"></progress>
