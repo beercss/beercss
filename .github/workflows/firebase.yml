@@ -6,6 +6,8 @@ on:
   push:
     tags:
       - v*
+  workflow_dispatch:
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest

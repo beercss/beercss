@@ -2,6 +2,7 @@ name: Issue Triage
 on:
   issues:
     types: [opened]
+  workflow_dispatch:
 
 jobs:
   triage:
