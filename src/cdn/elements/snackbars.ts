@@ -13,7 +13,7 @@ export function updateSnackbar(snackbar: Element, milliseconds?: number) {
   blurActiveElement();
 
   const activeSnackbars = queryAll(".snackbar.active");
-  for(let i=0; i<activeSnackbars.length; i++) removeClass(activeSnackbars[i], "active");
+  removeClass(activeSnackbars, "active");
   addClass(snackbar, "active");
   onWeak(snackbar, "click", onClickSnackbar);
 

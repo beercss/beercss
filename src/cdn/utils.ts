@@ -158,7 +158,7 @@ export function updateAllClickable(element: Element) {
   if (!hasClass(container, "tabs") && !hasClass(container, "tabbed") && !hasTag(container, "nav")) return;
 
   const as = queryAll("a", container);
-  for(let i=0; i<as.length; i++) removeClass(as[i], "active");
+  removeClass(as, "active");
   if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
 }
 
