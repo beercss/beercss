@@ -24,7 +24,6 @@ body.dark {
 
 html {
   font-size: var(--size);
-  scrollbar-gutter: stable;
 }
 
 body {
@@ -35,10 +34,6 @@ body {
   font-size: 0.875rem;
   line-height: 1.5rem;
   letter-spacing: 0.0313rem;
-}
-
-body:has(dialog[open], dialog.active) {
-  overflow: hidden;
 }
 
 @media (pointer: fine) {
@@ -59,6 +54,10 @@ body:has(dialog[open], dialog.active) {
 
 @media (pointer: coarse) {
   body:has(input[type=range]:focus) {
+    overflow: hidden;
+  }
+
+  body:has(dialog[open], dialog.active) {
     overflow: hidden;
   }
 }
