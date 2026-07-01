@@ -4,7 +4,7 @@ import BeerCssCustomElement from "../src/cdn/customElement.js";
 let container: HTMLElement;
 let originalRun: any;
 
-vi.mock('https://cdn.jsdelivr.net/npm/beercss@4.0.22/dist/cdn/beer.min.js', () => {
+vi.mock('https://cdn.jsdelivr.net/npm/beercss@4.0.23/dist/cdn/beer.min.js', () => {
   return {
     default: {},
     namedExport: '',

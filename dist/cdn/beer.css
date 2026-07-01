@@ -24,7 +24,6 @@ body.dark {
 
 html {
   font-size: var(--size);
-  scrollbar-gutter: stable;
 }
 
 body {
@@ -35,10 +34,6 @@ body {
   font-size: 0.875rem;
   line-height: 1.5rem;
   letter-spacing: 0.0313rem;
-}
-
-body:has(dialog[open], dialog.active) {
-  overflow: hidden;
 }
 
 @media (pointer: fine) {
@@ -59,6 +54,10 @@ body:has(dialog[open], dialog.active) {
 
 @media (pointer: coarse) {
   body:has(input[type=range]:focus) {
+    overflow: hidden;
+  }
+
+  body:has(dialog[open], dialog.active) {
     overflow: hidden;
   }
 }
@@ -206,7 +205,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.22/dist/cdn/material-symbols-outlined.woff2) format("woff2");
+  src: url(material-symbols-outlined.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.23/dist/cdn/material-symbols-outlined.woff2) format("woff2");
 }
 
 /* rounded icons */
@@ -216,7 +215,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.22/dist/cdn/material-symbols-rounded.woff2) format("woff2");
+  src: url(material-symbols-rounded.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.23/dist/cdn/material-symbols-rounded.woff2) format("woff2");
 }
 
 /* sharp icons */
@@ -226,7 +225,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.22/dist/cdn/material-symbols-sharp.woff2) format("woff2");
+  src: url(material-symbols-sharp.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.23/dist/cdn/material-symbols-sharp.woff2) format("woff2");
 }
 
 /* subset of only required icons */
@@ -236,7 +235,7 @@ body.dark {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.22/dist/cdn/material-symbols-subset.woff2) format("woff2");
+  src: url(material-symbols-subset.woff2) format("woff2"), url(https://cdn.jsdelivr.net/npm/beercss@4.0.23/dist/cdn/material-symbols-subset.woff2) format("woff2");
 }
 
 /* begin scoped */
