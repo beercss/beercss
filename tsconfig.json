@@ -14,6 +14,13 @@
     "noImplicitAny": true,
     "lib": ["esnext", "dom"]
   },
-  "include": ["src/**/*.{js,tsx,ts,vue}", "src/**/*.d.ts"],
+  "vueCompilerOptions": {
+    "target": 3,
+    "extensions": [
+      ".vue"
+    ],
+    "plugins": ["@vue/language-plugin-pug"]
+  },
+  "include": ["src/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

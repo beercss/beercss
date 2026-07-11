@@ -25,7 +25,7 @@ export function updateMenu(from: Element, menu: HTMLMenuElement, e?: Event) {
     if (!hasTag(document.activeElement, "input")) blurActiveElement();
 
     const isActive = hasClass(menu, "active");
-    const isEvent = !!(e?.target === from);
+    const isEvent = (e?.target === from);
     const isChild = !!from.closest("menu");
 
     if ((!isActive && isChild) || (isActive && isEvent)) {

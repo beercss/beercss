@@ -4,25 +4,19 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .m:not(.s),
-  .l:not(.s),
-  .m.l:not(.s) {
-    display: none;
+  :is(.m, .l):not(.s) {
+    display: none !important;
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 992px) {
-  .s:not(.m),
-  .l:not(.m),
-  .s.l:not(.m) {
-    display: none;
+  :is(.s, .l):not(.m) {
+    display: none !important;
   }
 }
 
 @media only screen and (min-width: 993px) {
-  .m:not(.l),
-  .s:not(.l),
-  .m.s:not(.l) {
-    display: none;
+  :is(.m, .s):not(.l) {
+    display: none !important;
   }
 }

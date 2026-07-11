@@ -22,6 +22,7 @@ const data: IGmail = {
   emails: [],
   check: false,
   url: "/gmail",
+  isMax: true,
 };
 
 const dataAsRef: Ref<IGmail> = ref(data);

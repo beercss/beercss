@@ -3,71 +3,77 @@
   .large-space
   nav.wrap
     h4 Colors
-    button.chip.circle(data-ui="#dialog-colors")
+    button.chip.circle(data-ui="#dialog-colors", @click="showCode()")
       i code
     button.chip.circle(@click="sharedDomain.updateMode(data)")
       i {{ data.isDark ? "light_mode" : "dark_mode" }}
-    button.chip.circle
-      i palette
-      input(type="color", @input="sharedDomain.updateTheme(data, $event)")
-    button.chip.circle
-      i upload
-      input(type="file", @change="sharedDomain.updateTheme(data, $event)")
-    button.circle.small.red(@click="sharedDomain.updateTheme(data, '#f44336')")
-    button.circle.small.pink(@click="sharedDomain.updateTheme(data, '#e91e63')")
-    button.circle.small.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')")
-    button.circle.small.deep-purple(@click="sharedDomain.updateTheme(data, '#673ab7')")
-    button.circle.small.indigo(@click="sharedDomain.updateTheme(data, '#3f51b5')")
-    button.circle.small.blue(@click="sharedDomain.updateTheme(data, '#2196f3')")
-    button.circle.small.light-blue(@click="sharedDomain.updateTheme(data, '#03a9f4')")
-    button.circle.small.cyan(@click="sharedDomain.updateTheme(data, '#00bcd4')")
-    button.circle.small.teal(@click="sharedDomain.updateTheme(data, '#009688')")
-    button.circle.small.green(@click="sharedDomain.updateTheme(data, '#4caf50')")
-    button.circle.small.light-green(@click="sharedDomain.updateTheme(data, '#8bc34a')")
-    button.circle.small.lime(@click="sharedDomain.updateTheme(data, '#cddc39')")
-    button.circle.small.yellow(@click="sharedDomain.updateTheme(data, '#ffeb3b')")
-    button.circle.small.amber(@click="sharedDomain.updateTheme(data, '#ffc107')")
-    button.circle.small.orange(@click="sharedDomain.updateTheme(data, '#ff9800')")
-    button.circle.small.deep-orange(@click="sharedDomain.updateTheme(data, '#ff5722')")
-    button.circle.small.brown(@click="sharedDomain.updateTheme(data, '#795548')")
-    button.circle.small.grey(@click="sharedDomain.updateTheme(data, '#9e9e9e')")
-    button.circle.small.blue-grey(@click="sharedDomain.updateTheme(data, '#607d8b')")
-    button.circle.small.black(@click="sharedDomain.updateTheme(data, '#000000')")
-    button.circle.small.white(@click="sharedDomain.updateTheme(data, '#ffffff')")
+    div
+      button.chip.circle
+        i palette
+      input(type="color", @input="sharedDomain.updateTheme(data, $event)", aria-hidden="true")
+    div
+      button.chip.circle
+        i upload
+      input(type="file", @change="sharedDomain.updateTheme(data, $event)", aria-hidden="true")
+    button.circle.small.red(@click="sharedDomain.updateTheme(data, '#f44336')", aria-hidden="true")
+    button.circle.small.pink(@click="sharedDomain.updateTheme(data, '#e91e63')", aria-hidden="true")
+    button.circle.small.purple(@click="sharedDomain.updateTheme(data, '#9c27b0')", aria-hidden="true")
+    button.circle.small.deep-purple(@click="sharedDomain.updateTheme(data, '#673ab7')", aria-hidden="true")
+    button.circle.small.indigo(@click="sharedDomain.updateTheme(data, '#3f51b5')", aria-hidden="true")
+    button.circle.small.blue(@click="sharedDomain.updateTheme(data, '#2196f3')", aria-hidden="true")
+    button.circle.small.light-blue(@click="sharedDomain.updateTheme(data, '#03a9f4')", aria-hidden="true")
+    button.circle.small.cyan(@click="sharedDomain.updateTheme(data, '#00bcd4')", aria-hidden="true")
+    button.circle.small.teal(@click="sharedDomain.updateTheme(data, '#009688')", aria-hidden="true")
+    button.circle.small.green(@click="sharedDomain.updateTheme(data, '#4caf50')", aria-hidden="true")
+    button.circle.small.light-green(@click="sharedDomain.updateTheme(data, '#8bc34a')", aria-hidden="true")
+    button.circle.small.lime(@click="sharedDomain.updateTheme(data, '#cddc39')", aria-hidden="true")
+    button.circle.small.yellow(@click="sharedDomain.updateTheme(data, '#ffeb3b')", aria-hidden="true")
+    button.circle.small.amber(@click="sharedDomain.updateTheme(data, '#ffc107')", aria-hidden="true")
+    button.circle.small.orange(@click="sharedDomain.updateTheme(data, '#ff9800')", aria-hidden="true")
+    button.circle.small.deep-orange(@click="sharedDomain.updateTheme(data, '#ff5722')", aria-hidden="true")
+    button.circle.small.brown(@click="sharedDomain.updateTheme(data, '#795548')", aria-hidden="true")
+    button.circle.small.grey(@click="sharedDomain.updateTheme(data, '#9e9e9e')", aria-hidden="true")
+    button.circle.small.blue-grey(@click="sharedDomain.updateTheme(data, '#607d8b')", aria-hidden="true")
+    button.circle.small.black(@click="sharedDomain.updateTheme(data, '#000000')", aria-hidden="true")
+    button.circle.small.white(@click="sharedDomain.updateTheme(data, '#ffffff')", aria-hidden="true")
   .large-space
   .grid
     .s12.m6.l3
-      h6 Primary
+      h5.h6 Primary
       .space
-      .padding.primary primary
+      .padding.primary
+        div primary
+        div primary-border
+        div primary-text
       .padding.primary-container primary-container
-      .padding.border.primary-border primary-border
-      .padding.primary-text primary-text
     .s12.m6.l3
-      h6 Secondary
+      h5.h6 Secondary
       .space
-      .padding.secondary secondary
+      .padding.secondary
+        div secondary
+        div secondary-border
+        div secondary-text
       .padding.secondary-container secondary-container
-      .padding.border.secondary-border secondary-border
-      .padding.secondary-text secondary-text
     .s12.m6.l3
-      h6 Tertiary
+      h5.h6 Tertiary
       .space
-      .padding.tertiary tertiary
+      .padding.tertiary
+        div tertiary
+        div tertiary-border
+        div tertiary-text
       .padding.tertiary-container tertiary-container
-      .padding.border.tertiary-border tertiary-border
-      .padding.tertiary-text tertiary-text
     .s12.m6.l3
-      h6 Error
+      h5.h6 Error
       .space
-      .padding.error error
+      .padding.error
+        div error
+        div error-border
+        div error-text
       .padding.error-container error-container
-      .padding.border.error-border error-border
-      .padding.error-text error-text
   .medium-space
   .grid
     .s12.m6
-      h6 Neutral
+      h5.h6 Neutral
       .grid
         .s12.l6
           .padding.surface-dim surface-dim
@@ -83,18 +89,19 @@
           .padding.surface-container-high surface-container-high
           .padding.surface-container-highest surface-container-highest
     .s12.m6.l3
-      h6 Others
+      h5.h6 Other
       .grid
         .s12
-          .padding.inverse-primary inverse-primary
-          .padding.inverse-primary-border.border inverse-primary-border
-          .padding.inverse-primary-text inverse-primary-text
+          .padding.inverse-primary.white-text
+            div inverse-primary
+            div inverse-primary-border
+            div inverse-primary-text
 
   .overlay
   dialog#dialog-colors.right.medium
     header.fixed
       nav
-        h5.max Colors
+        h2.h5.max(aria-hidden="true") Colors
         button.circle.transparent(data-ui="#dialog-colors")
           i close
     div
@@ -106,33 +113,33 @@
           input(v-model="data.theme.selected", type="radio", value="dark")
           span Dark
     .space
-    article.border
+    .small-round.padding.border
       pre.scroll
         code(v-html="sourceCode()")
 
     .grid.no-round
       .s12
-        h5 Primary
+        h3.h5 Primary
         .padding.primary primary
         .padding.primary-container primary-container
         .padding.border.primary-border primary-border
         .padding.primary-text primary-text
-        h5 Secondary
+        h3.h5 Secondary
         .padding.secondary secondary
         .padding.secondary-container secondary-container
         .padding.border.secondary-border secondary-border
         .padding.secondary-text secondary-text
-        h5 Tertiary
+        h3.h5 Tertiary
         .padding.tertiary tertiary
         .padding.tertiary-container tertiary-container
         .padding.border.tertiary-border tertiary-border
         .padding.tertiary-text tertiary-text
-        h5 Error
+        h3.h5 Error
         .padding.error error
         .padding.error-container error-container
         .padding.border.error-border error-border
         .padding.error-text error-text
-        h5 Neutral
+        h3.h5 Neutral
         .padding.surface-dim surface-dim
         .padding.surface-bright surface-bright
         .padding.surface-variant surface-variant
@@ -144,12 +151,12 @@
         .padding.surface-container-highest surface-container-highest
         .padding.surface surface
         .padding.background background
-        h5 Others
+        h3.h5 Other
         .padding.inverse-primary inverse-primary
         .padding.inverse-primary-border.border inverse-primary-border
         .padding.inverse-primary-text inverse-primary-text
       .s12
-        h5 Red
+        h3.h5 Red
         .black-text.red1 red1
         .black-text.red2 red2
         .black-text.red3 red3
@@ -163,7 +170,7 @@
         .red-border.border red-border
         .red-text red-text
       .s12
-        h5 Pink
+        h3.h5 Pink
         .black-text.pink1 pink1
         .black-text.pink2 pink2
         .black-text.pink3 pink3
@@ -177,7 +184,7 @@
         .pink-border.border pink-border
         .pink-text pink-text
       .s12
-        h5 Purple
+        h3.h5 Purple
         .black-text.purple1 purple1
         .black-text.purple2 purple2
         .black-text.purple3 purple3
@@ -191,7 +198,7 @@
         .purple-border.border purple-border
         .purple-text purple-text
       .s12
-        h5 Deep-purple
+        h3.h5 Deep purple
         .black-text.deep-purple1 deep-purple1
         .black-text.deep-purple2 deep-purple2
         .black-text.deep-purple3 deep-purple3
@@ -205,7 +212,7 @@
         .deep-purple-border.border deep-purple-border
         .deep-purple-text deep-purple-text
       .s12
-        h5 Indigo
+        h3.h5 Indigo
         .black-text.indigo1 indigo1
         .black-text.indigo2 indigo2
         .black-text.indigo3 indigo3
@@ -219,7 +226,7 @@
         .indigo-border.border indigo-border
         .indigo-text indigo-text
       .s12
-        h5 Blue
+        h3.h5 Blue
         .black-text.blue1 blue1
         .black-text.blue2 blue2
         .black-text.blue3 blue3
@@ -233,7 +240,7 @@
         .blue-border.border blue-border
         .blue-text blue-text
       .s12
-        h5 Light-blue
+        h3.h5 Light blue
         .black-text.light-blue1 light-blue1
         .black-text.light-blue2 light-blue2
         .black-text.light-blue3 light-blue3
@@ -247,7 +254,7 @@
         .light-blue-border.border light-blue-border
         .light-blue-text light-blue-text
       .s12
-        h5 Cyan
+        h3.h5 Cyan
         .black-text.cyan1 cyan1
         .black-text.cyan2 cyan2
         .black-text.cyan3 cyan3
@@ -261,7 +268,7 @@
         .cyan-border.border cyan-border
         .cyan-text cyan-text
       .s12
-        h5 Teal
+        h3.h5 Teal
         .black-text.teal1 teal1
         .black-text.teal2 teal2
         .black-text.teal3 teal3
@@ -275,7 +282,7 @@
         .teal-border.border teal-border
         .teal-text teal-text
       .s12
-        h5 Green
+        h3.h5 Green
         .black-text.green1 green1
         .black-text.green2 green2
         .black-text.green3 green3
@@ -289,7 +296,7 @@
         .green-border.border green-border
         .green-text green-text
       .s12
-        h5 Light-green
+        h3.h5 Light green
         .black-text.light-green1 light-green1
         .black-text.light-green2 light-green2
         .black-text.light-green3 light-green3
@@ -303,7 +310,7 @@
         .light-green-border.border light-green-border
         .light-green-text light-green-text
       .s12
-        h5 Lime
+        h3.h5 Lime
         .black-text.lime1 lime1
         .black-text.lime2 lime2
         .black-text.lime3 lime3
@@ -317,7 +324,7 @@
         .lime-border.border lime-border
         .lime-text lime-text
       .s12
-        h5 Yellow
+        h3.h5 Yellow
         .black-text.yellow1 yellow1
         .black-text.yellow2 yellow2
         .black-text.yellow3 yellow3
@@ -331,7 +338,7 @@
         .yellow-border.border yellow-border
         .yellow-text yellow-text
       .s12
-        h5 Amber
+        h3.h5 Amber
         .black-text.amber1 amber1
         .black-text.amber2 amber2
         .black-text.amber3 amber3
@@ -345,7 +352,7 @@
         .amber-border.border amber-border
         .amber-text amber-text
       .s12
-        h5 Orange
+        h3.h5 Orange
         .black-text.orange1 orange1
         .black-text.orange2 orange2
         .black-text.orange3 orange3
@@ -359,7 +366,7 @@
         .orange-border.border orange-border
         .orange-text orange-text
       .s12
-        h5 Deep-orange
+        h3.h5 Deep orange
         .black-text.deep-orange1 deep-orange1
         .black-text.deep-orange2 deep-orange2
         .black-text.deep-orange3 deep-orange3
@@ -373,7 +380,7 @@
         .deep-orange-border.border deep-orange-border
         .deep-orange-text deep-orange-text
       .s12
-        h5 Brown
+        h3.h5 Brown
         .black-text.brown1 brown1
         .black-text.brown2 brown2
         .black-text.brown3 brown3
@@ -387,7 +394,7 @@
         .brown-border.border brown-border
         .brown-text brown-text
       .s12
-        h5 Grey
+        h3.h5 Grey
         .black-text.grey1 grey1
         .black-text.grey2 grey2
         .black-text.grey3 grey3
@@ -401,7 +408,7 @@
         .grey-border.border grey-border
         .grey-text grey-text
       .s12
-        h5 Blue-grey
+        h3.h5 Blue grey
         .black-text.blue-grey1 blue-grey1
         .black-text.blue-grey2 blue-grey2
         .black-text.blue-grey3 blue-grey3
@@ -415,17 +422,17 @@
         .blue-grey-border.border blue-grey-border
         .blue-grey-text blue-grey-text
       .s12
-        h5 Black
+        h3.h5 Black
         .black.white-text black
         .black-border.border black-border
         div black-text
       .s12
-        h5 White
+        h3.h5 White
         .white.black-text white
         .white-border.border white-border
         div white-text
       .s12
-        h5 Transparent
+        h3.h5 Transparent
         .transparent transparent
         .transparent-border.border transparent-border
         div transparent-text
@@ -434,6 +441,11 @@
 <script setup lang="ts">
 import sharedDomain from "../shared/domain";
 import data from "./data";
+
+const showCode = () => {
+  if (!data.value) return;
+  if (!data.value.theme.light || !data.value.theme.dark || !data.value.theme.selected) sharedDomain.updateTheme(data.value, null);
+};
 
 const sourceCode = () => {
   return ((data.value.theme as any)[data.value.theme.selected] || "").replace(/;/g, ";<br/>");

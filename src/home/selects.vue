@@ -36,30 +36,30 @@
   .grid
     .s12.l4
       .field.suffix.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
         i arrow_drop_down
     .s12.l4
       .field.suffix.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
         i arrow_drop_down
-        span.helper Helper text
+        output Helper text
     .s12.l4
       .field.suffix.invalid.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
         i arrow_drop_down
-        span.error Error text
+        output.invalid Error text
     .s12.l4
       .field.label.suffix.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
@@ -67,69 +67,22 @@
         i arrow_drop_down
     .s12.l4
       .field.label.suffix.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
         label Label
         i arrow_drop_down
-        span.helper Helper text
+        output Helper text
     .s12.l4
       .field.label.suffix.invalid.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
         label Label
         i arrow_drop_down
-        span.error Error text
-    .s12.l4
-      .field.label.suffix.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        label Label
-        img.circle(:src="'/favicon.png'")
-    .s12.l4
-      .field.label.suffix.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        label Label
-        img.circle(:src="'/favicon.png'")
-        span.helper Helper text
-    .s12.l4
-      .field.label.suffix.invalid.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        label Label
-        img.circle(:src="'/favicon.png'")
-        span.error Error text
-    .s12.l4
-      .field.suffix.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        progress.circle
-    .s12.l4
-      .field.suffix.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        progress.circle
-    .s12.l4
-      .field.suffix.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        progress.circle
+        output.invalid Error text
 </template>
 
 <script setup lang="ts">

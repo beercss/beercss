@@ -20,11 +20,12 @@ try {
     },
     server: {
       open: "/",
+      host: true,
     },
   });
 
   await server.listen();
   server.printUrls();
-} catch(error) {
+} catch (error) {
   console.log(error);
 }

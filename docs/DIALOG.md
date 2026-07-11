@@ -72,7 +72,7 @@ Add/remove `active` class on dialog.
 
 #### Method 2
 
-Call HTML dialog element methods
+Using [HTML dialog element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog).
 
 ```html
 <dialog id="dialog">
@@ -127,8 +127,31 @@ Call `ui("dialog-selector")`
 ui('#dialog');
 ```
 
+#### Method 5
+
+Using [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API).
+
+```html
+<button popovertarget="dialog">Button</button>
+
+<dialog id="dialog" popover>
+  <h5>Title</h5>
+  <p>Content of dialog</p>
+  <nav>
+    <button>Cancel</button>
+    <button>Confirm</button>
+  </nav>
+</dialog>
+```
+
+```js
+document.querySelector('#dialog').hidePopover(); // hide
+document.querySelector('#dialog').showPopover(); //show
+document.querySelector('#dialog').togglePopover(); // toggle
+```
+
 ## Go to
 
 [Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Slider](SLIDER.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Snackbar](SNACKBAR.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Shape](SHAPE.md), [Slider](SLIDER.md), [Snackbar](SNACKBAR.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

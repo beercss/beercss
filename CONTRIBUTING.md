@@ -9,7 +9,7 @@ Hi! We are really excited that you are interested in contributing to Beer CSS! B
 
 ## Issue Reporting Guidelines
 
-- None at moment :)
+- If you are reporting a bug, please use the "Bug report" template, otherwise use the "Blank issue" template.
 
 ## Pull Request Guidelines
 
@@ -45,7 +45,7 @@ $ npm install
 ### Commonly used NPM scripts
 
 ``` bash
-# watch and opens a brownser
+# watch and opens a browser
 $ npm run dev
 
 # build all dist files, including npm packages

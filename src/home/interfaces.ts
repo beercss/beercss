@@ -18,4 +18,8 @@ export interface IHome extends ILayout {
   isHorizontal: boolean,
   isHorizontalSlider: boolean,
   isRtl: boolean,
+  isMax: boolean,
+  isExplore: boolean,
+  isShowingSample: boolean,
+  mediaShape: number,
 }

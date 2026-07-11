@@ -18,10 +18,10 @@
       i.primary-text today
       span Assist
     button.chip
-      img(:src="'favicon.png'")
+      img(alt="", :src="'favicon.png'")
       span Image
     button.chip
-      img.responsive(:src="'favicon.png'")
+      img.responsive(alt="", :src="'favicon.png'")
       span Responsive
   nav.wrap
     button.chip.round Suggestion
@@ -35,10 +35,10 @@
       i.primary-text today
       span Assist
     button.chip.round
-      img(:src="'favicon.png'")
+      img(alt="", :src="'favicon.png'")
       span Image
     button.chip.round
-      img.responsive(:src="'favicon.png'")
+      img.responsive(alt="", :src="'favicon.png'")
       span Responsive
   nav.wrap
     button.chip.fill Suggestion
@@ -52,10 +52,10 @@
       i.primary-text today
       span Assist
     button.chip.fill
-      img(:src="'favicon.png'")
+      img(alt="", :src="'favicon.png'")
       span Image
     button.chip.fill
-      img.responsive(:src="'favicon.png'")
+      img.responsive(alt="", :src="'favicon.png'")
       span Responsive
   nav.wrap
     button.chip.fill.round Suggestion
@@ -69,10 +69,10 @@
       i.primary-text today
       span Assist
     button.chip.fill.round
-      img(:src="'favicon.png'")
+      img(alt="", :src="'favicon.png'")
       span Image
     button.chip.fill.round
-      img.responsive(:src="'favicon.png'")
+      img.responsive(alt="", :src="'favicon.png'")
       span Responsive
 </template>
 

@@ -1,4 +1,4 @@
-import { router } from "../shared/router.js";
+import { addRoute } from "../shared/router.js";
 import musicPlayer from "./page.vue";
 
-router("/music-player", musicPlayer);
+addRoute("/music-player", musicPlayer);

@@ -15,4 +15,5 @@ export interface IGmail extends ILayout {
   emails: Array<IItemGmail>,
   check: boolean,
   url: string,
+  isMax: boolean,
 }

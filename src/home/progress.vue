@@ -1,10 +1,7 @@
 <template lang="pug">
 #progress
   .large-space
-  h4
-    span Progress
-    button.chip.circle(@click="domain.showSamples(data, '#default-progress progress, #custom-progress article, #custom-progress nav > button, #custom-progress nav > .chip', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
-      i code
+  h4 Progress
   nav.wrap
     label.radio
       input(type="radio", name="percent-progress", @click="domain.updateProgress(0)")
@@ -28,42 +25,51 @@
       input(type="radio", name="color-progress", @click="domain.updateTextColor('#progress progress', 'orange-text')")
       span orange
   .large-space
-  #default-progress
-    h6 Linear (default)
-    .space
-    progress
-    .space
-    progress(value="30", max="100")
-    .medium-space
-    h6 Circular
-    nav
-      progress.circle.small
+  #linear-progress
+    h5.h6
+      span Linear
+      button.chip.circle(@click="domain.showSamples(data, '#linear-progress progress', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
+        i code
+    .grid
+      .s6.m3.l3
+        progress
+      .s6.m3.l3
+        progress(value="30", max="100")
+      .s6.m3.l3
+        progress.wavy
+      .s6.m3.l3
+        progress.wavy(value="30", max="100")
+  .large-space
+  #circular-progress 
+    h5.h6
+      span Circular
+      button.chip.circle(@click="domain.showSamples(data, '#circular-progress progress', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
+        i code
+    nav.wrap
       progress.circle
-      progress.circle.large
+      progress.circle(value="30", max="100")
+      progress.circle.wavy
+      progress.circle.wavy(value="30", max="100")
   .large-space
   #custom-progress
-    h6 Custom progressbar
+    h5.h6
+      span Custom progress
+      button.chip.circle(@click="domain.showSamples(data, '#custom-progress > nav > *', 'Progress', null, 'https://github.com/beercss/beercss/blob/main/docs/PROGRESS.md')")
+        i code
     .medium-space
     nav
       article
-        h5 Card
         progress.max(value="30", max="100")
+        h5(aria-hidden="true") Card
       button.chip
-        span Chip
         progress.max(value="30", max="100")
-      button
-        span Button
-        progress.max(value="30", max="100")
-    nav
-      article
-        h5 Card
-        progress.max.vertical(value="30", max="100")
-      button.chip
         span Chip
-        progress.max.vertical(value="30", max="100")
       button
+        progress.max(value="30", max="100")
         span Button
-        progress.max.vertical(value="30", max="100")
+      .field.border.prefix
+        progress.circle
+        input(aria-hidden="true")
   .space
 </template>
 

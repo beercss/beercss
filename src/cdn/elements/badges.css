@@ -1,10 +1,11 @@
 .badge {
+  --_x: 0;
+  --_y: -100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   font-size: 0.6875rem;
-  text-transform: none;
   z-index: 2;
   padding: 0 0.25rem;
   min-block-size: 1rem;
@@ -14,40 +15,24 @@
   line-height: normal;
   border-radius: 1rem;
   inset: 50% auto auto 50%;
-  transform: translate(0, -100%);
+  transform: translate(var(--_x, 50%), var(--_y, -50%));
   font-family: var(--font);
 }
 
 .badge.top {
-  transform: translate(-50%, -100%);
+  --_y: -100%;
 }
 
 .badge.bottom {
-  transform: translate(-50%, 0);
+  --_y: 0;
 }
 
 .badge.left {
-  transform: translate(-100%, -50%);
+  --_x: -100%;
 }
 
 .badge.right {
-  transform: translate(0, -50%);
-}
-
-.badge.top.left {
-  transform: translate(-100%, -100%);
-}
-
-.badge.bottom.left {
-  transform: translate(-100%, 0);
-}
-
-.badge.top.right {
-  transform: translate(0, -100%);
-}
-
-.badge.bottom.right {
-  transform: translate(0, 0);
+  --_x: 0;
 }
 
 .badge.border {
@@ -77,7 +62,7 @@
 }
 
 nav:is(.left, .right, .top, .bottom) > a > .badge,
-nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > .badge {
+nav:is(.left, .right, .top, .bottom) :is(li, div:has(> menu)) > a > .badge {
   inset: 1rem auto auto 50%;
 }
 
@@ -86,8 +71,4 @@ nav:is(.left, .right, .top, .bottom) > :is(ol, ul) > li > a > .badge {
   transform: none;
   position: relative;
   margin: 0 0.125rem;
-}
-
-:is(button, .button, .chip) > .badge.none {
-  margin: 0 -0.5rem;
 }

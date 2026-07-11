@@ -1,3 +1,6 @@
 import "./dist/cdn/beer.min.css";
-import beercss from "./dist/cdn/beer.min.js";
-export default beercss;
+import { ui } from "./dist/cdn/beer.min.js";
+export {
+  ui as default,
+  ui,
+};

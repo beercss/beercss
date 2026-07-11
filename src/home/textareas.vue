@@ -23,7 +23,7 @@
         type="radio",
         name="size-textareas",
         checked,
-        @click="updateSize('#textareas .field')"
+        @click="updateSize('#textareas .field', '')"
       )
       span medium
     label.radio
@@ -32,84 +32,49 @@
     label.radio
       input(type="radio", name="size-textareas", @click="updateSize('#textareas .field', 'extra')")
       span extra
-    label.radio
-      input(type="radio", name="minmax-textareas", checked, @click="updateMinMax('#textareas .field', '')")
-      span max
-    label.radio
-      input(type="radio", name="minmax-textareas", @click="updateMinMax('#textareas .field', 'min')")
-      span min
   .space
   .grid
     .s12.l4
-      .field.textarea.border
-        textarea
+      .field.border
+        textarea(aria-hidden="true")
     .s12.l4
-      .field.textarea.border
-        textarea
-        span.helper Helper text
+      .field.border
+        textarea(aria-hidden="true")
+        output Helper text
     .s12.l4
-      .field.textarea.invalid.border
-        textarea
-        span.error Error text
+      .field.invalid.border
+        textarea(aria-hidden="true")
+        output.invalid Error text
     .s12.l4
-      .field.textarea.label.border
-        textarea
+      .field.label.border
+        textarea(aria-hidden="true")
         label Label
     .s12.l4
-      .field.textarea.label.border
-        textarea
+      .field.label.border
+        textarea(aria-hidden="true")
         label Label
-        span.helper Helper text
+        output Helper text
     .s12.l4
-      .field.textarea.label.invalid.border
-        textarea
+      .field.label.invalid.border
+        textarea(aria-hidden="true")
         label Label
-        span.error Error text
+        output.invalid Error text
     .s12.l4
-      .field.textarea.label.prefix.border
+      .field.label.prefix.border
         i search
-        textarea
+        textarea(aria-hidden="true")
         label Label
     .s12.l4
-      .field.textarea.label.suffix.border
-        textarea
-        label Label
-        i search
-    .s12.l4
-      .field.textarea.label.prefix.suffix.border
-        i search
-        textarea
+      .field.label.suffix.border
+        textarea(aria-hidden="true")
         label Label
         i search
     .s12.l4
-      .field.textarea.label.prefix.border
-        img.circle(:src="'/favicon.png'")
-        textarea
+      .field.label.prefix.suffix.border
+        i search
+        textarea(aria-hidden="true")
         label Label
-    .s12.l4
-      .field.textarea.label.suffix.border
-        textarea
-        label Label
-        img.circle(:src="'/favicon.png'")
-    .s12.l4
-      .field.textarea.label.prefix.suffix.border
-        img.circle(:src="'/favicon.png'")
-        textarea
-        label Label
-        img.circle(:src="'/favicon.png'")
-    .s12.l4
-      .field.textarea.border.prefix
-        progress.circle
-        textarea
-    .s12.l4
-      .field.textarea.border.suffix
-        textarea
-        progress.circle
-    .s12.l4
-      .field.textarea.border.prefix.suffix
-        progress.circle
-        textarea
-        progress.circle
+        i search
 </template>
 
 <script setup lang="ts">

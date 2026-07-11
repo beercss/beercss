@@ -9,21 +9,22 @@ main.responsive
   article.no-padding.round
     .grid.no-space
       .s12.m4.s
-        img.responsive.extra.top-round(:src="'/classic-utility-jacket.jpg'", @click="sharedDomain.updateTheme(data, '#f9bd49')")
+        img.responsive.extra.top-round(alt="", :src="'/classic-utility-jacket.webp'", @click="sharedDomain.updateTheme(data, '#f9bd49')")
       .s12.m4.m.l
-        img.responsive.extra.left-round(:src="'/classic-utility-jacket.jpg'", @click="sharedDomain.updateTheme(data, '#f9bd49')")
+        img.responsive.extra.left-round(alt="", :src="'/classic-utility-jacket.webp'", @click="sharedDomain.updateTheme(data, '#f9bd49')", fetchpriority="high")
       .s12.m8.padding
         .row
           .max
-            h5.no-margin Classic Utility Jacket
+            h4.h5.no-margin Classic Utility Jacket
             span In stock
-          h6 $110,00
-        nav
-          button.chip.square.active XS
-          button.chip.square S
-          button.chip.square M
-          button.chip.square L
-          button.chip.square XL
+          h5.h6 $110,00
+        nav.group.connected
+          button.left-round.active(data-ui="") XS
+          button.no-round(data-ui="") S
+          button.no-round(data-ui="") M
+          button.no-round(data-ui="") L
+          button.right-round(data-ui="") XL
+          .space
           label.l Size guide
         hr.large
         nav
@@ -32,22 +33,22 @@ main.responsive
           button.border.square.no-round
             i favorite
         p Free shipping on all continental US orders.
-
   article.round.border
     .grid.no-space
       .s12.m4
-        img.responsive.extra.round(:src="'/kids-jumpsuit.jpg'", @click="sharedDomain.updateTheme(data, '/kids-jumpsuit.jpg')")
+        img.responsive.extra.round(alt="", :src="'/kids-jumpsuit.webp'", @click="sharedDomain.updateTheme(data, '/kids-jumpsuit.webp')")
       .s12.m8.padding
-        h6.no-margin.bold Kids Jumpsuit
+        h4.h6.no-margin.bold Kids Jumpsuit
         h5.bold.middle-align
           span $39,00
           label &nbsp;In stock
-        nav
-          button.chip.circle XS
-          button.chip.circle S
-          button.chip.circle M
-          button.chip.circle L
-          button.chip.circle XL
+        nav.group.connected
+          button.left-round.active(data-ui="") XS
+          button.no-round(data-ui="") S
+          button.no-round(data-ui="") M
+          button.no-round(data-ui="") L
+          button.right-round(data-ui="") XL
+          .space
           label.l Size guide
         hr.large
         nav
@@ -56,22 +57,22 @@ main.responsive
           button.circle
             i favorite
         p Free shipping on all continental US orders.
-
   article.small-padding
     .grid.no-space
       .s12.m4
-        img.responsive.extra(:src="'/dogtooth-style-jacket.jpg'", @click="sharedDomain.updateTheme(data, '/dogtooth-style-jacket.jpg')")
+        img.responsive.extra(alt="", :src="'/dogtooth-style-jacket.webp'", @click="sharedDomain.updateTheme(data, '/dogtooth-style-jacket.webp')")
       .s12.m8.large-padding
-        h5.no-margin Dogtooth Style Jacket
-        h6.middle-align
+        h4.h5.no-margin Dogtooth Style Jacket
+        h5.h6.middle-align
           span $39,00
           label &nbsp;In stock
-        nav
-          button.chip.circle XS
-          button.chip.circle S
-          button.chip.circle M
-          button.chip.circle L
-          button.chip.circle XL
+        nav.group.connected
+          button.border.left-round.active(data-ui="") XS
+          button.border.no-round(data-ui="") S
+          button.border.no-round(data-ui="") M
+          button.border.no-round(data-ui="") L
+          button.border.right-round(data-ui="") XL
+          .space
           label.l Size guide
         hr.large
         nav
@@ -80,21 +81,21 @@ main.responsive
           button.large.transparent.circle
             i.primary-text favorite
         p Free shipping on all continental US orders.
-
   article.no-elevate.top-shadow.white-text
     .grid.no-space
       .s12.m4.padding
-        img.responsive.large(:src="'/retro-shoe.jpg'", @click="sharedDomain.updateTheme(data, '/retro-shoe.jpg')")
+        img.responsive.large(alt="", :src="'/retro-shoe.webp'", @click="sharedDomain.updateTheme(data, '/retro-shoe.webp')")
       .s12.m8.padding
-        h5.no-margin Retro Shoe
-        h6.middle-align $39,00
+        h4.h5.no-margin Retro Shoe
+        h5.h6.middle-align $39,00
           label.bold &nbsp;In stock
-        nav
-          button.chip.circle.bottom-round.right-round XS
-          button.chip.circle.bottom-round.right-round S
-          button.chip.circle.bottom-round.right-round M
-          button.chip.circle.bottom-round.right-round L
-          button.chip.circle.bottom-round.right-round XL
+        nav.group.connected
+          button.border.left-round.active(data-ui="") XS
+          button.border.no-round(data-ui="") S
+          button.border.no-round(data-ui="") M
+          button.border.no-round(data-ui="") L
+          button.border.right-round(data-ui="") XL
+          .space
           label.l Size guide
         hr.large
         nav
@@ -103,7 +104,6 @@ main.responsive
           button.large.transparent.circle.bottom-round.right-round
             i.primary-text favorite
         p Free shipping on all continental US orders.
-
   .large-space
   h3.bold Responsive everything.
   hr.large
@@ -111,41 +111,40 @@ main.responsive
   article.no-padding.fill.no-elevate.round
     .grid
       .s12.s
-        img.responsive.large(:src="'/beach-house-in-collingwood-001.jpg'", @click="sharedDomain.updateTheme(data, '/beach-house-in-collingwood-001.jpg')")
+        img.responsive.large(alt="", :src="'/beach-house-in-collingwood-001.webp'", @click="sharedDomain.updateTheme(data, '/beach-house-in-collingwood-001.webp')")
         .absolute.left.bottom.right.bottom-shadow.s.padding.white-text
           div Entire house
-          h5 Beach House in Collingwood
+          h4.h5 Beach House in Collingwood
       .s12.s
         .large-padding
           nav
             i star
-            a 4.94
-            a (128)
-            a Collingwood, Ontario
+            a(href="javascript:;") 4.94
+            a(href="javascript:;") (128)
+            a(href="javascript:;") Collingwood, Ontario
           nav
             button.large Check availability
       .s6.m.l.large-padding.middle-align
         div
           div Entire house
-          h5 Beach House in Collingwood
+          h4.h5 Beach House in Collingwood
           div
             nav
               i star
-              a 4.94
-              a (128)
-              a Collingwood, Ontario
+              a(href="javascript:;") 4.94
+              a(href="javascript:;") (128)
+              a(href="javascript:;") Collingwood, Ontario
             hr.large
             nav
               button.large Check availability
       .s6.m.l.large-padding
-        img.responsive.large.round(:src="'/beach-house-in-collingwood-001.jpg'", @click="sharedDomain.updateTheme(data, '/beach-house-in-collingwood-001.jpg')")
+        img.responsive.large.round(alt="", :src="'/beach-house-in-collingwood-001.webp'", @click="sharedDomain.updateTheme(data, '/beach-house-in-collingwood-001.webp')")
         .space.l
         .row.l
-          img.round.extra(:src="'/beach-house-in-collingwood-002.jpg'")
-          img.round.extra(:src="'/beach-house-in-collingwood-003.jpg'")
+          img.round.extra(alt="", :src="'/beach-house-in-collingwood-002.webp'")
+          img.round.extra(alt="", :src="'/beach-house-in-collingwood-003.webp'")
           .max
 </template>
-
 <script setup lang="ts">
 import data from "./data";
 import sharedDomain from "../shared/domain";

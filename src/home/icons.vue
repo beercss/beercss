@@ -12,7 +12,7 @@
   h4
     span Icons
   .medium-space
-  h6 Default icons
+  h5.h6 Default icons
     button.chip.circle(@click="domain.showSamples(data, '#icons-default i', 'Icons', '#dialog-icons', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
   nav.wrap
@@ -43,7 +43,7 @@
       i.large account_circle
       i.extra account_circle
   .medium-space
-  h6
+  h5.h6
     span SVG icons
     button.chip.circle(@click="domain.showSamples(data, '#icons-svg i, #icons-svg > svg', 'SVG icons', '#dialog-icons-svg', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
@@ -95,7 +95,7 @@
         svg(viewBox="0 0 24 24")
           use(href="#account_circle")
   .medium-space
-  h6
+  h5.h6
     span Image icons
     button.chip.circle(@click="domain.showSamples(data, '#icons-image i', 'Image', null, 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
@@ -103,17 +103,17 @@
   #icons-image
     nav.wrap
       i.tiny
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
       i.small
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
       i
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
       i.large
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
       i.extra
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
   .medium-space
-  h6
+  h5.h6
     span Other libs
     button.chip.circle(@click="domain.showSamples(data, '#icons-libs > nav > i', 'Pictogrammer', '#dialog-icons-libs', 'https://github.com/beercss/beercss/blob/main/docs/ICON.md')")
       i code
@@ -133,7 +133,7 @@
   .medium-space
   #icons-libs
     .space
-    h6
+    h5.h6
       span Font Awesome
       a.link(href="https://fontawesome.com/search?m=free&o=r", target="_blank")
         i open_in_new
@@ -144,7 +144,7 @@
       i.fa-regular.fa-circle-user.large
       i.fa-regular.fa-circle-user.extra
     .medium-space
-    h6
+    h6(aria-hidden="true")
       span Pictogrammers
       a.link(href="https://pictogrammers.com/library/mdi/", target="_blank")
         i open_in_new
@@ -159,7 +159,7 @@
   dialog#dialog-icons.right.large
     header.fixed
       nav
-        h5 Default
+        h5 Default icons
         a.button.border.small-round.m.l(
           href="https://fonts.google.com/icons",
           target="_blank"
@@ -177,7 +177,7 @@
         button.circle.transparent(data-ui="#dialog-icons")
           i close
     .space
-    article.border(v-for="exemplo in data.samples")
+    .small-round.padding.border(v-for="exemplo in data.samples")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll
@@ -206,7 +206,7 @@
         button.circle.transparent(data-ui="#dialog-icons-svg")
           i close
     .space
-    article.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
+    .small-round.padding.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll
@@ -214,11 +214,11 @@
     .medium-space
     h6 Multiple icons in a single SVG
     .medium-space
-    article.border
+    .small-round.padding.border
       pre.scroll
         code(v-html="data.svgSample")
     .space
-    article.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
+    .small-round.padding.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll
@@ -249,7 +249,7 @@
         i open_in_new
     p To work as expected, you need to load the lib manually.
     .space
-    article.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
+    .small-round.padding.border(v-for="(exemplo, i) in data.samples", v-show="i < 5")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll
@@ -261,15 +261,21 @@
         i open_in_new
     p To work as expected, you need to load the lib manually.
     .medium-space
-    article.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
+    .small-round.padding.border(v-for="(exemplo, i) in data.samples", v-show="i > 4")
       div(v-html="exemplo.html")
       .space(v-show="exemplo.html")
       pre.scroll
         code(v-html="exemplo.sourceCode")
     .space
 </template>
-
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";
+import { onMounted } from "vue";
+import utils from "../shared/utils";
+
+onMounted(() => {
+  utils.loadCss("https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css");
+  utils.loadCss("https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css");
+});
 </script>

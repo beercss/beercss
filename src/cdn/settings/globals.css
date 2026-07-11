@@ -1,6 +1,6 @@
 :root {
-  --size: 16px;
-  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Noto Sans, Arial, sans-serif;
+  --size: 1rem;
+  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", "Noto Sans", Arial, sans-serif;
   --font-icon: "Material Symbols Outlined";
   --speed1: 0.1s;
   --speed2: 0.2s;
@@ -15,4 +15,106 @@
   --bottom: env(safe-area-inset-bottom);
   --left: env(safe-area-inset-left);
   --right: env(safe-area-inset-right);
+  --image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
+}
+
+body.dark {
+  --image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
+}
+
+html {
+  font-size: var(--size);
+}
+
+body {
+  color: var(--on-surface);
+  background-color: var(--surface);
+  overflow-x: hidden;
+  font-family: var(--font);
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.0313rem;
+}
+
+@media (pointer: fine) {
+  body ::-webkit-scrollbar,
+  body ::-webkit-scrollbar-thumb,
+  body ::-webkit-scrollbar-button {
+    background: none;
+    inline-size: 0.4rem;
+    block-size: 0.4rem;
+  }
+
+  body :is(:focus, :hover)::-webkit-scrollbar-thumb,
+  body :has(:focus, :hover)::-webkit-scrollbar-thumb {
+    background: var(--outline);
+    border-radius: 1rem;
+  }
+}
+
+@media (pointer: coarse) {
+  body:has(input[type=range]:focus) {
+    overflow: hidden;
+  }
+
+  body:has(dialog[open], dialog.active) {
+    overflow: hidden;
+  }
+}
+
+@keyframes to-page {
+  from {
+    opacity: 0;
+    transform: var(--_transform);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes to-linear-progress {
+  0% {
+    margin: 0 0 0 -100%;
+  }
+
+  50% {
+    margin: 0 0 0 0;
+  }
+
+  100% {
+    margin: 0 0 0 100%;
+  }
+}
+
+@keyframes to-indeterminate-progress {
+  0% {
+    padding: 0 100% 0 0;
+  }
+
+  50% {
+    padding: 0 0 0 0;
+  }
+
+  100% {
+    padding: 0 0 0 100%;
+  }
+}
+
+@keyframes to-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes to-ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }

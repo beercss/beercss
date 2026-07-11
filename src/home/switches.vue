@@ -3,29 +3,29 @@
   .large-space
   h4
     span Switches
-    button.chip.circle(@click="domain.showSamples(data, '#switches .field:not(#switches1), #switches1 label', 'Switches', null, 'https://github.com/beercss/beercss/blob/main/docs/SWITCH.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#switches .field:not(#switches1, #switches2), #switches1 label, #switches2 label', 'Switches', null, 'https://github.com/beercss/beercss/blob/main/docs/SWITCH.md')")
       i code
   .grid
     .s12
       .space
-      h6 Default switch
+      h5.h6 Default switch
       .field.middle-align#switches1
         nav.wrap
           label.switch
-            input(type="checkbox")
+            input(type="checkbox", aria-hidden="true")
             span
           label.switch
-            input(type="checkbox")
+            input(type="checkbox", aria-hidden="true")
             span
           label.switch
-            input(type="checkbox", disabled)
+            input(type="checkbox", disabled, aria-hidden="true")
             span
           label.switch
-            input(type="checkbox", checked, disabled)
+            input(type="checkbox", checked, disabled, aria-hidden="true")
             span
     .s12
-      h6 Switch with icons
-      .field.middle-align#switches1
+      h5.h6 Switch with icons
+      .field.middle-align#switches2
         nav.wrap
           label.switch.icon
             input(type="checkbox")
@@ -45,7 +45,7 @@
               i close
               i done
     .s12
-      h6 Switch in field elements
+      h5.h6 Switch in field elements
     .s12.l6
       .field.middle-align
         nav
@@ -53,7 +53,7 @@
             h6 Title
             div Some text here
           label.switch
-            input(type="checkbox")
+            input(type="checkbox", aria-hidden="true")
             span
       .field.middle-align
         nav
@@ -61,18 +61,18 @@
             h6 Title
             div Some text here
           label.switch
-            input(type="checkbox")
+            input(type="checkbox", aria-hidden="true")
             span
-        span.helper Helper text
+        output Helper text
       .field.middle-align.invalid
         nav
           .max
             h6 Title
             div Some text here
           label.switch
-            input(type="checkbox")
+            input(type="checkbox", aria-hidden="true")
             span
-        span.error Error text
+        output.invalid Error text
 </template>
 
 <script setup lang="ts">

@@ -1,23 +1,24 @@
 <template lang="pug">
-.grey10.white-text
+.white-text
   nav.top.top-shadow.white-text
-    img(:src="'/netflix.png'")
-    button.circle.large.transparent.s.m(data-ui="#menu-menu")
-      i menu
-      menu#menu-menu.no-wrap(data-ui="#menu-menu")
-        a.row(@click="scroll('#home')")
+    img(alt="", :src="'/netflix.png'")
+    div
+      button.circle.large.transparent.s.m
+        i menu
+      menu.no-wrap
+        li(@click="scroll('#home')")
           i home
           .max Home
-        a.row(@click="scroll('#series')")
+        li(@click="scroll('#series')")
           i subscriptions
           .max Series
-        a.row(@click="scroll('#movies')")
+        li(@click="scroll('#movies')")
           i subscriptions
           .max Movies
-        a.row(@click="scroll('#hot')")
+        li(@click="scroll('#hot')")
           i whatshot
           .max Hot
-        a.row(@click="scroll('#my-list')")
+        li(@click="scroll('#my-list')")
           i video_library
           .max My list
     button.small-round.large.transparent.l(@click="scroll('#home')") Home
@@ -28,28 +29,27 @@
     .max
     button.circle.large.transparent(data-ui="#dialog-search")
       i search
-    button.circle.large.transparent.m.l(data-ui="#menu-notifications")
-      i notifications
-      menu#menu-notifications.left.no-wrap(
-        data-ui="#menu-notifications"
-      )
-        a.row
-          img.round(:src="'alok-001.jpg'")
+    div
+      button.circle.large.transparent.m.l
+        i notifications
+      menu.left.no-wrap
+        li
+          img.round(alt="", :src="'alok-001.webp'")
           .max
             div Alok 01/2021
             label 10k views
-        a.row
-          img.round(:src="'vintage-001.jpg'")
+        li
+          img.round(alt="", :src="'vintage-001.webp'")
           .max
             div The best of 2021
             label 10k views
-        a.row
-          img.round(:src="'ocean-001.jpg'")
+        li
+          img.round(alt="", :src="'ocean-001.webp'")
           .max
             div Alok, Zebra, Iro - Ocean
             label 10k views
-    button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+    button.circle.large.transparent(@click="redirect('/')", aria-label="beer css")
+      img.responsive(alt="", :src="'/favicon.png'")
   main
     .overlay
     dialog#dialog-search.top.transparent
@@ -58,7 +58,7 @@
         .max
           .field.round.suffix.prefix.small.no-margin.white.black-text
             i.fron search
-            input(type="text")
+            input(type="text", placeholder="Search", aria-label="search")
             i.front mic
         .max.l
 
@@ -70,12 +70,13 @@ import { onMounted } from "vue";
 import home from "./home.vue";
 import { redirect } from "../shared/router";
 
-const scroll = (selector:string) => {
+function scroll(selector:string) {
   const element = document.querySelector(selector);
   if (element) element.scrollIntoView({ block: "start", behavior: "smooth" });
-};
+}
 
 onMounted(() => {
   document.title = "Netflix - Beer CSS";
+  ui("mode", "dark");
 });
 </script>

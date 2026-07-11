@@ -1,4 +1,4 @@
-[class*=width] {
+[class*=-width] {
   max-inline-size: 100%;
 }
 

@@ -5,7 +5,12 @@ try {
   await build({
     publicDir: "./src/static",
     plugins: [vue()],
+    esbuild: {
+      legalComments: 'none'
+    },
     build: {
+      assetsInlineLimit: 0,
+      sourcemap: true,
       rollupOptions: {
         input: {
           app: "./src/build.ts",
