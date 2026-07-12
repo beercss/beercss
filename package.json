@@ -15,19 +15,19 @@
   "devDependencies": {
     "@types/jsdom": "^28.0.3",
     "@vitejs/plugin-vue": "^6.0.7",
-    "@vitest/coverage-v8": "^4.1.9",
-    "@vue/language-plugin-pug": "^3.3.6",
+    "@vitest/coverage-v8": "^4.1.10",
+    "@vue/language-plugin-pug": "^3.3.7",
     "brotli-size": "^4.0.0",
     "cssnano": "^8.0.2",
     "fs-extra": "^11.3.6",
     "jsdom": "^29.1.1",
-    "postcss": "^8.5.16",
+    "postcss": "^8.5.17",
     "pug": "^3.0.4",
-    "typescript": "^6.0.3",
-    "vite": "^8.1.3",
-    "vitest": "^4.1.9",
+    "typescript": "^7.0.2",
+    "vite": "^8.1.4",
+    "vitest": "^4.1.10",
     "vue": "^3.5.39",
-    "vue-tsc": "^3.3.6"
+    "vue-tsc": "^3.3.7"
   },
   "files": [
     "custom-element",
