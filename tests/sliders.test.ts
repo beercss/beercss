@@ -1,5 +1,5 @@
 import { expect, test, beforeEach, afterEach } from "vitest";
-import { updateAllSliders } from "../src/cdn/elements/sliders";
+import { updateAllSliders } from "../src/cdn/elements/slider";
 
 let container: HTMLElement;
 

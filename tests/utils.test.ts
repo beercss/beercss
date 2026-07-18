@@ -1,4 +1,4 @@
-import { expect, test, beforeEach, afterEach, vi } from "vitest";
+import { beforeAll, expect, test, vi } from "vitest";
 import {
   isChrome,
   isFirefox,
@@ -18,7 +18,7 @@ import {
   addClass,
   removeClass,
   query,
-  queryAll,
+  queryAll
 } from "../src/cdn/utils";
 
 test("isChrome returns boolean", () => {

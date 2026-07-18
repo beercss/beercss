@@ -1,5 +1,5 @@
 import { expect, test, beforeEach, afterEach } from "vitest";
-import { updatePage } from "../src/cdn/elements/pages";
+import { updatePage } from "../src/cdn/elements/page";
 
 let container: HTMLElement;
 

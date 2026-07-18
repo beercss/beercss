@@ -1,11 +1,9 @@
 declare class BeerCssCustomElement extends HTMLElement {
-  static isCssLoaded: boolean;
-  static isJsLoaded: boolean;
+  static isLoaded: boolean;
   
   constructor();
   
-  addJs(): Promise<void | any>;
-  addCss(): Promise<void>;
+  load(): Promise<void>;
   run(): Promise<void>;
 }
 

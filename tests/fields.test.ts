@@ -1,5 +1,5 @@
 import { expect, test, beforeEach, afterEach } from "vitest";
-import { updateAllFields } from "../src/cdn/elements/fields";
+import { updateAllFields } from "../src/cdn/elements/field";
 
 let container: HTMLElement;
 

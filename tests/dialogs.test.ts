@@ -1,5 +1,5 @@
 import { expect, test, beforeEach, afterEach, vi } from "vitest";
-import { updateDialog } from "../src/cdn/elements/dialogs";
+import { updateDialog } from "../src/cdn/elements/dialog";
 
 let container: HTMLElement;
 

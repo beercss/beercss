@@ -20,17 +20,17 @@ main.responsive
           h5.h6 $110,00
         nav.group.connected
           button.left-round.active(data-ui="") XS
-          button.no-round(data-ui="") S
-          button.no-round(data-ui="") M
-          button.no-round(data-ui="") L
+          button(data-ui="") S
+          button(data-ui="") M
+          button(data-ui="") L
           button.right-round(data-ui="") XL
           .space
           label.l Size guide
         hr.large
         nav
-          button.no-round Buy now
-          button.border.no-round Add to bag
-          button.border.square.no-round
+          button.small-round Buy now
+          button.border.small-round Add to bag
+          button.border.square
             i favorite
         p Free shipping on all continental US orders.
   article.round.border
@@ -44,9 +44,9 @@ main.responsive
           label &nbsp;In stock
         nav.group.connected
           button.left-round.active(data-ui="") XS
-          button.no-round(data-ui="") S
-          button.no-round(data-ui="") M
-          button.no-round(data-ui="") L
+          button(data-ui="") S
+          button(data-ui="") M
+          button(data-ui="") L
           button.right-round(data-ui="") XL
           .space
           label.l Size guide
@@ -68,9 +68,9 @@ main.responsive
           label &nbsp;In stock
         nav.group.connected
           button.border.left-round.active(data-ui="") XS
-          button.border.no-round(data-ui="") S
-          button.border.no-round(data-ui="") M
-          button.border.no-round(data-ui="") L
+          button.border(data-ui="") S
+          button.border(data-ui="") M
+          button.border(data-ui="") L
           button.border.right-round(data-ui="") XL
           .space
           label.l Size guide
@@ -91,9 +91,9 @@ main.responsive
           label.bold &nbsp;In stock
         nav.group.connected
           button.border.left-round.active(data-ui="") XS
-          button.border.no-round(data-ui="") S
-          button.border.no-round(data-ui="") M
-          button.border.no-round(data-ui="") L
+          button.border(data-ui="") S
+          button.border(data-ui="") M
+          button.border(data-ui="") L
           button.border.right-round(data-ui="") XL
           .space
           label.l Size guide

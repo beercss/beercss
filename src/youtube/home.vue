@@ -4,8 +4,8 @@ main(v-show="data.isLoaded")
     nav.group.connected.scroll
       button.left-round.active(data-ui="")
         span The best of 2020
-      button.no-round(data-ui="") Documentaries
-      button.no-round(data-ui="") Rock and roll
+      button(data-ui="") Documentaries
+      button(data-ui="") Rock and roll
       button.right-round(data-ui="") Others
     .space
     .grid

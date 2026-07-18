@@ -1,4 +1,5 @@
 import { addClass, next, prev, hasTag, insertBefore, wait, create,  hasClass, removeClass, on, off, queryAllDataUi, blurActiveElement, query, onWeak } from "../utils";
+import globals from "../globals";
 
 const _dialogs: Array<HTMLDialogElement> = [];
 
@@ -67,4 +68,8 @@ export async function updateDialog(from: Element, dialog: HTMLDialogElement): Pr
 
   if (isActive) closeDialog(dialog, overlay);
   else void openDialog(dialog, overlay, isModal, from);
+}
+
+globals.dialog = {
+  updateDialog
 }

@@ -380,10 +380,13 @@ nav.group {
   background: none !important;
 }
 
+nav.group > :is(.button, button) {
+  border-radius: 0.5rem;
+}
+
 nav.group:is(.connected, .split) {
   gap: 0.125rem;
 }
-
 
 nav.group:not(.split) > :is(.button, button):not(.border) {
   background-color: var(--surface-container);

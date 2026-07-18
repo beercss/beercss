@@ -1,3 +1,4 @@
+import globals from "../globals";
 import { onWeak } from "../utils";
 
 function onAnimationendRipple(e: Event) {
@@ -48,4 +49,8 @@ export function updateAllRipples() {
 
   onWeak(body, "mousedown", onMousedownRippleDelegation);
   onWeak(body, "keydown", onKeydownRippleDelegation);
+}
+
+globals.ripple = {
+  updateAllRipples
 }

@@ -99,13 +99,13 @@
 }
 
 .inverse-surface {
-  background-color: var(--inverse-surface);
-  color: var(--inverse-on-surface);
+  background-color: var(--inverse-surface) !important;
+  color: var(--inverse-on-surface) !important;
 }
 
 .inverse-primary {
-  background-color: var(--inverse-primary);
-  color: var(--primary);
+  background-color: var(--inverse-primary) !important;
+  color: var(--primary) !important;
 }
 
 .inverse-primary-text {

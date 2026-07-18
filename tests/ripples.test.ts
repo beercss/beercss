@@ -1,5 +1,5 @@
 import { expect, test, beforeEach, afterEach } from "vitest";
-import { updateAllRipples } from "../src/cdn/helpers/ripples";
+import { updateAllRipples } from "../src/cdn/helpers/ripple";
 
 let container: HTMLElement;
 

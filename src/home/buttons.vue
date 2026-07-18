@@ -437,15 +437,15 @@
     h3.h6 Standard
     nav.group
       button.left-round(data-ui="") Button
-      button.no-round(data-ui="") Button
-      button.no-round.active(data-ui="") Button
+      button(data-ui="") Button
+      button.active(data-ui="") Button
       button.right-round(data-ui="") Button
     nav.group
       button.left-round(data-ui="")
         i mic
-      button.no-round(data-ui="")
+      button(data-ui="")
         i videocam
-      button.no-round.active(data-ui="")
+      button.active(data-ui="")
         i mood
       button.right-round(data-ui="")
         i front_hand
@@ -453,10 +453,10 @@
       button.left-round(data-ui="")
         i mic
         span Button
-      button.no-round(data-ui="")
+      button(data-ui="")
         i videocam
         span Button
-      button.no-round.active(data-ui="")
+      button.active(data-ui="")
         i mood
         span Button
       button.right-round(data-ui="")
@@ -466,15 +466,15 @@
     h3.h6 Connected
     nav.group.connected
       button.left-round(data-ui="") Button
-      button.no-round(data-ui="") Button
-      button.no-round.active(data-ui="") Button
+      button(data-ui="") Button
+      button.active(data-ui="") Button
       button.right-round(data-ui="") Button
     nav.group.connected
       button.left-round(data-ui="")
         i mic
-      button.no-round(data-ui="")
+      button(data-ui="")
         i videocam
-      button.no-round.active(data-ui="")
+      button.active(data-ui="")
         i mood
       button.right-round(data-ui="")
         i front_hand
@@ -482,10 +482,10 @@
       button.left-round(data-ui="")
         i mic
         span Button
-      button.no-round(data-ui="")
+      button(data-ui="")
         i videocam
         span Button
-      button.no-round.active(data-ui="")
+      button.active(data-ui="")
         i mood
         span Button
       button.right-round(data-ui="")

@@ -163,8 +163,15 @@ export function updateAllClickable(element: Element) {
 }
 
 export function rootSizeInPixels(): number {
-  const size = getComputedStyle(document.documentElement).getPropertyValue("--size") || "16px";
+  const rootElement = query('.beer') || document.documentElement;
+  const size = getComputedStyle(rootElement).getPropertyValue("--size") || "16px";
   if (size.includes("%")) return (parseInt(size) * 16) / 100;
   if (size.includes("em")) return parseInt(size) * 16;
   return parseInt(size);
+}
+
+export function randomId() {
+  const timestamp = Date.now().toString(36);
+  const randomness = Math.random().toString(36).slice(2, 7);
+  return `x${timestamp}${randomness}`;
 }

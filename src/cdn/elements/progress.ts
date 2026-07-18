@@ -1,3 +1,4 @@
+import globals from "../globals";
 import { queryAll, hasTag, off, on, isMac, isIOS, isChrome, hasClass } from "../utils";
 
 
@@ -33,4 +34,8 @@ export function updateAllProgress() {
   if (!progresses.length) off(body, "input", onInputDocument, false);
   else on(body, "input", onInputDocument, false);
   for (let i = 0; i < progresses.length; i++) updateProgress(progresses[i]);
+}
+
+globals.progress = {
+  updateAllProgress
 }

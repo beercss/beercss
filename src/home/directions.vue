@@ -26,7 +26,7 @@
       button.border.left-round
         i home
         span Button
-      button.border.no-round
+      button.border
         i home
         span Button
       button.border.right-round

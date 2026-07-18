@@ -17,9 +17,9 @@ main(v-show="data.isLoaded")
           nav.group.connected
             button.left-round(data-ui="")
               i thumb_up
-            button.no-round(data-ui="")
+            button(data-ui="")
               i bookmark
-            button.no-round(data-ui="")
+            button(data-ui="")
               i share
             button.right-round(data-ui="")
               i more_vert

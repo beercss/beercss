@@ -1,5 +1,5 @@
 import { expect, test, beforeEach, afterEach, vi } from "vitest";
-import { updateSnackbar } from "../src/cdn/elements/snackbars";
+import { updateSnackbar } from "../src/cdn/elements/snackbar";
 
 let container: HTMLElement;
 

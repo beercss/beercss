@@ -1,3 +1,4 @@
+import globals from "../globals";
 import { type IBeerCssTheme } from "../interfaces";
 import { isDark } from "../utils";
 
@@ -84,4 +85,9 @@ export function updateMode(value: string): string {
   const lastThemeStyle = value === "light" ? _lastTheme.light : _lastTheme.dark;
   if (context.materialDynamicColors) body.setAttribute("style", lastThemeStyle);
   return getMode();
+}
+
+globals.theme = {
+  updateTheme,
+  updateMode
 }

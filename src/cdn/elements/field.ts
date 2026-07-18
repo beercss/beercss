@@ -1,3 +1,4 @@
+import globals from "../globals";
 import { query, next, prev, hasType, parent, queryAll, onWeak, isChrome, isMac, isIOS, on, hasClass, rootSizeInPixels } from "../utils";
 
 function updatePlaceholder(element: HTMLInputElement | HTMLTextAreaElement) {
@@ -180,4 +181,8 @@ export function updateAllFields() {
   updateAllColors();
   updateAllTextareas();
   updateAllPasswordIcons();
+}
+
+globals.field = {
+  updateAllFields
 }

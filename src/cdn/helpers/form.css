@@ -12,13 +12,16 @@
   --_round: 3.5rem;
 }
 
-.no-round,
 .square,
 .top-round,
 .bottom-round,
 .left-round,
 .right-round {
   border-radius: 0.5rem !important;
+}
+
+.no-round {
+  border-radius: 0 !important;
 }
 
 .top-round {

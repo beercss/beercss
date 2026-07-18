@@ -1,3 +1,4 @@
+import globals from "../globals";
 import { queryAll, addClass, removeClass, blurActiveElement, onWeak } from "../utils";
 
 let _timeoutSnackbar: ReturnType<typeof setTimeout>;
@@ -24,4 +25,8 @@ export function updateSnackbar(snackbar: Element, milliseconds?: number) {
   _timeoutSnackbar = setTimeout(() => {
     removeClass(snackbar, "active");
   }, milliseconds ?? 6000);
+}
+
+globals.snackbar = {
+  updateSnackbar
 }

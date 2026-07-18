@@ -1,3 +1,4 @@
+import globals from "../globals";
 import { query, queryAll, addClass, on, off, hasTag, hasClass, removeClass, blurActiveElement } from "../utils";
 
 let _timeoutMenu: ReturnType<typeof setTimeout>;
@@ -37,4 +38,8 @@ export function updateMenu(from: Element, menu: HTMLMenuElement, e?: Event) {
     addClass(menu, "active");
     focusOnMenuOrInput(menu);
   }, 90);
+}
+
+globals.menu = {
+  updateMenu
 }

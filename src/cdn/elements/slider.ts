@@ -1,3 +1,4 @@
+import globals from "../globals";
 import { query, queryAll, hasClass, on, off, parent, hasTag, onWeak, rootSizeInPixels } from "../utils";
 
 function onInputDocument(e: Event) {
@@ -71,4 +72,8 @@ function updateRange(input: HTMLInputElement) {
 
 export function updateAllSliders() {
   updateAllRanges();
+}
+
+globals.slider = {
+  updateAllSliders
 }
