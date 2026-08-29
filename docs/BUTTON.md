@@ -111,7 +111,7 @@ Button groups organize buttons and add interactions between them.
 ```html
 <nav class="group">
   <button class="left-round">Left</button>
-  <button class="no-round">Center</button>
+  <button>Center</button>
   <button class="right-round">Right</button>
 </nav>
 ```
@@ -120,7 +120,7 @@ Button groups organize buttons and add interactions between them.
 ```html
 <nav class="group connected">
   <button class="left-round">Left</button>
-  <button class="no-round">Center</button>
+  <button>Center</button>
   <button class="right-round">Right</button>
 </nav>
 ```
