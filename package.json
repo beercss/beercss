@@ -10,7 +10,8 @@
     "dev": "node ./build/dev.js",
     "build": "node ./build/build.js && node ./build/cdn.js",
     "test": "vitest run",
-    "llms": "node ./build/llms.js"
+    "llms": "node ./build/llms.js",
+    "skills": "node ./build/skills.js"
   },
   "devDependencies": {
     "@types/jsdom": "^28.0.3",
