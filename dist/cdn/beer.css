@@ -1838,7 +1838,7 @@ button {
   color: var(--inverse-on-surface) !important;
   border-color: var(--inverse-surface) !important;
 }
-:is(.button, button):not(.chip):active,
+:is(.button, button):not(.chip):not(:disabled, [disabled]):active,
 :is(.button, button):not(.chip).active {
   border-radius: 0.5rem !important;
 }
@@ -3549,7 +3549,7 @@ nav.group.connected > :is(.button, button).active {
   color: var(--on-secondary-container);
 }
 nav.group:is(.connected, .split) > :is(.button, button).active,
-nav.split > :is(.button, button):active {
+nav.split > :is(.button, button):not(:disabled, [disabled]):active {
   border-radius: 2rem !important;
 }
 :is(.scroll, .no-scroll, .no-space, .tabs, .tabbed) > :focus-visible {
