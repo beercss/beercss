@@ -420,7 +420,7 @@ nav.group.connected > :is(.button, button).active {
 }
 
 nav.group:is(.connected, .split) > :is(.button, button).active,
-nav.split > :is(.button, button):not(:disabled, [disabled]):active {
+nav.split > :is(.button, button):active {
   border-radius: 2rem !important;
 }
 

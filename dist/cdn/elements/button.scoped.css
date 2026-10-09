@@ -102,7 +102,7 @@ button {
   border-color: var(--inverse-surface) !important;
 }
 
-:is(.button, button):not(.chip):not(:disabled, [disabled]):active,
+:is(.button, button):not(.chip):active,
 :is(.button, button):not(.chip).active {
   border-radius: 0.5rem !important;
 }
