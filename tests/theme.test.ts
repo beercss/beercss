@@ -1,5 +1,6 @@
 import { expect, test, beforeEach, afterEach, vi } from "vitest";
 import { updateTheme, updateMode } from "../src/cdn/settings/theme";
+import * as utils from "../src/cdn/utils";
 
 beforeEach(() => {
   document.body.className = "";
@@ -90,9 +91,7 @@ test("updateMode sets dark mode", () => {
 });
 
 test("updateMode with auto uses isDark detection", () => {
-  vi.mock("../src/cdn/utils", () => ({
-    isDark: () => true,
-  }));
+  vi.spyOn(utils, "isDark").mockReturnValue(true);
   
   const mode = updateMode("auto");
   expect(mode).toBe("dark");
