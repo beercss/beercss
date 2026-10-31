@@ -1,44 +1,65 @@
 import globals from "../globals";
-import { query, queryAll, hasClass, on, off, parent, hasTag, onWeak, rootSizeInPixels } from "../utils";
+import { query, queryAll, hasClass, on, off, parent, hasTag, onWeak, rootSizeInPixels, isTouchable } from "../utils";
+
+function getContainer(root: Document | ShadowRoot): Element {
+  return root instanceof Document ? root.body : root.host;
+}
 
 function onInputDocument(e: Event) {
   const input = e.target as HTMLInputElement;
   if (!hasTag(input, "input") && !hasTag(input, "select")) return;
 
+  const root = (input.getRootNode?.() ?? document) as Document | ShadowRoot;
   if (input.type === "range") {
     input.focus();
-    updateRange(input);
+    updateRange(input, root);
   } else {
-    updateAllRanges();
+    updateAllRanges(root);
   }
 }
 
+function onFocusRange(e: Event, root: Document | ShadowRoot) {
+  if (!isTouchable()) return;
+
+  const input = e.target as HTMLInputElement;
+  const label = parent(input) as HTMLLabelElement;
+  if (hasClass(label, "vertical")) getContainer(root).classList.add("no-scroll");
+}
+
+function onBlurRange(e: Event, root: Document | ShadowRoot) {
+  if (!isTouchable()) return;
+
+  const input = e.target as HTMLInputElement;
+  const label = parent(input) as HTMLLabelElement;
+  if (hasClass(label, "vertical")) getContainer(root).classList.remove("no-scroll");
+}
+
+function updateAllRanges(root: Document | ShadowRoot = document) {
+  const container = getContainer(root);
+  const ranges = queryAll(".slider > input[type=range]", root) as NodeListOf<HTMLInputElement>;
+  if (!ranges.length) off(container, "input", onInputDocument, false);
+  else onWeak(container as any, "input", onInputDocument, false);
+  for(let i=0; i<ranges.length; i++) updateRange(ranges[i], root);
+}
+
 function onChangeInput(e: Event) {
-  const isCoarse = window.matchMedia('(pointer: coarse)').matches;
+  const isCoarse = window.matchMedia?.('(pointer: coarse)')?.matches ?? false;
   if (!isCoarse) return;
 
   const input = e.target as HTMLInputElement;
   input.blur();
 }
 
-function updateAllRanges() {
-  const body = document.body;
-  const ranges = queryAll(".slider > input[type=range]") as NodeListOf<HTMLInputElement>;
-  if (!ranges.length) off(body, "input", onInputDocument, false);
-  else on(body, "input", onInputDocument, false);
-  for (let i = 0; i < ranges.length; i++) updateRange(ranges[i]);
-}
-
-function updateRange(input: HTMLInputElement) {
+function updateRange(input: HTMLInputElement, root: Document | ShadowRoot = document) {
   onWeak(input, "change", onChangeInput);
 
   const label = parent(input) as HTMLElement;
-  const bar = query("span", label) as HTMLElement;
-  const inputs = queryAll("input", label) as NodeListOf<HTMLInputElement>;
+  const bar = query("span", root, label) as HTMLElement;
+  const inputs = queryAll("input", root, label) as NodeListOf<HTMLInputElement>;
   if (!inputs.length || !bar) return;
 
-  const rootSize = rootSizeInPixels();
-  const thumb = hasClass(label, "max") ? 0 : (0.25 * rootSize * 100) / inputs[0].offsetWidth;
+  const rootSize = rootSizeInPixels(root);
+  const thumb = hasClass(label, "max") ? 0 : 0.25 * rootSize * 100 / inputs[0].offsetWidth;
   const percents: Array<number> = [];
   const values: Array<number> = [];
   for (let i = 0, n = inputs.length; i < n; i++) {
@@ -70,8 +91,8 @@ function updateRange(input: HTMLInputElement) {
   requestAnimationFrame(() => label.style.cssText = `--_start: ${start}%; --_end: ${end}%; --_value1: '${value1}'; --_value2: '${value2}';`);
 }
 
-export function updateAllSliders() {
-  updateAllRanges();
+export function updateAllSliders(root: Document | ShadowRoot = document) {
+  updateAllRanges(root);
 }
 
 globals().slider = {

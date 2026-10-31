@@ -97,20 +97,6 @@ function guid() {
 		return (c === "x" ? r : r & 3 | 8).toString(16);
 	});
 }
-function query(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelector(selector) : selector;
-	} catch {
-		return null;
-	}
-}
-function queryAll(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
-	} catch {
-		return _emptyNodeList;
-	}
-}
 function hasClass(element, name) {
 	return element?.classList.contains(name) ?? false;
 }
@@ -149,14 +135,28 @@ function onWeak(element, name, callback, useCapture = true) {
 function closest(element, selector) {
 	return element?.closest(selector);
 }
-function queryDataUi(id) {
-	return query("[data-ui=\"#" + id + "\"]");
+function query(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelector(selector) : selector;
+	} catch {
+		return null;
+	}
 }
-function updateAllClickable(element) {
-	if (element.id && hasClass(element, "page")) element = queryDataUi(element.id) ?? element;
+function queryAll(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
+	} catch {
+		return _emptyNodeList;
+	}
+}
+function queryDataUi(id, root, element) {
+	return query("[data-ui=\"#" + id + "\"]", root, element);
+}
+function updateAllClickable(element, root) {
+	if (element.id && hasClass(element, "page")) element = queryDataUi(element.id, root) ?? element;
 	const container = closest(element, ".tabs, nav");
 	if (!container) return;
-	removeClass(queryAll("a", container), "active");
+	removeClass(queryAll("a", root, container), "active");
 	if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
 }
 function getCssModule(url, path, scoped) {
@@ -236,100 +236,108 @@ async function importModulesFromQueryString(queryString) {
 //#region src/cdn/loader.ts
 var _url = import.meta.url;
 var _context = globalThis;
-var _timeoutMutation;
-var _mutation;
-function onMutation() {
-	if (_timeoutMutation) clearTimeout(_timeoutMutation);
-	_timeoutMutation = setTimeout(async () => await _ui(), 180);
-}
-async function run(from, to, options, e) {
-	if (!to) {
-		to = query(from.getAttribute("data-ui"));
+function createBeerCssInstance(root = document) {
+	let _timeoutMutation;
+	let _mutation = null;
+	const instanceRoot = root;
+	const onMutation = () => {
+		if (_timeoutMutation) clearTimeout(_timeoutMutation);
+		_timeoutMutation = setTimeout(async () => await _ui(), 180);
+	};
+	const setup = () => {
+		if (_mutation || !_context.MutationObserver) return;
+		_mutation = new MutationObserver(onMutation);
+		const observeTarget = instanceRoot instanceof Document ? instanceRoot.body : instanceRoot;
+		if (observeTarget) _mutation.observe(observeTarget, {
+			childList: true,
+			subtree: true
+		});
+		onMutation();
+	};
+	const run = async (from, to, options, e) => {
 		if (!to) {
-			from.classList.toggle("active");
+			to = query(from.getAttribute("data-ui"), instanceRoot);
+			if (!to) {
+				from.classList.toggle("active");
+				return;
+			}
+		}
+		updateAllClickable(from, instanceRoot);
+		if (hasTag(to, "dialog")) {
+			requestAnimationFrame(() => globals_default().dialog?.updateDialog(from, to, instanceRoot));
 			return;
 		}
-	}
-	updateAllClickable(from);
-	if (hasTag(to, "dialog")) {
-		requestAnimationFrame(() => globals_default().dialog?.updateDialog(from, to));
-		return;
-	}
-	if (hasTag(to, "menu")) {
-		requestAnimationFrame(() => globals_default().menu?.updateMenu(from, to, e));
-		return;
-	}
-	if (hasClass(to, "snackbar")) {
-		requestAnimationFrame(() => globals_default().snackbar?.updateSnackbar(to, options));
-		return;
-	}
-	if (hasClass(to, "page")) {
-		requestAnimationFrame(() => globals_default().page?.updatePage(to));
-		return;
-	}
-	if (hasClass(to, "active")) {
-		removeClass(from, "active");
-		removeClass(to, "active");
-		return;
-	}
-	addClass(to, "active");
-}
-function setup() {
-	if (_context.ui || _mutation || !_context.MutationObserver) return;
-	_mutation = new MutationObserver(onMutation);
-	_mutation.observe(document.body, {
-		childList: true,
-		subtree: true
-	});
-	onMutation();
-}
-function onClickDataUi(e) {
-	const from = e.target.closest("[data-ui]");
-	if (from) run(from, null, null, e);
-}
-function onKeydownDataUi(e) {
-	const from = e.target.closest("[data-ui]");
-	if (from && hasTag(from, "a") && !from.getAttribute("href") && e.key === "Enter") run(from, null, null, e);
-}
-function updateAllDataUis() {
-	const body = document.body;
-	if (!body) return;
-	onWeak(body, "click", onClickDataUi);
-	onWeak(body, "keydown", onKeydownDataUi);
-}
-function _ui(selector, options) {
-	if (selector) {
-		if (selector === "setup") {
-			setup();
+		if (hasTag(to, "menu")) {
+			requestAnimationFrame(() => globals_default().menu?.updateMenu(from, to, e, instanceRoot));
 			return;
 		}
-		if (selector === "guid") return guid();
-		if (selector === "mode") return globals_default().theme?.updateMode(options);
-		if (selector === "theme") return globals_default().theme?.updateTheme(options);
-		if (selector === "import") {
-			importModulesFromQueryString(options);
+		if (hasClass(to, "snackbar")) {
+			requestAnimationFrame(() => globals_default().snackbar?.updateSnackbar(to, options, instanceRoot));
 			return;
 		}
-		const to = query(selector);
-		if (!to) return;
-		run(to, to, options);
-	}
-	updateAllDataUis();
-	globals_default().field?.updateAllFields();
-	globals_default().ripple?.updateAllRipples();
-	globals_default().slider?.updateAllSliders();
-	globals_default().progress?.updateAllProgress();
+		if (hasClass(to, "page")) {
+			requestAnimationFrame(() => globals_default().page?.updatePage(to, instanceRoot));
+			return;
+		}
+		if (hasClass(to, "active")) {
+			removeClass(from, "active");
+			removeClass(to, "active");
+			return;
+		}
+		addClass(to, "active");
+	};
+	const onClickDataUi = (e) => {
+		const from = e.target.closest("[data-ui]");
+		if (from) run(from, null, null, e);
+	};
+	const onKeydownDataUi = (e) => {
+		const from = e.target.closest("[data-ui]");
+		if (from && hasTag(from, "a") && !from.getAttribute("href") && e.key === "Enter") run(from, null, null, e);
+	};
+	const updateAllDataUis = () => {
+		const container = instanceRoot instanceof Document ? instanceRoot.body : instanceRoot;
+		if (!container) return;
+		onWeak(container, "click", onClickDataUi);
+		onWeak(container, "keydown", onKeydownDataUi);
+	};
+	const _ui = (selector, options) => {
+		if (selector) {
+			if (selector === "setup") {
+				setup();
+				return;
+			}
+			if (selector === "guid") return guid();
+			if (selector === "mode") return globals_default().theme?.updateMode(options, instanceRoot);
+			if (selector === "theme") return globals_default().theme?.updateTheme(options, instanceRoot);
+			if (selector === "import") {
+				importModulesFromQueryString(options);
+				return;
+			}
+			const to = query(selector, instanceRoot);
+			if (!to) return;
+			run(to, to, options);
+		}
+		updateAllDataUis();
+		globals_default().field?.updateAllFields(instanceRoot);
+		globals_default().ripple?.updateAllRipples(instanceRoot);
+		globals_default().slider?.updateAllSliders(instanceRoot);
+		globals_default().progress?.updateAllProgress(instanceRoot);
+	};
+	const container = instanceRoot instanceof Document ? instanceRoot.body : instanceRoot.host;
+	if (container && !container.classList.contains("dark") && !container.classList.contains("light")) globals_default().theme?.updateMode("auto", instanceRoot);
+	setup();
+	return _ui;
+}
+function init(root = document) {
+	return createBeerCssInstance(root);
 }
 function start() {
 	if (_context.ui) return;
-	const body = _context.document?.body;
-	if (body && !body.classList.contains("dark") && !body.classList.contains("light")) globals_default().theme?.updateMode("auto");
-	setup();
-	_context.ui = _ui;
+	_context.ui = init(document);
 }
 importModulesFromUrl(_url);
 start();
 var ui = _context.ui;
 globals_default().ui = ui;
 //#endregion
-export { ui as default, ui };
+export { createBeerCssInstance, ui as default, ui, init };

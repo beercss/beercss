@@ -103,20 +103,6 @@ function guid() {
 		return (c === "x" ? r : r & 3 | 8).toString(16);
 	});
 }
-function query(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelector(selector) : selector;
-	} catch {
-		return null;
-	}
-}
-function queryAll(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
-	} catch {
-		return _emptyNodeList;
-	}
-}
 function hasClass(element, name) {
 	return element?.classList.contains(name) ?? false;
 }
@@ -173,8 +159,22 @@ function parent(element) {
 function closest(element, selector) {
 	return element?.closest(selector);
 }
-function create(htmlAttributesAsJson) {
-	const element = document.createElement("div");
+function query(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelector(selector) : selector;
+	} catch {
+		return null;
+	}
+}
+function queryAll(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
+	} catch {
+		return _emptyNodeList;
+	}
+}
+function create(htmlAttributesAsJson, root) {
+	const element = (root ? root instanceof Document ? root : root.ownerDocument : document).createElement("div");
 	for (let i = 0, keys = Object.keys(htmlAttributesAsJson), n = keys.length; i < n; i++) {
 		const key = keys[i];
 		const value = htmlAttributesAsJson[key];
@@ -182,24 +182,24 @@ function create(htmlAttributesAsJson) {
 	}
 	return element;
 }
-function blurActiveElement() {
-	document.activeElement?.blur();
+function blurActiveElement(root) {
+	(root ?? document).activeElement?.blur();
 }
-function queryAllDataUi(id) {
-	return queryAll("[data-ui=\"#" + id + "\"]");
+function queryAllDataUi(id, root, element) {
+	return queryAll("[data-ui=\"#" + id + "\"]", root, element);
 }
-function queryDataUi(id) {
-	return query("[data-ui=\"#" + id + "\"]");
+function queryDataUi(id, root, element) {
+	return query("[data-ui=\"#" + id + "\"]", root, element);
 }
-function updateAllClickable(element) {
-	if (element.id && hasClass(element, "page")) element = queryDataUi(element.id) ?? element;
+function updateAllClickable(element, root) {
+	if (element.id && hasClass(element, "page")) element = queryDataUi(element.id, root) ?? element;
 	const container = closest(element, ".tabs, nav");
 	if (!container) return;
-	removeClass(queryAll("a", container), "active");
+	removeClass(queryAll("a", root, container), "active");
 	if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
 }
-function rootSizeInPixels() {
-	const rootElement = query(".beer") || document.documentElement;
+function rootSizeInPixels(root) {
+	const rootElement = query(".beer", root ?? document) || (root instanceof Document ? root.documentElement : root ? root.host : document.documentElement);
 	const size = getComputedStyle(rootElement).getPropertyValue("--size") || "16px";
 	if (size.includes("%")) return parseInt(size) * 16 / 100;
 	if (size.includes("em")) return parseInt(size) * 16;
@@ -306,26 +306,28 @@ function onChangeColor(e) {
 }
 function onKeydownFile(e) {
 	const input = e.currentTarget;
-	updateFile(input, e);
+	updateFile(input);
 }
 function onKeydownColor(e) {
 	const input = e.currentTarget;
-	updateColor(input, e);
-}
-function onPasswordIconClick(e) {
-	const icon = e.currentTarget;
-	const input = query("input", parent(icon));
-	if (input && icon.textContent?.includes("visibility")) if (input.type === "password") {
-		input.type = "text";
-		icon.textContent = "visibility_off";
-	} else {
-		input.type = "password";
-		icon.textContent = "visibility";
-	}
+	updateColor(input);
 }
 function onInputTextarea(e) {
 	const textarea = e.currentTarget;
 	updateTextarea(textarea);
+}
+function onPasswordIconClick(e) {
+	const icon = e.currentTarget;
+	const input = query("input", parent(icon));
+	if (input && icon.textContent?.includes("visibility")) {
+		if (input.type === "password") {
+			input.type = "text";
+			icon.textContent = "visibility_off";
+		} else {
+			input.type = "password";
+			icon.textContent = "visibility";
+		}
+	}
 }
 function onClickLabelDelegation(e) {
 	const from = e.target.closest(".field > label");
@@ -336,53 +338,53 @@ function onClickLabelDelegation(e) {
 	});
 	onClickLabel(e);
 }
-function updateAllLabels() {
-	const body = document.body;
-	if (!body) return;
-	onWeak(body, "click", onClickLabelDelegation);
+function updateAllLabels(root = document) {
+	const container = root instanceof Document ? root.body : root;
+	if (!container) return;
+	onWeak(container, "click", onClickLabelDelegation);
 }
-function updateAllInputs() {
-	const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])");
+function updateAllInputs(root = document) {
+	const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])", root);
 	for (let i = 0; i < inputs.length; i++) {
 		onWeak(inputs[i], "focus", onFocusInput);
 		onWeak(inputs[i], "blur", onBlurInput);
 		updateInput(inputs[i]);
 	}
 }
-function updateAllSelects() {
-	const selects = queryAll(".field > select");
+function updateAllSelects(root = document) {
+	const selects = queryAll(".field > select", root);
 	for (let i = 0; i < selects.length; i++) {
 		onWeak(selects[i], "focus", onFocusInput);
 		onWeak(selects[i], "blur", onBlurInput);
 	}
 }
-function updateAllFiles() {
-	const files = queryAll(".field > input[type=file]");
+function updateAllFiles(root = document) {
+	const files = queryAll(".field > input[type=file]", root);
 	for (let i = 0; i < files.length; i++) {
 		onWeak(files[i], "change", onChangeFile);
 		updateFile(files[i]);
 	}
 }
-function updateAllColors() {
-	const colors = queryAll(".field > input[type=color]");
+function updateAllColors(root = document) {
+	const colors = queryAll(".field > input[type=color]", root);
 	for (let i = 0; i < colors.length; i++) {
 		onWeak(colors[i], "change", onChangeColor);
 		updateColor(colors[i]);
 	}
 }
-function updateAllTextareas() {
-	const textareas = queryAll(".field > textarea");
+function updateAllTextareas(root = document) {
+	const textareas = queryAll(".field.textarea > textarea", root);
 	for (let i = 0; i < textareas.length; i++) {
 		onWeak(textareas[i], "focus", onFocusInput);
 		onWeak(textareas[i], "blur", onBlurInput);
 		updatePlaceholder(textareas[i]);
 		if (isChrome && !isMac && !isIOS) continue;
 		onWeak(textareas[i], "input", onInputTextarea);
-		updateTextarea(textareas[i]);
+		updateTextarea(textareas[i], root);
 	}
 }
-function updateAllPasswordIcons() {
-	const icons = queryAll(".field:has(> input[type=password]) > i, a");
+function updateAllPasswordIcons(root = document) {
+	const icons = queryAll(".field:has(> input[type=password]) > i, a", root);
 	for (let i = 0; i < icons.length; i++) onWeak(icons[i], "click", onPasswordIconClick);
 }
 function updateInput(input) {
@@ -417,51 +419,55 @@ function updateColor(input, e) {
 	onWeak(nextInput, "keydown", onKeydownColor, false);
 	updateInput(nextInput);
 }
-function updateTextarea(textarea) {
+function updateTextarea(textarea, root) {
 	updatePlaceholder(textarea);
 	if (textarea.hasAttribute("rows")) return;
-	const rootSize = rootSizeInPixels();
+	const rootSize = rootSizeInPixels(root);
 	textarea.style.blockSize = "auto";
 	textarea.style.blockSize = `${textarea.scrollHeight - rootSize}px`;
 }
-function updateAllFields() {
-	updateAllLabels();
-	updateAllInputs();
-	updateAllSelects();
-	updateAllFiles();
-	updateAllColors();
-	updateAllTextareas();
-	updateAllPasswordIcons();
+function updateAllFields(root = document) {
+	updateAllLabels(root);
+	updateAllInputs(root);
+	updateAllSelects(root);
+	updateAllFiles(root);
+	updateAllColors(root);
+	updateAllTextareas(root);
+	updateAllPasswordIcons(root);
 }
 globals_default().field = { updateAllFields };
 //#endregion
 //#region src/cdn/elements/slider.ts
+function getContainer$2(root) {
+	return root instanceof Document ? root.body : root.host;
+}
 function onInputDocument$1(e) {
 	const input = e.target;
 	if (!hasTag(input, "input") && !hasTag(input, "select")) return;
+	const root = input.getRootNode?.() ?? document;
 	if (input.type === "range") {
 		input.focus();
-		updateRange(input);
-	} else updateAllRanges();
+		updateRange(input, root);
+	} else updateAllRanges(root);
+}
+function updateAllRanges(root = document) {
+	const container = getContainer$2(root);
+	const ranges = queryAll(".slider > input[type=range]", root);
+	if (!ranges.length) off(container, "input", onInputDocument$1, false);
+	else onWeak(container, "input", onInputDocument$1, false);
+	for (let i = 0; i < ranges.length; i++) updateRange(ranges[i], root);
 }
 function onChangeInput(e) {
-	if (!window.matchMedia("(pointer: coarse)").matches) return;
+	if (!(window.matchMedia?.("(pointer: coarse)")?.matches ?? false)) return;
 	e.target.blur();
 }
-function updateAllRanges() {
-	const body = document.body;
-	const ranges = queryAll(".slider > input[type=range]");
-	if (!ranges.length) off(body, "input", onInputDocument$1, false);
-	else on(body, "input", onInputDocument$1, false);
-	for (let i = 0; i < ranges.length; i++) updateRange(ranges[i]);
-}
-function updateRange(input) {
+function updateRange(input, root = document) {
 	onWeak(input, "change", onChangeInput);
 	const label = parent(input);
-	const bar = query("span", label);
-	const inputs = queryAll("input", label);
+	const bar = query("span", root, label);
+	const inputs = queryAll("input", root, label);
 	if (!inputs.length || !bar) return;
-	const rootSize = rootSizeInPixels();
+	const rootSize = rootSizeInPixels(root);
 	const thumb = hasClass(label, "max") ? 0 : .25 * rootSize * 100 / inputs[0].offsetWidth;
 	const percents = [];
 	const values = [];
@@ -490,85 +496,99 @@ function updateRange(input) {
 	}
 	requestAnimationFrame(() => label.style.cssText = `--_start: ${start}%; --_end: ${end}%; --_value1: '${value1}'; --_value2: '${value2}';`);
 }
-function updateAllSliders() {
-	updateAllRanges();
+function updateAllSliders(root = document) {
+	updateAllRanges(root);
 }
 globals_default().slider = { updateAllSliders };
 //#endregion
 //#region src/cdn/elements/dialog.ts
-var _dialogs = [];
-function onKeydownDialog(e) {
+var dialogsMap = /* @__PURE__ */ new WeakMap();
+function getDialogsForRoot(root) {
+	if (!dialogsMap.has(root)) dialogsMap.set(root, []);
+	return dialogsMap.get(root);
+}
+function onKeydownDialog(e, root) {
 	if (e.key === "Escape") {
 		const dialog = e.currentTarget;
-		updateDialog(dialog, dialog);
+		updateDialog(dialog, dialog, root);
 	}
 }
-function focusOnDialogOrElement(dialog) {
-	(query("[autofocus]", dialog) ?? dialog).focus();
+function focusOnDialogOrElement(dialog, root) {
+	(query("[autofocus]", root, dialog) ?? dialog).focus();
 }
-function closeDialog(dialog, overlay) {
-	removeClass(queryAllDataUi(dialog.id), "active");
+function closeDialog(dialog, overlay, root) {
+	removeClass(queryAllDataUi(dialog.id, root), "active");
 	removeClass(dialog, "active");
 	removeClass(overlay, "active");
 	dialog.close();
-	const index = _dialogs.indexOf(dialog);
-	if (index > -1) _dialogs.splice(index, 1);
-	const previousDialog = _dialogs[_dialogs.length - 1];
+	const dialogs = getDialogsForRoot(root);
+	const index = dialogs.indexOf(dialog);
+	if (index > -1) dialogs.splice(index, 1);
+	const previousDialog = dialogs[dialogs.length - 1];
 	if (previousDialog) previousDialog.focus();
 }
-async function openDialog(dialog, overlay, isModal, from) {
+async function openDialog(dialog, overlay, isModal, from, root) {
 	if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip")) addClass(from, "active");
 	addClass(overlay, "active");
 	addClass(dialog, "active");
 	if (isModal) dialog.showModal();
 	else dialog.show();
 	await wait(90);
-	if (!isModal) on(dialog, "keydown", onKeydownDialog, false);
-	_dialogs.push(dialog);
-	focusOnDialogOrElement(dialog);
+	if (!isModal) on(dialog, "keydown", (e) => onKeydownDialog(e, root), false);
+	getDialogsForRoot(root).push(dialog);
+	focusOnDialogOrElement(dialog, root);
 }
-function onClickOverlay(e) {
+function onClickOverlay(e, root) {
 	const overlay = e.currentTarget;
 	const dialog = next(overlay);
-	if (hasTag(dialog, "dialog")) closeDialog(dialog, overlay);
+	if (hasTag(dialog, "dialog")) closeDialog(dialog, overlay, root);
 }
-async function updateDialog(from, dialog) {
-	blurActiveElement();
+async function updateDialog(from, dialog, root = document) {
+	blurActiveElement(root);
 	let overlay = prev(dialog);
 	const isActive = hasClass(dialog, "active") || dialog.open;
 	const isModal = hasClass(dialog, "modal");
-	if (!isModal) off(dialog, "keydown", onKeydownDialog, false);
+	if (!isModal) off(dialog, "keydown", (e) => onKeydownDialog(e, root), false);
 	if (!hasClass(overlay, "overlay")) {
-		overlay = create({ class: "overlay" });
+		overlay = create({ class: "overlay" }, root);
 		insertBefore(overlay, dialog);
 		await wait(90);
 	}
-	if (!isModal) onWeak(overlay, "click", onClickOverlay, false);
-	if (isActive) closeDialog(dialog, overlay);
-	else openDialog(dialog, overlay, isModal, from);
+	if (!isModal) onWeak(overlay, "click", (e) => onClickOverlay(e, root), false);
+	if (isActive) closeDialog(dialog, overlay, root);
+	else openDialog(dialog, overlay, isModal, from, root);
 }
 globals_default().dialog = { updateDialog };
 //#endregion
 //#region src/cdn/elements/menu.ts
-var _timeoutMenu;
-function onClickDocument(e) {
-	off(document.body, "click", onClickDocument);
-	const body = e.target;
-	const menus = queryAll("menu.active");
-	for (let i = 0; i < menus.length; i++) updateMenu(body, menus[i], e);
+var menuTimeouts = /* @__PURE__ */ new WeakMap();
+function getContainer$1(root = document) {
+	return root instanceof Document ? root.body : root ? root.host : document.body;
 }
-function focusOnMenuOrInput(menu) {
+function onClickDocument(e, root = document) {
+	off(getContainer$1(root), "click", (event) => onClickDocument(event, root));
+	const body = e.target;
+	const menus = queryAll("menu.active", root);
+	for (let i = 0; i < menus.length; i++) updateMenu(body, menus[i], e, root);
+}
+function focusOnMenuOrInput(menu, root = document) {
 	setTimeout(() => {
-		const input = query(".field > input", menu);
+		const input = query(".field > input", root, menu);
 		if (input) input.focus();
 		else menu.focus();
 	}, 90);
 }
-function updateMenu(from, menu, e) {
-	if (_timeoutMenu) clearTimeout(_timeoutMenu);
-	_timeoutMenu = setTimeout(() => {
-		on(document.body, "click", onClickDocument);
-		if (!hasTag(document.activeElement, "input")) blurActiveElement();
+function updateMenu(from, menu, e, root) {
+	if (e && (e instanceof Document || typeof ShadowRoot !== "undefined" && e instanceof ShadowRoot)) {
+		root = e;
+		e = void 0;
+	}
+	root = root ?? document;
+	let timeoutMenu = menuTimeouts.get(root);
+	if (timeoutMenu) clearTimeout(timeoutMenu);
+	timeoutMenu = setTimeout(() => {
+		on(getContainer$1(root), "click", (event) => onClickDocument(event, root));
+		if (!hasTag(root.activeElement, "input")) blurActiveElement(root);
 		const isActive = hasClass(menu, "active");
 		const isEvent = e?.target === from;
 		const isChild = !!from.closest("menu");
@@ -576,37 +596,41 @@ function updateMenu(from, menu, e) {
 			removeClass(menu, "active");
 			return;
 		}
-		removeClass(queryAll("menu.active"), "active");
+		removeClass(queryAll("menu.active", root), "active");
 		addClass(menu, "active");
-		focusOnMenuOrInput(menu);
+		focusOnMenuOrInput(menu, root);
 	}, 90);
+	menuTimeouts.set(root, timeoutMenu);
 }
 globals_default().menu = { updateMenu };
 //#endregion
 //#region src/cdn/elements/snackbar.ts
-var _timeoutSnackbar;
-function onClickSnackbar(e) {
+var snackbarTimeouts = /* @__PURE__ */ new WeakMap();
+function onClickSnackbar(e, root) {
 	const snackbar = e.currentTarget;
 	removeClass(snackbar, "active");
-	if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
+	const timeoutSnackbar = snackbarTimeouts.get(root);
+	if (timeoutSnackbar) clearTimeout(timeoutSnackbar);
 }
-function updateSnackbar(snackbar, milliseconds) {
-	blurActiveElement();
-	removeClass(queryAll(".snackbar.active"), "active");
+function updateSnackbar(snackbar, milliseconds, root = document) {
+	blurActiveElement(root);
+	removeClass(queryAll(".snackbar.active", root), "active");
 	addClass(snackbar, "active");
-	onWeak(snackbar, "click", onClickSnackbar);
-	if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
+	onWeak(snackbar, "click", (e) => onClickSnackbar(e, root));
+	let timeoutSnackbar = snackbarTimeouts.get(root);
+	if (timeoutSnackbar) clearTimeout(timeoutSnackbar);
 	if (milliseconds === -1) return;
-	_timeoutSnackbar = setTimeout(() => {
+	timeoutSnackbar = setTimeout(() => {
 		removeClass(snackbar, "active");
 	}, milliseconds ?? 6e3);
+	snackbarTimeouts.set(root, timeoutSnackbar);
 }
 globals_default().snackbar = { updateSnackbar };
 //#endregion
 //#region src/cdn/elements/page.ts
-function updatePage(page) {
+function updatePage(page, root) {
 	const container = parent(page);
-	if (container) removeClass(queryAll(":scope > .page", container), "active");
+	if (container) removeClass(queryAll(":scope > .page", root, container), "active");
 	addClass(page, "active");
 }
 globals_default().page = { updatePage };
@@ -678,11 +702,11 @@ function onKeydownRippleDelegation(e) {
 	});
 	updateRipple(e);
 }
-function updateAllRipples() {
-	const body = document.body;
-	if (!body) return;
-	onWeak(body, "mousedown", onMousedownRippleDelegation);
-	onWeak(body, "keydown", onKeydownRippleDelegation);
+function updateAllRipples(root = document) {
+	const container = root instanceof Document ? root.body : root;
+	if (!container) return;
+	onWeak(container, "mousedown", onMousedownRippleDelegation);
+	onWeak(container, "keydown", onKeydownRippleDelegation);
 }
 globals_default().ripple = { updateAllRipples };
 //#endregion
@@ -691,20 +715,23 @@ var _lastTheme = {
 	light: "",
 	dark: ""
 };
-function getMode() {
-	return document?.body?.classList.contains("dark") ? "dark" : "light";
+function getContainer(root) {
+	return root instanceof Document ? root.body : root.host;
 }
-function lastTheme() {
+function getMode(root) {
+	return getContainer(root).classList.contains("dark") ? "dark" : "light";
+}
+function lastTheme(root) {
 	if (_lastTheme.light && _lastTheme.dark) return _lastTheme;
-	const body = document.body;
-	const light = document.createElement("body");
+	const container = getContainer(root);
+	const light = document.createElement("div");
 	light.className = "light";
 	light.style.display = "none";
-	body.appendChild(light);
-	const dark = document.createElement("body");
+	container.appendChild(light);
+	const dark = document.createElement("div");
 	dark.className = "dark";
 	dark.style.display = "none";
-	body.appendChild(dark);
+	container.appendChild(dark);
 	try {
 		const fromLight = getComputedStyle(light);
 		const fromDark = getComputedStyle(dark);
@@ -751,19 +778,19 @@ function lastTheme() {
 			_lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
 		}
 	} finally {
-		body.removeChild(light);
-		body.removeChild(dark);
+		container.removeChild(light);
+		container.removeChild(dark);
 	}
 	return _lastTheme;
 }
-async function updateTheme(source) {
+async function updateTheme(source, root = document) {
 	const context = globalThis;
-	const body = document.body;
-	if (!source || !context.materialDynamicColors) return lastTheme();
+	const container = getContainer(root);
+	if (!source || !context.materialDynamicColors) return lastTheme(root);
 	if (source.light && source.dark) {
 		_lastTheme.light = source.light;
 		_lastTheme.dark = source.dark;
-		body.setAttribute("style", source[getMode()]);
+		container.setAttribute("style", source[getMode(root)]);
 		return source;
 	}
 	return context.materialDynamicColors(source).then((theme) => {
@@ -779,21 +806,21 @@ async function updateTheme(source) {
 		};
 		_lastTheme.light = toCss(theme.light);
 		_lastTheme.dark = toCss(theme.dark);
-		body.setAttribute("style", _lastTheme[getMode()]);
+		container.setAttribute("style", _lastTheme[getMode(root)]);
 		return _lastTheme;
 	});
 }
-function updateMode(value) {
+function updateMode(value, root = document) {
 	const context = globalThis;
-	const body = document.body;
-	if (!body) return value;
-	if (!value) return getMode();
+	const container = getContainer(root);
+	if (!container) return value;
+	if (!value) return getMode(root);
 	if (value === "auto") value = isDark() ? "dark" : "light";
-	body.classList.remove("light", "dark");
-	body.classList.add(value);
+	container.classList.remove("light", "dark");
+	container.classList.add(value);
 	const lastThemeStyle = value === "light" ? _lastTheme.light : _lastTheme.dark;
-	if (context.materialDynamicColors) body.setAttribute("style", lastThemeStyle);
-	return getMode();
+	if (context.materialDynamicColors) container.setAttribute("style", lastThemeStyle);
+	return getMode(root);
 }
 globals_default().theme = {
 	updateTheme,
@@ -803,100 +830,108 @@ globals_default().theme = {
 //#region src/cdn/loader.ts
 var _url = import.meta.url;
 var _context = globalThis;
-var _timeoutMutation;
-var _mutation;
-function onMutation() {
-	if (_timeoutMutation) clearTimeout(_timeoutMutation);
-	_timeoutMutation = setTimeout(async () => await _ui(), 180);
-}
-async function run(from, to, options, e) {
-	if (!to) {
-		to = query(from.getAttribute("data-ui"));
+function createBeerCssInstance(root = document) {
+	let _timeoutMutation;
+	let _mutation = null;
+	const instanceRoot = root;
+	const onMutation = () => {
+		if (_timeoutMutation) clearTimeout(_timeoutMutation);
+		_timeoutMutation = setTimeout(async () => await _ui(), 180);
+	};
+	const setup = () => {
+		if (_mutation || !_context.MutationObserver) return;
+		_mutation = new MutationObserver(onMutation);
+		const observeTarget = instanceRoot instanceof Document ? instanceRoot.body : instanceRoot;
+		if (observeTarget) _mutation.observe(observeTarget, {
+			childList: true,
+			subtree: true
+		});
+		onMutation();
+	};
+	const run = async (from, to, options, e) => {
 		if (!to) {
-			from.classList.toggle("active");
+			to = query(from.getAttribute("data-ui"), instanceRoot);
+			if (!to) {
+				from.classList.toggle("active");
+				return;
+			}
+		}
+		updateAllClickable(from, instanceRoot);
+		if (hasTag(to, "dialog")) {
+			requestAnimationFrame(() => globals_default().dialog?.updateDialog(from, to, instanceRoot));
 			return;
 		}
-	}
-	updateAllClickable(from);
-	if (hasTag(to, "dialog")) {
-		requestAnimationFrame(() => globals_default().dialog?.updateDialog(from, to));
-		return;
-	}
-	if (hasTag(to, "menu")) {
-		requestAnimationFrame(() => globals_default().menu?.updateMenu(from, to, e));
-		return;
-	}
-	if (hasClass(to, "snackbar")) {
-		requestAnimationFrame(() => globals_default().snackbar?.updateSnackbar(to, options));
-		return;
-	}
-	if (hasClass(to, "page")) {
-		requestAnimationFrame(() => globals_default().page?.updatePage(to));
-		return;
-	}
-	if (hasClass(to, "active")) {
-		removeClass(from, "active");
-		removeClass(to, "active");
-		return;
-	}
-	addClass(to, "active");
-}
-function setup() {
-	if (_context.ui || _mutation || !_context.MutationObserver) return;
-	_mutation = new MutationObserver(onMutation);
-	_mutation.observe(document.body, {
-		childList: true,
-		subtree: true
-	});
-	onMutation();
-}
-function onClickDataUi(e) {
-	const from = e.target.closest("[data-ui]");
-	if (from) run(from, null, null, e);
-}
-function onKeydownDataUi(e) {
-	const from = e.target.closest("[data-ui]");
-	if (from && hasTag(from, "a") && !from.getAttribute("href") && e.key === "Enter") run(from, null, null, e);
-}
-function updateAllDataUis() {
-	const body = document.body;
-	if (!body) return;
-	onWeak(body, "click", onClickDataUi);
-	onWeak(body, "keydown", onKeydownDataUi);
-}
-function _ui(selector, options) {
-	if (selector) {
-		if (selector === "setup") {
-			setup();
+		if (hasTag(to, "menu")) {
+			requestAnimationFrame(() => globals_default().menu?.updateMenu(from, to, e, instanceRoot));
 			return;
 		}
-		if (selector === "guid") return guid();
-		if (selector === "mode") return globals_default().theme?.updateMode(options);
-		if (selector === "theme") return globals_default().theme?.updateTheme(options);
-		if (selector === "import") {
-			importModulesFromQueryString(options);
+		if (hasClass(to, "snackbar")) {
+			requestAnimationFrame(() => globals_default().snackbar?.updateSnackbar(to, options, instanceRoot));
 			return;
 		}
-		const to = query(selector);
-		if (!to) return;
-		run(to, to, options);
-	}
-	updateAllDataUis();
-	globals_default().field?.updateAllFields();
-	globals_default().ripple?.updateAllRipples();
-	globals_default().slider?.updateAllSliders();
-	globals_default().progress?.updateAllProgress();
+		if (hasClass(to, "page")) {
+			requestAnimationFrame(() => globals_default().page?.updatePage(to, instanceRoot));
+			return;
+		}
+		if (hasClass(to, "active")) {
+			removeClass(from, "active");
+			removeClass(to, "active");
+			return;
+		}
+		addClass(to, "active");
+	};
+	const onClickDataUi = (e) => {
+		const from = e.target.closest("[data-ui]");
+		if (from) run(from, null, null, e);
+	};
+	const onKeydownDataUi = (e) => {
+		const from = e.target.closest("[data-ui]");
+		if (from && hasTag(from, "a") && !from.getAttribute("href") && e.key === "Enter") run(from, null, null, e);
+	};
+	const updateAllDataUis = () => {
+		const container = instanceRoot instanceof Document ? instanceRoot.body : instanceRoot;
+		if (!container) return;
+		onWeak(container, "click", onClickDataUi);
+		onWeak(container, "keydown", onKeydownDataUi);
+	};
+	const _ui = (selector, options) => {
+		if (selector) {
+			if (selector === "setup") {
+				setup();
+				return;
+			}
+			if (selector === "guid") return guid();
+			if (selector === "mode") return globals_default().theme?.updateMode(options, instanceRoot);
+			if (selector === "theme") return globals_default().theme?.updateTheme(options, instanceRoot);
+			if (selector === "import") {
+				importModulesFromQueryString(options);
+				return;
+			}
+			const to = query(selector, instanceRoot);
+			if (!to) return;
+			run(to, to, options);
+		}
+		updateAllDataUis();
+		globals_default().field?.updateAllFields(instanceRoot);
+		globals_default().ripple?.updateAllRipples(instanceRoot);
+		globals_default().slider?.updateAllSliders(instanceRoot);
+		globals_default().progress?.updateAllProgress(instanceRoot);
+	};
+	const container = instanceRoot instanceof Document ? instanceRoot.body : instanceRoot.host;
+	if (container && !container.classList.contains("dark") && !container.classList.contains("light")) globals_default().theme?.updateMode("auto", instanceRoot);
+	setup();
+	return _ui;
+}
+function init(root = document) {
+	return createBeerCssInstance(root);
 }
 function start() {
 	if (_context.ui) return;
-	const body = _context.document?.body;
-	if (body && !body.classList.contains("dark") && !body.classList.contains("light")) globals_default().theme?.updateMode("auto");
-	setup();
-	_context.ui = _ui;
+	_context.ui = init(document);
 }
 importModulesFromUrl(_url);
 start();
 var ui = _context.ui;
 globals_default().ui = ui;
 //#endregion
-export { ui as default, ui };
+export { ui as default, ui, init };

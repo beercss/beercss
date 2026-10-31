@@ -51,26 +51,6 @@ export function guid(): string {
   });
 }
 
-export function query(selector: string | Element | null, element?: Element | null): Element | null {
-  try {
-    return (typeof selector === "string")
-      ? (element ?? document).querySelector(selector)
-      : selector;
-  } catch {
-    return null;
-  }
-}
-
-export function queryAll(selector: string | NodeListOf<Element> | null, element?: Element | null): NodeListOf<Element> {
-  try {
-    return (typeof selector === "string")
-      ? (element ?? document).querySelectorAll(selector)
-      : selector ?? _emptyNodeList;
-  } catch {
-    return _emptyNodeList;
-  }
-}
-
 export function hasClass(element: Element | null, name: string): boolean {
   return element?.classList.contains(name) ?? false;
 }
@@ -135,7 +115,6 @@ export function prev(element: Element): Element | null {
 export function next(element: Element): Element | null {
   return element?.nextElementSibling;
 }
-
 export function parent(element: Element): Element | null {
   return element?.parentElement;
 }
@@ -144,8 +123,31 @@ export function closest(element: Element, selector: string): Element | null {
   return element?.closest(selector);
 }
 
-export function create(htmlAttributesAsJson: any): HTMLElement {
-  const element = document.createElement("div");
+export function query(selector: string | Element | null, elementOrRoot?: Element | Document | ShadowRoot | null, element?: Element | null): Element | null {
+  try {
+    const searchContext = element ?? elementOrRoot ?? document;
+    return (typeof selector === "string")
+      ? searchContext.querySelector(selector)
+      : selector;
+  } catch {
+    return null;
+  }
+}
+
+export function queryAll(selector: string | NodeListOf<Element> | null, elementOrRoot?: Element | Document | ShadowRoot | null, element?: Element | null): NodeListOf<Element> {
+  try {
+    const searchContext = element ?? elementOrRoot ?? document;
+    return (typeof selector === "string")
+      ? searchContext.querySelectorAll(selector)
+      : selector ?? _emptyNodeList;
+  } catch {
+    return _emptyNodeList;
+  }
+}
+
+export function create(htmlAttributesAsJson: any, root?: Document | ShadowRoot): HTMLElement {
+  const doc = root ? (root instanceof Document ? root : root.ownerDocument) : document;
+  const element = doc.createElement("div");
   for (let i = 0, keys = Object.keys(htmlAttributesAsJson), n = keys.length; i < n; i++) {
     const key = keys[i];
     const value = htmlAttributesAsJson[key] as string;
@@ -154,31 +156,32 @@ export function create(htmlAttributesAsJson: any): HTMLElement {
   return element;
 }
 
-export function blurActiveElement() {
-  (document.activeElement as HTMLElement)?.blur();
+export function blurActiveElement(root?: Document | ShadowRoot) {
+  ((root ?? document).activeElement as HTMLElement)?.blur();
 }
 
-export function queryAllDataUi(id: string): NodeListOf<Element> {
-  return queryAll("[data-ui=\"#"+id+"\"]");
+export function queryAllDataUi(id: string, root?: Document | ShadowRoot, element?: Element | null): NodeListOf<Element> {
+  return queryAll("[data-ui=\"#"+id+"\"]", root, element);
 }
 
-export function queryDataUi(id: string): Element | null {
-  return query("[data-ui=\"#"+id+"\"]");
+export function queryDataUi(id: string, root?: Document | ShadowRoot, element?: Element | null): Element | null {
+  return query("[data-ui=\"#"+id+"\"]", root, element);
 }
 
-export function updateAllClickable(element: Element) {
-  if (element.id && hasClass(element, "page")) element = queryDataUi(element.id) ?? element;
+export function updateAllClickable(element: Element, root?: Document | ShadowRoot) {
+  if (element.id && hasClass(element, "page")) element = queryDataUi(element.id, root) ?? element;
 
   const container = closest(element, ".tabs, nav");
   if (!container) return;
 
-  const as = queryAll("a", container);
+  const as = queryAll("a", root, container);
   removeClass(as, "active");
   if (!hasTag(element, "button") && !hasClass(element, "button") && !hasClass(element, "chip")) addClass(element, "active");
 }
 
-export function rootSizeInPixels(): number {
-  const rootElement = query('.beer') || document.documentElement;
+export function rootSizeInPixels(root?: Document | ShadowRoot): number {
+  const searchRoot = root ?? document;
+  const rootElement = query('.beer', searchRoot) || (root instanceof Document ? root.documentElement : (root ? (root as ShadowRoot).host : document.documentElement));
   const size = getComputedStyle(rootElement).getPropertyValue("--size") || "16px";
   if (size.includes("%")) return (parseInt(size) * 16) / 100;
   if (size.includes("em")) return parseInt(size) * 16;

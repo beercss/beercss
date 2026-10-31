@@ -22,20 +22,23 @@ var _lastTheme = {
 	light: "",
 	dark: ""
 };
-function getMode() {
-	return document?.body?.classList.contains("dark") ? "dark" : "light";
+function getContainer(root) {
+	return root instanceof Document ? root.body : root.host;
 }
-function lastTheme() {
+function getMode(root) {
+	return getContainer(root).classList.contains("dark") ? "dark" : "light";
+}
+function lastTheme(root) {
 	if (_lastTheme.light && _lastTheme.dark) return _lastTheme;
-	const body = document.body;
-	const light = document.createElement("body");
+	const container = getContainer(root);
+	const light = document.createElement("div");
 	light.className = "light";
 	light.style.display = "none";
-	body.appendChild(light);
-	const dark = document.createElement("body");
+	container.appendChild(light);
+	const dark = document.createElement("div");
 	dark.className = "dark";
 	dark.style.display = "none";
-	body.appendChild(dark);
+	container.appendChild(dark);
 	try {
 		const fromLight = getComputedStyle(light);
 		const fromDark = getComputedStyle(dark);
@@ -82,19 +85,19 @@ function lastTheme() {
 			_lastTheme.dark += variables[i] + ":" + fromDark.getPropertyValue(variables[i]) + ";";
 		}
 	} finally {
-		body.removeChild(light);
-		body.removeChild(dark);
+		container.removeChild(light);
+		container.removeChild(dark);
 	}
 	return _lastTheme;
 }
-async function updateTheme(source) {
+async function updateTheme(source, root = document) {
 	const context = globalThis;
-	const body = document.body;
-	if (!source || !context.materialDynamicColors) return lastTheme();
+	const container = getContainer(root);
+	if (!source || !context.materialDynamicColors) return lastTheme(root);
 	if (source.light && source.dark) {
 		_lastTheme.light = source.light;
 		_lastTheme.dark = source.dark;
-		body.setAttribute("style", source[getMode()]);
+		container.setAttribute("style", source[getMode(root)]);
 		return source;
 	}
 	return context.materialDynamicColors(source).then((theme) => {
@@ -110,21 +113,21 @@ async function updateTheme(source) {
 		};
 		_lastTheme.light = toCss(theme.light);
 		_lastTheme.dark = toCss(theme.dark);
-		body.setAttribute("style", _lastTheme[getMode()]);
+		container.setAttribute("style", _lastTheme[getMode(root)]);
 		return _lastTheme;
 	});
 }
-function updateMode(value) {
+function updateMode(value, root = document) {
 	const context = globalThis;
-	const body = document.body;
-	if (!body) return value;
-	if (!value) return getMode();
+	const container = getContainer(root);
+	if (!container) return value;
+	if (!value) return getMode(root);
 	if (value === "auto") value = isDark() ? "dark" : "light";
-	body.classList.remove("light", "dark");
-	body.classList.add(value);
+	container.classList.remove("light", "dark");
+	container.classList.add(value);
 	const lastThemeStyle = value === "light" ? _lastTheme.light : _lastTheme.dark;
-	if (context.materialDynamicColors) body.setAttribute("style", lastThemeStyle);
-	return getMode();
+	if (context.materialDynamicColors) container.setAttribute("style", lastThemeStyle);
+	return getMode(root);
 }
 globals_default().theme = {
 	updateTheme,

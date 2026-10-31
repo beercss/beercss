@@ -46,4 +46,5 @@
 - [Textarea](https://www.beercss.com/docs/TEXTAREA.md)
 - [Tooltip](https://www.beercss.com/docs/TOOLTIP.md)
 - [Typography](https://www.beercss.com/docs/TYPOGRAPHY.md)
+- [Using with Web Components](https://www.beercss.com/docs/WEB_COMPONENT.md)
 - [Javascript](https://www.beercss.com/docs/JAVASCRIPT.md)

@@ -15,20 +15,6 @@ navigator.userAgent.includes("Macintosh");
 navigator.userAgent.includes("Linux");
 navigator.userAgent.includes("Android");
 /iPad|iPhone|iPod/.test(navigator.userAgent);
-function query(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelector(selector) : selector;
-	} catch {
-		return null;
-	}
-}
-function queryAll(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
-	} catch {
-		return _emptyNodeList;
-	}
-}
 function hasClass(element, name) {
 	return element?.classList.contains(name) ?? false;
 }
@@ -62,8 +48,22 @@ function off(element, name, callback, useCapture = true) {
 function parent(element) {
 	return element?.parentElement;
 }
-function rootSizeInPixels() {
-	const rootElement = query(".beer") || document.documentElement;
+function query(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelector(selector) : selector;
+	} catch {
+		return null;
+	}
+}
+function queryAll(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
+	} catch {
+		return _emptyNodeList;
+	}
+}
+function rootSizeInPixels(root) {
+	const rootElement = query(".beer", root ?? document) || (root instanceof Document ? root.documentElement : root ? root.host : document.documentElement);
 	const size = getComputedStyle(rootElement).getPropertyValue("--size") || "16px";
 	if (size.includes("%")) return parseInt(size) * 16 / 100;
 	if (size.includes("em")) return parseInt(size) * 16;
@@ -71,32 +71,36 @@ function rootSizeInPixels() {
 }
 //#endregion
 //#region src/cdn/elements/slider.ts
+function getContainer(root) {
+	return root instanceof Document ? root.body : root.host;
+}
 function onInputDocument(e) {
 	const input = e.target;
 	if (!hasTag(input, "input") && !hasTag(input, "select")) return;
+	const root = input.getRootNode?.() ?? document;
 	if (input.type === "range") {
 		input.focus();
-		updateRange(input);
-	} else updateAllRanges();
+		updateRange(input, root);
+	} else updateAllRanges(root);
+}
+function updateAllRanges(root = document) {
+	const container = getContainer(root);
+	const ranges = queryAll(".slider > input[type=range]", root);
+	if (!ranges.length) off(container, "input", onInputDocument, false);
+	else onWeak(container, "input", onInputDocument, false);
+	for (let i = 0; i < ranges.length; i++) updateRange(ranges[i], root);
 }
 function onChangeInput(e) {
-	if (!window.matchMedia("(pointer: coarse)").matches) return;
+	if (!(window.matchMedia?.("(pointer: coarse)")?.matches ?? false)) return;
 	e.target.blur();
 }
-function updateAllRanges() {
-	const body = document.body;
-	const ranges = queryAll(".slider > input[type=range]");
-	if (!ranges.length) off(body, "input", onInputDocument, false);
-	else on(body, "input", onInputDocument, false);
-	for (let i = 0; i < ranges.length; i++) updateRange(ranges[i]);
-}
-function updateRange(input) {
+function updateRange(input, root = document) {
 	onWeak(input, "change", onChangeInput);
 	const label = parent(input);
-	const bar = query("span", label);
-	const inputs = queryAll("input", label);
+	const bar = query("span", root, label);
+	const inputs = queryAll("input", root, label);
 	if (!inputs.length || !bar) return;
-	const rootSize = rootSizeInPixels();
+	const rootSize = rootSizeInPixels(root);
 	const thumb = hasClass(label, "max") ? 0 : .25 * rootSize * 100 / inputs[0].offsetWidth;
 	const percents = [];
 	const values = [];
@@ -125,8 +129,8 @@ function updateRange(input) {
 	}
 	requestAnimationFrame(() => label.style.cssText = `--_start: ${start}%; --_end: ${end}%; --_value1: '${value1}'; --_value2: '${value2}';`);
 }
-function updateAllSliders() {
-	updateAllRanges();
+function updateAllSliders(root = document) {
+	updateAllRanges(root);
 }
 globals_default().slider = { updateAllSliders };
 //#endregion
