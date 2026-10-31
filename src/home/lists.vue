@@ -23,22 +23,37 @@ div
     .medium-space
     .grid
       #list-default.s12.m6.l6
-        h6
+        h5.h6
           span Default
-          button.chip.circle(@click="domain.showSamples(data, '#list-default > article > .list', 'List border')")
+          button.chip.circle(@click="domain.showSamples(data, '#list-default > div > .list', 'List border')")
             i code
-        article
+        .padding
           ul.list.border
             li Item
             li Item
             li Item
             li Item
-      #list-nested.s12.m6.l6
-        h6
-          span Nested
-          button.chip.circle(@click="domain.showSamples(data, '#list-nested > article > .list', 'List nested')")
+      #list-links.s12.m6.l6
+        h5.h6
+          span Links
+          button.chip.circle(@click="domain.showSamples(data, '#list-links > div > .list', 'List border')")
             i code
-        article
+        .padding
+          ul.list.border
+            li
+              a(href="javascript:;") Item
+            li
+              a(href="javascript:;") Item
+            li
+              a(href="javascript:;") Item
+            li
+              a(href="javascript:;") Item
+      #list-nested.s12.m6.l6
+        h5.h6
+          span Nested
+          button.chip.circle(@click="domain.showSamples(data, '#list-nested > div > .list', 'List nested')")
+            i code
+        .padding
           ul.list.border
             li Item
             li Item
@@ -47,11 +62,11 @@ div
                 li Item
                 li Item
       #list-expansion.s12.m6.l6
-        h6
+        h5.h6
           span Expansion
-          button.chip.circle(@click="domain.showSamples(data, '#list-expansion > article > .list', 'List expansion')")
+          button.chip.circle(@click="domain.showSamples(data, '#list-expansion > div > .list', 'List expansion')")
             i code
-        article
+        .padding
           ul.list.border
             li Item
             li Item
@@ -63,103 +78,86 @@ div
                   li Item
     .medium-space
     #list1
-      h6 
+      h5.h6
         span Headline and supporting text
         button.chip.circle(@click="domain.showSamples(data, '#list1 .list', 'Lists')")
           i code
-      article
+      .padding
         ul.list.border
           li
             button.circle A
             .max
-              h6.small Headline
+              h6.small(aria-hidden="true") Headline
               div Supporting text
             label +15 min
           li
             button.circle A
             .max
-              h6.small Headline
+              h6.small(aria-hidden="true") Headline
               div Supporting text
             label +15 min
-      article
-        ul.list.border
-          li
-            a(href="#1")
-              button.circle A
-              .max
-                h6.small Headline
-                div Supporting text
-              label +15 min
-          li
-            a(href="#1")
-              button.circle A
-              .max
-                h6.small Headline
-                div Supporting text
-              label +15 min
     .medium-space
     #list2
-      h6 
+      h5.h6
         span Icons
         button.chip.circle(@click="domain.showSamples(data, '#list2 .list', 'Lists')")
           i code
-      article
+      .padding
         ul.list.border
           li
             i home
             .max
-              h6.small Headline
+              h6.small(aria-hidden="true") Headline
               div Supporting text
             label +15 min
           li
             i home
             .max
-              h6.small Headline
+              h6.small(aria-hidden="true") Headline
               div Supporting text
             label +15 min
     .medium-space
     #list3
-      h6 
+      h5.h6
         span Leading media or avatar
         button.chip.circle(@click="domain.showSamples(data, '#list3 .list', 'Lists')")
           i code
-      article
+      .padding
         ul.list.border
           li
-            img.round(:src="'/beer-and-woman.svg'")
+            img.round(alt="", :src="'/beer-and-woman.svg'")
             .max
-              h6.small Headline
+              h6.small(aria-hidden="true") Headline
               div Supporting text
             label +15 min
           li
-            img.round(:src="'/beer-and-woman.svg'")
+            img.round(alt="", :src="'/beer-and-woman.svg'")
             .max
-              h6.small Headline
+              h6.small(aria-hidden="true") Headline
               div Supporting text
             label +15 min
     .medium-space
     #list4
-      h6 
+      h5.h6
         span Links and buttons
         button.chip.circle(@click="domain.showSamples(data, '#list4 .list', 'Lists')")
           i code
-      article
+      .padding
         ul.list.border
           li
             .max
-              h6.small Headline
+              h6.small(aria-hidden="true") Headline
               div Supporting text
-            a Link
+            a(href="javascript:;") Link
             button Button
           li
             .max
-              h6.small Headline
+              h6.small(aria-hidden="true") Headline
               div Supporting text
-            a Link
+            a(href="javascript:;") Link
             button Button
-    
+   
 </template>
-
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";

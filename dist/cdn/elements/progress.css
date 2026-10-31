@@ -1,0 +1,160 @@
+progress {
+  --_size: 0.25rem;
+  position: relative;
+  inline-size: 100%;
+  block-size: var(--_size);
+  color: var(--primary);
+  background: var(--image);
+  border-radius: 1rem;
+  flex: none;
+  border: none;
+  overflow: hidden;
+  writing-mode: horizontal-tb;
+  direction: ltr;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+progress.small {
+  --_size: 0.25rem;
+}
+
+progress.medium {
+  --_size: 0.35rem;
+}
+
+progress.large {
+  --_size: 0.45rem;
+}
+
+progress.indeterminate {
+  --_value: 100;
+  animation: 3.2s to-indeterminate-progress ease infinite;
+}
+
+progress:not(.circle, [value])::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  clip-path: none;
+  background: currentcolor;
+  animation: 3.2s to-linear-progress ease infinite;
+}
+
+progress:not(.circle, [value])::-moz-progress-bar {
+  animation: 3.2s to-linear-progress ease infinite;
+}
+
+progress:not(.circle, [value])::-webkit-progress-value {
+  animation: 3.2s to-linear-progress ease infinite;
+}
+
+progress::-webkit-progress-bar {
+  background: none;
+}
+
+progress::-webkit-progress-value {
+  background: currentColor;
+}
+
+progress::-moz-progress-bar {
+  background: currentColor;
+}
+
+progress.wavy {
+  block-size: calc(var(--_size, 0) * 2);
+  background: none;
+  background-image: var(--image);
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  background-size: auto calc(var(--_size, 0) / 2);
+}
+
+progress.wavy::-webkit-progress-value,
+progress.wavy:not(.circle, [value])::after {
+  mask-image: url(../wavy.svg);
+  mask-position: 0 50%;
+  mask-repeat: repeat-x;
+  mask-size: auto 100%;
+
+}
+
+progress.wavy::-moz-progress-bar {
+  mask-image: url(../wavy.svg);
+  mask-position: 0 50%;
+  mask-repeat: repeat-x;
+  mask-size: auto 100%;
+}
+
+progress.circle {
+  --_value: attr(value type(<number>), 50);
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  background: conic-gradient(currentColor calc(var(--_value, 0) * 1%), var(--active) 0%);
+  border-radius: 50%;
+  mask-image: radial-gradient(circle at center, transparent 57%, currentColor 60%);
+}
+
+progress.circle::-webkit-progress-value {
+  background: none;
+}
+
+progress.circle::-moz-progress-bar {
+  background: none;
+}
+
+progress.circle.wavy {
+  background: conic-gradient(currentColor calc(var(--_value, 0) * 1%), var(--active) 0);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  mask-image: url(../wavy-circle.svg);
+}
+
+progress.circle.small {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
+
+progress.circle.large {
+  inline-size: 3.5rem;
+  block-size: 3.5rem;
+}
+
+progress.circle:not([value]),
+progress.circle.indeterminate {
+  --_value: 50;
+  animation: to-rotate 1s infinite linear;
+}
+
+:is(nav, .row, .field) > progress:not(.circle, .small, .medium, .large) {
+  flex: auto;
+}
+
+progress.max {
+  display: unset;
+  position: absolute;
+  inline-size: 100% !important;
+  block-size: 100% !important;
+  color: currentColor;
+  background: none;
+  inset: 0;
+  border-radius: inherit;
+  animation: none;
+  writing-mode: horizontal-tb;
+  opacity: 0.33;
+}
+
+progress.max[class*='-text'] {
+  opacity: 1;
+}
+
+progress.max + * {
+  margin-block-start: 0;
+}
+
+:is(.button, button, .chip) > progress.circle {
+  color: inherit;
+}

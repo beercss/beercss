@@ -4,7 +4,7 @@ declare global {
     light: string,
   }
   
-  function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme>;
+  function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | undefined | Promise<IBeerCssTheme>;
 }
 
 declare module "ui";
@@ -14,6 +14,6 @@ export interface IBeerCssTheme {
   light: string,
 }
 
-export function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme>;
+export function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | undefined | Promise<IBeerCssTheme>;
 
 export default ui;

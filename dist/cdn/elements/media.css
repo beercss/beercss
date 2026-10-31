@@ -1,0 +1,112 @@
+svg {
+  fill: currentcolor;
+}
+
+:is(img, svg, video):is(.small, .medium, .large, .tiny, .extra, .round, .circle, .square, .responsive) {
+  --_size: 3rem;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
+  block-size: var(--_size);
+  inline-size: var(--_size);
+}
+
+:is(img, svg, video).round {
+  --_round: 0.5rem;
+}
+
+:is(img, svg, video).tiny {
+  --_size: 2rem;
+}
+
+:is(img, svg, video).small {
+  --_size: 2.5rem;
+}
+
+:is(img, svg, video).large {
+  --_size: 3.5rem;
+}
+
+:is(img, svg, video).extra {
+  --_size: 4rem;
+}
+
+:is(img, svg, video).responsive {
+  --_size: 100%;
+  margin: 0 auto;
+}
+
+:is(img, svg, video).responsive.tiny {
+  inline-size: 100%;
+  block-size: 4rem;
+}
+
+:is(img, svg, video).responsive.small {
+  inline-size: 100%;
+  block-size: 8rem;
+}
+
+:is(img, svg, video).responsive.medium {
+  inline-size: 100%;
+  block-size: 12rem;
+}
+
+:is(img, svg, video).responsive.large {
+  inline-size: 100%;
+  block-size: 16rem;
+}
+
+:is(img, svg, video).responsive.extra {
+  inline-size: 100%;
+  block-size: 20rem;
+}
+
+:is(img, svg, video).responsive.round {
+  --_round: 2rem;
+}
+
+:is(img, svg, video).empty-state {
+  max-inline-size: 100%;
+  inline-size: 24rem;
+}
+
+:is(button, .button, .chip):not(.transparent) > .responsive {
+  border: 0.25rem solid transparent;
+}
+
+:is(button, .button, .chip, .field) > :is(img, svg):not(.responsive),
+.tabs :is(img, svg):not(.responsive) {
+  min-inline-size: 1.5rem;
+  max-inline-size: 1.5rem;
+  min-block-size: 1.5rem;
+  max-block-size: 1.5rem;
+}
+
+:is(button, .button, .chip):not(.extend) > .responsive:first-child {
+  margin-inline-start: calc(-1 * var(--_padding, 0));
+}
+
+:is(button, .button, .chip):not(.extend) > .responsive:not(:first-child) {
+  margin-inline-end: calc(-1 * var(--_padding, 0));
+}
+
+:is(button, .button, .chip, .circle, .square, .extend) > .responsive {
+  --_size: inherit;
+  margin: 0 auto;
+}
+
+.extend > :is(.responsive, i) {
+  margin: 0;
+  position: absolute;
+  inset-inline: 1rem;
+  z-index: 1;
+}
+
+.extend > .responsive {
+  inset-inline: 0;
+  inline-size: 3.5rem;
+}
+
+.extend.border > .responsive {
+  inline-size: 3.375rem;
+}

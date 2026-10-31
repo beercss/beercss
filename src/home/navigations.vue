@@ -4,7 +4,7 @@
   h4
     span Navigations
   .medium-space
-  h6.middle-align
+  h5.h6.middle-align
     span Rows
     button.chip.circle(@click="domain.showSamples(data, '#row-default > .row', 'Rows', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
@@ -40,7 +40,7 @@
       div min
       div min
   .medium-space
-  h6.middle-align
+  h5.h6.middle-align
     span Navigations
     button.chip.circle(@click="domain.showSamples(data, '#navigation-default > nav', 'Navigations', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
       i code
@@ -60,39 +60,39 @@
       button Button
       button.chip Chip
       i home
-      img.circle(:src="'/beer-and-woman.svg'")
+      img.circle(alt="", :src="'/beer-and-woman.svg'")
     hr.small
     nav
       button Button
       button.chip Chip
       i home
       .max max
-      img.circle(:src="'/beer-and-woman.svg'")
+      img.circle(alt="", :src="'/beer-and-woman.svg'")
     hr.small
     nav
       button Button
       button.chip Chip
       .max max
       i home
-      img.circle(:src="'/beer-and-woman.svg'")
+      img.circle(alt="", :src="'/beer-and-woman.svg'")
     hr.small
     nav
       button Button
       .max max
       button.chip Chip
       i home
-      img.circle(:src="'/beer-and-woman.svg'")
+      img.circle(alt="", :src="'/beer-and-woman.svg'")
     hr.small
     nav
       .max max
       button Button
       button.chip Chip
       i home
-      img.circle(:src="'/beer-and-woman.svg'")
+      img.circle(alt="", :src="'/beer-and-woman.svg'")
   .medium-space
   #navigation-rail
     .medium-space
-    h6.middle-align
+    h5.h6.middle-align
       span Navigation rail/bar
       button.chip.circle(@click="domain.showSamples(data, '#app > div > nav.m.l', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
@@ -112,7 +112,7 @@
   .medium-space
   #navigation-tabbed
     .medium-space
-    h6.middle-align
+    h5.h6.middle-align
       span Navigation tabbed
       button.chip.circle(@click="domain.showSamples(data, '#navigation-tabbed-example', 'Navigation tabbed', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
         i code
@@ -143,28 +143,27 @@
     .medium-space
     #navigation-tabbed-example
       nav.tabbed
-        a.active(data-ui="#page-overview", tabindex="0")
+        a.active(data-ui="#page-overview", tabindex="0", href="javascript:;")
           i info
           span Overview
-        a(data-ui="#page-specs", tabindex="0")
+        a(data-ui="#page-specs", tabindex="0", href="javascript:;")
           i style
           span Specs
-        a(data-ui="#page-guidelines", tabindex="0")
+        a(data-ui="#page-guidelines", tabindex="0", href="javascript:;")
           i design_services
           span Guidelines
-        a(data-ui="#page-acessibility", tabindex="0")
+        a(data-ui="#page-acessibility", tabindex="0", href="javascript:;")
           i accessibility_new
           span Acessibility
       #page-overview.page.padding.active
-        h5 Overview
+        h5(aria-hidden="true") Overview
       #page-specs.page.padding
-        h5 Specs
+        h5(aria-hidden="true") Specs
       #page-guidelines.page.padding
-        h5 Guidelines
+        h5(aria-hidden="true") Guidelines
       #page-acessibility.page.padding
-        h5 Acessibility
+        h5(aria-hidden="true") Acessibility
 </template>
-
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";

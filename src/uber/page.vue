@@ -2,12 +2,11 @@
 div
   nav.top.black.white-text
     .space
-    img(height="24", :src="'/uber-dark.png'")
-    button.large.transparent.m.l(
-      data-ui="#menu-ride"
-    )
-      span Ride
-      menu#menu-ride.no-wrap(data-ui="#menu-ride")
+    img(height="24", alt="", :src="'/uber-dark.png'")
+    div
+      button.large.transparent.m.l
+        span Ride
+      menu.no-wrap
         li Overview
         li Price calculator
         li Cities
@@ -17,11 +16,10 @@ div
         li How it works
         li Safety
         li Airports
-    button.large.transparent.m.l(
-      data-ui="#menu-drive"
-    )
-      span Drive
-      menu#menu-drive.no-wrap(data-ui="#menu-drive")
+    div
+      button.large.transparent.m.l
+        span Drive
+      menu.no-wrap
         li Overview
         li Partner app
         li Safe
@@ -32,11 +30,10 @@ div
         li Requirements
         li Vehicle solutions
         li Safety
-    button.large.transparent.m.l(
-      data-ui="#menu-more"
-    )
-      span More
-      menu#menu-more.no-wrap(data-ui="#menu-more")
+    div
+      button.large.transparent.m.l
+        span More
+      menu.no-wrap
         li Uber Eats
         li Make deliveries
         li Uber Health
@@ -47,8 +44,8 @@ div
     .max
     button.circle.large.transparent.m.l(data-ui="#themes1")
       i palette
-    button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+    button.circle.large.transparent(@click="redirect('/')", aria-hidden="true")
+      img.responsive(alt="", :src="'/favicon.png'")
     .space
 
   main.responsive.max

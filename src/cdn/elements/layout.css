@@ -1,0 +1,35 @@
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+:is(.absolute, .fixed).left.right {
+  inline-size: auto;
+}
+
+:is(.absolute, .fixed).left.right.small {
+  block-size: 20rem;
+}
+
+:is(.absolute, .fixed).left.right.medium {
+  block-size: 28rem;
+}
+
+:is(.absolute, .fixed).left.right.large {
+  block-size: 44rem;
+}
+
+:is(.absolute, .fixed).top.bottom.small {
+  inline-size: 20rem;
+}
+
+:is(.absolute, .fixed).top.bottom.medium {
+  inline-size: 28rem;
+}
+
+:is(.absolute, .fixed).top.bottom.large {
+  inline-size: 44rem;
+}

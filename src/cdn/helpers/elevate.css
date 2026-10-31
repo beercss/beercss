@@ -1,0 +1,16 @@
+.no-elevate {
+  box-shadow: none !important;
+}
+
+.small-elevate,
+.elevate {
+  box-shadow: var(--elevate1) !important;
+}
+
+.medium-elevate {
+  box-shadow: var(--elevate2) !important;
+}
+
+.large-elevate {
+  box-shadow: var(--elevate3) !important;
+}

@@ -1,0 +1,131 @@
+.tooltip {
+  --_space: -0.5rem;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--inverse-surface);
+  color: var(--inverse-on-surface);
+  font-size: 0.75rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 200;
+  inset: 0 auto auto 50%;
+  inline-size: auto;
+  white-space: nowrap;
+  font-weight: 500;
+  opacity: 0;
+  transition: all var(--speed2);
+  line-height: normal;
+  transform: translate(-50%, -100%) scale(0.9);
+}
+
+.tooltip:not(.max):hover {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tooltip.left {
+  inset: 50% auto auto 0;
+  transform: translate(-100%, -50%) scale(0.9);
+}
+
+.tooltip.right {
+  inset: 50% 0 auto auto;
+  transform: translate(100%, -50%) scale(0.9);
+}
+
+.tooltip.bottom {
+  inset: auto auto 0 50%;
+  transform: translate(-50%, 100%) scale(0.9);
+}
+
+.tooltip.small {
+  inline-size: 8rem;
+  white-space: normal;
+}
+
+.tooltip.medium {
+  inline-size: 12rem;
+  white-space: normal;
+}
+
+.tooltip.large {
+  inline-size: 16rem;
+  white-space: normal;
+}
+
+:hover > .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -100%) scale(1);
+}
+
+:hover > .tooltip.left {
+  transform: translate(-100%, -50%) scale(1);
+}
+
+:hover > .tooltip.right {
+  transform: translate(100%, -50%) scale(1);
+}
+
+:hover > .tooltip.bottom {
+  transform: translate(-50%, 100%) scale(1);
+}
+
+.tooltip.no-space {
+  --_space: 0;
+}
+
+.tooltip.medium-space {
+  --_space: -1rem;
+}
+
+.tooltip.large-space {
+  --_space: -1.5rem;
+}
+
+.tooltip:not(.left, .right, .bottom) {
+  margin-block-start: var(--_space) !important;
+}
+
+.tooltip.left,
+.tooltip.right {
+  margin-inline: var(--_space) !important;
+}
+
+.tooltip.bottom {
+  margin-block-end: var(--_space) !important;
+}
+
+menu:active ~ .tooltip,
+:is(button, .button):focus > menu ~ .tooltip,
+.field > :focus ~ menu ~ .tooltip {
+  visibility: hidden;
+}
+
+.slider > .tooltip {
+  --_space: -1.25rem;
+}
+
+.slider.vertical > .tooltip {
+  --_space: -0.75rem;
+}
+
+.slider.vertical > .tooltip:is(.left, .right) {
+  --_space: -0.5rem;
+}
+
+.tooltip.max {
+  display: block;
+  font-size: inherit;
+  white-space: normal;
+  text-align: start;
+  inline-size: 20rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: var(--elevate2);
+}

@@ -1,43 +1,150 @@
 <template lang="pug">
 div
-  nav#navigation-rail1.m.l.left(:class="{ max: data.isMax }")
+  nav#navigation-rail1.m.l.left.scroll(:class="{ max: data.isMax }")
     header
       button.extra.circle.transparent(@click="updateNavigationRail()")
         i {{ data.isMax ? "menu_open" : "menu" }}
-      button.extend.square.round(@click="updateExplore()")
-        i widgets
-        span Explore
-          
-    a(@click="domain.updateMenu(data, 'left')")
-      i arrow_back
-      span Left
-    a(@click="domain.updateMenu(data, 'right')")
-      i arrow_forward
-      span Right
-    a(v-show="!data.isRtl", @click="domain.updateRtlLtr(data)")
-      i checklist_rtl
-      span RTL
-    a(v-show="data.isRtl", @click="domain.updateRtlLtr(data)")
-      i checklist
-      span LTR
-    a(@click="domain.showSamples(data, '#navigation-rail1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
-      i code
-      span Code
+      button.extend.square.round(@click="domain.goTo('#intro', false)")
+        i code
+        span Get started
+    a(href="javascript:;", @click="domain.goTo('#app-bars')")
+      i widgets
+      span App bars
+    a(href="javascript:;", @click="domain.goTo('#badges')")
+      i widgets
+      span Badges
+    a(href="javascript:;", @click="domain.goTo('#buttons')")
+      i widgets
+      span Buttons
+    a(href="javascript:;", @click="domain.goTo('#cards')")
+      i widgets
+      span Cards
+    a(href="javascript:;", @click="domain.goTo('#checkboxes')")
+      i widgets
+      span Checkboxes
+    a(href="javascript:;", @click="domain.goTo('#chips')")
+      i widgets
+      span Chips
+    a(href="javascript:;", @click="domain.goTo('#colors')")
+      i widgets
+      span Colors
+    a(href="javascript:;", @click="domain.goTo('#containers')")
+      i widgets
+      span Containers
+    a(href="javascript:;", @click="domain.goTo('#dialogs')")
+      i widgets
+      span Dialogs
+    a(href="javascript:;", @click="domain.goTo('#directions')")
+      i widgets
+      span Directions
+    a(href="javascript:;", @click="domain.goTo('#dividers')")
+      i widgets
+      span Dividers
+    a(href="javascript:;", @click="domain.goTo('#expansions')")
+      i widgets
+      span Expansions
+    a(href="javascript:;", @click="domain.goTo('#fieldsets')")
+      i widgets
+      span Fieldsets
+    a(href="javascript:;", @click="domain.goTo('#grids')")
+      i widgets
+      span Grids
+    a(href="javascript:;", @click="domain.goTo('#icons')")
+      i widgets
+      span Icons
+    a(href="javascript:;", @click="domain.goTo('#inputs')")
+      i widgets
+      span Inputs
+    a(href="javascript:;", @click="domain.goTo('#layouts')")
+      i widgets
+      span Layouts
+    a(href="javascript:;", @click="domain.goTo('#lists')")
+      i widgets
+      span Lists
+    a(href="javascript:;", @click="domain.goTo('#media')")
+      i widgets
+      span Media
+    a(href="javascript:;", @click="domain.goTo('#menus')")
+      i widgets
+      span Menus
+    a(href="javascript:;", @click="domain.goTo('#navigations')")
+      i widgets
+      span Navigations
+    a(href="javascript:;", @click="domain.goTo('#pages')")
+      i widgets
+      span Pages
+    a(href="javascript:;", @click="domain.goTo('#progress')")
+      i widgets
+      span Progress
+    a(href="javascript:;", @click="domain.goTo('#radios')")
+      i widgets
+      span Radios
+    a(href="javascript:;", @click="domain.goTo('#responsive')")
+      i widgets
+      span Responsive
+    a(href="javascript:;", @click="domain.goTo('#scrolls')")
+      i widgets
+      span Scrolls
+    a(href="javascript:;", @click="domain.goTo('#search')")
+      i widgets
+      span Search
+    a(href="javascript:;", @click="domain.goTo('#selects')")
+      i widgets
+      span Selects
+    a(href="javascript:;", @click="domain.goTo('#shapes')")
+      i widgets
+      span Shapes
+    a(href="javascript:;", @click="domain.goTo('#sliders')")
+      i widgets
+      span Sliders
+    a(href="javascript:;", @click="domain.goTo('#snackbars')")
+      i widgets
+      span Snackbars
+    a(href="javascript:;", @click="domain.goTo('#spaces')")
+      i widgets
+      span Spaces
+    a(href="javascript:;", @click="domain.goTo('#steppers')")
+      i widgets
+      span Steppers
+    a(href="javascript:;", @click="domain.goTo('#switches')")
+      i widgets
+      span Switches
+    a(href="javascript:;", @click="domain.goTo('#tables')")
+      i widgets
+      span Tables
+    a(href="javascript:;", @click="domain.goTo('#tabs')")
+      i widgets
+      span Tabs
+    a(href="javascript:;", @click="domain.goTo('#textareas')")
+      i widgets
+      span Textareas
+    a(href="javascript:;", @click="domain.goTo('#toolbars')")
+      i widgets
+      span Toolbars
+    a(href="javascript:;", @click="domain.goTo('#tooltips')")
+      i widgets
+      span Tooltips
+    a(href="javascript:;", @click="domain.goTo('#typography')")
+      i widgets
+      span Typography
+    a(href="javascript:;", @click="domain.goTo('#waves-and-ripples')")
+      i widgets
+      span Waves
 
   nav#navigation-bar1.s.bottom
-    a(@click="domain.goTo('#intro')")
+    a(@click="domain.goTo('#intro')", href="javascript:;")
       i home
       span Install
-    a(data-ui="#dialog-menu")
+    a(data-ui="#dialog-menu", href="javascript:;")
       i widgets
       span Explore
-    a(@click="domain.updateMenu(data, 'top')")
+    a(@click="domain.updateMenu(data, 'top')", href="javascript:;")
       i arrow_upward
       span Top
-    a(@click="domain.updateMenu(data, 'bottom')")
+    a(@click="domain.updateMenu(data, 'bottom')", href="javascript:;")
       i arrow_downward
       span Bottom
-    a(@click="domain.showSamples(data, '#navigation-bar1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')")
+    a(@click="domain.showSamples(data, '#navigation-bar1', 'Navigation rail/bar', null, 'https://github.com/beercss/beercss/blob/main/docs/NAVIGATION.md')", href="javascript:;")
       i code
       span Code
 
@@ -46,7 +153,7 @@ div
     header.fixed
       nav
         .max.padding
-          h6 Explore
+          h2.h6 Explore
         button.transparent.circle(data-ui="#dialog-menu")
           i close
     ol.list
@@ -172,15 +279,14 @@ div
         span Typography
       li.wave.round(data-ui="#dialog-menu", @click="domain.goTo('#waves-and-ripples')")
         i widgets
-        span Waves and ripples
+        span Waves
 
   themes(id="themes3", v-model="data", position="top")
-
   .overlay
   dialog#more3.large-width(data-ui="#more3")
     header.fixed
       nav
-        h5.max Templates
+        h2.h5.max Templates
         button.transparent.circle
           i close
     p All templates listed below are only for tests purpose. Feel free to study them.
@@ -229,8 +335,8 @@ div
   header.fixed.transparent.center-align.min
     .margin
       nav.toolbar.primary.elevate.min
-        img.circle(:src="'/favicon.png'")
-        a.button.transparent.circle(href="https://github.com/beercss/beercss", target="_self")
+        img.circle(alt="", :src="'/favicon.png'")
+        a.button.transparent.circle(href="https://github.com/beercss/beercss", target="_self", aria-hidden="true")
           i
             svg(viewBox="0 0 24 24")
               path(d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z")
@@ -243,20 +349,19 @@ div
           i.page.top.active(v-else) dark_mode
 
   .absolute.top.left.right.yellow4.middle-align.center-align(style="block-size: 100vh;")
-
   main.responsive
     .black-text.middle-align.center-align(style="block-size: 100vh; margin: -6rem 0 0 0;")
       div
         .medium-height.middle-align.center-align
-          img#logo(:src="'/logo.png'", @click="domain.addHomeScreen()")
-        h5.center-align Build material design
-        h3.center-align in record time
-        h5.center-align without stress for devs
+          img#logo(alt="", :src="'/logo.png'", @click="domain.addHomeScreen()", fetchpriority="high")
+        h2.h5.center-align Build material design
+        h2.h6.center-align in record time
+        h2.h5.center-align without stress for devs
     #begin
       .small-height
       .small-height
-      h1 We are translating a modern UI into HTML semantic standard
-      h3 
+      h2 We are translating a modern UI into HTML semantic standard
+      h3
         a.link(href="https://github.com/beercss/beercss") Don't forget to star us on Github
       .small-height
       .small-height
@@ -268,15 +373,15 @@ div
           .div
             h3 Get started
             .medium-space
-            h5 From CDN
+            h4.h5 From CDN
             .space
             pre.scroll
               code
-                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.css" rel="stylesheet"&gt;
-                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
-                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
+                | &lt;link href="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.css" rel="stylesheet"&gt;
+                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.js"&gt;&lt;/script&gt;
+                | &lt;script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"&gt;&lt;/script&gt;
             .medium-space
-            h5 From NPM
+            h4.h5 From NPM
             .space
             pre.scroll
               code
@@ -288,154 +393,214 @@ div
                 | import "beercss";
                 | import "material-dynamic-colors";
             .medium-space
-            b We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.
+            b 
+              | *Use
+              | &nbsp;
+              a.link(href="https://www.npmjs.com/package/material-dynamic-colors") material-dynamic-colors 
+              | &nbsp;
+              | lib only for theme changes at runtime with 
+              code ui("theme")
+              | .
             .medium-space
             .l
-              h5 Summary
+              h4.h5 Summary
               .space
               pre
                 code
-                  p
-                    b.error-text &lt;a&gt;
-                    span &nbsp;link, inverse-link, underline
-                  p
-                    b.error-text absolute
-                    span &nbsp;left, right, top, bottom, front, back, small, medium, large
-                  p
-                    b.error-text &lt;aside&gt;
-                    span &nbsp;left, right
-                  p
-                    b.error-text &lt;article&gt;
-                    span &nbsp;small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, tiny-padding small-padding, medium-padding, large-padding
-                  p
-                    b.error-text &lt;b&gt;
-                  p
-                    b.error-text badge
-                    span &nbsp;min, left, right, top, bottom, none, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
-                  p
-                    b.error-text &lt;blockquote&gt;
-                    span &nbsp;border, no-border, scroll
-                  p
-                    b.error-text button or &lt;button&gt;
-                    span &nbsp;small, medium, large, extra, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
-                  p
-                    b.error-text chip
-                    span &nbsp;small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
-                  p
-                    b.error-text &lt;code&gt;
-                  p
-                    b.error-text &lt;details&gt;
-                  p
-                    b.error-text &lt;dialog&gt;
-                    span &nbsp;left, right, top, bottom, small, medium, large, modal, border, round, no-round, left-round, right-round, top-round, bottom-round, active
-                  p
-                    b.error-text &lt;em&gt;
-                  p
-                    b.error-text field
-                    span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
-                  p
-                    b.error-text &lt;fieldset&gt;
-                  p
-                    b.error-text fixed
-                    span &nbsp;left, right, top, bottom, front, back, small, medium, large
-                  p
-                    b.error-text &lt;footer&gt;
-                    span &nbsp;fixed, responsive, max
-                  p
-                    b.error-text grid
-                    span &nbsp;space, no-space, small-space, medium-space, large-space
-                  p
-                    b.error-text &lt;h1&gt;...&lt;h6&gt;
-                    span &nbsp;small, medium, large
-                  p
-                    b.error-text &lt;header&gt;
-                    span &nbsp;fixed, responsive, max
-                  p
-                    b.error-text &lt;hr&gt;
-                    span &nbsp;small, medium, large
-                  p
-                    b.error-text &lt;i&gt;
-                    span &nbsp;tiny, small, medium, large, extra, fill
-                  p
-                    b.error-text &lt;img&gt;
-                    span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
-                  p
-                    b.error-text &lt;label&gt;
-                    span &nbsp;active, radio, checkbox, switch, small, medium, large, extra
-                  p
-                    b.error-text &lt;legend&gt;
-                  p
-                    b.error-text &lt;li&gt;
-                  p
-                    b.error-text list
-                    span &nbsp;border, space, no-space, small-space, medium-space, large-space
-                  p
-                    b.error-text &lt;main&gt;
-                    span &nbsp;responsive, max
-                  p
-                    b.error-text &lt;menu&gt;
-                    span &nbsp;border, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
-                  p
-                    b.error-text &lt;nav&gt;
-                    span &nbsp;left, right, top, bottom, tabbed, group, toolbar, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
-                  p
-                    b.error-text &lt;ol&gt;
-                  p
-                    b.error-text overlay
-                    span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active, blur, small-blur, medium-blur, large-blur
-                  p
-                    b.error-text page
-                    span &nbsp;left, right, top, bottom, active
-                  p
-                    b.error-text &lt;pre&gt;
-                    span &nbsp;border, no-border, scroll
-                  p
-                    b.error-text &lt;progress&gt;
-                    span &nbsp;small, medium, large, circle, wavy, max, vertical
-                  p
-                    b.error-text row
-                    span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, space, no-space, small-space, medium-space, large-space, horizontal, vertical
-                  p
-                    b.error-text shape
-                    span &nbsp;tiny, small, medium, large, extra, space, no-space, tiny-space, small-space, medium-space, large-space, extra-space, rotate, slow-rotate, fast-rotate
-                  p
-                    b.error-text snackbar
-                    span &nbsp;top, bottom, active
-                  p
-                    b.error-text &lt;strong&gt;
-                  p
-                    b.error-text &lt;sub&gt;
-                  p
-                    b.error-text &lt;summary&gt;
-                    span &nbsp;none
-                  p
-                    b.error-text &lt;sup&gt;
-                  p
-                    b.error-text &lt;table&gt;
-                    span &nbsp;border, stripes, left-align, right-align, center-align, space, no-space, small-space, medium-space, large-space
-                  p
-                    b.error-text tabs
-                    span &nbsp;left-align, right-align, center-align, horizontal, vertical, min, max
-                  p
-                    b.error-text &lt;td&gt;
-                    span &nbsp;min
-                  p
-                    b.error-text &lt;th&gt;
-                    span &nbsp;min
-                  p
-                    b.error-text &lt;tfoot&gt;
-                    span &nbsp;fixed
-                  p
-                    b.error-text &lt;thead&gt;
-                    span &nbsp;fixed
-                  p
-                    b.error-text tooltip
-                    span &nbsp;left, right, top, bottom, max
-                  p
-                    b.error-text &lt;ul&gt;
-                  p
-                    b.error-text &lt;video&gt;
-                    span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
+                  b.error-text &lt;a&gt;
+                  span &nbsp;link, underline
+                  |
+                  |
+                  b.error-text absolute
+                  span &nbsp;left, right, top, bottom, front, back, small, medium, large
+                  |
+                  |
+                  b.error-text &lt;aside&gt;
+                  span &nbsp;left, right
+                  |
+                  |
+                  b.error-text &lt;article&gt;
+                  span &nbsp;small, medium, large, border, round, no-round, left-round, top-round, right-round, bottom-round, padding, no-padding, tiny-padding small-padding, medium-padding, large-padding
+                  |
+                  |
+                  b.error-text &lt;b&gt;
+                  |
+                  |
+                  b.error-text badge
+                  span &nbsp;min, left, right, top, bottom, none, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round
+                  |
+                  |
+                  b.error-text &lt;blockquote&gt;
+                  span &nbsp;border, no-border, scroll
+                  |
+                  |
+                  b.error-text button or &lt;button&gt;
+                  span &nbsp;small, medium, large, extra, extend, border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, responsive, horizontal, vertical
+                  |
+                  |
+                  b.error-text chip
+                  span &nbsp;small, medium, large, border, no-border, circle, square, round, no-round, left-round, right-round, top-round, bottom-round, horizontal, vertical
+                  |
+                  |
+                  b.error-text &lt;code&gt;
+                  |
+                  |
+                  b.error-text &lt;details&gt;
+                  |
+                  |
+                  b.error-text &lt;dialog&gt;
+                  span &nbsp;left, right, top, bottom, small, medium, large, modal, border, round, no-round, left-round, right-round, top-round, bottom-round, active
+                  |
+                  |
+                  b.error-text &lt;em&gt;
+                  |
+                  |
+                  b.error-text field
+                  span &nbsp;small, medium, large, extra, label, border, round, fill, prefix, suffix
+                  |
+                  |
+                  b.error-text &lt;fieldset&gt;
+                  |
+                  |
+                  b.error-text fixed
+                  span &nbsp;left, right, top, bottom, front, back, small, medium, large
+                  |
+                  |
+                  b.error-text &lt;footer&gt;
+                  span &nbsp;fixed, responsive, max
+                  |
+                  |
+                  b.error-text grid
+                  span &nbsp;space, no-space, small-space, medium-space, large-space
+                  |
+                  |
+                  b.error-text &lt;h1&gt;...&lt;h6&gt;
+                  span &nbsp;small, medium, large
+                  |
+                  |
+                  b.error-text &lt;header&gt;
+                  span &nbsp;fixed, responsive, max
+                  |
+                  |
+                  b.error-text &lt;hr&gt;
+                  span &nbsp;small, medium, large
+                  |
+                  |
+                  b.error-text &lt;i&gt;
+                  span &nbsp;tiny, small, medium, large, extra, fill
+                  |
+                  |
+                  b.error-text &lt;img&gt;
+                  span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
+                  |
+                  |
+                  b.error-text &lt;label&gt;
+                  span &nbsp;active, radio, checkbox, switch, small, medium, large, extra
+                  |
+                  |
+                  b.error-text &lt;legend&gt;
+                  |
+                  |
+                  b.error-text &lt;li&gt;
+                  |
+                  |
+                  b.error-text list
+                  span &nbsp;border, space, no-space, small-space, medium-space, large-space
+                  |
+                  |
+                  b.error-text &lt;main&gt;
+                  span &nbsp;responsive, max
+                  |
+                  |
+                  b.error-text &lt;menu&gt;
+                  span &nbsp;border, group, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, tiny-space, small-space, medium-space, large-space, extra-space
+                  |
+                  |
+                  b.error-text &lt;nav&gt;
+                  span &nbsp;left, right, top, bottom, tabbed, group, toolbar, connected, split, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+                  |
+                  |
+                  b.error-text &lt;ol&gt;
+                  |
+                  |
+                  b.error-text &lt;output&gt;
+                  span &nbsp;invalid
+                  |
+                  |
+                  b.error-text overlay
+                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, active, blur, small-blur, medium-blur, large-blur
+                  |
+                  |
+                  b.error-text page
+                  span &nbsp;left, right, top, bottom, active
+                  |
+                  |
+                  b.error-text &lt;pre&gt;
+                  span &nbsp;border, no-border, scroll
+                  |
+                  |
+                  b.error-text &lt;progress&gt;
+                  span &nbsp;small, medium, large, circle, wavy, max
+                  |
+                  |
+                  b.error-text row
+                  span &nbsp;left-align, right-align, center-align, top-align, bottom-align, middle-align, space, no-space, small-space, medium-space, large-space, horizontal, vertical
+                  |
+                  |
+                  b.error-text shape
+                  span &nbsp;tiny, small, medium, large, extra, space, no-space, tiny-space, small-space, medium-space, large-space, extra-space, rotate, slow-rotate, fast-rotate
+                  |
+                  |
+                  b.error-text snackbar
+                  span &nbsp;top, bottom, active
+                  |
+                  |
+                  b.error-text &lt;strong&gt;
+                  |
+                  |
+                  b.error-text &lt;sub&gt;
+                  |
+                  |
+                  b.error-text &lt;summary&gt;
+                  span &nbsp;none
+                  |
+                  |
+                  b.error-text &lt;sup&gt;
+                  |
+                  |
+                  b.error-text &lt;table&gt;
+                  span &nbsp;border, stripes, left-align, right-align, center-align, space, no-space, small-space, medium-space, large-space
+                  |
+                  |
+                  b.error-text tabs
+                  span &nbsp;left-align, right-align, center-align, horizontal, vertical, min, max
+                  |
+                  |
+                  b.error-text &lt;td&gt;
+                  span &nbsp;min
+                  |
+                  |
+                  b.error-text &lt;th&gt;
+                  span &nbsp;min
+                  |
+                  |
+                  b.error-text &lt;tfoot&gt;
+                  span &nbsp;fixed
+                  |
+                  |
+                  b.error-text &lt;thead&gt;
+                  span &nbsp;fixed
+                  |
+                  |
+                  b.error-text tooltip
+                  span &nbsp;left, right, top, bottom, max
+                  |
+                  |
+                  b.error-text &lt;ul&gt;
+                  |
+                  |
+                  b.error-text &lt;video&gt;
+                  span &nbsp;tiny, small, medium, large, extra, circle, round, no-round, left-round, right-round, top-round, bottom-round, responsive
             .large-space
             mainLayouts
             .medium-space
@@ -536,7 +701,7 @@ div
         header.fixed.front
           nav
             .max.truncate
-              h5 {{ data.name }}
+              h2.h5 {{ data.name || "Code" }}
             a.m.l.button.small-round.border(v-show="data.urlSample", :href="data.urlSample", target="_blank") Documentation
             a.button.circle.transparent.s(v-show="data.urlSample", :href="data.urlSample", target="_blank")
               i description
@@ -548,7 +713,6 @@ div
           pre.scroll
             code(v-html="exemplo.sourceCode")
 </template>
-
 <script setup lang="ts">
 import { onMounted } from "vue";
 import themes from "../shared/themes.vue";
@@ -598,6 +762,7 @@ import toolbars from "./toolbars.vue";
 import tooltips from "./tooltips.vue";
 import typography from "./typography.vue";
 import wavesAndRipples from "./wavesAndRipples.vue";
+import utils from "../shared/utils";
 
 function updateNavigationRail() {
   data.value.isMax = !data.value.isMax;
@@ -605,32 +770,30 @@ function updateNavigationRail() {
 }
 
 function updateExplore() {
-  ui("#dialog-menu");
   data.value.isExplore = !data.value.isExplore;
 }
 
 onMounted(() => {
   document.title = "Beer CSS - Build material design in record time, without stress for devs";
-
   setTimeout(() => {
     data.value.isHorizontal = window.outerWidth <= 600;
     document.getElementById("logo")?.classList?.add("active");
   }, 1000);
+
+  utils.loadCss("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.1/build/styles/default.min.css");
+  utils.loadJs("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.4.1/build/highlight.min.js");
 });
 </script>
-
 <style>
 #logo {
   display: none;
   max-inline-size: 100%;
   inline-size: 32rem;
 }
-
 #logo.active {
   display: inline-block;
   animation: 1s logo-intro;
 }
-
 #container-logo {
   block-size: 16rem;
 }
@@ -642,30 +805,27 @@ dialog#dialog-colors .s12 > div {
 dialog#dialog-colors .s12 > .border {
   border: 0.0625rem solid var(--outline);
 }
-
 .hljs-string, .error-text {
   color: var(--error) !important;
 }
-
 .logo-template {
   inline-size: auto;
   block-size: 1.5rem;
 }
-
 .logo-codepen {
   inline-size: auto;
   block-size: 1.25rem;
 }
-
 .logo-support {
   inline-size: auto;
   block-size: 100rem;
 }
-
 #grids .grid > * {
   border: 0.0625rem solid var(--outline);
 }
-
+.lazy > * {
+  display: none;
+}
 @keyframes logo-intro {
   0% {
     opacity: 0;

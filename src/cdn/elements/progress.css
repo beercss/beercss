@@ -1,12 +1,10 @@
 progress {
-  --_light: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
-  --_dark: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
   --_size: 0.25rem;
   position: relative;
   inline-size: 100%;
   block-size: var(--_size);
   color: var(--primary);
-  background: var(--_light);
+  background: var(--image);
   border-radius: 1rem;
   flex: none;
   border: none;
@@ -15,10 +13,6 @@ progress {
   direction: ltr;
   -webkit-appearance: none;
   appearance: none;
-}
-
-.dark progress {
-  background: var(--_dark);
 }
 
 progress.small {
@@ -33,6 +27,11 @@ progress.large {
   --_size: 0.45rem;
 }
 
+progress.indeterminate {
+  --_value: 100;
+  animation: 3.2s to-indeterminate-progress ease infinite;
+}
+
 progress:not(.circle, [value])::after {
   content: "";
   position: absolute;
@@ -41,15 +40,15 @@ progress:not(.circle, [value])::after {
   block-size: 100%;
   clip-path: none;
   background: currentcolor;
-  animation: 3.2s to-linear ease infinite;
+  animation: 3.2s to-linear-progress ease infinite;
 }
 
 progress:not(.circle, [value])::-moz-progress-bar {
-  animation: 3.2s to-linear ease infinite;
+  animation: 3.2s to-linear-progress ease infinite;
 }
 
 progress:not(.circle, [value])::-webkit-progress-value {
-  animation: 3.2s to-linear ease infinite;
+  animation: 3.2s to-linear-progress ease infinite;
 }
 
 progress::-webkit-progress-bar {
@@ -65,16 +64,12 @@ progress::-moz-progress-bar {
 }
 
 progress.wavy {
-  block-size: calc(var(--_size) * 2);
+  block-size: calc(var(--_size, 0) * 2);
   background: none;
-  background-image: var(--_light);
+  background-image: var(--image);
   background-repeat: repeat-x;
   background-position: 0 50%;
-  background-size: auto calc(var(--_size) / 2);
-}
-
-.dark progress.wavy {
-  background-image: var(--_dark);
+  background-size: auto calc(var(--_size, 0) / 2);
 }
 
 progress.wavy::-webkit-progress-value,
@@ -94,22 +89,33 @@ progress.wavy::-moz-progress-bar {
 }
 
 progress.circle {
-  --_value: attr(value type(<number>));
-  inline-size: 1.5rem;
-  block-size: 1.5rem;
-  background: conic-gradient(currentColor calc(var(--_value) * 1%), var(--active) 0);
+  --_value: attr(value type(<number>), 50);
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  background: conic-gradient(currentColor calc(var(--_value, 0) * 1%), var(--active) 0%);
   border-radius: 50%;
-  mask-image: radial-gradient(circle at center, transparent 55%, currentColor 50%);
-  transform: none;
+  mask-image: radial-gradient(circle at center, transparent 57%, currentColor 60%);
 }
 
 progress.circle::-webkit-progress-value {
   background: none;
 }
 
-progress.circle.medium {
-  inline-size: 2.5rem;
-  block-size: 2.5rem;
+progress.circle::-moz-progress-bar {
+  background: none;
+}
+
+progress.circle.wavy {
+  background: conic-gradient(currentColor calc(var(--_value, 0) * 1%), var(--active) 0);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  mask-image: url(../shapes/wavy-circle.svg);
+}
+
+progress.circle.small {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
 }
 
 progress.circle.large {
@@ -117,7 +123,9 @@ progress.circle.large {
   block-size: 3.5rem;
 }
 
-progress.circle:not([value]) {
+progress.circle:not([value]),
+progress.circle.indeterminate {
+  --_value: 50;
   animation: to-rotate 1s infinite linear;
 }
 
@@ -143,55 +151,10 @@ progress.max[class*='-text'] {
   opacity: 1;
 }
 
-progress:is(.horizontal, .vertical, .max) {
-  display: unset;
-  inline-size: 100% !important;
-}
-
-progress.vertical {
-  writing-mode: vertical-lr;
-}
-
-progress.max.vertical {
-  transform: rotate(-180deg);
-}
-
 progress.max + * {
   margin-block-start: 0;
 }
 
 :is(.button, button, .chip) > progress.circle {
   color: inherit;
-}
-
-@supports (-moz-appearance:none) {
-  progress.max.vertical {
-    transform: none;
-  }
-}
-
-@keyframes to-linear {
-  0% {
-    margin-inline-start: -100%;
-  }
-
-  50% {
-    margin-inline-start: 0%;
-  }
-
-  100% {
-    margin-inline-start: 100%;
-  }
-}
-
-@keyframes to-rotate {
-  from {
-    --_value: 50;
-    transform: rotate(0deg);
-  }
-
-  to {
-    --_value: 50;
-    transform: rotate(360deg);
-  }
 }

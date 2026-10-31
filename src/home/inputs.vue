@@ -62,94 +62,89 @@
   .grid
     .s12.l4
       .field.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
     .s12.l4
       .field.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         output Helper text
     .s12.l4
       .field.invalid.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         output.invalid Error text
     .s12.l4
       .field.label.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
     .s12.l4
       .field.label.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
         output Helper text
     .s12.l4
       .field.label.invalid.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
         output.invalid Error text
     .s12.l4
       .field.label.prefix.border
         i search
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
     .s12.l4
       .field.label.suffix.border
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
-        i.front search
+        i search
     .s12.l4
       .field.label.prefix.suffix.border
         i search
-        input(type="text")
+        input(type="text", aria-hidden="true")
         label Label
-        i.front search
-    .s12.l4
-      .field.border.prefix
-        img.circle(:src="'/favicon.png'")
-        input(type="text")
-    .s12.l4
-      .field.border.prefix
-        progress.circle
-        input(type="text")
-    .s12.l4
-      .field.border.prefix
-        i
-          .shape.loading-indicator.max
-        input(type="text")
+        i search
   .medium-space
-  h6
-    span Custom inputs
+  h5.h6
+    span Custom input
     button.chip.circle(@click="domain.showSamples(data, '#inputs-custom nav > *', 'Custom inputs', null, null)")
       i code
   .medium-space
   #inputs-custom
     nav.wrap
-      button.circle
-        i attach_file
-        input(type="file")
-      button.circle
-        i palette
-        input(type="color")
-      button.circle
-        i today
-        input(type="date")
-      button.circle
-        i schedule
-        input(type="time")
-      button
-        i attach_file
-        span File
-        input(type="file")
-      button
-        i palette
-        span Color
-        input(type="color")
-      button
-        i today
-        span Date
-        input(type="date")
-      button
-        i schedule
-        span Time
-        input(type="time")
+      div
+        button.circle
+          i attach_file
+        input(type="file", aria-hidden="true")
+      div
+        button.circle
+          i palette
+        input(type="color", aria-hidden="true")
+      div
+        button.circle
+          i today
+        input(type="date", aria-hidden="true")
+      div
+        button.circle
+          i schedule
+        input(type="time", aria-hidden="true")
+      div
+        button
+          i attach_file
+          span File
+        input(type="file", aria-hidden="true")
+      div
+        button
+          i palette
+          span Color
+        input(type="color", aria-hidden="true")
+      div 
+        button
+          i today
+          span Date
+        input(type="date", aria-hidden="true")
+      div
+        button
+          i schedule
+          span Time
+        input(type="time", aria-hidden="true")
 </template>
 
 <script setup lang="ts">

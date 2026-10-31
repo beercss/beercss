@@ -1,26 +1,28 @@
 <template lang="pug">
 nav.wrap
   label.radio(v-for="color in colors")
-    input(:id="color + '-' + context", type="radio", :name="'color-' + context", :checked="color === selectedColor", @click="domain.updateElementColor(context, color)")
+    input(:id="(color || 'color')  + '-' + id", type="radio", :name="'color-' + id", :checked="color === selectedColor", @click="domain.updateElementColor(context, color)")
     span {{ color || "default" }}
   label.radio(v-for="theme in themeColors")
-    input(:id="theme + '-' + context", type="radio", :name="'theme-' + context", :checked="theme === selectedThemeColor", @click="domain.updateColorTheme(context, theme)")
+    input(:id="(theme || 'theme') + '-' + id", type="radio", :name="'theme-' + id", :checked="theme === selectedThemeColor", @click="domain.updateColorTheme(context, theme)")
     span {{ theme || "default" }}
   label.radio(v-for="size in sizes")
-    input(:id="size + '-' + context", type="radio", :name="'size-' + context", :checked="size === selectedSize", @click="domain.updateSize(context, size)")
+    input(:id="(size || 'size') + '-' + id", type="radio", :name="'size-' + id", :checked="size === selectedSize", @click="domain.updateSize(context, size)")
     span {{ size || emptySize || "medium" }}
   label.radio(v-for="elevate in elevates")
-    input(:id="elevate + '-' + context", type="radio", :name="'elevate-' + context", :checked="elevate === selectedShadow", @click="domain.updateElevate(context, elevate)")
+    input(:id="(elevate || 'elevate') + '-' + id", type="radio", :name="'elevate-' + id", :checked="elevate === selectedShadow", @click="domain.updateElevate(context, elevate)")
     span {{ elevate || "no-elevate" }}
   label.radio(v-for="direction in directions")
-    input(:id="direction + '-' + context", type="radio", :name="'direction-' + context", :checked="direction === selectedDirection", @click="domain.updateDirection(context, direction)")
+    input(:id="(direction || 'direction') + '-' + id", type="radio", :name="'direction-' + id", :checked="direction === selectedDirection", @click="domain.updateDirection(context, direction)")
     span {{ direction || "" }}
 
 </template>
 
 <script setup lang="ts">
 import domain from "./domain";
-import { onMounted } from "vue";
+import utils from "../shared/utils";
+
+import { onBeforeMount, onMounted, ref } from "vue";
 
 export interface IProps {
   context?: string,
@@ -43,6 +45,7 @@ export interface IProps {
 }
 
 const data = withDefaults(defineProps<IProps>(), {
+  id: null,
   context: "buttons",
   colors: () => ["", "fill", "primary", "secondary", "tertiary"],
   themeColors: () => [],
@@ -59,6 +62,12 @@ const data = withDefaults(defineProps<IProps>(), {
   selectedSize: "",
   selectedShadow: "",
   selectedDirection: "",
+});
+
+const id = ref("");
+
+onBeforeMount(() => {
+  id.value = utils.id();
 });
 
 onMounted(() => {

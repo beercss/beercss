@@ -4,8 +4,6 @@ The main layout is a common html structure to setup your pages. For RTL language
 
 ## Example
 
-Place the `<nav>` elements before all others.
-
 ```html
 <nav class="top">...</nav>
 <nav class="bottom">...</nav>
@@ -44,15 +42,15 @@ responsive
 <nav class="bottom">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -66,15 +64,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -88,15 +86,15 @@ responsive
 <nav class="left max">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -110,15 +108,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -139,15 +137,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -170,6 +168,6 @@ responsive
 
 ## Go to
 
-[Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
+[Begin](INDEX.md), [Elements](ELEMENTS.md), [Helpers](HELPERS.md), [Settings](SETTINGS.md), [Modules](MODULES.md), [Summary](SUMMARY.md), [Javascript](JAVASCRIPT.md), [beercss.com](https://www.beercss.com)
 
-[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Container](CONTAINER.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Shape](SHAPE.md), [Slider](SLIDER.md), [Snackbar](SNACKBAR.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)
+[Badge](BADGE.md), [Button](BUTTON.md), [Card](CARD.md), [Checkbox](CHECKBOX.md), [Chip](CHIP.md), [Dialog](DIALOG.md), [Divider](DIVIDER.md), [Expansion](EXPANSION.md), [Grid](GRID.md), [Icon](ICON.md), [Input](INPUT.md), [Layout](LAYOUT.md), [List](LIST.md), [Main layout](MAIN_LAYOUT.md), [Media](MEDIA.md), [Menu](MENU.md), [Navigation](NAVIGATION.md), [Overlay](OVERLAY.md), [Page](PAGE.md), [Progress](PROGRESS.md), [Radio](RADIO.md), [Select](SELECT.md), [Shape](SHAPE.md), [Slider](SLIDER.md), [Snackbar](SNACKBAR.md), [Switch](SWITCH.md), [Table](TABLE.md), [Tabs](TABS.md), [Textarea](TEXTAREA.md), [Tooltip](TOOLTIP.md), [Typography](TYPOGRAPHY.md)

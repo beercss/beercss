@@ -1,10 +1,8 @@
 import "./cdn/beer.css";
-import { init } from "./cdn/beer";
-
-const ui = init();
+import { init, ui } from "./cdn/beer";
 
 export {
   init,
   ui as default,
-  ui
+  ui,
 };

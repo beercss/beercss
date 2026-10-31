@@ -1,0 +1,39 @@
+:root,
+body.light {
+  --primary: #6750a4;
+  --on-primary: #ffffff;
+  --primary-container: #e9ddff;
+  --on-primary-container: #22005d;
+  --secondary: #625b71;
+  --on-secondary: #ffffff;
+  --secondary-container: #e8def8;
+  --on-secondary-container: #1e192b;
+  --tertiary: #7e5260;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #ffd9e3;
+  --on-tertiary-container: #31101d;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #410002;
+  --background: #fffbff;
+  --on-background: #1c1b1e;
+  --surface: #fdf8fd;
+  --on-surface: #1c1b1e;
+  --surface-variant: #e7e0eb;
+  --on-surface-variant: #49454e;
+  --outline: #7a757f;
+  --outline-variant: #cac4cf;
+  --shadow: #000000;
+  --scrim: #000000;
+  --inverse-surface: #313033;
+  --inverse-on-surface: #f4eff4;
+  --inverse-primary: #cfbcff;
+  --surface-dim: #ddd8dd;
+  --surface-bright: #fdf8fd;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f7f2f7;
+  --surface-container: #f2ecf1;
+  --surface-container-high: #ece7eb;
+  --surface-container-highest: #e6e1e6;
+}

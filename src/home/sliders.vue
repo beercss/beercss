@@ -1,10 +1,9 @@
 <template lang="pug">
 #sliders
   .large-space
-  h4
-    span Sliders
+  h4 Sliders
   .medium-space
-  h6
+  h5.h6
     span Default slider
     button.chip.circle(@click="domain.showSamples(data, '#sliders1 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -37,23 +36,23 @@
   .medium-space
   .grid#sliders1
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
+      .slider
+        input(type="range", value="25", aria-hidden="true")
         span
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="5", min="4", max="8")
+      .slider
+        input(type="range", value="5", min="4", max="8", aria-hidden="true")
         span
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
-        input(type="range", value="50")
+      .slider
+        input(type="range", value="25", aria-hidden="true")
+        input(type="range", value="50", aria-hidden="true")
         span
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25", disabled)
+      .slider
+        input(type="range", value="25", disabled, aria-hidden="true")
         span
-  h6
+  h5.h6
     span Value indicator
     button.chip.circle(@click="domain.showSamples(data, '#sliders2 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -86,29 +85,29 @@
   .medium-space
   .grid#sliders2
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
+      .slider
+        input(type="range", value="25", aria-hidden="true")
         span
-        .tooltip
+        span.tooltip
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="5", min="4", max="8")
+      .slider
+        input(type="range", value="5", min="4", max="8", aria-hidden="true")
         span
-        .tooltip
+        span.tooltip
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
-        input(type="range", value="50")
+      .slider
+        input(type="range", value="25", aria-hidden="true")
+        input(type="range", value="50", aria-hidden="true")
         span
-        .tooltip
-        .tooltip
+        span.tooltip
+        span.tooltip
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25", disabled)
+      .slider
+        input(type="range", value="25", disabled, aria-hidden="true")
         span
-        .tooltip
+        span.tooltip
   .medium-space
-  h6
+  h5.h6
     span Value indicator bottom
     button.chip.circle(@click="domain.showSamples(data, '#sliders6 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -141,29 +140,29 @@
   .medium-space
   .grid#sliders6
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
+      .slider
+        input(type="range", value="25", aria-hidden="true")
         span
-        .tooltip.bottom
+        span.tooltip.bottom
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="5", min="4", max="8")
+      .slider
+        input(type="range", value="5", min="4", max="8", aria-hidden="true")
         span
-        .tooltip.bottom
+        span.tooltip.bottom
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25")
-        input(type="range", value="50")
+      .slider
+        input(type="range", value="25", aria-hidden="true")
+        input(type="range", value="50", aria-hidden="true")
         span
-        .tooltip.bottom
-        .tooltip.bottom
+        span.tooltip.bottom
+        span.tooltip.bottom
     .s12.m6.l3.center-align
-      label.slider
-        input(type="range", value="25", disabled)
+      .slider
+        input(type="range", value="25", disabled, aria-hidden="true")
         span
-        .tooltip.bottom
+        span.tooltip.bottom
   .medium-space
-  h6
+  h5.h6
     span Inset icon
     button.chip.circle(@click="domain.showSamples(data, '#sliders4 .slider', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -197,22 +196,22 @@
   .medium-space
   .grid.large-space#sliders4
     .s12.m6.l4.center-align
-      label.slider.medium
-        input(type="range")
+      .slider.medium
+        input(type="range", aria-hidden="true")
         span
           i volume_up
     .s12.m6.l4.center-align
-      label.slider.medium
-        input(type="range")
+      .slider.medium
+        input(type="range", aria-hidden="true")
         span
           i add
     .s12.m6.l4.center-align
-      label.slider.medium
-        input(type="range", value="25")
+      .slider.medium
+        input(type="range", value="25", aria-hidden="true")
         span
           i sunny
   .medium-space
-  h6
+  h5.h6
     span Slider in field elements
     button.chip.circle(@click="domain.showSamples(data, '#sliders3 .field', 'Sliders', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
       i code
@@ -220,28 +219,28 @@
   .grid#sliders3
     .s12.m6.l4
       .field.middle-align
-        label.slider
-          input(type="range", value="25")
+        .slider
+          input(type="range", value="25", aria-hidden="true")
           span
         output Helper
     .s12.m6.l4
       .field.middle-align
-        label.slider
-          input(type="range", value="25")
+        .slider
+          input(type="range", value="25", aria-hidden="true")
           span
         output.invalid Error text
     .s12.m6.l4
       .field.middle-align.prefix.suffix
         nav
           i sunny
-          label.slider
-            input(type="range", value="25")
+          .slider
+            input(type="range", value="25", aria-hidden="true")
             span
           i rainy
         output Helper
   .large-space
   #sliders5
-    h6 Custom slider
+    h5.h6 Custom slider
       button.chip.circle(@click="domain.showSamples(data, '#sliders5 nav > :not(label)', 'Custom', null, 'https://github.com/beercss/beercss/blob/main/docs/SLIDER.md')")
         i code
     nav.wrap
@@ -256,13 +255,13 @@
         span green-text
     .medium-space
     nav.top-align.wrap
-      article.small-width.small-height.round
-        label.slider.max
-          input(type="range", value="30", max="100")
+      .small-width.small-height.round.fill
+        .slider.max
+          input(type="range", value="30", max="100", aria-hidden="true")
           span
-      article.small-width.small-height.round
-        label.slider.max.vertical
-          input(type="range", value="30", max="100")
+      .small-width.small-height.round.fill
+        .slider.max.vertical
+          input(type="range", value="30", max="100", aria-hidden="true")
           span
 
 </template>

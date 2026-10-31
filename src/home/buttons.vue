@@ -3,7 +3,7 @@
   .large-space
   h4 Buttons
   .medium-space
-  h6.middle-align
+  h3.h6.middle-align
     span Common buttons
     button.chip.circle(@click="domain.showSamples(data, '#default-buttons button', 'Buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -16,10 +16,10 @@
         i home
         span Button
       button
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
         span Button
       button
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
         span Button
     nav.wrap
       button.small-round Button
@@ -27,10 +27,10 @@
         i home
         span Button
       button.small-round
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
         span Button
       button.small-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
         span Button
     nav.wrap
       button.border Button
@@ -38,10 +38,10 @@
         i home
         span Button
       button.border
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
         span Button
-      button.border
-        img.responsive(:src="'/favicon.png'")
+      button.border(aria-label="beer css")
+        img.responsive(alt="", :src="'/favicon.png'")
         span Button
     nav.wrap
       button.border.small-round Button
@@ -49,13 +49,13 @@
         i home
         span Button
       button.border.small-round
-        img(:src="'/favicon.png'")
+        img(alt="", :src="'/favicon.png'")
         span Button
       button.border.small-round
-        img.responsive(:src="'/favicon.png'")
+        img.responsive(alt="", :src="'/favicon.png'")
         span Button
   .medium-space
-  h6.middle-align
+  h3.h6.middle-align
     span Responsive buttons
     button.chip.circle(@click="domain.showSamples(data, '#responsive-buttons button', 'Reponsive buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -70,7 +70,7 @@
           span Button
       nav
         button.responsive
-          img(:src="'/favicon.png'")
+          img(alt="", :src="'/favicon.png'")
           span Button
     .s12.m6
       nav
@@ -81,7 +81,7 @@
           span Button
       nav
         button.responsive.round
-          img(:src="'/favicon.png'")
+          img(alt="", :src="'/favicon.png'")
           span Button
     .s12.m6
       nav
@@ -92,7 +92,7 @@
           span Button
       nav
         button.responsive.border
-          img(:src="'/favicon.png'")
+          img(alt="", :src="'/favicon.png'")
           span Button
     .s12.m6
       nav
@@ -103,10 +103,10 @@
           span Button
       nav
         button.responsive.border.round
-          img(:src="'/favicon.png'")
+          img(alt="", :src="'/favicon.png'")
           span Button
   .medium-space
-  h6.middle-align
+  h3.h6.middle-align
     span FABs
     button.chip.circle(@click="domain.showSamples(data, '#fabs button', 'FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -152,26 +152,26 @@
       button.border.circle.right-round
         i add
     nav.wrap
-      button.border.square
-        img.responsive(:src="'/favicon.png'")
-      button.border.square.round
-        img.responsive(:src="'/favicon.png'")
-      button.border.circle
-        img.responsive(:src="'/favicon.png'")
-      button.border.circle.left-round.top-round
-        img.responsive(:src="'/favicon.png'")
-      button.border.circle.left-round.bottom-round
-        img.responsive(:src="'/favicon.png'")
-      button.border.circle.right-round.top-round
-        img.responsive(:src="'/favicon.png'")
-      button.border.circle.right-round.bottom-round
-        img.responsive(:src="'/favicon.png'")
-      button.border.circle.left-round
-        img.responsive(:src="'/favicon.png'")
-      button.border.circle.right-round
-        img.responsive(:src="'/favicon.png'")
+      button.border.square(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.border.square.round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.border.circle(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.border.circle.left-round.top-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.border.circle.left-round.bottom-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.border.circle.right-round.top-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.border.circle.right-round.bottom-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.border.circle.left-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.border.circle.right-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
   .medium-space
-  h6.middle-align
+  h3.h6.middle-align
     span Extended FABs
     button.chip.circle(@click="domain.showSamples(data, '#extended-fabs button', 'Extended FABs', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -253,53 +253,53 @@
           span Button
     .s6.m6.l4
       nav
-        button.extend.border.square
-          img.responsive(:src="'/favicon.png'")
+        button.extend.border.square(aria-hidden="true")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
-        button.extend.border.square.round
-          img.responsive(:src="'/favicon.png'")
+        button.extend.border.square.round(aria-hidden="true")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
-        button.extend.border.circle
-          img.responsive(:src="'/favicon.png'")
+        button.extend.border.circle(aria-hidden="true")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
-        button.extend.border.circle.left-round.top-round
-          img.responsive(:src="'/favicon.png'")
+        button.extend.border.circle.left-round.top-round(aria-hidden="true")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
-        button.extend.border.circle.left-round.bottom-round
-          img.responsive(:src="'/favicon.png'")
+        button.extend.border.circle.left-round.bottom-round(aria-hidden="true")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
-        button.extend.border.circle.right-round.top-round
-          img.responsive(:src="'/favicon.png'")
+        button.extend.border.circle.right-round.top-round(aria-hidden="true")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
-        button.extend.border.circle.right-round.bottom-round
-          img.responsive(:src="'/favicon.png'")
+        button.extend.border.circle.right-round.bottom-round(aria-hidden="true")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
-        button.extend.border.circle.left-round
-          img.responsive(:src="'/favicon.png'")
+        button.extend.border.circle.left-round(aria-hidden="true")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
       nav
-        button.extend.border.circle.right-round
-          img.responsive(:src="'/favicon.png'")
+        button.extend.border.circle.right-round(aria-hidden="true")
+          img.responsive(alt="", :src="'/favicon.png'")
           span Button
   .medium-space
-  h6.middle-align
+  h3.h6.middle-align
     span FABs menu
-    button.chip.circle(@click="domain.showSamples(data, '#fabs-menu nav.min', 'FABs menu', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#fabs-menu nav > div', 'FABs menu', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
   #fabs-menu
     .space
     nav
-      nav.min(data-ui="#fab-menu1")
+      div
         button.extra.circle
           i north_east
-        menu#fab-menu1.top.transparent.no-wrap
+        menu.group.no-wrap.small-space.top
           li
             button.fill
               i search
@@ -312,10 +312,10 @@
             button.fill
               i more_vert
               span About us
-      nav.min(data-ui="#fab-menu2")
+      div
         button.extra.circle
           i north_west
-        menu#fab-menu2.top.transparent.no-wrap.left.right-align
+        menu.group.no-wrap.small-space.top.left.right-align
           li
             button.fill
               i search
@@ -328,10 +328,10 @@
             button.fill
               i more_vert
               span About us
-      nav.min(data-ui="#fab-menu3")
+      div
         button.extra.circle
           i south_east
-        menu#fab-menu3.bottom.transparent.no-wrap
+        menu.group.no-wrap.small-space.bottom
           li
             button.fill
               i search
@@ -344,10 +344,10 @@
             button.fill
               i more_vert
               span About us
-      nav.min(data-ui="#fab-menu4")
+      div
         button.extra.circle
           i south_west
-        menu#fab-menu4.bottom.transparent.no-wrap.left.right-align
+        menu.group.no-wrap.small-space.bottom.left.right-align
           li
             button.fill
               i search
@@ -361,7 +361,7 @@
               i more_vert
               span About us
   .medium-space
-  h6.middle-align
+  h3.h6.middle-align
     span Icon buttons
     button.chip.circle(@click="domain.showSamples(data, '#transparent-buttons button', 'Transparent buttons', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -386,24 +386,24 @@
       button.transparent.circle.right-round
         i search
     nav.wrap
-      button.transparent.square
-        img.responsive(:src="'/favicon.png'")
-      button.transparent.circle
-        img.responsive(:src="'/favicon.png'")
-      button.transparent.circle.left-round.top-round
-        img.responsive(:src="'/favicon.png'")
-      button.transparent.circle.left-round.bottom-round
-        img.responsive(:src="'/favicon.png'")
-      button.transparent.circle.right-round.top-round
-        img.responsive(:src="'/favicon.png'")
-      button.transparent.circle.right-round.bottom-round
-        img.responsive(:src="'/favicon.png'")
-      button.transparent.circle.left-round
-        img.responsive(:src="'/favicon.png'")
-      button.transparent.circle.right-round
-        img.responsive(:src="'/favicon.png'")
+      button.transparent.square(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.transparent.circle(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.transparent.circle.left-round.top-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.transparent.circle.left-round.bottom-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.transparent.circle.right-round.top-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.transparent.circle.right-round.bottom-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.transparent.circle.left-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
+      button.transparent.circle.right-round(aria-hidden="true")
+        img.responsive(alt="", :src="'/favicon.png'")
   .medium-space
-  h6.middle-align
+  h3.h6.middle-align
     span Button groups
     button.chip.circle(@click="domain.showSamples(data, '#group-buttons nav.group', 'Button groups', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -434,18 +434,18 @@
       span extra
   #group-buttons
     .medium-space
-    h6 Standard
+    h3.h6 Standard
     nav.group
       button.left-round(data-ui="") Button
-      button.no-round(data-ui="") Button
-      button.no-round.active(data-ui="") Button
+      button(data-ui="") Button
+      button.active(data-ui="") Button
       button.right-round(data-ui="") Button
     nav.group
       button.left-round(data-ui="")
         i mic
-      button.no-round(data-ui="")
+      button(data-ui="")
         i videocam
-      button.no-round.active(data-ui="")
+      button.active(data-ui="")
         i mood
       button.right-round(data-ui="")
         i front_hand
@@ -453,28 +453,28 @@
       button.left-round(data-ui="")
         i mic
         span Button
-      button.no-round(data-ui="")
+      button(data-ui="")
         i videocam
         span Button
-      button.no-round.active(data-ui="")
+      button.active(data-ui="")
         i mood
         span Button
       button.right-round(data-ui="")
         i front_hand
         span Button
     .medium-space
-    h6 Connected
+    h3.h6 Connected
     nav.group.connected
       button.left-round(data-ui="") Button
-      button.no-round(data-ui="") Button
-      button.no-round.active(data-ui="") Button
+      button(data-ui="") Button
+      button.active(data-ui="") Button
       button.right-round(data-ui="") Button
     nav.group.connected
       button.left-round(data-ui="")
         i mic
-      button.no-round(data-ui="")
+      button(data-ui="")
         i videocam
-      button.no-round.active(data-ui="")
+      button.active(data-ui="")
         i mood
       button.right-round(data-ui="")
         i front_hand
@@ -482,17 +482,17 @@
       button.left-round(data-ui="")
         i mic
         span Button
-      button.no-round(data-ui="")
+      button(data-ui="")
         i videocam
         span Button
-      button.no-round.active(data-ui="")
+      button.active(data-ui="")
         i mood
         span Button
       button.right-round(data-ui="")
         i front_hand
         span Button
   .medium-space
-  h6.middle-align
+  h3.h6.middle-align
     span Split buttons
     button.chip.circle(@click="domain.showSamples(data, '#split-buttons .group', 'Split button', null, 'https://github.com/beercss/beercss/blob/main/docs/BUTTON.md')")
       i code
@@ -531,7 +531,6 @@
         button.right-round.square
           i keyboard_arrow_down
 </template>
-
 <script setup lang="ts">
 import domain from "./domain";
 import data from "./data";

@@ -1,0 +1,19 @@
+.tiny-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
+  block-size: 0.5rem;
+}
+
+:is(.space, .small-space):not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
+  block-size: 1rem;
+}
+
+.medium-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
+  block-size: 2rem;
+}
+
+.large-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
+  block-size: 3rem;
+}
+
+.extra-space:not(nav, .row, .grid, table, .tooltip, .list, menu, .shape) {
+  block-size: 4rem;
+}

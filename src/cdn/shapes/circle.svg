@@ -1,3 +1,1 @@
-<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M320 160C320 248.366 248.366 320 160 320C71.6344 320 -1e-05 248.366 0 160C0 71.6344 71.6345 -7.72516e-06 160 0C248.366 7.72516e-06 320 71.6345 320 160Z" fill="#D0BCFF"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" fill="none" viewBox="0 0 320 320"><path fill="#d0bcff" d="M320 160c0 88.366-71.634 160-160 160S0 248.366 0 160 71.635 0 160 0c88.366 0 160 71.635 160 160"/></svg>

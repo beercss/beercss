@@ -36,14 +36,14 @@
   .grid
     .s12.l4
       .field.suffix.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
         i arrow_drop_down
     .s12.l4
       .field.suffix.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
@@ -51,7 +51,7 @@
         output Helper text
     .s12.l4
       .field.suffix.invalid.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
@@ -59,7 +59,7 @@
         output.invalid Error text
     .s12.l4
       .field.label.suffix.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
@@ -67,7 +67,7 @@
         i arrow_drop_down
     .s12.l4
       .field.label.suffix.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
@@ -76,35 +76,13 @@
         output Helper text
     .s12.l4
       .field.label.suffix.invalid.border
-        select
+        select(aria-hidden="true")
           option Item 1
           option Item 2
           option Item 3
         label Label
         i arrow_drop_down
         output.invalid Error text
-    .s12.l4
-      .field.suffix.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        img.circle(:src="'/favicon.png'")
-    .s12.l4
-      .field.suffix.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        progress.circle
-    .s12.l4
-      .field.suffix.border
-        select
-          option Item 1
-          option Item 2
-          option Item 3
-        i
-          .shape.loading-indicator.max
 </template>
 
 <script setup lang="ts">

@@ -3,36 +3,35 @@ div
   nav.bottom.s
     a(href="/gmail", :class="{ active: data.url === '/gmail' }")
       i inbox
-      div Inbox
+      span Inbox
     a(href="/gmail/sent", :class="{ active: data.url === '/gmail/sent' }")
       i send
-      div Sent
-    a.button.fill.square.round.extra(data-ui="#dialog-add-small")
+      span Sent
+    a.button.fill.square.round.extra(data-ui="#dialog-add-small", href="javascript:;")
       i edit
     a(href="/gmail/drafts", :class="{ active: data.url === '/gmail/drafts' }")
       i insert_drive_file
-      div Drafts
-    a(data-ui="#themes1")
+      span Drafts
+    a(data-ui="#themes1", href="javascript:;")
       i palette
-      div Theme
+      span Theme
 
   nav.top.surface
-    img(v-show="!data.isDark", :src="'/gmail-light.png'")
-    img(v-show="data.isDark", :src="'/gmail-dark.png'")
+    img(v-show="!data.isDark", alt="", :src="'/gmail-light.png'")
+    img(v-show="data.isDark", alt="", :src="'/gmail-dark.png'")
     .max
     .max
       .field.round.suffix.prefix.small.no-margin.m.l.white.black-text
         i.front search
-        input(type="text", data-ui="#menu-search")
+        input(type="text", data-ui="#menu-search", aria-label="search mail")
         i.front mic
     .max
     button.circle.large.transparent.s(data-ui="#dialog-search")
       i search
-    button.circle.large.transparent.m.l(data-ui="#menu-settings")
-      i settings
-      menu#menu-settings.left.no-wrap(
-        data-ui="#menu-settings"
-      )
+    div
+      button.circle.large.transparent.m.l
+        i settings
+      menu.left.no-wrap
         li
           .max
             div Account
@@ -41,27 +40,29 @@ div
           .max
             div Appearance
             label Change display settings
-    button.circle.large.transparent.m.l(data-ui="#menu-apps")
-      i apps
-      menu#menu-apps.left.padding.no-wrap(data-ui="#menu-apps")
-        .grid.no-space
-          .s4.center-align
-            a.button.transparent.circle.large
-              img.no-round(:src="'/calendar.png'")
-          .s4.center-align
-            a.button.transparent.circle.large
-              img.no-round(:src="'/keep.png'")
-          .s4.center-align
-            a.button.transparent.circle.large
-              img.no-round(:src="'/tasks.png'")
-          .s4.center-align
-            a.button.transparent.circle.large
-              img.no-round(:src="'/contacts.png'")
-          .s4.center-align
-            a.button.transparent.circle.large
-              img.no-round(:src="'/favicon.png'")
-    button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+    div
+      button.circle.large.transparent.m.l
+        i apps
+      menu.left.padding.no-wrap
+        li.no-margin.no-padding.transparent
+          .grid.no-space
+            .s4.center-align
+              button.transparent.circle.large(aria-label="calendar")
+                img.no-round(alt="", :src="'/calendar.png'")
+            .s4.center-align
+              button.transparent.circle.large(aria-label="keep")
+                img.no-round(alt="", :src="'/keep.png'")
+            .s4.center-align
+              button.transparent.circle.large(aria-label="tasks")
+                img.no-round(alt="", :src="'/tasks.png'")
+            .s4.center-align
+              button.transparent.circle.large(aria-label="contacts")
+                img.no-round(alt="", :src="'/contacts.png'")
+            .s4.center-align
+              button.transparent.circle.large(aria-label="beer css")
+                img.no-round(alt="", :src="'/favicon.png'")
+    button.circle.large.transparent(@click="redirect('/')", aria-label="beer css")
+      img.responsive(alt="", :src="'/favicon.png'")
 
   nav.left.m.l(:class="{ max: data.isMax }")
     header
@@ -72,42 +73,42 @@ div
         span Compose
     a(href="/gmail", :class="{ active: data.url === '/gmail' }")
       i inbox
-      div Inbox
+      span Inbox
     a(href="/gmail/snoozed", :class="{ active: data.url === '/gmail/snoozed' }")
       i watch_later
-      div Snoozed
+      span Snoozed
     a(
       href="/gmail/important",
       :class="{ active: data.url === '/gmail/important' }"
     )
       i label_important
-      div Important
+      span Important
     a(href="/gmail/sent", :class="{ active: data.url === '/gmail/sent' }")
       i send
-      div Sent
+      span Sent
     a(href="/gmail/drafts", :class="{ active: data.url === '/gmail/drafts' }")
       i insert_drive_file
-      div Drafts
+      span Drafts
     a(href="/gmail/spam", :class="{ active: data.url === '/gmail/spam' }")
       i error_outline
-      div Spam
-    a(data-ui="#themes1")
+      span Spam
+    a(data-ui="#themes1", href="javascript:;")
       i palette
-      div Themes
+      span Themes
 
   nav.right.m.l.center-align
-    button.circle.transparent.large
-      img.no-round(:src="'/calendar.png'")
-      .tooltip.left Calendar
-    button.circle.transparent.large
-      img.no-round(:src="'/keep.png'")
-      .tooltip.left Keep
-    button.circle.transparent.large
-      img.no-round(:src="'/tasks.png'")
-      .tooltip.left Tasks
-    button.circle.transparent.large
-      img.no-round(:src="'/contacts.png'")
-      .tooltip.left Contacts
+    button.circle.transparent.large(aria-label="calendar")
+      img.no-round(alt="", :src="'/calendar.png'")
+      span.tooltip.left Calendar
+    button.circle.transparent.large(aria-label="keep")
+      img.no-round(alt="", :src="'/keep.png'")
+      span.tooltip.left Keep
+    button.circle.transparent.large(aria-label="tasks")
+      img.no-round(alt="", :src="'/tasks.png'")
+      span.tooltip.left Tasks
+    button.circle.transparent.large(aria-label="contacts")
+      img.no-round(alt="", :src="'/contacts.png'")
+      span.tooltip.left Contacts
 
   main.surface-container.round.padding.bottom-margin
     .overlay

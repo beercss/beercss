@@ -3,7 +3,7 @@
   .large-space
   h4
     span Tooltips
-    button.chip.circle(@click="domain.showSamples(data, '#tooltip-code .chip', 'Tooltips', null, 'https://github.com/beercss/beercss/blob/main/docs/TOOLTIP.md')")
+    button.chip.circle(@click="domain.showSamples(data, '#tooltip-code > *', 'Tooltips', null, 'https://github.com/beercss/beercss/blob/main/docs/TOOLTIP.md')")
       i code
   nav.wrap
     label.radio
@@ -21,26 +21,30 @@
   nav#tooltip-code.wrap
     button.chip.round
       span Plain tooltip
-      .tooltip Tooltip
-    button.chip.round
-      span Rich tooltip
-      .tooltip.max
-        b Title
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        nav
-          a.inverse-link Action
+      span.tooltip Tooltip
     button.chip.circle
       i arrow_back
-      .tooltip.left Tooltip
+      span.tooltip.left Tooltip
     button.chip.circle
       i arrow_upward
-      .tooltip.top Tooltip
+      span.tooltip.top Tooltip
     button.chip.circle
       i arrow_downward
-      .tooltip.bottom Tooltip
+      span.tooltip.bottom Tooltip
     button.chip.circle
       i arrow_forward
-      .tooltip.right Tooltip
+      span.tooltip.right Tooltip
+    div
+      button.chip.round
+        span Wrapped tooltip
+      .tooltip Tooltip
+    div
+      button.chip.round
+        span Rich tooltip
+      .tooltip.max 
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        nav
+          button Button
 
 </template>
 

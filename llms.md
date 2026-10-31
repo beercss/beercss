@@ -1,7 +1,7 @@
 # BeerCSS - Complete Documentation for AI/LLM Systems
 
 This file is auto-generated from the BeerCSS documentation.
-Generated on: 2025-10-01
+Generated on: 2026-03-31
 
 BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML elements with optional helper classes.
 
@@ -15,7 +15,7 @@ BeerCSS is a CSS framework based on Material Design 3 that uses semantic HTML el
 
 The following documentation sections are included in order:
 
-- Get started
+- The principles
 - SETTINGS
 - ELEMENTS
 - HELPERS
@@ -56,14 +56,33 @@ The following documentation sections are included in order:
 
 ---
 
+# The principles
+
+This project was guided by the **"Germany Beer Purity Law"** or **"Reinheitsgebot"** created in 1516. This law states that beer should only be brewed with the following ingredients: **water**, **barley malt** and **hops**. Only 3 ingredients. Exciting, right? So we thinking about It and our 3 ingredients are: [Settings](SETTINGS.md), [Elements](ELEMENTS.md) and [Helpers](HELPERS.md). This sounds weird at first time, because It's not BEM, OOCSS, SMACSS, ITCSS, "Utility first" or any other approach. Our approach doesn't avoid some bad practices, but is lightweight, tasty and pure like a beer. Just try it and feel it! 😁
+
+```
+|  SETTINGS     |       // The settings affects all document
+|---------------|----|
+|               |    |
+|  ELEMENTS     |    |  // The elements are the components, widgets or tags
+|               |    |
+|---------------|    |
+|               |    |
+|               |    |
+|  HELPERS      |----|  // The common helpers makes the elements more scalable and customizable
+|               |
+|               |
+|---------------|
+```
+
 # Get started
 
 ### DEFAULT VERSION
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ```js
@@ -80,9 +99,9 @@ import "material-dynamic-colors";
 Applied on child elements of `<* class="beer">...</*>`.
 
 ```html
-<link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.scoped.min.css" rel="stylesheet" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ```js
@@ -99,8 +118,8 @@ import "material-dynamic-colors";
 Applied on child elements of `<beer-css>...</beer-css>`.
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.custom-element.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.custom-element.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
 ```
 
 ```js
@@ -115,7 +134,7 @@ import "material-dynamic-colors";
 
 ### LOCAL CDN VERSION
 
-Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
+Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/ and https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/. Now put the files inside a new folder in your project (like `/beercss` for example):
 
 ```html
 <link href="/beercss/beer.min.css" rel="stylesheet" />
@@ -128,75 +147,76 @@ Download all files from CDN https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cd
 You can use this html to setup your project. See on [Codepen](https://codepen.io/leo-bnu/pen/yLKLPxj). More about in [Main layout](docs/MAIN_LAYOUT.md).
 
 ```html
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate">
     <title>Hello world</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.css" rel="stylesheet">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
   </head>
   <body class="dark">
     <nav class="left max l">
       <header>
         <nav>
-          <img src="https://www.beercss.com/favicon.png" class="circle extra">
+          <img alt="logo" src="https://www.beercss.com/favicon.png" class="circle extra">
           <h6>Cheers</h6>
         </nav>
       </header>
       <a>
         <i>home</i>
-        <div>Home</div>
+        <span>Home</span>
       </a>
       <a>
         <i>search</i>
-        <div>Search</div>
+        <span>Search</span>
       </a>
       <a>
         <i>share</i>
-        <div>Share</div>
+        <span>Share</span>
       </a>
       <a>
         <i>more_vert</i>
-        <div>More</div>
+        <span>More</span>
       </a>
       <div class="divider"></div>
       <a>
         <i>widgets</i>
-        <div>Widgets</div>
+        <span>Widgets</span>
       </a>
       <a>
         <i>chat</i>
-        <div>Chat</div>
+        <span>Chat</span>
       </a>
       <a>
         <i>help</i>
-        <div>Help</div>
+        <span>Help</span>
       </a>  
     </nav>
 
     <nav class="left m">
       <header>
-        <img src="https://www.beercss.com/favicon.png" class="circle extra">
+        <img alt="logo" src="https://www.beercss.com/favicon.png" class="circle extra">
       </header>
       <a>
         <i>home</i>
-        <div>Home</div>
+        <span>Home</span>
       </a>
       <a>
         <i>search</i>
-        <div>Search</div>
+        <span>Search</span>
       </a>
       <a>
         <i>share</i>
-        <div>Share</div>
+        <span>Share</span>
       </a>
       <a>
         <i>more_vert</i>
-        <div>More</div>
+        <span>More</span>
       </a>
     </nav>
 
@@ -216,34 +236,82 @@ You can use this html to setup your project. See on [Codepen](https://codepen.io
     </nav>
 
     <main class="responsive">
-      <img src="https://www.beercss.com/beer-and-woman.svg" class="responsive round medium-height">
+      <img alt="beer and woman" src="https://www.beercss.com/beer-and-woman.svg" class="responsive round medium-height">
       <h3>Welcome</h3>
-      <h5>The beer is ready!</h5>
+      <h4>The beer is ready!</h4>
     </main>
   </body>
 </html>
 ```
 
-**We recommend using the material-dynamic-colors only when your app needs to change theme at runtime.**
+**The `beer.min.js` and `material-dynamic-colors.min.js` are optional, but could be required for some use cases.**
 
-## [Settings](SETTINGS.md)
+### ✅ DO:
 
-The settings affects all document.
+```
+// 1 setting to 1 document
+<body class="dark|light">...</body>
 
-## [Elements](ELEMENTS.md)
+// 1 element to N helpers
+<element class="helper helper">...</element>
+<div class="element helper helper">...</div>
 
-The elements are the components, widgets or tags.
+// 1 main element per document
+<...>
+  <main></main>
+</...>
 
-## [Helpers](HELPERS.md)
+// inline/block elements in block elements
+<div>
+  <div></div>
+  <span></span>
+</div>
 
-The common helpers makes the elements more scalable and customizable.
+// write css like this
+.element.helper {...}
+.element > .element {...}
+.element > .helper {...}
+```
 
-## Tips to master beercss
+### 🚫 DON'T:
 
-1. Try use helpers first, before any custom css.
+```
+// N elements to 1 tag
+<div class="element element helper">...</div>
+<element class="element helper">...</element>
+
+// element with dependencies
+<div class="element">
+  <div class="element-header">...</div>
+  <div class="element-content">...</div>
+  <div class="element-footer">...</div>
+</div>
+
+// N main elements per document
+<...>
+  <main></main>
+  <main></main>
+</...>
+
+// block elements in inline elements
+<span>
+  <div></div>
+</span>
+
+// write css like this
+.element.element {...}
+.element .element {...}
+.element .helper {...}
+```
+
+## 🧙‍♂️ Tips to master beercss
+
+1. Try use [Helpers](HELPERS.md) first, before any custom css.
 2. To customize themes go to [Settings](SETTINGS.md).
 3. To quick learn the project go to [Summary](SUMMARY.md).
-4. To understand the JS file [Javascript](JAVASCRIPT.md).
+4. To understand the [Javascript](JAVASCRIPT.md) file.
+5. Read the DO and DON'T section to write a compliance HTML/CSS.
+6. For [Vite](https://vite.dev/config/build-options#build-assetsinlinelimit) users, build your app with `assetsInlineLimit: 0` to keep the original size of CSS files.
 
 ---
 
@@ -278,11 +346,11 @@ The default theme will be set according to device color scheme. Use light or dar
 
 ## Dynamic theme
 
-It sets the theme and mode at runtime. You need to use [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors). You can get a real example of dynamic theme [in this codepen](https://codepen.io/leo-bnu/pen/LYWxjVG).
+It sets the theme and mode at runtime. You can get a real example of dynamic theme [in this codepen](https://codepen.io/leo-bnu/pen/LYWxjVG).
 
 #### To change theme
 
-Call `ui("theme", "color|path|url|file|blob|theme")`. It returns the new theme and applies on body element.
+Call `ui("theme", "color|path|url|file|blob|theme")`. It returns the new theme and applies on body element. Requires [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib.
 ```js
 // From color
 let theme = await ui("theme", "#ffd700");
@@ -316,7 +384,7 @@ let theme = await ui("theme");
 
 #### To change mode
 
-Call `ui("mode", "light|dark|auto")` to set current theme to light, dark or auto.
+Call `ui("mode", "light|dark|auto")` to set current theme to light, dark or auto. Doesn't require [material-dynamic-colors](https://www.npmjs.com/package/material-dynamic-colors) lib.
 
 ```js
 // To light
@@ -441,27 +509,43 @@ It sets the font and icon font of project.
 #### Examples
 
 ```css
- /* To import your custom font */
-@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap";
+/* To use all outlined icons (default) */
+:root {
+  --font-icon: "Material Symbols Outlined";
+}
+
+/* To use all rounded icons */
+:root {
+  --font-icon: "Material Symbols Rounded";
+}
+
+/* To use all sharp icons */
+:root {
+  --font-icon: "Material Symbols Sharp";
+}
+
+/* To use a minimal subset of icons required in checkbox, radio and switch */
+:root {
+  --font-icon: "Material Symbols Subset";
+}
+
+/* To remove icons */
+:root {
+  --font-icon: none;
+}
+
+/* To import your custom font */
+@import "https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;700&display=swap";
 
 :root {
-  /* To use your custom font */
   --font: "Roboto Flex";
+}
 
-  /* To remove default icons */
-  --font-icon: none;
+/* To import only the icons needed */
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1&icon_names=check,check_box,check_box_outline_blank,indeterminate_check_box,radio_button_checked&display=swap";
 
-  /* To use default outlined icons */
+:root {
   --font-icon: "Material Symbols Outlined";
-
-  /* To use default rounded icons */
-  --font-icon: "Material Symbols Rounded";
-
-  /* To use default sharp icons */
-  --font-icon: "Material Symbols Sharp";
-
-  /* To only use minimal subset of icons required in checkbox, radio and switch */
-  --font-icon: "Material Symbols Subset";
 }
 ```
 
@@ -1802,7 +1886,7 @@ Lists are continuous, vertical indexes of text and images. Each item can have up
 
 **Forms**
 
-border
+none, border
 
 **Spaces**
 
@@ -1922,8 +2006,6 @@ The main layout is a common html structure to setup your pages. For RTL language
 
 ## Example
 
-Place the `<nav>` elements before all others.
-
 ```html
 <nav class="top">...</nav>
 <nav class="bottom">...</nav>
@@ -1962,15 +2044,15 @@ responsive
 <nav class="bottom">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -1984,15 +2066,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -2006,15 +2088,15 @@ responsive
 <nav class="left max">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -2028,15 +2110,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -2057,15 +2139,15 @@ responsive
 <nav class="left">
   <a>
     <i>home</i>
-    <div>Home</div>
+    <span>Home</span>
   </a>
   <a>
     <i>search</i>
-    <div>Search</div>
+    <span>Search</span>
   </a>
   <a>
     <i>share</i>
-    <div>share</div>
+    <span>share</span>
   </a>
 </nav>
 <main class="responsive">
@@ -2160,7 +2242,7 @@ Menus display a list of choices on temporary surfaces.
 
 **Forms**
 
-border
+border, group
 
 **Positions**
 
@@ -2172,7 +2254,7 @@ wrap, no-wrap, min, max
 
 **Spaces**
 
-space, no-space, small-space, medium-space, large-space
+space, no-space, tiny-space, small-space, medium-space, large-space, extra-space
 
 **Triggers**
 
@@ -2181,19 +2263,23 @@ active
 ## Example
 
 ```html
-<button>
-  <span>Button</span>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
   <menu>
     <li>Item</li>
     <li>Item</li>
     <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 ```html
-<button>
-  <span>Button</span>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
   <menu>
     <li>
       <a href="#">Item</a>
@@ -2205,7 +2291,74 @@ active
       <a href="#">Item</a>
     </li>
   </menu>
-</button>
+</div>
+```
+
+## Multilevel menu example
+
+```html
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <menu>
+    <li>
+      <span>Item</span>
+      <menu>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+      </menu>
+    </li>
+  </menu>
+</div>
+```
+
+## Grouped menu example
+
+The grouped menu was designed to place any element inside it. The `<menu>` is transparent and has a little space on top/bottom. The `<li>` is transparent and hasn't all styles from default version.
+
+```html
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <menu class="group">
+    <li>
+      <menu>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+      </menu>
+    </li>
+    <li>
+      <menu>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+      </menu>
+    </li>
+  </menu>
+</div>
+```
+
+```html
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <menu class="group">
+    <li>
+      <button>Button</button>
+    </li>
+    <li>
+      <button>Button</button>
+    </li>
+    <li>
+      <button>Button</button>
+    </li>
+  </menu>
+</div>
 ```
 
 ## Triggers 
@@ -2217,14 +2370,16 @@ active
 Add/remove `active` class on menu.
 
 ```html
-<button>
-  <span>Button</span>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
   <menu class="active">
     <li>Item</li>
     <li>Item</li>
     <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 #### Method 2
@@ -2232,14 +2387,16 @@ Add/remove `active` class on menu.
 Add `data-ui="menu-selector"` attribute on elements.
 
 ```html
-<button data-ui="#menu">
-  <span>Button</span>
+<div data-ui="#menu">
+  <button>
+    <span>Button</span>
+  </button>
   <menu id="menu">
     <li>Item</li>
     <li>Item</li>
     <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 #### Method 3
@@ -2247,14 +2404,16 @@ Add `data-ui="menu-selector"` attribute on elements.
 Call `ui("menu-selector")`.
 
 ```html
-<button>
-  <span>Button</span>
+<div>
+  <button>
+    <span>Button</span>
+  </button>
   <menu id="menu">
     <li>Item</li>
     <li>Item</li>
     <li>Item</li>
   </menu>
-</button>
+</div>
 ```
 
 ```js
@@ -2294,7 +2453,7 @@ vertical, horizontal
 
 **Forms**
 
-border, round, no-round, left-round, right-round, top-round, bottom-round, tabbed, group, toolbar
+border, round, no-round, left-round, right-round, top-round, bottom-round, tabbed, group, toolbar, connected, split
 
 **Margins**
 
@@ -2611,29 +2770,23 @@ Progress display the length of a process or an unspecified wait time.
 
 ## Most used helpers
 
-**Directions**
-
-vertical
-
 **Forms**
 
-circle, wavy
+circle, wavy, indeterminate
 
 **Sizes**
 
-small, medium, large, min
+small, medium, large, max
 
 ## Linear example
 
 ```html
 <progress></progress>
-<progress value="0.25"></progress>
 <progress value="25" max="100"></progress>
 ```
 
 ```html
 <progress class="wavy"></progress>
-<progress class="wavy" value="0.25"></progress>
 <progress class="wavy" value="25" max="100"></progress>
 ```
 
@@ -2641,6 +2794,12 @@ small, medium, large, min
 
 ```html
 <progress class="circle"></progress>
+<progress class="circle" value="25" max="100"></progress>
+```
+
+```html
+<progress class="circle wavy"></progress>
+<progress class="circle wavy" value="25" max="100"></progress>
 ```
 
 ## Custom examples
@@ -2809,7 +2968,7 @@ Add/remove `active` class on label/select (the JS file of beer do this automatic
 
 # Shape
 
-The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing.
+The M3 shape system includes original shapes, a corner radius scale, and built-in shape morphing. Thanks to [@dariadororoshchuk](https://www.figma.com/@dariadoroshchuk) for all 35 svg files and [@KTibow](https://github.com/KTibow) for the loading indicator svg file.
 
 ## Element
 
@@ -2864,34 +3023,34 @@ Sliders let users make selections from a range of values. Default range is 0-100
 ## Element
 
 ```html
-<label class="slider">
+<div class="slider">
   <input type="range">
   <span></span>
-</label>
+</div>
 ```
 
 ## Example
 
 ```html
-<label class="slider">
+<div class="slider">
   <input type="range">
   <span></span>
-</label>
+</div>
 
-<label class="slider">
+<div class="slider">
   <input type="range" min="4" max="8">
   <span></span>
-</label>
+</div>
 ```
 
 ## Value indicator example
 
 ```html
-<label class="slider">
+<div class="slider">
   <input type="range">
   <span></span>
   <div class="tooltip"></div>
-</label>
+</div>
 ```
 
 ## Inset icon example
@@ -2899,22 +3058,22 @@ Sliders let users make selections from a range of values. Default range is 0-100
 The icon will show only with `medium`, `large` or `extra` helpers.
 
 ```html
-<label class="slider medium">
+<div class="slider medium">
   <input type="range">
   <span>
     <i>sunny</i>
   </span>
-</label>
+</div>
 ```
 
 ## In field elements example
 
 ```html
 <div class="field middle-align">
-  <label class="slider">
+  <div class="slider">
     <input type="range">
     <span></span>
-  </label>
+  </div>
 </div>
 ```
 
@@ -2922,10 +3081,10 @@ The icon will show only with `medium`, `large` or `extra` helpers.
 
 ```html
 <article>
-  <label class="slider max">
+  <div class="slider max">
     <input type="range">
     <span></span>
-  </label>
+  </div>
 <article>
 ```
 
@@ -3057,7 +3216,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;em&gt;**
 
-**field** small, medium, large, extra, label, border, round, fill, prefix, suffix, textarea
+**field** small, medium, large, extra, label, border, round, fill, prefix, suffix
 
 **&lt;fieldset&gt;**
 
@@ -3087,9 +3246,9 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;main&gt;** responsive, max
 
-**&lt;menu&gt;** border, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, small-space, medium-space, large-space
+**&lt;menu&gt;** border, group, left, right, top, bottom, wrap, no-wrap, active, min, max, space, no-space, tiny-space, small-space, medium-space, large-space, extra-space
 
-**&lt;nav&gt;** left, right, top, bottom, group, toolbar, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
+**&lt;nav&gt;** left, right, top, bottom, group, toolbar, connected, split, min, max, left-align, right-align, center-align, top-align, bottom-align, middle-align, border, round, no-round, left-round, right-round, top-round, bottom-round, space, no-space, small-space, medium-space, large-space, wrap, no-wrap, margin, no-margin, tiny-margin, small-margin, medium-margin, large-margin
 
 **&lt;ol&gt;**
 
@@ -3099,7 +3258,7 @@ Use this page to learn. This page has the most used combinations of elements and
 
 **&lt;pre&gt;** border, no-border, scroll
 
-**&lt;progress&gt;** small, medium, large, circle, wavy, max, vertical
+**&lt;progress&gt;** small, medium, large, circle, wavy, indeterminate, max
 
 **row** left-align, right-align, center-align, top-align, bottom-align, middle-align, space, no-space, small-space, medium-space, large-space, horizontal, vertical
 
@@ -3553,9 +3712,17 @@ Textarea fields let users enter and edit long text.
 
 ## Element
 
+If [textarea rows attribute](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Reference/Elements/textarea#rows) is not defined, the textarea will auto resize automatically. It uses a pure CSS solution on all Chromium based browsers, except on Apple devices. Other browsers will use JS.
+
 ```html
-<div class="field textarea">
+<div class="field">
   <textarea></textarea>
+</div>
+```
+
+```html
+<div class="field">
+  <textarea rows="10"></textarea>
 </div>
 ```
 
@@ -3563,7 +3730,7 @@ Textarea fields let users enter and edit long text.
 
 **Forms**
 
-label, textarea, border, round, fill, prefix, suffix
+label, border, round, fill, prefix, suffix
 
 **Sizes**
 
@@ -3576,7 +3743,7 @@ active
 ## Example
 
 ```html
-<div class="field textarea label border">
+<div class="field label border">
   <textarea></textarea>
   <label>Label</label>
 </div>
@@ -3648,8 +3815,15 @@ max
 ```html
 <button>
   <span>Button</span>
-  <div class="tooltip">I'm a tooltip</div>
+  <span class="tooltip">I'm a tooltip</span>
 </button>
+
+<div>
+  <button>
+    <span>Button</span>
+  </button>
+  <div class="tooltip">I'm a tooltip</div>
+</div>
 ```
 
 ---

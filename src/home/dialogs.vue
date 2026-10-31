@@ -93,8 +93,8 @@
     dialog#dialog-navigation-drawer.left
       header
         nav
-          img.circle.large(:src="'/favicon.png'")
-          h6.max Title
+          img.circle.large(alt="", :src="'/favicon.png'")
+          h6.max(aria-hidden="true") Title
           button.transparent.circle.large(data-ui="#dialog-navigation-drawer")
             i close
       .space

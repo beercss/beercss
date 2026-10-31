@@ -1,0 +1,24 @@
+:is(.beer, beer-css) {
+
+.zoom,
+.tiny-zoom {
+  zoom: 2;
+}
+
+.small-zoom {
+  zoom: 3;
+}
+
+.medium-zoom {
+  zoom: 4;
+}
+
+.large-zoom {
+  zoom: 5;
+}
+
+.extra-zoom {
+  zoom: 6;
+}
+
+}

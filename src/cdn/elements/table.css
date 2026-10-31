@@ -1,0 +1,65 @@
+table {
+  inline-size: 100%;
+  border-spacing: 0;
+  font-size: 0.875rem;
+  text-align: start;
+}
+
+.scroll > table,
+table :is(thead, tbody, tfoot, tr, th, td) {
+  background-color: inherit;
+  color: inherit;
+}
+
+:is(th, td) {
+  inline-size: auto;
+  text-align: inherit;
+  padding: 0.5rem;
+  border-radius: 0;
+}
+
+:is(th, td) > * {
+  vertical-align: middle;
+}
+
+table.border > tbody > tr:not(:last-child) > td,
+thead > tr > th {
+  border-block-end: 0.0625rem solid var(--outline);
+}
+
+tfoot > tr > th {
+  border-block-start: 0.0625rem solid var(--outline);
+}
+
+table.stripes > tbody > tr:nth-child(odd) {
+  background-color: var(--active);
+}
+
+table.no-space :is(th, td) {
+  padding: 0;
+}
+
+table.medium-space :is(th, td) {
+  padding: 0.75rem;
+}
+
+table.large-space :is(th, td) {
+  padding: 1rem;
+}
+
+table > .fixed,
+th.fixed {
+  position: sticky;
+  z-index: 1;
+  inset-block-start: 0;
+}
+
+tfoot.fixed,
+tfoot th.fixed {
+  inset-block-end: 0;
+}
+
+:is(td, th).min {
+  inline-size: 0.1%;
+  white-space: nowrap;
+}

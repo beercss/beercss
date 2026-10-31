@@ -54,49 +54,49 @@
   p.space
   div
     .tabs
-      a.active(data-ui="#tab1", tabindex="0") Tab 1
-      a(data-ui="#tab2", tabindex="0") Tab 2
-      a(data-ui="#tab3", tabindex="0") Tab 3
+      a.active(data-ui="#tab1", tabindex="0", href="javascript:;") Tab 1
+      a(data-ui="#tab2", tabindex="0", href="javascript:;") Tab 2
+      a(data-ui="#tab3", tabindex="0", href="javascript:;") Tab 3
     #tab1.page.padding.active
-      h5 Tab 1
+      h5(aria-hidden="true") Tab 1
     #tab2.page.padding
-      h5 Tab 2
+      h5(aria-hidden="true") Tab 2
     #tab3.page.padding
-      h5 Tab 3
+      h5(aria-hidden="true") Tab 3
   div
     .tabs
-      a.active(data-ui="#tab4", tabindex="0")
+      a.active(data-ui="#tab4", tabindex="0", href="javascript:;")
         i home
         span Tab 1
-      a(data-ui="#tab5", tabindex="0")
+      a(data-ui="#tab5", tabindex="0", href="javascript:;")
         i home
         span Tab 2
-      a(data-ui="#tab6", tabindex="0")
+      a(data-ui="#tab6", tabindex="0", href="javascript:;")
         i home
         span Tab 3
     #tab4.page.padding.active
-      h5 Tab 1
+      h5(aria-hidden="true") Tab 1
     #tab5.page.padding
-      h5 Tab 2
+      h5(aria-hidden="true") Tab 2
     #tab6.page.padding
-      h5 Tab 3
+      h5(aria-hidden="true") Tab 3
   div
     .tabs
-      a.active(data-ui="#tab7", tabindex="0")
-        img.circle(:src="'/favicon.png'")
+      a.active(data-ui="#tab7", tabindex="0", href="javascript:;")
+        img.circle(alt="", :src="'/favicon.png'")
         span Tab 1
-      a(data-ui="#tab8", tabindex="0")
-        img.circle(:src="'/favicon.png'")
+      a(data-ui="#tab8", tabindex="0", href="javascript:;")
+        img.circle(alt="", :src="'/favicon.png'")
         span Tab 2
-      a(data-ui="#tab9", tabindex="0")
-        img.circle(:src="'/favicon.png'")
+      a(data-ui="#tab9", tabindex="0", href="javascript:;")
+        img.circle(alt="", :src="'/favicon.png'")
         span Tab 3
     #tab7.page.padding.active
-      h5 Tab 1
+      h5(aria-hidden="true") Tab 1
     #tab8.page.padding
-      h5 Tab 2
+      h5(aria-hidden="true") Tab 2
     #tab9.page.padding
-      h5 Tab 3
+      h5(aria-hidden="true") Tab 3
 </template>
 
 <script setup lang="ts">

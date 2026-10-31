@@ -1,0 +1,47 @@
+.snackbar {
+  position: fixed;
+  inset: auto auto 6rem 50%;
+  inline-size: 80%;
+  block-size: auto;
+  z-index: 200;
+  visibility: hidden;
+  display: flex;
+  box-shadow: var(--elevate2);
+  color: var(--inverse-on-surface);
+  background-color: var(--inverse-surface);
+  padding: 1rem;
+  cursor: pointer;
+  text-align: start;
+  align-items: center;
+  border-radius: 0.25rem;
+  gap: 0.5rem;
+  transition: all var(--speed2);
+  transform: translate(-50%, 1rem);
+  opacity: 0;
+}
+
+.snackbar.top {
+  inset: 6rem auto auto 50%;
+}
+
+.snackbar:is(.active) {
+  visibility: visible;
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.snackbar:popover-open {
+  visibility: visible;
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.snackbar > .max {
+  flex: auto;
+}
+
+@media only screen and (min-width: 993px) {
+  .snackbar {
+    inline-size: 40%;
+  }
+}

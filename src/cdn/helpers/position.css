@@ -1,0 +1,45 @@
+.front {
+  z-index: 10 !important;
+}
+
+.back {
+  z-index: -10 !important;
+}
+
+.left {
+  inset-inline-start: 0;
+}
+
+.right {
+  inset-inline-end: 0;
+}
+
+.top {
+  inset-block-start: 0;
+}
+
+.bottom {
+  inset-block-end: 0;
+}
+
+.center {
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+}
+
+[dir=rtl] .center {
+  transform: translateX(50%);
+}
+
+.middle {
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+}
+
+.middle.center {
+  transform: translate(-50%, -50%);
+}
+
+[dir=rtl] .middle.center {
+  transform: translate(50%, -50%);
+}

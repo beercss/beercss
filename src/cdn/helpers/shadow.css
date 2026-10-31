@@ -1,0 +1,23 @@
+.shadow {
+  background-color: #00000050;
+}
+
+:is(.left-shadow, .right-shadow, .top-shadow, .bottom-shadow) {
+  background-color: transparent !important;
+}
+
+.left-shadow {
+  background-image: linear-gradient(to right, black, transparent) !important;
+}
+
+.right-shadow {
+  background-image: linear-gradient(to left, black, transparent) !important;
+}
+
+.bottom-shadow {
+  background-image: linear-gradient(to top, black, transparent) !important;
+}
+
+.top-shadow {
+  background-image: linear-gradient(to bottom, black, transparent) !important;
+}

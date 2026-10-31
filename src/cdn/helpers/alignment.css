@@ -1,0 +1,29 @@
+.middle-align {
+  display: flex;
+  align-items: center !important;
+}
+
+.bottom-align {
+  display: flex;
+  align-items: flex-end !important;
+}
+
+.top-align {
+  display: flex;
+  align-items: flex-start !important;
+}
+
+.left-align {
+  text-align: start;
+  justify-content: flex-start !important;
+}
+
+.right-align {
+  text-align: end;
+  justify-content: flex-end !important;
+}
+
+.center-align {
+  text-align: center;
+  justify-content: center !important;
+}

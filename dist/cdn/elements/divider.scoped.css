@@ -1,0 +1,55 @@
+:is(.beer, beer-css) {
+
+hr,
+[class*=divider] {
+  all: unset;
+  align-self: center;
+  justify-self: center;
+  min-inline-size: 1.5em;
+  inline-size: -webkit-fill-available !important;
+  min-block-size: auto;
+  block-size: 0.0625rem;
+  background-color: var(--outline-variant);
+  display: block;
+}
+
+hr + *,
+[class*=divider] + * {
+  margin: 0 !important;
+}
+
+hr.medium,
+.medium-divider {
+  margin: 1rem 0 !important;
+}
+
+hr.large,
+.large-divider {
+  margin: 1.5rem 0 !important;
+}
+
+hr.small,
+.small-divider {
+  margin: 0.5rem 0 !important;
+}
+
+:is(hr, .divider).vertical {
+  min-inline-size: auto;
+  min-block-size: 1.5rem;
+  inline-size: 0.0625rem !important;
+}
+
+li:has(> :is(hr, .divider)) {
+  all: unset;
+  inline-size: -webkit-fill-available !important;
+}
+
+nav:is(.top, .bottom) li:has(> :is(hr, .divider)) {
+  inline-size: auto !important;
+}
+
+nav:is(.top, .bottom) > :is(hr, .divider) {
+  inline-size: 0.0625rem !important;
+}
+
+}

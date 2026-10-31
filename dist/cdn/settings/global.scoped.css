@@ -1,0 +1,126 @@
+:is(.beer, beer-css) * { all: revert; }
+
+:root {
+  --size: 1rem;
+  --font: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", "Noto Sans", Arial, sans-serif;
+  --font-icon: "Material Symbols Outlined";
+  --speed1: 0.1s;
+  --speed2: 0.2s;
+  --speed3: 0.3s;
+  --speed4: 0.4s;
+  --active: rgb(128 128 128 / 0.192);
+  --overlay: rgb(0 0 0 / 0.5);
+  --elevate1: 0 0.125rem 0.125rem 0 rgb(0 0 0 / 0.32);
+  --elevate2: 0 0.25rem 0.5rem 0 rgb(0 0 0 / 0.4);
+  --elevate3: 0 0.375rem 0.75rem 0 rgb(0 0 0 / 0.48);
+  --top: env(safe-area-inset-top);
+  --bottom: env(safe-area-inset-bottom);
+  --left: env(safe-area-inset-left);
+  --right: env(safe-area-inset-right);
+  --image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWJiYGAQBgAAAP//ZyYa+wAAAAZJREFUAwAAIgAWeX9MsQAAAABJRU5ErkJggg==);
+}
+
+:is(.beer, beer-css).dark {
+  --image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWL6//+/FAAAAP//qSv5QwAAAAZJREFUAwAJIAMaJWjIvQAAAABJRU5ErkJggg==);
+}
+
+:is(.beer, beer-css) {
+  font-size: var(--size);
+}
+
+:is(.beer, beer-css) {
+  color: var(--on-surface);
+  background-color: var(--surface);
+  overflow-x: hidden;
+  font-family: var(--font);
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.0125rem;
+}
+
+@media (pointer: fine) {
+  :is(.beer, beer-css) ::-webkit-scrollbar,
+  :is(.beer, beer-css) ::-webkit-scrollbar-thumb,
+  :is(.beer, beer-css) ::-webkit-scrollbar-button {
+    background: none;
+    inline-size: 0.4rem;
+    block-size: 0.4rem;
+  }
+
+  :is(.beer, beer-css) :is(:focus, :hover)::-webkit-scrollbar-thumb,
+  :is(.beer, beer-css) :has(:focus, :hover)::-webkit-scrollbar-thumb {
+    background: var(--outline);
+    border-radius: 1rem;
+  }
+}
+
+@media (pointer: coarse) {
+  :is(.beer, beer-css):has(input[type=range]:focus) {
+    overflow: hidden;
+  }
+
+  :is(.beer, beer-css):has(dialog[open], dialog.active) {
+    overflow: hidden;
+  }
+}
+
+@keyframes to-page {
+  from {
+    opacity: 0;
+    transform: var(--_transform);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes to-linear-progress {
+  0% {
+    margin: 0 0 0 -100%;
+  }
+
+  50% {
+    margin: 0 0 0 0;
+  }
+
+  100% {
+    margin: 0 0 0 100%;
+  }
+}
+
+@keyframes to-indeterminate-progress {
+  0% {
+    padding: 0 100% 0 0;
+  }
+
+  50% {
+    padding: 0 0 0 0;
+  }
+
+  100% {
+    padding: 0 0 0 100%;
+  }
+}
+
+@keyframes to-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes to-ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+:is(.beer, beer-css) { overflow: unset; display: block; }
+
+:is(.beer, beer-css):not(.light, .dark) { background: none; }

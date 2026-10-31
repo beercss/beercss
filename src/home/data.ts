@@ -18,6 +18,8 @@ const data: IHome = {
   isRtl: false,
   isMax: true,
   isExplore: false,
+  isShowingSample: false,
+  mediaShape: 1, 
 };
 
 const dataAsRef: Ref<IHome> = ref(data);

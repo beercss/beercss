@@ -4,7 +4,7 @@ div
     h4 App bars
     .medium-space
   #top-app-bars
-    h6 Top app bars
+    h5.h6 Top app bars
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#top-app-bars header', 'Top app bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )
@@ -30,15 +30,15 @@ div
       nav
         button.circle.transparent
           i menu
-        h6.max.center-align Headline
-        button.circle.transparent
-          img.responsive(:src="'/favicon.png'")
+        h6.max.center-align(aria-hidden="true") Headline
+        button.circle.transparent(aria-hidden="true")
+          img.responsive(alt="", :src="'/favicon.png'")
     .space
     header
       nav
         button.circle.transparent
           i arrow_back
-        h6.max Headline
+        h6.max(aria-hidden="true") Headline
         button.circle.transparent
           i attach_file
         button.circle.transparent
@@ -58,7 +58,7 @@ div
         button.circle.transparent
           i more_vert
       .small-padding
-        h5 Headline
+        h5(aria-hidden="true") Headline
     .space
     header
       nav
@@ -72,10 +72,10 @@ div
         button.circle.transparent
           i more_vert
       .small-padding
-        h4 Headline
+        h4(aria-hidden="true") Headline
   .medium-space
   #bottom-app-bars
-    h6 Bottom app bars
+    h5.h6 Bottom app bars
       button.chip.circle(
         @click="data.layout = 0; domain.showSamples(data, '#bottom-app-bars footer', 'Bottom app bars', null, 'https://github.com/beercss/beercss/blob/main/docs/LAYOUT.md')"
       )

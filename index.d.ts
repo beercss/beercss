@@ -3,17 +3,35 @@ declare global {
     dark: string,
     light: string,
   }
-  
-  function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme>;
-}
 
-declare module "ui";
+  class BeerCssCustomElement extends HTMLElement {
+    static isCssLoaded: boolean;
+    static isJsLoaded: boolean;
+    
+    constructor();
+    
+    addJs(): Promise<void | any>;
+    addCss(): Promise<void>;
+    run(): Promise<void>;
+  }
+
+  function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | undefined | Promise<IBeerCssTheme>;
+}
 
 export interface IBeerCssTheme {
   dark: string,
   light: string,
 }
 
-export function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | IBeerCssTheme | Promise<IBeerCssTheme>;
+export declare class BeerCssCustomElement extends HTMLElement {
+  static isCssLoaded: boolean;
+  static isJsLoaded: boolean;
+  
+  constructor();
+  
+  addJs(): Promise<void | any>;
+  addCss(): Promise<void>;
+  run(): Promise<void>;
+}
 
-export default ui;
+export default function ui(selector?: string | Element, options?: string | number | IBeerCssTheme): string | undefined | Promise<IBeerCssTheme>;

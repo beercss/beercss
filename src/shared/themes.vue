@@ -6,7 +6,7 @@ div
     header.fixed
       nav
         .max
-          h5
+          h2.h5
             span Colors
             button.chip.circle(@click="showCode(true)")
               i code
@@ -15,11 +15,13 @@ div
       nav.wrap
         button.chip.circle.small(@click="sharedDomain.updateMode(data.modelValue)")
           i {{ data.modelValue.isDark ? "light_mode" : "dark_mode" }}
-        button.chip.circle
-          i palette
+        div
+          button.chip.circle
+            i palette
           input(type="color", @input="sharedDomain.updateTheme(data.modelValue, $event)")
-        button.chip.circle
-          i upload
+        div
+          button.chip.circle
+            i upload
           input(type="file", @change="sharedDomain.updateTheme(data.modelValue, $event)")
         button.circle.small.red(@click="sharedDomain.updateTheme(data.modelValue, '#f44336')")
         button.circle.small.pink(@click="sharedDomain.updateTheme(data.modelValue, '#e91e63')")
@@ -45,7 +47,7 @@ div
   .overlay
   dialog.right(:id="dialogCodeId()")
     nav
-      h5 Themes
+      h2.h5 Themes
       a.button.border.m.l(href="https://github.com/beercss/beercss/blob/main/docs/SETTINGS.md", target="_blank") Documentation
       .max
       button.transparent.circle(@click="showCode(false)")
@@ -58,7 +60,7 @@ div
         input(v-model="data.modelValue.theme.selected", type="radio", value="dark")
         span Dark
     .space
-    article.border
+    .small-round.padding.border
       pre.scroll
         code(v-html="sourceCode()")
 </template>
@@ -70,7 +72,7 @@ import { type ILayout } from "./interfaces";
 
 export interface IProps {
   id?: string,
-  modelValue?: ILayout,
+  modelValue: ILayout,
   position?: string,
 }
 

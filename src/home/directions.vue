@@ -26,20 +26,20 @@
       button.border.left-round
         i home
         span Button
-      button.border.no-round
+      button.border
         i home
         span Button
       button.border.right-round
         i home
         span Button
     .tabs
-      a.active(tabindex="0")
+      a.active(tabindex="0", href="javascript:;")
         i home
         span Tab 1
-      a(tabindex="0")
+      a(tabindex="0", href="javascript:;")
         i home
         span Tab 2
-      a(tabindex="0")
+      a(tabindex="0", href="javascript:;")
         i home
         span Tab 3
 

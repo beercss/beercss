@@ -1,4 +1,5 @@
 import { type IInstallEvent } from "./interfaces";
+import { redirect } from "./router";
 
 let _installEvent: IInstallEvent;
 
@@ -31,12 +32,9 @@ const addClass = (elements: NodeListOf<Element>, classes: Array<string>, filter?
 };
 
 const is = (element: Element | null, selectors: Array<string>) => {
-  const newElement = document.createElement("div");
-  newElement.innerHTML = element?.outerHTML ?? "";
-
-  for (let i = 0; i < selectors.length; i++) { if (newElement.querySelector(selectors[i])) return true; }
-
-  return false;
+  if (!element || selectors.length === 0) return false;
+  const selector = selectors.join(",");
+  return element.matches(selector) || element.querySelector(selector) !== null;
 };
 
 const removeAttribute = (elements: NodeListOf<Element>, attribute: string) => {
@@ -62,11 +60,23 @@ const queryAll = (selector: string | NodeListOf<Element>): NodeListOf<Element> =
   return selector;
 };
 
-const firstRedirect = () => {
-  window.addEventListener("load", () => {
-    if (window.location.pathname !== "/") page.redirect(window.location.pathname);
-  });
-};
+const loadCss = (href: string, timeout: number = 3000) => {
+  setTimeout(() => {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  }, timeout);
+}
+
+const loadJs = (src: string, timeout: number = 3000) => {
+  setTimeout(() => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    document.head.appendChild(script);
+  }, timeout);
+}
 
 const waitForInstall = () => {
   if (_installEvent) return;
@@ -98,7 +108,8 @@ export default {
   removeValue,
   query,
   queryAll,
-  firstRedirect,
   waitForInstall,
   install,
+  loadCss,
+  loadJs,
 };

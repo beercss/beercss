@@ -1,0 +1,32 @@
+.overlay,
+dialog::backdrop {
+  display: block !important;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  inset: 0;
+  color: var(--on-surface);
+  background-color: var(--overlay);
+  z-index: 100;
+  transition: all var(--speed3), 0s background-color;
+  border-radius: 0;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+dialog:popover-open::backdrop {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay + dialog::backdrop,
+.snackbar::backdrop {
+  display: none;
+}
+
+[popover] {
+  border: 0;
+}

@@ -1,0 +1,22 @@
+.responsive {
+  inline-size: -webkit-fill-available;
+  inline-size: -moz-available;
+}
+
+@media only screen and (max-width: 600px) {
+  :is(.m, .l):not(.s) {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  :is(.s, .l):not(.m) {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  :is(.m, .s):not(.l) {
+    display: none !important;
+  }
+}

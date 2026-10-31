@@ -7,7 +7,7 @@ const data: IMusicPlayer = {
   showPage: false,
   showWallpaper: true,
   title: "Classic Utility Jacket",
-  wallpaper: "/classic-utility-jacket.jpg",
+  wallpaper: "/classic-utility-jacket.webp",
   time: 0,
 };
 

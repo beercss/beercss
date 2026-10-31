@@ -6,102 +6,100 @@
         i {{ data.isMax ? 'menu_open' : 'menu' }}
     a(href="/youtube", :class="{ active: data.url === '/youtube' }")
       i home
-      div Home
+      span Home
     a(href="/youtube/whats-hot", :class="{ active: data.url === '/youtube/whats-hot' }")
       i whatshot
       div What's hot
     a(href="/youtube/subscriptions", :class="{ active: data.url === '/youtube/subscriptions' }")
       i subscriptions
-      div Subscript
+      span Subscript
     a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
-      div Library
-    a(data-ui="#themes1")
+      span Library
+    a(data-ui="#themes1", href="javascript:;")
       i palette
-      div Themes
+      span Themes
     hr
-    a
+    a(href="javascript:;")
       i history
-      div History
-    a
+      span History
+    a(href="javascript:;")
       i slideshow
-      div Your videos
-    a
+      span Your videos
+    a(href="javascript:;")
       i playlist_play
-      div Your albuns
-    a
+      span Your albuns
+    a(href="javascript:;")
       i watch_later
-      div Watch later
+      span Watch later
 
   nav.bottom.s
     a(href="/youtube", :class="{ active: data.url === '/youtube' }")
       i home
-      div Home
+      span Home
     a(href="/youtube/explore", :class="{ active: data.url === '/youtube/explore' }")
       i explore
-      div Explore
-    a.button.square.round.extra.fill(data-ui="#dialog-add")
+      span Explore
+    a.button.square.round.extra.fill(data-ui="#dialog-add", href="javascript:;")
       i add
     a(href="/youtube/library", :class="{ active: data.url === '/youtube/library' }")
       i video_library
-      div Library
-    a(data-ui="#themes1")
+      span Library
+    a(data-ui="#themes1", href="javascript:;")
       i palette
-      div Themes
+      span Themes
 
   nav.top.surface
     img(
       v-show="!data.isDark",
-      :src="'/youtube-light.png'"
+      alt="", :src="'/youtube-light.png'"
     )
     img(
       v-show="data.isDark",
-      :src="'/youtube-dark.png'"
+      alt="", :src="'/youtube-dark.png'"
     )
     .max
     .max.field.round.suffix.prefix.small.no-margin.m.l.white.black-text
       i.front search
-      input(type="text")
+      input(type="text", placeholder="Search", aria-label="search")
       i.front mic
     .max
     button.circle.large.transparent.s(data-ui="#dialog-search")
       i search
-    button.circle.large.transparent.m.l(data-ui="#menu-add")
-      i video_call
-      menu#menu-add.left.no-wrap(data-ui="#menu-add")
+    div
+      button.circle.large.transparent.m.l
+        i video_call
+      menu.left.no-wrap
         li
-          .min
-            i upload
-          .min Send a video
+          i upload
+          div Send a video
         li
-          .min
-            i sensors
-          .min Broadcast live
-    button.circle.large.transparent.m.l(data-ui="#menu-apps")
-      i apps
-      menu#menu-apps.left.no-wrap(data-ui="#menu-apps")
+          i sensors
+          div Broadcast live
+    div
+      button.circle.large.transparent.m.l
+        i apps
+      menu.left.no-wrap
         li
-          .min
-            img(:src="'/youtube.png'")
-          .min Youtube TV
-        hr.small
+          img(alt="", :src="'/youtube.png'")
+          div Youtube TV
+        li 
+          hr
         li
-          .min
-            img(:src="'/youtube.png'")
-          .min Youtube Music
+          img(alt="", :src="'/youtube.png'")
+          div Youtube Music
         li
-          .min
-            img(:src="'/youtube.png'")
-          .min Youtube Kids
+          img(alt="", :src="'/youtube.png'")
+          div Youtube Kids
     button.circle.large.transparent(data-ui="#dialog-notifications")
       i notifications
-    button.circle.large.transparent(@click="redirect('/')")
-      img.responsive(:src="'/favicon.png'")
+    button.circle.large.transparent(@click="redirect('/')", aria-label="beer css")
+      img.responsive(alt="", :src="'/favicon.png'")
 
   .overlay
   dialog#dialog-notifications.right
     nav
-      h5.max Notifications
+      h2.h5.max Notifications
       button.circle.transparent(data-ui="#dialog-notifications")
         i close
     p No new notifications here
@@ -109,19 +107,16 @@
   .overlay
   dialog#dialog-add.bottom.top-round
     nav
-      h5.max New
+      h2.h5.max New
       button.circle.transparent(data-ui="#dialog-add")
         i close
-    a.row
-      .min
+    ul.list
+      li
         i upload
-      .min
-        span Send a video
-    a.row
-      .min
+        div Send a video
+      li
         i sensors
-      .min
-        span Broadcast live
+        div Broadcast live
 
   .overlay
   dialog#dialog-search.top.transparent

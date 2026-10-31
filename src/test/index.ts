@@ -1,6 +1,6 @@
-import { router } from "../shared/router";
+import { addRoute } from "../shared/router";
 import test from "./page.vue";
 import mainLayouts from "./mainLayouts.vue";
 
-router("/test/mainLayouts", mainLayouts);
-router("/test", test);
+addRoute("/test/mainLayouts", mainLayouts);
+addRoute("/test", test);
