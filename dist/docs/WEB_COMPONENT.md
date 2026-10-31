@@ -30,7 +30,7 @@ Here is a complete example of a web component using Beer CSS.
 // import { init } from 'beercss';
 
 // Or import directly from the CDN.
-import { init } from 'https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.js'; // Note: Version might need update
+import { init } from 'https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.js';
 
 class MyBeerComponent extends HTMLElement {
   _ui; // Declare _ui property to hold the scoped ui function
@@ -45,7 +45,7 @@ class MyBeerComponent extends HTMLElement {
     // Set the HTML content for the component
     this.shadowRoot.innerHTML = `
       <!-- 1. Link the stylesheet inside the Shadow DOM -->
-      <link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.css" rel="stylesheet" />
+      <link href="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.css" rel="stylesheet" />
       
       <!-- 2. Add your HTML with Beer CSS components -->
       <main class="responsive">

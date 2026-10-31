@@ -208,7 +208,7 @@ test("multi-instance BeerCSS for web components", async () => {
       super();
       this.attachShadow({ mode: "open" });
       this.shadowRoot!.innerHTML = `
-        <link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.css" rel="stylesheet" />
         <button id="testButton" class="button">Component Button</button>
       `;
       this._ui = init(this.shadowRoot!);
