@@ -383,11 +383,12 @@ const updateRtlLtr = (data: IHome) => {
   else document.body.removeAttribute("dir");
 };
 
+const shapesRegex = /arch|arrow|boom|bun|burst|circle|clamshell|clamshell|diamond|fan|flower|gem|ghost-ish|heart|leaf-clover4|leaft-clover8|loading-indicator|oval|pentagon|pill|pixel-circle|pixel-triangle|puffy|semicircle|sided-cookie4|sided-cookie6|sided-cookie7|sided-cookie9|sided-cookie12|slanted|soft-boom|soft-burst|square|sunny|triangle|very-sunny/g;
+
 const updateShape = (selector: string, shape: string) => {
-  const shapes = /arch|arrow|boom|bun|burst|circle|clamshell|clamshell|diamond|fan|flower|gem|ghost-ish|heart|leaf-clover4|leaft-clover8|loading-indicator|oval|pentagon|pill|pixel-circle|pixel-triangle|puffy|semicircle|sided-cookie4|sided-cookie6|sided-cookie7|sided-cookie9|sided-cookie12|slanted|soft-boom|soft-burst|square|sunny|triangle|very-sunny/g;
   const elements = Array.from(utils.queryAll(selector));
   for(const element of elements)
-    element.className = element.className.replace(shapes, shape);
+    element.className = element.className.replace(shapesRegex, shape);
 };
 
 const updateRotate = (selector: string, rotate: string) => {
