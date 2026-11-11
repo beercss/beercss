@@ -15,19 +15,19 @@
   "devDependencies": {
     "@types/jsdom": "^30.0.0",
     "@vitejs/plugin-vue": "^6.0.10",
-    "@vitest/coverage-v8": "^5.0.5",
-    "@vue/language-plugin-pug": "^3.3.13",
+    "@vitest/coverage-v8": "^5.1.0",
+    "@vue/language-plugin-pug": "^3.3.14",
     "brotli-size": "^4.0.0",
     "cssnano": "^9.9.0",
     "fs-extra": "^11.4.1",
-    "jsdom": "^30.1.3",
-    "postcss": "^8.5.30",
+    "jsdom": "^31.0.0",
+    "postcss": "^8.5.32",
     "pug": "^3.0.4",
     "typescript": "^7.0.2",
-    "vite": "^8.3.4",
-    "vitest": "^5.0.5",
-    "vue": "^3.5.44",
-    "vue-tsc": "^3.3.13"
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0",
+    "vue": "^3.5.45",
+    "vue-tsc": "^3.3.14"
   },
   "files": [
     "custom-element",
@@ -57,6 +57,6 @@
     "url": "https://github.com/beercss/beercss/issues"
   },
   "dependencies": {
-    "material-dynamic-colors": "^1.1.4"
+    "material-dynamic-colors": "^1.2.0"
   }
 }
