@@ -55,7 +55,7 @@ label {
   margin-block-start: 1rem;
 }
 
-:has(> [class*='margin']) {
+:where(:has(> [class*='margin']:not(.no-margin))) {
   padding: 0.1px;
 }
 
