@@ -14,13 +14,6 @@ var isMac = navigator.userAgent.includes("Macintosh");
 navigator.userAgent.includes("Linux");
 navigator.userAgent.includes("Android");
 var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-function queryAll(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
-	} catch {
-		return _emptyNodeList;
-	}
-}
 function hasClass(element, name) {
 	return element?.classList.contains(name) ?? false;
 }
@@ -32,6 +25,13 @@ function on(element, name, callback, useCapture = true) {
 }
 function off(element, name, callback, useCapture = true) {
 	if (element?.removeEventListener) element.removeEventListener(name, callback, useCapture);
+}
+function queryAll(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
+	} catch {
+		return _emptyNodeList;
+	}
 }
 //#endregion
 //#region src/cdn/elements/progress.ts

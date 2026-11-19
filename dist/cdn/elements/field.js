@@ -15,20 +15,6 @@ var isMac = navigator.userAgent.includes("Macintosh");
 navigator.userAgent.includes("Linux");
 navigator.userAgent.includes("Android");
 var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-function query(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelector(selector) : selector;
-	} catch {
-		return null;
-	}
-}
-function queryAll(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
-	} catch {
-		return _emptyNodeList;
-	}
-}
 function hasType(element, name) {
 	return element?.type?.toLowerCase() === name;
 }
@@ -62,8 +48,22 @@ function next(element) {
 function parent(element) {
 	return element?.parentElement;
 }
-function rootSizeInPixels() {
-	const rootElement = query(".beer") || document.documentElement;
+function query(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelector(selector) : selector;
+	} catch {
+		return null;
+	}
+}
+function queryAll(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
+	} catch {
+		return _emptyNodeList;
+	}
+}
+function rootSizeInPixels(root) {
+	const rootElement = query(".beer", root ?? document) || (root instanceof Document ? root.documentElement : root ? root.host : document.documentElement);
 	const size = getComputedStyle(rootElement).getPropertyValue("--size") || "16px";
 	if (size.includes("%")) return parseInt(size) * 16 / 100;
 	if (size.includes("em")) return parseInt(size) * 16;
@@ -97,26 +97,28 @@ function onChangeColor(e) {
 }
 function onKeydownFile(e) {
 	const input = e.currentTarget;
-	updateFile(input, e);
+	updateFile(input);
 }
 function onKeydownColor(e) {
 	const input = e.currentTarget;
-	updateColor(input, e);
-}
-function onPasswordIconClick(e) {
-	const icon = e.currentTarget;
-	const input = query("input", parent(icon));
-	if (input && icon.textContent?.includes("visibility")) if (input.type === "password") {
-		input.type = "text";
-		icon.textContent = "visibility_off";
-	} else {
-		input.type = "password";
-		icon.textContent = "visibility";
-	}
+	updateColor(input);
 }
 function onInputTextarea(e) {
 	const textarea = e.currentTarget;
 	updateTextarea(textarea);
+}
+function onPasswordIconClick(e) {
+	const icon = e.currentTarget;
+	const input = query("input", parent(icon));
+	if (input && icon.textContent?.includes("visibility")) {
+		if (input.type === "password") {
+			input.type = "text";
+			icon.textContent = "visibility_off";
+		} else {
+			input.type = "password";
+			icon.textContent = "visibility";
+		}
+	}
 }
 function onClickLabelDelegation(e) {
 	const from = e.target.closest(".field > label");
@@ -127,53 +129,53 @@ function onClickLabelDelegation(e) {
 	});
 	onClickLabel(e);
 }
-function updateAllLabels() {
-	const body = document.body;
-	if (!body) return;
-	onWeak(body, "click", onClickLabelDelegation);
+function updateAllLabels(root = document) {
+	const container = root instanceof Document ? root.body : root;
+	if (!container) return;
+	onWeak(container, "click", onClickLabelDelegation);
 }
-function updateAllInputs() {
-	const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])");
+function updateAllInputs(root = document) {
+	const inputs = queryAll(".field > input:not([type=file], [type=color], [type=range])", root);
 	for (let i = 0; i < inputs.length; i++) {
 		onWeak(inputs[i], "focus", onFocusInput);
 		onWeak(inputs[i], "blur", onBlurInput);
 		updateInput(inputs[i]);
 	}
 }
-function updateAllSelects() {
-	const selects = queryAll(".field > select");
+function updateAllSelects(root = document) {
+	const selects = queryAll(".field > select", root);
 	for (let i = 0; i < selects.length; i++) {
 		onWeak(selects[i], "focus", onFocusInput);
 		onWeak(selects[i], "blur", onBlurInput);
 	}
 }
-function updateAllFiles() {
-	const files = queryAll(".field > input[type=file]");
+function updateAllFiles(root = document) {
+	const files = queryAll(".field > input[type=file]", root);
 	for (let i = 0; i < files.length; i++) {
 		onWeak(files[i], "change", onChangeFile);
 		updateFile(files[i]);
 	}
 }
-function updateAllColors() {
-	const colors = queryAll(".field > input[type=color]");
+function updateAllColors(root = document) {
+	const colors = queryAll(".field > input[type=color]", root);
 	for (let i = 0; i < colors.length; i++) {
 		onWeak(colors[i], "change", onChangeColor);
 		updateColor(colors[i]);
 	}
 }
-function updateAllTextareas() {
-	const textareas = queryAll(".field > textarea");
+function updateAllTextareas(root = document) {
+	const textareas = queryAll(".field.textarea > textarea", root);
 	for (let i = 0; i < textareas.length; i++) {
 		onWeak(textareas[i], "focus", onFocusInput);
 		onWeak(textareas[i], "blur", onBlurInput);
 		updatePlaceholder(textareas[i]);
 		if (isChrome && !isMac && !isIOS) continue;
 		onWeak(textareas[i], "input", onInputTextarea);
-		updateTextarea(textareas[i]);
+		updateTextarea(textareas[i], root);
 	}
 }
-function updateAllPasswordIcons() {
-	const icons = queryAll(".field:has(> input[type=password]) > i, a");
+function updateAllPasswordIcons(root = document) {
+	const icons = queryAll(".field:has(> input[type=password]) > i, a", root);
 	for (let i = 0; i < icons.length; i++) onWeak(icons[i], "click", onPasswordIconClick);
 }
 function updateInput(input) {
@@ -208,21 +210,21 @@ function updateColor(input, e) {
 	onWeak(nextInput, "keydown", onKeydownColor, false);
 	updateInput(nextInput);
 }
-function updateTextarea(textarea) {
+function updateTextarea(textarea, root) {
 	updatePlaceholder(textarea);
 	if (textarea.hasAttribute("rows")) return;
-	const rootSize = rootSizeInPixels();
+	const rootSize = rootSizeInPixels(root);
 	textarea.style.blockSize = "auto";
 	textarea.style.blockSize = `${textarea.scrollHeight - rootSize}px`;
 }
-function updateAllFields() {
-	updateAllLabels();
-	updateAllInputs();
-	updateAllSelects();
-	updateAllFiles();
-	updateAllColors();
-	updateAllTextareas();
-	updateAllPasswordIcons();
+function updateAllFields(root = document) {
+	updateAllLabels(root);
+	updateAllInputs(root);
+	updateAllSelects(root);
+	updateAllFiles(root);
+	updateAllColors(root);
+	updateAllTextareas(root);
+	updateAllPasswordIcons(root);
 }
 globals_default().field = { updateAllFields };
 //#endregion

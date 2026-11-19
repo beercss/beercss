@@ -14,20 +14,6 @@ navigator.userAgent.includes("Macintosh");
 navigator.userAgent.includes("Linux");
 navigator.userAgent.includes("Android");
 /iPad|iPhone|iPod/.test(navigator.userAgent);
-function query(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelector(selector) : selector;
-	} catch {
-		return null;
-	}
-}
-function queryAll(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
-	} catch {
-		return _emptyNodeList;
-	}
-}
 function hasClass(element, name) {
 	return element?.classList.contains(name) ?? false;
 }
@@ -48,30 +34,53 @@ function on(element, name, callback, useCapture = true) {
 function off(element, name, callback, useCapture = true) {
 	if (element?.removeEventListener) element.removeEventListener(name, callback, useCapture);
 }
-function blurActiveElement() {
-	document.activeElement?.blur();
+function query(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelector(selector) : selector;
+	} catch {
+		return null;
+	}
+}
+function queryAll(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
+	} catch {
+		return _emptyNodeList;
+	}
+}
+function blurActiveElement(root) {
+	(root ?? document).activeElement?.blur();
 }
 //#endregion
 //#region src/cdn/elements/menu.ts
-var _timeoutMenu;
-function onClickDocument(e) {
-	off(document.body, "click", onClickDocument);
-	const body = e.target;
-	const menus = queryAll("menu.active");
-	for (let i = 0; i < menus.length; i++) updateMenu(body, menus[i], e);
+var menuTimeouts = /* @__PURE__ */ new WeakMap();
+function getContainer(root = document) {
+	return root instanceof Document ? root.body : root ? root.host : document.body;
 }
-function focusOnMenuOrInput(menu) {
+function onClickDocument(e, root = document) {
+	off(getContainer(root), "click", (event) => onClickDocument(event, root));
+	const body = e.target;
+	const menus = queryAll("menu.active", root);
+	for (let i = 0; i < menus.length; i++) updateMenu(body, menus[i], e, root);
+}
+function focusOnMenuOrInput(menu, root = document) {
 	setTimeout(() => {
-		const input = query(".field > input", menu);
+		const input = query(".field > input", root, menu);
 		if (input) input.focus();
 		else menu.focus();
 	}, 90);
 }
-function updateMenu(from, menu, e) {
-	if (_timeoutMenu) clearTimeout(_timeoutMenu);
-	_timeoutMenu = setTimeout(() => {
-		on(document.body, "click", onClickDocument);
-		if (!hasTag(document.activeElement, "input")) blurActiveElement();
+function updateMenu(from, menu, e, root) {
+	if (e && (e instanceof Document || typeof ShadowRoot !== "undefined" && e instanceof ShadowRoot)) {
+		root = e;
+		e = void 0;
+	}
+	root = root ?? document;
+	let timeoutMenu = menuTimeouts.get(root);
+	if (timeoutMenu) clearTimeout(timeoutMenu);
+	timeoutMenu = setTimeout(() => {
+		on(getContainer(root), "click", (event) => onClickDocument(event, root));
+		if (!hasTag(root.activeElement, "input")) blurActiveElement(root);
 		const isActive = hasClass(menu, "active");
 		const isEvent = e?.target === from;
 		const isChild = !!from.closest("menu");
@@ -79,10 +88,11 @@ function updateMenu(from, menu, e) {
 			removeClass(menu, "active");
 			return;
 		}
-		removeClass(queryAll("menu.active"), "active");
+		removeClass(queryAll("menu.active", root), "active");
 		addClass(menu, "active");
-		focusOnMenuOrInput(menu);
+		focusOnMenuOrInput(menu, root);
 	}, 90);
+	menuTimeouts.set(root, timeoutMenu);
 }
 globals_default().menu = { updateMenu };
 //#endregion

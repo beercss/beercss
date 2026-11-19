@@ -76,11 +76,11 @@ function onKeydownRippleDelegation(e) {
 	});
 	updateRipple(e);
 }
-function updateAllRipples() {
-	const body = document.body;
-	if (!body) return;
-	onWeak(body, "mousedown", onMousedownRippleDelegation);
-	onWeak(body, "keydown", onKeydownRippleDelegation);
+function updateAllRipples(root = document) {
+	const container = root instanceof Document ? root.body : root;
+	if (!container) return;
+	onWeak(container, "mousedown", onMousedownRippleDelegation);
+	onWeak(container, "keydown", onKeydownRippleDelegation);
 }
 globals_default().ripple = { updateAllRipples };
 //#endregion

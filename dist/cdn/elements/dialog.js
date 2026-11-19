@@ -12,20 +12,6 @@ navigator.userAgent.includes("Android");
 async function wait(milliseconds) {
 	await new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
-function query(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelector(selector) : selector;
-	} catch {
-		return null;
-	}
-}
-function queryAll(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
-	} catch {
-		return _emptyNodeList;
-	}
-}
 function hasClass(element, name) {
 	return element?.classList.contains(name) ?? false;
 }
@@ -73,8 +59,22 @@ function prev(element) {
 function next(element) {
 	return element?.nextElementSibling;
 }
-function create(htmlAttributesAsJson) {
-	const element = document.createElement("div");
+function query(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelector(selector) : selector;
+	} catch {
+		return null;
+	}
+}
+function queryAll(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
+	} catch {
+		return _emptyNodeList;
+	}
+}
+function create(htmlAttributesAsJson, root) {
+	const element = (root ? root instanceof Document ? root : root.ownerDocument : document).createElement("div");
 	for (let i = 0, keys = Object.keys(htmlAttributesAsJson), n = keys.length; i < n; i++) {
 		const key = keys[i];
 		const value = htmlAttributesAsJson[key];
@@ -82,11 +82,11 @@ function create(htmlAttributesAsJson) {
 	}
 	return element;
 }
-function blurActiveElement() {
-	document.activeElement?.blur();
+function blurActiveElement(root) {
+	(root ?? document).activeElement?.blur();
 }
-function queryAllDataUi(id) {
-	return queryAll("[data-ui=\"#" + id + "\"]");
+function queryAllDataUi(id, root, element) {
+	return queryAll("[data-ui=\"#" + id + "\"]", root, element);
 }
 //#endregion
 //#region src/cdn/globals.ts
@@ -97,56 +97,61 @@ var globals_default = () => {
 };
 //#endregion
 //#region src/cdn/elements/dialog.ts
-var _dialogs = [];
-function onKeydownDialog(e) {
+var dialogsMap = /* @__PURE__ */ new WeakMap();
+function getDialogsForRoot(root) {
+	if (!dialogsMap.has(root)) dialogsMap.set(root, []);
+	return dialogsMap.get(root);
+}
+function onKeydownDialog(e, root) {
 	if (e.key === "Escape") {
 		const dialog = e.currentTarget;
-		updateDialog(dialog, dialog);
+		updateDialog(dialog, dialog, root);
 	}
 }
-function focusOnDialogOrElement(dialog) {
-	(query("[autofocus]", dialog) ?? dialog).focus();
+function focusOnDialogOrElement(dialog, root) {
+	(query("[autofocus]", root, dialog) ?? dialog).focus();
 }
-function closeDialog(dialog, overlay) {
-	removeClass(queryAllDataUi(dialog.id), "active");
+function closeDialog(dialog, overlay, root) {
+	removeClass(queryAllDataUi(dialog.id, root), "active");
 	removeClass(dialog, "active");
 	removeClass(overlay, "active");
 	dialog.close();
-	const index = _dialogs.indexOf(dialog);
-	if (index > -1) _dialogs.splice(index, 1);
-	const previousDialog = _dialogs[_dialogs.length - 1];
+	const dialogs = getDialogsForRoot(root);
+	const index = dialogs.indexOf(dialog);
+	if (index > -1) dialogs.splice(index, 1);
+	const previousDialog = dialogs[dialogs.length - 1];
 	if (previousDialog) previousDialog.focus();
 }
-async function openDialog(dialog, overlay, isModal, from) {
+async function openDialog(dialog, overlay, isModal, from, root) {
 	if (!hasTag(from, "button") && !hasClass(from, "button") && !hasClass(from, "chip")) addClass(from, "active");
 	addClass(overlay, "active");
 	addClass(dialog, "active");
 	if (isModal) dialog.showModal();
 	else dialog.show();
 	await wait(90);
-	if (!isModal) on(dialog, "keydown", onKeydownDialog, false);
-	_dialogs.push(dialog);
-	focusOnDialogOrElement(dialog);
+	if (!isModal) on(dialog, "keydown", (e) => onKeydownDialog(e, root), false);
+	getDialogsForRoot(root).push(dialog);
+	focusOnDialogOrElement(dialog, root);
 }
-function onClickOverlay(e) {
+function onClickOverlay(e, root) {
 	const overlay = e.currentTarget;
 	const dialog = next(overlay);
-	if (hasTag(dialog, "dialog")) closeDialog(dialog, overlay);
+	if (hasTag(dialog, "dialog")) closeDialog(dialog, overlay, root);
 }
-async function updateDialog(from, dialog) {
-	blurActiveElement();
+async function updateDialog(from, dialog, root = document) {
+	blurActiveElement(root);
 	let overlay = prev(dialog);
 	const isActive = hasClass(dialog, "active") || dialog.open;
 	const isModal = hasClass(dialog, "modal");
-	if (!isModal) off(dialog, "keydown", onKeydownDialog, false);
+	if (!isModal) off(dialog, "keydown", (e) => onKeydownDialog(e, root), false);
 	if (!hasClass(overlay, "overlay")) {
-		overlay = create({ class: "overlay" });
+		overlay = create({ class: "overlay" }, root);
 		insertBefore(overlay, dialog);
 		await wait(90);
 	}
-	if (!isModal) onWeak(overlay, "click", onClickOverlay, false);
-	if (isActive) closeDialog(dialog, overlay);
-	else openDialog(dialog, overlay, isModal, from);
+	if (!isModal) onWeak(overlay, "click", (e) => onClickOverlay(e, root), false);
+	if (isActive) closeDialog(dialog, overlay, root);
+	else openDialog(dialog, overlay, isModal, from, root);
 }
 globals_default().dialog = { updateDialog };
 //#endregion

@@ -1,5 +1,5 @@
 import { expect, test, beforeEach, afterEach, vi } from "vitest";
-import ui from "../src/cdn/beer";
+import ui, { init } from "../src/cdn/beer";
 import { type IBeerCssTheme } from "../src/cdn/interfaces";
 import "material-dynamic-colors";
 
@@ -200,3 +200,44 @@ test("checking all variables from theme", async () => {
     expect(theme.dark).toMatch(colorWithValue);
   }
 });
+
+test("multi-instance BeerCSS for web components", async () => {
+  class TestBeerComponent extends HTMLElement {
+    _ui: any;
+    constructor() {
+      super();
+      this.attachShadow({ mode: "open" });
+      this.shadowRoot!.innerHTML = `
+        <link href="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.css" rel="stylesheet" />
+        <button id="testButton" class="button">Component Button</button>
+      `;
+      this._ui = init(this.shadowRoot!);
+    }
+  }
+  if (!customElements.get("test-beer-component")) {
+    customElements.define("test-beer-component", TestBeerComponent);
+  }
+
+  const mainUi = init(document);
+  document.body.innerHTML = `
+    <button id="mainButton" class="button">Main Button</button>
+    <test-beer-component id="myComponent"></test-beer-component>
+  `;
+
+  mainUi("setup");
+  const myComponent = document.getElementById("myComponent") as TestBeerComponent;
+  myComponent._ui("setup");
+
+  mainUi("mode", "dark");
+  await new Promise(resolve => setTimeout(resolve, 200));
+
+  const componentHost = myComponent;
+  expect(componentHost?.classList.contains("dark")).toBe(false);
+
+  myComponent._ui("mode", "light");
+  await new Promise(resolve => setTimeout(resolve, 200));
+
+  expect(componentHost?.classList.contains("light")).toBe(true);
+  expect(document.body.classList.contains("dark")).toBe(true);
+});
+

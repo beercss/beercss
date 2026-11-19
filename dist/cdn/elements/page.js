@@ -14,13 +14,6 @@ navigator.userAgent.includes("Macintosh");
 navigator.userAgent.includes("Linux");
 navigator.userAgent.includes("Android");
 /iPad|iPhone|iPod/.test(navigator.userAgent);
-function queryAll(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
-	} catch {
-		return _emptyNodeList;
-	}
-}
 function addClass(element, name) {
 	if (element instanceof NodeList) for (let i = 0; i < element.length; i++) element[i].classList.add(name);
 	else element?.classList.add(name);
@@ -32,11 +25,18 @@ function removeClass(element, name) {
 function parent(element) {
 	return element?.parentElement;
 }
+function queryAll(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
+	} catch {
+		return _emptyNodeList;
+	}
+}
 //#endregion
 //#region src/cdn/elements/page.ts
-function updatePage(page) {
+function updatePage(page, root) {
 	const container = parent(page);
-	if (container) removeClass(queryAll(":scope > .page", container), "active");
+	if (container) removeClass(queryAll(":scope > .page", root, container), "active");
 	addClass(page, "active");
 }
 globals_default().page = { updatePage };

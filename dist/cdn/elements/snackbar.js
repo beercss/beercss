@@ -15,13 +15,6 @@ navigator.userAgent.includes("Macintosh");
 navigator.userAgent.includes("Linux");
 navigator.userAgent.includes("Android");
 /iPad|iPhone|iPod/.test(navigator.userAgent);
-function queryAll(selector, element) {
-	try {
-		return typeof selector === "string" ? (element ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
-	} catch {
-		return _emptyNodeList;
-	}
-}
 function addClass(element, name) {
 	if (element instanceof NodeList) for (let i = 0; i < element.length; i++) element[i].classList.add(name);
 	else element?.classList.add(name);
@@ -51,27 +44,37 @@ function onWeak(element, name, callback, useCapture = true) {
 	callbacks.add(callback);
 	on(element, name, callback, useCapture);
 }
-function blurActiveElement() {
-	document.activeElement?.blur();
+function queryAll(selector, elementOrRoot, element) {
+	try {
+		return typeof selector === "string" ? (element ?? elementOrRoot ?? document).querySelectorAll(selector) : selector ?? _emptyNodeList;
+	} catch {
+		return _emptyNodeList;
+	}
+}
+function blurActiveElement(root) {
+	(root ?? document).activeElement?.blur();
 }
 //#endregion
 //#region src/cdn/elements/snackbar.ts
-var _timeoutSnackbar;
-function onClickSnackbar(e) {
+var snackbarTimeouts = /* @__PURE__ */ new WeakMap();
+function onClickSnackbar(e, root) {
 	const snackbar = e.currentTarget;
 	removeClass(snackbar, "active");
-	if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
+	const timeoutSnackbar = snackbarTimeouts.get(root);
+	if (timeoutSnackbar) clearTimeout(timeoutSnackbar);
 }
-function updateSnackbar(snackbar, milliseconds) {
-	blurActiveElement();
-	removeClass(queryAll(".snackbar.active"), "active");
+function updateSnackbar(snackbar, milliseconds, root = document) {
+	blurActiveElement(root);
+	removeClass(queryAll(".snackbar.active", root), "active");
 	addClass(snackbar, "active");
-	onWeak(snackbar, "click", onClickSnackbar);
-	if (_timeoutSnackbar) clearTimeout(_timeoutSnackbar);
+	onWeak(snackbar, "click", (e) => onClickSnackbar(e, root));
+	let timeoutSnackbar = snackbarTimeouts.get(root);
+	if (timeoutSnackbar) clearTimeout(timeoutSnackbar);
 	if (milliseconds === -1) return;
-	_timeoutSnackbar = setTimeout(() => {
+	timeoutSnackbar = setTimeout(() => {
 		removeClass(snackbar, "active");
 	}, milliseconds ?? 6e3);
+	snackbarTimeouts.set(root, timeoutSnackbar);
 }
 globals_default().snackbar = { updateSnackbar };
 //#endregion

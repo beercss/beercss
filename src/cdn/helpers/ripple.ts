@@ -43,12 +43,12 @@ function onKeydownRippleDelegation(e: KeyboardEvent) {
   updateRipple(e);
 }
 
-export function updateAllRipples() {
-  const body = document.body;
-  if (!body) return;
+export function updateAllRipples(root: Document | ShadowRoot = document) {
+  const container = root instanceof Document ? root.body : root;
+  if (!container) return;
 
-  onWeak(body, "mousedown", onMousedownRippleDelegation);
-  onWeak(body, "keydown", onKeydownRippleDelegation);
+  onWeak(container as any, "mousedown", onMousedownRippleDelegation);
+  onWeak(container as any, "keydown", onKeydownRippleDelegation);
 }
 
 globals().ripple = {
