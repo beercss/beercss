@@ -194,7 +194,7 @@ nav.max > header > .extend {
 }
 
 nav.max > header > .extend > span:not([class]) {
-  display: block;
+  display: flow-root;
   margin-inline-start: var(--_padding);
 }
 

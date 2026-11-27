@@ -8,7 +8,7 @@ hr,
   min-block-size: auto;
   block-size: 0.0625rem;
   background-color: var(--outline-variant);
-  display: block;
+  display: flow-root;
 }
 
 hr + *,

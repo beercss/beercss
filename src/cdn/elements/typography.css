@@ -11,7 +11,7 @@ h6,
 .h5,
 .h6 {
   font-weight: 400;
-  display: block;
+  display: flow-root;
   align-items: center;
   line-height: normal;
 }

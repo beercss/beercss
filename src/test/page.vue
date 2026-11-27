@@ -663,8 +663,23 @@ main.responsive
             li Three
         li Two
         li Three
-  
-      
+
+  .large-space
+  h5(aria-hidden="true") Margin collapse
+  article.primary
+    h6.border.large-padding.large-margin article
+
+  nav.primary.padding.top-align
+    h6.border.large-padding.large-margin nav
+
+  article.primary
+    aside.left.large-margin
+      img(src="/favicon.png")
+    .large-margin Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+  nav.primary.padding.top-align
+    img.large-margin(src="/favicon.png")
+    .max.large-margin Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   .large-space
   h5(aria-hidden="true") Navigations
