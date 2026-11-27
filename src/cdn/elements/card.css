@@ -5,7 +5,7 @@ article {
   color: var(--on-surface);
   padding: var(--_padding);
   border-radius: 0.75rem;
-  display: block;
+  display: flow-root;
   transition: transform var(--speed3), border-radius var(--speed3), padding var(--speed3);
 }
 

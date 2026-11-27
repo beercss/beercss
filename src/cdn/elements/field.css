@@ -346,7 +346,7 @@ input[type=number] {
 
 .field.label.border:not(.fill) > label::after {
   content: "";
-  display: block;
+  display: flow-root;
   margin: 0.5rem 0 0 0;
   border-block-start: 0.0625rem solid var(--outline);
   block-size: 1rem;

@@ -120,7 +120,7 @@ menu:active ~ .tooltip,
 }
 
 .tooltip.max {
-  display: block;
+  display: flow-root;
   font-size: inherit;
   white-space: normal;
   text-align: start;
