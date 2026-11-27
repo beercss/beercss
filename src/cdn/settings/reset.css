@@ -54,6 +54,10 @@ label {
   margin-block-start: 1rem;
 }
 
+:has(> [class*='margin']) {
+  display: flow-root;
+}
+
 :is(a, button, .button, .chip, summary):focus-visible {
   outline: 0.125rem solid var(--primary);
   outline-offset: 0.25rem;
