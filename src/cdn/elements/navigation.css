@@ -79,7 +79,8 @@ nav.row {
   gap: 2rem;
 }
 
-:is(nav, .row) .max {
+:is(nav, .row) .max,
+li > :is(nav, .row) {
   flex: 1;
 }
 
